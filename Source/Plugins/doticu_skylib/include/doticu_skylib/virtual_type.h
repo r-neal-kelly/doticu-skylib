@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "doticu_skylib/papyrus.h"
+#include "doticu_skylib/virtual.h"
 
-namespace doticu_skylib { namespace Papyrus {
+namespace doticu_skylib { namespace Virtual {
 
     class Class_t;
 
@@ -27,8 +27,6 @@ namespace doticu_skylib { namespace Papyrus {
     };
 
     class Type_t {
-    public:
-        
     public:
         Type_t();
         Type_t(Type_e type);

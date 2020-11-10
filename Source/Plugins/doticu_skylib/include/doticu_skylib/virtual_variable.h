@@ -4,25 +4,19 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/alias.h"
-#include "doticu_skylib/papyrus.h"
-#include "doticu_skylib/papyrus/type.h"
+#include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_type.h"
 
-namespace doticu_skylib { namespace Papyrus {
+namespace doticu_skylib { namespace Virtual {
 
     class Object_t;
     class Array_t;
 
     class Variable_t {
     public:
-        static Registry_t* Registry();
-        static Policy_t* Policy();
-
         template <typename Type>
-        static Variable_t* Fetch(Type* bsobject,
-                                 String_t class_name,
-                                 String_t variable_name);
+        static Variable_t* Fetch(Type* bsobject, String_t class_name, String_t variable_name);
     public:
         Variable_t();
 

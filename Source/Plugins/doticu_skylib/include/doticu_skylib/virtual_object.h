@@ -4,12 +4,13 @@
 
 #pragma once
 
-#include "doticu_skylib/papyrus.h"
-#include "doticu_skylib/papyrus/handle.h"
-#include "doticu_skylib/papyrus/variable.h"
-#include "doticu_skylib/papyrus/class.h"
+#include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_handle.h"
 
-namespace doticu_skylib { namespace Papyrus {
+namespace doticu_skylib { namespace Virtual {
+
+    class Class_t;
+    class Variable_t;
 
     class Object_t {
     public:

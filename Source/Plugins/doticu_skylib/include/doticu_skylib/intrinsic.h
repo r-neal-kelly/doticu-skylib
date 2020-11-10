@@ -56,4 +56,10 @@ namespace doticu_skylib {
     typedef BGSLocation     Location_t;
     typedef TESObjectCELL   Cell_t;
 
+    template <typename ...Arguments>
+    struct Callback_t {
+        virtual ~Callback_t() = default;
+        virtual void operator()(Arguments...) = 0;
+    };
+
 }

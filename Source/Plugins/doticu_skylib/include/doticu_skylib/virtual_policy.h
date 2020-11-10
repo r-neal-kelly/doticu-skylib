@@ -4,12 +4,14 @@
 
 #pragma once
 
-#include "doticu_skylib/papyrus.h"
-#include "doticu_skylib/papyrus/handle.h"
-#include "doticu_skylib/papyrus/object.h"
-#include "doticu_skylib/papyrus/virtual.h"
+#include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_handle.h"
 
-namespace doticu_skylib { namespace Papyrus {
+namespace doticu_skylib { namespace Virtual {
+
+    class Binder_t;
+    class Machine_t;
+    class Object_t;
 
     class Handle_Policy_t {
     public:
@@ -35,8 +37,8 @@ namespace doticu_skylib { namespace Papyrus {
         void Bind_Object(Object_t*& object, Handle_t handle);
         void Unbind_Object(Object_t*& object);
 
-        Virtual_Machine_t* virtual_machine; // 08
-        Virtual_Binder_t* virtual_binder; // 10
+        Machine_t* machine; // 08
+        Binder_t* binder; // 10
     };
 
 }}

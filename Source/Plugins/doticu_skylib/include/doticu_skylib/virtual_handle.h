@@ -4,20 +4,22 @@
 
 #pragma once
 
-#include "doticu_skylib/utils.h"
-#include "doticu_skylib/form.h"
-#include "doticu_skylib/papyrus.h"
+#include "doticu_skylib/virtual.h"
 
-namespace doticu_skylib { namespace Papyrus {
+namespace doticu_skylib { namespace Virtual {
+
+    class Machine_t;
+    class Handle_Policy_t;
 
     class Handle_t {
     public:
         static Registry_t* Registry();
-        static Policy_t* Policy();
+        static Machine_t* Machine();
+        static Handle_Policy_t* Policy();
 
         u64 handle = 0;
 
-        Handle_t(void* instance, Form_Type_t form_type);
+        Handle_t(void* form, Form_Type_t form_type);
         template <typename Type_t>
         Handle_t(Type_t* instance);
         Handle_t(Form_t* form);
