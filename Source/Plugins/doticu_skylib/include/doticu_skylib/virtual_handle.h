@@ -8,28 +8,39 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    class Machine_t;
-    class Handle_Policy_t;
-
     class Handle_t {
     public:
-        static Registry_t* Registry();
-        static Machine_t* Machine();
-        static Handle_Policy_t* Policy();
+        Raw_Handle_t raw_handle = 0;
 
-        u64 handle = 0;
-
+        template <typename Type>
+        Handle_t(Type* form_or_alias);
         Handle_t(void* form, Form_Type_t form_type);
-        template <typename Type_t>
-        Handle_t(Type_t* instance);
-        Handle_t(Form_t* form);
+        Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
         Bool_t Is_Valid();
         Bool_t Has_Form_Type(Form_Type_t form_type);
 
-        operator u64();
+        operator Raw_Handle_t();
     };
     STATIC_ASSERT(sizeof(Handle_t) == 0x8);
+
+}}
+
+#include "doticu_skylib/virtual_policy.h"
+
+namespace doticu_skylib { namespace Virtual {
+
+    template <typename Type>
+    Handle_t::Handle_t(Type* form_or_alias)
+    {
+        if (form_or_alias) {
+            raw_handle = Handle_Policy_t::Self()->Handle(Type::kTypeID, form_or_alias);
+        } else {
+            raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
+        }
+    }
+    template <> Handle_t::Handle_t(void* form_or_alias) = delete;
+    template <> Handle_t::Handle_t(Handle_t* form_or_alias) = delete;
 
 }}

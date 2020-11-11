@@ -28,11 +28,11 @@ namespace doticu_skylib { namespace Virtual {
 
     class Type_t {
     public:
+        u64 mangled;
+
         Type_t();
         Type_t(Type_e type);
         Type_t(Class_t* class_info);
-
-        u64 mangled;
 
         Type_e Unmangled();
         Class_t* Class_Info();

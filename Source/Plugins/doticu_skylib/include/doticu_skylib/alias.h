@@ -8,6 +8,8 @@
 
 namespace doticu_skylib {
 
+    class Quest_t;
+
     class Alias_Base_t {
     public:
         enum {

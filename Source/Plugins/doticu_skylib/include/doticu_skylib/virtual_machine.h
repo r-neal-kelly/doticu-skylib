@@ -13,8 +13,9 @@ namespace doticu_skylib { namespace Virtual {
     class Array_t;
     class Callback_i;
     class Class_t;
+    class Handle_Policy_t;
     class Object_t;
-    class Object_Policy_t;
+    class Bind_Policy_t;
     class Type_t;
     class Variable_t;
 
@@ -71,15 +72,22 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _2C(void); // 2C
         virtual Handle_Policy_t* Handle_Policy(); // 2D
         virtual void _2E(void); // 2E
-        virtual Object_Policy_t* Object_Policy(); // 2F
+        virtual Bind_Policy_t* Bind_Policy(); // 2F
 
         template <typename BSObject>
         void Send_Event(BSObject* object, String_t event_name, IFunctionArguments* arguments);
         template <typename BSObject>
         void Send_Event(BSObject* object, String_t event_name);
 
-        Bool_t Call_Global(String_t class_name, String_t function_name, Arguments_i* arguments = nullptr, Callback_i** callback = nullptr);
-        Bool_t Call_Method(Handle_t handle, String_t class_name, String_t function_name, Arguments_i* arguments = nullptr, Callback_i** callback = nullptr);
+        Bool_t Call_Global(String_t class_name,
+                           String_t function_name,
+                           Arguments_i* arguments = nullptr,
+                           Callback_i** vcallback = nullptr);
+        Bool_t Call_Method(Handle_t handle,
+                           String_t class_name,
+                           String_t function_name,
+                           Arguments_i* arguments = nullptr,
+                           Callback_i** vcallback = nullptr);
 
         Int_t Count_Objects(Handle_t handle);
         Bool_t Has_Object(Handle_t handle);

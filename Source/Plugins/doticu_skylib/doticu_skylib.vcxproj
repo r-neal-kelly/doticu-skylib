@@ -44,6 +44,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)\..;$(ProjectDir)\include;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>common/IPrefix.h</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -60,7 +61,9 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\alias.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
+    <ClInclude Include="include\doticu_skylib\game.h" />
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />
+    <ClInclude Include="include\doticu_skylib\quest.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
     <ClInclude Include="include\doticu_skylib\virtual_binder.h" />
     <ClInclude Include="include\doticu_skylib\virtual_callback.h" />
@@ -76,7 +79,14 @@
     <ClInclude Include="include\doticu_skylib\utils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\doticu_skylib\game.cpp" />
+    <ClCompile Include="src\doticu_skylib\quest.cpp" />
     <ClCompile Include="src\doticu_skylib\utils.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_handle.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_machine.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_policy.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

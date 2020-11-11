@@ -6,10 +6,11 @@
 
 #include "skse64/GameForms.h"
 
+#include "doticu_skylib/utils.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
 
-    
+
 
 }

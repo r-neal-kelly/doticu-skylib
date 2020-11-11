@@ -26,7 +26,7 @@ W
 
 #else
 
-#define DOTICU_ASSERT(IGNORED_)
+#define SKYLIB_ASSERT(IGNORED_)
 
 #endif
 

@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "common/ITypes.h"
 
 #include "skse64/GameObjects.h"
@@ -30,7 +32,10 @@ namespace doticu_skylib {
     typedef float           Float_t;
     typedef BSFixedString   String_t;
 
+    typedef ModInfo         Mod_t;
     typedef TESForm         Form_t;
+    typedef u32             Form_ID_t;
+    typedef u32             Lower_Form_ID_t;
     typedef u32             Form_Type_t;
 
     typedef TESObjectMISC   Misc_t;
@@ -50,16 +55,18 @@ namespace doticu_skylib {
     typedef UInt32          Reference_Handle_t;
 
     typedef TESFile         File_t;
-    typedef TESQuest        Quest_t;
 
     typedef TESWorldSpace   Worldspace_t;
     typedef BGSLocation     Location_t;
     typedef TESObjectCELL   Cell_t;
 
     template <typename ...Arguments>
-    struct Callback_t {
-        virtual ~Callback_t() = default;
+    struct Callback_i {
+        virtual ~Callback_i() = default;
         virtual void operator()(Arguments...) = 0;
     };
+
+    template <typename Type, typename Allocator = std::allocator<Type>>
+    using Vector_t = std::vector<Type, Allocator>;
 
 }

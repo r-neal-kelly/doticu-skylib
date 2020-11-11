@@ -14,7 +14,11 @@ namespace doticu_skylib { namespace Virtual {
 
     typedef VMClassRegistry     Registry_t;
     typedef u32                 Stack_ID_t;
+    typedef u64                 Raw_Handle_t;
 
-    template <typename T> using Vector_t = VMResultArray<T>;
+    template <typename T>
+    using Vector_t = VMResultArray<T>;
+
+    class Callback_i;
 
 }}
