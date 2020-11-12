@@ -46,11 +46,14 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t Is_Object();
         Bool_t Is_Array();
         Bool_t Is_None_Array();
-        Bool_t Is_Object_Array();
-        Bool_t Is_String_Array();
+        Bool_t Is_Bool_Array();
         Bool_t Is_Int_Array();
         Bool_t Is_Float_Array();
-        Bool_t Is_Bool_Array();
+        Bool_t Is_String_Array();
+        Bool_t Is_Object_Array();
+
+        Bool_t operator ==(const Type_t& other);
+        Bool_t operator ==(const Type_e& type);
     };
     STATIC_ASSERT(sizeof(Type_t) == 0x8);
 

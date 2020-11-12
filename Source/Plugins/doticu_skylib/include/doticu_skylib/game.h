@@ -8,6 +8,8 @@
 
 namespace doticu_skylib {
 
+    class Form_t;
+
     class Game_t {
     public:
         static Mod_t* Mod(const char* mod_name);

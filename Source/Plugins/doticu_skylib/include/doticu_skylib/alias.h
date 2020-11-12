@@ -8,12 +8,13 @@
 
 namespace doticu_skylib {
 
+    class Form_t;
     class Quest_t;
 
     class Alias_Base_t {
     public:
         enum {
-            kTypeID = kFormType_Alias
+            kTypeID = kFormType_Alias,
         };
 
         enum Flags : UInt32 {

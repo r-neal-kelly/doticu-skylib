@@ -4,7 +4,10 @@
 
 #pragma once
 
+#include "doticu_skylib/string.h"
 #include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_type.h"
+#include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -305,3 +308,23 @@ namespace doticu_skylib { namespace Virtual {
     }
 
 }}
+
+template <>
+inline UInt64 GetTypeID<doticu_skylib::String_t>(doticu_skylib::Virtual::Registry_t* registry)
+{
+    return static_cast<UInt64>(doticu_skylib::Virtual::Type_e::STRING);
+}
+
+template <>
+inline void UnpackValue<doticu_skylib::String_t>(doticu_skylib::String_t* destination, VMValue* source)
+{
+    using Type_e = doticu_skylib::Virtual::Type_e;
+    using Variable_t = doticu_skylib::Virtual::Variable_t;
+
+    Variable_t* source_variable = reinterpret_cast<Variable_t*>(source);
+    if (source_variable->type == Type_e::STRING) {
+        destination->Value(source_variable->String());
+    } else {
+        destination->Value("");
+    }
+}

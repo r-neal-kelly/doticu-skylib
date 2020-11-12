@@ -26,14 +26,13 @@ namespace doticu_skylib {
 
     typedef UInt8           Byte_t;
     typedef size_t          Word_t;
+    typedef SInt64          Index_t;
 
     typedef bool            Bool_t;
     typedef SInt32          Int_t;
     typedef float           Float_t;
-    typedef BSFixedString   String_t;
 
     typedef ModInfo         Mod_t;
-    typedef TESForm         Form_t;
     typedef u32             Form_ID_t;
     typedef u32             Lower_Form_ID_t;
     typedef u32             Form_Type_t;
@@ -60,13 +59,15 @@ namespace doticu_skylib {
     typedef BGSLocation     Location_t;
     typedef TESObjectCELL   Cell_t;
 
+    template <typename Type, typename Allocator = std::allocator<Type>>
+    using Vector_t = std::vector<Type, Allocator>;
+
     template <typename ...Arguments>
     struct Callback_i {
         virtual ~Callback_i() = default;
         virtual void operator()(Arguments...) = 0;
     };
 
-    template <typename Type, typename Allocator = std::allocator<Type>>
-    using Vector_t = std::vector<Type, Allocator>;
-
 }
+
+#include "doticu_skylib/string.h"

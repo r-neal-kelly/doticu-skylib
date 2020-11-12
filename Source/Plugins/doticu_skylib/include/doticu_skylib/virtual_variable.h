@@ -4,34 +4,43 @@
 
 #pragma once
 
-#include "doticu_skylib/alias.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 
 namespace doticu_skylib { namespace Virtual {
 
+    class Alias_Base_t;
+    class Form_t;
     class Object_t;
     class Array_t;
 
+    union Variable_u {
+        Variable_u();
+
+        void* ptr;
+        Bool_t b;
+        Int_t i;
+        Float_t f;
+        String_t str;
+        Object_t* obj;
+        Array_t* arr;
+    };
+
     class Variable_t {
     public:
+        enum class Offset_t : Word_t {
+            COPY    = 0x01236E50, // 97509
+            DESTROY = 0x01236D10, // 97508
+        };
+
         template <typename Type>
         static Variable_t* Fetch(Type* bsobject, String_t class_name, String_t variable_name);
+
     public:
         Variable_t();
 
         Type_t type;
-        union Variable_u {
-            Variable_u();
-
-            void* ptr;
-            Bool_t b;
-            Int_t i;
-            Float_t f;
-            String_t str;
-            Object_t* obj;
-            Array_t* arr;
-        } data;
+        Variable_u data;
 
         void Destroy();
         void Copy(Variable_t* other);

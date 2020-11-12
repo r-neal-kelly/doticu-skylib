@@ -16,12 +16,12 @@
 
 #if 1
 
-#define SKYLIB_ASSERT(IS_TRUE)                                      \
-M                                                                   \
-    if (!(IS_TRUE)) {                                               \
-        _MESSAGE("Asserted. Exiting Skyrim. Failed: %s", #IS_TRUE); \
-        _AssertionFailed(__FILE__, __LINE__, #IS_TRUE);             \
-    }                                                               \
+#define SKYLIB_ASSERT(IS_TRUE_)                                         \
+M                                                                       \
+    if (!(IS_TRUE_)) {                                                  \
+        _MESSAGE("Asserted. Exiting Skyrim. Failed: %s", #IS_TRUE_);    \
+        _AssertionFailed(__FILE__, __LINE__, #IS_TRUE_);                \
+    }                                                                   \
 W
 
 #else
@@ -45,5 +45,19 @@ namespace doticu_skylib {
     {
         return !Is_Odd(num);
     }
+
+    class CString_t {
+    public:
+        static constexpr Word_t MAX_LENGTH = 2048;
+
+        static Word_t Length(const char* sub);
+
+        static Bool_t Is_Same(const char* sub, const char* obj, Bool_t caseless);
+        static Bool_t Starts_With(const char* sub, const char* obj, Bool_t caseless);
+        static Bool_t Starts_With(const char* sub, const char obj, Bool_t caseless);
+        static Bool_t Ends_With(const char* sub, const char* obj, Bool_t caseless);
+        static Bool_t Ends_With(const char* sub, const char obj, Bool_t caseless);
+        static Bool_t Contains(const char* sub, const char* obj, Bool_t caseless);
+    };
 
 }

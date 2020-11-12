@@ -5,6 +5,7 @@
 #include "skse64/GameData.h"
 
 #include "doticu_skylib/utils.h"
+#include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
 
 namespace doticu_skylib {
@@ -23,7 +24,7 @@ namespace doticu_skylib {
 
     Form_t* Game_t::Form(Form_ID_t form_id)
     {
-        return LookupFormByID(form_id);
+        return reinterpret_cast<Form_t*>(LookupFormByID(form_id));
     }
 
     Form_t* Game_t::Form(Mod_t* mod, Lower_Form_ID_t lower_form_id)
