@@ -9,10 +9,12 @@
 
 namespace doticu_skylib { namespace Virtual {
 
+    class Actor_t;
     class Alias_Base_t;
     class Form_t;
     class Object_t;
     class Array_t;
+    class Reference_t;
 
     union Variable_u {
         Variable_u();

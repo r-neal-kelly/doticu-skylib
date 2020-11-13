@@ -2,24 +2,23 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "skse64/GameData.h"
-
 #include "doticu_skylib/utils.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 
-    static DataHandler* Data_Handler()
+    Game_Data_t* Game_t::Data()
     {
-        static DataHandler* data_handler = DataHandler::GetSingleton();
-        SKYLIB_ASSERT(data_handler != nullptr);
-        return data_handler;
+        static Game_Data_t* data = static_cast<Game_Data_t*>(DataHandler::GetSingleton());
+        SKYLIB_ASSERT(data != nullptr);
+        return data;
     }
 
     Mod_t* Game_t::Mod(const char* mod_name)
     {
-        return const_cast<Mod_t*>(Data_Handler()->LookupModByName(mod_name));
+        return const_cast<Mod_t*>(Data()->LookupModByName(mod_name));
     }
 
     Form_t* Game_t::Form(Form_ID_t form_id)

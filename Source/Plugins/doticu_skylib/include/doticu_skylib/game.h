@@ -8,10 +8,14 @@
 
 namespace doticu_skylib {
 
+    class Cell_t;
     class Form_t;
+    class Worldspace_t;
 
     class Game_t {
     public:
+        static Game_Data_t* Data();
+
         static Mod_t* Mod(const char* mod_name);
         static Form_t* Form(Form_ID_t form_id);
         static Form_t* Form(Mod_t* mod, Lower_Form_ID_t lower_form_id);

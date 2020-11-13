@@ -18,9 +18,9 @@ namespace doticu_skylib {
         u32 unk_20; // 20
         u32 pad_24; // 24
     };
-    //STATIC_ASSERT(sizeof(Story_Form_t) == 0x28);
+    STATIC_ASSERT(sizeof(Story_Form_t) == 0x28);
 
-    class Quest_t : public Story_Form_t {
+    class Quest_t : public Story_Form_t, public Name_Component_t {
     public:
         enum {
             kTypeID = kFormType_Quest,
@@ -30,8 +30,6 @@ namespace doticu_skylib {
 
     public:
         virtual ~Quest_t(); // 00
-
-        TESFullName full_name;
 
         void Start(Virtual::Callback_i* vcallback = nullptr);
         void Start(Callback_i<Bool_t>* ucallback = nullptr);

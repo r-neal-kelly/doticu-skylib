@@ -8,6 +8,7 @@
 
 #include "common/ITypes.h"
 
+#include "skse64/GameData.h"
 #include "skse64/GameObjects.h"
 #include "skse64/GameTypes.h"
 
@@ -35,7 +36,7 @@ namespace doticu_skylib {
     typedef ModInfo         Mod_t;
     typedef u32             Form_ID_t;
     typedef u32             Lower_Form_ID_t;
-    typedef u32             Form_Type_t;
+    typedef u8              Form_Type_t;
 
     typedef TESObjectMISC   Misc_t;
     typedef TESObjectSTAT   Static_t;
@@ -45,19 +46,16 @@ namespace doticu_skylib {
     typedef TESFaction      Faction_t;
     typedef BGSOutfit       Outfit_t;
 
-    typedef TESObjectREFR   Reference_t;
-    typedef Actor           Actor_t;
-    typedef TESNPC          Actor_Base_t;
+    typedef TESRace         Race_t;
     typedef Character       Character_t;
     typedef PlayerCharacter Player_Character_t;
 
     typedef UInt32          Reference_Handle_t;
 
+    typedef DataHandler     Game_Data_t;
     typedef TESFile         File_t;
 
-    typedef TESWorldSpace   Worldspace_t;
     typedef BGSLocation     Location_t;
-    typedef TESObjectCELL   Cell_t;
 
     template <typename Type, typename Allocator = std::allocator<Type>>
     using Vector_t = std::vector<Type, Allocator>;
@@ -65,6 +63,12 @@ namespace doticu_skylib {
     template <typename ...Arguments>
     struct Callback_i {
         virtual ~Callback_i() = default;
+        virtual void operator()(Arguments...) = 0;
+    };
+
+    template <typename ...Arguments>
+    struct Iterator_i {
+        virtual ~Iterator_i() = default;
         virtual void operator()(Arguments...) = 0;
     };
 
