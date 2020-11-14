@@ -11,6 +11,8 @@
 
 namespace doticu_skylib {
 
+    class Form_t;
+
     namespace Virtual {
 
         class Callback_i;
@@ -42,14 +44,25 @@ namespace doticu_skylib {
     public:
         virtual ~Model_Component_t(); // 00
 
-        String_t    model;          // 08
-        void*       textures;       // 10
-        void*       unk_18;         // 18
-        u16         texture_count;  // 20
-        u16         addon_count;    // 22
-        u32         pad_24;         // 24
+        String_t    model;              // 08
+        void*       textures;           // 10
+        void*       model_addons;       // 18
+        u16         texture_count;      // 20
+        u16         model_addon_count;  // 22
+        u32         pad_24;             // 24
     };
     STATIC_ASSERT(sizeof(Model_Component_t) == 0x28);
+
+    class Model_Alternate_Textures_Component_t : public Model_Component_t // TESModelTextureSwap
+    {
+    public:
+        virtual ~Model_Alternate_Textures_Component_t(); // 00
+
+        void*   alternate_textures;         // 28
+        u32     alternate_texture_count;    // 30
+        u32     pad_34;                     // 34
+    };
+    STATIC_ASSERT(sizeof(Model_Alternate_Textures_Component_t) == 0x38);
 
     class Race_Component_t : public Form_Component_t { // TESRaceForm
     public:
@@ -156,6 +169,33 @@ namespace doticu_skylib {
         void*   combat_overrides;           // 20
     };
     STATIC_ASSERT(sizeof(Package_Override_Component_t) == 0x28);
+
+    class Leveled_Component_t : public Form_Component_t
+    {
+    public:
+        class Entry_t
+        {
+        public:
+            Form_t* form;   // 00
+            u16     count;  // 08
+            u16     level;  // 0A
+            u32     pad_0C; // 0C
+            void*   extra;  // 10
+        };
+
+    public:
+        virtual ~Leveled_Component_t();
+
+        Entry_t*    leveled_entries;        // 08
+        u8          chance_of_none;         // 10
+        u8          leveled_flags;          // 11
+        u8          leveled_entry_count;    // 12
+        u8          unk_13;                 // 13
+        u32         pad_14;                 // 14
+        void*       unk_18;                 // 18
+        TESGlobal*  chance_of_none_global;  // 20;
+    };
+    STATIC_ASSERT(sizeof(Leveled_Component_t) == 0x28);
 
     class Form_t : public Form_Component_t { // TESForm
     public:

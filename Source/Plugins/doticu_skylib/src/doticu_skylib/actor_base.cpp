@@ -5,8 +5,6 @@
 #include "doticu_skylib/utils.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/game.h"
-#include "doticu_skylib/cell.h"
-#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 

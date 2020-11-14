@@ -65,7 +65,7 @@ namespace doticu_skylib {
     public:
         enum
         {
-            kTypeID = kFormType_Cell,
+            kTypeID = kFormType_NPC,
         };
 
         static Vector_t<Actor_Base_t*>  Actor_Bases();
@@ -74,6 +74,6 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_Base_t();
     };
-    //STATIC_ASSERT(sizeof(Actor_t) == 0x0);
+    //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 
 }

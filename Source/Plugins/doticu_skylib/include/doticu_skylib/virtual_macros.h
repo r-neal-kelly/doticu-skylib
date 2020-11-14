@@ -40,18 +40,21 @@ namespace doticu_skylib { namespace Virtual {
         return object;                                                  \
     W
 
-    #define DEFINE_VARIABLE(NAME_)                                  \
+    #define DEFINE_TYPED_VARIABLE(TYPE_, NAME_)                     \
     M                                                               \
         using String_t = doticu_skylib::String_t;                   \
-        using Variable_t = doticu_skylib::Virtual::Variable_t;      \
+        using TYPE_ = doticu_skylib::Virtual::TYPE_;                \
                                                                     \
-        static const String_t variable_name = String_t(NAME_);      \
-        SKYLIB_ASSERT(variable_name);                               \
+        static const String_t name = String_t(NAME_);               \
+        SKYLIB_ASSERT(name);                                        \
                                                                     \
-        Variable_t* variable = Object()->Variable(variable_name);   \
-        SKYLIB_ASSERT(variable);                                    \
-        return variable;                                            \
+        TYPE_* var = static_cast<TYPE_*>(Object()->Variable(name)); \
+        SKYLIB_ASSERT(var);                                         \
+        return var;                                                 \
     W
+
+    #define DEFINE_VARIABLE(NAME_)          DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
+    #define DEFINE_STRING_VARIABLE(NAME_)   DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
 
     #define DEFINE_PROPERTY(NAME_)                                  \
     M                                                               \
