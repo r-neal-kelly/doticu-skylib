@@ -37,4 +37,9 @@ namespace doticu_skylib {
         #undef TAB
     }
 
+    Sex_e Actor_Base_t::Sex()
+    {
+        return Is_Female() ? Sex_e::FEMALE : Sex_e::MALE;
+    }
+
 }

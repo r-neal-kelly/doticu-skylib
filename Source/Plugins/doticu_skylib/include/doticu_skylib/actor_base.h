@@ -45,6 +45,13 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Actor_Values_t) == 0x8);
 
+    enum class Sex_e : Int_t
+    {
+        NONE    = -1,
+        MALE    = 0,
+        FEMALE  = 1,
+    };
+
     class Actor_Base_t :
         public Animated_Object_t,
         public Actor_Base_Component_t,
@@ -73,6 +80,8 @@ namespace doticu_skylib {
 
     public:
         virtual ~Actor_Base_t();
+
+        Sex_e Sex();
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 

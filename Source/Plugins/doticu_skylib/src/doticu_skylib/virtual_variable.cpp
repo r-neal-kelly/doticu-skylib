@@ -132,6 +132,16 @@ namespace doticu_skylib { namespace Virtual {
         data.str.Value(value);
     }
 
+    Int_t Int_Variable_t::Value()
+    {
+        return Int();
+    }
+
+    void Int_Variable_t::Value(Int_t value)
+    {
+        Int(value);
+    }
+
     String_t String_Variable_t::Value()
     {
         return String();
@@ -140,11 +150,6 @@ namespace doticu_skylib { namespace Virtual {
     void String_Variable_t::Value(String_t value)
     {
         String(value);
-    }
-
-    String_Variable_t::operator String_t()
-    {
-        return String();
     }
 
 }}

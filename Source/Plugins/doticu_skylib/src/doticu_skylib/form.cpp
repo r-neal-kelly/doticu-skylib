@@ -14,6 +14,11 @@
 
 namespace doticu_skylib {
 
+    Bool_t Actor_Base_Component_t::Is_Female()
+    {
+        return (actor_base_flags & static_cast<Actor_Base_Flags_t>(Actor_Base_Flags_e::IS_FEMALE)) != 0;
+    }
+
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
     {
         struct VArguments_t : public Virtual::Arguments_t {

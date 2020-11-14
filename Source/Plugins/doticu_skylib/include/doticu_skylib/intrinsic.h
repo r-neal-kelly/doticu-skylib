@@ -44,6 +44,7 @@ namespace doticu_skylib {
     typedef TESObjectARMO   Armor_t;
 
     typedef TESFaction      Faction_t;
+    typedef s8              Faction_Rank_t;
     typedef BGSOutfit       Outfit_t;
 
     typedef TESRace         Race_t;

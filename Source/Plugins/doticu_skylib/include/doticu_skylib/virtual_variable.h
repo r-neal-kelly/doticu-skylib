@@ -100,13 +100,19 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 
+    class Int_Variable_t : public Variable_t
+    {
+    public:
+        Int_t   Value();
+        void    Value(Int_t value);
+    };
+    STATIC_ASSERT(sizeof(Int_Variable_t) == 0x10);
+
     class String_Variable_t : public Variable_t
     {
     public:
         String_t    Value();
         void        Value(String_t value);
-
-        operator String_t();
     };
     STATIC_ASSERT(sizeof(String_Variable_t) == 0x10);
 

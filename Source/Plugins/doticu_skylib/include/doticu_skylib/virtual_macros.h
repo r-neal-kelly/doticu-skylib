@@ -54,6 +54,7 @@ namespace doticu_skylib { namespace Virtual {
     W
 
     #define DEFINE_VARIABLE(NAME_)          DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
+    #define DEFINE_INT_VARIABLE(NAME_)      DEFINE_TYPED_VARIABLE(Int_Variable_t, NAME_)
     #define DEFINE_STRING_VARIABLE(NAME_)   DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
 
     #define DEFINE_PROPERTY(NAME_)                                  \
