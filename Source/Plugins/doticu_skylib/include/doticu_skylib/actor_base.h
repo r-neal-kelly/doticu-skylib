@@ -12,6 +12,7 @@
 namespace doticu_skylib {
 
     class Form_t;
+    class Race_t;
 
     class Object_t : public Form_t
     {
@@ -81,7 +82,8 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_Base_t();
 
-        Sex_e Sex();
+        Sex_e   Sex();
+        Race_t* Race();
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 

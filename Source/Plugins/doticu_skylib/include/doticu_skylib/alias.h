@@ -9,6 +9,7 @@
 namespace doticu_skylib {
 
     class Form_t;
+    class Mod_t;
     class Quest_t;
 
     class Alias_Base_t {
@@ -32,7 +33,7 @@ namespace doticu_skylib {
         };
 
         virtual ~Alias_Base_t(); // 00
-        virtual bool Load(File_t* file); // 01
+        virtual bool Load(Mod_t* mod); // 01
         virtual void Item(Form_t* form); // 02
         virtual String_t Type(); // 03
 

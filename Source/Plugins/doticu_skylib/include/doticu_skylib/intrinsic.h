@@ -33,7 +33,6 @@ namespace doticu_skylib {
     typedef SInt32          Int_t;
     typedef float           Float_t;
 
-    typedef ModInfo         Mod_t;
     typedef u32             Form_ID_t;
     typedef u32             Lower_Form_ID_t;
     typedef u8              Form_Type_t;
@@ -47,19 +46,39 @@ namespace doticu_skylib {
     typedef s8              Faction_Rank_t;
     typedef BGSOutfit       Outfit_t;
 
-    typedef TESRace         Race_t;
     typedef Character       Character_t;
     typedef PlayerCharacter Player_Character_t;
 
     typedef UInt32          Reference_Handle_t;
 
     typedef DataHandler     Game_Data_t;
-    typedef TESFile         File_t;
 
     typedef BGSLocation     Location_t;
 
-    template <typename Type, typename Allocator = std::allocator<Type>>
-    using Vector_t = std::vector<Type, Allocator>;
+    template <typename Type>
+    class Vector_t : public std::vector<Type>
+    {
+    public:
+        Index_t Index_Of(Type& item)
+        {
+            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+                if (At(idx) == item) {
+                    return idx;
+                }
+            }
+            return -1;
+        }
+
+        Bool_t Has(Type& item)
+        {
+            return Index_Of(item) > -1;
+        }
+
+        void Sort(Int_t(*comparator)(const Type* item_a, const Type* item_b))
+        {
+            qsort(data(), size(), sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
+        }
+    };
 
     template <typename ...Arguments>
     struct Callback_i {

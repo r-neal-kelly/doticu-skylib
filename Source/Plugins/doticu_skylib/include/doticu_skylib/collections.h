@@ -26,6 +26,16 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Short_XYZ_t) == 0x6);
 
     template <typename Type>
+    class Static_Array_t
+    {
+    public:
+        Type*   data;   // 0
+        u32     count;  // 8
+        u32     pad_0C; // C
+    };
+    STATIC_ASSERT(sizeof(Static_Array_t<void*>) == 0x10);
+
+    template <typename Type>
     class Small_Array_t
     {
     public:

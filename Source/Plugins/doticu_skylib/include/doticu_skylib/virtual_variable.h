@@ -100,6 +100,14 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 
+    class Bool_Variable_t : public Variable_t
+    {
+    public:
+        Bool_t  Value();
+        void    Value(Bool_t value);
+    };
+    STATIC_ASSERT(sizeof(Bool_Variable_t) == 0x10);
+
     class Int_Variable_t : public Variable_t
     {
     public:

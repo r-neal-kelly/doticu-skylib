@@ -16,7 +16,11 @@ namespace doticu_skylib {
         results.reserve(leveled_actor_bases.count);
 
         for (Index_t idx = 0, end = leveled_actor_bases.count; idx < end; idx += 1) {
-            results.push_back(reinterpret_cast<Leveled_Actor_Base_t*>(leveled_actor_bases.entries[idx]));
+            Leveled_Actor_Base_t* leveled_actor_base =
+                reinterpret_cast<Leveled_Actor_Base_t*>(leveled_actor_bases.entries[idx]);
+            if (leveled_actor_base) {
+                results.push_back(leveled_actor_base);
+            }
         }
 
         return results;

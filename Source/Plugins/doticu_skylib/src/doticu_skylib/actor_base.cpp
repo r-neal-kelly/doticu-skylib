@@ -16,7 +16,10 @@ namespace doticu_skylib {
         results.reserve(actor_bases.count);
 
         for (Index_t idx = 0, end = actor_bases.count; idx < end; idx += 1) {
-            results.push_back(reinterpret_cast<Actor_Base_t*>(actor_bases.entries[idx]));
+            Actor_Base_t* actor_base = reinterpret_cast<Actor_Base_t*>(actor_bases.entries[idx]);
+            if (actor_base) {
+                results.push_back(actor_base);
+            }
         }
 
         return results;
@@ -40,6 +43,11 @@ namespace doticu_skylib {
     Sex_e Actor_Base_t::Sex()
     {
         return Is_Female() ? Sex_e::FEMALE : Sex_e::MALE;
+    }
+
+    Race_t* Actor_Base_t::Race()
+    {
+        return race;
     }
 
 }

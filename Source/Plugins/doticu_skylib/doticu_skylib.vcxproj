@@ -68,9 +68,12 @@
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />
     <ClInclude Include="include\doticu_skylib\leveled_actor_base.h" />
+    <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\quest.h" />
+    <ClInclude Include="include\doticu_skylib\race.h" />
     <ClInclude Include="include\doticu_skylib\reference.h" />
     <ClInclude Include="include\doticu_skylib\collections.h" />
+    <ClInclude Include="include\doticu_skylib\relation.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
     <ClInclude Include="include\doticu_skylib\virtual_array.h" />
@@ -100,8 +103,11 @@
     <ClCompile Include="src\doticu_skylib\game.cpp" />
     <ClCompile Include="src\doticu_skylib\global.cpp" />
     <ClCompile Include="src\doticu_skylib\leveled_actor_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\mod.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />
+    <ClCompile Include="src\doticu_skylib\race.cpp" />
     <ClCompile Include="src\doticu_skylib\reference.cpp" />
+    <ClCompile Include="src\doticu_skylib\relation.cpp" />
     <ClCompile Include="src\doticu_skylib\ui.cpp" />
     <ClCompile Include="src\doticu_skylib\utils.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_arguments.cpp" />

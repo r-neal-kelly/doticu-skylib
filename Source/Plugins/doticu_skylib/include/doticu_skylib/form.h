@@ -7,11 +7,14 @@
 #include "skse64/GameForms.h"
 
 #include "doticu_skylib/utils.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
 
     class Form_t;
+    class Mod_t;
+    class Race_t;
 
     namespace Virtual {
 
@@ -39,6 +42,16 @@ namespace doticu_skylib {
         String_t    name; // 8
     };
     STATIC_ASSERT(sizeof(Name_Component_t) == 0x10);
+
+    class Description_Component_t : public Form_Component_t // TESDescription
+    {
+    public:
+        virtual ~Description_Component_t();
+
+        u32 description_offset; // 08
+        u32 description_text_id; // 0C
+    };
+    STATIC_ASSERT(sizeof(Description_Component_t) == 0x10);
 
     class Model_Component_t : public Form_Component_t { // TESModel
     public:
@@ -162,7 +175,7 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Container_Component_t) == 0x18);
 
-    class Active_Effects_Component_t : public Form_Component_t
+    class Active_Effects_Component_t : public Form_Component_t // TESSpellList
     {
     public:
         virtual ~Active_Effects_Component_t();
@@ -189,7 +202,7 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Destructible_Component_t) == 0x10);
 
-    class Skin_Component_t : public Form_Component_t
+    class Skin_Component_t : public Form_Component_t // BGSSkinForm
     {
     public:
         virtual ~Skin_Component_t();
@@ -197,6 +210,44 @@ namespace doticu_skylib {
         void* unk_8; // 8
     };
     STATIC_ASSERT(sizeof(Skin_Component_t) == 0x10);
+
+    enum class Biped_Slots_e : u32
+    {
+        HEAD                = 1lu << 0,
+        HAIR                = 1lu << 1,
+        BODY                = 1lu << 2,
+        HANDS               = 1lu << 3,
+        FOREARMS            = 1lu << 4,
+        AMULET              = 1lu << 5,
+        RING                = 1lu << 6,
+        FEET                = 1lu << 7,
+        CALVES              = 1lu << 8,
+        SHIELD              = 1lu << 9,
+        TAIL                = 1lu << 10,
+        LONG_HAIR           = 1lu << 11,
+        CIRCLET             = 1lu << 12,
+        EARS                = 1lu << 13,
+        DECAPTIATED_HEAD    = 1lu << 20,
+        DECAPITATED_NECK    = 1lu << 21,
+        FX                  = 1lu << 31,
+    };
+
+    enum class Armor_Type_e : u32
+    {
+        LIGHT_ARMOR = 0,
+        HEAVY_ARMOR = 1,
+        CLOTHING = 2,
+    };
+
+    class Biped_Component_t : public Form_Component_t // BGSBipedObjectForm
+    {
+    public:
+        virtual ~Biped_Component_t();
+
+        Biped_Slots_e   biped_slots;
+        Armor_Type_e    biped_armor_type;
+    };
+    STATIC_ASSERT(sizeof(Biped_Component_t) == 0x10);
 
     class Keyword_Component_t : public Form_Component_t
     {
@@ -297,7 +348,7 @@ namespace doticu_skylib {
         virtual void        _11(void);                              // 11
         virtual void        _12(void);                              // 12
         virtual void        _13(void);                              // 13
-        virtual void        _14(void);                              // 14
+        virtual Mod_t*      Get_Highest_Mod();                      // 14
         virtual void        _15(void);                              // 15
         virtual void        _16(void);                              // 16
         virtual void        _17(void);                              // 17
@@ -337,13 +388,13 @@ namespace doticu_skylib {
         virtual void        _39(void);                              // 39
         virtual void        _3A(void);                              // 3A
 
-        void*       form_files;     // 08 (Static_Array_t, BSStaticArray<TESFile*>)
-        u32         form_flags;     // 10
-        Form_ID_t   form_id;        // 14
-        u16         form_flags2;    // 18
-        Form_Type_t form_type;      // 1A
-        u8          pad_1B;         // 1B
-        u32         pad_1C;         // 1C
+        Static_Array_t<Mod_t*>* form_files;     // 08
+        u32                     form_flags;     // 10
+        Form_ID_t               form_id;        // 14
+        u16                     form_flags2;    // 18
+        Form_Type_t             form_type;      // 1A
+        u8                      pad_1B;         // 1B
+        u32                     pad_1C;         // 1C
 
         void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
         void Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);

@@ -5,6 +5,7 @@
 #include "doticu_skylib/utils.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/mod.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -18,7 +19,7 @@ namespace doticu_skylib {
 
     Mod_t* Game_t::Mod(const char* mod_name)
     {
-        return const_cast<Mod_t*>(Data()->LookupModByName(mod_name));
+        return (Mod_t*)(Data()->LookupModByName(mod_name));
     }
 
     Form_t* Game_t::Form(Form_ID_t form_id)

@@ -10,6 +10,7 @@ namespace doticu_skylib {
 
     class Cell_t;
     class Form_t;
+    class Mod_t;
     class Worldspace_t;
 
     class Game_t {
