@@ -12,7 +12,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto resize = reinterpret_cast
             <Bool_t(*)(Arguments_i::Array_t*, u32)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::RESIZE));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::RESIZE));
         return resize(this, count);
     }
 

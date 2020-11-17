@@ -14,9 +14,24 @@
 
 namespace doticu_skylib {
 
+    Bool_t Actor_Base_Component_t::Is_Male()
+    {
+        return !Is_Female();
+    }
+
     Bool_t Actor_Base_Component_t::Is_Female()
     {
-        return (actor_base_flags & static_cast<Actor_Base_Flags_t>(Actor_Base_Flags_e::IS_FEMALE)) != 0;
+        return (actor_base_flags & Actor_Base_Flags_e::IS_FEMALE) != 0;
+    }
+
+    Bool_t Actor_Base_Component_t::Is_Unique()
+    {
+        return (actor_base_flags & Actor_Base_Flags_e::IS_UNIQUE) != 0;
+    }
+
+    Bool_t Actor_Base_Component_t::Is_Generic()
+    {
+        return !Is_Unique();
     }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)

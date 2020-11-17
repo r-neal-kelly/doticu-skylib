@@ -8,21 +8,30 @@
 
 namespace doticu_skylib {
 
+    size_t Actor_Base_t::Count_Actor_Bases()
+    {
+        return Game_t::Data()->npcs.count;
+    }
+
     Vector_t<Actor_Base_t*> Actor_Base_t::Actor_Bases()
     {
-        auto& actor_bases = Game_t::Data()->npcs;
-
         Vector_t<Actor_Base_t*> results;
-        results.reserve(actor_bases.count);
+        results.reserve(Count_Actor_Bases());
 
+        Actor_Bases(results);
+
+        return results;
+    }
+
+    void Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
+    {
+        auto& actor_bases = Game_t::Data()->npcs;
         for (Index_t idx = 0, end = actor_bases.count; idx < end; idx += 1) {
             Actor_Base_t* actor_base = reinterpret_cast<Actor_Base_t*>(actor_bases.entries[idx]);
             if (actor_base) {
                 results.push_back(actor_base);
             }
         }
-
-        return results;
     }
 
     void Actor_Base_t::Log_Actor_Bases()

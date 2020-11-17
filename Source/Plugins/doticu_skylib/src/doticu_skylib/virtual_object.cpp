@@ -13,7 +13,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto destroy = reinterpret_cast
             <void(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::DESTROY));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DESTROY));
         destroy(this);
     }
 
@@ -21,7 +21,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto increment_lock = reinterpret_cast
             <void(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::INCREMENT_LOCK));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::INCREMENT_LOCK));
         increment_lock(this);
     }
 
@@ -29,7 +29,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto decrement_lock = reinterpret_cast
             <u32(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::DECREMENT_LOCK));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DECREMENT_LOCK));
         return decrement_lock(this);
     }
 

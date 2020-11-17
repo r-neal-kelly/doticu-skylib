@@ -14,7 +14,7 @@ namespace doticu_skylib { namespace Virtual {
     public:
         class Array_t {
         public:
-            enum class Offset_t : Word_t {
+            enum class Offset_e : Word_t {
                 RESIZE = 0x00920360, // 53105
             };
 

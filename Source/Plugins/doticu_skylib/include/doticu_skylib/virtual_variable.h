@@ -30,7 +30,7 @@ namespace doticu_skylib { namespace Virtual {
 
     class Variable_t {
     public:
-        enum class Offset_t : Word_t {
+        enum class Offset_e : Word_t {
             COPY    = 0x01236E50, // 97509
             DESTROY = 0x01236D10, // 97508
         };

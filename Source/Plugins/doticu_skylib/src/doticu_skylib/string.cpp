@@ -15,7 +15,7 @@ namespace doticu_skylib {
     {
         static auto create = reinterpret_cast
             <void(*)(String_t*, const char*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::CREATE));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::CREATE));
         create(this, string);
     }
 
@@ -28,7 +28,7 @@ namespace doticu_skylib {
     {
         static auto destroy = reinterpret_cast
             <void(*)(String_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::DESTROY));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DESTROY));
         destroy(this);
         data = "";
     }
@@ -42,7 +42,7 @@ namespace doticu_skylib {
     {
         static auto set = reinterpret_cast
             <String_t*(*)(String_t*, const char*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::SET));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::SET));
         set(this, value ? value : "");
     }
 

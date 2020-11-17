@@ -76,7 +76,9 @@ namespace doticu_skylib {
             kTypeID = kFormType_NPC,
         };
 
+        static size_t                   Count_Actor_Bases();
         static Vector_t<Actor_Base_t*>  Actor_Bases();
+        static void                     Actor_Bases(Vector_t<Actor_Base_t*>& results);
         static void                     Log_Actor_Bases();
 
     public:

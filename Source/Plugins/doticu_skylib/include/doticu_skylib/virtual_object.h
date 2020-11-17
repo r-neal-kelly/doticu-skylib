@@ -14,7 +14,7 @@ namespace doticu_skylib { namespace Virtual {
 
     class Object_t {
     public:
-        enum class Offset_t : Word_t {
+        enum class Offset_e : Word_t {
             INCREMENT_LOCK  = 0x01234360, // 97468
             DECREMENT_LOCK  = 0x01234410, // 97469
             DESTROY         = 0x01233670, // 97462

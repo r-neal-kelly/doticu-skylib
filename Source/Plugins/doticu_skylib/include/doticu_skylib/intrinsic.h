@@ -74,9 +74,37 @@ namespace doticu_skylib {
             return Index_Of(item) > -1;
         }
 
-        void Sort(Int_t(*comparator)(const Type* item_a, const Type* item_b))
+        void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))
         {
             qsort(data(), size(), sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
+        }
+    };
+
+    template <typename Type>
+    class Enum_t
+    {
+    public:
+        Type value;
+
+        Enum_t(Type value) :
+            value(value)
+        {
+        }
+
+        template <typename Int>
+        Enum_t(Int value) :
+            value(static_cast<Type>(value))
+        {
+        }
+
+        operator Type()
+        {
+            return static_cast<Type>(value);
+        }
+
+        operator Type() const
+        {
+            return static_cast<const Type>(value);
         }
     };
 

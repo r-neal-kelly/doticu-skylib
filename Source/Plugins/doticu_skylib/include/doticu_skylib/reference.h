@@ -48,7 +48,7 @@ namespace doticu_skylib {
         public Event_Sink_t<void*>,
         public Animation_Graphs_t {
     public:
-        enum class Offset_t : Word_t {
+        enum class Offset_e : Word_t {
             GET_NAME    = 0x002961F0,
         };
 

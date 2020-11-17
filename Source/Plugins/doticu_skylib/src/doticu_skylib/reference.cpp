@@ -15,7 +15,7 @@ namespace doticu_skylib {
     {
         static auto get_name = reinterpret_cast
             <const char*(*)(Reference_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::GET_NAME));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::GET_NAME));
         return get_name(this);
     }
 

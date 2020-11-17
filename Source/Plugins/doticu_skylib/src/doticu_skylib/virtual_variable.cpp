@@ -20,7 +20,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto destroy = reinterpret_cast
             <void (*)(Variable_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::DESTROY));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DESTROY));
         destroy(this);
         data.ptr = nullptr;
     }
@@ -29,7 +29,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto copy = reinterpret_cast
             <void (*)(Variable_t*, Variable_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_t::COPY));
+            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::COPY));
         Destroy();
         copy(this, other);
     }
