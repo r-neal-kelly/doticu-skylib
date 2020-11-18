@@ -56,13 +56,80 @@ namespace doticu_skylib {
     typedef BGSLocation     Location_t;
 
     template <typename Type>
+    class Enum_t
+    {
+    public:
+        Type value;
+
+        Enum_t() :
+            value(0)
+        {
+        }
+
+        Enum_t(Type value) :
+            value(value)
+        {
+        }
+
+        operator Type()
+        {
+            return static_cast<Type>(value);
+        }
+
+        operator Type() const
+        {
+            return static_cast<const Type>(value);
+        }
+    };
+
+    class Ternary_e : public Enum_t<Word_t>
+    {
+    public:
+        enum
+        {
+            LOW     = -1,
+            NONE    = 0,
+            HIGH    = 1,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    template <typename ...Arguments>
+    class Callback_i
+    {
+    public:
+        virtual ~Callback_i() = default;
+        virtual void operator()(Arguments...) = 0;
+    };
+
+    template <typename ...Arguments>
+    class Iterator_i
+    {
+    public:
+        virtual ~Iterator_i() = default;
+        virtual void operator()(Arguments...) = 0;
+    };
+
+    class Comparator_e : public Enum_t<Word_t>
+    {
+    public:
+        enum
+        {
+            IS_ORDERED = -1,
+            IS_UNORDERED = 1,
+            IS_EQUAL = 0,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    template <typename Type>
     class Vector_t : public std::vector<Type>
     {
     public:
         Index_t Index_Of(Type& item)
         {
             for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
-                if (At(idx) == item) {
+                if (at(idx) == item) {
                     return idx;
                 }
             }
@@ -78,46 +145,6 @@ namespace doticu_skylib {
         {
             qsort(data(), size(), sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
-    };
-
-    template <typename Type>
-    class Enum_t
-    {
-    public:
-        Type value;
-
-        Enum_t(Type value) :
-            value(value)
-        {
-        }
-
-        template <typename Int>
-        Enum_t(Int value) :
-            value(static_cast<Type>(value))
-        {
-        }
-
-        operator Type()
-        {
-            return static_cast<Type>(value);
-        }
-
-        operator Type() const
-        {
-            return static_cast<const Type>(value);
-        }
-    };
-
-    template <typename ...Arguments>
-    struct Callback_i {
-        virtual ~Callback_i() = default;
-        virtual void operator()(Arguments...) = 0;
-    };
-
-    template <typename ...Arguments>
-    struct Iterator_i {
-        virtual ~Iterator_i() = default;
-        virtual void operator()(Arguments...) = 0;
     };
 
 }

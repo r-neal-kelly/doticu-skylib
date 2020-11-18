@@ -32,11 +32,21 @@ namespace doticu_skylib {
     class Reference_t;
     class Loaded_Reference_t {
     public:
-        Reference_t* reference;
-        Cell_t* cell;
+        Reference_t*    reference;
+        Cell_t*         cell;
+
+        Loaded_Reference_t() :
+            reference(nullptr), cell(nullptr)
+        {
+        }
 
         Loaded_Reference_t(Reference_t* reference, Cell_t* cell) :
             reference(reference), cell(cell)
+        {
+        }
+
+        Loaded_Reference_t(const Loaded_Reference_t& other) :
+            reference(other.reference), cell(other.cell)
         {
         }
     };
@@ -73,6 +83,7 @@ namespace doticu_skylib {
 
         const char* Name();
         const char* Base_Name();
+        String_t    Any_Name();
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

@@ -84,8 +84,9 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_Base_t();
 
-        Sex_e   Sex();
-        Race_t* Race();
+        Sex_e       Sex();
+        Race_t*     Race();
+        String_t    Any_Name();
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 

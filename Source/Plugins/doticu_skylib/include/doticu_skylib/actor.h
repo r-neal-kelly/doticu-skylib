@@ -98,6 +98,30 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Actor_State_t) == 0x10);
 
+    class Actor_t;
+    class Loaded_Actor_t
+    {
+    public:
+        Actor_t*    actor;
+        Cell_t*     cell;
+
+        Loaded_Actor_t() :
+            actor(nullptr), cell(nullptr)
+        {
+        }
+
+        Loaded_Actor_t(Actor_t* actor, Cell_t* cell) :
+            actor(actor), cell(cell)
+        {
+        }
+
+        Loaded_Actor_t(const Loaded_Actor_t& other) :
+            actor(other.actor), cell(other.cell)
+        {
+        }
+    };
+    STATIC_ASSERT(sizeof(Loaded_Actor_t) == 0x10);
+
     class Actor_t :
         public Reference_t,
         public Magic_Target_t,
@@ -113,11 +137,14 @@ namespace doticu_skylib {
             kTypeID = kFormType_Character,
         };
 
-        static Vector_t<Loaded_Reference_t> Loaded_Actors();
-        static void                         Log_Loaded_Actors();
+        static Vector_t<Loaded_Actor_t> Loaded_Actors();
+        static void                     Loaded_Actors(Vector_t<Loaded_Actor_t>& results);
+        static void                     Log_Loaded_Actors();
 
     public:
         virtual ~Actor_t(); // 00
+
+        Race_t* Race();
     };
     //STATIC_ASSERT(sizeof(Actor_t) == 0x0);
 

@@ -59,4 +59,14 @@ namespace doticu_skylib {
         return race;
     }
 
+    String_t Actor_Base_t::Any_Name()
+    {
+        const char* name = Name();
+        if (!name || !name[0]) {
+            return Form_ID_String();
+        } else {
+            return name;
+        }
+    }
+
 }

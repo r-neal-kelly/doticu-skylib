@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include <sstream>
+
 #include "skse64/GameData.h"
 
 #include "doticu_skylib/utils.h"
@@ -32,6 +34,25 @@ namespace doticu_skylib {
     Bool_t Actor_Base_Component_t::Is_Generic()
     {
         return !Is_Unique();
+    }
+
+    String_t Form_t::Form_ID_String()
+    {
+        std::stringstream form_id_sstring;
+        form_id_sstring << std::hex << form_id;
+
+        std::string form_id_string = form_id_sstring.str();
+        size_t form_id_length = form_id_string.length();
+
+        for (Index_t idx = 0, end = form_id_length; idx < end; idx += 1) {
+            form_id_string[idx] = toupper(form_id_string[idx]);
+        }
+
+        if (form_id_length < 8) {
+            form_id_string.insert(0, 8 - form_id_length, '0');
+        }
+
+        return ("0x" + form_id_string).c_str();
     }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)

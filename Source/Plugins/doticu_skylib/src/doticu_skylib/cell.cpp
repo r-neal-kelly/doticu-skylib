@@ -98,6 +98,21 @@ namespace doticu_skylib {
         return (cell_flags & static_cast<Cell_Flags_t>(Cell_Flags_e::IS_INTERIOR)) == 0;
     }
 
+    String_t Cell_t::Any_Name()
+    {
+        const char* name = Name();
+        if (!name || !name[0]) {
+            name = Get_Editor_ID();
+            if (!name || !name[0]) {
+                return Form_ID_String();
+            } else {
+                return name;
+            }
+        } else {
+            return name;
+        }
+    }
+
     void Cell_t::References(Iterator_i<Reference_t*>& iterator)
     {
         for (Index_t idx = 0, end = references.capacity; idx < end; idx += 1) {

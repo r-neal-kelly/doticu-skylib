@@ -39,6 +39,7 @@ namespace doticu_skylib {
 
         static Relation_e   Between(Form_t* form_a, Form_t* form_b);
         static void         Between(Form_t* form_a, Form_t* form_b, Relation_e relation);
+        static const char*  To_String(Relation_e relation);
 
     public:
         using Enum_t::Enum_t;

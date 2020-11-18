@@ -72,10 +72,12 @@ namespace doticu_skylib {
         void*                   lighting_template;  // 130
         u64                     unk_138;            // 138
 
-        Bool_t Is_Interior();
-        Bool_t Is_Exterior();
+        Bool_t      Is_Interior();
+        Bool_t      Is_Exterior();
 
-        void References(Iterator_i<Reference_t*>& iterator);
+        String_t    Any_Name();
+
+        void        References(Iterator_i<Reference_t*>& iterator);
     };
     STATIC_ASSERT(sizeof(Cell_t) == 0x140);
 

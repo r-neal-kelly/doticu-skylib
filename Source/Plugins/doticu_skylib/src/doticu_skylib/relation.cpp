@@ -25,4 +25,29 @@ namespace doticu_skylib {
         }
     }
 
+    const char* Relation_e::To_String(Relation_e relation)
+    {
+        if (relation == Relation_e::LOVER) {
+            return "Lover";
+        } else if (relation == Relation_e::ALLY) {
+            return "Ally";
+        } else if (relation == Relation_e::CONFIDANT) {
+            return "Confidant";
+        } else if (relation == Relation_e::FRIEND) {
+            return "Friend";
+        } else if (relation == Relation_e::ACQUAINTANCE) {
+            return "Acquaintance";
+        } else if (relation == Relation_e::RIVAL) {
+            return "Rival";
+        } else if (relation == Relation_e::FOE) {
+            return "Foe";
+        } else if (relation == Relation_e::ENEMY) {
+            return "Enemy";
+        } else if (relation == Relation_e::ARCHNEMESIS) {
+            return "Archnemesis";
+        } else {
+            return "None";
+        }
+    }
+
 }

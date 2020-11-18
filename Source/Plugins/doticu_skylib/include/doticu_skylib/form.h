@@ -401,9 +401,11 @@ namespace doticu_skylib {
         u8                      pad_1B;         // 1B
         u32                     pad_1C;         // 1C
 
-        void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
-        void Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
-        void Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
+        String_t    Form_ID_String();
+
+        void        Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
+        void        Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
+        void        Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
 
