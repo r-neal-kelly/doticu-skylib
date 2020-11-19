@@ -129,4 +129,36 @@ namespace doticu_skylib { namespace Virtual {
         reinterpret_cast<VMClassInfo*>(this)->Release();
     }
 
+    void Class_t::Log_Variable_Infos()
+    {
+        _MESSAGE("Logging Variables: %s", name);
+        Variable_Info_t* variables = Variable_Infos();
+        for (u64 idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
+            Variable_Info_t& variable = variables[idx];
+            _MESSAGE("name: %s", variable.name);
+            _MESSAGE("    type: %u", variable.type);
+            _MESSAGE("        name: %s\n", variable.type.To_String());
+        }
+    }
+
+    void Class_t::Log_Property_Infos()
+    {
+        _MESSAGE("Logging Properties: %s", name);
+        Property_Info_t* properties = Property_Infos();
+        for (u64 idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
+            Property_Info_t& property = properties[idx];
+            _MESSAGE("name: %s", property.name);
+            _MESSAGE("    parent_name: %s", property.parent_name);
+            _MESSAGE("    property_name: %s", property.property_name);
+            _MESSAGE("    type: %s", property.type.To_String());
+            _MESSAGE("    flags_20: %u", property.flags_20);
+            _MESSAGE("    pad_24: %p", property.unk_24);
+            _MESSAGE("    getter: %p", property.getter);
+            _MESSAGE("    setter: %p", property.setter);
+            _MESSAGE("    auto_var_idx: %p", property.auto_var_idx);
+            _MESSAGE("    flags_3C: %u", property.flags_3C);
+            _MESSAGE("    unk_40: %p\n", property.unk_40);
+        }
+    }
+
 }}

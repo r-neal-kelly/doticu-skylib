@@ -27,6 +27,17 @@ namespace doticu_skylib {
             ARCHNEMESIS     = 8,
         };
 
+        static constexpr const char* NONE_STRING            = "None";
+        static constexpr const char* LOVER_STRING           = "Lover";
+        static constexpr const char* ALLY_STRING            = "Ally";
+        static constexpr const char* CONFIDANT_STRING       = "Confidant";
+        static constexpr const char* FRIEND_STRING          = "Friend";
+        static constexpr const char* ACQUAINTANCE_STRING    = "Acquaintance";
+        static constexpr const char* RIVAL_STRING           = "Rival";
+        static constexpr const char* FOE_STRING             = "Foe";
+        static constexpr const char* ENEMY_STRING           = "Enemy";
+        static constexpr const char* ARCHNEMESIS_STRING     = "Archnemesis";
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -40,6 +51,7 @@ namespace doticu_skylib {
         static Relation_e   Between(Form_t* form_a, Form_t* form_b);
         static void         Between(Form_t* form_a, Form_t* form_b, Relation_e relation);
         static const char*  To_String(Relation_e relation);
+        static Relation_e   From_String(const char* relation);
 
     public:
         using Enum_t::Enum_t;

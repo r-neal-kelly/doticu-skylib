@@ -10,6 +10,40 @@
 
 namespace doticu_skylib {
 
+    /* Loaded_Actor_t */
+
+    Loaded_Actor_t::Loaded_Actor_t() :
+        actor(nullptr), cell(nullptr)
+    {
+    }
+
+    Loaded_Actor_t::Loaded_Actor_t(Actor_t* actor, Cell_t* cell) :
+        actor(actor), cell(cell)
+    {
+        if (actor) {
+            actor->Increment_Reference();
+        }
+    }
+
+    Loaded_Actor_t::Loaded_Actor_t(const Loaded_Actor_t& other) :
+        Loaded_Actor_t(other.actor, other.cell)
+    {
+    }
+
+    Loaded_Actor_t::~Loaded_Actor_t()
+    {
+        if (actor) {
+            actor->Decrement_Reference();
+        }
+    }
+
+    Bool_t Loaded_Actor_t::Is_Valid()
+    {
+        return actor != nullptr && cell != nullptr;
+    }
+
+    /* Actor_t */
+
     Vector_t<Loaded_Actor_t> Actor_t::Loaded_Actors()
     {
         Vector_t<Loaded_Actor_t> loaded_actors;
@@ -57,7 +91,7 @@ namespace doticu_skylib {
                 name = actor->Base_Name();
             }
             _MESSAGE(TAB "index: %6zu", idx);
-            _MESSAGE(TAB TAB "actor: %8.8X %s", actor->form_id, name);
+            _MESSAGE(TAB TAB "actor: %8.8X %s, ref_count: %i", actor->form_id, name, actor->Reference_Count());
             if (cell->Is_Interior()) {
                 _MESSAGE(TAB TAB "interior cell: %8.8X %s", cell->form_id, cell->Get_Editor_ID());
             } else {
@@ -78,6 +112,40 @@ namespace doticu_skylib {
             return static_cast<Actor_Base_t*>(base_form)->Race();
         } else {
             return nullptr;
+        }
+    }
+
+    Actor_Base_t* Actor_t::Actor_Base()
+    {
+        return static_cast<Actor_Base_t*>(base_form);
+    }
+
+    const char* Actor_t::Base_Name()
+    {
+        if (base_form) {
+            return static_cast<Actor_Base_t*>(base_form)->Name();
+        } else {
+            return "";
+        }
+    }
+
+    String_t Actor_t::Any_Name()
+    {
+        const char* name = Name();
+        if (!name || !name[0]) {
+            name = Base_Name();
+            if (!name || !name[0]) {
+                name = Get_Editor_ID();
+                if (!name || !name[0]) {
+                    return Form_ID_String();
+                } else {
+                    return name;
+                }
+            } else {
+                return name;
+            }
+        } else {
+            return name;
         }
     }
 

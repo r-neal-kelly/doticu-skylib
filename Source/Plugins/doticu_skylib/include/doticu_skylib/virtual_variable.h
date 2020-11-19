@@ -96,7 +96,7 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Type>
         void Pack(Type* value);
         template <typename Type>
-        void Pack(Vector_t<Type>& values);
+        void Pack(doticu_skylib::Vector_t<Type>& values);
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 
@@ -123,5 +123,31 @@ namespace doticu_skylib { namespace Virtual {
         void        Value(String_t value);
     };
     STATIC_ASSERT(sizeof(String_Variable_t) == 0x10);
+
+    class String_Property_t : public String_Variable_t
+    {
+    public:
+    };
+    STATIC_ASSERT(sizeof(String_Property_t) == 0x10);
+
+}}
+
+namespace doticu_skylib { namespace Virtual {
+
+    template <typename Type>
+    inline void Variable_t::Pack(doticu_skylib::Vector_t<Type>& values)
+    {
+        PackValue<Type>(reinterpret_cast<VMValue*>(this),
+                        reinterpret_cast<VMResultArray<Type>*>(&values),
+                        (*g_skyrimVM)->GetClassRegistry());
+    }
+
+    template <>
+    inline void Variable_t::Pack<String_t>(doticu_skylib::Vector_t<String_t>& values)
+    {
+        PackValue<BSFixedString>(reinterpret_cast<VMValue*>(this),
+                                 reinterpret_cast<VMResultArray<BSFixedString>*>(&values),
+                                 (*g_skyrimVM)->GetClassRegistry());
+    }
 
 }}

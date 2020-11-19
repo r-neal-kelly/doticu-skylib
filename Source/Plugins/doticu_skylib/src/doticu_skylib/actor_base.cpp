@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    size_t Actor_Base_t::Count_Actor_Bases()
+    size_t Actor_Base_t::Actor_Base_Count()
     {
         return Game_t::Data()->npcs.count;
     }
@@ -16,7 +16,7 @@ namespace doticu_skylib {
     Vector_t<Actor_Base_t*> Actor_Base_t::Actor_Bases()
     {
         Vector_t<Actor_Base_t*> results;
-        results.reserve(Count_Actor_Bases());
+        results.reserve(Actor_Base_Count());
 
         Actor_Bases(results);
 
@@ -63,7 +63,12 @@ namespace doticu_skylib {
     {
         const char* name = Name();
         if (!name || !name[0]) {
-            return Form_ID_String();
+            name = Get_Editor_ID();
+            if (!name || !name[0]) {
+                return Form_ID_String();
+            } else {
+                return name;
+            }
         } else {
             return name;
         }

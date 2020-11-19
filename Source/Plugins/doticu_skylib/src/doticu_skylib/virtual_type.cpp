@@ -3,6 +3,7 @@
 */
 
 #include "doticu_skylib/virtual_type.h"
+#include "doticu_skylib/virtual_class.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -28,6 +29,36 @@ namespace doticu_skylib { namespace Virtual {
         } else {
             return (mangled & 1llu) ? Type_e::OBJECT_ARRAY : Type_e::OBJECT;
         }
+    }
+
+    Class_t* Type_t::Class()
+    {
+        if (Is_Object()) {
+            return reinterpret_cast<Class_t*>(mangled);
+        } else if (Is_Object_Array()) {
+            return reinterpret_cast<Class_t*>(mangled - 1);
+        } else {
+            return nullptr;
+        }
+    }
+
+    String_t Type_t::To_String()
+    {
+        switch (Unmangled()) {
+            case Type_e::NONE: return "None";
+            case Type_e::OBJECT: return Class()->name;
+            case Type_e::STRING: return "String";
+            case Type_e::INT: return "Int";
+            case Type_e::FLOAT: return "Float";
+            case Type_e::BOOL: return "Bool";
+            case Type_e::NONE_ARRAY: return "None[]";
+            case Type_e::OBJECT_ARRAY: return "Object[]";
+            case Type_e::STRING_ARRAY: return "String[]";
+            case Type_e::INT_ARRAY: return "Int[]";
+            case Type_e::FLOAT_ARRAY: return "Float[]";
+            case Type_e::BOOL_ARRAY: return "Bool[]";
+            default: return "Invalid";
+        };
     }
 
     Bool_t Type_t::Is_None()

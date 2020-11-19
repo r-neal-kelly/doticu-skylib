@@ -52,7 +52,7 @@ namespace doticu_skylib {
             form_id_string.insert(0, 8 - form_id_length, '0');
         }
 
-        return ("0x" + form_id_string).c_str();
+        return "0x" + form_id_string;
     }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)

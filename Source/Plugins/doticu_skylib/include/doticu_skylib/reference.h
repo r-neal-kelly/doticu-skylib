@@ -16,15 +16,21 @@ namespace doticu_skylib {
     class Cell_t;
     class Form_t;
 
-    class Reference_Counter_t {
-        virtual ~Reference_Counter_t();
+    class Reference_Count_t {
+    public:
+        virtual ~Reference_Count_t();
 
-        u32 unk_08; // 08
-        u32 unk_0C; // 0C
+        volatile u32    reference_count;    // 08
+        u32             pad_0C;             // 0C
+
+        Int_t Reference_Count();
+        Int_t Increment_Reference();
+        Int_t Decrement_Reference();
     };
-    STATIC_ASSERT(sizeof(Reference_Counter_t) == 0x10);
+    STATIC_ASSERT(sizeof(Reference_Count_t) == 0x10);
 
     class Animation_Graphs_t {
+    public:
         virtual ~Animation_Graphs_t();
     };
     STATIC_ASSERT(sizeof(Animation_Graphs_t) == 0x8);
@@ -54,7 +60,7 @@ namespace doticu_skylib {
 
     class Reference_t :
         public Form_t,
-        public Reference_Counter_t,
+        public Reference_Count_t,
         public Event_Sink_t<void*>,
         public Animation_Graphs_t {
     public:
@@ -82,7 +88,6 @@ namespace doticu_skylib {
         u32     pad_94;         // 94
 
         const char* Name();
-        const char* Base_Name();
         String_t    Any_Name();
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);

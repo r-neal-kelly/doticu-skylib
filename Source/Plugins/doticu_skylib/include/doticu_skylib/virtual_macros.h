@@ -58,18 +58,21 @@ namespace doticu_skylib { namespace Virtual {
     #define DEFINE_INT_VARIABLE(NAME_)      DEFINE_TYPED_VARIABLE(Int_Variable_t, NAME_)
     #define DEFINE_STRING_VARIABLE(NAME_)   DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
 
-    #define DEFINE_PROPERTY(NAME_)                                  \
-    M                                                               \
-        using String_t = doticu_skylib::String_t;                   \
-        using Variable_t = doticu_skylib::Virtual::Variable_t;      \
-                                                                    \
-        static const String_t property_name = String_t(NAME_);      \
-        SKYLIB_ASSERT(property_name);                               \
-                                                                    \
-        Variable_t* property_ = Object()->Property(property_name);  \
-        SKYLIB_ASSERT(property_);                                   \
-        return property_;                                           \
+    #define DEFINE_TYPED_PROPERTY(TYPE_, NAME_)                         \
+    M                                                                   \
+        using String_t = doticu_skylib::String_t;                       \
+        using TYPE_ = doticu_skylib::Virtual::TYPE_;                    \
+                                                                        \
+        static const String_t name = String_t(NAME_);                   \
+        SKYLIB_ASSERT(name);                                            \
+                                                                        \
+        TYPE_* prop = static_cast<TYPE_*>(Object()->Property(name));    \
+        SKYLIB_ASSERT(prop);                                            \
+        return prop;                                                    \
     W
+
+    #define DEFINE_PROPERTY(NAME_)          DEFINE_TYPED_PROPERTY(Variable_t, NAME_)
+    #define DEFINE_STRING_PROPERTY(NAME_)   DEFINE_TYPED_PROPERTY(String_Property_t, NAME_)
 
     #define BIND_METHOD(VM_, STR_CLASS_, TYPE_, STR_FUNC_, ARG_NUM_, RETURN_, METHOD_, ...)     \
     M                                                                                           \

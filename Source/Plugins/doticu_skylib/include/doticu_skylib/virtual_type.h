@@ -35,7 +35,7 @@ namespace doticu_skylib { namespace Virtual {
         Type_t(Class_t* class_info);
 
         Type_e Unmangled();
-        Class_t* Class_Info();
+        Class_t* Class();
         String_t To_String();
 
         Bool_t Is_None();

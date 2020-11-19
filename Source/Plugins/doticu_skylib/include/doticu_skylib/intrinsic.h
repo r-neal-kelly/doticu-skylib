@@ -95,6 +95,14 @@ namespace doticu_skylib {
     };
 
     template <typename ...Arguments>
+    class Functor_i
+    {
+    public:
+        virtual ~Functor_i() = default;
+        virtual void operator()(Arguments...) = 0;
+    };
+
+    template <typename ...Arguments>
     class Callback_i
     {
     public:
@@ -144,6 +152,15 @@ namespace doticu_skylib {
         void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))
         {
             qsort(data(), size(), sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
+        }
+
+        void Sort(Int_t(*comparator)(Type* item_a, Type* item_b), size_t begin)
+        {
+            size_t end = size();
+            if (begin >= end) {
+                begin = end - 1;
+            }
+            qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
     };
 
