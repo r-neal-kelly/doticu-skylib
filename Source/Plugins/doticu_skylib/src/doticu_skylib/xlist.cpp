@@ -12,11 +12,7 @@ namespace doticu_skylib {
     {
         Presence_t* presence = static_cast<Presence_t*>(Heap_Allocate(sizeof(Presence_t)));
         SKYLIB_ASSERT(presence);
-
-        Word_t* words = reinterpret_cast<Word_t*>(presence->flags);
-        words[0] = 0;
-        words[1] = 0;
-        words[2] = 0;
+        presence->Clear();
     }
 
     Bool_t XList_t::Presence_t::Has(XData_Type_e type)
@@ -48,9 +44,20 @@ namespace doticu_skylib {
         }
     }
 
+    void XList_t::Presence_t::Clear()
+    {
+        Word_t* words = reinterpret_cast<Word_t*>(flags);
+        words[0] = 0;
+        words[1] = 0;
+        words[2] = 0;
+    }
+
     void XList_t::Validate()
     {
+        BSWriteLocker locker(&lock);
+
         if (presence) {
+            presence->Clear();
             for (XData_t* xdata = xdatas; xdata != nullptr; xdata = xdata->next) {
                 presence->Add(xdata->Type());
             }
@@ -86,7 +93,7 @@ namespace doticu_skylib {
 
     Bool_t XList_t::Add(XData_t* xdata)
     {
-        BSReadLocker locker(&lock);
+        BSWriteLocker locker(&lock);
 
         if (xdata) {
             XData_Type_e type = xdata->Type();
@@ -109,7 +116,7 @@ namespace doticu_skylib {
 
     Bool_t XList_t::Remove(XData_t* xdata)
     {
-        BSReadLocker locker(&lock);
+        BSWriteLocker locker(&lock);
 
         if (xdata) {
             XData_Type_e type = xdata->Type();

@@ -27,6 +27,7 @@ namespace doticu_skylib {
             Bool_t  Has(XData_Type_e type);
             void    Add(XData_Type_e type);
             void    Remove(XData_Type_e type);
+            void    Clear();
         };
         STATIC_ASSERT(sizeof(Presence_t) == 0x18);
 

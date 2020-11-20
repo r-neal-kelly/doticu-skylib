@@ -126,6 +126,8 @@ namespace doticu_skylib {
         Vector_t<Location_t*> locations;
         locations.reserve(8);
 
+        xlist.Validate();
+
         Location_t* xlocation_location = nullptr;
         if (xlist.Has<XLocation_t>()) {
             XLocation_t* xlocation = xlist.Get<XLocation_t>();
@@ -148,6 +150,8 @@ namespace doticu_skylib {
     {
         Vector_t<String_t> locations;
         locations.reserve(8);
+
+        xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
         if (xlist.Has<XLocation_t>()) {
