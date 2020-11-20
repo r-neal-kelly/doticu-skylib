@@ -25,17 +25,18 @@ namespace doticu_skylib {
     typedef float           f32;
     typedef double          f64;
 
-    typedef UInt8           Byte_t;
+    typedef u8              Byte_t;
     typedef size_t          Word_t;
-    typedef SInt64          Index_t;
+    typedef s64             Index_t;
 
     typedef bool            Bool_t;
-    typedef SInt32          Int_t;
+    typedef s32             Int_t;
     typedef float           Float_t;
 
     typedef u32             Form_ID_t;
     typedef u32             Lower_Form_ID_t;
     typedef u8              Form_Type_t;
+    typedef u32             Reference_Handle_t;
 
     typedef TESObjectMISC   Misc_t;
     typedef TESObjectSTAT   Static_t;
@@ -45,15 +46,12 @@ namespace doticu_skylib {
     typedef TESFaction      Faction_t;
     typedef s8              Faction_Rank_t;
     typedef BGSOutfit       Outfit_t;
+    typedef BGSKeyword      Keyword_t;
 
     typedef Character       Character_t;
     typedef PlayerCharacter Player_Character_t;
 
-    typedef UInt32          Reference_Handle_t;
-
     typedef DataHandler     Game_Data_t;
-
-    typedef BGSLocation     Location_t;
 
     template <typename Type>
     class Enum_t

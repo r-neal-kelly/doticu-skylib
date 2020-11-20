@@ -60,4 +60,14 @@ namespace doticu_skylib {
         static Bool_t Contains(const char* sub, const char* obj, Bool_t caseless);
     };
 
+    inline Word_t V_Table_Offset(void* instance)
+    {
+        return *reinterpret_cast<uintptr_t*>(instance) - RelocationManager::s_baseAddr;
+    }
+
+    inline void Add_V_Table(void* instance, Word_t v_table_offset)
+    {
+        static_cast<Word_t*>(instance)[0] = RelocationManager::s_baseAddr + v_table_offset;
+    }
+
 }

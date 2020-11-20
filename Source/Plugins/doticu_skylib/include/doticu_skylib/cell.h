@@ -11,6 +11,7 @@
 
 namespace doticu_skylib {
 
+    class Location_t;
     class Reference_t;
     class Worldspace_t;
 
@@ -72,12 +73,16 @@ namespace doticu_skylib {
         void*                   lighting_template;  // 130
         u64                     unk_138;            // 138
 
-        Bool_t      Is_Interior();
-        Bool_t      Is_Exterior();
+        Bool_t                  Is_Interior();
+        Bool_t                  Is_Exterior();
 
-        String_t    Any_Name();
+        Location_t*             Location();
+        Vector_t<Location_t*>   Locations();
+        Vector_t<String_t>      Location_Names();
 
-        void        References(Iterator_i<Reference_t*>& iterator);
+        String_t                Any_Name();
+
+        void                    References(Iterator_i<Reference_t*>& iterator);
     };
     STATIC_ASSERT(sizeof(Cell_t) == 0x140);
 

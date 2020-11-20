@@ -120,6 +120,12 @@
     <ClInclude Include="include\doticu_skylib\mod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\location.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\xdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\utils.cpp">
@@ -198,6 +204,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\mod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\xdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\xlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

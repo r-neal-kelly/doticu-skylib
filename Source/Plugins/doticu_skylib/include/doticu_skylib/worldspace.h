@@ -12,6 +12,7 @@
 namespace doticu_skylib {
 
     class Cell_t;
+    class Location_t;
     class Reference_t;
 
     class XY_t {
@@ -68,9 +69,14 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Worldspace_Form_ID_Maps_t) == 0x90);
 
-    class Worldspace_t : public Form_t, public Name_Component_t, public Model_Component_t {
+    class Worldspace_t :
+        public Form_t,
+        public Name_Component_t,
+        public Model_Component_t
+    {
     public:
-        enum {
+        enum
+        {
             kTypeID = kFormType_WorldSpace,
         };
 

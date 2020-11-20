@@ -6,6 +6,8 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/location.h"
+#include "doticu_skylib/mod.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -86,6 +88,7 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = loaded_actors.size(); idx < end; idx += 1) {
             Actor_t* actor = loaded_actors[idx].actor;
             Cell_t* cell = loaded_actors[idx].cell;
+            Location_t* location = cell->Location();
             const char* name = actor->Name();
             if (!name || !name[0]) {
                 name = actor->Base_Name();
@@ -93,17 +96,33 @@ namespace doticu_skylib {
             _MESSAGE(TAB "index: %6zu", idx);
             _MESSAGE(TAB TAB "actor: %8.8X %s, ref_count: %i", actor->form_id, name, actor->Reference_Count());
             if (cell->Is_Interior()) {
-                _MESSAGE(TAB TAB "interior cell: %8.8X %s", cell->form_id, cell->Get_Editor_ID());
+                _MESSAGE(TAB TAB "interior cell: %8.8X %s, location: %s",
+                         cell->form_id, cell->Get_Editor_ID(), location ? location->Any_Name() : "");
             } else {
                 Worldspace_t* worldspace = cell->worldspace;
                 SKYLIB_ASSERT(worldspace);
-                _MESSAGE(TAB TAB "exterior cell: %8.8X %s", cell->form_id, cell->Get_Editor_ID());
+                _MESSAGE(TAB TAB "exterior cell: %8.8X %s, location: %s",
+                         cell->form_id, cell->Get_Editor_ID(), location ? location->Any_Name() : "");
                 _MESSAGE(TAB TAB "worldspace: %8.8X %s", worldspace->form_id, worldspace->Get_Editor_ID());
             }
         }
         _MESSAGE("}");
 
         #undef TAB
+    }
+
+    Vector_t<Mod_t*> Actor_t::Mods()
+    {
+        Vector_t<Mod_t*> mods;
+        if (form_files) {
+            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
+                Mod_t* mod = form_files->entries[idx];
+                if (mod) {
+                    mods.push_back(mod);
+                }
+            }
+        }
+        return mods;
     }
 
     Race_t* Actor_t::Race()
@@ -118,6 +137,20 @@ namespace doticu_skylib {
     Actor_Base_t* Actor_t::Actor_Base()
     {
         return static_cast<Actor_Base_t*>(base_form);
+    }
+
+    Vector_t<String_t> Actor_t::Mod_Names()
+    {
+        Vector_t<String_t> mods;
+        if (form_files) {
+            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
+                Mod_t* mod = form_files->entries[idx];
+                if (mod) {
+                    mods.push_back(mod->Name());
+                }
+            }
+        }
+        return mods;
     }
 
     const char* Actor_t::Base_Name()

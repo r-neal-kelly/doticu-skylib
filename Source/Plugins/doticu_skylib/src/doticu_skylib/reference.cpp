@@ -6,6 +6,7 @@
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/location.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/actor_base.h"
@@ -52,6 +53,21 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    Location_t* Reference_t::Location()
+    {
+        Cell_t* cell = Cell();
+        if (cell) {
+            return Cell()->Location();
+        } else {
+            return nullptr;
+        }
+    }
+
+    Cell_t* Reference_t::Cell()
+    {
+        return parent_cell;
     }
 
 }

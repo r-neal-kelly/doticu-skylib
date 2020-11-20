@@ -7,6 +7,9 @@
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/worldspace.h"
+#include "doticu_skylib/location.h"
+#include "doticu_skylib/xdata.h"
+#include "doticu_skylib/xlist.h"
 
 namespace doticu_skylib {
 
@@ -96,6 +99,72 @@ namespace doticu_skylib {
     Bool_t Cell_t::Is_Exterior()
     {
         return (cell_flags & static_cast<Cell_Flags_t>(Cell_Flags_e::IS_INTERIOR)) == 0;
+    }
+
+    Location_t* Cell_t::Location()
+    {
+        xlist.Validate();
+
+        if (xlist.Has<XLocation_t>()) {
+            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+            if (xlocation->location) {
+                return xlocation->location;
+            } else if (worldspace) {
+                return worldspace->location;
+            } else {
+                return nullptr;
+            }
+        } else if (worldspace) {
+            return worldspace->location;
+        } else {
+            return nullptr;
+        }
+    }
+
+    Vector_t<Location_t*> Cell_t::Locations()
+    {
+        Vector_t<Location_t*> locations;
+        locations.reserve(8);
+
+        Location_t* xlocation_location = nullptr;
+        if (xlist.Has<XLocation_t>()) {
+            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+            xlocation_location = xlocation->location;
+        }
+        for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
+            locations.push_back(it);
+        }
+
+        Location_t* worldspace_location =
+            worldspace ? worldspace->location : nullptr;
+        for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
+            locations.push_back(it);
+        }
+
+        return locations;
+    }
+
+    Vector_t<String_t> Cell_t::Location_Names()
+    {
+        Vector_t<String_t> locations;
+        locations.reserve(8);
+
+        Location_t* xlocation_location = nullptr;
+        if (xlist.Has<XLocation_t>()) {
+            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+            xlocation_location = xlocation->location;
+        }
+        for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
+            locations.push_back(it->Any_Name());
+        }
+
+        Location_t* worldspace_location =
+            worldspace ? worldspace->location : nullptr;
+        for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
+            locations.push_back(it->Any_Name());
+        }
+
+        return locations;
     }
 
     String_t Cell_t::Any_Name()

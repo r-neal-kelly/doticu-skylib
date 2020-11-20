@@ -15,6 +15,7 @@ namespace doticu_skylib {
 
     class Cell_t;
     class Form_t;
+    class Location_t;
 
     class Reference_Count_t {
     public:
@@ -89,6 +90,8 @@ namespace doticu_skylib {
 
         const char* Name();
         String_t    Any_Name();
+        Location_t* Location();
+        Cell_t*     Cell();
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 
