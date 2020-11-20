@@ -7,7 +7,6 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/location.h"
-#include "doticu_skylib/mod.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -22,9 +21,18 @@ namespace doticu_skylib {
     Loaded_Actor_t::Loaded_Actor_t(Actor_t* actor, Cell_t* cell) :
         actor(actor), cell(cell)
     {
-        if (actor) {
+        if (actor && cell) {
             actor->Increment_Reference();
+        } else {
+            actor = nullptr;
+            cell = nullptr;
         }
+    }
+
+    Loaded_Actor_t::Loaded_Actor_t(Form_ID_t actor_form_id, Form_ID_t cell_form_id) :
+        Loaded_Actor_t(static_cast<Actor_t*>(Game_t::Form(actor_form_id)),
+                       static_cast<Cell_t*>(Game_t::Form(cell_form_id)))
+    {
     }
 
     Loaded_Actor_t::Loaded_Actor_t(const Loaded_Actor_t& other) :
@@ -32,11 +40,71 @@ namespace doticu_skylib {
     {
     }
 
+    Loaded_Actor_t::Loaded_Actor_t(Loaded_Actor_t&& other) noexcept :
+        actor(std::exchange(other.actor, nullptr)),
+        cell(std::exchange(other.cell, nullptr))
+    {
+        if (!cell) {
+            if (actor) {
+                actor->Decrement_Reference();
+            }
+            actor = nullptr;
+            cell = nullptr;
+        } else if (!actor) {
+            actor = nullptr;
+            cell = nullptr;
+        }
+    }
+
     Loaded_Actor_t::~Loaded_Actor_t()
     {
         if (actor) {
             actor->Decrement_Reference();
         }
+    }
+
+    Loaded_Actor_t& Loaded_Actor_t::operator=(const Loaded_Actor_t& other)
+    {
+        if (this != &other) {
+            if (other.actor && other.cell) {
+                actor = other.actor;
+                cell = other.cell;
+                actor->Increment_Reference();
+            } else {
+                actor = nullptr;
+                cell = nullptr;
+            }
+        }
+        return *this;
+    }
+
+    Loaded_Actor_t& Loaded_Actor_t::operator=(Loaded_Actor_t&& other) noexcept
+    {
+        if (this != &other) {
+            actor = std::exchange(other.actor, nullptr);
+            cell = std::exchange(other.cell, nullptr);
+            if (!cell) {
+                if (actor) {
+                    actor->Decrement_Reference();
+                }
+                actor = nullptr;
+                cell = nullptr;
+            } else if (!actor) {
+                actor = nullptr;
+                cell = nullptr;
+            }
+        }
+        return *this;
+    }
+
+    Bool_t Loaded_Actor_t::operator==(const Loaded_Actor_t& other)
+    {
+        return actor == other.actor && cell == other.cell;
+    }
+
+    Bool_t Loaded_Actor_t::operator!=(const Loaded_Actor_t& other)
+    {
+        return !operator==(other);
     }
 
     Bool_t Loaded_Actor_t::Is_Valid()
@@ -71,7 +139,10 @@ namespace doticu_skylib {
                 void operator()(Reference_t* reference)
                 {
                     if (reference->form_type == kFormType_Character) {
-                        results.push_back(Loaded_Actor_t(static_cast<Actor_t*>(reference), cell));
+                        Loaded_Actor_t loaded_actor(static_cast<Actor_t*>(reference), cell);
+                        if (loaded_actor.Is_Valid() && !results.Has(loaded_actor)) {
+                            results.push_back(loaded_actor);
+                        }
                     }
                 }
             } iterator(results, cell);
@@ -111,20 +182,6 @@ namespace doticu_skylib {
         #undef TAB
     }
 
-    Vector_t<Mod_t*> Actor_t::Mods()
-    {
-        Vector_t<Mod_t*> mods;
-        if (form_files) {
-            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
-                Mod_t* mod = form_files->entries[idx];
-                if (mod) {
-                    mods.push_back(mod);
-                }
-            }
-        }
-        return mods;
-    }
-
     Race_t* Actor_t::Race()
     {
         if (base_form) {
@@ -137,20 +194,6 @@ namespace doticu_skylib {
     Actor_Base_t* Actor_t::Actor_Base()
     {
         return static_cast<Actor_Base_t*>(base_form);
-    }
-
-    Vector_t<String_t> Actor_t::Mod_Names()
-    {
-        Vector_t<String_t> mods;
-        if (form_files) {
-            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
-                Mod_t* mod = form_files->entries[idx];
-                if (mod) {
-                    mods.push_back(mod->Name());
-                }
-            }
-        }
-        return mods;
     }
 
     const char* Actor_t::Base_Name()

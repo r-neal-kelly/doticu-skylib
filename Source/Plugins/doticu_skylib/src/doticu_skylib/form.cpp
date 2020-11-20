@@ -9,6 +9,7 @@
 #include "doticu_skylib/utils.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/mod.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
@@ -36,6 +37,20 @@ namespace doticu_skylib {
         return !Is_Unique();
     }
 
+    Vector_t<Mod_t*> Form_t::Mods()
+    {
+        Vector_t<Mod_t*> mods;
+        if (form_files) {
+            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
+                Mod_t* mod = form_files->entries[idx];
+                if (mod) {
+                    mods.push_back(mod);
+                }
+            }
+        }
+        return mods;
+    }
+
     String_t Form_t::Form_ID_String()
     {
         std::stringstream form_id_sstring;
@@ -53,6 +68,20 @@ namespace doticu_skylib {
         }
 
         return "0x" + form_id_string;
+    }
+
+    Vector_t<String_t> Form_t::Mod_Names()
+    {
+        Vector_t<String_t> mods;
+        if (form_files) {
+            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
+                Mod_t* mod = form_files->entries[idx];
+                if (mod) {
+                    mods.push_back(mod->Name());
+                }
+            }
+        }
+        return mods;
     }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)

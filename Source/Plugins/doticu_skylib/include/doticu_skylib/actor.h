@@ -107,8 +107,15 @@ namespace doticu_skylib {
 
         Loaded_Actor_t();
         Loaded_Actor_t(Actor_t* actor, Cell_t* cell);
+        Loaded_Actor_t(Form_ID_t actor_form_id, Form_ID_t cell_form_id);
         Loaded_Actor_t(const Loaded_Actor_t& other);
+        Loaded_Actor_t(Loaded_Actor_t&& other) noexcept;
         ~Loaded_Actor_t();
+
+        Loaded_Actor_t& operator=(const Loaded_Actor_t& other);
+        Loaded_Actor_t& operator=(Loaded_Actor_t&& other) noexcept;
+        Bool_t operator==(const Loaded_Actor_t& other);
+        Bool_t operator!=(const Loaded_Actor_t& other);
 
         Bool_t Is_Valid();
     };
@@ -136,11 +143,9 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_t(); // 00
 
-        Vector_t<Mod_t*>    Mods();
         Race_t*             Race();
         Actor_Base_t*       Actor_Base();
 
-        Vector_t<String_t>  Mod_Names();
         const char*         Base_Name();
         String_t            Any_Name();
     };

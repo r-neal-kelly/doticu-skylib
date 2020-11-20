@@ -324,9 +324,11 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Leveled_Component_t) == 0x28);
 
-    class Form_t : public Form_Component_t { // TESForm
+    class Form_t : public Form_Component_t
+    {
     public:
-        enum {
+        enum
+        {
             kTypeID = kFormType_None,
         };
 
@@ -393,6 +395,7 @@ namespace doticu_skylib {
         virtual void        _39(void);                              // 39
         virtual void        _3A(void);                              // 3A
 
+    public:
         Static_Array_t<Mod_t*>* form_files;     // 08
         u32                     form_flags;     // 10
         Form_ID_t               form_id;        // 14
@@ -401,11 +404,16 @@ namespace doticu_skylib {
         u8                      pad_1B;         // 1B
         u32                     pad_1C;         // 1C
 
-        String_t    Form_ID_String();
+    public:
+        Vector_t<Mod_t*>    Mods();
 
-        void        Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
-        void        Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
-        void        Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
+        String_t            Form_ID_String();
+        Vector_t<String_t>  Mod_Names();
+
+    public:
+        void                Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
+        void                Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
+        void                Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
 

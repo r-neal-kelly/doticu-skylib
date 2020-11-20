@@ -19,6 +19,14 @@ namespace doticu_skylib { namespace Virtual {
     template <typename Type>
     using Vector_t = VMResultArray<Type>;
 
+    class Array_t;
     class Callback_i;
+    class Class_t;
+    class Machine_t;
+    class Object_t;
+    class Variable_t;
+    class Bool_Variable_t;
+    class Int_Variable_t;
+    class String_Variable_t;
 
 }}

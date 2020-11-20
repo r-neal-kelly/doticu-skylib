@@ -86,6 +86,7 @@ namespace doticu_skylib {
 
         Sex_e       Sex();
         Race_t*     Race();
+
         String_t    Any_Name();
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
