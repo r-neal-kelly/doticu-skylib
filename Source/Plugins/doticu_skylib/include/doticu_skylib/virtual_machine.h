@@ -35,10 +35,10 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _07(void); // 07
         virtual void _08(void); // 08
         virtual Bool_t Load_Class_Info(String_t* class_name, Class_t** info_out); // 09, call Class_Info_t Free() after use
-        virtual Bool_t Load_Class_Info2(Form_Type_t form_type, Class_t** info_out); // 0A, call Class_Info_t Free() after use
+        virtual Bool_t Load_Class_Info2(Form_Type_e form_type, Class_t** info_out); // 0A, call Class_Info_t Free() after use
         virtual Bool_t Class_Info(String_t* class_name, Class_t** info_out); // 0B, call Class_Info_t Free() after use
-        virtual Bool_t Class_Info2(Form_Type_t form_type, Class_t** info_out); // 0C, call Class_Info_t Free() after use
-        virtual Bool_t Type_ID(String_t* class_name, Form_Type_t* form_type_out); // 0D
+        virtual Bool_t Class_Info2(Form_Type_e form_type, Class_t** info_out); // 0C, call Class_Info_t Free() after use
+        virtual Bool_t Type_ID(String_t* class_name, Form_Type_e* form_type_out); // 0D
         virtual void _0E(void); // 0E
         virtual void _0F(void); // 0F
         virtual void _10(void); // 10
@@ -92,7 +92,7 @@ namespace doticu_skylib { namespace Virtual {
         Int_t Count_Objects(Handle_t handle);
         Bool_t Has_Object(Handle_t handle);
 
-        Form_Type_t Form_Type(String_t class_name);
+        Form_Type_e Form_Type(String_t class_name);
     };
 
 }}

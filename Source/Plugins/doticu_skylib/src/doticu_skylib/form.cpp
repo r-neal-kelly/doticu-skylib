@@ -2,8 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include <sstream>
-
 #include "skse64/GameData.h"
 
 #include "doticu_skylib/utils.h"
@@ -53,7 +51,31 @@ namespace doticu_skylib {
 
     String_t Form_t::Form_ID_String()
     {
-        std::stringstream form_id_sstring;
+        static const char hex_values[16] =
+        {
+            '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+        };
+
+        char form_id_string[11] =
+        {
+            '0', 'x',
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+            '\0'
+        };
+
+        form_id_string[2] = hex_values[(form_id & 0xF0000000) >> 28];
+        form_id_string[3] = hex_values[(form_id & 0x0F000000) >> 24];
+        form_id_string[4] = hex_values[(form_id & 0x00F00000) >> 20];
+        form_id_string[5] = hex_values[(form_id & 0x000F0000) >> 16];
+        form_id_string[6] = hex_values[(form_id & 0x0000F000) >> 12];
+        form_id_string[7] = hex_values[(form_id & 0x00000F00) >>  8];
+        form_id_string[8] = hex_values[(form_id & 0x000000F0) >>  4];
+        form_id_string[9] = hex_values[(form_id & 0x0000000F) >>  0];
+
+        return form_id_string;
+
+        /*std::stringstream form_id_sstring;
         form_id_sstring << std::hex << form_id;
 
         std::string form_id_string = form_id_sstring.str();
@@ -67,7 +89,7 @@ namespace doticu_skylib {
             form_id_string.insert(0, 8 - form_id_length, '0');
         }
 
-        return "0x" + form_id_string;
+        return "0x" + form_id_string;*/
     }
 
     Vector_t<String_t> Form_t::Mod_Names()

@@ -33,7 +33,10 @@ namespace doticu_skylib {
         void* interior;
     };
 
-    class Cell_t : public Form_t, public Name_Component_t {
+    class Cell_t :
+        public Form_t,
+        public Name_Component_t
+    {
     public:
         enum {
             kTypeID = kFormType_Cell,

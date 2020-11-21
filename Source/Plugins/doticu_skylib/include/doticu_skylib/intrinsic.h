@@ -35,7 +35,6 @@ namespace doticu_skylib {
 
     typedef u32             Form_ID_t;
     typedef u32             Lower_Form_ID_t;
-    typedef u8              Form_Type_t;
     typedef u32             Reference_Handle_t;
 
     typedef TESObjectMISC   Misc_t;
@@ -74,20 +73,37 @@ namespace doticu_skylib {
             return static_cast<Type>(value);
         }
 
-        operator Type() const
+        operator const Type() const
         {
             return static_cast<const Type>(value);
         }
     };
 
-    class Ternary_e : public Enum_t<Word_t>
+    class Ternary_e : public Enum_t<s8>
     {
     public:
-        enum
+        enum : s8
         {
-            LOW     = -1,
+            ALL     = -1,
             NONE    = 0,
-            HIGH    = 1,
+            A       = 1,
+            B       = 2,
+            C       = 3,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Quaternary_e : public Enum_t<s8>
+    {
+    public:
+        enum : s8
+        {
+            ALL     = -1,
+            NONE    = 0,
+            A       = 1,
+            B       = 2,
+            C       = 3,
+            D       = 4,
         };
         using Enum_t::Enum_t;
     };

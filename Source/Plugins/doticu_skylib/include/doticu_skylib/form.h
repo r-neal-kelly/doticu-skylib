@@ -6,9 +6,10 @@
 
 #include "skse64/GameForms.h"
 
-#include "doticu_skylib/utils.h"
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/utils.h"
 
 namespace doticu_skylib {
 
@@ -400,7 +401,7 @@ namespace doticu_skylib {
         u32                     form_flags;     // 10
         Form_ID_t               form_id;        // 14
         u16                     form_flags2;    // 18
-        Form_Type_t             form_type;      // 1A
+        Form_Type_e             form_type;      // 1A
         u8                      pad_1B;         // 1B
         u32                     pad_1C;         // 1C
 

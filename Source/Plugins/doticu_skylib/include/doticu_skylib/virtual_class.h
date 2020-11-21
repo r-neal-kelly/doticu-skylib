@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 #include "doticu_skylib/virtual_variable.h"
@@ -46,7 +47,7 @@ namespace doticu_skylib { namespace Virtual {
     class Class_t {
     public:
         static Class_t* Fetch(String_t class_name, Bool_t do_auto_decrement = false);
-        static Class_t* Fetch(Form_Type_t form_type, Bool_t do_auto_decrement = false);
+        static Class_t* Fetch(Form_Type_e form_type, Bool_t do_auto_decrement = false);
 
     public:
         u32 ref_count; // 00

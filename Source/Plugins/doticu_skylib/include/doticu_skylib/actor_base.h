@@ -46,11 +46,16 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Actor_Values_t) == 0x8);
 
-    enum class Sex_e : Int_t
+    class Sex_e : Enum_t<Int_t>
     {
-        NONE    = -1,
-        MALE    = 0,
-        FEMALE  = 1,
+    public:
+        enum : Int_t
+        {
+            NONE    = -1,
+            MALE    = 0,
+            FEMALE  = 1,
+        };
+        using Enum_t::Enum_t;
     };
 
     class Actor_Base_t :

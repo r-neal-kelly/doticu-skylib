@@ -64,6 +64,7 @@
     <ClInclude Include="include\doticu_skylib\alias.h" />
     <ClInclude Include="include\doticu_skylib\cell.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
+    <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />
@@ -75,6 +76,7 @@
     <ClInclude Include="include\doticu_skylib\reference.h" />
     <ClInclude Include="include\doticu_skylib\collections.h" />
     <ClInclude Include="include\doticu_skylib\relation.h" />
+    <ClInclude Include="include\doticu_skylib\skylib.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
     <ClInclude Include="include\doticu_skylib\virtual_array.h" />

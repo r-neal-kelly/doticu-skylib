@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 
@@ -72,7 +73,7 @@ namespace doticu_skylib { namespace Virtual {
         Array_t* Array();
         Array_t* Object_Array();
         template <typename T>
-        T* Resolve(Form_Type_t form_type);
+        T* Resolve(Form_Type_e form_type);
         Form_t* Form();
         Actor_t* Actor();
         Alias_Base_t* Alias();

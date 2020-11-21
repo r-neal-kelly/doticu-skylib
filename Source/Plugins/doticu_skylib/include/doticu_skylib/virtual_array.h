@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 
@@ -33,15 +34,15 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Type>
         Vector_t<Type> Vector();
         template <typename Type>
-        Vector_t<Type*> Vector(Form_Type_t form_type);
+        Vector_t<Type*> Vector(Form_Type_e form_type);
         template <typename Type>
         Int_t Find(Type element);
         template <typename Type>
-        Int_t Find(Form_Type_t form_type, Type* element);
+        Int_t Find(Form_Type_e form_type, Type* element);
         template <typename Type>
         Bool_t Has(Type element);
         template <typename Type>
-        Bool_t Has(Form_Type_t form_type, Type* element);
+        Bool_t Has(Form_Type_e form_type, Type* element);
     };
     STATIC_ASSERT(sizeof(Array_t) == 0x20);
 

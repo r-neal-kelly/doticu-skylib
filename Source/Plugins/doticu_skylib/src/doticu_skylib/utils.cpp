@@ -6,7 +6,7 @@
 
 namespace doticu_skylib {
 
-    Word_t CString_t::Length(const char* sub)
+    Word_t CString_t::Length(const char* sub, Bool_t with_null)
     {
         Word_t idx = 0;
         for (; idx < MAX_LENGTH; idx += 1) {
@@ -14,7 +14,11 @@ namespace doticu_skylib {
                 return idx;
             }
         }
-        return idx;
+        if (with_null) {
+            return idx + 1;
+        } else {
+            return idx;
+        }
     }
 
     Bool_t CString_t::Is_Same(const char* sub, const char* obj, Bool_t caseless)

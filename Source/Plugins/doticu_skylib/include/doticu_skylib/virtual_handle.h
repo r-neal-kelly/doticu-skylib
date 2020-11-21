@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/virtual.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -14,12 +15,12 @@ namespace doticu_skylib { namespace Virtual {
 
         template <typename Type>
         Handle_t(Type* form_or_alias);
-        Handle_t(void* form, Form_Type_t form_type);
+        Handle_t(void* form, Form_Type_e form_type);
         Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
         Bool_t Is_Valid();
-        Bool_t Has_Form_Type(Form_Type_t form_type);
+        Bool_t Has_Form_Type(Form_Type_e form_type);
 
         operator Raw_Handle_t();
     };

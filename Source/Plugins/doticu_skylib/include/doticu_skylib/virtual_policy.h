@@ -19,10 +19,10 @@ namespace doticu_skylib { namespace Virtual {
     public:
         virtual ~Handle_Policy_t();
 
-        virtual Bool_t Has_Form_Type(Form_Type_t form_type, Raw_Handle_t handle); // 01
+        virtual Bool_t Has_Form_Type(Form_Type_e form_type, Raw_Handle_t handle); // 01
         virtual Bool_t Is_Valid(Raw_Handle_t handle); // 02
         virtual Raw_Handle_t Invalid_Handle(); // 03
-        virtual Raw_Handle_t Handle(Form_Type_t form_type, const void* form); // 04
+        virtual Raw_Handle_t Handle(Form_Type_e form_type, const void* form); // 04
         virtual void _05(void); // 05
         virtual void _06(void); // 06
         virtual void _07(void); // 07

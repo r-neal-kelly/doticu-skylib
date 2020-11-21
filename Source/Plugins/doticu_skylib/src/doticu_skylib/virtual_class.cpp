@@ -23,7 +23,7 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    Class_t* Class_t::Fetch(Form_Type_t form_type, Bool_t do_auto_decrement)
+    Class_t* Class_t::Fetch(Form_Type_e form_type, Bool_t do_auto_decrement)
     {
         Machine_t* const machine = Machine_t::Self();
         if (machine) {
