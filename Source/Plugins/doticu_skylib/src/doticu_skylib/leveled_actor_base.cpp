@@ -49,6 +49,26 @@ namespace doticu_skylib {
         #undef TAB
     }
 
+    void Leveled_Actor_Base_t::Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator)
+    {
+        for (Index_t idx = 0, end = leveled_entry_count; idx < end; idx += 1) {
+            Leveled_Component_t::Entry_t& leveled_entry = leveled_entries[idx];
+            Form_t* form = leveled_entry.form;
+            if (form && form->Is_Valid()) {
+                if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
+                    static_cast<Leveled_Actor_Base_t*>(form)->Iterate_Actor_Bases(iterator);
+                } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
+                    Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(form);
+                    if (actor_base && actor_base->Is_Valid()) {
+                        if (iterator(actor_base) == Iterator_e::BREAK) {
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     Vector_t<Actor_Base_t*> Leveled_Actor_Base_t::Actor_Bases()
     {
         Vector_t<Actor_Base_t*> actor_bases;
@@ -59,65 +79,104 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
-        for (Index_t idx = 0, end = leveled_entry_count; idx < end; idx += 1) {
-            Leveled_Component_t::Entry_t& leveled_entry = leveled_entries[idx];
-            Form_t* form = leveled_entry.form;
-            if (form) {
-                if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
-                    static_cast<Leveled_Actor_Base_t*>(form)->Actor_Bases(results);
-                } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
-                    Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(form);
-                    if (!results.Has(actor_base)) {
-                        results.push_back(actor_base);
-                    }
-                }
+        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        {
+        public:
+            Vector_t<Actor_Base_t*>& results;
+            Iterator_t(Vector_t<Actor_Base_t*>& results) :
+                results(results)
+            {
             }
-        }
+
+            Iterator_e operator()(Actor_Base_t* actor_base)
+            {
+                if (!results.Has(actor_base)) {
+                    results.push_back(actor_base);
+                }
+                return Iterator_e::CONTINUE;
+            }
+        } iterator(results);
+        Iterate_Actor_Bases(iterator);
     }
 
     String_t Leveled_Actor_Base_t::Leveled_Name()
     {
-        static constexpr size_t MAX_NAME_CHARS = 36;
-        char name_chars[MAX_NAME_CHARS + 1];
+        constexpr size_t MAX_CHARS = 32;
 
-        Vector_t<Actor_Base_t*> actor_bases = Actor_Bases();
-        size_t actor_base_count = actor_bases.size();
+        Vector_t<String_t> names;
+        names.reserve(16);
 
-        Bool_t is_too_long = false;
-        size_t name_char_idx = 0;
-        for (Index_t idx = 0, end = actor_base_count; idx < end && name_char_idx < MAX_NAME_CHARS; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
-            if (actor_base) {
-                String_t name = actor_base->Any_Name();
-                size_t name_length = CString_t::Length(name, false);
-                for (Index_t idx = 0, end = name_length; idx < end; idx += 1, name_char_idx += 1) {
-                    if (name_char_idx < MAX_NAME_CHARS) {
-                        name_chars[name_char_idx] = name.data[idx];
-                    } else {
-                        is_too_long = true;
-                        break;
-                    }
-                }
-                if (idx + 1 < end) {
-                    if (name_char_idx + 1 < MAX_NAME_CHARS) {
-                        name_chars[name_char_idx] = ',';
-                        name_char_idx += 1;
-                        name_chars[name_char_idx] = ' ';
-                        name_char_idx += 1;
-                    } else {
-                        is_too_long = true;
-                        break;
-                    }
-                }
+        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        {
+        public:
+            Vector_t<Actor_Base_t*> actor_bases;
+            Vector_t<String_t>& names;
+            size_t char_count;
+            size_t char_difference;
+            Iterator_t(Vector_t<String_t>& names) :
+                names(names), char_count(0), char_difference(0)
+            {
+                actor_bases.reserve(16);
             }
-        }
-        name_chars[name_char_idx] = 0;
 
-        if (is_too_long) {
-            return std::string(static_cast<char*>(name_chars)) + "... " + std::to_string(actor_base_count);
+            size_t Actor_Base_Count()
+            {
+                return actor_bases.size();
+            }
+
+            size_t Char_Difference()
+            {
+                return char_difference;
+            }
+
+            Iterator_e operator()(Actor_Base_t* actor_base)
+            {
+                if (!actor_bases.Has(actor_base)) {
+                    actor_bases.push_back(actor_base);
+                    if (char_count < MAX_CHARS) {
+                        String_t name = actor_base->Any_Name();
+                        if (name.data && name.data[0] && !names.Has(name)) {
+                            names.push_back(name);
+                            size_t name_char_count = CString_t::Length(name, false);
+                            char_count += name_char_count;
+                            if (char_count > MAX_CHARS) {
+                                char_difference = name_char_count - (char_count - MAX_CHARS);
+                            }
+                        }
+                    }
+                }
+                return Iterator_e::CONTINUE;
+            }
+        } iterator(names);
+        Iterate_Actor_Bases(iterator);
+
+        std::string leveled_name = "";
+        size_t name_count = names.size();
+        if (name_count > 0) {
+            for (Index_t idx = 0, end = name_count - 1; idx < end; idx += 1) {
+                leveled_name += std::string(names[idx]) + ", ";
+            }
+            size_t char_difference = iterator.Char_Difference();
+            if (char_difference > 0) {
+                if (char_difference > MAX_CHARS) {
+                    char_difference = MAX_CHARS;
+                }
+                char remaining_chars[MAX_CHARS + 1];
+                String_t name = names[name_count - 1];
+                Index_t idx = 0, end = char_difference;
+                for (; idx < end; idx += 1) {
+                    remaining_chars[idx] = name.data[idx];
+                }
+                remaining_chars[idx] = 0;
+                leveled_name += std::string(remaining_chars) + "... " + std::to_string(iterator.Actor_Base_Count());
+            } else {
+                leveled_name += std::string(names[name_count - 1]) + " " + std::to_string(iterator.Actor_Base_Count());
+            }
         } else {
-            return std::string(static_cast<char*>(name_chars)) + " " + std::to_string(actor_base_count);
+            leveled_name += std::to_string(iterator.Actor_Base_Count());
         }
+
+        return leveled_name;
     }
 
     String_t Leveled_Actor_Base_t::Any_Name()
@@ -139,10 +198,17 @@ namespace doticu_skylib {
     {
         Vector_t<String_t> results;
 
-        Vector_t<Actor_Base_t*> actor_bases = Actor_Bases();
-        for (Index_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
-            if (actor_base) {
+        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        {
+        public:
+            Vector_t<String_t>& results;
+            Iterator_t(Vector_t<String_t>& results) :
+                results(results)
+            {
+            }
+
+            Iterator_e operator()(Actor_Base_t* actor_base)
+            {
                 Race_t* race = actor_base->Race();
                 if (race) {
                     String_t race_name = race->Get_Editor_ID();
@@ -150,8 +216,10 @@ namespace doticu_skylib {
                         results.push_back(race_name);
                     }
                 }
+                return Iterator_e::CONTINUE;
             }
-        }
+        } iterator(results);
+        Iterate_Actor_Bases(iterator);
 
         return results;
     }
@@ -160,16 +228,25 @@ namespace doticu_skylib {
     {
         Vector_t<String_t> results;
 
-        Vector_t<Actor_Base_t*> actor_bases = Actor_Bases();
-        for (Index_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
-            if (actor_base) {
+        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        {
+        public:
+            Vector_t<String_t>& results;
+            Iterator_t(Vector_t<String_t>& results) :
+                results(results)
+            {
+            }
+
+            Iterator_e operator()(Actor_Base_t* actor_base)
+            {
                 String_t name = actor_base->Any_Name();
                 if (!results.Has(name)) {
                     results.push_back(name);
                 }
+                return Iterator_e::CONTINUE;
             }
-        }
+        } iterator(results);
+        Iterate_Actor_Bases(iterator);
 
         return results;
     }

@@ -35,6 +35,11 @@ namespace doticu_skylib {
         return !Is_Unique();
     }
 
+    Bool_t Form_t::Is_Valid()
+    {
+        return form_id != 0;
+    }
+
     Vector_t<Mod_t*> Form_t::Mods()
     {
         Vector_t<Mod_t*> mods;

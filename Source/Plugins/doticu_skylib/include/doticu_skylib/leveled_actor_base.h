@@ -29,7 +29,10 @@ namespace doticu_skylib {
         static void                             Log_Leveled_Actor_Bases();
 
     public:
-        virtual ~Leveled_Actor_Base_t();
+        virtual                 ~Leveled_Actor_Base_t();
+
+    public:
+        void                    Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator);
 
         Vector_t<Form_t*>       Forms();
         Vector_t<Actor_Base_t*> Actor_Bases();
@@ -39,8 +42,6 @@ namespace doticu_skylib {
         String_t                Any_Name();
         Vector_t<String_t>      Race_Names();
         Vector_t<String_t>      Actor_Base_Names();
-
-        void                    Iterate_Actor_Bases(Iterator_i<Actor_Base_t*>* iterator);
     };
     STATIC_ASSERT(sizeof(Leveled_Actor_Base_t) == 0x90);
 

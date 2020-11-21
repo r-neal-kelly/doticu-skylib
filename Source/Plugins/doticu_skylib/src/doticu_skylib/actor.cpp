@@ -21,9 +21,7 @@ namespace doticu_skylib {
     Loaded_Actor_t::Loaded_Actor_t(Actor_t* actor, Cell_t* cell) :
         actor(actor), cell(cell)
     {
-        if (actor && cell) {
-            actor->Increment_Reference();
-        } else {
+        if (!actor || !cell) {
             actor = nullptr;
             cell = nullptr;
         }
@@ -44,13 +42,7 @@ namespace doticu_skylib {
         actor(std::exchange(other.actor, nullptr)),
         cell(std::exchange(other.cell, nullptr))
     {
-        if (!cell) {
-            if (actor) {
-                actor->Decrement_Reference();
-            }
-            actor = nullptr;
-            cell = nullptr;
-        } else if (!actor) {
+        if (!actor || !cell) {
             actor = nullptr;
             cell = nullptr;
         }
@@ -58,9 +50,8 @@ namespace doticu_skylib {
 
     Loaded_Actor_t::~Loaded_Actor_t()
     {
-        if (actor) {
-            actor->Decrement_Reference();
-        }
+        actor = nullptr;
+        cell = nullptr;
     }
 
     Loaded_Actor_t& Loaded_Actor_t::operator=(const Loaded_Actor_t& other)
@@ -69,7 +60,6 @@ namespace doticu_skylib {
             if (other.actor && other.cell) {
                 actor = other.actor;
                 cell = other.cell;
-                actor->Increment_Reference();
             } else {
                 actor = nullptr;
                 cell = nullptr;
@@ -83,13 +73,7 @@ namespace doticu_skylib {
         if (this != &other) {
             actor = std::exchange(other.actor, nullptr);
             cell = std::exchange(other.cell, nullptr);
-            if (!cell) {
-                if (actor) {
-                    actor->Decrement_Reference();
-                }
-                actor = nullptr;
-                cell = nullptr;
-            } else if (!actor) {
+            if (!actor || !cell) {
                 actor = nullptr;
                 cell = nullptr;
             }
@@ -109,7 +93,7 @@ namespace doticu_skylib {
 
     Bool_t Loaded_Actor_t::Is_Valid()
     {
-        return actor != nullptr && cell != nullptr;
+        return actor && cell && actor->Is_Valid() && cell->Is_Valid();
     }
 
     /* Actor_t */
@@ -127,7 +111,7 @@ namespace doticu_skylib {
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
         for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
-            class Iterator_t : public Iterator_i<Reference_t*>
+            class Iterator_t : public Iterator_i<void, Reference_t*>
             {
             public:
                 Vector_t<Loaded_Actor_t>& results;

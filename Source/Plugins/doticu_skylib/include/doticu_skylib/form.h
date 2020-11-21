@@ -406,6 +406,8 @@ namespace doticu_skylib {
         u32                     pad_1C;         // 1C
 
     public:
+        Bool_t              Is_Valid();
+
         Vector_t<Mod_t*>    Mods();
 
         String_t            Form_ID_String();

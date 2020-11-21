@@ -186,7 +186,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Cell_t::References(Iterator_i<Reference_t*>& iterator)
+    void Cell_t::References(Iterator_i<void, Reference_t*>& iterator)
     {
         for (Index_t idx = 0, end = references.capacity; idx < end; idx += 1) {
             Set_t<Reference_t*>::Entry_t& entry = references.entries[idx];

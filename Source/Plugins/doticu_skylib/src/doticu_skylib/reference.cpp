@@ -27,7 +27,7 @@ namespace doticu_skylib {
     {
         Int_t count = _InterlockedDecrement(static_cast<volatile u32*>(&reference_count));
         if ((count & 0x3FF) == 0) {
-            delete this;
+            delete this; // not sure this is right. might want to call MarkForDelete through virtual machine script (as if console)
         }
         return count;
     }

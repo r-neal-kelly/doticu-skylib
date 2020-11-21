@@ -79,12 +79,29 @@ namespace doticu_skylib {
         }
     };
 
+    class Binary_e : public Enum_t<s8>
+    {
+    public:
+        enum : s8
+        {
+            ALL     = -1,
+            BOTH    = -1,
+            EITHER  = -1,
+            NONE    = 0,
+            NEITHER = 0,
+            A       = 1,
+            B       = 2,
+        };
+        using Enum_t::Enum_t;
+    };
+
     class Ternary_e : public Enum_t<s8>
     {
     public:
         enum : s8
         {
             ALL     = -1,
+            ANY     = -1,
             NONE    = 0,
             A       = 1,
             B       = 2,
@@ -99,6 +116,7 @@ namespace doticu_skylib {
         enum : s8
         {
             ALL     = -1,
+            ANY     = -1,
             NONE    = 0,
             A       = 1,
             B       = 2,
@@ -124,24 +142,23 @@ namespace doticu_skylib {
         virtual void operator()(Arguments...) = 0;
     };
 
-    template <typename ...Arguments>
+    template <typename Return, typename ...Arguments>
     class Iterator_i
     {
     public:
         virtual ~Iterator_i() = default;
-        virtual void operator()(Arguments...) = 0;
+        virtual Return operator()(Arguments...) = 0;
     };
 
-    class Comparator_e : public Enum_t<Word_t>
+    class Iterator_e : public Binary_e
     {
     public:
-        enum
+        enum : s8
         {
-            IS_ORDERED = -1,
-            IS_UNORDERED = 1,
-            IS_EQUAL = 0,
+            CONTINUE    = Binary_e::A,
+            BREAK       = Binary_e::B,
         };
-        using Enum_t::Enum_t;
+        using Binary_e::Binary_e;
     };
 
     template <typename Type>
@@ -176,6 +193,18 @@ namespace doticu_skylib {
             }
             qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
+    };
+
+    class Comparator_e : public Enum_t<Word_t>
+    {
+    public:
+        enum
+        {
+            IS_ORDERED      = -1,
+            IS_UNORDERED    = 1,
+            IS_EQUAL        = 0,
+        };
+        using Enum_t::Enum_t;
     };
 
 }
