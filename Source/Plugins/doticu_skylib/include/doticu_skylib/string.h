@@ -33,6 +33,8 @@ namespace doticu_skylib {
 
         Bool_t operator==(const String_t& other);
         Bool_t operator!=(const String_t& other);
+        Bool_t operator!();
+        operator Bool_t();
     };
 
 }

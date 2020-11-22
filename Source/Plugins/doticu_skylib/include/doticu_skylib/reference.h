@@ -65,13 +65,23 @@ namespace doticu_skylib {
         public Event_Sink_t<void*>,
         public Animation_Graphs_t {
     public:
-        enum class Offset_e : Word_t {
-            GET_NAME    = 0x002961F0,
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : Word_t
+            {
+                GET_NAME    = 0x002961F0,
+                PLACE_AT_ME = 0x009951F0,
+            };
+            using Enum_t::Enum_t;
         };
 
-        enum {
+        enum
+        {
             kTypeID = kFormType_Reference,
         };
+
+        static Reference_t* Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable);
 
     public:
         virtual ~Reference_t(); // 00

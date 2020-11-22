@@ -72,4 +72,14 @@ namespace doticu_skylib {
         return !operator==(other);
     }
 
+    Bool_t String_t::operator!()
+    {
+        return !static_cast<Bool_t>(*this);
+    }
+
+    String_t::operator Bool_t()
+    {
+        return data && data[0];
+    }
+
 }

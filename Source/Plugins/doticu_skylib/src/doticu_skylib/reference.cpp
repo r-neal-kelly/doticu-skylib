@@ -10,6 +10,8 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_machine.h"
 
 namespace doticu_skylib {
 
@@ -30,6 +32,14 @@ namespace doticu_skylib {
             delete this; // not sure this is right. might want to call MarkForDelete through virtual machine script (as if console)
         }
         return count;
+    }
+
+    Reference_t* Reference_t::Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable)
+    {
+        static auto place_at_me = reinterpret_cast
+            <Reference_t*(*)(Virtual::Machine_t*, Virtual::Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
+            (RelocationManager::s_baseAddr + Offset_e::PLACE_AT_ME);
+        return place_at_me(Virtual::Machine_t::Self(), 0, at, base, count, force_persist, initially_disable);
     }
 
     const char* Reference_t::Name()
