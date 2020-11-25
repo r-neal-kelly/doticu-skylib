@@ -118,6 +118,8 @@ namespace doticu_skylib {
         Bool_t operator!=(const Loaded_Actor_t& other);
 
         Bool_t Is_Valid();
+
+        operator Bool_t();
     };
     STATIC_ASSERT(sizeof(Loaded_Actor_t) == 0x10);
 

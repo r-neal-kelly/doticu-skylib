@@ -13,7 +13,9 @@ namespace doticu_skylib {
     class Actor_Base_t;
     class Actor_Base_Component_t;
     class Actor_State_t;
+    class Actor_Value_e;
     class Actor_Values_t;
+    class Actor_Value_Modifier_e;
     class AI_Component_t;
     class Alias_Base_t;
     class Alias_Reference_t;
@@ -23,12 +25,15 @@ namespace doticu_skylib {
     class Bound_Object_t;
 
     class Cell_t;
+    class Consts_t;
     class Container_Component_t;
 
     class Destructible_Component_t;
 
     class Form_t;
     class Form_Type_e;
+
+    class Game_t;
 
     class Keyword_Component_t;
 

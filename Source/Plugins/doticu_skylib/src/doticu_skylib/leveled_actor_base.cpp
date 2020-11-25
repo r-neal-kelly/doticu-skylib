@@ -197,7 +197,12 @@ namespace doticu_skylib {
     Vector_t<String_t> Leveled_Actor_Base_t::Race_Names()
     {
         Vector_t<String_t> results;
+        Race_Names(results);
+        return results;
+    }
 
+    void Leveled_Actor_Base_t::Race_Names(Vector_t<String_t>& results)
+    {
         class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
         {
         public:
@@ -220,14 +225,17 @@ namespace doticu_skylib {
             }
         } iterator(results);
         Iterate_Actor_Bases(iterator);
-
-        return results;
     }
 
     Vector_t<String_t> Leveled_Actor_Base_t::Actor_Base_Names()
     {
         Vector_t<String_t> results;
+        Actor_Base_Names(results);
+        return results;
+    }
 
+    void Leveled_Actor_Base_t::Actor_Base_Names(Vector_t<String_t>& results)
+    {
         class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
         {
         public:
@@ -247,8 +255,6 @@ namespace doticu_skylib {
             }
         } iterator(results);
         Iterate_Actor_Bases(iterator);
-
-        return results;
     }
 
 }

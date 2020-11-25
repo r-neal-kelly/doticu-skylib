@@ -41,7 +41,9 @@ namespace doticu_skylib {
         String_t                Leveled_Name();
         String_t                Any_Name();
         Vector_t<String_t>      Race_Names();
+        void                    Race_Names(Vector_t<String_t>& results);
         Vector_t<String_t>      Actor_Base_Names();
+        void                    Actor_Base_Names(Vector_t<String_t>& results);
     };
     STATIC_ASSERT(sizeof(Leveled_Actor_Base_t) == 0x90);
 

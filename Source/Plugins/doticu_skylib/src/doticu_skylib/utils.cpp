@@ -11,14 +11,14 @@ namespace doticu_skylib {
         Word_t idx = 0;
         for (; idx < MAX_LENGTH; idx += 1) {
             if (sub[idx] == 0) {
-                return idx;
+                if (with_null) {
+                    return idx + 1;
+                } else {
+                    return idx;
+                }
             }
         }
-        if (with_null) {
-            return idx + 1;
-        } else {
-            return idx;
-        }
+        return MAX_LENGTH;
     }
 
     Bool_t CString_t::Is_Same(const char* sub, const char* obj, Bool_t caseless)
@@ -137,6 +137,48 @@ namespace doticu_skylib {
                 }
             }
             return false;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t CString_t::Is_Length_Less_Than(const char* sub, Word_t length, Bool_t with_null)
+    {
+        SKYLIB_ASSERT(length < MAX_LENGTH);
+
+        if (sub) {
+            Word_t idx = 0;
+            for (; idx < length; idx += 1) {
+                if (sub[idx] == 0) {
+                    if (with_null) {
+                        return idx + 1 < length;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t CString_t::Is_Length_Greater_Than(const char* sub, Word_t length, Bool_t with_null)
+    {
+        SKYLIB_ASSERT(length < MAX_LENGTH);
+
+        if (sub) {
+            Word_t idx = 0;
+            for (; idx <= length; idx += 1) {
+                if (sub[idx] == 0) {
+                    if (with_null) {
+                        return idx + 1 > length;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return true;
         } else {
             return false;
         }

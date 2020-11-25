@@ -207,6 +207,46 @@ namespace doticu_skylib {
         using Enum_t::Enum_t;
     };
 
+    /*class FStream_t : public std::fstream
+    {
+    public:
+        template <typename Type>
+        FStream_t& operator<<(Type& data)
+        {
+            if (this->operator bool()) {
+                write(reinterpret_cast<char*>(&data), sizeof(Type));
+            }
+            return *this;
+        }
+
+        template <typename Type>
+        FStream_t& operator<<(Type&& data)
+        {
+            if (this->operator bool()) {
+                write(reinterpret_cast<char*>(&data), sizeof(Type));
+            }
+            return *this;
+        }
+
+        template <typename Type>
+        FStream_t& operator>>(Type& data)
+        {
+            if (this->operator bool()) {
+                read(reinterpret_cast<char*>(&data), sizeof(Type));
+            }
+            return *this;
+        }
+
+        template <typename Type>
+        FStream_t& operator>>(Type* data)
+        {
+            if (this->operator bool()) {
+                read(reinterpret_cast<char*>(data), sizeof(Type));
+            }
+            return *this;
+        }
+    };*/
+
 }
 
 #include "doticu_skylib/string.h"

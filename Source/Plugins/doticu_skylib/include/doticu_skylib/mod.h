@@ -22,6 +22,8 @@ namespace doticu_skylib {
         static Vector_t<Mod_t*> Active_Mods();
         static Vector_t<Mod_t*> Active_Heavy_Mods();
         static Vector_t<Mod_t*> Active_Light_Mods();
+        static tArray<Mod_t*>&  Active_Heavy_Mods_2();
+        static tArray<Mod_t*>&  Active_Light_Mods_2();
         static void             Log_Mods();
         static void             Log_Active_Mods();
         static void             Log_Active_Heavy_Mods();

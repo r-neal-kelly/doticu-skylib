@@ -105,6 +105,16 @@ namespace doticu_skylib {
         return results;
     }
 
+    tArray<Mod_t*>& Mod_t::Active_Heavy_Mods_2()
+    {
+        return reinterpret_cast<tArray<Mod_t*>&>(Game_t::Data()->modList.loadedMods);
+    }
+
+    tArray<Mod_t*>& Mod_t::Active_Light_Mods_2()
+    {
+        return reinterpret_cast<tArray<Mod_t*>&>(Game_t::Data()->modList.loadedCCMods);
+    }
+
     static void Log_Mods(const char* title, Vector_t<Mod_t*> mods)
     {
         #define TAB "    "

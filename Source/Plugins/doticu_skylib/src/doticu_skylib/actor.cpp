@@ -96,6 +96,11 @@ namespace doticu_skylib {
         return actor && cell && actor->Is_Valid() && cell->Is_Valid();
     }
 
+    Loaded_Actor_t::operator Bool_t()
+    {
+        return Is_Valid();
+    }
+
     /* Actor_t */
 
     Vector_t<Loaded_Actor_t> Actor_t::Loaded_Actors()

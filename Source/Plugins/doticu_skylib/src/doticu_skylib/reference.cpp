@@ -8,6 +8,7 @@
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/mod.h"
 #include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/virtual.h"
@@ -78,6 +79,76 @@ namespace doticu_skylib {
     Cell_t* Reference_t::Cell()
     {
         return parent_cell;
+    }
+
+    Index_t Live_References_t::Index_Of(Reference_t* reference)
+    {
+        if (reference && reference->Is_Valid()) {
+            for (Index_t idx = 0, end = reference_entries.size(); idx < end; idx += 1) {
+                if (reference_entries[idx].reference == reference) {
+                    return idx;
+                }
+            }
+            return -1;
+        } else {
+            return -1;
+        }
+    }
+
+    Bool_t Live_References_t::Has(Reference_t* reference)
+    {
+        return Index_Of(reference) > -1;
+    }
+
+    Bool_t Live_References_t::Add(Reference_t* reference)
+    {
+        if (reference && reference->Is_Valid() && !Has(reference)) {
+            Form_t* base_form = reference->base_form;
+            if (base_form && base_form->Is_Valid() && base_form->Is_Static()) {
+                Mod_t* base_mod = base_form->Indexed_Mod();
+                SKYLIB_ASSERT(base_mod);
+
+                s64 base_mod_index = mod_entries.Index_Of(base_mod);
+                if (base_mod_index < 0) {
+                    base_mod_index = mod_entries.size();
+                    mod_entries.push_back(base_mod);
+                }
+
+                s64 reference_mod_index = -1;
+                if (reference->Is_Static()) {
+                    Mod_t* reference_mod = reference->Indexed_Mod();
+                    SKYLIB_ASSERT(reference_mod);
+                    reference_mod_index = mod_entries.Index_Of(reference_mod);
+                    if (reference_mod_index < 0) {
+                        reference_mod_index = mod_entries.size();
+                        mod_entries.push_back(reference_mod);
+                    }
+                }
+
+                reference_entries.emplace(reference_entries.end(),
+                                          base_form, reference, base_mod_index, reference_mod_index);
+
+                return true;
+            } else {
+                // currently don't know how to handle dynamic bases
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Live_References_t::Remove(Reference_t* reference)
+    {
+        Index_t index = Index_Of(reference);
+        size_t size = reference_entries.size();
+        if (index > -1 && index < size) {
+            reference_entries[index] = reference_entries[size - 1];
+            reference_entries.erase(reference_entries.end() - 1);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

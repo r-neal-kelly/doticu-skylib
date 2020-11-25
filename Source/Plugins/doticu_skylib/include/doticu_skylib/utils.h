@@ -58,6 +58,9 @@ namespace doticu_skylib {
         static Bool_t Ends_With(const char* sub, const char* obj, Bool_t caseless);
         static Bool_t Ends_With(const char* sub, const char obj, Bool_t caseless);
         static Bool_t Contains(const char* sub, const char* obj, Bool_t caseless);
+
+        static Bool_t Is_Length_Less_Than(const char* sub, Word_t length, Bool_t with_null = false);
+        static Bool_t Is_Length_Greater_Than(const char* sub, Word_t length, Bool_t with_null = false);
     };
 
     inline Word_t V_Table_Offset(void* instance)

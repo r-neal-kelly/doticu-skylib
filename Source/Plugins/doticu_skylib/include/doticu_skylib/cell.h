@@ -82,6 +82,7 @@ namespace doticu_skylib {
         Location_t*             Location();
         Vector_t<Location_t*>   Locations();
         Vector_t<String_t>      Location_Names();
+        void                    Location_Names(Vector_t<String_t>& results);
 
         String_t                Any_Name();
 

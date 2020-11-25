@@ -407,11 +407,17 @@ namespace doticu_skylib {
 
     public:
         Bool_t              Is_Valid();
+        Bool_t              Is_Static();
+        Bool_t              Is_Dynamic();
+        Bool_t              Is_Heavy();
+        Bool_t              Is_Light();
+        Mod_t*              Indexed_Mod();
 
         Vector_t<Mod_t*>    Mods();
 
         String_t            Form_ID_String();
         Vector_t<String_t>  Mod_Names();
+        void                Mod_Names(Vector_t<String_t>& results);
 
     public:
         void                Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);

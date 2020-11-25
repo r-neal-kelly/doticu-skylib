@@ -110,16 +110,37 @@ namespace doticu_skylib {
     public:
         enum
         {
-            kTypeID = kFormType_NPC,
+            FORM_TYPE   = Form_Type_e::ACTOR_BASE,
+            kTypeID     = kFormType_NPC,
         };
 
         static size_t                   Actor_Base_Count();
         static Vector_t<Actor_Base_t*>  Actor_Bases();
         static void                     Actor_Bases(Vector_t<Actor_Base_t*>& results);
+        static Vector_t<Actor_Base_t*>  Dynamic_Actor_Bases();
+        static void                     Dynamic_Actor_Bases(Vector_t<Actor_Base_t*>& results);
         static void                     Log_Actor_Bases();
+        static void                     Log_Dynamic_Actor_Bases();
 
     public:
         virtual ~Actor_Base_t();
+
+        u8              skills[18];     // 190 // 00
+        u8              unk_1A2[18];    // 1A2 // 12
+        u16             attributes[3];  // 1B4 // 24
+        u16             pad_1BA;        // 1BA // 2A
+        Float_t         unk_1BC;        // 1BC // 2C
+        TESClass*       actor_class;    // 1C0
+        void*           head_data;      // 1C8
+        void*           unk_1D0;        // 1D0
+        TESCombatStyle* combat_style;   // 1D8
+        u32             file_offset;    // 1E0
+        u32             pad_1E4;        // 1E4
+        Race_t*         extra_race;     // 1E8
+        Actor_Base_t*   template_list;  // 1F0
+        Float_t         height;         // 1F8
+        Float_t         weight;         // 1FC
+        // ...
 
         Sex_e       Sex();
         Race_t*     Race();

@@ -148,9 +148,14 @@ namespace doticu_skylib {
 
     Vector_t<String_t> Cell_t::Location_Names()
     {
-        Vector_t<String_t> locations;
-        locations.reserve(8);
+        Vector_t<String_t> results;
+        results.reserve(8);
+        Location_Names(results);
+        return results;
+    }
 
+    void Cell_t::Location_Names(Vector_t<String_t>& results)
+    {
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
@@ -159,16 +164,14 @@ namespace doticu_skylib {
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
-            locations.push_back(it->Any_Name());
+            results.push_back(it->Any_Name());
         }
 
         Location_t* worldspace_location =
             worldspace ? worldspace->location : nullptr;
         for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
-            locations.push_back(it->Any_Name());
+            results.push_back(it->Any_Name());
         }
-
-        return locations;
     }
 
     String_t Cell_t::Any_Name()

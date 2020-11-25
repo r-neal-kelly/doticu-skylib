@@ -40,6 +40,46 @@ namespace doticu_skylib {
         return form_id != 0;
     }
 
+    Bool_t Form_t::Is_Static()
+    {
+        return !Is_Dynamic();
+    }
+
+    Bool_t Form_t::Is_Dynamic()
+    {
+        return (form_id & 0xFF000000) == 0xFF000000;
+    }
+
+    Bool_t Form_t::Is_Heavy()
+    {
+        return !Is_Light();
+    }
+
+    Bool_t Form_t::Is_Light()
+    {
+        return (form_id & 0xFF000000) == 0xFE000000;
+    }
+
+    Mod_t* Form_t::Indexed_Mod()
+    {
+        static tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        static tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        
+        if (Is_Static()) {
+            if (Is_Light()) {
+                u32 index = (form_id & 0x00FFF000) >> 12;
+                SKYLIB_ASSERT(index < light_mods.count);
+                return light_mods.entries[index];
+            } else {
+                u32 index = (form_id & 0xFF000000) >> 24;
+                SKYLIB_ASSERT(index < heavy_mods.count);
+                return heavy_mods.entries[index];
+            }
+        } else {
+            return nullptr;
+        }
+    }
+
     Vector_t<Mod_t*> Form_t::Mods()
     {
         Vector_t<Mod_t*> mods;
@@ -79,36 +119,26 @@ namespace doticu_skylib {
         form_id_string[9] = hex_values[(form_id & 0x0000000F) >>  0];
 
         return form_id_string;
-
-        /*std::stringstream form_id_sstring;
-        form_id_sstring << std::hex << form_id;
-
-        std::string form_id_string = form_id_sstring.str();
-        size_t form_id_length = form_id_string.length();
-
-        for (Index_t idx = 0, end = form_id_length; idx < end; idx += 1) {
-            form_id_string[idx] = toupper(form_id_string[idx]);
-        }
-
-        if (form_id_length < 8) {
-            form_id_string.insert(0, 8 - form_id_length, '0');
-        }
-
-        return "0x" + form_id_string;*/
     }
 
     Vector_t<String_t> Form_t::Mod_Names()
     {
-        Vector_t<String_t> mods;
+        Vector_t<String_t> results;
+        Mod_Names(results);
+        return results;
+    }
+
+    void Form_t::Mod_Names(Vector_t<String_t>& results)
+    {
         if (form_files) {
+            results.reserve(form_files->count);
             for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
                 Mod_t* mod = form_files->entries[idx];
                 if (mod) {
-                    mods.push_back(mod->Name());
+                    results.push_back(mod->Name());
                 }
             }
         }
-        return mods;
     }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
