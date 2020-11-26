@@ -185,6 +185,27 @@ namespace doticu_skylib {
         return static_cast<Actor_Base_t*>(base_form);
     }
 
+    Vector_t<Actor_Base_t*> Actor_t::Actor_Bases()
+    {
+        if (base_form && base_form->Is_Valid()) {
+            Vector_t<Actor_Base_t*> results;
+            results.reserve(4);
+            Actor_Bases(results);
+            return results;
+        } else {
+            return Vector_t<Actor_Base_t*>();
+        }
+    }
+
+    void Actor_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
+    {
+        Actor_Base_t* actor_base = Actor_Base();
+        if (actor_base && base_form->Is_Valid()) {
+            results.push_back(actor_base);
+            actor_base->Templates(results);
+        }
+    }
+
     const char* Actor_t::Base_Name()
     {
         if (base_form) {

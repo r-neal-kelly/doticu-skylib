@@ -142,10 +142,12 @@ namespace doticu_skylib {
         Float_t         weight;         // 1FC
         // ...
 
-        Sex_e       Sex();
-        Race_t*     Race();
+        Sex_e                   Sex();
+        Race_t*                 Race();
+        Vector_t<Actor_Base_t*> Templates();
+        void                    Templates(Vector_t<Actor_Base_t*>& results);
 
-        String_t    Any_Name();
+        String_t                Any_Name();
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 

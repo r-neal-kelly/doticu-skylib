@@ -116,6 +116,25 @@ namespace doticu_skylib {
         return race;
     }
 
+    Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
+    {
+        if (template_list) {
+            Vector_t<Actor_Base_t*> results;
+            results.reserve(4);
+            Templates(results);
+            return results;
+        } else {
+            return Vector_t<Actor_Base_t*>();
+        }
+    }
+
+    void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
+    {
+        for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+            results.push_back(it);
+        }
+    }
+
     String_t Actor_Base_t::Any_Name()
     {
         const char* name = Name();

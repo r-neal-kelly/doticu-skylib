@@ -145,11 +145,13 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_t(); // 00
 
-        Race_t*             Race();
-        Actor_Base_t*       Actor_Base();
+        Race_t*                 Race();
+        Actor_Base_t*           Actor_Base();
+        Vector_t<Actor_Base_t*> Actor_Bases();
+        void                    Actor_Bases(Vector_t<Actor_Base_t*>& results);
 
-        const char*         Base_Name();
-        String_t            Any_Name();
+        const char*             Base_Name();
+        String_t                Any_Name();
     };
     //STATIC_ASSERT(sizeof(Actor_t) == 0x0);
 
