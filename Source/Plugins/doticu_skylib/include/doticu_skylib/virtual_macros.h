@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/utils.h"
+#include "doticu_skylib/virtual_array.h"
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_function.h"
@@ -42,8 +43,8 @@ namespace doticu_skylib { namespace Virtual {
 
     #define DEFINE_TYPED_VARIABLE(TYPE_, NAME_)                     \
     M                                                               \
-        using String_t = doticu_skylib::String_t;                   \
-        using TYPE_ = doticu_skylib::Virtual::TYPE_;                \
+        using namespace doticu_skylib;                              \
+        using namespace doticu_skylib::Virtual;                     \
                                                                     \
         static const String_t name = String_t(NAME_);               \
         SKYLIB_ASSERT(name);                                        \
@@ -53,10 +54,11 @@ namespace doticu_skylib { namespace Virtual {
         return var;                                                 \
     W
 
-    #define DEFINE_VARIABLE(NAME_)          DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
-    #define DEFINE_BOOL_VARIABLE(NAME_)     DEFINE_TYPED_VARIABLE(Bool_Variable_t, NAME_)
-    #define DEFINE_INT_VARIABLE(NAME_)      DEFINE_TYPED_VARIABLE(Int_Variable_t, NAME_)
-    #define DEFINE_STRING_VARIABLE(NAME_)   DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
+    #define DEFINE_VARIABLE(NAME_)              DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
+    #define DEFINE_BOOL_VARIABLE(NAME_)         DEFINE_TYPED_VARIABLE(Bool_Variable_t, NAME_)
+    #define DEFINE_INT_VARIABLE(NAME_)          DEFINE_TYPED_VARIABLE(Int_Variable_t, NAME_)
+    #define DEFINE_STRING_VARIABLE(NAME_)       DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
+    #define DEFINE_ARRAY_VARIABLE(TYPE_, NAME_) DEFINE_TYPED_VARIABLE(Array_Variable_t<TYPE_>, NAME_)
 
     #define DEFINE_TYPED_PROPERTY(TYPE_, NAME_)                         \
     M                                                                   \

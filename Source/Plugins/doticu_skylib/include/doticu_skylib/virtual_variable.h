@@ -125,6 +125,17 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(String_Variable_t) == 0x10);
 
+    template <typename T>
+    class Array_Variable_t : public Variable_t
+    {
+    public:
+        Array_t*                    Value();
+        doticu_skylib::Vector_t<T>  Values();
+        void                        Values(doticu_skylib::Vector_t<T>& values);
+        void                        Values(doticu_skylib::Vector_t<T>&& values);
+    };
+    STATIC_ASSERT(sizeof(Array_Variable_t<Int_t>) == 0x10);
+
     class String_Property_t : public String_Variable_t
     {
     public:
@@ -132,6 +143,8 @@ namespace doticu_skylib { namespace Virtual {
     STATIC_ASSERT(sizeof(String_Property_t) == 0x10);
 
 }}
+
+#include "doticu_skylib/virtual_array.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -149,6 +162,35 @@ namespace doticu_skylib { namespace Virtual {
         PackValue<BSFixedString>(reinterpret_cast<VMValue*>(this),
                                  reinterpret_cast<VMResultArray<BSFixedString>*>(&values),
                                  (*g_skyrimVM)->GetClassRegistry());
+    }
+
+    template <typename T>
+    inline Array_t* Array_Variable_t<T>::Value()
+    {
+        return Array();
+    }
+
+    template <typename T>
+    inline doticu_skylib::Vector_t<T> Array_Variable_t<T>::Values()
+    {
+        Array_t* arr = Value();
+        if (arr) {
+            return arr->Vector<T>();
+        } else {
+            return doticu_skylib::Vector_t<T>();
+        }
+    }
+
+    template <typename T>
+    inline void Array_Variable_t<T>::Values(doticu_skylib::Vector_t<T>& values)
+    {
+        Pack<T>(values);
+    }
+
+    template <typename T>
+    inline void Array_Variable_t<T>::Values(doticu_skylib::Vector_t<T>&& values)
+    {
+        Pack<T>(values);
     }
 
 }}

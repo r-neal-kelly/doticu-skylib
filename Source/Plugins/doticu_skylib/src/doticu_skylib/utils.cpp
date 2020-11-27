@@ -23,10 +23,14 @@ namespace doticu_skylib {
 
     Bool_t CString_t::Is_Same(const char* sub, const char* obj, Bool_t caseless)
     {
-        if (caseless) {
-            return _stricmp(sub, obj) == 0;
+        if (sub && obj) {
+            if (caseless) {
+                return _stricmp(sub, obj) == 0;
+            } else {
+                return strcmp(sub, obj) == 0;
+            }
         } else {
-            return strcmp(sub, obj) == 0;
+            return false;
         }
     }
 

@@ -29,8 +29,12 @@ namespace doticu_skylib {
         static void             Log_Active_Heavy_Mods();
         static void             Log_Active_Light_Mods();
 
+        static Mod_t* From(const char* mod_name);
+
     public:
         const char* Name();
+        Index_t Heavy_Index();
+        Index_t Light_Index();
     };
     //STATIC_ASSERT(sizeof(Mod_t) == 0x0);
 

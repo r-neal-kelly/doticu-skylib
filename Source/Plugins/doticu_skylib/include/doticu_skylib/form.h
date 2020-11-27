@@ -333,6 +333,13 @@ namespace doticu_skylib {
             kTypeID = kFormType_None,
         };
 
+        static Bool_t       Is_Static(Form_ID_t form_id);
+        static Bool_t       Is_Dynamic(Form_ID_t form_id);
+        static Bool_t       Is_Heavy(Form_ID_t form_id);
+        static Bool_t       Is_Light(Form_ID_t form_id);
+        static Form_ID_t    Reindex(Form_ID_t form_id, Mod_t* mod);
+        static Form_ID_t    Reindex(Form_ID_t form_id, u32 idx);
+
     public:
         virtual             ~Form_t();                              // 00
 
@@ -412,6 +419,7 @@ namespace doticu_skylib {
         Bool_t              Is_Heavy();
         Bool_t              Is_Light();
         Mod_t*              Indexed_Mod();
+        Bool_t              Has_Indexed_Mod(const char* mod_name);
 
         Vector_t<Mod_t*>    Mods();
 

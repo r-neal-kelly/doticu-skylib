@@ -35,6 +35,66 @@ namespace doticu_skylib {
         return !Is_Unique();
     }
 
+    Bool_t Form_t::Is_Static(Form_ID_t form_id)
+    {
+        return !Is_Dynamic(form_id);
+    }
+
+    Bool_t Form_t::Is_Dynamic(Form_ID_t form_id)
+    {
+        return (form_id & 0xFF000000) == 0xFF000000;
+    }
+
+    Bool_t Form_t::Is_Heavy(Form_ID_t form_id)
+    {
+        return !Is_Light(form_id);
+    }
+
+    Bool_t Form_t::Is_Light(Form_ID_t form_id)
+    {
+        return (form_id & 0xFF000000) == 0xFE000000;
+    }
+
+    Form_ID_t Form_t::Reindex(Form_ID_t form_id, Mod_t* mod)
+    {
+        if (mod) {
+            Index_t mod_idx = -1;
+            if (Is_Light(form_id)) {
+                mod_idx = mod->Light_Index();
+            } else {
+                mod_idx = mod->Heavy_Index();
+            }
+            if (mod_idx > -1) {
+                return Reindex(form_id, mod_idx);
+            } else {
+                return 0;
+            }
+        } else {
+            if (Is_Heavy(form_id)) {
+                return Reindex(form_id, 0xFF);
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    Form_ID_t Form_t::Reindex(Form_ID_t form_id, u32 idx)
+    {
+        if (Is_Light(form_id)) {
+            if (idx < 0x1000) {
+                return 0xFE000000 | (idx << 12) | (form_id & 0x00000FFF);
+            } else {
+                return 0;
+            }
+        } else {
+            if (idx < 0x100) {
+                return (idx << 24) | (form_id & 0x00FFFFFF);
+            } else {
+                return 0;
+            }
+        }
+    }
+
     Bool_t Form_t::Is_Valid()
     {
         return form_id != 0;
@@ -62,8 +122,8 @@ namespace doticu_skylib {
 
     Mod_t* Form_t::Indexed_Mod()
     {
-        static tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-        static tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
         
         if (Is_Static()) {
             if (Is_Light()) {
@@ -77,6 +137,31 @@ namespace doticu_skylib {
             }
         } else {
             return nullptr;
+        }
+    }
+
+    Bool_t Form_t::Has_Indexed_Mod(const char* mod_name)
+    {
+        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+
+        if (mod_name && mod_name[0]) {
+            if (Is_Static()) {
+                Mod_t* mod = Indexed_Mod();
+                if (mod) {
+                    return CString_t::Is_Same(mod_name, mod->Name(), true);
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            if (Is_Dynamic()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

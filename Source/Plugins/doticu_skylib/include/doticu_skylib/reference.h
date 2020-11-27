@@ -104,39 +104,4 @@ namespace doticu_skylib {
         Cell_t*     Cell();
     };
 
-    class Live_References_t
-    {
-    public:
-        class Reference_Entry_t
-        {
-        public:
-            Form_t*         base_form;
-            Reference_t*    reference;
-            s64             base_mod_index;
-            s64             reference_mod_index;
-
-            Reference_Entry_t(Form_t* base_form,
-                              Reference_t* reference,
-                              s64 base_mod_index,
-                              s64 reference_mod_index) :
-                base_form(base_form),
-                reference(reference),
-                base_mod_index(base_mod_index),
-                reference_mod_index(reference_mod_index)
-            {
-            }
-        };
-
-    public:
-        Live_References_t(const char* path);
-
-        Vector_t<Mod_t*>            mod_entries;
-        Vector_t<Reference_Entry_t> reference_entries;
-
-        Index_t Index_Of(Reference_t* reference);
-        Bool_t  Has(Reference_t* reference);
-        Bool_t  Add(Reference_t* reference);
-        Bool_t  Remove(Reference_t* reference);
-    };
-
 }

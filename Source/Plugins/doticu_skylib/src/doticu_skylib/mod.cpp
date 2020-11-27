@@ -149,9 +149,56 @@ namespace doticu_skylib {
         doticu_skylib::Log_Mods("Log_Active_Light_Mods", Active_Light_Mods());
     }
 
+    Mod_t* Mod_t::From(const char* mod_name)
+    {
+        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        for (Index_t idx = 0, end = heavy_mods.count; idx < end; idx += 1) {
+            Mod_t* mod = heavy_mods.entries[idx];
+            if (mod) {
+                if (CString_t::Is_Same(mod_name, mod->Name(), true)) {
+                    return mod;
+                }
+            }
+        }
+
+        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        for (Index_t idx = 0, end = light_mods.count; idx < end; idx += 1) {
+            Mod_t* mod = light_mods.entries[idx];
+            if (mod) {
+                if (CString_t::Is_Same(mod_name, mod->Name(), true)) {
+                    return mod;
+                }
+            }
+        }
+
+        return nullptr;
+    }
+
     const char* Mod_t::Name()
     {
         return static_cast<const char*>(name);
+    }
+
+    Index_t Mod_t::Heavy_Index()
+    {
+        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        for (Index_t idx = 0, end = heavy_mods.count; idx < end; idx += 1) {
+            if (heavy_mods.entries[idx] == this) {
+                return idx;
+            }
+        }
+        return -1;
+    }
+
+    Index_t Mod_t::Light_Index()
+    {
+        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        for (Index_t idx = 0, end = light_mods.count; idx < end; idx += 1) {
+            if (light_mods.entries[idx] == this) {
+                return idx;
+            }
+        }
+        return -1;
     }
 
 }

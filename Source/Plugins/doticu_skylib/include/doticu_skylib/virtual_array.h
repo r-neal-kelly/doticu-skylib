@@ -47,3 +47,22 @@ namespace doticu_skylib { namespace Virtual {
     STATIC_ASSERT(sizeof(Array_t) == 0x20);
 
 }}
+
+namespace doticu_skylib { namespace Virtual {
+
+    template <typename Type>
+    inline Vector_t<Type> Array_t::Vector()
+    {
+        Vector_t<Type> vector;
+        for (size_t idx = 0; idx < count; idx += 1) {
+            Variable_t* variable = Point(idx);
+            if (variable && variable->data.ptr) {
+                vector.push_back(*reinterpret_cast<Type*>(&variable->data.ptr));
+            } else {
+                vector.push_back(0);
+            }
+        }
+        return vector;
+    }
+
+}}
