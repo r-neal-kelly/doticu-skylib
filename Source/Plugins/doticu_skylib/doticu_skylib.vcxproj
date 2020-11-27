@@ -76,6 +76,7 @@
     <ClInclude Include="include\doticu_skylib\reference.h" />
     <ClInclude Include="include\doticu_skylib\collections.h" />
     <ClInclude Include="include\doticu_skylib\relation.h" />
+    <ClInclude Include="include\doticu_skylib\script.h" />
     <ClInclude Include="include\doticu_skylib\skylib.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
@@ -113,6 +114,7 @@
     <ClCompile Include="src\doticu_skylib\race.cpp" />
     <ClCompile Include="src\doticu_skylib\reference.cpp" />
     <ClCompile Include="src\doticu_skylib\relation.cpp" />
+    <ClCompile Include="src\doticu_skylib\script.cpp" />
     <ClCompile Include="src\doticu_skylib\ui.cpp" />
     <ClCompile Include="src\doticu_skylib\utils.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_arguments.cpp" />

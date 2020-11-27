@@ -65,6 +65,11 @@ namespace doticu_skylib {
         public Event_Sink_t<void*>,
         public Animation_Graphs_t {
     public:
+        enum
+        {
+            kTypeID = kFormType_Reference,
+        };
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -76,9 +81,14 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        enum
+        class Form_Flags_e : public Enum_t<u32>
         {
-            kTypeID = kFormType_Reference,
+        public:
+            enum : u32
+            {
+                IS_PERSISTENT = 1 << 10,
+            };
+            using Enum_t::Enum_t;
         };
 
         static Reference_t* Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable);
@@ -102,6 +112,12 @@ namespace doticu_skylib {
         String_t    Any_Name();
         Location_t* Location();
         Cell_t*     Cell();
+
+        void Enable();
+        void Disable();
+        void Mark_For_Delete(Bool_t do_disable = true);
+        void Delete(Virtual::Callback_i* vcallback = nullptr);
+        //void Delete_Persistent(Virtual::Callback_i* vcallback = nullptr);
     };
 
 }

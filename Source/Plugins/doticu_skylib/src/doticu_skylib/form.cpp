@@ -288,4 +288,22 @@ namespace doticu_skylib {
         );
     }
 
+    Form_Factory_i* Form_Factory_i::Form_Factory(Form_Type_e form_type)
+    {
+        struct Form_Factories_t
+        {
+            Form_Factory_i* factories[138];
+        };
+
+        static auto factories = reinterpret_cast
+            <Form_Factories_t*>
+            (RelocationManager::s_baseAddr + Offset_e::FACTORIES);
+        static Bool_t is_created = *reinterpret_cast
+            <Bool_t*>
+            (RelocationManager::s_baseAddr + Offset_e::IS_CREATED);
+
+        SKYLIB_ASSERT(is_created);
+        return factories->factories[form_type];
+    }
+
 }

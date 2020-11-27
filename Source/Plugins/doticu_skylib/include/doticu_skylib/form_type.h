@@ -13,10 +13,13 @@ namespace doticu_skylib {
     public:
         enum : u8
         {
-            ACTOR_BASE          = 0x2B,
-            LEVELED_ACTOR_BASE  = 0x2C,
+            SCRIPT              = 0x13, // SCPT
 
-            ACTOR               = 0x3E,
+            ACTOR_BASE          = 0x2B, // NPC_
+            LEVELED_ACTOR_BASE  = 0x2C, // LVLN
+
+            REFERENCE           = 0X3D, // REFR
+            ACTOR               = 0x3E, // ACHR
         };
         using Enum_t::Enum_t;
     };

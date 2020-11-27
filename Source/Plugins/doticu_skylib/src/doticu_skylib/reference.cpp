@@ -11,7 +11,9 @@
 #include "doticu_skylib/mod.h"
 #include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
 
 namespace doticu_skylib {
@@ -80,5 +82,65 @@ namespace doticu_skylib {
     {
         return parent_cell;
     }
+
+    void Reference_t::Enable()
+    {
+        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+
+        if (Is_Valid()) {
+            Script_t* script = static_cast<Script_t*>(script_factory->Create());
+            SKYLIB_ASSERT(script);
+            script->Command("Enable");
+            script->Execute(this);
+            delete script;
+        }
+    }
+
+    void Reference_t::Disable()
+    {
+        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+
+        if (Is_Valid()) {
+            Script_t* script = static_cast<Script_t*>(script_factory->Create());
+            SKYLIB_ASSERT(script);
+            script->Command("Disable");
+            script->Execute(this);
+            delete script;
+        }
+    }
+
+    void Reference_t::Mark_For_Delete(Bool_t do_disable)
+    {
+        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+
+        if (Is_Valid()) {
+            Script_t* script = static_cast<Script_t*>(script_factory->Create());
+            SKYLIB_ASSERT(script);
+            if (do_disable) {
+                script->Command("Disable");
+                script->Execute(this);
+            }
+            script->Command("MarkForDelete");
+            script->Execute(this);
+            delete script;
+        }
+    }
+
+    void Reference_t::Delete(Virtual::Callback_i* vcallback)
+    {
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            "ObjectReference",
+            "Delete",
+            nullptr,
+            &vcallback
+        );
+    }
+
+    /*void Reference_t::Delete_Persistent(Virtual::Callback_i* vcallback)
+    {
+        form_flags &= ~Form_Flags_e::IS_PERSISTENT;
+        Delete(vcallback);
+    }*/
 
 }
