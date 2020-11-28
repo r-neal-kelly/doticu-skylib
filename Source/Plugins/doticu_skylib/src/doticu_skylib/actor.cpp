@@ -185,20 +185,11 @@ namespace doticu_skylib {
         return static_cast<Actor_Base_t*>(base_form);
     }
 
-    Actor_Base_t* Actor_t::Static_Actor_Base()
+    Actor_Base_t* Actor_t::Highest_Static_Actor_Base()
     {
         Actor_Base_t* actor_base = Actor_Base();
         if (actor_base && actor_base->Is_Valid()) {
-            if (actor_base->Is_Static()) {
-                return actor_base;
-            } else {
-                for (Actor_Base_t* it = actor_base->template_list; it != nullptr; it = it->template_list) {
-                    if (it && it->Is_Valid() && it->Is_Static()) {
-                        return it;
-                    }
-                }
-                return nullptr;
-            }
+            return actor_base->Highest_Static();
         } else {
             return nullptr;
         }

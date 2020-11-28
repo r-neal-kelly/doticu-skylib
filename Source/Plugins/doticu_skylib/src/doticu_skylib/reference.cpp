@@ -45,6 +45,16 @@ namespace doticu_skylib {
         return place_at_me(Virtual::Machine_t::Self(), 0, at, base, count, force_persist, initially_disable);
     }
 
+    Bool_t Reference_t::Is_Persistent()
+    {
+        return (form_flags & Form_Flags_e::IS_PERSISTENT) != 0;
+    }
+
+    Bool_t Reference_t::Is_Temporary()
+    {
+        return !Is_Persistent();
+    }
+
     const char* Reference_t::Name()
     {
         static auto get_name = reinterpret_cast
@@ -120,8 +130,10 @@ namespace doticu_skylib {
                 script->Command("Disable");
                 script->Execute(this);
             }
-            script->Command("MarkForDelete");
-            script->Execute(this);
+            if (Is_Persistent()) {
+                script->Command("MarkForDelete");
+                script->Execute(this);
+            }
             delete script;
         }
     }

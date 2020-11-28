@@ -174,6 +174,12 @@ namespace doticu_skylib {
         return nullptr;
     }
 
+    Mod_t* Mod_t::Skyrim()
+    {
+        static Mod_t* skyrim = From("Skyrim.esm");
+        return skyrim;
+    }
+
     const char* Mod_t::Name()
     {
         return static_cast<const char*>(name);

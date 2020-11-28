@@ -108,6 +108,9 @@ namespace doticu_skylib {
         Bool_t  pre_destroyed;  // 93
         u32     pad_94;         // 94
 
+        Bool_t Is_Persistent();
+        Bool_t Is_Temporary();
+
         const char* Name();
         String_t    Any_Name();
         Location_t* Location();

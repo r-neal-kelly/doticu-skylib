@@ -27,6 +27,7 @@ namespace doticu_skylib {
 
     typedef u8              Byte_t;
     typedef size_t          Word_t;
+    typedef u32             Half_Word_t;
     typedef s64             Index_t;
 
     typedef bool            Bool_t;

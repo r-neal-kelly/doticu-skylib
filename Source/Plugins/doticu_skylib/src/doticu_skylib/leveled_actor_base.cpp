@@ -52,19 +52,42 @@ namespace doticu_skylib {
     void Leveled_Actor_Base_t::Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator)
     {
         if (Is_Valid()) {
-            Vector_t<Leveled_Actor_Base_t*> leveled_bases;
-            leveled_bases.reserve(16);
-            leveled_bases.push_back(this);
-            for (Index_t idx = 0; idx < leveled_bases.size(); idx += 1) {
-                Leveled_Actor_Base_t* leveled_base = leveled_bases[idx];
-                for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
-                    Form_t* form = leveled_base->leveled_entries[idx].form;
-                    if (form && form->Is_Valid()) {
-                        if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
-                            leveled_bases.push_back(static_cast<Leveled_Actor_Base_t*>(form));
-                        } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
-                            if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
-                                return;
+            Vector_t<Leveled_Actor_Base_t*> leveled_bases_backup;
+            {
+                Stack_Array_t<Leveled_Actor_Base_t*, 256> leveled_bases;
+                leveled_bases.Push(this);
+                for (Index_t idx = 0; idx < leveled_bases.count; idx += 1) {
+                    Leveled_Actor_Base_t* leveled_base = leveled_bases[idx];
+                    for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
+                        Form_t* form = leveled_base->leveled_entries[idx].form;
+                        if (form && form->Is_Valid()) {
+                            if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
+                                if (leveled_bases.Has_Space()) {
+                                    leveled_bases.Push(static_cast<Leveled_Actor_Base_t*>(form));
+                                } else {
+                                    leveled_bases_backup.push_back(static_cast<Leveled_Actor_Base_t*>(form));
+                                }
+                            } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
+                                if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            {
+                for (Index_t idx = 0; idx < leveled_bases_backup.size(); idx += 1) {
+                    Leveled_Actor_Base_t* leveled_base = leveled_bases_backup[idx];
+                    for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
+                        Form_t* form = leveled_base->leveled_entries[idx].form;
+                        if (form && form->Is_Valid()) {
+                            if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
+                                leveled_bases_backup.push_back(static_cast<Leveled_Actor_Base_t*>(form));
+                            } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
+                                if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
+                                    return;
+                                }
                             }
                         }
                     }

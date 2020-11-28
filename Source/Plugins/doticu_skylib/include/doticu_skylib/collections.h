@@ -8,6 +8,54 @@
 
 namespace doticu_skylib {
 
+    template <typename Type_t, size_t static_capacity>
+    class Stack_Array_t
+    {
+    public:
+        const size_t    capacity                    = static_capacity;
+        size_t          count                       = 0;
+        Type_t          entries[static_capacity];
+
+        void Push(Type_t& entry)
+        {
+            SKYLIB_ASSERT(count < capacity);
+            entries[count] = entry;
+            count += 1;
+        }
+
+        void Push(Type_t&& entry)
+        {
+            SKYLIB_ASSERT(count < capacity);
+            entries[count] = std::move(entry);
+            count += 1;
+        }
+
+        void Push(const Type_t&& entry)
+        {
+            SKYLIB_ASSERT(count < capacity);
+            entries[count] = std::move(entry);
+            count += 1;
+        }
+
+        Type_t&& Pop()
+        {
+            SKYLIB_ASSERT(count > 0);
+            count -= 1;
+            return std::move(entries[count]);
+        }
+
+        Type_t& operator[](size_t index)
+        {
+            SKYLIB_ASSERT(index < count);
+            return entries[index];
+        }
+
+        Bool_t Has_Space()
+        {
+            return count < capacity;
+        }
+    };
+
     class XYZ_t
     {
         Float_t x; // 0

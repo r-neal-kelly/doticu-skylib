@@ -30,6 +30,7 @@ namespace doticu_skylib {
         static void             Log_Active_Light_Mods();
 
         static Mod_t* From(const char* mod_name);
+        static Mod_t* Skyrim();
 
     public:
         const char* Name();

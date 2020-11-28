@@ -7,6 +7,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/player.h"
 
 namespace doticu_skylib {
 
@@ -106,6 +107,16 @@ namespace doticu_skylib {
         #undef TAB
     }
 
+    Bool_t Actor_Base_t::Has_Template_FF000800()
+    {
+        for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+            if (it->form_id == 0xFF000800) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     Sex_e Actor_Base_t::Sex()
     {
         return Is_Female() ? Sex_e::FEMALE : Sex_e::MALE;
@@ -133,6 +144,57 @@ namespace doticu_skylib {
         for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
             results.push_back(it);
         }
+    }
+
+    Actor_Base_t* Actor_Base_t::Highest_Static()
+    {
+        if (Is_Static()) {
+            return this;
+        } else {
+            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+                if (it->Is_Static()) {
+                    return it;
+                }
+            }
+            return nullptr;
+        }
+    }
+
+    Actor_Base_t* Actor_Base_t::Root_Template()
+    {
+        if (template_list) {
+            Actor_Base_t* it = template_list;
+            for (; it->template_list != nullptr; it = it->template_list) {
+            }
+            return it;
+        } else {
+            return this;
+        }
+    }
+
+    Actor_Base_t* Actor_Base_t::Root_Base()
+    {
+        Actor_Base_t* base = this;
+        for (size_t recursions = 0; recursions < 8; recursions += 1) {
+            if (base && base->Is_Valid()) {
+                Actor_Base_t* root = base->Root_Template();
+                if (root && root->Is_Valid()) {
+                    if (root->Is_Dynamic()) {
+                        Actor_t* actor = static_cast<Actor_t*>
+                            (Reference_t::Create(base, 1, Player_t::Self(), false, false));
+                        base = actor->Actor_Base();
+                        actor->Mark_For_Delete();
+                    } else {
+                        return root;
+                    }
+                } else {
+                    return nullptr;
+                }
+            } else {
+                return nullptr;
+            }
+        }
+        return nullptr;
     }
 
     String_t Actor_Base_t::Any_Name()
