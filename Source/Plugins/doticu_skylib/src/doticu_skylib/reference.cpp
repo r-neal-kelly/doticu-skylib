@@ -93,6 +93,19 @@ namespace doticu_skylib {
         return parent_cell;
     }
 
+    void Reference_t::Select_In_Console()
+    {
+        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+
+        if (Is_Valid()) {
+            Script_t* script = static_cast<Script_t*>(script_factory->Create());
+            SKYLIB_ASSERT(script);
+            script->Command((std::string("prid ") + Form_ID_String().data).c_str());
+            script->Execute(this);
+            delete script;
+        }
+    }
+
     void Reference_t::Enable()
     {
         static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);

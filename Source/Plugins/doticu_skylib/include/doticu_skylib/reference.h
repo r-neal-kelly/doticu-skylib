@@ -116,6 +116,7 @@ namespace doticu_skylib {
         Location_t* Location();
         Cell_t*     Cell();
 
+        void Select_In_Console();
         void Enable();
         void Disable();
         void Mark_For_Delete(Bool_t do_disable = true);
