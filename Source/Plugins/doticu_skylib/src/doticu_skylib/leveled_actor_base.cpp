@@ -51,22 +51,60 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator)
     {
-        for (Index_t idx = 0, end = leveled_entry_count; idx < end; idx += 1) {
-            Leveled_Component_t::Entry_t& leveled_entry = leveled_entries[idx];
-            Form_t* form = leveled_entry.form;
-            if (form && form->Is_Valid()) {
-                if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
-                    static_cast<Leveled_Actor_Base_t*>(form)->Iterate_Actor_Bases(iterator);
-                } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
-                    Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(form);
-                    if (actor_base && actor_base->Is_Valid()) {
-                        if (iterator(actor_base) == Iterator_e::BREAK) {
-                            return;
+        if (Is_Valid()) {
+            Vector_t<Leveled_Actor_Base_t*> leveled_bases;
+            leveled_bases.reserve(16);
+            leveled_bases.push_back(this);
+            for (Index_t idx = 0; idx < leveled_bases.size(); idx += 1) {
+                Leveled_Actor_Base_t* leveled_base = leveled_bases[idx];
+                for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
+                    Form_t* form = leveled_base->leveled_entries[idx].form;
+                    if (form && form->Is_Valid()) {
+                        if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
+                            leveled_bases.push_back(static_cast<Leveled_Actor_Base_t*>(form));
+                        } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
+                            if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
+                                return;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    Bool_t Leveled_Actor_Base_t::Has_Actor_Base(Actor_Base_t* actor_base)
+    {
+        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        {
+        public:
+            Actor_Base_t* base_to_compare;
+            Bool_t result;
+
+            Iterator_t(Actor_Base_t* base_to_compare) :
+                base_to_compare(base_to_compare), result(false)
+            {
+            }
+
+            Iterator_e operator()(Actor_Base_t* actor_base)
+            {
+                if (actor_base == base_to_compare) {
+                    result = true;
+                    return Iterator_e::BREAK;
+                } else {
+                    return Iterator_e::CONTINUE;
+                }
+            }
+
+            Bool_t Result()
+            {
+                return result;
+            }
+        } iterator(actor_base);
+
+        Iterate_Actor_Bases(iterator);
+
+        return iterator.Result();
     }
 
     Vector_t<Actor_Base_t*> Leveled_Actor_Base_t::Actor_Bases()

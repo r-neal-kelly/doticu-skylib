@@ -34,6 +34,8 @@ namespace doticu_skylib {
     public:
         void                    Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator);
 
+        Bool_t                  Has_Actor_Base(Actor_Base_t* actor_base);
+
         Vector_t<Form_t*>       Forms();
         Vector_t<Actor_Base_t*> Actor_Bases();
         void                    Actor_Bases(Vector_t<Actor_Base_t*>& results);
