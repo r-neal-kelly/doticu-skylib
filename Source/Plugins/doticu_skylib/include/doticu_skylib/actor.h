@@ -11,6 +11,8 @@
 
 namespace doticu_skylib {
 
+    class Leveled_Actor_Base_t;
+
     class Magic_Target_t
     {
     public:
@@ -142,9 +144,14 @@ namespace doticu_skylib {
         static void                     Loaded_Actors(Vector_t<Loaded_Actor_t>& results);
         static void                     Log_Loaded_Actors();
 
+        static Actor_t* Create(Form_t* base, Bool_t do_persist, Bool_t do_uncombative);
+        static Actor_t* Create(Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
+        static Actor_t* Create(Leveled_Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
+
     public:
         virtual ~Actor_t(); // 00
 
+        Sex_e                   Sex();
         Race_t*                 Race();
         Actor_Base_t*           Actor_Base();
         Actor_Base_t*           Highest_Static_Actor_Base();

@@ -88,6 +88,8 @@ namespace doticu_skylib {
             FEMALE  = 1,
         };
         using Enum_t::Enum_t;
+
+        static const char* To_String(Sex_e sex_e);
     };
 
     class Actor_Base_t :

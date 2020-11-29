@@ -6,7 +6,9 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -169,6 +171,67 @@ namespace doticu_skylib {
         _MESSAGE("}");
 
         #undef TAB
+    }
+
+    Actor_t* Actor_t::Create(Form_t* base, Bool_t do_persist, Bool_t do_uncombative)
+    {
+        if (base && base->Is_Valid()) {
+            Actor_t* actor = static_cast<Actor_t*>
+                (Reference_t::Create(base, 1, Player_t::Self(), do_persist, false));
+            if (actor && actor->Is_Valid()) {
+                if (do_uncombative) {
+                    actor->Set_Actor_Value(Actor_Value_e::AGGRESSION, 0.0f);
+                }
+                return actor;
+            } else {
+                return nullptr;
+            }
+        } else {
+            return nullptr;
+        }
+    }
+
+    Actor_t* Actor_t::Create(Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    {
+        if (do_static) {
+            if (base && base->Is_Valid()) {
+                return Create(static_cast<Form_t*>(base->Root_Base()), do_persist, do_uncombative);
+            } else {
+                return nullptr;
+            }
+        } else {
+            return Create(static_cast<Form_t*>(base), do_persist, do_uncombative);
+        }
+    }
+
+    Actor_t* Actor_t::Create(Leveled_Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    {
+        if (do_static) {
+            if (base && base->Is_Valid()) {
+                Actor_t* actor = static_cast<Actor_t*>
+                    (Reference_t::Create(base, 1, Player_t::Self(), false, true));
+                if (actor && actor->Is_Valid()) {
+                    Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(actor->base_form);
+                    actor->Mark_For_Delete();
+                    return Create(actor_base, do_static, do_persist, do_uncombative);
+                } else {
+                    return nullptr;
+                }
+            } else {
+                return nullptr;
+            }
+        } else {
+            return Create(static_cast<Form_t*>(base), do_persist, do_uncombative);
+        }
+    }
+
+    Sex_e Actor_t::Sex()
+    {
+        if (base_form) {
+            return static_cast<Actor_Base_t*>(base_form)->Sex();
+        } else {
+            return Sex_e::NONE;
+        }
     }
 
     Race_t* Actor_t::Race()
