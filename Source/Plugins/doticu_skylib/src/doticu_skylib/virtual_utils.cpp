@@ -2,9 +2,11 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/virtual_utils.h"
+#include "doticu_skylib/collections.h"
+
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_utils.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -17,7 +19,7 @@ namespace doticu_skylib { namespace Virtual {
                 seconds(seconds)
             {
             }
-            Bool_t operator()(Array_t* arguments)
+            Bool_t operator()(Buffer_t<Variable_t>* arguments)
             {
                 arguments->Resize(1);
                 arguments->At(0)->Float(seconds);
@@ -41,7 +43,7 @@ namespace doticu_skylib { namespace Virtual {
                 seconds(seconds)
             {
             }
-            Bool_t operator()(Array_t* arguments)
+            Bool_t operator()(Buffer_t<Variable_t>* arguments)
             {
                 arguments->Resize(1);
                 arguments->At(0)->Float(seconds);

@@ -2,7 +2,9 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/cstring.h"
+
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/relation.h"
 
 namespace doticu_skylib {
@@ -11,7 +13,7 @@ namespace doticu_skylib {
     {
         static auto get = reinterpret_cast
             <u8(*)(Form_t*, Form_t*)>
-            (RelocationManager::s_baseAddr + Offset_e::GET);
+            (Game_t::Base_Address() + Offset_e::GET);
         return get(form_a, form_b);
     }
 
@@ -19,7 +21,7 @@ namespace doticu_skylib {
     {
         static auto set = reinterpret_cast
             <void(*)(Form_t*, Form_t*, u8)>
-            (RelocationManager::s_baseAddr + Offset_e::SET);
+            (Game_t::Base_Address() + Offset_e::SET);
         if (relation > -1) {
             set(form_a, form_b, relation);
         }

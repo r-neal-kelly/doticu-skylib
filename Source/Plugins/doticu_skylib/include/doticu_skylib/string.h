@@ -5,12 +5,15 @@
 #pragma once
 
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/enum.h"
 
 namespace doticu_skylib {
 
-    class String_t : public BSFixedString {
+    class Static_String_t
+    {
     public:
-        class Offset_e : Enum_t<Word_t> {
+        class Offset_e : Enum_t<Word_t>
+        {
         public:
             enum
             {
@@ -22,19 +25,37 @@ namespace doticu_skylib {
         };
 
     public:
-        String_t();
-        String_t(const char* string);
-        String_t(std::string&& string);
+        const char* data;
 
-        void Destroy();
+        Static_String_t();
+        Static_String_t(const char* string);
+        Static_String_t(std::string&& string);
+
+        void        Destroy();
 
         const char* Value();
-        void Value(const char* value);
+        void        Value(const char* value);
 
-        Bool_t operator==(const String_t& other);
-        Bool_t operator!=(const String_t& other);
-        Bool_t operator!();
+        Bool_t      operator==(const Static_String_t& other);
+        Bool_t      operator!=(const Static_String_t& other);
+        Bool_t      operator!();
+
         operator Bool_t();
+        operator Bool_t() const;
+        operator const char*();
     };
+    STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
+
+    class Dynamic_String_t
+    {
+    public:
+        char*   data;       // 0
+        u16     length;     // 8
+        u16     capacity;   // A
+        u32     pad_0C;     // C
+    };
+    STATIC_ASSERT(sizeof(Dynamic_String_t) == 0x10);
+
+    using String_t = Static_String_t;
 
 }

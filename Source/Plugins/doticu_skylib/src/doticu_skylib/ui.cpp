@@ -3,7 +3,9 @@
 */
 
 #include "doticu_skylib/ui.h"
+
 #include "doticu_skylib/virtual_arguments.h"
+#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.h"
 
@@ -22,7 +24,7 @@ namespace doticu_skylib {
                 note(note)
             {
             }
-            Bool_t operator()(Array_t* arguments)
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* arguments)
             {
                 arguments->Resize(1);
                 arguments->At(0)->String(note);
@@ -46,7 +48,7 @@ namespace doticu_skylib {
                 message(message)
             {
             }
-            Bool_t operator()(Array_t* arguments)
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* arguments)
             {
                 arguments->Resize(1);
                 arguments->At(0)->String(message);
@@ -66,7 +68,7 @@ namespace doticu_skylib {
     {
         MenuManager* menu_manager = MenuManager::GetSingleton();
         if (menu_manager) {
-            return menu_manager->IsMenuOpen(&menu);
+            return menu_manager->IsMenuOpen(reinterpret_cast<BSFixedString*>(&menu));
         } else {
             return false;
         }

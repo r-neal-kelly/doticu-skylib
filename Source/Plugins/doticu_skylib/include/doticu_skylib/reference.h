@@ -4,60 +4,17 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/utils.h"
 #include "doticu_skylib/collections.h"
+
 #include "doticu_skylib/form.h"
-#include "doticu_skylib/string.h"
-#include "doticu_skylib/xlist.h"
+#include "doticu_skylib/reference_count.h"
+#include "doticu_skylib/unknown.h"
+#include "doticu_skylib/extra_list.h"
 
 namespace doticu_skylib {
 
     class Cell_t;
-    class Form_t;
     class Location_t;
-
-    class Reference_Count_t {
-    public:
-        virtual ~Reference_Count_t();
-
-        volatile u32    reference_count;    // 08
-        u32             pad_0C;             // 0C
-
-        Int_t Reference_Count();
-        Int_t Increment_Reference();
-        Int_t Decrement_Reference();
-    };
-    STATIC_ASSERT(sizeof(Reference_Count_t) == 0x10);
-
-    class Animation_Graphs_t {
-    public:
-        virtual ~Animation_Graphs_t();
-    };
-    STATIC_ASSERT(sizeof(Animation_Graphs_t) == 0x8);
-
-    class Reference_t;
-    class Loaded_Reference_t {
-    public:
-        Reference_t*    reference;
-        Cell_t*         cell;
-
-        Loaded_Reference_t() :
-            reference(nullptr), cell(nullptr)
-        {
-        }
-
-        Loaded_Reference_t(Reference_t* reference, Cell_t* cell) :
-            reference(reference), cell(cell)
-        {
-        }
-
-        Loaded_Reference_t(const Loaded_Reference_t& other) :
-            reference(other.reference), cell(other.cell)
-        {
-        }
-    };
-    STATIC_ASSERT(sizeof(Loaded_Reference_t) == 0x10);
 
     class Reference_t :
         public Form_t,
@@ -67,7 +24,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            kTypeID = kFormType_Reference,
+            FORM_TYPE   = Form_Type_e::REFERENCE,
+            kTypeID     = FORM_TYPE,
         };
 
         class Offset_e : public Enum_t<Word_t>
@@ -97,11 +55,11 @@ namespace doticu_skylib {
         virtual ~Reference_t(); // 00
 
         Form_t* base_form;      // 40
-        XYZ_t   rotation;       // 48
-        XYZ_t   position;       // 54
+        f32_xyz rotation;       // 48
+        f32_xyz position;       // 54
         Cell_t* parent_cell;    // 60
         void*   unk_68;         // 68
-        XList_t xlist;          // 70
+        List_x  xlist;          // 70
         u64     unk_88;         // 88
         u16     scale;          // 90
         s8      unk_92;         // 92
@@ -120,8 +78,6 @@ namespace doticu_skylib {
         void Enable();
         void Disable();
         void Mark_For_Delete(Bool_t do_disable = true);
-        void Delete(Virtual::Callback_i* vcallback = nullptr);
-        //void Delete_Persistent(Virtual::Callback_i* vcallback = nullptr);
     };
 
 }

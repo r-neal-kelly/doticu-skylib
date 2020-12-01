@@ -4,10 +4,9 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/enum.h"
+
 #include "doticu_skylib/form.h"
-#include "doticu_skylib/collections.h"
-#include "doticu_skylib/xlist.h"
 
 namespace doticu_skylib {
 

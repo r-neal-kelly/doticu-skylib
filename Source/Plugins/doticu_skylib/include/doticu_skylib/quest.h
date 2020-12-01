@@ -4,14 +4,23 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/collections.h"
+#include "doticu_skylib/interface.h"
+
+#include "doticu_skylib/component_name.h"
+
 #include "doticu_skylib/form.h"
-#include "doticu_skylib/virtual.h"
 
 namespace doticu_skylib {
 
-    class Story_Form_t : public Form_t { // BGSStoryManagerTreeForm, 
+    namespace Virtual {
+
+        class Callback_i;
+
+    }
+
+    class Story_Form_t : public Form_t // BGSStoryManagerTreeForm, 
+    {
     public:
         virtual ~Story_Form_t(); // 00
 
@@ -20,10 +29,15 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Story_Form_t) == 0x28);
 
-    class Quest_t : public Story_Form_t, public Name_Component_t {
+    class Quest_t :
+        public Story_Form_t,
+        public Name_c
+    {
     public:
-        enum {
-            kTypeID = kFormType_Quest,
+        enum
+        {
+            FORM_TYPE   = Form_Type_e::QUEST,
+            kTypeID     = FORM_TYPE,
         };
 
         static void Start(const Vector_t<Quest_t*> quests, Callback_i<>* ucallback);

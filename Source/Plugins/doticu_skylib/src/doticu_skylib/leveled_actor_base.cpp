@@ -2,16 +2,18 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
-#include "doticu_skylib/leveled_actor_base.h"
+#include "doticu_skylib/cstring.h"
+
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/race.h"
 
 namespace doticu_skylib {
 
     size_t Leveled_Actor_Base_t::Leveled_Actor_Base_Count()
     {
-        return Game_t::Data()->arrLVLN.count;
+        return Game_t::Self()->arrLVLN.count;
     }
 
     Vector_t<Leveled_Actor_Base_t*> Leveled_Actor_Base_t::Leveled_Actor_Bases()
@@ -24,7 +26,7 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results)
     {
-        auto& leveled_actor_bases = Game_t::Data()->arrLVLN;
+        auto& leveled_actor_bases = Game_t::Self()->arrLVLN;
         for (Index_t idx = 0, end = leveled_actor_bases.count; idx < end; idx += 1) {
             Leveled_Actor_Base_t* leveled_actor_base =
                 reinterpret_cast<Leveled_Actor_Base_t*>(leveled_actor_bases.entries[idx]);

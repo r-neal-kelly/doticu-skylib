@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/enum.h"
 
 namespace doticu_skylib {
 
@@ -13,13 +13,33 @@ namespace doticu_skylib {
     public:
         enum : u8
         {
-            SCRIPT              = 0x13, // SCPT
+            FORM                    = 0x00,
 
-            ACTOR_BASE          = 0x2B, // NPC_
-            LEVELED_ACTOR_BASE  = 0x2C, // LVLN
+            KEYWORD                 = 0x04, // KYWD
+            LOCATION_REFERENCE_TYPE = 0X05, // LCRT
 
-            REFERENCE           = 0X3D, // REFR
-            ACTOR               = 0x3E, // ACHR
+            GLOBAL                  = 0x09, // GLOB
+
+            RACE                    = 0x0E, // RACE
+
+            SCRIPT                  = 0x13, // SCPT
+
+            ACTOR_BASE              = 0x2B, // NPC_
+            LEVELED_ACTOR_BASE      = 0x2C, // LVLN
+
+            CELL                    = 0x3C, // CELL
+            REFERENCE               = 0x3D, // REFR
+            ACTOR                   = 0x3E, // ACHR
+
+            WORLDSPACE              = 0x47, // WRLD
+
+            QUEST                   = 0x4D, // QUST
+
+            LOCATION                = 0x68, // LCTN
+
+            ALIAS_BASE              = 0x8B,
+            ALIAS_REFERENCE         = 0x8C,
+            ALIAS_LOCATION          = 0x8D,
         };
         using Enum_t::Enum_t;
     };

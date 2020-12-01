@@ -2,108 +2,17 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/interface.h"
+
 #include "doticu_skylib/actor.h"
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
-#include "doticu_skylib/game.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
-
-    /* Loaded_Actor_t */
-
-    Loaded_Actor_t::Loaded_Actor_t() :
-        actor(nullptr), cell(nullptr)
-    {
-    }
-
-    Loaded_Actor_t::Loaded_Actor_t(Actor_t* actor, Cell_t* cell) :
-        actor(actor), cell(cell)
-    {
-        if (!actor || !cell) {
-            actor = nullptr;
-            cell = nullptr;
-        }
-    }
-
-    Loaded_Actor_t::Loaded_Actor_t(Form_ID_t actor_form_id, Form_ID_t cell_form_id) :
-        Loaded_Actor_t(static_cast<Actor_t*>(Game_t::Form(actor_form_id)),
-                       static_cast<Cell_t*>(Game_t::Form(cell_form_id)))
-    {
-    }
-
-    Loaded_Actor_t::Loaded_Actor_t(const Loaded_Actor_t& other) :
-        Loaded_Actor_t(other.actor, other.cell)
-    {
-    }
-
-    Loaded_Actor_t::Loaded_Actor_t(Loaded_Actor_t&& other) noexcept :
-        actor(std::exchange(other.actor, nullptr)),
-        cell(std::exchange(other.cell, nullptr))
-    {
-        if (!actor || !cell) {
-            actor = nullptr;
-            cell = nullptr;
-        }
-    }
-
-    Loaded_Actor_t::~Loaded_Actor_t()
-    {
-        actor = nullptr;
-        cell = nullptr;
-    }
-
-    Loaded_Actor_t& Loaded_Actor_t::operator=(const Loaded_Actor_t& other)
-    {
-        if (this != &other) {
-            if (other.actor && other.cell) {
-                actor = other.actor;
-                cell = other.cell;
-            } else {
-                actor = nullptr;
-                cell = nullptr;
-            }
-        }
-        return *this;
-    }
-
-    Loaded_Actor_t& Loaded_Actor_t::operator=(Loaded_Actor_t&& other) noexcept
-    {
-        if (this != &other) {
-            actor = std::exchange(other.actor, nullptr);
-            cell = std::exchange(other.cell, nullptr);
-            if (!actor || !cell) {
-                actor = nullptr;
-                cell = nullptr;
-            }
-        }
-        return *this;
-    }
-
-    Bool_t Loaded_Actor_t::operator==(const Loaded_Actor_t& other)
-    {
-        return actor == other.actor && cell == other.cell;
-    }
-
-    Bool_t Loaded_Actor_t::operator!=(const Loaded_Actor_t& other)
-    {
-        return !operator==(other);
-    }
-
-    Bool_t Loaded_Actor_t::Is_Valid()
-    {
-        return actor && cell && actor->Is_Valid() && cell->Is_Valid();
-    }
-
-    Loaded_Actor_t::operator Bool_t()
-    {
-        return Is_Valid();
-    }
-
-    /* Actor_t */
 
     Vector_t<Loaded_Actor_t> Actor_t::Loaded_Actors()
     {
@@ -129,7 +38,7 @@ namespace doticu_skylib {
                 }
                 void operator()(Reference_t* reference)
                 {
-                    if (reference->form_type == kFormType_Character) {
+                    if (reference->form_type == Form_Type_e::ACTOR) {
                         Loaded_Actor_t loaded_actor(static_cast<Actor_t*>(reference), cell);
                         if (loaded_actor.Is_Valid() && !results.Has(loaded_actor)) {
                             results.push_back(loaded_actor);
@@ -173,9 +82,11 @@ namespace doticu_skylib {
         #undef TAB
     }
 
-    Actor_t* Actor_t::Create(Form_t* base, Bool_t do_persist, Bool_t do_uncombative)
+    Maybe_p<Actor_t> Actor_t::Create(Some_p<Form_t> base, Bool_t do_persist, Bool_t do_uncombative)
     {
-        if (base && base->Is_Valid()) {
+        SKYLIB_ASSERT_SOME_P(base);
+
+        if (base->Is_Valid()) {
             Actor_t* actor = static_cast<Actor_t*>
                 (Reference_t::Create(base, 1, Player_t::Self(), do_persist, false));
             if (actor && actor->Is_Valid()) {
@@ -191,10 +102,12 @@ namespace doticu_skylib {
         }
     }
 
-    Actor_t* Actor_t::Create(Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    Maybe_p<Actor_t> Actor_t::Create(Some_p<Actor_Base_t> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
     {
+        SKYLIB_ASSERT_SOME_P(base);
+
         if (do_static) {
-            if (base && base->Is_Valid()) {
+            if (base->Is_Valid()) {
                 return Create(static_cast<Form_t*>(base->Root_Base()), do_persist, do_uncombative);
             } else {
                 return nullptr;
@@ -204,10 +117,12 @@ namespace doticu_skylib {
         }
     }
 
-    Actor_t* Actor_t::Create(Leveled_Actor_Base_t* base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    Maybe_p<Actor_t> Actor_t::Create(Some_p<Leveled_Actor_Base_t> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
     {
+        SKYLIB_ASSERT_SOME_P(base);
+
         if (do_static) {
-            if (base && base->Is_Valid()) {
+            if (base->Is_Valid()) {
                 Actor_t* actor = static_cast<Actor_t*>
                     (Reference_t::Create(base, 1, Player_t::Self(), false, true));
                 if (actor && actor->Is_Valid()) {

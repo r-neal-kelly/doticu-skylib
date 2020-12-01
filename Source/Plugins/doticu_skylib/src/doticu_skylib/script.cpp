@@ -2,7 +2,9 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/cstring.h"
+
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/script.h"
 
 namespace doticu_skylib {
@@ -28,7 +30,7 @@ namespace doticu_skylib {
 
         static auto execute = reinterpret_cast
             <void(*)(Script_t*, Compiler_t*, Compiler_e, Reference_t*)>
-            (RelocationManager::s_baseAddr + Offset_e::EXECUTE);
+            (Game_t::Base_Address() + Offset_e::EXECUTE);
 
         Compiler_t compiler;
         execute(this, &compiler, compiler_e, reference);

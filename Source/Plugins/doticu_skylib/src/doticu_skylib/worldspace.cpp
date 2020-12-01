@@ -2,22 +2,15 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
-#include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 
-    Form_ID_t Worldspace_Form_ID_Maps_t::Array_t::At(Index_t index)
-    {
-        SKYLIB_ASSERT(index > -1 && index < count);
-        return *(&head + index);
-    }
-
     Vector_t<Worldspace_t*> Worldspace_t::Worldspaces()
     {
-        auto worldspaces = reinterpret_cast<tArray<Worldspace_t*>&>(Game_t::Data()->arrWRLD);
+        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
 
         Vector_t<Worldspace_t*> results;
         results.reserve(worldspaces.count);
@@ -37,7 +30,7 @@ namespace doticu_skylib {
         {
             _MESSAGE(TAB "xy_to_cell capacity: %u", xy_to_cell.capacity);
             for (Index_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
-                Hash_Map_t<Cell_XY_t, Cell_t*>::Entry_t& entry = xy_to_cell.entries[idx];
+                Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = xy_to_cell.entries[idx];
                 if (entry.chain) {
                     if (entry.tuple.value) {
                         _MESSAGE(TAB TAB "x: %5.i, y: %5.i, cell: %8.8X, %s",

@@ -5,44 +5,47 @@
 #pragma once
 
 #include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/string.h"
+
+#include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_array.h"
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_function.h"
+#include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
 
     #define DEFINE_CLASS_NAME(NAME_)                \
-    M                                               \
+    SKYLIB_M                                        \
         using String_t = doticu_skylib::String_t;   \
                                                     \
         static const String_t class_name = NAME_;   \
         SKYLIB_ASSERT(class_name);                  \
         return class_name;                          \
-    W
+    SKYLIB_W
 
     #define DEFINE_CLASS()                                              \
-    M                                                                   \
+    SKYLIB_M                                                            \
         using Class_t = doticu_skylib::Virtual::Class_t;                \
                                                                         \
         static Class_t* class_ = Class_t::Fetch(Class_Name(), false);   \
         SKYLIB_ASSERT(class_);                                          \
         return class_;                                                  \
-    W
+    SKYLIB_W
 
     #define DEFINE_OBJECT()                                             \
-    M                                                                   \
+    SKYLIB_M                                                            \
         using Object_t = doticu_skylib::Virtual::Object_t;              \
                                                                         \
         Object_t* object = Object_t::Fetch(this, Class_Name(), true);   \
         SKYLIB_ASSERT(object);                                          \
         return object;                                                  \
-    W
+    SKYLIB_W
 
     #define DEFINE_TYPED_VARIABLE(TYPE_, NAME_)                     \
-    M                                                               \
+    SKYLIB_M                                                        \
         using namespace doticu_skylib;                              \
         using namespace doticu_skylib::Virtual;                     \
                                                                     \
@@ -52,7 +55,7 @@ namespace doticu_skylib { namespace Virtual {
         TYPE_* var = static_cast<TYPE_*>(Object()->Variable(name)); \
         SKYLIB_ASSERT(var);                                         \
         return var;                                                 \
-    W
+    SKYLIB_W
 
     #define DEFINE_VARIABLE(NAME_)              DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
     #define DEFINE_BOOL_VARIABLE(NAME_)         DEFINE_TYPED_VARIABLE(Bool_Variable_t, NAME_)
@@ -61,7 +64,7 @@ namespace doticu_skylib { namespace Virtual {
     #define DEFINE_ARRAY_VARIABLE(TYPE_, NAME_) DEFINE_TYPED_VARIABLE(Array_Variable_t<TYPE_>, NAME_)
 
     #define DEFINE_TYPED_PROPERTY(TYPE_, NAME_)                         \
-    M                                                                   \
+    SKYLIB_M                                                            \
         using String_t = doticu_skylib::String_t;                       \
         using TYPE_ = doticu_skylib::Virtual::TYPE_;                    \
                                                                         \
@@ -71,34 +74,34 @@ namespace doticu_skylib { namespace Virtual {
         TYPE_* prop = static_cast<TYPE_*>(Object()->Property(name));    \
         SKYLIB_ASSERT(prop);                                            \
         return prop;                                                    \
-    W
+    SKYLIB_W
 
     #define DEFINE_PROPERTY(NAME_)          DEFINE_TYPED_PROPERTY(Variable_t, NAME_)
     #define DEFINE_STRING_PROPERTY(NAME_)   DEFINE_TYPED_PROPERTY(String_Property_t, NAME_)
 
-    #define BIND_METHOD(VM_, STR_CLASS_, TYPE_, STR_FUNC_, ARG_NUM_, RETURN_, METHOD_, ...)     \
-    M                                                                                           \
+    #define BIND_METHOD(VM_, STR_CLASS_, BASE_, STR_FUNC_, ARG_NUM_, RETURN_, METHOD_, ...)     \
+    SKYLIB_M                                                                                    \
         namespace Virtual = doticu_skylib::Virtual;                                             \
                                                                                                 \
-        auto METHOD_ = Virtual::Forward<RETURN_, TYPE_, __VA_ARGS__, &TYPE_::METHOD_>();        \
+        auto METHOD_ = Virtual::Forward<RETURN_, BASE_, __VA_ARGS__, &BASE_::METHOD_>();        \
         VM_->Bind_Function(                                                                     \
-            new NativeFunction##ARG_NUM_ <TYPE_, RETURN_, __VA_ARGS__>(                         \
+            new NativeFunction##ARG_NUM_ <BASE_, RETURN_, __VA_ARGS__>(                         \
                 STR_FUNC_, STR_CLASS_, METHOD_, reinterpret_cast<Virtual::Registry_t*>(VM_)     \
             )                                                                                   \
         );                                                                                      \
-    W
+    SKYLIB_W
 
-    #define BIND_LATENT_METHOD(VM_, STR_CLASS_, TYPE_, STR_FUNC_, ARG_NUM_, RETURN_, METHOD_, ...)      \
-    M                                                                                                   \
+    #define BIND_LATENT_METHOD(VM_, STR_CLASS_, BASE_, STR_FUNC_, ARG_NUM_, RETURN_, METHOD_, ...)      \
+    SKYLIB_M                                                                                            \
         namespace Virtual = doticu_skylib::Virtual;                                                     \
                                                                                                         \
-        auto METHOD_ = Virtual::Forward_Latent<TYPE_, __VA_ARGS__, &TYPE_::METHOD_>();                  \
+        auto METHOD_ = Virtual::Forward_Latent<BASE_, __VA_ARGS__, &BASE_::METHOD_>();                  \
         VM_->Bind_Function(                                                                             \
-            new LatentNativeFunction##ARG_NUM_ <TYPE_, RETURN_, __VA_ARGS__>(                           \
+            new LatentNativeFunction##ARG_NUM_ <BASE_, RETURN_, __VA_ARGS__>(                           \
                 STR_FUNC_, STR_CLASS_, METHOD_, reinterpret_cast<Virtual::Registry_t*>(VM_)             \
             )                                                                                           \
         );                                                                                              \
-    W
+    SKYLIB_W
 
     #define BIND_GLOBAL
 

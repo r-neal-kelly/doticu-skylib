@@ -4,7 +4,10 @@
 
 #pragma once
 
+#include "doticu_skylib/string.h"
+
 #include "doticu_skylib/form_type.h"
+
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 #include "doticu_skylib/virtual_variable.h"

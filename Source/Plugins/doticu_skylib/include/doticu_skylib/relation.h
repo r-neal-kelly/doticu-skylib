@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/enum.h"
 
 namespace doticu_skylib {
 
@@ -13,7 +13,7 @@ namespace doticu_skylib {
     class Relation_e : public Enum_t<s8>
     {
     public:
-        enum
+        enum : s8
         {
             NONE            = -1,
             LOVER           = 0,
@@ -27,6 +27,16 @@ namespace doticu_skylib {
             ARCHNEMESIS     = 8,
         };
 
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum
+            {
+                GET = 0x00345ED0, // 23624
+                SET = 0x00345B80, // 23623
+            };
+        };
+
         static constexpr const char* NONE_STRING            = "None";
         static constexpr const char* LOVER_STRING           = "Lover";
         static constexpr const char* ALLY_STRING            = "Ally";
@@ -38,23 +48,13 @@ namespace doticu_skylib {
         static constexpr const char* ENEMY_STRING           = "Enemy";
         static constexpr const char* ARCHNEMESIS_STRING     = "Archnemesis";
 
-        class Offset_e : public Enum_t<Word_t>
-        {
-        public:
-            enum
-            {
-                GET = 0x00345ED0, // 23624
-                SET = 0x00345B80, // 23623
-            };
-        };
+    public:
+        using Enum_t::Enum_t;
 
         static Relation_e   Between(Form_t* form_a, Form_t* form_b);
         static void         Between(Form_t* form_a, Form_t* form_b, Relation_e relation);
         static const char*  To_String(Relation_e relation);
         static Relation_e   From_String(const char* relation);
-
-    public:
-        using Enum_t::Enum_t;
     };
 
 }

@@ -4,23 +4,28 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/form.h"
-#include "doticu_skylib/xlist.h"
-#include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/interface.h"
+
+#include "doticu_skylib/component_leveled.h"
+#include "doticu_skylib/component_model.h"
+
+#include "doticu_skylib/animated_object.h"
 
 namespace doticu_skylib {
 
+    class Actor_Base_t;
+
     class Leveled_Actor_Base_t :
         public Animated_Object_t,
-        public Leveled_Component_t,
-        public Model_Alternate_Textures_Component_t
+        public Leveled_c,
+        public Model_Alternate_c
     {
     public:
         enum
         {
-            kTypeID = kFormType_LeveledCharacter,
+            FORM_TYPE   = Form_Type_e::LEVELED_ACTOR_BASE,
+            kTypeID     = FORM_TYPE,
         };
 
         static size_t                           Leveled_Actor_Base_Count();

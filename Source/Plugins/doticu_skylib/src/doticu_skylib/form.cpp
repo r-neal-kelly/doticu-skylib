@@ -2,38 +2,16 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "skse64/GameData.h"
+#include "doticu_skylib/cstring.h"
 
-#include "doticu_skylib/utils.h"
 #include "doticu_skylib/form.h"
-#include "doticu_skylib/game.h"
 #include "doticu_skylib/mod.h"
+
 #include "doticu_skylib/virtual_arguments.h"
-#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib {
-
-    Bool_t Actor_Base_Component_t::Is_Male()
-    {
-        return !Is_Female();
-    }
-
-    Bool_t Actor_Base_Component_t::Is_Female()
-    {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_FEMALE) != 0;
-    }
-
-    Bool_t Actor_Base_Component_t::Is_Unique()
-    {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_UNIQUE) != 0;
-    }
-
-    Bool_t Actor_Base_Component_t::Is_Generic()
-    {
-        return !Is_Unique();
-    }
 
     Bool_t Form_t::Is_Static(Form_ID_t form_id)
     {
@@ -122,8 +100,8 @@ namespace doticu_skylib {
 
     Mod_t* Form_t::Indexed_Mod()
     {
-        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
         
         if (Is_Static()) {
             if (Is_Light()) {
@@ -142,8 +120,8 @@ namespace doticu_skylib {
 
     Bool_t Form_t::Has_Indexed_Mod(const char* mod_name)
     {
-        tArray<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-        tArray<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+        Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+        Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
 
         if (mod_name && mod_name[0]) {
             if (Is_Static()) {
@@ -168,9 +146,9 @@ namespace doticu_skylib {
     Vector_t<Mod_t*> Form_t::Mods()
     {
         Vector_t<Mod_t*> mods;
-        if (form_files) {
-            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
-                Mod_t* mod = form_files->entries[idx];
+        if (form_mods) {
+            for (Index_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
+                Mod_t* mod = form_mods->entries[idx];
                 if (mod) {
                     mods.push_back(mod);
                 }
@@ -215,10 +193,10 @@ namespace doticu_skylib {
 
     void Form_t::Mod_Names(Vector_t<String_t>& results)
     {
-        if (form_files) {
-            results.reserve(form_files->count);
-            for (Index_t idx = 0, end = form_files->count; idx < end; idx += 1) {
-                Mod_t* mod = form_files->entries[idx];
+        if (form_mods) {
+            results.reserve(form_mods->count);
+            for (Index_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
+                Mod_t* mod = form_mods->entries[idx];
                 if (mod) {
                     results.push_back(mod->Name());
                 }
@@ -235,7 +213,7 @@ namespace doticu_skylib {
                 event_name(event_name), callback_name(callback_name)
             {
             }
-            Bool_t operator()(Array_t* args)
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
             {
                 args->Resize(2);
                 args->At(0)->String(event_name);
@@ -260,7 +238,7 @@ namespace doticu_skylib {
                 event_name(event_name)
             {
             }
-            Bool_t operator()(Array_t* args)
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
             {
                 args->Resize(1);
                 args->At(0)->String(event_name);
@@ -286,24 +264,6 @@ namespace doticu_skylib {
             nullptr,
             &vcallback
         );
-    }
-
-    Form_Factory_i* Form_Factory_i::Form_Factory(Form_Type_e form_type)
-    {
-        struct Form_Factories_t
-        {
-            Form_Factory_i* factories[138];
-        };
-
-        static auto factories = reinterpret_cast
-            <Form_Factories_t*>
-            (RelocationManager::s_baseAddr + Offset_e::FACTORIES);
-        static Bool_t is_created = *reinterpret_cast
-            <Bool_t*>
-            (RelocationManager::s_baseAddr + Offset_e::IS_CREATED);
-
-        SKYLIB_ASSERT(is_created);
-        return factories->factories[form_type];
     }
 
 }

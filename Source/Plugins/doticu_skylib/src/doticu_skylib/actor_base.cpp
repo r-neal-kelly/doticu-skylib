@@ -2,27 +2,20 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/interface.h"
+
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/player.h"
+#include "doticu_skylib/reference.h"
 
 namespace doticu_skylib {
 
-    const char* Sex_e::To_String(Sex_e sex_e)
-    {
-        switch (sex_e) {
-            case (Sex_e::MALE):     return "Male";
-            case (Sex_e::FEMALE):   return "Female";
-            default:                return "None";
-        }
-    }
-
     size_t Actor_Base_t::Actor_Base_Count()
     {
-        return Game_t::Data()->npcs.count;
+        return Game_t::Self()->npcs.count;
     }
 
     Vector_t<Actor_Base_t*> Actor_Base_t::Actor_Bases()
@@ -35,7 +28,7 @@ namespace doticu_skylib {
 
     void Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
-        auto& actor_bases = Game_t::Data()->npcs;
+        auto& actor_bases = Game_t::Self()->npcs;
         for (Index_t idx = 0, end = actor_bases.count; idx < end; idx += 1) {
             Actor_Base_t* actor_base = reinterpret_cast<Actor_Base_t*>(actor_bases.entries[idx]);
             if (actor_base) {

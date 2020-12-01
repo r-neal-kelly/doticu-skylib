@@ -13,7 +13,7 @@
 namespace doticu_skylib { namespace Virtual {
 
     typedef VMClassRegistry     Registry_t;
-    typedef u32                 Stack_ID_t;
+    typedef UInt32              Stack_ID_t;
     typedef u64                 Raw_Handle_t;
 
     class Array_t;

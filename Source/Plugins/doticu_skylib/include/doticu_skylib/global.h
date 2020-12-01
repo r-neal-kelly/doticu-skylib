@@ -4,16 +4,22 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/string.h"
+
 #include "doticu_skylib/form.h"
 
 namespace doticu_skylib {
 
-    enum class Global_Type_e : char
+    class Global_Type_e : Enum_t<char>
     {
-        FLOAT   = 'f',
-        SHORT   = 's',
-        LONG    = 'l',
+    public:
+        enum : char
+        {
+            FLOAT   = 'f',
+            SHORT   = 's',
+            LONG    = 'l',
+        };
+        using Enum_t::Enum_t;
     };
 
     class Global_t : public Form_t
@@ -21,17 +27,18 @@ namespace doticu_skylib {
     public:
         enum
         {
-            kTypeID = kFormType_Global,
+            FORM_TYPE   = Form_Type_e::GLOBAL,
+            kTypeID     = FORM_TYPE,
         };
 
     public:
         virtual ~Global_t();
 
-        BSString        editor_id;  // 20
-        Global_Type_e   type;       // 30
-        u8              pad_31;     // 31
-        u16             pad_32;     // 32
-        Float_t         value;      // 34
+        Dynamic_String_t    editor_id;  // 20
+        Global_Type_e       type;       // 30
+        u8                  pad_31;     // 31
+        u16                 pad_32;     // 32
+        Float_t             value;      // 34
 
         Bool_t  Bool();
         Float_t Float();

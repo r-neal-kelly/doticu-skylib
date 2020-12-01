@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/string.h"
+
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 #include "doticu_skylib/virtual_variable.h"
@@ -310,9 +311,15 @@ namespace doticu_skylib { namespace Virtual {
 }}
 
 template <>
-inline UInt64 GetTypeID<doticu_skylib::String_t>(doticu_skylib::Virtual::Registry_t* registry)
+inline UInt64 GetTypeID<doticu_skylib::String_t>(VMClassRegistry* registry)
 {
     return static_cast<UInt64>(doticu_skylib::Virtual::Type_e::STRING);
+}
+
+template <>
+inline void PackValue<doticu_skylib::String_t>(VMValue* destination, doticu_skylib::String_t* source, VMClassRegistry* registry)
+{
+    destination->SetString(source->data);
 }
 
 template <>
@@ -326,5 +333,25 @@ inline void UnpackValue<doticu_skylib::String_t>(doticu_skylib::String_t* destin
         destination->Value(source_variable->String());
     } else {
         destination->Value("");
+    }
+}
+
+template <>
+inline void PackValue<doticu_skylib::Int_t>(VMValue* destination, doticu_skylib::Int_t* source, VMClassRegistry* registry)
+{
+    destination->SetInt(*source);
+}
+
+template <>
+inline void UnpackValue<doticu_skylib::Int_t>(doticu_skylib::Int_t* destination, VMValue* source)
+{
+    if (source->type == VMValue::kType_Int) {
+        *destination = source->data.u;
+    } else if (source->type == VMValue::kType_Float) {
+        *destination = source->data.f;
+    } else if (source->type == VMValue::kType_Bool) {
+        *destination = source->data.b;
+    } else {
+        *destination = 0;
     }
 }

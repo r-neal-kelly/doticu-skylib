@@ -2,25 +2,27 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/collections.h"
+#include "doticu_skylib/interface.h"
+
 #include "doticu_skylib/cell.h"
-#include "doticu_skylib/reference.h"
 #include "doticu_skylib/game.h"
-#include "doticu_skylib/worldspace.h"
 #include "doticu_skylib/location.h"
-#include "doticu_skylib/xdata.h"
-#include "doticu_skylib/xlist.h"
+#include "doticu_skylib/worldspace.h"
+
+#include "doticu_skylib/extra_list.inl"
+#include "doticu_skylib/extra_location.h"
 
 namespace doticu_skylib {
 
     size_t Cell_t::Interior_Cell_Count()
     {
-        return reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Data()->cellList).count;
+        return reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Self()->cellList).count;
     }
 
     size_t Cell_t::Loaded_Exterior_Cell_Count()
     {
-        auto worldspaces = reinterpret_cast<tArray<Worldspace_t*>&>(Game_t::Data()->arrWRLD);
+        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
         size_t exterior_cell_count = 0;
         for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces.entries[idx];
@@ -38,7 +40,7 @@ namespace doticu_skylib {
 
     static void Interior_Cells(Vector_t<Cell_t*>& accumulator)
     {
-        Small_Array_t<Cell_t*>& interior_cells = reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Data()->cellList);
+        Small_Array_t<Cell_t*>& interior_cells = reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Self()->cellList);
         for (Index_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
             Cell_t* cell = interior_cells.entries[idx];
             if (cell) {
@@ -49,7 +51,7 @@ namespace doticu_skylib {
 
     static void Loaded_Exterior_Cells(Vector_t<Cell_t*>& accumulator)
     {
-        auto worldspaces = reinterpret_cast<tArray<Worldspace_t*>&>(Game_t::Data()->arrWRLD);
+        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
         for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces.entries[idx];
             if (worldspace) {
@@ -57,7 +59,7 @@ namespace doticu_skylib {
                     accumulator.push_back(worldspace->persistent_cell);
                 }
                 for (Index_t idx = 0, end = worldspace->xy_to_cell.capacity; idx < end; idx += 1) {
-                    Hash_Map_t<Cell_XY_t, Cell_t*>::Entry_t& entry = worldspace->xy_to_cell.entries[idx];
+                    Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = worldspace->xy_to_cell.entries[idx];
                     if (entry.chain && entry.tuple.value) {
                         accumulator.push_back(entry.tuple.value);
                     }
@@ -93,20 +95,20 @@ namespace doticu_skylib {
 
     Bool_t Cell_t::Is_Interior()
     {
-        return (cell_flags & static_cast<Cell_Flags_t>(Cell_Flags_e::IS_INTERIOR)) != 0;
+        return (cell_flags & Cell_Flags_e::IS_INTERIOR) != 0;
     }
 
     Bool_t Cell_t::Is_Exterior()
     {
-        return (cell_flags & static_cast<Cell_Flags_t>(Cell_Flags_e::IS_INTERIOR)) == 0;
+        return (cell_flags & Cell_Flags_e::IS_INTERIOR) == 0;
     }
 
     Location_t* Cell_t::Location()
     {
         xlist.Validate();
 
-        if (xlist.Has<XLocation_t>()) {
-            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+        if (xlist.Has<Location_x>()) {
+            Location_x* xlocation = xlist.Get<Location_x>();
             if (xlocation->location) {
                 return xlocation->location;
             } else if (worldspace) {
@@ -129,8 +131,8 @@ namespace doticu_skylib {
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
-        if (xlist.Has<XLocation_t>()) {
-            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+        if (xlist.Has<Location_x>()) {
+            Location_x* xlocation = xlist.Get<Location_x>();
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
@@ -159,8 +161,8 @@ namespace doticu_skylib {
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
-        if (xlist.Has<XLocation_t>()) {
-            XLocation_t* xlocation = xlist.Get<XLocation_t>();
+        if (xlist.Has<Location_x>()) {
+            Location_x* xlocation = xlist.Get<Location_x>();
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {

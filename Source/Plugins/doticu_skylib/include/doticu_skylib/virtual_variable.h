@@ -4,18 +4,30 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
+#include "doticu_skylib/string.h"
+
 #include "doticu_skylib/form_type.h"
+
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
 
-namespace doticu_skylib { namespace Virtual {
+namespace doticu_skylib {
 
     class Actor_t;
     class Alias_Base_t;
+    class Faction_t;
     class Form_t;
+    class Misc_t;
     class Object_t;
-    class Array_t;
+    class Outfit_t;
     class Reference_t;
+
+}
+
+namespace doticu_skylib { namespace Virtual {
+
+    class Array_t;
 
     union Variable_u {
         Variable_u();
@@ -145,6 +157,7 @@ namespace doticu_skylib { namespace Virtual {
 }}
 
 #include "doticu_skylib/virtual_array.h"
+#include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
 

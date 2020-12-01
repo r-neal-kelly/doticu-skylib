@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/game.h"
+
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -20,7 +22,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto destroy = reinterpret_cast
             <void (*)(Variable_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DESTROY));
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DESTROY));
         destroy(this);
         data.ptr = nullptr;
     }
@@ -29,7 +31,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto copy = reinterpret_cast
             <void (*)(Variable_t*, Variable_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::COPY));
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::COPY));
         Destroy();
         copy(this, other);
     }

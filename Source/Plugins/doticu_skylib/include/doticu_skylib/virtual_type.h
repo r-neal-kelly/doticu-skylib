@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "doticu_skylib/string.h"
+
 #include "doticu_skylib/virtual.h"
 
 namespace doticu_skylib { namespace Virtual {

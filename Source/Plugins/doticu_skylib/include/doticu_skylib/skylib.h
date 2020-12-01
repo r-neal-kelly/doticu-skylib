@@ -4,63 +4,81 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
+#include "doticu_skylib/cstring.h"
+#include "doticu_skylib/enum.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/math.h"
+#include "doticu_skylib/maybe.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
-    class Active_Effects_Component_t;
+    class Actor_Value_e;
+    class Actor_Value_Modifier_e;
+    class Form_Type_e;
+    class Relation_e;
+    class Sex_e;
+
+    class Active_Effects_c;
+    class Actor_Base_Data_c;
+    class AI_c;
+    class Attack_c;
+    class Biped_c;
+    class Container_c;
+    class Description_c;
+    class Destructible_c;
+    class Form_Data_c;
+    class Keywords_c;
+    class Leveled_c;
+    class Model_c;
+    class Model_Alternate_c;
+    class Name_c;
+    class Package_Override_c;
+    class Perks_c;
+    class Race_c;
+    class Skin_c;
+
     class Actor_t;
     class Actor_Base_t;
-    class Actor_Base_Component_t;
     class Actor_State_t;
-    class Actor_Value_e;
     class Actor_Values_t;
-    class Actor_Value_Modifier_e;
-    class AI_Component_t;
     class Alias_Base_t;
     class Alias_Reference_t;
     class Animated_Object_t;
-    class Attack_Component_t;
-
     class Bound_Object_t;
-
     class Cell_t;
     class Consts_t;
-    class Container_Component_t;
-
-    class Destructible_Component_t;
-
     class Form_t;
-    class Form_Type_e;
-
     class Game_t;
-
-    class Keyword_Component_t;
-
     class Leveled_Actor_Base_t;
     class Loaded_Actor_t;
     class Location_t;
-
     class Magic_Target_t;
     class Mod_t;
-
-    class Name_Component_t;
-
     class Object_t;
-
-    class Package_Override_Component_t;
-    class Perk_Component_t;
-
     class Quest_t;
-
     class Race_t;
-    class Race_Component_t;
     class Reference_t;
-    class Relation_e;
-
-    class Sex_e;
-    class Skin_Component_t;
-
     class Worldspace_t;
 
+    class Data_x;
+    class List_x;
+    class Location_x;
+
 }
+
+/*#include "skse64/GameObjects.h"
+
+namespace doticu_skylib {
+
+    typedef TESObjectMISC   Misc_t;
+    typedef TESObjectSTAT   Static_t;
+    typedef TESObjectWEAP   Weapon_t;
+    typedef TESObjectARMO   Armor_t;
+
+    typedef BGSOutfit       Outfit_t;
+    typedef BGSKeyword      Keyword_t;
+
+}*/

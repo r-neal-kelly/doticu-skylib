@@ -2,7 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/utils.h"
+#include "doticu_skylib/game.h"
+
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_machine.h"
@@ -13,7 +14,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto destroy = reinterpret_cast
             <void(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DESTROY));
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DESTROY));
         destroy(this);
     }
 
@@ -21,7 +22,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto increment_lock = reinterpret_cast
             <void(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::INCREMENT_LOCK));
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::INCREMENT_LOCK));
         increment_lock(this);
     }
 
@@ -29,7 +30,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         static auto decrement_lock = reinterpret_cast
             <u32(*)(Object_t*)>
-            (RelocationManager::s_baseAddr + static_cast<Word_t>(Offset_e::DECREMENT_LOCK));
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DECREMENT_LOCK));
         return decrement_lock(this);
     }
 

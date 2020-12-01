@@ -1,0 +1,28 @@
+/*
+    Copyright © 2020 r-neal-kelly, aka doticu
+*/
+
+#include "doticu_skylib/form_factory.h"
+#include "doticu_skylib/game.h"
+
+namespace doticu_skylib {
+
+    Form_Factory_i* Form_Factory_i::Form_Factory(Form_Type_e form_type)
+    {
+        struct Form_Factories_t
+        {
+            Form_Factory_i* factories[138];
+        };
+
+        static auto factories = reinterpret_cast
+            <Form_Factories_t*>
+            (Game_t::Base_Address() + Offset_e::FACTORIES);
+        static Bool_t is_created = *reinterpret_cast
+            <Bool_t*>
+            (Game_t::Base_Address() + Offset_e::IS_CREATED);
+
+        SKYLIB_ASSERT(is_created);
+        return factories->factories[form_type];
+    }
+
+}

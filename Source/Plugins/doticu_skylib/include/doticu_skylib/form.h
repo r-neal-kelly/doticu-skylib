@@ -4,16 +4,16 @@
 
 #pragma once
 
-#include "skse64/GameForms.h"
-
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/string.h"
+
+#include "doticu_skylib/component_form_data.h"
+
+#include "doticu_skylib/form_id.h"
 #include "doticu_skylib/form_type.h"
-#include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/utils.h"
 
 namespace doticu_skylib {
 
-    class Form_t;
     class Mod_t;
     class Race_t;
 
@@ -23,314 +23,13 @@ namespace doticu_skylib {
 
     }
 
-    class Form_Component_t { // BaseFormComponent
-    public:
-        virtual ~Form_Component_t(); // 00
-
-        virtual void _01(void); // 01
-        virtual void _02(void); // 02
-        virtual void _03(void); // 03
-    };
-    STATIC_ASSERT(sizeof(Form_Component_t) == 0x8);
-
-    class Name_Component_t : public Form_Component_t { // TESFullName
-    public:
-        virtual             ~Name_Component_t();    // 00
-
-        virtual u32         Name_Length();          // 04
-        virtual const char* Name();                 // 05
-
-        String_t    name; // 8
-    };
-    STATIC_ASSERT(sizeof(Name_Component_t) == 0x10);
-
-    class Description_Component_t : public Form_Component_t // TESDescription
-    {
-    public:
-        virtual ~Description_Component_t();
-
-        u32 description_offset; // 08
-        u32 description_text_id; // 0C
-    };
-    STATIC_ASSERT(sizeof(Description_Component_t) == 0x10);
-
-    class Model_Component_t : public Form_Component_t { // TESModel
-    public:
-        virtual ~Model_Component_t(); // 00
-
-        String_t    model;              // 08
-        void*       textures;           // 10
-        void*       model_addons;       // 18
-        u16         texture_count;      // 20
-        u16         model_addon_count;  // 22
-        u32         pad_24;             // 24
-    };
-    STATIC_ASSERT(sizeof(Model_Component_t) == 0x28);
-
-    class Model_Alternate_Textures_Component_t : public Model_Component_t // TESModelTextureSwap
-    {
-    public:
-        virtual ~Model_Alternate_Textures_Component_t(); // 00
-
-        void*   alternate_textures;         // 28
-        u32     alternate_texture_count;    // 30
-        u32     pad_34;                     // 34
-    };
-    STATIC_ASSERT(sizeof(Model_Alternate_Textures_Component_t) == 0x38);
-
-    class Race_Component_t : public Form_Component_t { // TESRaceForm
-    public:
-        virtual ~Race_Component_t(); // 00
-
-        Race_t* race; // 00
-    };
-    STATIC_ASSERT(sizeof(Race_Component_t) == 0x10);
-
-    class Actor_Base_Flags_e : public Enum_t<u32>
+    class Form_t : public Form_Data_c
     {
     public:
         enum
         {
-            IS_FEMALE                       = 1lu << 0,
-            IS_ESSENTIAL                    = 1lu << 1,
-            IS_CHARGEN_FACE_PRESET          = 1lu << 2,
-            DOES_RESPAWN                    = 1lu << 3,
-            DOES_AUTO_CALCUATE_STATS        = 1lu << 4,
-            IS_UNIQUE                       = 1lu << 5,
-            DOESNT_AFFECT_STEALTH_METER     = 1lu << 6,
-            HAS_PC_LEVEL_MULTIPLIER         = 1lu << 7,
-            DOES_USE_TEMPLATE               = 1lu << 8,
-            IS_PROTECTED                    = 1lu << 11,
-            IS_SUMMONABLE                   = 1lu << 14,
-            DOESNT_BLEED                    = 1lu << 16,
-            HAS_BLEEDOUT_OVERRIDE           = 1lu << 18,
-            HAS_OPPOSITE_GENDER_ANIMATIONS  = 1lu << 19,
-            IS_SIMPLE_ACTOR                 = 1lu << 20,
-            HAS_LOOPED_SCRIPT               = 1lu << 21,
-            HAS_LOOPED_AUDIO                = 1lu << 28,
-            IS_GHOST                        = 1lu << 29,
-            IS_INVULNERABLE                 = 1lu << 31,
-        };
-    };
-
-    enum class Actor_Base_Template_Flags_e : u16
-    {
-        TRAITS              = 1lu << 0,
-        STATS               = 1lu << 1,
-        FACTIONS            = 1lu << 2,
-        SPELLS              = 1lu << 3,
-        AI_DATA             = 1lu << 4,
-        AI_PACKAGES         = 1lu << 5,
-        UNUSED              = 1lu << 6,
-        BASE_DATA           = 1lu << 7,
-        INVENTORY           = 1lu << 8,
-        SCRIPT              = 1lu << 9,
-        AI_DEFAULT_PACKAGES = 1lu << 10,
-        ATTACK_DATA         = 1lu << 11,
-        KEYWORDS            = 1lu << 12,
-    };
-
-    class Faction_And_Rank_t
-    {
-    public:
-        Faction_t*      faction;    // 00
-        Faction_Rank_t  rank;       // 08
-        u8              pad_09;     // 09
-        u16             pad_0A;     // 0A
-        u32             pad_0C;     // 0C
-    };
-    STATIC_ASSERT(sizeof(Faction_And_Rank_t) == 0x10);
-
-    class Actor_Base_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Actor_Base_Component_t();
-
-        Actor_Base_Flags_e          actor_base_flags;           // 08
-        s16                         magicka_offset;             // 0C
-        s16                         stamina_offset;             // 0E
-        u16                         level;                      // 10
-        u16                         min_level_calc;             // 12
-        u16                         max_level_calc;             // 14
-        u16                         speed_multiplier;           // 16
-        u16                         base_disposition;           // 18
-        Actor_Base_Template_Flags_e actor_base_template_flags;  // 1A
-        s16                         health_offset;              // 1C
-        s16                         bleedout_override;          // 1E
-        TESLevItem*                 death_item;                 // 20
-        BGSVoiceType*               voice_type;                 // 28
-        Form_t*                     base_template_form;         // 30
-        Form_t**                    template_forms;             // 38
-        tArray<Faction_And_Rank_t>  factions_and_ranks;         // 40
-
-        Bool_t Is_Male();
-        Bool_t Is_Female();
-        Bool_t Is_Unique();
-        Bool_t Is_Generic();
-    };
-    STATIC_ASSERT(sizeof(Actor_Base_Component_t) == 0x58);
-
-    class Container_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Container_Component_t();
-
-        void**  unk_08; // 08
-        u32     count;  // 10
-        u32     pad_14; // 14
-    };
-    STATIC_ASSERT(sizeof(Container_Component_t) == 0x18);
-
-    class Active_Effects_Component_t : public Form_Component_t // TESSpellList
-    {
-    public:
-        virtual ~Active_Effects_Component_t();
-
-        void* active_effects; // 8
-    };
-    STATIC_ASSERT(sizeof(Active_Effects_Component_t) == 0x10);
-
-    class AI_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~AI_Component_t();
-
-        u8 data[0x20]; // 08
-    };
-    STATIC_ASSERT(sizeof(AI_Component_t) == 0x28);
-
-    class Destructible_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Destructible_Component_t();
-
-        void* unk_8; // 8
-    };
-    STATIC_ASSERT(sizeof(Destructible_Component_t) == 0x10);
-
-    class Skin_Component_t : public Form_Component_t // BGSSkinForm
-    {
-    public:
-        virtual ~Skin_Component_t();
-
-        void* unk_8; // 8
-    };
-    STATIC_ASSERT(sizeof(Skin_Component_t) == 0x10);
-
-    enum class Biped_Slots_e : u32
-    {
-        HEAD                = 1lu << 0,
-        HAIR                = 1lu << 1,
-        BODY                = 1lu << 2,
-        HANDS               = 1lu << 3,
-        FOREARMS            = 1lu << 4,
-        AMULET              = 1lu << 5,
-        RING                = 1lu << 6,
-        FEET                = 1lu << 7,
-        CALVES              = 1lu << 8,
-        SHIELD              = 1lu << 9,
-        TAIL                = 1lu << 10,
-        LONG_HAIR           = 1lu << 11,
-        CIRCLET             = 1lu << 12,
-        EARS                = 1lu << 13,
-        DECAPTIATED_HEAD    = 1lu << 20,
-        DECAPITATED_NECK    = 1lu << 21,
-        FX                  = 1lu << 31,
-    };
-
-    enum class Armor_Type_e : u32
-    {
-        LIGHT_ARMOR = 0,
-        HEAVY_ARMOR = 1,
-        CLOTHING = 2,
-    };
-
-    class Biped_Component_t : public Form_Component_t // BGSBipedObjectForm
-    {
-    public:
-        virtual ~Biped_Component_t();
-
-        Biped_Slots_e   biped_slots;
-        Armor_Type_e    biped_armor_type;
-    };
-    STATIC_ASSERT(sizeof(Biped_Component_t) == 0x10);
-
-    class Keyword_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Keyword_Component_t();
-
-        void*   keywords;   // 08
-        u32     count;      // 10
-        u32     pad_14;     // 14
-    };
-    STATIC_ASSERT(sizeof(Keyword_Component_t) == 0x18);
-
-    class Attack_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Attack_Component_t();
-
-        void* unk_8; // 08
-    };
-    STATIC_ASSERT(sizeof(Attack_Component_t) == 0x10);
-
-    class Perk_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Perk_Component_t();
-
-        void*   perks;  // 08
-        u32     count;  // 10
-        u32     pad_14; // 14
-    };
-    STATIC_ASSERT(sizeof(Perk_Component_t) == 0x18);
-
-    class Package_Override_Component_t : public Form_Component_t
-    {
-    public:
-        virtual ~Package_Override_Component_t();
-
-        void*   spectator_overrides;        // 08
-        void*   observe_corpse_overrides;   // 10
-        void*   guard_overrides;            // 18
-        void*   combat_overrides;           // 20
-    };
-    STATIC_ASSERT(sizeof(Package_Override_Component_t) == 0x28);
-
-    class Leveled_Component_t : public Form_Component_t
-    {
-    public:
-        class Entry_t
-        {
-        public:
-            Form_t* form;   // 00
-            u16     count;  // 08
-            u16     level;  // 0A
-            u32     pad_0C; // 0C
-            void*   extra;  // 10
-        };
-
-    public:
-        virtual ~Leveled_Component_t();
-
-        Entry_t*    leveled_entries;        // 08
-        u8          chance_of_none;         // 10
-        u8          leveled_flags;          // 11
-        u8          leveled_entry_count;    // 12
-        u8          unk_13;                 // 13
-        u32         pad_14;                 // 14
-        void*       unk_18;                 // 18
-        TESGlobal*  chance_of_none_global;  // 20;
-    };
-    STATIC_ASSERT(sizeof(Leveled_Component_t) == 0x28);
-
-    class Form_t : public Form_Component_t
-    {
-    public:
-        enum
-        {
-            kTypeID = kFormType_None,
+            FORM_TYPE   = Form_Type_e::FORM,
+            kTypeID     = FORM_TYPE,
         };
 
         static Bool_t       Is_Static(Form_ID_t form_id);
@@ -404,7 +103,7 @@ namespace doticu_skylib {
         virtual void        _3A(void);                              // 3A
 
     public:
-        Static_Array_t<Mod_t*>* form_files;     // 08
+        Static_Array_t<Mod_t*>* form_mods;      // 08
         u32                     form_flags;     // 10
         Form_ID_t               form_id;        // 14
         u16                     form_flags2;    // 18
@@ -433,27 +132,5 @@ namespace doticu_skylib {
         void                Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
-
-    class Form_Factory_i
-    {
-    public:
-        class Offset_e : public Enum_t<Word_t>
-        {
-        public:
-            enum : Word_t
-            {
-                IS_CREATED  = 0x1EC3CB3,
-                FACTORIES   = 0x1EC3CE0,
-            };
-            using Enum_t::Enum_t;
-        };
-
-    public:
-        static Form_Factory_i* Form_Factory(Form_Type_e form_type);
-
-    public:
-        virtual ~Form_Factory_i(); // 00
-        virtual Form_t* Create(); // 01
-    };
 
 }
