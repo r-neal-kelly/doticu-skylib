@@ -23,10 +23,10 @@
         }                                                       \
     SKYLIB_W
 
-    #define SKYLIB_ASSERT_SOME_P(SOME_P_, ...) \
-        SKYLIB_ASSERT(SOME_P_, "Missing a required pointer. " __VA_ARGS__)
-    #define SKYLIB_ASSERT_MAYBE_P(MAYBE_P_, ...) \
-        SKYLIB_ASSERT(MAYBE_P_, "Failed to check an optional pointer. " __VA_ARGS__)
+    #define SKYLIB_ASSERT_SOME(SOME_, ...) \
+        SKYLIB_ASSERT(SOME_, "Missing a required pointer. " __VA_ARGS__)
+    #define SKYLIB_ASSERT_MAYBE(MAYBE_, ...) \
+        SKYLIB_ASSERT(MAYBE_, "Failed to check an optional pointer. " __VA_ARGS__)
 #else
     #define SKYLIB_ASSERT(IGNORED_)
     #define SKYLIB_ASSERT_SOME_P(IGNORED_)

@@ -24,8 +24,8 @@ namespace doticu_skylib {
     }
 
     Loaded_Actor_t::Loaded_Actor_t(Form_ID_t actor_form_id, Form_ID_t cell_form_id) :
-        Loaded_Actor_t(static_cast<Actor_t*>(Game_t::Form(actor_form_id)),
-                       static_cast<Cell_t*>(Game_t::Form(cell_form_id)))
+        Loaded_Actor_t(static_cast<maybe<Actor_t*>>(Game_t::Form(actor_form_id)),
+                       static_cast<maybe<Cell_t*>>(Game_t::Form(cell_form_id)))
     {
     }
 

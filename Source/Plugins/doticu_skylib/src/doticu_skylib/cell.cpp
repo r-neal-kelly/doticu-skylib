@@ -17,12 +17,12 @@ namespace doticu_skylib {
 
     size_t Cell_t::Interior_Cell_Count()
     {
-        return reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Self()->cellList).count;
+        return Game_t::Self()->interior_cells.count;
     }
 
     size_t Cell_t::Loaded_Exterior_Cell_Count()
     {
-        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
+        auto worldspaces = Game_t::Self()->Worldspaces();
         size_t exterior_cell_count = 0;
         for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces.entries[idx];
@@ -40,7 +40,7 @@ namespace doticu_skylib {
 
     static void Interior_Cells(Vector_t<Cell_t*>& accumulator)
     {
-        Small_Array_t<Cell_t*>& interior_cells = reinterpret_cast<Small_Array_t<Cell_t*>&>(Game_t::Self()->cellList);
+        Short_Array_t<Cell_t*>& interior_cells = Game_t::Self()->interior_cells;
         for (Index_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
             Cell_t* cell = interior_cells.entries[idx];
             if (cell) {
@@ -51,7 +51,7 @@ namespace doticu_skylib {
 
     static void Loaded_Exterior_Cells(Vector_t<Cell_t*>& accumulator)
     {
-        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
+        auto worldspaces = Game_t::Self()->Worldspaces();
         for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces.entries[idx];
             if (worldspace) {

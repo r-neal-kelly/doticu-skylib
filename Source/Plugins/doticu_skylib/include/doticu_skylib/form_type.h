@@ -11,6 +11,8 @@ namespace doticu_skylib {
     class Form_Type_e : public Enum_t<u8>
     {
     public:
+        static constexpr size_t MAX_TYPES = 0x8A;
+
         enum : u8
         {
             FORM                    = 0x00,

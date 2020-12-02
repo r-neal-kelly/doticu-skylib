@@ -128,10 +128,10 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Static_Array_t<void*>) == 0x10);
 
     template <typename Type_t>
-    class Small_Array_t
+    class Short_Array_t
     {
     public:
-        virtual ~Small_Array_t();
+        virtual ~Short_Array_t();
 
         Type_t* entries;    // 08
         u16     capacity;   // 10
@@ -139,10 +139,10 @@ namespace doticu_skylib {
         u16     count;      // 14
         u16     grow_rate;  // 16
     };
-    STATIC_ASSERT(sizeof(Small_Array_t<void*>) == 0x18);
+    STATIC_ASSERT(sizeof(Short_Array_t<void*>) == 0x18);
 
     template <typename Type_t>
-    class Dynamic_Array_t
+    class Dynamic_Array_t // tArray
     {
     public:
         Type_t* entries;    // 00
@@ -150,11 +150,14 @@ namespace doticu_skylib {
         u32     pad_0C;     // 0C
         u32     count;      // 10
         u32     pad_14;     // 14
+
+        some<Type_t*> At(u32 index)
+        {
+            SKYLIB_ASSERT(index < count);
+            return entries + index;
+        }
     };
     STATIC_ASSERT(sizeof(Dynamic_Array_t<void*>) == 0x18);
-
-    template <typename Type_t>
-    using Array_t = Dynamic_Array_t<Type_t>;
 
     class Buffer_Allocator_t
     {
@@ -176,22 +179,16 @@ namespace doticu_skylib {
     };
 
     template <typename Type_t>
-    class Buffer_t : public Buffer_Allocator_t
+    class Buffer_t :
+        public Buffer_Allocator_t,
+        public Dynamic_Array_t<Type_t>
     {
     public:
-        Type_t* entries;    // 08
-        u32     capacity;   // 10
-        u32     pad_14;     // 14
-        u32     count;      // 18
-        u32     pad_1C;     // 1C
-
-        Some_p<Type_t> At(u32 index)
-        {
-            SKYLIB_ASSERT(index < count);
-            return entries + index;
-        }
     };
     STATIC_ASSERT(sizeof(Buffer_t<int>) == 0x20);
+
+    template <typename Type_t>
+    using Array_t = Dynamic_Array_t<Type_t>;
 
     template <typename Type>
     class Vector_t : public std::vector<Type>
@@ -226,6 +223,43 @@ namespace doticu_skylib {
             qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
     };
+
+    template <typename Type_t>
+    class Forward_List_t // tList
+    {
+    public:
+        class Node_t
+        {
+        public:
+            Type_t  entry;  // 0
+            Node_t* next;   // ?
+        };
+
+    public:
+        Node_t head; // 0
+    };
+
+    template <typename Type_t>
+    class Double_List_t
+    {
+    public:
+        class Node_t
+        {
+        public:
+            Node_t* next;       // 00
+            Node_t* previous;   // 08
+            Type_t  entry;      // 10
+        };
+
+    public:
+        Node_t* head;   // 00
+        Node_t* tail;   // 08
+        u32     size;   // 10
+        u32     pad_14; // 14
+    };
+
+    template <typename Type_t>
+    using List_t = Forward_List_t<Type_t>;
 
     template <typename Key_t>
     class Set_t

@@ -82,9 +82,9 @@ namespace doticu_skylib {
         #undef TAB
     }
 
-    Maybe_p<Actor_t> Actor_t::Create(Some_p<Form_t> base, Bool_t do_persist, Bool_t do_uncombative)
+    maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative)
     {
-        SKYLIB_ASSERT_SOME_P(base);
+        SKYLIB_ASSERT_SOME(base);
 
         if (base->Is_Valid()) {
             Actor_t* actor = static_cast<Actor_t*>
@@ -102,9 +102,9 @@ namespace doticu_skylib {
         }
     }
 
-    Maybe_p<Actor_t> Actor_t::Create(Some_p<Actor_Base_t> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    maybe<Actor_t*> Actor_t::Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
     {
-        SKYLIB_ASSERT_SOME_P(base);
+        SKYLIB_ASSERT_SOME(base);
 
         if (do_static) {
             if (base->Is_Valid()) {
@@ -117,9 +117,9 @@ namespace doticu_skylib {
         }
     }
 
-    Maybe_p<Actor_t> Actor_t::Create(Some_p<Leveled_Actor_Base_t> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    maybe<Actor_t*> Actor_t::Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
     {
-        SKYLIB_ASSERT_SOME_P(base);
+        SKYLIB_ASSERT_SOME(base);
 
         if (do_static) {
             if (base->Is_Valid()) {

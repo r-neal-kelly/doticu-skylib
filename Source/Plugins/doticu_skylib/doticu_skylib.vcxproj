@@ -94,6 +94,7 @@
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
+    <ClInclude Include="include\doticu_skylib\form_flags.h" />
     <ClInclude Include="include\doticu_skylib\form_id.h" />
     <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />

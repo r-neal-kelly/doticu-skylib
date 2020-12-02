@@ -20,8 +20,8 @@ namespace doticu_skylib {
         public:
             enum : Word_t
             {
-                IS_CREATED  = 0x1EC3CB3,
-                FACTORIES   = 0x1EC3CE0,
+                IS_CREATED  = 0x01EC3CB3,
+                FACTORIES   = 0x01EC3CE0,
             };
             using Enum_t::Enum_t;
         };

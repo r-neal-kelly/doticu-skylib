@@ -15,7 +15,7 @@ namespace doticu_skylib {
 
     size_t Actor_Base_t::Actor_Base_Count()
     {
-        return Game_t::Self()->npcs.count;
+        return Game_t::Self()->Actor_Bases().count;
     }
 
     Vector_t<Actor_Base_t*> Actor_Base_t::Actor_Bases()
@@ -28,7 +28,7 @@ namespace doticu_skylib {
 
     void Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
-        auto& actor_bases = Game_t::Self()->npcs;
+        auto& actor_bases = Game_t::Self()->Actor_Bases();
         for (Index_t idx = 0, end = actor_bases.count; idx < end; idx += 1) {
             Actor_Base_t* actor_base = reinterpret_cast<Actor_Base_t*>(actor_bases.entries[idx]);
             if (actor_base) {

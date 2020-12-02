@@ -2,16 +2,21 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/cstring.h"
+
+#include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/mod.h"
 
 namespace doticu_skylib {
 
-    Game_t* Game_t::Self()
+    some<Game_t*> Game_t::Self()
     {
-        static Game_t* data = static_cast<Game_t*>(DataHandler::GetSingleton());
-        SKYLIB_ASSERT(data != nullptr);
-        return data;
+        static auto self = *reinterpret_cast
+            <Game_t**>
+            (Game_t::Base_Address() + Offset_e::SELF);
+        SKYLIB_ASSERT_SOME(self);
+        return self;
     }
 
     Word_t Game_t::Base_Address()
@@ -21,41 +26,25 @@ namespace doticu_skylib {
         return base_address;
     }
 
-    Byte_t* Game_t::Base_Address_Pointer()
+    some<Byte_t*> Game_t::Base_Address_Pointer()
     {
         return reinterpret_cast<Byte_t*>(Base_Address());
     }
 
-    Mod_t* Game_t::Mod(const char* mod_name)
+    maybe<Form_t*> Game_t::Form(Form_ID_t form_id)
     {
-        return (Mod_t*)(Self()->LookupModByName(mod_name));
+        static auto get_form = reinterpret_cast
+            <Form_t*(*)(Form_ID_t form_id)>
+            (Game_t::Base_Address() + Offset_e::GET_FORM);
+        return get_form(form_id);
     }
 
-    Form_t* Game_t::Form(Form_ID_t form_id)
-    {
-        return reinterpret_cast<Form_t*>(LookupFormByID(form_id));
-    }
-
-    Form_t* Game_t::Form(Mod_t* mod, Lower_Form_ID_t lower_form_id)
+    maybe<Form_t*> Game_t::Form(Mod_t* mod, Lower_Form_ID_t lower_form_id)
     {
         if (mod) {
-            return Form(static_cast<Form_ID_t>(mod->GetFormID(lower_form_id)));
+            return Form(Form_t::Form_ID(lower_form_id, mod));
         } else {
             return nullptr;
-        }
-    }
-
-    Bool_t Game_t::Has_Mod(Mod_t* mod)
-    {
-        return mod && mod->IsActive();
-    }
-
-    Bool_t Game_t::Has_Form(Mod_t* mod, Form_ID_t form_id)
-    {
-        if (mod) {
-            return mod->IsFormInMod(form_id);
-        } else {
-            return false;
         }
     }
 
@@ -67,6 +56,26 @@ namespace doticu_skylib {
     void Game_t::Write_V_Table(void* instance, Word_t v_table_offset)
     {
         static_cast<Word_t*>(instance)[0] = Game_t::Base_Address() + v_table_offset;
+    }
+
+    Array_t<Actor_Base_t*>& Game_t::Actor_Bases()
+    {
+        return reinterpret_cast<Array_t<Actor_Base_t*>&>(form_caches[Form_Type_e::ACTOR_BASE]);
+    }
+
+    Array_t<Leveled_Actor_Base_t*>& Game_t::Leveled_Actor_Bases()
+    {
+        return reinterpret_cast<Array_t<Leveled_Actor_Base_t*>&>(form_caches[Form_Type_e::LEVELED_ACTOR_BASE]);
+    }
+
+    Array_t<Race_t*>& Game_t::Races()
+    {
+        return reinterpret_cast<Array_t<Race_t*>&>(form_caches[Form_Type_e::RACE]);
+    }
+
+    Array_t<Worldspace_t*>& Game_t::Worldspaces()
+    {
+        return reinterpret_cast<Array_t<Worldspace_t*>&>(form_caches[Form_Type_e::WORLDSPACE]);
     }
 
 }

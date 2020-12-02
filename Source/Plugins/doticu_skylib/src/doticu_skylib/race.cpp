@@ -9,12 +9,12 @@ namespace doticu_skylib {
 
     size_t Race_t::Race_Count()
     {
-        return Game_t::Self()->races.count;
+        return Game_t::Self()->Races().count;
     }
 
     Vector_t<Race_t*> Race_t::Races()
     {
-        auto& races = Game_t::Self()->races;
+        auto& races = Game_t::Self()->Races();
 
         Vector_t<Race_t*> results;
         results.reserve(races.count);
@@ -31,7 +31,7 @@ namespace doticu_skylib {
 
     Vector_t<const char*> Race_t::Race_Editor_IDs()
     {
-        auto& races = Game_t::Self()->races;
+        auto& races = Game_t::Self()->Races();
 
         Vector_t<const char*> results;
         results.reserve(races.count);

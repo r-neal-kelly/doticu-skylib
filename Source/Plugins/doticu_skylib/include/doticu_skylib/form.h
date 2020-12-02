@@ -9,6 +9,7 @@
 
 #include "doticu_skylib/component_form_data.h"
 
+#include "doticu_skylib/form_flags.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/form_type.h"
 
@@ -32,12 +33,14 @@ namespace doticu_skylib {
             kTypeID     = FORM_TYPE,
         };
 
-        static Bool_t       Is_Static(Form_ID_t form_id);
-        static Bool_t       Is_Dynamic(Form_ID_t form_id);
-        static Bool_t       Is_Heavy(Form_ID_t form_id);
-        static Bool_t       Is_Light(Form_ID_t form_id);
-        static Form_ID_t    Reindex(Form_ID_t form_id, Mod_t* mod);
-        static Form_ID_t    Reindex(Form_ID_t form_id, u32 idx);
+        static Bool_t           Is_Static(Form_ID_t form_id);
+        static Bool_t           Is_Dynamic(Form_ID_t form_id);
+        static Bool_t           Is_Heavy(Form_ID_t form_id);
+        static Bool_t           Is_Light(Form_ID_t form_id);
+        static Form_ID_t        Reindex(Form_ID_t form_id, Mod_t* mod);
+        static Form_ID_t        Reindex(Form_ID_t form_id, u32 idx);
+        //static some<Form_ID_t>  Form_ID(some<Lower_Form_ID_t> lower_form_id, some<Mod_t*> mod);
+        static Form_ID_t        Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod);
 
     public:
         virtual             ~Form_t();                              // 00
@@ -104,7 +107,7 @@ namespace doticu_skylib {
 
     public:
         Static_Array_t<Mod_t*>* form_mods;      // 08
-        u32                     form_flags;     // 10
+        Form_Flags_e            form_flags;     // 10
         Form_ID_t               form_id;        // 14
         u16                     form_flags2;    // 18
         Form_Type_e             form_type;      // 1A

@@ -10,7 +10,7 @@ namespace doticu_skylib {
 
     Vector_t<Worldspace_t*> Worldspace_t::Worldspaces()
     {
-        auto worldspaces = reinterpret_cast<Array_t<Worldspace_t*>&>(Game_t::Self()->arrWRLD);
+        auto worldspaces = Game_t::Self()->Worldspaces();
 
         Vector_t<Worldspace_t*> results;
         results.reserve(worldspaces.count);

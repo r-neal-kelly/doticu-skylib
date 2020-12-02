@@ -36,14 +36,14 @@ namespace doticu_skylib {
     Form_ID_t Form_t::Reindex(Form_ID_t form_id, Mod_t* mod)
     {
         if (mod) {
-            Index_t mod_idx = -1;
+            maybe<Index_t> mod_idx;
             if (Is_Light(form_id)) {
                 mod_idx = mod->Light_Index();
             } else {
                 mod_idx = mod->Heavy_Index();
             }
-            if (mod_idx > -1) {
-                return Reindex(form_id, mod_idx);
+            if (mod_idx) {
+                return Reindex(form_id, mod_idx());
             } else {
                 return 0;
             }
@@ -67,6 +67,27 @@ namespace doticu_skylib {
         } else {
             if (idx < 0x100) {
                 return (idx << 24) | (form_id & 0x00FFFFFF);
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    Form_ID_t Form_t::Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod)
+    {
+        SKYLIB_ASSERT_SOME(mod);
+
+        if (mod->Is_Light()) {
+            maybe<Index_t> mod_idx = mod->Light_Index();
+            if (mod_idx && mod_idx() < 0x1000) {
+                return 0xFE000000 | (mod_idx() << 12) | (lower_form_id & 0x00000FFF);
+            } else {
+                return 0;
+            }
+        } else {
+            maybe<Index_t> mod_idx = mod->Heavy_Index();
+            if (mod_idx && mod_idx() < 0x100) {
+                return (mod_idx() << 24) | (lower_form_id & 0x00FFFFFF);
             } else {
                 return 0;
             }
