@@ -1,1 +1,56 @@
+/*
+    Copyright © 2020 r-neal-kelly, aka doticu
+*/
+
 #pragma once
+
+#include "doticu_skylib/enum.h"
+#include "doticu_skylib/string.h"
+
+namespace doticu_skylib {
+
+    class Quest_t;
+    class Quest_Target_t;
+
+    class Quest_Objective_State_e : Enum_t<u8>
+    {
+    public:
+        enum : u8
+        {
+            DORMANT                 = 0,
+            DISPLAYED               = 1,
+            COMPLETED               = 2,
+            COMPLETED_AND_DISPLAYED = 3,
+            FAILED                  = 4,
+            FAILED_AND_DISPLAYED    = 5,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Quest_Objective_Flags_e : Enum_t<u32>
+    {
+    public:
+        enum : u32
+        {
+            OR_WITH_PREVIOUS    = 1 << 0,
+            DONT_TRACK_STATS    = 1 << 1,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Quest_Objective_t
+    {
+    public:
+        String_t                display_text;   // 00
+        Quest_t*                quest;          // 08
+        Quest_Target_t**        targets;        // 10
+        u32                     target_count;   // 18
+        u16                     index;          // 1C
+        Bool_t                  is_initialized; // 1E
+        Quest_Objective_State_e state;          // 1F
+        Quest_Objective_Flags_e flags;          // 20
+        u32                     pad_24;         // 24
+    };
+    STATIC_ASSERT(sizeof(Quest_Objective_t) == 0x28);
+
+}

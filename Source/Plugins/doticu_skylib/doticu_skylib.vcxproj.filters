@@ -285,6 +285,12 @@
     <ClInclude Include="include\doticu_skylib\extra_aliases.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\quest_target.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\forward_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -413,6 +419,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\ui.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\forward_list.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

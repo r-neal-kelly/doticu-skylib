@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/string.h"
 

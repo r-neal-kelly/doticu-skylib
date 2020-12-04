@@ -67,6 +67,11 @@ namespace doticu_skylib {
         {
         }
 
+        ~Stack_Array_t()
+        {
+            Clear();
+        }
+
         Type_t* Entries()
         {
             return reinterpret_cast<Type_t*>(bytes);
@@ -109,6 +114,14 @@ namespace doticu_skylib {
         Bool_t Has_Space()
         {
             return count < capacity;
+        }
+
+        void Clear()
+        {
+            for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+                Entries()[idx].~Type_t();
+            }
+            count = 0;
         }
     };
     STATIC_ASSERT(sizeof(Stack_Array_t<Byte_t, 64>) == 0x50);
@@ -252,21 +265,6 @@ namespace doticu_skylib {
     };
 
     template <typename Type_t>
-    class Forward_List_t // tList
-    {
-    public:
-        class Node_t
-        {
-        public:
-            Type_t  entry;  // 0
-            Node_t* next;   // ?
-        };
-
-    public:
-        Node_t head; // 0
-    };
-
-    template <typename Type_t>
     class Double_List_t
     {
     public:
@@ -275,7 +273,7 @@ namespace doticu_skylib {
         public:
             Node_t* next;       // 00
             Node_t* previous;   // 08
-            Type_t  entry;      // 10
+            Type_t  value;      // 10
         };
 
     public:
@@ -284,9 +282,7 @@ namespace doticu_skylib {
         u32     size;   // 10
         u32     pad_14; // 14
     };
-
-    template <typename Type_t>
-    using List_t = Forward_List_t<Type_t>;
+    STATIC_ASSERT(sizeof(Double_List_t<void*>) == 0x18);
 
     template <typename ...Types>
     class Tuple_t

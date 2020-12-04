@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
 
 #include "doticu_skylib/form_id.h"

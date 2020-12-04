@@ -100,6 +100,7 @@
     <ClInclude Include="include\doticu_skylib\form_flags.h" />
     <ClInclude Include="include\doticu_skylib\form_id.h" />
     <ClInclude Include="include\doticu_skylib\form_type.h" />
+    <ClInclude Include="include\doticu_skylib\forward_list.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\interface.h" />
@@ -116,6 +117,7 @@
     <ClInclude Include="include\doticu_skylib\player.h" />
     <ClInclude Include="include\doticu_skylib\quest.h" />
     <ClInclude Include="include\doticu_skylib\quest_objective.h" />
+    <ClInclude Include="include\doticu_skylib\quest_target.h" />
     <ClInclude Include="include\doticu_skylib\race.h" />
     <ClInclude Include="include\doticu_skylib\read_write_lock.h" />
     <ClInclude Include="include\doticu_skylib\reference.h" />
@@ -194,6 +196,7 @@
   <ItemGroup>
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
+    <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
