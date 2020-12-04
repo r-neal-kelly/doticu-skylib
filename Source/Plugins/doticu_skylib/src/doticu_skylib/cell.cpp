@@ -60,8 +60,8 @@ namespace doticu_skylib {
                 }
                 for (Index_t idx = 0, end = worldspace->xy_to_cell.capacity; idx < end; idx += 1) {
                     Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = worldspace->xy_to_cell.entries[idx];
-                    if (entry.chain && entry.tuple.value) {
-                        accumulator.push_back(entry.tuple.value);
+                    if (entry.chain && entry.second) {
+                        accumulator.push_back(entry.second);
                     }
                 }
             }
@@ -195,8 +195,8 @@ namespace doticu_skylib {
     {
         for (Index_t idx = 0, end = references.capacity; idx < end; idx += 1) {
             Set_t<Reference_t*>::Entry_t& entry = references.entries[idx];
-            if (entry.chain && entry.key) {
-                iterator.operator()(entry.key);
+            if (entry.chain && entry.first) {
+                iterator.operator()(entry.first);
             }
         }
     }

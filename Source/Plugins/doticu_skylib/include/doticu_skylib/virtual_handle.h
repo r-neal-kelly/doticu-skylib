@@ -13,8 +13,8 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Raw_Handle_t raw_handle = 0;
 
-        template <typename Type>
-        Handle_t(Type* form_or_alias);
+        template <typename Type_t>
+        Handle_t(Type_t* form_or_alias_or_active_effect);
         Handle_t(void* form, Form_Type_e form_type);
         Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
@@ -32,16 +32,16 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Type>
-    Handle_t::Handle_t(Type* form_or_alias)
+    template <typename Type_t>
+    Handle_t::Handle_t(Type_t* form_or_alias_or_active_effect)
     {
-        if (form_or_alias) {
-            raw_handle = Handle_Policy_t::Self()->Handle(Type::kTypeID, form_or_alias);
+        if (form_or_alias_or_active_effect) {
+            raw_handle = Handle_Policy_t::Self()->Handle(Type_t::FORM_TYPE, form_or_alias_or_active_effect);
         } else {
             raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
         }
     }
-    template <> Handle_t::Handle_t(void* form_or_alias) = delete;
-    template <> Handle_t::Handle_t(Handle_t* form_or_alias) = delete;
+    template <> Handle_t::Handle_t(void* form_or_alias_or_active_effect)        = delete;
+    template <> Handle_t::Handle_t(Handle_t* form_or_alias_or_active_effect)    = delete;
 
 }}

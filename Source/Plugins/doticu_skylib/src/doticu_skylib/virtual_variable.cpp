@@ -2,8 +2,11 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/game.h"
 
+#include "doticu_skylib/virtual_object.h"
+#include "doticu_skylib/virtual_policy.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -94,6 +97,20 @@ namespace doticu_skylib { namespace Virtual {
     {
         if (type.Is_Object_Array()) {
             return data.arr;
+        } else {
+            return nullptr;
+        }
+    }
+
+    Reference_t* Variable_t::Reference()
+    {
+        if (type.Is_Object()) {
+            if (data.obj) {
+                return static_cast<Reference_t*>
+                    (Handle_Policy_t::Self()->Resolve(Form_Type_e::REFERENCE, data.obj->Handle()));
+            } else {
+                return nullptr;
+            }
         } else {
             return nullptr;
         }

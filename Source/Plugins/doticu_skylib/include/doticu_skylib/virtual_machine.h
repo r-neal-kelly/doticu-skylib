@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/virtual.h"
@@ -21,7 +22,8 @@ namespace doticu_skylib { namespace Virtual {
     class Type_t;
     class Variable_t;
 
-    class Machine_t {
+    class Machine_t
+    {
     public:
         static Machine_t* Self();
 
@@ -63,7 +65,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _21(void); // 21
         virtual void _22(void); // 22
         virtual void _23(void); // 23
-        virtual void Send_Event(Handle_t handle, String_t* event_name, IFunctionArguments* arguments); // 24
+        virtual void Send_Event(Handle_t handle, String_t* event_name, Arguments_i* arguments); // 24
         virtual void _25(void); // 25
         virtual Bool_t Call_Global(String_t* class_name, String_t* function_name, Arguments_i* arguments, Callback_i** callback); // 26
         virtual void _27(void); // 27
@@ -76,20 +78,25 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _2E(void); // 2E
         virtual Bind_Policy_t* Bind_Policy(); // 2F
 
-        template <typename BSObject>
-        void Send_Event(BSObject* object, String_t event_name, IFunctionArguments* arguments);
-        template <typename BSObject>
-        void Send_Event(BSObject* object, String_t event_name);
-
         Bool_t Call_Global(String_t class_name,
+                           String_t function_name,
+                           Arguments_i* arguments = nullptr,
+                           Callback_i** vcallback = nullptr);
+
+        Bool_t Call_Method(Handle_t handle,
+                           String_t class_name,
                            String_t function_name,
                            Arguments_i* arguments = nullptr,
                            Callback_i** vcallback = nullptr);
         Bool_t Call_Method(Handle_t handle,
                            String_t class_name,
                            String_t function_name,
-                           Arguments_i* arguments = nullptr,
-                           Callback_i** vcallback = nullptr);
+                           maybe<Arguments_i*> maybe_varguments = nullptr,
+                           maybe<Callback_i*> maybe_vcallback = nullptr);
+
+        void Send_Event(Handle_t handle,
+                        String_t event_name,
+                        maybe<Arguments_i*> maybe_varguments = nullptr);
 
         Int_t Count_Objects(Handle_t handle);
         Bool_t Has_Object(Handle_t handle);

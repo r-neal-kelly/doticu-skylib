@@ -5,6 +5,8 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/interface.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/alias_id.h"
@@ -15,6 +17,13 @@ namespace doticu_skylib {
     class Form_t;
     class Mod_t;
     class Quest_t;
+    class Reference_t;
+
+    namespace Virtual {
+
+        class Callback_i;
+
+    }
 
     class Alias_Flags_e : public Enum_t<u32>
     {
@@ -66,6 +75,14 @@ namespace doticu_skylib {
         u32                 pad_24;     // 24
 
         void Log();
+
+    public:
+        void Ready_Virtual_Object();
+
+        void Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> vcallback = nullptr);
+        void Unfill(maybe<Virtual::Callback_i*> vcallback = nullptr);
+        void Reference(some<Virtual::Callback_i*> vcallback);
+        void Reference(some<Callback_i<Reference_t*>*> ucallback);
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);
 

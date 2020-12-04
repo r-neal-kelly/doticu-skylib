@@ -42,6 +42,8 @@ namespace doticu_skylib {
         //static some<Form_ID_t>  Form_ID(some<Lower_Form_ID_t> lower_form_id, some<Mod_t*> mod);
         static Form_ID_t        Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod);
 
+        static Int_t            Compare_Names(const char* name_a, const char* name_b);
+
     public:
         virtual             ~Form_t();                              // 00
 

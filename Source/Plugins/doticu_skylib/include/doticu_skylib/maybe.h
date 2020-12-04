@@ -312,6 +312,16 @@ namespace doticu_skylib {
             return operator T*();
         }
 
+        Bool_t operator==(const some& other)
+        {
+            return value == other.value;
+        }
+
+        Bool_t operator!=(const some& other)
+        {
+            return !operator==(other);
+        }
+
         operator T*()
         {
             SKYLIB_ASSERT_SOME(operator Bool_t());
@@ -331,6 +341,11 @@ namespace doticu_skylib {
         }
 
         operator Bool_t()
+        {
+            return value != none<T*>();
+        }
+
+        operator Bool_t() const
         {
             return value != none<T*>();
         }
@@ -406,6 +421,16 @@ namespace doticu_skylib {
             return operator T*();
         }
 
+        Bool_t operator==(const maybe& other)
+        {
+            return value == other.value;
+        }
+
+        Bool_t operator!=(const maybe& other)
+        {
+            return !operator==(other);
+        }
+
         operator T*()
         {
             SKYLIB_ASSERT_MAYBE(operator Bool_t());
@@ -432,6 +457,11 @@ namespace doticu_skylib {
         }
 
         operator Bool_t()
+        {
+            return value != none<T*>();
+        }
+
+        operator Bool_t() const
         {
             return value != none<T*>();
         }

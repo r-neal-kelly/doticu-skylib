@@ -32,12 +32,12 @@ namespace doticu_skylib {
             for (Index_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
                 Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = xy_to_cell.entries[idx];
                 if (entry.chain) {
-                    if (entry.tuple.value) {
+                    if (entry.second) {
                         _MESSAGE(TAB TAB "x: %5.i, y: %5.i, cell: %8.8X, %s",
-                                 entry.tuple.key.x, entry.tuple.key.y,
-                                 entry.tuple.value->form_id, entry.tuple.value->Get_Editor_ID());
+                                 entry.first.x, entry.first.y,
+                                 entry.second->form_id, entry.second->Get_Editor_ID());
                     } else {
-                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, empty", entry.tuple.key.x, entry.tuple.key.y);
+                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, empty", entry.first.x, entry.first.y);
                     }
                 }
             }
@@ -55,8 +55,8 @@ namespace doticu_skylib {
             for (Index_t idx = 0, end = cell_xy_to_filtered_form_ids.capacity; idx < end; idx += 1) {
                 auto& entry = cell_xy_to_filtered_form_ids.entries[idx];
                 if (entry.chain) {
-                    auto& cell_xy = entry.tuple.key;
-                    auto& arr = entry.tuple.value;
+                    auto& cell_xy = entry.first;
+                    auto& arr = entry.second;
                     if (arr) {
                         _MESSAGE(TAB TAB "x: %5.i, y: %5.i, count: %u", cell_xy.x, cell_xy.y, arr->count);
                         for (Index_t idx = 0, end = arr->count; idx < end; idx += 1) {

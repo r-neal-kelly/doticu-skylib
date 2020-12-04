@@ -6,8 +6,10 @@
 
 #include "doticu_skylib/collections.h"
 
+#include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/reference_count.h"
+#include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/extra_list.h"
 
@@ -15,6 +17,7 @@ namespace doticu_skylib {
 
     class Cell_t;
     class Location_t;
+    class Quest_t;
 
     class Reference_t :
         public Form_t,
@@ -33,8 +36,9 @@ namespace doticu_skylib {
         public:
             enum : Word_t
             {
-                GET_NAME    = 0x002961F0,
-                PLACE_AT_ME = 0x009951F0,
+                FROM_REFERENCE_HANDLE_1 = 0x001328A0,
+                GET_NAME                = 0x002961F0,
+                PLACE_AT_ME             = 0x009951F0,
             };
             using Enum_t::Enum_t;
         };
@@ -50,6 +54,7 @@ namespace doticu_skylib {
         };
 
         static Reference_t* Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable);
+        static Reference_t* From_Handle(Reference_Handle_t reference_handle);
 
     public:
         virtual ~Reference_t(); // 00
@@ -68,6 +73,7 @@ namespace doticu_skylib {
 
         Bool_t Is_Persistent();
         Bool_t Is_Temporary();
+        Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
         const char* Name();
         String_t    Any_Name();

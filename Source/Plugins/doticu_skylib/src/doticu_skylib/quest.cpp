@@ -2,8 +2,10 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/quest.h"
 
+#include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.h"
@@ -50,6 +52,22 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
+    {
+        return filled_aliases.Has(alias_id);
+    }
+
+    void Quest_t::Log_Promoted_References()
+    {
+        for (Index_t idx = 0, end = promoted_references.count; idx < end; idx += 1) {
+            Reference_Handle_t reference_handle = promoted_references.entries[idx];
+            Reference_t* reference = Reference_t::From_Handle(reference_handle);
+            if (reference) {
+                _MESSAGE("%s", reference->Any_Name());
+            }
+        }
+    }
+
     void Quest_t::Start(Virtual::Callback_i* vcallback)
     {
         Virtual::Machine_t::Self()->Call_Method(
@@ -81,6 +99,66 @@ namespace doticu_skylib {
             }
         };
         Start(new VCallback(ucallback));
+    }
+
+    void Quest_t::Display_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback)
+    {
+        class Arguments_t : public Virtual::Arguments_t
+        {
+        public:
+            Int_t objective;
+            Bool_t do_force;
+            Arguments_t(Int_t objective, Bool_t do_force) :
+                objective(objective), do_force(do_force)
+            {
+            }
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* variables)
+            {
+                variables->Resize(3);
+                variables->At(0)->Int(objective);
+                variables->At(1)->Bool(true);
+                variables->At(2)->Bool(do_force);
+                return true;
+            }
+        } varguments(objective, do_force);
+
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            "Quest",
+            "SetObjectiveDisplayed",
+            &varguments,
+            vcallback
+        );
+    }
+
+    void Quest_t::Undisplay_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback)
+    {
+        class Arguments_t : public Virtual::Arguments_t
+        {
+        public:
+            Int_t objective;
+            Bool_t do_force;
+            Arguments_t(Int_t objective, Bool_t do_force) :
+                objective(objective), do_force(do_force)
+            {
+            }
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* variables)
+            {
+                variables->Resize(3);
+                variables->At(0)->Int(objective);
+                variables->At(1)->Bool(false);
+                variables->At(2)->Bool(do_force);
+                return true;
+            }
+        } varguments(objective, do_force);
+
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            "Quest",
+            "SetObjectiveDisplayed",
+            &varguments,
+            vcallback
+        );
     }
 
 }

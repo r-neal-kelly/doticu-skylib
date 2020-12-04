@@ -2,6 +2,9 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include <fstream>
+#include <iomanip>
+
 #include "doticu_skylib/interface.h"
 
 #include "doticu_skylib/actor.h"
@@ -107,6 +110,70 @@ namespace doticu_skylib {
         _MESSAGE("}");
 
         #undef TAB
+    }
+
+    void Actor_Base_t::Stream_Actor_Bases(Vector_t<some<Actor_Base_t*>>& actor_bases, std::fstream& fstream)
+    {
+        static constexpr const char* SPACE  = "     ";
+        static constexpr const char* TAB    = "    ";
+
+        if (fstream && fstream.is_open()) {
+            size_t actor_bases_count = actor_bases.size();
+            fstream << "Printing " << std::to_string(actor_bases_count) << " actor bases." << std::endl;
+
+            size_t index_fill =
+                actor_bases_count < 10 ? 1 :
+                actor_bases_count < 100 ? 2 :
+                actor_bases_count < 1000 ? 3 :
+                actor_bases_count < 10000 ? 4 :
+                actor_bases_count < 100000 ? 5 :
+                6;
+
+            for (Index_t idx = 0, end = actor_bases_count; idx < end; idx += 1) {
+                some<Actor_Base_t*> actor_base = actor_bases[idx];
+                SKYLIB_ASSERT_SOME(actor_base);
+
+                String_t name = actor_base->Name();
+                if (!name) {
+                    name = "(none)";
+                }
+
+                const char* form_id = actor_base->Form_ID_String().data + 2;
+
+                fstream << "index: "
+                    << std::left
+                    << std::setfill(' ')
+                    << std::setw(index_fill)
+                    << std::dec
+                    << idx
+                    << TAB;
+                fstream << "form_id: "
+                    << form_id
+                    << TAB;
+                fstream << "name: "
+                    << name.data
+                    << std::endl;
+            }
+        }
+    }
+
+    Int_t Actor_Base_t::Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b)
+    {
+        if (!a || !*a) {
+            return Comparator_e::IS_UNORDERED;
+        } else if (!b || !*b) {
+            return Comparator_e::IS_ORDERED;
+        } else {
+            Comparator_e result = Form_t::Compare_Names(
+                (*a)->Any_Name(),
+                (*b)->Any_Name()
+            );
+            if (result == Comparator_e::IS_EQUAL) {
+                return (*a)->form_id - (*b)->form_id;
+            } else {
+                return result;
+            }
+        }
     }
 
     Bool_t Actor_Base_t::Has_Template_FF000800()

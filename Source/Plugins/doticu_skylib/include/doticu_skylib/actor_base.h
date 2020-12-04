@@ -59,6 +59,10 @@ namespace doticu_skylib {
         static void                     Log_Actor_Bases();
         static void                     Log_Dynamic_Actor_Bases();
 
+        static void                     Stream_Actor_Bases(Vector_t<some<Actor_Base_t*>>& actor_bases, std::fstream& fstream);
+
+        static Int_t                    Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
+
     public:
         virtual ~Actor_Base_t();
 

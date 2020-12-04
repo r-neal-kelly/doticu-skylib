@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
@@ -21,5 +22,61 @@ namespace doticu_skylib {
     {
         return !Is_Odd(num);
     }
+
+    class CRC32_Hash_t
+    {
+    public:
+        template <typename T>
+        using enable_if_32 = std::enable_if_t<
+            sizeof(T) == sizeof(u32),
+            Bool_t
+        >;
+        template <typename T>
+        using enable_if_64 = std::enable_if_t<
+            sizeof(T) == sizeof(u64),
+            Bool_t
+        >;
+        template <typename T>
+        using enable_if_not_32_or_64 = std::enable_if_t<
+            sizeof(T) != sizeof(u64) &&
+            sizeof(T) != sizeof(u32)
+            , Bool_t
+        >;
+
+    public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : Word_t
+            {
+                HASH_SIZE   = 0x00C06490,
+                HASH_32     = 0x00C064F0,
+                HASH_64     = 0x00C06570,
+            };
+            using Enum_t::Enum_t;
+        };
+
+        static u32 Hash(void* value, u32 size);
+        static u32 Hash(u32 value);
+        static u32 Hash(u64 value);
+
+        template <typename T, enable_if_32<T> = true>
+        static u32 Hash(T value)
+        {
+            return Hash(static_cast<u32>(value));
+        }
+
+        template <typename T, enable_if_64<T> = true>
+        static u32 Hash(T value)
+        {
+            return Hash(static_cast<u64>(value));
+        }
+
+        template <typename T, enable_if_not_32_or_64<T> = true>
+        static u32 Hash(T value)
+        {
+            return Hash(static_cast<void*>(&value), sizeof(T));
+        }
+    };
 
 }

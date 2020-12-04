@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "skse64/PapyrusValue.h"
+
 #include "doticu_skylib/game.h"
 
 #include "doticu_skylib/virtual_class.h"
@@ -32,6 +34,11 @@ namespace doticu_skylib { namespace Virtual {
             <u32(*)(Object_t*)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DECREMENT_LOCK));
         return decrement_lock(this);
+    }
+
+    Handle_t Object_t::Handle()
+    {
+        return reinterpret_cast<VMIdentifier*>(this)->GetHandle();
     }
 
     Variable_t* Object_t::Variables()

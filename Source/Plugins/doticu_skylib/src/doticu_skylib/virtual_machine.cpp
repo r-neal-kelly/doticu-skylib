@@ -4,16 +4,16 @@
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_game.h"
 #include "doticu_skylib/virtual_machine.h"
 
 namespace doticu_skylib { namespace Virtual {
 
-    Machine_t* Machine_t::Self() // use address library here
+    Machine_t* Machine_t::Self()
     {
-        static Machine_t* machine =
-            reinterpret_cast<Machine_t*>((*g_skyrimVM)->GetClassRegistry());
-        SKYLIB_ASSERT(machine);
-        return machine;
+        static Machine_t* self = Virtual::Game_t::Self()->machine;
+        SKYLIB_ASSERT(self);
+        return self;
     }
 
     Bool_t Machine_t::Call_Global(String_t class_name,
@@ -21,8 +21,9 @@ namespace doticu_skylib { namespace Virtual {
                                   Arguments_i* arguments,
                                   Callback_i** vcallback)
     {
+        Callback_i* default_vcallback;
         if (!vcallback || !*vcallback) {
-            Callback_i* default_vcallback = new Callback_t();
+            default_vcallback = new Callback_t();
             vcallback = &default_vcallback;
         }
         if (arguments) {
@@ -39,8 +40,9 @@ namespace doticu_skylib { namespace Virtual {
                                   Arguments_i* arguments,
                                   Callback_i** vcallback)
     {
+        Callback_i* default_vcallback;
         if (!vcallback || !*vcallback) {
-            Callback_i* default_vcallback = new Callback_t();
+            default_vcallback = new Callback_t();
             vcallback = &default_vcallback;
         }
         if (arguments) {
@@ -48,6 +50,39 @@ namespace doticu_skylib { namespace Virtual {
         } else {
             Arguments_t default_arguments;
             return Call_Method2(handle, &class_name, &function_name, &default_arguments, vcallback);
+        }
+    }
+
+    Bool_t Machine_t::Call_Method(Handle_t handle,
+                                  String_t class_name,
+                                  String_t function_name,
+                                  maybe<Arguments_i*> maybe_varguments,
+                                  maybe<Callback_i*> maybe_vcallback)
+    {
+        Callback_i* vcallback;
+        if (maybe_vcallback) {
+            vcallback = maybe_vcallback;
+        } else {
+            vcallback = new Callback_t();
+        }
+
+        if (maybe_varguments) {
+            return Call_Method2(handle, &class_name, &function_name, maybe_varguments, &vcallback);
+        } else {
+            Arguments_t default_varguments;
+            return Call_Method2(handle, &class_name, &function_name, &default_varguments, &vcallback);
+        }
+    }
+
+    void Machine_t::Send_Event(Handle_t handle,
+                               String_t event_name,
+                               maybe<Arguments_i*> maybe_varguments)
+    {
+        if (maybe_varguments) {
+            return Send_Event(handle, &event_name, maybe_varguments);
+        } else {
+            Arguments_t default_varguments;
+            return Send_Event(handle, &event_name, &default_varguments);
         }
     }
 

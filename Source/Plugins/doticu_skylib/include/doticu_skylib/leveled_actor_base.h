@@ -10,6 +10,7 @@
 #include "doticu_skylib/component_leveled.h"
 #include "doticu_skylib/component_model.h"
 
+#include "doticu_skylib/actor_base_leveleds.h"
 #include "doticu_skylib/animated_object.h"
 
 namespace doticu_skylib {
@@ -31,6 +32,10 @@ namespace doticu_skylib {
         static size_t                           Leveled_Actor_Base_Count();
         static Vector_t<Leveled_Actor_Base_t*>  Leveled_Actor_Bases();
         static void                             Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results);
+        static void                             Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results,
+                                                                    Vector_t<Actor_Base_Leveleds_t>& actor_bases_leveleds);
+        static Vector_t<Actor_Base_Leveleds_t>  Actor_Bases_Leveleds();
+        static void                             Actor_Bases_Leveleds(Vector_t<Actor_Base_Leveleds_t>& results);
         static void                             Log_Leveled_Actor_Bases();
 
     public:

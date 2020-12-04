@@ -61,6 +61,7 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor.h" />
     <ClInclude Include="include\doticu_skylib\actor_base.h" />
+    <ClInclude Include="include\doticu_skylib\actor_base_leveleds.h" />
     <ClInclude Include="include\doticu_skylib\actor_state.h" />
     <ClInclude Include="include\doticu_skylib\actor_values.h" />
     <ClInclude Include="include\doticu_skylib\alias_base.h" />
@@ -68,6 +69,7 @@
     <ClInclude Include="include\doticu_skylib\alias_reference.h" />
     <ClInclude Include="include\doticu_skylib\animated_object.h" />
     <ClInclude Include="include\doticu_skylib\bound_object.h" />
+    <ClInclude Include="include\doticu_skylib\branch_type.h" />
     <ClInclude Include="include\doticu_skylib\cell.h" />
     <ClInclude Include="include\doticu_skylib\component_active_effects.h" />
     <ClInclude Include="include\doticu_skylib\component_actor_base_data.h" />
@@ -89,6 +91,7 @@
     <ClInclude Include="include\doticu_skylib\component_texture.h" />
     <ClInclude Include="include\doticu_skylib\cstring.h" />
     <ClInclude Include="include\doticu_skylib\enum.h" />
+    <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
     <ClInclude Include="include\doticu_skylib\extra_location.h" />
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
@@ -112,7 +115,9 @@
     <ClInclude Include="include\doticu_skylib\object.h" />
     <ClInclude Include="include\doticu_skylib\player.h" />
     <ClInclude Include="include\doticu_skylib\quest.h" />
+    <ClInclude Include="include\doticu_skylib\quest_objective.h" />
     <ClInclude Include="include\doticu_skylib\race.h" />
+    <ClInclude Include="include\doticu_skylib\read_write_lock.h" />
     <ClInclude Include="include\doticu_skylib\reference.h" />
     <ClInclude Include="include\doticu_skylib\collections.h" />
     <ClInclude Include="include\doticu_skylib\reference_count.h" />
@@ -129,6 +134,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_callback.h" />
     <ClInclude Include="include\doticu_skylib\virtual_class.h" />
     <ClInclude Include="include\doticu_skylib\virtual_function.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_game.h" />
     <ClInclude Include="include\doticu_skylib\virtual_handle.h" />
     <ClInclude Include="include\doticu_skylib\virtual_machine.h" />
     <ClInclude Include="include\doticu_skylib\virtual_macros.h" />
@@ -147,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
@@ -157,6 +164,7 @@
     <ClCompile Include="src\doticu_skylib\leveled_actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\loaded_actor.cpp" />
     <ClCompile Include="src\doticu_skylib\location.cpp" />
+    <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />
@@ -170,6 +178,7 @@
     <ClCompile Include="src\doticu_skylib\cstring.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_array.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_class.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_game.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_machine.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_object.cpp" />

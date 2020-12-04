@@ -8,6 +8,7 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
@@ -58,28 +59,37 @@ namespace doticu_skylib {
     class Stack_Array_t
     {
     public:
-        const size_t    capacity                    = static_capacity;
-        size_t          count                       = 0;
-        Type_t          entries[static_capacity];
+        const size_t    capacity    = static_capacity;
+        size_t          count       = 0;
+        Byte_t          bytes       [static_capacity * sizeof(Type_t)];
+
+        Stack_Array_t()
+        {
+        }
+
+        Type_t* Entries()
+        {
+            return reinterpret_cast<Type_t*>(bytes);
+        }
 
         void Push(Type_t& entry)
         {
             SKYLIB_ASSERT(count < capacity);
-            entries[count] = entry;
+            Entries()[count] = entry;
             count += 1;
         }
 
         void Push(Type_t&& entry)
         {
             SKYLIB_ASSERT(count < capacity);
-            entries[count] = std::move(entry);
+            Entries()[count] = std::move(entry);
             count += 1;
         }
 
         void Push(const Type_t&& entry)
         {
             SKYLIB_ASSERT(count < capacity);
-            entries[count] = std::move(entry);
+            Entries()[count] = std::move(entry);
             count += 1;
         }
 
@@ -87,13 +97,13 @@ namespace doticu_skylib {
         {
             SKYLIB_ASSERT(count > 0);
             count -= 1;
-            return std::move(entries[count]);
+            return std::move(Entries()[count]);
         }
 
         Type_t& operator[](size_t index)
         {
             SKYLIB_ASSERT(index < count);
-            return entries[index];
+            return Entries()[index];
         }
 
         Bool_t Has_Space()
@@ -204,7 +214,24 @@ namespace doticu_skylib {
             return -1;
         }
 
+        template <typename TT>
+        Index_t Index_Of(TT& item)
+        {
+            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+                if (at(idx) == item) {
+                    return idx;
+                }
+            }
+            return -1;
+        }
+
         Bool_t Has(Type& item)
+        {
+            return Index_Of(item) > -1;
+        }
+
+        template <typename TT>
+        Bool_t Has(TT& item)
         {
             return Index_Of(item) > -1;
         }
@@ -261,63 +288,73 @@ namespace doticu_skylib {
     template <typename Type_t>
     using List_t = Forward_List_t<Type_t>;
 
-    template <typename Key_t>
-    class Set_t
+    template <typename ...Types>
+    class Tuple_t
     {
     public:
-        class Entry_t
-        {
-        public:
-            Key_t key;
-            Entry_t* chain; // if nullptr, key is not in the table
-        };
-
-        UInt64 pad_00; // 00
-        UInt32 pad_08; // 08
-        UInt32 capacity; // 0C
-        UInt32 free_count; // 10
-        UInt32 free_idx; // 14
-        Entry_t* end_of_chain; // 18
-        UInt64 pad_20; // 20
-        Entry_t* entries; // 28
     };
-    STATIC_ASSERT(sizeof(Set_t<void*>) == 0x30);
 
-    template <typename Key_t, typename Value_t>
-    class Hash_Map_t
+    template <typename A>
+    class Tuple_t<A>
     {
     public:
-        class Tuple_t
+        A first;
+    };
+
+    template <typename A, typename B>
+    class Tuple_t<A, B>
+    {
+    public:
+        A first;
+        B second;
+    };
+
+    template <typename A, typename B, typename C>
+    class Tuple_t<A, B, C>
+    {
+    public:
+        A first;
+        B second;
+        C third;
+    };
+
+    template <typename A, typename B, typename C, typename D>
+    class Tuple_t<A, B, C, D>
+    {
+    public:
+        A first;
+        B second;
+        C third;
+        D forth;
+    };
+
+    template <typename First_t, typename ...Types>
+    class Tuple_Map_t
+    {
+    public:
+        class Entry_t : public Tuple_t<First_t, Types...>
         {
         public:
-            Key_t key;
-            Value_t value;
+            Entry_t* chain; // nullptr == not in map
         };
 
-        class Entry_t
-        {
-        public:
-            Tuple_t tuple;
-            Entry_t* chain; // if nullptr, key is not in the table
-        };
+        u64         unk_00;         // 00
+        u32         unk_08;         // 08
+        u32         capacity;       // 0C
+        u32         free_count;     // 10
+        u32         free_idx;       // 14
+        Entry_t*    end_of_chain;   // 18
+        u64         unk_20;         // 20
+        Entry_t*    entries;        // 28
 
-        UInt64 pad_00; // 00
-        UInt32 pad_08; // 08
-        UInt32 capacity; // 0C
-        UInt32 free_count; // 10
-        UInt32 free_idx; // 14
-        Entry_t* end_of_chain; // 18
-        UInt64 pad_20; // 20
-        Entry_t* entries; // 28
-
-        Bool_t Has_Key(Key_t key)
+        Bool_t Has(First_t first)
         {
             if (entries) {
-                UInt32 idx = Utils::CRC32(key) & (capacity - 1);
+                Index_t idx = CRC32_Hash_t::Hash(first) & (capacity - 1);
                 Entry_t* entry = entries + idx;
                 if (entry && entry->chain != nullptr) {
                     for (; entry != end_of_chain; entry = entry->chain) {
-                        if (entry->tuple.key == key) {
+                        if (entry->first == first) {
                             return true;
                         }
                     }
@@ -330,6 +367,20 @@ namespace doticu_skylib {
             }
         }
     };
-    STATIC_ASSERT(sizeof(Hash_Map_t<void*, void*>) == 0x30);
+    STATIC_ASSERT(sizeof(Tuple_Map_t<Int_t>) == 0x30);
+
+    template <typename Key_t>
+    class Set_t : public Tuple_Map_t<Key_t>
+    {
+    public:
+    };
+    STATIC_ASSERT(sizeof(Set_t<Int_t>) == 0x30);
+
+    template <typename Key_t, typename Value_t>
+    class Hash_Map_t : public Tuple_Map_t<Key_t, Value_t>
+    {
+    public:
+    };
+    STATIC_ASSERT(sizeof(Hash_Map_t<Int_t, Int_t>) == 0x30);
 
 }

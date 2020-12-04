@@ -42,6 +42,7 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Actor_Base_t;
+    class Actor_Base_Leveleds_t;
     class Actor_State_t;
     class Actor_Values_t;
     class Alias_Base_t;
@@ -63,6 +64,7 @@ namespace doticu_skylib {
     class Reference_t;
     class Worldspace_t;
 
+    class Aliases_x;
     class Data_x;
     class List_x;
     class Location_x;

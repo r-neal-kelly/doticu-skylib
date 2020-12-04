@@ -94,6 +94,21 @@ namespace doticu_skylib {
         }
     }
 
+    Int_t Form_t::Compare_Names(const char* name_a, const char* name_b)
+    {
+        if (!name_a || !name_a[0]) {
+            return Comparator_e::IS_UNORDERED;
+        } else if (!name_b || !name_b[0]) {
+            return Comparator_e::IS_ORDERED;
+        } else if (name_a[0] == '0' && name_a[1] == 'x' && name_b[0] != '0' && name_b[1] != 'x') {
+            return Comparator_e::IS_UNORDERED;
+        } else if (name_a[0] != '0' && name_a[1] != 'x' && name_b[0] == '0' && name_b[1] == 'x') {
+            return Comparator_e::IS_ORDERED;
+        } else {
+            return _stricmp(name_a, name_b);
+        }
+    }
+
     Bool_t Form_t::Is_Valid()
     {
         return form_id != 0;

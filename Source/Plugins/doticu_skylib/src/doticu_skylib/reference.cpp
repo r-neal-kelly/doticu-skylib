@@ -2,11 +2,15 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/script.h"
+
+#include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_list.inl"
 
 #include "doticu_skylib/virtual_machine.h"
 
@@ -20,6 +24,17 @@ namespace doticu_skylib {
         return place_at_me(Virtual::Machine_t::Self(), 0, at, base, count, force_persist, initially_disable);
     }
 
+    Reference_t* Reference_t::From_Handle(Reference_Handle_t reference_handle)
+    {
+        static auto from_reference_handle = reinterpret_cast
+            <Reference_t*(*)(Reference_Handle_t&, Reference_t*&)>
+            (Game_t::Base_Address() + Offset_e::FROM_REFERENCE_HANDLE_1);
+
+        Reference_t* reference = nullptr;
+        from_reference_handle(reference_handle, reference);
+        return reference;
+    }
+
     Bool_t Reference_t::Is_Persistent()
     {
         return (form_flags & Form_Flags_e::IS_PERSISTENT) != 0;
@@ -28,6 +43,24 @@ namespace doticu_skylib {
     Bool_t Reference_t::Is_Temporary()
     {
         return !Is_Persistent();
+    }
+
+    Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id)
+    {
+        SKYLIB_ASSERT_SOME(quest);
+
+        Aliases_x* xaliases = xlist.Get<Aliases_x>();
+        if (xaliases) {
+            for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
+                Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
+                if (instance && instance->quest == quest && instance->alias_base && instance->alias_base->id == alias_id) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
     }
 
     const char* Reference_t::Name()

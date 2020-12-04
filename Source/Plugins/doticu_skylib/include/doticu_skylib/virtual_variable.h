@@ -157,9 +157,23 @@ namespace doticu_skylib { namespace Virtual {
 }}
 
 #include "doticu_skylib/virtual_array.h"
+#include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
+
+    template <typename Type_t>
+    inline void Variable_t::Pack(Type_t* value)
+    {
+        if (value) {
+            PackHandle(reinterpret_cast<VMValue*>(this),
+                       value,
+                       Type_t::FORM_TYPE,
+                       (*g_skyrimVM)->GetClassRegistry());
+        } else {
+            None(Class_t::Fetch(Type_t::FORM_TYPE, true));
+        }
+    }
 
     template <typename Type>
     inline void Variable_t::Pack(doticu_skylib::Vector_t<Type>& values)

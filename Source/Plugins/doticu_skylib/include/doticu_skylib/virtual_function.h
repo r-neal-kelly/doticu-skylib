@@ -161,7 +161,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id);
@@ -174,7 +174,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -188,7 +188,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -202,7 +202,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -216,7 +216,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -230,7 +230,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -244,7 +244,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E, F)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e, F f)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e, F f)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -258,7 +258,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E, F, G)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -272,7 +272,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E, F, G, H)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -286,7 +286,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E, F, G, H, I)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h, I i)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h, I i)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
@@ -300,7 +300,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t(Base_t::* method)(Machine_t*, Stack_ID_t, A, B, C, D, E, F, G, H, I, J)
     > auto Forward_Latent()
     {
-        return [](Registry_t* registry, Stack_ID_t stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h, I i, J j)->Bool_t
+        return [](Registry_t* registry, UInt32 stack_id, Base_t* base, A a, B b, C c, D d, E e, F f, G g, H h, I i, J j)->Bool_t
         {
             SKYLIB_ASSERT(base);
             return (base->*method)(reinterpret_cast<Machine_t*>(registry), stack_id,
