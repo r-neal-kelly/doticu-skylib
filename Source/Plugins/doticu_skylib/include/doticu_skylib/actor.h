@@ -48,6 +48,8 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_t(); // 00
 
+        Byte_t unk_data[0x1D0];
+
         Sex_e                   Sex();
         Race_t*                 Race();
         Actor_Base_t*           Actor_Base();
@@ -58,6 +60,6 @@ namespace doticu_skylib {
         const char*             Base_Name();
         String_t                Any_Name();
     };
-    //STATIC_ASSERT(sizeof(Actor_t) == 0x0);
+    STATIC_ASSERT(sizeof(Actor_t) == 0x2B0);
 
 }

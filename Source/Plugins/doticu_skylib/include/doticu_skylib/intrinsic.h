@@ -14,6 +14,10 @@
 #define SKYLIB_W \
     } while (0)
 
+#define SKYLIB_TAB "    "
+
+#define SKYLIB_LOG(MESSAGE_, ...) _MESSAGE(std::string(MESSAGE_).c_str(), __VA_ARGS__)
+
 #if 1
     #define SKYLIB_ASSERT(IS_TRUE_, ...)                        \
     SKYLIB_M                                                    \

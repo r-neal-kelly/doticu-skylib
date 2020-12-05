@@ -7,25 +7,12 @@
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/quest_objective_state.h"
+
 namespace doticu_skylib {
 
     class Quest_t;
     class Quest_Target_t;
-
-    class Quest_Objective_State_e : Enum_t<u8>
-    {
-    public:
-        enum : u8
-        {
-            DORMANT                 = 0,
-            DISPLAYED               = 1,
-            COMPLETED               = 2,
-            COMPLETED_AND_DISPLAYED = 3,
-            FAILED                  = 4,
-            FAILED_AND_DISPLAYED    = 5,
-        };
-        using Enum_t::Enum_t;
-    };
 
     class Quest_Objective_Flags_e : Enum_t<u32>
     {
@@ -50,6 +37,8 @@ namespace doticu_skylib {
         Quest_Objective_State_e state;          // 1F
         Quest_Objective_Flags_e flags;          // 20
         u32                     pad_24;         // 24
+
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Quest_Objective_t) == 0x28);
 

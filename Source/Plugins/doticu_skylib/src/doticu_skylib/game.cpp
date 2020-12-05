@@ -58,6 +58,16 @@ namespace doticu_skylib {
         static_cast<Word_t*>(instance)[0] = Game_t::Base_Address() + v_table_offset;
     }
 
+    void Game_t::Log_u64s(void* data, size_t count, std::string indent)
+    {
+        SKYLIB_ASSERT(data);
+
+        u64* ptr = static_cast<u64*>(data);
+        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+            SKYLIB_LOG(indent + "idx: %8i, %p", idx, *(ptr + idx));
+        }
+    }
+
     Array_t<Actor_Base_t*>& Game_t::Actor_Bases()
     {
         return reinterpret_cast<Array_t<Actor_Base_t*>&>(form_caches[Form_Type_e::ACTOR_BASE]);

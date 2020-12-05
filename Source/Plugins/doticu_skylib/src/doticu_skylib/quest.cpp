@@ -2,8 +2,11 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/forward_list.inl"
+
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/quest.h"
+#include "doticu_skylib/quest_objective.h"
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -55,6 +58,23 @@ namespace doticu_skylib {
     Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
     {
         return filled_aliases.Has(alias_id);
+    }
+
+    void Quest_t::Log_Objectives(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Quest_t::Log_Objectives");
+        SKYLIB_LOG(indent + "{");
+
+        if (!objectives.Is_Empty()) {
+            for (List_t<Quest_Objective_t*>::Node_t* node = &objectives.head; node; node = node->next) {
+                Quest_Objective_t* objective = node->value;
+                if (objective) {
+                    objective->Log(indent + SKYLIB_TAB);
+                }
+            }
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
     void Quest_t::Log_Promoted_References()
