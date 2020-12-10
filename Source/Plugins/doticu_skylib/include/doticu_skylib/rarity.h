@@ -9,18 +9,18 @@
 
 namespace doticu_skylib {
 
-    class Sex_e : public Enum_t<Int_t>
+    class Rarity_e : public Enum_t<Int_t>
     {
     public:
         enum : Int_t
         {
-            NONE    = -1,
-            MALE    = 0,
-            FEMALE  = 1,
+            NONE = -1,
+            UNIQUE = 0,
+            GENERIC = 1,
         };
         using Enum_t::Enum_t;
 
-        static const char* To_String(Sex_e sex_e);
+        static const char* To_String(Rarity_e rarity_e);
     };
 
 }

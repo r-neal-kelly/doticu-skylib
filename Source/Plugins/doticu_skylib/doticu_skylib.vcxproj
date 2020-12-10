@@ -113,6 +113,7 @@
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
+    <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />
     <ClInclude Include="include\doticu_skylib\player.h" />
     <ClInclude Include="include\doticu_skylib\quest.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="include\doticu_skylib\quest_objective_state.h" />
     <ClInclude Include="include\doticu_skylib\quest_target.h" />
     <ClInclude Include="include\doticu_skylib\race.h" />
+    <ClInclude Include="include\doticu_skylib\rarity.h" />
     <ClInclude Include="include\doticu_skylib\read_write_lock.h" />
     <ClInclude Include="include\doticu_skylib\reference.h" />
     <ClInclude Include="include\doticu_skylib\collections.h" />
@@ -169,11 +171,13 @@
     <ClCompile Include="src\doticu_skylib\location.cpp" />
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
+    <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />
     <ClCompile Include="src\doticu_skylib\quest_objective.cpp" />
     <ClCompile Include="src\doticu_skylib\quest_objective_state.cpp" />
     <ClCompile Include="src\doticu_skylib\race.cpp" />
+    <ClCompile Include="src\doticu_skylib\rarity.cpp" />
     <ClCompile Include="src\doticu_skylib\reference.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_count.cpp" />
     <ClCompile Include="src\doticu_skylib\relation.cpp" />

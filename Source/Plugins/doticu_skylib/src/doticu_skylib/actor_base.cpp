@@ -191,6 +191,11 @@ namespace doticu_skylib {
         return Is_Female() ? Sex_e::FEMALE : Sex_e::MALE;
     }
 
+    Rarity_e Actor_Base_t::Rarity()
+    {
+        return Is_Unique() ? Rarity_e::UNIQUE : Rarity_e::GENERIC;
+    }
+
     Race_t* Actor_Base_t::Race()
     {
         return race;

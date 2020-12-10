@@ -19,6 +19,7 @@
 
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/animated_object.h"
+#include "doticu_skylib/rarity.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
 
@@ -86,6 +87,7 @@ namespace doticu_skylib {
         Bool_t                  Has_Template_FF000800();
 
         Sex_e                   Sex();
+        Rarity_e                Rarity();
         Race_t*                 Race();
         Vector_t<Actor_Base_t*> Templates();
         void                    Templates(Vector_t<Actor_Base_t*>& results);

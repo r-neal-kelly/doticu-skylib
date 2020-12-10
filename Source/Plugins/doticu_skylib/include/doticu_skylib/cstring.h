@@ -24,6 +24,27 @@ namespace doticu_skylib {
 
         static Bool_t Is_Length_Less_Than(const char* sub, Word_t length, Bool_t with_null = false);
         static Bool_t Is_Length_Greater_Than(const char* sub, Word_t length, Bool_t with_null = false);
+
+        template <typename Type_t>
+        static Type_t To(const char* sub)
+        {
+            STATIC_ASSERT(false);
+        }
+
+        template <>
+        static std::wstring To(const char* sub)
+        {
+            if (sub) {
+                size_t buffer_size = CString_t::Length(sub, false);
+                std::wstring buffer(buffer_size, L' ');
+                for (Index_t idx = 0, end = buffer_size; idx < end; idx += 1) {
+                    buffer[idx] = sub[idx];
+                }
+                return buffer;
+            } else {
+                return L"";
+            }
+        }
     };
 
 }

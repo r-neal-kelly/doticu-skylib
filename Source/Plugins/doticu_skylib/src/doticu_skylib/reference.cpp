@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/math.h"
+
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
@@ -26,13 +28,31 @@ namespace doticu_skylib {
 
     Reference_t* Reference_t::From_Handle(Reference_Handle_t reference_handle)
     {
-        static auto from_reference_handle = reinterpret_cast
-            <Reference_t*(*)(Reference_Handle_t&, Reference_t*&)>
-            (Game_t::Base_Address() + Offset_e::FROM_REFERENCE_HANDLE_1);
+        static auto lookup_reference_handle_1 = reinterpret_cast
+            <Bool_t(*)(Reference_Handle_t&, Reference_t*&)>
+            (Game_t::Base_Address() + Offset_e::LOOKUP_REFERENCE_HANDLE_1);
 
         Reference_t* reference = nullptr;
-        from_reference_handle(reference_handle, reference);
+        lookup_reference_handle_1(reference_handle, reference);
         return reference;
+    }
+
+    Reference_Handle_t Reference_t::Invalid_Handle()
+    {
+        static auto invalid_reference_handle = reinterpret_cast
+            <Reference_Handle_t*>
+            (Game_t::Base_Address() + Offset_e::INVALID_REFERENCE_HANDLE);
+        return *invalid_reference_handle;
+    }
+
+    Bool_t Reference_t::Is_Enabled()
+    {
+        return !Is_Disabled();
+    }
+
+    Bool_t Reference_t::Is_Disabled()
+    {
+        return (form_flags & Form_Flags_e::IS_DISABLED) != 0;
     }
 
     Bool_t Reference_t::Is_Persistent()
@@ -99,6 +119,81 @@ namespace doticu_skylib {
     Cell_t* Reference_t::Cell()
     {
         return parent_cell;
+    }
+
+    Worldspace_t* Reference_t::Worldspace()
+    {
+        static auto get_worldspace = reinterpret_cast
+            <Worldspace_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::GET_WORLDSPACE);
+        return get_worldspace(this);
+    }
+
+    Reference_Handle_t Reference_t::To_Handle()
+    {
+        static auto create_reference_handle = reinterpret_cast
+            <void(*)(Reference_Handle_t&, Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::CREATE_REFERENCE_HANDLE);
+
+        Reference_Handle_t handle = Invalid_Handle();
+        if (Is_Valid() && Reference_Count() > 0) {
+            create_reference_handle(handle, this);
+        }
+        return handle;
+    }
+
+    void Reference_t::Move_To_Offset(some<Reference_t*> target,
+                                     some<Cell_t*> target_cell,
+                                     maybe<Worldspace_t*> target_worldspace,
+                                     f32_xyz& offset,
+                                     f32_xyz& rotation)
+    {
+        static auto move_to_offset = reinterpret_cast
+            <void(*)(Reference_t*, Reference_Handle_t&, Cell_t*, Worldspace_t*, f32_xyz&, f32_xyz&)>
+            (Game_t::Base_Address() + Offset_e::MOVE_TO_OFFSET);
+
+        SKYLIB_ASSERT_SOME(target);
+        SKYLIB_ASSERT_SOME(target_cell);
+
+        if (Is_Valid()) {
+            Reference_Handle_t target_handle = target->To_Handle();
+            if (target_handle != Reference_t::Invalid_Handle()) {
+                move_to_offset(this, target_handle, target_cell, target_worldspace ? target_worldspace() : nullptr, offset, rotation);
+            }
+        }
+    }
+
+    void Reference_t::Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation)
+    {
+        SKYLIB_ASSERT_SOME(target);
+
+        if (Is_Valid()) {
+            Cell_t* target_cell = target->Cell();
+            if (target_cell) {
+                Move_To_Offset(target, target_cell, target->Worldspace(), offset, rotation);
+            }
+        }
+    }
+
+    void Reference_t::Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree)
+    {
+        SKYLIB_ASSERT_SOME(origin);
+
+        if (Is_Valid()) {
+            Float_t radians = origin->rotation.z - To_Radians(degree);
+
+            f32_xyz offset;
+            offset.x = origin->position.x + radius * sin(radians);
+            offset.y = origin->position.y + radius * cos(radians);
+            offset.z = origin->position.z;
+
+            f32_xyz rotation;
+            rotation.x = 0.0f;
+            rotation.y = 0.0f;
+            rotation.z = origin->rotation.z + To_Radians(180.0f - degree);
+
+            Move_To_Offset(origin, offset, rotation);
+        }
     }
 
     void Reference_t::Select_In_Console()

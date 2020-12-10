@@ -23,6 +23,16 @@ namespace doticu_skylib {
         return !Is_Odd(num);
     }
 
+    inline Float_t To_Degrees(Float_t radians)
+    {
+        return radians * (180.0f / PI);
+    }
+
+    inline Float_t To_Radians(Float_t degrees)
+    {
+        return degrees * PI / 180.0f;
+    }
+
     class CRC32_Hash_t
     {
     public:

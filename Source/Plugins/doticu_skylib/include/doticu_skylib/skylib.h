@@ -18,6 +18,7 @@ namespace doticu_skylib {
     class Actor_Value_e;
     class Actor_Value_Modifier_e;
     class Form_Type_e;
+    class Rarity_e;
     class Relation_e;
     class Sex_e;
 
@@ -62,6 +63,7 @@ namespace doticu_skylib {
     class Quest_t;
     class Race_t;
     class Reference_t;
+    class Translations_t;
     class Worldspace_t;
 
     class Aliases_x;

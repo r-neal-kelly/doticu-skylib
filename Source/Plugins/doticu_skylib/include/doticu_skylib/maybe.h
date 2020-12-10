@@ -124,7 +124,7 @@ namespace doticu_skylib {
 
         operator Index_t()
         {
-            SKYLIB_ASSERT_SOME(operator Bool_t());
+            //SKYLIB_ASSERT_SOME(operator Bool_t());
             return value;
         }
 
@@ -196,14 +196,14 @@ namespace doticu_skylib {
 
         operator Index_t()
         {
-            SKYLIB_ASSERT_MAYBE(operator Bool_t());
+            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return value;
         }
 
         template <typename T, enable_if_signed_integral_t<T> = true>
         operator some<T>()
         {
-            SKYLIB_ASSERT_MAYBE(operator Bool_t());
+            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return static_cast<T>(value);
         }
 
@@ -324,13 +324,13 @@ namespace doticu_skylib {
 
         operator T*()
         {
-            SKYLIB_ASSERT_SOME(operator Bool_t());
+            //SKYLIB_ASSERT_SOME(operator Bool_t());
             return value;
         }
 
         operator T*() const
         {
-            SKYLIB_ASSERT_SOME(operator Bool_t());
+            //SKYLIB_ASSERT_SOME(operator Bool_t());
             return value;
         }
 
@@ -433,20 +433,20 @@ namespace doticu_skylib {
 
         operator T*()
         {
-            SKYLIB_ASSERT_MAYBE(operator Bool_t());
+            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return value;
         }
 
         operator T*() const
         {
-            SKYLIB_ASSERT_MAYBE(operator Bool_t());
+            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return value;
         }
 
         template <typename TT>
         operator some<TT*>()
         {
-            SKYLIB_ASSERT_MAYBE(operator Bool_t());
+            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return static_cast<TT*>(value);
         }
 
