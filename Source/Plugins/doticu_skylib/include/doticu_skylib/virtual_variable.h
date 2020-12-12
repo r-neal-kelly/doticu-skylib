@@ -22,6 +22,7 @@ namespace doticu_skylib {
     class Object_t;
     class Outfit_t;
     class Reference_t;
+    class Quest_t;
 
 }
 
@@ -93,6 +94,7 @@ namespace doticu_skylib { namespace Virtual {
         Misc_t* Misc();
         Outfit_t* Outfit();
         Reference_t* Reference();
+        Quest_t* Quest();
         template <typename Type>
         Vector_t<Type> Vector();
 

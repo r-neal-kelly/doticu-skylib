@@ -143,7 +143,7 @@ namespace doticu_skylib {
     }
 
     void Reference_t::Move_To_Offset(some<Reference_t*> target,
-                                     some<Cell_t*> target_cell,
+                                     maybe<Cell_t*> target_cell,
                                      maybe<Worldspace_t*> target_worldspace,
                                      f32_xyz& offset,
                                      f32_xyz& rotation)
@@ -153,12 +153,11 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::MOVE_TO_OFFSET);
 
         SKYLIB_ASSERT_SOME(target);
-        SKYLIB_ASSERT_SOME(target_cell);
 
-        if (Is_Valid()) {
+        if (Is_Valid() && target->Is_Valid()) {
             Reference_Handle_t target_handle = target->To_Handle();
             if (target_handle != Reference_t::Invalid_Handle()) {
-                move_to_offset(this, target_handle, target_cell, target_worldspace ? target_worldspace() : nullptr, offset, rotation);
+                move_to_offset(this, target_handle, target_cell, target_worldspace, offset, rotation);
             }
         }
     }
@@ -167,11 +166,8 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(target);
 
-        if (Is_Valid()) {
-            Cell_t* target_cell = target->Cell();
-            if (target_cell) {
-                Move_To_Offset(target, target_cell, target->Worldspace(), offset, rotation);
-            }
+        if (Is_Valid() && target->Is_Valid()) {
+            Move_To_Offset(target, target->Cell(), target->Worldspace(), offset, rotation);
         }
     }
 
@@ -179,7 +175,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(origin);
 
-        if (Is_Valid()) {
+        if (Is_Valid() && origin->Is_Valid()) {
             Float_t radians = origin->rotation.z - To_Radians(degree);
 
             f32_xyz offset;
@@ -202,55 +198,59 @@ namespace doticu_skylib {
 
         if (Is_Valid()) {
             Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            SKYLIB_ASSERT(script);
-            script->Command((std::string("prid ") + Form_ID_String().data).c_str());
-            script->Execute(this);
-            delete script;
+            if (script) {
+                script->Command((std::string("prid ") + Form_ID_String().data).c_str());
+                script->Execute(this);
+                delete script;
+            }
         }
     }
 
     void Reference_t::Enable()
     {
-        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
 
         if (Is_Valid()) {
             Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            SKYLIB_ASSERT(script);
-            script->Command("Enable");
-            script->Execute(this);
-            delete script;
+            if (script) {
+                script->Command("Enable");
+                script->Execute(this);
+                delete script;
+            }
         }
     }
 
     void Reference_t::Disable()
     {
-        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
 
         if (Is_Valid()) {
             Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            SKYLIB_ASSERT(script);
-            script->Command("Disable");
-            script->Execute(this);
-            delete script;
+            if (script) {
+                script->Command("Disable");
+                script->Execute(this);
+                delete script;
+            }
         }
     }
 
     void Reference_t::Mark_For_Delete(Bool_t do_disable)
     {
-        static Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
 
         if (Is_Valid()) {
             Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            SKYLIB_ASSERT(script);
-            if (do_disable) {
-                script->Command("Disable");
-                script->Execute(this);
+            if (script) {
+                if (do_disable) {
+                    script->Command("Disable");
+                    script->Execute(this);
+                }
+                if (Is_Persistent()) {
+                    script->Command("MarkForDelete");
+                    script->Execute(this);
+                }
+                delete script;
             }
-            if (Is_Persistent()) {
-                script->Command("MarkForDelete");
-                script->Execute(this);
-            }
-            delete script;
         }
     }
 

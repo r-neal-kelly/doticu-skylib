@@ -91,6 +91,7 @@ namespace doticu_skylib {
 
         Bool_t                  Is_Interior();
         Bool_t                  Is_Exterior();
+        Bool_t                  Can_Travel_From();
 
         Location_t*             Location();
         Vector_t<Location_t*>   Locations();

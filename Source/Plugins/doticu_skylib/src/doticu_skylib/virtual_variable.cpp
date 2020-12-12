@@ -116,6 +116,20 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
+    Quest_t* Variable_t::Quest()
+    {
+        if (type.Is_Object()) {
+            if (data.obj) {
+                return static_cast<Quest_t*>
+                    (Handle_Policy_t::Self()->Resolve(Form_Type_e::QUEST, data.obj->Handle()));
+            } else {
+                return nullptr;
+            }
+        } else {
+            return nullptr;
+        }
+    }
+
     void Variable_t::None(Type_t type)
     {
         Destroy();

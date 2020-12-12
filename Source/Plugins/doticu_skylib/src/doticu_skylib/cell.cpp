@@ -103,6 +103,11 @@ namespace doticu_skylib {
         return (cell_flags & Cell_Flags_e::IS_INTERIOR) == 0;
     }
 
+    Bool_t Cell_t::Can_Travel_From()
+    {
+        return (cell_flags & Cell_Flags_e::CAN_TRAVEL_FROM) != 0;
+    }
+
     Location_t* Cell_t::Location()
     {
         xlist.Validate();

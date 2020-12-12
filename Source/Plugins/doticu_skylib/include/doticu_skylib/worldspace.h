@@ -117,6 +117,9 @@ namespace doticu_skylib {
         u32                                     pad_34C;                            // 34C
         s8*                                     unk_350;                            // 350
 
+        Bool_t Can_Fast_Travel();
+        Bool_t Cant_Fast_Travel();
+
         void Log();
     };
     STATIC_ASSERT(sizeof(Worldspace_t) == 0x358);

@@ -54,6 +54,7 @@ namespace doticu_skylib {
     class Consts_t;
     class Form_t;
     class Game_t;
+    class Global_t;
     class Leveled_Actor_Base_t;
     class Loaded_Actor_t;
     class Location_t;

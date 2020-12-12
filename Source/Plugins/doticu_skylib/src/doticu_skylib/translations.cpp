@@ -2,8 +2,11 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "skse64/GameSettings.h"
 #include "skse64/ScaleformLoader.h"
 #include "skse64/ScaleformState.h"
+
+#include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/translations.h"
 
@@ -20,6 +23,20 @@ namespace doticu_skylib {
     }
 
     std::mutex Translations_t::mutex;
+
+    Bool_t Translations_t::Are_English()
+    {
+        Setting* setting = GetINISetting("sLanguage:General");
+        if (setting && setting->GetType() == Setting::kType_String) {
+            if (setting->data.s) {
+                return CString_t::Is_Same(setting->data.s, "ENGLISH", true);
+            } else {
+                return true;
+            }
+        } else {
+            return true;
+        }
+    }
 
     std::wstring Translations_t::Translation(maybe<const wchar_t*> key)
     {

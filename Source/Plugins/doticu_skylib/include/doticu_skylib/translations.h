@@ -27,6 +27,8 @@ namespace doticu_skylib {
     public:
         static std::mutex mutex;
 
+        static Bool_t                                   Are_English();
+
         static std::wstring                             Translation(maybe<const wchar_t*> key);
         static void                                     Translation(maybe<const wchar_t*> key, maybe<const wchar_t*> value_to_copy);
 

@@ -22,6 +22,16 @@ namespace doticu_skylib {
         return results;
     }
 
+    Bool_t Worldspace_t::Can_Fast_Travel()
+    {
+        return !Cant_Fast_Travel();
+    }
+
+    Bool_t Worldspace_t::Cant_Fast_Travel()
+    {
+        return (worldspace_flags & Worldspace_Flags_e::CANT_FAST_TRAVEL) != 0;
+    }
+
     void Worldspace_t::Log()
     {
         #define TAB "    "

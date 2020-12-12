@@ -174,7 +174,7 @@ namespace doticu_skylib {
         u32     count;      // 10
         u32     pad_14;     // 14
 
-        some<Type_t*> At(u32 index)
+        some<Type_t*> At(u32 index) // this should be Point
         {
             SKYLIB_ASSERT(index < count);
             return entries + index;

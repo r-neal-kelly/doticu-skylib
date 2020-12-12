@@ -95,7 +95,7 @@ namespace doticu_skylib {
         Reference_Handle_t  To_Handle();
 
         void Move_To_Offset(some<Reference_t*> target,
-                            some<Cell_t*> target_cell,
+                            maybe<Cell_t*> target_cell,
                             maybe<Worldspace_t*> target_worldspace,
                             f32_xyz& offset,
                             f32_xyz& rotation);
