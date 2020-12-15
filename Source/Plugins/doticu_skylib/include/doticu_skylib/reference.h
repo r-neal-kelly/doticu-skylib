@@ -24,7 +24,8 @@ namespace doticu_skylib {
         public Form_t,
         public Reference_Count_t,
         public Event_Sink_t<void*>,
-        public Animation_Graphs_t {
+        public Animation_Graphs_t
+    {
     public:
         enum
         {

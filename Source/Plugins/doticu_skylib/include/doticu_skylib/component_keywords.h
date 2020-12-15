@@ -10,14 +10,16 @@
 
 namespace doticu_skylib {
 
+    class Keyword_t;
+
     class Keywords_c : public Form_Data_c
     {
     public:
         virtual ~Keywords_c(); // 0
 
-        void*   keywords;       // 08
-        u32     keyword_count;  // 10
-        u32     pad_14;         // 14
+        Keyword_t** keywords;       // 08
+        u32         keyword_count;  // 10
+        u32         pad_14;         // 14
     };
     STATIC_ASSERT(sizeof(Keywords_c) == 0x18);
 

@@ -11,6 +11,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/keyword.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/reference.h"
 
@@ -257,6 +258,26 @@ namespace doticu_skylib {
                 Faction_And_Rank_t& faction_and_rank = buffer[idx];
                 if (faction_and_rank.rank > -1) {
                     results.push_back(faction_and_rank);
+                }
+            }
+        }
+    }
+
+    Vector_t<Keyword_t*> Actor_Base_t::Keywords()
+    {
+        Vector_t<Keyword_t*> results;
+        Keywords(results);
+        return results;
+    }
+
+    void Actor_Base_t::Keywords(Vector_t<Keyword_t*>& results)
+    {
+        if (keywords) {
+            results.reserve(keyword_count);
+            for (Index_t idx = 0, end = keyword_count; idx < end; idx += 1) {
+                Keyword_t* keyword = keywords[idx];
+                if (keyword && keyword->Is_Valid() && !results.Has(keyword)) {
+                    results.push_back(keyword);
                 }
             }
         }
