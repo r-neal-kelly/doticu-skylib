@@ -196,7 +196,7 @@ namespace doticu_skylib {
         void                Read(void* destination, u32 size);
 
         Bool_t              Find_Record(const char* type, Form_ID_t form_id);
-        String_t            Editor_ID(const char* type, Form_ID_t form_id);
+        const char*         Allocate_Editor_ID(const char* type, Form_ID_t form_id);
 
         void                Log_Records(std::string indent = "");
     };

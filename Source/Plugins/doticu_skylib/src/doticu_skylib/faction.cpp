@@ -8,6 +8,41 @@
 
 namespace doticu_skylib {
 
+    Vector_t<const char*>   Faction_t::editor_ids;
+    std::mutex              Faction_t::editor_ids_mutex;
+
+    void Faction_t::Init_Editor_IDs()
+    {
+        static Bool_t has_initialized = false;
+
+        std::lock_guard<std::mutex> guard(editor_ids_mutex);
+        if (!has_initialized) {
+            auto& factions = Game_t::Self()->Factions();
+            for (Index_t idx = 0, end = factions.count; idx < end; idx += 1) {
+                Faction_t* faction = factions.entries[idx];
+                if (faction) {
+                    if (faction->Is_Valid()) {
+                        Mod_t* highest_mod = faction->Get_Highest_Mod();
+                        if (highest_mod) {
+                            const char* editor_id = highest_mod->Allocate_Editor_ID("FACT", faction->form_id);
+                            if (editor_id && editor_id[0]) {
+                                faction->editor_id_index = editor_ids.size();
+                                editor_ids.push_back(editor_id);
+                            } else {
+                                faction->editor_id_index = 0xFFFFFFFF;
+                            }
+                        } else {
+                            faction->editor_id_index = 0xFFFFFFFF;
+                        }
+                    } else {
+                        faction->editor_id_index = 0xFFFFFFFF;
+                    }
+                }
+            }
+            has_initialized = true;
+        }
+    }
+
     size_t Faction_t::Faction_Count()
     {
         return Game_t::Self()->Factions().count;
@@ -39,20 +74,21 @@ namespace doticu_skylib {
         if (name && name[0]) {
             return name;
         } else {
-            String_t editor_id = Editor_ID();
-            if (editor_id.data && editor_id.data[0]) {
-                return editor_id;
+            name = Editor_ID();
+            if (name && name[0]) {
+                return name;
             } else {
                 return Form_ID_String();
             }
         }
     }
 
-    String_t Faction_t::Editor_ID()
+    const char* Faction_t::Editor_ID()
     {
-        Mod_t* highest_mod = Get_Highest_Mod();
-        if (highest_mod) {
-            return highest_mod->Editor_ID("FACT", form_id);
+        Init_Editor_IDs();
+
+        if (editor_id_index != 0xFFFFFFFF && editor_id_index < editor_ids.size()) {
+            return editor_ids[editor_id_index];
         } else {
             return "";
         }

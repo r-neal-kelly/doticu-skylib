@@ -307,13 +307,20 @@ namespace doticu_skylib {
         return false;
     }
 
-    String_t Mod_t::Editor_ID(const char* type, Form_ID_t form_id)
+    const char* Mod_t::Allocate_Editor_ID(const char* type, Form_ID_t form_id)
     {
         if (Find_Record(type, form_id)) {
             if (Has_Current_Sub_Record_Type("EDID")) {
-                char editor_id[256];
-                Read(editor_id, sizeof(editor_id));
-                editor_id[255] = 0;
+                u32 editor_id_size = current_sub_record_header.body_size;
+
+                char* editor_id = static_cast<char*>(malloc(editor_id_size));
+                SKYLIB_ASSERT(editor_id);
+
+                Read(editor_id, editor_id_size);
+                editor_id[editor_id_size - 1] = 0;
+
+                SKYLIB_ASSERT(editor_id_size == CString_t::Length(editor_id, true));
+
                 return editor_id;
             } else {
                 return "";
