@@ -220,6 +220,48 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<Faction_And_Rank_t> Actor_Base_t::Factions_And_Ranks(Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> results;
+        Factions_And_Ranks(results, remove_negatives);
+        return results;
+    }
+
+    void Actor_Base_t::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> buffer;
+        Vector_t<Faction_And_Rank_t>* output;
+        if (remove_negatives) {
+            output = &buffer;
+            buffer.reserve(factions_and_ranks.count);
+            results.reserve(factions_and_ranks.count);
+        } else {
+            output = &results;
+            results.reserve(factions_and_ranks.count);
+        }
+
+        for (Index_t idx = 0, end = factions_and_ranks.count; idx < end; idx += 1) {
+            Faction_And_Rank_t& faction_and_rank = factions_and_ranks.entries[idx];
+            if (faction_and_rank.Is_Valid()) {
+                maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                if (output_idx) {
+                    output->operator[](idx).rank = faction_and_rank.rank;
+                } else {
+                    output->push_back(faction_and_rank);
+                }
+            }
+        }
+
+        if (remove_negatives) {
+            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = buffer[idx];
+                if (faction_and_rank.rank > -1) {
+                    results.push_back(faction_and_rank);
+                }
+            }
+        }
+    }
+
     Actor_Base_t* Actor_Base_t::Highest_Static()
     {
         if (Is_Static()) {
@@ -284,6 +326,19 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    void Actor_Base_t::Log_Factions_And_Ranks(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_Base_t::Log_Factions_And_Ranks: %s", Any_Name());
+        SKYLIB_LOG(indent + "{");
+
+        Vector_t<Faction_And_Rank_t> factions_and_ranks = Factions_And_Ranks();
+        for (Index_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
+            factions_and_ranks[idx].Log(indent + SKYLIB_TAB);
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

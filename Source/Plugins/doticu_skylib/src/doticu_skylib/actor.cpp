@@ -12,6 +12,9 @@
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
 
+#include "doticu_skylib/extra_factions_and_ranks.h"
+#include "doticu_skylib/extra_list.inl"
+
 namespace doticu_skylib {
 
     Vector_t<Loaded_Actor_t> Actor_t::Loaded_Actors()
@@ -194,6 +197,80 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<Faction_And_Rank_t> Actor_t::Factions_And_Ranks(Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> results;
+        Factions_And_Ranks(results, remove_negatives);
+        return results;
+    }
+
+    void Actor_t::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
+    {
+        Array_t<Faction_And_Rank_t>* base_factions_and_ranks = nullptr;
+        Array_t<Faction_And_Rank_t>* reference_factions_and_ranks = nullptr;
+        size_t reserve_count = 0;
+
+        Actor_Base_t* actor_base = Actor_Base();
+        if (actor_base && actor_base->Is_Valid()) {
+            base_factions_and_ranks = &actor_base->factions_and_ranks;
+            reserve_count += base_factions_and_ranks->count;
+        }
+
+        Factions_And_Ranks_x* xfactions_and_ranks = xlist.Get<Factions_And_Ranks_x>();
+        if (xfactions_and_ranks) {
+            reference_factions_and_ranks = &xfactions_and_ranks->factions_and_ranks;
+            reserve_count += reference_factions_and_ranks->count;
+        }
+
+        Vector_t<Faction_And_Rank_t> buffer;
+        Vector_t<Faction_And_Rank_t>* output;
+        if (remove_negatives) {
+            output = &buffer;
+            buffer.reserve(reserve_count);
+            results.reserve(reserve_count);
+        } else {
+            output = &results;
+            results.reserve(reserve_count);
+        }
+
+        if (base_factions_and_ranks) {
+            for (Index_t idx = 0, end = base_factions_and_ranks->count; idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = base_factions_and_ranks->entries[idx];
+                if (faction_and_rank.Is_Valid()) {
+                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                    if (output_idx) {
+                        output->operator[](idx).rank = faction_and_rank.rank;
+                    } else {
+                        output->push_back(faction_and_rank);
+                    }
+                }
+            }
+        }
+
+        if (reference_factions_and_ranks) {
+            for (Index_t idx = 0, end = reference_factions_and_ranks->count; idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = reference_factions_and_ranks->entries[idx];
+                if (faction_and_rank.Is_Valid()) {
+                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                    if (output_idx) {
+                        output->operator[](idx).rank = faction_and_rank.rank;
+                    } else {
+                        output->push_back(faction_and_rank);
+                    }
+                }
+            }
+        }
+
+        if (remove_negatives) {
+            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = buffer[idx];
+                if (faction_and_rank.rank > -1) {
+                    results.push_back(faction_and_rank);
+                }
+            }
+        }
+    }
+
     const char* Actor_t::Base_Name()
     {
         if (base_form) {
@@ -221,6 +298,19 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    void Actor_t::Log_Factions_And_Ranks(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_t::Log_Factions_And_Ranks: %s", Any_Name());
+        SKYLIB_LOG(indent + "{");
+
+        Vector_t<Faction_And_Rank_t> factions_and_ranks = Factions_And_Ranks();
+        for (Index_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
+            factions_and_ranks[idx].Log(indent + SKYLIB_TAB);
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

@@ -19,6 +19,7 @@
 
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/animated_object.h"
+#include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
@@ -84,18 +85,23 @@ namespace doticu_skylib {
         Float_t         weight;         // 1FC
         // ...
 
-        Bool_t                  Has_Template_FF000800();
+    public:
+        Bool_t                          Has_Template_FF000800();
 
-        Sex_e                   Sex();
-        Rarity_e                Rarity();
-        Race_t*                 Race();
-        Vector_t<Actor_Base_t*> Templates();
-        void                    Templates(Vector_t<Actor_Base_t*>& results);
-        Actor_Base_t*           Highest_Static();
-        Actor_Base_t*           Root_Template();
-        Actor_Base_t*           Root_Base();
+        Sex_e                           Sex();
+        Rarity_e                        Rarity();
+        Race_t*                         Race();
+        Vector_t<Actor_Base_t*>         Templates();
+        void                            Templates(Vector_t<Actor_Base_t*>& results);
+        Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
+        void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
+        Actor_Base_t*                   Highest_Static();
+        Actor_Base_t*                   Root_Template();
+        Actor_Base_t*                   Root_Base();
 
-        String_t                Any_Name();
+        String_t                        Any_Name();
+
+        void                            Log_Factions_And_Ranks(std::string indent = "");
     };
     //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
 

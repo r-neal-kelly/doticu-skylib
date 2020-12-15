@@ -227,6 +227,16 @@ namespace doticu_skylib {
             return -1;
         }
 
+        Index_t Index_Of(Type& item, Bool_t(*is_same)(const Type&, const Type&))
+        {
+            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+                if (is_same(at(idx), item)) {
+                    return idx;
+                }
+            }
+            return -1;
+        }
+
         template <typename TT>
         Index_t Index_Of(TT& item)
         {

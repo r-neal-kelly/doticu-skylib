@@ -52,6 +52,8 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Cell_t;
     class Consts_t;
+    class Faction_t;
+    class Faction_And_Rank_t;
     class Form_t;
     class Game_t;
     class Global_t;

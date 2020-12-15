@@ -87,14 +87,17 @@
     <ClInclude Include="include\doticu_skylib\component_package_override.h" />
     <ClInclude Include="include\doticu_skylib\component_perks.h" />
     <ClInclude Include="include\doticu_skylib\component_race.h" />
+    <ClInclude Include="include\doticu_skylib\component_reaction.h" />
     <ClInclude Include="include\doticu_skylib\component_skin.h" />
     <ClInclude Include="include\doticu_skylib\component_texture.h" />
     <ClInclude Include="include\doticu_skylib\cstring.h" />
     <ClInclude Include="include\doticu_skylib\enum.h" />
     <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
+    <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h" />
     <ClInclude Include="include\doticu_skylib\extra_location.h" />
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
+    <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
     <ClInclude Include="include\doticu_skylib\form_flags.h" />
@@ -162,6 +165,8 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\faction.cpp" />
+    <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
     <ClCompile Include="src\doticu_skylib\form.cpp" />
     <ClCompile Include="src\doticu_skylib\form_factory.cpp" />
     <ClCompile Include="src\doticu_skylib\game.cpp" />

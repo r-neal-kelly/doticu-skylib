@@ -17,6 +17,7 @@ namespace doticu_skylib {
     class Actor_Base_t;
     class Addon_Node_t;
     class Cell_t;
+    class Faction_t;
     class Form_t;
     class Leveled_Actor_Base_t;
     class Mod_t;
@@ -71,6 +72,7 @@ namespace doticu_skylib {
 
     public:
         Array_t<Actor_Base_t*>&         Actor_Bases();
+        Array_t<Faction_t*>&            Factions();
         Array_t<Leveled_Actor_Base_t*>& Leveled_Actor_Bases();
         Array_t<Race_t*>&               Races();
         Array_t<Worldspace_t*>&         Worldspaces();

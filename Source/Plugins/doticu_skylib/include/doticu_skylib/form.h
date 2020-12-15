@@ -53,13 +53,13 @@ namespace doticu_skylib {
 
         virtual void        _04(void);                              // 04
         virtual void        _05(void);                              // 05
-        virtual void        _06(void);                              // 06
+        virtual Bool_t      Load(Mod_t* mod);                       // 06
         virtual void        _07(void);                              // 07
         virtual void        _08(void);                              // 08
         virtual void        _09(void);                              // 09
         virtual void        _0A(void);                              // 0A
         virtual void        _0B(void);                              // 0B
-        virtual void        _0C(void);                              // 0C
+        virtual Bool_t      Find_In_Mod(Mod_t* mod);                // 0C
         virtual void        _0D(void);                              // 0D
         virtual void        _0E(void);                              // 0E
         virtual void        _0F(void);                              // 0F

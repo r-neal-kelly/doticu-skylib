@@ -13,8 +13,10 @@ namespace doticu_skylib {
     public:
         enum : u8
         {
-            ALIASES     = 0x88,
-            LOCATION    = 0x89,
+            FACTIONS_AND_RANKS  = 0x5B,
+
+            ALIASES             = 0x88,
+            LOCATION            = 0x89,
         };
         using Enum_t::Enum_t;
     };

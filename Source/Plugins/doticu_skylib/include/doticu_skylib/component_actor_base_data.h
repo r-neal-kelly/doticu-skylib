@@ -11,7 +11,7 @@
 
 #include "doticu_skylib/component_form_data.h"
 
-#include "doticu_skylib/faction.h"
+#include "doticu_skylib/faction_and_rank.h"
 
 class TESLevItem;
 class BGSVoiceType;

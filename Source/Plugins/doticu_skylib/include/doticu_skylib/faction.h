@@ -6,21 +6,38 @@
 
 #include "doticu_skylib/intrinsic.h"
 
+#include "doticu_skylib/component_name.h"
+#include "doticu_skylib/component_reaction.h"
+
+#include "doticu_skylib/form.h"
+
 namespace doticu_skylib {
 
-    class Faction_t;
-
-    using Faction_Rank_t = s8;
-
-    class Faction_And_Rank_t
+    class Faction_t :
+        public Form_t,
+        public Name_c,
+        public Reaction_c
     {
     public:
-        Faction_t*      faction;    // 00
-        Faction_Rank_t  rank;       // 08
-        u8              pad_09;     // 09
-        u16             pad_0A;     // 0A
-        u32             pad_0C;     // 0C
+        enum
+        {
+            FORM_TYPE   = Form_Type_e::FACTION,
+            kTypeID     = FORM_TYPE,
+        };
+
+    public:
+        static size_t               Faction_Count();
+        static Vector_t<Faction_t*> Factions();
+        static void                 Factions(Vector_t<Faction_t*>& results);
+
+    public:
+        virtual ~Faction_t(); // 00
+
+    public:
+        String_t    Any_Name();
+        String_t    Editor_ID();
+
+        void        Log(std::string indent = "");
     };
-    STATIC_ASSERT(sizeof(Faction_And_Rank_t) == 0x10);
 
 }

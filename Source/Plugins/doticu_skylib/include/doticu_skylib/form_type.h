@@ -21,6 +21,7 @@ namespace doticu_skylib {
             LOCATION_REFERENCE_TYPE = 0X05, // LCRT
 
             GLOBAL                  = 0x09, // GLOB
+            FACTION                 = 0x0B, // FACT
 
             RACE                    = 0x0E, // RACE
 

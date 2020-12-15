@@ -40,21 +40,63 @@ namespace doticu_skylib {
         using Enum_t::Enum_t;
     };
 
-    class Mod_Form_t
+    class Record_Header_Base_t
     {
     public:
-        char            type[4];            // 00
-        u32             length;             // 04
-        Form_Flags_e    flags;              // 08
-        Form_ID_t       id;                 // 0C
-        u32             control;            // 10
-        u16             version;            // 14
-        u16             control_version;    // 16
+        char    type[4];    // 00
+        u32     body_size;  // 04 sizeof(header) + sizeof(body) == sizeof(record)
+
+    public:
+        Bool_t Has_Type(const char* type);
     };
-    STATIC_ASSERT(sizeof(Mod_Form_t) == 0x18);
+
+    class Record_Header_t : public Record_Header_Base_t
+    {
+    public:
+        Form_Flags_e    flags;              // 08
+        Form_ID_t       form_id;            // 0C
+        u32             version_control_1;  // 10
+        u16             form_version;       // 14
+        u16             version_control_2;  // 16
+
+        void Log(Mod_t* mod, std::string indent = "");
+    };
+    STATIC_ASSERT(sizeof(Record_Header_t) == 0x18);
+
+    class Record_Group_t : public Record_Header_Base_t
+    {
+    public:
+        char    inner_type[4];  // 08
+        u32     unk_0C;         // 0C
+        u64     unk_10;         // 10
+
+    public:
+        Bool_t Has_Inner_Type(const char* type);
+    };
+    STATIC_ASSERT(sizeof(Record_Group_t) == 0x18);
+
+    class Sub_Record_Header_t : public Record_Header_Base_t
+    {
+    public:
+    };
+    STATIC_ASSERT(sizeof(Sub_Record_Header_t) == 0x8);
 
     class Mod_t
     {
+    public:
+        class Offset_e : Enum_t<Word_t>
+        {
+        public:
+            enum
+            {
+                SEEK                    = 0x0017D550,   // 13898
+                SEEK_NEXT_SUB_RECORD    = 0x0017D960,   // 13903
+                CURRENT_SUB_RECORD_TYPE = 0x0017D910,   // 13902
+                READ                    = 0x0017DA10,   // 13904
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         static size_t                   Active_Mod_Count();
         static size_t                   Active_Heavy_Mod_Count();
@@ -95,16 +137,15 @@ namespace doticu_skylib {
         u32                     unk_274;                    // 274
         Cell_t*                 current_cell;               // 278
         u32                     current_reference_offset;   // 280
-        Mod_Form_t              current_form;               // 284
-        u32                     current_chunk_id;           // 29C
-        u32                     chunk_size;                 // 2A0
+        Record_Header_t         current_record_header;      // 284
+        Sub_Record_Header_t     current_sub_record_header;  // 29C
         u32                     file_size;                  // 2A4
         u32                     file_offset;                // 2A8
-        u32                     form_offset;                // 2AC
-        u32                     chunk_offset;               // 2B0
-        Mod_Form_t              save_form;                  // 2B4
-        u32                     save_form_offset;           // 2CC
-        u64                     save_chunk_offset;          // 2D0
+        u32                     current_record_offset;      // 2AC
+        u32                     current_sub_record_offset;  // 2B0
+        Record_Header_t         save_record_header;         // 2B4
+        u32                     save_record_offset;         // 2CC
+        u64                     save_sub_record_offset;     // 2D0
         u64                     unk_2D8;                    // 2D8
         u64                     unk_2E0;                    // 2E0
         u8                      unk_2E8;                    // 2E8
@@ -142,9 +183,22 @@ namespace doticu_skylib {
         Bool_t              Is_Heavy();
         Bool_t              Is_Light();
 
+        Bool_t              Has_Current_Record_Type(const char* type);
+        Bool_t              Has_Current_Sub_Record_Type(const char* type);
+
         const char*         Name();
         maybe<Index_t>      Heavy_Index();
         maybe<Index_t>      Light_Index();
+
+        Bool_t              Seek(u32 offset);
+        //Bool_t              Seek_Next_Record();
+        Bool_t              Seek_Next_Sub_Record();
+        void                Read(void* destination, u32 size);
+
+        Bool_t              Find_Record(const char* type, Form_ID_t form_id);
+        String_t            Editor_ID(const char* type, Form_ID_t form_id);
+
+        void                Log_Records(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Mod_t) == 0x4C8);
 
