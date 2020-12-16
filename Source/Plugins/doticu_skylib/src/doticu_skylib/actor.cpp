@@ -271,6 +271,21 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<Keyword_t*> Actor_t::Keywords(Bool_t include_templates)
+    {
+        Vector_t<Keyword_t*> results;
+        Keywords(results, include_templates);
+        return results;
+    }
+
+    void Actor_t::Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates)
+    {
+        Actor_Base_t* actor_base = Actor_Base();
+        if (actor_base && actor_base->Is_Valid()) {
+            actor_base->Keywords(results, include_templates);
+        }
+    }
+
     const char* Actor_t::Base_Name()
     {
         if (base_form) {

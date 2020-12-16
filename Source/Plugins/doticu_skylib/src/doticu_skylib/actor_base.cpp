@@ -263,21 +263,43 @@ namespace doticu_skylib {
         }
     }
 
-    Vector_t<Keyword_t*> Actor_Base_t::Keywords()
+    Vector_t<Keyword_t*> Actor_Base_t::Keywords(Bool_t include_templates)
     {
         Vector_t<Keyword_t*> results;
-        Keywords(results);
+        Keywords(results, include_templates);
         return results;
     }
 
-    void Actor_Base_t::Keywords(Vector_t<Keyword_t*>& results)
+    void Actor_Base_t::Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates)
     {
-        if (keywords) {
+        if (include_templates) {
+            size_t reserve_count = keyword_count;
+            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+                reserve_count += it->keyword_count;
+            }
+            results.reserve(reserve_count);
+        } else {
             results.reserve(keyword_count);
+        }
+
+        if (keywords) {
             for (Index_t idx = 0, end = keyword_count; idx < end; idx += 1) {
                 Keyword_t* keyword = keywords[idx];
                 if (keyword && keyword->Is_Valid() && !results.Has(keyword)) {
                     results.push_back(keyword);
+                }
+            }
+        }
+
+        if (include_templates) {
+            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+                if (it->keywords) {
+                    for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
+                        Keyword_t* keyword = it->keywords[idx];
+                        if (keyword && keyword->Is_Valid() && !results.Has(keyword)) {
+                            results.push_back(keyword);
+                        }
+                    }
                 }
             }
         }

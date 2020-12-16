@@ -62,6 +62,7 @@ namespace doticu_skylib {
     public:
         String_t    Any_Name();
         const char* Editor_ID();
+        String_t    Editor_Or_Form_ID();
 
         void        Log(std::string indent = "");
     };

@@ -267,9 +267,6 @@
     <ClInclude Include="include\doticu_skylib\form_flags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\actor_base_leveleds.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\read_write_lock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -444,6 +441,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\faction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\keyword.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -95,8 +95,8 @@ namespace doticu_skylib {
         void                            Templates(Vector_t<Actor_Base_t*>& results);
         Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
-        Vector_t<Keyword_t*>            Keywords();
-        void                            Keywords(Vector_t<Keyword_t*>& results);
+        Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);
+        void                            Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
         Actor_Base_t*                   Highest_Static();
         Actor_Base_t*                   Root_Template();
         Actor_Base_t*                   Root_Base();

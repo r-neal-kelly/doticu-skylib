@@ -21,6 +21,8 @@ namespace doticu_skylib {
         virtual ~Keyword_t(); // 0
 
         String_t editor_id; // 20
+
+        String_t Any_Name();
     };
     STATIC_ASSERT(sizeof(Keyword_t) == 0x28);
 

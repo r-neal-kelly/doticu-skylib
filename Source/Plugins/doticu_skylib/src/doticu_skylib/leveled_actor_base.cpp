@@ -35,69 +35,6 @@ namespace doticu_skylib {
         }
     }
 
-    void Leveled_Actor_Base_t::Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results,
-                                                   Vector_t<Actor_Base_Leveleds_t>& actor_bases_leveleds)
-    {
-        for (Index_t idx = 0, end = actor_bases_leveleds.size(); idx < end; idx += 1) {
-            Actor_Base_Leveleds_t& actor_base_leveleds = actor_bases_leveleds[idx];
-            for (Index_t idx = 0, end = actor_base_leveleds.Count(); idx < end; idx += 1) {
-                some<Leveled_Actor_Base_t*> leveled_actor_base = actor_base_leveleds[idx];
-                SKYLIB_ASSERT_SOME(leveled_actor_base);
-                if (!results.Has(leveled_actor_base)) {
-                    results.push_back(leveled_actor_base);
-                }
-            }
-        }
-    }
-
-    Vector_t<Actor_Base_Leveleds_t> Leveled_Actor_Base_t::Actor_Bases_Leveleds()
-    {
-        Vector_t<Actor_Base_Leveleds_t> results;
-        results.reserve(Actor_Base_t::Actor_Base_Count());
-        Actor_Bases_Leveleds(results);
-        return results;
-    }
-
-    void Leveled_Actor_Base_t::Actor_Bases_Leveleds(Vector_t<Actor_Base_Leveleds_t>& results)
-    {
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
-        {
-        public:
-            Vector_t<Actor_Base_Leveleds_t>&    results;
-            some<Leveled_Actor_Base_t*>         leveled_actor_base;
-
-            Iterator_t(Vector_t<Actor_Base_Leveleds_t>& results, some<Leveled_Actor_Base_t*> leveled_actor_base) :
-                results(results), leveled_actor_base(leveled_actor_base)
-            {
-            }
-
-            Iterator_e operator()(Actor_Base_t* actor_base)
-            {
-                if (actor_base) {
-                    Index_t index = results.Index_Of(actor_base);
-                    if (index > -1) {
-                        Actor_Base_Leveleds_t& actor_base_leveleds = results[index];
-                        actor_base_leveleds.Push(leveled_actor_base);
-                    } else {
-                        Actor_Base_Leveleds_t actor_base_leveleds(actor_base);
-                        actor_base_leveleds.Push(leveled_actor_base);
-                        results.push_back(actor_base_leveleds);
-                    }
-                }
-                return Iterator_e::CONTINUE;
-            }
-        };
-
-        auto& leveled_actor_bases = Game_t::Self()->Leveled_Actor_Bases();
-        for (Index_t idx = 0, end = leveled_actor_bases.count; idx < end; idx += 1) {
-            Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases.entries[idx];
-            if (leveled_actor_base) {
-                Iterator_t iterator(results, leveled_actor_base);
-                leveled_actor_base->Iterate_Actor_Bases(iterator);
-            }
-        }
-    }
-
     void Leveled_Actor_Base_t::Log_Leveled_Actor_Bases()
     {
         #define TAB "    "

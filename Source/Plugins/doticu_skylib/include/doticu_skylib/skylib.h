@@ -43,7 +43,6 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Actor_Base_t;
-    class Actor_Base_Leveleds_t;
     class Actor_State_t;
     class Actor_Values_t;
     class Alias_Base_t;
@@ -57,6 +56,7 @@ namespace doticu_skylib {
     class Form_t;
     class Game_t;
     class Global_t;
+    class Keyword_t;
     class Leveled_Actor_Base_t;
     class Loaded_Actor_t;
     class Location_t;
@@ -86,6 +86,5 @@ namespace doticu_skylib {
     typedef TESObjectARMO   Armor_t;
 
     typedef BGSOutfit       Outfit_t;
-    typedef BGSKeyword      Keyword_t;
 
 }*/

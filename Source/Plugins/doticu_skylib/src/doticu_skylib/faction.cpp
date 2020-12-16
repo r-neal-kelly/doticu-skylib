@@ -94,6 +94,16 @@ namespace doticu_skylib {
         }
     }
 
+    String_t Faction_t::Editor_Or_Form_ID()
+    {
+        const char* name = Editor_ID();
+        if (name && name[0]) {
+            return name;
+        } else {
+            return Form_ID_String();
+        }
+    }
+
     void Faction_t::Log(std::string indent)
     {
         SKYLIB_LOG(indent + "Faction_t::Log");

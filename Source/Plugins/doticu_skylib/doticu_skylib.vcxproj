@@ -61,7 +61,6 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor.h" />
     <ClInclude Include="include\doticu_skylib\actor_base.h" />
-    <ClInclude Include="include\doticu_skylib\actor_base_leveleds.h" />
     <ClInclude Include="include\doticu_skylib\actor_state.h" />
     <ClInclude Include="include\doticu_skylib\actor_values.h" />
     <ClInclude Include="include\doticu_skylib\alias_base.h" />
@@ -171,6 +170,7 @@
     <ClCompile Include="src\doticu_skylib\form_factory.cpp" />
     <ClCompile Include="src\doticu_skylib\game.cpp" />
     <ClCompile Include="src\doticu_skylib\global.cpp" />
+    <ClCompile Include="src\doticu_skylib\keyword.cpp" />
     <ClCompile Include="src\doticu_skylib\leveled_actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\loaded_actor.cpp" />
     <ClCompile Include="src\doticu_skylib\location.cpp" />
