@@ -23,6 +23,29 @@ namespace doticu_skylib {
     class Keyword_t;
     class Leveled_Actor_Base_t;
 
+    class Actor_Flags_1_e : public Enum_t<u32>
+    {
+    public:
+        enum : u32
+        {
+            PROCESS_AI          = 1 << 1,
+            RESET_AI            = 1 << 17,
+            IS_PLAYER_TEAMMATE  = 1 << 26,
+            IS_PARALYZED        = static_cast<u32>(1 << 31),
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Actor_Flags_2_e : public Enum_t<u32>
+    {
+    public:
+        enum : u32
+        {
+
+        };
+        using Enum_t::Enum_t;
+    };
+
     class Actor_t :
         public Reference_t,
         public Magic_Target_t,
@@ -48,9 +71,19 @@ namespace doticu_skylib {
         static maybe<Actor_t*> Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
 
     public:
-        virtual ~Actor_t(); // 00
+        virtual         ~Actor_t();                                 // 000
 
-        Byte_t unk_data[0x1D0];
+        virtual Bool_t  Is_Dead(Bool_t is_not_essential) override;  // 099
+
+    public:
+        Actor_Flags_1_e actor_flags_1;          // 0E0
+        Float_t         update_target_timer;    // 0E4
+        Byte_t          unk_data[0x1C8];        // 0E8
+
+        Bool_t                          Is_Alive();
+        Bool_t                          Is_Dead();
+        Bool_t                          Is_Player_Teammate();
+        Bool_t                          Isnt_Player_Teammate();
 
         Sex_e                           Sex();
         Race_t*                         Race();

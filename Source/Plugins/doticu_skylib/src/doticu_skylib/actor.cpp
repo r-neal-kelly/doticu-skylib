@@ -143,6 +143,26 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Actor_t::Is_Alive()
+    {
+        return !Is_Dead();
+    }
+
+    Bool_t Actor_t::Is_Dead()
+    {
+        return Is_Dead(true);
+    }
+
+    Bool_t Actor_t::Is_Player_Teammate()
+    {
+        return (actor_flags_1 & Actor_Flags_1_e::IS_PLAYER_TEAMMATE) != 0;
+    }
+
+    Bool_t Actor_t::Isnt_Player_Teammate()
+    {
+        return !Is_Player_Teammate();
+    }
+
     Sex_e Actor_t::Sex()
     {
         if (base_form) {

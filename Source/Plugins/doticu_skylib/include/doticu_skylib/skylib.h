@@ -21,6 +21,7 @@ namespace doticu_skylib {
     class Rarity_e;
     class Relation_e;
     class Sex_e;
+    class Vitality_e;
 
     class Active_Effects_c;
     class Actor_Base_Data_c;
@@ -71,6 +72,7 @@ namespace doticu_skylib {
 
     class Aliases_x;
     class Data_x;
+    class Factions_And_Ranks_x;
     class List_x;
     class Location_x;
 

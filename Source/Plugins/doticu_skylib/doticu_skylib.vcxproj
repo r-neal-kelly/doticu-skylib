@@ -153,6 +153,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_variable.h" />
     <ClInclude Include="include\doticu_skylib\virtual.h" />
     <ClInclude Include="include\doticu_skylib\math.h" />
+    <ClInclude Include="include\doticu_skylib\vitality.h" />
     <ClInclude Include="include\doticu_skylib\worldspace.h" />
     <ClInclude Include="include\doticu_skylib\extra_data.h" />
     <ClInclude Include="include\doticu_skylib\extra_list.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="src\doticu_skylib\location.cpp" />
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
+    <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />
@@ -201,6 +203,7 @@
     <ClCompile Include="src\doticu_skylib\virtual_type.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_utils.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />
+    <ClCompile Include="src\doticu_skylib\vitality.cpp" />
     <ClCompile Include="src\doticu_skylib\worldspace.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_data.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_list.cpp" />

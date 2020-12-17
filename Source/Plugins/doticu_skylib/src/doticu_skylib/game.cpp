@@ -83,6 +83,11 @@ namespace doticu_skylib {
         return reinterpret_cast<Array_t<Leveled_Actor_Base_t*>&>(form_caches[Form_Type_e::LEVELED_ACTOR_BASE]);
     }
 
+    Array_t<Quest_t*>& Game_t::Quests()
+    {
+        return reinterpret_cast<Array_t<Quest_t*>&>(form_caches[Form_Type_e::QUEST]);
+    }
+
     Array_t<Race_t*>& Game_t::Races()
     {
         return reinterpret_cast<Array_t<Race_t*>&>(form_caches[Form_Type_e::RACE]);

@@ -21,6 +21,7 @@ namespace doticu_skylib {
     class Form_t;
     class Leveled_Actor_Base_t;
     class Mod_t;
+    class Quest_t;
     class Race_t;
     class Region_t;
     class Worldspace_t;
@@ -74,6 +75,7 @@ namespace doticu_skylib {
         Array_t<Actor_Base_t*>&         Actor_Bases();
         Array_t<Faction_t*>&            Factions();
         Array_t<Leveled_Actor_Base_t*>& Leveled_Actor_Bases();
+        Array_t<Quest_t*>&              Quests();
         Array_t<Race_t*>&               Races();
         Array_t<Worldspace_t*>&         Worldspaces();
     };

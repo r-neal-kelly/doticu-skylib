@@ -124,6 +124,8 @@ namespace doticu_skylib {
     public:
         Bool_t Has_Filled_Alias(Alias_ID_t alias_id);
 
+        String_t Any_Name();
+
         void Log_Objectives(std::string indent = "");
         void Log_Promoted_References();
 

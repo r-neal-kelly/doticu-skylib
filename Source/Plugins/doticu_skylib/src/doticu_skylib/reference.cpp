@@ -8,6 +8,7 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/script.h"
 
@@ -71,6 +72,7 @@ namespace doticu_skylib {
 
         Aliases_x* xaliases = xlist.Get<Aliases_x>();
         if (xaliases) {
+            Read_Locker_t locker(xaliases->lock);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
                 Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
                 if (instance && instance->quest == quest && instance->alias_base && instance->alias_base->id == alias_id) {
@@ -126,7 +128,30 @@ namespace doticu_skylib {
         static auto get_worldspace = reinterpret_cast
             <Worldspace_t*(*)(Reference_t*)>
             (Game_t::Base_Address() + Offset_e::GET_WORLDSPACE);
+
         return get_worldspace(this);
+    }
+
+    Vector_t<Quest_t*> Reference_t::Quests()
+    {
+        Vector_t<Quest_t*> results;
+        Quests(results);
+        return results;
+    }
+
+    void Reference_t::Quests(Vector_t<Quest_t*>& results)
+    {
+        Aliases_x* xaliases = xlist.Get<Aliases_x>();
+        if (xaliases) {
+            Read_Locker_t locker(xaliases->lock);
+            results.reserve(xaliases->instances.count);
+            for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
+                Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
+                if (instance && instance->quest && instance->quest->Is_Valid() && instance->alias_base) {
+                    results.push_back(instance->quest);
+                }
+            }
+        }
     }
 
     Reference_Handle_t Reference_t::To_Handle()

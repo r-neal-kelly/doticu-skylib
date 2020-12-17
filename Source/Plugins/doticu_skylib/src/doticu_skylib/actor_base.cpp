@@ -197,6 +197,19 @@ namespace doticu_skylib {
         return Is_Unique() ? Rarity_e::UNIQUE : Rarity_e::GENERIC;
     }
 
+    Vitality_e Actor_Base_t::Vitality()
+    {
+        if (Is_Invulnerable()) {
+            return Vitality_e::INVULNERABLE;
+        } else if (Is_Essential()) {
+            return Vitality_e::ESSENTIAL;
+        } else if (Is_Protected()) {
+            return Vitality_e::PROTECTED;
+        } else {
+            return Vitality_e::MORTAL;
+        }
+    }
+
     Race_t* Actor_Base_t::Race()
     {
         return race;

@@ -23,6 +23,7 @@
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
+#include "doticu_skylib/vitality.h"
 
 namespace doticu_skylib {
 
@@ -90,6 +91,7 @@ namespace doticu_skylib {
 
         Sex_e                           Sex();
         Rarity_e                        Rarity();
+        Vitality_e                      Vitality();
         Race_t*                         Race();
         Vector_t<Actor_Base_t*>         Templates();
         void                            Templates(Vector_t<Actor_Base_t*>& results);

@@ -60,6 +60,21 @@ namespace doticu_skylib {
         return filled_aliases.Has(alias_id);
     }
 
+    String_t Quest_t::Any_Name()
+    {
+        const char* name = Name();
+        if (name && name[0]) {
+            return name;
+        } else {
+            name = Get_Editor_ID();
+            if (name && name[0]) {
+                return name;
+            } else {
+                return Form_ID_String();
+            }
+        }
+    }
+
     void Quest_t::Log_Objectives(std::string indent)
     {
         SKYLIB_LOG(indent + "Quest_t::Log_Objectives");
