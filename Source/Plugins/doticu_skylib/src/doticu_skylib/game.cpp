@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#pragma comment(lib, "version.lib")
+
 #include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/form.h"
@@ -9,6 +11,107 @@
 #include "doticu_skylib/mod.h"
 
 namespace doticu_skylib {
+
+    template <typename Type_t>
+    class smart_ptr
+    {
+    public:
+        Type_t* ptr;
+
+        smart_ptr() :
+            ptr(nullptr)
+        {
+        }
+
+        smart_ptr(Type_t* ptr) :
+            ptr(ptr)
+        {
+        }
+
+        smart_ptr(const smart_ptr&) = delete;
+
+        smart_ptr(smart_ptr&& other) noexcept :
+            ptr(std::exchange(other.ptr, nullptr))
+        {
+        }
+
+        ~smart_ptr()
+        {
+            if (ptr) {
+                delete ptr;
+            }
+        }
+
+        smart_ptr& operator=(const smart_ptr&) = delete;
+
+        smart_ptr& operator=(smart_ptr&& other) noexcept
+        {
+            if (this != &other) {
+                ptr = std::exchange(other.ptr, nullptr);
+            }
+        }
+
+        operator Type_t*()
+        {
+            return ptr;
+        }
+    };
+
+    static Bool_t Write_Version(Version_t<u8>& game_version, const char* version_csv)
+    {
+        int major;
+        int minor;
+        int patch;
+        int build;
+        if (sscanf_s(version_csv, "%d.%d.%d.%d", &major, &minor, &patch, &build) == 4) {
+            game_version.major = major;
+            game_version.minor = minor;
+            game_version.patch = patch;
+            game_version.build = build;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    static Bool_t Read_Version(Version_t<u8>& game_version)
+    {
+        static constexpr const char* product_version = "\\StringFileInfo\\040904B0\\ProductVersion";
+        static constexpr const char* file_version = "\\StringFileInfo\\040904B0\\FileVersion";
+
+        char file_path[MAX_PATH];
+        file_path[0] = 0;
+        if (GetModuleFileNameA(0, file_path, sizeof(file_path)) && file_path[0]) {
+            DWORD unused = 0;
+            DWORD version_size = GetFileVersionInfoSizeA(file_path, &unused);
+            if (version_size > 0) {
+                smart_ptr<char> version_info = new char[version_size];
+                if (GetFileVersionInfoA(file_path, unused, version_size, version_info)) {
+                    char* version_csv = nullptr;
+                    UINT version_csv_size = 0;
+                    if (VerQueryValueA(version_info, product_version, (LPVOID*)&version_csv, &version_csv_size) &&
+                        version_csv_size > 0 && version_csv && version_csv[0]) {
+                        return Write_Version(game_version, version_csv);
+                    } else {
+                        version_csv = nullptr;
+                        version_csv_size = 0;
+                        if (VerQueryValueA(version_info, file_version, (LPVOID*)&version_csv, &version_csv_size) &&
+                            version_csv_size > 0 && version_csv && version_csv[0]) {
+                            return Write_Version(game_version, version_csv);
+                        } else {
+                            return false;
+                        }
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
     some<Game_t*> Game_t::Self()
     {
@@ -29,6 +132,18 @@ namespace doticu_skylib {
     some<Byte_t*> Game_t::Base_Address_Pointer()
     {
         return reinterpret_cast<Byte_t*>(Base_Address());
+    }
+
+    const Version_t<u8>& Game_t::Version()
+    {
+        static const Version_t<u8> version;
+
+        static Bool_t has_read = false;
+        if (!has_read) {
+            has_read = Read_Version(const_cast<Version_t<u8>&>(version));
+        }
+
+        return version;
     }
 
     maybe<Form_t*> Game_t::Form(Form_ID_t form_id)

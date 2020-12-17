@@ -33,24 +33,6 @@ namespace doticu_skylib {
         return degrees * PI / 180.0f;
     }
 
-    inline Bool_t Is_Version_Less_Than(Int_t major,
-                                       Int_t minor,
-                                       Int_t patch,
-                                       Int_t min_major,
-                                       Int_t min_minor,
-                                       Int_t min_patch)
-    {
-        if (major != min_major) {
-            return major < min_major;
-        } else if (minor != min_minor) {
-            return minor < min_minor;
-        } else if (patch != min_patch) {
-            return patch < min_patch;
-        } else {
-            return false;
-        }
-    }
-
     class CRC32_Hash_t
     {
     public:

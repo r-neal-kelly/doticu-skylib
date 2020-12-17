@@ -8,6 +8,7 @@
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/version.h"
 
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/form_type.h"
@@ -41,17 +42,19 @@ namespace doticu_skylib {
         };
 
     public:
-        static some<Game_t*>    Self();
+        static some<Game_t*>        Self();
 
-        static Word_t           Base_Address();
-        static some<Byte_t*>    Base_Address_Pointer();
+        static Word_t               Base_Address();
+        static some<Byte_t*>        Base_Address_Pointer();
 
-        static maybe<Form_t*>   Form(Form_ID_t form_id);
-        static maybe<Form_t*>   Form(Mod_t* mod, Lower_Form_ID_t lower_form_id);
+        static const Version_t<u8>& Version();
 
-        static Word_t           V_Table_Offset(void* instance);
-        static void             Write_V_Table(void* instance, Word_t v_table_offset);
-        static void             Log_u64s(void* data, size_t count, std::string indent = "");
+        static maybe<Form_t*>       Form(Form_ID_t form_id);
+        static maybe<Form_t*>       Form(Mod_t* mod, Lower_Form_ID_t lower_form_id);
+
+        static Word_t               V_Table_Offset(void* instance);
+        static void                 Write_V_Table(void* instance, Word_t v_table_offset);
+        static void                 Log_u64s(void* data, size_t count, std::string indent = "");
 
     public:
         u64                             unk_000;                                // 000

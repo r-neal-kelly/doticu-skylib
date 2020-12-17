@@ -12,6 +12,7 @@
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/version.h"
 
 namespace doticu_skylib {
 

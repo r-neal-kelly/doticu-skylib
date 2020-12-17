@@ -135,6 +135,7 @@
     <ClInclude Include="include\doticu_skylib\skylib.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
     <ClInclude Include="include\doticu_skylib\unknown.h" />
+    <ClInclude Include="include\doticu_skylib\version.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
     <ClInclude Include="include\doticu_skylib\virtual_array.h" />
     <ClInclude Include="include\doticu_skylib\virtual_binder.h" />
