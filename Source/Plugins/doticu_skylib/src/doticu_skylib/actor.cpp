@@ -306,6 +306,21 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<Location_t*> Actor_t::Locations()
+    {
+        Vector_t<Location_t*> results;
+        Locations(results);
+        return results;
+    }
+
+    void Actor_t::Locations(Vector_t<Location_t*>& results)
+    {
+        Cell_t* cell = Cell();
+        if (cell && cell->Is_Valid()) {
+            cell->Locations(results);
+        }
+    }
+
     const char* Actor_t::Base_Name()
     {
         if (base_form) {

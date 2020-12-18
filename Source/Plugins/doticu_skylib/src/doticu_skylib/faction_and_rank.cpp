@@ -12,6 +12,25 @@ namespace doticu_skylib {
         return a.faction == b.faction;
     }
 
+    Int_t Faction_And_Rank_t::Compare_Editor_Or_Form_IDs(Faction_And_Rank_t* a, Faction_And_Rank_t* b)
+    {
+        if (!a || !a->faction) {
+            return Comparator_e::IS_UNORDERED;
+        } else if (!b || !b->faction) {
+            return Comparator_e::IS_ORDERED;
+        } else {
+            Comparator_e result = Form_t::Compare_Names(
+                a->faction->Editor_Or_Form_ID(),
+                b->faction->Editor_Or_Form_ID()
+            );
+            if (result == Comparator_e::IS_EQUAL) {
+                return a->faction->form_id - b->faction->form_id;
+            } else {
+                return result;
+            }
+        }
+    }
+
     Bool_t Faction_And_Rank_t::Is_Valid()
     {
         return faction && faction->Is_Valid();

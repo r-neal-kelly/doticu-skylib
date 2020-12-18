@@ -29,6 +29,7 @@ namespace doticu_skylib {
 
         Static_String_t();
         Static_String_t(const char* string);
+        Static_String_t(std::string& string);
         Static_String_t(std::string&& string);
 
         void        Destroy();

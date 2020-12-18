@@ -131,7 +131,13 @@ namespace doticu_skylib {
     Vector_t<Location_t*> Cell_t::Locations()
     {
         Vector_t<Location_t*> locations;
-        locations.reserve(8);
+        Locations(locations);
+        return locations;
+    }
+
+    void Cell_t::Locations(Vector_t<Location_t*>& results)
+    {
+        results.reserve(8);
 
         xlist.Validate();
 
@@ -141,28 +147,31 @@ namespace doticu_skylib {
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
-            locations.push_back(it);
+            if (!results.Has(it)) {
+                results.push_back(it);
+            }
         }
 
         Location_t* worldspace_location =
             worldspace ? worldspace->location : nullptr;
         for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
-            locations.push_back(it);
+            if (!results.Has(it)) {
+                results.push_back(it);
+            }
         }
-
-        return locations;
     }
 
     Vector_t<String_t> Cell_t::Location_Names()
     {
         Vector_t<String_t> results;
-        results.reserve(8);
         Location_Names(results);
         return results;
     }
 
     void Cell_t::Location_Names(Vector_t<String_t>& results)
     {
+        results.reserve(8);
+
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
@@ -171,13 +180,19 @@ namespace doticu_skylib {
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
-            results.push_back(it->Any_Name());
+            String_t name = it->Any_Name();
+            if (!results.Has(name)) {
+                results.push_back(name);
+            }
         }
 
         Location_t* worldspace_location =
             worldspace ? worldspace->location : nullptr;
         for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
-            results.push_back(it->Any_Name());
+            String_t name = it->Any_Name();
+            if (!results.Has(name)) {
+                results.push_back(name);
+            }
         }
     }
 

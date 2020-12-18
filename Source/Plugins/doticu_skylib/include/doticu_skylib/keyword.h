@@ -18,6 +18,9 @@ namespace doticu_skylib {
         };
 
     public:
+        static Int_t Compare_Any_Names(Keyword_t** a, Keyword_t** b);
+
+    public:
         virtual ~Keyword_t(); // 0
 
         String_t editor_id; // 20

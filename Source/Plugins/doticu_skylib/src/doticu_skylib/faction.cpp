@@ -68,6 +68,25 @@ namespace doticu_skylib {
         }
     }
 
+    Int_t Faction_t::Compare_Editor_Or_Form_IDs(Faction_t** a, Faction_t** b)
+    {
+        if (!a || !*a) {
+            return Comparator_e::IS_UNORDERED;
+        } else if (!b || !*b) {
+            return Comparator_e::IS_ORDERED;
+        } else {
+            Comparator_e result = Form_t::Compare_Names(
+                (*a)->Editor_Or_Form_ID(),
+                (*b)->Editor_Or_Form_ID()
+            );
+            if (result == Comparator_e::IS_EQUAL) {
+                return (*a)->form_id - (*b)->form_id;
+            } else {
+                return result;
+            }
+        }
+    }
+
     String_t Faction_t::Any_Name()
     {
         const char* name = Name();

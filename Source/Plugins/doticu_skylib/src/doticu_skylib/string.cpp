@@ -43,6 +43,11 @@ namespace doticu_skylib {
         Create_Impl(this, string);
     }
 
+    Static_String_t::Static_String_t(std::string& string)
+    {
+        Create_Impl(this, string.c_str());
+    }
+
     Static_String_t::Static_String_t(std::string&& string)
     {
         Create_Impl(this, string.c_str());

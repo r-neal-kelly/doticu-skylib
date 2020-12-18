@@ -85,7 +85,10 @@ namespace doticu_skylib {
             kTypeID     = FORM_TYPE,
         };
 
-        static void Start(const Vector_t<Quest_t*> quests, Callback_i<>* ucallback);
+    public:
+        static void     Start(const Vector_t<Quest_t*> quests, Callback_i<>* ucallback);
+
+        static Int_t    Compare_Any_Names(Quest_t** a, Quest_t** b);
 
     public:
         virtual ~Quest_t(); // 00

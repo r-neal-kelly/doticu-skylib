@@ -51,6 +51,8 @@ namespace doticu_skylib {
         static Vector_t<Faction_t*> Factions();
         static void                 Factions(Vector_t<Faction_t*>& results);
 
+        static Int_t                Compare_Editor_Or_Form_IDs(Faction_t** a, Faction_t** b);
+
     public:
         virtual ~Faction_t(); // 00
 

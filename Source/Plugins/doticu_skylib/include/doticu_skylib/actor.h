@@ -95,6 +95,8 @@ namespace doticu_skylib {
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
         Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);
         void                            Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
+        Vector_t<Location_t*>           Locations();
+        void                            Locations(Vector_t<Location_t*>& results);
 
         const char*                     Base_Name();
         String_t                        Any_Name();
