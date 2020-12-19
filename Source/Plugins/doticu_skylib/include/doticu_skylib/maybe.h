@@ -16,14 +16,14 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_signed_integral_t = std::enable_if_t<
-        std::is_integral<T>::value &&
+        std::is_integral<T>::value&&
         std::is_signed<T>::value,
         Bool_t
     >;
 
     template <typename T>
     using enable_if_unsigned_integral_t = std::enable_if_t<
-        std::is_integral<T>::value &&
+        std::is_integral<T>::value&&
         std::is_unsigned<T>::value,
         Bool_t
     >;
@@ -31,9 +31,9 @@ namespace doticu_skylib {
     template <typename T>
     class none;
     template <typename T>
-    class some;
-    template <typename T>
     class maybe;
+    template <typename T>
+    class some;
 
     // <Index_t>
 
@@ -73,70 +73,6 @@ namespace doticu_skylib {
         operator none<TT>()
         {
             return static_cast<TT>(value);
-        }
-    };
-
-    template <>
-    class some<Index_t>
-    {
-    private:
-        Index_t value;
-
-    public:
-        some() = delete;
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        some(T value) :
-            value(value)
-        {
-        }
-
-        some(const some& other) :
-            value(other.value)
-        {
-        }
-
-        some(some&& other) noexcept :
-            value(std::exchange(other.value, none<Index_t>()))
-        {
-        }
-
-        some& operator=(const some& other)
-        {
-            if (this != &other) {
-                value = other.value;
-            }
-            return *this;
-        }
-
-        some& operator=(some&& other) noexcept
-        {
-            if (this != &other) {
-                value = std::exchange(other.value, none<Index_t>());
-            }
-            return *this;
-        }
-
-        Index_t operator()()
-        {
-            return operator Index_t();
-        }
-
-        operator Index_t()
-        {
-            //SKYLIB_ASSERT_SOME(operator Bool_t());
-            return value;
-        }
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        operator some<T>()
-        {
-            return static_cast<T>(value);
-        }
-
-        operator Bool_t()
-        {
-            return value != none<Index_t>();
         }
     };
 
@@ -196,19 +132,80 @@ namespace doticu_skylib {
 
         operator Index_t()
         {
-            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return value;
         }
 
         template <typename T, enable_if_signed_integral_t<T> = true>
         operator some<T>()
         {
-            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return static_cast<T>(value);
         }
 
         template <typename T, enable_if_signed_integral_t<T> = true>
         operator maybe<T>()
+        {
+            return static_cast<T>(value);
+        }
+
+        operator Bool_t()
+        {
+            return value != none<Index_t>();
+        }
+    };
+
+    template <>
+    class some<Index_t>
+    {
+    private:
+        Index_t value;
+
+    public:
+        some() = delete;
+
+        template <typename T, enable_if_signed_integral_t<T> = true>
+        some(T value) :
+            value(value)
+        {
+        }
+
+        some(const some& other) :
+            value(other.value)
+        {
+        }
+
+        some(some&& other) noexcept :
+            value(std::exchange(other.value, none<Index_t>()))
+        {
+        }
+
+        some& operator=(const some& other)
+        {
+            if (this != &other) {
+                value = other.value;
+            }
+            return *this;
+        }
+
+        some& operator=(some&& other) noexcept
+        {
+            if (this != &other) {
+                value = std::exchange(other.value, none<Index_t>());
+            }
+            return *this;
+        }
+
+        Index_t operator()()
+        {
+            return operator Index_t();
+        }
+
+        operator Index_t()
+        {
+            return value;
+        }
+
+        template <typename T, enable_if_signed_integral_t<T> = true>
+        operator some<T>()
         {
             return static_cast<T>(value);
         }
@@ -235,15 +232,10 @@ namespace doticu_skylib {
 
         T* operator()()
         {
-            return operator T*();
+            return operator T * ();
         }
 
-        operator T*()
-        {
-            return value;
-        }
-
-        operator T*() const
+        operator T* () const
         {
             return value;
         }
@@ -253,109 +245,6 @@ namespace doticu_skylib {
         {
             return static_cast<TT*>(value);
         }
-    };
-
-    template <typename T>
-    class some<T*>
-    {
-    private:
-        T* value;
-
-    public:
-        some() = delete;
-
-        some(Nullptr_t) = delete;
-
-        some(T* value) :
-            value(value)
-        {
-        }
-
-        some(const some& other) :
-            value(other.value)
-        {
-        }
-
-        some(some&& other) noexcept :
-            value(std::exchange(other.value, none<T*>()))
-        {
-        }
-
-        some& operator=(const some& other)
-        {
-            if (this != &other) {
-                value = other.value;
-            }
-            return *this;
-        }
-
-        some& operator=(some&& other) noexcept
-        {
-            if (this != &other) {
-                value = std::exchange(other.value, none<T*>());
-            }
-            return *this;
-        }
-
-        T* operator->()
-        {
-            return operator T*();
-        }
-
-        T& operator*()
-        {
-            return *operator T*();
-        }
-
-        T* operator()()
-        {
-            return operator T*();
-        }
-
-        Bool_t operator==(const some& other)
-        {
-            return value == other.value;
-        }
-
-        Bool_t operator!=(const some& other)
-        {
-            return !operator==(other);
-        }
-
-        operator T*()
-        {
-            //SKYLIB_ASSERT_SOME(operator Bool_t());
-            return value;
-        }
-
-        operator T*() const
-        {
-            //SKYLIB_ASSERT_SOME(operator Bool_t());
-            return value;
-        }
-
-        template <typename TT>
-        operator some<TT*>()
-        {
-            return static_cast<TT*>(value);
-        }
-
-        operator Bool_t()
-        {
-            return value != none<T*>();
-        }
-
-        operator Bool_t() const
-        {
-            return value != none<T*>();
-        }
-    };
-
-    template <>
-    class some<Nullptr_t>
-    {
-    public:
-        some() = delete;
     };
 
     template <typename T>
@@ -370,12 +259,12 @@ namespace doticu_skylib {
         {
         }
 
-        maybe(none<T*> value) :
+        maybe(T* value) :
             value(value)
         {
         }
 
-        maybe(T* value) :
+        maybe(none<T*> value) :
             value(value)
         {
         }
@@ -406,65 +295,132 @@ namespace doticu_skylib {
             return *this;
         }
 
-        T* operator->()
+        T* operator->() const
         {
-            return operator T*();
+            return operator T * ();
         }
 
-        T& operator*()
+        T& operator*() const
         {
-            return *operator T*();
+            return *operator T * ();
         }
 
-        T* operator()()
+        T* operator()() const
         {
-            return operator T*();
+            return operator T * ();
         }
 
-        Bool_t operator==(const maybe& other)
+        operator T* () const
         {
-            return value == other.value;
-        }
-
-        Bool_t operator!=(const maybe& other)
-        {
-            return !operator==(other);
-        }
-
-        operator T*()
-        {
-            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
-            return value;
-        }
-
-        operator T*() const
-        {
-            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
             return value;
         }
 
         template <typename TT>
-        operator some<TT*>()
-        {
-            //SKYLIB_ASSERT_MAYBE(operator Bool_t());
-            return static_cast<TT*>(value);
-        }
-
-        template <typename TT>
-        operator maybe<TT*>()
+        operator maybe<TT*>() const
         {
             return static_cast<TT*>(value);
-        }
-
-        operator Bool_t()
-        {
-            return value != none<T*>();
         }
 
         operator Bool_t() const
         {
             return value != none<T*>();
         }
+    };
+
+    template <typename T>
+    class some<T*>
+    {
+    private:
+        T* value;
+
+    public:
+        some() = delete;
+
+        some(Nullptr_t) = delete;
+
+        some(T* value) :
+            value(value)
+        {
+        }
+
+        some(maybe<T*> value) :
+            value(value)
+        {
+        }
+
+        some(const some& other) :
+            value(other.value)
+        {
+        }
+
+        some(some&& other) noexcept :
+            value(std::exchange(other.value, none<T*>()))
+        {
+        }
+
+        some& operator=(const some& other)
+        {
+            if (this != &other) {
+                value = other.value;
+            }
+            return *this;
+        }
+
+        some& operator=(some&& other) noexcept
+        {
+            if (this != &other) {
+                value = std::exchange(other.value, none<T*>());
+            }
+            return *this;
+        }
+
+        Bool_t operator==(const some& other) const
+        {
+            return value == other.value;
+        }
+
+        Bool_t operator!=(const some& other) const
+        {
+            return !operator==(other);
+        }
+
+        T* operator->() const
+        {
+            return operator T * ();
+        }
+
+        T& operator*() const
+        {
+            return *operator T * ();
+        }
+
+        T* operator()() const
+        {
+            return operator T * ();
+        }
+
+        operator T* () const
+        {
+            return value;
+        }
+
+        template <typename TT>
+        operator some<TT*>() const
+        {
+            return static_cast<TT*>(value);
+        }
+
+        operator Bool_t() const
+        {
+            return value != none<T*>();
+        }
+    };
+
+    template <>
+    class some<Nullptr_t>
+    {
+    public:
+        some() = delete;
     };
 
 }

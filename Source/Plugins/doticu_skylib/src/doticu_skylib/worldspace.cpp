@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/location.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -30,6 +31,32 @@ namespace doticu_skylib {
     Bool_t Worldspace_t::Cant_Fast_Travel()
     {
         return (worldspace_flags & Worldspace_Flags_e::CANT_FAST_TRAVEL) != 0;
+    }
+
+    Bool_t Worldspace_t::Has_Location(some<Location_t*> location)
+    {
+        SKYLIB_ASSERT_SOME(location);
+
+        if (this->location == location) {
+            return true;
+        } else {
+            return form_id_to_location.Has(location->form_id);
+        }
+    }
+
+    String_t Worldspace_t::Any_Name()
+    {
+        const char* name = Name();
+        if (!name || !name[0]) {
+            name = Get_Editor_ID();
+            if (!name || !name[0]) {
+                return Form_ID_String();
+            } else {
+                return name;
+            }
+        } else {
+            return name;
+        }
     }
 
     void Worldspace_t::Log()

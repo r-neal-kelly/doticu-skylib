@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/maybe.h"
 
 #include "doticu_skylib/component_model.h"
 #include "doticu_skylib/component_name.h"
@@ -119,6 +120,9 @@ namespace doticu_skylib {
 
         Bool_t Can_Fast_Travel();
         Bool_t Cant_Fast_Travel();
+        Bool_t Has_Location(some<Location_t*> location);
+
+        String_t Any_Name();
 
         void Log();
     };

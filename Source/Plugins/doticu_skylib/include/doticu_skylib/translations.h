@@ -17,9 +17,10 @@ namespace doticu_skylib {
         const wchar_t*  key;
         const size_t    value_length;
 
+        Altered_Translation_t(some<const wchar_t*> key);
         Altered_Translation_t(some<const wchar_t*> key, some<const wchar_t*> value);
 
-        friend Bool_t operator==(Altered_Translation_t& a, const wchar_t* key);
+        Bool_t operator==(const Altered_Translation_t& other) const;
     };
 
     class Translations_t

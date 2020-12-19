@@ -73,19 +73,19 @@ namespace doticu_skylib {
         template <typename T, enable_if_32<T> = true>
         static u32 Hash(T value)
         {
-            return Hash(static_cast<u32>(value));
+            return Hash(reinterpret_cast<u32>(value));
         }
 
         template <typename T, enable_if_64<T> = true>
         static u32 Hash(T value)
         {
-            return Hash(static_cast<u64>(value));
+            return Hash(reinterpret_cast<u64>(value));
         }
 
         template <typename T, enable_if_not_32_or_64<T> = true>
         static u32 Hash(T value)
         {
-            return Hash(static_cast<void*>(&value), sizeof(T));
+            return Hash(reinterpret_cast<void*>(&value), sizeof(T));
         }
     };
 

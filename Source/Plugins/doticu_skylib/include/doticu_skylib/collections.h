@@ -227,6 +227,11 @@ namespace doticu_skylib {
             return -1;
         }
 
+        Index_t Index_Of(Type&& item)
+        {
+            return Index_Of(item);
+        }
+
         Index_t Index_Of(Type& item, Bool_t(*is_same)(const Type&, const Type&))
         {
             for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
@@ -248,15 +253,32 @@ namespace doticu_skylib {
             return -1;
         }
 
+        template <typename TT>
+        Index_t Index_Of(TT&& item)
+        {
+            return Index_Of(item);
+        }
+
         Bool_t Has(Type& item)
         {
             return Index_Of(item) > -1;
+        }
+
+        Bool_t Has(Type&& item)
+        {
+            return Has(item);
         }
 
         template <typename TT>
         Bool_t Has(TT& item)
         {
             return Index_Of(item) > -1;
+        }
+
+        template <typename TT>
+        Bool_t Has(TT&& item)
+        {
+            return Has(item);
         }
 
         void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))

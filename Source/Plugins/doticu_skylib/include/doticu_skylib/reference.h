@@ -193,14 +193,18 @@ namespace doticu_skylib {
         Bool_t Is_Temporary();
         Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
-        const char*         Name();
-        String_t            Any_Name();
-        Location_t*         Location();
-        Cell_t*             Cell();
-        Worldspace_t*       Worldspace();
+        const char*                     Name();
+        String_t                        Any_Name();
+        Location_t*                     Location();
+        Cell_t*                         Cell();
+        maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
+        Vector_t<some<Worldspace_t*>>   Worldspaces();
+        void                            Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 
-        Vector_t<Quest_t*>  Quests();
-        void                Quests(Vector_t<Quest_t*>& results);
+        Vector_t<Location_t*>   Locations();
+        void                    Locations(Vector_t<Location_t*>& results);
+        Vector_t<Quest_t*>      Quests();
+        void                    Quests(Vector_t<Quest_t*>& results);
 
         Reference_Handle_t  To_Handle();
 

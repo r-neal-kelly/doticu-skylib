@@ -108,6 +108,13 @@ namespace doticu_skylib {
         return (cell_flags & Cell_Flags_e::CAN_TRAVEL_FROM) != 0;
     }
 
+    Bool_t Cell_t::Has_Reference(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+
+        return references.Has(reference);
+    }
+
     Location_t* Cell_t::Location()
     {
         xlist.Validate();
@@ -192,6 +199,52 @@ namespace doticu_skylib {
             String_t name = it->Any_Name();
             if (!results.Has(name)) {
                 results.push_back(name);
+            }
+        }
+    }
+
+    maybe<Worldspace_t*> Cell_t::Worldspace(Bool_t do_check_locations)
+    {
+        if (worldspace) {
+            return worldspace;
+        } else if (do_check_locations) {
+            Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
+
+            Vector_t<Location_t*> locations = Locations();
+            for (Index_t idx = 0, end = locations.size(); idx < end; idx += 1) {
+                Location_t* location = locations[idx];
+                if (location && location->Is_Valid()) {
+                    for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
+                        Worldspace_t* worldspace = worldspaces.entries[idx];
+                        if (worldspace && worldspace->Is_Valid()) {
+                            if (worldspace->Has_Location(location)) {
+                                return worldspace;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return nullptr;
+        } else {
+            return nullptr;
+        }
+    }
+
+    Vector_t<some<Worldspace_t*>> Cell_t::Worldspaces()
+    {
+        Vector_t<some<Worldspace_t*>> worldspaces;
+        Worldspaces(worldspaces);
+        return std::move(worldspaces);
+    }
+
+    void Cell_t::Worldspaces(Vector_t<some<Worldspace_t*>>& results)
+    {
+        results.reserve(2);
+
+        for (Worldspace_t* it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+            if (!results.Has(some<Worldspace_t*>(it))) {
+                results.push_back(it);
             }
         }
     }

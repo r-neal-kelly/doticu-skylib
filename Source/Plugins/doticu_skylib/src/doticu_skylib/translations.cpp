@@ -12,14 +12,19 @@
 
 namespace doticu_skylib {
 
+    Altered_Translation_t::Altered_Translation_t(some<const wchar_t*> key) :
+        key(key), value_length(0)
+    {
+    }
+
     Altered_Translation_t::Altered_Translation_t(some<const wchar_t*> key, some<const wchar_t*> value) :
         key(key), value_length(wcslen(value))
     {
     }
 
-    Bool_t operator==(Altered_Translation_t& a, const wchar_t* key)
+    Bool_t Altered_Translation_t::operator==(const Altered_Translation_t& other) const
     {
-        return a.key == key;
+        return key == other.key;
     }
 
     std::mutex Translations_t::mutex;

@@ -8,9 +8,11 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/location.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/script.h"
+#include "doticu_skylib/worldspace.h"
 
 #include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_list.inl"
@@ -123,13 +125,56 @@ namespace doticu_skylib {
         return parent_cell;
     }
 
-    Worldspace_t* Reference_t::Worldspace()
+    maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)
     {
         static auto get_worldspace = reinterpret_cast
-            <Worldspace_t*(*)(Reference_t*)>
+            <Worldspace_t * (*)(Reference_t*)>
             (Game_t::Base_Address() + Offset_e::GET_WORLDSPACE);
 
-        return get_worldspace(this);
+        Worldspace_t* worldspace = get_worldspace(this);
+        if (worldspace) {
+            return worldspace;
+        } else {
+            Cell_t* cell = Cell();
+            if (cell) {
+                return cell->Worldspace(do_check_locations);
+            } else {
+                return nullptr;
+            }
+        }
+    }
+
+    Vector_t<some<Worldspace_t*>> Reference_t::Worldspaces()
+    {
+        Vector_t<some<Worldspace_t*>> worldspaces;
+        Worldspaces(worldspaces);
+        return std::move(worldspaces);
+    }
+
+    void Reference_t::Worldspaces(Vector_t<some<Worldspace_t*>>& results)
+    {
+        results.reserve(2);
+
+        for (Worldspace_t* it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+            if (!results.Has(some<Worldspace_t*>(it))) {
+                results.push_back(it);
+            }
+        }
+    }
+
+    Vector_t<Location_t*> Reference_t::Locations()
+    {
+        Vector_t<Location_t*> results;
+        Locations(results);
+        return results;
+    }
+
+    void Reference_t::Locations(Vector_t<Location_t*>& results)
+    {
+        Cell_t* cell = Cell();
+        if (cell && cell->Is_Valid()) {
+            cell->Locations(results);
+        }
     }
 
     Vector_t<Quest_t*> Reference_t::Quests()
