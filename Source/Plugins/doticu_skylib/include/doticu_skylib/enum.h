@@ -12,6 +12,8 @@ namespace doticu_skylib {
     class Enum_t
     {
     public:
+        using _TYPE_ = Type;
+
         Type value;
 
         Enum_t() :

@@ -39,6 +39,20 @@ namespace doticu_skylib { namespace Virtual {
         copy(this, other);
     }
 
+    Bool_t Variable_t::Is_None()            { return type.Is_None(); }
+    Bool_t Variable_t::Is_Bool()            { return type.Is_Bool(); }
+    Bool_t Variable_t::Is_Int()             { return type.Is_Int(); }
+    Bool_t Variable_t::Is_Float()           { return type.Is_Float(); }
+    Bool_t Variable_t::Is_String()          { return type.Is_String(); }
+    Bool_t Variable_t::Is_Object()          { return type.Is_Object(); }
+    Bool_t Variable_t::Is_Array()           { return type.Is_Array(); }
+    Bool_t Variable_t::Is_None_Array()      { return type.Is_None_Array(); }
+    Bool_t Variable_t::Is_Object_Array()    { return type.Is_Object_Array(); }
+    Bool_t Variable_t::Is_String_Array()    { return type.Is_String_Array(); }
+    Bool_t Variable_t::Is_Int_Array()       { return type.Is_Int_Array(); }
+    Bool_t Variable_t::Is_Float_Array()     { return type.Is_Float_Array(); }
+    Bool_t Variable_t::Is_Bool_Array()      { return type.Is_Bool_Array(); }
+
     Bool_t Variable_t::Bool()
     {
         if (type.Is_Bool()) {

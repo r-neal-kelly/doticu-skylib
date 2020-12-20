@@ -14,7 +14,8 @@ namespace doticu_skylib { namespace Virtual {
 
     class Variable_t;
 
-    class Array_t {
+    class Array_t
+    {
     public:
         static Array_t* Create(Type_t* item_type, UInt32 count);
         static void Destroy(Array_t* arr);
