@@ -17,72 +17,40 @@
 
 namespace doticu_skylib {
 
-    Vector_t<Loaded_Actor_t> Actor_t::Loaded_Actors()
+    Vector_t<Actor_t*> Actor_t::Loaded_Actors()
     {
-        Vector_t<Loaded_Actor_t> loaded_actors;
-        loaded_actors.reserve(2048);
+        Vector_t<Actor_t*> loaded_actors;
         Loaded_Actors(loaded_actors);
         return loaded_actors;
     }
 
-    void Actor_t::Loaded_Actors(Vector_t<Loaded_Actor_t>& results)
+    void Actor_t::Loaded_Actors(Vector_t<Actor_t*>& results)
     {
+        results.reserve(2048);
+
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
         for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
             class Iterator_t : public Iterator_i<void, Reference_t*>
             {
             public:
-                Vector_t<Loaded_Actor_t>& results;
-                Cell_t* cell;
-                Iterator_t(Vector_t<Loaded_Actor_t>& results, Cell_t* cell) :
-                    results(results), cell(cell)
+                Vector_t<Actor_t*>& results;
+                Iterator_t(Vector_t<Actor_t*>& results) :
+                    results(results)
                 {
                 }
                 void operator()(Reference_t* reference)
                 {
-                    if (reference->form_type == Form_Type_e::ACTOR) {
-                        Loaded_Actor_t loaded_actor(static_cast<Actor_t*>(reference), cell);
-                        if (loaded_actor.Is_Valid() && !results.Has(loaded_actor)) {
-                            results.push_back(loaded_actor);
+                    if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
+                        Actor_t* actor = static_cast<Actor_t*>(reference);
+                        if (!results.Has(actor)) {
+                            results.push_back(actor);
                         }
                     }
                 }
-            } iterator(results, cell);
+            } iterator(results);
             cell->References(iterator);
         }
-    }
-
-    void Actor_t::Log_Loaded_Actors()
-    {
-        #define TAB "    "
-
-        Vector_t<Loaded_Actor_t> loaded_actors = Loaded_Actors();
-        _MESSAGE("Log_Loaded_Actors {");
-        for (size_t idx = 0, end = loaded_actors.size(); idx < end; idx += 1) {
-            Actor_t* actor = loaded_actors[idx].actor;
-            Cell_t* cell = loaded_actors[idx].cell;
-            Location_t* location = cell->Location();
-            const char* name = actor->Name();
-            if (!name || !name[0]) {
-                name = actor->Base_Name();
-            }
-            _MESSAGE(TAB "index: %6zu", idx);
-            _MESSAGE(TAB TAB "actor: %8.8X %s, ref_count: %i", actor->form_id, name, actor->Reference_Count());
-            if (cell->Is_Interior()) {
-                _MESSAGE(TAB TAB "interior cell: %8.8X %s, location: %s",
-                         cell->form_id, cell->Get_Editor_ID(), location ? location->Any_Name() : "");
-            } else {
-                Worldspace_t* worldspace = cell->worldspace;
-                SKYLIB_ASSERT(worldspace);
-                _MESSAGE(TAB TAB "exterior cell: %8.8X %s, location: %s",
-                         cell->form_id, cell->Get_Editor_ID(), location ? location->Any_Name() : "");
-                _MESSAGE(TAB TAB "worldspace: %8.8X %s", worldspace->form_id, worldspace->Get_Editor_ID());
-            }
-        }
-        _MESSAGE("}");
-
-        #undef TAB
     }
 
     maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative)

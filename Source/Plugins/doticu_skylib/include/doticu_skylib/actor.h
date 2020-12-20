@@ -11,7 +11,6 @@
 #include "doticu_skylib/actor_state.h"
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/faction_and_rank.h"
-#include "doticu_skylib/loaded_actor.h"
 #include "doticu_skylib/magic_target.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/sex.h"
@@ -62,9 +61,9 @@ namespace doticu_skylib {
             kTypeID     = FORM_TYPE,
         };
 
-        static Vector_t<Loaded_Actor_t> Loaded_Actors();
-        static void                     Loaded_Actors(Vector_t<Loaded_Actor_t>& results);
-        static void                     Log_Loaded_Actors();
+        static Vector_t<Actor_t*>   Loaded_Actors();
+        static void                 Loaded_Actors(Vector_t<Actor_t*>& results);
+        static void                 Log_Loaded_Actors();
 
         static maybe<Actor_t*> Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative);
         static maybe<Actor_t*> Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);

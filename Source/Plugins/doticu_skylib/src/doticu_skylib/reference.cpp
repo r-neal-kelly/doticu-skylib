@@ -122,7 +122,16 @@ namespace doticu_skylib {
 
     Cell_t* Reference_t::Cell()
     {
-        return parent_cell;
+        if (parent_cell) {
+            return parent_cell;
+        } else {
+            maybe<Worldspace_t*> worldspace = Worldspace();
+            if (worldspace) {
+                return worldspace->persistent_cell;
+            } else {
+                return nullptr;
+            }
+        }
     }
 
     maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)

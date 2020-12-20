@@ -60,7 +60,6 @@ namespace doticu_skylib {
     class Global_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
-    class Loaded_Actor_t;
     class Location_t;
     class Magic_Target_t;
     class Mod_t;
