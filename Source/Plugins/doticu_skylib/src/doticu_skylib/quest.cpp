@@ -15,44 +15,42 @@
 
 namespace doticu_skylib {
 
-    void Quest_t::Start(const Vector_t<Quest_t*> quests, Callback_i<>* ucallback)
+    void Quest_t::Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback)
     {
-        using UCallback_t = Callback_i<>;
-        SKYLIB_ASSERT(ucallback);
+        using UCallback_t = maybe<Callback_i<Bool_t>*>;
 
         struct VCallback : public Virtual::Callback_t {
-            const Vector_t<Quest_t*> quests;
-            size_t index;
-            UCallback_t* ucallback;
-            VCallback(const Vector_t<Quest_t*> quests, size_t index, UCallback_t* ucallback) :
-                quests(quests), index(index), ucallback(ucallback)
+            const Vector_t<some<Quest_t*>> quests;
+            Index_t index;
+            Bool_t did_start_all;
+            UCallback_t ucallback;
+            VCallback(const Vector_t<some<Quest_t*>> quests, Index_t index, Bool_t did_start_all, UCallback_t ucallback) :
+                quests(quests), index(index), did_start_all(did_start_all), ucallback(ucallback)
             {
             }
-            void operator()(Virtual::Variable_t* result)
+            void operator()(Virtual::Variable_t* did_start)
             {
+                if (!did_start) {
+                    did_start_all = false;
+                }
+
                 if (index < quests.size()) {
                     Quest_t* quest = quests[index];
-                    if (quest) {
-                        quest->Start(new VCallback(quests, index + 1, ucallback));
-                    } else {
-                        ucallback->operator()();
-                        delete ucallback;
-                    }
+                    SKYLIB_ASSERT_SOME(quest);
+                    quest->Start(new VCallback(quests, index + 1, did_start_all, ucallback));
                 } else {
-                    ucallback->operator()();
-                    delete ucallback;
+                    if (ucallback) {
+                        ucallback()->operator()(did_start_all);
+                        delete ucallback();
+                    }
                 }
             }
         };
 
-        size_t index = 0;
+        Index_t index = 0;
         Quest_t* quest = quests[index];
-        if (quest) {
-            quest->Start(new VCallback(quests, index + 1, ucallback));
-        } else {
-            ucallback->operator()();
-            delete ucallback;
-        }
+        SKYLIB_ASSERT_SOME(quest);
+        quest->Start(new VCallback(quests, index + 1, true, ucallback));
     }
 
     Int_t Quest_t::Compare_Any_Names(Quest_t** a, Quest_t** b)
@@ -73,6 +71,14 @@ namespace doticu_skylib {
             }
         }
     }
+
+    Bool_t Quest_t::Is_Enabled()            { return (quest_flags & Quest_Flags_e::IS_ENABLED) > 0; }
+    Bool_t Quest_t::Is_Completed()          { return (quest_flags & Quest_Flags_e::IS_COMPLETED) > 0; }
+    Bool_t Quest_t::Does_Start_Enabled()    { return (quest_flags & Quest_Flags_e::DOES_START_ENABLED) > 0; }
+    Bool_t Quest_t::Is_Displayed_In_HUD()   { return (quest_flags & Quest_Flags_e::IS_DISPLAYED_IN_HUD) > 0; }
+    Bool_t Quest_t::Is_Failed()             { return (quest_flags & Quest_Flags_e::IS_FAILED) > 0; }
+    Bool_t Quest_t::Does_Run_Once()         { return (quest_flags & Quest_Flags_e::DOES_RUN_ONCE) > 0; }
+    Bool_t Quest_t::Is_Active()             { return (quest_flags & Quest_Flags_e::IS_ACTIVE) > 0; }
 
     Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
     {

@@ -23,23 +23,25 @@ namespace doticu_skylib {
         }
     }
 
-    Vitality_e Vitality_e::From_String(some<const char*> vitality)
+    Vitality_e Vitality_e::From_String(maybe<const char*> vitality)
     {
-        SKYLIB_ASSERT_SOME(vitality);
+        if (vitality) {
+            char* str = const_cast<char*>(vitality());
+            while (*str == ' ') {
+                str += 1;
+            }
 
-        char* input = const_cast<char*>(vitality());
-        while (*input == ' ') {
-            input += 1;
-        }
-
-        if (CString_t::Starts_With(MORTAL_STRING, input, true)) {
-            return Vitality_e::MORTAL;
-        } else if (CString_t::Starts_With(PROTECTED_STRING, input, true)) {
-            return Vitality_e::PROTECTED;
-        } else if (CString_t::Starts_With(ESSENTIAL_STRING, input, true)) {
-            return Vitality_e::ESSENTIAL;
-        } else if (CString_t::Starts_With(INVULNERABLE_STRING, input, true)) {
-            return Vitality_e::INVULNERABLE;
+            if (CString_t::Starts_With(MORTAL_STRING, str, true)) {
+                return Vitality_e::MORTAL;
+            } else if (CString_t::Starts_With(PROTECTED_STRING, str, true)) {
+                return Vitality_e::PROTECTED;
+            } else if (CString_t::Starts_With(ESSENTIAL_STRING, str, true)) {
+                return Vitality_e::ESSENTIAL;
+            } else if (CString_t::Starts_With(INVULNERABLE_STRING, str, true)) {
+                return Vitality_e::INVULNERABLE;
+            } else {
+                return Vitality_e::NONE;
+            }
         } else {
             return Vitality_e::NONE;
         }

@@ -217,6 +217,8 @@ namespace doticu_skylib {
     class Vector_t : public std::vector<Type>
     {
     public:
+        using std::vector<Type>::vector;
+
         Index_t Index_Of(Type& item)
         {
             for (Index_t idx = 0, end = size(); idx < end; idx += 1) {

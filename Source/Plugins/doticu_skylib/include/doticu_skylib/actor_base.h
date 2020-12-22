@@ -21,6 +21,7 @@
 #include "doticu_skylib/animated_object.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
+#include "doticu_skylib/relation.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"
@@ -92,6 +93,7 @@ namespace doticu_skylib {
         Sex_e                           Sex();
         Rarity_e                        Rarity();
         Vitality_e                      Vitality();
+        Relation_e                      Relation(maybe<Actor_Base_t*> other);
         Race_t*                         Race();
         Vector_t<Actor_Base_t*>         Templates();
         void                            Templates(Vector_t<Actor_Base_t*>& results);

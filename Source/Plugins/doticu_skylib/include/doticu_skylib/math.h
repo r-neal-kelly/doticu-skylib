@@ -49,8 +49,8 @@ namespace doticu_skylib {
         template <typename T>
         using enable_if_not_32_or_64 = std::enable_if_t<
             sizeof(T) != sizeof(u64) &&
-            sizeof(T) != sizeof(u32)
-            , Bool_t
+            sizeof(T) != sizeof(u32),
+            Bool_t
         >;
 
     public:

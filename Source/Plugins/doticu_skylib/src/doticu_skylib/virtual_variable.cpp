@@ -179,34 +179,16 @@ namespace doticu_skylib { namespace Virtual {
         data.str.Value(value);
     }
 
-    Bool_t Bool_Variable_t::Value()
-    {
-        return Bool();
-    }
+    Bool_t      Bool_Variable_t::Value()                    { return Bool(); }
+    void        Bool_Variable_t::Value(Bool_t value)        { Bool(value); }
 
-    void Bool_Variable_t::Value(Bool_t value)
-    {
-        Bool(value);
-    }
+    Int_t       Int_Variable_t::Value()                     { return Int(); }
+    void        Int_Variable_t::Value(Int_t value)          { Int(value); }
 
-    Int_t Int_Variable_t::Value()
-    {
-        return Int();
-    }
+    Float_t     Float_Variable_t::Value()                   { return Float(); }
+    void        Float_Variable_t::Value(Float_t value)      { Float(value); }
 
-    void Int_Variable_t::Value(Int_t value)
-    {
-        Int(value);
-    }
-
-    String_t String_Variable_t::Value()
-    {
-        return String();
-    }
-
-    void String_Variable_t::Value(String_t value)
-    {
-        String(value);
-    }
+    String_t    String_Variable_t::Value()                  { return String(); }
+    void        String_Variable_t::Value(String_t value)    { String(value); }
 
 }}

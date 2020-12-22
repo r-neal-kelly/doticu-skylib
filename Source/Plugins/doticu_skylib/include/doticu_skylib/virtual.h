@@ -28,10 +28,11 @@ namespace doticu_skylib { namespace Virtual {
     class Utils_t;
     class Variable_t;
 
-    template <typename T>
-    class Array_Variable_t;
     class Bool_Variable_t;
     class Int_Variable_t;
+    class Float_Variable_t;
     class String_Variable_t;
+    template <typename T>
+    class Array_Variable_t;
 
 }}

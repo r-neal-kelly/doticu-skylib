@@ -13,7 +13,7 @@ namespace doticu_skylib {
     class Relation_e : public Enum_t<s8>
     {
     public:
-        enum : s8
+        enum : _TYPE_
         {
             NONE            = -1,
             LOVER           = 0,
@@ -25,6 +25,8 @@ namespace doticu_skylib {
             FOE             = 6,
             ENEMY           = 7,
             ARCHNEMESIS     = 8,
+
+            _END_,
         };
 
         class Offset_e : public Enum_t<Word_t>
@@ -51,10 +53,10 @@ namespace doticu_skylib {
     public:
         using Enum_t::Enum_t;
 
-        static Relation_e   Between(Form_t* form_a, Form_t* form_b);
-        static void         Between(Form_t* form_a, Form_t* form_b, Relation_e relation);
-        static const char*  To_String(Relation_e relation);
-        static Relation_e   From_String(const char* relation);
+        static Relation_e           Between(Form_t* form_a, Form_t* form_b);
+        static void                 Between(Form_t* form_a, Form_t* form_b, Relation_e relation);
+        static some<const char*>    To_String(Relation_e relation);
+        static Relation_e           From_String(maybe<const char*> relation);
     };
 
 }

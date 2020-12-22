@@ -8,6 +8,7 @@
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/interface.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/component_name.h"
@@ -37,9 +38,15 @@ namespace doticu_skylib {
     class Quest_Flags_e : public Enum_t<u16>
     {
     public:
-        enum : u16
+        enum : _TYPE_
         {
-
+            IS_ENABLED          = 1 << 0,
+            IS_COMPLETED        = 1 << 1,
+            DOES_START_ENABLED  = 1 << 4,
+            IS_DISPLAYED_IN_HUD = 1 << 5,
+            IS_FAILED           = 1 << 6,
+            DOES_RUN_ONCE       = 1 << 8,
+            IS_ACTIVE           = 1 << 11,
         };
         using Enum_t::Enum_t;
     };
@@ -86,7 +93,7 @@ namespace doticu_skylib {
         };
 
     public:
-        static void     Start(const Vector_t<Quest_t*> quests, Callback_i<>* ucallback);
+        static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
 
         static Int_t    Compare_Any_Names(Quest_t** a, Quest_t** b);
 
@@ -125,6 +132,14 @@ namespace doticu_skylib {
         Array_t<Reference_Handle_t>                 promoted_references;                        // 250
 
     public:
+        Bool_t Is_Enabled();
+        Bool_t Is_Completed();
+        Bool_t Does_Start_Enabled();
+        Bool_t Is_Displayed_In_HUD();
+        Bool_t Is_Failed();
+        Bool_t Does_Run_Once();
+        Bool_t Is_Active();
+
         Bool_t Has_Filled_Alias(Alias_ID_t alias_id);
 
         String_t Any_Name();

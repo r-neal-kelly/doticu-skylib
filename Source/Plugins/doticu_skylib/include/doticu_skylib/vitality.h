@@ -12,13 +12,15 @@ namespace doticu_skylib {
     class Vitality_e : public Enum_t<s8>
     {
     public:
-        enum : s8
+        enum : _TYPE_
         {
             NONE            = -1,
             MORTAL          = 0,
             PROTECTED       = 1,
             ESSENTIAL       = 2,
             INVULNERABLE    = 3,
+
+            _END_,
         };
 
         static constexpr const char* NONE_STRING            = "None";
@@ -31,7 +33,7 @@ namespace doticu_skylib {
         using Enum_t::Enum_t;
 
         static some<const char*>    To_String(Vitality_e vitality);
-        static Vitality_e           From_String(some<const char*> vitality);
+        static Vitality_e           From_String(maybe<const char*> vitality);
     };
 
 }

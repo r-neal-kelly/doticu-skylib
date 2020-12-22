@@ -14,7 +14,12 @@ namespace doticu_skylib {
         static auto get = reinterpret_cast
             <u8(*)(Form_t*, Form_t*)>
             (Game_t::Base_Address() + Offset_e::GET);
-        return get(form_a, form_b);
+
+        if (form_a && form_b) {
+            return get(form_a, form_b);
+        } else {
+            return Relation_e::NONE;
+        }
     }
 
     void Relation_e::Between(Form_t* form_a, Form_t* form_b, Relation_e relation)
@@ -22,12 +27,13 @@ namespace doticu_skylib {
         static auto set = reinterpret_cast
             <void(*)(Form_t*, Form_t*, u8)>
             (Game_t::Base_Address() + Offset_e::SET);
-        if (relation > -1) {
+
+        if (form_a && form_b && relation > Relation_e::NONE && relation < Relation_e::_END_) {
             set(form_a, form_b, relation);
         }
     }
 
-    const char* Relation_e::To_String(Relation_e relation)
+    some<const char*> Relation_e::To_String(Relation_e relation)
     {
         if (relation == Relation_e::LOVER) {
             return LOVER_STRING;
@@ -52,37 +58,35 @@ namespace doticu_skylib {
         }
     }
 
-    Relation_e Relation_e::From_String(const char* relation)
+    Relation_e Relation_e::From_String(maybe<const char*> relation)
     {
-        constexpr Word_t MAX_LENGTH = 15;
-        char copy[MAX_LENGTH + 1];
-        Index_t copy_idx = 0;
-        for (Index_t idx = 0; relation[idx] != 0 && copy_idx < MAX_LENGTH; idx += 1) {
-            if (relation[idx] != ' ') {
-                copy[copy_idx] = relation[idx];
-                copy_idx += 1;
+        if (relation) {
+            char* str = const_cast<char*>(relation());
+            while (*str == ' ') {
+                str += 1;
             }
-        }
-        copy[copy_idx] = 0;
 
-        if (CString_t::Is_Same(copy, LOVER_STRING, true)) {
-            return Relation_e::LOVER;
-        } else if (CString_t::Is_Same(copy, ALLY_STRING, true)) {
-            return Relation_e::ALLY;
-        } else if (CString_t::Is_Same(copy, CONFIDANT_STRING, true)) {
-            return Relation_e::CONFIDANT;
-        } else if (CString_t::Is_Same(copy, FRIEND_STRING, true)) {
-            return Relation_e::FRIEND;
-        } else if (CString_t::Is_Same(copy, ACQUAINTANCE_STRING, true)) {
-            return Relation_e::ACQUAINTANCE;
-        } else if (CString_t::Is_Same(copy, RIVAL_STRING, true)) {
-            return Relation_e::RIVAL;
-        } else if (CString_t::Is_Same(copy, FOE_STRING, true)) {
-            return Relation_e::FOE;
-        } else if (CString_t::Is_Same(copy, ENEMY_STRING, true)) {
-            return Relation_e::ENEMY;
-        } else if (CString_t::Is_Same(copy, ARCHNEMESIS_STRING, true)) {
-            return Relation_e::ARCHNEMESIS;
+            if (CString_t::Starts_With(LOVER_STRING, str, true)) {
+                return Relation_e::LOVER;
+            } else if (CString_t::Starts_With(ALLY_STRING, str, true)) {
+                return Relation_e::ALLY;
+            } else if (CString_t::Starts_With(CONFIDANT_STRING, str, true)) {
+                return Relation_e::CONFIDANT;
+            } else if (CString_t::Starts_With(FRIEND_STRING, str, true)) {
+                return Relation_e::FRIEND;
+            } else if (CString_t::Starts_With(ACQUAINTANCE_STRING, str, true)) {
+                return Relation_e::ACQUAINTANCE;
+            } else if (CString_t::Starts_With(RIVAL_STRING, str, true)) {
+                return Relation_e::RIVAL;
+            } else if (CString_t::Starts_With(FOE_STRING, str, true)) {
+                return Relation_e::FOE;
+            } else if (CString_t::Starts_With(ENEMY_STRING, str, true)) {
+                return Relation_e::ENEMY;
+            } else if (CString_t::Starts_With(ARCHNEMESIS_STRING, str, true)) {
+                return Relation_e::ARCHNEMESIS;
+            } else {
+                return Relation_e::NONE;
+            }
         } else {
             return Relation_e::NONE;
         }
