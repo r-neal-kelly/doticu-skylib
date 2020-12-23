@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "skse64/GameTypes.h"
+
 #include "doticu_skylib/extra_list.h"
 
 namespace doticu_skylib {
@@ -52,7 +54,7 @@ namespace doticu_skylib {
 
     void List_x::Validate()
     {
-        BSWriteLocker locker(&lock);
+        Write_Locker_t locker(lock);
 
         if (presence) {
             presence->Clear();
@@ -64,7 +66,7 @@ namespace doticu_skylib {
 
     Bool_t List_x::Has(Extra_Type_e type)
     {
-        BSReadLocker locker(&lock);
+        Read_Locker_t locker(lock);
 
         if (presence) {
             return presence->Has(type);
@@ -75,7 +77,7 @@ namespace doticu_skylib {
 
     Data_x* List_x::Get(Extra_Type_e type)
     {
-        BSReadLocker locker(&lock);
+        Read_Locker_t locker(lock);
 
         if (presence && Has(type)) {
             for (Data_x* xdata = xdatas; xdata != nullptr; xdata = xdata->next) {
@@ -91,7 +93,7 @@ namespace doticu_skylib {
 
     Bool_t List_x::Add(Data_x* xdata)
     {
-        BSWriteLocker locker(&lock);
+        Write_Locker_t locker(lock);
 
         if (xdata) {
             Extra_Type_e type = xdata->Type();
@@ -114,7 +116,7 @@ namespace doticu_skylib {
 
     Bool_t List_x::Remove(Data_x* xdata)
     {
-        BSWriteLocker locker(&lock);
+        Write_Locker_t locker(lock);
 
         if (xdata) {
             Extra_Type_e type = xdata->Type();

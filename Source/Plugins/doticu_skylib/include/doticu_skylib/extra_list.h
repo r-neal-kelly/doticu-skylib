@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "skse64/GameTypes.h"
+#include "doticu_skylib/read_write_lock.h"
 
 #include "doticu_skylib/extra_data.h"
 
@@ -31,9 +31,9 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Presence_t) == 0x18);
 
     public:
-        Data_x*         xdatas;     // 00
-        Presence_t*     presence;   // 08
-        BSReadWriteLock lock;       // 10
+        Data_x*             xdatas;     // 00
+        Presence_t*         presence;   // 08
+        Read_Write_Lock_t   lock;       // 10
 
         void    Validate();
 

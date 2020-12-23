@@ -7,6 +7,7 @@
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/string.h"
 
 #include "doticu_skylib/component_model.h"
 #include "doticu_skylib/component_name.h"
@@ -101,7 +102,7 @@ namespace doticu_skylib {
         f32_xy                                  min_coords;                         // 1C0
         f32_xy                                  max_coords;                         // 1C8
         Hash_Map_t<Mod_t*, void*>               mod_to_unk;                         // 1D0
-        BSString                                editor_id;                          // 200
+        Dynamic_String_t                        editor_id;                          // 200
         Float_t                                 default_land_height;                // 210
         Float_t                                 default_water_height;               // 214
         Float_t                                 unk_218;                            // 218
