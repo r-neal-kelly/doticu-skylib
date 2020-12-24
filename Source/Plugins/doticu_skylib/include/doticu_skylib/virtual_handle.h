@@ -4,7 +4,8 @@
 
 #pragma once
 
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/script_type.h"
+
 #include "doticu_skylib/virtual.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -13,14 +14,13 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Raw_Handle_t raw_handle = 0;
 
-        template <typename Type_t>
-        Handle_t(Type_t* form_or_alias_or_active_effect);
-        Handle_t(void* form, Form_Type_e form_type);
+        template <typename Scriptable_t>
+        Handle_t(Scriptable_t* scriptable);
         Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
         Bool_t Is_Valid();
-        Bool_t Has_Form_Type(Form_Type_e form_type);
+        Bool_t Has_Script_Type(Script_Type_e script_type);
 
         operator Raw_Handle_t();
     };
@@ -32,16 +32,14 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Type_t>
-    Handle_t::Handle_t(Type_t* form_or_alias_or_active_effect)
+    template <typename Scriptable_t>
+    Handle_t::Handle_t(Scriptable_t* scriptable)
     {
-        if (form_or_alias_or_active_effect) {
-            raw_handle = Handle_Policy_t::Self()->Handle(Type_t::FORM_TYPE, form_or_alias_or_active_effect);
+        if (scriptable) {
+            raw_handle = Handle_Policy_t::Self()->Handle(Scriptable_t::SCRIPT_TYPE, scriptable);
         } else {
             raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
         }
     }
-    template <> Handle_t::Handle_t(void* form_or_alias_or_active_effect)        = delete;
-    template <> Handle_t::Handle_t(Handle_t* form_or_alias_or_active_effect)    = delete;
 
 }}

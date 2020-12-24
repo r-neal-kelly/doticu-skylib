@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/keyword.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -13,8 +14,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::LOCATION_REFERENCE_TYPE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::LOCATION_REFERENCE_TYPE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -14,8 +15,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::ALIAS_REFERENCE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::ALIAS_REFERENCE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         class Forced_Fill_t

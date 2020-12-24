@@ -22,6 +22,7 @@
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/relation.h"
+#include "doticu_skylib/script_type.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"
@@ -51,8 +52,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::ACTOR_BASE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::ACTOR_BASE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t                   Actor_Base_Count();

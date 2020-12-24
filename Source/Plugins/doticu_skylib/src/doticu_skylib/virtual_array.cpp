@@ -7,6 +7,11 @@
 
 namespace doticu_skylib { namespace Virtual {
 
+    Type_e Array_t::Array_Type()
+    {
+        return item_type.As_Array();
+    }
+
     Variable_t* Array_t::Variables()
     {
         SKYLIB_ASSERT(count > 0);

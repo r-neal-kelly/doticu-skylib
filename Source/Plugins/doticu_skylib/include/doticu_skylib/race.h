@@ -15,6 +15,7 @@
 #include "doticu_skylib/component_skin.h"
 
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -31,8 +32,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::RACE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::RACE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t                   Race_Count();

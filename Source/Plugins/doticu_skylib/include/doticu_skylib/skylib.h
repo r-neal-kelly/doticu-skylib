@@ -21,6 +21,7 @@ namespace doticu_skylib {
     class Form_Type_e;
     class Rarity_e;
     class Relation_e;
+    class Script_Type_e;
     class Sex_e;
     class Vitality_e;
 

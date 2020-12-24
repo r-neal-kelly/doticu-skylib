@@ -7,15 +7,6 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    Handle_t::Handle_t(void* form, Form_Type_e form_type)
-    {
-        if (form) {
-            raw_handle = Handle_Policy_t::Self()->Handle(form_type, form);
-        } else {
-            raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
-        }
-    }
-
     Handle_t::Handle_t(Raw_Handle_t raw_handle) :
         raw_handle(raw_handle)
     {
@@ -31,9 +22,9 @@ namespace doticu_skylib { namespace Virtual {
         return Handle_Policy_t::Self()->Is_Valid(*this);
     }
 
-    Bool_t Handle_t::Has_Form_Type(Form_Type_e form_type)
+    Bool_t Handle_t::Has_Script_Type(Script_Type_e script_type)
     {
-        return Handle_Policy_t::Self()->Has_Form_Type(form_type, *this);
+        return Handle_Policy_t::Self()->Has_Script_Type(script_type, raw_handle);
     }
 
     Handle_t::operator Raw_Handle_t()

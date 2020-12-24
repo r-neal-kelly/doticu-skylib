@@ -18,6 +18,7 @@
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -88,8 +89,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::QUEST,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::QUEST,
+            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

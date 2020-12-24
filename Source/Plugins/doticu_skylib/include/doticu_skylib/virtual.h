@@ -16,7 +16,6 @@ namespace doticu_skylib { namespace Virtual {
 
     using Stack_ID_t        = u32;
     using Raw_Handle_t      = u64;
-    using Virtual_Type_t    = u32; // takes Form_Type_e
 
     class Arguments_t;
     class Array_t;

@@ -8,32 +8,46 @@
 
 namespace doticu_skylib {
 
-    template <typename Type>
+    template <typename T>
+    using enable_if_enumable_t = std::enable_if_t<
+        std::is_integral<T>::value &&
+        !std::is_pointer<T>::value,
+        Bool_t
+    >;
+
+    template <typename Type_t, enable_if_enumable_t<Type_t> = true>
+    class Enum_Base_t
+    {
+    public:
+        using _BASE_TYPE_ = Type_t;
+    };
+
+    template <typename Type_t, enable_if_enumable_t<Type_t> = true>
     class Enum_t
     {
     public:
-        using _TYPE_ = Type;
+        using _TYPE_ = Type_t;
 
-        Type value;
+        Type_t value;
 
         Enum_t() :
             value(0)
         {
         }
 
-        Enum_t(Type value) :
+        Enum_t(Type_t value) :
             value(value)
         {
         }
 
-        operator Type()
+        operator Type_t()
         {
-            return static_cast<Type>(value);
+            return static_cast<Type_t>(value);
         }
 
-        operator const Type() const
+        operator const Type_t() const
         {
-            return static_cast<const Type>(value);
+            return static_cast<const Type_t>(value);
         }
     };
 

@@ -10,7 +10,9 @@
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/reference_count.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/script_type.h"
 #include "doticu_skylib/unknown.h"
+
 #include "doticu_skylib/extra_list.h"
 
 namespace doticu_skylib {
@@ -29,8 +31,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::REFERENCE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::REFERENCE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         class Offset_e : public Enum_t<Word_t>

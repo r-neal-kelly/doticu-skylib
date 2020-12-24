@@ -7,8 +7,11 @@
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/script_type.h"
+
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_handle.h"
+#include "doticu_skylib/virtual_type.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -19,7 +22,6 @@ namespace doticu_skylib { namespace Virtual {
     class Handle_Policy_t;
     class Object_t;
     class Bind_Policy_t;
-    class Type_t;
     class Variable_t;
 
     class Machine_t
@@ -39,10 +41,10 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _07(void); // 07
         virtual void _08(void); // 08
         virtual Bool_t Load_Class_Info(String_t* class_name, Class_t** info_out); // 09, call Class_Info_t Free() after use
-        virtual Bool_t Load_Class_Info2(Form_Type_e form_type, Class_t** info_out); // 0A, call Class_Info_t Free() after use
+        virtual Bool_t Load_Class_Info2(Raw_Script_Type_t script_type, Class_t** info_out); // 0A, call Class_Info_t Free() after use
         virtual Bool_t Class_Info(String_t* class_name, Class_t** info_out); // 0B, call Class_Info_t Free() after use
-        virtual Bool_t Class_Info2(Form_Type_e form_type, Class_t** info_out); // 0C, call Class_Info_t Free() after use
-        virtual Bool_t Type_ID(String_t* class_name, Form_Type_e* form_type_out); // 0D
+        virtual Bool_t Class_Info2(Raw_Script_Type_t script_type, Class_t** info_out); // 0C, call Class_Info_t Free() after use
+        virtual Bool_t Class_Script_Type(String_t& class_name, Raw_Script_Type_t& script_type_out); // 0D
         virtual void _0E(void); // 0E
         virtual void _0F(void); // 0F
         virtual void _10(void); // 10
@@ -51,7 +53,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _13(void); // 13
         virtual void _14(void); // 14
         virtual Bool_t Create_Object2(String_t* class_name, Object_t** object_out); // 15
-        virtual Bool_t Create_Array(Type_t* type, UInt32 count, Array_t** array_out); // 16, SKSE has Variable_t* for first arg?
+        virtual Bool_t Create_Array(Raw_Type_t* type, UInt32 count, Array_t** array_out); // 16, SKSE has Variable_t* for first arg?
         virtual void _17(void); // 17
         virtual Bool_t Bind_Function(IFunction* function); // 18
         virtual void _19(void); // 19
@@ -78,30 +80,24 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _2E(void); // 2E
         virtual Bind_Policy_t* Bind_Policy(); // 2F
 
-        Bool_t Call_Global(String_t class_name,
-                           String_t function_name,
-                           Arguments_i* arguments = nullptr,
-                           Callback_i** vcallback = nullptr);
+        Bool_t  Call_Global(String_t class_name,
+                            String_t function_name,
+                            Arguments_i* arguments = nullptr,
+                            Callback_i** vcallback = nullptr);
+        Bool_t  Call_Method(Handle_t handle,
+                            String_t class_name,
+                            String_t function_name,
+                            Arguments_i* arguments = nullptr,
+                            Callback_i** vcallback = nullptr);
+        Bool_t  Call_Method(Handle_t handle,
+                            String_t class_name,
+                            String_t function_name,
+                            maybe<Arguments_i*> maybe_varguments = nullptr,
+                            maybe<Callback_i*> maybe_vcallback = nullptr);
 
-        Bool_t Call_Method(Handle_t handle,
-                           String_t class_name,
-                           String_t function_name,
-                           Arguments_i* arguments = nullptr,
-                           Callback_i** vcallback = nullptr);
-        Bool_t Call_Method(Handle_t handle,
-                           String_t class_name,
-                           String_t function_name,
-                           maybe<Arguments_i*> maybe_varguments = nullptr,
-                           maybe<Callback_i*> maybe_vcallback = nullptr);
-
-        void Send_Event(Handle_t handle,
-                        String_t event_name,
-                        maybe<Arguments_i*> maybe_varguments = nullptr);
-
-        Int_t Count_Objects(Handle_t handle);
-        Bool_t Has_Object(Handle_t handle);
-
-        Form_Type_e Form_Type(String_t class_name);
+        void    Send_Event(Handle_t handle,
+                           String_t event_name,
+                           maybe<Arguments_i*> maybe_varguments = nullptr);
     };
 
 }}

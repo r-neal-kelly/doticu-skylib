@@ -14,6 +14,7 @@
 #include "doticu_skylib/component_texture.h"
 
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -61,8 +62,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::WORLDSPACE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::WORLDSPACE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

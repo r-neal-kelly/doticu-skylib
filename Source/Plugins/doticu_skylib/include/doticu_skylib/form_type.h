@@ -8,12 +8,12 @@
 
 namespace doticu_skylib {
 
-    class Form_Type_e : public Enum_t<u8>
+    using Raw_Form_Type_t = u8;
+
+    class Form_Type_Base_e : public Enum_Base_t<Raw_Form_Type_t>
     {
     public:
-        static constexpr size_t MAX_TYPES = 0x8A;
-
-        enum : u8
+        enum : _BASE_TYPE_
         {
             FORM                    = 0x00,
 
@@ -40,11 +40,17 @@ namespace doticu_skylib {
 
             LOCATION                = 0x68, // LCTN
 
-            ALIAS_BASE              = 0x8B,
-            ALIAS_REFERENCE         = 0x8C,
-            ALIAS_LOCATION          = 0x8D,
+            _END_                   = 0x8A,
         };
+    };
+
+    class Form_Type_e :
+        public Form_Type_Base_e,
+        public Enum_t<Raw_Form_Type_t>
+    {
+    public:
         using Enum_t::Enum_t;
     };
+    STATIC_ASSERT(sizeof(Form_Type_e) == 0x1);
 
 }

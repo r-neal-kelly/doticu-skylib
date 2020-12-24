@@ -22,17 +22,17 @@ namespace doticu_skylib { namespace Virtual {
     public:
         virtual                 ~Handle_Policy_t();
 
-        virtual Bool_t          Has_Form_Type(Virtual_Type_t type, Raw_Handle_t handle);    // 1
-        virtual Bool_t          Is_Valid(Raw_Handle_t handle);                              // 2
-        virtual Raw_Handle_t    Invalid_Handle();                                           // 3
-        virtual Raw_Handle_t    Handle(Virtual_Type_t type, const void* form);              // 4
-        virtual void            _05(void);                                                  // 5
-        virtual void            _06(void);                                                  // 6
-        virtual void            _07(void);                                                  // 7
-        virtual void*           Resolve(Virtual_Type_t type, Raw_Handle_t handle);          // 8
-        virtual void            _09(void);                                                  // 9
-        virtual void            Release(Raw_Handle_t handle);                               // A
-        virtual void            _0B(void);                                                  // B
+        virtual Bool_t          Has_Script_Type(Raw_Script_Type_t script_type, Raw_Handle_t handle);    // 1
+        virtual Bool_t          Is_Valid(Raw_Handle_t handle);                                          // 2
+        virtual Raw_Handle_t    Invalid_Handle();                                                       // 3
+        virtual Raw_Handle_t    Handle(Raw_Script_Type_t script_type, const void* form);                // 4
+        virtual void            _05(void);                                                              // 5
+        virtual void            _06(void);                                                              // 6
+        virtual void            _07(void);                                                              // 7
+        virtual void*           Resolve(Raw_Script_Type_t script_type, Raw_Handle_t handle);            // 8
+        virtual void            _09(void);                                                              // 9
+        virtual void            Release(Raw_Handle_t handle);                                           // A
+        virtual void            _0B(void);                                                              // B
     };
 
     class Bind_Policy_t

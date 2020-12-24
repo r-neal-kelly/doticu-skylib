@@ -13,6 +13,7 @@
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/magic_target.h"
 #include "doticu_skylib/reference.h"
+#include "doticu_skylib/script_type.h"
 #include "doticu_skylib/sex.h"
 
 namespace doticu_skylib {
@@ -57,8 +58,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::ACTOR,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::ACTOR,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static Vector_t<Actor_t*>   Loaded_Actors();

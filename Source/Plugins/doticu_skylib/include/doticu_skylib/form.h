@@ -11,7 +11,7 @@
 
 #include "doticu_skylib/form_flags.h"
 #include "doticu_skylib/form_id.h"
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -29,8 +29,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::FORM,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::FORM,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static Bool_t           Is_Static(Form_ID_t form_id);

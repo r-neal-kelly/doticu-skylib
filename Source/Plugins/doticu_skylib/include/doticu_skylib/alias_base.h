@@ -10,7 +10,7 @@
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/alias_id.h"
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -56,8 +56,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::ALIAS_BASE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::ALIAS_BASE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

@@ -57,22 +57,22 @@ namespace doticu_skylib {
         static void                 Log_u64s(void* data, size_t count, std::string indent = "");
 
     public:
-        u64                             unk_000;                                // 000
-        void*                           unk_008;                                // 008
-        Array_t<Form_t*>                form_caches[Form_Type_e::MAX_TYPES];    // 010
-        List_t<Region_t*>*              region_list;                            // D00
-        Short_Array_t<Cell_t*>          interior_cells;                         // D08
-        Short_Array_t<Addon_Node_t*>    addon_nodes;                            // D20
-        Double_List_t<Form_t*>          bad_forms;                              // D38
-        Form_ID_t                       next_id;                                // D50
-        u32                             pad_D54;                                // D54
-        Mod_t*                          active_mod;                             // D58
-        List_t<Mod_t*>                  mods;                                   // D60
-        Array_t<Mod_t*>                 heavy_mods;                             // D70
-        Array_t<Mod_t*>                 light_mods;                             // D88
-        Bool_t                          boolean_flags[16];                      // DA0
-        void*                           region_manager;                         // DB0
-        u64                             unk_DB8;                                // DB8
+        u64                             unk_000;                            // 000
+        void*                           unk_008;                            // 008
+        Array_t<Form_t*>                form_caches[Form_Type_e::_END_];    // 010
+        List_t<Region_t*>*              region_list;                        // D00
+        Short_Array_t<Cell_t*>          interior_cells;                     // D08
+        Short_Array_t<Addon_Node_t*>    addon_nodes;                        // D20
+        Double_List_t<Form_t*>          bad_forms;                          // D38
+        Form_ID_t                       next_id;                            // D50
+        u32                             pad_D54;                            // D54
+        Mod_t*                          active_mod;                         // D58
+        List_t<Mod_t*>                  mods;                               // D60
+        Array_t<Mod_t*>                 heavy_mods;                         // D70
+        Array_t<Mod_t*>                 light_mods;                         // D88
+        Bool_t                          boolean_flags[16];                  // DA0
+        void*                           region_manager;                     // DB0
+        u64                             unk_DB8;                            // DB8
 
     public:
         Array_t<Actor_Base_t*>&         Actor_Bases();

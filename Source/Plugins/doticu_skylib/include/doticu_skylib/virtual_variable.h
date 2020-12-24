@@ -44,9 +44,15 @@ namespace doticu_skylib { namespace Virtual {
 
     class Variable_t {
     public:
-        enum class Offset_e : Word_t {
-            COPY    = 0x01236E50, // 97509
-            DESTROY = 0x01236D10, // 97508
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : _TYPE_
+            {
+                COPY    = 0x01236E50, // 97509
+                DESTROY = 0x01236D10, // 97508
+            };
+            using Enum_t::Enum_t;
         };
 
         template <typename Type>
@@ -55,7 +61,7 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Variable_t();
 
-        Type_t type;
+        Type_e type;
         Variable_u data;
 
         void Destroy();
@@ -75,36 +81,42 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t Is_Float_Array();
         Bool_t Is_Bool_Array();
 
-        Bool_t Has_String();
-        Bool_t Has_Object();
+        maybe<Script_Type_e> Script_Type();
 
-        Bool_t Bool();
-        Int_t Int();
-        Float_t Float();
-        String_t String();
-        Object_t* Object();
-        Array_t* Array();
-        Array_t* Object_Array();
-        template <typename T>
-        T* Resolve(Form_Type_e form_type);
-        Form_t* Form();
-        Actor_t* Actor();
-        Alias_Base_t* Alias();
-        Faction_t* Faction();
-        Misc_t* Misc();
-        Outfit_t* Outfit();
-        Reference_t* Reference();
-        Quest_t* Quest();
-        template <typename Type>
-        Vector_t<Type> Vector();
+        Bool_t      Bool();
+        Int_t       Int();
+        Float_t     Float();
+        String_t    String();
+        Object_t*   Object();
+        Array_t*    Array();
+        Array_t*    Object_Array();
 
-        void None(Type_t type);
+        Reference_t*            Reference();
+        Quest_t*                Quest();
+
+        void None(Type_e type);
         void Bool(Bool_t value);
         void Int(Int_t value);
         void Float(Float_t value);
         void String(String_t value);
         void Object(Object_t* value);
         void Array(Array_t* value);
+
+        template <typename Probably_Bool_t, enable_if_probably_boolean_t<Probably_Bool_t> = true>
+        Probably_Bool_t         Unpack();
+        template <typename Integer_32_t, enable_if_integer_32_or_less_t<Integer_32_t> = true>
+        Integer_32_t            Unpack();
+        template <typename Float_32_t, enable_if_float_32_or_less_t<Float_32_t> = true>
+        Float_32_t              Unpack();
+        template <typename Scriptable_t, enable_if_pointer_t<Scriptable_t> = true>
+        maybe<Scriptable_t>     Unpack();
+        template <typename Intrinsic_t, enable_if_not_pointer_or_arithmetic<Intrinsic_t> = true>
+        Intrinsic_t             Unpack();
+
+        template <typename Arrayable_t>
+        Vector_t<Arrayable_t>   Unpack_Array();
+        template <typename Arrayable_t>
+        void                    Unpack_Array(Vector_t<Arrayable_t>& results);
 
         template <typename Type>
         void Pack(Type* value, Class_t* class_info);
@@ -152,7 +164,6 @@ namespace doticu_skylib { namespace Virtual {
     {
     public:
         Array_t*                    Value();
-        doticu_skylib::Vector_t<T>  Values();
         void                        Values(doticu_skylib::Vector_t<T>& values);
         void                        Values(doticu_skylib::Vector_t<T>&& values);
     };
@@ -168,9 +179,82 @@ namespace doticu_skylib { namespace Virtual {
 
 #include "doticu_skylib/virtual_array.h"
 #include "doticu_skylib/virtual_class.h"
+#include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {
+
+    template <typename Probably_Bool_t, enable_if_probably_boolean_t<Probably_Bool_t>>
+    inline Probably_Bool_t Variable_t::Unpack()
+    {
+        return Bool();
+    }
+
+    template <typename Integer_32_t, enable_if_integer_32_or_less_t<Integer_32_t>>
+    inline Integer_32_t Variable_t::Unpack()
+    {
+        return Int();
+    }
+
+    template <typename Float_32_t, enable_if_float_32_or_less_t<Float_32_t>>
+    inline Float_32_t Variable_t::Unpack()
+    {
+        return Float();
+    }
+
+    template <typename Scriptable_t, enable_if_pointer_t<Scriptable_t>>
+    inline maybe<Scriptable_t> Variable_t::Unpack()
+    {
+        if (type.Is_Object()) {
+            if (data.obj) {
+                maybe<Script_Type_e> script_type = Script_Type();
+                if (script_type) {
+                    Handle_Policy_t* handle_policy = Machine_t::Self()->Handle_Policy();
+                    if (handle_policy) {
+                        return static_cast<Scriptable_t>
+                            (handle_policy->Resolve(script_type, data.obj->Handle()));
+                    } else {
+                        return nullptr;
+                    }
+                } else {
+                    return nullptr;
+                }
+            } else {
+                return nullptr;
+            }
+        } else {
+            return nullptr;
+        }
+    }
+
+    template <typename Intrinsic_t, enable_if_not_pointer_or_arithmetic<Intrinsic_t>>
+    inline Intrinsic_t Variable_t::Unpack()
+    {
+        STATIC_ASSERT(false);
+    }
+
+    template <>
+    inline String_t Variable_t::Unpack<String_t>()
+    {
+        return String();
+    }
+
+    template <typename Arrayable_t>
+    inline Vector_t<Arrayable_t> Variable_t::Unpack_Array()
+    {
+        Vector_t<Arrayable_t> results;
+        Unpack_Array(results);
+        return results;
+    }
+
+    template <typename Arrayable_t>
+    inline void Variable_t::Unpack_Array(Vector_t<Arrayable_t>& results)
+    {
+        Array_t* varray = Array();
+        if (varray) {
+            return varray->Unpack(results);
+        }
+    }
 
     template <typename Type_t>
     inline void Variable_t::Pack(Type_t* value)
@@ -178,10 +262,10 @@ namespace doticu_skylib { namespace Virtual {
         if (value) {
             PackHandle(reinterpret_cast<VMValue*>(this),
                        value,
-                       Type_t::FORM_TYPE,
+                       Type_t::SCRIPT_TYPE,
                        (*g_skyrimVM)->GetClassRegistry());
         } else {
-            None(Class_t::Fetch(Type_t::FORM_TYPE, true));
+            None(Class_t::Fetch(Type_t::SCRIPT_TYPE, true));
         }
     }
 
@@ -205,17 +289,6 @@ namespace doticu_skylib { namespace Virtual {
     inline Array_t* Array_Variable_t<T>::Value()
     {
         return Array();
-    }
-
-    template <typename T>
-    inline doticu_skylib::Vector_t<T> Array_Variable_t<T>::Values()
-    {
-        Array_t* arr = Value();
-        if (arr) {
-            return arr->Vector<T>();
-        } else {
-            return doticu_skylib::Vector_t<T>();
-        }
     }
 
     template <typename T>

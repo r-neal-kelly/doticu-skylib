@@ -11,6 +11,7 @@
 #include "doticu_skylib/component_model.h"
 
 #include "doticu_skylib/animated_object.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -24,8 +25,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::LEVELED_ACTOR_BASE,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::LEVELED_ACTOR_BASE,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t                           Leveled_Actor_Base_Count();

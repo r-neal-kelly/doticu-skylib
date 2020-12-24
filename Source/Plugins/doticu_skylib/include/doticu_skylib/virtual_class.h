@@ -6,7 +6,7 @@
 
 #include "doticu_skylib/string.h"
 
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/script_type.h"
 
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
@@ -21,7 +21,7 @@ namespace doticu_skylib { namespace Virtual {
 
     struct Variable_Info_t {
         String_t name; // 00
-        Type_t type; // 08
+        Type_e type; // 08
     };
     STATIC_ASSERT(sizeof(Variable_Info_t) == 0x10);
 
@@ -36,7 +36,7 @@ namespace doticu_skylib { namespace Virtual {
         String_t name; // 00
         String_t parent_name; // 08
         String_t property_name; // 10
-        Type_t type; // 18
+        Type_e type; // 18
         u32 flags_20; // 20
         u32 unk_24; // 24
         IFunction* getter; // 28
@@ -50,7 +50,7 @@ namespace doticu_skylib { namespace Virtual {
     class Class_t {
     public:
         static Class_t* Fetch(String_t class_name, Bool_t do_auto_decrement = false);
-        static Class_t* Fetch(Form_Type_e form_type, Bool_t do_auto_decrement = false);
+        static Class_t* Fetch(Script_Type_e script_type, Bool_t do_auto_decrement = false);
 
     public:
         u32 ref_count; // 00
@@ -77,6 +77,8 @@ namespace doticu_skylib { namespace Virtual {
         Index_t Variable_Index(String_t variable_name);
         Index_t Property_Index(String_t property_name);
         Property_Info_t* Property_Info(String_t property_name);
+
+        maybe<Script_Type_e> Script_Type();
 
         void Hold();
         void Free();

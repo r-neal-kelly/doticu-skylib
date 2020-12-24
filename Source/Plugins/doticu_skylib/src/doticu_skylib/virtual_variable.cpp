@@ -4,6 +4,8 @@
 
 #include "doticu_skylib/form_type.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/quest.h"
+#include "doticu_skylib/reference.h"
 
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_policy.h"
@@ -17,7 +19,7 @@ namespace doticu_skylib { namespace Virtual {
     }
 
     Variable_t::Variable_t() :
-        type(Type_t()), data(Variable_u())
+        type(Type_e()), data(Variable_u())
     {
     }
 
@@ -52,6 +54,16 @@ namespace doticu_skylib { namespace Virtual {
     Bool_t Variable_t::Is_Int_Array()       { return type.Is_Int_Array(); }
     Bool_t Variable_t::Is_Float_Array()     { return type.Is_Float_Array(); }
     Bool_t Variable_t::Is_Bool_Array()      { return type.Is_Bool_Array(); }
+
+    maybe<Script_Type_e> Variable_t::Script_Type()
+    {
+        Class_t* vclass = type.Class();
+        if (vclass) {
+            return vclass->Script_Type();
+        } else {
+            return none<Script_Type_e>();
+        }
+    }
 
     Bool_t Variable_t::Bool()
     {
@@ -118,33 +130,15 @@ namespace doticu_skylib { namespace Virtual {
 
     Reference_t* Variable_t::Reference()
     {
-        if (type.Is_Object()) {
-            if (data.obj) {
-                return static_cast<Reference_t*>
-                    (Handle_Policy_t::Self()->Resolve(Form_Type_e::REFERENCE, data.obj->Handle()));
-            } else {
-                return nullptr;
-            }
-        } else {
-            return nullptr;
-        }
+        return Unpack<Reference_t*>();
     }
 
     Quest_t* Variable_t::Quest()
     {
-        if (type.Is_Object()) {
-            if (data.obj) {
-                return static_cast<Quest_t*>
-                    (Handle_Policy_t::Self()->Resolve(Form_Type_e::QUEST, data.obj->Handle()));
-            } else {
-                return nullptr;
-            }
-        } else {
-            return nullptr;
-        }
+        return Unpack<Quest_t*>();
     }
 
-    void Variable_t::None(Type_t type)
+    void Variable_t::None(Type_e type)
     {
         Destroy();
         this->type = type;

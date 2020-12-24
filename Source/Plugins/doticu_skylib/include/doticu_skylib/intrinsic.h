@@ -62,3 +62,50 @@ namespace doticu_skylib {
     using Nullptr_t = decltype(nullptr);
 
 }
+
+namespace doticu_skylib {
+
+    template <typename T>
+    using enable_if_pointer_t = std::enable_if_t<
+        std::is_pointer<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_not_pointer_t = std::enable_if_t<
+        !std::is_pointer<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_probably_boolean_t = std::enable_if_t <
+        std::is_same<T, Bool_t>::value ||
+        std::is_same<T, bool>::value ||
+        std::is_unsigned<T>::value &&
+        sizeof(T) == sizeof(Bool_t) &&
+        !std::is_same<T, u8>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_integer_32_or_less_t = std::enable_if_t<
+        std::is_integral<T>::value &&
+        sizeof(T) <= sizeof(u32),
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_float_32_or_less_t = std::enable_if_t<
+        std::is_floating_point<T>::value &&
+        sizeof(T) <= sizeof(f32),
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_not_pointer_or_arithmetic = std::enable_if_t<
+        !std::is_pointer<T>::value &&
+        !std::is_arithmetic<T>::value,
+        Bool_t
+    >;
+
+}

@@ -14,6 +14,7 @@
 #include "doticu_skylib/component_reaction.h"
 
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
 
@@ -37,8 +38,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::FACTION,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::FACTION,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static Vector_t<const char*>    editor_ids;

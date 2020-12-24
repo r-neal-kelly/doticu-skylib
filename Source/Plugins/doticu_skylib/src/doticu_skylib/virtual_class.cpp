@@ -4,6 +4,8 @@
 
 #include "doticu_skylib/cstring.h"
 
+#include "doticu_skylib/form_type.h"
+
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_machine.h"
 
@@ -24,16 +26,14 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    Class_t* Class_t::Fetch(Form_Type_e form_type, Bool_t do_auto_decrement)
+    Class_t* Class_t::Fetch(Script_Type_e script_type, Bool_t do_auto_decrement)
     {
-        Machine_t* const machine = Machine_t::Self();
-        if (machine) {
-            Class_t* info_out = nullptr;
-            machine->Load_Class_Info2(form_type, &info_out);
-            if (do_auto_decrement && info_out->ref_count > 1) {
-                info_out->Free();
+        Class_t* vclass = nullptr;
+        if (Machine_t::Self()->Load_Class_Info2(script_type, &vclass)) {
+            if (do_auto_decrement && vclass->ref_count > 1) {
+                vclass->Free();
             }
-            return info_out;
+            return vclass;
         } else {
             return nullptr;
         }
@@ -118,6 +118,16 @@ namespace doticu_skylib { namespace Virtual {
             }
         }
         return nullptr;
+    }
+
+    maybe<Script_Type_e> Class_t::Script_Type()
+    {
+        Raw_Script_Type_t script_type;
+        if (Machine_t::Self()->Class_Script_Type(name, script_type)) {
+            return script_type;
+        } else {
+            return none<Script_Type_e>();
+        }
     }
 
     void Class_t::Hold()

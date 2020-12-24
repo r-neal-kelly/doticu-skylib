@@ -17,13 +17,13 @@ namespace doticu_skylib { namespace Virtual {
     class Array_t
     {
     public:
-        static Array_t* Create(Type_t* item_type, UInt32 count);
+        static Array_t* Create(Type_e item_type, u32 count);
         static void Destroy(Array_t* arr);
 
     public:
         UInt32 ref_count; // 00
         UInt32 pad_04; // 04
-        Type_t item_type; // 08
+        Type_e item_type; // 08
         UInt32 count; // 10
         UInt32 pad_14; // 14
         UInt64 lock; // 18
@@ -31,21 +31,24 @@ namespace doticu_skylib { namespace Virtual {
 
         void Increment_Count();
         void Decrement_Count();
-        Type_t Array_Type();
+
+        Type_e      Array_Type();
         Variable_t* Variables();
         Variable_t* Point(Word_t idx);
-        template <typename Type>
-        Vector_t<Type> Vector();
-        template <typename Type>
-        Vector_t<Type*> Vector(Form_Type_e form_type);
-        template <typename Type>
-        Int_t Find(Type element);
+
+        template <typename Arrayable_t>
+        Vector_t<Arrayable_t>   Unpack();
+        template <typename Arrayable_t>
+        void                    Unpack(Vector_t<Arrayable_t>& results);
+
+        /*template <typename Type>
+        Int_t Find(Type element); // Index_Of
         template <typename Type>
         Int_t Find(Form_Type_e form_type, Type* element);
         template <typename Type>
         Bool_t Has(Type element);
         template <typename Type>
-        Bool_t Has(Form_Type_e form_type, Type* element);
+        Bool_t Has(Form_Type_e form_type, Type* element);*/
     };
     STATIC_ASSERT(sizeof(Array_t) == 0x20);
 
@@ -53,19 +56,24 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Type>
-    inline Vector_t<Type> Array_t::Vector()
+    template <typename Arrayable_t>
+    inline Vector_t<Arrayable_t> Array_t::Unpack()
     {
-        Vector_t<Type> vector;
-        for (size_t idx = 0; idx < count; idx += 1) {
+        Vector_t<Arrayable_t> results;
+        Unpack(results);
+        return results;
+    }
+
+    template <typename Arrayable_t>
+    inline void Array_t::Unpack(Vector_t<Arrayable_t>& results)
+    {
+        results.reserve(count);
+        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
             Variable_t* variable = Point(idx);
-            if (variable && variable->data.ptr) {
-                vector.push_back(*reinterpret_cast<Type*>(&variable->data.ptr));
-            } else {
-                vector.push_back(0);
+            if (variable) {
+                results.push_back(variable->Unpack<Arrayable_t>());
             }
         }
-        return vector;
     }
 
 }}

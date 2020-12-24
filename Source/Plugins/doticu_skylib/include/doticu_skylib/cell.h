@@ -10,6 +10,7 @@
 #include "doticu_skylib/component_name.h"
 
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/script_type.h"
 
 #include "doticu_skylib/extra_list.h"
 
@@ -51,8 +52,8 @@ namespace doticu_skylib {
     public:
         enum
         {
-            FORM_TYPE   = Form_Type_e::CELL,
-            kTypeID     = FORM_TYPE,
+            SCRIPT_TYPE = Script_Type_e::CELL,
+            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t               Interior_Cell_Count();
