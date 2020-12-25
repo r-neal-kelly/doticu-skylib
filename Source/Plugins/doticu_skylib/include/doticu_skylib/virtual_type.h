@@ -37,6 +37,19 @@ namespace doticu_skylib { namespace Virtual {
             BOOL_ARRAY      = 15,
         };
 
+        template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t> = true>
+        static Type_e From();
+        template <typename Intable_t, enable_if_virtual_int_t<Intable_t> = true>
+        static Type_e From();
+        template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t> = true>
+        static Type_e From();
+        template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t> = true>
+        static Type_e From();
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static Type_e From();
+        template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
+        static Type_e From();
+
     public:
         // mangled can be any of the above enums,
         // a reinterpret_cast<Raw_Type_t>(Class_t*) to indicate an object of said class,
@@ -45,13 +58,9 @@ namespace doticu_skylib { namespace Virtual {
 
     public:
         Type_e();
-        Type_e(Raw_Type_t unmangled);
+        Type_e(Raw_Type_t raw_type);
         Type_e(Class_t* vclass);
-        Type_e(Class_t* vclass, Bool_t is_array);
         Type_e(Script_Type_e script_type);
-        Type_e(Script_Type_e script_type, Bool_t is_array);
-        template <typename Scriptable_t> Type_e();
-        template <typename Scriptable_t> Type_e(Bool_t is_array);
 
         Type_e(const Type_e& other);
         Type_e(Type_e&& other) noexcept;
@@ -65,6 +74,7 @@ namespace doticu_skylib { namespace Virtual {
         Bool_t operator==(const Type_e& other) const;
 
     public:
+        Raw_Type_t  Mangled() const;
         Raw_Type_t  Unmangled() const;
         Class_t*    Class();
         String_t    To_String();
@@ -91,16 +101,40 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Scriptable_t>
-    inline Type_e::Type_e()
+    template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t>>
+    inline Type_e Type_e::From()
     {
-        mangled = Type_e(Scriptable_t::SCRIPT_TYPE).mangled;
+        return Type_e::BOOL;
     }
 
-    template <typename Scriptable_t>
-    inline Type_e::Type_e(Bool_t is_array)
+    template <typename Intable_t, enable_if_virtual_int_t<Intable_t>>
+    inline Type_e Type_e::From()
     {
-        mangled = Type_e(Scriptable_t::SCRIPT_TYPE, is_array).mangled;
+        return Type_e::INT;
+    }
+
+    template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t>>
+    inline Type_e Type_e::From()
+    {
+        return Type_e::FLOAT;
+    }
+
+    template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t>>
+    inline Type_e Type_e::From()
+    {
+        return Type_e::STRING;
+    }
+
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    inline Type_e Type_e::From()
+    {
+        return Script_Type_e::From<Scriptable_t>();
+    }
+
+    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
+    inline Type_e Type_e::From()
+    {
+        return From<Arrayable_t::value_type>().As_Array();
     }
 
 }}

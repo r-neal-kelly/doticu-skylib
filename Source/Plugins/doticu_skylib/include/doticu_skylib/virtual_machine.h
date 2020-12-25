@@ -53,7 +53,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _13(void); // 13
         virtual void _14(void); // 14
         virtual Bool_t Create_Object2(String_t* class_name, Object_t** object_out); // 15
-        virtual Bool_t Create_Array(Raw_Type_t* type, UInt32 count, Array_t** array_out); // 16, SKSE has Variable_t* for first arg?
+        virtual Bool_t Create_Array(Raw_Type_t& type, u32 count, Array_t*& array_out); // 16, SKSE has Variable_t* for first arg? (Create_Array(Variable_t& variable, u32 count, Array_t*& array_out))
         virtual void _17(void); // 17
         virtual Bool_t Bind_Function(IFunction* function); // 18
         virtual void _19(void); // 19

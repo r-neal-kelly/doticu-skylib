@@ -23,20 +23,43 @@ namespace doticu_skylib { namespace Virtual {
     {
     }
 
+    Variable_t::Variable_t(const Variable_t& other)
+    {
+        if (this != &other) {
+            Copy(other);
+        }
+    }
+
+    Variable_t& Variable_t::operator=(const Variable_t& other)
+    {
+        if (this != &other) {
+            Copy(other);
+        }
+        return *this;
+    }
+
+    Variable_t::~Variable_t()
+    {
+        Destroy();
+    }
+
     void Variable_t::Destroy()
     {
         static auto destroy = reinterpret_cast
             <void (*)(Variable_t*)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DESTROY));
+
         destroy(this);
-        data.ptr = nullptr;
+        type = Type_e();
+        data = Variable_u();
     }
 
-    void Variable_t::Copy(Variable_t* other)
+    void Variable_t::Copy(const Variable_t& other)
     {
         static auto copy = reinterpret_cast
-            <void (*)(Variable_t*, Variable_t*)>
+            <void (*)(const Variable_t*, const Variable_t&)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::COPY));
+
         Destroy();
         copy(this, other);
     }
@@ -49,57 +72,11 @@ namespace doticu_skylib { namespace Virtual {
     Bool_t Variable_t::Is_Object()          { return type.Is_Object(); }
     Bool_t Variable_t::Is_Array()           { return type.Is_Array(); }
     Bool_t Variable_t::Is_None_Array()      { return type.Is_None_Array(); }
-    Bool_t Variable_t::Is_Object_Array()    { return type.Is_Object_Array(); }
-    Bool_t Variable_t::Is_String_Array()    { return type.Is_String_Array(); }
+    Bool_t Variable_t::Is_Bool_Array()      { return type.Is_Bool_Array(); }
     Bool_t Variable_t::Is_Int_Array()       { return type.Is_Int_Array(); }
     Bool_t Variable_t::Is_Float_Array()     { return type.Is_Float_Array(); }
-    Bool_t Variable_t::Is_Bool_Array()      { return type.Is_Bool_Array(); }
-
-    maybe<Script_Type_e> Variable_t::Script_Type()
-    {
-        Class_t* vclass = type.Class();
-        if (vclass) {
-            return vclass->Script_Type();
-        } else {
-            return none<Script_Type_e>();
-        }
-    }
-
-    Bool_t Variable_t::Bool()
-    {
-        if (type.Is_Bool()) {
-            return data.b;
-        } else {
-            return false;
-        }
-    }
-
-    Int_t Variable_t::Int()
-    {
-        if (type.Is_Int()) {
-            return data.i;
-        } else {
-            return 0;
-        }
-    }
-
-    Float_t Variable_t::Float()
-    {
-        if (type.Is_Float()) {
-            return data.f;
-        } else {
-            return 0.0;
-        }
-    }
-
-    String_t Variable_t::String()
-    {
-        if (type.Is_String()) {
-            return data.str;
-        } else {
-            return "";
-        }
-    }
+    Bool_t Variable_t::Is_String_Array()    { return type.Is_String_Array(); }
+    Bool_t Variable_t::Is_Object_Array()    { return type.Is_Object_Array(); }
 
     Object_t* Variable_t::Object()
     {
@@ -119,70 +96,26 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    Array_t* Variable_t::Object_Array()
+    maybe<Script_Type_e> Variable_t::Script_Type()
     {
-        if (type.Is_Object_Array()) {
-            return data.arr;
+        Class_t* vclass = type.Class();
+        if (vclass) {
+            return vclass->Script_Type();
         } else {
-            return nullptr;
+            return none<Script_Type_e>();
         }
     }
 
-    Reference_t* Variable_t::Reference()
-    {
-        return Unpack<Reference_t*>();
-    }
+    Bool_t      Bool_Variable_t::Value()                    { return Unpack<Bool_t>(); }
+    void        Bool_Variable_t::Value(Bool_t value)        { Pack<Bool_t>(value); }
 
-    Quest_t* Variable_t::Quest()
-    {
-        return Unpack<Quest_t*>();
-    }
+    Int_t       Int_Variable_t::Value()                     { return Unpack<Int_t>(); }
+    void        Int_Variable_t::Value(Int_t value)          { Pack<Int_t>(value); }
 
-    void Variable_t::None(Type_e type)
-    {
-        Destroy();
-        this->type = type;
-        this->data.ptr = nullptr;
-    }
+    Float_t     Float_Variable_t::Value()                   { return Unpack<Float_t>(); }
+    void        Float_Variable_t::Value(Float_t value)      { Pack<Float_t>(value); }
 
-    void Variable_t::Bool(Bool_t value)
-    {
-        Destroy();
-        type = Type_e::BOOL;
-        data.b = value;
-    }
-
-    void Variable_t::Int(Int_t value)
-    {
-        Destroy();
-        type = Type_e::INT;
-        data.i = value;
-    }
-
-    void Variable_t::Float(Float_t value)
-    {
-        Destroy();
-        type = Type_e::FLOAT;
-        data.f = value;
-    }
-
-    void Variable_t::String(String_t value)
-    {
-        Destroy();
-        type = Type_e::STRING;
-        data.str.Value(value);
-    }
-
-    Bool_t      Bool_Variable_t::Value()                    { return Bool(); }
-    void        Bool_Variable_t::Value(Bool_t value)        { Bool(value); }
-
-    Int_t       Int_Variable_t::Value()                     { return Int(); }
-    void        Int_Variable_t::Value(Int_t value)          { Int(value); }
-
-    Float_t     Float_Variable_t::Value()                   { return Float(); }
-    void        Float_Variable_t::Value(Float_t value)      { Float(value); }
-
-    String_t    String_Variable_t::Value()                  { return String(); }
-    void        String_Variable_t::Value(String_t value)    { String(value); }
+    String_t    String_Variable_t::Value()                  { return Unpack<String_t>(); }
+    void        String_Variable_t::Value(String_t value)    { Pack<String_t>(value); }
 
 }}

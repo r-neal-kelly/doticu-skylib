@@ -6,6 +6,8 @@
 
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/script_type.h"
+
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_handle.h"
 
@@ -24,6 +26,9 @@ namespace doticu_skylib { namespace Virtual {
 
         template <typename Type>
         static Object_t* Fetch(Type* instance, String_t class_name, Bool_t do_auto_decrement = false);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static Object_t* Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
+
         template <typename Type>
         static Object_t* Create(Type* instance, String_t class_name);
         template <typename Type>
@@ -69,6 +74,42 @@ namespace doticu_skylib { namespace Virtual {
                     object->Decrement_Lock();
                 }
                 return object;
+            } else {
+                return nullptr;
+            }
+        } else {
+            return nullptr;
+        }
+    }
+
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    inline Object_t* Object_t::Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find)
+    {
+        Script_Type_e script_type = Script_Type_e::From<Scriptable_t>();
+        if (script_type) {
+            Class_t* vclass = script_type.Class();
+            if (vclass) {
+                Handle_t handle(scriptable);
+                if (handle.Is_Valid()) {
+                    Machine_t* machine = Machine_t::Self();
+                    Object_t* object = nullptr;
+                    if (machine->Find_Bound_Object(handle, vclass->name, &object) && object) {
+                        if (do_decrement_on_find) {
+                            object->Decrement_Lock();
+                        }
+                        return object;
+                    } else {
+                        object = nullptr;
+                        if (machine->Create_Object2(&vclass->name, &object) && object) {
+                            machine->Bind_Policy()->Bind_Object(&object, handle);
+                            return object;
+                        } else {
+                            return nullptr;
+                        }
+                    }
+                } else {
+                    return nullptr;
+                }
             } else {
                 return nullptr;
             }

@@ -13,14 +13,14 @@ namespace doticu_skylib { namespace Virtual {
         mangled = Type_e::NONE;
     }
 
-    Type_e::Type_e(Raw_Type_t unmangled)
+    Type_e::Type_e(Raw_Type_t raw_type)
     {
-        if (unmangled == Type_e::OBJECT) {
+        if (raw_type == Type_e::OBJECT) {
             mangled = Type_e::NONE;
-        } else if (unmangled == Type_e::OBJECT_ARRAY) {
+        } else if (raw_type == Type_e::OBJECT_ARRAY) {
             mangled = Type_e::NONE_ARRAY;
         } else {
-            mangled = unmangled;
+            mangled = raw_type;
         }
     }
 
@@ -33,31 +33,9 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    Type_e::Type_e(Class_t* vclass, Bool_t is_array)
-    {
-        if (vclass) {
-            if (is_array) {
-                mangled = reinterpret_cast<Raw_Type_t>(vclass) | 1llu;
-            } else {
-                mangled = reinterpret_cast<Raw_Type_t>(vclass);
-            }
-        } else {
-            if (is_array) {
-                mangled = Type_e::NONE_ARRAY;
-            } else {
-                mangled = Type_e::NONE;
-            }
-        }
-    }
-
     Type_e::Type_e(Script_Type_e script_type)
     {
-        mangled = Type_e(Class_t::Fetch(script_type, true)).mangled;
-    }
-
-    Type_e::Type_e(Script_Type_e script_type, Bool_t is_array)
-    {
-        mangled = Type_e(Class_t::Fetch(script_type, true), is_array).mangled;
+        mangled = Type_e(script_type.Class()).mangled;
     }
 
     Type_e::Type_e(const Type_e& other)
@@ -107,6 +85,11 @@ namespace doticu_skylib { namespace Virtual {
     Bool_t Type_e::operator==(const Type_e& other) const
     {
         return mangled == other.mangled;
+    }
+
+    Raw_Type_t Type_e::Mangled() const
+    {
+        return mangled;
     }
 
     Raw_Type_t Type_e::Unmangled() const

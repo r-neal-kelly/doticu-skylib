@@ -14,8 +14,8 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Raw_Handle_t raw_handle = 0;
 
-        template <typename Scriptable_t>
-        Handle_t(Scriptable_t* scriptable);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        Handle_t(Scriptable_t scriptable);
         Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
@@ -32,11 +32,11 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Scriptable_t>
-    Handle_t::Handle_t(Scriptable_t* scriptable)
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    Handle_t::Handle_t(Scriptable_t scriptable)
     {
         if (scriptable) {
-            raw_handle = Handle_Policy_t::Self()->Handle(Scriptable_t::SCRIPT_TYPE, scriptable);
+            raw_handle = Handle_Policy_t::Self()->Handle(Script_Type_e::From<Scriptable_t>(), scriptable);
         } else {
             raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
         }

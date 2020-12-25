@@ -145,6 +145,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_object.h" />
     <ClInclude Include="include\doticu_skylib\virtual_policy.h" />
     <ClInclude Include="include\doticu_skylib\string.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_skse.h" />
     <ClInclude Include="include\doticu_skylib\virtual_type.h" />
     <ClInclude Include="include\doticu_skylib\virtual_utils.h" />
     <ClInclude Include="include\doticu_skylib\virtual_variable.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />
+    <ClCompile Include="src\doticu_skylib\script_type.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />

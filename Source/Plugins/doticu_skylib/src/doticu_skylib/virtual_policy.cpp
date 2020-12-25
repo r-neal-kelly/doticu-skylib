@@ -24,6 +24,7 @@ namespace doticu_skylib { namespace Virtual {
         static auto bind_object = reinterpret_cast
             <void(*)(Bind_Policy_t*, Object_t**, Raw_Handle_t)>
             (doticu_skylib::Game_t::Base_Address() + Offset_e::BIND_OBJECT);
+
         bind_object(this, object, handle);
     }
 

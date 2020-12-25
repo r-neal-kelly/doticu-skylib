@@ -13,6 +13,7 @@
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_function.h"
 #include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_skse.h"
 #include "doticu_skylib/virtual_variable.h"
 
 namespace doticu_skylib { namespace Virtual {

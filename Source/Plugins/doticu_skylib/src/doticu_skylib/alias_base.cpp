@@ -102,7 +102,7 @@ namespace doticu_skylib {
             void operator()(Virtual::Variable_t* result)
             {
                 if (result) {
-                    ucallback->operator()(result->Reference());
+                    ucallback->operator()(result->Unpack<Reference_t*>());
                     delete ucallback;
                 } else {
                     ucallback->operator()(nullptr);

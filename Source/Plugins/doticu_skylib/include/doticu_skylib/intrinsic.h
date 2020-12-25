@@ -65,6 +65,68 @@ namespace doticu_skylib {
 
 namespace doticu_skylib {
 
+    template <typename ...Ts>
+    class traits_wrap_t
+    {
+    public:
+    };
+
+    template <typename T>
+    using iterable_traits_t = traits_wrap_t<
+        typename T::value_type,
+        decltype(std::declval<T>().begin()),
+        decltype(std::declval<T>().end())
+    >;
+
+    template <typename T, typename _ = void>
+    class is_iterable : public std::false_type
+    {
+    public:
+    };
+
+    template <typename T>
+    class is_iterable<T, std::conditional_t<false, iterable_traits_t<T>, void>> : public std::true_type
+    {
+    public:
+    };
+
+    template <typename T>
+    using arrayable_traits_t = traits_wrap_t<
+        typename T::value_type,
+        typename T::size_type,
+        decltype(std::declval<T>().size())
+    >;
+
+    template <typename T, typename _ = void>
+    class is_arrayable : public std::false_type
+    {
+    public:
+    };
+
+    template <typename T>
+    class is_arrayable<T, std::conditional_t<false, arrayable_traits_t<T>, void>> : public std::true_type
+    {
+    public:
+    };
+
+    template <typename T>
+    using enable_if_iterable_t = std::enable_if_t<
+        is_iterable<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_arrayable_t = std::enable_if_t<
+        is_arrayable<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_void_t = std::enable_if_t <
+        std::is_same<T, void>::value,
+        Bool_t
+    >;
+
     template <typename T>
     using enable_if_pointer_t = std::enable_if_t<
         std::is_pointer<T>::value,
@@ -78,19 +140,16 @@ namespace doticu_skylib {
     >;
 
     template <typename T>
-    using enable_if_probably_boolean_t = std::enable_if_t <
-        std::is_same<T, Bool_t>::value ||
-        std::is_same<T, bool>::value ||
-        std::is_unsigned<T>::value &&
-        sizeof(T) == sizeof(Bool_t) &&
-        !std::is_same<T, u8>::value,
+    using enable_if_boolean_t = std::enable_if_t<
+        std::is_same<T, bool>::value,
         Bool_t
     >;
 
     template <typename T>
     using enable_if_integer_32_or_less_t = std::enable_if_t<
         std::is_integral<T>::value &&
-        sizeof(T) <= sizeof(u32),
+        sizeof(T) <= sizeof(u32) &&
+        !std::is_same<T, bool>::value,
         Bool_t
     >;
 
@@ -102,7 +161,7 @@ namespace doticu_skylib {
     >;
 
     template <typename T>
-    using enable_if_not_pointer_or_arithmetic = std::enable_if_t<
+    using enable_if_not_pointer_and_not_arithmetic = std::enable_if_t<
         !std::is_pointer<T>::value &&
         !std::is_arithmetic<T>::value,
         Bool_t

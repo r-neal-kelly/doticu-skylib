@@ -36,10 +36,13 @@ namespace doticu_skylib { namespace Virtual {
         Variable_t* Variables();
         Variable_t* Point(Word_t idx);
 
-        template <typename Arrayable_t>
-        Vector_t<Arrayable_t>   Unpack();
-        template <typename Arrayable_t>
-        void                    Unpack(Vector_t<Arrayable_t>& results);
+        template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
+        Arrayable_t Unpack();
+        template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
+        void        Unpack(Arrayable_t& results);
+
+        template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
+        void        Pack(const Arrayable_t& values);
 
         /*template <typename Type>
         Int_t Find(Type element); // Index_Of
@@ -56,22 +59,33 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Arrayable_t>
-    inline Vector_t<Arrayable_t> Array_t::Unpack()
+    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
+    inline Arrayable_t Array_t::Unpack()
     {
-        Vector_t<Arrayable_t> results;
+        Arrayable_t results;
         Unpack(results);
         return results;
     }
 
-    template <typename Arrayable_t>
-    inline void Array_t::Unpack(Vector_t<Arrayable_t>& results)
+    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
+    inline void Array_t::Unpack(Arrayable_t& results)
     {
         results.reserve(count);
         for (Index_t idx = 0, end = count; idx < end; idx += 1) {
             Variable_t* variable = Point(idx);
             if (variable) {
-                results.push_back(variable->Unpack<Arrayable_t>());
+                results.push_back(variable->Unpack<Arrayable_t::value_type>());
+            }
+        }
+    }
+
+    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
+    inline void Array_t::Pack(const Arrayable_t& values)
+    {
+        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+            Variable_t* variable = Point(idx);
+            if (variable) {
+                variable->Pack<Arrayable_t::value_type>(values[idx]);
             }
         }
     }

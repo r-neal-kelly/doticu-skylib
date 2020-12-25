@@ -10,6 +10,12 @@
 
 namespace doticu_skylib {
 
+    namespace Virtual {
+
+        class Class_t;
+
+    }
+
     using Raw_Script_Type_t = u32;
 
     class Script_Type_e :
@@ -27,6 +33,15 @@ namespace doticu_skylib {
             _END_               = 0x8F, // I think user defined types begin here. Are they a pointer to their Class_t?
         };
         using Enum_t::Enum_t;
+
+        template <typename Scriptable_t>
+        static Script_Type_e From()
+        {
+            return std::remove_pointer_t<Scriptable_t>::SCRIPT_TYPE;
+        }
+
+    public:
+        maybe<Virtual::Class_t*> Class();
     };
     STATIC_ASSERT(sizeof(Script_Type_e) == 0x4);
 
