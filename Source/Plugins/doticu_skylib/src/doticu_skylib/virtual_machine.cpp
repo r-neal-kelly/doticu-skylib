@@ -61,13 +61,13 @@ namespace doticu_skylib { namespace Virtual {
     {
         Callback_i* vcallback;
         if (maybe_vcallback) {
-            vcallback = maybe_vcallback;
+            vcallback = maybe_vcallback();
         } else {
             vcallback = new Callback_t();
         }
 
         if (maybe_varguments) {
-            return Call_Method2(handle, &class_name, &function_name, maybe_varguments, &vcallback);
+            return Call_Method2(handle, &class_name, &function_name, maybe_varguments(), &vcallback);
         } else {
             Arguments_t default_varguments;
             return Call_Method2(handle, &class_name, &function_name, &default_varguments, &vcallback);
@@ -79,7 +79,7 @@ namespace doticu_skylib { namespace Virtual {
                                maybe<Arguments_i*> maybe_varguments)
     {
         if (maybe_varguments) {
-            return Send_Event(handle, &event_name, maybe_varguments);
+            return Send_Event(handle, &event_name, maybe_varguments());
         } else {
             Arguments_t default_varguments;
             return Send_Event(handle, &event_name, &default_varguments);

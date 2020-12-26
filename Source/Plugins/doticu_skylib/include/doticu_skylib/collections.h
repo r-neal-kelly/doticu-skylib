@@ -219,7 +219,7 @@ namespace doticu_skylib {
     public:
         using std::vector<Type>::vector;
 
-        Index_t Index_Of(Type& item)
+        Index_t Index_Of(const Type& item) const
         {
             for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
                 if (at(idx) == item) {
@@ -229,12 +229,23 @@ namespace doticu_skylib {
             return -1;
         }
 
-        Index_t Index_Of(Type&& item)
+        template <typename TT>
+        Index_t Index_Of(const TT& item) const
         {
-            return Index_Of(item);
+            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+                if (at(idx) == item) {
+                    return idx;
+                }
+            }
+            return -1;
         }
 
-        Index_t Index_Of(Type& item, Bool_t(*is_same)(const Type&, const Type&))
+        Bool_t Has(const Type& item) const
+        {
+            return Index_Of(item) > -1;
+        }
+
+        Index_t Index_Of(const Type& item, Bool_t(*is_same)(const Type&, const Type&))
         {
             for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
                 if (is_same(at(idx), item)) {
@@ -242,45 +253,6 @@ namespace doticu_skylib {
                 }
             }
             return -1;
-        }
-
-        template <typename TT>
-        Index_t Index_Of(TT& item)
-        {
-            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
-                if (at(idx) == item) {
-                    return idx;
-                }
-            }
-            return -1;
-        }
-
-        template <typename TT>
-        Index_t Index_Of(TT&& item)
-        {
-            return Index_Of(item);
-        }
-
-        Bool_t Has(Type& item)
-        {
-            return Index_Of(item) > -1;
-        }
-
-        Bool_t Has(Type&& item)
-        {
-            return Has(item);
-        }
-
-        template <typename TT>
-        Bool_t Has(TT& item)
-        {
-            return Index_Of(item) > -1;
-        }
-
-        template <typename TT>
-        Bool_t Has(TT&& item)
-        {
-            return Has(item);
         }
 
         void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))

@@ -65,6 +65,7 @@ namespace doticu_skylib {
     class Magic_Target_t;
     class Mod_t;
     class Object_t;
+    class Player_t;
     class Quest_t;
     class Race_t;
     class Reference_t;

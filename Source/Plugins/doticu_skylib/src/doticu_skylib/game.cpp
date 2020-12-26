@@ -151,16 +151,15 @@ namespace doticu_skylib {
         static auto get_form = reinterpret_cast
             <Form_t*(*)(Form_ID_t form_id)>
             (Game_t::Base_Address() + Offset_e::GET_FORM);
+
         return get_form(form_id);
     }
 
-    maybe<Form_t*> Game_t::Form(Mod_t* mod, Lower_Form_ID_t lower_form_id)
+    maybe<Form_t*> Game_t::Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id)
     {
-        if (mod) {
-            return Form(Form_t::Form_ID(lower_form_id, mod));
-        } else {
-            return nullptr;
-        }
+        SKYLIB_ASSERT_SOME(mod);
+
+        return Form(Form_t::Form_ID(lower_form_id, mod));
     }
 
     Word_t Game_t::V_Table_Offset(void* instance)

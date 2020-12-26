@@ -38,10 +38,12 @@ namespace doticu_skylib {
         void        Value(const char* value);
 
         Bool_t      operator==(const Static_String_t& other);
+        Bool_t      operator==(const Static_String_t& other) const;
         Bool_t      operator!=(const Static_String_t& other);
+        Bool_t      operator!=(const Static_String_t& other) const;
 
-        operator Bool_t();
-        operator Bool_t() const;
+        explicit operator Bool_t();
+        explicit operator Bool_t() const;
         operator const char*();
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);

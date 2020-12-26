@@ -145,7 +145,7 @@ namespace doticu_skylib {
 
         _MESSAGE("%s {", title);
         for (size_t idx = 0, end = mods.size(); idx < end; idx += 1) {
-            Mod_t* mod = mods[idx];
+            some<Mod_t*> mod = mods[idx];
             _MESSAGE(TAB "index: %6zu, mod: %s", idx, mod->Name());
         }
         _MESSAGE("}");
@@ -178,7 +178,7 @@ namespace doticu_skylib {
         for (Index_t idx = 0, end = heavy_mods.count; idx < end; idx += 1) {
             Mod_t* mod = heavy_mods.entries[idx];
             if (mod) {
-                if (CString_t::Is_Same(mod_name, mod->Name(), true)) {
+                if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
                     return mod;
                 }
             }
@@ -187,7 +187,7 @@ namespace doticu_skylib {
         for (Index_t idx = 0, end = light_mods.count; idx < end; idx += 1) {
             Mod_t* mod = light_mods.entries[idx];
             if (mod) {
-                if (CString_t::Is_Same(mod_name, mod->Name(), true)) {
+                if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
                     return mod;
                 }
             }
@@ -200,7 +200,7 @@ namespace doticu_skylib {
     {
         static maybe<Mod_t*> skyrim = Active_Mod("Skyrim.esm");
         SKYLIB_ASSERT(skyrim);
-        return skyrim;
+        return skyrim();
     }
 
     Bool_t Mod_t::Is_Active()

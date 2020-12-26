@@ -24,10 +24,10 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    Type_e::Type_e(Class_t* vclass)
+    Type_e::Type_e(maybe<Class_t*> vclass)
     {
         if (vclass) {
-            mangled = reinterpret_cast<Raw_Type_t>(vclass);
+            mangled = reinterpret_cast<Raw_Type_t>(vclass());
         } else {
             mangled = Type_e::NONE;
         }

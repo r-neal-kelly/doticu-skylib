@@ -112,7 +112,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(reference);
 
-        return references.Has(reference);
+        return references.Has(reference());
     }
 
     Location_t* Cell_t::Location()
@@ -242,9 +242,9 @@ namespace doticu_skylib {
     {
         results.reserve(2);
 
-        for (Worldspace_t* it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
-            if (!results.Has(some<Worldspace_t*>(it))) {
-                results.push_back(it);
+        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+            if (!results.Has(it())) {
+                results.push_back(it());
             }
         }
     }

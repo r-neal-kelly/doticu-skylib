@@ -13,12 +13,22 @@
 namespace doticu_skylib {
 
     Altered_Translation_t::Altered_Translation_t(some<const wchar_t*> key) :
-        key(key), value_length(0)
+        key(
+            (SKYLIB_ASSERT_SOME(key), key)
+        ),
+        value_length(
+            0
+        )
     {
     }
 
     Altered_Translation_t::Altered_Translation_t(some<const wchar_t*> key, some<const wchar_t*> value) :
-        key(key), value_length(wcslen(value))
+        key(
+            (SKYLIB_ASSERT_SOME(key), key)
+        ),
+        value_length(
+            (SKYLIB_ASSERT_SOME(value), wcslen(value()))
+        )
     {
     }
 
@@ -62,13 +72,13 @@ namespace doticu_skylib {
     {
         if (key && value_to_copy) {
             std::lock_guard<std::mutex> guard(mutex);
-            wchar_t* translation = Actual_Translation(key);
+            maybe<wchar_t*> translation = Actual_Translation(key);
             if (translation) {
-                some<Altered_Translation_t*> altered_translation = Altered_Translation(key, translation);
+                some<Altered_Translation_t*> altered_translation = Altered_Translation(key(), translation());
                 SKYLIB_ASSERT_SOME(altered_translation);
 
                 Index_t translation_end = altered_translation->value_length + 1;
-                Index_t value_end = wcslen(value_to_copy) + 1;
+                Index_t value_end = wcslen(value_to_copy()) + 1;
                 Index_t end = value_end > translation_end ? translation_end - 1 : value_end;
                 for (Index_t idx = 0; idx < end; idx += 1) {
                     translation[idx] = value_to_copy[idx];
@@ -100,7 +110,7 @@ namespace doticu_skylib {
             for (Index_t idx = 0, end = translations.capacity; idx < end; idx += 1) {
                 auto* entry = translations.entries + idx;
                 if (entry && entry->chain != nullptr) {
-                    if (lstrcmpiW(key, entry->first) == 0) {
+                    if (lstrcmpiW(key(), entry->first) == 0) {
                         return entry->second;
                     }
                 }

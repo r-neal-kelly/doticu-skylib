@@ -14,8 +14,8 @@ namespace doticu_skylib {
     class Altered_Translation_t
     {
     public:
-        const wchar_t*  key;
-        const size_t    value_length;
+        some<const wchar_t*>    key;
+        const size_t            value_length;
 
         Altered_Translation_t(some<const wchar_t*> key);
         Altered_Translation_t(some<const wchar_t*> key, some<const wchar_t*> value);

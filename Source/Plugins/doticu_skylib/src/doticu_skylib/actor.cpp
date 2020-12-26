@@ -84,7 +84,7 @@ namespace doticu_skylib {
                 return nullptr;
             }
         } else {
-            return Create(static_cast<Form_t*>(base), do_persist, do_uncombative);
+            return Create(static_cast<some<Form_t*>>(base), do_persist, do_uncombative);
         }
     }
 
@@ -107,7 +107,7 @@ namespace doticu_skylib {
                 return nullptr;
             }
         } else {
-            return Create(static_cast<Form_t*>(base), do_persist, do_uncombative);
+            return Create(static_cast<some<Form_t*>>(base), do_persist, do_uncombative);
         }
     }
 

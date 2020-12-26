@@ -64,7 +64,7 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        static Reference_t*         Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable);
+        static Reference_t*         Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
         static Reference_t*         From_Handle(Reference_Handle_t reference_handle);
         static Reference_Handle_t   Invalid_Handle(); // this should go on Reference_Handle_t, but I need to be careful that we don't use it with virtual functions from Skyrim types
 

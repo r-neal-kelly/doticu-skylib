@@ -100,6 +100,7 @@
     <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
+    <ClInclude Include="include\doticu_skylib\game_macros.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\interface.h" />
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />

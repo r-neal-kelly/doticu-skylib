@@ -131,22 +131,18 @@ namespace doticu_skylib { namespace Virtual {
         void            Pack(const Arrayable_t& values);
 
     public:
-        Bool_t                  Bool();
-        void                    Bool(const Bool_t value);
-        Int_t                   Int();
-        void                    Int(const Int_t value);
-        Float_t                 Float();
-        void                    Float(const Float_t value);
-        String_t                String();
-        void                    String(const String_t value);
-        template <typename Scriptable_t>
-        Scriptable_t            Scriptable();
-        template <typename Scriptable_t>
-        void                    Scriptable(const Scriptable_t value);
-        template <typename Scriptable_t>
-        Vector_t<Scriptable_t>  Scriptables();
-        template <typename Scriptable_t>
-        void                    Scriptables(const Vector_t<Scriptable_t>& values);
+        Bool_t      Bool();
+        void        Bool(const Bool_t value);
+        Int_t       Int();
+        void        Int(const Int_t value);
+        Float_t     Float();
+        void        Float(const Float_t value);
+        String_t    String();
+        void        String(const String_t value);
+        template <typename Intrinsic_t>
+        Intrinsic_t As();
+        template <typename Intrinsic_t>
+        void        As(const Intrinsic_t& value);
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 
@@ -387,22 +383,18 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
-    inline Bool_t                   Variable_t::Bool()                                              { return Unpack<Bool_t>(); }
-    inline void                     Variable_t::Bool(const Bool_t value)                            { Pack<Bool_t>(value); }
-    inline Int_t                    Variable_t::Int()                                               { return Unpack<Int_t>(); }
-    inline void                     Variable_t::Int(const Int_t value)                              { Pack<Int_t>(value); }
-    inline Float_t                  Variable_t::Float()                                             { return Unpack<Float_t>(); }
-    inline void                     Variable_t::Float(const Float_t value)                          { Pack<Float_t>(value); }
-    inline String_t                 Variable_t::String()                                            { return Unpack<String_t>(); }
-    inline void                     Variable_t::String(const String_t value)                        { Pack<String_t>(value); }
-    template <typename Scriptable_t>
-    inline Scriptable_t             Variable_t::Scriptable()                                        { return Unpack<Scriptable_t>(); }
-    template <typename Scriptable_t>
-    inline void                     Variable_t::Scriptable(const Scriptable_t value)                { Pack<Scriptable_t>(value); }
-    template <typename Scriptable_t>
-    inline Vector_t<Scriptable_t>   Variable_t::Scriptables()                                       { return Unpack<Vector_t<Scriptable_t>>(); }
-    template <typename Scriptable_t>
-    inline void                     Variable_t::Scriptables(const Vector_t<Scriptable_t>& values)   { Pack<Vector_t<Scriptable_t>>(values); }
+    inline Bool_t       Variable_t::Bool()                          { return Unpack<Bool_t>(); }
+    inline void         Variable_t::Bool(const Bool_t value)        { Pack<Bool_t>(value); }
+    inline Int_t        Variable_t::Int()                           { return Unpack<Int_t>(); }
+    inline void         Variable_t::Int(const Int_t value)          { Pack<Int_t>(value); }
+    inline Float_t      Variable_t::Float()                         { return Unpack<Float_t>(); }
+    inline void         Variable_t::Float(const Float_t value)      { Pack<Float_t>(value); }
+    inline String_t     Variable_t::String()                        { return Unpack<String_t>(); }
+    inline void         Variable_t::String(const String_t value)    { Pack<String_t>(value); }
+    template <typename Intrinsic_t>
+    inline Intrinsic_t  Variable_t::As()                            { return Unpack<Intrinsic_t>(); }
+    template <typename Intrinsic_t>
+    inline void         Variable_t::As(const Intrinsic_t& value)    { Pack<Intrinsic_t>(value); }
 
     template <typename T>
     inline Array_t* Array_Variable_t<T>::Value()

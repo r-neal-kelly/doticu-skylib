@@ -30,11 +30,11 @@ namespace doticu_skylib {
             ALIAS_LOCATION      = 0x8D,
             ACTIVE_MAGIC_EFFECT = 0x8E,
 
-            _END_               = 0x8F, // I think user defined types begin here. Are they a pointer to their Class_t?
+            _END_               = 0x8F, // I think user defined types begin here. Are they an offset to a pointer to their Class_t?
         };
         using Enum_t::Enum_t;
 
-        template <typename Scriptable_t>
+        template <typename Scriptable_t> // this can be overloaded for user types
         static Script_Type_e From()
         {
             return std::remove_pointer_t<Scriptable_t>::SCRIPT_TYPE;

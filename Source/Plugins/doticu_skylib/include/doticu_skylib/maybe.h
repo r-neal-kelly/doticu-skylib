@@ -9,26 +9,6 @@
 namespace doticu_skylib {
 
     template <typename T>
-    using enable_if_integral_t = std::enable_if_t<
-        std::is_integral<T>::value,
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_signed_integral_t = std::enable_if_t<
-        std::is_integral<T>::value&&
-        std::is_signed<T>::value,
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_unsigned_integral_t = std::enable_if_t<
-        std::is_integral<T>::value&&
-        std::is_unsigned<T>::value,
-        Bool_t
-    >;
-
-    template <typename T>
     class none;
     template <typename T>
     class maybe;
@@ -221,199 +201,136 @@ namespace doticu_skylib {
     template <typename T>
     class none<T*>
     {
+    public:
+        using value_type = T;
+
     private:
         T* value;
 
     public:
-        none() :
-            value(nullptr)
-        {
-        }
+        none() : value(nullptr) {}
 
-        T* operator()()
-        {
-            return operator T * ();
-        }
+        T* operator()()         { return value; }
+        T* operator()() const   { return value; }
 
-        operator T* () const
-        {
-            return value;
-        }
-
-        template <typename TT>
-        operator none<TT*>()
-        {
-            return static_cast<TT*>(value);
-        }
+        explicit operator Bool_t()          { return false; }
+        explicit operator Bool_t() const    { return false; }
     };
+
+    // try creating templated static cast contructors so we don't have to static_cast<maybe<Actor_t*>>(maybe<Form_t*>);
 
     template <typename T>
     class maybe<T*>
     {
+    public:
+        using value_type = T;
+
     private:
         T* value;
 
     public:
-        maybe() :
-            value(none<T*>())
-        {
-        }
+        maybe()                             : value(none<T*>()()) {}
+        maybe(T* value)                     : value(value) {}
+        maybe(const none<T*> other)         : value(other()) {}
+        maybe(const maybe<T*>& other)       : value(other.value) {}
+        maybe(maybe<T*>&& other) noexcept   : value(std::exchange(other.value, none<T*>()())) {}
 
-        maybe(T* value) :
-            value(value)
-        {
-        }
-
-        maybe(none<T*> value) :
-            value(value)
-        {
-        }
-
-        maybe(const maybe& other) :
-            value(other.value)
-        {
-        }
-
-        maybe(maybe&& other) noexcept :
-            value(std::exchange(other.value, none<T*>()))
-        {
-        }
-
-        maybe& operator=(const maybe& other)
+        maybe<T*>& operator=(const maybe<T*>& other)
         {
             if (this != &other) {
                 value = other.value;
             }
             return *this;
         }
-
-        maybe& operator=(maybe&& other)
+        maybe<T*>& operator=(maybe<T*>&& other)
         {
             if (this != &other) {
-                value = std::exchange(other.value, none<T*>());
+                value = std::exchange(other.value, none<T*>()());
             }
             return *this;
         }
 
-        T* operator->() const
-        {
-            return operator T * ();
-        }
+        T* operator()()         { return value; }
+        T* operator()() const   { return value; }
 
-        T& operator*() const
-        {
-            return *operator T * ();
-        }
+        T* operator->()         { return value; }
+        T* operator->() const   { return value; }
 
-        T* operator()() const
-        {
-            return operator T * ();
-        }
+        T& operator*()          { return *value; }
+        T& operator*() const    { return *value; }
 
-        operator T* () const
-        {
-            return value;
-        }
+        T& operator[](size_t idx)       { return *(value + idx); }
+        T& operator[](size_t idx) const { return *(value + idx); }
+
+        Bool_t operator==(const maybe<T*>& other)       { return value == other(); }
+        Bool_t operator==(const maybe<T*>& other) const { return value == other(); }
+        Bool_t operator!=(const maybe<T*>& other)       { return !operator==(other); }
+        Bool_t operator!=(const maybe<T*>& other) const { return !operator==(other); }
+
+        explicit operator Bool_t()          { return value != none<T*>()(); }
+        explicit operator Bool_t() const    { return value != none<T*>()(); }
 
         template <typename TT>
-        operator maybe<TT*>() const
-        {
-            return static_cast<TT*>(value);
-        }
-
-        operator Bool_t() const
-        {
-            return value != none<T*>();
-        }
+        operator maybe<TT*>()       { return static_cast<TT*>(value); }
+        template <typename TT>
+        operator maybe<TT*>() const { return static_cast<TT*>(value); }
     };
 
     template <typename T>
     class some<T*>
     {
+    public:
+        using value_type = T;
+
     private:
         T* value;
 
     public:
-        some() = delete;
+        some()                          = delete;
+        some(Nullptr_t)                 = delete;
+        some(T* value)                  : value(value) {}
+        some(const some<T*>& other)     : value(other.value) {}
+        some(some<T*>&& other) noexcept : value(std::exchange(other.value, none<T*>()())) {}
 
-        some(Nullptr_t) = delete;
-
-        some(T* value) :
-            value(value)
-        {
-        }
-
-        some(maybe<T*> value) :
-            value(value)
-        {
-        }
-
-        some(const some& other) :
-            value(other.value)
-        {
-        }
-
-        some(some&& other) noexcept :
-            value(std::exchange(other.value, none<T*>()))
-        {
-        }
-
-        some& operator=(const some& other)
+        some<T*>& operator=(const some<T*>& other)
         {
             if (this != &other) {
                 value = other.value;
             }
             return *this;
         }
-
-        some& operator=(some&& other) noexcept
+        some<T*>& operator=(some<T*>&& other) noexcept
         {
             if (this != &other) {
-                value = std::exchange(other.value, none<T*>());
+                value = std::exchange(other.value, none<T*>()());
             }
             return *this;
         }
 
-        Bool_t operator==(const some& other) const
-        {
-            return value == other.value;
-        }
+        T* operator()()         { return value; }
+        T* operator()() const   { return value; }
 
-        Bool_t operator!=(const some& other) const
-        {
-            return !operator==(other);
-        }
+        T* operator->()         { return value; }
+        T* operator->() const   { return value; }
 
-        T* operator->() const
-        {
-            return operator T * ();
-        }
+        T& operator*()          { return *value; }
+        T& operator*() const    { return *value; }
 
-        T& operator*() const
-        {
-            return *operator T * ();
-        }
+        T& operator[](size_t idx)       { return *(value + idx); }
+        T& operator[](size_t idx) const { return *(value + idx); }
 
-        T* operator()() const
-        {
-            return operator T * ();
-        }
+        Bool_t operator==(const some<T*>& other)        { return value == other(); }
+        Bool_t operator==(const some<T*>& other) const  { return value == other(); }
+        Bool_t operator!=(const some<T*>& other)        { return !operator==(other); }
+        Bool_t operator!=(const some<T*>& other) const  { return !operator==(other); }
 
-        operator T* () const
-        {
-            return value;
-        }
+        explicit operator Bool_t()          { return value != none<T*>()(); }
+        explicit operator Bool_t() const    { return value != none<T*>()(); }
 
         template <typename TT>
-        operator some<TT*>() const
-        {
-            return static_cast<TT*>(value);
-        }
-
-        operator Bool_t() const
-        {
-            return value != none<T*>();
-        }
+        operator some<TT*>()        { return static_cast<TT*>(value); }
+        template <typename TT>
+        operator some<TT*>() const  { return static_cast<TT*>(value); }
     };
 
     template <>

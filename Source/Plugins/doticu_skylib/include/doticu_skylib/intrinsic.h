@@ -16,25 +16,26 @@
 
 #define SKYLIB_TAB "    "
 
-#define SKYLIB_LOG(MESSAGE_, ...) _MESSAGE(std::string(MESSAGE_).c_str(), __VA_ARGS__)
+#define SKYLIB_LOG(MESSAGE_, ...)\
+    _MESSAGE(std::string(MESSAGE_).c_str(), __VA_ARGS__)
 
 #if 1
-    #define SKYLIB_ASSERT(IS_TRUE_, ...)                        \
-    SKYLIB_M                                                    \
-        if (!(IS_TRUE_)) {                                      \
-            _MESSAGE("Asserted. Exiting Skyrim. " __VA_ARGS__); \
-            _AssertionFailed(__FILE__, __LINE__, #IS_TRUE_);    \
-        }                                                       \
-    SKYLIB_W
+    #define SKYLIB_ASSERT(IS_TRUE_, ...)                            \
+    (                                                               \
+        !(IS_TRUE_) ? (                                             \
+            SKYLIB_LOG("Asserted. Exiting Skyrim. " __VA_ARGS__),   \
+            _AssertionFailed(__FILE__, __LINE__, #IS_TRUE_),        \
+            false                                                   \
+        ) : (                                                       \
+            true                                                    \
+        )                                                           \
+    )
 
     #define SKYLIB_ASSERT_SOME(SOME_, ...) \
         SKYLIB_ASSERT(SOME_, "Missing a required pointer. " __VA_ARGS__)
-    #define SKYLIB_ASSERT_MAYBE(MAYBE_, ...) \
-        SKYLIB_ASSERT(MAYBE_, "Failed to check an optional pointer. " __VA_ARGS__)
 #else
     #define SKYLIB_ASSERT(IGNORED_)
-    #define SKYLIB_ASSERT_SOME_P(IGNORED_)
-    #define SKYLIB_ASSERT_MAYBE_P(IGNORED_)
+    #define SKYLIB_ASSERT_SOME(IGNORED_)
 #endif
 
 namespace doticu_skylib {
@@ -164,6 +165,26 @@ namespace doticu_skylib {
     using enable_if_not_pointer_and_not_arithmetic = std::enable_if_t<
         !std::is_pointer<T>::value &&
         !std::is_arithmetic<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_integral_t = std::enable_if_t<
+        std::is_integral<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_signed_integral_t = std::enable_if_t<
+        std::is_integral<T>::value&&
+        std::is_signed<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_unsigned_integral_t = std::enable_if_t<
+        std::is_integral<T>::value&&
+        std::is_unsigned<T>::value,
         Bool_t
     >;
 

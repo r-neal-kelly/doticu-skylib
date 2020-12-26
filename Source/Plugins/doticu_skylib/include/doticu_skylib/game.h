@@ -50,7 +50,7 @@ namespace doticu_skylib {
         static const Version_t<u8>& Version();
 
         static maybe<Form_t*>       Form(Form_ID_t form_id);
-        static maybe<Form_t*>       Form(Mod_t* mod, Lower_Form_ID_t lower_form_id);
+        static maybe<Form_t*>       Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
 
         static Word_t               V_Table_Offset(void* instance);
         static void                 Write_V_Table(void* instance, Word_t v_table_offset);

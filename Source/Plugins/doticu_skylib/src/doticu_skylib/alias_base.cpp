@@ -47,7 +47,7 @@ namespace doticu_skylib {
                 variables->At(0)->Pack(reference);
                 return true;
             }
-        } varguments(reference);
+        } varguments(reference());
 
         Ready_Virtual_Object();
         Virtual::Machine_t::Self()->Call_Method(
@@ -111,7 +111,7 @@ namespace doticu_skylib {
             }
         };
 
-        Reference(new VCallback_t(ucallback));
+        Reference(new VCallback_t(ucallback()));
     }
 
 }

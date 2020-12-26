@@ -21,12 +21,16 @@
 
 namespace doticu_skylib {
 
-    Reference_t* Reference_t::Create(Form_t* base, u32 count, Reference_t* at, Bool_t force_persist, Bool_t initially_disable)
+    Reference_t* Reference_t::Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable)
     {
+        SKYLIB_ASSERT_SOME(base);
+        SKYLIB_ASSERT_SOME(at);
+
         static auto place_at_me = reinterpret_cast
             <Reference_t*(*)(Virtual::Machine_t*, Virtual::Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
             (Game_t::Base_Address() + Offset_e::PLACE_AT_ME);
-        return place_at_me(Virtual::Machine_t::Self(), 0, at, base, count, force_persist, initially_disable);
+
+        return place_at_me(Virtual::Machine_t::Self(), 0, at(), base(), count, force_persist, initially_disable);
     }
 
     Reference_t* Reference_t::From_Handle(Reference_Handle_t reference_handle)
@@ -45,6 +49,7 @@ namespace doticu_skylib {
         static auto invalid_reference_handle = reinterpret_cast
             <Reference_Handle_t*>
             (Game_t::Base_Address() + Offset_e::INVALID_REFERENCE_HANDLE);
+
         return *invalid_reference_handle;
     }
 
@@ -77,7 +82,7 @@ namespace doticu_skylib {
             Read_Locker_t locker(xaliases->lock);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
                 Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
-                if (instance && instance->quest == quest && instance->alias_base && instance->alias_base->id == alias_id) {
+                if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
                     return true;
                 }
             }
@@ -164,9 +169,9 @@ namespace doticu_skylib {
     {
         results.reserve(2);
 
-        for (Worldspace_t* it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
-            if (!results.Has(some<Worldspace_t*>(it))) {
-                results.push_back(it);
+        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+            if (!results.Has(it())) {
+                results.push_back(it());
             }
         }
     }
@@ -236,7 +241,7 @@ namespace doticu_skylib {
         if (Is_Valid() && target->Is_Valid()) {
             Reference_Handle_t target_handle = target->To_Handle();
             if (target_handle != Reference_t::Invalid_Handle()) {
-                move_to_offset(this, target_handle, target_cell, target_worldspace, offset, rotation);
+                move_to_offset(this, target_handle, target_cell(), target_worldspace(), offset, rotation);
             }
         }
     }

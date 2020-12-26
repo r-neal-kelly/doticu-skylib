@@ -29,11 +29,6 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         static Object_t* Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
 
-        template <typename Type>
-        static Object_t* Create(Type* instance, String_t class_name);
-        template <typename Type>
-        static Object_t* Create(Type* instance, Class_t* class_info);
-
     public:
         UInt64 unk_00; // 00
         Class_t* info; // 08
@@ -85,9 +80,9 @@ namespace doticu_skylib { namespace Virtual {
     template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
     inline Object_t* Object_t::Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find)
     {
-        Script_Type_e script_type = Script_Type_e::From<Scriptable_t>();
+        maybe<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
         if (script_type) {
-            Class_t* vclass = script_type.Class();
+            maybe<Class_t*> vclass = script_type().Class();
             if (vclass) {
                 Handle_t handle(scriptable);
                 if (handle.Is_Valid()) {

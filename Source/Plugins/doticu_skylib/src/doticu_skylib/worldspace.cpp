@@ -37,7 +37,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(location);
 
-        if (this->location == location) {
+        if (this->location == location()) {
             return true;
         } else {
             return form_id_to_location.Has(location->form_id);
@@ -98,7 +98,7 @@ namespace doticu_skylib {
                         _MESSAGE(TAB TAB "x: %5.i, y: %5.i, count: %u", cell_xy.x, cell_xy.y, arr->count);
                         for (Index_t idx = 0, end = arr->count; idx < end; idx += 1) {
                             Form_ID_t form_id = arr->At(idx);
-                            Form_t* form = Game_t::Form(form_id);
+                            maybe<Form_t*> form = Game_t::Form(form_id);
                             if (form) {
                                 _MESSAGE(TAB TAB TAB "form_id: %8.8X, form_type: %2.2X, editor_id: %s",
                                          form_id, form->form_type, form->Get_Editor_ID());

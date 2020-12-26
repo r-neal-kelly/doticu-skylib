@@ -59,7 +59,7 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Type_e();
         Type_e(Raw_Type_t raw_type);
-        Type_e(Class_t* vclass);
+        Type_e(maybe<Class_t*> vclass);
         Type_e(Script_Type_e script_type);
 
         Type_e(const Type_e& other);

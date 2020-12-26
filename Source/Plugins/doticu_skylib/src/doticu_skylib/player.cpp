@@ -30,8 +30,9 @@ namespace doticu_skylib {
     {
         static maybe<Player_t*> self = static_cast<maybe<Player_t*>>
             (Game_t::Form(Mod_t::Skyrim(), 0x000014));
+
         SKYLIB_ASSERT(self);
-        return self;
+        return self();
     }
 
     void Player_t::Log_Objectives(std::string indent)

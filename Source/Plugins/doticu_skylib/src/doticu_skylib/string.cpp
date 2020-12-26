@@ -14,6 +14,7 @@ namespace doticu_skylib {
         static auto create = reinterpret_cast
             <void(*)(Static_String_t*, const char*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::CREATE);
+
         create(self, string);
     }
 
@@ -22,6 +23,7 @@ namespace doticu_skylib {
         static auto destroy = reinterpret_cast
             <void(*)(Static_String_t*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::DESTROY);
+
         destroy(self);
     }
 
@@ -30,6 +32,7 @@ namespace doticu_skylib {
         static auto set = reinterpret_cast
             <Static_String_t * (*)(Static_String_t*, const char*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::SET);
+
         set(self, string ? string : "");
     }
 
@@ -74,7 +77,17 @@ namespace doticu_skylib {
         return CString_t::Is_Same(this->data, other.data, true);
     }
 
+    Bool_t Static_String_t::operator==(const Static_String_t& other) const
+    {
+        return CString_t::Is_Same(this->data, other.data, true);
+    }
+
     Bool_t Static_String_t::operator!=(const Static_String_t& other)
+    {
+        return !operator==(other);
+    }
+
+    Bool_t Static_String_t::operator!=(const Static_String_t& other) const
     {
         return !operator==(other);
     }

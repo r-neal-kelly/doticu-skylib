@@ -35,7 +35,7 @@ namespace doticu_skylib {
                 }
 
                 if (index < quests.size()) {
-                    Quest_t* quest = quests[index];
+                    some<Quest_t*> quest = quests[index];
                     SKYLIB_ASSERT_SOME(quest);
                     quest->Start(new VCallback(quests, index + 1, did_start_all, ucallback));
                 } else {
@@ -48,7 +48,7 @@ namespace doticu_skylib {
         };
 
         Index_t index = 0;
-        Quest_t* quest = quests[index];
+        some<Quest_t*> quest = quests[index];
         SKYLIB_ASSERT_SOME(quest);
         quest->Start(new VCallback(quests, index + 1, true, ucallback));
     }
