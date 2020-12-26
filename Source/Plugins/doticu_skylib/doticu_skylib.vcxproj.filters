@@ -318,6 +318,9 @@
     <ClInclude Include="include\doticu_skylib\game_macros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\game_heap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -464,6 +467,9 @@
     <ClCompile Include="src\doticu_skylib\script_type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\game_heap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\extra_data.inl">
@@ -476,6 +482,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\forward_list.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\game.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

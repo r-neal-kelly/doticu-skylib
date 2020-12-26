@@ -7,21 +7,21 @@
 
 namespace doticu_skylib {
 
-    Int_t Reference_Count_t::Reference_Count()
+    u32 Reference_Count_t::Reference_Count()
     {
-        return reference_count & 0x3FF;
+        return _InterlockedExchangeAdd(&reference_count, 0) & 0x3FF;
     }
 
-    Int_t Reference_Count_t::Increment_Reference()
+    u32 Reference_Count_t::Increment_Reference()
     {
-        return _InterlockedIncrement(static_cast<volatile u32*>(&reference_count)) & 0x3FF;
+        return _InterlockedIncrement(&reference_count) & 0x3FF;
     }
 
-    Int_t Reference_Count_t::Decrement_Reference()
+    u32 Reference_Count_t::Decrement_Reference()
     {
-        Int_t count = _InterlockedDecrement(static_cast<volatile u32*>(&reference_count));
-        if ((count & 0x3FF) == 0) {
-            delete this;
+        u32 count = _InterlockedDecrement(&reference_count) & 0x3FF;
+        if (count < 1) {
+            Destroy();
         }
         return count;
     }

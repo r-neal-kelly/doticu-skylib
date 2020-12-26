@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "skse64/PapyrusArgs.h"
+
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/keyword.h"

@@ -100,6 +100,7 @@
     <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
+    <ClInclude Include="include\doticu_skylib\game_heap.h" />
     <ClInclude Include="include\doticu_skylib\game_macros.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\interface.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="src\doticu_skylib\form.cpp" />
     <ClCompile Include="src\doticu_skylib\form_factory.cpp" />
     <ClCompile Include="src\doticu_skylib\game.cpp" />
+    <ClCompile Include="src\doticu_skylib\game_heap.cpp" />
     <ClCompile Include="src\doticu_skylib\global.cpp" />
     <ClCompile Include="src\doticu_skylib\keyword.cpp" />
     <ClCompile Include="src\doticu_skylib\leveled_actor_base.cpp" />
@@ -211,6 +213,7 @@
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />
+    <None Include="include\doticu_skylib\game.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

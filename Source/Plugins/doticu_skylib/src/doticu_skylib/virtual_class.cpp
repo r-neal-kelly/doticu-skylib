@@ -4,7 +4,8 @@
 
 #include "doticu_skylib/cstring.h"
 
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/game.h"
+#include "doticu_skylib/game.inl"
 
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_machine.h"
@@ -17,8 +18,8 @@ namespace doticu_skylib { namespace Virtual {
         if (machine) {
             Class_t* info_out = nullptr;
             machine->Load_Class_Info(&class_name, &info_out);
-            if (do_auto_decrement && info_out->ref_count > 1) {
-                info_out->Free();
+            if (do_auto_decrement && info_out->reference_count > 1) {
+                info_out->Decrement_Reference();
             }
             return info_out;
         } else {
@@ -30,13 +31,42 @@ namespace doticu_skylib { namespace Virtual {
     {
         Class_t* vclass = nullptr;
         if (Machine_t::Self()->Load_Class_Info2(script_type, &vclass)) {
-            if (do_auto_decrement && vclass->ref_count > 1) {
-                vclass->Free();
+            if (do_auto_decrement && vclass->reference_count > 1) {
+                vclass->Decrement_Reference();
             }
             return vclass;
         } else {
             return nullptr;
         }
+    }
+
+    void Class_t::Destroy()
+    {
+        static auto destroy = reinterpret_cast
+            <void(*)(Class_t*)>
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::DESTROY));
+
+        destroy(this);
+    }
+
+    u32 Class_t::Reference_Count()
+    {
+        return _InterlockedExchangeAdd(&reference_count, 0);
+    }
+
+    u32 Class_t::Increment_Reference()
+    {
+        return _InterlockedIncrement(&reference_count);
+    }
+
+    u32 Class_t::Decrement_Reference()
+    {
+        u32 count = _InterlockedDecrement(&reference_count);
+        if (count < 1) {
+            Destroy();
+            Game_t::Deallocate<Class_t>(this);
+        }
+        return count;
     }
 
     size_t Class_t::Count_Setting_Infos()
@@ -128,16 +158,6 @@ namespace doticu_skylib { namespace Virtual {
         } else {
             return none<Script_Type_e>();
         }
-    }
-
-    void Class_t::Hold()
-    {
-        reinterpret_cast<VMClassInfo*>(this)->AddRef();
-    }
-
-    void Class_t::Free()
-    {
-        reinterpret_cast<VMClassInfo*>(this)->Release();
     }
 
     void Class_t::Log_Variable_Infos()

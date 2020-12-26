@@ -85,11 +85,11 @@ namespace doticu_skylib { namespace Virtual {
         namespace Virtual = doticu_skylib::Virtual;                                                 \
                                                                                                     \
         auto method_ = Virtual::Forward_Method<RETURN_, BASE_, __VA_ARGS__, &BASE_::METHOD_>();     \
-        VM_->Bind_Function(                                                                         \
+        VM_->Bind_Function(reinterpret_cast<Virtual::Function_i*>(                                  \
             new NativeFunction##ARG_COUNT_ <BASE_, RETURN_, __VA_ARGS__>(                           \
-                METHOD_NAME_, CLASS_NAME_, method_, reinterpret_cast<Virtual::Registry_t*>(VM_)     \
+                METHOD_NAME_, CLASS_NAME_, method_, reinterpret_cast<VMClassRegistry*>(VM_)         \
             )                                                                                       \
-        );                                                                                          \
+        ));                                                                                         \
     SKYLIB_W
 
     #define BIND_LATENT_METHOD(VM_, CLASS_NAME_, BASE_, METHOD_NAME_, ARG_COUNT_, RETURN_, METHOD_, ...)    \
@@ -97,23 +97,23 @@ namespace doticu_skylib { namespace Virtual {
         namespace Virtual = doticu_skylib::Virtual;                                                         \
                                                                                                             \
         auto method_ = Virtual::Forward_Latent_Method<BASE_, __VA_ARGS__, &BASE_::METHOD_>();               \
-        VM_->Bind_Function(                                                                                 \
+        VM_->Bind_Function(reinterpret_cast<Virtual::Function_i*>(                                          \
             new LatentNativeFunction##ARG_COUNT_ <BASE_, RETURN_, __VA_ARGS__>(                             \
-                METHOD_NAME_, CLASS_NAME_, method_, reinterpret_cast<Virtual::Registry_t*>(VM_)             \
+                METHOD_NAME_, CLASS_NAME_, method_, reinterpret_cast<VMClassRegistry*>(VM_)                 \
             )                                                                                               \
-        );                                                                                                  \
+        ));                                                                                                 \
     SKYLIB_W
 
-    #define BIND_STATIC(VM_, CLASS_NAME_, STATIC_NAME_, ARG_COUNT_, RETURN_, STATIC_, ...)      \
-    SKYLIB_M                                                                                    \
-        namespace Virtual = doticu_skylib::Virtual;                                             \
-                                                                                                \
-        auto static_ = Virtual::Forward_Static<RETURN_, __VA_ARGS__, &STATIC_>();               \
-        VM_->Bind_Function(                                                                     \
-            new NativeFunction##ARG_COUNT_ <StaticFunctionTag, RETURN_, __VA_ARGS__>(           \
-                STATIC_NAME_, CLASS_NAME_, static_, reinterpret_cast<Virtual::Registry_t*>(VM_) \
-            )                                                                                   \
-        );                                                                                      \
+    #define BIND_STATIC(VM_, CLASS_NAME_, STATIC_NAME_, ARG_COUNT_, RETURN_, STATIC_, ...)  \
+    SKYLIB_M                                                                                \
+        namespace Virtual = doticu_skylib::Virtual;                                         \
+                                                                                            \
+        auto static_ = Virtual::Forward_Static<RETURN_, __VA_ARGS__, &STATIC_>();           \
+        VM_->Bind_Function(reinterpret_cast<Virtual::Function_i*>(                          \
+            new NativeFunction##ARG_COUNT_ <StaticFunctionTag, RETURN_, __VA_ARGS__>(       \
+                STATIC_NAME_, CLASS_NAME_, static_, reinterpret_cast<VMClassRegistry*>(VM_) \
+            )                                                                               \
+        ));                                                                                 \
     SKYLIB_W
 
     #define BIND_LATENT_STATIC(VM_, CLASS_NAME_, STATIC_NAME_, ARG_COUNT_, RETURN_, STATIC_, ...)   \
@@ -121,11 +121,11 @@ namespace doticu_skylib { namespace Virtual {
         namespace Virtual = doticu_skylib::Virtual;                                                 \
                                                                                                     \
         auto static_ = Virtual::Forward_Latent_Static<__VA_ARGS__, &STATIC_>();                     \
-        VM_->Bind_Function(                                                                         \
+        VM_->Bind_Function(reinterpret_cast<Virtual::Function_i*>(                                  \
             new LatentNativeFunction##ARG_COUNT_ <StaticFunctionTag, RETURN_, __VA_ARGS__>(         \
-                STATIC_NAME_, CLASS_NAME_, static_, reinterpret_cast<Virtual::Registry_t*>(VM_)     \
+                STATIC_NAME_, CLASS_NAME_, static_, reinterpret_cast<VMClassRegistry*>(VM_)         \
             )                                                                                       \
-        );                                                                                          \
+        ));                                                                                         \
     SKYLIB_W
 
 }}

@@ -4,15 +4,9 @@
 
 #pragma once
 
-#include "skse64/PapyrusArgs.h"
-#include "skse64/PapyrusNativeFunctions.h"
-#include "skse64/PapyrusVM.h"
-
 #include "doticu_skylib/skylib.h"
 
 namespace doticu_skylib { namespace Virtual {
-
-    using Registry_t        = VMClassRegistry;
 
     using Stack_ID_t        = u32;
     using Raw_Handle_t      = u64;

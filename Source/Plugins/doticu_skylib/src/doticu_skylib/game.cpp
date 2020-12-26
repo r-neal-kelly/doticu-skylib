@@ -118,7 +118,8 @@ namespace doticu_skylib {
         static auto self = *reinterpret_cast
             <Game_t**>
             (Game_t::Base_Address() + Offset_e::SELF);
-        SKYLIB_ASSERT_SOME(self);
+
+        SKYLIB_ASSERT(self);
         return self;
     }
 

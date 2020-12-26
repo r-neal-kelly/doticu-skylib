@@ -14,6 +14,8 @@
 
 namespace doticu_skylib { namespace Virtual {
 
+    class Function_i;
+
     struct Setting_Info_t {
         u64 unk_00; // 00
     };
@@ -39,30 +41,49 @@ namespace doticu_skylib { namespace Virtual {
         Type_e type; // 18
         u32 flags_20; // 20
         u32 unk_24; // 24
-        IFunction* getter; // 28
-        IFunction* setter; // 30
+        Function_i* getter; // 28
+        Function_i* setter; // 30
         u32 auto_var_idx; // 38
         u32 flags_3C; // 3C
         String_t unk_40; // 40
     };
     STATIC_ASSERT(sizeof(Property_Info_t) == 0x48);
 
-    class Class_t {
+    class Class_t
+    {
+    public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : _TYPE_
+            {
+                DESTROY = 0x01237240,
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         static Class_t* Fetch(String_t class_name, Bool_t do_auto_decrement = false);
         static Class_t* Fetch(Script_Type_e script_type, Bool_t do_auto_decrement = false);
 
+    private:
+        volatile u32    reference_count;    // 00
     public:
-        u32 ref_count; // 00
-        u32 pad_04; // 04
-        String_t name; // 08
-        Class_t* parent; // 10
-        String_t unk_18; // 18
-        u32 flags_20; // 20
-        u32 flags_24; // 24
-        u32 flags_28; // 28
-        u32 pad_2C; // 2C
-        u8* data; // 30
+        u32             pad_04;             // 04
+        String_t        name;               // 08
+        Class_t*        parent;             // 10
+        String_t        unk_18;             // 18
+        u32             flags_20;           // 20
+        u32             flags_24;           // 24
+        u32             flags_28;           // 28
+        u32             pad_2C;             // 2C
+        u8*             data;               // 30
+
+        void Destroy();
+
+        u32 Reference_Count();
+        u32 Increment_Reference();
+        u32 Decrement_Reference();
 
         size_t Count_Setting_Infos();
         size_t Count_Variable_Infos();
@@ -79,9 +100,6 @@ namespace doticu_skylib { namespace Virtual {
         Property_Info_t* Property_Info(String_t property_name);
 
         maybe<Script_Type_e> Script_Type();
-
-        void Hold();
-        void Free();
 
         void Log();
         //void Log_Setting_Infos();

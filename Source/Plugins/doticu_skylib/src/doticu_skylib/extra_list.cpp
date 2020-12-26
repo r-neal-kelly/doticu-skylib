@@ -2,17 +2,17 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "skse64/GameTypes.h"
+#include "doticu_skylib/game.inl"
 
 #include "doticu_skylib/extra_list.h"
 
 namespace doticu_skylib {
 
-    List_x::Presence_t* List_x::Presence_t::Create()
+    some<List_x::Presence_t*> List_x::Presence_t::Create()
     {
-        Presence_t* presence = static_cast<Presence_t*>(Heap_Allocate(sizeof(Presence_t)));
-        SKYLIB_ASSERT(presence);
+        some<Presence_t*> presence = Game_t::Allocate<Presence_t>();
         presence->Clear();
+        return presence;
     }
 
     Bool_t List_x::Presence_t::Has(Extra_Type_e type)
@@ -98,7 +98,7 @@ namespace doticu_skylib {
         if (xdata) {
             Extra_Type_e type = xdata->Type();
             if (!presence) {
-                presence = Presence_t::Create();
+                presence = Presence_t::Create()();
                 Validate();
             }
             if (!presence->Has(type)) {

@@ -58,6 +58,7 @@ namespace doticu_skylib {
     class Faction_And_Rank_t;
     class Form_t;
     class Game_t;
+    class Game_Heap_t;
     class Global_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
@@ -80,9 +81,7 @@ namespace doticu_skylib {
 
 }
 
-/*#include "skse64/GameObjects.h"
-
-namespace doticu_skylib {
+/*namespace doticu_skylib {
 
     typedef TESObjectMISC   Misc_t;
     typedef TESObjectSTAT   Static_t;

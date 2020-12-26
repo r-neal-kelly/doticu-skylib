@@ -18,10 +18,10 @@ namespace doticu_skylib {
         public:
             static constexpr size_t MAX_FLAGS = 192;
 
-            static Presence_t* Create();
+            static some<Presence_t*> Create();
 
         public:
-            Byte_t  flags[MAX_FLAGS >> 3];
+            Byte_t  flags[24];
 
             Bool_t  Has(Extra_Type_e type);
             void    Add(Extra_Type_e type);

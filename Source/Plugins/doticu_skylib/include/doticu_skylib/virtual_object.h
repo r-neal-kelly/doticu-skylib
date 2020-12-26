@@ -16,12 +16,20 @@ namespace doticu_skylib { namespace Virtual {
     class Class_t;
     class Variable_t;
 
-    class Object_t {
+    class Object_t
+    {
     public:
-        enum class Offset_e : Word_t {
-            INCREMENT_LOCK  = 0x01234360, // 97468
-            DECREMENT_LOCK  = 0x01234410, // 97469
-            DESTROY         = 0x01233670, // 97462
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : Word_t
+            {
+                GET_HANDLE      = 0x01233720, // 97463
+                INCREMENT_LOCK  = 0x01234360, // 97468
+                DECREMENT_LOCK  = 0x01234410, // 97469
+                DESTROY         = 0x01233670, // 97462
+            };
+            using Enum_t::Enum_t;
         };
 
         template <typename Type>
@@ -30,20 +38,22 @@ namespace doticu_skylib { namespace Virtual {
         static Object_t* Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
 
     public:
-        UInt64 unk_00; // 00
-        Class_t* info; // 08
-        String_t unk_10; // 10
-        void* unk_18; // 18
-        volatile Handle_t handle; // 20
-        volatile SInt32 lock; // 28
-        UInt32 pad_2C; // 2C
-        //Variable_t variables[0]; // 30
+        UInt64              unk_00;         // 00
+        Class_t*            info;           // 08
+        String_t            unk_10;         // 10
+        void*               unk_18;         // 18
+        volatile Handle_t   handle;         // 20
+        volatile SInt32     lock;           // 28
+        UInt32              pad_2C;         // 2C
+        //Variable_t        variables[0];   // 30
 
-        void Destroy();
-        void Increment_Lock();
-        u32 Decrement_Lock();
+    public:
+        void    Destroy();
+        void    Increment_Lock();
+        u32     Decrement_Lock();
 
-        Handle_t Handle();
+    public:
+        Handle_t    Handle();
         Variable_t* Variables();
         Variable_t* Variable(String_t variable_name);
         Variable_t* Property(String_t property_name);

@@ -24,6 +24,9 @@ namespace doticu_skylib { namespace Virtual {
     class Bind_Policy_t;
     class Variable_t;
 
+    class Function_i;
+    class Object_Iterator_i;
+
     class Machine_t
     {
     public:
@@ -55,10 +58,10 @@ namespace doticu_skylib { namespace Virtual {
         virtual Bool_t Create_Object2(String_t* class_name, Object_t** object_out); // 15
         virtual Bool_t Create_Array(Raw_Type_t& type, u32 count, Array_t*& array_out); // 16, SKSE has Variable_t* for first arg? (Create_Array(Variable_t& variable, u32 count, Array_t*& array_out))
         virtual void _17(void); // 17
-        virtual Bool_t Bind_Function(IFunction* function); // 18
+        virtual Bool_t Bind_Function(Function_i* function); // 18 (IFunction)
         virtual void _19(void); // 19
         virtual void _1A(void); // 1A
-        virtual void For_Each_Object(Handle_t handle, IForEachScriptObjectFunctor* functor); // 1B
+        virtual void Iterate_Objects(Handle_t handle, Object_Iterator_i* iterator); // 1B (IForEachScriptObjectFunctor)
         virtual Bool_t Find_Bound_Object(Handle_t handle, String_t class_name, Object_t** object_out); // 1C
         virtual void _1D(void); // 1D
         virtual void _1E(void); // 1E

@@ -57,7 +57,7 @@ namespace doticu_skylib { namespace Virtual {
     void Variable_t::Copy(const Variable_t& other)
     {
         static auto copy = reinterpret_cast
-            <void (*)(const Variable_t*, const Variable_t&)>
+            <void (*)(Variable_t*, const Variable_t&)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::COPY));
 
         Destroy();

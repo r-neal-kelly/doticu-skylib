@@ -43,7 +43,8 @@ namespace doticu_skylib { namespace Virtual {
         Variable_u();
     };
 
-    class Variable_t {
+    class Variable_t
+    {
     public:
         class Offset_e : public Enum_t<Word_t>
         {

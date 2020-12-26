@@ -49,6 +49,11 @@ namespace doticu_skylib {
 
         static const Version_t<u8>& Version();
 
+        template <typename T>
+        static some<T*>             Allocate();
+        template <typename T>
+        static void                 Deallocate(some<T*> data);
+
         static maybe<Form_t*>       Form(Form_ID_t form_id);
         static maybe<Form_t*>       Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
 
