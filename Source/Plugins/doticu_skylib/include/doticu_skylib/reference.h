@@ -197,16 +197,17 @@ namespace doticu_skylib {
 
         const char*                     Name();
         String_t                        Any_Name();
+
+        Cell_t*                         Cell(Bool_t do_check_worldspace = true);
         Location_t*                     Location();
-        Cell_t*                         Cell();
         maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
+        
+        Vector_t<Location_t*>           Locations();
+        void                            Locations(Vector_t<Location_t*>& results);
+        Vector_t<Quest_t*>              Quests();
+        void                            Quests(Vector_t<Quest_t*>& results);
         Vector_t<some<Worldspace_t*>>   Worldspaces();
         void                            Worldspaces(Vector_t<some<Worldspace_t*>>& results);
-
-        Vector_t<Location_t*>   Locations();
-        void                    Locations(Vector_t<Location_t*>& results);
-        Vector_t<Quest_t*>      Quests();
-        void                    Quests(Vector_t<Quest_t*>& results);
 
         Reference_Handle_t  To_Handle();
 

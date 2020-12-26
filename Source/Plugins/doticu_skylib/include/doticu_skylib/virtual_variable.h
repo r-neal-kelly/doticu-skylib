@@ -376,7 +376,8 @@ namespace doticu_skylib { namespace Virtual {
         size_t value_count = values.size();
         if (value_count > 0) {
             Array_t* varray = nullptr;
-            if (Machine_t::Self()->Create_Array(this->type.mangled, value_count, varray) && varray) {
+            Type_e item_type = Type_e::From<Arrayable_t::value_type>();
+            if (Machine_t::Self()->Create_Array(item_type.mangled, value_count, varray) && varray) {
                 varray->Pack(values);
                 type = Type_e::From<Arrayable_t>();
                 data.arr = varray;

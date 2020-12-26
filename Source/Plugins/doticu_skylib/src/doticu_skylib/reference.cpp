@@ -115,64 +115,51 @@ namespace doticu_skylib {
         }
     }
 
-    Location_t* Reference_t::Location()
+    static maybe<Worldspace_t*> Worldspace_Impl(some<Reference_t*> self)
     {
-        Cell_t* cell = Cell();
-        if (cell) {
-            return Cell()->Location();
-        } else {
-            return nullptr;
-        }
+        static auto get_worldspace = reinterpret_cast
+            <Worldspace_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Reference_t::Offset_e::GET_WORLDSPACE);
+
+        SKYLIB_ASSERT_SOME(self);
+        return get_worldspace(self());
     }
 
-    Cell_t* Reference_t::Cell()
+    Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
     {
         if (parent_cell) {
             return parent_cell;
-        } else {
-            maybe<Worldspace_t*> worldspace = Worldspace();
+        } else if (do_check_worldspace) {
+            maybe<Worldspace_t*> worldspace = Worldspace_Impl(this);
             if (worldspace) {
                 return worldspace->persistent_cell;
             } else {
                 return nullptr;
             }
+        } else {
+            return nullptr;
+        }
+    }
+
+    Location_t* Reference_t::Location()
+    {
+        Cell_t* cell = Cell(true);
+        if (cell) {
+            return cell->Location();
+        } else {
+            return nullptr;
         }
     }
 
     maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)
     {
-        static auto get_worldspace = reinterpret_cast
-            <Worldspace_t * (*)(Reference_t*)>
-            (Game_t::Base_Address() + Offset_e::GET_WORLDSPACE);
-
-        Worldspace_t* worldspace = get_worldspace(this);
+        maybe<Worldspace_t*> worldspace = Worldspace_Impl(this);
         if (worldspace) {
             return worldspace;
+        } else if (parent_cell) {
+            return parent_cell->Worldspace(do_check_locations);
         } else {
-            Cell_t* cell = Cell();
-            if (cell) {
-                return cell->Worldspace(do_check_locations);
-            } else {
-                return nullptr;
-            }
-        }
-    }
-
-    Vector_t<some<Worldspace_t*>> Reference_t::Worldspaces()
-    {
-        Vector_t<some<Worldspace_t*>> worldspaces;
-        Worldspaces(worldspaces);
-        return std::move(worldspaces);
-    }
-
-    void Reference_t::Worldspaces(Vector_t<some<Worldspace_t*>>& results)
-    {
-        results.reserve(2);
-
-        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
-            if (!results.Has(it())) {
-                results.push_back(it());
-            }
+            return nullptr;
         }
     }
 
@@ -209,6 +196,24 @@ namespace doticu_skylib {
                 if (instance && instance->quest && instance->quest->Is_Valid() && instance->alias_base) {
                     results.push_back(instance->quest);
                 }
+            }
+        }
+    }
+
+    Vector_t<some<Worldspace_t*>> Reference_t::Worldspaces()
+    {
+        Vector_t<some<Worldspace_t*>> worldspaces;
+        Worldspaces(worldspaces);
+        return std::move(worldspaces);
+    }
+
+    void Reference_t::Worldspaces(Vector_t<some<Worldspace_t*>>& results)
+    {
+        results.reserve(2);
+
+        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+            if (!results.Has(it())) {
+                results.push_back(it());
             }
         }
     }
@@ -251,7 +256,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(target);
 
         if (Is_Valid() && target->Is_Valid()) {
-            Move_To_Offset(target, target->Cell(), target->Worldspace(), offset, rotation);
+            Move_To_Offset(target, target->Cell(false), target->Worldspace(false), offset, rotation);
         }
     }
 
