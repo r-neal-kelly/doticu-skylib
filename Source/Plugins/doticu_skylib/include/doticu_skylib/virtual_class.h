@@ -16,36 +16,44 @@ namespace doticu_skylib { namespace Virtual {
 
     class Function_i;
 
-    struct Setting_Info_t {
+    class Setting_Info_t
+    {
+    public:
         u64 unk_00; // 00
     };
     STATIC_ASSERT(sizeof(Setting_Info_t) == 0x8);
 
-    struct Variable_Info_t {
-        String_t name; // 00
-        Type_e type; // 08
+    class Variable_Info_t
+    {
+    public:
+        String_t    name; // 00
+        Type_e      type; // 08
     };
     STATIC_ASSERT(sizeof(Variable_Info_t) == 0x10);
 
-    struct Default_Info_t {
-        u32 variable_idx; // 00
-        u32 pad_04; // 04
-        Variable_t variable; // 08
+    class Default_Info_t
+    {
+    public:
+        u32         variable_idx; // 00
+        u32         pad_04; // 04
+        Variable_t  variable; // 08
     };
     STATIC_ASSERT(sizeof(Default_Info_t) == 0x18);
 
-    struct Property_Info_t {
-        String_t name; // 00
-        String_t parent_name; // 08
-        String_t property_name; // 10
-        Type_e type; // 18
-        u32 flags_20; // 20
-        u32 unk_24; // 24
+    class Property_Info_t
+    {
+    public:
+        String_t    name; // 00
+        String_t    parent_name; // 08
+        String_t    property_name; // 10
+        Type_e      type; // 18
+        u32         flags_20; // 20
+        u32         unk_24; // 24
         Function_i* getter; // 28
         Function_i* setter; // 30
-        u32 auto_var_idx; // 38
-        u32 flags_3C; // 3C
-        String_t unk_40; // 40
+        u32         auto_var_idx; // 38
+        u32         flags_3C; // 3C
+        String_t    unk_40; // 40
     };
     STATIC_ASSERT(sizeof(Property_Info_t) == 0x48);
 

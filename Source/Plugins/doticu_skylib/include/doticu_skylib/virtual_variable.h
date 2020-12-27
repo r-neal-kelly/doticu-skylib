@@ -6,25 +6,12 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/traits.h"
 
 #include "doticu_skylib/script_type.h"
 
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_type.h"
-
-namespace doticu_skylib {
-
-    class Actor_t;
-    class Alias_Base_t;
-    class Faction_t;
-    class Form_t;
-    class Misc_t;
-    class Object_t;
-    class Outfit_t;
-    class Reference_t;
-    class Quest_t;
-
-}
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -131,6 +118,19 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         void            Pack(const Arrayable_t& values);
 
+        template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t> = true>
+        void            Pack(Boolable_t&& value);
+        template <typename Intable_t, enable_if_virtual_int_t<Intable_t> = true>
+        void            Pack(Intable_t&& value);
+        template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t> = true>
+        void            Pack(Floatable_t&& value);
+        template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t> = true>
+        void            Pack(Stringable_t&& value);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        void            Pack(Scriptable_t&& value);
+        template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
+        void            Pack(Arrayable_t&& values);
+
     public:
         Bool_t      Bool();
         void        Bool(const Bool_t value);
@@ -147,273 +147,20 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 
-    class Bool_Variable_t : public Variable_t
-    {
-    public:
-        Bool_t  Value();
-        void    Value(Bool_t value);
-    };
-    STATIC_ASSERT(sizeof(Bool_Variable_t) == 0x10);
-
-    class Int_Variable_t : public Variable_t
-    {
-    public:
-        Int_t   Value();
-        void    Value(Int_t value);
-    };
-    STATIC_ASSERT(sizeof(Int_Variable_t) == 0x10);
-
-    class Float_Variable_t : public Variable_t
-    {
-    public:
-        Float_t Value();
-        void    Value(Float_t value);
-    };
-    STATIC_ASSERT(sizeof(Int_Variable_t) == 0x10);
-
-    class String_Variable_t : public Variable_t
-    {
-    public:
-        String_t    Value();
-        void        Value(String_t value);
-    };
-    STATIC_ASSERT(sizeof(String_Variable_t) == 0x10);
-
-    template <typename T>
-    class Array_Variable_t : public Variable_t
-    {
-    public:
-        Array_t*    Value();
-        void        Values(doticu_skylib::Vector_t<T>& values);
-        void        Values(doticu_skylib::Vector_t<T>&& values);
-    };
-    STATIC_ASSERT(sizeof(Array_Variable_t<Int_t>) == 0x10);
-
-}}
-
-#include "doticu_skylib/virtual_array.h"
-#include "doticu_skylib/virtual_class.h"
-#include "doticu_skylib/virtual_handle.h"
-#include "doticu_skylib/virtual_object.h"
-#include "doticu_skylib/virtual_variable.h"
-
-namespace doticu_skylib { namespace Virtual {
-
-    template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t>>
-    inline Boolable_t Variable_t::Unpack()
-    {
-        if (type.Is_Bool()) {
-            return data.b;
-        } else {
-            return false;
-        }
-    }
-
-    template <typename Intable_t, enable_if_virtual_int_t<Intable_t>>
-    inline Intable_t Variable_t::Unpack()
-    {
-        if (type.Is_Int()) {
-            return data.i;
-        } else {
-            return 0;
-        }
-    }
-
-    template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t>>
-    inline Floatable_t Variable_t::Unpack()
-    {
-        if (type.Is_Float()) {
-            return data.f;
-        } else {
-            return 0.0;
-        }
-    }
-
-    template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t>>
-    inline Stringable_t Variable_t::Unpack()
-    {
-        if (type.Is_String()) {
-            return data.str;
-        } else {
-            return "";
-        }
-    }
-
-    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
-    inline Scriptable_t Variable_t::Unpack()
-    {
-        if (type.Is_Object()) {
-            if (data.obj) {
-                maybe<Script_Type_e> script_type = Script_Type();
-                if (script_type) {
-                    Handle_Policy_t* handle_policy = Machine_t::Self()->Handle_Policy();
-                    if (handle_policy) {
-                        return static_cast<Scriptable_t>
-                            (handle_policy->Resolve(script_type, data.obj->Handle()));
-                    } else {
-                        return nullptr;
-                    }
-                } else {
-                    return nullptr;
-                }
-            } else {
-                return nullptr;
-            }
-        } else {
-            return nullptr;
-        }
-    }
-
-    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
-    inline Arrayable_t Variable_t::Unpack()
-    {
-        Arrayable_t results;
-        Unpack(results);
-        return results;
-    }
-
-    template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t>>
-    inline void Variable_t::Unpack(Boolable_t& result)
-    {
-        result = Unpack<Boolable_t>();
-    }
-
-    template <typename Intable_t, enable_if_virtual_int_t<Intable_t>>
-    inline void Variable_t::Unpack(Intable_t& result)
-    {
-        result = Unpack<Intable_t>();
-    }
-
-    template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t>>
-    inline void Variable_t::Unpack(Floatable_t& result)
-    {
-        result = Unpack<Floatable_t>();
-    }
-
-    template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t>>
-    inline void Variable_t::Unpack(Stringable_t& result)
-    {
-        result = Unpack<Stringable_t>();
-    }
-
-    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
-    inline void Variable_t::Unpack(Scriptable_t& result)
-    {
-        result = Unpack<Scriptable_t>();
-    }
-
-    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
-    inline void Variable_t::Unpack(Arrayable_t& results)
-    {
-        Array_t* varray = Array();
-        if (varray) {
-            return varray->Unpack<Arrayable_t>(results);
-        }
-    }
-
-    template <typename Voidable_t, enable_if_void_t<Voidable_t>>
-    inline void Variable_t::Pack(Voidable_t)
-    {
-        Destroy();
-        this->type = Type_e::NONE;
-        this->data.ptr = nullptr;
-    }
-
-    template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t>>
-    inline void Variable_t::Pack(const Boolable_t& value)
-    {
-        Destroy();
-        type = Type_e::BOOL;
-        data.b = value;
-    }
-
-    template <typename Intable_t, enable_if_virtual_int_t<Intable_t>>
-    inline void Variable_t::Pack(const Intable_t& value)
-    {
-        Destroy();
-        type = Type_e::INT;
-        data.i = value;
-    }
-
-    template <typename Floatable_t, enable_if_virtual_float_t<Floatable_t>>
-    inline void Variable_t::Pack(const Floatable_t& value)
-    {
-        Destroy();
-        type = Type_e::FLOAT;
-        data.f = value;
-    }
-
-    template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t>>
-    inline void Variable_t::Pack(const Stringable_t& value)
-    {
-        Destroy();
-        type = Type_e::STRING;
-        data.str.Value(value.data);
-    }
-
-    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
-    inline void Variable_t::Pack(const Scriptable_t& value)
-    {
-        Destroy();
-
-        Script_Type_e script_type = Script_Type_e::From<Scriptable_t>();
-        if (script_type) {
-            type = script_type;
-            if (value) {
-                Object_t* object = Object_t::Find_Or_Create(value, false);
-                if (object) {
-                    data.obj = object;
-                }
-            }
-        }
-    }
-
-    template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
-    inline void Variable_t::Pack(const Arrayable_t& values)
-    {
-        Destroy();
-
-        size_t value_count = values.size();
-        if (value_count > 0) {
-            Array_t* varray = nullptr;
-            Type_e item_type = Type_e::From<Arrayable_t::value_type>();
-            if (Machine_t::Self()->Create_Array(item_type.mangled, value_count, varray) && varray) {
-                varray->Pack(values);
-                type = Type_e::From<Arrayable_t>();
-                data.arr = varray;
-            }
-        }
-    }
-
-    inline Bool_t       Variable_t::Bool()                          { return Unpack<Bool_t>(); }
-    inline void         Variable_t::Bool(const Bool_t value)        { Pack<Bool_t>(value); }
-    inline Int_t        Variable_t::Int()                           { return Unpack<Int_t>(); }
-    inline void         Variable_t::Int(const Int_t value)          { Pack<Int_t>(value); }
-    inline Float_t      Variable_t::Float()                         { return Unpack<Float_t>(); }
-    inline void         Variable_t::Float(const Float_t value)      { Pack<Float_t>(value); }
-    inline String_t     Variable_t::String()                        { return Unpack<String_t>(); }
-    inline void         Variable_t::String(const String_t value)    { Pack<String_t>(value); }
     template <typename Intrinsic_t>
-    inline Intrinsic_t  Variable_t::As()                            { return Unpack<Intrinsic_t>(); }
-    template <typename Intrinsic_t>
-    inline void         Variable_t::As(const Intrinsic_t& value)    { Pack<Intrinsic_t>(value); }
-
-    template <typename T>
-    inline Array_t* Array_Variable_t<T>::Value()
+    class Variable_tt : public Variable_t
     {
-        return Array();
-    }
+    public:
+        operator Intrinsic_t();
 
-    template <typename T>
-    inline void Array_Variable_t<T>::Values(Vector_t<T>& values)
-    {
-        Pack<Vector_t<T>>(values);
-    }
+        void operator=(Intrinsic_t& value);
+        void operator=(Intrinsic_t&& value);
 
-    template <typename T>
-    inline void Array_Variable_t<T>::Values(Vector_t<T>&& values)
-    {
-        Pack<Vector_t<T>>(values);
-    }
+        Bool_t operator==(const Intrinsic_t& value);
+        Bool_t operator==(Intrinsic_t&& value);
+        Bool_t operator!=(const Intrinsic_t& value);
+        Bool_t operator!=(Intrinsic_t&& value);
+    };
+    STATIC_ASSERT(sizeof(Variable_tt<Int_t>) == sizeof(Variable_t));
 
 }}

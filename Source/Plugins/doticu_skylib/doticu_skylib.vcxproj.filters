@@ -321,6 +321,9 @@
     <ClInclude Include="include\doticu_skylib\game_heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\traits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -485,6 +488,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\game.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\virtual_variable.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

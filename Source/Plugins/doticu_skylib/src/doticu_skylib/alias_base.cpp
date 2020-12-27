@@ -12,7 +12,7 @@
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_policy.h"
-#include "doticu_skylib/virtual_variable.h"
+#include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
 

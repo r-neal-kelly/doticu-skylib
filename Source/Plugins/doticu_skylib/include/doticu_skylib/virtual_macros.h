@@ -14,7 +14,7 @@
 #include "doticu_skylib/virtual_function.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_skse.h"
-#include "doticu_skylib/virtual_variable.h"
+#include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -45,7 +45,7 @@ namespace doticu_skylib { namespace Virtual {
         return object;                                                  \
     SKYLIB_W
 
-    #define DEFINE_TYPED_VARIABLE(TYPE_, NAME_)                     \
+    #define DEFINE_VARIABLE_POINTER(TYPE_, NAME_)                   \
     SKYLIB_M                                                        \
         using namespace doticu_skylib;                              \
         using namespace doticu_skylib::Virtual;                     \
@@ -53,32 +53,24 @@ namespace doticu_skylib { namespace Virtual {
         static const String_t name = String_t(NAME_);               \
         SKYLIB_ASSERT(name);                                        \
                                                                     \
-        TYPE_* var = static_cast<TYPE_*>(Object()->Variable(name)); \
-        SKYLIB_ASSERT(var);                                         \
+        Variable_tt<TYPE_>* var = static_cast<Variable_tt<TYPE_>*>  \
+            (Object()->Variable(name));                             \
         return var;                                                 \
     SKYLIB_W
 
-    #define DEFINE_VARIABLE(NAME_)              DEFINE_TYPED_VARIABLE(Variable_t, NAME_)
-    #define DEFINE_BOOL_VARIABLE(NAME_)         DEFINE_TYPED_VARIABLE(Bool_Variable_t, NAME_)
-    #define DEFINE_INT_VARIABLE(NAME_)          DEFINE_TYPED_VARIABLE(Int_Variable_t, NAME_)
-    #define DEFINE_STRING_VARIABLE(NAME_)       DEFINE_TYPED_VARIABLE(String_Variable_t, NAME_)
-    #define DEFINE_ARRAY_VARIABLE(TYPE_, NAME_) DEFINE_TYPED_VARIABLE(Array_Variable_t<TYPE_>, NAME_)
-
-    #define DEFINE_TYPED_PROPERTY(TYPE_, NAME_)                         \
-    SKYLIB_M                                                            \
-        using String_t = doticu_skylib::String_t;                       \
-        using TYPE_ = doticu_skylib::Virtual::TYPE_;                    \
-                                                                        \
-        static const String_t name = String_t(NAME_);                   \
-        SKYLIB_ASSERT(name);                                            \
-                                                                        \
-        TYPE_* prop = static_cast<TYPE_*>(Object()->Property(name));    \
-        SKYLIB_ASSERT(prop);                                            \
-        return prop;                                                    \
+    #define DEFINE_VARIABLE_REFERENCE(TYPE_, NAME_)                 \
+    SKYLIB_M                                                        \
+        using namespace doticu_skylib;                              \
+        using namespace doticu_skylib::Virtual;                     \
+                                                                    \
+        static const String_t name = String_t(NAME_);               \
+        SKYLIB_ASSERT(name);                                        \
+                                                                    \
+        Variable_tt<TYPE_>* var = static_cast<Variable_tt<TYPE_>*>  \
+            (Object()->Variable(name));                             \
+        SKYLIB_ASSERT(var);                                         \
+        return *var;                                                \
     SKYLIB_W
-
-    #define DEFINE_PROPERTY(NAME_)          DEFINE_TYPED_PROPERTY(Variable_t, NAME_)
-    #define DEFINE_STRING_PROPERTY(NAME_)   DEFINE_TYPED_PROPERTY(String_Property_t, NAME_)
 
     #define BIND_METHOD(VM_, CLASS_NAME_, BASE_, METHOD_NAME_, ARG_COUNT_, RETURN_, METHOD_, ...)   \
     SKYLIB_M                                                                                        \

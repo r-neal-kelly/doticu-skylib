@@ -21,13 +21,13 @@ namespace doticu_skylib { namespace Virtual {
         static void Destroy(Array_t* arr);
 
     public:
-        UInt32 ref_count; // 00
-        UInt32 pad_04; // 04
-        Type_e item_type; // 08
-        UInt32 count; // 10
-        UInt32 pad_14; // 14
-        UInt64 lock; // 18
-        //Variable_t* variables[0]; // 20
+        UInt32          ref_count; // 00
+        UInt32          pad_04; // 04
+        Type_e          item_type; // 08
+        UInt32          count; // 10
+        UInt32          pad_14; // 14
+        UInt64          lock; // 18
+        //Variable_t*   variables[0]; // 20
 
         void Increment_Count();
         void Decrement_Count();

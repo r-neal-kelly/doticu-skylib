@@ -6,18 +6,19 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
 
     constexpr Float_t PI = 3.141592741f;
 
-    template <typename Num>
+    template <typename Num, std::enable_if_t<std::is_arithmetic<Num>::value, Bool_t> = true>
     inline Bool_t Is_Odd(Num num)
     {
         return num & static_cast<Num>(1);
     }
 
-    template <typename Num>
+    template <typename Num, std::enable_if_t<std::is_arithmetic<Num>::value, Bool_t> = true>
     inline Bool_t Is_Even(Num num)
     {
         return !Is_Odd(num);

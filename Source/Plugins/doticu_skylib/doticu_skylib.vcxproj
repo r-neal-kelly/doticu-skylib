@@ -113,6 +113,7 @@
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\script_type.h" />
+    <ClInclude Include="include\doticu_skylib\traits.h" />
     <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />
     <ClInclude Include="include\doticu_skylib\player.h" />
@@ -215,6 +216,7 @@
     <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\game.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
+    <None Include="include\doticu_skylib\virtual_variable.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

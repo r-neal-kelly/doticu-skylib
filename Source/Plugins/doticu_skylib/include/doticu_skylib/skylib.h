@@ -71,6 +71,7 @@ namespace doticu_skylib {
     class Race_t;
     class Reference_t;
     class Translations_t;
+    class UI_t;
     class Worldspace_t;
 
     class Aliases_x;

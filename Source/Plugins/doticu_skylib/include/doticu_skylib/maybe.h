@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
 
