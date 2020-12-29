@@ -39,7 +39,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::FACTION,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         static Vector_t<const char*>    editor_ids;

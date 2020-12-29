@@ -87,6 +87,11 @@ namespace doticu_skylib { namespace Virtual {
                             String_t function_name,
                             Arguments_i* arguments = nullptr,
                             Callback_i** vcallback = nullptr);
+        Bool_t  Call_Global(String_t class_name,
+                            String_t function_name,
+                            maybe<Arguments_i*> varguments = nullptr,
+                            maybe<Callback_i*> vcallback = nullptr);
+
         Bool_t  Call_Method(Handle_t handle,
                             String_t class_name,
                             String_t function_name,

@@ -8,13 +8,14 @@
 
 namespace doticu_skylib {
 
-    class Active_Effects_c : public Form_Data_c // TESSpellList
+    // not sure this leads directly to active magic effects or some intermediary. it's confusing if I remember correctly!
+    class Active_Magic_Effects_c : public Form_Data_c // TESSpellList
     {
     public:
-        virtual ~Active_Effects_c(); // 0
+        virtual ~Active_Magic_Effects_c(); // 0
 
-        void* active_effects; // 8
+        void* unk_08; // 8
     };
-    STATIC_ASSERT(sizeof(Active_Effects_c) == 0x10);
+    STATIC_ASSERT(sizeof(Active_Magic_Effects_c) == 0x10);
 
 }

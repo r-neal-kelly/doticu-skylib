@@ -27,6 +27,10 @@ namespace doticu_skylib {
 
             SCRIPT                  = 0x13, // SCPT
 
+            ACTIVATOR               = 0x18, // ACTI
+
+            FLORA                   = 0x27, // FLOR
+
             ACTOR_BASE              = 0x2B, // NPC_
             LEVELED_ACTOR_BASE      = 0x2C, // LVLN
 

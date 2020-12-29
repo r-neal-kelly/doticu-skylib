@@ -25,7 +25,7 @@ namespace doticu_skylib {
     class Sex_e;
     class Vitality_e;
 
-    class Active_Effects_c;
+    class Active_Magic_Effects_c;
     class Actor_Base_Data_c;
     class AI_c;
     class Attack_c;
@@ -34,16 +34,19 @@ namespace doticu_skylib {
     class Description_c;
     class Destructible_c;
     class Form_Data_c;
+    class Harvest_c;
     class Keywords_c;
     class Leveled_c;
     class Model_c;
     class Model_Alternate_c;
     class Name_c;
+    class Openable_c;
     class Package_Override_c;
     class Perks_c;
     class Race_c;
     class Skin_c;
 
+    class Active_Magic_Effect_t;
     class Actor_t;
     class Actor_Base_t;
     class Actor_State_t;

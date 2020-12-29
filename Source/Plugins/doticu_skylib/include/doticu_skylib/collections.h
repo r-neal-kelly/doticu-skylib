@@ -26,6 +26,10 @@ namespace doticu_skylib {
     public:
         s16 y; // 0
         s16 x; // 2
+
+        s16_yx(s16 y, s16 x) : y(y), x(x) {}
+
+        Bool_t operator==(const s16_yx& other) { return this->y == other.y && this->x == other.x; }
     };
     STATIC_ASSERT(sizeof(s16_yx) == 0x4);
 
@@ -37,6 +41,16 @@ namespace doticu_skylib {
         s16 z; // 4
     };
     STATIC_ASSERT(sizeof(s16_xyz) == 0x6);
+
+    class s32_xy
+    {
+    public:
+        s32 x; // 0
+        s32 y; // 4
+
+        explicit operator s16_yx() { return s16_yx(y, x); }
+    };
+    STATIC_ASSERT(sizeof(s32_xy) == 0x8);
 
     class f32_xy
     {
@@ -349,7 +363,7 @@ namespace doticu_skylib {
         u64         unk_20;         // 20
         Entry_t*    entries;        // 28
 
-        Bool_t Has(First_t first)
+        Entry_t* Entry(First_t first)
         {
             if (entries) {
                 Index_t idx = CRC32_Hash_t::Hash(first) & (capacity - 1);
@@ -357,16 +371,21 @@ namespace doticu_skylib {
                 if (entry && entry->chain != nullptr) {
                     for (; entry != end_of_chain; entry = entry->chain) {
                         if (entry->first == first) {
-                            return true;
+                            return entry;
                         }
                     }
-                    return false;
+                    return nullptr;
                 } else {
-                    return false;
+                    return nullptr;
                 }
             } else {
-                return false;
+                return nullptr;
             }
+        }
+
+        Bool_t Has(First_t first)
+        {
+            return Entry(first) != nullptr;
         }
     };
     STATIC_ASSERT(sizeof(Tuple_Map_t<Int_t>) == 0x30);

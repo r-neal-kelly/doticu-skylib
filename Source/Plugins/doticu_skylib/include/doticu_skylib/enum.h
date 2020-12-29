@@ -27,6 +27,7 @@ namespace doticu_skylib {
     {
     public:
         using _TYPE_ = Type_t;
+        using value_type = Type_t;
 
         Type_t value;
 

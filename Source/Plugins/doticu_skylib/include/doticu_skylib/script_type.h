@@ -23,14 +23,14 @@ namespace doticu_skylib {
         public Enum_t<Raw_Script_Type_t>
     {
     public:
-        enum : _TYPE_
+        enum : value_type
         {
             ALIAS_BASE          = 0x8B,
             ALIAS_REFERENCE     = 0x8C,
             ALIAS_LOCATION      = 0x8D,
             ACTIVE_MAGIC_EFFECT = 0x8E,
 
-            _END_               = 0x8F, // I think user defined types begin here. Are they an offset to a pointer to their Class_t?
+            _END_               = 0x8F, // I guess user defined types begin here. Are they an offset to a pointer to their Class_t?
         };
         using Enum_t::Enum_t;
 
@@ -151,12 +151,12 @@ namespace doticu_skylib {
             return value;
         }
 
-        operator Bool_t()
+        explicit operator Bool_t()
         {
             return value != none<Script_Type_e>()();
         }
 
-        operator Bool_t() const
+        explicit operator Bool_t() const
         {
             return value != none<Script_Type_e>()();
         }
@@ -232,12 +232,12 @@ namespace doticu_skylib {
             return value;
         }
 
-        operator Bool_t()
+        explicit operator Bool_t()
         {
             return value != none<Script_Type_e>()();
         }
 
-        operator Bool_t() const
+        explicit operator Bool_t() const
         {
             return value != none<Script_Type_e>()();
         }

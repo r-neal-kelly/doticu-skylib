@@ -15,7 +15,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::KEYWORD,
-            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

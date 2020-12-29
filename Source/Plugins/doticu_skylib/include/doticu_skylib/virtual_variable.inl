@@ -105,7 +105,7 @@ namespace doticu_skylib { namespace Virtual {
                     Handle_Policy_t* handle_policy = Machine_t::Self()->Handle_Policy();
                     if (handle_policy) {
                         return static_cast<Scriptable_t>
-                            (handle_policy->Resolve(script_type, data.obj->Handle()));
+                            (handle_policy->Resolve(script_type(), data.obj->Handle()));
                     } else {
                         return nullptr;
                     }
@@ -229,14 +229,14 @@ namespace doticu_skylib { namespace Virtual {
     {
         Destroy();
 
+        this->type = Type_e::From<Arrayable_t>();
         size_t value_count = values.size();
         if (value_count > 0) {
             Array_t* varray = nullptr;
             Type_e item_type = Type_e::From<Arrayable_t::value_type>();
             if (Machine_t::Self()->Create_Array(item_type.mangled, value_count, varray) && varray) {
                 varray->Pack(values);
-                type = Type_e::From<Arrayable_t>();
-                data.arr = varray;
+                this->data.arr = varray;
             }
         }
     }

@@ -39,9 +39,38 @@ namespace doticu_skylib {
         using Enum_t::Enum_t;
     };
 
+    class Cell_State_e : public Enum_t<u8>
+    {
+    public:
+        enum : value_type
+        {
+            IS_ATTACHED = 7,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Exterior_Cell_t
+    {
+    public:
+        s32_xy  cell_xy;        // 00
+        char*   unk_08;         // 08
+        void*   unk_10;         // 10
+        f32_xy  world_xy;       // 18
+        u8      unk_flags_20;   // 20
+        u8      pad_21;         // 21
+        u16     pad_22;         // 22
+        u32     pad_24;         // 24
+    };
+    STATIC_ASSERT(sizeof(Exterior_Cell_t) == 0x28);
+
+    class Interior_Cell_t
+    {
+    public:
+    };
+
     union Cellterior_u
     {
-        void* exterior;
+        Exterior_Cell_t* exterior;
         void* interior;
     };
 
@@ -53,14 +82,15 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::CELL,
-            kTypeID     = SCRIPT_TYPE,
         };
 
-        static size_t               Interior_Cell_Count();
-        static size_t               Loaded_Exterior_Cell_Count();
-        static Vector_t<Cell_t*>    Interior_Cells();
-        static Vector_t<Cell_t*>    Loaded_Exterior_Cells();
-        static Vector_t<Cell_t*>    Loaded_Cells();
+        static size_t                   Interior_Cell_Count();
+        static size_t                   Loaded_Exterior_Cell_Count();
+        static Vector_t<Cell_t*>        Interior_Cells();
+        static Vector_t<Cell_t*>        Loaded_Exterior_Cells();
+        static Vector_t<Cell_t*>        Loaded_Cells();
+        static Vector_t<some<Cell_t*>>  Cells_In_Grid();
+        static void                     Cells_In_Grid(Vector_t<some<Cell_t*>>& results);
 
     public:
         virtual ~Cell_t();
@@ -69,7 +99,7 @@ namespace doticu_skylib {
         u64                     spin_lock_2;        // 038
         Cell_Flags_e            cell_flags;         // 040
         u16                     unk_042;            // 042
-        u8                      cell_state;         // 044
+        Cell_State_e            cell_state;         // 044
         Bool_t                  unk_045;            // 045
         Bool_t                  is_cell_detached;   // 046
         u8                      pad_047;            // 047
@@ -92,6 +122,7 @@ namespace doticu_skylib {
 
         Bool_t                          Is_Interior();
         Bool_t                          Is_Exterior();
+        Bool_t                          Is_Attached();
         Bool_t                          Can_Travel_From();
         Bool_t                          Has_Reference(some<Reference_t*> reference);
 

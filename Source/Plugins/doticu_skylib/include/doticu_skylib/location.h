@@ -30,7 +30,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::LOCATION,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         class Unloaded_Reference_t

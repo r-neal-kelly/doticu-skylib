@@ -59,7 +59,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::ACTOR,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         static Vector_t<Actor_t*>   Loaded_Actors();

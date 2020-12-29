@@ -55,6 +55,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\doticu_skylib\activator.h" />
+    <ClInclude Include="include\doticu_skylib\active_magic_effect.h" />
     <ClInclude Include="include\doticu_skylib\actor.h" />
     <ClInclude Include="include\doticu_skylib\actor_base.h" />
     <ClInclude Include="include\doticu_skylib\actor_state.h" />
@@ -75,10 +77,13 @@
     <ClInclude Include="include\doticu_skylib\component_description.h" />
     <ClInclude Include="include\doticu_skylib\component_destructible.h" />
     <ClInclude Include="include\doticu_skylib\component_form_data.h" />
+    <ClInclude Include="include\doticu_skylib\component_harvest.h" />
     <ClInclude Include="include\doticu_skylib\component_keywords.h" />
     <ClInclude Include="include\doticu_skylib\component_leveled.h" />
     <ClInclude Include="include\doticu_skylib\component_model.h" />
+    <ClInclude Include="include\doticu_skylib\component_model_alternate.h" />
     <ClInclude Include="include\doticu_skylib\component_name.h" />
+    <ClInclude Include="include\doticu_skylib\component_openable.h" />
     <ClInclude Include="include\doticu_skylib\component_package_override.h" />
     <ClInclude Include="include\doticu_skylib\component_perks.h" />
     <ClInclude Include="include\doticu_skylib\component_race.h" />
@@ -93,6 +98,7 @@
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
+    <ClInclude Include="include\doticu_skylib\flora.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
     <ClInclude Include="include\doticu_skylib\form_flags.h" />
@@ -101,6 +107,7 @@
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
     <ClInclude Include="include\doticu_skylib\game_heap.h" />
+    <ClInclude Include="include\doticu_skylib\game_ini.h" />
     <ClInclude Include="include\doticu_skylib\game_macros.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
     <ClInclude Include="include\doticu_skylib\interface.h" />
@@ -113,6 +120,7 @@
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\script_type.h" />
+    <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\traits.h" />
     <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />

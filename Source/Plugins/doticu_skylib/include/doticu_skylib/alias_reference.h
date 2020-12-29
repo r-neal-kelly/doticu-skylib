@@ -16,7 +16,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::ALIAS_REFERENCE,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         class Forced_Fill_t

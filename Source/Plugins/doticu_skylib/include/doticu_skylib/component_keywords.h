@@ -15,7 +15,10 @@ namespace doticu_skylib {
     class Keywords_c : public Form_Data_c
     {
     public:
-        virtual ~Keywords_c(); // 0
+        virtual             ~Keywords_c();                          // 0
+
+        virtual Bool_t      Has(const Keyword_t* keyword) const;    // 4
+        virtual Keyword_t*  Default_Keyword() const;                // 5
 
         Keyword_t** keywords;       // 08
         u32         keyword_count;  // 10

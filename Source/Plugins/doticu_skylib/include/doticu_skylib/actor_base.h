@@ -36,7 +36,7 @@ namespace doticu_skylib {
         public Animated_Object_t,
         public Actor_Base_Data_c,
         public Container_c,
-        public Active_Effects_c,
+        public Active_Magic_Effects_c,
         public AI_c,
         public Name_c,
         public Actor_Values_t,
@@ -53,7 +53,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::ACTOR_BASE,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t                   Actor_Base_Count();

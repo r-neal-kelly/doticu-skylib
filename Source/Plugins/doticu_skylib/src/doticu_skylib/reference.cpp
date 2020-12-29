@@ -21,6 +21,67 @@
 
 namespace doticu_skylib {
 
+    class Loaded_Reference_Iterator_t : public Iterator_i<void, Reference_t*>
+    {
+    public:
+        Vector_t<some<Reference_t*>>& results;
+        Filter_i<some<Reference_t*>>* filter;
+        Loaded_Reference_Iterator_t(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter) :
+            results(results), filter(filter)
+        {
+        }
+        void operator()(Reference_t* reference)
+        {
+            if (reference && reference->Is_Valid() && !results.Has(reference)) {
+                if (!filter || (*filter)(reference)) {
+                    results.push_back(reference);
+                }
+            }
+        }
+
+    };
+
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_References(Filter_i<some<Reference_t*>>* filter)
+    {
+        Vector_t<some<Reference_t*>> results;
+        Loaded_References(results, filter);
+        return results;
+    }
+
+    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
+    {
+        Loaded_Reference_Iterator_t iterator(results, filter);
+
+        results.reserve(2048);
+
+        Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
+        for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
+            Cell_t* cell = loaded_cells[idx];
+            if (cell && cell->Is_Valid()) {
+                cell->References(iterator);
+            }
+        }
+    }
+
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_References_In_Grid(Filter_i<some<Reference_t*>>* filter)
+    {
+        Vector_t<some<Reference_t*>> results;
+        Loaded_References_In_Grid(results, filter);
+        return results;
+    }
+
+    void Reference_t::Loaded_References_In_Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
+    {
+        Loaded_Reference_Iterator_t iterator(results, filter);
+
+        results.reserve(2048);
+
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        for (Index_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+            cells_in_grid[idx]->References(iterator);
+        }
+    }
+
     Reference_t* Reference_t::Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable)
     {
         SKYLIB_ASSERT_SOME(base);
@@ -211,7 +272,7 @@ namespace doticu_skylib {
     {
         results.reserve(2);
 
-        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+        for (maybe<Worldspace_t*> it = Worldspace(); it; it = it->parent_worldspace) {
             if (!results.Has(it())) {
                 results.push_back(it());
             }

@@ -23,7 +23,7 @@ namespace doticu_skylib {
         public Form_t,
         public Name_c,
         public Description_c,
-        public Active_Effects_c,
+        public Active_Magic_Effects_c,
         public Skin_c,
         public Biped_c,
         public Keywords_c,
@@ -33,7 +33,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::RACE,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         static size_t                   Race_Count();

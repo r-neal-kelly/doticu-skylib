@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/interface.h"
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form.h"
@@ -32,7 +33,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::REFERENCE,
-            kTypeID     = SCRIPT_TYPE,
         };
 
         class Offset_e : public Enum_t<Word_t>
@@ -64,9 +64,17 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        static Reference_t*         Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
-        static Reference_t*         From_Handle(Reference_Handle_t reference_handle);
-        static Reference_Handle_t   Invalid_Handle(); // this should go on Reference_Handle_t, but I need to be careful that we don't use it with virtual functions from Skyrim types
+        static Vector_t<some<Reference_t*>> Loaded_References(Filter_i<some<Reference_t*>>* filter = nullptr);
+        static void                         Loaded_References(Vector_t<some<Reference_t*>>& results,
+                                                              Filter_i<some<Reference_t*>>* filter = nullptr);
+
+        static Vector_t<some<Reference_t*>> Loaded_References_In_Grid(Filter_i<some<Reference_t*>>* filter = nullptr);
+        static void                         Loaded_References_In_Grid(Vector_t<some<Reference_t*>>& results,
+                                                                      Filter_i<some<Reference_t*>>* filter = nullptr);
+
+        static Reference_t*             Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
+        static Reference_t*             From_Handle(Reference_Handle_t reference_handle);
+        static Reference_Handle_t       Invalid_Handle(); // this should go on Reference_Handle_t, but I need to be careful that we don't use it with virtual functions from Skyrim types
 
     public:
         virtual         ~Reference_t();                             // 00

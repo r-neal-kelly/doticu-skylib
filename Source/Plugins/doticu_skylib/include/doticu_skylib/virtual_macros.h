@@ -8,7 +8,9 @@
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_array.h"
+#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_object.h"
 #include "doticu_skylib/virtual_function.h"

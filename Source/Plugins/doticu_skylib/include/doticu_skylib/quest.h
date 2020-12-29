@@ -90,7 +90,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::QUEST,
-            kTypeID     = SCRIPT_TYPE,
         };
 
     public:

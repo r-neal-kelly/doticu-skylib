@@ -7,7 +7,9 @@
 
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/game_ini.h"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
 
 #include "doticu_skylib/extra_list.inl"
@@ -93,6 +95,54 @@ namespace doticu_skylib {
         return results;
     }
 
+    Vector_t<some<Cell_t*>> Cell_t::Cells_In_Grid()
+    {
+        Vector_t<some<Cell_t*>> results;
+        Cells_In_Grid(results);
+        return results;
+    }
+
+    void Cell_t::Cells_In_Grid(Vector_t<some<Cell_t*>>& results)
+    {
+        // we can't make this static as apparently the ini model can be updated mid-game???
+        const u64 grids_to_load = Game_INI_t::INI_u32("uGridsToLoad:General");
+        const u64 grid_radius = grids_to_load ? grids_to_load / 2 : 2;
+
+        results.reserve(grids_to_load * grids_to_load);
+
+        Cell_t* player_cell = Player_t::Self()->Cell();
+        if (player_cell && player_cell->Is_Valid()) {
+            results.push_back(player_cell);
+            if (player_cell->Is_Exterior()) {
+                Exterior_Cell_t* exterior_cell = player_cell->cellterior.exterior;
+                if (exterior_cell) {
+                    Worldspace_t* worldspace = player_cell->worldspace;
+                    if (worldspace && worldspace->Is_Valid()) {
+                        const s16_yx origin = static_cast<s16_yx>(exterior_cell->cell_xy);
+                        const s16 begin_x = origin.x - grid_radius;
+                        const s16 end_x = origin.x + grid_radius + 1;
+                        const s16 begin_y = origin.y - grid_radius;
+                        const s16 end_y = origin.y + grid_radius + 1;
+                        if (begin_x < end_x && begin_y < end_y) {
+                            for (s16 idx_x = begin_x; idx_x < end_x; idx_x += 1) {
+                                for (s16 idx_y = begin_y; idx_y < end_y; idx_y += 1) {
+                                    s16_yx cell_yx(idx_y, idx_x);
+                                    auto entry = worldspace->xy_to_cell.Entry(cell_yx);
+                                    if (entry) {
+                                        Cell_t* cell = entry->second;
+                                        if (cell && cell->Is_Valid() && cell->Is_Attached() && !results.Has(cell)) {
+                                            results.push_back(cell);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     Bool_t Cell_t::Is_Interior()
     {
         return (cell_flags & Cell_Flags_e::IS_INTERIOR) != 0;
@@ -101,6 +151,11 @@ namespace doticu_skylib {
     Bool_t Cell_t::Is_Exterior()
     {
         return (cell_flags & Cell_Flags_e::IS_INTERIOR) == 0;
+    }
+
+    Bool_t Cell_t::Is_Attached()
+    {
+        return cell_state == Cell_State_e::IS_ATTACHED;
     }
 
     Bool_t Cell_t::Can_Travel_From()
@@ -242,7 +297,7 @@ namespace doticu_skylib {
     {
         results.reserve(2);
 
-        for (maybe<Worldspace_t*> it = Worldspace(); it != nullptr; it = it->parent_worldspace) {
+        for (maybe<Worldspace_t*> it = Worldspace(); it; it = it->parent_worldspace) {
             if (!results.Has(it())) {
                 results.push_back(it());
             }

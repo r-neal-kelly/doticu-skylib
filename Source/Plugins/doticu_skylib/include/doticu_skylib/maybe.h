@@ -238,14 +238,14 @@ namespace doticu_skylib {
 
         maybe<T*>& operator=(const maybe<T*>& other)
         {
-            if (this != &other) {
+            if (this != std::addressof(other)) {
                 value = other.value;
             }
             return *this;
         }
         maybe<T*>& operator=(maybe<T*>&& other)
         {
-            if (this != &other) {
+            if (this != std::addressof(other)) {
                 value = std::exchange(other.value, none<T*>()());
             }
             return *this;
@@ -259,6 +259,9 @@ namespace doticu_skylib {
 
         T& operator*()          { return *value; }
         T& operator*() const    { return *value; }
+
+        T** operator&()         { return &value; }
+        T** operator&() const   { return &value; }
 
         T& operator[](size_t idx)       { return *(value + idx); }
         T& operator[](size_t idx) const { return *(value + idx); }
@@ -295,14 +298,14 @@ namespace doticu_skylib {
 
         some<T*>& operator=(const some<T*>& other)
         {
-            if (this != &other) {
+            if (this != std::addressof(other)) {
                 value = other.value;
             }
             return *this;
         }
         some<T*>& operator=(some<T*>&& other) noexcept
         {
-            if (this != &other) {
+            if (this != std::addressof(other)) {
                 value = std::exchange(other.value, none<T*>()());
             }
             return *this;
@@ -316,6 +319,9 @@ namespace doticu_skylib {
 
         T& operator*()          { return *value; }
         T& operator*() const    { return *value; }
+
+        T** operator&()         { return &value; }
+        T** operator&() const   { return &value; }
 
         T& operator[](size_t idx)       { return *(value + idx); }
         T& operator[](size_t idx) const { return *(value + idx); }

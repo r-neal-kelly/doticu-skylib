@@ -42,6 +42,7 @@ namespace doticu_skylib {
     template <typename Type_t>
     class Event_Source_t
     {
+    public:
         Byte_t unk_data[0x58];
     };
     STATIC_ASSERT(sizeof(Event_Source_t<Int_t>) == 0x58);
@@ -49,6 +50,7 @@ namespace doticu_skylib {
     template <typename Event>
     class Event_Sink_t
     {
+    public:
         virtual ~Event_Sink_t();    // 0
 
         virtual void _01(void) = 0; // 1

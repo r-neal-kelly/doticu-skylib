@@ -63,7 +63,6 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::WORLDSPACE,
-            kTypeID     = SCRIPT_TYPE,
         };
 
     public:
