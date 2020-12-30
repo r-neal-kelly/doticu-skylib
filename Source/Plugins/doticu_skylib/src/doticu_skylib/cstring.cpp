@@ -188,4 +188,18 @@ namespace doticu_skylib {
         }
     }
 
+    const char* CString_t::Seek_After(const char* sub, const char obj, size_t max_chars)
+    {
+        if (sub) {
+            size_t chars = 0;
+            while (*sub && *sub == obj && chars < max_chars) {
+                sub += 1;
+                chars += 1;
+            }
+            return sub;
+        } else {
+            return nullptr;
+        }
+    }
+
 }

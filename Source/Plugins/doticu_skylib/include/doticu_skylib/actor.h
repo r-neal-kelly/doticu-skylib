@@ -56,6 +56,16 @@ namespace doticu_skylib {
         public Animation_Updater_i
     {
     public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E14AD8,
+            };
+            using Enum_t::Enum_t;
+        };
+
         enum
         {
             SCRIPT_TYPE = Script_Type_e::ACTOR,

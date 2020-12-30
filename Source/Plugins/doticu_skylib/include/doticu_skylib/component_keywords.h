@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/enum.h"
 
 #include "doticu_skylib/component_form_data.h"
 
@@ -14,6 +14,17 @@ namespace doticu_skylib {
 
     class Keywords_c : public Form_Data_c
     {
+    public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E10F28, // 513855
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual             ~Keywords_c();                          // 0
 

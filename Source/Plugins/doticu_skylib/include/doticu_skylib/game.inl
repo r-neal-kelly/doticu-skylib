@@ -24,4 +24,18 @@ namespace doticu_skylib {
         Game_Heap_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(data()));
     }
 
+    template <typename From_t, typename To_t>
+    inline maybe<To_t*> Game_t::Runtime_Cast(some<From_t*> from)
+    {
+        static auto runtime_cast = reinterpret_cast
+            <void *(*)(void* from, u32 unk_01, Word_t from_rtti, Word_t to_rtti, u32 unk_02)>
+            (Game_t::Base_Address() + Offset_e::RUNTIME_CAST);
+
+        SKYLIB_ASSERT_SOME(from);
+
+        Word_t from_rtti = Game_t::Base_Address() + From_t::Offset_e::RTTI;
+        Word_t to_rtti = Game_t::Base_Address() + To_t::Offset_e::RTTI;
+        return static_cast<To_t*>(runtime_cast(from(), 0, from_rtti, to_rtti, 0));
+    }
+
 }

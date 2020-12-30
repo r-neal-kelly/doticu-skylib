@@ -35,8 +35,9 @@ namespace doticu_skylib {
         public:
             enum : Word_t
             {
-                SELF        = 0x01EBE428,
-                GET_FORM    = 0x00194230,
+                SELF            = 0x01EBE428,
+                GET_FORM        = 0x00194230,
+                RUNTIME_CAST    = 0x0134BDB0,
             };
             using Enum_t::Enum_t;
         };
@@ -56,6 +57,9 @@ namespace doticu_skylib {
 
         static maybe<Form_t*>       Form(Form_ID_t form_id);
         static maybe<Form_t*>       Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
+
+        template <typename From_t, typename To_t>
+        static maybe<To_t*>         Runtime_Cast(some<From_t*> from);
 
         static Word_t               V_Table_Offset(void* instance);
         static void                 Write_V_Table(void* instance, Word_t v_table_offset);

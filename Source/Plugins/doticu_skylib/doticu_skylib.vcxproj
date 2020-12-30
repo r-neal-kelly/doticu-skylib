@@ -98,6 +98,9 @@
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
+    <ClInclude Include="include\doticu_skylib\filter.h" />
+    <ClInclude Include="include\doticu_skylib\filter.inl" />
+    <ClInclude Include="include\doticu_skylib\filter_keyword.h" />
     <ClInclude Include="include\doticu_skylib\flora.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
@@ -116,6 +119,7 @@
     <ClInclude Include="include\doticu_skylib\leveled_actor_base.h" />
     <ClInclude Include="include\doticu_skylib\location.h" />
     <ClInclude Include="include\doticu_skylib\location_reference_type.h" />
+    <ClInclude Include="include\doticu_skylib\logic_gate.h" />
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
@@ -184,6 +188,7 @@
     <ClCompile Include="src\doticu_skylib\keyword.cpp" />
     <ClCompile Include="src\doticu_skylib\leveled_actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\location.cpp" />
+    <ClCompile Include="src\doticu_skylib\logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />

@@ -19,6 +19,7 @@
 namespace doticu_skylib {
 
     class Cell_t;
+    class Keyword_t;
     class Location_t;
     class Quest_t;
     class Worldspace_t;
@@ -92,7 +93,7 @@ namespace doticu_skylib {
         virtual void    _45(void);                                  // 45
         virtual void    _46(void);                                  // 46
         virtual void    _47(void);                                  // 47
-        virtual void    _48(void);                                  // 48
+        virtual Bool_t  Has_Keyword(const Keyword_t* keyword);      // 48
         virtual void    _49(void);                                  // 49
         virtual void    _4A(void);                                  // 4A
         virtual void    _4B(void);                                  // 4B
