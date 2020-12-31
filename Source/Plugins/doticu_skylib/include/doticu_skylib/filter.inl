@@ -62,24 +62,9 @@ namespace doticu_skylib { namespace Filter {
         }
 
         template <typename Compare_a>
-        void Filter(Compare_a compare_a,
+        void Filter(Bool_t do_negate,
+                    Compare_a compare_a,
                     some<Result_e(*)(Filterable_t, Compare_a)> compare_f)
-        {
-            SKYLIB_ASSERT_SOME(compare_f);
-
-            for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
-                Filterable_t filterable = state.read->at(idx);
-                if (compare_f()(filterable, compare_a) == Result_e::IS_MATCH) {
-                    state.write->push_back(item);
-                }
-            }
-            state.Swap();
-        }
-
-        template <typename Compare_a>
-        void Filter_Negatable(Bool_t do_negate,
-                              Compare_a compare_a,
-                              some<Result_e(*)(Filterable_t, Compare_a)> compare_f)
         {
             SKYLIB_ASSERT_SOME(compare_f);
 
@@ -102,9 +87,9 @@ namespace doticu_skylib { namespace Filter {
         }
 
         template <typename Compare_a, typename Compare_b>
-        void Filter_Negatable(Bool_t do_negate,
-                              Compare_a compare_a, Compare_b compare_b,
-                              some<Result_e(*)(Filterable_t, Compare_a, Compare_b)> compare_f)
+        void Filter(Bool_t do_negate,
+                    Compare_a compare_a, Compare_b compare_b,
+                    some<Result_e(*)(Filterable_t, Compare_a, Compare_b)> compare_f)
         {
             SKYLIB_ASSERT_SOME(compare_f);
 

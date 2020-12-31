@@ -4,6 +4,10 @@
 
 #pragma once
 
+#include <limits>
+#undef max
+#undef min
+
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/traits.h"

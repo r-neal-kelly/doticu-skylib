@@ -30,7 +30,7 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (keyword && keyword->Is_Valid()) {
-                Filter_Negatable<some<Keyword_t*>>(do_negate, keyword(), compare_f);
+                Filter_i<Filterable_t>::Filter<some<Keyword_t*>>(do_negate, keyword, compare_f);
             }
         }
 
@@ -39,7 +39,7 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (keywords.size() > 0) {
-                Filter_Negatable<Vector_t<some<Keyword_t*>>&>(do_negate, keywords, compare_f);
+                Filter_i<Filterable_t>::Filter<Vector_t<some<Keyword_t*>>&>(do_negate, keywords, compare_f);
             }
         }
 
@@ -48,7 +48,7 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (keyword_name) {
-                Filter_Negatable<String_t>(do_negate, keyword_name, compare_f);
+                Filter_i<Filterable_t>::Filter<String_t>(do_negate, keyword_name, compare_f);
             }
         }
     };

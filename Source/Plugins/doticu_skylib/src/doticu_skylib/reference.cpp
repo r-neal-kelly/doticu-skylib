@@ -21,6 +21,16 @@
 
 namespace doticu_skylib {
 
+    static maybe<Worldspace_t*> Worldspace_Impl(some<Reference_t*> self)
+    {
+        static auto get_worldspace = reinterpret_cast
+            <Worldspace_t * (*)(Reference_t*)>
+            (Game_t::Base_Address() + Reference_t::Offset_e::GET_WORLDSPACE);
+
+        SKYLIB_ASSERT_SOME(self);
+        return get_worldspace(self());
+    }
+
     class Loaded_Reference_Iterator_t : public Iterator_i<void, Reference_t*>
     {
     public:
@@ -176,16 +186,6 @@ namespace doticu_skylib {
         }
     }
 
-    static maybe<Worldspace_t*> Worldspace_Impl(some<Reference_t*> self)
-    {
-        static auto get_worldspace = reinterpret_cast
-            <Worldspace_t*(*)(Reference_t*)>
-            (Game_t::Base_Address() + Reference_t::Offset_e::GET_WORLDSPACE);
-
-        SKYLIB_ASSERT_SOME(self);
-        return get_worldspace(self());
-    }
-
     Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
     {
         if (parent_cell) {
@@ -290,6 +290,45 @@ namespace doticu_skylib {
             create_reference_handle(handle, this);
         }
         return handle;
+    }
+
+    Float_t Reference_t::Distance_Between(some<Reference_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        if (this->parent_cell && other->parent_cell) {
+            if (this->parent_cell == other->parent_cell ||
+                (this->parent_cell->Is_Exterior() &&
+                 other->parent_cell->Is_Exterior() &&
+                 Worldspace_Impl(this) == Worldspace_Impl(other))) {
+                Float_t x_distance;
+                if (this->position.x > other->position.x) {
+                    x_distance = this->position.x - other->position.x;
+                } else {
+                    x_distance = other->position.x - this->position.x;
+                }
+
+                Float_t y_distance;
+                if (this->position.y > other->position.y) {
+                    y_distance = this->position.y - other->position.y;
+                } else {
+                    y_distance = other->position.y - this->position.y;
+                }
+
+                Float_t z_distance;
+                if (this->position.z > other->position.z) {
+                    z_distance = this->position.z - other->position.z;
+                } else {
+                    z_distance = other->position.z - this->position.z;
+                }
+
+                return sqrt(pow(x_distance, 2) + pow(y_distance, 2) + pow(z_distance, 2));
+            } else {
+                return std::numeric_limits<Float_t>::max();
+            }
+        } else {
+            return std::numeric_limits<Float_t>::max();
+        }
     }
 
     void Reference_t::Move_To_Offset(some<Reference_t*> target,

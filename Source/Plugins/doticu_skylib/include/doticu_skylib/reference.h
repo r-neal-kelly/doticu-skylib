@@ -220,6 +220,8 @@ namespace doticu_skylib {
 
         Reference_Handle_t  To_Handle();
 
+        Float_t Distance_Between(some<Reference_t*> other);
+
         void Move_To_Offset(some<Reference_t*> target,
                             maybe<Cell_t*> target_cell,
                             maybe<Worldspace_t*> target_worldspace,

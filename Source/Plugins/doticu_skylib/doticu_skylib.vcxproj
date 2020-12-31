@@ -100,6 +100,7 @@
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
     <ClInclude Include="include\doticu_skylib\filter.h" />
     <ClInclude Include="include\doticu_skylib\filter.inl" />
+    <ClInclude Include="include\doticu_skylib\filter_distances.h" />
     <ClInclude Include="include\doticu_skylib\filter_keyword.h" />
     <ClInclude Include="include\doticu_skylib\flora.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
@@ -123,6 +124,7 @@
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
+    <ClInclude Include="include\doticu_skylib\enum_operator.h" />
     <ClInclude Include="include\doticu_skylib\script_type.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\traits.h" />
@@ -178,6 +180,7 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
     <ClCompile Include="src\doticu_skylib\form.cpp" />
