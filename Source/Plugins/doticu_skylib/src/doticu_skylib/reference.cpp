@@ -73,14 +73,14 @@ namespace doticu_skylib {
         }
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_References_In_Grid(Filter_i<some<Reference_t*>>* filter)
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter)
     {
         Vector_t<some<Reference_t*>> results;
-        Loaded_References_In_Grid(results, filter);
+        Loaded_Grid_References(results, filter);
         return results;
     }
 
-    void Reference_t::Loaded_References_In_Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
+    void Reference_t::Loaded_Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
     {
         Loaded_Reference_Iterator_t iterator(results, filter);
 

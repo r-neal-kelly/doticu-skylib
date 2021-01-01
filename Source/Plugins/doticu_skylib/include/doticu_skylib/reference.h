@@ -69,9 +69,9 @@ namespace doticu_skylib {
         static void                         Loaded_References(Vector_t<some<Reference_t*>>& results,
                                                               Filter_i<some<Reference_t*>>* filter = nullptr);
 
-        static Vector_t<some<Reference_t*>> Loaded_References_In_Grid(Filter_i<some<Reference_t*>>* filter = nullptr);
-        static void                         Loaded_References_In_Grid(Vector_t<some<Reference_t*>>& results,
-                                                                      Filter_i<some<Reference_t*>>* filter = nullptr);
+        static Vector_t<some<Reference_t*>> Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter = nullptr);
+        static void                         Loaded_Grid_References(Vector_t<some<Reference_t*>>& results,
+                                                                   Filter_i<some<Reference_t*>>* filter = nullptr);
 
         static Reference_t*             Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
         static Reference_t*             From_Handle(Reference_Handle_t reference_handle);

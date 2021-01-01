@@ -4,13 +4,15 @@
 
 #include "doticu_skylib/cstring.h"
 
-#include "doticu_skylib/logic_gate.h"
+#include "doticu_skylib/enum_logic_gate.h"
 
 namespace doticu_skylib {
 
     some<const char*> Logic_Gate_e::To_String(Logic_Gate_e logic_gate)
     {
-        if (logic_gate == Logic_Gate_e::OR) {
+        if (logic_gate == Logic_Gate_e::NOT) {
+            return NOT_STRING;
+        } else if (logic_gate == Logic_Gate_e::OR) {
             return OR_STRING;
         } else if (logic_gate == Logic_Gate_e::AND) {
             return AND_STRING;
@@ -31,7 +33,9 @@ namespace doticu_skylib {
     {
         if (logic_gate) {
             const char* str = CString_t::Seek_After(logic_gate(), ' ', 24);
-            if (CString_t::Starts_With(OR_STRING, str, true)) {
+            if (CString_t::Starts_With(NOT_STRING, str, true)) {
+                return Logic_Gate_e::NOT;
+            } else if (CString_t::Starts_With(OR_STRING, str, true)) {
                 return Logic_Gate_e::OR;
             } else if (CString_t::Starts_With(AND_STRING, str, true)) {
                 return Logic_Gate_e::AND;

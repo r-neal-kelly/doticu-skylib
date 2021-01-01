@@ -16,6 +16,8 @@ namespace doticu_skylib {
         {
             NONE = static_cast<value_type>(-1),
 
+            NOT = 0,
+
             OR,
             AND,
             XOR,
@@ -27,12 +29,13 @@ namespace doticu_skylib {
         };
 
         static constexpr const char* NONE_STRING = "NONE";
-        static constexpr const char* OR_STRING = "OR";
-        static constexpr const char* AND_STRING = "AND";
-        static constexpr const char* XOR_STRING = "XOR";
-        static constexpr const char* NOR_STRING = "NOR";
-        static constexpr const char* NAND_STRING = "NAND";
-        static constexpr const char* XNOR_STRING = "XNOR";
+        static constexpr const char* NOT_STRING = "!";
+        static constexpr const char* OR_STRING = "|";
+        static constexpr const char* AND_STRING = "&";
+        static constexpr const char* XOR_STRING = "^";
+        static constexpr const char* NOR_STRING = "!|";
+        static constexpr const char* NAND_STRING = "!&";
+        static constexpr const char* XNOR_STRING = "!^";
 
     public:
         using Enum_t::Enum_t;

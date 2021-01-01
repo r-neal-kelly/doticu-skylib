@@ -74,7 +74,7 @@ namespace doticu_skylib { namespace Virtual {
         Handle_t handle(instance);
         if (handle.Is_Valid()) {
             Object_t* object = nullptr;
-            if (Machine_t::Self()->Find_Bound_Object(handle, class_name, &object)) {
+            if (Machine_t::Self()->Find_Bound_Object(handle, class_name, &object) && object) {
                 if (do_auto_decrement) {
                     object->Decrement_Lock();
                 }

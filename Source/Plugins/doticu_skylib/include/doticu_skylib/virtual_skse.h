@@ -11,6 +11,7 @@
 #include "doticu_skylib/active_magic_effect.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/form_list.h"
 #include "doticu_skylib/form_type.h"
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/reference.h"
@@ -33,6 +34,7 @@ DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Form_Type_e);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Active_Magic_Effect_t*);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Alias_Base_t*);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Form_t*);
+DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Form_List_t*);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Keyword_t*);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Reference_t*);
 
@@ -44,6 +46,7 @@ DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Form_Type_e>);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Active_Magic_Effect_t*>);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Alias_Base_t*>);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Form_t*>);
+DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Form_List_t*>);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Keyword_t*>);
 DEFINE_SKSE_GET_TYPE_ID(doticu_skylib::Vector_t<doticu_skylib::Reference_t*>);
 #undef DEFINE_SKSE_GET_TYPE_ID
@@ -72,6 +75,7 @@ DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Form_Type_e);
 DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Active_Magic_Effect_t);
 DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Alias_Base_t);
 DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Form_t);
+DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Form_List_t);
 DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Keyword_t);
 DEFINE_SKSE_UNPACK_POINTER(doticu_skylib::Reference_t);
 
@@ -83,6 +87,7 @@ DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_Type_e>);
 DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Active_Magic_Effect_t*>);
 DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Alias_Base_t*>);
 DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_t*>);
+DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_List_t*>);
 DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Keyword_t*>);
 DEFINE_SKSE_UNPACK_VALUE(doticu_skylib::Vector_t<doticu_skylib::Reference_t*>);
 #undef DEFINE_SKSE_UNPACK_VALUE
@@ -113,6 +118,7 @@ DEFINE_SKSE_PACK_VALUE(doticu_skylib::Form_Type_e);
 DEFINE_SKSE_PACK_VALUE(doticu_skylib::Active_Magic_Effect_t*);
 DEFINE_SKSE_PACK_VALUE(doticu_skylib::Alias_Base_t*);
 DEFINE_SKSE_PACK_VALUE(doticu_skylib::Form_t*);
+DEFINE_SKSE_PACK_VALUE(doticu_skylib::Form_List_t*);
 DEFINE_SKSE_PACK_VALUE(doticu_skylib::Keyword_t*);
 DEFINE_SKSE_PACK_VALUE(doticu_skylib::Reference_t*);
 
@@ -124,6 +130,7 @@ DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_Type_e
 DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Active_Magic_Effect_t*>);
 DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Alias_Base_t*>);
 DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_t*>);
+DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Form_List_t*>);
 DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Keyword_t*>);
 DEFINE_SKSE_PACK_VECTOR_VALUE(doticu_skylib::Vector_t<doticu_skylib::Reference_t*>);
 #undef DEFINE_SKSE_PACK_VALUE

@@ -14,7 +14,13 @@ namespace doticu_skylib { namespace Filter {
     class State_c;
 
     template <typename T>
+    class Base_Form_Types_t;
+    template <typename T>
+    class Bases_t;
+    template <typename T>
     class Distances_t;
+    template <typename T>
+    class Form_Types_t;
     template <typename T>
     class Keywords_t;
 
