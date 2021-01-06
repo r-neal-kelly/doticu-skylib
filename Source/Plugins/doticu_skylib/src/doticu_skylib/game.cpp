@@ -57,7 +57,7 @@ namespace doticu_skylib {
         }
     };
 
-    static Bool_t Write_Version(Version_t<u8>& game_version, const char* version_csv)
+    static Bool_t Write_Version(Version_t<u16>& game_version, const char* version_csv)
     {
         int major;
         int minor;
@@ -74,7 +74,7 @@ namespace doticu_skylib {
         }
     }
 
-    static Bool_t Read_Version(Version_t<u8>& game_version)
+    static Bool_t Read_Version(Version_t<u16>& game_version)
     {
         static constexpr const char* product_version = "\\StringFileInfo\\040904B0\\ProductVersion";
         static constexpr const char* file_version = "\\StringFileInfo\\040904B0\\FileVersion";
@@ -135,13 +135,13 @@ namespace doticu_skylib {
         return reinterpret_cast<Byte_t*>(Base_Address());
     }
 
-    const Version_t<u8>& Game_t::Version()
+    const Version_t<u16>& Game_t::Version()
     {
-        static const Version_t<u8> version;
+        static const Version_t<u16> version;
 
         static Bool_t has_read = false;
         if (!has_read) {
-            has_read = Read_Version(const_cast<Version_t<u8>&>(version));
+            has_read = Read_Version(const_cast<Version_t<u16>&>(version));
         }
 
         return version;
@@ -163,9 +163,9 @@ namespace doticu_skylib {
         return Form(Form_t::Form_ID(lower_form_id, mod));
     }
 
-    Word_t Game_t::V_Table_Offset(void* instance)
+    Word_t Game_t::V_Table_Offset(const void* instance)
     {
-        return *reinterpret_cast<Word_t*>(instance) - Game_t::Base_Address();
+        return *reinterpret_cast<const Word_t*>(instance) - Game_t::Base_Address();
     }
 
     void Game_t::Write_V_Table(void* instance, Word_t v_table_offset)

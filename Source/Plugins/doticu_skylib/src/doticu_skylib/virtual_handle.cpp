@@ -22,9 +22,10 @@ namespace doticu_skylib { namespace Virtual {
         return Handle_Policy_t::Self()->Is_Valid(*this);
     }
 
-    Bool_t Handle_t::Has_Script_Type(Script_Type_e script_type)
+    Bool_t Handle_t::Has_Script_Type(some<Script_Type_e> script_type)
     {
-        return Handle_Policy_t::Self()->Has_Script_Type(script_type, raw_handle);
+        SKYLIB_ASSERT_SOME(script_type);
+        return Handle_Policy_t::Self()->Has_Script_Type(script_type(), raw_handle);
     }
 
     Handle_t::operator Raw_Handle_t()

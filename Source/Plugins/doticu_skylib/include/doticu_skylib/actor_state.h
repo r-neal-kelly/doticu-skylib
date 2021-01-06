@@ -7,25 +7,13 @@
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/enum.h"
 
+#include "doticu_skylib/enum_weapon_state.h"
+
 namespace doticu_skylib {
 
     class Actor_State_t
     {
     public:
-        class Weapon_e : Enum_t<u8>
-        {
-            enum : u8
-            {
-                SHEATHED            = 0,
-                WANTS_TO_DRAW       = 1,
-                DRAWING             = 2,
-                DRAWN               = 3,
-                WANTS_TO_SHEATHE    = 4,
-                SHEATHING           = 5,
-            };
-            using Enum_t::Enum_t;
-        };
-
         class State_t
         {
         public:
@@ -80,10 +68,13 @@ namespace doticu_skylib {
     public:
         virtual ~Actor_State_t();
 
+    public:
         State_t state;
 
+    public:
         Bool_t Is_Moving();
-        Weapon_e Weapon_State();
+
+        Weapon_State_e Weapon_State();
     };
     STATIC_ASSERT(sizeof(Actor_State_t) == 0x10);
 

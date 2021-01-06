@@ -27,9 +27,9 @@ namespace doticu_skylib {
         return form();                                          \
     SKYLIB_W
 
-    #define DEFINE_VERSION(...)                             \
+    #define DEFINE_VERSION(TYPE_, ...)                      \
     SKYLIB_M                                                \
-        static const Version_t<u8> version(__VA_ARGS__);    \
+        static const Version_t<TYPE_> version(__VA_ARGS__); \
         return version;                                     \
     SKYLIB_W
 

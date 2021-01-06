@@ -16,11 +16,13 @@ namespace doticu_skylib { namespace Virtual {
 
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         Handle_t(Scriptable_t scriptable);
-        Handle_t(Raw_Handle_t raw_handle);
+        explicit Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
         Bool_t Is_Valid();
-        Bool_t Has_Script_Type(Script_Type_e script_type);
+        Bool_t Has_Script_Type(some<Script_Type_e> script_type);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        Scriptable_t Resolve();
 
         operator Raw_Handle_t();
     };
@@ -36,9 +38,22 @@ namespace doticu_skylib { namespace Virtual {
     Handle_t::Handle_t(Scriptable_t scriptable)
     {
         if (scriptable) {
-            raw_handle = Handle_Policy_t::Self()->Handle(Script_Type_e::From<Scriptable_t>(), scriptable);
+            some<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
+            raw_handle = Handle_Policy_t::Self()->Handle(script_type().Raw(), scriptable);
         } else {
             raw_handle = Handle_Policy_t::Self()->Invalid_Handle();
+        }
+    }
+
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    Scriptable_t Handle_t::Resolve()
+    {
+        some<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
+        if (Is_Valid() && Has_Script_Type(script_type)) {
+            return static_cast<Scriptable_t>
+                (Handle_Policy_t::Self()->Resolve(script_type().Raw(), raw_handle));
+        } else {
+            return nullptr;
         }
     }
 

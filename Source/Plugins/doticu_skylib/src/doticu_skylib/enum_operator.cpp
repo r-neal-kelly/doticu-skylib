@@ -43,6 +43,14 @@ namespace doticu_skylib {
         } else if (operator_e == Operator_e::BITWISE_RIGHT_SHIFT) {
             return BITWISE_RIGHT_SHIFT_STRING;
 
+        } else if (operator_e == Operator_e::REFERENCE) {
+            return REFERENCE_STRING;
+        } else if (operator_e == Operator_e::DEREFERENCE) {
+            return DEREFERENCE_STRING;
+
+        } else if (operator_e == Operator_e::ELLIPSIS) {
+            return ELLIPSIS_STRING;
+
         } else {
             return NONE_STRING;
         }
@@ -84,6 +92,14 @@ namespace doticu_skylib {
                 return Operator_e::BITWISE_LEFT_SHIFT;
             } else if (CString_t::Starts_With(BITWISE_RIGHT_SHIFT_STRING, str, true)) {
                 return Operator_e::BITWISE_RIGHT_SHIFT;
+
+            } else if (CString_t::Starts_With(REFERENCE_STRING, str, true)) {
+                return Operator_e::REFERENCE;
+            } else if (CString_t::Starts_With(DEREFERENCE_STRING, str, true)) {
+                return Operator_e::DEREFERENCE;
+
+            } else if (CString_t::Starts_With(ELLIPSIS_STRING, str, true)) {
+                return Operator_e::ELLIPSIS;
 
             } else {
                 return Operator_e::NONE;

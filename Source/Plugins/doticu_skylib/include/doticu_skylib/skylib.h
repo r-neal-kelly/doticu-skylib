@@ -14,6 +14,8 @@
 #include "doticu_skylib/string.h"
 #include "doticu_skylib/version.h"
 
+#include "doticu_skylib/form_id.h"
+
 namespace doticu_skylib {
 
     class Actor_Value_e;
@@ -31,7 +33,8 @@ namespace doticu_skylib {
     class Actor_Base_Data_c;
     class AI_c;
     class Attack_c;
-    class Biped_c;
+    class Biped_Model_c;
+    class Biped_Object_c;
     class Container_c;
     class Description_c;
     class Destructible_c;
@@ -40,7 +43,7 @@ namespace doticu_skylib {
     class Keywords_c;
     class Leveled_c;
     class Model_c;
-    class Model_Alternate_c;
+    class Model_Alternates_c;
     class Name_c;
     class Openable_c;
     class Package_Override_c;
@@ -56,12 +59,16 @@ namespace doticu_skylib {
     class Alias_Base_t;
     class Alias_Reference_t;
     class Animated_Object_t;
+    class Armor_t;
     class Bound_Object_t;
     class Cell_t;
     class Consts_t;
+    class Effect_Shader_t;
     class Faction_t;
     class Faction_And_Rank_t;
     class Form_t;
+    class Form_Factory_i;
+    class Form_List_t;
     class Game_t;
     class Game_Heap_t;
     class Global_t;
@@ -69,12 +76,15 @@ namespace doticu_skylib {
     class Leveled_Actor_Base_t;
     class Location_t;
     class Magic_Target_t;
+    class Misc_t;
     class Mod_t;
     class Object_t;
+    class OS_t;
     class Player_t;
     class Quest_t;
     class Race_t;
     class Reference_t;
+    class Script_t;
     class Translations_t;
     class UI_t;
     class Worldspace_t;

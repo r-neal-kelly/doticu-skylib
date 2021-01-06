@@ -8,7 +8,7 @@
 
 #include "doticu_skylib/component_active_effects.h"
 #include "doticu_skylib/component_attack.h"
-#include "doticu_skylib/component_biped.h"
+#include "doticu_skylib/component_biped_object.h"
 #include "doticu_skylib/component_description.h"
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
@@ -25,7 +25,7 @@ namespace doticu_skylib {
         public Description_c,
         public Active_Magic_Effects_c,
         public Skin_c,
-        public Biped_c,
+        public Biped_Object_c,
         public Keywords_c,
         public Attack_c
     {

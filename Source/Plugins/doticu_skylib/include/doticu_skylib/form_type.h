@@ -14,7 +14,7 @@ namespace doticu_skylib {
     class Form_Type_Base_e : public Enum_Base_t<Raw_Form_Type_t>
     {
     public:
-        enum : _BASE_TYPE_
+        enum : Raw_Form_Type_t
         {
             FORM                    = 0x00,
 
@@ -30,6 +30,10 @@ namespace doticu_skylib {
 
             ACTIVATOR               = 0x18, // ACTI
 
+            ARMOR                   = 0x1A, // ARMO
+
+            MISC                    = 0x20, // MISC
+
             FLORA                   = 0x27, // FLOR
 
             ACTOR_BASE              = 0x2B, // NPC_
@@ -42,6 +46,10 @@ namespace doticu_skylib {
             WORLDSPACE              = 0x47, // WRLD
 
             QUEST                   = 0x4D, // QUST
+
+            PACKAGE                 = 0x4F, // PACK
+
+            EFFECT_SHADER           = 0x55, // EFSH
 
             FORM_LIST               = 0x5B, // FLST
 
@@ -70,15 +78,15 @@ namespace doticu_skylib {
         Form_Type_e value;
 
     public:
-        none() : value(Form_Type_e::FORM) {}
+        none() : value(Form_Type_e::_END_) {}
 
         Form_Type_e operator()() { return value; }
         Form_Type_e operator()() const { return value; }
 
-        friend Bool_t operator==(const none<Form_Type_e>& a, const Form_Type_e b) { return b <= Form_Type_e::FORM || b >= Form_Type_e::_END_; }
-        friend Bool_t operator==(const Form_Type_e a, const none<Form_Type_e>& b) { return a <= Form_Type_e::FORM || a >= Form_Type_e::_END_; }
-        friend Bool_t operator==(const none<Form_Type_e>&& a, const Form_Type_e b) { return b <= Form_Type_e::FORM || b >= Form_Type_e::_END_; }
-        friend Bool_t operator==(const Form_Type_e a, const none<Form_Type_e>&& b) { return a <= Form_Type_e::FORM || a >= Form_Type_e::_END_; }
+        friend Bool_t operator==(const none<Form_Type_e>& a, const Form_Type_e b) { return b < Form_Type_e::FORM || b >= Form_Type_e::_END_; }
+        friend Bool_t operator==(const Form_Type_e a, const none<Form_Type_e>& b) { return a < Form_Type_e::FORM || a >= Form_Type_e::_END_; }
+        friend Bool_t operator==(const none<Form_Type_e>&& a, const Form_Type_e b) { return b < Form_Type_e::FORM || b >= Form_Type_e::_END_; }
+        friend Bool_t operator==(const Form_Type_e a, const none<Form_Type_e>&& b) { return a < Form_Type_e::FORM || a >= Form_Type_e::_END_; }
         friend Bool_t operator!=(const none<Form_Type_e>& a, const Form_Type_e b) { return !(a == b); }
         friend Bool_t operator!=(const Form_Type_e a, const none<Form_Type_e>& b) { return !(a == b); }
         friend Bool_t operator!=(const none<Form_Type_e>&& a, const Form_Type_e b) { return !(a == b); }

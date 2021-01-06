@@ -51,13 +51,13 @@ namespace doticu_skylib {
         #define TAB "    "
 
         Vector_t<Race_t*> races = Races();
-        _MESSAGE("Log_Races {");
+        SKYLIB_LOG("Log_Races {");
         for (size_t idx = 0, end = races.size(); idx < end; idx += 1) {
             Race_t* race = races[idx];
-            _MESSAGE(TAB "index: %6zu, race: %8.8X %s %s",
+            SKYLIB_LOG(TAB "index: %6zu, race: %8.8X %s %s",
                      idx, race->form_id, race->Name(), race->Get_Editor_ID());
         }
-        _MESSAGE("}");
+        SKYLIB_LOG("}");
 
         #undef TAB
     }

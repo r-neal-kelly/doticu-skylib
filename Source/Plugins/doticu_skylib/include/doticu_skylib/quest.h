@@ -39,7 +39,7 @@ namespace doticu_skylib {
     class Quest_Flags_e : public Enum_t<u16>
     {
     public:
-        enum : _TYPE_
+        enum : value_type
         {
             IS_ENABLED          = 1 << 0,
             IS_COMPLETED        = 1 << 1,

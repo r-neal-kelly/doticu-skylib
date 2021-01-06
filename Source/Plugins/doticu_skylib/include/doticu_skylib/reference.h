@@ -57,8 +57,10 @@ namespace doticu_skylib {
         class Form_Flags_e : public Enum_t<u32>
         {
         public:
-            enum : u32
+            enum : value_type
             {
+                IS_DELETED      = 1 << 5,
+
                 IS_PERSISTENT   = 1 << 10,
                 IS_DISABLED     = 1 << 11,
             };
@@ -198,6 +200,8 @@ namespace doticu_skylib {
         u32     pad_94;         // 94
 
     public:
+        Bool_t Is_Deleted();
+        Bool_t Isnt_Deleted();
         Bool_t Is_Enabled();
         Bool_t Is_Disabled();
         Bool_t Is_Persistent();

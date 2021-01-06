@@ -5,19 +5,36 @@
 #include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/game_heap.h"
 #include "doticu_skylib/script.h"
 
 namespace doticu_skylib {
 
-    void Script_t::Command(const char* command)
+    void Script_t::Command(some<const char*> command)
     {
-        size_t length = CString_t::Length(command, true);
+        SKYLIB_ASSERT_SOME(command);
+
+        size_t length = CString_t::Length(command(), true);
         if (length > 0) {
-            if (text) {
-                free(text);
-            }
-            text = static_cast<char*>(malloc(length));
-            memcpy(text, command, length);
+            Allocate_Command(length);
+            memcpy(text, command(), length);
+        }
+    }
+
+    void Script_t::Allocate_Command(size_t byte_count)
+    {
+        Deallocate_Command();
+
+        maybe<Byte_t*> bytes = Game_Heap_t::Self()->Allocate(byte_count);
+        SKYLIB_ASSERT(bytes);
+        text = reinterpret_cast<char*>(bytes());
+    }
+
+    void Script_t::Deallocate_Command()
+    {
+        if (text) {
+            Game_Heap_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(text));
+            text = nullptr;
         }
     }
 

@@ -36,7 +36,7 @@ namespace doticu_skylib { namespace Virtual {
         class Offset_e : public Enum_t<Word_t>
         {
         public:
-            enum : _TYPE_
+            enum : value_type
             {
                 COPY    = 0x01236E50, // 97509
                 DESTROY = 0x01236D10, // 97508
@@ -104,7 +104,7 @@ namespace doticu_skylib { namespace Virtual {
         void            Unpack(Arrayable_t& results);
 
         template <typename Voidable_t, enable_if_void_t<Voidable_t> = true>
-        void            Pack(Voidable_t);
+        void            Pack();
         template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t> = true>
         void            Pack(const Boolable_t& value);
         template <typename Intable_t, enable_if_virtual_int_t<Intable_t> = true>

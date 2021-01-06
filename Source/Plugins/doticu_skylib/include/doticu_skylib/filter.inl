@@ -61,6 +61,29 @@ namespace doticu_skylib { namespace Filter {
         {
         }
 
+        void Filter(Bool_t do_negate,
+                    some<Result_e(*)(Filterable_t)> compare_f)
+        {
+            SKYLIB_ASSERT_SOME(compare_f);
+
+            if (do_negate) {
+                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                    Filterable_t filterable = state.read->at(idx);
+                    if (compare_f()(filterable) == Result_e::ISNT_MATCH) {
+                        state.write->push_back(filterable);
+                    }
+                }
+            } else {
+                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                    Filterable_t filterable = state.read->at(idx);
+                    if (compare_f()(filterable) == Result_e::IS_MATCH) {
+                        state.write->push_back(filterable);
+                    }
+                }
+            }
+            state.Swap();
+        }
+
         template <typename Compare_a>
         void Filter(Bool_t do_negate,
                     Compare_a compare_a,

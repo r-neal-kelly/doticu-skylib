@@ -123,7 +123,7 @@ namespace doticu_skylib {
             Reference_Handle_t reference_handle = promoted_references.entries[idx];
             Reference_t* reference = Reference_t::From_Handle(reference_handle);
             if (reference) {
-                _MESSAGE("%s", reference->Any_Name());
+                SKYLIB_LOG("%s", reference->Any_Name());
             }
         }
     }

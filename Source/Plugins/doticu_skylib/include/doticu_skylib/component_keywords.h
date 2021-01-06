@@ -12,7 +12,7 @@ namespace doticu_skylib {
 
     class Keyword_t;
 
-    class Keywords_c : public Form_Data_c
+    class Keywords_c : public Form_Data_c // BGSKeywordForm
     {
     public:
         class Offset_e : public Enum_t<Word_t>

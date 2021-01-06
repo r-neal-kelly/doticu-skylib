@@ -34,6 +34,11 @@ namespace doticu_skylib {
             BITWISE_LEFT_SHIFT,
             BITWISE_RIGHT_SHIFT,
 
+            REFERENCE,
+            DEREFERENCE,
+
+            ELLIPSIS,
+
             _END_,
         };
 
@@ -56,6 +61,11 @@ namespace doticu_skylib {
         static constexpr const char* BITWISE_XOR_STRING = "^";
         static constexpr const char* BITWISE_LEFT_SHIFT_STRING = "<<";
         static constexpr const char* BITWISE_RIGHT_SHIFT_STRING = ">>";
+
+        static constexpr const char* REFERENCE_STRING = ".";
+        static constexpr const char* DEREFERENCE_STRING = "->";
+
+        static constexpr const char* ELLIPSIS_STRING = "...";
 
     public:
         using Enum_t::Enum_t;

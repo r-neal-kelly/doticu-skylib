@@ -54,7 +54,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE>
             static Result_e Run(maybe<Keyword_t*> filterable, Arg_a arg_a)
             {
-                if (filterable && filterable->Is_Valid()) {
+                if (filterable) {
                     return Compare_f<some<Keyword_t*>, Arg_a>::Run<MODE>(filterable(), arg_a);
                 } else {
                     return Result_e::INVALID;
@@ -184,7 +184,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE>
             static Result_e Run(maybe<Form_t*> filterable, Arg_a arg_a)
             {
-                if (filterable && filterable->Is_Valid()) {
+                if (filterable) {
                     return Compare_f<some<Form_t*>, Arg_a>::Run<MODE>(filterable(), arg_a);
                 } else {
                     return Result_e::INVALID;
@@ -203,14 +203,50 @@ namespace doticu_skylib { namespace Filter {
             }
         };
 
-        template <typename Arg_a>
-        class Compare_f<some<Reference_t*>, Arg_a>
+        template <>
+        class Compare_f<some<Reference_t*>, Vector_t<some<Keyword_t*>>&>
         {
         public:
-            template <const Logic_Gate_e::value_type MODE>
-            static Result_e Run(some<Reference_t*> filterable, Arg_a arg_a)
+            template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::OR, Bool_t> = true>
+            static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
-                return Compare_f<maybe<Form_t*>, Arg_a>::Run<MODE>(filterable->base_form, arg_a);
+                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                    if (filterable->Has_Keyword(keywords[idx]())) {
+                        return Result_e::IS_MATCH;
+                    }
+                }
+                return Result_e::ISNT_MATCH;
+            }
+
+            template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::AND, Bool_t> = true>
+            static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
+            {
+                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                    if (!filterable->Has_Keyword(keywords[idx]())) {
+                        return Result_e::ISNT_MATCH;
+                    }
+                }
+                return Result_e::IS_MATCH;
+            }
+
+            template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::XOR, Bool_t> = true>
+            static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
+            {
+                Bool_t did_match = false;
+                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                    if (filterable->Has_Keyword(keywords[idx]())) {
+                        if (did_match) {
+                            return Result_e::ISNT_MATCH;
+                        } else {
+                            did_match = true;
+                        }
+                    }
+                }
+                if (did_match) {
+                    return Result_e::IS_MATCH;
+                } else {
+                    return Result_e::ISNT_MATCH;
+                }
             }
         };
 
@@ -221,7 +257,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE>
             static Result_e Run(maybe<Reference_t*> filterable, Arg_a arg_a)
             {
-                if (filterable && filterable->Is_Valid()) {
+                if (filterable) {
                     return Compare_f<some<Reference_t*>, Arg_a>::Run<MODE>(filterable(), arg_a);
                 } else {
                     return Result_e::INVALID;

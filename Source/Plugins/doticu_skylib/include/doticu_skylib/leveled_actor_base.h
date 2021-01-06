@@ -8,7 +8,7 @@
 #include "doticu_skylib/interface.h"
 
 #include "doticu_skylib/component_leveled.h"
-#include "doticu_skylib/component_model_alternate.h"
+#include "doticu_skylib/component_model_alternates.h"
 
 #include "doticu_skylib/animated_object.h"
 #include "doticu_skylib/script_type.h"
@@ -20,7 +20,7 @@ namespace doticu_skylib {
     class Leveled_Actor_Base_t :
         public Animated_Object_t,
         public Leveled_c,
-        public Model_Alternate_c
+        public Model_Alternates_c
     {
     public:
         enum

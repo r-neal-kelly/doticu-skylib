@@ -37,6 +37,8 @@ namespace doticu_skylib { namespace Virtual {
             BOOL_ARRAY      = 15,
         };
 
+        template <typename Voidable_t = void, enable_if_void_t<Voidable_t> = true>
+        static Type_e From();
         template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t> = true>
         static Type_e From();
         template <typename Intable_t, enable_if_virtual_int_t<Intable_t> = true>
@@ -101,6 +103,12 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
+    template <typename Voidable_t, enable_if_void_t<Voidable_t>>
+    inline Type_e Type_e::From()
+    {
+        return Type_e::NONE;
+    }
+
     template <typename Boolable_t, enable_if_virtual_bool_t<Boolable_t>>
     inline Type_e Type_e::From()
     {
@@ -128,7 +136,7 @@ namespace doticu_skylib { namespace Virtual {
     template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
     inline Type_e Type_e::From()
     {
-        return Script_Type_e::From<Scriptable_t>();
+        return Script_Type_e::From<Scriptable_t>()();
     }
 
     template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>

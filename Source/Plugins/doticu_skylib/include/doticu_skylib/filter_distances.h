@@ -70,7 +70,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Operator_e::value_type MODE>
             static Result_e Run(maybe<Reference_t*> filterable, Distance_a distance, From_a from)
             {
-                if (filterable && filterable->Is_Valid()) {
+                if (filterable) {
                     return Compare_f<some<Reference_t*>, Distance_a, From_a>::Run<MODE>(filterable(), distance, from);
                 } else {
                     return Result_e::INVALID;

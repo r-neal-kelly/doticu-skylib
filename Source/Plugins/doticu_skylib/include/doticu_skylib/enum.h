@@ -19,14 +19,12 @@ namespace doticu_skylib {
     class Enum_Base_t
     {
     public:
-        using _BASE_TYPE_ = Type_t;
     };
 
     template <typename Type_t, enable_if_enumable_t<Type_t> = true>
     class Enum_t
     {
     public:
-        using _TYPE_ = Type_t;
         using value_type = Type_t;
 
         Type_t value;
@@ -49,6 +47,24 @@ namespace doticu_skylib {
         operator const Type_t() const
         {
             return static_cast<const Type_t>(value);
+        }
+
+        Enum_t<Type_t>& operator|=(const Type_t other)
+        {
+            value |= other;
+            return *this;
+        }
+
+        Enum_t<Type_t>& operator&=(const Type_t other)
+        {
+            value &= other;
+            return *this;
+        }
+
+        Enum_t<Type_t>& operator^=(const Type_t other)
+        {
+            value ^= other;
+            return *this;
         }
     };
 

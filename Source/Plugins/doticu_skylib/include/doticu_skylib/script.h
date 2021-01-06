@@ -51,7 +51,10 @@ namespace doticu_skylib {
         u32     pad_34;                 // 34
         char*   text;                   // 38
 
-        void Command(const char* command);
+        void Allocate_Command(size_t byte_count);
+        void Deallocate_Command();
+
+        void Command(some<const char*> command);
         void Execute(Reference_t* reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
     };
 

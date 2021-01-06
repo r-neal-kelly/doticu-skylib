@@ -102,7 +102,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE>
             static Result_e Run(maybe<Formable_t*> filterable, Arg_a arg_a)
             {
-                if (filterable && filterable->Is_Valid()) {
+                if (filterable) {
                     return Compare_f<some<Formable_t*>, Arg_a>::Run<MODE>(filterable(), arg_a);
                 } else {
                     return Result_e::INVALID;

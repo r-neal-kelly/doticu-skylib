@@ -12,7 +12,7 @@ namespace doticu_skylib {
     class Vitality_e : public Enum_t<s8>
     {
     public:
-        enum : _TYPE_
+        enum : value_type
         {
             NONE            = -1,
             MORTAL          = 0,

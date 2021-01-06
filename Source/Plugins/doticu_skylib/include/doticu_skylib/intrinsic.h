@@ -56,6 +56,7 @@ namespace doticu_skylib {
     using Bool_t    = bool;
     using Int_t     = s32;
     using Float_t   = float;
+    using Double_t  = double;
 
     using Byte_t    = u8;
     using Word_t    = size_t;

@@ -7,6 +7,9 @@
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/interface.h"
 
+#include "doticu_skylib/enum_cell_flags.h"
+#include "doticu_skylib/enum_cell_state.h"
+
 #include "doticu_skylib/component_name.h"
 
 #include "doticu_skylib/form.h"
@@ -16,38 +19,10 @@
 
 namespace doticu_skylib {
 
-    class Land_t; // TESObjectLAND
+    class Land_t;
     class Location_t;
     class Reference_t;
     class Worldspace_t;
-
-    class Cell_Flags_e : public Enum_t<u16>
-    {
-    public:
-        enum : u16
-        {
-            IS_INTERIOR         = 1 << 0,
-            HAS_WATER           = 1 << 1,
-            CAN_TRAVEL_FROM     = 1 << 2,
-            HASNT_LOD_WATER     = 1 << 3,
-            HAS_TEMP_DATA       = 1 << 4,
-            IS_PUBLIC           = 1 << 5,
-            IS_HAND_CHANGED     = 1 << 6,
-            HAS_SKY             = 1 << 7,
-            HAS_SKY_LIGHTING    = 1 << 8,
-        };
-        using Enum_t::Enum_t;
-    };
-
-    class Cell_State_e : public Enum_t<u8>
-    {
-    public:
-        enum : value_type
-        {
-            IS_ATTACHED = 7,
-        };
-        using Enum_t::Enum_t;
-    };
 
     class Exterior_Cell_t
     {

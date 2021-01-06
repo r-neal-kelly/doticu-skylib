@@ -13,7 +13,7 @@ namespace doticu_skylib {
     class Relation_e : public Enum_t<s8>
     {
     public:
-        enum : _TYPE_
+        enum : value_type
         {
             NONE            = -1,
             LOVER           = 0,

@@ -152,9 +152,11 @@ namespace doticu_skylib { namespace Virtual {
 
     maybe<Script_Type_e> Class_t::Script_Type()
     {
+        // user defined types do not have script types.
+
         Raw_Script_Type_t script_type;
         if (Machine_t::Self()->Class_Script_Type(name, script_type)) {
-            return script_type;
+            return Script_Type_e(script_type);
         } else {
             return none<Script_Type_e>();
         }
@@ -162,33 +164,33 @@ namespace doticu_skylib { namespace Virtual {
 
     void Class_t::Log_Variable_Infos()
     {
-        _MESSAGE("Logging Variables: %s", name);
+        SKYLIB_LOG("Logging Variables: %s", name);
         Variable_Info_t* variables = Variable_Infos();
         for (u64 idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
             Variable_Info_t& variable = variables[idx];
-            _MESSAGE("name: %s", variable.name);
-            _MESSAGE("    type: %u", variable.type);
-            _MESSAGE("        name: %s\n", variable.type.To_String());
+            SKYLIB_LOG("name: %s", variable.name);
+            SKYLIB_LOG("    type: %u", variable.type);
+            SKYLIB_LOG("        name: %s\n", variable.type.To_String());
         }
     }
 
     void Class_t::Log_Property_Infos()
     {
-        _MESSAGE("Logging Properties: %s", name);
+        SKYLIB_LOG("Logging Properties: %s", name);
         Property_Info_t* properties = Property_Infos();
         for (u64 idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
             Property_Info_t& property = properties[idx];
-            _MESSAGE("name: %s", property.name);
-            _MESSAGE("    parent_name: %s", property.parent_name);
-            _MESSAGE("    property_name: %s", property.property_name);
-            _MESSAGE("    type: %s", property.type.To_String());
-            _MESSAGE("    flags_20: %u", property.flags_20);
-            _MESSAGE("    pad_24: %p", property.unk_24);
-            _MESSAGE("    getter: %p", property.getter);
-            _MESSAGE("    setter: %p", property.setter);
-            _MESSAGE("    auto_var_idx: %p", property.auto_var_idx);
-            _MESSAGE("    flags_3C: %u", property.flags_3C);
-            _MESSAGE("    unk_40: %p\n", property.unk_40);
+            SKYLIB_LOG("name: %s", property.name);
+            SKYLIB_LOG("    parent_name: %s", property.parent_name);
+            SKYLIB_LOG("    property_name: %s", property.property_name);
+            SKYLIB_LOG("    type: %s", property.type.To_String());
+            SKYLIB_LOG("    flags_20: %u", property.flags_20);
+            SKYLIB_LOG("    pad_24: %p", property.unk_24);
+            SKYLIB_LOG("    getter: %p", property.getter);
+            SKYLIB_LOG("    setter: %p", property.setter);
+            SKYLIB_LOG("    auto_var_idx: %p", property.auto_var_idx);
+            SKYLIB_LOG("    flags_3C: %u", property.flags_3C);
+            SKYLIB_LOG("    unk_40: %p\n", property.unk_40);
         }
     }
 

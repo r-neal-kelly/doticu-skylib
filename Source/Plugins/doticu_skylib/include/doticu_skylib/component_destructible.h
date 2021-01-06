@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Destructible_c : public Form_Data_c
+    class Destructible_c : public Form_Data_c // BGSDestructibleObjectForm
     {
     public:
         virtual ~Destructible_c(); // 0

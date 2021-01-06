@@ -4,32 +4,10 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_actor_value.h"
+#include "doticu_skylib/enum_actor_value_modifier.h"
 
 namespace doticu_skylib {
-
-    class Actor_Value_e : public Enum_t<u32>
-    {
-    public:
-        enum : u32
-        {
-            AGGRESSION = 0,
-        };
-        using Enum_t::Enum_t;
-    };
-
-    class Actor_Value_Modifier_e : public Enum_t<u32>
-    {
-    public:
-        enum : u32
-        {
-            PERMANENT   = 0,
-            TEMPORARY   = 1,
-            DAMAGE      = 2,
-            INVALID     = 3,
-        };
-        using Enum_t::Enum_t;
-    };
 
     class Actor_Values_t
     {

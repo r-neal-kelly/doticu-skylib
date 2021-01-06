@@ -11,7 +11,7 @@ namespace doticu_skylib {
     class Extra_Type_e : public Enum_t<u8>
     {
     public:
-        enum : u8
+        enum : value_type
         {
             FACTIONS_AND_RANKS  = 0x5B,
 

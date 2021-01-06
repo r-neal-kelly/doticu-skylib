@@ -4,10 +4,12 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
+
+#include "doticu_skylib/enum_alias_fill.h"
+#include "doticu_skylib/enum_alias_flags.h"
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/script_type.h"
@@ -25,32 +27,6 @@ namespace doticu_skylib {
 
     }
 
-    class Alias_Flags_e : public Enum_t<u32>
-    {
-    public:
-        enum : u32
-        {
-            // ...
-            IS_ESSENTIAL    = 1 << 6,
-            // ...
-            IS_PROTECTED    = 1 << 10,
-            // ...
-        };
-        using Enum_t::Enum_t;
-    };
-
-    class Alias_Fill_Type_e : public Enum_t<u16>
-    {
-    public:
-        enum : u16
-        {
-            CONDITION   = 0,
-            FORCED      = 1,
-            // ...
-        };
-        using Enum_t::Enum_t;
-    };
-
     class Alias_Base_t
     {
     public:
@@ -65,15 +41,14 @@ namespace doticu_skylib {
         virtual void        _2(Form_t* form);   // 2
         virtual String_t    Type();             // 3
 
-        String_t            name;       // 08
-        Quest_t*            quest;      // 10
-        Alias_ID_t          id;         // 18
-        Alias_Flags_e       flags;      // 1C
-        Alias_Fill_Type_e   fill_type;  // 20
-        u16                 pad_22;     // 22
-        u32                 pad_24;     // 24
-
-        void Log();
+    public:
+        String_t        name;       // 08
+        Quest_t*        quest;      // 10
+        Alias_ID_t      id;         // 18
+        Alias_Flags_e   flags;      // 1C
+        Alias_Fill_e    fill_type;  // 20
+        u16             pad_22;     // 22
+        u32             pad_24;     // 24
 
     public:
         void Ready_Virtual_Object();

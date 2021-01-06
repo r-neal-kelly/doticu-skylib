@@ -6,14 +6,12 @@
 
 #include "doticu_skylib/enum.h"
 
-#include "doticu_skylib/component_form_data.h"
-
 namespace doticu_skylib {
 
     class Biped_Slots_e : public Enum_t<u32>
     {
     public:
-        enum : u32
+        enum : value_type
         {
             HEAD                = 1lu << 0,
             HAIR                = 1lu << 1,
@@ -35,27 +33,5 @@ namespace doticu_skylib {
         };
         using Enum_t::Enum_t;
     };
-
-    class Armor_Type_e : public Enum_t<u32>
-    {
-    public:
-        enum : u32
-        {
-            LIGHT_ARMOR = 0,
-            HEAVY_ARMOR = 1,
-            CLOTHING = 2,
-        };
-        using Enum_t::Enum_t;
-    };
-
-    class Biped_c : public Form_Data_c // BGSBipedObjectForm
-    {
-    public:
-        virtual ~Biped_c(); // 0
-
-        Biped_Slots_e   biped_slots;
-        Armor_Type_e    biped_armor_type;
-    };
-    STATIC_ASSERT(sizeof(Biped_c) == 0x10);
 
 }

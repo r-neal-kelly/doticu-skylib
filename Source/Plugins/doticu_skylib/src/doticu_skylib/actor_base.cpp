@@ -84,12 +84,12 @@ namespace doticu_skylib {
         #define TAB "    "
 
         Vector_t<Actor_Base_t*> actor_bases = Actor_Bases();
-        _MESSAGE("Log_Actor_Bases {");
+        SKYLIB_LOG("Log_Actor_Bases {");
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
-            _MESSAGE(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
+            SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
         }
-        _MESSAGE("}");
+        SKYLIB_LOG("}");
 
         #undef TAB
     }
@@ -99,16 +99,16 @@ namespace doticu_skylib {
         #define TAB "    "
 
         Vector_t<Actor_Base_t*> actor_bases = Dynamic_Actor_Bases();
-        _MESSAGE("Log_Dynamic_Actor_Bases {");
+        SKYLIB_LOG("Log_Dynamic_Actor_Bases {");
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
-            _MESSAGE(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
+            SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
             SKYLIB_ASSERT(actor_base->template_list);
             for (Actor_Base_t* it = actor_base->template_list; it != nullptr; it = it->template_list) {
-                _MESSAGE(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
+                SKYLIB_LOG(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
             }
         }
-        _MESSAGE("}");
+        SKYLIB_LOG("}");
 
         #undef TAB
     }

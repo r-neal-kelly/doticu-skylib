@@ -68,7 +68,7 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_void_t = std::enable_if_t <
-        std::is_same<T, void>::value,
+        std::is_void<T>::value,
         Bool_t
     >;
 
@@ -92,30 +92,38 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_integer_32_or_less_t = std::enable_if_t<
-        std::is_integral<T>::value &&
-        sizeof(T) <= sizeof(u32) &&
-        !std::is_same<T, bool>::value,
+        std::is_same<T, u8>::value ||
+        std::is_same<T, u16>::value ||
+        std::is_same<T, u32>::value ||
+        std::is_same<T, s8>::value ||
+        std::is_same<T, s16>::value ||
+        std::is_same<T, s32>::value,
         Bool_t
     >;
 
     template <typename T>
     using enable_if_enum_32_or_less_t = std::enable_if_t<
-        (std::is_enum<T>::value || std::is_convertible<T, Enum_t<typename T::_TYPE_>>::value) &&
-        sizeof(T) <= sizeof(u32),
+        (std::is_enum<T>::value ||
+         std::is_convertible<T, Enum_t<typename T::value_type>>::value) &&
+        (std::is_same<typename T::value_type, u8>::value ||
+         std::is_same<typename T::value_type, u16>::value ||
+         std::is_same<typename T::value_type, u32>::value ||
+         std::is_same<typename T::value_type, s8>::value ||
+         std::is_same<typename T::value_type, s16>::value ||
+         std::is_same<typename T::value_type, s32>::value),
         Bool_t
     >;
 
     template <typename T>
     using enable_if_enum_t = std::enable_if_t <
         std::is_enum<T>::value ||
-        std::is_convertible<T, Enum_t<typename T::_TYPE_>>::value,
+        std::is_convertible<T, Enum_t<typename T::value_type>>::value,
         Bool_t
     >;
 
     template <typename T>
-    using enable_if_float_32_or_less_t = std::enable_if_t<
-        std::is_floating_point<T>::value &&
-        sizeof(T) <= sizeof(f32),
+    using enable_if_float_32_t = std::enable_if_t<
+        std::is_same<T, f32>::value,
         Bool_t
     >;
 
@@ -141,7 +149,7 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_unsigned_integral_t = std::enable_if_t<
-        std::is_integral<T>::value&&
+        std::is_integral<T>::value &&
         std::is_unsigned<T>::value,
         Bool_t
     >;
@@ -161,11 +169,6 @@ namespace doticu_skylib {
     template <typename T>
     struct is_enum<T, std::conditional_t<false, enable_if_enum_t<T>, void>> : public std::true_type {};
 
-    template <typename T, typename _ = void>
-    struct is_float_32_or_less : public std::false_type {};
-    template <typename T>
-    struct is_float_32_or_less<T, std::conditional_t<false, enable_if_float_32_or_less_t<T>, void>> : public std::true_type {};
-
     template <typename T>
     using enable_if_virtual_bool_t = enable_if_boolean_t<T>;
 
@@ -177,7 +180,7 @@ namespace doticu_skylib {
     >;
 
     template <typename T>
-    using enable_if_virtual_float_t = enable_if_float_32_or_less_t<T>;
+    using enable_if_virtual_float_t = enable_if_float_32_t<T>;
 
     template <typename T>
     using enable_if_virtual_string_t = std::enable_if_t<

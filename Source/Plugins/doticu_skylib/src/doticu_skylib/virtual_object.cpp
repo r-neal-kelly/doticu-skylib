@@ -43,7 +43,7 @@ namespace doticu_skylib { namespace Virtual {
             <Raw_Handle_t(*)(Object_t*)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::GET_HANDLE));
 
-        return get_handle(this);
+        return Handle_t(get_handle(this));
     }
 
     Variable_t* Object_t::Variables()
@@ -95,18 +95,18 @@ namespace doticu_skylib { namespace Virtual {
 
     void Object_t::Log_Variables()
     {
-        _MESSAGE("Logging Object Variables: %s", info->name);
+        SKYLIB_LOG("Logging Object Variables: %s", info->name);
         Variable_Info_t* variables_infos = info->Variable_Infos();
         for (u64 idx = 0, size = info->Count_Variable_Infos(); idx < size; idx += 1) {
             Variable_t& variable = Variables()[idx];
             Variable_Info_t& info = variables_infos[idx];
-            _MESSAGE("Variable: %s", info.name);
+            SKYLIB_LOG("Variable: %s", info.name);
             if (info.type.Is_Int()) {
-                _MESSAGE("    type: %s, val: %i\n", info.type.To_String(), variable.data.i);
+                SKYLIB_LOG("    type: %s, val: %i\n", info.type.To_String(), variable.data.i);
             } else if (info.type.Is_String()) {
-                _MESSAGE("    type: %s, val: %s\n", info.type.To_String(), variable.data.str);
+                SKYLIB_LOG("    type: %s, val: %s\n", info.type.To_String(), variable.data.str);
             } else {
-                _MESSAGE("    type: %s, val: %p\n", info.type.To_String(), variable.data.ptr);
+                SKYLIB_LOG("    type: %s, val: %p\n", info.type.To_String(), variable.data.ptr);
             }
         }
     }

@@ -63,7 +63,7 @@ namespace doticu_skylib { namespace Virtual {
         class Offset_e : public Enum_t<Word_t>
         {
         public:
-            enum : _TYPE_
+            enum : value_type
             {
                 DESTROY = 0x01237240,
             };

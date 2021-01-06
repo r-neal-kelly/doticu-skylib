@@ -7,8 +7,9 @@
 #include <mutex>
 
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
+
+#include "doticu_skylib/enum_faction_flags.h"
 
 #include "doticu_skylib/component_name.h"
 #include "doticu_skylib/component_reaction.h"
@@ -19,16 +20,6 @@
 namespace doticu_skylib {
 
     class Actor_Base_t;
-
-    class Faction_Flags_e : public Enum_t<u32>
-    {
-    public:
-        enum : u32
-        {
-
-        };
-        using Enum_t::Enum_t;
-    };
 
     class Faction_t :
         public Form_t,

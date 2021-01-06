@@ -63,51 +63,51 @@ namespace doticu_skylib {
     {
         #define TAB "    "
 
-        _MESSAGE("worldspace: %8.8X, %s", form_id, Get_Editor_ID());
+        SKYLIB_LOG("worldspace: %8.8X, %s", form_id, Get_Editor_ID());
         {
-            _MESSAGE(TAB "xy_to_cell capacity: %u", xy_to_cell.capacity);
+            SKYLIB_LOG(TAB "xy_to_cell capacity: %u", xy_to_cell.capacity);
             for (Index_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
                 Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = xy_to_cell.entries[idx];
                 if (entry.chain) {
                     if (entry.second) {
-                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, cell: %8.8X, %s",
-                                 entry.first.x, entry.first.y,
-                                 entry.second->form_id, entry.second->Get_Editor_ID());
+                        SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, cell: %8.8X, %s",
+                                   entry.first.x, entry.first.y,
+                                   entry.second->form_id, entry.second->Get_Editor_ID());
                     } else {
-                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, empty", entry.first.x, entry.first.y);
+                        SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, empty", entry.first.x, entry.first.y);
                     }
                 }
             }
         }
         {
             if (persistent_cell) {
-                _MESSAGE(TAB "persistent_cell: %8.8X, %s", persistent_cell->form_id, persistent_cell->Get_Editor_ID());
+                SKYLIB_LOG(TAB "persistent_cell: %8.8X, %s", persistent_cell->form_id, persistent_cell->Get_Editor_ID());
             } else {
-                _MESSAGE(TAB "persistent_cell: empty");
+                SKYLIB_LOG(TAB "persistent_cell: empty");
             }
         }
         {
             auto& cell_xy_to_filtered_form_ids = form_id_maps.cell_xy_to_filtered_form_ids;
-            _MESSAGE(TAB "cell_xy_to_filtered_form_ids capacity: %u", cell_xy_to_filtered_form_ids.capacity);
+            SKYLIB_LOG(TAB "cell_xy_to_filtered_form_ids capacity: %u", cell_xy_to_filtered_form_ids.capacity);
             for (Index_t idx = 0, end = cell_xy_to_filtered_form_ids.capacity; idx < end; idx += 1) {
                 auto& entry = cell_xy_to_filtered_form_ids.entries[idx];
                 if (entry.chain) {
                     auto& cell_xy = entry.first;
                     auto& arr = entry.second;
                     if (arr) {
-                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, count: %u", cell_xy.x, cell_xy.y, arr->count);
+                        SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, count: %u", cell_xy.x, cell_xy.y, arr->count);
                         for (Index_t idx = 0, end = arr->count; idx < end; idx += 1) {
                             Form_ID_t form_id = arr->At(idx);
                             maybe<Form_t*> form = Game_t::Form(form_id);
                             if (form) {
-                                _MESSAGE(TAB TAB TAB "form_id: %8.8X, form_type: %2.2X, editor_id: %s",
-                                         form_id, form->form_type, form->Get_Editor_ID());
+                                SKYLIB_LOG(TAB TAB TAB "form_id: %8.8X, form_type: %2.2X, editor_id: %s",
+                                           form_id, form->form_type, form->Get_Editor_ID());
                             } else {
-                                _MESSAGE(TAB TAB TAB "form_id: %8.8X, unloaded", form_id);
+                                SKYLIB_LOG(TAB TAB TAB "form_id: %8.8X, unloaded", form_id);
                             }
                         }
                     } else {
-                        _MESSAGE(TAB TAB "x: %5.i, y: %5.i, empty", cell_xy.x, cell_xy.y);
+                        SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, empty", cell_xy.x, cell_xy.y);
                     }
                 }
             }

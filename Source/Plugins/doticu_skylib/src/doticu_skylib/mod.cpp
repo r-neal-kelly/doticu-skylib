@@ -143,12 +143,12 @@ namespace doticu_skylib {
     {
         #define TAB "    "
 
-        _MESSAGE("%s {", title);
+        SKYLIB_LOG("%s {", title);
         for (size_t idx = 0, end = mods.size(); idx < end; idx += 1) {
             some<Mod_t*> mod = mods[idx];
-            _MESSAGE(TAB "index: %6zu, mod: %s", idx, mod->Name());
+            SKYLIB_LOG(TAB "index: %6zu, mod: %s", idx, mod->Name());
         }
-        _MESSAGE("}");
+        SKYLIB_LOG("}");
 
         #undef TAB
     }

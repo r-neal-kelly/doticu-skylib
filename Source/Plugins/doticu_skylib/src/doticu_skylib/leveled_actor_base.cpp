@@ -40,12 +40,12 @@ namespace doticu_skylib {
         #define TAB "    "
 
         Vector_t<Leveled_Actor_Base_t*> leveled_actor_bases = Leveled_Actor_Bases();
-        _MESSAGE("Log_Leveled_Actor_Bases {");
+        SKYLIB_LOG("Log_Leveled_Actor_Bases {");
         for (size_t idx = 0, end = leveled_actor_bases.size(); idx < end; idx += 1) {
             Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases[idx];
-            _MESSAGE(TAB "index: %6zu, leveled_actor_base: %8.8X", idx, leveled_actor_base->form_id);
+            SKYLIB_LOG(TAB "index: %6zu, leveled_actor_base: %8.8X", idx, leveled_actor_base->form_id);
         }
-        _MESSAGE("}");
+        SKYLIB_LOG("}");
 
         #undef TAB
     }

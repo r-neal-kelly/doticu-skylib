@@ -7,7 +7,7 @@
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
-#include "doticu_skylib/game.h"
+#include "doticu_skylib/game.inl"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
@@ -122,6 +122,16 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::INVALID_REFERENCE_HANDLE);
 
         return *invalid_reference_handle;
+    }
+
+    Bool_t Reference_t::Is_Deleted()
+    {
+        return (form_flags & Form_Flags_e::IS_DELETED) != 0;
+    }
+
+    Bool_t Reference_t::Isnt_Deleted()
+    {
+        return !Is_Deleted();
     }
 
     Bool_t Reference_t::Is_Enabled()
@@ -390,7 +400,8 @@ namespace doticu_skylib {
             if (script) {
                 script->Command((std::string("prid ") + Form_ID_String().data).c_str());
                 script->Execute(this);
-                delete script;
+                script->Deallocate_Command();
+                Game_t::Deallocate<Script_t>(script);
             }
         }
     }
@@ -404,7 +415,8 @@ namespace doticu_skylib {
             if (script) {
                 script->Command("Enable");
                 script->Execute(this);
-                delete script;
+                script->Deallocate_Command();
+                Game_t::Deallocate<Script_t>(script);
             }
         }
     }
@@ -418,7 +430,8 @@ namespace doticu_skylib {
             if (script) {
                 script->Command("Disable");
                 script->Execute(this);
-                delete script;
+                script->Deallocate_Command();
+                Game_t::Deallocate<Script_t>(script);
             }
         }
     }
@@ -438,7 +451,8 @@ namespace doticu_skylib {
                     script->Command("MarkForDelete");
                     script->Execute(this);
                 }
-                delete script;
+                script->Deallocate_Command();
+                Game_t::Deallocate<Script_t>(script);
             }
         }
     }
