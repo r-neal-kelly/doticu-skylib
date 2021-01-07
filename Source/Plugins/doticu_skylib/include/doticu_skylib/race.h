@@ -7,7 +7,7 @@
 #include "doticu_skylib/collections.h"
 
 #include "doticu_skylib/component_active_effects.h"
-#include "doticu_skylib/component_attack.h"
+#include "doticu_skylib/component_attack_data.h"
 #include "doticu_skylib/component_biped_object.h"
 #include "doticu_skylib/component_description.h"
 #include "doticu_skylib/component_keywords.h"
@@ -27,7 +27,7 @@ namespace doticu_skylib {
         public Skin_c,
         public Biped_Object_c,
         public Keywords_c,
-        public Attack_c
+        public Attack_Data_c
     {
     public:
         enum

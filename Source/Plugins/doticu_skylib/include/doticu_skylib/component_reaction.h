@@ -12,7 +12,7 @@
 
 namespace doticu_skylib {
 
-    class Reaction_c : public Form_Data_c
+    class Reaction_c : public Form_Data_c // TESReactionForm
     {
     public:
         virtual ~Reaction_c(); // 00

@@ -6,7 +6,6 @@
 
 #include "doticu_skylib/intrinsic.h"
 
-#include "doticu_skylib/form.h"
 #include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
@@ -21,6 +20,10 @@ namespace doticu_skylib {
 
     public:
         virtual ~Active_Magic_Effect_t(); // 0
+
+    public:
+        Byte_t data[0x88]; // 08
     };
+    STATIC_ASSERT(sizeof(Active_Magic_Effect_t) == 0x90);
 
 }

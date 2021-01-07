@@ -10,7 +10,7 @@
 
 namespace doticu_skylib {
 
-    class Container_c : public Form_Data_c
+    class Container_c : public Form_Data_c // TESContainer
     {
     public:
         virtual ~Container_c(); // 0

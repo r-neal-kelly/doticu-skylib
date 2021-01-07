@@ -16,7 +16,7 @@ namespace doticu_skylib {
             PROCESS_AI          = 1 << 1,
             RESET_AI            = 1 << 17,
             IS_PLAYER_TEAMMATE  = 1 << 26,
-            IS_PARALYZED        = static_cast<u32>(1 << 31),
+            IS_PARALYZED        = static_cast<value_type>(1 << 31),
         };
         using Enum_t::Enum_t;
     };

@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Package_Override_c : public Form_Data_c
+    class Package_Override_c : public Form_Data_c // BGSOverridePackCollection
     {
     public:
         virtual ~Package_Override_c(); // 0

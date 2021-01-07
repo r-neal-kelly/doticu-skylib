@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    // not sure this leads directly to active magic effects or some intermediary. it's confusing if I remember correctly!
+    // not sure this leads directly to active magic effects or some intermediary. it's confusing if I remember correctly! We should probably rename it
 
     class Active_Magic_Effects_c : public Form_Data_c // TESSpellList
     {

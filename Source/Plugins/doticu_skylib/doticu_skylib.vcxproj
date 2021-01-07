@@ -69,10 +69,12 @@
     <ClInclude Include="include\doticu_skylib\bound_object.h" />
     <ClInclude Include="include\doticu_skylib\branch_type.h" />
     <ClInclude Include="include\doticu_skylib\cell.h" />
+    <ClInclude Include="include\doticu_skylib\character.h" />
     <ClInclude Include="include\doticu_skylib\component_active_effects.h" />
     <ClInclude Include="include\doticu_skylib\component_actor_base_data.h" />
     <ClInclude Include="include\doticu_skylib\component_ai.h" />
-    <ClInclude Include="include\doticu_skylib\component_attack.h" />
+    <ClInclude Include="include\doticu_skylib\component_attack_data.h" />
+    <ClInclude Include="include\doticu_skylib\component_attack_damage.h" />
     <ClInclude Include="include\doticu_skylib\component_biped_model.h" />
     <ClInclude Include="include\doticu_skylib\component_biped_object.h" />
     <ClInclude Include="include\doticu_skylib\component_block_bash.h" />
@@ -87,6 +89,7 @@
     <ClInclude Include="include\doticu_skylib\component_icon.h" />
     <ClInclude Include="include\doticu_skylib\component_keywords.h" />
     <ClInclude Include="include\doticu_skylib\component_leveled.h" />
+    <ClInclude Include="include\doticu_skylib\component_menu_display.h" />
     <ClInclude Include="include\doticu_skylib\component_message_icon.h" />
     <ClInclude Include="include\doticu_skylib\component_model.h" />
     <ClInclude Include="include\doticu_skylib\component_model_alternates.h" />
@@ -94,12 +97,14 @@
     <ClInclude Include="include\doticu_skylib\component_openable.h" />
     <ClInclude Include="include\doticu_skylib\component_package_override.h" />
     <ClInclude Include="include\doticu_skylib\component_perks.h" />
+    <ClInclude Include="include\doticu_skylib\component_preloadable.h" />
     <ClInclude Include="include\doticu_skylib\component_race.h" />
     <ClInclude Include="include\doticu_skylib\component_reaction.h" />
     <ClInclude Include="include\doticu_skylib\component_skin.h" />
     <ClInclude Include="include\doticu_skylib\component_texture.h" />
     <ClInclude Include="include\doticu_skylib\component_value.h" />
     <ClInclude Include="include\doticu_skylib\component_weight.h" />
+    <ClInclude Include="include\doticu_skylib\container.h" />
     <ClInclude Include="include\doticu_skylib\cstring.h" />
     <ClInclude Include="include\doticu_skylib\effect_shader.h" />
     <ClInclude Include="include\doticu_skylib\enum.h" />
@@ -115,6 +120,7 @@
     <ClInclude Include="include\doticu_skylib\enum_biped_slots.h" />
     <ClInclude Include="include\doticu_skylib\enum_cell_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_cell_state.h" />
+    <ClInclude Include="include\doticu_skylib\enum_container_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_day.h" />
     <ClInclude Include="include\doticu_skylib\enum_faction_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_flags.h" />
@@ -124,6 +130,7 @@
     <ClInclude Include="include\doticu_skylib\enum_package_target.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_value.h" />
     <ClInclude Include="include\doticu_skylib\enum_preferred_speed.h" />
+    <ClInclude Include="include\doticu_skylib\enum_static_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_weapon_state.h" />
     <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
     <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h" />
@@ -148,6 +155,7 @@
     <ClInclude Include="include\doticu_skylib\form_list.h" />
     <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
+    <ClInclude Include="include\doticu_skylib\furniture.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
     <ClInclude Include="include\doticu_skylib\game_heap.h" />
     <ClInclude Include="include\doticu_skylib\game_ini.h" />
@@ -157,14 +165,17 @@
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />
     <ClInclude Include="include\doticu_skylib\keyword.h" />
     <ClInclude Include="include\doticu_skylib\leveled_actor_base.h" />
+    <ClInclude Include="include\doticu_skylib\leveled_item.h" />
     <ClInclude Include="include\doticu_skylib\location.h" />
     <ClInclude Include="include\doticu_skylib\location_reference_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_logic_gate.h" />
+    <ClInclude Include="include\doticu_skylib\magic_effect.h" />
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
     <ClInclude Include="include\doticu_skylib\misc.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\enum_operator.h" />
+    <ClInclude Include="include\doticu_skylib\outfit.h" />
     <ClInclude Include="include\doticu_skylib\package.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_procedure.h" />
     <ClInclude Include="include\doticu_skylib\package_bool_value.h" />
@@ -178,8 +189,10 @@
     <ClInclude Include="include\doticu_skylib\package_target.h" />
     <ClInclude Include="include\doticu_skylib\package_topic_value.h" />
     <ClInclude Include="include\doticu_skylib\package_value.h" />
+    <ClInclude Include="include\doticu_skylib\perk.h" />
     <ClInclude Include="include\doticu_skylib\script_type.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
+    <ClInclude Include="include\doticu_skylib\static.h" />
     <ClInclude Include="include\doticu_skylib\traits.h" />
     <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />
@@ -224,6 +237,7 @@
     <ClInclude Include="include\doticu_skylib\math.h" />
     <ClInclude Include="include\doticu_skylib\vitality.h" />
     <ClInclude Include="include\doticu_skylib\os.h" />
+    <ClInclude Include="include\doticu_skylib\weapon.h" />
     <ClInclude Include="include\doticu_skylib\worldspace.h" />
     <ClInclude Include="include\doticu_skylib\extra_data.h" />
     <ClInclude Include="include\doticu_skylib\extra_list.h" />

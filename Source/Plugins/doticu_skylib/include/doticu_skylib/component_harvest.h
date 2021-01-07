@@ -12,7 +12,7 @@ namespace doticu_skylib {
 
     class Bound_Object_t;
 
-    class Harvest_c : public Form_Data_c
+    class Harvest_c : public Form_Data_c // TESProduceForm
     {
     public:
         virtual ~Harvest_c(); // 0

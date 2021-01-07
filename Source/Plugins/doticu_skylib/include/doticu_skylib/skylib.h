@@ -32,7 +32,8 @@ namespace doticu_skylib {
     class Active_Magic_Effects_c;
     class Actor_Base_Data_c;
     class AI_c;
-    class Attack_c;
+    class Attack_Damage_c;
+    class Attack_Data_c;
     class Biped_Model_c;
     class Biped_Object_c;
     class Container_c;
@@ -96,14 +97,3 @@ namespace doticu_skylib {
     class Location_x;
 
 }
-
-/*namespace doticu_skylib {
-
-    typedef TESObjectMISC   Misc_t;
-    typedef TESObjectSTAT   Static_t;
-    typedef TESObjectWEAP   Weapon_t;
-    typedef TESObjectARMO   Armor_t;
-
-    typedef BGSOutfit       Outfit_t;
-
-}*/

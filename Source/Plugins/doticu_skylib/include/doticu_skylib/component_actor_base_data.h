@@ -22,7 +22,7 @@ namespace doticu_skylib {
 
     class Form_t;
 
-    class Actor_Base_Data_c : public Form_Data_c
+    class Actor_Base_Data_c : public Form_Data_c // TESActorBaseData
     {
     public:
         virtual ~Actor_Base_Data_c(); // 0

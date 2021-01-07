@@ -7,7 +7,7 @@
 #include "doticu_skylib/component_active_effects.h"
 #include "doticu_skylib/component_actor_base_data.h"
 #include "doticu_skylib/component_ai.h"
-#include "doticu_skylib/component_attack.h"
+#include "doticu_skylib/component_attack_data.h"
 #include "doticu_skylib/component_container.h"
 #include "doticu_skylib/component_destructible.h"
 #include "doticu_skylib/component_keywords.h"
@@ -43,7 +43,7 @@ namespace doticu_skylib {
         public Destructible_c,
         public Skin_c,
         public Keywords_c,
-        public Attack_c,
+        public Attack_Data_c,
         public Perks_c,
         public Race_c,
         public Package_Override_c,

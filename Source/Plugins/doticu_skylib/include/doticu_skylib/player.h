@@ -8,7 +8,7 @@
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
 
-#include "doticu_skylib/actor.h"
+#include "doticu_skylib/character.h"
 #include "doticu_skylib/quest_objective_state.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unknown.h"
@@ -69,7 +69,7 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Player_Objective_t) == 0x10);
 
     class Player_t :
-        public Actor_t,
+        public Character_t,
         public Event_Source_t<void*>,
         public Event_Source_t<void**>,
         public Event_Source_t<void***>,
@@ -113,6 +113,7 @@ namespace doticu_skylib {
         List_t<Reference_Handle_t>              dropped_references;     // 5F8
         Byte_t                                  unk_data[0x5D8];        // 608
 
+    public:
         void Log_Objectives(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Player_t) == 0xBE0);

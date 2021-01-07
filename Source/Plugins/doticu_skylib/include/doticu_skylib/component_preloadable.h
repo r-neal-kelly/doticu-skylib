@@ -10,14 +10,11 @@
 
 namespace doticu_skylib {
 
-    class AI_c : public Form_Data_c // TESAIForm
+    class Preloadable_c : public Form_Data_c // BGSPreloadable
     {
     public:
-        virtual ~AI_c(); // 0
-
-    public:
-        u8 ai_data[0x20]; // 08
+        virtual ~Preloadable_c(); // 0
     };
-    STATIC_ASSERT(sizeof(AI_c) == 0x28);
+    STATIC_ASSERT(sizeof(Preloadable_c) == 0x8);
 
 }

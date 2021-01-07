@@ -8,13 +8,13 @@
 
 namespace doticu_skylib {
 
-    class Attack_c : public Form_Data_c
+    class Attack_Data_c : public Form_Data_c // BGSAttackDataForm
     {
     public:
-        virtual ~Attack_c(); // 0
+        virtual ~Attack_Data_c(); // 0
 
         void* unk_8; // 08
     };
-    STATIC_ASSERT(sizeof(Attack_c) == 0x10);
+    STATIC_ASSERT(sizeof(Attack_Data_c) == 0x10);
 
 }

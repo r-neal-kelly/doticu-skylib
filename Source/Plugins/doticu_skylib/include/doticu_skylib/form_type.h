@@ -26,18 +26,28 @@ namespace doticu_skylib {
 
             RACE                    = 0x0E, // RACE
 
+            MAGIC_EFFECT            = 0x12, // MGEF
             SCRIPT                  = 0x13, // SCPT
 
             ACTIVATOR               = 0x18, // ACTI
 
             ARMOR                   = 0x1A, // ARMO
 
+            CONTAINER               = 0x1C, // CONT
+
             MISC                    = 0x20, // MISC
 
+            STATIC                  = 0x22, // STAT
+
             FLORA                   = 0x27, // FLOR
+            FURNITURE               = 0x28, // FURN
+
+            WEAPON                  = 0x29, // WEAP
 
             ACTOR_BASE              = 0x2B, // NPC_
             LEVELED_ACTOR_BASE      = 0x2C, // LVLN
+
+            LEVELED_ITEM            = 0x35, // LVLI
 
             CELL                    = 0x3C, // CELL
             REFERENCE               = 0x3D, // REFR
@@ -52,8 +62,11 @@ namespace doticu_skylib {
             EFFECT_SHADER           = 0x55, // EFSH
 
             FORM_LIST               = 0x5B, // FLST
+            PERK                    = 0x5C, // PERK
 
             LOCATION                = 0x68, // LCTN
+
+            OUTFIT                  = 0x7C, // OTFT
 
             _END_                   = 0x8A,
         };

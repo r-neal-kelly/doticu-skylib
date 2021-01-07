@@ -13,7 +13,7 @@ namespace doticu_skylib {
     class Form_t;
     class Global_t;
 
-    class Leveled_c : public Form_Data_c
+    class Leveled_c : public Form_Data_c // TESLeveledList
     {
     public:
         class Entry_t

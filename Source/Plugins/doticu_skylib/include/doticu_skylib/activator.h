@@ -18,12 +18,12 @@
 namespace doticu_skylib {
 
     class Activator_t :
-        public Animated_Object_t, // 00
-        public Name_c, // 30
-        public Model_Alternates_c, // 40
-        public Destructible_c, // 78
-        public Openable_c, // 88
-        public Keywords_c // 90
+        public Animated_Object_t,   // 00
+        public Name_c,              // 30
+        public Model_Alternates_c,  // 40
+        public Destructible_c,      // 78
+        public Openable_c,          // 88
+        public Keywords_c           // 90
     {
     public:
         enum
@@ -32,8 +32,9 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Activator_t(); // 00
+        virtual ~Activator_t(); // 0
 
+    public:
         void*               unk_A8;             // A8
         void*               unk_B0;             // B0
         void*               unk_B8;             // B8

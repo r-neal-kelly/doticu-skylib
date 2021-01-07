@@ -20,7 +20,6 @@
 
 namespace doticu_skylib {
 
-    class Actor_t;
     class Actor_Base_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;

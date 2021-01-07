@@ -13,48 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\component">
+      <UniqueIdentifier>{fdfdab04-e334-4494-a2fc-ba14444f59c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\enum">
+      <UniqueIdentifier>{46fc80aa-1a9b-428a-8717-7ebabe3a5414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\virtual">
+      <UniqueIdentifier>{ff049d30-803f-4ed4-8d78-021f6539baa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extra">
+      <UniqueIdentifier>{3070bc99-2ad6-4d1b-8a56-67ab82148b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\filter">
+      <UniqueIdentifier>{74cb22ab-e2cb-4a7c-913b-a9ed48f61813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\package">
+      <UniqueIdentifier>{883b714b-3472-4c78-8788-5f06574d42b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\intrinsic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\form.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_variable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_type.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_policy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_handle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_function.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_class.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_machine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_arguments.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_callback.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_binder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\game.h">
@@ -64,15 +46,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\ui.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_array.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_macros.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\string.h">
@@ -129,9 +102,6 @@
     <ClInclude Include="include\doticu_skylib\maybe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -148,54 +118,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\faction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_actor_base_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_form_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_active_effects.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_ai.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_attack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_container.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_description.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_destructible.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_keywords.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_leveled.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_name.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_package_override.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_perks.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_race.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_skin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\form_factory.h">
@@ -234,21 +156,6 @@
     <ClInclude Include="include\doticu_skylib\alias_id.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_location.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_type.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_texture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\keyword.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -267,13 +174,7 @@
     <ClInclude Include="include\doticu_skylib\branch_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\quest_objective.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_aliases.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\quest_target.h">
@@ -291,13 +192,7 @@
     <ClInclude Include="include\doticu_skylib\translations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_reaction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\vitality.h">
@@ -321,16 +216,10 @@
     <ClInclude Include="include\doticu_skylib\game_ini.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_harvest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\season.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\activator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_openable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\flora.h">
@@ -339,64 +228,10 @@
     <ClInclude Include="include\doticu_skylib\active_magic_effect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter.inl">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_distances.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_operator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\form_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_bases.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_keywords.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_logic_gate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_form_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_base_form_types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\armor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_enchantable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_value.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_weight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_grab_sounds.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_biped_object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_biped_model.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_model_alternates.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_equip_slot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_block_bash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\effect_shader.h">
@@ -405,131 +240,356 @@
     <ClInclude Include="include\doticu_skylib\misc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_icon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_message_icon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_procedure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\os.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_enabled.h">
+    <ClInclude Include="include\doticu_skylib\static.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\filter_deleted.h">
+    <ClInclude Include="include\doticu_skylib\weapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_method.h">
+    <ClInclude Include="include\doticu_skylib\container.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_static.h">
+    <ClInclude Include="include\doticu_skylib\perk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_interrupts.h">
+    <ClInclude Include="include\doticu_skylib\leveled_item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_preferred_speed.h">
+    <ClInclude Include="include\doticu_skylib\outfit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_interrupt.h">
+    <ClInclude Include="include\doticu_skylib\furniture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_value.h">
+    <ClInclude Include="include\doticu_skylib\character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_data.h">
+    <ClInclude Include="include\doticu_skylib\magic_effect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_location.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_active_effects.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_target.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_actor_base_data.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_schedule.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_ai.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_day.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_attack_damage.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_attack_data.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_target.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_biped_model.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_location.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_biped_object.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_bool_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_block_bash.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_int_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_container.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_float_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_description.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_location_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_destructible.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_reference_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_enchantable.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_topic_value.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\component_equip_slot.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_form_data.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_grab_sounds.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_harvest.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_icon.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_keywords.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_leveled.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_menu_display.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_message_icon.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_model.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_model_alternates.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_name.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_openable.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_package_override.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_perks.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_preloadable.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_race.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_reaction.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_skin.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_texture.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_value.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\component_weight.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum.h">
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_activator_flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_actor_flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_weapon_state.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_actor_value.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_actor_value_modifier.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_alias_flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_alias_fill.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_cell_flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_cell_state.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_actor_base_flags.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_actor_base_template_flags.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_biped_slots.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\doticu_skylib\enum_actor_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_actor_value.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_actor_value_modifier.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_alias_fill.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_alias_flags.h">
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_armor.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_biped_slots.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_cell_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_cell_state.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_container_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_day.h">
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_faction_flags.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_logic_gate.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_operator.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_interrupt.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_interrupts.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_location.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_procedure.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_target.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_package_value.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_preferred_speed.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_static_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_weapon_state.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_arguments.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_array.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_binder.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_callback.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_class.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_function.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_game.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_handle.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_machine.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_macros.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_method.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_object.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_policy.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_static.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_type.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_utils.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_variable.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_aliases.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_data.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_list.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_location.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_type.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter.inl">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_base_form_types.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_bases.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_deleted.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_distances.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_enabled.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_form_types.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_keywords.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_bool_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_data.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_float_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_int_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_location.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_location_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_reference_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_schedule.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_target.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_topic_value.h">
+      <Filter>Header Files\package</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_value.h">
+      <Filter>Header Files\package</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -700,12 +760,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\doticu_skylib\extra_data.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="include\doticu_skylib\extra_list.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="include\doticu_skylib\ui.inl">
       <Filter>Header Files</Filter>
     </None>
@@ -716,7 +770,13 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\virtual_variable.inl">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\virtual</Filter>
+    </None>
+    <None Include="include\doticu_skylib\extra_data.inl">
+      <Filter>Header Files\extra</Filter>
+    </None>
+    <None Include="include\doticu_skylib\extra_list.inl">
+      <Filter>Header Files\extra</Filter>
     </None>
   </ItemGroup>
 </Project>
