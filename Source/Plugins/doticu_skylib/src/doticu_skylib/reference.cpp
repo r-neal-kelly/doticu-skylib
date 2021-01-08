@@ -7,6 +7,7 @@
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/form_factory.h"
+#include "doticu_skylib/form_list.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/quest.h"
@@ -31,7 +32,14 @@ namespace doticu_skylib {
         return get_worldspace(self());
     }
 
+    template <typename Results_t>
     class Loaded_Reference_Iterator_t : public Iterator_i<void, Reference_t*>
+    {
+    public:
+    };
+
+    template <>
+    class Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> : public Iterator_i<void, Reference_t*>
     {
     public:
         Vector_t<some<Reference_t*>>& results;
@@ -48,7 +56,26 @@ namespace doticu_skylib {
                 }
             }
         }
+    };
 
+    template <>
+    class Loaded_Reference_Iterator_t<some<Form_List_t*>> : public Iterator_i<void, Reference_t*>
+    {
+    public:
+        some<Form_List_t*> results;
+        Filter_i<some<Reference_t*>>* filter;
+        Loaded_Reference_Iterator_t(some<Form_List_t*> results, Filter_i<some<Reference_t*>>* filter) :
+            results(results), filter(filter)
+        {
+        }
+        void operator()(Reference_t* reference)
+        {
+            if (reference && reference->Is_Valid()) {
+                if (!filter || (*filter)(reference)) {
+                    results->Add_Form(reference);
+                }
+            }
+        }
     };
 
     Vector_t<some<Reference_t*>> Reference_t::Loaded_References(Filter_i<some<Reference_t*>>* filter)
@@ -60,7 +87,7 @@ namespace doticu_skylib {
 
     void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
     {
-        Loaded_Reference_Iterator_t iterator(results, filter);
+        Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> iterator(results, filter);
 
         results.reserve(2048);
 
@@ -82,9 +109,21 @@ namespace doticu_skylib {
 
     void Reference_t::Loaded_Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
     {
-        Loaded_Reference_Iterator_t iterator(results, filter);
+        Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> iterator(results, filter);
 
         results.reserve(2048);
+
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        for (Index_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+            cells_in_grid[idx]->References(iterator);
+        }
+    }
+
+    void Reference_t::Loaded_Grid_References(some<Form_List_t*> results, Filter_i<some<Reference_t*>>* filter)
+    {
+        SKYLIB_ASSERT_SOME(results);
+
+        Loaded_Reference_Iterator_t<some<Form_List_t*>> iterator(results, filter);
 
         Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
         for (Index_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {

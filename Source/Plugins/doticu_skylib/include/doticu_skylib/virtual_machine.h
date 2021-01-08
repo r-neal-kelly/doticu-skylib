@@ -59,8 +59,8 @@ namespace doticu_skylib { namespace Virtual {
         virtual Bool_t Create_Array(Raw_Type_t& type, u32 count, Array_t*& array_out); // 16, SKSE has Variable_t* for first arg? (Create_Array(Variable_t& variable, u32 count, Array_t*& array_out))
         virtual void _17(void); // 17
         virtual Bool_t Bind_Function(Function_i* function); // 18 (IFunction)
-        virtual void Allow_Function_State_Concurrency(const char* class_name, const char* state_name, const char* function_name, Bool_t can_be_concurrent); // 19
-        virtual void Allow_Function_Concurrency(const char* class_name, const char* function_name, Bool_t can_be_concurrent); // 1A
+        virtual void State_Function_Skips_Frame_Wait(const char* class_name, const char* state_name, const char* function_name, Bool_t doesnt_wait); // 19
+        virtual void Function_Skips_Frame_Wait(const char* class_name, const char* function_name, Bool_t doesnt_wait); // 1A
         virtual void Iterate_Objects(Handle_t handle, Object_Iterator_i* iterator); // 1B (IForEachScriptObjectFunctor)
         virtual Bool_t Find_Bound_Object(Handle_t handle, String_t class_name, Object_t** object_out); // 1C
         virtual void _1D(void); // 1D

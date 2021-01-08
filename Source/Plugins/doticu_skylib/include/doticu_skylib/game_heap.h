@@ -15,11 +15,12 @@ namespace doticu_skylib {
         class Offset_e : public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum : value_type
             {
-                SELF        = 0x01EBD280,
-                ALLOCATE    = 0x00C02260,
-                DEALLOCATE  = 0x00C02560,
+                SELF        = 0x01EBD280,   // 514110
+                ALLOCATE    = 0x00C02260,   // 66859
+                REALLOCATE  = 0x00C024B0,   // 66860
+                DEALLOCATE  = 0x00C02560,   // 66861
             };
             using Enum_t::Enum_t;
         };
@@ -28,8 +29,9 @@ namespace doticu_skylib {
         static some<Game_Heap_t*> Self();
 
     public:
-        maybe<Byte_t*>  Allocate(size_t byte_count);
-        void            Deallocate(some<Byte_t*> data);
+        maybe<Byte_t*>  Allocate(size_t byte_count, u32 alignment = 0, Bool_t do_align = false);
+        maybe<Byte_t*>  Reallocate(some<Byte_t*> data, size_t new_byte_count, u32 alignment = 0, Bool_t do_align = false);
+        void            Deallocate(some<Byte_t*> data, Bool_t is_aligned = false);
     };
 
 }

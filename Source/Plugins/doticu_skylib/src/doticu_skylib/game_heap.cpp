@@ -19,23 +19,33 @@ namespace doticu_skylib {
         return self;
     }
 
-    maybe<Byte_t*> Game_Heap_t::Allocate(size_t byte_count)
+    maybe<Byte_t*> Game_Heap_t::Allocate(size_t byte_count, u32 alignment, Bool_t do_align)
     {
         static auto allocate = reinterpret_cast
-            <Byte_t*(*)(Game_Heap_t*, size_t byte_count, size_t alignment, Bool_t do_align)>
+            <Byte_t*(*)(Game_Heap_t*, size_t, u32, Bool_t)>
             (Game_t::Base_Address() + Offset_e::ALLOCATE);
 
-        return allocate(this, byte_count, 0, false);
+        return allocate(this, byte_count, alignment, do_align);
     }
 
-    void Game_Heap_t::Deallocate(some<Byte_t*> data)
+    maybe<Byte_t*> Game_Heap_t::Reallocate(some<Byte_t*> data, size_t new_byte_count, u32 alignment, Bool_t do_align)
+    {
+        static auto reallocate = reinterpret_cast
+            <Byte_t*(*)(Game_Heap_t*, Byte_t*, size_t, u32, Bool_t)>
+            (Game_t::Base_Address() + Offset_e::REALLOCATE);
+
+        SKYLIB_ASSERT_SOME(data);
+        return reallocate(this, data(), new_byte_count, alignment, do_align);
+    }
+
+    void Game_Heap_t::Deallocate(some<Byte_t*> data, Bool_t is_aligned)
     {
         static auto deallocate = reinterpret_cast
-            <void(*)(Game_Heap_t*, Byte_t* data, Bool_t do_align)>
+            <void(*)(Game_Heap_t*, Byte_t*, Bool_t)>
             (Game_t::Base_Address() + Offset_e::DEALLOCATE);
 
         SKYLIB_ASSERT_SOME(data);
-        deallocate(this, data(), false);
+        deallocate(this, data(), is_aligned);
     }
 
 }

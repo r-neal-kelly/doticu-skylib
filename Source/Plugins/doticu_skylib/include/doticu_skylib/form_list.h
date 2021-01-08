@@ -23,6 +23,18 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::FORM_LIST,
         };
 
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                ADD_FORM            = 0x002C53D0, // 20470
+                REMOVE_ADDED_FORM   = 0x002C5570, // 20471
+                REVERT              = 0x002C5300, // 20469
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual ~Form_List_t(); // 0
 
@@ -34,6 +46,13 @@ namespace doticu_skylib {
     public:
         Bool_t Has(some<Form_t*> form);
         size_t Count();
+
+        void Add_Form(some<Form_t*> form);
+        void Remove_Added_Form(some<Form_t*> form);
+        void Revert();
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Form_List_t) == 0x48);
 

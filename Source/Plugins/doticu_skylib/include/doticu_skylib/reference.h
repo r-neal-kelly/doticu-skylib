@@ -19,6 +19,7 @@
 namespace doticu_skylib {
 
     class Cell_t;
+    class Form_List_t;
     class Keyword_t;
     class Location_t;
     class Quest_t;
@@ -73,6 +74,8 @@ namespace doticu_skylib {
 
         static Vector_t<some<Reference_t*>> Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter = nullptr);
         static void                         Loaded_Grid_References(Vector_t<some<Reference_t*>>& results,
+                                                                   Filter_i<some<Reference_t*>>* filter = nullptr);
+        static void                         Loaded_Grid_References(some<Form_List_t*> results,
                                                                    Filter_i<some<Reference_t*>>* filter = nullptr);
 
         static Reference_t*             Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
