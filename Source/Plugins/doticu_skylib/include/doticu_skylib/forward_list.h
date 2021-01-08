@@ -23,6 +23,7 @@ namespace doticu_skylib {
     public:
         Node_t head; // 0
 
+    public:
         Bool_t Is_Empty();
 
         maybe<Type_t*> Point(some<Index_t> index);

@@ -131,6 +131,18 @@ namespace doticu_skylib {
         return !Is_Player_Teammate();
     }
 
+    Bool_t Actor_t::Is_Owner_Of(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+        return reference->Has_Owner(this);
+    }
+
+    Bool_t Actor_t::Is_Potential_Thief_Of(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+        return reference->Has_Potential_Thief(this);
+    }
+
     Sex_e Actor_t::Sex()
     {
         if (base_form) {

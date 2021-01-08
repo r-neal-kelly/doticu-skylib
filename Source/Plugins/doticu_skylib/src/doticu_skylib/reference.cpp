@@ -4,8 +4,11 @@
 
 #include "doticu_skylib/math.h"
 
+#include "doticu_skylib/actor.h"
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/faction.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/form_list.h"
 #include "doticu_skylib/game.inl"
@@ -212,6 +215,82 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Reference_t::Has_Owner(some<Actor_t*> actor)
+    {
+        SKYLIB_ASSERT_SOME(actor);
+
+        maybe<Cell_t*> cell = this->Cell();
+        if (cell) {
+            maybe<Form_t*> cell_owner = cell->Owner();
+            if (cell_owner) {
+                if (cell_owner->form_type == Form_Type_e::FACTION) {
+                    some<Faction_t*> cell_faction_owner = static_cast<Faction_t*>(cell_owner());
+                    if (actor->Is_In_Faction(cell_faction_owner())) {
+                        return true;
+                    }
+                } else if (cell_owner->form_type == Form_Type_e::ACTOR_BASE) {
+                    if (actor->base_form == cell_owner()) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        maybe<Form_t*> ref_owner = this->Owner();
+        if (ref_owner) {
+            if (ref_owner->form_type == Form_Type_e::FACTION) {
+                some<Faction_t*> ref_faction_owner = static_cast<Faction_t*>(ref_owner());
+                if (actor->Is_In_Faction(ref_faction_owner())) {
+                    return true;
+                }
+            } else if (ref_owner->form_type == Form_Type_e::ACTOR_BASE) {
+                if (actor->base_form == ref_owner()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
+    {
+        SKYLIB_ASSERT_SOME(actor);
+
+        maybe<Cell_t*> cell = this->Cell();
+        if (cell) {
+            maybe<Form_t*> cell_owner = cell->Owner();
+            if (cell_owner) {
+                if (cell_owner->form_type == Form_Type_e::FACTION) {
+                    some<Faction_t*> cell_faction_owner = static_cast<Faction_t*>(cell_owner());
+                    if (!actor->Is_In_Faction(cell_faction_owner())) {
+                        return true;
+                    }
+                } else if (cell_owner->form_type == Form_Type_e::ACTOR_BASE) {
+                    if (actor->base_form != cell_owner()) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        maybe<Form_t*> ref_owner = this->Owner();
+        if (ref_owner) {
+            if (ref_owner->form_type == Form_Type_e::FACTION) {
+                some<Faction_t*> ref_faction_owner = static_cast<Faction_t*>(ref_owner());
+                if (!actor->Is_In_Faction(ref_faction_owner())) {
+                    return true;
+                }
+            } else if (ref_owner->form_type == Form_Type_e::ACTOR_BASE) {
+                if (actor->base_form != ref_owner()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     const char* Reference_t::Name()
     {
         static auto get_name = reinterpret_cast
@@ -235,6 +314,16 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Actor_Base_t*> Reference_t::Actor_Base_Owner()
+    {
+        maybe<Form_t*> owner = Owner();
+        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
+            return static_cast<maybe<Actor_Base_t*>>(owner);
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
     Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
     {
         if (parent_cell) {
@@ -251,6 +340,16 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Faction_t*> Reference_t::Faction_Owner()
+    {
+        maybe<Form_t*> owner = Owner();
+        if (owner && owner->form_type == Form_Type_e::FACTION) {
+            return static_cast<maybe<Faction_t*>>(owner);
+        } else {
+            return none<Faction_t*>();
+        }
+    }
+
     Location_t* Reference_t::Location()
     {
         Cell_t* cell = Cell(true);
@@ -259,6 +358,15 @@ namespace doticu_skylib {
         } else {
             return nullptr;
         }
+    }
+
+    maybe<Form_t*> Reference_t::Owner()
+    {
+        static auto get_owner = reinterpret_cast
+            <Form_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::GET_OWNER);
+
+        return get_owner(this);
     }
 
     maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)

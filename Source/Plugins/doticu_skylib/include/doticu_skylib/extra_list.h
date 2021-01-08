@@ -23,6 +23,7 @@ namespace doticu_skylib {
         public:
             Byte_t  flags[24];
 
+        public:
             Bool_t  Has(Extra_Type_e type);
             void    Add(Extra_Type_e type);
             void    Remove(Extra_Type_e type);
@@ -35,6 +36,7 @@ namespace doticu_skylib {
         Presence_t*         presence;   // 08
         Read_Write_Lock_t   lock;       // 10
 
+    public:
         void    Validate();
 
         Bool_t  Has(Extra_Type_e type);

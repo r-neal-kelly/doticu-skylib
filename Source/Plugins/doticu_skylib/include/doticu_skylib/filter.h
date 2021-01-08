@@ -19,5 +19,7 @@ namespace doticu_skylib { namespace Filter {
     template <typename T> class Enabled_t;
     template <typename T> class Form_Types_t;
     template <typename T> class Keywords_t;
+    template <typename T> class Owners_t;
+    template <typename T> class Potential_Thieves_t;
 
 }}

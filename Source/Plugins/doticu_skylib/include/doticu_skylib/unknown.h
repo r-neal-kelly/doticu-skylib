@@ -51,9 +51,9 @@ namespace doticu_skylib {
     class Event_Sink_t
     {
     public:
-        virtual ~Event_Sink_t();    // 0
+        virtual ~Event_Sink_t() = default;  // 0
 
-        virtual void _01(void) = 0; // 1
+        virtual void _01(void)  = 0;        // 1
     };
     STATIC_ASSERT(sizeof(Event_Sink_t<void*>) == 0x8);
 

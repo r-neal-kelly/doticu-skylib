@@ -55,6 +55,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\doticu_skylib\encounter_zone.h" />
+    <ClInclude Include="include\doticu_skylib\enum_encounter_zone_flags.h" />
+    <ClInclude Include="include\doticu_skylib\extra_encounter_zone.h" />
+    <ClInclude Include="include\doticu_skylib\extra_owner.h" />
     <ClInclude Include="include\doticu_skylib\activator.h" />
     <ClInclude Include="include\doticu_skylib\active_magic_effect.h" />
     <ClInclude Include="include\doticu_skylib\actor.h" />
@@ -138,6 +142,7 @@
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
+    <ClInclude Include="include\doticu_skylib\faction_rank.h" />
     <ClInclude Include="include\doticu_skylib\filter.h" />
     <ClInclude Include="include\doticu_skylib\filter.inl" />
     <ClInclude Include="include\doticu_skylib\filter_bases.h" />
@@ -147,6 +152,8 @@
     <ClInclude Include="include\doticu_skylib\filter_enabled.h" />
     <ClInclude Include="include\doticu_skylib\filter_form_types.h" />
     <ClInclude Include="include\doticu_skylib\filter_keywords.h" />
+    <ClInclude Include="include\doticu_skylib\filter_owners.h" />
+    <ClInclude Include="include\doticu_skylib\filter_potential_thieves.h" />
     <ClInclude Include="include\doticu_skylib\flora.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />

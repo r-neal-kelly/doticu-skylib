@@ -56,6 +56,7 @@ namespace doticu_skylib {
     public:
         virtual             ~Form_t();                              // 00
 
+        // Form_Data_c
         virtual void        _01(void) override;                     // 01
         virtual void        _02(void) override;                     // 02
         virtual void        _03(void) override;                     // 03
@@ -120,7 +121,7 @@ namespace doticu_skylib {
         Static_Array_t<Mod_t*>* form_mods;      // 08
         Form_Flags_e            form_flags;     // 10
         Form_ID_t               form_id;        // 14
-        u16                     form_flags2;    // 18
+        u16                     form_flags_2;   // 18
         Form_Type_e             form_type;      // 1A
         u8                      pad_1B;         // 1B
         u32                     pad_1C;         // 1C

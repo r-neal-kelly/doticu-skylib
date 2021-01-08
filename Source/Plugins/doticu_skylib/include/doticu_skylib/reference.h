@@ -18,7 +18,10 @@
 
 namespace doticu_skylib {
 
+    class Actor_t;
+    class Actor_Base_t;
     class Cell_t;
+    class Faction_t;
     class Form_List_t;
     class Keyword_t;
     class Location_t;
@@ -47,6 +50,7 @@ namespace doticu_skylib {
                 INVALID_REFERENCE_HANDLE    = 0x01EBEABC,
 
                 GET_NAME                    = 0x002961F0,
+                GET_OWNER                   = 0x002A6670, // 19789
                 GET_WORLDSPACE              = 0x00299750,
 
                 PLACE_AT_ME                 = 0x009951F0,
@@ -68,6 +72,7 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
+    public:
         static Vector_t<some<Reference_t*>> Loaded_References(Filter_i<some<Reference_t*>>* filter = nullptr);
         static void                         Loaded_References(Vector_t<some<Reference_t*>>& results,
                                                               Filter_i<some<Reference_t*>>* filter = nullptr);
@@ -211,11 +216,17 @@ namespace doticu_skylib {
         Bool_t Is_Temporary();
         Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
+        Bool_t Has_Owner(some<Actor_t*> actor);
+        Bool_t Has_Potential_Thief(some<Actor_t*> actor);
+
         const char*                     Name();
         String_t                        Any_Name();
 
+        maybe<Actor_Base_t*>            Actor_Base_Owner();
         Cell_t*                         Cell(Bool_t do_check_worldspace = true);
+        maybe<Faction_t*>               Faction_Owner();
         Location_t*                     Location();
+        maybe<Form_t*>                  Owner();
         maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
         
         Vector_t<Location_t*>           Locations();

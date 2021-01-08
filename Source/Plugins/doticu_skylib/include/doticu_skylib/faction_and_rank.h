@@ -4,13 +4,11 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/faction_rank.h"
 
 namespace doticu_skylib {
 
     class Faction_t;
-
-    using Faction_Rank_t = s8;
 
     class Faction_And_Rank_t
     {

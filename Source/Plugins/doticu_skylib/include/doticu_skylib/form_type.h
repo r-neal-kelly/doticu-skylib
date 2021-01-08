@@ -64,6 +64,7 @@ namespace doticu_skylib {
             FORM_LIST               = 0x5B, // FLST
             PERK                    = 0x5C, // PERK
 
+            ENCOUNTER_ZONE          = 0x67, // ECZN
             LOCATION                = 0x68, // LCTN
 
             OUTFIT                  = 0x7C, // OTFT

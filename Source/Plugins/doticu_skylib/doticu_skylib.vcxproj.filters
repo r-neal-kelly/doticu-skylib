@@ -591,6 +591,27 @@
     <ClInclude Include="include\doticu_skylib\package_value.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_owner.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\encounter_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_encounter_zone_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\faction_rank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_encounter_zone.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_owners.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\filter_potential_thieves.h">
+      <Filter>Header Files\filter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">

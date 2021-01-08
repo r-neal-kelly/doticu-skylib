@@ -13,7 +13,11 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
-            FACTIONS_AND_RANKS  = 0x5B,
+            OWNER               = 0x21, // XOWN
+
+            FACTIONS_AND_RANKS  = 0x5B, // XRNK
+
+            ENCOUNTER_ZONE      = 0x70,
 
             ALIASES             = 0x88,
             LOCATION            = 0x89,

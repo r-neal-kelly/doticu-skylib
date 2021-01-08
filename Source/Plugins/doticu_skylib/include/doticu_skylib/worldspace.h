@@ -19,6 +19,7 @@
 namespace doticu_skylib {
 
     class Cell_t;
+    class Encounter_Zone_t;
     class Location_t;
     class Reference_t;
 
@@ -71,6 +72,7 @@ namespace doticu_skylib {
     public:
         virtual ~Worldspace_t();
 
+    public:
         Hash_Map_t<s16_yx, Cell_t*>             xy_to_cell;                         // 058
         Cell_t*                                 persistent_cell;                    // 088
         void*                                   unk_090;                            // 090
@@ -107,7 +109,7 @@ namespace doticu_skylib {
         Float_t                                 default_water_height;               // 214
         Float_t                                 unk_218;                            // 218
         u32                                     pad_21C;                            // 21C
-        void*                                   encounter_zone;                     // 220
+        Encounter_Zone_t*                       encounter_zone;                     // 220
         Location_t*                             location;                           // 228
         Texture_c                               texture_230;                        // 230
         Texture_c                               texture_240;                        // 240

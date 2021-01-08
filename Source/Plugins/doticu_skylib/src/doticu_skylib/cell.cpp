@@ -5,15 +5,20 @@
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/interface.h"
 
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/encounter_zone.h"
+#include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/game_ini.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
 
+#include "doticu_skylib/extra_encounter_zone.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_location.h"
+#include "doticu_skylib/extra_owner.h"
 
 namespace doticu_skylib {
 
@@ -170,6 +175,45 @@ namespace doticu_skylib {
         return references.Has(reference());
     }
 
+    maybe<Actor_Base_t*> Cell_t::Actor_Base_Owner(Bool_t do_check_locations)
+    {
+        maybe<Form_t*> owner = Owner(do_check_locations);
+        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
+            return static_cast<maybe<Actor_Base_t*>>(owner);
+        } else {
+            return nullptr;
+        }
+    }
+
+    maybe<Encounter_Zone_t*> Cell_t::Encounter_Zone(Bool_t do_check_locations)
+    {
+        if (this->attached_cell && this->attached_cell->encounter_zone) {
+            return this->attached_cell->encounter_zone;
+        } else {
+            maybe<Encounter_Zone_x*> xencounter_zone = this->xlist.Get<Encounter_Zone_x>();
+            if (xencounter_zone && xencounter_zone->encounter_zone) {
+                return xencounter_zone->encounter_zone;
+            } else {
+                maybe<Worldspace_t*> worldspace = Worldspace(do_check_locations);
+                if (worldspace) {
+                    return worldspace->encounter_zone;
+                } else {
+                    return nullptr;
+                }
+            }
+        }
+    }
+
+    maybe<Faction_t*> Cell_t::Faction_Owner(Bool_t do_check_locations)
+    {
+        maybe<Form_t*> owner = Owner(do_check_locations);
+        if (owner && owner->form_type == Form_Type_e::FACTION) {
+            return static_cast<maybe<Faction_t*>>(owner);
+        } else {
+            return nullptr;
+        }
+    }
+
     Location_t* Cell_t::Location()
     {
         xlist.Validate();
@@ -254,6 +298,21 @@ namespace doticu_skylib {
             String_t name = it->Any_Name();
             if (!results.Has(name)) {
                 results.push_back(name);
+            }
+        }
+    }
+
+    maybe<Form_t*> Cell_t::Owner(Bool_t do_check_locations)
+    {
+        maybe<Owner_x*> xowner = this->xlist.Get<Owner_x>();
+        if (xowner && xowner->owner) {
+            return xowner->owner;
+        } else {
+            maybe<Encounter_Zone_t*> encounter_zone = Encounter_Zone(do_check_locations);
+            if (encounter_zone) {
+                return encounter_zone->owner;
+            } else {
+                return nullptr;
             }
         }
     }
