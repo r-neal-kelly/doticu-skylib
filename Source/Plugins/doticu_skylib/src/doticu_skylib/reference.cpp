@@ -296,6 +296,7 @@ namespace doticu_skylib {
         static auto get_name = reinterpret_cast
             <const char*(*)(Reference_t*)>
             (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::GET_NAME));
+
         return get_name(this);
     }
 

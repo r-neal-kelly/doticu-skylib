@@ -21,6 +21,7 @@ namespace doticu_skylib {
             KEYWORD                 = 0x04, // KYWD
             LOCATION_REFERENCE_TYPE = 0X05, // LCRT
 
+            MENU_ICON               = 0x08, // MICN
             GLOBAL                  = 0x09, // GLOB
             FACTION                 = 0x0B, // FACT
 
@@ -66,6 +67,7 @@ namespace doticu_skylib {
 
             ENCOUNTER_ZONE          = 0x67, // ECZN
             LOCATION                = 0x68, // LCTN
+            MESSAGE                 = 0x69, // MESG
 
             OUTFIT                  = 0x7C, // OTFT
 

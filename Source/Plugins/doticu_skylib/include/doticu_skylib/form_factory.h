@@ -30,8 +30,9 @@ namespace doticu_skylib {
         static Form_Factory_i* Form_Factory(Form_Type_e form_type);
 
     public:
-        virtual ~Form_Factory_i(); // 00
-        virtual Form_t* Create(); // 01
+        virtual ~Form_Factory_i(); // 0
+
+        virtual Form_t* Create(); // 1
     };
 
 }

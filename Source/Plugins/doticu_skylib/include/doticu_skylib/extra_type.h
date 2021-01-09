@@ -13,7 +13,13 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
+            FOLLOWERS           = 0x1D,
+
+            GHOST               = 0x1F,
+
             OWNER               = 0x21, // XOWN
+
+            TALK_TO_PLAYER      = 0x54,
 
             FACTIONS_AND_RANKS  = 0x5B, // XRNK
 
@@ -21,6 +27,14 @@ namespace doticu_skylib {
 
             ALIASES             = 0x88,
             LOCATION            = 0x89,
+
+            OUTFIT              = 0x8E,
+
+            TEXT_DISPLAY        = 0x99,
+
+            SOUL                = 0x9C,
+
+            FLAGS               = 0xA0,
         };
         using Enum_t::Enum_t;
     };

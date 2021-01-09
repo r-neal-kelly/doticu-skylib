@@ -57,7 +57,14 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\encounter_zone.h" />
     <ClInclude Include="include\doticu_skylib\enum_encounter_zone_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_extra_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_message_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_encounter_zone.h" />
+    <ClInclude Include="include\doticu_skylib\extra_flags.h" />
+    <ClInclude Include="include\doticu_skylib\extra_followers.h" />
+    <ClInclude Include="include\doticu_skylib\extra_ghost.h" />
+    <ClInclude Include="include\doticu_skylib\extra_outfit.h" />
     <ClInclude Include="include\doticu_skylib\extra_owner.h" />
     <ClInclude Include="include\doticu_skylib\activator.h" />
     <ClInclude Include="include\doticu_skylib\active_magic_effect.h" />
@@ -139,6 +146,9 @@
     <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
     <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h" />
     <ClInclude Include="include\doticu_skylib\extra_location.h" />
+    <ClInclude Include="include\doticu_skylib\extra_soul.h" />
+    <ClInclude Include="include\doticu_skylib\extra_talk_to_player.h" />
+    <ClInclude Include="include\doticu_skylib\extra_text_display.h" />
     <ClInclude Include="include\doticu_skylib\extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
@@ -179,6 +189,8 @@
     <ClInclude Include="include\doticu_skylib\magic_effect.h" />
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
+    <ClInclude Include="include\doticu_skylib\menu_icon.h" />
+    <ClInclude Include="include\doticu_skylib\message.h" />
     <ClInclude Include="include\doticu_skylib\misc.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\enum_operator.h" />
@@ -256,6 +268,7 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\component_description.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
