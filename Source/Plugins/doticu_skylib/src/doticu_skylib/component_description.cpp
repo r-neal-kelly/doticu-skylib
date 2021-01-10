@@ -8,7 +8,14 @@
 
 namespace doticu_skylib {
 
-    void Description_c::Description_DString(DString_t& result, some<Form_t*> parent, u32 sub_type)
+    DString_t Description_c::Description(some<Form_t*> parent, u32 sub_type)
+    {
+        DString_t description;
+        Description(description, parent, sub_type);
+        return std::move(description);
+    }
+
+    void Description_c::Description(DString_t& result, some<Form_t*> parent, u32 sub_type)
     {
         static auto get = reinterpret_cast
             <void(*)(Description_c*, DString_t&, Form_t*, u32)>

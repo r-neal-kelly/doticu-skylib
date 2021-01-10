@@ -75,7 +75,7 @@ namespace doticu_skylib {
     public:
         const size_t    capacity    = static_capacity;
         size_t          count       = 0;
-        Byte_t          bytes       [static_capacity * sizeof(Type_t)];
+        Byte_t          bytes       [static_capacity * sizeof(Type_t)]; // we're delaying construction of each element
 
         Stack_Array_t()
         {
@@ -91,7 +91,7 @@ namespace doticu_skylib {
             return reinterpret_cast<Type_t*>(bytes);
         }
 
-        void Push(Type_t& entry)
+        void Push(const Type_t& entry)
         {
             SKYLIB_ASSERT(count < capacity);
             Entries()[count] = entry;
@@ -105,18 +105,11 @@ namespace doticu_skylib {
             count += 1;
         }
 
-        void Push(const Type_t&& entry)
-        {
-            SKYLIB_ASSERT(count < capacity);
-            Entries()[count] = std::move(entry);
-            count += 1;
-        }
-
-        Type_t&& Pop()
+        Type_t Pop()
         {
             SKYLIB_ASSERT(count > 0);
             count -= 1;
-            return std::move(Entries()[count]);
+            return Entries()[count];
         }
 
         Type_t& operator[](size_t index)

@@ -31,7 +31,7 @@ namespace doticu_skylib {
         Static_String_t();
         Static_String_t(const char* string);
         Static_String_t(std::string& string);
-        Static_String_t(std::string&& string);
+        Static_String_t(std::string&& string) noexcept;
 
     public:
         void        Destroy();
@@ -40,15 +40,12 @@ namespace doticu_skylib {
         void        Value(const char* value);
 
     public:
-        Bool_t      operator==(const Static_String_t& other);
         Bool_t      operator==(const Static_String_t& other) const;
-        Bool_t      operator!=(const Static_String_t& other);
         Bool_t      operator!=(const Static_String_t& other) const;
 
     public:
-        explicit operator Bool_t();
         explicit operator Bool_t() const;
-        operator const char*();
+        operator const char*() const;
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
 
@@ -74,12 +71,13 @@ namespace doticu_skylib {
     public:
         Dynamic_String_t();
         Dynamic_String_t(const char* other);
+        Dynamic_String_t(Dynamic_String_t&& other) noexcept;
+        Dynamic_String_t& operator=(const char* other);
         ~Dynamic_String_t();
 
     public:
-        Dynamic_String_t& operator=(const char* other);
-        Bool_t operator==(const Dynamic_String_t& other) const;
-        Bool_t operator!=(const Dynamic_String_t& other) const;
+        Bool_t operator==(const char* other) const;
+        Bool_t operator!=(const char* other) const;
 
     public:
         explicit operator Bool_t() const;

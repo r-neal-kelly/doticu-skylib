@@ -6,8 +6,11 @@
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/game_heap.h"
 
 namespace doticu_skylib {
+
+    /* Static_String_t */
 
     static void Create_Impl(Static_String_t* self, const char* string)
     {
@@ -51,7 +54,7 @@ namespace doticu_skylib {
         Create_Impl(this, string.c_str());
     }
 
-    Static_String_t::Static_String_t(std::string&& string)
+    Static_String_t::Static_String_t(std::string&& string) noexcept
     {
         Create_Impl(this, string.c_str());
     }
@@ -72,19 +75,9 @@ namespace doticu_skylib {
         Set_Impl(this, value);
     }
 
-    Bool_t Static_String_t::operator==(const Static_String_t& other)
-    {
-        return CString_t::Is_Same(this->data, other.data, true);
-    }
-
     Bool_t Static_String_t::operator==(const Static_String_t& other) const
     {
         return CString_t::Is_Same(this->data, other.data, true);
-    }
-
-    Bool_t Static_String_t::operator!=(const Static_String_t& other)
-    {
-        return !operator==(other);
     }
 
     Bool_t Static_String_t::operator!=(const Static_String_t& other) const
@@ -92,19 +85,78 @@ namespace doticu_skylib {
         return !operator==(other);
     }
 
-    Static_String_t::operator Bool_t()
-    {
-        return data && data[0];
-    }
-
     Static_String_t::operator Bool_t() const
     {
         return data && data[0];
     }
 
-    Static_String_t::operator const char*()
+    Static_String_t::operator const char*() const
     {
         return data;
+    }
+
+    /* Dynamic_String_t */
+
+    static Bool_t Set_Impl(Dynamic_String_t* self, some<const char*> string)
+    {
+        static auto set = reinterpret_cast
+            <Bool_t(*)(Dynamic_String_t*, const char*, u32)>
+            (Game_t::Base_Address() + Dynamic_String_t::Offset_e::SET);
+
+        SKYLIB_ASSERT_SOME(string);
+        return set(self, string(), CString_t::Length(string(), false));
+    }
+
+    Dynamic_String_t::Dynamic_String_t() :
+        data(nullptr), length(0), capacity(0)
+    {
+    }
+
+    Dynamic_String_t::Dynamic_String_t(const char* other) :
+        data(nullptr), length(0), capacity(0)
+    {
+        Set_Impl(this, other ? other : "");
+    }
+
+    Dynamic_String_t::Dynamic_String_t(Dynamic_String_t&& other) noexcept :
+        data(std::exchange(other.data, nullptr)), length(other.length), capacity(other.capacity)
+    {
+    }
+
+    Dynamic_String_t& Dynamic_String_t::operator=(const char* other)
+    {
+        data = nullptr;
+        length = 0;
+        capacity = 0;
+        Set_Impl(this, other ? other : "");
+    }
+
+    Dynamic_String_t::~Dynamic_String_t()
+    {
+        if (data) {
+            Game_Heap_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(data));
+            data = nullptr;
+        }
+    }
+
+    Bool_t Dynamic_String_t::operator==(const char* other) const
+    {
+        return CString_t::Is_Same(this->data, other, true);
+    }
+
+    Bool_t Dynamic_String_t::operator!=(const char* other) const
+    {
+        return !operator==(other);
+    }
+
+    Dynamic_String_t::operator Bool_t() const
+    {
+        return data && data[0];
+    }
+
+    Dynamic_String_t::operator const char* () const
+    {
+        return data ? data : "";
     }
 
 }

@@ -142,7 +142,7 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_signed_integral_t = std::enable_if_t<
-        std::is_integral<T>::value&&
+        std::is_integral<T>::value &&
         std::is_signed<T>::value,
         Bool_t
     >;

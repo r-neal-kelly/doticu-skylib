@@ -7,6 +7,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/leveled_actor_base.h"
+#include "doticu_skylib/leveled_entry.h"
 #include "doticu_skylib/race.h"
 
 namespace doticu_skylib {
@@ -60,7 +61,7 @@ namespace doticu_skylib {
                 for (Index_t idx = 0; idx < leveled_bases.count; idx += 1) {
                     Leveled_Actor_Base_t* leveled_base = leveled_bases[idx];
                     for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
-                        Form_t* form = leveled_base->leveled_entries[idx].form;
+                        Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
                                 if (leveled_bases.Has_Space()) {
@@ -81,7 +82,7 @@ namespace doticu_skylib {
                 for (Index_t idx = 0; idx < leveled_bases_backup.size(); idx += 1) {
                     Leveled_Actor_Base_t* leveled_base = leveled_bases_backup[idx];
                     for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
-                        Form_t* form = leveled_base->leveled_entries[idx].form;
+                        Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
                                 leveled_bases_backup.push_back(static_cast<Leveled_Actor_Base_t*>(form));

@@ -4,18 +4,16 @@
 
 #pragma once
 
-#include "doticu_skylib/enum_soul_level.h"
-
 #include "doticu_skylib/extra_data.h"
 
 namespace doticu_skylib {
 
-    class Soul_x : public Data_x // ExtraSoul
+    class Count_x : public Data_x // ExtraCount
     {
     public:
         enum
         {
-            EXTRA_TYPE = Extra_Type_e::SOUL,
+            EXTRA_TYPE = Extra_Type_e::COUNT,
         };
 
         class Offset_e : public Enum_t<Word_t>
@@ -23,20 +21,19 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                //V_TABLE = 0x,
+                V_TABLE = 0x0152BFE0,
             };
             using Enum_t::Enum_t;
         };
 
     public:
-        virtual ~Soul_x();
+        virtual ~Count_x();
 
     public:
-        Soul_Level_e    level;  // 10
-        u8              pad_11; // 11
-        u16             pad_12; // 12
-        u32             pad_14; // 14
+        s16 count;  // 10
+        u16 pad_12; // 12
+        u32 pad_14; // 14
     };
-    STATIC_ASSERT(sizeof(Soul_x) == 0x18);
+    STATIC_ASSERT(sizeof(Count_x) == 0x18);
 
 }

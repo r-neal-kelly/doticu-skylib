@@ -63,6 +63,7 @@ namespace doticu_skylib {
 
         static Word_t               V_Table_Offset(const void* instance);
         static void                 Write_V_Table(void* instance, Word_t v_table_offset);
+
         static void                 Log_u64s(void* data, size_t count, std::string indent = "");
 
     public:

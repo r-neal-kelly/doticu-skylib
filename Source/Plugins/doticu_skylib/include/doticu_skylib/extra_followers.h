@@ -33,7 +33,7 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                //V_TABLE = 0x, (find on player when someone is following them)
+                V_TABLE = 0x0152BE80,
             };
             using Enum_t::Enum_t;
         };

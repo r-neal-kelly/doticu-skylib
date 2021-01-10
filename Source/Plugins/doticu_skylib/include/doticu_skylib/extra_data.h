@@ -15,14 +15,19 @@ namespace doticu_skylib {
         static Type_t*  Create();
         static void     Destroy(Data_x* xdata);
 
+        static void     Log_V_Tables(std::string indent = "");
+        static void     Log_Text_Displays(std::string indent = "");
+
     public:
         virtual         ~Data_x();                          // 0
 
         virtual u8      Get_Type();                         // 1
         virtual Bool_t  Isnt_Equal(const Data_x* other);    // 2
 
+    public:
         Data_x* next;
 
+    public:
         Extra_Type_e Type();
     };
     STATIC_ASSERT(sizeof(Data_x) == 0x10);

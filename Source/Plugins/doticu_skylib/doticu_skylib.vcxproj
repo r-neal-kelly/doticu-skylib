@@ -55,15 +55,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\doticu_skylib\container_changes.h" />
+    <ClInclude Include="include\doticu_skylib\container_changes_entry.h" />
+    <ClInclude Include="include\doticu_skylib\container_entry.h" />
+    <ClInclude Include="include\doticu_skylib\container_entry_extra.h" />
     <ClInclude Include="include\doticu_skylib\encounter_zone.h" />
     <ClInclude Include="include\doticu_skylib\enum_encounter_zone_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_extra_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_extra_text_display_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_message_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h" />
+    <ClInclude Include="include\doticu_skylib\extra_container_changes.h" />
+    <ClInclude Include="include\doticu_skylib\extra_count.h" />
     <ClInclude Include="include\doticu_skylib\extra_encounter_zone.h" />
     <ClInclude Include="include\doticu_skylib\extra_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_followers.h" />
     <ClInclude Include="include\doticu_skylib\extra_ghost.h" />
+    <ClInclude Include="include\doticu_skylib\extra_interaction.h" />
     <ClInclude Include="include\doticu_skylib\extra_outfit.h" />
     <ClInclude Include="include\doticu_skylib\extra_owner.h" />
     <ClInclude Include="include\doticu_skylib\activator.h" />
@@ -183,6 +191,7 @@
     <ClInclude Include="include\doticu_skylib\keyword.h" />
     <ClInclude Include="include\doticu_skylib\leveled_actor_base.h" />
     <ClInclude Include="include\doticu_skylib\leveled_item.h" />
+    <ClInclude Include="include\doticu_skylib\leveled_entry.h" />
     <ClInclude Include="include\doticu_skylib\location.h" />
     <ClInclude Include="include\doticu_skylib\location_reference_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_logic_gate.h" />
@@ -271,6 +280,7 @@
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
     <ClCompile Include="src\doticu_skylib\form.cpp" />

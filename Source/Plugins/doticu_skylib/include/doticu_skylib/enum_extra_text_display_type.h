@@ -8,13 +8,13 @@
 
 namespace doticu_skylib {
 
-    class Message_Flags_e : public Enum_t<u32>
+    class Text_Display_Type_e : public Enum_t<s32>
     {
     public:
         enum : value_type
         {
-            USE_MESSAGE_BOX     = 1 << 0,
-            HAVE_INITIAL_DELAY  = 1 << 1,
+            DEFAULT = -1,
+            CUSTOM  = -2,
         };
         using Enum_t::Enum_t;
     };

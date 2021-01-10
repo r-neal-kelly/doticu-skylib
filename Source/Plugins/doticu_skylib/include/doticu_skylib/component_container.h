@@ -10,14 +10,17 @@
 
 namespace doticu_skylib {
 
+    class Container_Entry_t;
+
     class Container_c : public Form_Data_c // TESContainer
     {
     public:
         virtual ~Container_c(); // 0
 
-        void**  unk_08;             // 08
-        u32     container_count;    // 10
-        u32     pad_14;             // 14
+    public:
+        Container_Entry_t** container_entries;      // 08 (CNTO - Container Object)
+        u32                 container_entry_count;  // 10 (COCT - Container Count)
+        u32                 pad_14;                 // 14
     };
     STATIC_ASSERT(sizeof(Container_c) == 0x18);
 

@@ -21,12 +21,12 @@ namespace doticu_skylib {
         };
 
     public:
-        Node_t head; // 0
+        Node_t head; // 0 (this really should have been a pointer, to determine if the list is empty!)
 
     public:
-        Bool_t Is_Empty();
+        Bool_t          Is_Empty(); // this is questionable when it comes to non-pointer types.
 
-        maybe<Type_t*> Point(some<Index_t> index);
+        maybe<Type_t*>  Point(some<Index_t> index);
     };
     STATIC_ASSERT(sizeof(Forward_List_t<void*>) == 0x10);
 
