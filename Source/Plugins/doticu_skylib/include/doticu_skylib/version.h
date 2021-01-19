@@ -51,6 +51,15 @@ namespace doticu_skylib {
                 this->build == other.build;
         }
 
+        Bool_t operator!=(const Version_t<T>& other) const
+        {
+            return
+                this->major != other.major ||
+                this->minor != other.minor ||
+                this->patch != other.patch ||
+                this->build != other.build;
+        }
+
         Bool_t operator<(const Version_t<T>& other) const
         {
             return
