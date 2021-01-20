@@ -73,6 +73,9 @@ namespace doticu_skylib {
     class Stack_Array_t
     {
     public:
+        static_assert(static_capacity != ~0llu, "The maximum index is reserved. Array must be 1 less than max size.");
+
+    public:
         const size_t    capacity    = static_capacity;
         size_t          count       = 0;
         Byte_t          bytes       [static_capacity * sizeof(Type_t)]; // we're delaying construction of each element
@@ -112,15 +115,36 @@ namespace doticu_skylib {
             return Entries()[count];
         }
 
+        Type_t& At(size_t index)
+        {
+            SKYLIB_ASSERT(index < count);
+            return Entries()[index];
+        }
+
         Type_t& operator[](size_t index)
         {
             SKYLIB_ASSERT(index < count);
             return Entries()[index];
         }
 
+        size_t Index_Of(const Type_t& item)
+        {
+            for (size_t idx = 0, end = count; idx < end; idx += 1) {
+                if (At(idx) == item) {
+                    return idx;
+                }
+            }
+            return ~0llu;
+        }
+
         Bool_t Has_Space()
         {
             return count < capacity;
+        }
+
+        Bool_t Has(const Type_t& item)
+        {
+            return Index_Of(item) != ~0llu;
         }
 
         void Clear()

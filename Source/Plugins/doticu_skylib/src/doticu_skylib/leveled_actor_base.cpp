@@ -64,10 +64,13 @@ namespace doticu_skylib {
                         Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
-                                if (leveled_bases.Has_Space()) {
-                                    leveled_bases.Push(static_cast<Leveled_Actor_Base_t*>(form));
-                                } else {
-                                    leveled_bases_backup.push_back(static_cast<Leveled_Actor_Base_t*>(form));
+                                Leveled_Actor_Base_t* leveled_base = static_cast<Leveled_Actor_Base_t*>(form);
+                                if (!leveled_bases.Has(leveled_base)) {
+                                    if (leveled_bases.Has_Space()) {
+                                        leveled_bases.Push(leveled_base);
+                                    } else if (!leveled_bases_backup.Has(leveled_base)) {
+                                        leveled_bases_backup.push_back(leveled_base);
+                                    }
                                 }
                             } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
                                 if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
@@ -85,7 +88,10 @@ namespace doticu_skylib {
                         Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
-                                leveled_bases_backup.push_back(static_cast<Leveled_Actor_Base_t*>(form));
+                                Leveled_Actor_Base_t* leveled_base = static_cast<Leveled_Actor_Base_t*>(form);
+                                if (!leveled_bases_backup.Has(leveled_base)) {
+                                    leveled_bases_backup.push_back(leveled_base);
+                                }
                             } else if (form->form_type == Form_Type_e::ACTOR_BASE) {
                                 if (iterator(static_cast<Actor_Base_t*>(form)) == Iterator_e::BREAK) {
                                     return;
