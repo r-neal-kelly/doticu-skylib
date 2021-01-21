@@ -35,6 +35,11 @@ namespace doticu_skylib {
         public Animation_Updater_i
     {
     public:
+        enum
+        {
+            SCRIPT_TYPE = Script_Type_e::ACTOR,
+        };
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -45,11 +50,17 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        enum
+        class Form_Flags_e : public Enum_t<u32>
         {
-            SCRIPT_TYPE = Script_Type_e::ACTOR,
+        public:
+            enum : value_type
+            {
+                IGNORES_FRIENDLY_HITS = 1 << 20,
+            };
+            using Enum_t::Enum_t;
         };
 
+    public:
         static Vector_t<Actor_t*>   Loaded_Actors();
         static void                 Loaded_Actors(Vector_t<Actor_t*>& results);
         static void                 Log_Loaded_Actors();
@@ -227,6 +238,7 @@ namespace doticu_skylib {
         const char*                     Base_Name();
         String_t                        Any_Name();
 
+    public:
         void                            Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_t) == 0x2B0);

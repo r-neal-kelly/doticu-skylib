@@ -69,6 +69,15 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(f32_xyz) == 0xC);
 
+    template <typename Type_t>
+    class Range_t
+    {
+    public:
+        Type_t begin;
+        Type_t end;
+    };
+    STATIC_ASSERT(sizeof(Range_t<u16>) == 0x4);
+
     template <typename Type_t, size_t static_capacity>
     class Stack_Array_t
     {

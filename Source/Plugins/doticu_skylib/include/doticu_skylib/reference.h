@@ -65,7 +65,6 @@ namespace doticu_skylib {
             enum : value_type
             {
                 IS_DELETED      = 1 << 5,
-
                 IS_PERSISTENT   = 1 << 10,
                 IS_DISABLED     = 1 << 11,
             };

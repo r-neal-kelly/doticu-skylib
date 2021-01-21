@@ -675,6 +675,9 @@
     <ClInclude Include="include\doticu_skylib\enum_extra_text_display_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_model_update_flags.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -846,6 +849,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\magic_target.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -14,15 +14,15 @@ namespace doticu_skylib { namespace Virtual {
         return Machine_t::Self()->Handle_Policy();
     }
 
-    Bind_Policy_t* Bind_Policy_t::Self()
+    Object_Policy_t* Object_Policy_t::Self()
     {
-        return Machine_t::Self()->Bind_Policy();
+        return Machine_t::Self()->Object_Policy();
     }
 
-    void Bind_Policy_t::Bind_Object(Object_t** object, Raw_Handle_t handle)
+    void Object_Policy_t::Bind_Object(Object_t** object, Raw_Handle_t handle)
     {
         static auto bind_object = reinterpret_cast
-            <void(*)(Bind_Policy_t*, Object_t**, Raw_Handle_t)>
+            <void(*)(Object_Policy_t*, Object_t**, Raw_Handle_t)>
             (doticu_skylib::Game_t::Base_Address() + Offset_e::BIND_OBJECT);
 
         bind_object(this, object, handle);

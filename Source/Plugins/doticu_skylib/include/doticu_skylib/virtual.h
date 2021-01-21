@@ -20,8 +20,10 @@ namespace doticu_skylib { namespace Virtual {
     class Callback_t;
     class Class_t;
     class Handle_t;
+    class Handle_Policy_t;
     class Machine_t;
     class Object_t;
+    class Object_Policy_t;
     class Utils_t;
     class Variable_t;
 

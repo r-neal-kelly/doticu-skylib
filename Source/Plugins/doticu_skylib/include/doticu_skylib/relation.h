@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
 

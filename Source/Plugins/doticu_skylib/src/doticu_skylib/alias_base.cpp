@@ -25,7 +25,7 @@ namespace doticu_skylib {
             String_t class_name = "ReferenceAlias";
             machine->Create_Object2(&class_name, &object);
             if (object != nullptr) {
-                machine->Bind_Policy()->Bind_Object(&object, Virtual::Handle_t(this));
+                machine->Object_Policy()->Bind_Object(&object, Virtual::Handle_t(this));
             }
         }
     }

@@ -13,7 +13,7 @@
 
 namespace doticu_skylib {
 
-    class Magic_Effect_t :
+    class Magic_Effect_t : // EffectSetting
         public Form_t,          // 00
         public Name_c,          // 20
         public Menu_Display_c,  // 30

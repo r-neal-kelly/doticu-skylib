@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/enum_extra_text_display_type.h"
@@ -28,7 +29,8 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                V_TABLE = 0x0152CAE0,
+                V_TABLE     = 0x0152CAE0, // 229625
+                SET_NAME    = 0x0013C870, // 12628
             };
             using Enum_t::Enum_t;
         };
@@ -54,8 +56,9 @@ namespace doticu_skylib {
         u32             pad_34;         // 34
 
     public:
-        void Rename(String_t name, Bool_t do_force);
+        void Name(some<const char*> name, Bool_t do_force);
 
+    public:
         void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Text_Display_x) == 0x38);

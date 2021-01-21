@@ -105,7 +105,7 @@ namespace doticu_skylib { namespace Virtual {
                 } else {
                     object = nullptr;
                     if (machine->Create_Object2(&vclass->name, &object) && object) {
-                        machine->Bind_Policy()->Bind_Object(&object, handle);
+                        machine->Object_Policy()->Bind_Object(&object, handle);
                         return object;
                     } else {
                         return nullptr;

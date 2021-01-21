@@ -21,7 +21,7 @@ namespace doticu_skylib { namespace Virtual {
     class Class_t;
     class Handle_Policy_t;
     class Object_t;
-    class Bind_Policy_t;
+    class Object_Policy_t;
     class Variable_t;
 
     class Function_i;
@@ -81,7 +81,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _2C(void); // 2C
         virtual Handle_Policy_t* Handle_Policy(); // 2D
         virtual void _2E(void); // 2E
-        virtual Bind_Policy_t* Bind_Policy(); // 2F
+        virtual Object_Policy_t* Object_Policy(); // 2F
 
         Bool_t  Call_Global(String_t class_name,
                             String_t function_name,

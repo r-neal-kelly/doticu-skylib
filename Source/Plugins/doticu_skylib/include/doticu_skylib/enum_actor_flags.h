@@ -26,7 +26,13 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
-
+            IS_MOUNT                    = 1 << 1,
+            CAN_DO_FAVOR                = 1 << 7,
+            CAN_SPEAK                   = 1 << 13,
+            IS_ESSENTIAL                = 1 << 18,
+            IS_PROTECTED                = 1 << 19,
+            IS_HIDDEN_FROM_STEALTH_EYE  = 1 << 26,
+            IS_UNDERWATER               = static_cast<value_type>(1 << 31),
         };
         using Enum_t::Enum_t;
     };

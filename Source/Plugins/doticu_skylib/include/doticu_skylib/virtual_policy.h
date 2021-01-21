@@ -35,7 +35,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void            _0B(void);                                                              // B
     };
 
-    class Bind_Policy_t
+    class Object_Policy_t
     {
     public:
         class Offset_e : public Enum_t<Word_t>
@@ -48,16 +48,17 @@ namespace doticu_skylib { namespace Virtual {
             using Enum_t::Enum_t;
         };
 
-        static Bind_Policy_t* Self();
+        static Object_Policy_t* Self();
 
     public:
-        virtual ~Bind_Policy_t();
+        virtual ~Object_Policy_t();
 
+    public:
+        Machine_t*  machine;    // 08
+        Binder_t*   binder;     // 10
+
+    public:
         void Bind_Object(Object_t** object, Raw_Handle_t handle);
-        //void Unbind_Object(Object_t*& object);
-
-        Machine_t* machine; // 08
-        Binder_t* binder; // 10
     };
 
 }}

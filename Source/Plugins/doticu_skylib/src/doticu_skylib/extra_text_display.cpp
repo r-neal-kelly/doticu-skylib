@@ -2,12 +2,28 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/message.h"
 #include "doticu_skylib/quest.h"
 
 #include "doticu_skylib/extra_text_display.h"
 
 namespace doticu_skylib {
+
+    void Text_Display_x::Name(some<const char*> name, Bool_t do_force)
+    {
+        static auto set_name = reinterpret_cast
+            <void(*)(Text_Display_x*, const char*)>
+            (Game_t::Base_Address() + Offset_e::SET_NAME);
+
+        SKYLIB_ASSERT_SOME(name);
+
+        if (do_force) {
+            this->message = nullptr;
+            this->owner = nullptr;
+        }
+        set_name(this, name());
+    }
 
     void Text_Display_x::Log(std::string indent)
     {
