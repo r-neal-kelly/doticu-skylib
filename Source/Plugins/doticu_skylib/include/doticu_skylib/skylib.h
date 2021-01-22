@@ -87,6 +87,18 @@ namespace doticu_skylib {
     class Object_t;
     class OS_t;
     class Outfit_t;
+    class Package_t;
+    class Package_Bool_Value_t;
+    class Package_Data_t;
+    class Package_Float_Value_t;
+    class Package_Int_Value_t;
+    class Package_Location_t;
+    class Package_Location_Value_t;
+    class Package_Reference_Value_t;
+    class Package_Schedule_t;
+    class Package_Target_t;
+    class Package_Topic_Value_t;
+    class Package_Value_t;
     class Perk_t;
     class Player_t;
     class Quest_t;
