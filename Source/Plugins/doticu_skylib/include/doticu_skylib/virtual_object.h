@@ -32,10 +32,11 @@ namespace doticu_skylib { namespace Virtual {
             using Enum_t::Enum_t;
         };
 
-        template <typename Type>
-        static Object_t* Fetch(Type* instance, String_t class_name, Bool_t do_auto_decrement = false);
+    public:
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
-        static Object_t* Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
+        static maybe<Object_t*> Find(Scriptable_t scriptable, String_t class_name, Bool_t do_decrement);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static maybe<Object_t*> Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
 
     public:
         UInt64              unk_00;         // 00
@@ -68,14 +69,14 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib { namespace Virtual {
 
-    template <typename Type>
-    inline Object_t* Object_t::Fetch(Type* instance, String_t class_name, Bool_t do_auto_decrement)
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    inline maybe<Object_t*> Object_t::Find(Scriptable_t scriptable, String_t class_name, Bool_t do_decrement)
     {
-        Handle_t handle(instance);
+        Handle_t handle(scriptable);
         if (handle.Is_Valid()) {
             Object_t* object = nullptr;
             if (Machine_t::Self()->Find_Bound_Object(handle, class_name, &object) && object) {
-                if (do_auto_decrement) {
+                if (do_decrement) {
                     object->Decrement_Lock();
                 }
                 return object;
@@ -88,7 +89,7 @@ namespace doticu_skylib { namespace Virtual {
     }
 
     template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
-    inline Object_t* Object_t::Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find)
+    inline maybe<Object_t*> Object_t::Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find)
     {
         some<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
         maybe<Class_t*> vclass = script_type().Class();

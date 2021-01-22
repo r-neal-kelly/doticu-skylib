@@ -39,7 +39,7 @@ namespace doticu_skylib {
             return value;
         }
 
-        template <typename Scriptable_t> // this can be overloaded for user types
+        template <typename Scriptable_t>
         static some<Script_Type_e> From()
         {
             return std::remove_pointer_t<Scriptable_t>::SCRIPT_TYPE;

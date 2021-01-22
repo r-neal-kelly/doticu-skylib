@@ -43,10 +43,10 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _06(void); // 06
         virtual void _07(void); // 07
         virtual void _08(void); // 08
-        virtual Bool_t Load_Class_Info(String_t* class_name, Class_t** info_out); // 09, call Class_Info_t Free() after use
-        virtual Bool_t Load_Class_Info2(Raw_Script_Type_t script_type, Class_t** info_out); // 0A, call Class_Info_t Free() after use
-        virtual Bool_t Class_Info(String_t* class_name, Class_t** info_out); // 0B, call Class_Info_t Free() after use
-        virtual Bool_t Class_Info2(Raw_Script_Type_t script_type, Class_t** info_out); // 0C, call Class_Info_t Free() after use
+        virtual Bool_t Find_Or_Load_Class(String_t& class_name, Class_t*& vclass_out);              // 09 increments reference
+        virtual Bool_t Find_Or_Load_Class_2(Raw_Script_Type_t script_type, Class_t*& vclass_out);   // 0A increments reference
+        virtual Bool_t Find_Class(String_t& class_name, Class_t*& vclass_out);                      // 0B increments reference
+        virtual Bool_t Find_Class_2(Raw_Script_Type_t script_type, Class_t*& vclass_out);           // 0C increments reference
         virtual Bool_t Class_Script_Type(String_t& class_name, Raw_Script_Type_t& script_type_out); // 0D
         virtual void _0E(void); // 0E
         virtual void _0F(void); // 0F

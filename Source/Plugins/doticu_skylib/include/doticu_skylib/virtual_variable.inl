@@ -200,9 +200,9 @@ namespace doticu_skylib { namespace Virtual {
         some<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
         type = script_type();
         if (value) {
-            Object_t* object = Object_t::Find_Or_Create(value, false);
+            maybe<Object_t*> object = Object_t::Find_Or_Create(value, false);
             if (object) {
-                data.obj = object;
+                data.obj = object();
             }
         }
     }
@@ -281,7 +281,13 @@ namespace doticu_skylib { namespace Virtual {
     inline Intrinsic_t  Variable_t::As()                            { return Unpack<Intrinsic_t>(); }
     template <typename Intrinsic_t>
     inline void         Variable_t::As(const Intrinsic_t& value)    { Pack<Intrinsic_t>(value); }
-    
+
+    template <typename Intrinsic_t>
+    inline Variable_t::operator Variable_tt<Intrinsic_t>*()
+    {
+        return reinterpret_cast<Variable_tt<Intrinsic_t>*>(this);
+    }
+
     template <typename Intrinsic_t>
     inline          Variable_tt<Intrinsic_t>::operator Intrinsic_t()                { return Unpack<Intrinsic_t>(); }
     template <typename Intrinsic_t>

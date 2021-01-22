@@ -17,6 +17,9 @@ namespace doticu_skylib { namespace Virtual {
 
     class Array_t;
 
+    template <typename Intrinsic_t>
+    class Variable_tt;
+
     union Variable_u
     {
         void*       ptr;
@@ -144,6 +147,9 @@ namespace doticu_skylib { namespace Virtual {
         Intrinsic_t As();
         template <typename Intrinsic_t>
         void        As(const Intrinsic_t& value);
+
+        template <typename Intrinsic_t>
+        operator Variable_tt<Intrinsic_t>*();
     };
     STATIC_ASSERT(sizeof(Variable_t) == 0x10);
 

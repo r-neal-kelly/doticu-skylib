@@ -55,6 +55,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\doticu_skylib\atomic_count.h" />
     <ClInclude Include="include\doticu_skylib\container_changes.h" />
     <ClInclude Include="include\doticu_skylib\container_changes_entry.h" />
     <ClInclude Include="include\doticu_skylib\container_entry.h" />
@@ -275,6 +276,7 @@
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />

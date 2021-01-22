@@ -11,9 +11,9 @@ namespace doticu_skylib {
     class Reference_Count_t
     {
     public:
-        virtual     ~Reference_Count_t();   // 0
+        virtual         ~Reference_Count_t();   // 0
 
-        virtual void Destroy();             // 1
+        virtual void    Destroy();              // 1
 
     public:
         volatile u32    reference_count;    // 08

@@ -10,7 +10,7 @@ namespace doticu_skylib {
 
     maybe<Virtual::Class_t*> Script_Type_e::Class()
     {
-        return Virtual::Class_t::Fetch(*this, true);
+        return Virtual::Class_t::Find_Or_Load(*this, true);
     }
 
 }

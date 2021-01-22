@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/atomic_count.h"
 #include "doticu_skylib/script_type.h"
 
 #include "doticu_skylib/virtual.h"
@@ -57,7 +58,7 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(Property_Info_t) == 0x48);
 
-    class Class_t
+    class Class_t : public Atomic_Count_t
     {
     public:
         class Offset_e : public Enum_t<Word_t>
@@ -71,11 +72,9 @@ namespace doticu_skylib { namespace Virtual {
         };
 
     public:
-        static Class_t* Fetch(String_t class_name, Bool_t do_auto_decrement = false);
-        static Class_t* Fetch(Script_Type_e script_type, Bool_t do_auto_decrement = false);
+        static maybe<Class_t*> Find_Or_Load(String_t class_name, Bool_t do_decrement_on_find);
+        static maybe<Class_t*> Find_Or_Load(Script_Type_e script_type, Bool_t do_decrement_on_find);
 
-    private:
-        volatile u32    reference_count;    // 00
     public:
         u32             pad_04;             // 04
         String_t        name;               // 08
@@ -87,6 +86,7 @@ namespace doticu_skylib { namespace Virtual {
         u32             pad_2C;             // 2C
         u8*             data;               // 30
 
+    public:
         void Destroy();
 
         u32 Reference_Count();

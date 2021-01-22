@@ -29,22 +29,31 @@ namespace doticu_skylib { namespace Virtual {
         return class_name;                          \
     SKYLIB_W
 
-    #define DEFINE_CLASS()                                              \
-    SKYLIB_M                                                            \
-        using Class_t = doticu_skylib::Virtual::Class_t;                \
-                                                                        \
-        static Class_t* class_ = Class_t::Fetch(Class_Name(), false);   \
-        SKYLIB_ASSERT(class_);                                          \
-        return class_;                                                  \
+    #define DEFINE_CLASS()                                                          \
+    SKYLIB_M                                                                        \
+        using Class_t = doticu_skylib::Virtual::Class_t;                            \
+                                                                                    \
+        static maybe<Class_t*> vclass = Class_t::Find_Or_Load(Class_Name(), false); \
+        SKYLIB_ASSERT(vclass);                                                      \
+        return vclass();                                                            \
     SKYLIB_W
 
-    #define DEFINE_OBJECT()                                             \
-    SKYLIB_M                                                            \
-        using Object_t = doticu_skylib::Virtual::Object_t;              \
-                                                                        \
-        Object_t* object = Object_t::Fetch(this, Class_Name(), true);   \
-        SKYLIB_ASSERT(object);                                          \
-        return object;                                                  \
+    #define DEFINE_OBJECT_STATIC()                                              \
+    SKYLIB_M                                                                    \
+        using Object_t = doticu_skylib::Virtual::Object_t;                      \
+                                                                                \
+        maybe<Object_t*> object = Object_t::Find(Self()(), Class_Name(), true); \
+        SKYLIB_ASSERT(object);                                                  \
+        return object();                                                        \
+    SKYLIB_W
+
+    #define DEFINE_OBJECT_METHOD()                                          \
+    SKYLIB_M                                                                \
+        using Object_t = doticu_skylib::Virtual::Object_t;                  \
+                                                                            \
+        maybe<Object_t*> object = Object_t::Find(this, Class_Name(), true); \
+        SKYLIB_ASSERT(object);                                              \
+        return object();                                                    \
     SKYLIB_W
 
     #define DEFINE_VARIABLE_POINTER(TYPE_, NAME_)                   \
@@ -74,15 +83,6 @@ namespace doticu_skylib { namespace Virtual {
         return *var;                                                \
     SKYLIB_W
 
-    #define BIND_METHOD(MACHINE_, CLASS_NAME_, BASE_TYPE_, METHOD_NAME_, WAITS_FOR_FRAME_, RETURN_, METHOD_, ...)   \
-    SKYLIB_M                                                                                                        \
-        namespace V = doticu_skylib::Virtual;                                                                       \
-        MACHINE_->Bind_Function(reinterpret_cast<V::Function_i*>(                                                   \
-            new V::Method_t<RETURN_, BASE_TYPE_, __VA_ARGS__>(CLASS_NAME_, METHOD_NAME_, &METHOD_)                  \
-        ));                                                                                                         \
-        MACHINE_->Function_Skips_Frame_Wait(CLASS_NAME_, METHOD_NAME_, !WAITS_FOR_FRAME_);                          \
-    SKYLIB_W
-
     #define BIND_STATIC(MACHINE_, CLASS_NAME_, STATIC_NAME_, WAITS_FOR_FRAME_, RETURN_, STATIC_, ...)   \
     SKYLIB_M                                                                                            \
         namespace V = doticu_skylib::Virtual;                                                           \
@@ -90,6 +90,15 @@ namespace doticu_skylib { namespace Virtual {
             new V::Static_t<RETURN_, __VA_ARGS__>(CLASS_NAME_, STATIC_NAME_, &STATIC_)                  \
         ));                                                                                             \
         MACHINE_->Function_Skips_Frame_Wait(CLASS_NAME_, STATIC_NAME_, !WAITS_FOR_FRAME_);              \
+    SKYLIB_W
+
+    #define BIND_METHOD(MACHINE_, CLASS_NAME_, BASE_TYPE_, METHOD_NAME_, WAITS_FOR_FRAME_, RETURN_, METHOD_, ...)   \
+    SKYLIB_M                                                                                                        \
+        namespace V = doticu_skylib::Virtual;                                                                       \
+        MACHINE_->Bind_Function(reinterpret_cast<V::Function_i*>(                                                   \
+            new V::Method_t<RETURN_, BASE_TYPE_, __VA_ARGS__>(CLASS_NAME_, METHOD_NAME_, &METHOD_)                  \
+        ));                                                                                                         \
+        MACHINE_->Function_Skips_Frame_Wait(CLASS_NAME_, METHOD_NAME_, !WAITS_FOR_FRAME_);                          \
     SKYLIB_W
 
 }}

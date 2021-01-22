@@ -12,26 +12,24 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    Class_t* Class_t::Fetch(String_t class_name, Bool_t do_auto_decrement)
+    maybe<Class_t*> Class_t::Find_Or_Load(String_t class_name, Bool_t do_decrement_on_find)
     {
-        Machine_t* const machine = Machine_t::Self();
-        if (machine) {
-            Class_t* info_out = nullptr;
-            machine->Load_Class_Info(&class_name, &info_out);
-            if (do_auto_decrement && info_out->reference_count > 1) {
-                info_out->Decrement_Reference();
+        Class_t* vclass = nullptr;
+        if (Machine_t::Self()->Find_Or_Load_Class(class_name, vclass) && vclass) {
+            if (do_decrement_on_find && vclass->Reference_Count() > 1) {
+                vclass->Decrement_Reference();
             }
-            return info_out;
+            return vclass;
         } else {
             return nullptr;
         }
     }
 
-    Class_t* Class_t::Fetch(Script_Type_e script_type, Bool_t do_auto_decrement)
+    maybe<Class_t*> Class_t::Find_Or_Load(Script_Type_e script_type, Bool_t do_decrement_on_find)
     {
         Class_t* vclass = nullptr;
-        if (Machine_t::Self()->Load_Class_Info2(script_type, &vclass)) {
-            if (do_auto_decrement && vclass->reference_count > 1) {
+        if (Machine_t::Self()->Find_Or_Load_Class_2(script_type.Raw(), vclass) && vclass) {
+            if (do_decrement_on_find && vclass->Reference_Count() > 1) {
                 vclass->Decrement_Reference();
             }
             return vclass;
@@ -51,17 +49,17 @@ namespace doticu_skylib { namespace Virtual {
 
     u32 Class_t::Reference_Count()
     {
-        return _InterlockedExchangeAdd(&reference_count, 0);
+        return Atomic_Count_t::Count();
     }
 
     u32 Class_t::Increment_Reference()
     {
-        return _InterlockedIncrement(&reference_count);
+        return Atomic_Count_t::Increment();
     }
 
     u32 Class_t::Decrement_Reference()
     {
-        u32 count = _InterlockedDecrement(&reference_count);
+        u32 count = Atomic_Count_t::Decrement();
         if (count < 1) {
             Destroy();
             Game_t::Deallocate<Class_t>(this);

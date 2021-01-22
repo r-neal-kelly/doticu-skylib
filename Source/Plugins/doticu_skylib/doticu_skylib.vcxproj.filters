@@ -678,6 +678,9 @@
     <ClInclude Include="include\doticu_skylib\enum_model_update_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\atomic_count.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -855,6 +858,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\magic_target.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\atomic_count.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

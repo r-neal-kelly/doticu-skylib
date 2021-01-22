@@ -10,7 +10,8 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    class Handle_t {
+    class Handle_t
+    {
     public:
         Raw_Handle_t raw_handle = 0;
 

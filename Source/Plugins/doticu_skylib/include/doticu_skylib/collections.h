@@ -236,10 +236,12 @@ namespace doticu_skylib {
         };
 
     public:
-        void* allocator;
+        void* allocator; // 0
 
+    public:
         Bool_t Resize(u32 count);
     };
+    STATIC_ASSERT(sizeof(Buffer_Allocator_t) == 0x8);
 
     template <typename Type_t>
     class Buffer_t :
