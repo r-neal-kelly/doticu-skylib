@@ -30,6 +30,8 @@ namespace doticu_skylib {
             MAGIC_EFFECT            = 0x12, // MGEF
             SCRIPT                  = 0x13, // SCPT
 
+            SPELL                   = 0x16, // SPEL
+
             ACTIVATOR               = 0x18, // ACTI
 
             ARMOR                   = 0x1A, // ARMO
@@ -56,6 +58,8 @@ namespace doticu_skylib {
 
             WORLDSPACE              = 0x47, // WRLD
 
+            DIALOGUE_TOPIC          = 0x4B, // DIAL
+            DIALOGUE_INFO           = 0x4C, // INFO
             QUEST                   = 0x4D, // QUST
 
             PACKAGE                 = 0x4F, // PACK
@@ -68,6 +72,8 @@ namespace doticu_skylib {
             ENCOUNTER_ZONE          = 0x67, // ECZN
             LOCATION                = 0x68, // LCTN
             MESSAGE                 = 0x69, // MESG
+
+            DIALOGUE_BRANCH         = 0x73, // DLBR
 
             OUTFIT                  = 0x7C, // OTFT
 

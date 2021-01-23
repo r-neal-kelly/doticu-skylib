@@ -32,8 +32,8 @@ namespace doticu_skylib {
         virtual ~Flags_x();
 
     public:
-        Extra_Flags_e   flags;  // 10
-        u32             pad_14; // 14
+        Extra_Flags_e   extra_flags;    // 10
+        u32             pad_14;         // 14
     };
     STATIC_ASSERT(sizeof(Flags_x) == 0x18);
 

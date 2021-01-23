@@ -53,7 +53,7 @@ namespace doticu_skylib {
     class Record_Header_t : public Record_Header_Base_t
     {
     public:
-        Form_Flags_e    flags;              // 08
+        Form_Flags_e    form_flags;         // 08
         Form_ID_t       form_id;            // 0C
         u32             version_control_1;  // 10
         u16             form_version;       // 14

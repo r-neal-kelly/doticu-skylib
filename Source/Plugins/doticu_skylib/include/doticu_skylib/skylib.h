@@ -66,6 +66,12 @@ namespace doticu_skylib {
     class Character_t;
     class Consts_t;
     class Container_t;
+    class Dialogue_Branch_t;
+    class Dialogue_Info_t;
+    class Dialogue_Info_Instance_t;
+    class Dialogue_Response_t;
+    class Dialogue_Response_Instance_t;
+    class Dialogue_Topic_t;
     class Effect_Shader_t;
     class Faction_t;
     class Faction_And_Rank_t;
@@ -80,7 +86,9 @@ namespace doticu_skylib {
     class Leveled_Actor_Base_t;
     class Leveled_Item_t;
     class Location_t;
+    class Magic_Base_t;
     class Magic_Effect_t;
+    class Magic_Effect_Instance_t;
     class Magic_Target_t;
     class Misc_t;
     class Mod_t;
@@ -105,6 +113,7 @@ namespace doticu_skylib {
     class Race_t;
     class Reference_t;
     class Script_t;
+    class Spell_t;
     class Static_t;
     class Translations_t;
     class UI_t;

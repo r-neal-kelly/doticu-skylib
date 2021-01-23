@@ -37,12 +37,12 @@ namespace doticu_skylib {
         virtual ~Container_t(); // 0
 
     public:
-        u8                  unk_B8;         // B8
-        Container_Flags_e   flags;          // B9
-        u16                 pad_BA;         // BA
-        u32                 pad_BC;         // BC
-        void*               open_sound;     // C0
-        void*               close_sound;    // C8
+        u8                  unk_B8;             // B8
+        Container_Flags_e   container_flags;    // B9
+        u16                 pad_BA;             // BA
+        u32                 pad_BC;             // BC
+        void*               open_sound;         // C0
+        void*               close_sound;        // C8
     };
     STATIC_ASSERT(sizeof(Container_t) == 0xD0);
 

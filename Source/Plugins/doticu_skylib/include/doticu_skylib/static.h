@@ -27,11 +27,11 @@ namespace doticu_skylib {
         virtual ~Static_t(); // 0
 
     public:
-        Float_t         unk_68; // 68
-        u32             pad_6C; // 6C
-        void*           unk_70; // 70
-        Static_Flags_e  flags;  // 78
-        u32             pad_7C; // 7C
+        Float_t         unk_68;         // 68
+        u32             pad_6C;         // 6C
+        void*           unk_70;         // 70
+        Static_Flags_e  static_flags;   // 78
+        u32             pad_7C;         // 7C
     };
     STATIC_ASSERT(sizeof(Static_t) == 0x80);
 

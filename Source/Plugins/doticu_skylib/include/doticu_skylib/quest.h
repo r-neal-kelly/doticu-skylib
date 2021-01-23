@@ -11,10 +11,12 @@
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/enum_dialogue_branch_type.h"
+#include "doticu_skylib/enum_dialogue_topic_type.h"
+
 #include "doticu_skylib/component_name.h"
 
 #include "doticu_skylib/alias_id.h"
-#include "doticu_skylib/branch_type.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
@@ -118,8 +120,8 @@ namespace doticu_skylib {
         List_t<Quest_Objective_t*>                  objectives;                                 // 0F8
         u64                                         objective_conditions;                       // 108
         u64                                         story_conditions;                           // 110
-        Hash_Map_t<Branch_t*, Array_t<Topic_t*>*>   complex_branches[Complex_Branch_e::MAX];    // 118
-        Array_t<Topic_t*>                           simple_branches[Simple_Branch_e::MAX];      // 178
+        Hash_Map_t<Branch_t*, Array_t<Topic_t*>*>   branches[Dialogue_Branch_Type_e::_TOTAL_];  // 118
+        Array_t<Topic_t*>                           topics[Dialogue_Topic_Type_e::_TOTAL_];     // 178
         Array_t<Scene_t*>                           scenes;                                     // 208
         Array_t<Global_t*>*                         text_globals;                               // 220
         u16                                         current_stage;                              // 228

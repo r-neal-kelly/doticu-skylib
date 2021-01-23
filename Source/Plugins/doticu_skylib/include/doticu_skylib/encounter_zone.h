@@ -41,7 +41,7 @@ namespace doticu_skylib {
         Location_t*             location;               // 28
         Faction_Rank_t          required_owner_rank;    // 30
         s8                      min_level;              // 31
-        Encounter_Zone_Flags_e  flags;                  // 32
+        Encounter_Zone_Flags_e  encounter_zone_flags;   // 32
         s8                      max_level;              // 33
         u32                     pad_34;                 // 34
         u32                     detach_time;            // 38

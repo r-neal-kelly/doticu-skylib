@@ -41,7 +41,7 @@ namespace doticu_skylib {
         virtual Bool_t Is_Package_Owner(Actor_t* actor);
 
     public:
-        Package_Flags_e         flags;                  // 20
+        Package_Flags_e         package_flags;          // 20
         Package_Procedure_e     procedure_type;         // 24
         Package_Interrupt_e     interrupt_type;         // 25
         Preferred_Speed_e       preferred_speed;        // 26

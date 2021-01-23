@@ -28,15 +28,15 @@ namespace doticu_skylib {
     class Quest_Objective_t
     {
     public:
-        String_t                display_text;   // 00
-        Quest_t*                quest;          // 08
-        Quest_Target_t**        targets;        // 10
-        u32                     target_count;   // 18
-        u16                     index;          // 1C
-        Bool_t                  is_initialized; // 1E
-        Quest_Objective_State_e state;          // 1F
-        Quest_Objective_Flags_e flags;          // 20
-        u32                     pad_24;         // 24
+        String_t                display_text;           // 00
+        Quest_t*                quest;                  // 08
+        Quest_Target_t**        targets;                // 10
+        u32                     target_count;           // 18
+        u16                     index;                  // 1C
+        Bool_t                  is_initialized;         // 1E
+        Quest_Objective_State_e state;                  // 1F
+        Quest_Objective_Flags_e quest_objective_flags;  // 20
+        u32                     pad_24;                 // 24
 
         void Log(std::string indent = "");
     };

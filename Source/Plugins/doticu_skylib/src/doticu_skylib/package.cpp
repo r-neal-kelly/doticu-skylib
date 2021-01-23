@@ -8,29 +8,29 @@ namespace doticu_skylib {
 
     Bool_t Package_t::Is_Flagged(Package_Flags_e flag)
     {
-        return (flags & flag) != 0;
+        return (this->package_flags & flag) != 0;
     }
 
     Bool_t Package_t::Is_Flagged(Package_Interrupts_e flag)
     {
-        return (flags & flag) != 0;
+        return (this->interrupt_flags & flag) != 0;
     }
 
     void Package_t::Flag(Package_Flags_e flag, Bool_t value)
     {
         if (value) {
-            flags |= flag;
+            this->package_flags |= flag;
         } else {
-            flags &= ~flag;
+            this->package_flags &= ~flag;
         }
     }
 
     void Package_t::Flag(Package_Interrupts_e flag, Bool_t value)
     {
         if (value) {
-            interrupt_flags |= flag;
+            this->interrupt_flags |= flag;
         } else {
-            interrupt_flags &= ~flag;
+            this->interrupt_flags &= ~flag;
         }
     }
 

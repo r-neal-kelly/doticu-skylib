@@ -42,13 +42,13 @@ namespace doticu_skylib {
         virtual String_t    Type();             // 3
 
     public:
-        String_t        name;       // 08
-        Quest_t*        quest;      // 10
-        Alias_ID_t      id;         // 18
-        Alias_Flags_e   flags;      // 1C
-        Alias_Fill_e    fill_type;  // 20
-        u16             pad_22;     // 22
-        u32             pad_24;     // 24
+        String_t        name;           // 08
+        Quest_t*        quest;          // 10
+        Alias_ID_t      id;             // 18
+        Alias_Flags_e   alias_flags;    // 1C
+        Alias_Fill_e    fill_type;      // 20
+        u16             pad_22;         // 22
+        u32             pad_24;         // 24
 
     public:
         void Ready_Virtual_Object();

@@ -46,7 +46,7 @@ namespace doticu_skylib {
         Menu_Icon_t*        menu_icon;      // 40
         Quest_t*            owner;          // 48
         List_t<Button_t*>   menu_buttons;   // 50
-        Message_Flags_e     flags;          // 60
+        Message_Flags_e     message_flags;  // 60
         u32                 display_time;   // 64
     };
     STATIC_ASSERT(sizeof(Message_t) == 0x68);

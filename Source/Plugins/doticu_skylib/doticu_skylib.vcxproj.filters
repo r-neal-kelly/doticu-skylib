@@ -171,9 +171,6 @@
     <ClInclude Include="include\doticu_skylib\read_write_lock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\branch_type.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\quest_objective.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -681,6 +678,72 @@
     <ClInclude Include="include\doticu_skylib\atomic_count.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\spell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\magic_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_spell_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_cast_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_delivery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\magic_effect_instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_branch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_info_instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_topic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_response.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_branch_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_branch_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_topic_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_topic_subtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_topic_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_info_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_response_instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_favor_level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_emotion_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_dialogue_response_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -861,6 +924,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\dialogue_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
