@@ -83,6 +83,9 @@
     <ClInclude Include="include\doticu_skylib\enum_magic_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_message_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_model_update_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_quest_event.h" />
+    <ClInclude Include="include\doticu_skylib\enum_quest_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_quest_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_spell_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_container_changes.h" />
