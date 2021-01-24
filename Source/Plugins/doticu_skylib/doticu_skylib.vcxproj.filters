@@ -753,6 +753,9 @@
     <ClInclude Include="include\doticu_skylib\enum_quest_event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_global_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -960,6 +963,9 @@
     </None>
     <None Include="include\doticu_skylib\extra_list.inl">
       <Filter>Header Files\extra</Filter>
+    </None>
+    <None Include="include\doticu_skylib\global.inl">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

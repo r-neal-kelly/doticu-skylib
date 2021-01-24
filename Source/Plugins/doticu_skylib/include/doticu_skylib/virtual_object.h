@@ -57,7 +57,7 @@ namespace doticu_skylib { namespace Virtual {
         Handle_t    Handle();
         Variable_t* Variables();
         Variable_t* Variable(String_t variable_name);
-        Variable_t* Property(String_t property_name);
+        Variable_t* Property(String_t property_name); // this does not seem to work yet. use Variable("::" + variable_name + "_var")
 
         void Log_Variables();
     };

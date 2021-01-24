@@ -78,6 +78,7 @@
     <ClInclude Include="include\doticu_skylib\enum_extra_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_extra_text_display_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_favor_level.h" />
+    <ClInclude Include="include\doticu_skylib\enum_global_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_cast_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_delivery.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_type.h" />
@@ -365,6 +366,7 @@
     <None Include="include\doticu_skylib\extra_list.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\game.inl" />
+    <None Include="include\doticu_skylib\global.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
     <None Include="include\doticu_skylib\virtual_variable.inl" />
   </ItemGroup>

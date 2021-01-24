@@ -83,6 +83,9 @@ namespace doticu_skylib { namespace Virtual {
         return *var;                                                \
     SKYLIB_W
 
+    #define DEFINE_PROPERTY_POINTER(TYPE_, NAME_) DEFINE_VARIABLE_POINTER(TYPE_, "::" NAME_ "_var")
+    #define DEFINE_PROPERTY_REFERENCE(TYPE_, NAME_) DEFINE_VARIABLE_REFERENCE(TYPE_, "::" NAME_ "_var")
+
     #define BIND_STATIC(MACHINE_, CLASS_NAME_, STATIC_NAME_, WAITS_FOR_FRAME_, RETURN_, STATIC_, ...)   \
     SKYLIB_M                                                                                            \
         namespace V = doticu_skylib::Virtual;                                                           \

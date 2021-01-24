@@ -2,48 +2,42 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/global.h"
+#include "doticu_skylib/global.inl"
 
 namespace doticu_skylib {
 
-    Bool_t Global_t::Bool()
+    Bool_t  Global_t::Bool()                { return this->value != 0.0f; }
+    void    Global_t::Bool(Bool_t value)    { this->value = static_cast<Float_t>(value); }
+
+    Int_t   Global_t::Int()                 { return static_cast<Int_t>(this->value); }
+    void    Global_t::Int(Int_t value)      { this->value = static_cast<Float_t>(value); }
+
+    Float_t Global_t::Float()               { return this->value; }
+    void    Global_t::Float(Float_t value)  { this->value = value; }
+
+    Int_t Global_t::Percent()
     {
-        return static_cast<u32>(value) != 0;
+        Int_t percent = this->As<Int_t>();
+        if (percent < 0) {
+            this->As<u16>(0);
+            return 0;
+        } else if (percent > 100) {
+            this->As<u16>(100);
+            return 100;
+        } else {
+            return percent;
+        }
     }
 
-    Float_t Global_t::Float()
+    void Global_t::Percent(Int_t value)
     {
-        return value;
-    }
-
-    u16 Global_t::Short()
-    {
-        return static_cast<u16>(value);
-    }
-
-    u32 Global_t::Long()
-    {
-        return static_cast<u32>(value);
-    }
-
-    void Global_t::Bool(Bool_t value)
-    {
-        this->value = value ? 1 : 0;
-    }
-
-    void Global_t::Float(Float_t value)
-    {
-        this->value = value;
-    }
-
-    void Global_t::Short(u16 value)
-    {
-        this->value = static_cast<Float_t>(value);
-    }
-
-    void Global_t::Long(u32 value)
-    {
-        this->value = static_cast<Float_t>(value);
+        if (value < 0) {
+            this->As<u16>(0);
+        } else if (value > 100) {
+            this->As<u16>(100);
+        } else {
+            this->As<u16>(value);
+        }
     }
 
 }
