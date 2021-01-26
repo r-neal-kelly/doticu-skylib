@@ -36,7 +36,7 @@ namespace doticu_skylib {
     template <>
     inline Bool_t Is_Equal(const none<Heavy_Mod_Index_t>& a, const Heavy_Mod_Index_t& b)
     {
-        return b != 0xFE && b >= a.value;
+        return b == 0xFE || b >= a.value;
     }
 
     template <>
