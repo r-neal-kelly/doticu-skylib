@@ -11,6 +11,7 @@
 
 #include "doticu_skylib/form_flags.h"
 #include "doticu_skylib/form_id.h"
+#include "doticu_skylib/mod_index.h"
 #include "doticu_skylib/script_type.h"
 
 namespace doticu_skylib {
@@ -47,9 +48,10 @@ namespace doticu_skylib {
         static Bool_t           Is_Heavy(Form_ID_t form_id);
         static Bool_t           Is_Light(Form_ID_t form_id);
         static Form_ID_t        Reindex(Form_ID_t form_id, Mod_t* mod);
-        static Form_ID_t        Reindex(Form_ID_t form_id, u32 idx);
+        static Form_ID_t        Reindex(Form_ID_t form_id, some<Heavy_Mod_Index_t> heavy_index);
+        static Form_ID_t        Reindex(Form_ID_t form_id, some<Light_Mod_Index_t> light_index);
         //static some<Form_ID_t>  Form_ID(some<Lower_Form_ID_t> lower_form_id, some<Mod_t*> mod);
-        static Form_ID_t        Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod);
+        static Form_ID_t        Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod); // this should probably be a constructor for Form_ID_t
 
         static Int_t            Compare_Names(const char* name_a, const char* name_b);
 
@@ -134,6 +136,7 @@ namespace doticu_skylib {
         Bool_t              Is_Light();
         Mod_t*              Indexed_Mod();
         Bool_t              Has_Indexed_Mod(const char* mod_name);
+        Bool_t              Has_Indexed_Mod(maybe<Mod_t*> mod);
 
         Vector_t<Mod_t*>    Mods();
 

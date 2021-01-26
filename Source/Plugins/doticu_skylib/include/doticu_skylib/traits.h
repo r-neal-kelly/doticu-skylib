@@ -155,6 +155,16 @@ namespace doticu_skylib {
     >;
 
     template <typename T, typename _ = void>
+    struct is_signed_integral : public std::false_type {};
+    template <typename T>
+    struct is_signed_integral<T, std::conditional_t<false, enable_if_signed_integral_t<T>, void>> : public std::true_type {};
+
+    template <typename T, typename _ = void>
+    struct is_unsigned_integral : public std::false_type {};
+    template <typename T>
+    struct is_unsigned_integral<T, std::conditional_t<false, enable_if_unsigned_integral_t<T>, void>> : public std::true_type {};
+
+    template <typename T, typename _ = void>
     struct is_integer_32_or_less : public std::false_type {};
     template <typename T>
     struct is_integer_32_or_less<T, std::conditional_t<false, enable_if_integer_32_or_less_t<T>, void>> : public std::true_type {};

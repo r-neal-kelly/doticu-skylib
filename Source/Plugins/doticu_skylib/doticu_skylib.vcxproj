@@ -224,11 +224,13 @@
     <ClInclude Include="include\doticu_skylib\magic_effect_instance.h" />
     <ClInclude Include="include\doticu_skylib\magic_target.h" />
     <ClInclude Include="include\doticu_skylib\maybe.h" />
+    <ClInclude Include="include\doticu_skylib\maybe_numeric.h" />
     <ClInclude Include="include\doticu_skylib\menu_icon.h" />
     <ClInclude Include="include\doticu_skylib\message.h" />
     <ClInclude Include="include\doticu_skylib\misc.h" />
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\enum_operator.h" />
+    <ClInclude Include="include\doticu_skylib\mod_index.h" />
     <ClInclude Include="include\doticu_skylib\outfit.h" />
     <ClInclude Include="include\doticu_skylib\package.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_procedure.h" />

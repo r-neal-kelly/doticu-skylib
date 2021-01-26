@@ -11,6 +11,7 @@
 
 #include "doticu_skylib/form_flags.h"
 #include "doticu_skylib/form_id.h"
+#include "doticu_skylib/mod_index.h"
 
 namespace doticu_skylib {
 
@@ -33,7 +34,7 @@ namespace doticu_skylib {
             IS_MASTER = 1 << 0,
             IS_ALTERED = 1 << 1,
 
-            IS_ACTIVE = 1 << 3,
+            IS_ACTIVE = 1 << 3, // doesn't seem to be correct. if a mod is inactive, it won't have an instance.
 
             IS_LIGHT = 1 << 9,
         };
@@ -108,12 +109,14 @@ namespace doticu_skylib {
         static Array_t<Mod_t*>&         Active_Heavy_Mods_2();
         static Array_t<Mod_t*>&         Active_Light_Mods_2();
 
-        static void                     Log_Active_Mods();
-        static void                     Log_Active_Heavy_Mods();
-        static void                     Log_Active_Light_Mods();
+        static Bool_t                   Has_Active_Mod(some<const char*> mod_name);
 
         static maybe<Mod_t*>            Active_Mod(some<const char*> mod_name);
         static some<Mod_t*>             Skyrim();
+
+        static void                     Log_Active_Mods();
+        static void                     Log_Active_Heavy_Mods();
+        static void                     Log_Active_Light_Mods();
 
     public:
         Mod_Error_e             last_error;                 // 000
@@ -179,26 +182,27 @@ namespace doticu_skylib {
         void*                   unk_4C0;                    // 4C0
 
     public:
-        Bool_t              Is_Active();
-        Bool_t              Is_Heavy();
-        Bool_t              Is_Light();
+        Bool_t                      Is_Heavy();
+        Bool_t                      Is_Light();
+        Bool_t                      Has_Form(some<Form_t*> form);
+        Bool_t                      Has_Form(Form_ID_t form_id);
 
-        Bool_t              Has_Current_Record_Type(const char* type);
-        Bool_t              Has_Current_Sub_Record_Type(const char* type);
+        Bool_t                      Has_Current_Record_Type(const char* type);
+        Bool_t                      Has_Current_Sub_Record_Type(const char* type);
 
-        const char*         Name();
-        maybe<Index_t>      Heavy_Index();
-        maybe<Index_t>      Light_Index();
+        const char*                 Name();
+        maybe<Heavy_Mod_Index_t>    Heavy_Index();
+        maybe<Light_Mod_Index_t>    Light_Index();
 
-        Bool_t              Seek(u32 offset);
-        //Bool_t              Seek_Next_Record();
-        Bool_t              Seek_Next_Sub_Record();
-        void                Read(void* destination, u32 size);
+        Bool_t                      Seek(u32 offset);
+        //Bool_t                      Seek_Next_Record();
+        Bool_t                      Seek_Next_Sub_Record();
+        void                        Read(void* destination, u32 size);
 
-        Bool_t              Find_Record(const char* type, Form_ID_t form_id);
-        const char*         Allocate_Editor_ID(const char* type, Form_ID_t form_id);
+        Bool_t                      Find_Record(const char* type, Form_ID_t form_id);
+        const char*                 Allocate_Editor_ID(const char* type, Form_ID_t form_id);
 
-        void                Log_Records(std::string indent = "");
+        void                        Log_Records(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Mod_t) == 0x4C8);
 

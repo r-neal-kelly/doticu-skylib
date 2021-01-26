@@ -43,28 +43,28 @@ namespace doticu_skylib {
         };
 
     public:
-        static some<Game_t*>        Self();
+        static some<Game_t*>            Self();
 
-        static Word_t               Base_Address();
-        static some<Byte_t*>        Base_Address_Pointer();
+        static Word_t                   Base_Address();
+        static some<Byte_t*>            Base_Address_Pointer();
 
-        static const Version_t<u16>& Version();
+        static const Version_t<u16>&    Version();
 
         template <typename T>
-        static some<T*>             Allocate();
+        static some<T*>                 Allocate();
         template <typename T>
-        static void                 Deallocate(some<T*> data);
+        static void                     Deallocate(some<T*> data);
 
-        static maybe<Form_t*>       Form(Form_ID_t form_id);
-        static maybe<Form_t*>       Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
+        static maybe<Form_t*>           Form(Form_ID_t form_id);
+        static maybe<Form_t*>           Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
 
         template <typename From_t, typename To_t>
-        static maybe<To_t*>         Runtime_Cast(some<From_t*> from);
+        static maybe<To_t*>             Runtime_Cast(some<From_t*> from);
 
-        static Word_t               V_Table_Offset(const void* instance);
-        static void                 Write_V_Table(void* instance, Word_t v_table_offset);
+        static Word_t                   V_Table_Offset(const void* instance);
+        static void                     Write_V_Table(void* instance, Word_t v_table_offset);
 
-        static void                 Log_u64s(void* data, size_t count, std::string indent = "");
+        static void                     Log_u64s(void* data, size_t count, std::string indent = "");
 
     public:
         u64                             unk_000;                            // 000

@@ -16,6 +16,12 @@ namespace doticu_skylib {
     template <typename T>
     class some;
 
+    template <typename T>
+    Bool_t Is_Equal(const none<T>& a, const T& b)
+    {
+        static_assert(false, "You must define Is_Equal() for your none type.");
+    }
+
     // <Index_t>
 
     template <>
@@ -217,8 +223,6 @@ namespace doticu_skylib {
         explicit operator Bool_t()          { return false; }
         explicit operator Bool_t() const    { return false; }
     };
-
-    // try creating templated static cast contructors so we don't have to static_cast<maybe<Actor_t*>>(maybe<Form_t*>);
 
     template <typename T>
     class maybe<T*>

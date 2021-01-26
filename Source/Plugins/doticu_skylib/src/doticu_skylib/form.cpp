@@ -36,40 +36,49 @@ namespace doticu_skylib {
     Form_ID_t Form_t::Reindex(Form_ID_t form_id, Mod_t* mod)
     {
         if (mod) {
-            maybe<Index_t> mod_idx;
             if (Is_Light(form_id)) {
-                mod_idx = mod->Light_Index();
+                maybe<Light_Mod_Index_t> light_index = mod->Light_Index();
+                if (light_index) {
+                    return Reindex(form_id, light_index());
+                } else {
+                    return 0;
+                }
             } else {
-                mod_idx = mod->Heavy_Index();
-            }
-            if (mod_idx) {
-                return Reindex(form_id, mod_idx());
-            } else {
-                return 0;
+                maybe<Heavy_Mod_Index_t> heavy_index = mod->Heavy_Index();
+                if (heavy_index) {
+                    return Reindex(form_id, heavy_index());
+                } else {
+                    return 0;
+                }
             }
         } else {
             if (Is_Heavy(form_id)) {
-                return Reindex(form_id, 0xFF);
+                return Reindex(form_id, Heavy_Mod_Index_t(0xFF));
             } else {
                 return 0;
             }
         }
     }
 
-    Form_ID_t Form_t::Reindex(Form_ID_t form_id, u32 idx)
+    Form_ID_t Form_t::Reindex(Form_ID_t form_id, some<Heavy_Mod_Index_t> heavy_index)
     {
-        if (Is_Light(form_id)) {
-            if (idx < 0x1000) {
-                return 0xFE000000 | (idx << 12) | (form_id & 0x00000FFF);
-            } else {
-                return 0;
-            }
+        SKYLIB_ASSERT_SOME(heavy_index);
+
+        if (Is_Heavy(form_id)) {
+            return (static_cast<u32>(heavy_index()) << 24) | (form_id & 0x00FFFFFF);
         } else {
-            if (idx < 0x100) {
-                return (idx << 24) | (form_id & 0x00FFFFFF);
-            } else {
-                return 0;
-            }
+            return 0;
+        }
+    }
+
+    Form_ID_t Form_t::Reindex(Form_ID_t form_id, some<Light_Mod_Index_t> light_index)
+    {
+        SKYLIB_ASSERT_SOME(light_index);
+
+        if (Is_Light(form_id)) {
+            return 0xFE000000 | (static_cast<u32>(light_index()) << 12) | (form_id & 0x00000FFF);
+        } else {
+            return 0;
         }
     }
 
@@ -78,16 +87,16 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(mod);
 
         if (mod->Is_Light()) {
-            maybe<Index_t> mod_idx = mod->Light_Index();
-            if (mod_idx && mod_idx() < 0x1000) {
-                return 0xFE000000 | (mod_idx() << 12) | (lower_form_id & 0x00000FFF);
+            maybe<Light_Mod_Index_t> light_index = mod->Light_Index();
+            if (light_index) {
+                return 0xFE000000 | (static_cast<u32>(light_index()) << 12) | (lower_form_id & 0x00000FFF);
             } else {
                 return 0;
             }
         } else {
-            maybe<Index_t> mod_idx = mod->Heavy_Index();
-            if (mod_idx && mod_idx() < 0x100) {
-                return (mod_idx() << 24) | (lower_form_id & 0x00FFFFFF);
+            maybe<Heavy_Mod_Index_t> heavy_index = mod->Heavy_Index();
+            if (heavy_index) {
+                return (static_cast<u32>(heavy_index()) << 24) | (lower_form_id & 0x00FFFFFF);
             } else {
                 return 0;
             }
@@ -136,15 +145,14 @@ namespace doticu_skylib {
 
     Mod_t* Form_t::Indexed_Mod()
     {
-        Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-        Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
-        
         if (Is_Static()) {
             if (Is_Light()) {
+                Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
                 u32 index = (form_id & 0x00FFF000) >> 12;
                 SKYLIB_ASSERT(index < light_mods.count);
                 return light_mods.entries[index];
             } else {
+                Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
                 u32 index = (form_id & 0xFF000000) >> 24;
                 SKYLIB_ASSERT(index < heavy_mods.count);
                 return heavy_mods.entries[index];
@@ -156,9 +164,6 @@ namespace doticu_skylib {
 
     Bool_t Form_t::Has_Indexed_Mod(const char* mod_name)
     {
-        Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-        Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
-
         if (mod_name && mod_name[0]) {
             if (Is_Static()) {
                 Mod_t* mod = Indexed_Mod();
@@ -176,6 +181,15 @@ namespace doticu_skylib {
             } else {
                 return false;
             }
+        }
+    }
+
+    Bool_t Form_t::Has_Indexed_Mod(maybe<Mod_t*> mod)
+    {
+        if (mod) {
+            return Indexed_Mod() == mod();
+        } else {
+            return Is_Dynamic();
         }
     }
 

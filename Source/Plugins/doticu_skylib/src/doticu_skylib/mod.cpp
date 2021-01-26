@@ -139,33 +139,11 @@ namespace doticu_skylib {
         return Game_t::Self()->light_mods;
     }
 
-    static void Log_Mods(const char* title, Vector_t<some<Mod_t*>> mods)
+    Bool_t Mod_t::Has_Active_Mod(some<const char*> mod_name)
     {
-        #define TAB "    "
+        SKYLIB_ASSERT_SOME(mod_name);
 
-        SKYLIB_LOG("%s {", title);
-        for (size_t idx = 0, end = mods.size(); idx < end; idx += 1) {
-            some<Mod_t*> mod = mods[idx];
-            SKYLIB_LOG(TAB "index: %6zu, mod: %s", idx, mod->Name());
-        }
-        SKYLIB_LOG("}");
-
-        #undef TAB
-    }
-
-    void Mod_t::Log_Active_Mods()
-    {
-        doticu_skylib::Log_Mods("Log_Active_Mods", Active_Mods());
-    }
-
-    void Mod_t::Log_Active_Heavy_Mods()
-    {
-        doticu_skylib::Log_Mods("Log_Active_Heavy_Mods", Active_Heavy_Mods());
-    }
-
-    void Mod_t::Log_Active_Light_Mods()
-    {
-        doticu_skylib::Log_Mods("Log_Active_Light_Mods", Active_Light_Mods());
+        return !!Active_Mod(mod_name);
     }
 
     maybe<Mod_t*> Mod_t::Active_Mod(some<const char*> mod_name)
@@ -203,9 +181,33 @@ namespace doticu_skylib {
         return skyrim();
     }
 
-    Bool_t Mod_t::Is_Active()
+    static void Log_Mods(const char* title, Vector_t<some<Mod_t*>> mods)
     {
-        return (mod_flags & Mod_Flags_e::IS_ACTIVE) != 0;
+        #define TAB "    "
+
+        SKYLIB_LOG("%s {", title);
+        for (size_t idx = 0, end = mods.size(); idx < end; idx += 1) {
+            some<Mod_t*> mod = mods[idx];
+            SKYLIB_LOG(TAB "index: %6zu, mod: %s", idx, mod->Name());
+        }
+        SKYLIB_LOG("}");
+
+        #undef TAB
+    }
+
+    void Mod_t::Log_Active_Mods()
+    {
+        doticu_skylib::Log_Mods("Log_Active_Mods", Active_Mods());
+    }
+
+    void Mod_t::Log_Active_Heavy_Mods()
+    {
+        doticu_skylib::Log_Mods("Log_Active_Heavy_Mods", Active_Heavy_Mods());
+    }
+
+    void Mod_t::Log_Active_Light_Mods()
+    {
+        doticu_skylib::Log_Mods("Log_Active_Light_Mods", Active_Light_Mods());
     }
 
     Bool_t Mod_t::Is_Heavy()
@@ -216,6 +218,35 @@ namespace doticu_skylib {
     Bool_t Mod_t::Is_Light()
     {
         return (mod_flags & Mod_Flags_e::IS_LIGHT) != 0;
+    }
+
+    Bool_t Mod_t::Has_Form(some<Form_t*> form)
+    {
+        SKYLIB_ASSERT_SOME(form);
+
+        return Has_Form(form->form_id);
+    }
+
+    Bool_t Mod_t::Has_Form(Form_ID_t form_id)
+    {
+        // some of this should go in Form_ID_t, Has_Heavy/Light_Mod_Index()
+        if (Is_Light()) {
+            maybe<Light_Mod_Index_t> mod_index = Light_Mod_Index_t(this->light_index);
+            if (mod_index) {
+                maybe<Light_Mod_Index_t> form_mod_index = Light_Mod_Index_t((form_id & 0x00FFF000) >> 12); // eventually take the Form_ID_t
+                return mod_index == form_mod_index;
+            } else {
+                return false;
+            }
+        } else {
+            maybe<Heavy_Mod_Index_t> mod_index = Heavy_Mod_Index_t(this->heavy_index);
+            if (mod_index) {
+                maybe<Heavy_Mod_Index_t> form_mod_index = Heavy_Mod_Index_t((form_id & 0xFF000000) >> 24); // eventually take the Form_ID_t
+                return mod_index == form_mod_index;
+            } else {
+                return false;
+            }
+        }
     }
 
     Bool_t Mod_t::Has_Current_Record_Type(const char* type)
@@ -233,29 +264,21 @@ namespace doticu_skylib {
         return static_cast<const char*>(file_name);
     }
 
-    maybe<Index_t> Mod_t::Heavy_Index()
+    maybe<Heavy_Mod_Index_t> Mod_t::Heavy_Index()
     {
         if (Is_Heavy()) {
-            if (heavy_index == 0xFF) {
-                return none<Index_t>();
-            } else {
-                return maybe<Index_t>(static_cast<Index_t>(heavy_index));
-            }
+            return Heavy_Mod_Index_t(heavy_index);
         } else {
-            return none<Index_t>();
+            return none<Heavy_Mod_Index_t>();
         }
     }
 
-    maybe<Index_t> Mod_t::Light_Index()
+    maybe<Light_Mod_Index_t> Mod_t::Light_Index()
     {
         if (Is_Light()) {
-            if (light_index == 0xFFFF) {
-                return none<Index_t>();
-            } else {
-                return maybe<Index_t>(static_cast<Index_t>(light_index));
-            }
+            return Light_Mod_Index_t(light_index);
         } else {
-            return none<Index_t>();
+            return none<Light_Mod_Index_t>();
         }
     }
 
