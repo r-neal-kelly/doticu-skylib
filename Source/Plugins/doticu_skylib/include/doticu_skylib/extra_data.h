@@ -12,11 +12,14 @@ namespace doticu_skylib {
     {
     public:
         template <typename Type_t>
-        static Type_t*  Create();
-        static void     Destroy(Data_x* xdata);
+        static some<Type_t*>    Create();
+        template <typename Type_t>
+        static void             Destroy(some<Type_t*> xdata);
 
-        static void     Log_V_Tables(std::string indent = "");
-        static void     Log_Text_Displays(std::string indent = "");
+    public:
+        static void Log_V_Tables(std::string indent = "");
+        static void Log_Collision_Layers(std::string indent = "");
+        static void Log_Text_Displays(std::string indent = "");
 
     public:
         virtual         ~Data_x();                          // 0

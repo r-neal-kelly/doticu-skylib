@@ -86,6 +86,9 @@ namespace doticu_skylib {
         explicit operator Bool_t()          { return value != none<Numeric_t>(); }
         explicit operator Bool_t() const    { return value != none<Numeric_t>(); }
 
+        Bool_t operator !()         { return !static_cast<Bool_t>(*this); }
+        Bool_t operator !() const   { return !static_cast<Bool_t>(*this); }
+
         template <typename TT>
         operator maybe<TT>() const
         {
@@ -138,6 +141,9 @@ namespace doticu_skylib {
 
         explicit operator Bool_t()          { return value != none<Numeric_t>(); }
         explicit operator Bool_t() const    { return value != none<Numeric_t>(); }
+
+        Bool_t operator !()         { return !static_cast<Bool_t>(*this); }
+        Bool_t operator !() const   { return !static_cast<Bool_t>(*this); }
 
         template <typename TT>
         operator some<TT>() const

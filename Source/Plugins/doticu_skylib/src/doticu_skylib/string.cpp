@@ -90,6 +90,11 @@ namespace doticu_skylib {
         return data && data[0];
     }
 
+    Bool_t Static_String_t::operator !() const
+    {
+        return !static_cast<Bool_t>(*this);
+    }
+
     Static_String_t::operator const char*() const
     {
         return data;
@@ -152,6 +157,11 @@ namespace doticu_skylib {
     Dynamic_String_t::operator Bool_t() const
     {
         return data && data[0];
+    }
+
+    Bool_t Dynamic_String_t::operator !() const
+    {
+        return !static_cast<Bool_t>(*this);
     }
 
     Dynamic_String_t::operator const char* () const

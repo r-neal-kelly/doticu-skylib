@@ -45,6 +45,7 @@ namespace doticu_skylib {
 
     public:
         explicit operator Bool_t() const;
+        Bool_t operator !() const;
         operator const char*() const;
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
@@ -81,6 +82,7 @@ namespace doticu_skylib {
 
     public:
         explicit operator Bool_t() const;
+        Bool_t operator !() const;
         operator const char*() const;
     };
     STATIC_ASSERT(sizeof(Dynamic_String_t) == 0x10);

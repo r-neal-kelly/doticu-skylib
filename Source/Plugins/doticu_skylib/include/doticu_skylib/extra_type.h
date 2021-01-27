@@ -102,7 +102,7 @@ namespace doticu_skylib {
             // 0x6B 0x0152C8A0
             // 0x6C 0x0152C920
 
-            // 0x6E 0x0152C940
+            COLLISION_LAYER     = 0x6E, // XTRI
 
             ENCOUNTER_ZONE      = 0x70,
             // 0x71 0x0152F4C0

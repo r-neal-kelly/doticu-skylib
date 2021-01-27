@@ -53,6 +53,11 @@ namespace doticu_skylib {
 
             return value > 0;
         }
+
+        inline Bool_t operator !() const
+        {
+            return !static_cast<Bool_t>(*this);
+        }
     };
     STATIC_ASSERT(sizeof(Package_Bool_Value_t) == 0x10);
 

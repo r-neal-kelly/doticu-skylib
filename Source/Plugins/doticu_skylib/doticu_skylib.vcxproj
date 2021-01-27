@@ -67,6 +67,7 @@
     <ClInclude Include="include\doticu_skylib\dialogue_response_instance.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic.h" />
     <ClInclude Include="include\doticu_skylib\encounter_zone.h" />
+    <ClInclude Include="include\doticu_skylib\enum_collision_layer_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_dialogue_branch_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_dialogue_info_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_dialogue_response_flags.h" />
@@ -89,6 +90,7 @@
     <ClInclude Include="include\doticu_skylib\enum_quest_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_spell_flags.h" />
+    <ClInclude Include="include\doticu_skylib\extra_collision_layer.h" />
     <ClInclude Include="include\doticu_skylib\extra_container_changes.h" />
     <ClInclude Include="include\doticu_skylib\extra_count.h" />
     <ClInclude Include="include\doticu_skylib\extra_encounter_zone.h" />
@@ -314,6 +316,7 @@
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
