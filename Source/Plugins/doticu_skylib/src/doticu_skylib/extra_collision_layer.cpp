@@ -17,6 +17,9 @@ namespace doticu_skylib {
     void Collision_Layer_x::Destroy(some<Collision_Layer_x*> collision_layer_x)
     {
         SKYLIB_ASSERT_SOME(collision_layer_x);
+
+        collision_layer_x->Collision_Layer_Type(Collision_Layer_Type_e::_NONE_);
+
         Data_x::Destroy<Collision_Layer_x>(collision_layer_x);
     }
 
@@ -31,10 +34,17 @@ namespace doticu_skylib {
 
     void Collision_Layer_x::Collision_Layer_Type(Collision_Layer_Type_e collision_layer_type)
     {
-        if (!this->collision_layer_type) {
-            this->collision_layer_type = Game_t::Allocate<Collision_Layer_Type_e>()();
+        if (collision_layer_type != Collision_Layer_Type_e::_NONE_) {
+            if (!this->collision_layer_type) {
+                this->collision_layer_type = Game_t::Allocate<Collision_Layer_Type_e>()();
+            }
+            *this->collision_layer_type = collision_layer_type;
+        } else {
+            if (this->collision_layer_type) {
+                Game_t::Deallocate<Collision_Layer_Type_e>(this->collision_layer_type());
+                this->collision_layer_type = none<Collision_Layer_Type_e*>();
+            }
         }
-        *this->collision_layer_type = collision_layer_type;
     }
 
     void Collision_Layer_x::Log(std::string indent)
