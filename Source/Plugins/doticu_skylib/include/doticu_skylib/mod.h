@@ -185,14 +185,14 @@ namespace doticu_skylib {
         Bool_t                      Is_Heavy();
         Bool_t                      Is_Light();
         Bool_t                      Has_Form(some<Form_t*> form);
-        Bool_t                      Has_Form(Form_ID_t form_id);
+        Bool_t                      Has_Form(maybe<Form_ID_t> form_id);
 
         Bool_t                      Has_Current_Record_Type(const char* type);
         Bool_t                      Has_Current_Sub_Record_Type(const char* type);
 
         const char*                 Name();
-        maybe<Heavy_Mod_Index_t>    Heavy_Index();
-        maybe<Light_Mod_Index_t>    Light_Index();
+        maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index();
+        maybe<Light_Mod_Index_t>    Light_Mod_Index();
 
         Bool_t                      Seek(u32 offset);
         //Bool_t                      Seek_Next_Record();

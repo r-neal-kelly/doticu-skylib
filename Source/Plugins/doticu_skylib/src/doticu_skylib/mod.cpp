@@ -227,25 +227,12 @@ namespace doticu_skylib {
         return Has_Form(form->form_id);
     }
 
-    Bool_t Mod_t::Has_Form(Form_ID_t form_id)
+    Bool_t Mod_t::Has_Form(maybe<Form_ID_t> form_id)
     {
-        // some of this should go in Form_ID_t, Has_Heavy/Light_Mod_Index()
-        if (Is_Light()) {
-            maybe<Light_Mod_Index_t> mod_index = Light_Mod_Index_t(this->light_index);
-            if (mod_index) {
-                maybe<Light_Mod_Index_t> form_mod_index = Light_Mod_Index_t((form_id & 0x00FFF000) >> 12); // eventually take the Form_ID_t
-                return mod_index == form_mod_index;
-            } else {
-                return false;
-            }
+        if (form_id) {
+            return form_id().Has_Mod(this);
         } else {
-            maybe<Heavy_Mod_Index_t> mod_index = Heavy_Mod_Index_t(this->heavy_index);
-            if (mod_index) {
-                maybe<Heavy_Mod_Index_t> form_mod_index = Heavy_Mod_Index_t((form_id & 0xFF000000) >> 24); // eventually take the Form_ID_t
-                return mod_index == form_mod_index;
-            } else {
-                return false;
-            }
+            return false;
         }
     }
 
@@ -264,7 +251,7 @@ namespace doticu_skylib {
         return static_cast<const char*>(file_name);
     }
 
-    maybe<Heavy_Mod_Index_t> Mod_t::Heavy_Index()
+    maybe<Heavy_Mod_Index_t> Mod_t::Heavy_Mod_Index()
     {
         if (Is_Heavy()) {
             return Heavy_Mod_Index_t(heavy_index);
@@ -273,7 +260,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Light_Mod_Index_t> Mod_t::Light_Index()
+    maybe<Light_Mod_Index_t> Mod_t::Light_Mod_Index()
     {
         if (Is_Light()) {
             return Light_Mod_Index_t(light_index);

@@ -13,96 +13,6 @@
 
 namespace doticu_skylib {
 
-    Bool_t Form_t::Is_Static(Form_ID_t form_id)
-    {
-        return !Is_Dynamic(form_id);
-    }
-
-    Bool_t Form_t::Is_Dynamic(Form_ID_t form_id)
-    {
-        return (form_id & 0xFF000000) == 0xFF000000;
-    }
-
-    Bool_t Form_t::Is_Heavy(Form_ID_t form_id)
-    {
-        return !Is_Light(form_id);
-    }
-
-    Bool_t Form_t::Is_Light(Form_ID_t form_id)
-    {
-        return (form_id & 0xFF000000) == 0xFE000000;
-    }
-
-    Form_ID_t Form_t::Reindex(Form_ID_t form_id, Mod_t* mod)
-    {
-        if (mod) {
-            if (Is_Light(form_id)) {
-                maybe<Light_Mod_Index_t> light_index = mod->Light_Index();
-                if (light_index) {
-                    return Reindex(form_id, light_index());
-                } else {
-                    return 0;
-                }
-            } else {
-                maybe<Heavy_Mod_Index_t> heavy_index = mod->Heavy_Index();
-                if (heavy_index) {
-                    return Reindex(form_id, heavy_index());
-                } else {
-                    return 0;
-                }
-            }
-        } else {
-            if (Is_Heavy(form_id)) {
-                return Reindex(form_id, Heavy_Mod_Index_t(0xFF));
-            } else {
-                return 0;
-            }
-        }
-    }
-
-    Form_ID_t Form_t::Reindex(Form_ID_t form_id, some<Heavy_Mod_Index_t> heavy_index)
-    {
-        SKYLIB_ASSERT_SOME(heavy_index);
-
-        if (Is_Heavy(form_id)) {
-            return (static_cast<u32>(heavy_index()) << 24) | (form_id & 0x00FFFFFF);
-        } else {
-            return 0;
-        }
-    }
-
-    Form_ID_t Form_t::Reindex(Form_ID_t form_id, some<Light_Mod_Index_t> light_index)
-    {
-        SKYLIB_ASSERT_SOME(light_index);
-
-        if (Is_Light(form_id)) {
-            return 0xFE000000 | (static_cast<u32>(light_index()) << 12) | (form_id & 0x00000FFF);
-        } else {
-            return 0;
-        }
-    }
-
-    Form_ID_t Form_t::Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod)
-    {
-        SKYLIB_ASSERT_SOME(mod);
-
-        if (mod->Is_Light()) {
-            maybe<Light_Mod_Index_t> light_index = mod->Light_Index();
-            if (light_index) {
-                return 0xFE000000 | (static_cast<u32>(light_index()) << 12) | (lower_form_id & 0x00000FFF);
-            } else {
-                return 0;
-            }
-        } else {
-            maybe<Heavy_Mod_Index_t> heavy_index = mod->Heavy_Index();
-            if (heavy_index) {
-                return (static_cast<u32>(heavy_index()) << 24) | (lower_form_id & 0x00FFFFFF);
-            } else {
-                return 0;
-            }
-        }
-    }
-
     Int_t Form_t::Compare_Names(const char* name_a, const char* name_b)
     {
         if (!name_a || !name_a[0]) {
@@ -118,57 +28,29 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Form_t::Is_Valid()
+    Bool_t Form_t::Is_Valid()   { return static_cast<Bool_t>(form_id); }
+    Bool_t Form_t::Is_Static()  { return form_id.Is_Static(); }
+    Bool_t Form_t::Is_Dynamic() { return form_id.Is_Dynamic(); }
+    Bool_t Form_t::Is_Heavy()   { return form_id.Is_Heavy(); }
+    Bool_t Form_t::Is_Light()   { return form_id.Is_Light(); }
+
+    maybe<Heavy_Mod_Index_t>    Form_t::Heavy_Mod_Index()   { return form_id.Heavy_Mod_Index(); }
+    maybe<Light_Mod_Index_t>    Form_t::Light_Mod_Index()   { return form_id.Light_Mod_Index(); }
+    maybe<Heavy_Form_Index_t>   Form_t::Heavy_Form_Index()  { return form_id.Heavy_Form_Index(); }
+    maybe<Light_Form_Index_t>   Form_t::Light_Form_Index()  { return form_id.Light_Form_Index(); }
+
+    maybe<Mod_t*> Form_t::Indexed_Mod()
     {
-        return form_id != 0;
+        return form_id.Mod();
     }
 
-    Bool_t Form_t::Is_Static()
-    {
-        return !Is_Dynamic();
-    }
-
-    Bool_t Form_t::Is_Dynamic()
-    {
-        return (form_id & 0xFF000000) == 0xFF000000;
-    }
-
-    Bool_t Form_t::Is_Heavy()
-    {
-        return !Is_Light();
-    }
-
-    Bool_t Form_t::Is_Light()
-    {
-        return (form_id & 0xFF000000) == 0xFE000000;
-    }
-
-    Mod_t* Form_t::Indexed_Mod()
-    {
-        if (Is_Static()) {
-            if (Is_Light()) {
-                Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
-                u32 index = (form_id & 0x00FFF000) >> 12;
-                SKYLIB_ASSERT(index < light_mods.count);
-                return light_mods.entries[index];
-            } else {
-                Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-                u32 index = (form_id & 0xFF000000) >> 24;
-                SKYLIB_ASSERT(index < heavy_mods.count);
-                return heavy_mods.entries[index];
-            }
-        } else {
-            return nullptr;
-        }
-    }
-
-    Bool_t Form_t::Has_Indexed_Mod(const char* mod_name)
+    Bool_t Form_t::Has_Indexed_Mod(maybe<const char*> mod_name)
     {
         if (mod_name && mod_name[0]) {
             if (Is_Static()) {
-                Mod_t* mod = Indexed_Mod();
+                maybe<Mod_t*> mod = Indexed_Mod();
                 if (mod) {
-                    return CString_t::Is_Same(mod_name, mod->Name(), true);
+                    return CString_t::Is_Same(mod_name(), mod->Name(), true);
                 } else {
                     return false;
                 }
@@ -209,29 +91,7 @@ namespace doticu_skylib {
 
     String_t Form_t::Form_ID_String()
     {
-        static const char hex_values[16] =
-        {
-            '0', '1', '2', '3', '4', '5', '6', '7',
-            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-        };
-
-        char form_id_string[11] =
-        {
-            '0', 'x',
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-            '\0'
-        };
-
-        form_id_string[2] = hex_values[(form_id & 0xF0000000) >> 28];
-        form_id_string[3] = hex_values[(form_id & 0x0F000000) >> 24];
-        form_id_string[4] = hex_values[(form_id & 0x00F00000) >> 20];
-        form_id_string[5] = hex_values[(form_id & 0x000F0000) >> 16];
-        form_id_string[6] = hex_values[(form_id & 0x0000F000) >> 12];
-        form_id_string[7] = hex_values[(form_id & 0x00000F00) >>  8];
-        form_id_string[8] = hex_values[(form_id & 0x000000F0) >>  4];
-        form_id_string[9] = hex_values[(form_id & 0x0000000F) >>  0];
-
-        return form_id_string;
+        return static_cast<String_t>(this->form_id);
     }
 
     Vector_t<String_t> Form_t::Mod_Names()

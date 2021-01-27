@@ -31,7 +31,8 @@ namespace doticu_skylib {
     public:
         none_numeric(const Numeric_t value) : value(value) {}
 
-        friend Bool_t Is_Equal<Numeric_t>(const none<Numeric_t>& a, const Numeric_t& b);
+        Numeric_t operator()()          { return const_cast<Numeric_t>(value); }
+        Numeric_t operator()() const    { return const_cast<Numeric_t>(value); }
 
         friend Bool_t operator==(const none<Numeric_t>& a, const Numeric_t b)   { return Is_Equal(a, b); }
         friend Bool_t operator==(const none<Numeric_t>&& a, const Numeric_t b)  { return Is_Equal(a, b); }

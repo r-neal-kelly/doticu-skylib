@@ -201,6 +201,7 @@
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
     <ClInclude Include="include\doticu_skylib\form_flags.h" />
     <ClInclude Include="include\doticu_skylib\form_id.h" />
+    <ClInclude Include="include\doticu_skylib\form_index.h" />
     <ClInclude Include="include\doticu_skylib\form_list.h" />
     <ClInclude Include="include\doticu_skylib\form_type.h" />
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
@@ -318,6 +319,8 @@
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
     <ClCompile Include="src\doticu_skylib\form.cpp" />
     <ClCompile Include="src\doticu_skylib\form_factory.cpp" />
+    <ClCompile Include="src\doticu_skylib\form_id.cpp" />
+    <ClCompile Include="src\doticu_skylib\form_index.cpp" />
     <ClCompile Include="src\doticu_skylib\form_list.cpp" />
     <ClCompile Include="src\doticu_skylib\game.cpp" />
     <ClCompile Include="src\doticu_skylib\game_heap.cpp" />
@@ -328,6 +331,7 @@
     <ClCompile Include="src\doticu_skylib\magic_target.cpp" />
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
+    <ClCompile Include="src\doticu_skylib\mod_index.cpp" />
     <ClCompile Include="src\doticu_skylib\os.cpp" />
     <ClCompile Include="src\doticu_skylib\package.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value.cpp" />

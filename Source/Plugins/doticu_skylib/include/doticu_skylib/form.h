@@ -43,16 +43,6 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::FORM,
         };
 
-        static Bool_t           Is_Static(Form_ID_t form_id);
-        static Bool_t           Is_Dynamic(Form_ID_t form_id);
-        static Bool_t           Is_Heavy(Form_ID_t form_id);
-        static Bool_t           Is_Light(Form_ID_t form_id);
-        static Form_ID_t        Reindex(Form_ID_t form_id, Mod_t* mod);
-        static Form_ID_t        Reindex(Form_ID_t form_id, some<Heavy_Mod_Index_t> heavy_index);
-        static Form_ID_t        Reindex(Form_ID_t form_id, some<Light_Mod_Index_t> light_index);
-        //static some<Form_ID_t>  Form_ID(some<Lower_Form_ID_t> lower_form_id, some<Mod_t*> mod);
-        static Form_ID_t        Form_ID(Lower_Form_ID_t lower_form_id, some<Mod_t*> mod); // this should probably be a constructor for Form_ID_t
-
         static Int_t            Compare_Names(const char* name_a, const char* name_b);
 
     public:
@@ -129,25 +119,31 @@ namespace doticu_skylib {
         u32                     pad_1C;         // 1C
 
     public:
-        Bool_t              Is_Valid();
-        Bool_t              Is_Static();
-        Bool_t              Is_Dynamic();
-        Bool_t              Is_Heavy();
-        Bool_t              Is_Light();
-        Mod_t*              Indexed_Mod();
-        Bool_t              Has_Indexed_Mod(const char* mod_name);
-        Bool_t              Has_Indexed_Mod(maybe<Mod_t*> mod);
+        Bool_t                      Is_Valid();
+        Bool_t                      Is_Static();
+        Bool_t                      Is_Dynamic();
+        Bool_t                      Is_Heavy();
+        Bool_t                      Is_Light();
 
-        Vector_t<Mod_t*>    Mods();
+        maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index();
+        maybe<Light_Mod_Index_t>    Light_Mod_Index();
+        maybe<Heavy_Form_Index_t>   Heavy_Form_Index();
+        maybe<Light_Form_Index_t>   Light_Form_Index();
 
-        String_t            Form_ID_String();
-        Vector_t<String_t>  Mod_Names();
-        void                Mod_Names(Vector_t<String_t>& results);
+        maybe<Mod_t*>               Indexed_Mod();
+        Bool_t                      Has_Indexed_Mod(maybe<const char*> mod_name);
+        Bool_t                      Has_Indexed_Mod(maybe<Mod_t*> mod);
+
+        Vector_t<Mod_t*>            Mods();
+
+        String_t                    Form_ID_String();
+        Vector_t<String_t>          Mod_Names();
+        void                        Mod_Names(Vector_t<String_t>& results);
 
     public:
-        void                Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
-        void                Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
-        void                Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
+        void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
+        void Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
+        void Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
 

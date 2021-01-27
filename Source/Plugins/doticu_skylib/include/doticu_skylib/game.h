@@ -55,8 +55,8 @@ namespace doticu_skylib {
         template <typename T>
         static void                     Deallocate(some<T*> data);
 
-        static maybe<Form_t*>           Form(Form_ID_t form_id);
-        static maybe<Form_t*>           Form(some<Mod_t*> mod, Lower_Form_ID_t lower_form_id);
+        static maybe<Form_t*>           Form(Raw_Form_ID_t raw_form_id);
+        static maybe<Form_t*>           Form(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
 
         template <typename From_t, typename To_t>
         static maybe<To_t*>             Runtime_Cast(some<From_t*> from);
