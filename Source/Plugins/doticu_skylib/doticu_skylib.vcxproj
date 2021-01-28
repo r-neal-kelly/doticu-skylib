@@ -55,6 +55,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\doticu_skylib\actor_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_controller.h" />
+    <ClInclude Include="include\doticu_skylib\actor_high_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_low_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_middle_ai.h" />
     <ClInclude Include="include\doticu_skylib\atomic_count.h" />
     <ClInclude Include="include\doticu_skylib\container_changes.h" />
     <ClInclude Include="include\doticu_skylib\container_changes_entry.h" />
@@ -66,7 +71,9 @@
     <ClInclude Include="include\doticu_skylib\dialogue_response.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_response_instance.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic.h" />
+    <ClInclude Include="include\doticu_skylib\dynatomic_count.h" />
     <ClInclude Include="include\doticu_skylib\encounter_zone.h" />
+    <ClInclude Include="include\doticu_skylib\enum_actor_controller_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_collision_layer_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_dialogue_branch_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_dialogue_info_flags.h" />
@@ -80,6 +87,7 @@
     <ClInclude Include="include\doticu_skylib\enum_extra_text_display_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_favor_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_global_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_havok_collision_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_cast_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_delivery.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_type.h" />
@@ -88,6 +96,7 @@
     <ClInclude Include="include\doticu_skylib\enum_quest_event.h" />
     <ClInclude Include="include\doticu_skylib\enum_quest_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_quest_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_reference_count_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_spell_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_collision_layer.h" />
@@ -213,6 +222,16 @@
     <ClInclude Include="include\doticu_skylib\game_ini.h" />
     <ClInclude Include="include\doticu_skylib\game_macros.h" />
     <ClInclude Include="include\doticu_skylib\global.h" />
+    <ClInclude Include="include\doticu_skylib\enum_actor_critical_stage.h" />
+    <ClInclude Include="include\doticu_skylib\havok_bound_object.h" />
+    <ClInclude Include="include\doticu_skylib\havok_broad_phase_handle.h" />
+    <ClInclude Include="include\doticu_skylib\havok_collidable.h" />
+    <ClInclude Include="include\doticu_skylib\havok_collidable_base.h" />
+    <ClInclude Include="include\doticu_skylib\havok_entity.h" />
+    <ClInclude Include="include\doticu_skylib\havok_linked_collidable.h" />
+    <ClInclude Include="include\doticu_skylib\havok_rigid_body.h" />
+    <ClInclude Include="include\doticu_skylib\havok_step_time.h" />
+    <ClInclude Include="include\doticu_skylib\havok_typed_broad_phase_handle.h" />
     <ClInclude Include="include\doticu_skylib\interface.h" />
     <ClInclude Include="include\doticu_skylib\intrinsic.h" />
     <ClInclude Include="include\doticu_skylib\keyword.h" />
@@ -234,6 +253,9 @@
     <ClInclude Include="include\doticu_skylib\mod.h" />
     <ClInclude Include="include\doticu_skylib\enum_operator.h" />
     <ClInclude Include="include\doticu_skylib\mod_index.h" />
+    <ClInclude Include="include\doticu_skylib\ni_extra_bounds.h" />
+    <ClInclude Include="include\doticu_skylib\ni_extra_data.h" />
+    <ClInclude Include="include\doticu_skylib\ni_object.h" />
     <ClInclude Include="include\doticu_skylib\outfit.h" />
     <ClInclude Include="include\doticu_skylib\package.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_procedure.h" />
@@ -301,6 +323,8 @@
     <ClInclude Include="include\doticu_skylib\worldspace.h" />
     <ClInclude Include="include\doticu_skylib\extra_data.h" />
     <ClInclude Include="include\doticu_skylib\extra_list.h" />
+    <ClInclude Include="include\doticu_skylib\havok_object.h" />
+    <ClInclude Include="include\doticu_skylib\havok_referenced_object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
@@ -313,6 +337,7 @@
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp" />
+    <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
@@ -335,6 +360,7 @@
     <ClCompile Include="src\doticu_skylib\math.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
     <ClCompile Include="src\doticu_skylib\mod_index.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_extra_bounds.cpp" />
     <ClCompile Include="src\doticu_skylib\os.cpp" />
     <ClCompile Include="src\doticu_skylib\package.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value.cpp" />

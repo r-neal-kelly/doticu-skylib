@@ -46,10 +46,10 @@ namespace doticu_skylib {
             SMALL_TRANSPARENT               = 26,
             INVISIBLE_WALL                  = 27,
             SMALL_ANIMATED_TRANSPARENT      = 28,
-            WARD                            = 29, // LARGE_CLUTTER ?
+            WARD                            = 29,
             CHARACTER_CONTROLLER            = 30,
             STAIR_HELPER                    = 31,
-            DEAD_BIPED                      = 32, // DEAD_BIP ?
+            DEAD_BIPED                      = 32,
             NO_CHARACTER_CONTROLLER_BIPED   = 33,
             AVOID_BOX                       = 34,
             COLLISION_BOX                   = 35,

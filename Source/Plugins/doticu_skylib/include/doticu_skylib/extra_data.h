@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "doticu_skylib/maybe.h"
+
 #include "doticu_skylib/extra_type.h"
 
 namespace doticu_skylib {
@@ -11,10 +13,10 @@ namespace doticu_skylib {
     class Data_x
     {
     public:
-        template <typename Type_t>
-        static some<Type_t*>    Create();
-        template <typename Type_t>
-        static void             Destroy(some<Type_t*> xdata);
+        template <typename Extra_t>
+        static some<Extra_t*>   Create();
+        template <typename Extra_t>
+        static void             Destroy(some<Extra_t*> x_data);
 
     public:
         static void Log_V_Tables(std::string indent = "");
@@ -22,13 +24,12 @@ namespace doticu_skylib {
         static void Log_Text_Displays(std::string indent = "");
 
     public:
-        virtual         ~Data_x();                          // 0
-
-        virtual u8      Get_Type();                         // 1
-        virtual Bool_t  Isnt_Equal(const Data_x* other);    // 2
+        virtual         ~Data_x();                                  // 0
+        virtual u8      Get_Type()                      = 0;        // 1
+        virtual Bool_t  Isnt_Equal(const Data_x* other) = 0;        // 2
 
     public:
-        Data_x* next;
+        maybe<Data_x*> next;
 
     public:
         Extra_Type_e Type();

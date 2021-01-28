@@ -200,7 +200,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(quest);
 
-        Aliases_x* xaliases = xlist.Get<Aliases_x>();
+        maybe<Aliases_x*> xaliases = xlist.Get<Aliases_x>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
@@ -406,7 +406,7 @@ namespace doticu_skylib {
 
     void Reference_t::Quests(Vector_t<Quest_t*>& results)
     {
-        Aliases_x* xaliases = xlist.Get<Aliases_x>();
+        maybe<Aliases_x*> xaliases = xlist.Get<Aliases_x>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             results.reserve(xaliases->instances.count);

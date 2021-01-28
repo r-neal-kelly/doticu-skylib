@@ -60,7 +60,7 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(f32_xy) == 0x8);
 
-    class f32_xyz
+    class f32_xyz // NiPoint3
     {
     public:
         Float_t x; // 0

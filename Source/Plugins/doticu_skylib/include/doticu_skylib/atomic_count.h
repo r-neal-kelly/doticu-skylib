@@ -8,15 +8,15 @@
 
 namespace doticu_skylib {
 
-    class Atomic_Count_t
+    class Atomic_Count_t // BSIntrusiveRefCounted
     {
     public:
         volatile u32 atomic_count; // 0
 
     public:
-        u32 Count();
-        u32 Increment();
-        u32 Decrement();
+        u32 Atomic_Count();
+        u32 Increment_Atomic();
+        u32 Decrement_Atomic();
     };
     STATIC_ASSERT(sizeof(Atomic_Count_t) == 0x4);
 

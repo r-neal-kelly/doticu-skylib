@@ -4,20 +4,14 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/dynatomic_count.h"
 
 namespace doticu_skylib {
 
-    class Reference_Count_t
+    class Reference_Count_t : public Dynatomic_Count_t
     {
     public:
-        virtual         ~Reference_Count_t();   // 0
-
-        virtual void    Destroy();              // 1
-
-    public:
-        volatile u32    reference_count;    // 08
-        u32             pad_0C;             // 0C
+        virtual ~Reference_Count_t(); // 0
 
     public:
         u32 Reference_Count();

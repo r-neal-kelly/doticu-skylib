@@ -20,17 +20,17 @@ namespace doticu_skylib { namespace Virtual {
 
     u32 Array_t::Reference_Count()
     {
-        return Atomic_Count_t::Count();
+        return Atomic_Count_t::Atomic_Count();
     }
 
     u32 Array_t::Increment_Reference()
     {
-        return Atomic_Count_t::Increment();
+        return Atomic_Count_t::Increment_Atomic();
     }
 
     u32 Array_t::Decrement_Reference()
     {
-        u32 count = Atomic_Count_t::Decrement();
+        u32 count = Atomic_Count_t::Decrement_Atomic();
         if (count < 1) {
             Destroy();
             Game_t::Deallocate<Array_t>(this);

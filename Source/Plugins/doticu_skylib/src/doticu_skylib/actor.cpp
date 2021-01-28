@@ -5,7 +5,9 @@
 #include "doticu_skylib/interface.h"
 
 #include "doticu_skylib/actor.h"
+#include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/actor_middle_ai.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
@@ -197,6 +199,15 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Actor_Controller_t*> Actor_t::Actor_Controller()
+    {
+        if (this->actor_ai && this->actor_ai->middle_ai) {
+            return this->actor_ai->middle_ai->actor_controller;
+        } else {
+            return false;
+        }
+    }
+
     Vector_t<Faction_And_Rank_t> Actor_t::Factions_And_Ranks(Bool_t remove_negatives)
     {
         Vector_t<Faction_And_Rank_t> results;
@@ -216,7 +227,7 @@ namespace doticu_skylib {
             reserve_count += base_factions_and_ranks->count;
         }
 
-        Factions_And_Ranks_x* xfactions_and_ranks = xlist.Get<Factions_And_Ranks_x>();
+        maybe<Factions_And_Ranks_x*> xfactions_and_ranks = xlist.Get<Factions_And_Ranks_x>();
         if (xfactions_and_ranks) {
             reference_factions_and_ranks = &xfactions_and_ranks->factions_and_ranks;
             reserve_count += reference_factions_and_ranks->count;

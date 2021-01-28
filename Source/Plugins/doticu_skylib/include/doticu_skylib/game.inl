@@ -18,6 +18,14 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline some<T*> Game_t::Callocate()
+    {
+        some<T*> data = Allocate<T>();
+        memset(static_cast<void*>(data()), 0, sizeof(T));
+        return data;
+    }
+
+    template <typename T>
     inline void Game_t::Deallocate(some<T*> data)
     {
         SKYLIB_ASSERT_SOME(data);

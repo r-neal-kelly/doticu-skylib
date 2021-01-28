@@ -8,16 +8,28 @@
 
 namespace doticu_skylib {
 
-    template <typename Type_t>
+    template <typename Extra_t>
     inline Bool_t List_x::Has()
     {
-        return Has(Type_t::EXTRA_TYPE);
+        return Has(Extra_t::EXTRA_TYPE);
     }
 
-    template <typename Type_t>
-    inline Type_t* List_x::Get()
+    template <typename Extra_t>
+    inline maybe<Extra_t*> List_x::Get()
     {
-        return static_cast<Type_t*>(Get(Type_t::EXTRA_TYPE));
+        return static_cast<maybe<Extra_t*>>(Get(Extra_t::EXTRA_TYPE));
+    }
+
+    template <typename Extra_t>
+    Bool_t List_x::Add(some<Extra_t*> extra)
+    {
+        return Add(static_cast<some<Data_x*>>(extra));
+    }
+
+    template <typename Extra_t>
+    Bool_t List_x::Remove(some<Extra_t*> extra)
+    {
+        return Remove(static_cast<some<Data_x*>>(extra));
     }
 
 }

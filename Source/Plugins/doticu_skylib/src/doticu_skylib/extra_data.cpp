@@ -7,7 +7,7 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
-#include "doticu_skylib/game.h"
+#include "doticu_skylib/game.inl"
 #include "doticu_skylib/reference.h"
 
 #include "doticu_skylib/extra_collision_layer.h"
@@ -28,7 +28,11 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
 
-            SKYLIB_LOG(indent + SKYLIB_TAB + "Reference_t: %s, %s", ref->Any_Name(), ref->Form_ID_String());
+            SKYLIB_LOG(indent + SKYLIB_TAB + "Reference_t name: %s, form_id: %s, base_form_id: %s, base_form_type: 0x%2.2X",
+                       ref->Any_Name(),
+                       ref->Form_ID_String(),
+                       ref->base_form ? static_cast<String_t>(ref->base_form->form_id) : "(none)",
+                       ref->base_form ? static_cast<Form_Type_e::value_type>(ref->base_form->form_type) : 0);
             SKYLIB_LOG(indent + SKYLIB_TAB + "{");
 
             Log_Extra_List<Extra_t>(indent + SKYLIB_TAB + SKYLIB_TAB, ref->xlist);
@@ -43,15 +47,15 @@ namespace doticu_skylib {
     static void Log_Extra_List(std::string indent, List_x& list_x)
     {
         Read_Locker_t locker(list_x.lock);
-        for (Data_x* xdata = list_x.xdatas; xdata != nullptr; xdata = xdata->next) {
-            Extra_Type_e type = xdata->Type();
+        for (maybe<Data_x*> it = list_x.x_datas; it; it = it->next) {
+            Extra_Type_e type = it->Type();
             if (type == Extra_Type_e::CONTAINER_CHANGES) {
-                maybe<Container_Changes_t*> container_changes = static_cast<Container_Changes_x*>(xdata)->container_changes;
+                maybe<Container_Changes_t*> container_changes = static_cast<Container_Changes_x*>(it())->container_changes;
                 if (container_changes) {
                     Log_Container_Changes<Extra_t>(indent, *container_changes);
                 }
             } else if (type == Extra_t::EXTRA_TYPE) {
-                static_cast<Extra_t*>(xdata)->Log(indent);
+                static_cast<Extra_t*>(it())->Log(indent);
             }
         }
     }
@@ -85,14 +89,14 @@ namespace doticu_skylib {
     static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, List_x& x_list)
     {
         Read_Locker_t locker(x_list.lock);
-        for (Data_x* xdata = x_list.xdatas; xdata != nullptr; xdata = xdata->next) {
-            Extra_Type_e type = xdata->Type();
+        for (maybe<Data_x*> it = x_list.x_datas; it; it = it->next) {
+            Extra_Type_e type = it->Type();
             if (!found_types.Has(type)) {
                 found_types.push_back(type);
                 if (type == Extra_Type_e::CONTAINER_CHANGES) {
-                    Log_Unique_V_Tables(indent, found_types, static_cast<Container_Changes_x*>(xdata)->container_changes);
+                    Log_Unique_V_Tables(indent, found_types, static_cast<Container_Changes_x*>(it())->container_changes);
                 } else {
-                    SKYLIB_LOG(indent + "type: 0x%2.2X, v_table_offset: 0x%8.8X", type, Game_t::V_Table_Offset(xdata));
+                    SKYLIB_LOG(indent + "type: 0x%2.2X, v_table_offset: 0x%8.8X", type, Game_t::V_Table_Offset(it()));
                 }
             }
         }
@@ -153,9 +157,9 @@ namespace doticu_skylib {
     static void Log_Text_Displays(std::string indent, List_x& x_list)
     {
         Read_Locker_t locker(x_list.lock);
-        for (Data_x* xdata = x_list.xdatas; xdata != nullptr; xdata = xdata->next) {
-            if (xdata->Type() == Extra_Type_e::TEXT_DISPLAY) {
-                static_cast<Text_Display_x*>(xdata)->Log(indent + SKYLIB_TAB);
+        for (maybe<Data_x*> it = x_list.x_datas; it; it = it->next) {
+            if (it->Type() == Extra_Type_e::TEXT_DISPLAY) {
+                static_cast<Text_Display_x*>(it())->Log(indent + SKYLIB_TAB);
             }
         }
     }

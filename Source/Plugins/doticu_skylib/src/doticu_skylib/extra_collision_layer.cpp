@@ -11,7 +11,21 @@ namespace doticu_skylib {
 
     some<Collision_Layer_x*> Collision_Layer_x::Create()
     {
-        return Data_x::Create<Collision_Layer_x>();
+        some<Collision_Layer_x*> x_collision_layer = Data_x::Create<Collision_Layer_x>();
+
+        x_collision_layer->collision_layer_type = none<Collision_Layer_Type_e*>();
+
+        return x_collision_layer;
+    }
+
+    some<Collision_Layer_x*> Collision_Layer_x::Create(Collision_Layer_Type_e collision_layer_type)
+    {
+        some<Collision_Layer_x*> x_collision_layer = Data_x::Create<Collision_Layer_x>();
+
+        x_collision_layer->collision_layer_type = none<Collision_Layer_Type_e*>();
+        x_collision_layer->Collision_Layer_Type(collision_layer_type);
+
+        return x_collision_layer;
     }
 
     void Collision_Layer_x::Destroy(some<Collision_Layer_x*> collision_layer_x)

@@ -8,6 +8,7 @@
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/maybe.h"
 
+#include "doticu_skylib/enum_actor_critical_stage.h"
 #include "doticu_skylib/enum_actor_flags.h"
 
 #include "doticu_skylib/actor_state.h"
@@ -20,7 +21,9 @@
 
 namespace doticu_skylib {
 
+    class Actor_AI_t;
     class Actor_Base_t;
+    class Actor_Controller_t;
     class Faction_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
@@ -211,9 +214,12 @@ namespace doticu_skylib {
         virtual void    _127(void);                                     // 127
 
     public:
-        Actor_Flags_1_e actor_flags_1;          // 0E0
-        Float_t         update_target_timer;    // 0E4
-        Byte_t          unk_data[0x1C8];        // 0E8
+        Actor_Flags_1_e         actor_flags_1;          // 0E0
+        Float_t                 update_target_timer;    // 0E4
+        Actor_Critical_Stage_e  actor_critical_stage;   // 0E8
+        u32                     pad_0EC;                // 0EC
+        maybe<Actor_AI_t*>      actor_ai;               // 0F0
+        Byte_t                  unk_data[0x1B8];        // 0F8
 
     public:
         Bool_t                          Is_Alive();
@@ -230,6 +236,7 @@ namespace doticu_skylib {
         Actor_Base_t*                   Highest_Static_Actor_Base();
         Vector_t<Actor_Base_t*>         Actor_Bases();
         void                            Actor_Bases(Vector_t<Actor_Base_t*>& results);
+        maybe<Actor_Controller_t*>      Actor_Controller();
         Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
         Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);

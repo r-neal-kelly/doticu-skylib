@@ -218,15 +218,9 @@ namespace doticu_skylib {
     {
         xlist.Validate();
 
-        if (xlist.Has<Location_x>()) {
-            Location_x* xlocation = xlist.Get<Location_x>();
-            if (xlocation->location) {
-                return xlocation->location;
-            } else if (worldspace) {
-                return worldspace->location;
-            } else {
-                return nullptr;
-            }
+        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        if (xlocation && xlocation->location) {
+            return xlocation->location;
         } else if (worldspace) {
             return worldspace->location;
         } else {
@@ -248,8 +242,8 @@ namespace doticu_skylib {
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
-        if (xlist.Has<Location_x>()) {
-            Location_x* xlocation = xlist.Get<Location_x>();
+        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        if (xlocation) {
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
@@ -258,8 +252,7 @@ namespace doticu_skylib {
             }
         }
 
-        Location_t* worldspace_location =
-            worldspace ? worldspace->location : nullptr;
+        Location_t* worldspace_location = worldspace ? worldspace->location : nullptr;
         for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
             if (!results.Has(it)) {
                 results.push_back(it);
@@ -281,8 +274,8 @@ namespace doticu_skylib {
         xlist.Validate();
 
         Location_t* xlocation_location = nullptr;
-        if (xlist.Has<Location_x>()) {
-            Location_x* xlocation = xlist.Get<Location_x>();
+        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        if (xlocation) {
             xlocation_location = xlocation->location;
         }
         for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
@@ -292,8 +285,7 @@ namespace doticu_skylib {
             }
         }
 
-        Location_t* worldspace_location =
-            worldspace ? worldspace->location : nullptr;
+        Location_t* worldspace_location = worldspace ? worldspace->location : nullptr;
         for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
             String_t name = it->Any_Name();
             if (!results.Has(name)) {

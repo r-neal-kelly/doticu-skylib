@@ -32,10 +32,14 @@ namespace doticu_skylib {
 
     public:
         static some<Collision_Layer_x*> Create();
+        static some<Collision_Layer_x*> Create(Collision_Layer_Type_e collision_layer_type);
         static void                     Destroy(some<Collision_Layer_x*> collision_layer_x);
 
     public:
-        virtual ~Collision_Layer_x();
+        virtual         ~Collision_Layer_x();                       // 0
+
+        virtual u8      Get_Type()                      override;   // 1
+        virtual Bool_t  Isnt_Equal(const Data_x* other) override;   // 2
 
     public:
         maybe<Collision_Layer_Type_e*> collision_layer_type; // 10

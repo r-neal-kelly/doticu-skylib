@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "doticu_skylib/maybe.h"
+
 #include "doticu_skylib/read_write_lock.h"
 
 #include "doticu_skylib/extra_data.h"
@@ -18,10 +20,20 @@ namespace doticu_skylib {
         public:
             static constexpr size_t MAX_FLAGS = 192;
 
-            static some<Presence_t*> Create();
+        public:
+            static some<Presence_t*>    Create();
+            static void                 Destroy(some<Presence_t*> presence);
 
         public:
-            Byte_t  flags[24];
+            Byte_t flags[24]; // 0
+
+        public:
+            Presence_t();
+            Presence_t(const Presence_t& other)                 = delete;
+            Presence_t(Presence_t&& other) noexcept             = delete;
+            Presence_t& operator=(const Presence_t & other)     = delete;
+            Presence_t& operator=(Presence_t&& other) noexcept  = delete;
+            ~Presence_t();
 
         public:
             Bool_t  Has(Extra_Type_e type);
@@ -32,22 +44,38 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Presence_t) == 0x18);
 
     public:
-        Data_x*             xdatas;     // 00
-        Presence_t*         presence;   // 08
+        static some<List_x*>    Create();
+        static void             Destroy(some<List_x*> x_list);
+
+    public:
+        maybe<Data_x*>      x_datas;    // 00
+        maybe<Presence_t*>  presence;   // 08
         Read_Write_Lock_t   lock;       // 10
 
     public:
-        void    Validate();
+        List_x();
+        List_x(const List_x& other)                 = delete;
+        List_x(List_x&& other) noexcept             = delete;
+        List_x& operator=(const List_x& other)      = delete;
+        List_x& operator=(List_x&& other) noexcept  = delete;
+        ~List_x();
 
-        Bool_t  Has(Extra_Type_e type);
-        Data_x* Get(Extra_Type_e type);
-        Bool_t  Add(Data_x* xdata);
-        Bool_t  Remove(Data_x* xdata);
+    public:
+        void            Validate();
 
-        template <typename Type_t>
-        Bool_t  Has();
-        template <typename Type_t>
-        Type_t* Get();
+        Bool_t          Has(Extra_Type_e type);
+        maybe<Data_x*>  Get(Extra_Type_e type);
+        Bool_t          Add(some<Data_x*> x_data);
+        Bool_t          Remove(some<Data_x*> x_data);
+
+        template <typename Extra_t>
+        Bool_t          Has();
+        template <typename Extra_t>
+        maybe<Extra_t*> Get();
+        template <typename Extra_t>
+        Bool_t          Add(some<Extra_t*> extra);
+        template <typename Extra_t>
+        Bool_t          Remove(some<Extra_t*> extra);
     };
     STATIC_ASSERT(sizeof(List_x) == 0x18);
 

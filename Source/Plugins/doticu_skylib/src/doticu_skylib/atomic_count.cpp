@@ -6,17 +6,17 @@
 
 namespace doticu_skylib {
 
-    u32 Atomic_Count_t::Count()
+    u32 Atomic_Count_t::Atomic_Count()
     {
         return InterlockedExchangeAdd(&this->atomic_count, 0);
     }
 
-    u32 Atomic_Count_t::Increment()
+    u32 Atomic_Count_t::Increment_Atomic()
     {
         return InterlockedIncrement(&this->atomic_count);
     }
 
-    u32 Atomic_Count_t::Decrement()
+    u32 Atomic_Count_t::Decrement_Atomic()
     {
         return InterlockedDecrement(&this->atomic_count);
     }

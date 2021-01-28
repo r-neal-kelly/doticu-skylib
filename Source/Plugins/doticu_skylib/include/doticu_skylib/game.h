@@ -53,6 +53,8 @@ namespace doticu_skylib {
         template <typename T>
         static some<T*>                 Allocate();
         template <typename T>
+        static some<T*>                 Callocate();
+        template <typename T>
         static void                     Deallocate(some<T*> data);
 
         static maybe<Form_t*>           Form(Raw_Form_ID_t raw_form_id);

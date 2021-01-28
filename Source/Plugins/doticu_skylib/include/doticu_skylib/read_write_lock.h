@@ -28,6 +28,7 @@ namespace doticu_skylib {
         volatile u32 thread;    // 0
         volatile u32 lock;      // 4
 
+    public:
         Read_Write_Lock_t();
 
         void Lock_For_Read();
