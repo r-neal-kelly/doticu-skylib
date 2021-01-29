@@ -13,8 +13,12 @@
 #include "doticu_skylib/form_list.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/ni_3d.h"
+#include "doticu_skylib/ni_collidable.h"
+#include "doticu_skylib/ni_node.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
+#include "doticu_skylib/reference_attached_state.h"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/worldspace.h"
 
@@ -200,7 +204,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(quest);
 
-        maybe<Aliases_x*> xaliases = xlist.Get<Aliases_x>();
+        maybe<Aliases_x*> xaliases = x_list.Get<Aliases_x>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
@@ -328,7 +332,7 @@ namespace doticu_skylib {
     Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
     {
         if (parent_cell) {
-            return parent_cell;
+            return parent_cell();
         } else if (do_check_worldspace) {
             maybe<Worldspace_t*> worldspace = Worldspace_Impl(this);
             if (worldspace) {
@@ -338,6 +342,24 @@ namespace doticu_skylib {
             }
         } else {
             return nullptr;
+        }
+    }
+
+    Vector_t<some<NI_Collidable_t*>> Reference_t::Collidables()
+    {
+        maybe<NI_3D_t*> ni_3d = attached_state ? attached_state->ni_3d : nullptr;
+        if (ni_3d) {
+            return ni_3d->Collidables();
+        } else {
+            return Vector_t<some<NI_Collidable_t*>>();
+        }
+    }
+
+    void Reference_t::Collidables(Vector_t<some<NI_Collidable_t*>>& results)
+    {
+        maybe<NI_3D_t*> ni_3d = attached_state ? attached_state->ni_3d : nullptr;
+        if (ni_3d) {
+            ni_3d->Collidables(results);
         }
     }
 
@@ -406,7 +428,7 @@ namespace doticu_skylib {
 
     void Reference_t::Quests(Vector_t<Quest_t*>& results)
     {
-        maybe<Aliases_x*> xaliases = xlist.Get<Aliases_x>();
+        maybe<Aliases_x*> xaliases = x_list.Get<Aliases_x>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             results.reserve(xaliases->instances.count);

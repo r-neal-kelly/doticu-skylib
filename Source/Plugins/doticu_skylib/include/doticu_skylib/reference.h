@@ -9,6 +9,8 @@
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/ni_collidable.h"
+#include "doticu_skylib/ni_point.h"
 #include "doticu_skylib/reference_count.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/script_type.h"
@@ -25,7 +27,9 @@ namespace doticu_skylib {
     class Form_List_t;
     class Keyword_t;
     class Location_t;
+    class NI_3D_t;
     class Quest_t;
+    class Reference_Attached_State_t;
     class Worldspace_t;
 
     class Reference_t :
@@ -141,8 +145,8 @@ namespace doticu_skylib {
         virtual void    _6C(void);                                  // 6C
         virtual void    _6D(void);                                  // 6D
         virtual void    _6E(void);                                  // 6E
-        virtual void    _6F(void);                                  // 6F
-        virtual void    _70(void);                                  // 70
+        virtual NI_3D_t*    Get_3D_1(Bool_t get_first_person);          // 6F
+        virtual NI_3D_t*    Get_3D_2();                             // 70
         virtual void    _71(void);                                  // 71
         virtual void    _72(void);                                  // 72
         virtual void    _73(void);                                  // 73
@@ -171,7 +175,7 @@ namespace doticu_skylib {
         virtual void    _8A(void);                                  // 8A
         virtual void    _8B(void);                                  // 8B
         virtual void    _8C(void);                                  // 8C
-        virtual void    _8D(void);                                  // 8D
+        virtual NI_3D_t*    Get_Current_3D() const;         // 8D (this is getting skeleton for actors.)
         virtual void    _8E(void);                                  // 8E
         virtual void    _8F(void);                                  // 8F
         virtual void    _90(void);                                  // 90
@@ -194,17 +198,17 @@ namespace doticu_skylib {
         virtual void    _A1(void);                                  // A1
 
     public:
-        Form_t* base_form;      // 40
-        f32_xyz rotation;       // 48
-        f32_xyz position;       // 54
-        Cell_t* parent_cell;    // 60
-        void*   unk_68;         // 68
-        List_x  xlist;          // 70
-        u64     unk_88;         // 88
-        u16     scale;          // 90
-        s8      unk_92;         // 92
-        Bool_t  pre_destroyed;  // 93
-        u32     pad_94;         // 94
+        maybe<Form_t*>                      base_form;          // 40
+        NI_Point_3_t                        rotation;           // 48
+        NI_Point_3_t                        position;           // 54
+        maybe<Cell_t*>                      parent_cell;        // 60
+        maybe<Reference_Attached_State_t*>  attached_state;     // 68
+        List_x                              x_list;             // 70
+        u64                                 unk_88;             // 88
+        u16                                 scale;              // 90
+        s8                                  model_state;        // 92
+        Bool_t                              is_pre_destroyed;   // 93
+        u32                                 pad_94;             // 94
 
     public:
         Bool_t Is_Deleted();
@@ -218,22 +222,24 @@ namespace doticu_skylib {
         Bool_t Has_Owner(some<Actor_t*> actor);
         Bool_t Has_Potential_Thief(some<Actor_t*> actor);
 
-        const char*                     Name();
-        String_t                        Any_Name();
+        const char*                         Name();
+        String_t                            Any_Name();
 
-        maybe<Actor_Base_t*>            Actor_Base_Owner();
-        Cell_t*                         Cell(Bool_t do_check_worldspace = true);
-        maybe<Faction_t*>               Faction_Owner();
-        Location_t*                     Location();
-        maybe<Form_t*>                  Owner();
-        maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
+        maybe<Actor_Base_t*>                Actor_Base_Owner();
+        Cell_t*                             Cell(Bool_t do_check_worldspace = true);
+        Vector_t<some<NI_Collidable_t*>>    Collidables();
+        void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
+        maybe<Faction_t*>                   Faction_Owner();
+        Location_t*                         Location();
+        maybe<Form_t*>                      Owner();
+        maybe<Worldspace_t*>                Worldspace(Bool_t do_check_locations = true);
         
-        Vector_t<Location_t*>           Locations();
-        void                            Locations(Vector_t<Location_t*>& results);
-        Vector_t<Quest_t*>              Quests();
-        void                            Quests(Vector_t<Quest_t*>& results);
-        Vector_t<some<Worldspace_t*>>   Worldspaces();
-        void                            Worldspaces(Vector_t<some<Worldspace_t*>>& results);
+        Vector_t<Location_t*>               Locations();
+        void                                Locations(Vector_t<Location_t*>& results);
+        Vector_t<Quest_t*>                  Quests();
+        void                                Quests(Vector_t<Quest_t*>& results);
+        Vector_t<some<Worldspace_t*>>       Worldspaces();
+        void                                Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 
         Reference_Handle_t  To_Handle();
 
@@ -249,11 +255,11 @@ namespace doticu_skylib {
 
         void Select_In_Console();
 
-        
         void Enable();
         void Disable();
 
         void Mark_For_Delete(Bool_t do_disable = true);
     };
+    STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 
 }

@@ -99,9 +99,13 @@ namespace doticu_skylib {
                 Actor_t* actor = static_cast<Actor_t*>
                     (Reference_t::Create(base, 1, Player_t::Self(), false, true));
                 if (actor && actor->Is_Valid()) {
-                    Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(actor->base_form);
+                    maybe<Actor_Base_t*> actor_base = static_cast<maybe<Actor_Base_t*>>(actor->base_form);
                     actor->Mark_For_Delete();
-                    return Create(actor_base, do_static, do_persist, do_uncombative);
+                    if (actor_base) {
+                        return Create(actor_base(), do_static, do_persist, do_uncombative);
+                    } else {
+                        return nullptr;
+                    }
                 } else {
                     return nullptr;
                 }
@@ -148,7 +152,7 @@ namespace doticu_skylib {
     Sex_e Actor_t::Sex()
     {
         if (base_form) {
-            return static_cast<Actor_Base_t*>(base_form)->Sex();
+            return static_cast<maybe<Actor_Base_t*>>(base_form)->Sex();
         } else {
             return Sex_e::NONE;
         }
@@ -157,7 +161,7 @@ namespace doticu_skylib {
     Race_t* Actor_t::Race()
     {
         if (base_form) {
-            return static_cast<Actor_Base_t*>(base_form)->Race();
+            return static_cast<maybe<Actor_Base_t*>>(base_form)->Race();
         } else {
             return nullptr;
         }
@@ -165,7 +169,7 @@ namespace doticu_skylib {
 
     Actor_Base_t* Actor_t::Actor_Base()
     {
-        return static_cast<Actor_Base_t*>(base_form);
+        return static_cast<maybe<Actor_Base_t*>>(base_form)();
     }
 
     Actor_Base_t* Actor_t::Highest_Static_Actor_Base()
@@ -227,7 +231,7 @@ namespace doticu_skylib {
             reserve_count += base_factions_and_ranks->count;
         }
 
-        maybe<Factions_And_Ranks_x*> xfactions_and_ranks = xlist.Get<Factions_And_Ranks_x>();
+        maybe<Factions_And_Ranks_x*> xfactions_and_ranks = x_list.Get<Factions_And_Ranks_x>();
         if (xfactions_and_ranks) {
             reference_factions_and_ranks = &xfactions_and_ranks->factions_and_ranks;
             reserve_count += reference_factions_and_ranks->count;
@@ -300,7 +304,7 @@ namespace doticu_skylib {
     const char* Actor_t::Base_Name()
     {
         if (base_form) {
-            return static_cast<Actor_Base_t*>(base_form)->Name();
+            return static_cast<maybe<Actor_Base_t*>>(base_form)->Name();
         } else {
             return "";
         }

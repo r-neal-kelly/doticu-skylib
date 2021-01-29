@@ -4,21 +4,20 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
-
-#include "doticu_skylib/ni_extra_data.h"
+#include "doticu_skylib/ni_extra.h"
+#include "doticu_skylib/ni_point.h"
 
 namespace doticu_skylib {
 
     class NI_Extra_Bounds_t :   // BSBound
-        public NI_Extra_Data_t  // 00
+        public NI_Extra_t       // 00
     {
     public:
         virtual ~NI_Extra_Bounds_t(); // 00
 
     public:
-        f32_xyz center; // 18
-        f32_xyz bounds; // 24
+        NI_Point_3_t    center; // 18
+        NI_Point_3_t    bounds; // 24
 
     public:
         void Log(std::string indent = "");

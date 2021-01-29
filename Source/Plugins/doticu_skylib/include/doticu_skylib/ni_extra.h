@@ -10,15 +10,15 @@
 
 namespace doticu_skylib {
 
-    class NI_Extra_Data_t : // NiExtraData
+    class NI_Extra_t :      // NiExtraData
         public NI_Object_t  // 00
     {
     public:
-        virtual ~NI_Extra_Data_t(); // 00
+        virtual ~NI_Extra_t(); // 00
 
     public:
-        String_t extra_data_name; // 10
+        String_t extra_name; // 10
     };
-    STATIC_ASSERT(sizeof(NI_Extra_Data_t) == 0x18);
+    STATIC_ASSERT(sizeof(NI_Extra_t) == 0x18);
 
 }

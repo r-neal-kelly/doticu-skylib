@@ -60,7 +60,7 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(f32_xy) == 0x8);
 
-    class f32_xyz // NiPoint3
+    class f32_xyz
     {
     public:
         Float_t x; // 0
@@ -191,7 +191,7 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Static_Array_t<void*>) == 0x10);
 
     template <typename Type_t>
-    class Short_Array_t
+    class Short_Array_t // NiTArray
     {
     public:
         virtual ~Short_Array_t();

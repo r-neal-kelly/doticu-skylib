@@ -190,7 +190,7 @@ namespace doticu_skylib {
         if (this->attached_cell && this->attached_cell->encounter_zone) {
             return this->attached_cell->encounter_zone;
         } else {
-            maybe<Encounter_Zone_x*> xencounter_zone = this->xlist.Get<Encounter_Zone_x>();
+            maybe<Encounter_Zone_x*> xencounter_zone = this->x_list.Get<Encounter_Zone_x>();
             if (xencounter_zone && xencounter_zone->encounter_zone) {
                 return xencounter_zone->encounter_zone;
             } else {
@@ -216,9 +216,9 @@ namespace doticu_skylib {
 
     Location_t* Cell_t::Location()
     {
-        xlist.Validate();
+        x_list.Validate();
 
-        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
         if (xlocation && xlocation->location) {
             return xlocation->location;
         } else if (worldspace) {
@@ -239,10 +239,10 @@ namespace doticu_skylib {
     {
         results.reserve(8);
 
-        xlist.Validate();
+        x_list.Validate();
 
         Location_t* xlocation_location = nullptr;
-        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
         if (xlocation) {
             xlocation_location = xlocation->location;
         }
@@ -271,10 +271,10 @@ namespace doticu_skylib {
     {
         results.reserve(8);
 
-        xlist.Validate();
+        x_list.Validate();
 
         Location_t* xlocation_location = nullptr;
-        maybe<Location_x*> xlocation = xlist.Get<Location_x>();
+        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
         if (xlocation) {
             xlocation_location = xlocation->location;
         }
@@ -296,7 +296,7 @@ namespace doticu_skylib {
 
     maybe<Form_t*> Cell_t::Owner(Bool_t do_check_locations)
     {
-        maybe<Owner_x*> xowner = this->xlist.Get<Owner_x>();
+        maybe<Owner_x*> xowner = this->x_list.Get<Owner_x>();
         if (xowner && xowner->owner) {
             return xowner->owner;
         } else {

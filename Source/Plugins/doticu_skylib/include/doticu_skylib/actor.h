@@ -78,6 +78,7 @@ namespace doticu_skylib {
         // Reference_t
         virtual Bool_t  Is_Dead(Bool_t is_not_essential) override;      // 099
 
+        // Actor_t
         virtual void    _0A2(void);                                     // 0A2
         virtual void    _0A3(void);                                     // 0A3
         virtual void    _0A4(void);                                     // 0A4
@@ -91,7 +92,7 @@ namespace doticu_skylib {
         virtual void    _0AC(void);                                     // 0AC
         virtual void    _0AD(void);                                     // 0AD
         virtual void    _0AE(void);                                     // 0AE
-        virtual void    _0AF(void);                                     // 0AF
+        virtual void    _0AF(some<Actor_Controller_t*> actor_controller);   // 0AF
         virtual void    _0B0(void);                                     // 0B0
         virtual void    _0B1(void);                                     // 0B1
         virtual void    _0B2(void);                                     // 0B2

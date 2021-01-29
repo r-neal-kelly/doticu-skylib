@@ -8,12 +8,12 @@
 
 namespace doticu_skylib {
 
-    class Havok_Linked_Collidable_t :   // hkpLinkedCollidable
+    class Havok_Collidable_Links_t :    // hkpLinkedCollidable
         public Havok_Collidable_t       // 00
     {
     public:
         Byte_t data_070[0x10]; // 70
     };
-    STATIC_ASSERT(sizeof(Havok_Linked_Collidable_t) == 0x80);
+    STATIC_ASSERT(sizeof(Havok_Collidable_Links_t) == 0x80);
 
 }

@@ -35,7 +35,7 @@ namespace doticu_skylib {
                        ref->base_form ? static_cast<Form_Type_e::value_type>(ref->base_form->form_type) : 0);
             SKYLIB_LOG(indent + SKYLIB_TAB + "{");
 
-            Log_Extra_List<Extra_t>(indent + SKYLIB_TAB + SKYLIB_TAB, ref->xlist);
+            Log_Extra_List<Extra_t>(indent + SKYLIB_TAB + SKYLIB_TAB, ref->x_list);
 
             SKYLIB_LOG(indent + SKYLIB_TAB + "}");
         }
@@ -129,14 +129,14 @@ namespace doticu_skylib {
         Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
-            Log_Unique_V_Tables(indent, found_types, ref->xlist);
+            Log_Unique_V_Tables(indent, found_types, ref->x_list);
         }
 
         Vector_t<Cell_t*> cells = Cell_t::Loaded_Cells();
         for (size_t idx = 0, end = cells.size(); idx < end; idx += 1) {
             maybe<Cell_t*> cell = cells[idx];
             if (cell) {
-                Log_Unique_V_Tables(indent, found_types, cell->xlist);
+                Log_Unique_V_Tables(indent, found_types, cell->x_list);
             }
         }
     }
@@ -188,14 +188,14 @@ namespace doticu_skylib {
         Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
-            doticu_skylib::Log_Text_Displays(indent, ref->xlist);
+            doticu_skylib::Log_Text_Displays(indent, ref->x_list);
         }
 
         Vector_t<Cell_t*> cells = Cell_t::Loaded_Cells();
         for (size_t idx = 0, end = cells.size(); idx < end; idx += 1) {
             maybe<Cell_t*> cell = cells[idx];
             if (cell) {
-                doticu_skylib::Log_Text_Displays(indent, cell->xlist);
+                doticu_skylib::Log_Text_Displays(indent, cell->x_list);
             }
         }
     }

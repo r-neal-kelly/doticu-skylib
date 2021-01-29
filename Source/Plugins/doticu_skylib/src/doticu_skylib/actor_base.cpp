@@ -66,10 +66,10 @@ namespace doticu_skylib {
                 void operator()(Reference_t* reference)
                 {
                     if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
-                        Actor_Base_t* actor_base = static_cast<Actor_Base_t*>(reference->base_form);
+                        maybe<Actor_Base_t*> actor_base = static_cast<maybe<Actor_Base_t*>>(reference->base_form);
                         if (actor_base && actor_base->Is_Valid() && actor_base->Is_Dynamic()) {
-                            if (!results.Has(actor_base)) {
-                                results.push_back(actor_base);
+                            if (!results.Has(actor_base())) {
+                                results.push_back(actor_base());
                             }
                         }
                     }

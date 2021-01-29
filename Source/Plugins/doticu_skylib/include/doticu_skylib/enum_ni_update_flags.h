@@ -8,14 +8,12 @@
 
 namespace doticu_skylib {
 
-    class Havok_Collision_Flags_e : public Enum_t<u32>
+    class NI_Update_Flags_e : public Enum_t<u32>
     {
     public:
         enum : value_type
         {
-            NO_COLLISION            = static_cast<value_type>(1 << 14),
-
-            COLLISION_LAYER_MASK    = static_cast<value_type>(0x7F),
+            IS_DIRTY = static_cast<value_type>(1 << 0),
         };
         using Enum_t::Enum_t;
     };

@@ -112,7 +112,7 @@ namespace doticu_skylib {
         Bool_t                  unk_045;            // 045
         Bool_t                  is_cell_detached;   // 046
         u8                      pad_047;            // 047
-        List_x                  xlist;              // 048
+        List_x                  x_list;             // 048
         Cellterior_u            cellterior;         // 060
         Land_t*                 land;               // 068
         Float_t                 water_height;       // 070

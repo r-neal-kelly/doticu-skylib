@@ -4,12 +4,12 @@
 
 #pragma once
 
-#include "doticu_skylib/havok_bound_object.h"
+#include "doticu_skylib/havok_body.h"
 
 namespace doticu_skylib {
 
-    class Havok_Entity_t :          // hkpEntity
-        public Havok_Bound_Object_t // 000
+    class Havok_Entity_t :  // hkpEntity
+        public Havok_Body_t // 000
     {
     public:
         virtual ~Havok_Entity_t(); // 0
