@@ -56,7 +56,6 @@ namespace doticu_skylib {
         u64                     unk_108;                    // 108
 
     public:
-        maybe<NI_Node_t*>                   As_NI_Node();
         Vector_t<some<NI_Collidable_t*>>    Collidables();
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         void                                Update(NI_Update_t& ni_update);

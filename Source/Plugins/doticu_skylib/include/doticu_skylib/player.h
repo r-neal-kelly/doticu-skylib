@@ -16,6 +16,8 @@
 namespace doticu_skylib {
 
     class Faction_t;
+    class Havok_Player_t;
+    class Havok_Player_Controller_t;
     class Perk_t;
     class Quest_Objective_t;
 
@@ -112,6 +114,10 @@ namespace doticu_skylib {
         Hash_Map_t<void*, void*>                unk_5C8;                // 5C8
         List_t<Reference_Handle_t>              dropped_references;     // 5F8
         Byte_t                                  unk_data[0x5D8];        // 608
+
+    public:
+        maybe<Havok_Player_t*>              Havok_Player();
+        maybe<Havok_Player_Controller_t*>   Havok_Player_Controller();
 
     public:
         void Log_Objectives(std::string indent = "");

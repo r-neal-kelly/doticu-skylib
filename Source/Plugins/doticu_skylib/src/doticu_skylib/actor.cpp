@@ -7,8 +7,11 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_base.h"
-#include "doticu_skylib/actor_middle_ai.h"
+#include "doticu_skylib/actor_middle_high_ai.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/game.inl"
+#include "doticu_skylib/havok_actor_controller.h"
+#include "doticu_skylib/havok_actor_rigid_body_controller.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
@@ -203,15 +206,6 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Controller_t*> Actor_t::Actor_Controller()
-    {
-        if (this->actor_ai && this->actor_ai->middle_ai) {
-            return this->actor_ai->middle_ai->actor_controller;
-        } else {
-            return false;
-        }
-    }
-
     Vector_t<Faction_And_Rank_t> Actor_t::Factions_And_Ranks(Bool_t remove_negatives)
     {
         Vector_t<Faction_And_Rank_t> results;
@@ -283,6 +277,25 @@ namespace doticu_skylib {
                     results.push_back(faction_and_rank);
                 }
             }
+        }
+    }
+
+    maybe<Havok_Actor_Controller_t*> Actor_t::Havok_Actor_Controller()
+    {
+        if (this->actor_ai && this->actor_ai->middle_high_ai) {
+            return this->actor_ai->middle_high_ai->havok_actor_controller;
+        } else {
+            return none<Havok_Actor_Controller_t*>();
+        }
+    }
+
+    maybe<Havok_Actor_Rigid_Body_Controller_t*> Actor_t::Havok_Actor_Rigid_Body_Controller()
+    {
+        maybe<Havok_Actor_Controller_t*> actor_controller = Havok_Actor_Controller();
+        if (actor_controller) {
+            return Game_t::Runtime_Cast<Havok_Actor_Controller_t, Havok_Actor_Rigid_Body_Controller_t>(actor_controller());
+        } else {
+            return nullptr;
         }
     }
 

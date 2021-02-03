@@ -5,7 +5,7 @@
 #include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/game.h"
-#include "doticu_skylib/game_heap.h"
+#include "doticu_skylib/memory.h"
 #include "doticu_skylib/script.h"
 
 namespace doticu_skylib {
@@ -25,7 +25,7 @@ namespace doticu_skylib {
     {
         Deallocate_Command();
 
-        maybe<Byte_t*> bytes = Game_Heap_t::Self()->Allocate(byte_count);
+        maybe<Byte_t*> bytes = Memory_t::Self()->Allocate(byte_count);
         SKYLIB_ASSERT(bytes);
         text = reinterpret_cast<char*>(bytes());
     }
@@ -33,7 +33,7 @@ namespace doticu_skylib {
     void Script_t::Deallocate_Command()
     {
         if (text) {
-            Game_Heap_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(text));
+            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(text));
             text = nullptr;
         }
     }

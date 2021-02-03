@@ -13,7 +13,9 @@ namespace doticu_skylib {
 
     void Havok_Body_t::Collision_Layer_Type(Collision_Layer_Type_e collision_layer_type)
     {
-        collidable_links.broad_phase_handle.collidable_flags |= collision_layer_type & Havok_Collidable_Flags_e::COLLISION_LAYER_MASK;
+        collidable_links.broad_phase_handle.collidable_flags =
+            (collidable_links.broad_phase_handle.collidable_flags & ~Havok_Collidable_Flags_e::COLLISION_LAYER_MASK) |
+            (collision_layer_type & Havok_Collidable_Flags_e::COLLISION_LAYER_MASK);
     }
 
 }

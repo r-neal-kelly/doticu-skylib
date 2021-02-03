@@ -11,7 +11,8 @@
 
 namespace doticu_skylib {
 
-    class Outfit_t : public Form_t
+    class Outfit_t :    // BGSOutfit
+        public Form_t   // 00
     {
     public:
         enum

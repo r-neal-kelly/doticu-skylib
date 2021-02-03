@@ -80,7 +80,6 @@ namespace doticu_skylib {
     class Form_List_t;
     class Furniture_t;
     class Game_t;
-    class Game_Heap_t;
     class Global_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
@@ -90,6 +89,7 @@ namespace doticu_skylib {
     class Magic_Effect_t;
     class Magic_Effect_Instance_t;
     class Magic_Target_t;
+    class Memory_t;
     class Misc_t;
     class Mod_t;
     class Object_t;

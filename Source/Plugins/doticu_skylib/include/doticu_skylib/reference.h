@@ -8,6 +8,7 @@
 #include "doticu_skylib/interface.h"
 
 #include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/enum_collision_layer_type.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_point.h"
@@ -229,6 +230,8 @@ namespace doticu_skylib {
         Cell_t*                             Cell(Bool_t do_check_worldspace = true);
         Vector_t<some<NI_Collidable_t*>>    Collidables();
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
+        maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
+        void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
         maybe<Faction_t*>                   Faction_Owner();
         Location_t*                         Location();
         maybe<Form_t*>                      Owner();

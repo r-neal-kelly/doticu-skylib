@@ -56,6 +56,7 @@ namespace doticu_skylib {
     public:
         maybe_numeric() : value(none<Numeric_t>().value) {}
         maybe_numeric(const Numeric_t value) : value(value) {}
+        maybe_numeric(const typename Numeric_t::value_type value) : value(value) {}
         maybe_numeric(const none<Numeric_t> none) : value(none.value) {}
         maybe_numeric(const maybe_numeric& other) : value(other.value) {}
         maybe_numeric(maybe_numeric&& other) noexcept : value(std::exchange(other.value, none<Numeric_t>().value)) {}
@@ -111,7 +112,8 @@ namespace doticu_skylib {
 
     public:
         some_numeric() = delete;
-        some_numeric(Numeric_t value) : value(value) {}
+        some_numeric(const Numeric_t value) : value(value) {}
+        some_numeric(const typename Numeric_t::value_type value) = delete;
         some_numeric(const none<Numeric_t> none) : value(none.value) {}
         some_numeric(const some_numeric& other) : value(other.value) {}
         some_numeric(some_numeric&& other) noexcept : value(std::exchange(other.value, none<Numeric_t>().value)) {}

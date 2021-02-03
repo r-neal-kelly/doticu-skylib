@@ -253,7 +253,7 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Buffer_t<int>) == 0x20);
 
     template <typename Type_t>
-    using Array_t = Dynamic_Array_t<Type_t>;
+    using Array_t = Dynamic_Array_t<Type_t>; // BSTArray
 
     template <typename Type>
     class Vector_t : public std::vector<Type>

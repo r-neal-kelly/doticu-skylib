@@ -23,8 +23,9 @@ namespace doticu_skylib {
 
     class Actor_AI_t;
     class Actor_Base_t;
-    class Actor_Controller_t;
     class Faction_t;
+    class Havok_Actor_Controller_t;
+    class Havok_Actor_Rigid_Body_Controller_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
 
@@ -92,7 +93,7 @@ namespace doticu_skylib {
         virtual void    _0AC(void);                                     // 0AC
         virtual void    _0AD(void);                                     // 0AD
         virtual void    _0AE(void);                                     // 0AE
-        virtual void    _0AF(some<Actor_Controller_t*> actor_controller);   // 0AF
+        virtual void    _0AF(some<Havok_Actor_Controller_t*> actor_controller); // 0AF
         virtual void    _0B0(void);                                     // 0B0
         virtual void    _0B1(void);                                     // 0B1
         virtual void    _0B2(void);                                     // 0B2
@@ -223,31 +224,32 @@ namespace doticu_skylib {
         Byte_t                  unk_data[0x1B8];        // 0F8
 
     public:
-        Bool_t                          Is_Alive();
-        Bool_t                          Is_Dead();
-        Bool_t                          Is_Player_Teammate();
-        Bool_t                          Isnt_Player_Teammate();
+        Bool_t                                      Is_Alive();
+        Bool_t                                      Is_Dead();
+        Bool_t                                      Is_Player_Teammate();
+        Bool_t                                      Isnt_Player_Teammate();
 
-        Bool_t                          Is_Owner_Of(some<Reference_t*> reference);
-        Bool_t                          Is_Potential_Thief_Of(some<Reference_t*> reference);
+        Bool_t                                      Is_Owner_Of(some<Reference_t*> reference);
+        Bool_t                                      Is_Potential_Thief_Of(some<Reference_t*> reference);
 
-        Sex_e                           Sex();
-        Race_t*                         Race();
-        Actor_Base_t*                   Actor_Base();
-        Actor_Base_t*                   Highest_Static_Actor_Base();
-        Vector_t<Actor_Base_t*>         Actor_Bases();
-        void                            Actor_Bases(Vector_t<Actor_Base_t*>& results);
-        maybe<Actor_Controller_t*>      Actor_Controller();
-        Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
-        void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
-        Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);
-        void                            Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
+        Sex_e                                       Sex();
+        Race_t*                                     Race();
+        Actor_Base_t*                               Actor_Base();
+        Actor_Base_t*                               Highest_Static_Actor_Base();
+        Vector_t<Actor_Base_t*>                     Actor_Bases();
+        void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
+        Vector_t<Faction_And_Rank_t>                Factions_And_Ranks(Bool_t remove_negatives = true);
+        void                                        Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
+        maybe<Havok_Actor_Controller_t*>            Havok_Actor_Controller();
+        maybe<Havok_Actor_Rigid_Body_Controller_t*> Havok_Actor_Rigid_Body_Controller();
+        Vector_t<Keyword_t*>                        Keywords(Bool_t include_templates = true);
+        void                                        Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
 
-        const char*                     Base_Name();
-        String_t                        Any_Name();
+        const char*                                 Base_Name();
+        String_t                                    Any_Name();
 
     public:
-        void                            Log_Factions_And_Ranks(std::string indent = "");
+        void Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_t) == 0x2B0);
 

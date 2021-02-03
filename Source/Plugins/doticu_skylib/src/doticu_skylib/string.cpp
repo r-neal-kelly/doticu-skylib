@@ -6,7 +6,7 @@
 #include "doticu_skylib/string.h"
 
 #include "doticu_skylib/game.h"
-#include "doticu_skylib/game_heap.h"
+#include "doticu_skylib/memory.h"
 
 namespace doticu_skylib {
 
@@ -139,7 +139,7 @@ namespace doticu_skylib {
     Dynamic_String_t::~Dynamic_String_t()
     {
         if (data) {
-            Game_Heap_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(data));
+            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(data));
             data = nullptr;
         }
     }

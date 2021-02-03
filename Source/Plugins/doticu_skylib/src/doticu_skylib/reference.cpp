@@ -12,6 +12,10 @@
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/form_list.h"
 #include "doticu_skylib/game.inl"
+#include "doticu_skylib/havok_actor_rigid_body_controller.h"
+#include "doticu_skylib/havok_actor_rigid_body_base.h"
+#include "doticu_skylib/havok_rigid_body.h"
+#include "doticu_skylib/havok_rigid_body_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/ni_collidable.h"
@@ -360,6 +364,54 @@ namespace doticu_skylib {
         maybe<NI_3D_t*> ni_3d = attached_state ? attached_state->ni_3d : nullptr;
         if (ni_3d) {
             ni_3d->Collidables(results);
+        }
+    }
+
+    maybe<Collision_Layer_Type_e> Reference_t::Collision_Layer_Type()
+    {
+        if (this->form_type == Form_Type_e::ACTOR) {
+            some<Actor_t*> actor = static_cast<Actor_t*>(this);
+            maybe<Havok_Actor_Rigid_Body_Controller_t*> controller = actor->Havok_Actor_Rigid_Body_Controller();
+            if (controller && controller->actor_rigid_body_base.rigid_body_base) {
+                maybe<Havok_Rigid_Body_t*> rigid_body = controller->actor_rigid_body_base.rigid_body_base->Rigid_Body();
+                if (rigid_body) {
+                    return rigid_body->Collision_Layer_Type();
+                } else {
+                    return Collision_Layer_Type_e::_NONE_;
+                }
+            } else {
+                return Collision_Layer_Type_e::_NONE_;
+            }
+        } else if (this->form_type == Form_Type_e::REFERENCE) {
+            maybe<NI_3D_t*> ni_3d = attached_state ? attached_state->ni_3d : nullptr;
+            if (ni_3d && ni_3d->collidable) {
+                return ni_3d->collidable->Collision_Layer_Type();
+            } else {
+                return Collision_Layer_Type_e::_NONE_;
+            }
+        } else {
+            return Collision_Layer_Type_e::_NONE_;
+        }
+    }
+
+    void Reference_t::Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type)
+    {
+        SKYLIB_ASSERT_SOME(collision_layer_type);
+
+        if (this->form_type == Form_Type_e::ACTOR) {
+            some<Actor_t*> actor = static_cast<Actor_t*>(this);
+            maybe<Havok_Actor_Rigid_Body_Controller_t*> controller = actor->Havok_Actor_Rigid_Body_Controller();
+            if (controller && controller->actor_rigid_body_base.rigid_body_base) {
+                maybe<Havok_Rigid_Body_t*> rigid_body = controller->actor_rigid_body_base.rigid_body_base->Rigid_Body();
+                if (rigid_body) {
+                    rigid_body->Collision_Layer_Type(collision_layer_type());
+                }
+            }
+        } else if (this->form_type == Form_Type_e::REFERENCE) {
+            maybe<NI_3D_t*> ni_3d = attached_state ? attached_state->ni_3d : nullptr;
+            if (ni_3d && ni_3d->collidable) {
+                ni_3d->collidable->Collision_Layer_Type(collision_layer_type());
+            }
         }
     }
 

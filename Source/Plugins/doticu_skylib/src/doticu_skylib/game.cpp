@@ -4,6 +4,8 @@
 
 #pragma comment(lib, "version.lib")
 
+#include "psapi.h"
+
 #include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/form.h"
@@ -133,6 +135,14 @@ namespace doticu_skylib {
     some<Byte_t*> Game_t::Base_Address_Pointer()
     {
         return reinterpret_cast<Byte_t*>(Base_Address());
+    }
+
+    size_t Game_t::Base_Address_Size()
+    {
+        MODULEINFO module_info;
+        memset(&module_info, 0, sizeof(module_info));
+        GetModuleInformation(GetCurrentProcess(), GetModuleHandle(0), &module_info, sizeof(MODULEINFO));
+        return module_info.SizeOfImage;
     }
 
     const Version_t<u16>& Game_t::Version()

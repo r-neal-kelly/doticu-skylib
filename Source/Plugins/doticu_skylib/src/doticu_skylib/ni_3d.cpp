@@ -8,11 +8,6 @@
 
 namespace doticu_skylib {
 
-    maybe<NI_Node_t*> NI_3D_t::As_NI_Node()
-    {
-        return Game_t::Runtime_Cast<NI_3D_t, NI_Node_t>(this);
-    }
-
     Vector_t<some<NI_Collidable_t*>> NI_3D_t::Collidables()
     {
         Vector_t<some<NI_Collidable_t*>> results;

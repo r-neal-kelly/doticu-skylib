@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "doticu_skylib/intrinsic.h"
+
 namespace doticu_skylib {
 
     class Animation_Updater_i
@@ -56,12 +58,5 @@ namespace doticu_skylib {
         virtual void _01(void)  = 0;        // 1
     };
     STATIC_ASSERT(sizeof(Event_Sink_t<void*>) == 0x8);
-
-    class alignas(0x10) Havok_Quad_t
-    {
-    public:
-        __m128 xyzw;
-    };
-    STATIC_ASSERT(sizeof(Havok_Quad_t) == 0x10);
 
 }

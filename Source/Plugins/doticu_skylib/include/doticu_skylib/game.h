@@ -47,6 +47,7 @@ namespace doticu_skylib {
 
         static Word_t                   Base_Address();
         static some<Byte_t*>            Base_Address_Pointer();
+        static size_t                   Base_Address_Size();
 
         static const Version_t<u16>&    Version();
 
@@ -65,6 +66,14 @@ namespace doticu_skylib {
 
         static Word_t                   V_Table_Offset(const void* instance);
         static void                     Write_V_Table(void* instance, Word_t v_table_offset);
+
+        template <typename Data_t, typename Value_t>
+        static Bool_t                   Data_Has_Value(Data_t* data, Value_t value);
+        template <typename Data_t, typename Value_t>
+        static Word_t                   Offset_Of_Value(Data_t* data, Value_t value);
+
+        template <typename Value_t>
+        static void                     Log_Value_Offsets(Value_t value, std::string indent = "");
 
         static void                     Log_u64s(void* data, size_t count, std::string indent = "");
 

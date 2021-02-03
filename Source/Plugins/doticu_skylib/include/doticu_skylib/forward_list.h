@@ -10,7 +10,7 @@
 namespace doticu_skylib {
 
     template <typename Type_t>
-    class Forward_List_t // tList
+    class Forward_List_t // tList, BSSimpleList
     {
     public:
         class Node_t

@@ -91,7 +91,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE>
             static Result_e Run(some<Reference_t*> filterable, Bases_a bases)
             {
-                return Compare_f<Form_t*, Bases_a>::Run<MODE>(filterable->base_form, bases);
+                return Compare_f<Form_t*, Bases_a>::Run<MODE>(filterable->base_form(), bases);
             }
         };
 

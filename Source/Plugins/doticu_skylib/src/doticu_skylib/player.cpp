@@ -4,7 +4,10 @@
 
 #include "doticu_skylib/maybe.h"
 
-#include "doticu_skylib/game.h"
+#include "doticu_skylib/game.inl"
+#include "doticu_skylib/havok_actor_controller.h"
+#include "doticu_skylib/havok_player.h"
+#include "doticu_skylib/havok_player_controller.h"
 #include "doticu_skylib/mod.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
@@ -33,6 +36,26 @@ namespace doticu_skylib {
 
         SKYLIB_ASSERT(self);
         return self();
+    }
+
+    maybe<Havok_Player_t*> Player_t::Havok_Player()
+    {
+        maybe<Havok_Player_Controller_t*> player_controller = Havok_Player_Controller();
+        if (player_controller) {
+            return player_controller->player_base.Player();
+        } else {
+            return none<Havok_Player_t*>();
+        }
+    }
+
+    maybe<Havok_Player_Controller_t*> Player_t::Havok_Player_Controller()
+    {
+        maybe<Havok_Actor_Controller_t*> actor_controller = Havok_Actor_Controller();
+        if (actor_controller) {
+            return Game_t::Runtime_Cast<Havok_Actor_Controller_t, Havok_Player_Controller_t>(actor_controller());
+        } else {
+            return none<Havok_Player_Controller_t*>();
+        }
     }
 
     void Player_t::Log_Objectives(std::string indent)
