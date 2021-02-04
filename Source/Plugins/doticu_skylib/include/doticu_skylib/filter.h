@@ -14,6 +14,7 @@ namespace doticu_skylib { namespace Filter {
 
     template <typename T> class Base_Form_Types_t;
     template <typename T> class Bases_t;
+    template <typename T> class Collision_Layer_Types_t;
     template <typename T> class Deleted_t;
     template <typename T> class Distances_t;
     template <typename T> class Enabled_t;

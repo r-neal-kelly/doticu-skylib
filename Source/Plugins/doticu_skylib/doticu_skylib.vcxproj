@@ -57,6 +57,7 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
+    <ClInclude Include="include\doticu_skylib\filter_collision_layer_types.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_controller.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_listener.h" />
     <ClInclude Include="include\doticu_skylib\movement_actor_controller.h" />
