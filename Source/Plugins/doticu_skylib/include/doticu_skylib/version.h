@@ -31,12 +31,23 @@ namespace doticu_skylib {
                                 (version & 0x0000000F) >> 0);
         }
 
+        static const u32 To_MM_mm_ppp_b(Version_t<T>& version)
+        {
+            static_assert(sizeof(T) <= sizeof(u16), "invalid T size");
+            return static_cast<u32>(0) |
+                ((version.major & 0x000000FF) << 24) |
+                ((version.minor & 0x000000FF) << 16) |
+                ((version.patch & 0x00000FFF) << 4) |
+                ((version.build & 0x0000000F) << 0);
+        }
+
     public:
         T major;
         T minor;
         T patch;
         T build;
 
+    public:
         Version_t(T major = 0, T minor = 0, T patch = 0, T build = 0) :
             major(major), minor(minor), patch(patch), build(build)
         {
@@ -53,29 +64,7 @@ namespace doticu_skylib {
 
         Bool_t operator!=(const Version_t<T>& other) const
         {
-            return
-                this->major != other.major ||
-                this->minor != other.minor ||
-                this->patch != other.patch ||
-                this->build != other.build;
-        }
-
-        Bool_t operator<(const Version_t<T>& other) const
-        {
-            return
-                this->major < other.major ||
-                this->minor < other.minor ||
-                this->patch < other.patch ||
-                this->build < other.build;
-        }
-
-        Bool_t operator>(const Version_t<T>& other) const
-        {
-            return
-                this->major > other.major ||
-                this->minor > other.minor ||
-                this->patch > other.patch ||
-                this->build > other.build;
+            return !operator==(other);
         }
 
         Bool_t operator<=(const Version_t<T>& other) const
@@ -94,6 +83,16 @@ namespace doticu_skylib {
                 this->minor >= other.minor &&
                 this->patch >= other.patch &&
                 this->build >= other.build;
+        }
+
+        Bool_t operator<(const Version_t<T>& other) const
+        {
+            return !operator>=(other);
+        }
+
+        Bool_t operator>(const Version_t<T>& other) const
+        {
+            return !operator<=(other);
         }
 
         template <typename TT>
