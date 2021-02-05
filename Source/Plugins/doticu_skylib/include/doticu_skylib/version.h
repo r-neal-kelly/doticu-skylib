@@ -67,32 +67,32 @@ namespace doticu_skylib {
             return !operator==(other);
         }
 
-        Bool_t operator<=(const Version_t<T>& other) const
-        {
-            return
-                this->major <= other.major &&
-                this->minor <= other.minor &&
-                this->patch <= other.patch &&
-                this->build <= other.build;
-        }
-
-        Bool_t operator>=(const Version_t<T>& other) const
-        {
-            return
-                this->major >= other.major &&
-                this->minor >= other.minor &&
-                this->patch >= other.patch &&
-                this->build >= other.build;
-        }
-
         Bool_t operator<(const Version_t<T>& other) const
         {
-            return !operator>=(other);
+                 if (this->major != other.major)    return this->major < other.major;
+            else if (this->minor != other.minor)    return this->minor < other.minor;
+            else if (this->patch != other.patch)    return this->patch < other.patch;
+            else if (this->build != other.build)    return this->build < other.build;
+            else                                    return false;
         }
 
         Bool_t operator>(const Version_t<T>& other) const
         {
-            return !operator<=(other);
+                 if (this->major != other.major)    return this->major > other.major;
+            else if (this->minor != other.minor)    return this->minor > other.minor;
+            else if (this->patch != other.patch)    return this->patch > other.patch;
+            else if (this->build != other.build)    return this->build > other.build;
+            else                                    return false;
+        }
+
+        Bool_t operator<=(const Version_t<T>& other) const
+        {
+            return !operator>(other);
+        }
+
+        Bool_t operator>=(const Version_t<T>& other) const
+        {
+            return !operator<(other);
         }
 
         template <typename TT>
