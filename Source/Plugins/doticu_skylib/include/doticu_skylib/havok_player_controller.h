@@ -30,7 +30,7 @@ namespace doticu_skylib {
 
     public:
         Havok_Player_Base_t player_base;    // 340
-        void*               unk_5A0;        // 5A0 (Player_t*) ?
+        void*               unk_5A0;        // 5A0 (v_table: 0x017A47D0, size: 0x30, densely packed with same sized other types)
         u64                 unk_5A8;        // 5A8
     };
     STATIC_ASSERT(sizeof(Havok_Player_Controller_t) == 0x5B0);

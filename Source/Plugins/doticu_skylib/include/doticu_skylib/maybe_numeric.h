@@ -113,7 +113,7 @@ namespace doticu_skylib {
     public:
         some_numeric() = delete;
         some_numeric(const Numeric_t value) : value(value) {}
-        some_numeric(const typename Numeric_t::value_type value) = delete;
+        some_numeric(const typename Numeric_t::value_type value) : value(value) {}
         some_numeric(const none<Numeric_t> none) : value(none.value) {}
         some_numeric(const some_numeric& other) : value(other.value) {}
         some_numeric(some_numeric&& other) noexcept : value(std::exchange(other.value, none<Numeric_t>().value)) {}

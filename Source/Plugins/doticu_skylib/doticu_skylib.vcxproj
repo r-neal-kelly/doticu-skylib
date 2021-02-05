@@ -60,6 +60,7 @@
     <ClInclude Include="include\doticu_skylib\filter_collision_layer_types.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_controller.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_listener.h" />
+    <ClInclude Include="include\doticu_skylib\havok_world.h" />
     <ClInclude Include="include\doticu_skylib\movement_actor_controller.h" />
     <ClInclude Include="include\doticu_skylib\movement_ai_controller.h" />
     <ClInclude Include="include\doticu_skylib\enum_crime_type.h" />

@@ -27,7 +27,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Havok_Reference_Base_t(); // 00
+        virtual         ~Havok_Reference_Base_t();  // 00
+
+        // Havok_Reference_Base_t
+        virtual void    _25(void);                  // 25
+        virtual void    _26(void);                  // 26
 
     public:
         maybe<Havok_Reference_t*> reference; // 10

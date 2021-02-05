@@ -46,8 +46,8 @@ namespace doticu_skylib {
         Havok_Array_t<maybe<Havok_Trigger_Volume_t*>>   trigger_volumes;        // 50
         Havok_Quad_t                                    unk_60;                 // 60
         Havok_Quad_t                                    unk_70;                 // 70
-        void*                                           unk_80;                 // 80
-        Float_t                                         dynaimc_friction;       // 88
+        void*                                           unk_80;                 // 80 (v_table: 0x0172E3E8, has a bunch of ptrs, looks big)
+        Float_t                                         dynamic_friction;       // 88
         Float_t                                         static_friction;        // 8C
         Havok_Quad_t                                    unk_90;                 // 90
         Float_t                                         unk_A0;                 // A0

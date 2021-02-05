@@ -17,7 +17,8 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                RTTI = 0x01EA1870, // 690928
+                RTTI    = 0x01EA1870, // 690928
+                V_TABLE = 0x017B1ED0, // 290759
             };
             using Enum_t::Enum_t;
         };
@@ -26,8 +27,8 @@ namespace doticu_skylib {
         virtual ~Havok_Player_Ex_t(); // 00
 
     public:
-        u64 unk_F0; // F0
-        u64 unk_F8; // F8
+        void*   unk_F0; // F0
+        u64     unk_F8; // F8
     };
     STATIC_ASSERT(sizeof(Havok_Player_Ex_t) == 0x100);
 
