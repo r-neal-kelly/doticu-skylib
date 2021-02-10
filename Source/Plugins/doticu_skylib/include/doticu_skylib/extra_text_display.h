@@ -16,7 +16,8 @@ namespace doticu_skylib {
     class Message_t;
     class Quest_t;
 
-    class Text_Display_x : public Data_x // ExtraTextDisplayData
+    class Extra_Text_Display_t :    // ExtraTextDisplayData
+        public Extra_Data_t         // 00
     {
     public:
         enum
@@ -35,6 +36,7 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
+    public:
         union Conditional_u
         {
             Text_Display_Type_e type;
@@ -43,7 +45,7 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Conditional_u) == 0x4);
 
     public:
-        virtual ~Text_Display_x();
+        virtual ~Extra_Text_Display_t(); // 0
 
     public:
         String_t        name;           // 10
@@ -61,6 +63,6 @@ namespace doticu_skylib {
     public:
         void Log(std::string indent = "");
     };
-    STATIC_ASSERT(sizeof(Text_Display_x) == 0x38);
+    STATIC_ASSERT(sizeof(Extra_Text_Display_t) == 0x38);
 
 }

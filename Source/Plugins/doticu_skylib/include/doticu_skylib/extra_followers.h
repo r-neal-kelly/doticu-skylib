@@ -6,21 +6,14 @@
 
 #include "doticu_skylib/collections.h"
 
-#include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/actor_handle.h"
 
 #include "doticu_skylib/extra_data.h"
 
 namespace doticu_skylib {
 
-    class Follower_Info_t
-    {
-    public:
-        Reference_Handle_t  handle;     // 0
-        Float_t             distance;   // 4
-    };
-    STATIC_ASSERT(sizeof(Follower_Info_t) == 0x8);
-
-    class Followers_x : public Data_x // ExtraFollower
+    class Extra_Followers_t :   // ExtraFollower
+        public Extra_Data_t     // 00
     {
     public:
         enum
@@ -39,11 +32,20 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Followers_x();
+        class Instance_t // FollowerInfo
+        {
+        public:
+            Actor_Handle_t  handle;     // 0
+            Float_t         distance;   // 4
+        };
+        STATIC_ASSERT(sizeof(Instance_t) == 0x8);
 
     public:
-        Array_t<Follower_Info_t> follower_infos; // 10
+        virtual ~Extra_Followers_t(); // 0
+
+    public:
+        Array_t<Instance_t> instances; // 10
     };
-    STATIC_ASSERT(sizeof(Followers_x) == 0x28);
+    STATIC_ASSERT(sizeof(Extra_Followers_t) == 0x28);
 
 }

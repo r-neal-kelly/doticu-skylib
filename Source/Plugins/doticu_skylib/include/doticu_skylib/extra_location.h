@@ -10,7 +10,8 @@ namespace doticu_skylib {
 
     class Location_t;
 
-    class Location_x : public Data_x
+    class Extra_Location_t :    // ExtraLocation
+        public Extra_Data_t     // 00
     {
     public:
         enum
@@ -29,10 +30,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Location_x();
+        virtual ~Extra_Location_t(); // 0
 
+    public:
         Location_t* location; // 10
     };
-    STATIC_ASSERT(sizeof(Location_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Location_t) == 0x18);
 
 }

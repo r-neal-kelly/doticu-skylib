@@ -20,6 +20,7 @@ namespace doticu_skylib {
 
     class Actor_Value_e;
     class Actor_Value_Modifier_e;
+    class Extra_Type_e;
     class Form_Type_e;
     class Logic_Gate_e;
     class Operator_e;
@@ -120,10 +121,23 @@ namespace doticu_skylib {
     class Weapon_t;
     class Worldspace_t;
 
-    class Aliases_x;
-    class Data_x;
-    class Factions_And_Ranks_x;
-    class List_x;
-    class Location_x;
+    class Extra_Aliases_t;
+    class Extra_Collision_Layer_t;
+    class Extra_Container_Changes_t;
+    class Extra_Count_t;
+    class Extra_Data_t;
+    class Extra_Encounter_Zone_t;
+    class Extra_Factions_And_Ranks_t;
+    class Extra_Flags_t;
+    class Extra_Followers_t;
+    class Extra_Ghost_t;
+    class Extra_Interaction_t;
+    class Extra_List_t;
+    class Extra_Location_t;
+    class Extra_Outfit_t;
+    class Extra_Owner_t;
+    class Extra_Soul_Level_t;
+    class Extra_Talk_To_Player_t;
+    class Extra_Text_Display_t;
 
 }

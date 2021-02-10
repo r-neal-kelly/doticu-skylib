@@ -519,9 +519,6 @@
     <ClInclude Include="include\doticu_skylib\extra_location.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_type.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\filter.h">
       <Filter>Header Files\filter</Filter>
     </ClInclude>
@@ -607,9 +604,6 @@
       <Filter>Header Files\filter</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\extra_followers.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_soul.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h">
@@ -1005,6 +999,18 @@
     <ClInclude Include="include\doticu_skylib\havok_world.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\unique.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_stack_id.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_soul_level.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_extra_type.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1245,6 +1251,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\virtual_stack_id.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

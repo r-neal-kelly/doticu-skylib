@@ -10,7 +10,8 @@
 
 namespace doticu_skylib {
 
-    class Flags_x : public Data_x // ExtraFlags
+    class Extra_Flags_t :   // ExtraFlags
+        public Extra_Data_t // 0
     {
     public:
         enum
@@ -29,12 +30,12 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Flags_x();
+        virtual ~Extra_Flags_t(); // 0
 
     public:
         Extra_Flags_e   extra_flags;    // 10
         u32             pad_14;         // 14
     };
-    STATIC_ASSERT(sizeof(Flags_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Flags_t) == 0x18);
 
 }

@@ -6,17 +6,17 @@
 
 #include "doticu_skylib/maybe.h"
 
-#include "doticu_skylib/extra_type.h"
+#include "doticu_skylib/enum_extra_type.h"
 
 namespace doticu_skylib {
 
-    class Data_x
+    class Extra_Data_t // BSExtraData
     {
     public:
-        template <typename Extra_t>
-        static some<Extra_t*>   Create();
-        template <typename Extra_t>
-        static void             Destroy(some<Extra_t*> x_data);
+        template <typename T>
+        static some<T*> Create();
+        template <typename T>
+        static void     Destroy(some<T*> x_data);
 
     public:
         static void Log_V_Tables(std::string indent = "");
@@ -24,16 +24,16 @@ namespace doticu_skylib {
         static void Log_Text_Displays(std::string indent = "");
 
     public:
-        virtual         ~Data_x();                                  // 0
-        virtual u8      Get_Type()                      = 0;        // 1
-        virtual Bool_t  Isnt_Equal(const Data_x* other) = 0;        // 2
+        virtual         ~Extra_Data_t();                                // 0
+        virtual u8      Get_Type()                              = 0;    // 1
+        virtual Bool_t  Isnt_Equal(const Extra_Data_t* other)   = 0;    // 2
 
     public:
-        maybe<Data_x*> next;
+        maybe<Extra_Data_t*> next; // 08
 
     public:
         Extra_Type_e Type();
     };
-    STATIC_ASSERT(sizeof(Data_x) == 0x10);
+    STATIC_ASSERT(sizeof(Extra_Data_t) == 0x10);
 
 }

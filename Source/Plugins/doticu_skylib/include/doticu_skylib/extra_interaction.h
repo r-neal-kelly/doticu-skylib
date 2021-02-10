@@ -10,7 +10,8 @@ namespace doticu_skylib {
 
     class Interaction_t;
 
-    class Interaction_x : public Data_x // ExtraInteraction
+    class Extra_Interaction_t : // ExtraInteraction
+        public Extra_Data_t     // 00
     {
     public:
         enum
@@ -29,11 +30,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Interaction_x();
+        virtual ~Extra_Interaction_t(); // 0
 
     public:
         Interaction_t* interaction; // 10 (smart ptr?)
     };
-    STATIC_ASSERT(sizeof(Interaction_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Interaction_t) == 0x18);
 
 }

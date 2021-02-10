@@ -139,7 +139,7 @@ namespace doticu_skylib {
             TEXT_DISPLAY        = 0x99,
             // 0x9A 0x0152CB20
 
-            SOUL                = 0x9C,
+            SOUL_LEVEL          = 0x9C,
             // 0x9D 0x0152CB60
 
             FLAGS               = 0xA0,

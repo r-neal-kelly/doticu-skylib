@@ -15,7 +15,8 @@ namespace doticu_skylib {
     class Package_t;
     class Quest_t;
 
-    class Aliases_x : public Data_x
+    class Extra_Aliases_t : // ExtraAliasInstanceArray
+        public Extra_Data_t // 00
     {
     public:
         enum
@@ -34,20 +35,22 @@ namespace doticu_skylib {
         };
 
     public:
-        class Instance_t
+        class Instance_t // BGSRefAliasInstanceData
         {
         public:
             Quest_t*                quest;      // 00
             Alias_Base_t*           alias_base; // 08
             Array_t<Package_t*>*    packages;   // 10
         };
+        STATIC_ASSERT(sizeof(Instance_t) == 0x18);
 
     public:
-        virtual ~Aliases_x();
+        virtual ~Extra_Aliases_t(); // 0
 
+    public:
         Array_t<Instance_t*>    instances;  // 10
         Read_Write_Lock_t       lock;       // 28
     };
-    STATIC_ASSERT(sizeof(Aliases_x) == 0x30);
+    STATIC_ASSERT(sizeof(Extra_Aliases_t) == 0x30);
 
 }

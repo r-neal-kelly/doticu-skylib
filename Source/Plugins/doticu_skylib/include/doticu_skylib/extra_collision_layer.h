@@ -12,7 +12,8 @@
 
 namespace doticu_skylib {
 
-    class Collision_Layer_x : public Data_x // ExtraCollisionData
+    class Extra_Collision_Layer_t : // ExtraCollisionData
+        public Extra_Data_t         // 00
     {
     public:
         enum
@@ -31,15 +32,15 @@ namespace doticu_skylib {
         };
 
     public:
-        static some<Collision_Layer_x*> Create();
-        static some<Collision_Layer_x*> Create(Collision_Layer_Type_e collision_layer_type);
-        static void                     Destroy(some<Collision_Layer_x*> collision_layer_x);
+        static some<Extra_Collision_Layer_t*>   Create();
+        static some<Extra_Collision_Layer_t*>   Create(Collision_Layer_Type_e collision_layer_type);
+        static void                             Destroy(some<Extra_Collision_Layer_t*> collision_layer_x);
 
     public:
-        virtual         ~Collision_Layer_x();                       // 0
+        virtual         ~Extra_Collision_Layer_t();                         // 0
 
-        virtual u8      Get_Type()                      override;   // 1
-        virtual Bool_t  Isnt_Equal(const Data_x* other) override;   // 2
+        virtual u8      Get_Type()                              override;   // 1
+        virtual Bool_t  Isnt_Equal(const Extra_Data_t* other)   override;   // 2
 
     public:
         maybe<Collision_Layer_Type_e*> collision_layer_type; // 10
@@ -51,6 +52,6 @@ namespace doticu_skylib {
     public:
         void Log(std::string indent = "");
     };
-    STATIC_ASSERT(sizeof(Collision_Layer_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Collision_Layer_t) == 0x18);
 
 }

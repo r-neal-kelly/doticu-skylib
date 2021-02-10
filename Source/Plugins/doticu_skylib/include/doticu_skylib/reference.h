@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/interface.h"
+#include "doticu_skylib/unique.h"
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/enum_collision_layer_type.h"
@@ -204,7 +205,7 @@ namespace doticu_skylib {
         NI_Point_3_t                        position;           // 54
         maybe<Cell_t*>                      parent_cell;        // 60
         maybe<Reference_Attached_State_t*>  attached_state;     // 68
-        List_x                              x_list;             // 70
+        Extra_List_t                        x_list;             // 70
         u64                                 unk_88;             // 88
         u16                                 scale;              // 90
         s8                                  model_state;        // 92
@@ -262,6 +263,11 @@ namespace doticu_skylib {
         void Disable();
 
         void Mark_For_Delete(Bool_t do_disable = true);
+
+        void Add_Item(some<Form_t*> item, s16 count_delta);
+
+    public:
+        void Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback);
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

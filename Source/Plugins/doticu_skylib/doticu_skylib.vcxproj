@@ -231,10 +231,10 @@
     <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
     <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h" />
     <ClInclude Include="include\doticu_skylib\extra_location.h" />
-    <ClInclude Include="include\doticu_skylib\extra_soul.h" />
+    <ClInclude Include="include\doticu_skylib\extra_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_talk_to_player.h" />
     <ClInclude Include="include\doticu_skylib\extra_text_display.h" />
-    <ClInclude Include="include\doticu_skylib\extra_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_extra_type.h" />
     <ClInclude Include="include\doticu_skylib\faction.h" />
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h" />
     <ClInclude Include="include\doticu_skylib\faction_rank.h" />
@@ -349,6 +349,7 @@
     <ClInclude Include="include\doticu_skylib\sex.h" />
     <ClInclude Include="include\doticu_skylib\skylib.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
+    <ClInclude Include="include\doticu_skylib\unique.h" />
     <ClInclude Include="include\doticu_skylib\unknown.h" />
     <ClInclude Include="include\doticu_skylib\version.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
@@ -365,6 +366,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_object.h" />
     <ClInclude Include="include\doticu_skylib\virtual_policy.h" />
     <ClInclude Include="include\doticu_skylib\string.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_stack_id.h" />
     <ClInclude Include="include\doticu_skylib\virtual_static.h" />
     <ClInclude Include="include\doticu_skylib\virtual_type.h" />
     <ClInclude Include="include\doticu_skylib\virtual_utils.h" />
@@ -454,6 +456,7 @@
     <ClCompile Include="src\doticu_skylib\virtual_object.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_policy.cpp" />
     <ClCompile Include="src\doticu_skylib\string.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_stack_id.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_type.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_utils.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />

@@ -10,26 +10,26 @@
 
 namespace doticu_skylib {
 
-    template <typename Extra_t>
-    inline some<Extra_t*> Data_x::Create()
+    template <typename T>
+    inline some<T*> Extra_Data_t::Create()
     {
-        some<Extra_t*> x_data = Game_t::Allocate<Extra_t>();
+        some<T*> x_data = Game_t::Allocate<T>();
 
-        Game_t::Write_V_Table(x_data(), Extra_t::Offset_e::V_TABLE);
-        x_data->next = none<Data_x*>();
+        Game_t::Write_V_Table(x_data(), T::Offset_e::V_TABLE);
+        x_data->next = none<Extra_Data_t*>();
 
         return x_data;
     }
 
-    template <typename Extra_t>
-    inline void Data_x::Destroy(some<Extra_t*> x_data)
+    template <typename T>
+    inline void Extra_Data_t::Destroy(some<T*> x_data)
     {
         SKYLIB_ASSERT_SOME(x_data);
 
-        static_cast<some<Data_x*>>(x_data)->~Data_x();
-        x_data->next = none<Data_x*>();
+        x_data->~T();
+        x_data->next = none<Extra_Data_t*>();
 
-        Game_t::Deallocate<Extra_t>(x_data);
+        Game_t::Deallocate<T>(x_data);
     }
 
 }

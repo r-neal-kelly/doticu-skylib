@@ -18,7 +18,7 @@
 
 namespace doticu_skylib {
 
-    template <typename Extra_t>
+    template <typename T>
     static void Log_References(std::string indent)
     {
         SKYLIB_LOG(indent + "Log_References");
@@ -35,7 +35,7 @@ namespace doticu_skylib {
                        ref->base_form ? static_cast<Form_Type_e::value_type>(ref->base_form->form_type) : 0);
             SKYLIB_LOG(indent + SKYLIB_TAB + "{");
 
-            Log_Extra_List<Extra_t>(indent + SKYLIB_TAB + SKYLIB_TAB, ref->x_list);
+            Log_Extra_List<T>(indent + SKYLIB_TAB + SKYLIB_TAB, ref->x_list);
 
             SKYLIB_LOG(indent + SKYLIB_TAB + "}");
         }
@@ -43,24 +43,24 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "}");
     }
 
-    template <typename Extra_t>
-    static void Log_Extra_List(std::string indent, List_x& list_x)
+    template <typename T>
+    static void Log_Extra_List(std::string indent, Extra_List_t& x_list)
     {
-        Read_Locker_t locker(list_x.lock);
-        for (maybe<Data_x*> it = list_x.x_datas; it; it = it->next) {
+        Read_Locker_t locker(x_list.lock);
+        for (maybe<Extra_Data_t*> it = x_list.x_datas; it; it = it->next) {
             Extra_Type_e type = it->Type();
             if (type == Extra_Type_e::CONTAINER_CHANGES) {
-                maybe<Container_Changes_t*> container_changes = static_cast<Container_Changes_x*>(it())->container_changes;
+                maybe<Container_Changes_t*> container_changes = static_cast<Extra_Container_Changes_t*>(it())->container_changes;
                 if (container_changes) {
-                    Log_Container_Changes<Extra_t>(indent, *container_changes);
+                    Log_Container_Changes<T>(indent, *container_changes);
                 }
-            } else if (type == Extra_t::EXTRA_TYPE) {
-                static_cast<Extra_t*>(it())->Log(indent);
+            } else if (type == T::EXTRA_TYPE) {
+                static_cast<T*>(it())->Log(indent);
             }
         }
     }
 
-    template <typename Extra_t>
+    template <typename T>
     static void Log_Container_Changes(std::string indent, Container_Changes_t& container_changes)
     {
         SKYLIB_LOG(indent + "Log_Container_Changes");
@@ -69,11 +69,11 @@ namespace doticu_skylib {
         if (container_changes.entries && !container_changes.entries->Is_Empty()) {
             for (auto* it = &container_changes.entries->head; it; it = it->next) {
                 Container_Changes_Entry_t* entry = it->value;
-                if (entry && entry->xlists && !entry->xlists->Is_Empty()) {
-                    for (auto* it = &entry->xlists->head; it; it = it->next) {
-                        List_x* x_list = it->value;
+                if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
+                    for (auto* it = &entry->x_lists->head; it; it = it->next) {
+                        Extra_List_t* x_list = it->value;
                         if (x_list) {
-                            Log_Extra_List<Extra_t>(indent + SKYLIB_TAB, *x_list);
+                            Log_Extra_List<T>(indent + SKYLIB_TAB, *x_list);
                         }
                     }
                 }
@@ -83,18 +83,18 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "}");
     }
 
-    static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, List_x& x_list);
+    static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, Extra_List_t& x_list);
     static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, Container_Changes_t* container_changes);
 
-    static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, List_x& x_list)
+    static void Log_Unique_V_Tables(std::string indent, Vector_t<Extra_Type_e>& found_types, Extra_List_t& x_list)
     {
         Read_Locker_t locker(x_list.lock);
-        for (maybe<Data_x*> it = x_list.x_datas; it; it = it->next) {
+        for (maybe<Extra_Data_t*> it = x_list.x_datas; it; it = it->next) {
             Extra_Type_e type = it->Type();
             if (!found_types.Has(type)) {
                 found_types.push_back(type);
                 if (type == Extra_Type_e::CONTAINER_CHANGES) {
-                    Log_Unique_V_Tables(indent, found_types, static_cast<Container_Changes_x*>(it())->container_changes);
+                    Log_Unique_V_Tables(indent, found_types, static_cast<Extra_Container_Changes_t*>(it())->container_changes);
                 } else {
                     SKYLIB_LOG(indent + "type: 0x%2.2X, v_table_offset: 0x%8.8X", type, Game_t::V_Table_Offset(it()));
                 }
@@ -108,9 +108,9 @@ namespace doticu_skylib {
             if (container_changes->entries && !container_changes->entries->Is_Empty()) {
                 for (auto* it = &container_changes->entries->head; it; it = it->next) {
                     Container_Changes_Entry_t* entry = it->value;
-                    if (entry && entry->xlists && !entry->xlists->Is_Empty()) {
-                        for (auto* it = &entry->xlists->head; it; it = it->next) {
-                            List_x* x_list = it->value;
+                    if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
+                        for (auto* it = &entry->x_lists->head; it; it = it->next) {
+                            Extra_List_t* x_list = it->value;
                             if (x_list) {
                                 Log_Unique_V_Tables(indent, found_types, *x_list);
                             }
@@ -121,7 +121,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Data_x::Log_V_Tables(std::string indent)
+    void Extra_Data_t::Log_V_Tables(std::string indent)
     {
         Vector_t<Extra_Type_e> found_types;
         found_types.reserve(256);
@@ -141,25 +141,25 @@ namespace doticu_skylib {
         }
     }
 
-    void Data_x::Log_Collision_Layers(std::string indent)
+    void Extra_Data_t::Log_Collision_Layers(std::string indent)
     {
-        SKYLIB_LOG(indent + "Data_x::Log_Collision_Layers");
+        SKYLIB_LOG(indent + "Extra_Data_t::Log_Collision_Layers");
         SKYLIB_LOG(indent + "{");
 
-        Log_References<Collision_Layer_x>(indent + SKYLIB_TAB);
+        Log_References<Extra_Collision_Layer_t>(indent + SKYLIB_TAB);
 
         SKYLIB_LOG(indent + "}");
     }
 
-    static void Log_Text_Displays(std::string indent, List_x& x_list);
+    static void Log_Text_Displays(std::string indent, Extra_List_t& x_list);
     static void Log_Text_Displays(std::string indent, Container_Changes_t* container_changes);
 
-    static void Log_Text_Displays(std::string indent, List_x& x_list)
+    static void Log_Text_Displays(std::string indent, Extra_List_t& x_list)
     {
         Read_Locker_t locker(x_list.lock);
-        for (maybe<Data_x*> it = x_list.x_datas; it; it = it->next) {
+        for (maybe<Extra_Data_t*> it = x_list.x_datas; it; it = it->next) {
             if (it->Type() == Extra_Type_e::TEXT_DISPLAY) {
-                static_cast<Text_Display_x*>(it())->Log(indent + SKYLIB_TAB);
+                static_cast<Extra_Text_Display_t*>(it())->Log(indent + SKYLIB_TAB);
             }
         }
     }
@@ -170,9 +170,9 @@ namespace doticu_skylib {
             if (container_changes->entries && !container_changes->entries->Is_Empty()) {
                 for (auto* it = &container_changes->entries->head; it; it = it->next) {
                     Container_Changes_Entry_t* entry = it->value;
-                    if (entry && entry->xlists && !entry->xlists->Is_Empty()) {
-                        for (auto* it = &entry->xlists->head; it; it = it->next) {
-                            List_x* x_list = it->value;
+                    if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
+                        for (auto* it = &entry->x_lists->head; it; it = it->next) {
+                            Extra_List_t* x_list = it->value;
                             if (x_list) {
                                 Log_Text_Displays(indent, *x_list);
                             }
@@ -183,7 +183,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Data_x::Log_Text_Displays(std::string indent)
+    void Extra_Data_t::Log_Text_Displays(std::string indent)
     {
         Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
@@ -200,7 +200,7 @@ namespace doticu_skylib {
         }
     }
 
-    Extra_Type_e Data_x::Type()
+    Extra_Type_e Extra_Data_t::Type()
     {
         return Get_Type();
     }

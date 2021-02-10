@@ -14,7 +14,8 @@ namespace doticu_skylib {
 
     class Faction_t;
 
-    class Factions_And_Ranks_x : public Data_x
+    class Extra_Factions_And_Ranks_t :  // ExtraFactionChanges
+        public Extra_Data_t             // 00
     {
     public:
         enum
@@ -33,8 +34,9 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Factions_And_Ranks_x();
+        virtual ~Extra_Factions_And_Ranks_t(); // 0
 
+    public:
         Array_t<Faction_And_Rank_t> factions_and_ranks;         // 10
         Faction_t*                  crime_faction;              // 28
         Bool_t                      do_remove_crime_faction;    // 30
@@ -42,6 +44,6 @@ namespace doticu_skylib {
         u16                         pad_32;                     // 32
         u32                         pad_34;                     // 34
     };
-    STATIC_ASSERT(sizeof(Factions_And_Ranks_x) == 0x38);
+    STATIC_ASSERT(sizeof(Extra_Factions_And_Ranks_t) == 0x38);
 
 }

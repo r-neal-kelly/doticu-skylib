@@ -10,12 +10,13 @@
 
 namespace doticu_skylib {
 
-    class Soul_x : public Data_x // ExtraSoul
+    class Extra_Soul_Level_t :  // ExtraSoul
+        public Extra_Data_t     // 00
     {
     public:
         enum
         {
-            EXTRA_TYPE = Extra_Type_e::SOUL,
+            EXTRA_TYPE = Extra_Type_e::SOUL_LEVEL,
         };
 
         class Offset_e : public Enum_t<Word_t>
@@ -29,7 +30,7 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Soul_x();
+        virtual ~Extra_Soul_Level_t(); // 0
 
     public:
         Soul_Level_e    level;  // 10
@@ -37,6 +38,6 @@ namespace doticu_skylib {
         u16             pad_12; // 12
         u32             pad_14; // 14
     };
-    STATIC_ASSERT(sizeof(Soul_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Soul_Level_t) == 0x18);
 
 }

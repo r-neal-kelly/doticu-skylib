@@ -12,7 +12,8 @@ namespace doticu_skylib {
 
     class Container_Changes_t;
 
-    class Container_Changes_x : public Data_x // ExtraContainerChanges
+    class Extra_Container_Changes_t :   // ExtraContainerChanges
+        public Extra_Data_t             // 00
     {
     public:
         enum
@@ -31,11 +32,15 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Container_Changes_x();
+        static some<Extra_Container_Changes_t*> Create();
+        static void                             Destroy(some<Extra_Container_Changes_t*> x_container_changes);
+
+    public:
+        virtual ~Extra_Container_Changes_t(); // 0
 
     public:
         Container_Changes_t* container_changes; // 10
     };
-    STATIC_ASSERT(sizeof(Container_Changes_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Container_Changes_t) == 0x18);
 
 }

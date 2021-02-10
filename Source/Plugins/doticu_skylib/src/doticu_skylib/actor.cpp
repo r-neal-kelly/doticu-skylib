@@ -225,7 +225,7 @@ namespace doticu_skylib {
             reserve_count += base_factions_and_ranks->count;
         }
 
-        maybe<Factions_And_Ranks_x*> xfactions_and_ranks = x_list.Get<Factions_And_Ranks_x>();
+        maybe<Extra_Factions_And_Ranks_t*> xfactions_and_ranks = x_list.Get<Extra_Factions_And_Ranks_t>();
         if (xfactions_and_ranks) {
             reference_factions_and_ranks = &xfactions_and_ranks->factions_and_ranks;
             reserve_count += reference_factions_and_ranks->count;

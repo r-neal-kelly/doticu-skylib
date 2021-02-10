@@ -190,7 +190,7 @@ namespace doticu_skylib {
         if (this->attached_cell && this->attached_cell->encounter_zone) {
             return this->attached_cell->encounter_zone;
         } else {
-            maybe<Encounter_Zone_x*> xencounter_zone = this->x_list.Get<Encounter_Zone_x>();
+            maybe<Extra_Encounter_Zone_t*> xencounter_zone = this->x_list.Get<Extra_Encounter_Zone_t>();
             if (xencounter_zone && xencounter_zone->encounter_zone) {
                 return xencounter_zone->encounter_zone;
             } else {
@@ -218,7 +218,7 @@ namespace doticu_skylib {
     {
         x_list.Validate();
 
-        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
+        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
         if (xlocation && xlocation->location) {
             return xlocation->location;
         } else if (worldspace) {
@@ -242,7 +242,7 @@ namespace doticu_skylib {
         x_list.Validate();
 
         Location_t* xlocation_location = nullptr;
-        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
+        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
         if (xlocation) {
             xlocation_location = xlocation->location;
         }
@@ -274,7 +274,7 @@ namespace doticu_skylib {
         x_list.Validate();
 
         Location_t* xlocation_location = nullptr;
-        maybe<Location_x*> xlocation = x_list.Get<Location_x>();
+        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
         if (xlocation) {
             xlocation_location = xlocation->location;
         }
@@ -296,7 +296,7 @@ namespace doticu_skylib {
 
     maybe<Form_t*> Cell_t::Owner(Bool_t do_check_locations)
     {
-        maybe<Owner_x*> xowner = this->x_list.Get<Owner_x>();
+        maybe<Extra_Owner_t*> xowner = this->x_list.Get<Extra_Owner_t>();
         if (xowner && xowner->owner) {
             return xowner->owner;
         } else {

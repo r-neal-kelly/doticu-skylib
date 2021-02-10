@@ -12,9 +12,15 @@ namespace doticu_skylib {
 
     class Reference_t;
 
-    class Script_t : public Form_t
+    class Script_t :
+        public Form_t
     {
     public:
+        enum
+        {
+            SCRIPT_TYPE = Script_Type_e::SCRIPT,
+        };
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:

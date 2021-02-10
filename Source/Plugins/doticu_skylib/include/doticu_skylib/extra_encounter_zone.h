@@ -10,7 +10,8 @@ namespace doticu_skylib {
 
     class Encounter_Zone_t;
 
-    class Encounter_Zone_x : public Data_x // ExtraEncounterZone
+    class Extra_Encounter_Zone_t :  // ExtraEncounterZone
+        public Extra_Data_t         // 00
     {
     public:
         enum
@@ -29,11 +30,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Encounter_Zone_x();
+        virtual ~Extra_Encounter_Zone_t(); // 0
 
     public:
         Encounter_Zone_t* encounter_zone; // 10
     };
-    STATIC_ASSERT(sizeof(Encounter_Zone_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Encounter_Zone_t) == 0x18);
 
 }

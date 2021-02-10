@@ -10,7 +10,8 @@ namespace doticu_skylib {
 
     class Form_t;
 
-    class Owner_x : public Data_x // ExtraOwnership
+    class Extra_Owner_t :   // ExtraOwnership
+        public Extra_Data_t // 00
     {
     public:
         enum
@@ -29,11 +30,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Owner_x();
+        virtual ~Extra_Owner_t(); // 0
 
     public:
         Form_t* owner; // 10
     };
-    STATIC_ASSERT(sizeof(Owner_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Owner_t) == 0x18);
 
 }

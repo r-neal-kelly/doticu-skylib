@@ -11,7 +11,7 @@ namespace doticu_skylib {
     class Container_Changes_Entry_t;
     class Reference_t;
 
-    class Container_Changes_t
+    class Container_Changes_t // InventoryChanges
     {
     public:
         List_t<Container_Changes_Entry_t*>* entries;        // 00

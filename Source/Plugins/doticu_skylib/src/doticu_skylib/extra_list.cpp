@@ -9,31 +9,31 @@
 
 namespace doticu_skylib {
 
-    some<List_x::Presence_t*> List_x::Presence_t::Create()
+    some<Extra_List_t::Presence_t*> Extra_List_t::Presence_t::Create()
     {
         some<Presence_t*> presence = Game_t::Allocate<Presence_t>();
         new (presence()) Presence_t();
         return presence;
     }
 
-    void List_x::Presence_t::Destroy(some<Presence_t*> presence)
+    void Extra_List_t::Presence_t::Destroy(some<Presence_t*> presence)
     {
         SKYLIB_ASSERT_SOME(presence);
         presence->~Presence_t();
         Game_t::Deallocate<Presence_t>(presence);
     }
 
-    List_x::Presence_t::Presence_t()
+    Extra_List_t::Presence_t::Presence_t()
     {
         Clear();
     }
 
-    List_x::Presence_t::~Presence_t()
+    Extra_List_t::Presence_t::~Presence_t()
     {
         Clear();
     }
 
-    Bool_t List_x::Presence_t::Has(Extra_Type_e type)
+    Bool_t Extra_List_t::Presence_t::Has(Extra_Type_e type)
     {
         if (type < MAX_FLAGS) {
             Byte_t mask = 1 << (type % 8);
@@ -44,7 +44,7 @@ namespace doticu_skylib {
         }
     }
 
-    void List_x::Presence_t::Add(Extra_Type_e type)
+    void Extra_List_t::Presence_t::Add(Extra_Type_e type)
     {
         if (type < MAX_FLAGS) {
             Byte_t mask = 1 << (type % 8);
@@ -53,7 +53,7 @@ namespace doticu_skylib {
         }
     }
 
-    void List_x::Presence_t::Remove(Extra_Type_e type)
+    void Extra_List_t::Presence_t::Remove(Extra_Type_e type)
     {
         if (type < MAX_FLAGS) {
             Byte_t mask = 1 << (type % 8);
@@ -62,7 +62,7 @@ namespace doticu_skylib {
         }
     }
 
-    void List_x::Presence_t::Clear()
+    void Extra_List_t::Presence_t::Clear()
     {
         Word_t* words = reinterpret_cast<Word_t*>(flags);
         words[0] = 0;
@@ -70,35 +70,35 @@ namespace doticu_skylib {
         words[2] = 0;
     }
 
-    some<List_x*> List_x::Create()
+    some<Extra_List_t*> Extra_List_t::Create()
     {
-        some<List_x*> x_list = Game_t::Allocate<List_x>();
-        new (x_list()) List_x();
+        some<Extra_List_t*> x_list = Game_t::Allocate<Extra_List_t>();
+        new (x_list()) Extra_List_t();
         return x_list;
     }
 
-    void List_x::Destroy(some<List_x*> x_list)
+    void Extra_List_t::Destroy(some<Extra_List_t*> x_list)
     {
         SKYLIB_ASSERT_SOME(x_list);
-        x_list->~List_x();
-        Game_t::Deallocate<List_x>(x_list);
+        x_list->~Extra_List_t();
+        Game_t::Deallocate<Extra_List_t>(x_list);
     }
 
-    List_x::List_x() :
-        x_datas(none<Data_x*>()), presence(none<Presence_t*>()), lock(Read_Write_Lock_t())
+    Extra_List_t::Extra_List_t() :
+        x_datas(none<Extra_Data_t*>()), presence(none<Presence_t*>()), lock(Read_Write_Lock_t())
     {
     }
 
-    List_x::~List_x()
+    Extra_List_t::~Extra_List_t()
     {
         Write_Locker_t locker(this->lock);
 
-        for (maybe<Data_x*> it = this->x_datas; it;) {
-            maybe<Data_x*> next = it->next;
-            Data_x::Destroy<Data_x>(it());
+        for (maybe<Extra_Data_t*> it = this->x_datas; it;) {
+            maybe<Extra_Data_t*> next = it->next;
+            Extra_Data_t::Destroy<Extra_Data_t>(it());
             it = next;
         }
-        this->x_datas = none<Data_x*>();
+        this->x_datas = none<Extra_Data_t*>();
 
         if (this->presence) {
             Presence_t::Destroy(this->presence());
@@ -106,19 +106,19 @@ namespace doticu_skylib {
         }
     }
 
-    void List_x::Validate()
+    void Extra_List_t::Validate()
     {
         Write_Locker_t locker(this->lock);
 
         if (this->presence) {
             this->presence->Clear();
-            for (maybe<Data_x*> it = this->x_datas; it; it = it->next) {
+            for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 this->presence->Add(it->Type());
             }
         }
     }
 
-    Bool_t List_x::Has(Extra_Type_e type)
+    Bool_t Extra_List_t::Has(Extra_Type_e type)
     {
         Read_Locker_t locker(this->lock);
 
@@ -129,23 +129,23 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Data_x*> List_x::Get(Extra_Type_e type)
+    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type)
     {
         Read_Locker_t locker(this->lock);
 
         if (this->presence && Has(type)) {
-            for (maybe<Data_x*> it = this->x_datas; it; it = it->next) {
+            for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
                     return it;
                 }
             }
-            return none<Data_x*>();
+            return none<Extra_Data_t*>();
         } else {
-            return none<Data_x*>();
+            return none<Extra_Data_t*>();
         }
     }
 
-    Bool_t List_x::Add(some<Data_x*> x_data)
+    Bool_t Extra_List_t::Add(some<Extra_Data_t*> x_data)
     {
         SKYLIB_ASSERT_SOME(x_data);
 
@@ -166,7 +166,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t List_x::Remove(some<Data_x*> x_data)
+    Bool_t Extra_List_t::Remove(some<Extra_Data_t*> x_data)
     {
         SKYLIB_ASSERT_SOME(x_data);
 
@@ -179,7 +179,7 @@ namespace doticu_skylib {
                 this->presence->Remove(type);
                 return true;
             } else {
-                for (maybe<Data_x*> it = this->x_datas; it; it = it->next) {
+                for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                     if (it->next == x_data()) {
                         it->next = x_data->next;
                         this->presence->Remove(type);

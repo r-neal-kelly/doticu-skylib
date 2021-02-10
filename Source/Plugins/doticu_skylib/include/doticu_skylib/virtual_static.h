@@ -7,6 +7,7 @@
 #include "skse64/PapyrusNativeFunctions.h"
 
 #include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_stack_id.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -52,7 +53,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -117,7 +118,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -180,7 +181,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -241,7 +242,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -300,7 +301,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -357,7 +358,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -412,7 +413,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -465,7 +466,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -516,7 +517,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -565,7 +566,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             u32 args_offset = CALL_MEMBER_FN(_state->argList, GetOffset)(_state);
 
@@ -610,7 +611,7 @@ namespace doticu_skylib { namespace Virtual {
         }
 
         template <typename Return_t>
-        static inline void Run(VMState* _state, Bool_t is_latent, Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
+        static inline void Run(VMState* _state, Bool_t is_latent, Raw_Stack_ID_t stack_id, Variable_t* return_variable, Callback_u callback)
         {
             if (is_latent) {
                 return_variable->Pack<Bool_t>(callback.latent(stack_id));

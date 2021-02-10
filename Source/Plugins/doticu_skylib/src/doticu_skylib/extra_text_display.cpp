@@ -10,10 +10,10 @@
 
 namespace doticu_skylib {
 
-    void Text_Display_x::Name(some<const char*> name, Bool_t do_force)
+    void Extra_Text_Display_t::Name(some<const char*> name, Bool_t do_force)
     {
         static auto set_name = reinterpret_cast
-            <void(*)(Text_Display_x*, const char*)>
+            <void(*)(Extra_Text_Display_t*, const char*)>
             (Game_t::Base_Address() + Offset_e::SET_NAME);
 
         SKYLIB_ASSERT_SOME(name);
@@ -25,9 +25,9 @@ namespace doticu_skylib {
         set_name(this, name());
     }
 
-    void Text_Display_x::Log(std::string indent)
+    void Extra_Text_Display_t::Log(std::string indent)
     {
-        SKYLIB_LOG(indent + "Text_Display_x::Log");
+        SKYLIB_LOG(indent + "Extra_Text_Display_t::Log");
         SKYLIB_LOG(indent + "{");
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "name: %s", this->name ? name.data : "");

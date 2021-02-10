@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Ghost_x : public Data_x // ExtraGhost
+    class Extra_Ghost_t :   // ExtraGhost
+        public Extra_Data_t // 00
     {
     public:
         enum
@@ -27,7 +28,7 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Ghost_x();
+        virtual ~Extra_Ghost_t(); // 0
 
     public:
         Bool_t  is_ghost;   // 10
@@ -35,6 +36,6 @@ namespace doticu_skylib {
         u16     pad_12;     // 12
         u32     pad_14;     // 14
     };
-    STATIC_ASSERT(sizeof(Ghost_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Ghost_t) == 0x18);
 
 }

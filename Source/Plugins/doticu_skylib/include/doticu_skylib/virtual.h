@@ -8,7 +8,6 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    using Stack_ID_t        = u32;
     using Raw_Handle_t      = u64;
 
     class Type_e;
@@ -24,6 +23,7 @@ namespace doticu_skylib { namespace Virtual {
     class Machine_t;
     class Object_t;
     class Object_Policy_t;
+    class Stack_ID_t;
     class Utils_t;
     class Variable_t;
 

@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Talk_To_Player_x : public Data_x // ExtraCanTalkToPlayer
+    class Extra_Talk_To_Player_t :  // ExtraCanTalkToPlayer
+        public Extra_Data_t         // 00
     {
     public:
         enum
@@ -27,7 +28,7 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Talk_To_Player_x();
+        virtual ~Extra_Talk_To_Player_t(); // 0
 
     public:
         Bool_t  can_talk;   // 10
@@ -35,6 +36,6 @@ namespace doticu_skylib {
         u16     pad_12;     // 12
         u32     pad_14;     // 14
     };
-    STATIC_ASSERT(sizeof(Talk_To_Player_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Talk_To_Player_t) == 0x18);
 
 }

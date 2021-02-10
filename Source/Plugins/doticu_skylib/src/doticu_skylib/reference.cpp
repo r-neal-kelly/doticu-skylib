@@ -29,7 +29,10 @@
 #include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_list.inl"
 
+#include "doticu_skylib/virtual_arguments.h"
+#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
 
@@ -148,7 +151,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(at);
 
         static auto place_at_me = reinterpret_cast
-            <Reference_t*(*)(Virtual::Machine_t*, Virtual::Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
+            <Reference_t*(*)(Virtual::Machine_t*, Virtual::Raw_Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
             (Game_t::Base_Address() + Offset_e::PLACE_AT_ME);
 
         return place_at_me(Virtual::Machine_t::Self(), 0, at(), base(), count, force_persist, initially_disable);
@@ -208,11 +211,11 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(quest);
 
-        maybe<Aliases_x*> xaliases = x_list.Get<Aliases_x>();
+        maybe<Extra_Aliases_t*> xaliases = x_list.Get<Extra_Aliases_t>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
-                Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
+                Extra_Aliases_t::Instance_t* instance = xaliases->instances.entries[idx];
                 if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
                     return true;
                 }
@@ -480,12 +483,12 @@ namespace doticu_skylib {
 
     void Reference_t::Quests(Vector_t<Quest_t*>& results)
     {
-        maybe<Aliases_x*> xaliases = x_list.Get<Aliases_x>();
+        maybe<Extra_Aliases_t*> xaliases = x_list.Get<Extra_Aliases_t>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
             results.reserve(xaliases->instances.count);
             for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
-                Aliases_x::Instance_t* instance = xaliases->instances.entries[idx];
+                Extra_Aliases_t::Instance_t* instance = xaliases->instances.entries[idx];
                 if (instance && instance->quest && instance->quest->Is_Valid() && instance->alias_base) {
                     results.push_back(instance->quest);
                 }
@@ -677,6 +680,72 @@ namespace doticu_skylib {
                 Game_t::Deallocate<Script_t>(script);
             }
         }
+    }
+
+    void Reference_t::Add_Item(some<Form_t*> item, s16 count_delta)
+    {
+        SKYLIB_ASSERT_SOME(item);
+
+        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
+        if (Is_Valid()) {
+            Script_t* script = static_cast<Script_t*>(script_factory->Create());
+            if (script) {
+                script->Command(
+                    (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(count_delta)).c_str()
+                );
+                script->Execute(this);
+                script->Deallocate_Command();
+                Game_t::Deallocate<Script_t>(script);
+            }
+        }
+    }
+
+    void Reference_t::Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback)
+    {
+        SKYLIB_ASSERT_SOME(activator);
+
+        using Callback = Callback_i<Bool_t>;
+
+        struct Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+            some<Reference_t*> activator;
+            Virtual_Arguments(some<Reference_t*> activator) :
+                activator(activator)
+            {
+            }
+            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
+            {
+                args->Resize(2);
+                args->At(0)->As<Reference_t*>(activator());
+                args->At(1)->As<Bool_t>(false);
+                return true;
+            }
+        } arguments(activator);
+
+        struct Virtual_Callback :
+            public Virtual::Callback_t
+        {
+            unique<Callback> callback;
+            Virtual_Callback(unique<Callback> callback) :
+                callback(std::move(callback))
+            {
+            }
+            void operator()(Virtual::Variable_t* result)
+            {
+                if (callback) {
+                    callback->operator()(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            "ObjectReference",
+            "Activate",
+            &arguments,
+            new Virtual_Callback(std::move(callback))
+        );
     }
 
 }

@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Count_x : public Data_x // ExtraCount
+    class Extra_Count_t :   // ExtraCount
+        public Extra_Data_t // 00
     {
     public:
         enum
@@ -27,13 +28,13 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Count_x();
+        virtual ~Extra_Count_t(); // 0
 
     public:
         s16 count;  // 10
         u16 pad_12; // 12
         u32 pad_14; // 14
     };
-    STATIC_ASSERT(sizeof(Count_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Count_t) == 0x18);
 
 }

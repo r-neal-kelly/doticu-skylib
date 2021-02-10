@@ -11,6 +11,7 @@
 
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_handle.h"
+#include "doticu_skylib/virtual_stack_id.h"
 #include "doticu_skylib/virtual_type.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -77,7 +78,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual Bool_t Call_Method2(Handle_t handle, String_t* class_name, String_t* function_name, Arguments_i* arguments, Callback_i** callback); // 28
         virtual void _29(void); // 29
         virtual void _2A(void); // 2A
-        virtual void Return_Latent_Function(Stack_ID_t stack_id, Variable_t* return_variable); // 2B
+        virtual void Return_Latent_Function(Raw_Stack_ID_t stack_id, Variable_t* return_variable); // 2B
         virtual void _2C(void); // 2C
         virtual Handle_Policy_t* Handle_Policy(); // 2D
         virtual void _2E(void); // 2E

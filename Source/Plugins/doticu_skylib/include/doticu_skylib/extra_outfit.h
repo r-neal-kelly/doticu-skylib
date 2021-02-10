@@ -10,7 +10,8 @@
 
 namespace doticu_skylib {
 
-    class Outfit_x : public Data_x // ExtraOutfitItem
+    class Extra_Outfit_t :  // ExtraOutfitItem
+        public Extra_Data_t // 00
     {
     public:
         enum
@@ -29,12 +30,12 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Outfit_x();
+        virtual ~Extra_Outfit_t(); // 0
 
     public:
         Form_ID_t   outfit_form_id; // 10 (Outfit_t)
         u32         pad_14;         // 14
     };
-    STATIC_ASSERT(sizeof(Outfit_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_Outfit_t) == 0x18);
 
 }

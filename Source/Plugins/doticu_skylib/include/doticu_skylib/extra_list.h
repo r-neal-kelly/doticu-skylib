@@ -12,10 +12,10 @@
 
 namespace doticu_skylib {
 
-    class List_x
+    class Extra_List_t // ExtraDataList
     {
     public:
-        class Presence_t
+        class Presence_t // PresenceBitfield
         {
         public:
             static constexpr size_t MAX_FLAGS = 192;
@@ -44,39 +44,39 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Presence_t) == 0x18);
 
     public:
-        static some<List_x*>    Create();
-        static void             Destroy(some<List_x*> x_list);
+        static some<Extra_List_t*>  Create();
+        static void                 Destroy(some<Extra_List_t*> x_list);
 
     public:
-        maybe<Data_x*>      x_datas;    // 00
-        maybe<Presence_t*>  presence;   // 08
-        Read_Write_Lock_t   lock;       // 10
+        maybe<Extra_Data_t*>    x_datas;    // 00
+        maybe<Presence_t*>      presence;   // 08
+        Read_Write_Lock_t       lock;       // 10
 
     public:
-        List_x();
-        List_x(const List_x& other)                 = delete;
-        List_x(List_x&& other) noexcept             = delete;
-        List_x& operator=(const List_x& other)      = delete;
-        List_x& operator=(List_x&& other) noexcept  = delete;
-        ~List_x();
+        Extra_List_t();
+        Extra_List_t(const Extra_List_t& other)                 = delete;
+        Extra_List_t(Extra_List_t&& other) noexcept             = delete;
+        Extra_List_t& operator=(const Extra_List_t& other)      = delete;
+        Extra_List_t& operator=(Extra_List_t&& other) noexcept  = delete;
+        ~Extra_List_t();
 
     public:
-        void            Validate();
+        void                    Validate();
 
-        Bool_t          Has(Extra_Type_e type);
-        maybe<Data_x*>  Get(Extra_Type_e type);
-        Bool_t          Add(some<Data_x*> x_data);
-        Bool_t          Remove(some<Data_x*> x_data);
+        Bool_t                  Has(Extra_Type_e type);
+        maybe<Extra_Data_t*>    Get(Extra_Type_e type);
+        Bool_t                  Add(some<Extra_Data_t*> x_data);
+        Bool_t                  Remove(some<Extra_Data_t*> x_data);
 
-        template <typename Extra_t>
-        Bool_t          Has();
-        template <typename Extra_t>
-        maybe<Extra_t*> Get();
-        template <typename Extra_t>
-        Bool_t          Add(some<Extra_t*> extra);
-        template <typename Extra_t>
-        Bool_t          Remove(some<Extra_t*> extra);
+        template <typename T>
+        Bool_t                  Has();
+        template <typename T>
+        maybe<T*>               Get();
+        template <typename T>
+        Bool_t                  Add(some<T*> x_data);
+        template <typename T>
+        Bool_t                  Remove(some<T*> x_data);
     };
-    STATIC_ASSERT(sizeof(List_x) == 0x18);
+    STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);
 
 }

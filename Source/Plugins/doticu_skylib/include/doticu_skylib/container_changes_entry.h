@@ -12,13 +12,13 @@ namespace doticu_skylib {
 
     class Bound_Object_t;
 
-    class Container_Changes_Entry_t
+    class Container_Changes_Entry_t // InventoryEntryData
     {
     public:
-        Bound_Object_t*     object;         // 00
-        List_t<List_x*>*    xlists;         // 08
-        s32                 count_delta;    // 10
-        u32                 pad_14;         // 14
+        Bound_Object_t*         object;         // 00
+        List_t<Extra_List_t*>*  x_lists;        // 08
+        s32                     count_delta;    // 10
+        u32                     pad_14;         // 14
     };
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
 
