@@ -67,11 +67,11 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "{");
 
         if (container_changes.entries && !container_changes.entries->Is_Empty()) {
-            for (auto* it = &container_changes.entries->head; it; it = it->next) {
-                Container_Changes_Entry_t* entry = it->value;
+            for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &container_changes.entries->head; it; it = it->next) {
+                maybe<Container_Changes_Entry_t*> entry = it->value;
                 if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
-                    for (auto* it = &entry->x_lists->head; it; it = it->next) {
-                        Extra_List_t* x_list = it->value;
+                    for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &entry->x_lists->head; it; it = it->next) {
+                        maybe<Extra_List_t*> x_list = it->value;
                         if (x_list) {
                             Log_Extra_List<T>(indent + SKYLIB_TAB, *x_list);
                         }
@@ -94,7 +94,7 @@ namespace doticu_skylib {
             if (!found_types.Has(type)) {
                 found_types.push_back(type);
                 if (type == Extra_Type_e::CONTAINER_CHANGES) {
-                    Log_Unique_V_Tables(indent, found_types, static_cast<Extra_Container_Changes_t*>(it())->container_changes);
+                    Log_Unique_V_Tables(indent, found_types, static_cast<Extra_Container_Changes_t*>(it())->container_changes());
                 } else {
                     SKYLIB_LOG(indent + "type: 0x%2.2X, v_table_offset: 0x%8.8X", type, Game_t::V_Table_Offset(it()));
                 }
@@ -106,11 +106,11 @@ namespace doticu_skylib {
     {
         if (container_changes) {
             if (container_changes->entries && !container_changes->entries->Is_Empty()) {
-                for (auto* it = &container_changes->entries->head; it; it = it->next) {
-                    Container_Changes_Entry_t* entry = it->value;
+                for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &container_changes->entries->head; it; it = it->next) {
+                    maybe<Container_Changes_Entry_t*> entry = it->value;
                     if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
-                        for (auto* it = &entry->x_lists->head; it; it = it->next) {
-                            Extra_List_t* x_list = it->value;
+                        for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &entry->x_lists->head; it; it = it->next) {
+                            maybe<Extra_List_t*> x_list = it->value;
                             if (x_list) {
                                 Log_Unique_V_Tables(indent, found_types, *x_list);
                             }
@@ -168,11 +168,11 @@ namespace doticu_skylib {
     {
         if (container_changes) {
             if (container_changes->entries && !container_changes->entries->Is_Empty()) {
-                for (auto* it = &container_changes->entries->head; it; it = it->next) {
-                    Container_Changes_Entry_t* entry = it->value;
+                for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &container_changes->entries->head; it; it = it->next) {
+                    maybe<Container_Changes_Entry_t*> entry = it->value;
                     if (entry && entry->x_lists && !entry->x_lists->Is_Empty()) {
-                        for (auto* it = &entry->x_lists->head; it; it = it->next) {
-                            Extra_List_t* x_list = it->value;
+                        for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &entry->x_lists->head; it; it = it->next) {
+                            maybe<Extra_List_t*> x_list = it->value;
                             if (x_list) {
                                 Log_Text_Displays(indent, *x_list);
                             }

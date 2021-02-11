@@ -39,7 +39,7 @@ namespace doticu_skylib {
         virtual ~Extra_Container_Changes_t(); // 0
 
     public:
-        Container_Changes_t* container_changes; // 10
+        maybe<Container_Changes_t*> container_changes; // 10
     };
     STATIC_ASSERT(sizeof(Extra_Container_Changes_t) == 0x18);
 

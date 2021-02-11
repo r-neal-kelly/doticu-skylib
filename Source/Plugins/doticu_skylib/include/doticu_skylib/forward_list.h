@@ -9,28 +9,57 @@
 
 namespace doticu_skylib {
 
-    template <typename Type_t>
+    template <typename T>
     class Forward_List_t // tList, BSSimpleList
     {
     public:
         class Node_t
         {
         public:
-            Type_t  value;  // 0
-            Node_t* next;   // ?
+            static some<Node_t*>    Create(const T& value);
+            static some<Node_t*>    Create(T&& value);
+            static void             Destroy(some<Node_t*> node);
+
+        public:
+            T               value;  // 0
+            maybe<Node_t*>  next;   // ?
+
+        public:
+            Node_t();
+            Node_t(const T& value);
+            Node_t(T&& value);
+            Node_t(const Node_t& other);
+            Node_t(Node_t&& other) noexcept;
+            Node_t& operator=(const Node_t& other);
+            Node_t& operator=(Node_t&& other) noexcept;
+            ~Node_t();
         };
 
     public:
-        Node_t head; // 0 (this really should have been a pointer, to determine if the list is empty!)
+        static some<Forward_List_t*>    Create(const T& head_value);
+        static some<Forward_List_t*>    Create(T&& head_value);
+        static void                     Destroy(some<Forward_List_t*> forward_list);
 
     public:
-        Bool_t          Is_Empty(); // this is questionable when it comes to non-pointer types.
+        Node_t head; // 0
 
-        maybe<Type_t*>  Point(some<Index_t> index);
+    public:
+        Forward_List_t();
+        Forward_List_t(const T& head_value);
+        Forward_List_t(T&& head_value);
+        Forward_List_t(const Forward_List_t& other)                 = delete;
+        Forward_List_t(Forward_List_t&& other) noexcept             = delete;
+        Forward_List_t& operator=(const Forward_List_t& other)      = delete;
+        Forward_List_t& operator=(Forward_List_t&& other) noexcept  = delete;
+        ~Forward_List_t();
+
+    public:
+        Bool_t      Is_Empty();                 // this is questionable when it comes to non-pointer types.
+        maybe<T*>   Point(some<Index_t> index);
     };
     STATIC_ASSERT(sizeof(Forward_List_t<void*>) == 0x10);
 
-    template <typename Type_t>
-    using List_t = Forward_List_t<Type_t>;
+    template <typename T>
+    using List_t = Forward_List_t<T>;
 
 }

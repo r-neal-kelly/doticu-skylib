@@ -27,6 +27,7 @@
 #include "doticu_skylib/worldspace.h"
 
 #include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_list.inl"
 
 #include "doticu_skylib/virtual_arguments.h"
@@ -415,6 +416,22 @@ namespace doticu_skylib {
             if (ni_3d && ni_3d->collidable) {
                 ni_3d->collidable->Collision_Layer_Type(collision_layer_type());
             }
+        }
+    }
+
+    maybe<Container_Changes_t*> Reference_t::Container_Changes(Bool_t do_force_create)
+    {
+        static auto initialize_container_changes = reinterpret_cast
+            <Container_Changes_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::INITIALIZE_CONTAINER_CHANGES);
+
+        maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
+        if (x_container_changes && x_container_changes->container_changes) {
+            return x_container_changes->container_changes;
+        } else if (do_force_create) {
+            return initialize_container_changes(this);
+        } else {
+            return none<Container_Changes_t*>();
         }
     }
 

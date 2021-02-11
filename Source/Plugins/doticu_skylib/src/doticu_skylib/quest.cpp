@@ -106,7 +106,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "{");
 
         if (!objectives.Is_Empty()) {
-            for (List_t<Quest_Objective_t*>::Node_t* node = &objectives.head; node; node = node->next) {
+            for (maybe<List_t<Quest_Objective_t*>::Node_t*> node = &objectives.head; node; node = node->next) {
                 Quest_Objective_t* objective = node->value;
                 if (objective) {
                     objective->Log(indent + SKYLIB_TAB);

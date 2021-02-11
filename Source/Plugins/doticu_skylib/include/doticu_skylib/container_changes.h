@@ -14,15 +14,15 @@ namespace doticu_skylib {
     class Container_Changes_t // InventoryChanges
     {
     public:
-        List_t<Container_Changes_Entry_t*>* entries;        // 00
-        Reference_t*                        owner;          // 08
-        Float_t                             total_weight;   // 10
-        Float_t                             armor_weight;   // 14
-        Bool_t                              has_changed;    // 18
-        u8                                  pad_19;         // 19
-        u8                                  pad_1A;         // 1A
-        u8                                  pad_1B;         // 1B
-        u32                                 pad_1C;         // 1C
+        maybe<List_t<maybe<Container_Changes_Entry_t*>>*>   entries;        // 00
+        maybe<Reference_t*>                                 owner;          // 08
+        Float_t                                             total_weight;   // 10
+        Float_t                                             armor_weight;   // 14
+        Bool_t                                              has_changed;    // 18
+        u8                                                  pad_19;         // 19
+        u8                                                  pad_1A;         // 1A
+        u8                                                  pad_1B;         // 1B
+        u32                                                 pad_1C;         // 1C
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
 

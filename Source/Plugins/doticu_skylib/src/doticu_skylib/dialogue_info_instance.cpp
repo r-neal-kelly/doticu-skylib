@@ -13,7 +13,7 @@ namespace doticu_skylib {
                                                        maybe<Actor_t*> speaker)
     {
         static auto ctor = reinterpret_cast
-            <Dialogue_Info_Instance_t*(*)(Dialogue_Info_Instance_t*, Quest_t*, Dialogue_Topic_t*, Dialogue_Info_t*, Actor_t*)>
+            <Dialogue_Info_Instance_t&(*)(Dialogue_Info_Instance_t*, Quest_t*, Dialogue_Topic_t*, Dialogue_Info_t*, Actor_t*)>
             (Game_t::Base_Address() + Offset_e::CTOR);
 
         SKYLIB_ASSERT_SOME(quest);

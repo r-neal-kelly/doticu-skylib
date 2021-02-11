@@ -25,6 +25,7 @@ namespace doticu_skylib {
     class Actor_t;
     class Actor_Base_t;
     class Cell_t;
+    class Container_Changes_t;
     class Faction_t;
     class Form_List_t;
     class Keyword_t;
@@ -34,11 +35,11 @@ namespace doticu_skylib {
     class Reference_Attached_State_t;
     class Worldspace_t;
 
-    class Reference_t :
-        public Form_t,
-        public Reference_Count_t,
-        public Event_Sink_t<void*>,
-        public Animation_Graphs_t
+    class Reference_t :             // TESObjectREFR
+        public Form_t,              // 00
+        public Reference_Count_t,   // 20
+        public Event_Sink_t<void*>, // 30
+        public Animation_Graphs_t   // 38
     {
     public:
         enum
@@ -49,18 +50,22 @@ namespace doticu_skylib {
         class Offset_e : public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum : value_type
             {
-                CREATE_REFERENCE_HANDLE     = 0x001320F0,
-                LOOKUP_REFERENCE_HANDLE_1   = 0x001328A0,
-                INVALID_REFERENCE_HANDLE    = 0x01EBEABC,
+                RTTI                                = 0x01E13798, // 513899
 
-                GET_NAME                    = 0x002961F0,
-                GET_OWNER                   = 0x002A6670, // 19789
-                GET_WORLDSPACE              = 0x00299750,
+                CREATE_REFERENCE_HANDLE             = 0x001320F0,
+                LOOKUP_REFERENCE_HANDLE_1           = 0x001328A0,
+                INVALID_REFERENCE_HANDLE            = 0x01EBEABC,
 
-                PLACE_AT_ME                 = 0x009951F0,
-                MOVE_TO_OFFSET              = 0x009AE5C0,
+                GET_NAME                            = 0x002961F0,
+                GET_OWNER                           = 0x002A6670, // 19789
+                GET_WORLDSPACE                      = 0x00299750,
+
+                INITIALIZE_CONTAINER_CHANGES        = 0x001D8E40, // 15802
+
+                PLACE_AT_ME                         = 0x009951F0,
+                MOVE_TO_OFFSET                      = 0x009AE5C0,
             };
             using Enum_t::Enum_t;
         };
@@ -233,6 +238,7 @@ namespace doticu_skylib {
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
+        maybe<Container_Changes_t*>         Container_Changes(Bool_t do_force_create);
         maybe<Faction_t*>                   Faction_Owner();
         Location_t*                         Location();
         maybe<Form_t*>                      Owner();
