@@ -158,7 +158,7 @@ namespace doticu_skylib {
 
         if (!Is_Empty()) {
             Index_t idx = 0;
-            for (Node_t* node = &head; node; node = node->next, idx += 1) {
+            for (maybe<Node_t*> node = &head; node; node = node->next, idx += 1) {
                 if (idx == index()) {
                     return &node->value;
                 }
