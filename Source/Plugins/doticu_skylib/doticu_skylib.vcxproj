@@ -57,6 +57,7 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
+    <ClInclude Include="include\doticu_skylib\container_entry_count.h" />
     <ClInclude Include="include\doticu_skylib\filter_collision_layer_types.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_controller.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_listener.h" />
@@ -393,6 +394,7 @@
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp" />
+    <ClCompile Include="src\doticu_skylib\container_entry_count.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp" />
     <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
@@ -401,6 +403,7 @@
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_count.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />

@@ -76,6 +76,11 @@ namespace doticu_skylib {
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
         Bool_t                  Remove(some<T*> x_data);
+
+        s16                     Count();
+        s16                     Increment_Count(s16 amount);
+        s16                     Decrement_Count(s16 amount);
+        Bool_t                  Should_Be_Deleted();
     };
     STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);
 

@@ -28,12 +28,22 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Count_t*> Create(s16 count);
+        static void                 Destroy(some<Extra_Count_t*> x_count);
+
+    public:
         virtual ~Extra_Count_t(); // 0
 
     public:
-        s16 count;  // 10
+        s16 count;  // 10 (do we know this is a s16 because of barter gold limits?)
         u16 pad_12; // 12
         u32 pad_14; // 14
+
+    public:
+        s16     Count();
+        void    Count(s16 count);
+        s16     Increment_Count(s16 amount);
+        s16     Decrement_Count(s16 amount);
     };
     STATIC_ASSERT(sizeof(Extra_Count_t) == 0x18);
 

@@ -55,6 +55,17 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ACTOR_BASE,
         };
 
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E14C08, // 513923
+            };
+            using Enum_t::Enum_t;
+        };
+
+    public:
         static size_t                   Actor_Base_Count();
         static Vector_t<Actor_Base_t*>  Actor_Bases();
         static void                     Actor_Bases(Vector_t<Actor_Base_t*>& results);

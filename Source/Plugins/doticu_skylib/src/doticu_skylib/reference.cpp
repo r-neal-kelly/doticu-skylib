@@ -699,7 +699,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Add_Item(some<Form_t*> item, s16 count_delta)
+    void Reference_t::Add_Item(some<Form_t*> item, s16 delta)
     {
         SKYLIB_ASSERT_SOME(item);
 
@@ -708,7 +708,7 @@ namespace doticu_skylib {
             Script_t* script = static_cast<Script_t*>(script_factory->Create());
             if (script) {
                 script->Command(
-                    (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(count_delta)).c_str()
+                    (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta)).c_str()
                 );
                 script->Execute(this);
                 script->Deallocate_Command();

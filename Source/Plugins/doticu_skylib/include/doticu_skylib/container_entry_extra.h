@@ -11,7 +11,7 @@ namespace doticu_skylib {
     class Form_t;
     class Global_t;
 
-    class Container_Entry_Extra_t
+    class Container_Entry_Extra_t // ContainerItemExtra
     {
     public:
         union Conditional_u

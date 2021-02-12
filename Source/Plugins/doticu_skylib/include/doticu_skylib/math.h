@@ -14,6 +14,8 @@
 
 namespace doticu_skylib {
 
+    // these really need to be put in Math_t
+
     constexpr Float_t PI = 3.141592741f;
 
     template <typename Num, std::enable_if_t<std::is_arithmetic<Num>::value, Bool_t> = true>
@@ -36,6 +38,18 @@ namespace doticu_skylib {
     inline Float_t To_Radians(Float_t degrees)
     {
         return degrees * PI / 180.0f;
+    }
+
+    template <typename T>
+    inline T Limit(T value, T minimum, T maximum)
+    {
+        if (value < minimum) {
+            return minimum;
+        } else if (value > maximum) {
+            return maximum;
+        } else {
+            return value;
+        }
     }
 
     class CRC32_Hash_t

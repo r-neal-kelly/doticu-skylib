@@ -1011,6 +1011,9 @@
     <ClInclude Include="include\doticu_skylib\enum_extra_type.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\container_entry_count.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1260,6 +1263,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_count.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\container_entry_count.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

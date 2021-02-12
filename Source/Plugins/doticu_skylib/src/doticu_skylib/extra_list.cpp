@@ -4,8 +4,9 @@
 
 #include "doticu_skylib/game.inl"
 
+#include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
-#include "doticu_skylib/extra_list.h"
+#include "doticu_skylib/extra_list.inl"
 
 namespace doticu_skylib {
 
@@ -191,6 +192,53 @@ namespace doticu_skylib {
         } else {
             return false;
         }
+    }
+
+    s16 Extra_List_t::Count()
+    {
+        maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
+        if (x_count) {
+            return x_count->Count();
+        } else {
+            return 1;
+        }
+    }
+
+    s16 Extra_List_t::Increment_Count(s16 amount)
+    {
+        if (amount > 0) {
+            maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
+            if (x_count) {
+                return x_count->Increment_Count(amount);
+            } else {
+                some<Extra_Count_t*> new_x_count = Extra_Count_t::Create(1);
+                Add<Extra_Count_t>(new_x_count);
+                return new_x_count->Increment_Count(amount);
+            }
+        } else {
+            return Count();
+        }
+    }
+
+    s16 Extra_List_t::Decrement_Count(s16 amount)
+    {
+        if (amount > 0) {
+            maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
+            if (x_count) {
+                return x_count->Decrement_Count(amount);
+            } else {
+                some<Extra_Count_t*> new_x_count = Extra_Count_t::Create(1);
+                Add<Extra_Count_t>(new_x_count);
+                return new_x_count->Decrement_Count(amount);
+            }
+        } else {
+            return Count();
+        }
+    }
+
+    Bool_t Extra_List_t::Should_Be_Deleted()
+    {
+        return Count() < 1;
     }
 
 }

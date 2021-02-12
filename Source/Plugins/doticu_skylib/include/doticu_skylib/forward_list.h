@@ -16,6 +16,7 @@ namespace doticu_skylib {
         class Node_t
         {
         public:
+            static some<Node_t*>    Create();
             static some<Node_t*>    Create(const T& value);
             static some<Node_t*>    Create(T&& value);
             static void             Destroy(some<Node_t*> node);
@@ -54,8 +55,11 @@ namespace doticu_skylib {
         ~Forward_List_t();
 
     public:
-        Bool_t      Is_Empty();                 // this is questionable when it comes to non-pointer types.
+        Bool_t      Is_Empty();
         maybe<T*>   Point(some<Index_t> index);
+        Bool_t      Has(const T& value);
+        void        Add(const T& value);
+        Bool_t      Remove(const T& value);
     };
     STATIC_ASSERT(sizeof(Forward_List_t<void*>) == 0x10);
 

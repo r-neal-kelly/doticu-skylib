@@ -270,7 +270,7 @@ namespace doticu_skylib {
 
         void Mark_For_Delete(Bool_t do_disable = true);
 
-        void Add_Item(some<Form_t*> item, s16 count_delta);
+        void Add_Item(some<Form_t*> item, s16 delta);
 
     public:
         void Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback);

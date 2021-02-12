@@ -4,9 +4,8 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
-
 #include "doticu_skylib/component_form_data.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
 
@@ -18,9 +17,9 @@ namespace doticu_skylib {
         virtual ~Container_c(); // 0
 
     public:
-        Container_Entry_t** container_entries;      // 08 (CNTO - Container Object)
-        u32                 container_entry_count;  // 10 (COCT - Container Count)
-        u32                 pad_14;                 // 14
+        maybe<maybe<Container_Entry_t*>*>   container_entries;      // 08 (CNTO - Container Object)
+        u32                                 container_entry_count;  // 10 (COCT - Container Count)
+        u32                                 pad_14;                 // 14
     };
     STATIC_ASSERT(sizeof(Container_c) == 0x18);
 
