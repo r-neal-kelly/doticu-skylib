@@ -8,6 +8,7 @@
 
 namespace doticu_skylib {
 
+    class Bound_Object_t;
     class Container_Changes_Entry_t;
     class Reference_t;
 
@@ -23,6 +24,12 @@ namespace doticu_skylib {
         u8                                                  pad_1A;         // 1A
         u8                                                  pad_1B;         // 1B
         u32                                                 pad_1C;         // 1C
+
+    public:
+        maybe<Container_Changes_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> object);
+        some<Container_Changes_Entry_t*>    Some_Entry(some<Bound_Object_t*> object);
+        Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
+        Bool_t                              Remove_Entry(some<Container_Changes_Entry_t*> entry);
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
 

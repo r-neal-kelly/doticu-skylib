@@ -103,6 +103,14 @@ namespace doticu_skylib {
     /* Forward_List_t<T> */
 
     template <typename T>
+    inline some<Forward_List_t<T>*> Forward_List_t<T>::Create()
+    {
+        some<Forward_List_t*> forward_list = Game_t::Allocate<Forward_List_t>();
+        new (forward_list()) Forward_List_t();
+        return forward_list;
+    }
+
+    template <typename T>
     inline some<Forward_List_t<T>*> Forward_List_t<T>::Create(const T& head_value)
     {
         some<Forward_List_t*> forward_list = Game_t::Allocate<Forward_List_t>();
@@ -178,7 +186,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    Bool_t Forward_List_t<T>::Has(const T& value)
+    inline Bool_t Forward_List_t<T>::Has(const T& value)
     {
         if (Is_Empty()) {
             return false;
@@ -193,7 +201,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    void Forward_List_t<T>::Add(const T& value)
+    inline void Forward_List_t<T>::Add(const T& value)
     {
         if (Is_Empty()) {
             head = Node_t(value);
@@ -206,24 +214,23 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    Bool_t Forward_List_t<T>::Remove(const T& value)
+    inline Bool_t Forward_List_t<T>::Remove(const T& value)
     {
         if (Is_Empty()) {
             return false;
         } else {
             if (this->head.value == value) {
                 maybe<Node_t*> next_node = this->head.next;
+                this->head.~Node_t();
                 if (next_node) {
-                    this->head.~Node();
-                    this->head = std::move(*this->head.next);
+                    this->head = std::move(*next_node);
                     Node_t::Destroy(next_node());
-                } else {
-                    this->head.~Node();
                 }
                 return true;
             } else {
-                for (maybe<Node_t*> it = &this->head, next = it->next; next; it = next, next = it->next) {
-                    if (next->value == value) {
+                for (maybe<Node_t*> it = &this->head; it; it = it->next) {
+                    maybe<Node_t*> next = it->next;
+                    if (next && next->value == value) {
                         it->next = next->next;
                         Node_t::Destroy(next());
                         return true;

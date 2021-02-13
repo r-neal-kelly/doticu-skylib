@@ -393,6 +393,7 @@
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
+    <ClCompile Include="src\doticu_skylib\container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry_count.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info.cpp" />

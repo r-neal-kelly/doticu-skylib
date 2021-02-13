@@ -37,6 +37,7 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Forward_List_t*>    Create();
         static some<Forward_List_t*>    Create(const T& head_value);
         static some<Forward_List_t*>    Create(T&& head_value);
         static void                     Destroy(some<Forward_List_t*> forward_list);
