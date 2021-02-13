@@ -30,6 +30,8 @@ namespace doticu_skylib {
         some<Container_Changes_Entry_t*>    Some_Entry(some<Bound_Object_t*> object);
         Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
         Bool_t                              Remove_Entry(some<Container_Changes_Entry_t*> entry);
+
+        void                                Destroy_Entries();
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
 

@@ -56,6 +56,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_container.h" />
+    <ClInclude Include="include\doticu_skylib\actor_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
     <ClInclude Include="include\doticu_skylib\container_entry_count.h" />
     <ClInclude Include="include\doticu_skylib\filter_collision_layer_types.h" />
@@ -387,11 +389,14 @@
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\actor_container.cpp" />
+    <ClCompile Include="src\doticu_skylib\actor_container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\collections.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\component_container.cpp" />
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp" />

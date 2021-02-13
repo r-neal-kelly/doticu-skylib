@@ -57,10 +57,7 @@ namespace doticu_skylib {
     Container_Changes_Entry_t::~Container_Changes_Entry_t()
     {
         this->object = none<Bound_Object_t*>();
-        if (this->x_lists) {
-            List_t<maybe<Extra_List_t*>>::Destroy(this->x_lists());
-            this->x_lists = none<List_t<maybe<Extra_List_t*>>*>();
-        }
+        Destroy_Extra_Lists();
         this->delta = 0;
         this->pad_14 = 0;
     }
@@ -82,27 +79,32 @@ namespace doticu_skylib {
         return count;
     }
 
-    s32 Container_Changes_Entry_t::Minimum_Delta(Container_Entry_Count_t container_entry_count)
+    s32 Container_Changes_Entry_t::Minimum_Delta(Container_Entry_Count_t base_count)
     {
-        return Extra_Lists_Count() + -container_entry_count;
+        return Extra_Lists_Count() + -base_count;
     }
 
-    s32 Container_Changes_Entry_t::Maximum_Delta(Container_Entry_Count_t container_entry_count)
+    s32 Container_Changes_Entry_t::Maximum_Delta(Container_Entry_Count_t base_count)
     {
-        return std::numeric_limits<s32>::max() + -container_entry_count;
+        return std::numeric_limits<s32>::max() + -base_count;
     }
 
-    s32 Container_Changes_Entry_t::Delta(Container_Entry_Count_t container_entry_count)
+    s32 Container_Changes_Entry_t::Delta(Container_Entry_Count_t base_count)
     {
-        this->delta = Limit(this->delta, Minimum_Delta(container_entry_count), Maximum_Delta(container_entry_count));
+        this->delta = Limit(this->delta, Minimum_Delta(base_count), Maximum_Delta(base_count));
         return this->delta;
     }
 
-    s32 Container_Changes_Entry_t::Increment_Delta(Container_Entry_Count_t container_entry_count, s32 amount)
+    s32 Container_Changes_Entry_t::Count(Container_Entry_Count_t base_count)
+    {
+        return Delta(base_count) + base_count;
+    }
+
+    s32 Container_Changes_Entry_t::Increment_Delta(Container_Entry_Count_t base_count, s32 amount)
     {
         if (amount > 0) {
-            s32 minimum_delta = Minimum_Delta(container_entry_count);
-            s32 maximum_delta = Maximum_Delta(container_entry_count);
+            s32 minimum_delta = Minimum_Delta(base_count);
+            s32 maximum_delta = Maximum_Delta(base_count);
             s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
             s32 new_delta = current_delta + amount;
             if (new_delta < current_delta || new_delta > maximum_delta) {
@@ -112,15 +114,15 @@ namespace doticu_skylib {
             }
             return this->delta;
         } else {
-            return Delta(container_entry_count);
+            return Delta(base_count);
         }
     }
 
-    s32 Container_Changes_Entry_t::Decrement_Delta(Container_Entry_Count_t container_entry_count, s32 amount)
+    s32 Container_Changes_Entry_t::Decrement_Delta(Container_Entry_Count_t base_count, s32 amount)
     {
         if (amount > 0) {
-            s32 minimum_delta = Minimum_Delta(container_entry_count);
-            s32 maximum_delta = Maximum_Delta(container_entry_count);
+            s32 minimum_delta = Minimum_Delta(base_count);
+            s32 maximum_delta = Maximum_Delta(base_count);
             s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
             s32 new_delta = current_delta - amount;
             if (new_delta > current_delta || new_delta < minimum_delta) {
@@ -130,14 +132,14 @@ namespace doticu_skylib {
             }
             return this->delta;
         } else {
-            return Delta(container_entry_count);
+            return Delta(base_count);
         }
     }
 
-    s32 Container_Changes_Entry_t::Add_Extra_List(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Deleted());
+        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
 
         if (!this->x_lists) {
             this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list())();
@@ -145,52 +147,80 @@ namespace doticu_skylib {
             this->x_lists->Add(extra_list());
         }
 
-        return Increment_Delta(container_entry_count, extra_list->Count());
+        return Increment_Delta(base_count, extra_list->Count());
     }
 
-    s32 Container_Changes_Entry_t::Remove_Extra_List(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Remove_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Deleted());
+        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Remove(extra_list())) {
-            return Decrement_Delta(container_entry_count, extra_list->Count());
+            if (this->x_lists->Is_Empty()) {
+                Destroy_Extra_Lists();
+            }
+            return Decrement_Delta(base_count, extra_list->Count());
         }
     }
 
-    s32 Container_Changes_Entry_t::Increment_Extra_List_Count(Container_Entry_Count_t container_entry_count,
+    s32 Container_Changes_Entry_t::Increment_Extra_List_Count(Container_Entry_Count_t base_count,
                                                               some<Extra_List_t*> extra_list,
                                                               s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Deleted());
+        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Has(extra_list())) {
             s16 count = extra_list->Count();
             s16 new_count = extra_list->Increment_Count(amount);
-            return Increment_Delta(container_entry_count, new_count - count);
+            return Increment_Delta(base_count, new_count - count);
         } else {
-            return Delta(container_entry_count);
+            return Delta(base_count);
         }
     }
 
-    s32 Container_Changes_Entry_t::Decrement_Extra_List_Count(Container_Entry_Count_t container_entry_count,
+    s32 Container_Changes_Entry_t::Decrement_Extra_List_Count(Container_Entry_Count_t base_count,
                                                               some<Extra_List_t*> extra_list,
                                                               s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Deleted());
+        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Has(extra_list())) {
             s16 count = extra_list->Count();
             s16 new_count = extra_list->Decrement_Count(amount);
-            if (extra_list->Should_Be_Deleted()) {
+            if (extra_list->Should_Be_Destroyed()) {
                 this->x_lists->Remove(extra_list());
                 Extra_List_t::Destroy(extra_list);
+                if (this->x_lists->Is_Empty()) {
+                    Destroy_Extra_Lists();
+                }
             }
-            return Decrement_Delta(container_entry_count, count - new_count);
+            return Decrement_Delta(base_count, count - new_count);
         } else {
-            return Delta(container_entry_count);
+            return Delta(base_count);
+        }
+    }
+
+    Bool_t Container_Changes_Entry_t::Should_Be_Destroyed()
+    {
+        return this->delta == 0 && Extra_Lists_Count() == 0;
+    }
+
+    void Container_Changes_Entry_t::Destroy_Extra_Lists()
+    {
+        if (this->x_lists) {
+            if (!this->x_lists->Is_Empty()) {
+                for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
+                    maybe<Extra_List_t*> x_list = it->value;
+                    if (x_list) {
+                        Extra_List_t::Destroy(x_list());
+                        it->value = none<Extra_List_t*>();
+                    }
+                }
+            }
+            List_t<maybe<Extra_List_t*>>::Destroy(this->x_lists());
+            this->x_lists = none<List_t<maybe<Extra_List_t*>>*>();
         }
     }
 

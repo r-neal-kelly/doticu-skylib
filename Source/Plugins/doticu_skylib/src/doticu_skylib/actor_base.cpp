@@ -355,14 +355,14 @@ namespace doticu_skylib {
 
     Actor_Base_t* Actor_Base_t::Root_Base()
     {
-        Actor_Base_t* base = this;
+        maybe<Actor_Base_t*> base = this;
         for (size_t recursions = 0; recursions < 8; recursions += 1) {
             if (base && base->Is_Valid()) {
                 Actor_Base_t* root = base->Root_Template();
                 if (root && root->Is_Valid()) {
                     if (root->Is_Dynamic()) {
                         Actor_t* actor = static_cast<Actor_t*>
-                            (Reference_t::Create(base, 1, Player_t::Self(), false, false));
+                            (Reference_t::Create(base(), 1, Player_t::Self(), false, false));
                         base = actor->Actor_Base();
                         actor->Mark_For_Delete();
                     } else {

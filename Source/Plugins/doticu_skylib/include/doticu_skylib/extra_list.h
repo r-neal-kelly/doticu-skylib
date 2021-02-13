@@ -80,7 +80,8 @@ namespace doticu_skylib {
         s16                     Count();
         s16                     Increment_Count(s16 amount);
         s16                     Decrement_Count(s16 amount);
-        Bool_t                  Should_Be_Deleted();
+
+        Bool_t                  Should_Be_Destroyed();
     };
     STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);
 

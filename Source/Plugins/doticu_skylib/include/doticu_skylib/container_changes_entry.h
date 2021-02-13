@@ -34,20 +34,25 @@ namespace doticu_skylib {
         ~Container_Changes_Entry_t();
 
     public:
-        s32 Extra_Lists_Count();
+        s32     Extra_Lists_Count();
 
-        s32 Minimum_Delta(Container_Entry_Count_t container_entry_count);
-        s32 Maximum_Delta(Container_Entry_Count_t container_entry_count);
-        s32 Delta(Container_Entry_Count_t container_entry_count);
+        s32     Minimum_Delta(Container_Entry_Count_t base_count);
+        s32     Maximum_Delta(Container_Entry_Count_t base_count);
+        s32     Delta(Container_Entry_Count_t base_count);
+        s32     Count(Container_Entry_Count_t base_count);
 
-        s32 Increment_Delta(Container_Entry_Count_t container_entry_count, s32 amount);
-        s32 Decrement_Delta(Container_Entry_Count_t container_entry_count, s32 amount);
+        s32     Increment_Delta(Container_Entry_Count_t base_count, s32 amount);
+        s32     Decrement_Delta(Container_Entry_Count_t base_count, s32 amount);
 
-        s32 Add_Extra_List(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list);
-        s32 Remove_Extra_List(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list);
+        s32     Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
+        s32     Remove_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
 
-        s32 Increment_Extra_List_Count(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list, s16 amount);
-        s32 Decrement_Extra_List_Count(Container_Entry_Count_t container_entry_count, some<Extra_List_t*> extra_list, s16 amount);
+        s32     Increment_Extra_List_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
+        s32     Decrement_Extra_List_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
+
+        Bool_t  Should_Be_Destroyed();
+
+        void    Destroy_Extra_Lists();
 
     public:
         void Log(std::string indent);

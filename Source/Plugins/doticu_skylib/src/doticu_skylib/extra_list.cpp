@@ -236,7 +236,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Should_Be_Deleted()
+    Bool_t Extra_List_t::Should_Be_Destroyed()
     {
         return Count() < 1;
     }

@@ -170,14 +170,18 @@ namespace doticu_skylib {
         }
     }
 
-    Actor_Base_t* Actor_t::Actor_Base()
+    maybe<Actor_Base_t*> Actor_t::Actor_Base()
     {
-        return static_cast<maybe<Actor_Base_t*>>(base_form)();
+        if (base_form) {
+            return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(base_form());
+        } else {
+            return none<Actor_Base_t*>();
+        }
     }
 
     Actor_Base_t* Actor_t::Highest_Static_Actor_Base()
     {
-        Actor_Base_t* actor_base = Actor_Base();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base && actor_base->Is_Valid()) {
             return actor_base->Highest_Static();
         } else {
@@ -199,9 +203,9 @@ namespace doticu_skylib {
 
     void Actor_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
-        Actor_Base_t* actor_base = Actor_Base();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base && base_form->Is_Valid()) {
-            results.push_back(actor_base);
+            results.push_back(actor_base());
             actor_base->Templates(results);
         }
     }
@@ -219,7 +223,7 @@ namespace doticu_skylib {
         Array_t<Faction_And_Rank_t>* reference_factions_and_ranks = nullptr;
         size_t reserve_count = 0;
 
-        Actor_Base_t* actor_base = Actor_Base();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base && actor_base->Is_Valid()) {
             base_factions_and_ranks = &actor_base->factions_and_ranks;
             reserve_count += base_factions_and_ranks->count;
@@ -308,7 +312,7 @@ namespace doticu_skylib {
 
     void Actor_t::Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates)
     {
-        Actor_Base_t* actor_base = Actor_Base();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base && actor_base->Is_Valid()) {
             actor_base->Keywords(results, include_templates);
         }

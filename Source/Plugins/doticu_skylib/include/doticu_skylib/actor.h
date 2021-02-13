@@ -234,7 +234,7 @@ namespace doticu_skylib {
 
         Sex_e                                       Sex();
         Race_t*                                     Race();
-        Actor_Base_t*                               Actor_Base();
+        maybe<Actor_Base_t*>                        Actor_Base();
         Actor_Base_t*                               Highest_Static_Actor_Base();
         Vector_t<Actor_Base_t*>                     Actor_Bases();
         void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
