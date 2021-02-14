@@ -4,16 +4,16 @@
 
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/extra_list.h"
-#include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/math.h"
 
 namespace doticu_skylib {
 
-    some<Container_Changes_Entry_t*> Container_Changes_Entry_t::Create(some<Bound_Object_t*> object, s32 delta)
+    some<Container_Changes_Entry_t*> Container_Changes_Entry_t::Create(some<Bound_Object_t*> object)
     {
         some<Container_Changes_Entry_t*> container_changes_entry = Game_t::Allocate<Container_Changes_Entry_t>();
-        new (container_changes_entry()) Container_Changes_Entry_t(object, delta);
+        new (container_changes_entry()) Container_Changes_Entry_t(object);
         return container_changes_entry;
     }
 
@@ -29,8 +29,8 @@ namespace doticu_skylib {
     {
     }
 
-    Container_Changes_Entry_t::Container_Changes_Entry_t(some<Bound_Object_t*> object, s32 delta) :
-        object(object()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(delta), pad_14(0)
+    Container_Changes_Entry_t::Container_Changes_Entry_t(some<Bound_Object_t*> object) :
+        object(object()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
     {
     }
 
@@ -60,6 +60,22 @@ namespace doticu_skylib {
         Destroy_Extra_Lists();
         this->delta = 0;
         this->pad_14 = 0;
+    }
+
+    Vector_t<some<Extra_List_t*>> Container_Changes_Entry_t::Extra_Lists()
+    {
+        Vector_t<some<Extra_List_t*>> results;
+
+        if (this->x_lists && !this->x_lists->Is_Empty()) {
+            for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
+                maybe<Extra_List_t*> x_list = it->value;
+                if (x_list) {
+                    results.push_back(x_list());
+                }
+            }
+        }
+
+        return results;
     }
 
     s32 Container_Changes_Entry_t::Extra_Lists_Count()
@@ -160,6 +176,26 @@ namespace doticu_skylib {
                 Destroy_Extra_Lists();
             }
             return Decrement_Delta(base_count, extra_list->Count());
+        } else {
+            return Delta(base_count);
+        }
+    }
+
+    s32 Container_Changes_Entry_t::Destroy_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        if (this->x_lists && this->x_lists->Remove(extra_list())) {
+            if (this->x_lists->Is_Empty()) {
+                Destroy_Extra_Lists();
+            }
+            s16 x_list_count = extra_list->Count();
+            Extra_List_t::Destroy(extra_list());
+            return Decrement_Delta(base_count, x_list_count);
+        } else {
+            SKYLIB_ASSERT(false);
+            Extra_List_t::Destroy(extra_list());
+            return Delta(base_count);
         }
     }
 

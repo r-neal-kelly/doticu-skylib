@@ -37,7 +37,7 @@ namespace doticu_skylib {
         if (maybe_entry) {
             return maybe_entry();
         } else {
-            some<Container_Changes_Entry_t*> some_entry = Container_Changes_Entry_t::Create(object, 0);
+            some<Container_Changes_Entry_t*> some_entry = Container_Changes_Entry_t::Create(object);
             this->entries->Add(some_entry());
             this->has_changed = true;
             return some_entry;

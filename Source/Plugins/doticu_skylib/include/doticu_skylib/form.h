@@ -64,8 +64,8 @@ namespace doticu_skylib {
         virtual void        _07(void);                                      // 07
         virtual void        _08(void);                                      // 08
         virtual void        _09(void);                                      // 09
-        virtual void        _0A(void);                                      // 0A
-        virtual void        _0B(void);                                      // 0B
+        virtual Bool_t      Flag_Change(u32 flag);                          // 0A (verify this is working correctly.)
+        virtual void        Unflag_Change(u32 flag);                        // 0B
         virtual Bool_t      Find_In_Mod(Mod_t* mod);                        // 0C
         virtual void        _0D(void);                                      // 0D
         virtual void        _0E(void);                                      // 0E

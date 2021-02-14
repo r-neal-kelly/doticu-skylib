@@ -429,7 +429,7 @@ namespace doticu_skylib {
         if (x_container_changes && x_container_changes->container_changes) {
             return x_container_changes->container_changes;
         } else if (do_force_create) {
-            return initialize_container_changes(this);
+            return initialize_container_changes(this); // this causes a crash if doing soon after game load?
         } else {
             return none<Container_Changes_t*>();
         }

@@ -75,9 +75,20 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                IS_DELETED      = 1 << 5,
-                IS_PERSISTENT   = 1 << 10,
-                IS_DISABLED     = 1 << 11,
+                IS_DELETED      = static_cast<value_type>(1 << 5),
+                IS_PERSISTENT   = static_cast<value_type>(1 << 10),
+                IS_DISABLED     = static_cast<value_type>(1 << 11),
+            };
+            using Enum_t::Enum_t;
+        };
+
+        class Form_Change_Flags_e : public Enum_t<u32>
+        {
+        public:
+            enum : value_type
+            {
+                CONTAINER   = static_cast<value_type>(1 << 5),
+                EXTRA_LIST  = static_cast<value_type>(1 << 10),
             };
             using Enum_t::Enum_t;
         };

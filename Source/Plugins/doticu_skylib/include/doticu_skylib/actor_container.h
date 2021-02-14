@@ -11,15 +11,16 @@
 namespace doticu_skylib {
 
     class Actor_t;
+    class Bound_Object_t;
     class Container_c;
     class Container_Changes_t;
+    class Container_Changes_Entry_t;
 
     class Actor_Container_t
     {
     public:
         some<Actor_t*>                      owner;
-        maybe<Container_c*>                 base_container;
-        maybe<Container_Changes_t*>         reference_container;
+        some<Container_Changes_t*>          reference_container;
         Vector_t<Actor_Container_Entry_t>   entries;
 
     public:
@@ -29,6 +30,15 @@ namespace doticu_skylib {
         Actor_Container_t& operator =(const Actor_Container_t& other)       = delete;
         Actor_Container_t& operator =(Actor_Container_t&& other) noexcept   = delete;
         ~Actor_Container_t();
+
+    public:
+        maybe<Actor_Container_Entry_t*> Maybe_Entry(some<Bound_Object_t*> object);
+        some<Actor_Container_Entry_t*>  Some_Entry(some<Bound_Object_t*> object);
+
+        Container_Entry_Count_t         Count(some<Bound_Object_t*> object);
+
+        Container_Entry_Count_t         Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
+        Container_Entry_Count_t         Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
 
     public:
         void Log(std::string indent = "");
