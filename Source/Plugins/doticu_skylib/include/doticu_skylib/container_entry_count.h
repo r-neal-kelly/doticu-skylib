@@ -19,17 +19,14 @@ namespace doticu_skylib {
         static constexpr value_type NONE_VALUE = 0;
 
     protected:
-        value_type value;
+        const value_type value;
 
     public:
         Container_Entry_Count_t();
         Container_Entry_Count_t(value_type value);
 
     public:
-                    operator            value_type() const;
-                    explicit operator   Bool_t() const;
-        Bool_t      operator            !() const;
-        value_type  operator            -() const;
+        operator value_type() const;
     };
 
 }

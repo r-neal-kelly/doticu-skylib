@@ -41,10 +41,9 @@ namespace doticu_skylib {
         s32                             Minimum_Delta(Container_Entry_Count_t base_count);
         s32                             Maximum_Delta(Container_Entry_Count_t base_count);
         s32                             Delta(Container_Entry_Count_t base_count);
-        s32                             Count(Container_Entry_Count_t base_count);
 
-        s32                             Increment_Delta(Container_Entry_Count_t base_count, s32 amount);
-        s32                             Decrement_Delta(Container_Entry_Count_t base_count, s32 amount);
+        s32                             Increment_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount);
+        s32                             Decrement_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount);
 
         s32                             Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);

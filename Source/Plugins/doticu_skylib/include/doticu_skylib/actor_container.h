@@ -19,7 +19,7 @@ namespace doticu_skylib {
     class Actor_Container_t
     {
     public:
-        some<Actor_t*>                      owner;
+        some<Actor_t*>                      actor;
         some<Container_Changes_t*>          reference_container;
         Vector_t<Actor_Container_Entry_t>   entries;
 

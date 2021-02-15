@@ -34,6 +34,8 @@ namespace doticu_skylib {
         some<Container_Changes_Entry_t*>    Some_Reference_Entry(some<Actor_Container_t*> owner);
 
         Container_Entry_Count_t             Base_Count();
+        Container_Entry_Count_t             Reference_Count();
+        Container_Entry_Count_t             Extra_Lists_Count();
         Container_Entry_Count_t             Count();
 
         Container_Entry_Count_t             Increment_Count(some<Actor_Container_t*> owner, Container_Entry_Count_t amount);

@@ -17,21 +17,21 @@
 namespace doticu_skylib {
 
     Actor_Container_t::Actor_Container_t(some<Actor_t*> actor) :
-        owner(static_cast<Actor_t*>(nullptr)),
+        actor(static_cast<Actor_t*>(nullptr)),
         reference_container(static_cast<Container_Changes_t*>(nullptr))
     {
-        this->owner = actor;
-        SKYLIB_ASSERT_SOME(this->owner);
-        this->reference_container = this->owner->Container_Changes(true)();
+        this->actor = actor;
+        SKYLIB_ASSERT_SOME(this->actor);
+        this->reference_container = this->actor->Container_Changes(true)();
         SKYLIB_ASSERT(this->reference_container);
 
-        maybe<Container_c*> base_container = static_cast<maybe<Container_c*>>(this->owner->Actor_Base());
+        maybe<Container_c*> base_container = static_cast<maybe<Container_c*>>(this->actor->Actor_Base());
         Vector_t<some<Bound_Object_t*>> handled_objects;
 
         maybe<List_t<maybe<Container_Changes_Entry_t*>>*> reference_entries = this->reference_container->entries;
         if (reference_entries && !reference_entries->Is_Empty()) {
             for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &reference_entries->head; it; it = it->next) {
-                maybe<Container_Changes_Entry_t*> reference_entry;
+                maybe<Container_Changes_Entry_t*> reference_entry = it->value;
                 if (reference_entry && reference_entry->object) {
                     maybe<Container_Entry_t*> base_entry = none<Container_Entry_t*>();
                     if (base_container) {
@@ -110,32 +110,34 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(object);
 
-        if (amount > 0) {
-            return Some_Entry(object)->Increment_Count(this, amount);
-        } else {
-            return Count(object);
-        }
+        return Some_Entry(object)->Increment_Count(this, amount);
     }
 
     Container_Entry_Count_t Actor_Container_t::Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount)
     {
         SKYLIB_ASSERT_SOME(object);
 
-        if (amount > 0) {
-            maybe<Actor_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
-            if (maybe_entry) {
-                return maybe_entry->Decrement_Count(this, amount);
-            } else {
-                return 0;
-            }
+        maybe<Actor_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
+        if (maybe_entry) {
+            return maybe_entry->Decrement_Count(this, amount);
         } else {
-            return Count(object);
+            return 0;
         }
     }
 
     void Actor_Container_t::Log(std::string indent)
     {
+        SKYLIB_LOG(indent + "Actor_Container_t::Log");
+        SKYLIB_LOG(indent + "{");
 
+        SKYLIB_LOG(indent + SKYLIB_TAB + "Actor: %s", this->actor->Any_Name());
+
+        for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
+            Actor_Container_Entry_t& entry = this->entries[idx];
+            entry.Log(indent + SKYLIB_TAB);
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

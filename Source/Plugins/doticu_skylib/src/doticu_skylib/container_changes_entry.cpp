@@ -21,7 +21,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(container_changes_entry);
         container_changes_entry->~Container_Changes_Entry_t();
-        Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry);
+        //Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry); // we need to make sure we find the correct heap. probably want to do that check in Game_t
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t() :
@@ -111,45 +111,32 @@ namespace doticu_skylib {
         return this->delta;
     }
 
-    s32 Container_Changes_Entry_t::Count(Container_Entry_Count_t base_count)
+    s32 Container_Changes_Entry_t::Increment_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount)
     {
-        return Delta(base_count) + base_count;
+        s32 minimum_delta = Minimum_Delta(base_count);
+        s32 maximum_delta = Maximum_Delta(base_count);
+        s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
+        s32 new_delta = current_delta + amount;
+        if (new_delta < current_delta || new_delta > maximum_delta) {
+            this->delta = maximum_delta;
+        } else {
+            this->delta = new_delta;
+        }
+        return this->delta;
     }
 
-    s32 Container_Changes_Entry_t::Increment_Delta(Container_Entry_Count_t base_count, s32 amount)
+    s32 Container_Changes_Entry_t::Decrement_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount)
     {
-        if (amount > 0) {
-            s32 minimum_delta = Minimum_Delta(base_count);
-            s32 maximum_delta = Maximum_Delta(base_count);
-            s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
-            s32 new_delta = current_delta + amount;
-            if (new_delta < current_delta || new_delta > maximum_delta) {
-                this->delta = maximum_delta;
-            } else {
-                this->delta = new_delta;
-            }
-            return this->delta;
+        s32 minimum_delta = Minimum_Delta(base_count);
+        s32 maximum_delta = Maximum_Delta(base_count);
+        s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
+        s32 new_delta = current_delta - amount;
+        if (new_delta > current_delta || new_delta < minimum_delta) {
+            this->delta = minimum_delta;
         } else {
-            return Delta(base_count);
+            this->delta = new_delta;
         }
-    }
-
-    s32 Container_Changes_Entry_t::Decrement_Delta(Container_Entry_Count_t base_count, s32 amount)
-    {
-        if (amount > 0) {
-            s32 minimum_delta = Minimum_Delta(base_count);
-            s32 maximum_delta = Maximum_Delta(base_count);
-            s32 current_delta = Limit(this->delta, minimum_delta, maximum_delta);
-            s32 new_delta = current_delta - amount;
-            if (new_delta > current_delta || new_delta < minimum_delta) {
-                this->delta = minimum_delta;
-            } else {
-                this->delta = new_delta;
-            }
-            return this->delta;
-        } else {
-            return Delta(base_count);
-        }
+        return this->delta;
     }
 
     s32 Container_Changes_Entry_t::Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)

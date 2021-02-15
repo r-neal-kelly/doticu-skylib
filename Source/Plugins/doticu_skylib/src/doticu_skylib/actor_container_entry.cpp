@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/actor_container.h"
 #include "doticu_skylib/actor_container_entry.h"
+#include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/container_entry.h"
@@ -100,12 +101,31 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Actor_Container_Entry_t::Count()
+    Container_Entry_Count_t Actor_Container_Entry_t::Reference_Count()
     {
         if (this->reference_entry) {
-            return this->reference_entry->Count(Base_Count());
+            return this->reference_entry->Delta(Base_Count());
         } else {
-            return Base_Count();
+            return 0;
+        }
+    }
+
+    Container_Entry_Count_t Actor_Container_Entry_t::Extra_Lists_Count()
+    {
+        if (this->reference_entry) {
+            return this->reference_entry->Extra_Lists_Count();
+        } else {
+            return 0;
+        }
+    }
+
+    Container_Entry_Count_t Actor_Container_Entry_t::Count()
+    {
+        Container_Entry_Count_t base_count = Base_Count();
+        if (this->reference_entry) {
+            return this->reference_entry->Delta(base_count) + base_count;
+        } else {
+            return base_count;
         }
     }
 
@@ -125,7 +145,16 @@ namespace doticu_skylib {
 
     void Actor_Container_Entry_t::Log(std::string indent)
     {
+        SKYLIB_LOG(indent + "Actor_Container_Entry_t::Log");
+        SKYLIB_LOG(indent + "{");
 
+        SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s", Some_Object()->Form_ID_String());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "base_count: %d", Base_Count());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "reference_count: %d", Reference_Count());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "extra_lists_count: %d", Extra_Lists_Count());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "count: %d", Count());
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

@@ -15,7 +15,7 @@ namespace doticu_skylib {
     class Container_Entry_t // ContainerObject
     {
     public:
-        Container_Entry_Count_t         count;  // 00
+        Raw_Container_Entry_Count_t     count;  // 00
         u32                             pad_04; // 04
         maybe<Bound_Object_t*>          object; // 08
         maybe<Container_Entry_Extra_t*> extra;  // 10 (COED - Container Object Extra Data)
