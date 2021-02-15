@@ -258,6 +258,11 @@ namespace doticu_skylib {
             return *this;
         }
 
+        ~maybe()
+        {
+            this->value = none<T*>()();
+        }
+
         T* operator()()         { return value; }
         T* operator()() const   { return value; }
 
@@ -319,6 +324,11 @@ namespace doticu_skylib {
                 value = std::exchange(other.value, none<T*>()());
             }
             return *this;
+        }
+
+        ~some()
+        {
+            this->value = none<T*>()();
         }
 
         T* operator()()         { return value; }

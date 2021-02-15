@@ -10,6 +10,8 @@
 
 namespace doticu_skylib {
 
+    Vector_t<some<Container_Changes_Entry_t*>> temp_allocations;
+
     some<Container_Changes_Entry_t*> Container_Changes_Entry_t::Create(some<Bound_Object_t*> object)
     {
         some<Container_Changes_Entry_t*> container_changes_entry = Game_t::Allocate<Container_Changes_Entry_t>();
@@ -21,7 +23,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(container_changes_entry);
         container_changes_entry->~Container_Changes_Entry_t();
-        //Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry); // we need to make sure we find the correct heap. probably want to do that check in Game_t
+        Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry);
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t() :

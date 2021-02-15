@@ -241,4 +241,42 @@ namespace doticu_skylib {
         }
     }
 
+    template <typename T>
+    inline void Forward_List_t<T>::Log(std::string indent)
+    {
+        Forward_List_Logger_t<T>::Log(*this, indent);
+    }
+
+    template <typename T>
+    inline void Forward_List_Logger_t<T*>::Log(Forward_List_t<T*>& forward_list, std::string indent)
+    {
+        SKYLIB_LOG(indent + "Forward_List_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        if (forward_list.Is_Empty()) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "(empty)");
+        } else {
+            size_t idx = 0;
+            for (maybe<Forward_List_t<T*>::Node_t*> it = &forward_list.head; it; it = it->next, idx += 1) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "idx: %zu", idx);
+                SKYLIB_LOG(indent + SKYLIB_TAB + "value: %p", it->value);
+                SKYLIB_LOG(indent + SKYLIB_TAB + "next: %p", it->next);
+            }
+        }
+
+        SKYLIB_LOG(indent + "}");
+    }
+
+    template <typename T>
+    inline void Forward_List_Logger_t<maybe<T*>>::Log(Forward_List_t<maybe<T*>>& forward_list, std::string indent)
+    {
+        Forward_List_Logger_t<T*>::Log(reinterpret_cast<Forward_List_t<T*>&>(forward_list), indent);
+    }
+
+    template <typename T>
+    inline void Forward_List_Logger_t<some<T*>>::Log(Forward_List_t<some<T*>>& forward_list, std::string indent)
+    {
+        Forward_List_Logger_t<T*>::Log(reinterpret_cast<Forward_List_t<T*>&>(forward_list), indent);
+    }
+
 }

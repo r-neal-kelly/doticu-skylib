@@ -49,10 +49,10 @@ namespace doticu_skylib {
         Forward_List_t();
         Forward_List_t(const T& head_value);
         Forward_List_t(T&& head_value);
-        Forward_List_t(const Forward_List_t& other)                 = delete;
-        Forward_List_t(Forward_List_t&& other) noexcept             = delete;
-        Forward_List_t& operator=(const Forward_List_t& other)      = delete;
-        Forward_List_t& operator=(Forward_List_t&& other) noexcept  = delete;
+        Forward_List_t(const Forward_List_t& other) = delete;
+        Forward_List_t(Forward_List_t&& other) noexcept = delete;
+        Forward_List_t& operator=(const Forward_List_t& other) = delete;
+        Forward_List_t& operator=(Forward_List_t&& other) noexcept = delete;
         ~Forward_List_t();
 
     public:
@@ -61,8 +61,39 @@ namespace doticu_skylib {
         Bool_t      Has(const T& value);
         void        Add(const T& value);
         Bool_t      Remove(const T& value);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Forward_List_t<void*>) == 0x10);
+
+    template <typename T>
+    class Forward_List_Logger_t
+    {
+    public:
+        static void Log(Forward_List_t<T>& forward_list, std::string indent = "") = delete;
+    };
+
+    template <typename T>
+    class Forward_List_Logger_t<T*>
+    {
+    public:
+        static void Log(Forward_List_t<T*>& forward_list, std::string indent = "");
+    };
+
+    template <typename T>
+    class Forward_List_Logger_t<maybe<T*>>
+    {
+    public:
+        static void Log(Forward_List_t<maybe<T*>>& forward_list, std::string indent = "");
+    };
+
+    template <typename T>
+    class Forward_List_Logger_t<some<T*>>
+    {
+    public:
+        static void Log(Forward_List_t<some<T*>>& forward_list, std::string indent = "");
+    };
 
     template <typename T>
     using List_t = Forward_List_t<T>;
