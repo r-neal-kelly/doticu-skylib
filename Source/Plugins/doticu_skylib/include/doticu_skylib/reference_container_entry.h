@@ -32,19 +32,28 @@ namespace doticu_skylib {
 
     public:
         Bool_t                              Is_Valid();
+        Bool_t                              Is_Leveled_Item();
 
         some<Bound_Object_t*>               Some_Object();
         maybe<Leveled_Item_t*>              Maybe_Leveled_Item();
-
         maybe<Container_Changes_Entry_t*>   Maybe_Reference_Entry();
         some<Container_Changes_Entry_t*>    Some_Reference_Entry(some<Reference_Container_t*> owner);
+        Vector_t<some<Extra_List_t*>>       Some_Extra_Lists();
 
         Container_Entry_Count_t             Base_Count();
         Container_Entry_Count_t             Reference_Count();
         Container_Entry_Count_t             Extra_Lists_Count();
+        Container_Entry_Count_t             Non_Extra_Lists_Count();
         Container_Entry_Count_t             Count();
+
         Container_Entry_Count_t             Increment_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Decrement_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount);
+        Container_Entry_Count_t             Increment_Extra_List_Count(some<Extra_List_t*> extra_list, s16 amount);
+        Container_Entry_Count_t             Decrement_Extra_List_Count(some<Extra_List_t*> extra_list, s16 amount);
+
+        Container_Entry_Count_t             Add_Extra_List(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t             Remove_Extra_List(some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t             Remove_And_Destroy_Extra_List(some<Extra_List_t*> extra_list);
 
     public:
         void Log(std::string indent = "");

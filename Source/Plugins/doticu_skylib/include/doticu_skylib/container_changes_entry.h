@@ -47,7 +47,7 @@ namespace doticu_skylib {
 
         s32                             Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
-        s32                             Destroy_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
+        s32                             Remove_And_Destroy_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
 
         s32                             Increment_Extra_List_Count(Container_Entry_Count_t base_count,
                                                                    some<Extra_List_t*> extra_list,

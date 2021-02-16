@@ -56,15 +56,6 @@ namespace doticu_skylib {
 
     Reference_Container_t::~Reference_Container_t()
     {
-        for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
-            Reference_Container_Entry_t& entry = this->entries[idx];
-            if (entry.reference_entry && entry.reference_entry->Should_Be_Destroyed()) {
-                SKYLIB_ASSERT(this->reference_container);
-                this->reference_container->Remove_Entry(entry.reference_entry());
-                Container_Changes_Entry_t::Destroy(entry.reference_entry());
-                entry.reference_entry = none<Container_Changes_Entry_t*>();
-            }
-        }
         this->entries.~Vector_t<Reference_Container_Entry_t>();
         this->reference_container = static_cast<Container_Changes_t*>(nullptr);
         this->base_container = static_cast<Container_c*>(nullptr);

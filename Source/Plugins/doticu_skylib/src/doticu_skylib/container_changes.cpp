@@ -65,40 +65,6 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Container_Changes_t::Remove_Entry(some<Container_Changes_Entry_t*> entry)
-    {
-        SKYLIB_ASSERT_SOME(entry);
-
-        if (!this->entries) {
-            return false;
-        } else {
-            Bool_t did_remove = this->entries->Remove(entry());
-            if (did_remove) {
-                if (this->entries->Is_Empty()) {
-                    Destroy_Entries();
-                }
-                this->has_changed = true;
-            }
-            return did_remove;
-        }
-    }
-
-    void Container_Changes_t::Destroy_Entries()
-    {
-        if (this->entries) {
-            if (!this->entries->Is_Empty()) {
-                for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
-                    maybe<Container_Changes_Entry_t*> entry = it->value;
-                    if (entry) {
-                        Container_Changes_Entry_t::Destroy(entry());
-                        it->value = none<Container_Changes_Entry_t*>();
-                    }
-                }
-            }
-            List_t<maybe<Container_Changes_Entry_t*>>::Destroy(this->entries());
-            this->entries = none<List_t<maybe<Container_Changes_Entry_t*>>*>();
-            this->has_changed = true;
-        }
-    }
+    // removing entries can cause a crash when loading a previous save. the save mechanism is designed to manage entries I think.
 
 }

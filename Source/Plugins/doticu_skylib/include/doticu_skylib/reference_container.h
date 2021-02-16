@@ -10,9 +10,7 @@
 
 namespace doticu_skylib {
 
-    // we need to limit usage to references that have Container_c on their base_forms. (e.g. Actor_t Container_t)
-    // we may want to rename Container_Entry_t to Component_Container_Entry_t a,d Container_c to Component_Container_t
-    // maybe put a method on Reference that tries to get the component container and if it doesn't have it, not big deal, we just don't use it.
+    // we may want to rename Container_Entry_t to Component_Container_Entry_t and Container_c to Component_Container_t
 
     class Bound_Object_t;
     class Container_c;
@@ -47,6 +45,7 @@ namespace doticu_skylib {
         some<Reference_Container_Entry_t*>  Some_Entry(some<Bound_Object_t*> object);
 
         Container_Entry_Count_t             Count(some<Bound_Object_t*> object);
+
         Container_Entry_Count_t             Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
 
