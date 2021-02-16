@@ -1014,13 +1014,13 @@
     <ClInclude Include="include\doticu_skylib\container_entry_count.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\actor_container_entry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\actor_container.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\extra_leveled_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\reference_container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\reference_container_entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1286,16 +1286,16 @@
     <ClCompile Include="src\doticu_skylib\component_container.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\actor_container.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\actor_container_entry.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\bound_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\reference_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

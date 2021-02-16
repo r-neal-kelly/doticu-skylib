@@ -25,6 +25,7 @@ namespace doticu_skylib {
     class Actor_t;
     class Actor_Base_t;
     class Cell_t;
+    class Container_c;
     class Container_Changes_t;
     class Faction_t;
     class Form_List_t;
@@ -249,6 +250,7 @@ namespace doticu_skylib {
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
+        maybe<Container_c*>                 Component_Container();
         maybe<Container_Changes_t*>         Container_Changes(Bool_t do_force_create);
         maybe<Faction_t*>                   Faction_Owner();
         Location_t*                         Location();

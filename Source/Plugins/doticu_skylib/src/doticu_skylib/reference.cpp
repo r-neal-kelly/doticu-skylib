@@ -8,6 +8,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/component_container.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/form_list.h"
@@ -419,6 +420,15 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Container_c*> Reference_t::Component_Container()
+    {
+        if (this->base_form) {
+            return Game_t::Runtime_Cast<Form_t, Container_c>(this->base_form());
+        } else {
+            return none<Container_c*>();
+        }
+    }
+
     maybe<Container_Changes_t*> Reference_t::Container_Changes(Bool_t do_force_create)
     {
         static auto initialize_container_changes = reinterpret_cast
@@ -429,7 +439,7 @@ namespace doticu_skylib {
         if (x_container_changes && x_container_changes->container_changes) {
             return x_container_changes->container_changes;
         } else if (do_force_create) {
-            return initialize_container_changes(this); // this causes a crash if doing soon after game load?
+            return initialize_container_changes(this);
         } else {
             return none<Container_Changes_t*>();
         }

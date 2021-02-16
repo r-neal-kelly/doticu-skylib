@@ -56,8 +56,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
-    <ClInclude Include="include\doticu_skylib\actor_container.h" />
-    <ClInclude Include="include\doticu_skylib\actor_container_entry.h" />
+    <ClInclude Include="include\doticu_skylib\reference_container.h" />
+    <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
     <ClInclude Include="include\doticu_skylib\container_entry_count.h" />
     <ClInclude Include="include\doticu_skylib\extra_leveled_item.h" />
@@ -391,8 +391,6 @@
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
-    <ClCompile Include="src\doticu_skylib\actor_container.cpp" />
-    <ClCompile Include="src\doticu_skylib\actor_container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
@@ -447,6 +445,8 @@
     <ClCompile Include="src\doticu_skylib\package.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value.cpp" />
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />
+    <ClCompile Include="src\doticu_skylib\reference_container.cpp" />
+    <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\script_type.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />

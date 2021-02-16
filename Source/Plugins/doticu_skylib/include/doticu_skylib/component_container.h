@@ -16,6 +16,17 @@ namespace doticu_skylib {
     class Container_c : public Form_Data_c // TESContainer
     {
     public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E15488, // 513941
+            };
+            using Enum_t::Enum_t;
+        };
+
+    public:
         virtual ~Container_c(); // 0
 
     public:
