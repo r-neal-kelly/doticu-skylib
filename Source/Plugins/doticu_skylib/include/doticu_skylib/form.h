@@ -31,6 +31,11 @@ namespace doticu_skylib {
         public Form_Data_c
     {
     public:
+        enum
+        {
+            SCRIPT_TYPE = Script_Type_e::FORM,
+        };
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -39,11 +44,6 @@ namespace doticu_skylib {
                 RTTI = 0x01E10E30,
             };
             using Enum_t::Enum_t;
-        };
-
-        enum
-        {
-            SCRIPT_TYPE = Script_Type_e::FORM,
         };
 
     public:

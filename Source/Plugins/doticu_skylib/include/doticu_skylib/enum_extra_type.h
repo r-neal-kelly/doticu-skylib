@@ -34,12 +34,14 @@ namespace doticu_skylib {
 
             // 0x14 0x0152C200
             CONTAINER_CHANGES   = 0x15,
+            WORN                = 0x16, // 0x0152C000
+            WORN_LEFT           = 0x17, // 
 
             // 0x18 0x0152C140
             // 0x19 0x0152F320
 
             // 0x1B 0x0152F380
-            // 0x1C 0x0152C160
+            REFERENCE_HANDLE    = 0x1C, // 0x0152C160
             FOLLOWERS           = 0x1D,
             // 0x1E 0x0152C440
             GHOST               = 0x1F,
@@ -47,12 +49,15 @@ namespace doticu_skylib {
             OWNER               = 0x21, // XOWN
 
             COUNT               = 0x24,
+            HEALTH              = 0x25, // 
 
+            CHARGE              = 0x28, // 
             // 0x29 0x0152F1E0
             // 0x2A 0x0152BEA0
             // 0x2B 0x0152BF00
             // 0x2C 0x0152F220
             // 0x2D 0x0152F200
+            LEVELED_ITEM        = 0x2E,
 
             // 0x30 0x0152CAA0
             // 0x31 0x0163AD50
@@ -134,6 +139,8 @@ namespace doticu_skylib {
             // 0x92 0x0152CA20
             // 0x93 0x0152CA40
 
+            FROM_ALIAS          = 0x95, // 0x0152BEC0
+
             // 0x97 0x0152CA80
             // 0x98 0x0152CB00
             TEXT_DISPLAY        = 0x99,
@@ -142,6 +149,7 @@ namespace doticu_skylib {
             SOUL_LEVEL          = 0x9C,
             // 0x9D 0x0152CB60
 
+            UNIQUE_ID           = 0x9F, // 0x0152CBA0
             FLAGS               = 0xA0,
             // 0xA1 0x0152CBE0
             // 0xA2 0x0152CC00

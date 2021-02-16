@@ -49,10 +49,10 @@ namespace doticu_skylib {
         Forward_List_t();
         Forward_List_t(const T& head_value);
         Forward_List_t(T&& head_value);
-        Forward_List_t(const Forward_List_t& other) = delete;
-        Forward_List_t(Forward_List_t&& other) noexcept = delete;
-        Forward_List_t& operator=(const Forward_List_t& other) = delete;
-        Forward_List_t& operator=(Forward_List_t&& other) noexcept = delete;
+        Forward_List_t(const Forward_List_t& other)                 = delete;
+        Forward_List_t(Forward_List_t&& other) noexcept             = delete;
+        Forward_List_t& operator=(const Forward_List_t& other)      = delete;
+        Forward_List_t& operator=(Forward_List_t&& other) noexcept  = delete;
         ~Forward_List_t();
 
     public:

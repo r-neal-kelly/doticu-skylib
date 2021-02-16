@@ -11,6 +11,7 @@ namespace doticu_skylib {
 
     class Bound_Object_t;
     class Container_Entry_Extra_t;
+    class Leveled_Item_t;
 
     class Container_Entry_t // ContainerObject
     {

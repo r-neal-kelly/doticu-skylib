@@ -2,11 +2,14 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.inl"
 
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_list.inl"
+#include "doticu_skylib/extra_owner.h"
 
 namespace doticu_skylib {
 
@@ -117,6 +120,11 @@ namespace doticu_skylib {
                 this->presence->Add(it->Type());
             }
         }
+    }
+
+    Bool_t Extra_List_t::Should_Be_Destroyed()
+    {
+        return Count() < 1;
     }
 
     Bool_t Extra_List_t::Has(Extra_Type_e type)
@@ -236,9 +244,45 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Should_Be_Destroyed()
+    maybe<Form_t*> Extra_List_t::Owner()
     {
-        return Count() < 1;
+        maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
+        if (x_owner) {
+            return x_owner->owner;
+        } else {
+            return none<Form_t*>();
+        }
+    }
+
+    void Extra_List_t::Owner(maybe<Form_t*> form)
+    {
+        maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
+        if (x_owner) {
+            x_owner->owner = form;
+        } else {
+            some<Extra_Owner_t*> new_x_owner = Extra_Owner_t::Create(form);
+            Add<Extra_Owner_t>(new_x_owner);
+        }
+    }
+
+    maybe<Faction_t*> Extra_List_t::Faction_Owner()
+    {
+        return static_cast<maybe<Faction_t*>>(Owner());
+    }
+
+    void Extra_List_t::Faction_Owner(maybe<Faction_t*> faction)
+    {
+        Owner(static_cast<maybe<Form_t*>>(faction));
+    }
+
+    maybe<Actor_Base_t*> Extra_List_t::Actor_Base_Owner()
+    {
+        return static_cast<maybe<Actor_Base_t*>>(Owner());
+    }
+
+    void Extra_List_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
+    {
+        Owner(static_cast<maybe<Form_t*>>(actor_base));
     }
 
 }

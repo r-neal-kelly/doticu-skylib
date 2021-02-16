@@ -11,14 +11,10 @@
 
 namespace doticu_skylib {
 
-    Actor_Container_Entry_t::Actor_Container_Entry_t(some<Actor_Container_t*> owner, some<Bound_Object_t*> object) :
+    Actor_Container_Entry_t::Actor_Container_Entry_t(some<Container_Changes_Entry_t*> reference_entry) :
         base_entry(none<Container_Entry_t*>()),
-        reference_entry(none<Container_Changes_Entry_t*>())
+        reference_entry(reference_entry())
     {
-        SKYLIB_ASSERT_SOME(owner);
-        SKYLIB_ASSERT_SOME(object);
-
-        this->reference_entry = owner->reference_container->Some_Entry(object)();
         SKYLIB_ASSERT_SOME(this->reference_entry);
     }
 
@@ -54,7 +50,7 @@ namespace doticu_skylib {
         return *this;
     }
 
-    Actor_Container_Entry_t& Actor_Container_Entry_t::operator = (Actor_Container_Entry_t&& other) noexcept
+    Actor_Container_Entry_t& Actor_Container_Entry_t::operator =(Actor_Container_Entry_t&& other) noexcept
     {
         if (std::addressof(other) != this) {
             base_entry = std::exchange(other.base_entry, none<Container_Entry_t*>());
@@ -81,9 +77,25 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Leveled_Item_t*> Actor_Container_Entry_t::Maybe_Leveled_Item()
+    {
+        if (this->base_entry) {
+            SKYLIB_ASSERT_SOME(this->base_entry->object);
+            return this->base_entry->object->As_Leveled_Item();
+        } else {
+            return none<Leveled_Item_t*>();
+        }
+    }
+
+    maybe<Container_Changes_Entry_t*> Actor_Container_Entry_t::Maybe_Reference_Entry()
+    {
+        return this->reference_entry;
+    }
+
     some<Container_Changes_Entry_t*> Actor_Container_Entry_t::Some_Reference_Entry(some<Actor_Container_t*> owner)
     {
         SKYLIB_ASSERT_SOME(owner);
+        SKYLIB_ASSERT(!Some_Object()->Is_Leveled_Item());
 
         if (!this->reference_entry) {
             this->reference_entry = owner->reference_container->Some_Entry(Some_Object())();

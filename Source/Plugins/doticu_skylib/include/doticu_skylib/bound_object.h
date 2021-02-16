@@ -5,14 +5,27 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
-
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/object.h"
 
 namespace doticu_skylib {
 
+    class Leveled_Item_t;
+
     class Bound_Object_t :
         public Object_t
     {
+    public:
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E10EB8, // 513852
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual ~Bound_Object_t();
 
@@ -20,6 +33,12 @@ namespace doticu_skylib {
         s16_xyz bound_min;  // 20
         s16_xyz bound_max;  // 26
         u32     pad_2C;     // 2C
+
+    public:
+        maybe<Leveled_Item_t*> As_Leveled_Item();
+
+    public:
+        Bool_t Is_Leveled_Item();
     };
     STATIC_ASSERT(sizeof(Bound_Object_t) == 0x30);
 

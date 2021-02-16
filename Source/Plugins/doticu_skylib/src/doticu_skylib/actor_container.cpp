@@ -84,12 +84,13 @@ namespace doticu_skylib {
     some<Actor_Container_Entry_t*> Actor_Container_t::Some_Entry(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT(!object->Is_Leveled_Item());
 
         maybe<Actor_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
         if (maybe_entry) {
             return maybe_entry();
         } else {
-            this->entries.push_back(Actor_Container_Entry_t(this, object));
+            this->entries.push_back(this->reference_container->Some_Entry(object));
             return &this->entries[this->entries.size() - 1];
         }
     }

@@ -12,6 +12,10 @@
 
 namespace doticu_skylib {
 
+    class Actor_Base_t;
+    class Faction_t;
+    class Form_t;
+
     class Extra_List_t // ExtraDataList
     {
     public:
@@ -62,7 +66,10 @@ namespace doticu_skylib {
 
     public:
         void                    Validate();
+        Bool_t                  Should_Be_Destroyed();
+        Bool_t                  Is_Quest_Item();
 
+    public:
         Bool_t                  Has(Extra_Type_e type);
         maybe<Extra_Data_t*>    Get(Extra_Type_e type);
         Bool_t                  Add(some<Extra_Data_t*> x_data);
@@ -77,11 +84,19 @@ namespace doticu_skylib {
         template <typename T>
         Bool_t                  Remove(some<T*> x_data);
 
+    public:
         s16                     Count();
         s16                     Increment_Count(s16 amount);
         s16                     Decrement_Count(s16 amount);
 
-        Bool_t                  Should_Be_Destroyed();
+    public:
+        maybe<Form_t*>          Owner();
+        void                    Owner(maybe<Form_t*> form);
+        maybe<Faction_t*>       Faction_Owner();
+        void                    Faction_Owner(maybe<Faction_t*> faction);
+        maybe<Actor_Base_t*>    Actor_Base_Owner();
+        void                    Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+
     };
     STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);
 

@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/forward_list.inl"
@@ -34,6 +35,7 @@ namespace doticu_skylib {
     Container_Changes_Entry_t::Container_Changes_Entry_t(some<Bound_Object_t*> object) :
         object(object()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
     {
+        SKYLIB_ASSERT(!object->Is_Leveled_Item());
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t(Container_Changes_Entry_t&& other) noexcept :
@@ -144,7 +146,8 @@ namespace doticu_skylib {
     s32 Container_Changes_Entry_t::Add_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
+        SKYLIB_ASSERT(this->x_lists ? !this->x_lists->Has(extra_list()) : true);
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
         if (!this->x_lists) {
             this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list())();
@@ -158,7 +161,8 @@ namespace doticu_skylib {
     s32 Container_Changes_Entry_t::Remove_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
+        SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Remove(extra_list())) {
             if (this->x_lists->Is_Empty()) {
@@ -173,18 +177,15 @@ namespace doticu_skylib {
     s32 Container_Changes_Entry_t::Destroy_Extra_List(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
+        SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
 
-        if (this->x_lists && this->x_lists->Remove(extra_list())) {
+        if (this->x_lists->Remove(extra_list())) {
             if (this->x_lists->Is_Empty()) {
                 Destroy_Extra_Lists();
             }
             s16 x_list_count = extra_list->Count();
             Extra_List_t::Destroy(extra_list());
             return Decrement_Delta(base_count, x_list_count);
-        } else {
-            SKYLIB_ASSERT(false);
-            Extra_List_t::Destroy(extra_list());
-            return Delta(base_count);
         }
     }
 
@@ -193,7 +194,8 @@ namespace doticu_skylib {
                                                               s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
+        SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Has(extra_list())) {
             s16 count = extra_list->Count();
@@ -209,7 +211,8 @@ namespace doticu_skylib {
                                                               s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
-        SKYLIB_ASSERT_SOME(!extra_list->Should_Be_Destroyed());
+        SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
         if (this->x_lists && this->x_lists->Has(extra_list())) {
             s16 count = extra_list->Count();

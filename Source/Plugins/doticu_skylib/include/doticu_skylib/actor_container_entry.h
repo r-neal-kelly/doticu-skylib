@@ -13,6 +13,7 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Container_Entry_t;
     class Container_Changes_Entry_t;
+    class Leveled_Item_t;
 
     class Actor_Container_Entry_t
     {
@@ -21,7 +22,7 @@ namespace doticu_skylib {
         maybe<Container_Changes_Entry_t*>   reference_entry;
 
     public:
-        Actor_Container_Entry_t(some<Actor_Container_t*> owner, some<Bound_Object_t*> object);
+        Actor_Container_Entry_t(some<Container_Changes_Entry_t*> reference_entry);
         Actor_Container_Entry_t(maybe<Container_Entry_t*> base_entry, maybe<Container_Changes_Entry_t*> reference_entry);
         Actor_Container_Entry_t(const Actor_Container_Entry_t& other);
         Actor_Container_Entry_t(Actor_Container_Entry_t&& other) noexcept;
@@ -31,6 +32,8 @@ namespace doticu_skylib {
 
     public:
         some<Bound_Object_t*>               Some_Object();
+        maybe<Leveled_Item_t*>              Maybe_Leveled_Item();
+        maybe<Container_Changes_Entry_t*>   Maybe_Reference_Entry();
         some<Container_Changes_Entry_t*>    Some_Reference_Entry(some<Actor_Container_t*> owner);
 
         Container_Entry_Count_t             Base_Count();

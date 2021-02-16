@@ -65,4 +65,21 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
 
+    /*
+        Extra_Type_e that we know we can find on x_lists:
+            OUTFIT
+            OWNER
+            LEVELED_ITEM
+            COUNT
+            UNIQUE_ID
+            ALIASES
+            REFERENCE_HANDLE
+            FROM_ALIAS
+            WORN
+            WORN_LEFT
+            TEXT_DISPLAY
+            HEALTH
+            CHARGE
+    */
+
 }

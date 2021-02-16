@@ -11,7 +11,7 @@
 
 namespace doticu_skylib {
 
-    class Leveled_Item_t :
+    class Leveled_Item_t :      // TESLevItem
         public Bound_Object_t,  // 00
         public Leveled_c        // 30
     {
@@ -19,6 +19,16 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::LEVELED_ITEM,
+        };
+
+        class Offset_e : public Enum_t<Word_t>
+        {
+        public:
+            enum : value_type
+            {
+                RTTI = 0x01E15668, // 513952
+            };
+            using Enum_t::Enum_t;
         };
 
     public:

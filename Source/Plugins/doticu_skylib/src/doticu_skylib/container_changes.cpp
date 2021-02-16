@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/forward_list.inl"
@@ -28,6 +29,7 @@ namespace doticu_skylib {
     some<Container_Changes_Entry_t*> Container_Changes_t::Some_Entry(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT(!object->Is_Leveled_Item());
 
         if (!this->entries) {
             this->entries = List_t<maybe<Container_Changes_Entry_t*>>::Create()();

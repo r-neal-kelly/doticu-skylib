@@ -30,10 +30,14 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Owner_t*> Create(maybe<Form_t*> owner);
+        static void                 Destroy(some<Extra_Owner_t*> x_count);
+
+    public:
         virtual ~Extra_Owner_t(); // 0
 
     public:
-        Form_t* owner; // 10
+        maybe<Form_t*> owner; // 10
     };
     STATIC_ASSERT(sizeof(Extra_Owner_t) == 0x18);
 
