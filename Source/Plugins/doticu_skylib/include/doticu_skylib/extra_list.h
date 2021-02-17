@@ -15,6 +15,7 @@ namespace doticu_skylib {
     class Actor_Base_t;
     class Faction_t;
     class Form_t;
+    class Outfit_t;
 
     class Extra_List_t // ExtraDataList
     {
@@ -96,6 +97,9 @@ namespace doticu_skylib {
         void                    Faction_Owner(maybe<Faction_t*> faction);
         maybe<Actor_Base_t*>    Actor_Base_Owner();
         void                    Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+
+        maybe<Outfit_t*>        Outfit();
+        void                    Outfit(maybe<Outfit_t*> outfit);
 
     };
     STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);

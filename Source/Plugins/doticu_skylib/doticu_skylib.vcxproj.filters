@@ -1023,6 +1023,21 @@
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\actor_skills.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_actor_skill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_sound_level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_color_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1289,13 +1304,13 @@
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\bound_object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\doticu_skylib\reference_container.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_outfit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

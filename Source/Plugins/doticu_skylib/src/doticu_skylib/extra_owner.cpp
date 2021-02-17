@@ -17,6 +17,7 @@ namespace doticu_skylib {
     void Extra_Owner_t::Destroy(some<Extra_Owner_t*> x_owner)
     {
         SKYLIB_ASSERT_SOME(x_owner);
+        x_owner->owner = none<Form_t*>();
         Extra_Data_t::Destroy<Extra_Owner_t>(x_owner);
     }
 

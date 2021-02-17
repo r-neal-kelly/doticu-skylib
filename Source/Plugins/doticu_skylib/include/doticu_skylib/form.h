@@ -5,18 +5,19 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/string.h"
-
 #include "doticu_skylib/component_form_data.h"
-
 #include "doticu_skylib/form_flags.h"
 #include "doticu_skylib/form_id.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/mod_index.h"
 #include "doticu_skylib/script_type.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
+    class Actor_t;
     class Bound_Object_t;
+    class Leveled_Item_t;
     class Mod_t;
     class Race_t;
     class Reference_t;
@@ -64,8 +65,8 @@ namespace doticu_skylib {
         virtual void        _07(void);                                      // 07
         virtual void        _08(void);                                      // 08
         virtual void        _09(void);                                      // 09
-        virtual Bool_t      Flag_Change(u32 flag);                          // 0A (verify this is working correctly.)
-        virtual void        Unflag_Change(u32 flag);                        // 0B
+        virtual Bool_t      Flag_Form_Change(u32 flag);                     // 0A (verify this is working correctly.)
+        virtual void        Unflag_Form_Change(u32 flag);                   // 0B
         virtual Bool_t      Find_In_Mod(Mod_t* mod);                        // 0C
         virtual void        _0D(void);                                      // 0D
         virtual void        _0E(void);                                      // 0E
@@ -148,6 +149,13 @@ namespace doticu_skylib {
         String_t                    Form_ID_String();
         Vector_t<String_t>          Mod_Names();
         void                        Mod_Names(Vector_t<String_t>& results);
+
+    public:
+        Bool_t                  Is_Actor();
+        Bool_t                  Is_Leveled_Item();
+
+        maybe<Actor_t*>         As_Actor();
+        maybe<Leveled_Item_t*>  As_Leveled_Item();
 
     public:
         void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);

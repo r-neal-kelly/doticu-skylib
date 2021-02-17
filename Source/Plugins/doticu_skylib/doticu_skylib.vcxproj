@@ -56,6 +56,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_skills.h" />
+    <ClInclude Include="include\doticu_skylib\color.h" />
+    <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
+    <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
@@ -387,7 +392,6 @@
     <ClInclude Include="include\doticu_skylib\havok_reference.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\bound_object.cpp" />
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
@@ -410,6 +414,7 @@
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_outfit.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />

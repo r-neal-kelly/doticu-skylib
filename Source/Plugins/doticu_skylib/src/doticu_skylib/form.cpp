@@ -2,11 +2,12 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor.h"
 #include "doticu_skylib/cstring.h"
-
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/game.inl"
+#include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/mod.h"
-
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.inl"
@@ -113,6 +114,12 @@ namespace doticu_skylib {
             }
         }
     }
+
+    Bool_t  Form_t::Is_Actor()          { return As_Actor() != none<Actor_t*>(); }
+    Bool_t  Form_t::Is_Leveled_Item()   { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+
+    maybe<Actor_t*>         Form_t::As_Actor()          { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
+    maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()   { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
     {

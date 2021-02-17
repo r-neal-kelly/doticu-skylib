@@ -3,13 +3,14 @@
 */
 
 #include "doticu_skylib/actor_base.h"
-#include "doticu_skylib/faction.h"
-#include "doticu_skylib/game.inl"
-
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_list.inl"
+#include "doticu_skylib/extra_outfit.h"
 #include "doticu_skylib/extra_owner.h"
+#include "doticu_skylib/faction.h"
+#include "doticu_skylib/game.inl"
+#include "doticu_skylib/outfit.h"
 
 namespace doticu_skylib {
 
@@ -260,8 +261,7 @@ namespace doticu_skylib {
         if (x_owner) {
             x_owner->owner = form;
         } else {
-            some<Extra_Owner_t*> new_x_owner = Extra_Owner_t::Create(form);
-            Add<Extra_Owner_t>(new_x_owner);
+            Add<Extra_Owner_t>(Extra_Owner_t::Create(form));
         }
     }
 
@@ -283,6 +283,40 @@ namespace doticu_skylib {
     void Extra_List_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
     {
         Owner(static_cast<maybe<Form_t*>>(actor_base));
+    }
+
+    maybe<Outfit_t*> Extra_List_t::Outfit()
+    {
+        maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+        if (x_outfit) {
+            if (x_outfit->outfit_form_id) {
+                return Game_t::Form(x_outfit->outfit_form_id());
+            } else {
+                Remove<Extra_Outfit_t>(x_outfit());
+                Extra_Outfit_t::Destroy(x_outfit());
+                return none<Outfit_t*>();
+            }
+        } else {
+            return none<Outfit_t*>();
+        }
+    }
+
+    void Extra_List_t::Outfit(maybe<Outfit_t*> outfit)
+    {
+        if (outfit) {
+            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+            if (x_outfit) {
+                x_outfit->outfit_form_id = outfit->form_id;
+            } else {
+                Add<Extra_Outfit_t>(Extra_Outfit_t::Create(outfit()));
+            }
+        } else {
+            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+            if (x_outfit) {
+                Remove<Extra_Outfit_t>(x_outfit());
+                Extra_Outfit_t::Destroy(x_outfit());
+            }
+        }
     }
 
 }

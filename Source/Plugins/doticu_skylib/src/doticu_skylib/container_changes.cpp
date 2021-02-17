@@ -65,6 +65,4 @@ namespace doticu_skylib {
         }
     }
 
-    // removing entries can cause a crash when loading a previous save. the save mechanism is designed to manage entries I think.
-
 }

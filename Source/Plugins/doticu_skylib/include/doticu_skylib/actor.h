@@ -49,7 +49,7 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                RTTI = 0x01E14AD8,
+                RTTI = 0x01E14AD8, // 513915
             };
             using Enum_t::Enum_t;
         };
@@ -59,7 +59,7 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                IGNORES_FRIENDLY_HITS = 1 << 20,
+                IGNORES_FRIENDLY_HITS = static_cast<value_type>(1 << 20),
             };
             using Enum_t::Enum_t;
         };

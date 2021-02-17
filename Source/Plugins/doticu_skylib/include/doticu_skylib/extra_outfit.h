@@ -4,11 +4,13 @@
 
 #pragma once
 
-#include "doticu_skylib/form_id.h"
-
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/form_id.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
+
+    class Outfit_t;
 
     class Extra_Outfit_t :  // ExtraOutfitItem
         public Extra_Data_t // 00
@@ -30,11 +32,15 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Outfit_t*>    Create(some<Outfit_t*> outfit);
+        static void                     Destroy(some<Extra_Outfit_t*> x_outfit);
+
+    public:
         virtual ~Extra_Outfit_t(); // 0
 
     public:
-        Form_ID_t   outfit_form_id; // 10 (Outfit_t)
-        u32         pad_14;         // 14
+        maybe<Form_ID_t>    outfit_form_id; // 10
+        u32                 pad_14;         // 14
     };
     STATIC_ASSERT(sizeof(Extra_Outfit_t) == 0x18);
 

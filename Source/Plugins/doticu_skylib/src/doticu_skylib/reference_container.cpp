@@ -155,6 +155,39 @@ namespace doticu_skylib {
         }
     }
 
+    Container_Entry_Count_t Reference_Container_t::Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        return Some_Entry(object)->Add(this, extra_list);
+    }
+
+    Container_Entry_Count_t Reference_Container_t::Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
+        SKYLIB_ASSERT(entry);
+
+        return entry->Remove(extra_list);
+    }
+
+    Container_Entry_Count_t Reference_Container_t::Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
+        SKYLIB_ASSERT(entry);
+
+        return entry->Remove_And_Destroy(extra_list);
+    }
+
     void Reference_Container_t::Log(std::string indent)
     {
         SKYLIB_ASSERT(Is_Valid());

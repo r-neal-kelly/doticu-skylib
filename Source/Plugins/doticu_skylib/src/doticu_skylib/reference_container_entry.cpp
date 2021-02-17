@@ -126,8 +126,9 @@ namespace doticu_skylib {
     {
         if (this->reference_entry) {
             return this->reference_entry->Extra_Lists();
-        } else
+        } else {
             return Vector_t<some<Extra_List_t*>>();
+        }
     }
 
     Container_Entry_Count_t Reference_Container_Entry_t::Base_Count()
@@ -146,7 +147,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
 
         if (this->reference_entry) {
-            return this->reference_entry->Delta(Base_Count());
+            return this->reference_entry->Count(Base_Count());
         } else {
             return 0;
         }
@@ -168,7 +169,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
 
         if (this->reference_entry) {
-            return Container_Entry_Count_t(this->reference_entry->Delta(Base_Count())) - this->reference_entry->Extra_Lists_Count();
+            return this->reference_entry->Count(Base_Count()) - this->reference_entry->Extra_Lists_Count();
         } else {
             return 0;
         }
@@ -204,55 +205,54 @@ namespace doticu_skylib {
         return Some_Reference_Entry(owner)->Decrement_Delta(base_count, amount) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Extra_List_Count(some<Extra_List_t*> extra_list, s16 amount)
-    {
-        SKYLIB_ASSERT(Is_Valid());
-        SKYLIB_ASSERT(this->reference_entry);
-        SKYLIB_ASSERT_SOME(extra_list);
-
-        Container_Entry_Count_t base_count = Base_Count();
-        return this->reference_entry->Increment_Extra_List_Count(base_count, extra_list, amount) + base_count;
-    }
-
-    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Extra_List_Count(some<Extra_List_t*> extra_list, s16 amount)
-    {
-        SKYLIB_ASSERT(Is_Valid());
-        SKYLIB_ASSERT(this->reference_entry);
-        SKYLIB_ASSERT_SOME(extra_list);
-
-        Container_Entry_Count_t base_count = Base_Count();
-        return this->reference_entry->Decrement_Extra_List_Count(base_count, extra_list, amount) + base_count;
-    }
-
-    Container_Entry_Count_t Reference_Container_Entry_t::Add_Extra_List(some<Reference_Container_t*> owner,
-                                                                        some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Add(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(owner);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
-        return Some_Reference_Entry(owner)->Add_Extra_List(base_count, extra_list) + base_count;
+        return Some_Reference_Entry(owner)->Add(base_count, extra_list) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Remove_Extra_List(some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove(some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
-        return this->reference_entry->Remove_Extra_List(base_count, extra_list) + base_count;
+        return this->reference_entry->Remove(base_count, extra_list) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Remove_And_Destroy_Extra_List(some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_And_Destroy(some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
-        return this->reference_entry->Remove_And_Destroy_Extra_List(base_count, extra_list) + base_count;
+        return this->reference_entry->Remove_And_Destroy(base_count, extra_list) + base_count;
+    }
+
+    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Extra_List_t*> extra_list, s16 amount)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT(this->reference_entry);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        Container_Entry_Count_t base_count = Base_Count();
+        return this->reference_entry->Increment_Count(base_count, extra_list, amount) + base_count;
+    }
+
+    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Count(some<Extra_List_t*> extra_list, s16 amount)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT(this->reference_entry);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        Container_Entry_Count_t base_count = Base_Count();
+        return this->reference_entry->Decrement_Count(base_count, extra_list, amount) + base_count;
     }
 
     void Reference_Container_Entry_t::Log(std::string indent)

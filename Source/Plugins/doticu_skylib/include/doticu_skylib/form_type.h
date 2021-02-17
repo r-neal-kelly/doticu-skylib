@@ -77,6 +77,8 @@ namespace doticu_skylib {
 
             OUTFIT                  = 0x7C, // OTFT
 
+            COLOR                   = 0x85, // CLFM
+
             _END_                   = 0x8A,
         };
     };

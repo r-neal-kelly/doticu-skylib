@@ -4,6 +4,10 @@
 
 #pragma once
 
+#include "doticu_skylib/actor_skills.h"
+#include "doticu_skylib/actor_values.h"
+#include "doticu_skylib/animated_object.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/component_active_effects.h"
 #include "doticu_skylib/component_actor_base_data.h"
 #include "doticu_skylib/component_ai.h"
@@ -16,9 +20,7 @@
 #include "doticu_skylib/component_perks.h"
 #include "doticu_skylib/component_race.h"
 #include "doticu_skylib/component_skin.h"
-
-#include "doticu_skylib/actor_values.h"
-#include "doticu_skylib/animated_object.h"
+#include "doticu_skylib/enum_sound_level.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/relation.h"
@@ -30,7 +32,11 @@
 namespace doticu_skylib {
 
     class Actor_Class_t; // TESClass
+    class Armor_t;
     class Combat_Style_t; // TESCombatStyle
+    class Faction_t;
+    class Form_List_t;
+    class Outfit_t;
 
     class Actor_Base_t :
         public Animated_Object_t,
@@ -65,6 +71,28 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
+        class Form_Change_Flags_e : public Enum_t<u32>
+        {
+        public:
+            enum : value_type
+            {
+                ACTOR_BASE_DATA = static_cast<value_type>(1 << 1),
+                ATTRIBUTES      = static_cast<value_type>(1 << 2),
+                AI              = static_cast<value_type>(1 << 3),
+                SPELLS          = static_cast<value_type>(1 << 4),
+                NAME            = static_cast<value_type>(1 << 5),
+                FACTIONS        = static_cast<value_type>(1 << 6),
+                SKILLS          = static_cast<value_type>(1 << 9),
+                CLASS           = static_cast<value_type>(1 << 10),
+                FACE            = static_cast<value_type>(1 << 11),
+                DEFAULT_OUTFIT  = static_cast<value_type>(1 << 12), // (DOFT)
+                SLEEP_OUTFIT    = static_cast<value_type>(1 << 13),
+                GENDER          = static_cast<value_type>(1 << 24),
+                RACE            = static_cast<value_type>(1 << 25),
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         static size_t                   Actor_Base_Count();
         static Vector_t<Actor_Base_t*>  Actor_Bases();
@@ -79,24 +107,40 @@ namespace doticu_skylib {
         static Int_t                    Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
 
     public:
-        virtual ~Actor_Base_t();
+        virtual ~Actor_Base_t(); // 0
 
-        u8              skills[18];     // 190 // 00
-        u8              unk_1A2[18];    // 1A2 // 12
-        u16             attributes[3];  // 1B4 // 24
-        u16             pad_1BA;        // 1BA // 2A
-        Float_t         unk_1BC;        // 1BC // 2C
-        Actor_Class_t*  actor_class;    // 1C0
-        void*           head_data;      // 1C8
-        void*           unk_1D0;        // 1D0
-        Combat_Style_t* combat_style;   // 1D8
-        u32             file_offset;    // 1E0
-        u32             pad_1E4;        // 1E4
-        Race_t*         extra_race;     // 1E8
-        Actor_Base_t*   template_list;  // 1F0
-        Float_t         height;         // 1F8
-        Float_t         weight;         // 1FC
-        // ...
+    public:
+        Actor_Skills_t      actor_skills;       // 190
+        Actor_Class_t*      actor_class;        // 1C0
+        void*               head_data;          // 1C8
+        void*               unk_1D0;            // 1D0
+        Combat_Style_t*     combat_style;       // 1D8
+        u32                 file_offset;        // 1E0
+        u32                 pad_1E4;            // 1E4
+        Race_t*             extra_race;         // 1E8
+        Actor_Base_t*       template_list;      // 1F0
+        Float_t             height;             // 1F8
+        Float_t             weight;             // 1FC
+        void*               sounds;             // 200
+        String_t            short_name;         // 208 (SHRT)
+        Armor_t*            far_skin;           // 210
+        maybe<Outfit_t*>    default_outfit;     // 218 (DOFT)
+        maybe<Outfit_t*>    sleep_outfit;       // 220
+        Form_List_t*        unk_228;            // 228
+        Faction_t*          crime_faction;      // 230
+        void*               head_parts;         // 238
+        s8                  head_part_count;    // 240
+        u8                  unk_241;            // 241
+        u8                  unk_242;            // 242
+        u8                  unk_243;            // 243
+        u8                  unk_244;            // 244
+        Sound_Level_e       sound_level;        // 245
+        u8_rgba             body_tint;          // 246
+        u16                 pad_24A;            // 24A
+        u32                 pad_24C;            // 24C
+        Array_t<void*>*     relationships;      // 250
+        void*               face_data;          // 258
+        Array_t<void*>*     tint_layers;        // 260
 
     public:
         Bool_t                          Has_Template_FF000800();
@@ -116,10 +160,15 @@ namespace doticu_skylib {
         Actor_Base_t*                   Root_Template();
         Actor_Base_t*                   Root_Base();
 
+        maybe<Outfit_t*>                Default_Outfit();
+        void                            Default_Outfit(maybe<Outfit_t*> default_outfit);
+        maybe<Outfit_t*>                Sleep_Outfit();
+        void                            Sleep_Outfit(maybe<Outfit_t*> sleep_outfit);
+
         String_t                        Any_Name();
 
         void                            Log_Factions_And_Ranks(std::string indent = "");
     };
-    //STATIC_ASSERT(sizeof(Actor_Base_t) == 0x0);
+    STATIC_ASSERT(sizeof(Actor_Base_t) == 0x268);
 
 }

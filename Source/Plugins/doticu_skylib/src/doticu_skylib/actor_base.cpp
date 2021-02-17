@@ -378,6 +378,28 @@ namespace doticu_skylib {
         return nullptr;
     }
 
+    maybe<Outfit_t*> Actor_Base_t::Default_Outfit()
+    {
+        return this->default_outfit;
+    }
+
+    void Actor_Base_t::Default_Outfit(maybe<Outfit_t*> default_outfit)
+    {
+        this->default_outfit = default_outfit;
+        Flag_Form_Change(Form_Change_Flags_e::DEFAULT_OUTFIT);
+    }
+
+    maybe<Outfit_t*> Actor_Base_t::Sleep_Outfit()
+    {
+        return this->sleep_outfit;
+    }
+
+    void Actor_Base_t::Sleep_Outfit(maybe<Outfit_t*> sleep_outfit)
+    {
+        this->sleep_outfit = sleep_outfit;
+        Flag_Form_Change(Form_Change_Flags_e::SLEEP_OUTFIT);
+    }
+
     String_t Actor_Base_t::Any_Name()
     {
         const char* name = Name();

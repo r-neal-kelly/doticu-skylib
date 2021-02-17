@@ -69,6 +69,16 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(f32_xyz) == 0xC);
 
+    class u8_rgba // Color
+    {
+    public:
+        u8 r;   // 0
+        u8 g;   // 1
+        u8 b;   // 2
+        u8 a;   // 3
+    };
+    STATIC_ASSERT(sizeof(u8_rgba) == 0x4);
+
     template <typename Type_t>
     class Range_t
     {
