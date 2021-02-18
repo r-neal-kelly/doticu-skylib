@@ -266,7 +266,7 @@
     <ClInclude Include="include\doticu_skylib\form_id.h" />
     <ClInclude Include="include\doticu_skylib\form_index.h" />
     <ClInclude Include="include\doticu_skylib\form_list.h" />
-    <ClInclude Include="include\doticu_skylib\form_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_form_type.h" />
     <ClInclude Include="include\doticu_skylib\forward_list.h" />
     <ClInclude Include="include\doticu_skylib\furniture.h" />
     <ClInclude Include="include\doticu_skylib\game.h" />
@@ -335,7 +335,7 @@
     <ClInclude Include="include\doticu_skylib\package_topic_value.h" />
     <ClInclude Include="include\doticu_skylib\package_value.h" />
     <ClInclude Include="include\doticu_skylib\perk.h" />
-    <ClInclude Include="include\doticu_skylib\script_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_script_type.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
@@ -410,8 +410,10 @@
     <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp" />
     <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_extra_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_form_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_script_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
@@ -456,7 +458,6 @@
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_container.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp" />
-    <ClCompile Include="src\doticu_skylib\script_type.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />

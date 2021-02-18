@@ -15,7 +15,7 @@
 
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/reference_handle.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 #include "doticu_skylib/extra_list.h"
 

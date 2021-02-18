@@ -6,7 +6,7 @@
 
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/reference_handle.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {
 

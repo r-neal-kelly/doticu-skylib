@@ -6,12 +6,11 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_form_type.h"
+#include "doticu_skylib/form_id.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/version.h"
-
-#include "doticu_skylib/form_id.h"
-#include "doticu_skylib/form_type.h"
 
 namespace doticu_skylib {
 
@@ -80,7 +79,7 @@ namespace doticu_skylib {
     public:
         u64                             unk_000;                            // 000
         void*                           unk_008;                            // 008
-        Array_t<Form_t*>                form_caches[Form_Type_e::_END_];    // 010
+        Array_t<Form_t*>                form_caches[Form_Type_e::_TOTAL_];  // 010
         List_t<Region_t*>*              region_list;                        // D00
         Short_Array_t<Cell_t*>          interior_cells;                     // D08
         Short_Array_t<Addon_Node_t*>    addon_nodes;                        // D20

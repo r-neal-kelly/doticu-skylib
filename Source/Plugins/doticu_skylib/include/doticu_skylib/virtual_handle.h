@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 #include "doticu_skylib/virtual.h"
 

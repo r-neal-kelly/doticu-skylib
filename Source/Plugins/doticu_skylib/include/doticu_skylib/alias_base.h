@@ -12,7 +12,7 @@
 #include "doticu_skylib/enum_alias_flags.h"
 
 #include "doticu_skylib/alias_id.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {
 

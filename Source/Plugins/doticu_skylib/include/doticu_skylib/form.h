@@ -10,7 +10,7 @@
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/mod_index.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/string.h"
 
 namespace doticu_skylib {

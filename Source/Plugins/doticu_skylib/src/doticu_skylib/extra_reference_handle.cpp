@@ -2,8 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#pragma once
-
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/reference.h"
@@ -53,7 +51,15 @@ namespace doticu_skylib {
         if (reference) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference:");
             SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_type: %s, form_id: %s, name: %s",
-                       "(unfinished)", reference->Form_ID_String(), reference->Any_Name());
+                       Form_Type_e::To_String(reference->form_type),
+                       reference->Form_ID_String(),
+                       reference->Any_Name());
+            if (reference->base_form) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "base_form_type: %s, base_form_id: %s, base_name: %s",
+                           Form_Type_e::To_String(reference->base_form->form_type),
+                           reference->base_form->Form_ID_String(),
+                           reference->base_form->Component_Name());
+            }
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference: (none)");
         }

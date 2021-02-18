@@ -24,7 +24,7 @@
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/relation.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"

@@ -6,7 +6,7 @@
 
 #include "doticu_skylib/maybe.h"
 
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/enum_form_type.h"
 
 namespace doticu_skylib {
 
@@ -19,21 +19,30 @@ namespace doticu_skylib {
     using Raw_Script_Type_t = u32;
 
     class Script_Type_e :
-        public Form_Type_Base_e,
+        public Raw_Form_Type_e,
         public Enum_t<Raw_Script_Type_t>
     {
     public:
         enum : value_type
         {
+            // 0x8A
             ALIAS_BASE          = 0x8B,
             ALIAS_REFERENCE     = 0x8C,
             ALIAS_LOCATION      = 0x8D,
             ACTIVE_MAGIC_EFFECT = 0x8E,
 
-            _END_               = 0x8F, // user defined types do not have script types.
+            _TOTAL_             = 0x8F, // user defined types do not have script types.
         };
+
+    public:
+        static some<const char* const*> Strings();
+        static some<const char*>        To_String(Script_Type_e script_type);
+        static Script_Type_e            From_String(maybe<const char*> script_type);
+
+    public:
         using Enum_t::Enum_t;
 
+    public:
         Raw_Script_Type_t Raw()
         {
             return value;
@@ -60,15 +69,15 @@ namespace doticu_skylib {
         Script_Type_e value;
 
     public:
-        none() : value(Script_Type_e::_END_) {}
+        none() : value(Script_Type_e::_TOTAL_) {}
 
         Script_Type_e operator()() { return value; }
         Script_Type_e operator()() const { return value; }
 
-        friend Bool_t operator==(const none<Script_Type_e>& a, const Script_Type_e b) { return b >= Script_Type_e::_END_; }
-        friend Bool_t operator==(const Script_Type_e a, const none<Script_Type_e>& b) { return a >= Script_Type_e::_END_; }
-        friend Bool_t operator==(const none<Script_Type_e>&& a, const Script_Type_e b) { return b >= Script_Type_e::_END_; }
-        friend Bool_t operator==(const Script_Type_e a, const none<Script_Type_e>&& b) { return a >= Script_Type_e::_END_; }
+        friend Bool_t operator==(const none<Script_Type_e>& a, const Script_Type_e b) { return b >= Script_Type_e::_TOTAL_; }
+        friend Bool_t operator==(const Script_Type_e a, const none<Script_Type_e>& b) { return a >= Script_Type_e::_TOTAL_; }
+        friend Bool_t operator==(const none<Script_Type_e>&& a, const Script_Type_e b) { return b >= Script_Type_e::_TOTAL_; }
+        friend Bool_t operator==(const Script_Type_e a, const none<Script_Type_e>&& b) { return a >= Script_Type_e::_TOTAL_; }
         friend Bool_t operator!=(const none<Script_Type_e>& a, const Script_Type_e b) { return !(a == b); }
         friend Bool_t operator!=(const Script_Type_e a, const none<Script_Type_e>& b) { return !(a == b); }
         friend Bool_t operator!=(const none<Script_Type_e>&& a, const Script_Type_e b) { return !(a == b); }

@@ -4,11 +4,11 @@
 
 #pragma once
 
+#include "doticu_skylib/enum_form_type.h"
 #include "doticu_skylib/enum_package_target.h"
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form_id.h"
-#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/reference_handle.h"
 
 namespace doticu_skylib {

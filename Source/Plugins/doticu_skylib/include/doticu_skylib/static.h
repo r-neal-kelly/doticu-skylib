@@ -9,7 +9,7 @@
 #include "doticu_skylib/component_model_alternates.h"
 
 #include "doticu_skylib/bound_object.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {
 

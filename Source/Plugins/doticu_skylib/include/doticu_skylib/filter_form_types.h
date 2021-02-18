@@ -4,10 +4,10 @@
 
 #pragma once
 
+#include "doticu_skylib/enum_form_type.h"
 #include "doticu_skylib/enum_logic_gate.h"
 
 #include "doticu_skylib/form.h"
-#include "doticu_skylib/form_type.h"
 #include "doticu_skylib/reference.h"
 
 #include "doticu_skylib/filter.inl"

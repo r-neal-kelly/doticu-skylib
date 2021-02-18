@@ -5,8 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
-
-#include "doticu_skylib/form_type.h"
+#include "doticu_skylib/enum_form_type.h"
 
 namespace doticu_skylib {
 

@@ -12,7 +12,7 @@
 
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/package_schedule.h"
-#include "doticu_skylib/script_type.h"
+#include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {
 
