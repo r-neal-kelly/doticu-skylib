@@ -188,6 +188,20 @@ namespace doticu_skylib {
         return entry->Remove_And_Destroy(extra_list);
     }
 
+    Bool_t Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
+        if (entry) {
+            return entry->Try_To_Consume(extra_list);
+        } else {
+            return false;
+        }
+    }
+
     void Reference_Container_t::Log(std::string indent)
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -197,9 +211,15 @@ namespace doticu_skylib {
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "Reference: %s", this->reference->Any_Name());
 
-        for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
-            Reference_Container_Entry_t& entry = this->entries[idx];
-            entry.Log(indent + SKYLIB_TAB);
+        size_t entries_size = this->entries.size();
+        if (entries_size > 0) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "entries:");
+            for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
+                Reference_Container_Entry_t& entry = this->entries[idx];
+                entry.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+            }
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "entries: (none)");
         }
 
         SKYLIB_LOG(indent + "}");

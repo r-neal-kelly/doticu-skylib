@@ -28,14 +28,14 @@ namespace doticu_skylib {
             _END_,
         };
 
-        static constexpr const char* NONE_STRING = "NONE";
-        static constexpr const char* NOT_STRING = "!";
-        static constexpr const char* OR_STRING = "|";
-        static constexpr const char* AND_STRING = "&";
-        static constexpr const char* XOR_STRING = "^";
-        static constexpr const char* NOR_STRING = "!|";
-        static constexpr const char* NAND_STRING = "!&";
-        static constexpr const char* XNOR_STRING = "!^";
+        static constexpr const char* NONE_STRING    = "NONE";
+        static constexpr const char* NOT_STRING     = "!";
+        static constexpr const char* OR_STRING      = "|";
+        static constexpr const char* AND_STRING     = "&";
+        static constexpr const char* XOR_STRING     = "^";
+        static constexpr const char* NOR_STRING     = "!|";
+        static constexpr const char* NAND_STRING    = "!&";
+        static constexpr const char* XNOR_STRING    = "!^";
 
     public:
         using Enum_t::Enum_t;

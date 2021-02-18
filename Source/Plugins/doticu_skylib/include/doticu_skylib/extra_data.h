@@ -24,15 +24,21 @@ namespace doticu_skylib {
         static void Log_Text_Displays(std::string indent = "");
 
     public:
-        virtual         ~Extra_Data_t();                                // 0
-        virtual u8      Get_Type()                              = 0;    // 1
-        virtual Bool_t  Isnt_Equal(const Extra_Data_t* other)   = 0;    // 2
+        virtual         ~Extra_Data_t();                                    // 0
+        virtual u8      Get_Type()                                  = 0;    // 1
+        virtual Bool_t  Get_Isnt_Equal(const Extra_Data_t* other)   = 0;    // 2
 
     public:
         maybe<Extra_Data_t*> next; // 08
 
     public:
-        Extra_Type_e Type();
+        Extra_Type_e    Type();
+
+        Bool_t          Is_Equal(some<Extra_Data_t*> other);
+        Bool_t          Isnt_Equal(some<Extra_Data_t*> other);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Data_t) == 0x10);
 

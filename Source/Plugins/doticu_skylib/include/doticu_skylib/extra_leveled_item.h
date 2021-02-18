@@ -31,11 +31,15 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Leveled_Item_t*>  Create(some<Leveled_Item_t*> leveled_item);
+        static void                         Destroy(some<Extra_Leveled_Item_t*> x_leveled_item);
+
+    public:
         virtual ~Extra_Leveled_Item_t(); // 0
 
     public:
-        maybe<Form_ID_t>    leveled_item;   // 10
-        u32                 pad_14;         // 14
+        maybe<Form_ID_t>    leveled_item_form_id;   // 10
+        u32                 pad_14;                 // 14
     };
     STATIC_ASSERT(sizeof(Extra_Leveled_Item_t) == 0x18);
 

@@ -26,10 +26,10 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(x_outfit);
 
+        Extra_Data_t::Destroy<Extra_Outfit_t>(x_outfit);
+
         x_outfit->outfit_form_id = none<Form_ID_t>();
         x_outfit->pad_14 = 0;
-
-        Extra_Data_t::Destroy<Extra_Outfit_t>(x_outfit);
     }
 
 }

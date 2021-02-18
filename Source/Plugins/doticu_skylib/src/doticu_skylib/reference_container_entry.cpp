@@ -255,6 +255,18 @@ namespace doticu_skylib {
         return this->reference_entry->Decrement_Count(base_count, extra_list, amount) + base_count;
     }
 
+    Bool_t Reference_Container_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        if (this->reference_entry) {
+            return this->reference_entry->Try_To_Consume(extra_list);
+        } else {
+            return false;
+        }
+    }
+
     void Reference_Container_Entry_t::Log(std::string indent)
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -262,12 +274,19 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Reference_Container_Entry_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s", Some_Object()->Form_ID_String());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s %s", Some_Object()->Component_Name(), Some_Object()->Form_ID_String());
         SKYLIB_LOG(indent + SKYLIB_TAB + "base_count: %d", Base_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "reference_count: %d", Reference_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "extra_lists_count: %d", Extra_Lists_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "non_extra_lists_count: %d", Non_Extra_Lists_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "count: %d", Count());
+
+        if (this->reference_entry) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "reference_entry:");
+            this->reference_entry->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "reference_entry: (none)");
+        }
 
         SKYLIB_LOG(indent + "}");
     }

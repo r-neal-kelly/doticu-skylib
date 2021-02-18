@@ -3,6 +3,7 @@
 */
 
 #include "doticu_skylib/actor.h"
+#include "doticu_skylib/component_name.h"
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.inl"
@@ -115,10 +116,27 @@ namespace doticu_skylib {
         }
     }
 
+    some<const char*> Form_t::Component_Name()
+    {
+        maybe<Name_c*> component_name = As_Component_Name();
+        if (component_name) {
+            const char* name = component_name->Name();
+            if (name) {
+                return name;
+            } else {
+                return "";
+            }
+        } else {
+            return "";
+        }
+    }
+
     Bool_t  Form_t::Is_Actor()          { return As_Actor() != none<Actor_t*>(); }
+    Bool_t  Form_t::Is_Component_Name() { return As_Component_Name() != none<Name_c*>(); }
     Bool_t  Form_t::Is_Leveled_Item()   { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
 
     maybe<Actor_t*>         Form_t::As_Actor()          { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
+    maybe<Name_c*>          Form_t::As_Component_Name() { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()   { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)

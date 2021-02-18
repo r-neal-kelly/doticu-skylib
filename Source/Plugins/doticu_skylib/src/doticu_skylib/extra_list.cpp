@@ -5,11 +5,13 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
+#include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_outfit.h"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.inl"
+#include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/outfit.h"
 
 namespace doticu_skylib {
@@ -128,6 +130,52 @@ namespace doticu_skylib {
         return Count() < 1;
     }
 
+    /*Bool_t Extra_List_t::Is_Quest_Item()
+    {
+        static_assert(false, "incomplete.");
+    }*/
+
+    Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        Read_Locker_t this_locker(this->lock);
+        Read_Locker_t other_locker(other->lock);
+
+        for (maybe<Extra_Data_t*> other_it = other->x_datas; other_it; other_it = other_it->next) {
+            Extra_Type_e other_type = other_it->Type();
+            if (other_type != Extra_Type_e::COUNT) {
+                Bool_t this_has_other_type = false;
+                for (maybe<Extra_Data_t*> this_it = this->x_datas; this_it; this_it = this_it->next) {
+                    if (this_it->Type() == other_type) {
+                        this_has_other_type = true;
+                        if (this_it->Isnt_Equal(other_it())) {
+                            return false;
+                        }
+                    }
+                }
+                if (!this_has_other_type) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    Bool_t Extra_List_t::Try_To_Consume(some<Extra_List_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        if (Can_Consume(other)) {
+            Increment_Count(other->Count());
+            Destroy(other);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     Bool_t Extra_List_t::Has(Extra_Type_e type)
     {
         Read_Locker_t locker(this->lock);
@@ -203,6 +251,19 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<some<Extra_Data_t*>> Extra_List_t::Extra_Datas()
+    {
+        Read_Locker_t locker(this->lock);
+
+        Vector_t<some<Extra_Data_t*>> extra_datas;
+
+        for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
+            extra_datas.push_back(it());
+        }
+
+        return extra_datas;
+    }
+
     s16 Extra_List_t::Count()
     {
         maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
@@ -242,6 +303,74 @@ namespace doticu_skylib {
             }
         } else {
             return Count();
+        }
+    }
+
+    maybe<Leveled_Item_t*> Extra_List_t::Leveled_Item()
+    {
+        maybe<Extra_Leveled_Item_t*> x_leveled_item = Get<Extra_Leveled_Item_t>();
+        if (x_leveled_item) {
+            if (x_leveled_item->leveled_item_form_id) {
+                return Game_t::Form(x_leveled_item->leveled_item_form_id());
+            } else {
+                Remove<Extra_Leveled_Item_t>(x_leveled_item());
+                Extra_Leveled_Item_t::Destroy(x_leveled_item());
+                return none<Leveled_Item_t*>();
+            }
+        } else {
+            return none<Leveled_Item_t*>();
+        }
+    }
+
+    void Extra_List_t::Leveled_Item(maybe<Leveled_Item_t*> leveled_item)
+    {
+        if (leveled_item) {
+            maybe<Extra_Leveled_Item_t*> x_leveled_item = Get<Extra_Leveled_Item_t>();
+            if (x_leveled_item) {
+                x_leveled_item->leveled_item_form_id = leveled_item->form_id;
+            } else {
+                Add<Extra_Leveled_Item_t>(Extra_Leveled_Item_t::Create(leveled_item()));
+            }
+        } else {
+            maybe<Extra_Leveled_Item_t*> x_leveled_item = Get<Extra_Leveled_Item_t>();
+            if (x_leveled_item) {
+                Remove<Extra_Leveled_Item_t>(x_leveled_item());
+                Extra_Leveled_Item_t::Destroy(x_leveled_item());
+            }
+        }
+    }
+
+    maybe<Outfit_t*> Extra_List_t::Outfit()
+    {
+        maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+        if (x_outfit) {
+            if (x_outfit->outfit_form_id) {
+                return Game_t::Form(x_outfit->outfit_form_id());
+            } else {
+                Remove<Extra_Outfit_t>(x_outfit());
+                Extra_Outfit_t::Destroy(x_outfit());
+                return none<Outfit_t*>();
+            }
+        } else {
+            return none<Outfit_t*>();
+        }
+    }
+
+    void Extra_List_t::Outfit(maybe<Outfit_t*> outfit)
+    {
+        if (outfit) {
+            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+            if (x_outfit) {
+                x_outfit->outfit_form_id = outfit->form_id;
+            } else {
+                Add<Extra_Outfit_t>(Extra_Outfit_t::Create(outfit()));
+            }
+        } else {
+            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
+            if (x_outfit) {
+                Remove<Extra_Outfit_t>(x_outfit());
+                Extra_Outfit_t::Destroy(x_outfit());
+            }
         }
     }
 
@@ -285,38 +414,18 @@ namespace doticu_skylib {
         Owner(static_cast<maybe<Form_t*>>(actor_base));
     }
 
-    maybe<Outfit_t*> Extra_List_t::Outfit()
+    void Extra_List_t::Log(std::string indent)
     {
-        maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
-        if (x_outfit) {
-            if (x_outfit->outfit_form_id) {
-                return Game_t::Form(x_outfit->outfit_form_id());
-            } else {
-                Remove<Extra_Outfit_t>(x_outfit());
-                Extra_Outfit_t::Destroy(x_outfit());
-                return none<Outfit_t*>();
-            }
-        } else {
-            return none<Outfit_t*>();
-        }
-    }
+        Read_Locker_t locker(this->lock);
 
-    void Extra_List_t::Outfit(maybe<Outfit_t*> outfit)
-    {
-        if (outfit) {
-            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
-            if (x_outfit) {
-                x_outfit->outfit_form_id = outfit->form_id;
-            } else {
-                Add<Extra_Outfit_t>(Extra_Outfit_t::Create(outfit()));
-            }
-        } else {
-            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
-            if (x_outfit) {
-                Remove<Extra_Outfit_t>(x_outfit());
-                Extra_Outfit_t::Destroy(x_outfit());
-            }
+        SKYLIB_LOG(indent + "Extra_List_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
+            it->Log(indent + SKYLIB_TAB);
         }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

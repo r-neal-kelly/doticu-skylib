@@ -225,6 +225,23 @@ namespace doticu_skylib {
         return Decrement_Delta(base_count, count - new_count);
     }
 
+    Bool_t Container_Changes_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        if (this->x_lists && !this->x_lists->Is_Empty()) {
+            for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
+                maybe<Extra_List_t*> x_list = it->value;
+                if (x_list && x_list->Try_To_Consume(extra_list)) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
     Bool_t Container_Changes_Entry_t::Should_Be_Destroyed()
     {
         return this->delta == 0 && Extra_Lists_Count() == 0;
@@ -245,6 +262,34 @@ namespace doticu_skylib {
             List_t<maybe<Extra_List_t*>>::Destroy(this->x_lists());
             this->x_lists = none<List_t<maybe<Extra_List_t*>>*>();
         }
+    }
+
+    void Container_Changes_Entry_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Container_Changes_Entry_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        if (this->object) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s %s", this->object->Component_Name(), this->object->Form_ID_String());
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "object: (none)");
+        }
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "delta: %i", this->delta);
+
+        if (this->x_lists && !this->x_lists->Is_Empty()) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "x_lists:");
+            for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
+                maybe<Extra_List_t*> x_list = it->value;
+                if (x_list) {
+                    x_list->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+                }
+            }
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "x_lists: (none)");
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

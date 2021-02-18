@@ -13,6 +13,7 @@
 #include "doticu_skylib/extra_collision_layer.h"
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/extra_list.h"
 
@@ -203,6 +204,37 @@ namespace doticu_skylib {
     Extra_Type_e Extra_Data_t::Type()
     {
         return Get_Type();
+    }
+
+    Bool_t Extra_Data_t::Is_Equal(some<Extra_Data_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        return !Get_Isnt_Equal(other());
+    }
+
+    Bool_t Extra_Data_t::Isnt_Equal(some<Extra_Data_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        return Get_Isnt_Equal(other());
+    }
+
+    void Extra_Data_t::Log(std::string indent)
+    {
+        Extra_Type_e type = Type();
+        if (type == Extra_Type_e::REFERENCE_HANDLE) {
+            static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
+        } else if (type == Extra_Type_e::TEXT_DISPLAY) {
+            static_cast<Extra_Text_Display_t*>(this)->Log(indent);
+        } else {
+            SKYLIB_LOG(indent + "Extra_Data_t::Log");
+            SKYLIB_LOG(indent + "{");
+
+            SKYLIB_LOG(indent + SKYLIB_TAB + "type: %s", Extra_Type_e::To_String(type));
+
+            SKYLIB_LOG(indent + "}");
+        }
     }
 
 }

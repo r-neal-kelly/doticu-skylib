@@ -17,6 +17,7 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Bound_Object_t;
+    class Name_c;
     class Leveled_Item_t;
     class Mod_t;
     class Race_t;
@@ -150,11 +151,15 @@ namespace doticu_skylib {
         Vector_t<String_t>          Mod_Names();
         void                        Mod_Names(Vector_t<String_t>& results);
 
+        some<const char*>           Component_Name();
+
     public:
         Bool_t                  Is_Actor();
+        Bool_t                  Is_Component_Name();
         Bool_t                  Is_Leveled_Item();
 
         maybe<Actor_t*>         As_Actor();
+        maybe<Name_c*>          As_Component_Name();
         maybe<Leveled_Item_t*>  As_Leveled_Item();
 
     public:

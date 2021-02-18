@@ -61,6 +61,7 @@
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
+    <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
@@ -408,14 +409,17 @@
     <ClCompile Include="src\doticu_skylib\dialogue_info.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp" />
     <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_extra_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_leveled_item.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_outfit.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_reference_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
