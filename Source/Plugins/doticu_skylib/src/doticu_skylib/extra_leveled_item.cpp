@@ -2,8 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#pragma once
-
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/leveled_item.h"

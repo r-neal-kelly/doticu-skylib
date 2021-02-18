@@ -8,8 +8,8 @@
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
 
+#include "doticu_skylib/enum_alias_base_flags.h"
 #include "doticu_skylib/enum_alias_fill.h"
-#include "doticu_skylib/enum_alias_flags.h"
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/enum_script_type.h"
@@ -27,7 +27,7 @@ namespace doticu_skylib {
 
     }
 
-    class Alias_Base_t
+    class Alias_Base_t // BGSBaseAlias
     {
     public:
         enum
@@ -42,13 +42,16 @@ namespace doticu_skylib {
         virtual String_t    Type();             // 3
 
     public:
-        String_t        name;           // 08
-        Quest_t*        quest;          // 10
-        Alias_ID_t      id;             // 18
-        Alias_Flags_e   alias_flags;    // 1C
-        Alias_Fill_e    fill_type;      // 20
-        u16             pad_22;         // 22
-        u32             pad_24;         // 24
+        String_t            name;               // 08
+        Quest_t*            quest;              // 10
+        Alias_ID_t          id;                 // 18
+        Alias_Base_Flags_e  alias_base_flags;   // 1C
+        Alias_Fill_e        fill_type;          // 20
+        u16                 pad_22;             // 22
+        u32                 pad_24;             // 24
+
+    public:
+        Bool_t Is_Quest_Item();
 
     public:
         void Ready_Virtual_Object();

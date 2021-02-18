@@ -236,6 +236,7 @@ namespace doticu_skylib {
         Bool_t Is_Disabled();
         Bool_t Is_Persistent();
         Bool_t Is_Temporary();
+        Bool_t Is_Quest_Item();
         Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
         Bool_t Has_Owner(some<Actor_t*> actor);

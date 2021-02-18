@@ -2,8 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#pragma once
-
 #include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/component_container.h"
 #include "doticu_skylib/container_changes.h"

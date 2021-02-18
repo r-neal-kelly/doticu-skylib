@@ -31,6 +31,7 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Reference_Handle_t*>  Create(Reference_Handle_t reference_handle);
         static some<Extra_Reference_Handle_t*>  Create(some<Reference_t*> reference);
         static void                             Destroy(some<Extra_Reference_Handle_t*> x_reference_handle);
 

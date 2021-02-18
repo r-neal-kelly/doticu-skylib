@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release|x64">
@@ -62,6 +62,8 @@
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
+    <ClInclude Include="include\doticu_skylib\extra_worn.h" />
+    <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
@@ -221,7 +223,7 @@
     <ClInclude Include="include\doticu_skylib\enum_actor_value.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_value_modifier.h" />
     <ClInclude Include="include\doticu_skylib\enum_alias_fill.h" />
-    <ClInclude Include="include\doticu_skylib\enum_alias_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_alias_base_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_armor.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_slots.h" />
     <ClInclude Include="include\doticu_skylib\enum_cell_flags.h" />
@@ -423,6 +425,8 @@
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_reference_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_worn.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_worn_left.cpp" />
     <ClCompile Include="src\doticu_skylib\faction.cpp" />
     <ClCompile Include="src\doticu_skylib\faction_and_rank.cpp" />
     <ClCompile Include="src\doticu_skylib\form.cpp" />

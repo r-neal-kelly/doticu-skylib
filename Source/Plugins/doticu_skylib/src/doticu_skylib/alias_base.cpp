@@ -16,6 +16,11 @@
 
 namespace doticu_skylib {
 
+    Bool_t Alias_Base_t::Is_Quest_Item()
+    {
+        return (this->alias_base_flags & Alias_Base_Flags_e::IS_QUEST_ITEM) != 0;
+    }
+
     void Alias_Base_t::Ready_Virtual_Object()
     {
         Virtual::Machine_t* machine = Virtual::Machine_t::Self();

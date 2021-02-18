@@ -4,11 +4,10 @@
 
 #pragma once
 
-#include "doticu_skylib/maybe.h"
-
-#include "doticu_skylib/read_write_lock.h"
-
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/maybe.h"
+#include "doticu_skylib/read_write_lock.h"
+#include "doticu_skylib/reference_handle.h"
 
 namespace doticu_skylib {
 
@@ -69,46 +68,58 @@ namespace doticu_skylib {
     public:
         void    Validate();
         Bool_t  Should_Be_Destroyed();
-        Bool_t  Is_Quest_Item();
-
-    public:
         Bool_t  Can_Consume(some<Extra_List_t*> other);
         Bool_t  Try_To_Consume(some<Extra_List_t*> other);
 
     public:
-        Bool_t                          Has(Extra_Type_e type);
-        maybe<Extra_Data_t*>            Get(Extra_Type_e type);
-        Bool_t                          Add(some<Extra_Data_t*> x_data);
-        Bool_t                          Remove(some<Extra_Data_t*> x_data);
+        Bool_t                  Has(Extra_Type_e type);
+        maybe<Extra_Data_t*>    Get(Extra_Type_e type);
+        Bool_t                  Add(some<Extra_Data_t*> x_data);
+        Bool_t                  Remove(some<Extra_Data_t*> x_data);
 
         template <typename T>
-        Bool_t                          Has();
+        Bool_t                  Has();
         template <typename T>
-        maybe<T*>                       Get();
+        maybe<T*>               Get();
         template <typename T>
-        Bool_t                          Add(some<T*> x_data);
+        Bool_t                  Add(some<T*> x_data);
         template <typename T>
-        Bool_t                          Remove(some<T*> x_data);
-
-        Vector_t<some<Extra_Data_t*>>   Extra_Datas();
+        Bool_t                  Remove(some<T*> x_data);
 
     public:
-        s16                     Count();
-        s16                     Increment_Count(s16 amount);
-        s16                     Decrement_Count(s16 amount);
+        Vector_t<some<Extra_Data_t*>>   Extra_Datas();
 
-        maybe<Leveled_Item_t*>  Leveled_Item();
-        void                    Leveled_Item(maybe<Leveled_Item_t*> leveled_item);
+        s16                             Count();
+        s16                             Increment_Count(s16 amount);
+        s16                             Decrement_Count(s16 amount);
 
-        maybe<Outfit_t*>        Outfit();
-        void                    Outfit(maybe<Outfit_t*> outfit);
+        Bool_t                          Is_Leveled_Item();
+        maybe<Leveled_Item_t*>          Leveled_Item();
+        void                            Leveled_Item(maybe<Leveled_Item_t*> leveled_item);
 
-        maybe<Form_t*>          Owner();
-        void                    Owner(maybe<Form_t*> form);
-        maybe<Faction_t*>       Faction_Owner();
-        void                    Faction_Owner(maybe<Faction_t*> faction);
-        maybe<Actor_Base_t*>    Actor_Base_Owner();
-        void                    Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+        Bool_t                          Is_Outfit_Item();
+        maybe<Outfit_t*>                Outfit();
+        void                            Outfit(maybe<Outfit_t*> outfit);
+
+        maybe<Form_t*>                  Owner();
+        void                            Owner(maybe<Form_t*> form);
+        maybe<Faction_t*>               Faction_Owner();
+        void                            Faction_Owner(maybe<Faction_t*> faction);
+        maybe<Actor_Base_t*>            Actor_Base_Owner();
+        void                            Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+
+        Bool_t                          Is_Quest_Item();
+
+        maybe<Reference_t*>             Reference();
+        void                            Reference(some<Reference_t*> reference);
+        Reference_Handle_t              Reference_Handle();
+        void                            Reference_Handle(Reference_Handle_t reference_handle);
+
+        Bool_t                          Is_Worn_Item();
+        Bool_t                          Is_Worn();
+        void                            Is_Worn(Bool_t is_worn);
+        Bool_t                          Is_Worn_Left();
+        void                            Is_Worn_Left(Bool_t is_worn_left);
 
     public:
         void Log(std::string indent = "");

@@ -49,7 +49,12 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                RTTI = 0x01E14AD8, // 513915
+                RTTI                    = 0x01E14AD8, // 513915
+
+                ADD_SPELL               = 0x0062F560, // 37771
+                EVALUATE_PACKAGE        = 0x005DB310, // 36407
+                QUEUE_NI_NODE_UPDATE    = 0x00693110, // 39181
+                UPDATE_3D_MODEL         = 0x00650DF0, // 38404 (this maybe goes on an actor_ai type?)
             };
             using Enum_t::Enum_t;
         };

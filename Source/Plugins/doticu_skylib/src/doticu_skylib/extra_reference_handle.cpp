@@ -8,16 +8,21 @@
 
 namespace doticu_skylib {
 
+    some<Extra_Reference_Handle_t*> Extra_Reference_Handle_t::Create(Reference_Handle_t reference_handle)
+    {
+        some<Extra_Reference_Handle_t*> x_reference_handle = Extra_Data_t::Create<Extra_Reference_Handle_t>();
+
+        x_reference_handle->reference_handle = reference_handle;
+        x_reference_handle->pad_14 = 0;
+
+        return x_reference_handle;
+    }
+
     some<Extra_Reference_Handle_t*> Extra_Reference_Handle_t::Create(some<Reference_t*> reference)
     {
         SKYLIB_ASSERT_SOME(reference);
 
-        some<Extra_Reference_Handle_t*> x_reference_handle = Extra_Data_t::Create<Extra_Reference_Handle_t>();
-
-        x_reference_handle->reference_handle = reference->To_Handle();
-        x_reference_handle->pad_14 = 0;
-
-        return x_reference_handle;
+        return Create(reference->To_Handle());
     }
 
     void Extra_Reference_Handle_t::Destroy(some<Extra_Reference_Handle_t*> x_reference_handle)

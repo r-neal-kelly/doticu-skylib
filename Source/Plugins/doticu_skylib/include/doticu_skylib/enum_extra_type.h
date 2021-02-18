@@ -38,7 +38,7 @@ namespace doticu_skylib {
             // 0x13
             // 0x14 0x0152C200
             CONTAINER_CHANGES   = 0x15,
-            WORN                = 0x16, // 0x0152C000
+            WORN                = 0x16,
             WORN_LEFT           = 0x17, // 
             // 0x18 0x0152C140
             // 0x19 0x0152F320

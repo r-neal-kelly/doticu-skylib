@@ -209,15 +209,32 @@ namespace doticu_skylib {
         return !Is_Persistent();
     }
 
+    Bool_t Reference_t::Is_Quest_Item()
+    {
+        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            Read_Locker_t locker(x_aliases->lock);
+            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
+                if (instance && instance->alias_base && instance->alias_base->Is_Quest_Item()) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
     Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id)
     {
         SKYLIB_ASSERT_SOME(quest);
 
-        maybe<Extra_Aliases_t*> xaliases = x_list.Get<Extra_Aliases_t>();
-        if (xaliases) {
-            Read_Locker_t locker(xaliases->lock);
-            for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = xaliases->instances.entries[idx];
+        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            Read_Locker_t locker(x_aliases->lock);
+            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
                 if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
                     return true;
                 }

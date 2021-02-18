@@ -9,10 +9,15 @@
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_outfit.h"
 #include "doticu_skylib/extra_owner.h"
+#include "doticu_skylib/extra_reference_handle.h"
+#include "doticu_skylib/extra_worn.h"
+#include "doticu_skylib/extra_worn_left.h"
+#include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/outfit.h"
+#include "doticu_skylib/reference.h"
 
 namespace doticu_skylib {
 
@@ -129,11 +134,6 @@ namespace doticu_skylib {
     {
         return Count() < 1;
     }
-
-    /*Bool_t Extra_List_t::Is_Quest_Item()
-    {
-        static_assert(false, "incomplete.");
-    }*/
 
     Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
     {
@@ -306,6 +306,11 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Extra_List_t::Is_Leveled_Item()
+    {
+        return Has<Extra_Leveled_Item_t>();
+    }
+
     maybe<Leveled_Item_t*> Extra_List_t::Leveled_Item()
     {
         maybe<Extra_Leveled_Item_t*> x_leveled_item = Get<Extra_Leveled_Item_t>();
@@ -338,6 +343,11 @@ namespace doticu_skylib {
                 Extra_Leveled_Item_t::Destroy(x_leveled_item());
             }
         }
+    }
+
+    Bool_t Extra_List_t::Is_Outfit_Item()
+    {
+        return Has<Extra_Outfit_t>();
     }
 
     maybe<Outfit_t*> Extra_List_t::Outfit()
@@ -412,6 +422,101 @@ namespace doticu_skylib {
     void Extra_List_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
     {
         Owner(static_cast<maybe<Form_t*>>(actor_base));
+    }
+
+    Bool_t Extra_List_t::Is_Quest_Item()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference) {
+            return reference->Is_Quest_Item();
+        } else {
+            return false;
+        }
+    }
+
+    maybe<Reference_t*> Extra_List_t::Reference()
+    {
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            return x_reference_handle->Reference();
+        } else {
+            return none<Reference_t*>();
+        }
+    }
+
+    void Extra_List_t::Reference(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            x_reference_handle->Reference(reference);
+        } else {
+            Add<Extra_Reference_Handle_t>(Extra_Reference_Handle_t::Create(reference));
+        }
+    }
+
+    Reference_Handle_t Extra_List_t::Reference_Handle()
+    {
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            return x_reference_handle->reference_handle;
+        } else {
+            return 0;
+        }
+    }
+
+    void Extra_List_t::Reference_Handle(Reference_Handle_t reference_handle)
+    {
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            x_reference_handle->reference_handle = reference_handle;
+        } else {
+            Add<Extra_Reference_Handle_t>(Extra_Reference_Handle_t::Create(reference_handle));
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Worn_Item()
+    {
+        return Is_Worn() || Is_Worn_Left();
+    }
+
+    Bool_t Extra_List_t::Is_Worn()
+    {
+        return Has<Extra_Worn_t>();
+    }
+
+    void Extra_List_t::Is_Worn(Bool_t is_worn)
+    {
+        if (is_worn) {
+            if (!Is_Worn()) {
+                Add<Extra_Worn_t>(Extra_Worn_t::Create());
+            }
+        } else {
+            maybe<Extra_Worn_t*> x_worn = Get<Extra_Worn_t>();
+            if (x_worn) {
+                Remove<Extra_Worn_t>(x_worn());
+            }
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Worn_Left()
+    {
+        return Has<Extra_Worn_Left_t>();
+    }
+
+    void Extra_List_t::Is_Worn_Left(Bool_t is_worn_left)
+    {
+        if (is_worn_left) {
+            if (!Is_Worn_Left()) {
+                Add<Extra_Worn_Left_t>(Extra_Worn_Left_t::Create());
+            }
+        } else {
+            maybe<Extra_Worn_Left_t*> x_worn_left = Get<Extra_Worn_Left_t>();
+            if (x_worn_left) {
+                Remove<Extra_Worn_Left_t>(x_worn_left());
+            }
+        }
     }
 
     void Extra_List_t::Log(std::string indent)

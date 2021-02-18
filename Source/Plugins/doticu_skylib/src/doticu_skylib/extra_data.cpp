@@ -231,7 +231,9 @@ namespace doticu_skylib {
             SKYLIB_LOG(indent + "Extra_Data_t::Log");
             SKYLIB_LOG(indent + "{");
 
-            SKYLIB_LOG(indent + SKYLIB_TAB + "type: %s", Extra_Type_e::To_String(type));
+            SKYLIB_LOG(indent + SKYLIB_TAB + "type: %s, v_table: 0x%8.8X",
+                       Extra_Type_e::To_String(type),
+                       Game_t::V_Table_Offset(this));
 
             SKYLIB_LOG(indent + "}");
         }

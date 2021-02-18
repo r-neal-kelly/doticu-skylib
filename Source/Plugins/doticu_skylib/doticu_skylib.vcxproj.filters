@@ -384,9 +384,6 @@
     <ClInclude Include="include\doticu_skylib\enum_alias_fill.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_alias_flags.h">
-      <Filter>Header Files\enum</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_armor.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -602,9 +599,6 @@
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_soul_level.h">
       <Filter>Header Files\enum</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_outfit.h">
-      <Filter>Header Files\extra</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\extra_ghost.h">
       <Filter>Header Files\extra</Filter>
@@ -1041,6 +1035,18 @@
     <ClInclude Include="include\doticu_skylib\enum_script_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_alias_base_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_outfit.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_worn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_worn_left.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1310,9 +1316,6 @@
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\extra_outfit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_leveled_item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1326,6 +1329,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\enum_script_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_outfit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_worn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_worn_left.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
