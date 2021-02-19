@@ -15,7 +15,7 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
-            _NONE_              = 0x00,
+            _NONE_                  = 0x00,
 
             // 0x01 0x01525CD8
             // 0X02
@@ -37,32 +37,32 @@ namespace doticu_skylib {
             // 0x12 0x0156C830
             // 0x13
             // 0x14 0x0152C200
-            CONTAINER_CHANGES   = 0x15,
-            WORN                = 0x16,
-            WORN_LEFT           = 0x17,
+            CONTAINER_CHANGES       = 0x15,
+            WORN                    = 0x16,
+            WORN_LEFT               = 0x17,
             // 0x18 0x0152C140
             // 0x19 0x0152F320
             // 0x1A
             // 0x1B 0x0152F380
-            REFERENCE_HANDLE    = 0x1C,
-            FOLLOWERS           = 0x1D,
+            REFERENCE_HANDLE        = 0x1C,
+            FOLLOWERS               = 0x1D,
             // 0x1E 0x0152C440
-            GHOST               = 0x1F,
+            GHOST                   = 0x1F,
             // 0x20
-            OWNER               = 0x21, // XOWN
+            OWNER                   = 0x21, // XOWN
             // 0x22
             // 0x23
-            COUNT               = 0x24,
-            HEALTH              = 0x25, // 
+            COUNT                   = 0x24,
+            HEALTH                  = 0x25, // 
             // 0x26
             // 0x27
-            CHARGE              = 0x28, // 
+            CHARGE                  = 0x28, // 
             // 0x29 0x0152F1E0
             // 0x2A 0x0152BEA0
             // 0x2B 0x0152BF00
             // 0x2C 0x0152F220
             // 0x2D 0x0152F200
-            LEVELED_ITEM        = 0x2E,
+            LEVELED_ITEM            = 0x2E,
             // 0x2F
             // 0x30 0x0152CAA0
             // 0x31 0x0163AD50
@@ -100,14 +100,14 @@ namespace doticu_skylib {
             // 0x51 0x0152C360
             // 0x52 0x0152C380
             // 0x53 0x0152C3A0
-            TALK_TO_PLAYER      = 0x54,
+            TALK_TO_PLAYER          = 0x54,
             // 0x55 0x0152C760
             // 0x56 0x0152CD40
             // 0x57 0x0152C7A0
             // 0x58 0x0152C7C0
             // 0x59 0x0152C7E0
             // 0x5A
-            FACTIONS_AND_RANKS  = 0x5B, // XRNK
+            FACTIONS_AND_RANKS      = 0x5B, // XRNK
             // 0x5C 0x0152F1A0
             // 0x5D 0x0152C820
             // 0x5E
@@ -126,9 +126,9 @@ namespace doticu_skylib {
             // 0x6B 0x0152C8A0
             // 0x6C 0x0152C920
             // 0x6D
-            COLLISION_LAYER     = 0x6E, // XTRI
+            COLLISION_LAYER         = 0x6E, // XTRI
             // 0x6F
-            ENCOUNTER_ZONE      = 0x70,
+            ENCOUNTER_ZONE          = 0x70,
             // 0x71 0x0152F4C0
             // 0x72 0x0152C8C0
             // 0x73 0x0152C8E0
@@ -152,31 +152,31 @@ namespace doticu_skylib {
             // 0x85 0x0152C2E0
             // 0x86
             // 0x87 0x0152F4E0
-            ALIASES             = 0x88,
-            LOCATION            = 0x89,
+            ALIASES                 = 0x88,
+            LOCATION                = 0x89,
             // 0x8A
             // 0x8B 0x0152C300
             // 0x8C 0x0152C9C0
             // 0x8D
-            OUTFIT              = 0x8E,
+            OUTFIT                  = 0x8E,
             // 0x8F
             // 0x90 0x0152C320
             // 0x91 0x0152CA00
             // 0x92 0x0152CA20
             // 0x93 0x0152CA40
             // 0x94
-            FROM_ALIAS          = 0x95, // 0x0152BEC0
+            FROM_ALIAS              = 0x95, // 0x0152BEC0
             // 0x96
             // 0x97 0x0152CA80
             // 0x98 0x0152CB00
-            TEXT_DISPLAY        = 0x99,
+            TEXT_DISPLAY            = 0x99,
             // 0x9A 0x0152CB20
-            ENCHANTMENT         = 0x9B, // 
-            SOUL_LEVEL          = 0x9C, // 
+            ENCHANTMENT             = 0x9B, // 
+            SOUL_LEVEL              = 0x9C, // 
             // 0x9D 0x0152CB60
             // 0x9E
-            UNIQUE_ID           = 0x9F, // 0x0152CBA0
-            FLAGS               = 0xA0,
+            UNIQUE_ID               = 0x9F, // 0x0152CBA0
+            FLAGS                   = 0xA0,
             // 0xA1 0x0152CBE0
             // 0xA2 0x0152CC00
             // 0xA3 0x0152F280
@@ -185,7 +185,7 @@ namespace doticu_skylib {
             // 0xA6 0x0152CC20
             // 0xA7 0x0152F520
             // 0xA8 0x0152BF20
-            INTERACTION         = 0xA9,
+            REFERENCE_INTERACTION   = 0xA9,
             // 0xAA 0x0152CC40
             // 0xAB
             // 0xAC 0x0152C280
@@ -209,7 +209,7 @@ namespace doticu_skylib {
             // 0xBE
             // 0xBF
 
-            _TOTAL_ = 0xC0,
+            _TOTAL_                 = 0xC0,
         };
 
     public:

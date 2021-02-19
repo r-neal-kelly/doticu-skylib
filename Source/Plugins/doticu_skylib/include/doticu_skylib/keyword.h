@@ -9,9 +9,15 @@
 
 namespace doticu_skylib {
 
-    class Keyword_t : public Form_t
+    class Keyword_t :   // BGSKeyword
+        public Form_t   // 00
     {
     public:
+        enum
+        {
+            SCRIPT_TYPE = Script_Type_e::KEYWORD,
+        };
+
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -22,19 +28,18 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        enum
-        {
-            SCRIPT_TYPE = Script_Type_e::KEYWORD,
-        };
-
     public:
         static Int_t Compare_Any_Names(Keyword_t** a, Keyword_t** b);
+
+        static some<Keyword_t*> Vampire();
 
     public:
         virtual ~Keyword_t(); // 0
 
+    public:
         String_t editor_id; // 20
 
+    public:
         String_t Any_Name();
     };
     STATIC_ASSERT(sizeof(Keyword_t) == 0x28);

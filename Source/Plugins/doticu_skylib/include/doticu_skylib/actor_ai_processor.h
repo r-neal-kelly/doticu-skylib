@@ -18,6 +18,7 @@ namespace doticu_skylib {
 
     class Actor_t;
     class NI_Temp_Effect_t;
+    class Sync_Object_t;
 
     class Actor_AI_Processor_t // ProcessLists
     {
@@ -75,7 +76,7 @@ namespace doticu_skylib {
         Array_t<Actor_Handle_t>             init_package_locations_queue;           // 180
         u64                                 init_package_locations_queue_lock;      // 198
         Array_t<Actor_Handle_t>             init_animation_position_queue;          // 1A0
-        Array_t<void*>                      unk_1B8;                                // 1B8
+        Array_t<Sync_Object_t*>             sync_objects;                           // 1B8
         Float_t                             comment_player_actor_timer;             // 1D0
         Float_t                             comment_player_knock_object_timer;      // 1D4
         u32                                 current_low_actor;                      // 1D8

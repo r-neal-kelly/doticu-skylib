@@ -2,23 +2,22 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/interface.h"
-
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/extra_factions_and_ranks.h"
+#include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
 #include "doticu_skylib/havok_actor_rigid_body_controller.h"
+#include "doticu_skylib/interface.h"
+#include "doticu_skylib/keyword.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/worldspace.h"
-
-#include "doticu_skylib/extra_factions_and_ranks.h"
-#include "doticu_skylib/extra_list.inl"
 
 namespace doticu_skylib {
 
@@ -120,14 +119,34 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Actor_t::Is_Alive()
+    Bool_t Actor_t::Is_Unique()
     {
-        return !Is_Dead();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Is_Unique();
+        } else {
+            return false;
+        }
     }
 
-    Bool_t Actor_t::Is_Dead()
+    Bool_t Actor_t::Is_Generic()
     {
-        return Is_Dead(true);
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Is_Generic();
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Actor_t::Is_Vampire()
+    {
+        return Has_Keyword(Keyword_t::Vampire()());
+    }
+
+    Bool_t Actor_t::Isnt_Vampire()
+    {
+        return !Is_Vampire();
     }
 
     Bool_t Actor_t::Is_Player_Teammate()
@@ -138,6 +157,16 @@ namespace doticu_skylib {
     Bool_t Actor_t::Isnt_Player_Teammate()
     {
         return !Is_Player_Teammate();
+    }
+
+    Bool_t Actor_t::Has_Mount()
+    {
+        return !!Mount();
+    }
+
+    Bool_t Actor_t::Has_Rider()
+    {
+        return !!Rider();
     }
 
     Bool_t Actor_t::Is_Owner_Of(some<Reference_t*> reference)
@@ -173,7 +202,7 @@ namespace doticu_skylib {
     maybe<Actor_Base_t*> Actor_t::Actor_Base()
     {
         if (base_form) {
-            return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(base_form());
+            return base_form->As_Actor_Base();
         } else {
             return none<Actor_Base_t*>();
         }
@@ -316,6 +345,16 @@ namespace doticu_skylib {
         if (actor_base && actor_base->Is_Valid()) {
             actor_base->Keywords(results, include_templates);
         }
+    }
+
+    maybe<Actor_t*> Actor_t::Mount()
+    {
+        return this->x_list.Reference_Interactor_A();
+    }
+
+    maybe<Actor_t*> Actor_t::Rider()
+    {
+        return this->x_list.Reference_Interactor_B();
     }
 
     const char* Actor_t::Base_Name()

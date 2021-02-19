@@ -645,9 +645,6 @@
     <ClInclude Include="include\doticu_skylib\extra_count.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_interaction.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_extra_text_display_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -1050,6 +1047,15 @@
     <ClInclude Include="include\doticu_skylib\console_log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sync_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\reference_interaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_reference_interaction.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1344,6 +1350,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\console_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\reference_interaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_reference_interaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

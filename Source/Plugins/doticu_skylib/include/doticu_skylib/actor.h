@@ -82,7 +82,7 @@ namespace doticu_skylib {
         virtual         ~Actor_t();                                     // 000
 
         // Reference_t
-        virtual Bool_t  Is_Dead(Bool_t is_not_essential) override;      // 099
+        virtual Bool_t  Get_Is_Dead(Bool_t is_not_essential) override;  // 099
 
         // Actor_t
         virtual void    _0A2(void);                                     // 0A2
@@ -229,10 +229,14 @@ namespace doticu_skylib {
         Byte_t                  unk_data[0x1B8];        // 0F8
 
     public:
-        Bool_t                                      Is_Alive();
-        Bool_t                                      Is_Dead();
+        Bool_t                                      Is_Unique();
+        Bool_t                                      Is_Generic();
+        Bool_t                                      Is_Vampire();
+        Bool_t                                      Isnt_Vampire();
         Bool_t                                      Is_Player_Teammate();
         Bool_t                                      Isnt_Player_Teammate();
+        Bool_t                                      Has_Mount();
+        Bool_t                                      Has_Rider();
 
         Bool_t                                      Is_Owner_Of(some<Reference_t*> reference);
         Bool_t                                      Is_Potential_Thief_Of(some<Reference_t*> reference);
@@ -249,6 +253,8 @@ namespace doticu_skylib {
         maybe<Havok_Actor_Rigid_Body_Controller_t*> Havok_Actor_Rigid_Body_Controller();
         Vector_t<Keyword_t*>                        Keywords(Bool_t include_templates = true);
         void                                        Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
+        maybe<Actor_t*>                             Mount();
+        maybe<Actor_t*>                             Rider();
 
         const char*                                 Base_Name();
         String_t                                    Any_Name();

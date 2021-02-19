@@ -10,6 +10,7 @@
 #include "doticu_skylib/extra_outfit.h"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/extra_reference_handle.h"
+#include "doticu_skylib/extra_reference_interaction.h"
 #include "doticu_skylib/extra_worn.h"
 #include "doticu_skylib/extra_worn_left.h"
 #include "doticu_skylib/reference_handle.h"
@@ -473,6 +474,26 @@ namespace doticu_skylib {
             x_reference_handle->reference_handle = reference_handle;
         } else {
             Add<Extra_Reference_Handle_t>(Extra_Reference_Handle_t::Create(reference_handle));
+        }
+    }
+
+    maybe<Reference_t*> Extra_List_t::Reference_Interactor_A()
+    {
+        maybe<Extra_Reference_Interaction_t*> x_reference_interaction = Get<Extra_Reference_Interaction_t>();
+        if (x_reference_interaction) {
+            return x_reference_interaction->Interactor_A();
+        } else {
+            return none<Reference_t*>();
+        }
+    }
+
+    maybe<Reference_t*> Extra_List_t::Reference_Interactor_B()
+    {
+        maybe<Extra_Reference_Interaction_t*> x_reference_interaction = Get<Extra_Reference_Interaction_t>();
+        if (x_reference_interaction) {
+            return x_reference_interaction->Interactor_B();
+        } else {
+            return none<Reference_t*>();
         }
     }
 

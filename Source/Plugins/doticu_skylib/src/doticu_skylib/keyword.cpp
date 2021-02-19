@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/keyword.h"
 
 namespace doticu_skylib {
@@ -23,6 +24,13 @@ namespace doticu_skylib {
                 return result;
             }
         }
+    }
+
+    some<Keyword_t*> Keyword_t::Vampire()
+    {
+        static maybe<Keyword_t*> keyword = static_cast<maybe<Keyword_t*>>(Game_t::Form(0x000A82BB));
+        SKYLIB_ASSERT_SOME(keyword);
+        return keyword();
     }
 
     String_t Keyword_t::Any_Name()

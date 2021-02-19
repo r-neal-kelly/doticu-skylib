@@ -65,6 +65,7 @@
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
+    <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
@@ -161,7 +162,7 @@
     <ClInclude Include="include\doticu_skylib\extra_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_followers.h" />
     <ClInclude Include="include\doticu_skylib\extra_ghost.h" />
-    <ClInclude Include="include\doticu_skylib\extra_interaction.h" />
+    <ClInclude Include="include\doticu_skylib\extra_reference_interaction.h" />
     <ClInclude Include="include\doticu_skylib\extra_outfit.h" />
     <ClInclude Include="include\doticu_skylib\extra_owner.h" />
     <ClInclude Include="include\doticu_skylib\activator.h" />
@@ -342,6 +343,7 @@
     <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
+    <ClInclude Include="include\doticu_skylib\sync_object.h" />
     <ClInclude Include="include\doticu_skylib\traits.h" />
     <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />
@@ -426,6 +428,7 @@
     <ClCompile Include="src\doticu_skylib\extra_outfit.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_reference_handle.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_reference_interaction.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_worn.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_worn_left.cpp" />
@@ -464,6 +467,7 @@
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_container.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp" />
+    <ClCompile Include="src\doticu_skylib\reference_interaction.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />

@@ -206,7 +206,7 @@ namespace doticu_skylib {
         virtual void    _96(void);                                  // 96
         virtual void    _97(void);                                  // 97
         virtual void    _98(void);                                  // 98
-        virtual Bool_t  Is_Dead(Bool_t is_not_essential);           // 99 (not sure about the bool...)
+        virtual Bool_t  Get_Is_Dead(Bool_t is_not_essential);       // 99 (not sure about the bool...)
         virtual void    _9A(void);                                  // 9A
         virtual void    _9B(void);                                  // 9B
         virtual void    _9C(void);                                  // 9C
@@ -230,13 +230,18 @@ namespace doticu_skylib {
         u32                                 pad_94;             // 94
 
     public:
+        Bool_t Is_Alive();
+        Bool_t Is_Dead();
         Bool_t Is_Deleted();
         Bool_t Isnt_Deleted();
         Bool_t Is_Enabled();
         Bool_t Is_Disabled();
         Bool_t Is_Persistent();
         Bool_t Is_Temporary();
+        Bool_t Is_Attached();
+        Bool_t Is_Detached();
         Bool_t Is_Quest_Item();
+        Bool_t Is_Aliased(some<Quest_t*> quest);
         Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
         Bool_t Has_Owner(some<Actor_t*> actor);

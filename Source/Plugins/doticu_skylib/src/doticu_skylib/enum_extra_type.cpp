@@ -180,7 +180,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0xA6),
             SKYLIB_ENUM_TO_STRING(0xA7),
             SKYLIB_ENUM_TO_STRING(0xA8),
-            SKYLIB_ENUM_TO_STRING(INTERACTION),
+            SKYLIB_ENUM_TO_STRING(REFERENCE_INTERACTION),
             SKYLIB_ENUM_TO_STRING(0xAA),
             SKYLIB_ENUM_TO_STRING(0xAB),
             SKYLIB_ENUM_TO_STRING(0xAC),

@@ -16,6 +16,7 @@
 namespace doticu_skylib {
 
     class Actor_t;
+    class Actor_Base_t;
     class Bound_Object_t;
     class Name_c;
     class Leveled_Item_t;
@@ -155,10 +156,12 @@ namespace doticu_skylib {
 
     public:
         Bool_t                  Is_Actor();
+        Bool_t                  Is_Actor_Base();
         Bool_t                  Is_Component_Name();
         Bool_t                  Is_Leveled_Item();
 
         maybe<Actor_t*>         As_Actor();
+        maybe<Actor_Base_t*>    As_Actor_Base();
         maybe<Name_c*>          As_Component_Name();
         maybe<Leveled_Item_t*>  As_Leveled_Item();
 

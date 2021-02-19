@@ -131,11 +131,11 @@ namespace doticu_skylib {
     class Extra_Flags_t;
     class Extra_Followers_t;
     class Extra_Ghost_t;
-    class Extra_Interaction_t;
     class Extra_List_t;
     class Extra_Location_t;
     class Extra_Outfit_t;
     class Extra_Owner_t;
+    class Extra_Reference_Interaction_t;
     class Extra_Soul_Level_t;
     class Extra_Talk_To_Player_t;
     class Extra_Text_Display_t;

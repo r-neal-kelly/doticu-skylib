@@ -179,6 +179,16 @@ namespace doticu_skylib {
         return *invalid_reference_handle;
     }
 
+    Bool_t Reference_t::Is_Alive()
+    {
+        return !Is_Dead();
+    }
+
+    Bool_t Reference_t::Is_Dead()
+    {
+        return Get_Is_Dead(true);
+    }
+
     Bool_t Reference_t::Is_Deleted()
     {
         return (form_flags & Form_Flags_e::IS_DELETED) != 0;
@@ -209,6 +219,16 @@ namespace doticu_skylib {
         return !Is_Persistent();
     }
 
+    Bool_t Reference_t::Is_Attached()
+    {
+        return !!this->attached_state;
+    }
+
+    Bool_t Reference_t::Is_Detached()
+    {
+        return !Is_Attached();
+    }
+
     Bool_t Reference_t::Is_Quest_Item()
     {
         maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
@@ -217,6 +237,25 @@ namespace doticu_skylib {
             for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
                 Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
                 if (instance && instance->alias_base && instance->alias_base->Is_Quest_Item()) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest)
+    {
+        SKYLIB_ASSERT_SOME(quest);
+
+        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            Read_Locker_t locker(x_aliases->lock);
+            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
+                if (instance && instance->quest == quest()) {
                     return true;
                 }
             }
