@@ -30,7 +30,6 @@ namespace doticu_skylib {
     class Sex_e;
     class Vitality_e;
 
-    class Active_Magic_Effects_c;
     class Actor_Base_Data_c;
     class AI_c;
     class Attack_Damage_c;
@@ -52,6 +51,7 @@ namespace doticu_skylib {
     class Perks_c;
     class Race_c;
     class Skin_c;
+    class Spells_c;
 
     class Active_Magic_Effect_t;
     class Actor_t;

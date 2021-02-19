@@ -118,6 +118,9 @@ namespace doticu_skylib {
         maybe<Reference_t*>             Reference_Interactor_A();
         maybe<Reference_t*>             Reference_Interactor_B();
 
+        Bool_t                          Can_Talk_To_Player();
+        void                            Can_Talk_To_Player(Bool_t can_talk_to_player);
+
         Bool_t                          Is_Worn_Item();
         Bool_t                          Is_Worn();
         void                            Is_Worn(Bool_t is_worn);

@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/atomic_number.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
@@ -27,8 +28,8 @@ namespace doticu_skylib {
     public:
         using value_type = T;
 
-    public:
-        value_type value;
+    protected:
+        T value;
 
     public:
         Enum_t() :
@@ -36,40 +37,74 @@ namespace doticu_skylib {
         {
         }
 
-        Enum_t(value_type value) :
+        Enum_t(T value) :
             value(value)
         {
         }
 
+        Enum_t(const Enum_t& other) :
+            value(other.value)
+        {
+        }
+
+        Enum_t(Enum_t&& other) :
+            value(std::exchange(other.value, 0))
+        {
+        }
+
+        Enum_t& operator = (const Enum_t& other)
+        {
+            if (std::addressof(other) != this) {
+                this->value = other.value;
+            }
+            return *this;
+        }
+
+        Enum_t& operator = (Enum_t&& other)
+        {
+            if (std::addressof(other) != this) {
+                this->value = std::exchange(other.value, 0);
+            }
+            return *this;
+        }
+
     public:
-        operator value_type()
+        operator T() const
         {
-            return static_cast<value_type>(value);
+            return this->value;
         }
 
-        operator const value_type() const
+        T operator () () const
         {
-            return static_cast<const value_type>(value);
+            return this->value;
         }
 
-        Enum_t<value_type>& operator |=(const value_type other)
+        Enum_t operator ~() const
         {
-            value |= other;
+            return ~this->value;
+        }
+
+        Enum_t& operator |=(const T other)
+        {
+            this->value |= other;
             return *this;
         }
 
-        Enum_t<value_type>& operator &=(const value_type other)
+        Enum_t& operator &=(const T other)
         {
-            value &= other;
+            this->value &= other;
             return *this;
         }
 
-        Enum_t<value_type>& operator ^=(const value_type other)
+        Enum_t& operator ^=(const T other)
         {
-            value ^= other;
+            this->value ^= other;
             return *this;
         }
     };
+
+    template <typename T>
+    using Atomic_Enum_t = Atomic_Number_t<typename T::value_type>;
 
     class Binary_e : public Enum_t<s64>
     {

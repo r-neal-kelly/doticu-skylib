@@ -21,8 +21,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_owner);
 
         Extra_Data_t::Destroy<Extra_Owner_t>(x_owner);
-
-        x_owner->owner = none<Form_t*>();
     }
 
 }

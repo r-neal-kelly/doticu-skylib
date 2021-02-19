@@ -6,6 +6,7 @@
 #include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
+#include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/extra_factions_and_ranks.h"
 #include "doticu_skylib/extra_list.inl"
@@ -17,6 +18,7 @@
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
+#include "doticu_skylib/race.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -149,26 +151,6 @@ namespace doticu_skylib {
         return !Is_Vampire();
     }
 
-    Bool_t Actor_t::Is_Player_Teammate()
-    {
-        return (actor_flags_1 & Actor_Flags_1_e::IS_PLAYER_TEAMMATE) != 0;
-    }
-
-    Bool_t Actor_t::Isnt_Player_Teammate()
-    {
-        return !Is_Player_Teammate();
-    }
-
-    Bool_t Actor_t::Can_Do_Favors()
-    {
-        return (actor_flags_2 & Actor_Flags_2_e::CAN_DO_FAVORS) != 0;
-    }
-
-    Bool_t Actor_t::Cant_Do_Favors()
-    {
-        return !Can_Do_Favors();
-    }
-
     Bool_t Actor_t::Has_Mount()
     {
         return !!Mount();
@@ -193,26 +175,32 @@ namespace doticu_skylib {
 
     Sex_e Actor_t::Sex()
     {
-        if (base_form) {
-            return static_cast<maybe<Actor_Base_t*>>(base_form)->Sex();
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Sex();
         } else {
-            return Sex_e::NONE;
+            return Sex_e::_NONE_;
         }
     }
 
-    Race_t* Actor_t::Race()
+    maybe<Race_t*> Actor_t::Race()
     {
-        if (base_form) {
-            return static_cast<maybe<Actor_Base_t*>>(base_form)->Race();
+        if (this->race) {
+            return this->race;
         } else {
-            return nullptr;
+            maybe<Actor_Base_t*> actor_base = Actor_Base();
+            if (actor_base) {
+                return actor_base->Race();
+            } else {
+                return none<Race_t*>();
+            }
         }
     }
 
     maybe<Actor_Base_t*> Actor_t::Actor_Base()
     {
-        if (base_form) {
-            return base_form->As_Actor_Base();
+        if (this->base_form) {
+            return this->base_form->As_Actor_Base();
         } else {
             return none<Actor_Base_t*>();
         }
@@ -396,6 +384,80 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Actor_t::Is_Player_Teammate()
+    {
+        return (actor_flags_1 & Actor_Flags_1_e::IS_PLAYER_TEAMMATE) != 0;
+    }
+
+    void Actor_t::Is_Player_Teammate(Bool_t value)
+    {
+        if (value) {
+            if (!Is_Player_Teammate()) {
+                this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                Player_t::Self()->Increment_Teammate_Count();
+            }
+        } else {
+            if (Is_Player_Teammate()) {
+                this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                Player_t::Self()->Decrement_Teammate_Count();
+            }
+        }
+    }
+
+    Bool_t Actor_t::Can_Do_Favors()
+    {
+        return (actor_flags_2 & Actor_Flags_2_e::CAN_DO_FAVORS) != 0;
+    }
+
+    void Actor_t::Can_Do_Favors(Bool_t value)
+    {
+        if (value) {
+            this->actor_flags_2 |= Actor_Flags_2_e::CAN_DO_FAVORS;
+        } else {
+            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
+        }
+    }
+
+    Bool_t Actor_t::Can_Talk_To_Player()
+    {
+        if (this->x_list.Can_Talk_To_Player()) {
+            return true;
+        } else {
+            maybe<Race_t*> race = Race();
+            if (race) {
+                return race->Can_Talk_To_Player();
+            } else {
+                return false;
+            }
+        }
+    }
+
+    void Actor_t::Can_Talk_To_Player(Bool_t value)
+    {
+        if (Can_Talk_To_Player() != value) {
+            this->x_list.Can_Talk_To_Player(value);
+        }
+    }
+
+    Bool_t Actor_t::Has_AI()
+    {
+        return (this->actor_flags_1 & Actor_Flags_1_e::DO_PROCESS_AI) != 0;
+    }
+
+    void Actor_t::Has_AI(Bool_t value)
+    {
+        if (value) {
+            this->actor_flags_1 |= Actor_Flags_1_e::DO_PROCESS_AI;
+        } else {
+            this->actor_flags_1 &= ~Actor_Flags_1_e::DO_PROCESS_AI;
+        }
+    }
+
+    void Actor_t::Reset_AI()
+    {
+        Evaluate_Package(true, true);
+    }
+
     void Actor_t::Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai)
     {
         static auto evaluate_package = reinterpret_cast
@@ -403,30 +465,6 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::EVALUATE_PACKAGE);
 
         return evaluate_package(this, do_immediately, do_reset_ai);
-    }
-
-    void Actor_t::Join_Player_Team(Bool_t do_allow_favors)
-    {
-        if (Isnt_Player_Teammate()) {
-            this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
-            Player_t::Self()->Increment_Teammate_Count();
-        }
-
-        if (do_allow_favors) {
-            this->actor_flags_2 |= Actor_Flags_2_e::CAN_DO_FAVORS;
-        } else {
-            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
-        }
-    }
-
-    void Actor_t::Leave_Player_Team()
-    {
-        if (Is_Player_Teammate()) {
-            this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
-            Player_t::Self()->Decrement_Teammate_Count();
-
-            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
-        }
     }
 
     void Actor_t::Queue_NI_Node_Update(Bool_t do_update_weight)

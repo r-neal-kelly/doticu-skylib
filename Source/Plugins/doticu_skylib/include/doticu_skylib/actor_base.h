@@ -8,7 +8,6 @@
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/animated_object.h"
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/component_active_effects.h"
 #include "doticu_skylib/component_actor_base_data.h"
 #include "doticu_skylib/component_ai.h"
 #include "doticu_skylib/component_attack_data.h"
@@ -20,12 +19,13 @@
 #include "doticu_skylib/component_perks.h"
 #include "doticu_skylib/component_race.h"
 #include "doticu_skylib/component_skin.h"
+#include "doticu_skylib/component_spells.h"
+#include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/enum_sound_level.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/relation.h"
-#include "doticu_skylib/enum_script_type.h"
-#include "doticu_skylib/sex.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"
 
@@ -42,7 +42,7 @@ namespace doticu_skylib {
         public Animated_Object_t,
         public Actor_Base_Data_c,
         public Container_c,
-        public Active_Magic_Effects_c,
+        public Spells_c,
         public AI_c,
         public Name_c,
         public Actor_Values_t,

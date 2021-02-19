@@ -2,7 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/sex.h"
+#include "doticu_skylib/enum_sex.h"
 
 namespace doticu_skylib {
 

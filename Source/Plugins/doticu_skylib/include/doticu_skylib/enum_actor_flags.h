@@ -14,11 +14,13 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
-            PROCESS_AI          = static_cast<value_type>(1 << 1),
-            RESET_AI            = static_cast<value_type>(1 << 17),
+            DO_PROCESS_AI       = static_cast<value_type>(1 << 1),
+            DO_RESET_AI         = static_cast<value_type>(1 << 17),
             IS_PLAYER_TEAMMATE  = static_cast<value_type>(1 << 26),
             IS_PARALYZED        = static_cast<value_type>(1 << 31),
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

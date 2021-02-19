@@ -25,9 +25,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_leveled_item);
 
         Extra_Data_t::Destroy<Extra_Leveled_Item_t>(x_leveled_item);
-
-        x_leveled_item->leveled_item_form_id = none<Form_ID_t>();
-        x_leveled_item->pad_14 = 0;
     }
 
 }

@@ -28,13 +28,17 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Talk_To_Player_t*>    Create(Bool_t can_talk_to_player);
+        static void                             Destroy(some<Extra_Talk_To_Player_t*> x_talk_to_player);
+
+    public:
         virtual ~Extra_Talk_To_Player_t(); // 0
 
     public:
-        Bool_t  can_talk;   // 10
-        u8      pad_11;     // 11
-        u16     pad_12;     // 12
-        u32     pad_14;     // 14
+        Bool_t  can_talk_to_player; // 10
+        u8      pad_11;             // 11
+        u16     pad_12;             // 12
+        u32     pad_14;             // 14
     };
     STATIC_ASSERT(sizeof(Extra_Talk_To_Player_t) == 0x18);
 

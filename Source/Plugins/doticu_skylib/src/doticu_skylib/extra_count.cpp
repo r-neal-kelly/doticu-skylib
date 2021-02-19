@@ -18,6 +18,7 @@ namespace doticu_skylib {
     void Extra_Count_t::Destroy(some<Extra_Count_t*> x_count)
     {
         SKYLIB_ASSERT_SOME(x_count);
+
         Extra_Data_t::Destroy<Extra_Count_t>(x_count);
     }
 

@@ -10,7 +10,7 @@
 
 namespace doticu_skylib {
 
-    class Active_Magic_Effect_t
+    class Active_Magic_Effect_t // ActiveEffect
     {
     public:
         enum

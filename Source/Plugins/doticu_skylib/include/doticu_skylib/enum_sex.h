@@ -4,22 +4,29 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
 
-    class Sex_e : public Enum_t<Int_t>
+    class Sex_e :
+        public Enum_t<u32>
     {
     public:
-        enum : Int_t
+        enum : value_type
         {
-            NONE    = -1,
+            _NONE_  = static_cast<value_type>(-1),
+
             MALE    = 0,
             FEMALE  = 1,
+
+            _TOTAL_,
         };
+
+    public:
         using Enum_t::Enum_t;
 
+    public:
         static const char* To_String(Sex_e sex_e);
     };
 

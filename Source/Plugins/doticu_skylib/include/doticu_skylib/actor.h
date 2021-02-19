@@ -9,11 +9,13 @@
 #include "doticu_skylib/actor_value_modifiers.h"
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/actor_values_data.h"
+#include "doticu_skylib/atomic_number.h"
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum_actor_critical_stage.h"
 #include "doticu_skylib/enum_actor_flags.h"
 #include "doticu_skylib/enum_magic_slot.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/magic_target.h"
@@ -21,7 +23,6 @@
 #include "doticu_skylib/ni_point.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_handle.h"
-#include "doticu_skylib/sex.h"
 
 namespace doticu_skylib {
 
@@ -233,7 +234,7 @@ namespace doticu_skylib {
         virtual void    _127(void);                                     // 127
 
     public:
-        Actor_Flags_1_e                     actor_flags_1;                              // 0E0
+        Atomic_Enum_t<Actor_Flags_1_e>      actor_flags_1;                              // 0E0
         Float_t                             update_target_timer;                        // 0E4
         Actor_Critical_Stage_e              actor_critical_stage;                       // 0E8
         u32                                 pad_0EC;                                    // 0EC
@@ -272,7 +273,7 @@ namespace doticu_skylib {
         u32                                 pad_1EC;                                    // 1EC
         maybe<Race_t*>                      race;                                       // 1F0
         Float_t                             equipped_weight;                            // 1F8
-        Actor_Flags_2_e                     actor_flags_2;                              // 1FC
+        Atomic_Enum_t<Actor_Flags_2_e>      actor_flags_2;                              // 1FC
         Actor_Values_Data_t                 actor_values_data;                          // 200
         maybe<Dialogue_Branch_t*>           exclusive_dialogue_branch;                  // 220
         Actor_Value_Modifiers_t             health_modifiers;                           // 228
@@ -298,10 +299,6 @@ namespace doticu_skylib {
         Bool_t                                      Is_Generic();
         Bool_t                                      Is_Vampire();
         Bool_t                                      Isnt_Vampire();
-        Bool_t                                      Is_Player_Teammate();
-        Bool_t                                      Isnt_Player_Teammate();
-        Bool_t                                      Can_Do_Favors();
-        Bool_t                                      Cant_Do_Favors();
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();
 
@@ -309,7 +306,7 @@ namespace doticu_skylib {
         Bool_t                                      Is_Potential_Thief_Of(some<Reference_t*> reference);
 
         Sex_e                                       Sex();
-        Race_t*                                     Race();
+        maybe<Race_t*>                              Race();
         maybe<Actor_Base_t*>                        Actor_Base();
         Actor_Base_t*                               Highest_Static_Actor_Base();
         Vector_t<Actor_Base_t*>                     Actor_Bases();
@@ -326,9 +323,20 @@ namespace doticu_skylib {
         const char*                                 Base_Name();
         String_t                                    Any_Name();
 
+        Bool_t                                      Is_Player_Teammate();
+        void                                        Is_Player_Teammate(Bool_t value);
+
+        Bool_t                                      Can_Do_Favors();
+        void                                        Can_Do_Favors(Bool_t value);
+
+        Bool_t                                      Can_Talk_To_Player();
+        void                                        Can_Talk_To_Player(Bool_t value);
+
+        Bool_t                                      Has_AI();
+        void                                        Has_AI(Bool_t value);
+        void                                        Reset_AI();
+
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
-        void                                        Join_Player_Team(Bool_t do_allow_favors);
-        void                                        Leave_Player_Team();
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
 
     public:

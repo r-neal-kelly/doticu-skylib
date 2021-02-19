@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/component_actor_base_data.h"
 
 namespace doticu_skylib {

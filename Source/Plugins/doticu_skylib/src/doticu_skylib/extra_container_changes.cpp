@@ -16,6 +16,7 @@ namespace doticu_skylib {
     void Extra_Container_Changes_t::Destroy(some<Extra_Container_Changes_t*> x_container_changes)
     {
         SKYLIB_ASSERT_SOME(x_container_changes);
+
         Extra_Data_t::Destroy<Extra_Container_Changes_t>(x_container_changes);
     }
 

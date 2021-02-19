@@ -11,6 +11,7 @@
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_reference_interaction.h"
+#include "doticu_skylib/extra_talk_to_player.h"
 #include "doticu_skylib/extra_worn.h"
 #include "doticu_skylib/extra_worn_left.h"
 #include "doticu_skylib/reference_handle.h"
@@ -494,6 +495,26 @@ namespace doticu_skylib {
             return x_reference_interaction->Interactor_B();
         } else {
             return none<Reference_t*>();
+        }
+    }
+
+    Bool_t Extra_List_t::Can_Talk_To_Player()
+    {
+        maybe<Extra_Talk_To_Player_t*> x_talk_to_player = Get<Extra_Talk_To_Player_t>();
+        if (x_talk_to_player) {
+            return x_talk_to_player->can_talk_to_player;
+        } else {
+            return false;
+        }
+    }
+
+    void Extra_List_t::Can_Talk_To_Player(Bool_t can_talk_to_player)
+    {
+        maybe<Extra_Talk_To_Player_t*> x_talk_to_player = Get<Extra_Talk_To_Player_t>();
+        if (x_talk_to_player) {
+            x_talk_to_player->can_talk_to_player = can_talk_to_player;
+        } else {
+            Add<Extra_Talk_To_Player_t>(Extra_Talk_To_Player_t::Create(can_talk_to_player));
         }
     }
 

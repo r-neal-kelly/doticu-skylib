@@ -77,4 +77,9 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Race_t::Can_Talk_To_Player()
+    {
+        return (this->race_flags_1 & Race_Flags_1_e::CAN_TALK_TO_PLAYER) != 0;
+    }
+
 }

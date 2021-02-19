@@ -30,9 +30,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_reference_handle);
 
         Extra_Data_t::Destroy<Extra_Reference_Handle_t>(x_reference_handle);
-
-        x_reference_handle->reference_handle = 0;
-        x_reference_handle->pad_14 = 0;
     }
 
     maybe<Reference_t*> Extra_Reference_Handle_t::Reference()

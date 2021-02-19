@@ -9,7 +9,8 @@
 
 namespace doticu_skylib {
 
-    class Vitality_e : public Enum_t<s8>
+    class Vitality_e :
+        public Enum_t<s8>
     {
     public:
         enum : value_type

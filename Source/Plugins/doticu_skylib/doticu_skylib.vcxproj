@@ -59,15 +59,20 @@
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
+    <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
+    <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
+    <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
+    <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
@@ -183,7 +188,7 @@
     <ClInclude Include="include\doticu_skylib\enum_dialogue_branch_type.h" />
     <ClInclude Include="include\doticu_skylib\cell.h" />
     <ClInclude Include="include\doticu_skylib\character.h" />
-    <ClInclude Include="include\doticu_skylib\component_active_effects.h" />
+    <ClInclude Include="include\doticu_skylib\component_spells.h" />
     <ClInclude Include="include\doticu_skylib\component_actor_base_data.h" />
     <ClInclude Include="include\doticu_skylib\component_ai.h" />
     <ClInclude Include="include\doticu_skylib\component_attack_data.h" />
@@ -364,7 +369,7 @@
     <ClInclude Include="include\doticu_skylib\reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\relation.h" />
     <ClInclude Include="include\doticu_skylib\script.h" />
-    <ClInclude Include="include\doticu_skylib\sex.h" />
+    <ClInclude Include="include\doticu_skylib\enum_sex.h" />
     <ClInclude Include="include\doticu_skylib\skylib.h" />
     <ClInclude Include="include\doticu_skylib\ui.h" />
     <ClInclude Include="include\doticu_skylib\unique.h" />
@@ -432,6 +437,7 @@
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_reference_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_reference_interaction.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_talk_to_player.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_text_display.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_worn.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_worn_left.cpp" />
@@ -482,7 +488,7 @@
     <ClCompile Include="src\doticu_skylib\reference_count.cpp" />
     <ClCompile Include="src\doticu_skylib\relation.cpp" />
     <ClCompile Include="src\doticu_skylib\script.cpp" />
-    <ClCompile Include="src\doticu_skylib\sex.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_sex.cpp" />
     <ClCompile Include="src\doticu_skylib\ui.cpp" />
     <ClCompile Include="src\doticu_skylib\cstring.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_array.cpp" />
@@ -503,6 +509,7 @@
     <ClCompile Include="src\doticu_skylib\extra_list.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="include\doticu_skylib\atomic_number.inl" />
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />

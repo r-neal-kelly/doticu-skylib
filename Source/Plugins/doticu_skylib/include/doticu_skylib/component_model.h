@@ -11,11 +11,13 @@
 
 namespace doticu_skylib {
 
-    class Model_c : public Form_Data_c // TESModel
+    class Model_c :         // TESModel
+        public Form_Data_c  // 00
     {
     public:
         virtual ~Model_c(); // 0
 
+    public:
         String_t    model;              // 08
         void*       textures;           // 10
         void*       model_addons;       // 18
