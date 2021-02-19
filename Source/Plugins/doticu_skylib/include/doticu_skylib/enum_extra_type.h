@@ -39,7 +39,7 @@ namespace doticu_skylib {
             // 0x14 0x0152C200
             CONTAINER_CHANGES   = 0x15,
             WORN                = 0x16,
-            WORN_LEFT           = 0x17, // 
+            WORN_LEFT           = 0x17,
             // 0x18 0x0152C140
             // 0x19 0x0152F320
             // 0x1A
@@ -171,8 +171,8 @@ namespace doticu_skylib {
             // 0x98 0x0152CB00
             TEXT_DISPLAY        = 0x99,
             // 0x9A 0x0152CB20
-            // 0x9B
-            SOUL_LEVEL          = 0x9C,
+            ENCHANTMENT         = 0x9B, // 
+            SOUL_LEVEL          = 0x9C, // 
             // 0x9D 0x0152CB60
             // 0x9E
             UNIQUE_ID           = 0x9F, // 0x0152CBA0

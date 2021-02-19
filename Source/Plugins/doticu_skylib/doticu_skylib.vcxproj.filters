@@ -1047,6 +1047,9 @@
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\console_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1338,6 +1341,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_worn_left.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\console_log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

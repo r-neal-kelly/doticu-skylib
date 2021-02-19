@@ -26,7 +26,7 @@ namespace doticu_skylib {
     class Region_t;
     class Worldspace_t;
 
-    class Game_t
+    class Game_t // TESDataHandler
     {
     public:
         class Offset_e : public Enum_t<Word_t>

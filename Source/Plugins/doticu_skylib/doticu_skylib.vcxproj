@@ -58,6 +58,7 @@
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
+    <ClInclude Include="include\doticu_skylib\console_log.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
@@ -405,6 +406,7 @@
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_container.cpp" />
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
+    <ClCompile Include="src\doticu_skylib\console_log.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry_count.cpp" />

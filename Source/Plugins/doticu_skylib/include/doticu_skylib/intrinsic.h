@@ -22,6 +22,9 @@
 #define SKYLIB_LOG(MESSAGE_, ...)\
     _MESSAGE(std::string(MESSAGE_).c_str(), __VA_ARGS__)
 
+#define SKYLIB_GAME_LOG(MESSAGE_, ...)\
+    doticu_skylib::Console_Log_t::Self()->Print(MESSAGE_, __VA_ARGS__);
+
 #if 1
     #define SKYLIB_ASSERT(IS_TRUE_, ...)                            \
     (                                                               \
