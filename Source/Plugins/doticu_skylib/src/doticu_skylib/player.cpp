@@ -58,6 +58,21 @@ namespace doticu_skylib {
         }
     }
 
+    u32 Player_t::Teammate_Count()
+    {
+        return teammate_count.Atomic_Count();
+    }
+
+    u32 Player_t::Increment_Teammate_Count()
+    {
+        return teammate_count.Increment_Atomic();
+    }
+
+    u32 Player_t::Decrement_Teammate_Count()
+    {
+        return teammate_count.Decrement_Atomic();
+    }
+
     void Player_t::Log_Objectives(std::string indent)
     {
         SKYLIB_LOG(indent + "Player_t::Log_Objectives");

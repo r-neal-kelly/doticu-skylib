@@ -4,11 +4,11 @@
 
 #pragma once
 
+#include "doticu_skylib/atomic_count.h"
+#include "doticu_skylib/character.h"
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
-
-#include "doticu_skylib/character.h"
 #include "doticu_skylib/quest_objective_state.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unknown.h"
@@ -113,11 +113,17 @@ namespace doticu_skylib {
         Hash_Map_t<void*, void*>                unk_598;                // 598
         Hash_Map_t<void*, void*>                unk_5C8;                // 5C8
         List_t<Reference_Handle_t>              dropped_references;     // 5F8
-        Byte_t                                  unk_data[0x5D8];        // 608
+        Byte_t                                  unk_data_1[0x400];      // 608
+        Atomic_Count_t                          teammate_count;         // A08
+        Byte_t                                  unk_data_2[0x1D4];      // A0C
 
     public:
         maybe<Havok_Player_t*>              Havok_Player();
         maybe<Havok_Player_Controller_t*>   Havok_Player_Controller();
+
+        u32                                 Teammate_Count();
+        u32                                 Increment_Teammate_Count();
+        u32                                 Decrement_Teammate_Count();
 
     public:
         void Log_Objectives(std::string indent = "");

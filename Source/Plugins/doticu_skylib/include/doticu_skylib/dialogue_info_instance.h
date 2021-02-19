@@ -18,10 +18,12 @@ namespace doticu_skylib {
     class Quest_t;
     class Reference_t;
 
-    class Dialogue_Info_Instance_t : public Atomic_Count_t // DialogueItem
+    class Dialogue_Info_Instance_t :    // DialogueItem
+        public Atomic_Count_t           // 00
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
             enum : value_type

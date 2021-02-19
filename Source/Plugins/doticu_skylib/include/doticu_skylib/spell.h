@@ -44,7 +44,7 @@ namespace doticu_skylib {
         Magic_Delivery_e    magic_delivery;     // D4
         Float_t             cast_duration;      // D8
         Float_t             range;              // DC
-        Perk_t*             cast_perk;          // E0
+        maybe<Perk_t*>      cast_perk;          // E0
     };
     STATIC_ASSERT(sizeof(Spell_t) == 0xE8);
 

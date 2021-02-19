@@ -8,15 +8,16 @@
 
 namespace doticu_skylib {
 
-    class Actor_Value_Modifier_e :
+    class Magic_Slot_e :
         public Enum_t<u32>
     {
     public:
         enum : value_type
         {
-            PERMANENT   = 0,
-            TEMPORARY   = 1,
-            DAMAGE      = 2,
+            LEFT_HAND       = 0,
+            RIGHT_HAND      = 1,
+            UNK_2           = 2,
+            POWER_OR_SHOUT  = 3,
 
             _TOTAL_,
         };

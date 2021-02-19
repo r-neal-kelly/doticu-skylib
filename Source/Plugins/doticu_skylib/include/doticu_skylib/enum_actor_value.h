@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Actor_Value_e : public Enum_t<u32>
+    class Actor_Value_e :
+        public Enum_t<u32>
     {
     public:
         enum : value_type

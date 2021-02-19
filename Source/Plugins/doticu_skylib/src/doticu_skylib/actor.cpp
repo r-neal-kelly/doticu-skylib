@@ -159,6 +159,16 @@ namespace doticu_skylib {
         return !Is_Player_Teammate();
     }
 
+    Bool_t Actor_t::Can_Do_Favors()
+    {
+        return (actor_flags_2 & Actor_Flags_2_e::CAN_DO_FAVORS) != 0;
+    }
+
+    Bool_t Actor_t::Cant_Do_Favors()
+    {
+        return !Can_Do_Favors();
+    }
+
     Bool_t Actor_t::Has_Mount()
     {
         return !!Mount();
@@ -384,6 +394,48 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    void Actor_t::Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai)
+    {
+        static auto evaluate_package = reinterpret_cast
+            <void(*)(Actor_t*, Bool_t, Bool_t)>
+            (Game_t::Base_Address() + Offset_e::EVALUATE_PACKAGE);
+
+        return evaluate_package(this, do_immediately, do_reset_ai);
+    }
+
+    void Actor_t::Join_Player_Team(Bool_t do_allow_favors)
+    {
+        if (Isnt_Player_Teammate()) {
+            this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+            Player_t::Self()->Increment_Teammate_Count();
+        }
+
+        if (do_allow_favors) {
+            this->actor_flags_2 |= Actor_Flags_2_e::CAN_DO_FAVORS;
+        } else {
+            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
+        }
+    }
+
+    void Actor_t::Leave_Player_Team()
+    {
+        if (Is_Player_Teammate()) {
+            this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+            Player_t::Self()->Decrement_Teammate_Count();
+
+            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
+        }
+    }
+
+    void Actor_t::Queue_NI_Node_Update(Bool_t do_update_weight)
+    {
+        static auto queue_ni_node_update = reinterpret_cast
+            <void(*)(Actor_t*, Bool_t)>
+            (Game_t::Base_Address() + Offset_e::QUEUE_NI_NODE_UPDATE);
+
+        return queue_ni_node_update(this, do_update_weight);
     }
 
     void Actor_t::Log_Factions_And_Ranks(std::string indent)

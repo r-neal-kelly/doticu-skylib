@@ -4,39 +4,49 @@
 
 #pragma once
 
+#include "doticu_skylib/actor_handle.h"
+#include "doticu_skylib/actor_state.h"
+#include "doticu_skylib/actor_value_modifiers.h"
+#include "doticu_skylib/actor_values.h"
+#include "doticu_skylib/actor_values_data.h"
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/maybe.h"
-
 #include "doticu_skylib/enum_actor_critical_stage.h"
 #include "doticu_skylib/enum_actor_flags.h"
-
-#include "doticu_skylib/actor_state.h"
-#include "doticu_skylib/actor_values.h"
-#include "doticu_skylib/faction_and_rank.h"
-#include "doticu_skylib/magic_target.h"
-#include "doticu_skylib/reference.h"
+#include "doticu_skylib/enum_magic_slot.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/faction_and_rank.h"
+#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/magic_target.h"
+#include "doticu_skylib/maybe.h"
+#include "doticu_skylib/ni_point.h"
+#include "doticu_skylib/reference.h"
+#include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/sex.h"
 
 namespace doticu_skylib {
 
     class Actor_AI_t;
     class Actor_Base_t;
+    class Actor_Mover_t;
+    class Dialogue_Branch_t;
     class Faction_t;
     class Havok_Actor_Controller_t;
     class Havok_Actor_Rigid_Body_Controller_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
+    class Magic_Base_t;
+    class Movement_Actor_Controller_t;
+    class Race_t;
+    class Spell_t;
 
-    class Actor_t :
-        public Reference_t,
-        public Magic_Target_t,
-        public Actor_Values_t,
-        public Actor_State_t,
-        public Event_Sink_t<void**>,
-        public Event_Sink_t<void***>,
-        public Animation_Updater_i
+    class Actor_t :                     // Actor
+        public Reference_t,             // 000
+        public Magic_Target_t,          // 098
+        public Actor_Values_t,          // 0B0
+        public Actor_State_t,           // 0B8
+        public Event_Sink_t<void**>,    // 0C8
+        public Event_Sink_t<void***>,   // 0D0
+        public Animation_Updater_i      // 0D8
     {
     public:
         enum
@@ -44,7 +54,8 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ACTOR,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
             enum : value_type
@@ -59,7 +70,8 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        class Form_Flags_e : public Enum_t<u32>
+        class Form_Flags_e :
+            public Enum_t<u32>
         {
         public:
             enum : value_type
@@ -221,12 +233,65 @@ namespace doticu_skylib {
         virtual void    _127(void);                                     // 127
 
     public:
-        Actor_Flags_1_e         actor_flags_1;          // 0E0
-        Float_t                 update_target_timer;    // 0E4
-        Actor_Critical_Stage_e  actor_critical_stage;   // 0E8
-        u32                     pad_0EC;                // 0EC
-        maybe<Actor_AI_t*>      actor_ai;               // 0F0
-        Byte_t                  unk_data[0x1B8];        // 0F8
+        Actor_Flags_1_e                     actor_flags_1;                              // 0E0
+        Float_t                             update_target_timer;                        // 0E4
+        Actor_Critical_Stage_e              actor_critical_stage;                       // 0E8
+        u32                                 pad_0EC;                                    // 0EC
+        maybe<Actor_AI_t*>                  actor_ai;                                   // 0F0
+        Reference_Handle_t                  current_dialogue_target;                    // 0F8 (connected to Dialogue_Info_Instance_t?)
+        Actor_Handle_t                      current_combat_target;                      // 0FC
+        Actor_Handle_t                      current_killer;                             // 100
+        Float_t                             check_dead_body_timer;                      // 104
+        Float_t                             voice_timer;                                // 108
+        Float_t                             under_water_timer;                          // 10C
+        s32                                 thief_crime_stamp;                          // 110
+        s32                                 action_value;                               // 114
+        Float_t                             action_timer;                               // 118
+        u32                                 unk_11C;                                    // 11C
+        NI_Point_3_t                        editor_location_position;                   // 120
+        Float_t                             editor_location_rotation;                   // 12C
+        maybe<Form_t*>                      editor_location_form;                       // 130
+        maybe<Location_t*>                  editor_location_location;                   // 138
+        maybe<Actor_Mover_t*>               actor_mover;                                // 140
+        maybe<Movement_Actor_Controller_t*> actor_movement_controller;                  // 148
+        void*                               unk_150;                                    // 150
+        void*                               actor_combat_controller;                    // 158
+        maybe<Faction_t*>                   vendor_faction;                             // 160
+        Float_t                             vendor_faction_timer;                       // 168
+        u32                                 unk_16C;                                    // 16C
+        u32                                 unk_170;                                    // 170
+        u32                                 unk_174;                                    // 174
+        u32                                 unk_178;                                    // 178
+        u32                                 unk_17C;                                    // 17C
+        u64                                 unk_180;                                    // 180
+        Array_t<maybe<Spell_t*>>            added_spells;                               // 188
+        void*                               actor_magic_casters[Magic_Slot_e::_TOTAL_]; // 1A0
+        maybe<Magic_Base_t*>                equipped_spells[Magic_Slot_e::_TOTAL_];     // 1C0
+        maybe<Form_t*>                      equipped_power;                             // 1E0
+        u32                                 unk_1E8;                                    // 1E8
+        u32                                 pad_1EC;                                    // 1EC
+        maybe<Race_t*>                      race;                                       // 1F0
+        Float_t                             equipped_weight;                            // 1F8
+        Actor_Flags_2_e                     actor_flags_2;                              // 1FC
+        Actor_Values_Data_t                 actor_values_data;                          // 200
+        maybe<Dialogue_Branch_t*>           exclusive_dialogue_branch;                  // 220
+        Actor_Value_Modifiers_t             health_modifiers;                           // 228
+        Actor_Value_Modifiers_t             magicka_modifiers;                          // 234
+        Actor_Value_Modifiers_t             stamina_modifiers;                          // 240
+        Actor_Value_Modifiers_t             voice_points_modifiers;                     // 24C
+        Float_t                             last_update;                                // 258
+        u32                                 last_seen_time;                             // 25C
+        void*                               biped_animation;                            // 260
+        Float_t                             armor_rating;                               // 268
+        Float_t                             armor_base_faction_sum;                     // 26C
+        s8                                  unk_270;                                    // 270
+        u8                                  unk_271;                                    // 271
+        u8                                  unk_272;                                    // 272
+        u8                                  unk_273;                                    // 273
+        u32                                 unk_274;                                    // 274
+        u64                                 unk_278;                                    // 278
+        u64                                 unk_280;                                    // 280
+        CRITICAL_SECTION                    havok_critical_section;                     // 288
 
     public:
         Bool_t                                      Is_Unique();
@@ -235,6 +300,8 @@ namespace doticu_skylib {
         Bool_t                                      Isnt_Vampire();
         Bool_t                                      Is_Player_Teammate();
         Bool_t                                      Isnt_Player_Teammate();
+        Bool_t                                      Can_Do_Favors();
+        Bool_t                                      Cant_Do_Favors();
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();
 
@@ -258,6 +325,11 @@ namespace doticu_skylib {
 
         const char*                                 Base_Name();
         String_t                                    Any_Name();
+
+        void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
+        void                                        Join_Player_Team(Bool_t do_allow_favors);
+        void                                        Leave_Player_Team();
+        void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
 
     public:
         void Log_Factions_And_Ranks(std::string indent = "");

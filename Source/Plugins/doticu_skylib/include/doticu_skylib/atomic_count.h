@@ -8,6 +8,8 @@
 
 namespace doticu_skylib {
 
+    // make an Atomic_Number_t<T> that this can inherit from, so we can do flag ops and other ops all over the place correctly
+
     class Atomic_Count_t // BSIntrusiveRefCounted
     {
     public:

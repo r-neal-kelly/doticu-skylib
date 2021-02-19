@@ -57,10 +57,13 @@
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
+    <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
+    <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />

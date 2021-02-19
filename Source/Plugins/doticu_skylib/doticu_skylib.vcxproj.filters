@@ -1056,6 +1056,15 @@
     <ClInclude Include="include\doticu_skylib\extra_reference_interaction.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_slot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\actor_values_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
