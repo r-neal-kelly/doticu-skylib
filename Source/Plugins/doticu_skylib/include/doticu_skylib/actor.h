@@ -77,7 +77,7 @@ namespace doticu_skylib {
         public:
             enum : value_type
             {
-                IGNORES_FRIENDLY_HITS = static_cast<value_type>(1 << 20),
+                IGNORES_ALLY_HITS = static_cast<value_type>(1 << 20),
             };
             using Enum_t::Enum_t;
         };
@@ -343,8 +343,8 @@ namespace doticu_skylib {
         Bool_t                                      Can_Talk_To_Player();
         void                                        Can_Talk_To_Player(Bool_t value);
 
-        Bool_t                                      Ignores_Friendly_Hits();
-        void                                        Ignores_Friendly_Hits(Bool_t value);
+        Bool_t                                      Ignores_Ally_Hits();
+        void                                        Ignores_Ally_Hits(Bool_t value);
 
         Bool_t                                      Is_Hidden_From_Stealth_Eye();
         void                                        Is_Hidden_From_Stealth_Eye(Bool_t value);

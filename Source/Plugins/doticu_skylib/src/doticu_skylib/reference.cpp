@@ -701,67 +701,47 @@ namespace doticu_skylib {
 
     void Reference_t::Select_In_Console()
     {
-        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
-
         if (Is_Valid()) {
-            Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            if (script) {
-                script->Command((std::string("prid ") + Form_ID_String().data).c_str());
-                script->Execute(this);
-                script->Deallocate_Command();
-                Game_t::Deallocate<Script_t>(script);
-            }
+            some<Script_t*> script = Script_t::Create();
+            script->Command((std::string("prid ") + Form_ID_String().data).c_str());
+            script->Execute(this);
+            Script_t::Destroy(script);
         }
     }
 
     void Reference_t::Enable()
     {
-        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
-
         if (Is_Valid()) {
-            Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            if (script) {
-                script->Command("Enable");
-                script->Execute(this);
-                script->Deallocate_Command();
-                Game_t::Deallocate<Script_t>(script);
-            }
+            some<Script_t*> script = Script_t::Create();
+            script->Command("Enable");
+            script->Execute(this);
+            Script_t::Destroy(script);
         }
     }
 
     void Reference_t::Disable()
     {
-        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
-
         if (Is_Valid()) {
-            Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            if (script) {
-                script->Command("Disable");
-                script->Execute(this);
-                script->Deallocate_Command();
-                Game_t::Deallocate<Script_t>(script);
-            }
+            some<Script_t*> script = Script_t::Create();
+            script->Command("Disable");
+            script->Execute(this);
+            Script_t::Destroy(script);
         }
     }
 
     void Reference_t::Mark_For_Delete(Bool_t do_disable)
     {
-        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
-
         if (Is_Valid()) {
-            Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            if (script) {
-                if (do_disable) {
-                    script->Command("Disable");
-                    script->Execute(this);
-                }
-                if (Is_Persistent()) {
-                    script->Command("MarkForDelete");
-                    script->Execute(this);
-                }
-                script->Deallocate_Command();
-                Game_t::Deallocate<Script_t>(script);
+            some<Script_t*> script = Script_t::Create();
+            if (do_disable) {
+                script->Command("Disable");
+                script->Execute(this);
             }
+            if (Is_Persistent()) {
+                script->Command("MarkForDelete");
+                script->Execute(this);
+            }
+            Script_t::Destroy(script);
         }
     }
 
@@ -769,17 +749,13 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(item);
 
-        Form_Factory_i* script_factory = Form_Factory_i::Form_Factory(Form_Type_e::SCRIPT);
         if (Is_Valid()) {
-            Script_t* script = static_cast<Script_t*>(script_factory->Create());
-            if (script) {
-                script->Command(
-                    (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta)).c_str()
-                );
-                script->Execute(this);
-                script->Deallocate_Command();
-                Game_t::Deallocate<Script_t>(script);
-            }
+            some<Script_t*> script = Script_t::Create();
+            script->Command(
+                (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta)).c_str()
+            );
+            script->Execute(this);
+            Script_t::Destroy(script);
         }
     }
 

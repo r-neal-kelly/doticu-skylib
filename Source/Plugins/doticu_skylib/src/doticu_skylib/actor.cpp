@@ -444,17 +444,17 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Actor_t::Ignores_Friendly_Hits()
+    Bool_t Actor_t::Ignores_Ally_Hits()
     {
-        return (this->form_flags & Form_Flags_e::IGNORES_FRIENDLY_HITS) != 0;
+        return (this->form_flags & Form_Flags_e::IGNORES_ALLY_HITS) != 0;
     }
 
-    void Actor_t::Ignores_Friendly_Hits(Bool_t value)
+    void Actor_t::Ignores_Ally_Hits(Bool_t value)
     {
         if (value) {
-            this->form_flags |= Form_Flags_e::IGNORES_FRIENDLY_HITS;
+            this->form_flags |= Form_Flags_e::IGNORES_ALLY_HITS;
         } else {
-            this->form_flags &= ~Form_Flags_e::IGNORES_FRIENDLY_HITS;
+            this->form_flags &= ~Form_Flags_e::IGNORES_ALLY_HITS;
         }
         Flag_Form_Change(Form_Change_Flags_e::FORM_FLAGS);
     }

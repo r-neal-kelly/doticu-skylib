@@ -14,10 +14,11 @@ namespace doticu_skylib {
     class Form_Factory_i
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum enum_type : Word_t
             {
                 IS_CREATED  = 0x01EC3CB3,
                 FACTORIES   = 0x01EC3CE0,
@@ -26,12 +27,11 @@ namespace doticu_skylib {
         };
 
     public:
-        static Form_Factory_i* Form_Factory(Form_Type_e form_type);
+        static some<Form_Factory_i*> Form_Factory(some<Form_Type_e> form_type);
 
     public:
-        virtual ~Form_Factory_i(); // 0
-
-        virtual Form_t* Create(); // 1
+        virtual         ~Form_Factory_i();  // 0
+        virtual Form_t* Create();           // 1
     };
 
 }

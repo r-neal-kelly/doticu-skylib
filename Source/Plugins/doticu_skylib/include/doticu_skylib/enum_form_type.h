@@ -15,7 +15,7 @@ namespace doticu_skylib {
         public Enum_Base_t<Raw_Form_Type_t>
     {
     public:
-        enum : Raw_Form_Type_t
+        enum enum_type : Raw_Form_Type_t
         {
             _NONE_                  = static_cast<Raw_Form_Type_t>(-1),
 

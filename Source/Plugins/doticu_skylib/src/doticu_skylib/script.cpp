@@ -3,22 +3,28 @@
 */
 
 #include "doticu_skylib/cstring.h"
-
-#include "doticu_skylib/game.h"
+#include "doticu_skylib/form_factory.h"
+#include "doticu_skylib/game.inl"
 #include "doticu_skylib/memory.h"
 #include "doticu_skylib/script.h"
 
 namespace doticu_skylib {
 
-    void Script_t::Command(some<const char*> command)
+    some<Script_t*> Script_t::Create()
     {
-        SKYLIB_ASSERT_SOME(command);
+        static some<Form_Factory_i*> script_factory = Form_Factory_i::Form_Factory(Form_Type_e(SCRIPT_TYPE));
+        SKYLIB_ASSERT_SOME(script_factory);
 
-        size_t length = CString_t::Length(command(), true);
-        if (length > 0) {
-            Allocate_Command(length);
-            memcpy(text, command(), length);
-        }
+        return static_cast<Script_t*>(script_factory->Create());
+    }
+
+    void Script_t::Destroy(some<Script_t*> script)
+    {
+        SKYLIB_ASSERT_SOME(script);
+
+        script->Deallocate_Command();
+        script->~Script_t();
+        Game_t::Deallocate<Script_t>(script);
     }
 
     void Script_t::Allocate_Command(size_t byte_count)
@@ -27,18 +33,38 @@ namespace doticu_skylib {
 
         maybe<Byte_t*> bytes = Memory_t::Self()->Allocate(byte_count);
         SKYLIB_ASSERT(bytes);
-        text = reinterpret_cast<char*>(bytes());
+        this->text = reinterpret_cast<char*>(bytes());
     }
 
     void Script_t::Deallocate_Command()
     {
-        if (text) {
-            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(text));
-            text = nullptr;
+        if (this->text) {
+            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(this->text()));
+            this->text = nullptr;
         }
     }
 
-    void Script_t::Execute(Reference_t* reference, Compiler_e compiler_e)
+    some<const char*> Script_t::Command()
+    {
+        if (this->text) {
+            return this->text();
+        } else {
+            return "";
+        }
+    }
+
+    void Script_t::Command(some<const char*> command)
+    {
+        SKYLIB_ASSERT_SOME(command);
+
+        size_t length = CString_t::Length(command(), true);
+        if (length > 0) {
+            Allocate_Command(length);
+            memcpy(this->text(), command(), length);
+        }
+    }
+
+    void Script_t::Execute(some<Reference_t*> reference, Compiler_e compiler_e)
     {
         class Compiler_t
         {
@@ -49,8 +75,10 @@ namespace doticu_skylib {
             <void(*)(Script_t*, Compiler_t*, Compiler_e::value_type, Reference_t*)>
             (Game_t::Base_Address() + Offset_e::EXECUTE);
 
+        SKYLIB_ASSERT_SOME(reference);
+
         Compiler_t compiler;
-        execute(this, &compiler, compiler_e, reference);
+        execute(this, &compiler, compiler_e, reference());
     }
 
 }
