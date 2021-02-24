@@ -87,9 +87,6 @@
     <ClInclude Include="include\doticu_skylib\global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\relation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\race.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1071,9 +1068,6 @@
     <ClInclude Include="include\doticu_skylib\form_factory.h">
       <Filter>Header Files\form</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\form_flags.h">
-      <Filter>Header Files\form</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\form_id.h">
       <Filter>Header Files\form</Filter>
     </ClInclude>
@@ -1102,6 +1096,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\atomic_number.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\actor_ai_cached_values.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\actor_ai_cached_value.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_form_flags.h">
+      <Filter>Header Files\form</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_relation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1167,9 +1176,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\global.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\relation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\race.cpp">
@@ -1407,6 +1413,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_talk_to_player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_ghost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\actor_ai_cached_values.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_relation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

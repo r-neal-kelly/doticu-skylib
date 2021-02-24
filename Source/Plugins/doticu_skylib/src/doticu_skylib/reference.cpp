@@ -221,7 +221,7 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Is_Attached()
     {
-        return !!this->attached_state;
+        return this->attached_state != none<Reference_Attached_State_t*>();
     }
 
     Bool_t Reference_t::Is_Detached()

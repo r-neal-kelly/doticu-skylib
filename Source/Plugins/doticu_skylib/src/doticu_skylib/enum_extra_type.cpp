@@ -229,7 +229,7 @@ namespace doticu_skylib {
             }
             return _NONE_;
         } else {
-            _NONE_;
+            return _NONE_;
         }
     }
 

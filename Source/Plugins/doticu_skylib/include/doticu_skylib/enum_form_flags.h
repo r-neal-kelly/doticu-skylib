@@ -8,10 +8,11 @@
 
 namespace doticu_skylib {
 
-    class Form_Flags_e : public Enum_t<u32>
+    class Form_Flags_e :
+        public Enum_t<u32>
     {
     public:
-        enum : u32
+        enum enum_type : value_type
         {
             IS_MASTER   = 1 << 0,
 
@@ -19,6 +20,16 @@ namespace doticu_skylib {
             IS_PLAYABLE = 1 << 2,
 
             IS_DELETED  = 1 << 5,
+        };
+        using Enum_t::Enum_t;
+    };
+
+    class Form_Flags_Extra_e :
+        public Enum_t<u16>
+    {
+    public:
+        enum enum_type : value_type
+        {
         };
         using Enum_t::Enum_t;
     };

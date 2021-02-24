@@ -20,12 +20,12 @@
 #include "doticu_skylib/component_race.h"
 #include "doticu_skylib/component_skin.h"
 #include "doticu_skylib/component_spells.h"
+#include "doticu_skylib/enum_relation.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/enum_sound_level.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/rarity.h"
-#include "doticu_skylib/relation.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"
 
@@ -61,7 +61,8 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ACTOR_BASE,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
             enum : value_type
@@ -71,7 +72,8 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        class Form_Change_Flags_e : public Enum_t<u32>
+        class Form_Change_Flags_e :
+            public Enum_t<u32>
         {
         public:
             enum : value_type
@@ -148,7 +150,8 @@ namespace doticu_skylib {
         Sex_e                           Sex();
         Rarity_e                        Rarity();
         Vitality_e                      Vitality();
-        Relation_e                      Relation(maybe<Actor_Base_t*> other);
+        some<Relation_e>                Relation(some<Actor_Base_t*> other);
+        void                            Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
         Race_t*                         Race();
         Vector_t<Actor_Base_t*>         Templates();
         void                            Templates(Vector_t<Actor_Base_t*>& results);

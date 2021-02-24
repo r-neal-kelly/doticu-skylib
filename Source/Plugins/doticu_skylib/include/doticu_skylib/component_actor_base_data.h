@@ -47,6 +47,7 @@ namespace doticu_skylib {
         Bool_t Is_Female();
         Bool_t Is_Unique();
         Bool_t Is_Generic();
+        Bool_t Is_Ghost();
         Bool_t Is_Mortal();
         Bool_t Is_Protected();
         Bool_t Is_Essential();

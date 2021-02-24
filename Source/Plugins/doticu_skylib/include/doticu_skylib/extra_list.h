@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/enum.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
@@ -16,6 +17,7 @@ namespace doticu_skylib {
     class Form_t;
     class Leveled_Item_t;
     class Outfit_t;
+    class Reference_t;
 
     class Extra_List_t // ExtraDataList
     {
@@ -93,6 +95,9 @@ namespace doticu_skylib {
         s16                             Increment_Count(s16 amount);
         s16                             Decrement_Count(s16 amount);
 
+        Boolean_e                       Is_Ghost();
+        void                            Is_Ghost(Bool_t is_ghost);
+
         Bool_t                          Is_Leveled_Item();
         maybe<Leveled_Item_t*>          Leveled_Item();
         void                            Leveled_Item(maybe<Leveled_Item_t*> leveled_item);
@@ -118,7 +123,7 @@ namespace doticu_skylib {
         maybe<Reference_t*>             Reference_Interactor_A();
         maybe<Reference_t*>             Reference_Interactor_B();
 
-        Bool_t                          Can_Talk_To_Player();
+        Boolean_e                       Can_Talk_To_Player();
         void                            Can_Talk_To_Player(Bool_t can_talk_to_player);
 
         Bool_t                          Is_Worn_Item();

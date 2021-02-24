@@ -4,6 +4,9 @@
 
 #pragma once
 
+#undef TRUE
+#undef FALSE
+
 #include "doticu_skylib/atomic_number.h"
 #include "doticu_skylib/intrinsic.h"
 
@@ -69,7 +72,7 @@ namespace doticu_skylib {
         }
 
     public:
-        operator T() const
+        operator T () const
         {
             return this->value;
         }
@@ -106,54 +109,64 @@ namespace doticu_skylib {
     template <typename T>
     using Atomic_Enum_t = Atomic_Number_t<typename T::value_type>;
 
-    class Binary_e : public Enum_t<s64>
+    class Binary_e :
+        public Enum_t<s64>
     {
     public:
-        enum : s64
+        enum : value_type
         {
-            ALL = -1,
-            BOTH = -1,
-            EITHER = -1,
-            NONE = 0,
+            ALL     = -1,
+            BOTH    = -1,
+            EITHER  = -1,
+
+            NONE    = 0,
             NEITHER = 0,
-            A = 1,
-            B = 2,
+
+            A       = 1,
+            B       = 2,
         };
         using Enum_t::Enum_t;
     };
 
-    class Ternary_e : public Enum_t<s64>
+    class Ternary_e :
+        public Enum_t<s64>
     {
     public:
-        enum : s64
+        enum : value_type
         {
-            ALL = -1,
-            ANY = -1,
-            NONE = 0,
-            A = 1,
-            B = 2,
-            C = 3,
+            ALL     = -1,
+            ANY     = -1,
+
+            NONE    = 0,
+
+            A       = 1,
+            B       = 2,
+            C       = 3,
         };
         using Enum_t::Enum_t;
     };
 
-    class Quaternary_e : public Enum_t<s64>
+    class Quaternary_e :
+        public Enum_t<s64>
     {
     public:
-        enum : s64
+        enum : value_type
         {
-            ALL = -1,
-            ANY = -1,
-            NONE = 0,
-            A = 1,
-            B = 2,
-            C = 3,
-            D = 4,
+            ALL     = -1,
+            ANY     = -1,
+
+            NONE    = 0,
+
+            A       = 1,
+            B       = 2,
+            C       = 3,
+            D       = 4,
         };
         using Enum_t::Enum_t;
     };
 
-    class Iterator_e : public Binary_e
+    class Iterator_e :
+        public Binary_e
     {
     public:
         enum : s8
@@ -164,7 +177,61 @@ namespace doticu_skylib {
         using Binary_e::Binary_e;
     };
 
-    class Comparator_e : public Enum_t<Word_t>
+    class Boolean_e
+    {
+    public:
+        using value_type = s64;
+
+    public:
+        enum enum_type : value_type
+        {
+            NEITHER = static_cast<value_type>(-1),
+            FALSE   = static_cast<value_type>(0),
+            TRUE    = static_cast<value_type>(1),
+        };
+
+    protected:
+        enum_type value;
+
+    public:
+        Boolean_e()                             : value(NEITHER) {}
+        Boolean_e(Bool_t value)                 : value(value ? TRUE : FALSE) {}
+        Boolean_e(enum_type value)              : value(value == 0 ? FALSE : value > 0 ? TRUE : NEITHER) {}
+        Boolean_e(value_type value)             : value(Boolean_e(static_cast<enum_type>(value)).value) {}
+        Boolean_e(const Boolean_e& other)       : value(other.value) {}
+        Boolean_e(Boolean_e&& other) noexcept   : value(std::exchange(other.value, NEITHER)) {}
+
+        Boolean_e& operator = (const Boolean_e& other)
+        {
+            if (std::addressof(other) != this) {
+                this->value = other.value;
+            }
+            return *this;
+        }
+
+        Boolean_e& operator = (Boolean_e&& other) noexcept
+        {
+            if (std::addressof(other) != this) {
+                this->value = std::exchange(other.value, NEITHER);
+            }
+            return *this;
+        }
+
+    public:
+        Bool_t operator == (enum_type other) const          { return this->value == other; }
+        Bool_t operator == (const Boolean_e& other) const   { return operator ==(other.value); }
+        Bool_t operator == (Boolean_e&& other) const        { return operator ==(other.value); }
+
+        Bool_t operator != (enum_type other) const          { return this->value != other; }
+        Bool_t operator != (const Boolean_e& other) const   { return operator !=(other.value); }
+        Bool_t operator != (Boolean_e&& other) const        { return operator !=(other.value); }
+
+        Bool_t operator () () const                         { return this->value == TRUE ? true : false; }
+    };
+    STATIC_ASSERT(sizeof(Boolean_e) == 0x8);
+
+    class Comparator_e :
+        public Enum_t<Word_t>
     {
     public:
         enum

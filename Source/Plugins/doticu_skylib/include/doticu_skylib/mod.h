@@ -9,7 +9,7 @@
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/string.h"
 
-#include "doticu_skylib/form_flags.h"
+#include "doticu_skylib/enum_form_flags.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/mod_index.h"
 
@@ -51,7 +51,8 @@ namespace doticu_skylib {
         Bool_t Has_Type(const char* type);
     };
 
-    class Record_Header_t : public Record_Header_Base_t
+    class Record_Header_t :
+        public Record_Header_Base_t
     {
     public:
         Form_Flags_e    form_flags;         // 08

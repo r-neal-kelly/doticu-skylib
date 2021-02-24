@@ -82,14 +82,25 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
+        class Form_Change_Flags_e :
+            public Enum_t<u32>
+        {
+        public:
+            enum : value_type
+            {
+                FORM_FLAGS = static_cast<value_type>(1 << 0),
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         static Vector_t<Actor_t*>   Loaded_Actors();
         static void                 Loaded_Actors(Vector_t<Actor_t*>& results);
         static void                 Log_Loaded_Actors();
 
-        static maybe<Actor_t*> Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative);
-        static maybe<Actor_t*> Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
-        static maybe<Actor_t*> Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
+        static maybe<Actor_t*>      Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative);
+        static maybe<Actor_t*>      Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
+        static maybe<Actor_t*>      Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
 
     public:
         virtual         ~Actor_t();                                     // 000
@@ -332,9 +343,18 @@ namespace doticu_skylib {
         Bool_t                                      Can_Talk_To_Player();
         void                                        Can_Talk_To_Player(Bool_t value);
 
+        Bool_t                                      Ignores_Friendly_Hits();
+        void                                        Ignores_Friendly_Hits(Bool_t value);
+
+        Bool_t                                      Is_Hidden_From_Stealth_Eye();
+        void                                        Is_Hidden_From_Stealth_Eye(Bool_t value);
+
         Bool_t                                      Has_AI();
         void                                        Has_AI(Bool_t value);
         void                                        Reset_AI();
+
+        Bool_t                                      Is_Ghost();
+        void                                        Is_Ghost(Bool_t value);
 
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);

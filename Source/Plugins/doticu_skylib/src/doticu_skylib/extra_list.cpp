@@ -5,6 +5,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
+#include "doticu_skylib/extra_ghost.h"
 #include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_outfit.h"
@@ -308,6 +309,26 @@ namespace doticu_skylib {
         }
     }
 
+    Boolean_e Extra_List_t::Is_Ghost()
+    {
+        maybe<Extra_Ghost_t*> x_ghost = Get<Extra_Ghost_t>();
+        if (x_ghost) {
+            return x_ghost->is_ghost;
+        } else {
+            return Boolean_e::NEITHER;
+        }
+    }
+
+    void Extra_List_t::Is_Ghost(Bool_t is_ghost)
+    {
+        maybe<Extra_Ghost_t*> x_ghost = Get<Extra_Ghost_t>();
+        if (x_ghost) {
+            x_ghost->is_ghost = is_ghost;
+        } else {
+            Add<Extra_Ghost_t>(Extra_Ghost_t::Create(is_ghost));
+        }
+    }
+
     Bool_t Extra_List_t::Is_Leveled_Item()
     {
         return Has<Extra_Leveled_Item_t>();
@@ -498,13 +519,13 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Can_Talk_To_Player()
+    Boolean_e Extra_List_t::Can_Talk_To_Player()
     {
         maybe<Extra_Talk_To_Player_t*> x_talk_to_player = Get<Extra_Talk_To_Player_t>();
         if (x_talk_to_player) {
             return x_talk_to_player->can_talk_to_player;
         } else {
-            return false;
+            return Boolean_e::NEITHER;
         }
     }
 

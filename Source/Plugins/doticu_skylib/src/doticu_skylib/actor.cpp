@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_ai.h"
+#include "doticu_skylib/actor_ai_cached_values.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
 #include "doticu_skylib/atomic_number.inl"
@@ -391,15 +392,18 @@ namespace doticu_skylib {
 
     void Actor_t::Is_Player_Teammate(Bool_t value)
     {
-        if (value) {
-            if (!Is_Player_Teammate()) {
-                this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
-                Player_t::Self()->Increment_Teammate_Count();
-            }
-        } else {
-            if (Is_Player_Teammate()) {
-                this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
-                Player_t::Self()->Decrement_Teammate_Count();
+        some<Player_t*> player = Player_t::Self();
+        if (this != player()) {
+            if (value) {
+                if (!Is_Player_Teammate()) {
+                    this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                    player->Increment_Teammate_Count();
+                }
+            } else {
+                if (Is_Player_Teammate()) {
+                    this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                    player->Decrement_Teammate_Count();
+                }
             }
         }
     }
@@ -420,8 +424,9 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Can_Talk_To_Player()
     {
-        if (this->x_list.Can_Talk_To_Player()) {
-            return true;
+        Boolean_e can_talk_to_player = this->x_list.Can_Talk_To_Player();
+        if (can_talk_to_player != Boolean_e::NEITHER) {
+            return can_talk_to_player();
         } else {
             maybe<Race_t*> race = Race();
             if (race) {
@@ -436,6 +441,35 @@ namespace doticu_skylib {
     {
         if (Can_Talk_To_Player() != value) {
             this->x_list.Can_Talk_To_Player(value);
+        }
+    }
+
+    Bool_t Actor_t::Ignores_Friendly_Hits()
+    {
+        return (this->form_flags & Form_Flags_e::IGNORES_FRIENDLY_HITS) != 0;
+    }
+
+    void Actor_t::Ignores_Friendly_Hits(Bool_t value)
+    {
+        if (value) {
+            this->form_flags |= Form_Flags_e::IGNORES_FRIENDLY_HITS;
+        } else {
+            this->form_flags &= ~Form_Flags_e::IGNORES_FRIENDLY_HITS;
+        }
+        Flag_Form_Change(Form_Change_Flags_e::FORM_FLAGS);
+    }
+
+    Bool_t Actor_t::Is_Hidden_From_Stealth_Eye()
+    {
+        return (this->actor_flags_2 & Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE) != 0;
+    }
+
+    void Actor_t::Is_Hidden_From_Stealth_Eye(Bool_t value)
+    {
+        if (value) {
+            this->actor_flags_2 |= Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE;
+        } else {
+            this->actor_flags_2 &= ~Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE;
         }
     }
 
@@ -456,6 +490,31 @@ namespace doticu_skylib {
     void Actor_t::Reset_AI()
     {
         Evaluate_Package(true, true);
+    }
+
+    Bool_t Actor_t::Is_Ghost()
+    {
+        Boolean_e is_ghost = this->x_list.Is_Ghost();
+        if (is_ghost != Boolean_e::NEITHER) {
+            return is_ghost();
+        } else {
+            maybe<Actor_Base_t*> actor_base = Actor_Base();
+            if (actor_base) {
+                return actor_base->Is_Ghost();
+            } else {
+                return false;
+            }
+        }
+    }
+
+    void Actor_t::Is_Ghost(Bool_t value)
+    {
+        if (Is_Ghost() != value) {
+            this->x_list.Is_Ghost(value);
+            if (this->actor_ai && this->actor_ai->cached_values) {
+                this->actor_ai->cached_values->Is_Ghost(value);
+            }
+        }
     }
 
     void Actor_t::Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai)

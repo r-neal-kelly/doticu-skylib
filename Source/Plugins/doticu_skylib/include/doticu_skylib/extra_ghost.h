@@ -17,15 +17,20 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::GHOST,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
             enum : value_type
             {
-                V_TABLE = 0x0152F2A0,
+                V_TABLE = 0x0152F2A0, // 229888
             };
             using Enum_t::Enum_t;
         };
+
+    public:
+        static some<Extra_Ghost_t*> Create(Bool_t is_ghost);
+        static void                 Destroy(some<Extra_Ghost_t*> x_ghost);
 
     public:
         virtual ~Extra_Ghost_t(); // 0

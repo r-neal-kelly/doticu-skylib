@@ -56,12 +56,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
+    <ClInclude Include="include\doticu_skylib\actor_ai_cached_value.h" />
+    <ClInclude Include="include\doticu_skylib\actor_ai_cached_values.h" />
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
+    <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
@@ -274,7 +277,7 @@
     <ClInclude Include="include\doticu_skylib\flora.h" />
     <ClInclude Include="include\doticu_skylib\form.h" />
     <ClInclude Include="include\doticu_skylib\form_factory.h" />
-    <ClInclude Include="include\doticu_skylib\form_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_form_flags.h" />
     <ClInclude Include="include\doticu_skylib\form_id.h" />
     <ClInclude Include="include\doticu_skylib\form_index.h" />
     <ClInclude Include="include\doticu_skylib\form_list.h" />
@@ -367,7 +370,7 @@
     <ClInclude Include="include\doticu_skylib\collections.h" />
     <ClInclude Include="include\doticu_skylib\reference_count.h" />
     <ClInclude Include="include\doticu_skylib\reference_handle.h" />
-    <ClInclude Include="include\doticu_skylib\relation.h" />
+    <ClInclude Include="include\doticu_skylib\enum_relation.h" />
     <ClInclude Include="include\doticu_skylib\script.h" />
     <ClInclude Include="include\doticu_skylib\enum_sex.h" />
     <ClInclude Include="include\doticu_skylib\skylib.h" />
@@ -407,6 +410,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
+    <ClCompile Include="src\doticu_skylib\actor_ai_cached_values.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
@@ -432,6 +436,7 @@
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_ghost.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_leveled_item.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_outfit.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_owner.cpp" />
@@ -486,7 +491,7 @@
     <ClCompile Include="src\doticu_skylib\rarity.cpp" />
     <ClCompile Include="src\doticu_skylib\reference.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_count.cpp" />
-    <ClCompile Include="src\doticu_skylib\relation.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_relation.cpp" />
     <ClCompile Include="src\doticu_skylib\script.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_sex.cpp" />
     <ClCompile Include="src\doticu_skylib\ui.cpp" />

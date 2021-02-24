@@ -46,7 +46,7 @@ namespace doticu_skylib {
         };
 
         static auto execute = reinterpret_cast
-            <void(*)(Script_t*, Compiler_t*, Compiler_e, Reference_t*)>
+            <void(*)(Script_t*, Compiler_t*, Compiler_e::value_type, Reference_t*)>
             (Game_t::Base_Address() + Offset_e::EXECUTE);
 
         Compiler_t compiler;

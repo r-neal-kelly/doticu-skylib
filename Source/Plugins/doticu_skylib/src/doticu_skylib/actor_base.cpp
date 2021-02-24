@@ -210,13 +210,19 @@ namespace doticu_skylib {
         }
     }
 
-    Relation_e Actor_Base_t::Relation(maybe<Actor_Base_t*> other)
+    some<Relation_e> Actor_Base_t::Relation(some<Actor_Base_t*> other)
     {
-        if (other) {
-            return Relation_e::Between(this, other());
-        } else {
-            return Relation_e::NONE;
-        }
+        SKYLIB_ASSERT_SOME(other);
+
+        return Relation_e::Between(this, other);
+    }
+
+    void Actor_Base_t::Relation(some<Actor_Base_t*> other, some<Relation_e> relation)
+    {
+        SKYLIB_ASSERT_SOME(other);
+        SKYLIB_ASSERT_SOME(relation);
+
+        Relation_e::Between(this, other, relation);
     }
 
     Race_t* Actor_Base_t::Race()

@@ -6,11 +6,11 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/component_form_data.h"
-#include "doticu_skylib/form_flags.h"
+#include "doticu_skylib/enum_form_flags.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/mod_index.h"
-#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
@@ -123,13 +123,13 @@ namespace doticu_skylib {
         virtual void        _3A(void);                                      // 3A
 
     public:
-        Static_Array_t<Mod_t*>* form_mods;      // 08
-        Form_Flags_e            form_flags;     // 10
-        Form_ID_t               form_id;        // 14
-        u16                     form_flags_2;   // 18
-        Form_Type_e             form_type;      // 1A
-        u8                      pad_1B;         // 1B
-        u32                     pad_1C;         // 1C
+        Static_Array_t<Mod_t*>*             form_mods;          // 08
+        Atomic_Enum_t<Form_Flags_e>         form_flags;         // 10
+        Form_ID_t                           form_id;            // 14
+        Atomic_Enum_t<Form_Flags_Extra_e>   form_flags_extra;   // 18
+        Form_Type_e                         form_type;          // 1A
+        u8                                  pad_1B;             // 1B
+        u32                                 pad_1C;             // 1C
 
     public:
         Bool_t                      Is_Valid();

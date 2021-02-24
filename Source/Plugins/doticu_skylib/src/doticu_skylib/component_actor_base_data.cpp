@@ -27,6 +27,11 @@ namespace doticu_skylib {
         return !Is_Unique();
     }
 
+    Bool_t Actor_Base_Data_c::Is_Ghost()
+    {
+        return (actor_base_flags & Actor_Base_Flags_e::IS_GHOST) != 0;
+    }
+
     Bool_t Actor_Base_Data_c::Is_Mortal()
     {
         return !Is_Protected() && !Is_Essential() && !Is_Invulnerable();

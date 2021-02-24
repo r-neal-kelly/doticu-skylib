@@ -46,6 +46,7 @@ namespace doticu_skylib {
     public:
         virtual ~Script_t();
 
+    public:
         u32     variable_count;         // 20
         u32     unk_24;                 // 24
         u32     unk_28;                 // 28
@@ -57,6 +58,7 @@ namespace doticu_skylib {
         u32     pad_34;                 // 34
         char*   text;                   // 38
 
+    public:
         void Allocate_Command(size_t byte_count);
         void Deallocate_Command();
 
