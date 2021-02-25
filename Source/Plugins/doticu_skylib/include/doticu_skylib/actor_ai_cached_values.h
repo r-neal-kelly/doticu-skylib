@@ -5,7 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/actor_ai_cached_value.h"
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum_actor_ai_cached_values_flags.h"
 #include "doticu_skylib/intrinsic.h"
 

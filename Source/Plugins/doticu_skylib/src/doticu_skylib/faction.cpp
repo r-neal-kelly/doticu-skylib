@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/mod.h"
@@ -18,8 +19,8 @@ namespace doticu_skylib {
         std::lock_guard<std::mutex> guard(editor_ids_mutex);
         if (!has_initialized) {
             auto& factions = Game_t::Self()->Factions();
-            for (Index_t idx = 0, end = factions.count; idx < end; idx += 1) {
-                Faction_t* faction = factions.entries[idx];
+            for (Index_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
+                Faction_t* faction = factions[idx];
                 if (faction) {
                     if (faction->Is_Valid()) {
                         Mod_t* highest_mod = faction->Get_Highest_Mod();
@@ -45,7 +46,7 @@ namespace doticu_skylib {
 
     size_t Faction_t::Faction_Count()
     {
-        return Game_t::Self()->Factions().count;
+        return Game_t::Self()->Factions().Count();
     }
 
     Vector_t<Faction_t*> Faction_t::Factions()
@@ -58,10 +59,10 @@ namespace doticu_skylib {
     void Faction_t::Factions(Vector_t<Faction_t*>& results)
     {
         auto& factions = Game_t::Self()->Factions();
-        results.reserve(factions.count);
+        results.reserve(factions.Count());
 
-        for (Index_t idx = 0, end = factions.count; idx < end; idx += 1) {
-            Faction_t* faction = factions.entries[idx];
+        for (Index_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
+            Faction_t* faction = factions[idx];
             if (faction && faction->Is_Valid()) {
                 results.push_back(faction);
             }

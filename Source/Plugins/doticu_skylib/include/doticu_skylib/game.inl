@@ -10,19 +10,33 @@
 namespace doticu_skylib {
 
     template <typename T>
-    inline some<T*> Game_t::Allocate()
+    inline some<T*> Game_t::Allocate(size_t count)
     {
-        maybe<Byte_t*> data = Memory_t::Self()->Allocate(sizeof(T));
+        SKYLIB_ASSERT(count > 0);
+
+        maybe<Byte_t*> data = Memory_t::Self()->Allocate(sizeof(T) * count);
         SKYLIB_ASSERT(data);
         return reinterpret_cast<T*>(data());
     }
 
     template <typename T>
-    inline some<T*> Game_t::Callocate()
+    inline some<T*> Game_t::Callocate(size_t count)
     {
-        some<T*> data = Allocate<T>();
-        memset(static_cast<void*>(data()), 0, sizeof(T));
+        SKYLIB_ASSERT(count > 0);
+
+        some<T*> data = Allocate<T>(count);
+        memset(static_cast<void*>(data()), 0, sizeof(T) * count);
         return data;
+    }
+
+    template <typename T>
+    inline some<T*> Game_t::Reallocate(some<T*> data, size_t new_count)
+    {
+        SKYLIB_ASSERT(new_count > 0);
+
+        maybe<Byte_t*> new_data = Memory_t::Self()->Reallocate(reinterpret_cast<Byte_t*>(data()), sizeof(T) * new_count);
+        SKYLIB_ASSERT(new_data);
+        return reinterpret_cast<T*>(new_data());
     }
 
     template <typename T>

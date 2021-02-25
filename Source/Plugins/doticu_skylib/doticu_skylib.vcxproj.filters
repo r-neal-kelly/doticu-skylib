@@ -477,9 +477,6 @@
     <ClInclude Include="include\doticu_skylib\extra_data.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\extra_list.h">
       <Filter>Header Files\extra</Filter>
     </ClInclude>
@@ -1113,6 +1110,18 @@
     <ClInclude Include="include\doticu_skylib\enum_relation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_factions.h">
+      <Filter>Header Files\extra</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dynamic_array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\scrap_array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\scrap_array_allocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1209,9 +1218,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_list.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\collections.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\alias_base.cpp">
@@ -1424,6 +1430,12 @@
     <ClCompile Include="src\doticu_skylib\enum_relation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_factions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\ui.inl">
@@ -1448,6 +1460,12 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\atomic_number.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\dynamic_array.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\scrap_array.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

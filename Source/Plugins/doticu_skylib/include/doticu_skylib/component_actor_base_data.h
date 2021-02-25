@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/component_form_data.h"
 #include "doticu_skylib/enum_actor_base_flags.h"
 #include "doticu_skylib/enum_actor_base_template_flags.h"

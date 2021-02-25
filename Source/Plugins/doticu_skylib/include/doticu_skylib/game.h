@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/enum_form_type.h"
 #include "doticu_skylib/form_id.h"
@@ -51,9 +52,11 @@ namespace doticu_skylib {
         static const Version_t<u16>&    Version();
 
         template <typename T>
-        static some<T*>                 Allocate();
+        static some<T*>                 Allocate(size_t count = 1);
         template <typename T>
-        static some<T*>                 Callocate();
+        static some<T*>                 Callocate(size_t count = 1);
+        template <typename T>
+        static some<T*>                 Reallocate(some<T*> data, size_t new_count);
         template <typename T>
         static void                     Deallocate(some<T*> data);
 

@@ -4,8 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
-
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/read_write_lock.h"
 

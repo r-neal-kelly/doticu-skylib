@@ -102,7 +102,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x58),
             SKYLIB_ENUM_TO_STRING(0x59),
             SKYLIB_ENUM_TO_STRING(0x5A),
-            SKYLIB_ENUM_TO_STRING(FACTIONS_AND_RANKS),
+            SKYLIB_ENUM_TO_STRING(FACTIONS),
             SKYLIB_ENUM_TO_STRING(0x5C),
             SKYLIB_ENUM_TO_STRING(0x5D),
             SKYLIB_ENUM_TO_STRING(0x5E),

@@ -2,11 +2,12 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/forward_list.inl"
-
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/quest_objective.h"
+#include "doticu_skylib/scrap_array.h"
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -119,8 +120,8 @@ namespace doticu_skylib {
 
     void Quest_t::Log_Promoted_References()
     {
-        for (Index_t idx = 0, end = promoted_references.count; idx < end; idx += 1) {
-            Reference_Handle_t reference_handle = promoted_references.entries[idx];
+        for (Index_t idx = 0, end = promoted_references.Count(); idx < end; idx += 1) {
+            Reference_Handle_t reference_handle = promoted_references[idx];
             Reference_t* reference = Reference_t::From_Handle(reference_handle);
             if (reference) {
                 SKYLIB_LOG("%s", reference->Any_Name());
@@ -172,12 +173,12 @@ namespace doticu_skylib {
                 objective(objective), do_force(do_force)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* variables)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* variables)
             {
                 variables->Resize(3);
-                variables->At(0)->Int(objective);
-                variables->At(1)->Bool(true);
-                variables->At(2)->Bool(do_force);
+                variables->At(0).Int(objective);
+                variables->At(1).Bool(true);
+                variables->At(2).Bool(do_force);
                 return true;
             }
         } varguments(objective, do_force);
@@ -202,12 +203,12 @@ namespace doticu_skylib {
                 objective(objective), do_force(do_force)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* variables)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* variables)
             {
                 variables->Resize(3);
-                variables->At(0)->Int(objective);
-                variables->At(1)->Bool(false);
-                variables->At(2)->Bool(do_force);
+                variables->At(0).Int(objective);
+                variables->At(1).Bool(false);
+                variables->At(2).Bool(do_force);
                 return true;
             }
         } varguments(objective, do_force);

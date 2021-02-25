@@ -5,6 +5,7 @@
 #include "doticu_skylib/cstring.h"
 
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/leveled_entry.h"
@@ -14,7 +15,7 @@ namespace doticu_skylib {
 
     size_t Leveled_Actor_Base_t::Leveled_Actor_Base_Count()
     {
-        return Game_t::Self()->Leveled_Actor_Bases().count;
+        return Game_t::Self()->Leveled_Actor_Bases().Count();
     }
 
     Vector_t<Leveled_Actor_Base_t*> Leveled_Actor_Base_t::Leveled_Actor_Bases()
@@ -28,8 +29,8 @@ namespace doticu_skylib {
     void Leveled_Actor_Base_t::Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results)
     {
         auto& leveled_actor_bases = Game_t::Self()->Leveled_Actor_Bases();
-        for (Index_t idx = 0, end = leveled_actor_bases.count; idx < end; idx += 1) {
-            Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases.entries[idx];
+        for (Index_t idx = 0, end = leveled_actor_bases.Count(); idx < end; idx += 1) {
+            Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases[idx];
             if (leveled_actor_base) {
                 results.push_back(leveled_actor_base);
             }

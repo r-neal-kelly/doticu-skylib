@@ -2,13 +2,12 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/math.h"
-
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/form_list.h"
@@ -18,12 +17,14 @@
 #include "doticu_skylib/havok_rigid_body.h"
 #include "doticu_skylib/havok_rigid_body_base.h"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/math.h"
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_node.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_attached_state.h"
+#include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/worldspace.h"
 
@@ -234,8 +235,8 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
         if (x_aliases) {
             Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
+            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
                 if (instance && instance->alias_base && instance->alias_base->Is_Quest_Item()) {
                     return true;
                 }
@@ -253,8 +254,8 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
         if (x_aliases) {
             Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
+            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
                 if (instance && instance->quest == quest()) {
                     return true;
                 }
@@ -272,8 +273,8 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
         if (x_aliases) {
             Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.count; idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances.entries[idx];
+            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
                 if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
                     return true;
                 }
@@ -569,9 +570,9 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> xaliases = x_list.Get<Extra_Aliases_t>();
         if (xaliases) {
             Read_Locker_t locker(xaliases->lock);
-            results.reserve(xaliases->instances.count);
-            for (Index_t idx = 0, end = xaliases->instances.count; idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = xaliases->instances.entries[idx];
+            results.reserve(xaliases->instances.Count());
+            for (Index_t idx = 0, end = xaliases->instances.Count(); idx < end; idx += 1) {
+                Extra_Aliases_t::Instance_t* instance = xaliases->instances[idx];
                 if (instance && instance->quest && instance->quest->Is_Valid() && instance->alias_base) {
                     results.push_back(instance->quest);
                 }
@@ -773,11 +774,11 @@ namespace doticu_skylib {
                 activator(activator)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
             {
                 args->Resize(2);
-                args->At(0)->As<Reference_t*>(activator());
-                args->At(1)->As<Bool_t>(false);
+                args->At(0).As<Reference_t*>(activator());
+                args->At(1).As<Bool_t>(false);
                 return true;
             }
         } arguments(activator);

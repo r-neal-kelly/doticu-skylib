@@ -9,7 +9,8 @@
 #include "doticu_skylib/actor_middle_high_ai.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
-#include "doticu_skylib/extra_factions_and_ranks.h"
+#include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
@@ -254,13 +255,13 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base && actor_base->Is_Valid()) {
             base_factions_and_ranks = &actor_base->factions_and_ranks;
-            reserve_count += base_factions_and_ranks->count;
+            reserve_count += base_factions_and_ranks->Count();
         }
 
-        maybe<Extra_Factions_And_Ranks_t*> xfactions_and_ranks = x_list.Get<Extra_Factions_And_Ranks_t>();
-        if (xfactions_and_ranks) {
-            reference_factions_and_ranks = &xfactions_and_ranks->factions_and_ranks;
-            reserve_count += reference_factions_and_ranks->count;
+        maybe<Extra_Factions_t*> xfactions = x_list.Get<Extra_Factions_t>();
+        if (xfactions) {
+            reference_factions_and_ranks = &xfactions->factions_and_ranks;
+            reserve_count += reference_factions_and_ranks->Count();
         }
 
         Vector_t<Faction_And_Rank_t> buffer;
@@ -275,8 +276,8 @@ namespace doticu_skylib {
         }
 
         if (base_factions_and_ranks) {
-            for (Index_t idx = 0, end = base_factions_and_ranks->count; idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = base_factions_and_ranks->entries[idx];
+            for (Index_t idx = 0, end = base_factions_and_ranks->Count(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = base_factions_and_ranks->At(idx);
                 if (faction_and_rank.Is_Valid()) {
                     maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
                     if (output_idx) {
@@ -289,8 +290,8 @@ namespace doticu_skylib {
         }
 
         if (reference_factions_and_ranks) {
-            for (Index_t idx = 0, end = reference_factions_and_ranks->count; idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = reference_factions_and_ranks->entries[idx];
+            for (Index_t idx = 0, end = reference_factions_and_ranks->Count(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = reference_factions_and_ranks->At(idx);
                 if (faction_and_rank.Is_Valid()) {
                     maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
                     if (output_idx) {
@@ -382,6 +383,40 @@ namespace doticu_skylib {
             }
         } else {
             return name;
+        }
+    }
+
+    maybe<Faction_t*> Actor_t::Crime_Faction()
+    {
+        if (this->x_list.Has_Extra_Factions()) {
+            return this->x_list.Crime_Faction();
+        } else {
+            return Base_Crime_Faction();
+        }
+    }
+
+    void Actor_t::Crime_Faction(some<Faction_t*> crime_faction)
+    {
+        SKYLIB_ASSERT_SOME(crime_faction);
+
+        this->x_list.Crime_Faction(crime_faction());
+    }
+
+    maybe<Faction_t*> Actor_t::Base_Crime_Faction()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Crime_Faction();
+        } else {
+            return none<Faction_t*>();
+        }
+    }
+
+    void Actor_t::Base_Crime_Faction(maybe<Faction_t*> crime_faction)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Crime_Faction(crime_faction);
         }
     }
 

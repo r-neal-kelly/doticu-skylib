@@ -7,7 +7,7 @@
 #include "doticu_skylib/actor_skills.h"
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/animated_object.h"
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/component_actor_base_data.h"
 #include "doticu_skylib/component_ai.h"
 #include "doticu_skylib/component_attack_data.h"
@@ -129,7 +129,7 @@ namespace doticu_skylib {
         maybe<Outfit_t*>    default_outfit;     // 218 (DOFT)
         maybe<Outfit_t*>    sleep_outfit;       // 220
         Form_List_t*        unk_228;            // 228
-        Faction_t*          crime_faction;      // 230
+        maybe<Faction_t*>   crime_faction;      // 230
         void*               head_parts;         // 238
         s8                  head_part_count;    // 240
         u8                  unk_241;            // 241
@@ -167,6 +167,9 @@ namespace doticu_skylib {
         void                            Default_Outfit(maybe<Outfit_t*> default_outfit);
         maybe<Outfit_t*>                Sleep_Outfit();
         void                            Sleep_Outfit(maybe<Outfit_t*> sleep_outfit);
+
+        maybe<Faction_t*>               Crime_Faction();
+        void                            Crime_Faction(maybe<Faction_t*> faction);
 
         String_t                        Any_Name();
 

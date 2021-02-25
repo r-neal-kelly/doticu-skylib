@@ -5,6 +5,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
+#include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_ghost.h"
 #include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/extra_list.inl"
@@ -254,6 +255,18 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Extra_List_t::Has_Extra_Count()                  { return Has<Extra_Count_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Factions()               { return Has<Extra_Factions_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Ghost()                  { return Has<Extra_Ghost_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Leveled_Item()           { return Has<Extra_Leveled_Item_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Outfit()                 { return Has<Extra_Outfit_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Owner()                  { return Has<Extra_Owner_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Reference_Handle()       { return Has<Extra_Reference_Handle_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Reference_Interaction()  { return Has<Extra_Reference_Interaction_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Talk_To_Player()         { return Has<Extra_Talk_To_Player_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Worn()                   { return Has<Extra_Worn_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Worn_Left()              { return Has<Extra_Worn_Left_t>(); }
+
     Vector_t<some<Extra_Data_t*>> Extra_List_t::Extra_Datas()
     {
         Read_Locker_t locker(this->lock);
@@ -306,6 +319,26 @@ namespace doticu_skylib {
             }
         } else {
             return Count();
+        }
+    }
+
+    maybe<Faction_t*> Extra_List_t::Crime_Faction()
+    {
+        maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
+        if (x_factions) {
+            return x_factions->crime_faction;
+        } else {
+            return none<Faction_t*>();
+        }
+    }
+
+    void Extra_List_t::Crime_Faction(maybe<Faction_t*> crime_faction)
+    {
+        maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
+        if (x_factions) {
+            x_factions->crime_faction = crime_faction;
+        } else {
+            Add<Extra_Factions_t>(Extra_Factions_t::Create(crime_faction));
         }
     }
 

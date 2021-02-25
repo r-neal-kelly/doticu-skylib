@@ -214,57 +214,6 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Short_Array_t<void*>) == 0x18);
 
-    template <typename Type_t>
-    class Dynamic_Array_t // tArray
-    {
-    public:
-        Type_t* entries;    // 00
-        u32     capacity;   // 08
-        u32     pad_0C;     // 0C
-        u32     count;      // 10
-        u32     pad_14;     // 14
-
-        some<Type_t*> At(u32 index) // this should be Point
-        {
-            SKYLIB_ASSERT(index < count);
-            return entries + index;
-        }
-    };
-    STATIC_ASSERT(sizeof(Dynamic_Array_t<void*>) == 0x18);
-
-    class Buffer_Allocator_t
-    {
-    public:
-        class Offset_e : public Enum_t<Word_t>
-        {
-        public:
-            enum : Word_t
-            {
-                RESIZE = 0x00920360, // 53105
-            };
-            using Enum_t::Enum_t;
-        };
-
-    public:
-        void* allocator; // 0
-
-    public:
-        Bool_t Resize(u32 count);
-    };
-    STATIC_ASSERT(sizeof(Buffer_Allocator_t) == 0x8);
-
-    template <typename Type_t>
-    class Buffer_t :
-        public Buffer_Allocator_t,
-        public Dynamic_Array_t<Type_t>
-    {
-    public:
-    };
-    STATIC_ASSERT(sizeof(Buffer_t<int>) == 0x20);
-
-    template <typename Type_t>
-    using Array_t = Dynamic_Array_t<Type_t>; // BSTArray
-
     template <typename Type>
     class Vector_t : public std::vector<Type>
     {

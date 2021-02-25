@@ -3,6 +3,7 @@
 */
 
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/worldspace.h"
@@ -11,13 +12,13 @@ namespace doticu_skylib {
 
     Vector_t<Worldspace_t*> Worldspace_t::Worldspaces()
     {
-        auto worldspaces = Game_t::Self()->Worldspaces();
+        Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
 
         Vector_t<Worldspace_t*> results;
-        results.reserve(worldspaces.count);
+        results.reserve(worldspaces.Count());
 
-        for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
-            results.push_back(worldspaces.entries[idx]);
+        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+            results.push_back(worldspaces[idx]);
         }
 
         return results;

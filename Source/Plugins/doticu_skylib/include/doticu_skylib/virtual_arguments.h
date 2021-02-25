@@ -4,7 +4,8 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/scrap_array.h"
 
 namespace doticu_skylib { namespace Virtual {
 
@@ -14,13 +15,13 @@ namespace doticu_skylib { namespace Virtual {
     public:
         virtual ~Arguments_i() = default; // 00
 
-        virtual Bool_t operator()(Buffer_t<Variable_t>* arguments) = 0; // 01
+        virtual Bool_t operator()(Scrap_Array_t<Variable_t>* arguments) = 0; // 01
     };
     STATIC_ASSERT(sizeof(Arguments_i) == 0x8);
 
     class Arguments_t : public Arguments_i {
     public:
-        virtual Bool_t operator()(Buffer_t<Variable_t>* arguments) override
+        virtual Bool_t operator()(Scrap_Array_t<Variable_t>* arguments) override
         {
             return true;
         }

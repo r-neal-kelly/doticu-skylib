@@ -4,7 +4,7 @@
 
 #include "skse64/PapyrusInput.h"
 
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/scrap_array.inl"
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -22,10 +22,10 @@ namespace doticu_skylib { namespace Virtual {
                 seconds(seconds)
             {
             }
-            Bool_t operator()(Buffer_t<Variable_t>* arguments)
+            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
             {
                 arguments->Resize(1);
-                arguments->At(0)->Float(seconds);
+                arguments->At(0).Float(seconds);
                 return true;
             }
         } arguments(seconds);
@@ -46,10 +46,10 @@ namespace doticu_skylib { namespace Virtual {
                 seconds(seconds)
             {
             }
-            Bool_t operator()(Buffer_t<Variable_t>* arguments)
+            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
             {
                 arguments->Resize(1);
-                arguments->At(0)->Float(seconds);
+                arguments->At(0).Float(seconds);
                 return true;
             }
         } arguments(seconds);
@@ -81,10 +81,10 @@ namespace doticu_skylib { namespace Virtual {
                 key(key)
             {
             }
-            Bool_t operator()(Buffer_t<Variable_t>* arguments)
+            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
             {
                 arguments->Resize(1);
-                arguments->At(0)->Int(key);
+                arguments->At(0).Int(key);
                 return true;
             }
         } arguments(key);

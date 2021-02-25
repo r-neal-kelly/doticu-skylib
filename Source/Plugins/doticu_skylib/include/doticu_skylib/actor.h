@@ -10,7 +10,7 @@
 #include "doticu_skylib/actor_values.h"
 #include "doticu_skylib/actor_values_data.h"
 #include "doticu_skylib/atomic_number.h"
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum_actor_critical_stage.h"
 #include "doticu_skylib/enum_actor_flags.h"
 #include "doticu_skylib/enum_magic_slot.h"
@@ -333,6 +333,11 @@ namespace doticu_skylib {
 
         const char*                                 Base_Name();
         String_t                                    Any_Name();
+
+        maybe<Faction_t*>                           Crime_Faction();
+        void                                        Crime_Faction(some<Faction_t*> crime_faction);
+        maybe<Faction_t*>                           Base_Crime_Faction();
+        void                                        Base_Crime_Faction(maybe<Faction_t*> crime_faction);
 
         Bool_t                                      Is_Player_Teammate();
         void                                        Is_Player_Teammate(Bool_t value);

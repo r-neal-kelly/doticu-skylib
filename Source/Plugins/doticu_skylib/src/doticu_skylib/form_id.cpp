@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/game.h"
@@ -208,8 +209,8 @@ namespace doticu_skylib {
             maybe<Heavy_Mod_Index_t> heavy_mod_index = Heavy_Mod_Index();
             if (heavy_mod_index) {
                 Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
-                if (heavy_mod_index() < heavy_mods.count) {
-                    return heavy_mods.entries[heavy_mod_index()];
+                if (heavy_mod_index() < heavy_mods.Count()) {
+                    return heavy_mods[heavy_mod_index()];
                 } else {
                     return nullptr;
                 }
@@ -217,8 +218,8 @@ namespace doticu_skylib {
                 maybe<Light_Mod_Index_t> light_mod_index = Light_Mod_Index();
                 if (light_mod_index) {
                     Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
-                    if (light_mod_index() < light_mods.count) {
-                        return light_mods.entries[light_mod_index()];
+                    if (light_mod_index() < light_mods.Count()) {
+                        return light_mods[light_mod_index()];
                     } else {
                         return nullptr;
                     }

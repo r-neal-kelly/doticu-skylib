@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"

@@ -107,7 +107,7 @@ namespace doticu_skylib {
             // 0x58 0x0152C7C0
             // 0x59 0x0152C7E0
             // 0x5A
-            FACTIONS_AND_RANKS      = 0x5B, // XRNK
+            FACTIONS                = 0x5B, // XRNK
             // 0x5C 0x0152F1A0
             // 0x5D 0x0152C820
             // 0x5E

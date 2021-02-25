@@ -10,6 +10,7 @@
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/mod.h"
+#include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_variable.inl"
@@ -151,11 +152,11 @@ namespace doticu_skylib {
                 event_name(event_name), callback_name(callback_name)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
             {
                 args->Resize(2);
-                args->At(0)->String(event_name);
-                args->At(1)->String(callback_name);
+                args->At(0).String(event_name);
+                args->At(1).String(callback_name);
                 return true;
             }
         } arguments(event_name, callback_name);
@@ -176,10 +177,10 @@ namespace doticu_skylib {
                 event_name(event_name)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* args)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
             {
                 args->Resize(1);
-                args->At(0)->String(event_name);
+                args->At(0).String(event_name);
                 return true;
             }
         } arguments(event_name);

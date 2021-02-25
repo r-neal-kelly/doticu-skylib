@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/interface.h"
 

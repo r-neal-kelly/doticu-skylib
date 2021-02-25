@@ -6,7 +6,7 @@
 
 #include "doticu_skylib/atomic_count.h"
 #include "doticu_skylib/character.h"
-#include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/quest_objective_state.h"

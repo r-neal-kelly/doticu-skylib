@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/race.h"
 
@@ -9,7 +10,7 @@ namespace doticu_skylib {
 
     size_t Race_t::Race_Count()
     {
-        return Game_t::Self()->Races().count;
+        return Game_t::Self()->Races().Count();
     }
 
     Vector_t<Race_t*> Race_t::Races()
@@ -17,10 +18,10 @@ namespace doticu_skylib {
         auto& races = Game_t::Self()->Races();
 
         Vector_t<Race_t*> results;
-        results.reserve(races.count);
+        results.reserve(races.Count());
 
-        for (Index_t idx = 0, end = races.count; idx < end; idx += 1) {
-            Race_t* race = reinterpret_cast<Race_t*>(races.entries[idx]);
+        for (Index_t idx = 0, end = races.Count(); idx < end; idx += 1) {
+            Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
             if (race) {
                 results.push_back(race);
             }
@@ -34,10 +35,10 @@ namespace doticu_skylib {
         auto& races = Game_t::Self()->Races();
 
         Vector_t<const char*> results;
-        results.reserve(races.count);
+        results.reserve(races.Count());
 
-        for (Index_t idx = 0, end = races.count; idx < end; idx += 1) {
-            Race_t* race = reinterpret_cast<Race_t*>(races.entries[idx]);
+        for (Index_t idx = 0, end = races.Count(); idx < end; idx += 1) {
+            Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
             if (race) {
                 results.push_back(race->Get_Editor_ID());
             }

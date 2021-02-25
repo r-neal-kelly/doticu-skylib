@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/maybe.h"
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
 #include "doticu_skylib/havok_player.h"
@@ -78,8 +79,8 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Player_t::Log_Objectives");
         SKYLIB_LOG(indent + "{");
 
-        for (Index_t idx = 0, end = objectives.count; idx < end; idx += 1) {
-            Player_Objective_t& player_objective = objectives.entries[idx];
+        for (Index_t idx = 0, end = objectives.Count(); idx < end; idx += 1) {
+            Player_Objective_t& player_objective = objectives[idx];
             SKYLIB_LOG(indent + SKYLIB_TAB + "index: %i", idx);
             player_objective.Log(indent + SKYLIB_TAB SKYLIB_TAB);
         }

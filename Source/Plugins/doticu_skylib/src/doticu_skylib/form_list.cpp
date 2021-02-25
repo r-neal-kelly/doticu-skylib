@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/form_list.h"
 #include "doticu_skylib/game.h"
 
@@ -11,17 +12,17 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(form);
 
-        if (forms.entries) {
-            for (Index_t idx = 0, end = forms.count; idx < end; idx += 1) {
-                if (forms.entries[idx] == form()) {
+        if (!forms.Is_Empty()) {
+            for (Index_t idx = 0, end = forms.Count(); idx < end; idx += 1) {
+                if (forms[idx] == form()) {
                     return true;
                 }
             }
         }
 
-        if (added_form_ids && added_form_ids->entries) {
-            for (Index_t idx = 0, end = added_form_ids->count; idx < end; idx += 1) {
-                if (added_form_ids->entries[idx] == form->form_id) {
+        if (added_form_ids && !added_form_ids->Is_Empty()) {
+            for (Index_t idx = 0, end = added_form_ids->Count(); idx < end; idx += 1) {
+                if (added_form_ids->At(idx) == form->form_id) {
                     return true;
                 }
             }
@@ -32,9 +33,9 @@ namespace doticu_skylib {
 
     size_t Form_List_t::Count()
     {
-        size_t count = forms.count;
-        if (added_form_ids) {
-            count += added_form_ids->count;
+        size_t count = this->forms.Count();
+        if (this->added_form_ids) {
+            count += this->added_form_ids->Count();
         }
         return count;
     }
@@ -75,8 +76,8 @@ namespace doticu_skylib {
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "forms");
         SKYLIB_LOG(indent + SKYLIB_TAB + "{");
-        for (size_t idx = 0, end = this->forms.count; idx < end; idx += 1) {
-            Form_t* form = forms.entries[idx];
+        for (size_t idx = 0, end = this->forms.Count(); idx < end; idx += 1) {
+            Form_t* form = forms[idx];
             SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form: %p", form);
         }
         SKYLIB_LOG(indent + SKYLIB_TAB + "}");
@@ -84,8 +85,8 @@ namespace doticu_skylib {
         if (this->added_form_ids) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "added_form_ids");
             SKYLIB_LOG(indent + SKYLIB_TAB + "{");
-            for (size_t idx = 0, end = added_form_ids->count; idx < end; idx += 1) {
-                Form_ID_t form_id = added_form_ids->entries[idx];
+            for (size_t idx = 0, end = added_form_ids->Count(); idx < end; idx += 1) {
+                Form_ID_t form_id = added_form_ids->At(idx);
                 SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_id: %8.8X", form_id);
             }
             SKYLIB_LOG(indent + SKYLIB_TAB + "}");

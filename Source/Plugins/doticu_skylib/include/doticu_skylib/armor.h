@@ -4,8 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/collections.h"
-
+#include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/component_biped_model.h"
 #include "doticu_skylib/component_biped_object.h"
 #include "doticu_skylib/component_block_bash.h"
@@ -19,8 +18,7 @@
 #include "doticu_skylib/component_race.h"
 #include "doticu_skylib/component_value.h"
 #include "doticu_skylib/component_weight.h"
-
-#include "doticu_skylib/bound_object.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {

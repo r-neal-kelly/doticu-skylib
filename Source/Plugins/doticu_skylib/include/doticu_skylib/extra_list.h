@@ -88,12 +88,27 @@ namespace doticu_skylib {
         template <typename T>
         Bool_t                  Remove(some<T*> x_data);
 
+        Bool_t                  Has_Extra_Count();
+        Bool_t                  Has_Extra_Factions();
+        Bool_t                  Has_Extra_Ghost();
+        Bool_t                  Has_Extra_Leveled_Item();
+        Bool_t                  Has_Extra_Outfit();
+        Bool_t                  Has_Extra_Owner();
+        Bool_t                  Has_Extra_Reference_Handle();
+        Bool_t                  Has_Extra_Reference_Interaction();
+        Bool_t                  Has_Extra_Talk_To_Player();
+        Bool_t                  Has_Extra_Worn();
+        Bool_t                  Has_Extra_Worn_Left();
+
     public:
         Vector_t<some<Extra_Data_t*>>   Extra_Datas();
 
         s16                             Count();
         s16                             Increment_Count(s16 amount);
         s16                             Decrement_Count(s16 amount);
+
+        maybe<Faction_t*>               Crime_Faction();
+        void                            Crime_Faction(maybe<Faction_t*> crime_faction);
 
         Boolean_e                       Is_Ghost();
         void                            Is_Ghost(Bool_t is_ghost);

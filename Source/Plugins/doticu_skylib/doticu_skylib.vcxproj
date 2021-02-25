@@ -64,6 +64,7 @@
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
+    <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
@@ -254,7 +255,7 @@
     <ClInclude Include="include\doticu_skylib\enum_static_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_weapon_state.h" />
     <ClInclude Include="include\doticu_skylib\extra_aliases.h" />
-    <ClInclude Include="include\doticu_skylib\extra_factions_and_ranks.h" />
+    <ClInclude Include="include\doticu_skylib\extra_factions.h" />
     <ClInclude Include="include\doticu_skylib\extra_location.h" />
     <ClInclude Include="include\doticu_skylib\extra_soul_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_talk_to_player.h" />
@@ -351,6 +352,8 @@
     <ClInclude Include="include\doticu_skylib\package_value.h" />
     <ClInclude Include="include\doticu_skylib\perk.h" />
     <ClInclude Include="include\doticu_skylib\enum_script_type.h" />
+    <ClInclude Include="include\doticu_skylib\scrap_array.h" />
+    <ClInclude Include="include\doticu_skylib\scrap_array_allocator.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
@@ -416,7 +419,7 @@
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
-    <ClCompile Include="src\doticu_skylib\collections.cpp" />
+    <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_container.cpp" />
     <ClCompile Include="src\doticu_skylib\component_description.cpp" />
@@ -436,6 +439,7 @@
     <ClCompile Include="src\doticu_skylib\extra_collision_layer.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_factions.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_ghost.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_leveled_item.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_outfit.cpp" />
@@ -515,11 +519,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\atomic_number.inl" />
+    <None Include="include\doticu_skylib\dynamic_array.inl" />
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\game.inl" />
     <None Include="include\doticu_skylib\global.inl" />
+    <None Include="include\doticu_skylib\scrap_array.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
     <None Include="include\doticu_skylib\virtual_variable.inl" />
   </ItemGroup>

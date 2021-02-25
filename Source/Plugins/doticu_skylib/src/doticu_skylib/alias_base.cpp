@@ -7,6 +7,7 @@
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/reference.h"
+#include "doticu_skylib/scrap_array.inl"
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -46,10 +47,10 @@ namespace doticu_skylib {
                 reference(reference)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* variables)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* variables)
             {
                 variables->Resize(1);
-                variables->At(0)->Pack(reference);
+                variables->At(0).Pack(reference);
                 return true;
             }
         } varguments(reference());

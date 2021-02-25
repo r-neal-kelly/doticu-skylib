@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/ui.h"
 
 #include "doticu_skylib/virtual_arguments.h"
@@ -24,10 +25,10 @@ namespace doticu_skylib {
                 note(note)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* arguments)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* arguments)
             {
                 arguments->Resize(1);
-                arguments->At(0)->String(note);
+                arguments->At(0).String(note);
                 return true;
             }
         } arguments(note);
@@ -48,10 +49,10 @@ namespace doticu_skylib {
                 message(message)
             {
             }
-            Bool_t operator()(Buffer_t<Virtual::Variable_t>* arguments)
+            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* arguments)
             {
                 arguments->Resize(1);
-                arguments->At(0)->String(message);
+                arguments->At(0).String(message);
                 return true;
             }
         } arguments(message);

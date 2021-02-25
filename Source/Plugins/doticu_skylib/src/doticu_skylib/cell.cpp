@@ -7,6 +7,7 @@
 
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/encounter_zone.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.h"
@@ -29,10 +30,10 @@ namespace doticu_skylib {
 
     size_t Cell_t::Loaded_Exterior_Cell_Count()
     {
-        auto worldspaces = Game_t::Self()->Worldspaces();
+        Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
         size_t exterior_cell_count = 0;
-        for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
-            Worldspace_t* worldspace = worldspaces.entries[idx];
+        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+            Worldspace_t* worldspace = worldspaces[idx];
             if (worldspace) {
                 if (worldspace->persistent_cell) {
                     exterior_cell_count += 1;
@@ -58,9 +59,9 @@ namespace doticu_skylib {
 
     static void Loaded_Exterior_Cells(Vector_t<Cell_t*>& accumulator)
     {
-        auto worldspaces = Game_t::Self()->Worldspaces();
-        for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
-            Worldspace_t* worldspace = worldspaces.entries[idx];
+        Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
+        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+            Worldspace_t* worldspace = worldspaces[idx];
             if (worldspace) {
                 if (worldspace->persistent_cell) {
                     accumulator.push_back(worldspace->persistent_cell);
@@ -320,8 +321,8 @@ namespace doticu_skylib {
             for (Index_t idx = 0, end = locations.size(); idx < end; idx += 1) {
                 Location_t* location = locations[idx];
                 if (location && location->Is_Valid()) {
-                    for (Index_t idx = 0, end = worldspaces.count; idx < end; idx += 1) {
-                        Worldspace_t* worldspace = worldspaces.entries[idx];
+                    for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+                        Worldspace_t* worldspace = worldspaces[idx];
                         if (worldspace && worldspace->Is_Valid()) {
                             if (worldspace->Has_Location(location)) {
                                 return worldspace;
