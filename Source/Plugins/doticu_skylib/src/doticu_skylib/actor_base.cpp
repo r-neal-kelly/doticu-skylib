@@ -104,8 +104,8 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
-            SKYLIB_ASSERT(actor_base->template_list);
-            for (Actor_Base_t* it = actor_base->template_list; it != nullptr; it = it->template_list) {
+            SKYLIB_ASSERT(actor_base->template_base);
+            for (maybe<Actor_Base_t*> it = actor_base->template_base; it != nullptr; it = it->template_base) {
                 SKYLIB_LOG(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
             }
         }
@@ -180,7 +180,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_t::Has_Template_FF000800()
     {
-        for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+        for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
             if (it->form_id == 0xFF000800) {
                 return true;
             }
@@ -231,67 +231,6 @@ namespace doticu_skylib {
         return race;
     }
 
-    Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
-    {
-        if (template_list) {
-            Vector_t<Actor_Base_t*> results;
-            results.reserve(4);
-            Templates(results);
-            return results;
-        } else {
-            return Vector_t<Actor_Base_t*>();
-        }
-    }
-
-    void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
-    {
-        for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
-            results.push_back(it);
-        }
-    }
-
-    Vector_t<Faction_And_Rank_t> Actor_Base_t::Factions_And_Ranks(Bool_t remove_negatives)
-    {
-        Vector_t<Faction_And_Rank_t> results;
-        Factions_And_Ranks(results, remove_negatives);
-        return results;
-    }
-
-    void Actor_Base_t::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
-    {
-        Vector_t<Faction_And_Rank_t> buffer;
-        Vector_t<Faction_And_Rank_t>* output;
-        if (remove_negatives) {
-            output = &buffer;
-            buffer.reserve(factions_and_ranks.Count());
-            results.reserve(factions_and_ranks.Count());
-        } else {
-            output = &results;
-            results.reserve(factions_and_ranks.Count());
-        }
-
-        for (Index_t idx = 0, end = factions_and_ranks.Count(); idx < end; idx += 1) {
-            Faction_And_Rank_t& faction_and_rank = factions_and_ranks[idx];
-            if (faction_and_rank.Is_Valid()) {
-                maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
-                if (output_idx) {
-                    output->operator[](idx).rank = faction_and_rank.rank;
-                } else {
-                    output->push_back(faction_and_rank);
-                }
-            }
-        }
-
-        if (remove_negatives) {
-            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = buffer[idx];
-                if (faction_and_rank.rank > -1) {
-                    results.push_back(faction_and_rank);
-                }
-            }
-        }
-    }
-
     Vector_t<Keyword_t*> Actor_Base_t::Keywords(Bool_t include_templates)
     {
         Vector_t<Keyword_t*> results;
@@ -303,7 +242,7 @@ namespace doticu_skylib {
     {
         if (include_templates) {
             size_t reserve_count = keyword_count;
-            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+            for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
                 reserve_count += it->keyword_count;
             }
             results.reserve(reserve_count);
@@ -321,7 +260,7 @@ namespace doticu_skylib {
         }
 
         if (include_templates) {
-            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+            for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
                 if (it->keywords) {
                     for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
                         Keyword_t* keyword = it->keywords[idx];
@@ -334,55 +273,72 @@ namespace doticu_skylib {
         }
     }
 
-    Actor_Base_t* Actor_Base_t::Highest_Static()
+    some<Actor_Base_t*> Actor_Base_t::Base_Root()
+    {
+        some<Actor_Base_t*> base = this;
+        some<Actor_Base_t*> root = base;
+        for (size_t idx = 0, end = 16; idx < end; idx += 1) {
+            root = base->Template_Root();
+            if (root->Is_Static()) {
+                return root;
+            } else {
+                base = base->Instantiated_Base();
+            }
+        }
+        return base->Template_Root();
+    }
+
+    some<Actor_Base_t*> Actor_Base_t::Instantiated_Base()
+    {
+        some<Actor_t*> actor = static_cast<Actor_t*>(Reference_t::Create(this, 1, Player_t::Self(), false, false));
+        maybe<Actor_Base_t*> base = actor->Actor_Base();
+        actor->Mark_For_Delete();
+        if (base) {
+            return base();
+        } else {
+            return this;
+        }
+    }
+
+    some<Actor_Base_t*> Actor_Base_t::Template_Root()
+    {
+        some<Actor_Base_t*> it = this;
+        for (; it->template_base; it = it->template_base()) {
+        }
+        return it;
+    }
+
+    maybe<Actor_Base_t*> Actor_Base_t::Highest_Static_Template()
     {
         if (Is_Static()) {
             return this;
         } else {
-            for (Actor_Base_t* it = template_list; it != nullptr; it = it->template_list) {
+            for (maybe<Actor_Base_t*> it = this->template_base; it; it = it->template_base) {
                 if (it->Is_Static()) {
                     return it;
                 }
             }
-            return nullptr;
+            return none<Actor_Base_t*>();
         }
     }
 
-    Actor_Base_t* Actor_Base_t::Root_Template()
+    Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
     {
-        if (template_list) {
-            Actor_Base_t* it = template_list;
-            for (; it->template_list != nullptr; it = it->template_list) {
-            }
-            return it;
+        if (template_base) {
+            Vector_t<Actor_Base_t*> results;
+            results.reserve(4);
+            Templates(results);
+            return results;
         } else {
-            return this;
+            return Vector_t<Actor_Base_t*>();
         }
     }
 
-    Actor_Base_t* Actor_Base_t::Root_Base()
+    void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
     {
-        maybe<Actor_Base_t*> base = this;
-        for (size_t recursions = 0; recursions < 8; recursions += 1) {
-            if (base && base->Is_Valid()) {
-                Actor_Base_t* root = base->Root_Template();
-                if (root && root->Is_Valid()) {
-                    if (root->Is_Dynamic()) {
-                        Actor_t* actor = static_cast<Actor_t*>
-                            (Reference_t::Create(base(), 1, Player_t::Self(), false, false));
-                        base = actor->Actor_Base();
-                        actor->Mark_For_Delete();
-                    } else {
-                        return root;
-                    }
-                } else {
-                    return nullptr;
-                }
-            } else {
-                return nullptr;
-            }
+        for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
+            results.push_back(it());
         }
-        return nullptr;
     }
 
     maybe<Outfit_t*> Actor_Base_t::Default_Outfit()

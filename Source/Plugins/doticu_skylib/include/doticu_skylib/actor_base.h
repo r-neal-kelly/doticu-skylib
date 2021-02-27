@@ -24,7 +24,7 @@
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/enum_sound_level.h"
-#include "doticu_skylib/faction_and_rank.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/rarity.h"
 #include "doticu_skylib/unknown.h"
 #include "doticu_skylib/vitality.h"
@@ -112,37 +112,37 @@ namespace doticu_skylib {
         virtual ~Actor_Base_t(); // 0
 
     public:
-        Actor_Skills_t      actor_skills;       // 190
-        Actor_Class_t*      actor_class;        // 1C0
-        void*               head_data;          // 1C8
-        void*               unk_1D0;            // 1D0
-        Combat_Style_t*     combat_style;       // 1D8
-        u32                 file_offset;        // 1E0
-        u32                 pad_1E4;            // 1E4
-        Race_t*             extra_race;         // 1E8
-        Actor_Base_t*       template_list;      // 1F0
-        Float_t             height;             // 1F8
-        Float_t             weight;             // 1FC
-        void*               sounds;             // 200
-        String_t            short_name;         // 208 (SHRT)
-        Armor_t*            far_skin;           // 210
-        maybe<Outfit_t*>    default_outfit;     // 218 (DOFT)
-        maybe<Outfit_t*>    sleep_outfit;       // 220
-        Form_List_t*        unk_228;            // 228
-        maybe<Faction_t*>   crime_faction;      // 230
-        void*               head_parts;         // 238
-        s8                  head_part_count;    // 240
-        u8                  unk_241;            // 241
-        u8                  unk_242;            // 242
-        u8                  unk_243;            // 243
-        u8                  unk_244;            // 244
-        Sound_Level_e       sound_level;        // 245
-        u8_rgba             body_tint;          // 246
-        u16                 pad_24A;            // 24A
-        u32                 pad_24C;            // 24C
-        Array_t<void*>*     relationships;      // 250
-        void*               face_data;          // 258
-        Array_t<void*>*     tint_layers;        // 260
+        Actor_Skills_t          actor_skills;       // 190
+        Actor_Class_t*          actor_class;        // 1C0
+        void*                   head_data;          // 1C8
+        void*                   unk_1D0;            // 1D0
+        Combat_Style_t*         combat_style;       // 1D8
+        u32                     file_offset;        // 1E0
+        u32                     pad_1E4;            // 1E4
+        Race_t*                 extra_race;         // 1E8
+        maybe<Actor_Base_t*>    template_base;      // 1F0
+        Float_t                 height;             // 1F8
+        Float_t                 weight;             // 1FC
+        void*                   sounds;             // 200
+        String_t                short_name;         // 208 (SHRT)
+        Armor_t*                far_skin;           // 210
+        maybe<Outfit_t*>        default_outfit;     // 218 (DOFT)
+        maybe<Outfit_t*>        sleep_outfit;       // 220
+        Form_List_t*            unk_228;            // 228
+        maybe<Faction_t*>       crime_faction;      // 230
+        void*                   head_parts;         // 238
+        s8                      head_part_count;    // 240
+        u8                      unk_241;            // 241
+        u8                      unk_242;            // 242
+        u8                      unk_243;            // 243
+        u8                      unk_244;            // 244
+        Sound_Level_e           sound_level;        // 245
+        u8_rgba                 body_tint;          // 246
+        u16                     pad_24A;            // 24A
+        u32                     pad_24C;            // 24C
+        Array_t<void*>*         relationships;      // 250
+        void*                   face_data;          // 258
+        Array_t<void*>*         tint_layers;        // 260
 
     public:
         Bool_t                          Has_Template_FF000800();
@@ -153,15 +153,16 @@ namespace doticu_skylib {
         some<Relation_e>                Relation(some<Actor_Base_t*> other);
         void                            Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
         Race_t*                         Race();
-        Vector_t<Actor_Base_t*>         Templates();
-        void                            Templates(Vector_t<Actor_Base_t*>& results);
-        Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
-        void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
+
         Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);
         void                            Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
-        Actor_Base_t*                   Highest_Static();
-        Actor_Base_t*                   Root_Template();
-        Actor_Base_t*                   Root_Base();
+
+        some<Actor_Base_t*>             Base_Root();
+        some<Actor_Base_t*>             Instantiated_Base();
+        some<Actor_Base_t*>             Template_Root();
+        maybe<Actor_Base_t*>            Highest_Static_Template();
+        Vector_t<Actor_Base_t*>         Templates();
+        void                            Templates(Vector_t<Actor_Base_t*>& results);
 
         maybe<Outfit_t*>                Default_Outfit();
         void                            Default_Outfit(maybe<Outfit_t*> default_outfit);

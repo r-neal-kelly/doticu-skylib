@@ -67,12 +67,17 @@
     <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
+    <ClInclude Include="include\doticu_skylib\enum_attack_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
+    <ClInclude Include="include\doticu_skylib\enum_life_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
+    <ClInclude Include="include\doticu_skylib\enum_sit_sleep_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
+    <ClInclude Include="include\doticu_skylib\enum_fly_state.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
@@ -416,6 +421,7 @@
     <ClCompile Include="src\doticu_skylib\actor_ai_cached_values.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\actor_state.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />

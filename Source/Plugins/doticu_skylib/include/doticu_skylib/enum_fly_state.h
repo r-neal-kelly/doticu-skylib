@@ -8,18 +8,19 @@
 
 namespace doticu_skylib {
 
-    class Weapon_State_e :
+    class Fly_State_e :
         public Enum_t<u8>
     {
     public:
         enum enum_type : value_type
         {
-            SHEATHED            = 0x0,
-            WANTS_TO_DRAW       = 0x1,
-            DRAWING             = 0x2,
-            DRAWN               = 0x3,
-            WANTS_TO_SHEATHE    = 0x4,
-            SHEATHING           = 0x5,
+            NONE        = 0x0,
+            TAKE_OFF    = 0x1,
+            CRUISING    = 0x2,
+            HOVERING    = 0x3,
+            LANDING     = 0x4,
+            PERCHING    = 0x5,
+            ACTION      = 0x6,
         };
         using Enum_t::Enum_t;
     };

@@ -87,7 +87,7 @@ namespace doticu_skylib {
 
         if (do_static) {
             if (base->Is_Valid()) {
-                return Create(static_cast<Form_t*>(base->Root_Base()), do_persist, do_uncombative);
+                return Create(static_cast<some<Form_t*>>(base->Base_Root()), do_persist, do_uncombative);
             } else {
                 return nullptr;
             }
@@ -199,46 +199,6 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Base_t*> Actor_t::Actor_Base()
-    {
-        if (this->base_form) {
-            return this->base_form->As_Actor_Base();
-        } else {
-            return none<Actor_Base_t*>();
-        }
-    }
-
-    Actor_Base_t* Actor_t::Highest_Static_Actor_Base()
-    {
-        maybe<Actor_Base_t*> actor_base = Actor_Base();
-        if (actor_base && actor_base->Is_Valid()) {
-            return actor_base->Highest_Static();
-        } else {
-            return nullptr;
-        }
-    }
-
-    Vector_t<Actor_Base_t*> Actor_t::Actor_Bases()
-    {
-        if (base_form && base_form->Is_Valid()) {
-            Vector_t<Actor_Base_t*> results;
-            results.reserve(4);
-            Actor_Bases(results);
-            return results;
-        } else {
-            return Vector_t<Actor_Base_t*>();
-        }
-    }
-
-    void Actor_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
-    {
-        maybe<Actor_Base_t*> actor_base = Actor_Base();
-        if (actor_base && base_form->Is_Valid()) {
-            results.push_back(actor_base());
-            actor_base->Templates(results);
-        }
-    }
-
     maybe<Havok_Actor_Controller_t*> Actor_t::Havok_Actor_Controller()
     {
         if (this->actor_ai && this->actor_ai->middle_high_ai) {
@@ -283,6 +243,66 @@ namespace doticu_skylib {
         return this->x_list.Reference_Interactor_B();
     }
 
+    maybe<Actor_Base_t*> Actor_t::Actor_Base()
+    {
+        if (this->base_form) {
+            return this->base_form->As_Actor_Base();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    maybe<Actor_Base_t*> Actor_t::Actor_Base_Root()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Base_Root()();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    maybe<Actor_Base_t*> Actor_t::Actor_Base_Template_Root()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Template_Root()();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    maybe<Actor_Base_t*> Actor_t::Actor_Base_Highest_Static_Template()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Highest_Static_Template();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    Vector_t<Actor_Base_t*> Actor_t::Actor_Bases()
+    {
+        if (base_form && base_form->Is_Valid()) {
+            Vector_t<Actor_Base_t*> results;
+            results.reserve(4);
+            Actor_Bases(results);
+            return results;
+        } else {
+            return Vector_t<Actor_Base_t*>();
+        }
+    }
+
+    void Actor_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base && base_form->Is_Valid()) {
+            results.push_back(actor_base());
+            actor_base->Templates(results);
+        }
+    }
+
     const char* Actor_t::Base_Name()
     {
         if (base_form) {
@@ -309,6 +329,47 @@ namespace doticu_skylib {
             }
         } else {
             return name;
+        }
+    }
+
+    maybe<Raw_Faction_Rank_t> Actor_t::Faction_Rank(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Raw_Faction_Rank_t> rank = this->x_list.Faction_Rank(faction);
+        if (rank) {
+            return rank;
+        } else {
+            return Base_Faction_Rank(faction);
+        }
+    }
+
+    void Actor_t::Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        this->x_list.Faction_Rank(faction, rank);
+    }
+
+    maybe<Raw_Faction_Rank_t> Actor_t::Base_Faction_Rank(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Faction_Rank(faction);
+        } else {
+            return none<Raw_Faction_Rank_t>();
+        }
+    }
+
+    void Actor_t::Base_Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Faction_Rank(faction, rank);
         }
     }
 
@@ -383,47 +444,6 @@ namespace doticu_skylib {
                     results.push_back(faction_and_rank);
                 }
             }
-        }
-    }
-
-    maybe<Raw_Faction_Rank_t> Actor_t::Faction_Rank(some<Faction_t*> faction)
-    {
-        SKYLIB_ASSERT_SOME(faction);
-
-        maybe<Raw_Faction_Rank_t> rank = this->x_list.Faction_Rank(faction);
-        if (rank) {
-            return rank;
-        } else {
-            return Base_Faction_Rank(faction);
-        }
-    }
-
-    void Actor_t::Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
-    {
-        SKYLIB_ASSERT_SOME(faction);
-
-        this->x_list.Faction_Rank(faction, rank);
-    }
-
-    maybe<Raw_Faction_Rank_t> Actor_t::Base_Faction_Rank(some<Faction_t*> faction)
-    {
-        SKYLIB_ASSERT_SOME(faction);
-
-        maybe<Actor_Base_t*> actor_base = Actor_Base();
-        if (actor_base) {
-            return actor_base->Faction_Rank(faction);
-        } else {
-            return none<Raw_Faction_Rank_t>();
-        }
-    }
-
-    void Actor_t::Base_Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
-    {
-        SKYLIB_ASSERT_SOME(faction);
-
-        maybe<Actor_Base_t*> actor_base = Actor_Base();
-        if (actor_base) {
-            actor_base->Faction_Rank(faction, rank);
         }
     }
 

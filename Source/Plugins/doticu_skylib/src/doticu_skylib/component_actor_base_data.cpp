@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/component_actor_base_data.h"
+#include "doticu_skylib/dynamic_array.inl"
 
 namespace doticu_skylib {
 
@@ -64,6 +65,48 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(faction);
 
         this->factions_and_ranks.Faction_Rank(faction, rank);
+    }
+
+    Vector_t<Faction_And_Rank_t> Actor_Base_Data_c::Factions_And_Ranks(Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> results;
+        Factions_And_Ranks(results, remove_negatives);
+        return results;
+    }
+
+    void Actor_Base_Data_c::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> buffer;
+        Vector_t<Faction_And_Rank_t>* output;
+        if (remove_negatives) {
+            output = &buffer;
+            buffer.reserve(factions_and_ranks.Count());
+            results.reserve(factions_and_ranks.Count());
+        } else {
+            output = &results;
+            results.reserve(factions_and_ranks.Count());
+        }
+
+        for (Index_t idx = 0, end = factions_and_ranks.Count(); idx < end; idx += 1) {
+            Faction_And_Rank_t& faction_and_rank = factions_and_ranks[idx];
+            if (faction_and_rank.Is_Valid()) {
+                maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                if (output_idx) {
+                    output->operator[](idx).rank = faction_and_rank.rank;
+                } else {
+                    output->push_back(faction_and_rank);
+                }
+            }
+        }
+
+        if (remove_negatives) {
+            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = buffer[idx];
+                if (faction_and_rank.rank > -1) {
+                    results.push_back(faction_and_rank);
+                }
+            }
+        }
     }
 
 }

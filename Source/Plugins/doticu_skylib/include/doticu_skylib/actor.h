@@ -319,10 +319,7 @@ namespace doticu_skylib {
 
         Sex_e                                       Sex();
         maybe<Race_t*>                              Race();
-        maybe<Actor_Base_t*>                        Actor_Base();
-        Actor_Base_t*                               Highest_Static_Actor_Base();
-        Vector_t<Actor_Base_t*>                     Actor_Bases();
-        void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
+
         maybe<Havok_Actor_Controller_t*>            Havok_Actor_Controller();
         maybe<Havok_Actor_Rigid_Body_Controller_t*> Havok_Actor_Rigid_Body_Controller();
         Vector_t<Keyword_t*>                        Keywords(Bool_t include_templates = true);
@@ -330,15 +327,22 @@ namespace doticu_skylib {
         maybe<Actor_t*>                             Mount();
         maybe<Actor_t*>                             Rider();
 
+        maybe<Actor_Base_t*>                        Actor_Base();
+        maybe<Actor_Base_t*>                        Actor_Base_Root();
+        maybe<Actor_Base_t*>                        Actor_Base_Template_Root();
+        maybe<Actor_Base_t*>                        Actor_Base_Highest_Static_Template();
+        Vector_t<Actor_Base_t*>                     Actor_Bases();
+        void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
+
         const char*                                 Base_Name();
         String_t                                    Any_Name();
 
-        Vector_t<Faction_And_Rank_t>                Factions_And_Ranks(Bool_t remove_negatives = true);
-        void                                        Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
         maybe<Raw_Faction_Rank_t>                   Faction_Rank(some<Faction_t*> faction);
         void                                        Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
         maybe<Raw_Faction_Rank_t>                   Base_Faction_Rank(some<Faction_t*> faction);
         void                                        Base_Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
+        Vector_t<Faction_And_Rank_t>                Factions_And_Ranks(Bool_t remove_negatives = true);
+        void                                        Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
         maybe<Faction_t*>                           Crime_Faction();
         void                                        Crime_Faction(some<Faction_t*> crime_faction);
         maybe<Faction_t*>                           Base_Crime_Faction();

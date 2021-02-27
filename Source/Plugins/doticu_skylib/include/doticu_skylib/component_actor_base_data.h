@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/dynamic_array.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/component_form_data.h"
 #include "doticu_skylib/enum_actor_base_flags.h"
 #include "doticu_skylib/enum_actor_base_template_flags.h"
@@ -54,8 +55,10 @@ namespace doticu_skylib {
         Bool_t Is_Invulnerable();
 
     public:
-        maybe<Raw_Faction_Rank_t>   Faction_Rank(some<Faction_t*> faction);
-        void                        Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
+        maybe<Raw_Faction_Rank_t>       Faction_Rank(some<Faction_t*> faction);
+        void                            Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
+        Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
+        void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
     };
     STATIC_ASSERT(sizeof(Actor_Base_Data_c) == 0x58);
 
