@@ -17,21 +17,28 @@ namespace doticu_skylib {
     };
 
     template <typename ...Arguments>
-    class Callback_i : public Functor_i<void, Arguments...>
+    class Callback_i :
+        public Functor_i<void, Arguments...>
     {
+    public:
+        static void*    operator new(size_t byte_count);
+        static void     operator delete(void* data);
+
     public:
         virtual ~Callback_i() = default;
     };
 
     template <typename Return_t, typename ...Arguments>
-    class Iterator_i : public Functor_i<Return_t, Arguments...>
+    class Iterator_i :
+        public Functor_i<Return_t, Arguments...>
     {
     public:
         virtual ~Iterator_i() = default;
     };
 
     template <typename ...Arguments>
-    class Filter_i : public Functor_i<Bool_t, Arguments...>
+    class Filter_i :
+        public Functor_i<Bool_t, Arguments...>
     {
     public:
         virtual ~Filter_i() = default;

@@ -47,11 +47,14 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::REFERENCE,
         };
 
+        static constexpr const char* SCRIPT_CLASS_NAME = "ObjectReference";
+
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI                            = 0x01E13798, // 513899
 
@@ -75,7 +78,7 @@ namespace doticu_skylib {
             public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 IS_DELETED      = static_cast<value_type>(1 << 5),
                 IS_PERSISTENT   = static_cast<value_type>(1 << 10),
@@ -88,7 +91,7 @@ namespace doticu_skylib {
             public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 CONTAINER   = static_cast<value_type>(1 << 5),
                 EXTRA_LIST  = static_cast<value_type>(1 << 10), // this might be more specific
@@ -294,8 +297,8 @@ namespace doticu_skylib {
         void Add_Item(some<Form_t*> item, s16 delta);
 
     public:
-        void Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback);
-        void Is_In_Dialogue_With_Player(unique<Callback_i<Bool_t>> callback);
+        void Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback);
+        void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback);
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

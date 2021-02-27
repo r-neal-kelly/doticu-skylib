@@ -508,6 +508,7 @@
     <ClCompile Include="src\doticu_skylib\ui.cpp" />
     <ClCompile Include="src\doticu_skylib\cstring.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_array.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_callback.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_class.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_game.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_handle.cpp" />
@@ -532,6 +533,7 @@
     <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\game.inl" />
     <None Include="include\doticu_skylib\global.inl" />
+    <None Include="include\doticu_skylib\interface.inl" />
     <None Include="include\doticu_skylib\scrap_array.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
     <None Include="include\doticu_skylib\virtual_variable.inl" />

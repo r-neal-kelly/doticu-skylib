@@ -760,11 +760,9 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback)
+    void Reference_t::Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback)
     {
-        SKYLIB_ASSERT_SOME(activator);
-
-        using Callback = Callback_i<Bool_t>;
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
 
         struct Virtual_Arguments :
             public Virtual::Arguments_t
@@ -774,7 +772,7 @@ namespace doticu_skylib {
                 activator(activator)
             {
             }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
+            Bool_t operator ()(Scrap_Array_t<Virtual::Variable_t>* args)
             {
                 args->Resize(2);
                 args->At(0).As<Reference_t*>(activator());
@@ -786,51 +784,53 @@ namespace doticu_skylib {
         struct Virtual_Callback :
             public Virtual::Callback_t
         {
-            unique<Callback> callback;
-            Virtual_Callback(unique<Callback> callback) :
+            Callback callback;
+            Virtual_Callback(Callback callback) :
                 callback(std::move(callback))
             {
             }
-            void operator()(Virtual::Variable_t* result)
+            void operator ()(Virtual::Variable_t* result)
             {
-                if (callback) {
-                    callback->operator()(result ? result->As<Bool_t>() : false);
+                if (this->callback) {
+                    (*this->callback)(result ? result->As<Bool_t>() : false);
                 }
             }
         };
 
+        SKYLIB_ASSERT_SOME(activator);
+
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            "ObjectReference",
+            SCRIPT_CLASS_NAME,
             "Activate",
             &arguments,
             new Virtual_Callback(std::move(callback))
         );
     }
 
-    void Reference_t::Is_In_Dialogue_With_Player(unique<Callback_i<Bool_t>> callback)
+    void Reference_t::Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback)
     {
-        using Callback = Callback_i<Bool_t>;
+        using Callback = some<unique<Callback_i<Bool_t>>>;
 
         struct Virtual_Callback :
             public Virtual::Callback_t
         {
-            unique<Callback> callback;
-            Virtual_Callback(unique<Callback> callback) :
+            Callback callback;
+            Virtual_Callback(Callback callback) :
                 callback(std::move(callback))
             {
             }
-            void operator()(Virtual::Variable_t* result)
+            void operator ()(Virtual::Variable_t* result)
             {
-                if (callback) {
-                    callback->operator()(result ? result->As<Bool_t>() : false);
-                }
+                (*this->callback)(result ? result->As<Bool_t>() : false);
             }
         };
 
+        SKYLIB_ASSERT_SOME(callback);
+
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            "ObjectReference",
+            SCRIPT_CLASS_NAME,
             "IsInDialogueWithPlayer",
             nullptr,
             new Virtual_Callback(std::move(callback))

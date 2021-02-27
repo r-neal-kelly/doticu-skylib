@@ -9,23 +9,12 @@
 namespace doticu_skylib {
 
     template <typename T>
-    class unique_destroyer // this should call the destructor as well.
-    {
-    public:
-        static void Destroy(some<T*> value)
-        {
-            SKYLIB_ASSERT_SOME(value);
-            delete value();
-        }
-    };
-
-    template <typename T>
     class unique
     {
     public:
         using value_type = T;
 
-    public:
+    protected:
         maybe<T*> value;
 
     public:
@@ -41,13 +30,25 @@ namespace doticu_skylib {
 
         template <typename TT>
         unique(TT* value) :
-            value(static_cast<TT*>(value))
+            value(static_cast<T*>(value))
+        {
+        }
+
+        template <typename TT>
+        unique(none<TT*> value) :
+            value(static_cast<T*>(value()))
         {
         }
 
         template <typename TT>
         unique(maybe<TT*> value) :
-            value(static_cast<maybe<T*>>(value))
+            value(static_cast<T*>(value()))
+        {
+        }
+
+        template <typename TT>
+        unique(some<TT*> value) :
+            value(static_cast<T*>(value()))
         {
         }
 
@@ -61,10 +62,10 @@ namespace doticu_skylib {
         }
 
         template <typename TT>
-        unique& operator=(const unique<TT>& other) = delete;
+        unique& operator =(const unique<TT>& other) = delete;
 
         template <typename TT>
-        unique& operator=(unique<TT>&& other) noexcept
+        unique& operator =(unique<TT>&& other) noexcept
         {
             if (this != std::addressof(other)) {
                 this->value = static_cast<maybe<T*>>(std::exchange(other.value, none<TT*>()));
@@ -74,32 +75,129 @@ namespace doticu_skylib {
         ~unique()
         {
             if (this->value) {
-                unique_destroyer<T>::Destroy(this->value());
+                delete this->value();
                 this->value = nullptr;
             }
         }
 
     public:
-        explicit operator Bool_t()          { return static_cast<Bool_t>(this->value); }
-        explicit operator Bool_t() const    { return static_cast<Bool_t>(this->value); }
+        explicit operator Bool_t() const { return static_cast<Bool_t>(this->value); }
 
-        Bool_t operator !()         { return !static_cast<Bool_t>(*this); }
-        Bool_t operator !() const   { return !static_cast<Bool_t>(*this); }
+    public:
+        Bool_t              operator !() const              { return !static_cast<Bool_t>(*this); }
+        T&                  operator *() const              { return *this->value; }
+        some<maybe<T*>*>    operator &() const              { return &this->value(); }
+        maybe<T*>           operator ()() const             { return this->value; }
+        maybe<T*>           operator ->() const             { return this->value; }
+        T&                  operator [](size_t index) const { return *(this->value() + index); }
+    };
 
-        maybe<T*> operator()()          { return this->value; }
-        maybe<T*> operator()() const    { return this->value; }
+    template <typename T>
+    class none<unique<T>>
+    {
+    public:
+        using value_type = unique<T>;
 
-        maybe<T*> operator->()          { return this->value; }
-        maybe<T*> operator->() const    { return this->value; }
+    public:
+        none() {}
+    };
 
-        T& operator*()          { return *this->value; }
-        T& operator*() const    { return *this->value; }
+    template <typename T>
+    class maybe<unique<T>>
+    {
+    public:
+        using value_type = unique<T>;
 
-        some<maybe<T*>*> operator&()        { return &this->value(); }
-        some<maybe<T*>*> operator&() const  { return &this->value(); }
+    protected:
+        value_type value;
 
-        T& operator[](size_t index)         { return *(this->value() + index); }
-        T& operator[](size_t index) const   { return *(this->value() + index); }
+    public:
+        maybe()                         : value(nullptr) {}
+        maybe(none<value_type> other)   : value(nullptr) {}
+        maybe(value_type value)         : value(std::move(value)) {}
+        maybe(const maybe& other)       = delete;
+        maybe(maybe&& other) noexcept   : value(std::move(other.value)) {}
+
+        template <typename TT>
+        maybe(TT* value) :
+            value(value)
+        {
+        }
+
+        maybe& operator =(const maybe& other) = delete;
+
+        maybe& operator =(maybe&& other) noexcept
+        {
+            if (this != std::addressof(other)) {
+                this->value = std::move(other.value);
+            }
+            return *this;
+        }
+
+        ~maybe()
+        {
+            value.~value_type();
+        }
+
+    public:
+        explicit operator Bool_t() const { return this->value.operator Bool_t(); }
+
+    public:
+        Bool_t              operator !() const              { return this->value.operator !(); }
+        T&                  operator *() const              { return this->value.operator *(); }
+        some<maybe<T*>*>    operator &() const              { return this->value.operator &(); }
+        maybe<T*>           operator ()() const             { return this->value.operator ()(); }
+        maybe<T*>           operator ->() const             { return this->value.operator ->(); }
+        T&                  operator [](size_t index) const { return this->value.operator [](index); }
+    };
+
+    template <typename T>
+    class some<unique<T>>
+    {
+    public:
+        using value_type = unique<T>;
+
+    protected:
+        value_type value;
+
+    public:
+        some()                          : value(nullptr) {}
+        some(none<value_type> other)    : value(nullptr) {}
+        some(value_type value)          : value(std::move(value)) {}
+        some(const some& other)         = delete;
+        some(some&& other) noexcept     : value(std::move(other.value)) {}
+
+        template <typename TT>
+        some(TT* value) :
+            value(value)
+        {
+        }
+
+        some& operator =(const some& other) = delete;
+
+        some& operator =(some&& other) noexcept
+        {
+            if (this != std::addressof(other)) {
+                this->value = std::move(other.value);
+            }
+            return *this;
+        }
+
+        ~some()
+        {
+            value.~value_type();
+        }
+
+    public:
+        explicit operator Bool_t() const { return this->value.operator Bool_t(); }
+
+    public:
+        Bool_t              operator !() const              { return this->value.operator !(); }
+        T&                  operator *() const              { return this->value.operator *(); }
+        some<maybe<T*>*>    operator &() const              { return this->value.operator &(); }
+        maybe<T*>           operator ()() const             { return this->value.operator ()(); }
+        maybe<T*>           operator ->() const             { return this->value.operator ->(); }
+        T&                  operator [](size_t index) const { return this->value.operator [](index); }
     };
 
 }
