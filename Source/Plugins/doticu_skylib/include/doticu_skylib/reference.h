@@ -25,6 +25,7 @@ namespace doticu_skylib {
     class Cell_t;
     class Container_c;
     class Container_Changes_t;
+    class Dialogue_Branch_t;
     class Faction_t;
     class Form_List_t;
     class Keyword_t;
@@ -131,7 +132,7 @@ namespace doticu_skylib {
         virtual void        _4A(void);                                  // 4A
         virtual void        _4B(void);                                  // 4B
         virtual void        _4C(void);                                  // 4C
-        virtual void        _4D(void);                                  // 4D
+        virtual Dialogue_Branch_t*  Get_Exclusive_Dialogue_Branch();    // 4D
         virtual void        _4E(void);                                  // 4E
         virtual void        _4F(void);                                  // 4F
         virtual void        _50(void);                                  // 50
@@ -294,6 +295,7 @@ namespace doticu_skylib {
 
     public:
         void Activate(some<Reference_t*> activator, unique<Callback_i<Bool_t>> callback);
+        void Is_In_Dialogue_With_Player(unique<Callback_i<Bool_t>> callback);
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

@@ -40,6 +40,12 @@ namespace doticu_skylib {
         }
 
         template <typename TT>
+        unique(TT* value) :
+            value(static_cast<TT*>(value))
+        {
+        }
+
+        template <typename TT>
         unique(maybe<TT*> value) :
             value(static_cast<maybe<T*>>(value))
         {

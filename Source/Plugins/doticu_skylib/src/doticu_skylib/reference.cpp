@@ -808,4 +808,33 @@ namespace doticu_skylib {
         );
     }
 
+    void Reference_t::Is_In_Dialogue_With_Player(unique<Callback_i<Bool_t>> callback)
+    {
+        using Callback = Callback_i<Bool_t>;
+
+        struct Virtual_Callback :
+            public Virtual::Callback_t
+        {
+            unique<Callback> callback;
+            Virtual_Callback(unique<Callback> callback) :
+                callback(std::move(callback))
+            {
+            }
+            void operator()(Virtual::Variable_t* result)
+            {
+                if (callback) {
+                    callback->operator()(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            "ObjectReference",
+            "IsInDialogueWithPlayer",
+            nullptr,
+            new Virtual_Callback(std::move(callback))
+        );
+    }
+
 }

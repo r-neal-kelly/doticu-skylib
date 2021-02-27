@@ -29,6 +29,7 @@ namespace doticu_skylib {
 
     class Actor_AI_t;
     class Actor_Base_t;
+    class Actor_High_AI_t;
     class Actor_Mover_t;
     class Dialogue_Branch_t;
     class Faction_t;
@@ -251,7 +252,7 @@ namespace doticu_skylib {
         Actor_Critical_Stage_e              actor_critical_stage;                       // 0E8
         u32                                 pad_0EC;                                    // 0EC
         maybe<Actor_AI_t*>                  actor_ai;                                   // 0F0
-        Reference_Handle_t                  current_dialogue_target;                    // 0F8 (connected to Dialogue_Info_Instance_t?)
+        Reference_Handle_t                  last_dialogue_target;                       // 0F8 (connected to Dialogue_Info_Instance_t?)
         Actor_Handle_t                      current_combat_target;                      // 0FC
         Actor_Handle_t                      current_killer;                             // 100
         Float_t                             check_dead_body_timer;                      // 104
@@ -333,6 +334,9 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*>                        Actor_Base_Highest_Static_Template();
         Vector_t<Actor_Base_t*>                     Actor_Bases();
         void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
+
+        maybe<Actor_AI_t*>                          Actor_AI();
+        maybe<Actor_High_AI_t*>                     Actor_High_AI();
 
         const char*                                 Base_Name();
         String_t                                    Any_Name();

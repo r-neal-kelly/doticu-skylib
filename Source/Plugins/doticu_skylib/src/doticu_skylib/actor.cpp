@@ -6,6 +6,7 @@
 #include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_ai_cached_values.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/actor_high_ai.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
@@ -300,6 +301,20 @@ namespace doticu_skylib {
         if (actor_base && base_form->Is_Valid()) {
             results.push_back(actor_base());
             actor_base->Templates(results);
+        }
+    }
+
+    maybe<Actor_AI_t*> Actor_t::Actor_AI()
+    {
+        return this->actor_ai;
+    }
+
+    maybe<Actor_High_AI_t*> Actor_t::Actor_High_AI()
+    {
+        if (this->actor_ai) {
+            return this->actor_ai->high_ai;
+        } else {
+            return none<Actor_High_AI_t*>();
         }
     }
 

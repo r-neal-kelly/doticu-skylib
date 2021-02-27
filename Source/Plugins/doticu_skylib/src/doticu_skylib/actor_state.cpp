@@ -47,6 +47,11 @@ namespace doticu_skylib {
             this->bits_a.is_moving_back;
     }
 
+    Bool_t Actor_State_t::Is_Sneaking()
+    {
+        return this->bits_a.is_sneaking;
+    }
+
     Bool_t Actor_State_t::Has_Weapon_Drawn()
     {
         Weapon_State_e weapon_state = Weapon_State();

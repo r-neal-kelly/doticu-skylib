@@ -46,7 +46,7 @@ namespace doticu_skylib {
         class Bits_B_t
         {
         public:
-            u32 is_talking_to_player    : 1;    // 4::0
+            u32 is_talking_to_player    : 1;    // 4::0 (doesn't seem to be accurate)
             u32 is_force_running        : 1;    // 4::1
             u32 is_force_sneaking       : 1;    // 4::2
             u32 is_head_tracking        : 1;    // 4::3
@@ -80,6 +80,7 @@ namespace doticu_skylib {
         Weapon_State_e      Weapon_State();
 
         Bool_t              Is_Moving();
+        Bool_t              Is_Sneaking();
         Bool_t              Has_Weapon_Drawn();
         Bool_t              Has_Weapon_Sheathed();
     };
