@@ -195,7 +195,7 @@ namespace doticu_skylib {
     {
         Read_Locker_t locker(this->lock);
 
-        if (this->presence && Has(type)) {
+        if (this->presence && this->presence->Has(type)) {
             for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
                     return it;
@@ -322,11 +322,31 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Raw_Faction_Rank_t> Extra_List_t::Faction_Rank(some<Faction_t*> faction)
+    {
+        maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
+        if (x_factions) {
+            return x_factions->Faction_Rank(faction);
+        } else {
+            return none<Raw_Faction_Rank_t>();
+        }
+    }
+
+    void Extra_List_t::Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
+        if (x_factions) {
+            x_factions->Faction_Rank(faction, rank);
+        } else {
+            Add<Extra_Factions_t>(Extra_Factions_t::Create(faction, rank));
+        }
+    }
+
     maybe<Faction_t*> Extra_List_t::Crime_Faction()
     {
         maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
         if (x_factions) {
-            return x_factions->crime_faction;
+            return x_factions->Crime_Faction();
         } else {
             return none<Faction_t*>();
         }
@@ -336,7 +356,7 @@ namespace doticu_skylib {
     {
         maybe<Extra_Factions_t*> x_factions = Get<Extra_Factions_t>();
         if (x_factions) {
-            x_factions->crime_faction = crime_faction;
+            x_factions->Crime_Faction(crime_faction);
         } else {
             Add<Extra_Factions_t>(Extra_Factions_t::Create(crime_faction));
         }

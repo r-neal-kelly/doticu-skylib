@@ -239,80 +239,6 @@ namespace doticu_skylib {
         }
     }
 
-    Vector_t<Faction_And_Rank_t> Actor_t::Factions_And_Ranks(Bool_t remove_negatives)
-    {
-        Vector_t<Faction_And_Rank_t> results;
-        Factions_And_Ranks(results, remove_negatives);
-        return results;
-    }
-
-    void Actor_t::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
-    {
-        Array_t<Faction_And_Rank_t>* base_factions_and_ranks = nullptr;
-        Array_t<Faction_And_Rank_t>* reference_factions_and_ranks = nullptr;
-        size_t reserve_count = 0;
-
-        maybe<Actor_Base_t*> actor_base = Actor_Base();
-        if (actor_base && actor_base->Is_Valid()) {
-            base_factions_and_ranks = &actor_base->factions_and_ranks;
-            reserve_count += base_factions_and_ranks->Count();
-        }
-
-        maybe<Extra_Factions_t*> xfactions = x_list.Get<Extra_Factions_t>();
-        if (xfactions) {
-            reference_factions_and_ranks = &xfactions->factions_and_ranks;
-            reserve_count += reference_factions_and_ranks->Count();
-        }
-
-        Vector_t<Faction_And_Rank_t> buffer;
-        Vector_t<Faction_And_Rank_t>* output;
-        if (remove_negatives) {
-            output = &buffer;
-            buffer.reserve(reserve_count);
-            results.reserve(reserve_count);
-        } else {
-            output = &results;
-            results.reserve(reserve_count);
-        }
-
-        if (base_factions_and_ranks) {
-            for (Index_t idx = 0, end = base_factions_and_ranks->Count(); idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = base_factions_and_ranks->At(idx);
-                if (faction_and_rank.Is_Valid()) {
-                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
-                    if (output_idx) {
-                        output->operator[](idx).rank = faction_and_rank.rank;
-                    } else {
-                        output->push_back(faction_and_rank);
-                    }
-                }
-            }
-        }
-
-        if (reference_factions_and_ranks) {
-            for (Index_t idx = 0, end = reference_factions_and_ranks->Count(); idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = reference_factions_and_ranks->At(idx);
-                if (faction_and_rank.Is_Valid()) {
-                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
-                    if (output_idx) {
-                        output->operator[](idx).rank = faction_and_rank.rank;
-                    } else {
-                        output->push_back(faction_and_rank);
-                    }
-                }
-            }
-        }
-
-        if (remove_negatives) {
-            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
-                Faction_And_Rank_t& faction_and_rank = buffer[idx];
-                if (faction_and_rank.rank > -1) {
-                    results.push_back(faction_and_rank);
-                }
-            }
-        }
-    }
-
     maybe<Havok_Actor_Controller_t*> Actor_t::Havok_Actor_Controller()
     {
         if (this->actor_ai && this->actor_ai->middle_high_ai) {
@@ -386,10 +312,126 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<Faction_And_Rank_t> Actor_t::Factions_And_Ranks(Bool_t remove_negatives)
+    {
+        Vector_t<Faction_And_Rank_t> results;
+        Factions_And_Ranks(results, remove_negatives);
+        return results;
+    }
+
+    void Actor_t::Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives)
+    {
+        Factions_And_Ranks_t* base_factions_and_ranks = nullptr;
+        Factions_And_Ranks_t* reference_factions_and_ranks = nullptr;
+        size_t reserve_count = 0;
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base && actor_base->Is_Valid()) {
+            base_factions_and_ranks = &actor_base->factions_and_ranks;
+            reserve_count += base_factions_and_ranks->Count();
+        }
+
+        maybe<Extra_Factions_t*> xfactions = x_list.Get<Extra_Factions_t>();
+        if (xfactions) {
+            reference_factions_and_ranks = &xfactions->factions_and_ranks;
+            reserve_count += reference_factions_and_ranks->Count();
+        }
+
+        Vector_t<Faction_And_Rank_t> buffer;
+        Vector_t<Faction_And_Rank_t>* output;
+        if (remove_negatives) {
+            output = &buffer;
+            buffer.reserve(reserve_count);
+            results.reserve(reserve_count);
+        } else {
+            output = &results;
+            results.reserve(reserve_count);
+        }
+
+        if (base_factions_and_ranks) {
+            for (Index_t idx = 0, end = base_factions_and_ranks->Count(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = base_factions_and_ranks->At(idx);
+                if (faction_and_rank.Is_Valid()) {
+                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                    if (output_idx) {
+                        output->operator[](idx).rank = faction_and_rank.rank;
+                    } else {
+                        output->push_back(faction_and_rank);
+                    }
+                }
+            }
+        }
+
+        if (reference_factions_and_ranks) {
+            for (Index_t idx = 0, end = reference_factions_and_ranks->Count(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = reference_factions_and_ranks->At(idx);
+                if (faction_and_rank.Is_Valid()) {
+                    maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                    if (output_idx) {
+                        output->operator[](idx).rank = faction_and_rank.rank;
+                    } else {
+                        output->push_back(faction_and_rank);
+                    }
+                }
+            }
+        }
+
+        if (remove_negatives) {
+            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
+                Faction_And_Rank_t& faction_and_rank = buffer[idx];
+                if (faction_and_rank.rank > -1) {
+                    results.push_back(faction_and_rank);
+                }
+            }
+        }
+    }
+
+    maybe<Raw_Faction_Rank_t> Actor_t::Faction_Rank(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Raw_Faction_Rank_t> rank = this->x_list.Faction_Rank(faction);
+        if (rank) {
+            return rank;
+        } else {
+            return Base_Faction_Rank(faction);
+        }
+    }
+
+    void Actor_t::Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        this->x_list.Faction_Rank(faction, rank);
+    }
+
+    maybe<Raw_Faction_Rank_t> Actor_t::Base_Faction_Rank(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Faction_Rank(faction);
+        } else {
+            return none<Raw_Faction_Rank_t>();
+        }
+    }
+
+    void Actor_t::Base_Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Faction_Rank(faction, rank);
+        }
+    }
+
     maybe<Faction_t*> Actor_t::Crime_Faction()
     {
-        if (this->x_list.Has_Extra_Factions()) {
-            return this->x_list.Crime_Faction();
+        maybe<Faction_t*> crime_faction = this->x_list.Crime_Faction();
+        if (crime_faction) {
+            return crime_faction;
         } else {
             return Base_Crime_Faction();
         }
@@ -417,6 +459,29 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base) {
             actor_base->Crime_Faction(crime_faction);
+        }
+    }
+
+    some<Relation_e> Actor_t::Base_Relation(some<Actor_Base_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Relation(other);
+        } else {
+            return Relation_e::_DEFAULT_;
+        }
+    }
+
+    void Actor_t::Base_Relation(some<Actor_Base_t*> other, some<Relation_e> relation)
+    {
+        SKYLIB_ASSERT_SOME(other);
+        SKYLIB_ASSERT_SOME(relation);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Relation(other, relation);
         }
     }
 

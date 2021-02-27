@@ -40,7 +40,7 @@ namespace doticu_skylib {
         maybe<Voice_Type_t*>                        voice_type;                 // 28
         Form_t*                                     base_template_form;         // 30
         Form_t**                                    template_forms;             // 38
-        Array_t<Faction_And_Rank_t>                 factions_and_ranks;         // 40
+        Factions_And_Ranks_t                        factions_and_ranks;         // 40
 
     public:
         Bool_t Is_Male();
@@ -52,6 +52,10 @@ namespace doticu_skylib {
         Bool_t Is_Protected();
         Bool_t Is_Essential();
         Bool_t Is_Invulnerable();
+
+    public:
+        maybe<Raw_Faction_Rank_t>   Faction_Rank(some<Faction_t*> faction);
+        void                        Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
     };
     STATIC_ASSERT(sizeof(Actor_Base_Data_c) == 0x58);
 

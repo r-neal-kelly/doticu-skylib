@@ -52,4 +52,18 @@ namespace doticu_skylib {
         return (actor_base_flags & Actor_Base_Flags_e::IS_INVULNERABLE) != 0;
     }
 
+    maybe<Raw_Faction_Rank_t> Actor_Base_Data_c::Faction_Rank(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT(faction);
+
+        return this->factions_and_ranks.Faction_Rank(faction);
+    }
+
+    void Actor_Base_Data_c::Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank)
+    {
+        SKYLIB_ASSERT(faction);
+
+        this->factions_and_ranks.Faction_Rank(faction, rank);
+    }
+
 }

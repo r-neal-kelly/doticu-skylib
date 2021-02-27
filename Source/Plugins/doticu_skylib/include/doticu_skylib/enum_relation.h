@@ -30,7 +30,8 @@ namespace doticu_skylib {
             ENEMY           = 7,
             ARCHNEMESIS     = 8,
 
-            _TOTAL_,
+            _TOTAL_         = 9,
+            _DEFAULT_       = ACQUAINTANCE,
         };
 
         class Offset_e :

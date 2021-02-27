@@ -17,6 +17,179 @@ namespace doticu_skylib {
     class some;
 
     template <typename T>
+    class none
+    {
+    public:
+        using value_type = T;
+
+    public:
+        none() {}
+    };
+
+    template <typename T>
+    class maybe
+    {
+    public:
+        using value_type = T;
+
+    protected:
+        T       value;
+        Bool_t  has_value;
+
+    public:
+        maybe()
+            : value(T()), has_value(false)
+        {
+        }
+
+        maybe(const none<T> none)
+            : value(T()), has_value(false)
+        {
+        }
+
+        maybe(const T value)
+            : value(value), has_value(true)
+        {
+        }
+
+        maybe(const T value, Bool_t has_value)
+            : value(value), has_value(has_value)
+        {
+        }
+
+        maybe(const some<T>& other)
+            : value(other()), has_value(true)
+        {
+        }
+
+        maybe(const maybe& other)
+            : value(other.value), has_value(other.has_value)
+        {
+        }
+
+        maybe(maybe&& other) noexcept
+            : value(std::exchange(other.value, T())), has_value(std::exchange(other.has_value, false))
+        {
+        }
+
+        maybe& operator =(const maybe& other)
+        {
+            if (this != std::addressof(other)) {
+                this->value = other.value;
+                this->has_value = other.has_value;
+            }
+            return *this;
+        }
+
+        maybe& operator =(maybe&& other)
+        {
+            if (this != std::addressof(other)) {
+                this->value = std::exchange(other.value, T());
+                this->has_value = std::exchange(other.value, false);
+            }
+            return *this;
+        }
+
+        ~maybe()
+        {
+            this->value.~T();
+            this->has_value = false;
+        }
+
+    public:
+        explicit operator Bool_t() const
+        {
+            return this->has_value;
+        }
+
+        template <typename TT>
+        operator maybe<TT>() const
+        {
+            if (operator Bool_t()) {
+                return static_cast<TT>(value);
+            } else {
+                return none<TT>();
+            }
+        }
+
+    public:
+        Bool_t operator !() const
+        {
+            return !static_cast<Bool_t>(*this);
+        }
+
+        T operator ()() const
+        {
+            return this->value;
+        }
+    };
+
+    template <typename T>
+    class some
+    {
+    public:
+        using value_type = T;
+
+    protected:
+        T value;
+
+    public:
+        some(const T value)
+            : value(value)
+        {
+        }
+
+        some(const some& other)
+            : value(other.value)
+        {
+        }
+
+        some(some&& other) noexcept
+            : value(std::exchange(other.value, T()))
+        {
+        }
+
+        some& operator =(const some& other)
+        {
+            if (this != std::addressof(other)) {
+                this->value = other.value;
+            }
+            return *this;
+        }
+
+        some& operator =(some&& other)
+        {
+            if (this != std::addressof(other)) {
+                this->value = std::exchange(other.value, T());
+            }
+            return *this;
+        }
+
+        ~some()
+        {
+            this->value.~T();
+        }
+
+    public:
+        operator T() const
+        {
+            return this->value;
+        }
+
+        template <typename TT>
+        operator some<TT>() const
+        {
+            return static_cast<TT>(value);
+        }
+
+    public:
+        T operator ()() const
+        {
+            return this->value;
+        }
+    };
+
+    template <typename T>
     Bool_t Is_Equal(const none<T>& a, const T& b)
     {
         static_assert(false, "You must define Is_Equal() for your none type.");

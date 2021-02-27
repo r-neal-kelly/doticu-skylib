@@ -8,6 +8,6 @@
 
 namespace doticu_skylib {
 
-    using Faction_Rank_t = s8;
+    using Raw_Faction_Rank_t = s8;
 
 }

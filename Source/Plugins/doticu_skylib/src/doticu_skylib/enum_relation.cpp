@@ -64,7 +64,7 @@ namespace doticu_skylib {
         if (relation) {
             return relation();
         } else {
-            return ACQUAINTANCE;
+            return _DEFAULT_;
         }
     }
 

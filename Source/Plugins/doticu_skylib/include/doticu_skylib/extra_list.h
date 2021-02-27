@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/faction_rank.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
@@ -107,6 +108,8 @@ namespace doticu_skylib {
         s16                             Increment_Count(s16 amount);
         s16                             Decrement_Count(s16 amount);
 
+        maybe<Raw_Faction_Rank_t>       Faction_Rank(some<Faction_t*> faction);
+        void                            Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
         maybe<Faction_t*>               Crime_Faction();
         void                            Crime_Faction(maybe<Faction_t*> crime_faction);
 

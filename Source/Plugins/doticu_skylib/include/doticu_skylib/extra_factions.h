@@ -33,6 +33,8 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Factions_t*>  Create();
+        static some<Extra_Factions_t*>  Create(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
         static some<Extra_Factions_t*>  Create(maybe<Faction_t*> crime_faction);
         static void                     Destroy(some<Extra_Factions_t*> x_factions);
 
@@ -40,12 +42,18 @@ namespace doticu_skylib {
         virtual ~Extra_Factions_t(); // 0
 
     public:
-        Array_t<Faction_And_Rank_t> factions_and_ranks; // 10
-        maybe<Faction_t*>           crime_faction;      // 28
-        Bool_t                      unk_30;             // 30
-        u8                          pad_31;             // 31
-        u16                         pad_32;             // 32
-        u32                         pad_34;             // 34
+        Factions_And_Ranks_t    factions_and_ranks; // 10
+        maybe<Faction_t*>       crime_faction;      // 28
+        Bool_t                  unk_30;             // 30
+        u8                      pad_31;             // 31
+        u16                     pad_32;             // 32
+        u32                     pad_34;             // 34
+
+    public:
+        maybe<Raw_Faction_Rank_t>   Faction_Rank(some<Faction_t*> faction);
+        void                        Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
+        maybe<Faction_t*>           Crime_Faction();
+        void                        Crime_Faction(maybe<Faction_t*> crime_faction);
     };
     STATIC_ASSERT(sizeof(Extra_Factions_t) == 0x38);
 

@@ -14,6 +14,7 @@
 #include "doticu_skylib/enum_actor_critical_stage.h"
 #include "doticu_skylib/enum_actor_flags.h"
 #include "doticu_skylib/enum_magic_slot.h"
+#include "doticu_skylib/enum_relation.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/faction_and_rank.h"
@@ -59,7 +60,7 @@ namespace doticu_skylib {
             public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI                    = 0x01E14AD8, // 513915
 
@@ -75,7 +76,7 @@ namespace doticu_skylib {
             public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 IGNORES_ALLY_HITS = static_cast<value_type>(1 << 20),
             };
@@ -86,7 +87,7 @@ namespace doticu_skylib {
             public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 FORM_FLAGS = static_cast<value_type>(1 << 0),
             };
@@ -322,8 +323,6 @@ namespace doticu_skylib {
         Actor_Base_t*                               Highest_Static_Actor_Base();
         Vector_t<Actor_Base_t*>                     Actor_Bases();
         void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
-        Vector_t<Faction_And_Rank_t>                Factions_And_Ranks(Bool_t remove_negatives = true);
-        void                                        Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
         maybe<Havok_Actor_Controller_t*>            Havok_Actor_Controller();
         maybe<Havok_Actor_Rigid_Body_Controller_t*> Havok_Actor_Rigid_Body_Controller();
         Vector_t<Keyword_t*>                        Keywords(Bool_t include_templates = true);
@@ -334,10 +333,19 @@ namespace doticu_skylib {
         const char*                                 Base_Name();
         String_t                                    Any_Name();
 
+        Vector_t<Faction_And_Rank_t>                Factions_And_Ranks(Bool_t remove_negatives = true);
+        void                                        Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
+        maybe<Raw_Faction_Rank_t>                   Faction_Rank(some<Faction_t*> faction);
+        void                                        Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
+        maybe<Raw_Faction_Rank_t>                   Base_Faction_Rank(some<Faction_t*> faction);
+        void                                        Base_Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
         maybe<Faction_t*>                           Crime_Faction();
         void                                        Crime_Faction(some<Faction_t*> crime_faction);
         maybe<Faction_t*>                           Base_Crime_Faction();
         void                                        Base_Crime_Faction(maybe<Faction_t*> crime_faction);
+
+        some<Relation_e>                            Base_Relation(some<Actor_Base_t*> other);
+        void                                        Base_Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
 
         Bool_t                                      Is_Player_Teammate();
         void                                        Is_Player_Teammate(Bool_t value);
