@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "doticu_skylib/reference_container_entry.h"
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/reference_container_entry.h"
 
 namespace doticu_skylib {
 
@@ -16,6 +16,7 @@ namespace doticu_skylib {
     class Container_c;
     class Container_Changes_t;
     class Container_Changes_Entry_t;
+    class Extra_List_t;
     class Reference_t;
 
     class Reference_Container_t

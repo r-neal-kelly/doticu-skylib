@@ -4,18 +4,18 @@
 
 #pragma once
 
+#include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/enum_alias_base_flags.h"
+#include "doticu_skylib/enum_alias_fill.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
-
-#include "doticu_skylib/enum_alias_base_flags.h"
-#include "doticu_skylib/enum_alias_fill.h"
-
-#include "doticu_skylib/alias_id.h"
-#include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
 
+    class Alias_Reference_t;
     class Form_t;
     class Mod_t;
     class Quest_t;
@@ -35,11 +35,25 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ALIAS_BASE,
         };
 
+        static constexpr const char* SCRIPT_NAME = "Alias";
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E1ED30, // 685384
+            };
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual             ~Alias_Base_t();    // 0
         virtual Bool_t      _1(Mod_t* mod);     // 1
         virtual void        _2(Form_t* form);   // 2
-        virtual String_t    Type();             // 3
+        virtual String_t    Get_Type();         // 3
 
     public:
         String_t            name;               // 08
@@ -51,15 +65,10 @@ namespace doticu_skylib {
         u32                 pad_24;             // 24
 
     public:
-        Bool_t Is_Quest_Item();
+        Bool_t                      Is_Alias_Reference();
+        Bool_t                      Is_Quest_Item();
 
-    public:
-        void Ready_Virtual_Object();
-
-        void Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> vcallback = nullptr);
-        void Unfill(maybe<Virtual::Callback_i*> vcallback = nullptr);
-        void Reference(some<Virtual::Callback_i*> vcallback);
-        void Reference(some<Callback_i<Reference_t*>*> ucallback);
+        maybe<Alias_Reference_t*>   As_Alias_Reference();
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);
 

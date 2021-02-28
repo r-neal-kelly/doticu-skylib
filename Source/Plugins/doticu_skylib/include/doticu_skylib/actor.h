@@ -57,6 +57,9 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ACTOR,
         };
 
+        static constexpr const char* SCRIPT_NAME = "Actor";
+
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {
@@ -379,6 +382,10 @@ namespace doticu_skylib {
 
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
+
+    public:
+        void Stop_Bard_Performance(maybe<Virtual::Callback_i*> v_callback = nullptr);
+        void Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback = nullptr);
 
     public:
         void Log_Factions_And_Ranks(std::string indent = "");

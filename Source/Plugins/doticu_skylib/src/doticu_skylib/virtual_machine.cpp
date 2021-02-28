@@ -88,6 +88,22 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
+    Bool_t Machine_t::Call_Method(Handle_t handle,
+                                  String_t class_name,
+                                  String_t function_name,
+                                  Arguments_i&& varguments,
+                                  maybe<Callback_i*> maybe_vcallback)
+    {
+        Callback_i* vcallback;
+        if (maybe_vcallback) {
+            vcallback = maybe_vcallback();
+        } else {
+            vcallback = new Callback_t();
+        }
+
+        return Call_Method2(handle, &class_name, &function_name, &varguments, &vcallback);
+    }
+
     void Machine_t::Send_Event(Handle_t handle,
                                String_t event_name,
                                maybe<Arguments_i*> maybe_varguments)

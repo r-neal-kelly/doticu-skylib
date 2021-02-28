@@ -73,6 +73,11 @@ namespace doticu_skylib {
         }
     }
 
+    Int_t Quest_t::Compare_Any_Names(some<Quest_t*>* a, some<Quest_t*>* b)
+    {
+        return Compare_Any_Names(reinterpret_cast<Quest_t**>(a), reinterpret_cast<Quest_t**>(b));
+    }
+
     Bool_t Quest_t::Is_Enabled()            { return (quest_flags & Quest_Flags_e::IS_ENABLED) > 0; }
     Bool_t Quest_t::Is_Completed()          { return (quest_flags & Quest_Flags_e::IS_COMPLETED) > 0; }
     Bool_t Quest_t::Does_Start_Enabled()    { return (quest_flags & Quest_Flags_e::DOES_START_ENABLED) > 0; }

@@ -232,57 +232,22 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Is_Quest_Item()
     {
-        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
-        if (x_aliases) {
-            Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
-                if (instance && instance->alias_base && instance->alias_base->Is_Quest_Item()) {
-                    return true;
-                }
-            }
-            return false;
-        } else {
-            return false;
-        }
+        return this->x_list.Is_Quest_Item();
+    }
+
+    Bool_t Reference_t::Is_Aliased()
+    {
+        return this->x_list.Is_Aliased();
     }
 
     Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest)
     {
-        SKYLIB_ASSERT_SOME(quest);
-
-        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
-        if (x_aliases) {
-            Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
-                if (instance && instance->quest == quest()) {
-                    return true;
-                }
-            }
-            return false;
-        } else {
-            return false;
-        }
+        return this->x_list.Is_Aliased(quest);
     }
 
     Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id)
     {
-        SKYLIB_ASSERT_SOME(quest);
-
-        maybe<Extra_Aliases_t*> x_aliases = x_list.Get<Extra_Aliases_t>();
-        if (x_aliases) {
-            Read_Locker_t locker(x_aliases->lock);
-            for (Index_t idx = 0, end = x_aliases->instances.Count(); idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = x_aliases->instances[idx];
-                if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
-                    return true;
-                }
-            }
-            return false;
-        } else {
-            return false;
-        }
+        return this->x_list.Is_Aliased(quest, alias_id);
     }
 
     Bool_t Reference_t::Has_Owner(some<Actor_t*> actor)
@@ -558,26 +523,16 @@ namespace doticu_skylib {
         }
     }
 
-    Vector_t<Quest_t*> Reference_t::Quests()
+    Vector_t<some<Quest_t*>> Reference_t::Quests()
     {
-        Vector_t<Quest_t*> results;
+        Vector_t<some<Quest_t*>> results;
         Quests(results);
         return results;
     }
 
-    void Reference_t::Quests(Vector_t<Quest_t*>& results)
+    void Reference_t::Quests(Vector_t<some<Quest_t*>>& results)
     {
-        maybe<Extra_Aliases_t*> xaliases = x_list.Get<Extra_Aliases_t>();
-        if (xaliases) {
-            Read_Locker_t locker(xaliases->lock);
-            results.reserve(xaliases->instances.Count());
-            for (Index_t idx = 0, end = xaliases->instances.Count(); idx < end; idx += 1) {
-                Extra_Aliases_t::Instance_t* instance = xaliases->instances[idx];
-                if (instance && instance->quest && instance->quest->Is_Valid() && instance->alias_base) {
-                    results.push_back(instance->quest);
-                }
-            }
-        }
+        this->x_list.Quests(results);
     }
 
     Vector_t<some<Worldspace_t*>> Reference_t::Worldspaces()
@@ -801,7 +756,7 @@ namespace doticu_skylib {
 
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            SCRIPT_CLASS_NAME,
+            SCRIPT_NAME,
             "Activate",
             &arguments,
             new Virtual_Callback(std::move(callback))
@@ -830,7 +785,7 @@ namespace doticu_skylib {
 
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            SCRIPT_CLASS_NAME,
+            SCRIPT_NAME,
             "IsInDialogueWithPlayer",
             nullptr,
             new Virtual_Callback(std::move(callback))

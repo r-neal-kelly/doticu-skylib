@@ -40,7 +40,7 @@ namespace doticu_skylib { namespace Virtual {
 
         virtual Bool_t Can_Save() override
         {
-            return true;
+            return false;
         }
 
         virtual void Set_Object(Object_t** object) override

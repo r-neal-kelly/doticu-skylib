@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/maybe.h"
 
@@ -12,6 +13,7 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Container_Entry_t;
     class Container_Changes_Entry_t;
+    class Extra_List_t;
     class Leveled_Item_t;
     class Reference_Container_t;
 

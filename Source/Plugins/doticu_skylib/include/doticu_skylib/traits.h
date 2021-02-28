@@ -154,6 +154,12 @@ namespace doticu_skylib {
         Bool_t
     >;
 
+    template <typename From, typename To>
+    using enable_if_convertible_t = std::enable_if_t<
+        std::is_convertible<From, To>::value,
+        Bool_t
+    >;
+
     template <typename T, typename _ = void>
     struct is_signed_integral : public std::false_type {};
     template <typename T>

@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/read_write_lock.h"
@@ -11,6 +13,7 @@
 namespace doticu_skylib {
 
     class Alias_Base_t;
+    class Alias_Reference_t;
     class Package_t;
     class Quest_t;
 
@@ -23,6 +26,7 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::ALIASES,
         };
 
+    public:
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -37,9 +41,9 @@ namespace doticu_skylib {
         class Instance_t // BGSRefAliasInstanceData
         {
         public:
-            Quest_t*                quest;      // 00
-            Alias_Base_t*           alias_base; // 08
-            Array_t<Package_t*>*    packages;   // 10
+            maybe<Quest_t*>             quest;      // 00
+            maybe<Alias_Base_t*>        alias_base; // 08
+            maybe<Array_t<Package_t*>*> packages;   // 10
         };
         STATIC_ASSERT(sizeof(Instance_t) == 0x18);
 
@@ -47,8 +51,21 @@ namespace doticu_skylib {
         virtual ~Extra_Aliases_t(); // 0
 
     public:
-        Array_t<Instance_t*>    instances;  // 10
-        Read_Write_Lock_t       lock;       // 28
+        Array_t<maybe<Instance_t*>> instances;  // 10
+        Read_Write_Lock_t           lock;       // 28
+
+    public:
+        Bool_t                              Is_Aliased();
+        Bool_t                              Is_Aliased(some<Quest_t*> quest);
+        Bool_t                              Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
+        Bool_t                              Is_Quest_Item();
+
+        Vector_t<some<Alias_Base_t*>>       Alias_Bases();
+        void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);
+        Vector_t<some<Alias_Reference_t*>>  Alias_References();
+        void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
+        Vector_t<some<Quest_t*>>            Quests();
+        void                                Quests(Vector_t<some<Quest_t*>>& results);
     };
     STATIC_ASSERT(sizeof(Extra_Aliases_t) == 0x30);
 

@@ -270,11 +270,11 @@ namespace doticu_skylib {
             qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
 
-        template <typename TT>
+        /*template <typename TT>
         operator Vector_t<TT>& ()
         {
             return *reinterpret_cast<Vector_t<TT>*>(this);
-        }
+        }*/
     };
 
     template <typename Type_t>

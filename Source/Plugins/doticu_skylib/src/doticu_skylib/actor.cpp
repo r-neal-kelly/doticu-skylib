@@ -8,6 +8,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_high_ai.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
+#include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/dynamic_array.inl"
@@ -21,7 +22,12 @@
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/player.h"
+#include "doticu_skylib/quest.h"
 #include "doticu_skylib/race.h"
+#include "doticu_skylib/virtual_arguments.h"
+#include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_machine.inl"
+#include "doticu_skylib/virtual_variable.inl"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -669,6 +675,12 @@ namespace doticu_skylib {
 
         return queue_ni_node_update(this, do_update_weight);
     }
+
+    /*void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)
+    {
+        static some<Quest_t*> bard_songs_quest = static_cast<Quest_t*>(Game_t::Form(0x00074A55)());
+        SKYLIB_ASSERT_SOME(bard_songs_quest);
+    }*/
 
     void Actor_t::Log_Factions_And_Ranks(std::string indent)
     {

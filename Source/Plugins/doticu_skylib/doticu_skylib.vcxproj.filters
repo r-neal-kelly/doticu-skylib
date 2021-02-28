@@ -1460,6 +1460,12 @@
     <ClCompile Include="src\doticu_skylib\virtual_callback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\alias_reference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_aliases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\ui.inl">
@@ -1493,6 +1499,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\interface.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\virtual_machine.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

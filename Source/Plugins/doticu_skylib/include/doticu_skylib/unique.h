@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
 
@@ -28,43 +29,43 @@ namespace doticu_skylib {
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(TT* value) :
             value(static_cast<T*>(value))
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(none<TT*> value) :
             value(static_cast<T*>(value()))
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(maybe<TT*> value) :
             value(static_cast<T*>(value()))
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(some<TT*> value) :
             value(static_cast<T*>(value()))
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(const unique<TT>& other) = delete;
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique(unique<TT>&& other) noexcept :
             value(static_cast<maybe<T*>>(std::exchange(other.value, none<TT*>())))
         {
         }
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique& operator =(const unique<TT>& other) = delete;
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         unique& operator =(unique<TT>&& other) noexcept
         {
             if (this != std::addressof(other)) {
@@ -81,15 +82,23 @@ namespace doticu_skylib {
         }
 
     public:
-        explicit operator Bool_t() const { return static_cast<Bool_t>(this->value); }
+        maybe<T*> Disown()
+        {
+            maybe<T*> value = this->value;
+            this->value = nullptr;
+            return value;
+        }
 
     public:
-        Bool_t              operator !() const              { return !static_cast<Bool_t>(*this); }
-        T&                  operator *() const              { return *this->value; }
-        some<maybe<T*>*>    operator &() const              { return &this->value(); }
-        maybe<T*>           operator ()() const             { return this->value; }
-        maybe<T*>           operator ->() const             { return this->value; }
-        T&                  operator [](size_t index) const { return *(this->value() + index); }
+        explicit operator Bool_t() const { return this->value.operator Bool_t(); }
+
+    public:
+        Bool_t  operator !() const              { return this->value.operator !(); }
+        T&      operator *() const              { return this->value.operator *(); }
+        T**     operator &() const              { return this->value.operator &(); }
+        T*      operator ()() const             { return this->value.operator ()(); }
+        T*      operator ->() const             { return this->value.operator ->(); }
+        T&      operator [](size_t index) const { return this->value.operator [](index); }
     };
 
     template <typename T>
@@ -113,12 +122,13 @@ namespace doticu_skylib {
 
     public:
         maybe()                         : value(nullptr) {}
+        maybe(std::nullptr_t value)     : value(nullptr) {}
         maybe(none<value_type> other)   : value(nullptr) {}
         maybe(value_type value)         : value(std::move(value)) {}
         maybe(const maybe& other)       = delete;
         maybe(maybe&& other) noexcept   : value(std::move(other.value)) {}
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         maybe(TT* value) :
             value(value)
         {
@@ -143,12 +153,12 @@ namespace doticu_skylib {
         explicit operator Bool_t() const { return this->value.operator Bool_t(); }
 
     public:
-        Bool_t              operator !() const              { return this->value.operator !(); }
-        T&                  operator *() const              { return this->value.operator *(); }
-        some<maybe<T*>*>    operator &() const              { return this->value.operator &(); }
-        maybe<T*>           operator ()() const             { return this->value.operator ()(); }
-        maybe<T*>           operator ->() const             { return this->value.operator ->(); }
-        T&                  operator [](size_t index) const { return this->value.operator [](index); }
+        Bool_t  operator !() const              { return this->value.operator !(); }
+        T&      operator *() const              { return this->value.operator *(); }
+        T**     operator &() const              { return this->value.operator &(); }
+        T*      operator ()() const             { return this->value.operator ()(); }
+        T*      operator ->() const             { return this->value.operator ->(); }
+        T&      operator [](size_t index) const { return this->value.operator [](index); }
     };
 
     template <typename T>
@@ -162,12 +172,13 @@ namespace doticu_skylib {
 
     public:
         some()                          : value(nullptr) {}
+        some(std::nullptr_t value)      : value(nullptr) {}
         some(none<value_type> other)    : value(nullptr) {}
         some(value_type value)          : value(std::move(value)) {}
         some(const some& other)         = delete;
         some(some&& other) noexcept     : value(std::move(other.value)) {}
 
-        template <typename TT>
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
         some(TT* value) :
             value(value)
         {
@@ -192,12 +203,12 @@ namespace doticu_skylib {
         explicit operator Bool_t() const { return this->value.operator Bool_t(); }
 
     public:
-        Bool_t              operator !() const              { return this->value.operator !(); }
-        T&                  operator *() const              { return this->value.operator *(); }
-        some<maybe<T*>*>    operator &() const              { return this->value.operator &(); }
-        maybe<T*>           operator ()() const             { return this->value.operator ()(); }
-        maybe<T*>           operator ->() const             { return this->value.operator ->(); }
-        T&                  operator [](size_t index) const { return this->value.operator [](index); }
+        Bool_t  operator !() const              { return this->value.operator !(); }
+        T&      operator *() const              { return this->value.operator *(); }
+        T**     operator &() const              { return this->value.operator &(); }
+        T*      operator ()() const             { return this->value.operator ()(); }
+        T*      operator ->() const             { return this->value.operator ->(); }
+        T&      operator [](size_t index) const { return this->value.operator [](index); }
     };
 
 }

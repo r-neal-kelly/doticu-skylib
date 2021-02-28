@@ -15,16 +15,19 @@ namespace doticu_skylib { namespace Virtual {
     public:
         Raw_Handle_t raw_handle = 0;
 
+    public:
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         Handle_t(Scriptable_t scriptable);
         explicit Handle_t(Raw_Handle_t raw_handle);
         Handle_t();
 
+    public:
         Bool_t Is_Valid();
         Bool_t Has_Script_Type(some<Script_Type_e> script_type);
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         Scriptable_t Resolve();
 
+    public:
         operator Raw_Handle_t();
     };
     STATIC_ASSERT(sizeof(Handle_t) == 0x8);

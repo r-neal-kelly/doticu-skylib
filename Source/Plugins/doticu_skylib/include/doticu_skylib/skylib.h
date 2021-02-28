@@ -12,6 +12,7 @@
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/unique.h"
 #include "doticu_skylib/version.h"
 
 #include "doticu_skylib/form_id.h"

@@ -47,7 +47,7 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::REFERENCE,
         };
 
-        static constexpr const char* SCRIPT_CLASS_NAME = "ObjectReference";
+        static constexpr const char* SCRIPT_NAME = "ObjectReference";
 
     public:
         class Offset_e :
@@ -246,6 +246,7 @@ namespace doticu_skylib {
         Bool_t Is_Attached();
         Bool_t Is_Detached();
         Bool_t Is_Quest_Item();
+        Bool_t Is_Aliased();
         Bool_t Is_Aliased(some<Quest_t*> quest);
         Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
 
@@ -270,8 +271,8 @@ namespace doticu_skylib {
         
         Vector_t<Location_t*>               Locations();
         void                                Locations(Vector_t<Location_t*>& results);
-        Vector_t<Quest_t*>                  Quests();
-        void                                Quests(Vector_t<Quest_t*>& results);
+        Vector_t<some<Quest_t*>>            Quests();
+        void                                Quests(Vector_t<some<Quest_t*>>& results);
         Vector_t<some<Worldspace_t*>>       Worldspaces();
         void                                Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 

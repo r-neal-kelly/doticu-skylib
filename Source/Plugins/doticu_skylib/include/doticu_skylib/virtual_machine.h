@@ -4,11 +4,10 @@
 
 #pragma once
 
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
-
-#include "doticu_skylib/enum_script_type.h"
-
+#include "doticu_skylib/traits.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_handle.h"
 #include "doticu_skylib/virtual_stack_id.h"
@@ -31,7 +30,10 @@ namespace doticu_skylib { namespace Virtual {
     class Machine_t
     {
     public:
-        static Machine_t* Self();
+        static Machine_t*   Self();
+
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static Bool_t       Ready_Scriptable(some<Scriptable_t> scriptable);
 
     public:
         virtual ~Machine_t(); // 00
@@ -84,6 +86,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void _2E(void); // 2E
         virtual Object_Policy_t* Object_Policy(); // 2F
 
+    public:
         Bool_t  Call_Global(String_t class_name,
                             String_t function_name,
                             Arguments_i* arguments = nullptr,
@@ -102,6 +105,11 @@ namespace doticu_skylib { namespace Virtual {
                             String_t class_name,
                             String_t function_name,
                             maybe<Arguments_i*> maybe_varguments = nullptr,
+                            maybe<Callback_i*> maybe_vcallback = nullptr);
+        Bool_t  Call_Method(Handle_t handle,
+                            String_t class_name,
+                            String_t function_name,
+                            Arguments_i&& varguments,
                             maybe<Callback_i*> maybe_vcallback = nullptr);
 
         void    Send_Event(Handle_t handle,

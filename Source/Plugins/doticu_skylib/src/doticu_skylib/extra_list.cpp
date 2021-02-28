@@ -3,6 +3,7 @@
 */
 
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_factions.h"
@@ -255,6 +256,7 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Extra_List_t::Has_Extra_Aliases()                { return Has<Extra_Aliases_t>(); }
     Bool_t Extra_List_t::Has_Extra_Count()                  { return Has<Extra_Count_t>(); }
     Bool_t Extra_List_t::Has_Extra_Factions()               { return Has<Extra_Factions_t>(); }
     Bool_t Extra_List_t::Has_Extra_Ghost()                  { return Has<Extra_Ghost_t>(); }
@@ -278,6 +280,107 @@ namespace doticu_skylib {
         }
 
         return extra_datas;
+    }
+
+    Bool_t Extra_List_t::Is_Aliased()
+    {
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            return x_aliases->Is_Aliased();
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Aliased(some<Quest_t*> quest)
+    {
+        SKYLIB_ASSERT_SOME(quest);
+
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            return x_aliases->Is_Aliased(quest);
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id)
+    {
+        SKYLIB_ASSERT_SOME(quest);
+
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            return x_aliases->Is_Aliased(quest, alias_id);
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Quest_Item()
+    {
+        // I think the problem is that an x_list on a container can reference_handle a Reference_t that is not a container
+        // and a Reference_t x_list can reference_handle a Container_t. we may need to differentiate here by checking types.
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            return x_aliases->Is_Quest_Item();
+        } else {
+            maybe<Reference_t*> reference = Reference();
+            if (reference) {
+                x_aliases = reference->x_list.Get<Extra_Aliases_t>();
+                if (x_aliases) {
+                    return x_aliases->Is_Quest_Item();
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
+    Vector_t<some<Alias_Base_t*>> Extra_List_t::Alias_Bases()
+    {
+        Vector_t<some<Alias_Base_t*>> results;
+        Alias_Bases(results);
+        return results;
+    }
+
+    void Extra_List_t::Alias_Bases(Vector_t<some<Alias_Base_t*>>& results)
+    {
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            x_aliases->Alias_Bases(results);
+        }
+    }
+
+    Vector_t<some<Alias_Reference_t*>> Extra_List_t::Alias_References()
+    {
+        Vector_t<some<Alias_Reference_t*>> results;
+        Alias_References(results);
+        return results;
+    }
+
+    void Extra_List_t::Alias_References(Vector_t<some<Alias_Reference_t*>>& results)
+    {
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            x_aliases->Alias_References(results);
+        }
+    }
+
+    Vector_t<some<Quest_t*>> Extra_List_t::Quests()
+    {
+        Vector_t<some<Quest_t*>> results;
+        Quests(results);
+        return results;
+    }
+
+    void Extra_List_t::Quests(Vector_t<some<Quest_t*>>& results)
+    {
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        if (x_aliases) {
+            x_aliases->Quests(results);
+        }
     }
 
     s16 Extra_List_t::Count()
@@ -498,16 +601,6 @@ namespace doticu_skylib {
     void Extra_List_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
     {
         Owner(static_cast<maybe<Form_t*>>(actor_base));
-    }
-
-    Bool_t Extra_List_t::Is_Quest_Item()
-    {
-        maybe<Reference_t*> reference = Reference();
-        if (reference) {
-            return reference->Is_Quest_Item();
-        } else {
-            return false;
-        }
     }
 
     maybe<Reference_t*> Extra_List_t::Reference()
