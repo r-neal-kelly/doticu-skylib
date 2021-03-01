@@ -10,6 +10,7 @@
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/reference.h"
 
+#include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_collision_layer.h"
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.h"
@@ -223,7 +224,9 @@ namespace doticu_skylib {
     void Extra_Data_t::Log(std::string indent)
     {
         Extra_Type_e type = Type();
-        if (type == Extra_Type_e::REFERENCE_HANDLE) {
+        if (type == Extra_Type_e::ALIASES) {
+            static_cast<Extra_Aliases_t*>(this)->Log(indent);
+        } else if (type == Extra_Type_e::REFERENCE_HANDLE) {
             static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
         } else if (type == Extra_Type_e::TEXT_DISPLAY) {
             static_cast<Extra_Text_Display_t*>(this)->Log(indent);

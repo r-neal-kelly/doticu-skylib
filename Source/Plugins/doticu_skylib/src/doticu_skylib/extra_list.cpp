@@ -318,23 +318,19 @@ namespace doticu_skylib {
 
     Bool_t Extra_List_t::Is_Quest_Item()
     {
-        // I think the problem is that an x_list on a container can reference_handle a Reference_t that is not a container
-        // and a Reference_t x_list can reference_handle a Container_t. we may need to differentiate here by checking types.
-        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
+        maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
+
+        maybe<Reference_t*> reference = Reference();
+        if (reference && Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List(reference())) {
+            x_aliases = reference->x_list.Get<Extra_Aliases_t>();
+        } else {
+            x_aliases = Get<Extra_Aliases_t>();
+        }
+
         if (x_aliases) {
             return x_aliases->Is_Quest_Item();
         } else {
-            maybe<Reference_t*> reference = Reference();
-            if (reference) {
-                x_aliases = reference->x_list.Get<Extra_Aliases_t>();
-                if (x_aliases) {
-                    return x_aliases->Is_Quest_Item();
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
+            return false;
         }
     }
 

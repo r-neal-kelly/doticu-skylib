@@ -180,6 +180,10 @@ namespace doticu_skylib {
         return *invalid_reference_handle;
     }
 
+    Bool_t  Reference_t::Is_From_Actor_Base()           { return this->base_form && this->base_form->Is_Actor_Base(); }
+    Bool_t  Reference_t::Is_From_Component_Container()  { return this->base_form && this->base_form->Is_Component_Container(); }
+    Bool_t  Reference_t::Is_From_Container()            { return this->base_form && this->base_form->Is_Container(); }
+
     Bool_t Reference_t::Is_Alive()
     {
         return !Is_Dead();
@@ -442,10 +446,10 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Container_c*> Reference_t::Component_Container()
+    maybe<Container_c*> Reference_t::Base_Component_Container()
     {
         if (this->base_form) {
-            return Game_t::Runtime_Cast<Form_t, Container_c>(this->base_form());
+            return this->base_form->As_Component_Container();
         } else {
             return none<Container_c*>();
         }

@@ -235,6 +235,11 @@ namespace doticu_skylib {
         u32                                 pad_94;             // 94
 
     public:
+        Bool_t Is_From_Actor_Base();
+        Bool_t Is_From_Component_Container();
+        Bool_t Is_From_Container();
+
+    public:
         Bool_t Is_Alive();
         Bool_t Is_Dead();
         Bool_t Is_Deleted();
@@ -262,7 +267,7 @@ namespace doticu_skylib {
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
-        maybe<Container_c*>                 Component_Container();
+        maybe<Container_c*>                 Base_Component_Container();
         maybe<Container_Changes_t*>         Container_Changes(Bool_t do_force_create);
         maybe<Faction_t*>                   Faction_Owner();
         Location_t*                         Location();

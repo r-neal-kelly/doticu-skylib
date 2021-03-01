@@ -9,6 +9,14 @@
 
 namespace doticu_skylib {
 
+    void Extra_Aliases_t::Instance_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Extra_Aliases_t::Instance_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + "}");
+    }
+
     Bool_t Extra_Aliases_t::Is_Aliased()
     {
         Read_Locker_t locker(this->lock);
@@ -126,6 +134,16 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    void Extra_Aliases_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Extra_Aliases_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_quest_item: %s", Is_Quest_Item() ? "true" : "false");
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

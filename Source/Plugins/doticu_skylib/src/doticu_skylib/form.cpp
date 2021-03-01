@@ -4,7 +4,9 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/component_container.h"
 #include "doticu_skylib/component_name.h"
+#include "doticu_skylib/container.h"
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.inl"
@@ -133,15 +135,19 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t  Form_t::Is_Actor()          { return As_Actor() != none<Actor_t*>(); }
-    Bool_t  Form_t::Is_Actor_Base()     { return As_Actor_Base() != none<Actor_Base_t*>(); }
-    Bool_t  Form_t::Is_Component_Name() { return As_Component_Name() != none<Name_c*>(); }
-    Bool_t  Form_t::Is_Leveled_Item()   { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t  Form_t::Is_Actor()                  { return As_Actor() != none<Actor_t*>(); }
+    Bool_t  Form_t::Is_Actor_Base()             { return As_Actor_Base() != none<Actor_Base_t*>(); }
+    Bool_t  Form_t::Is_Component_Container()    { return As_Component_Container() != none<Container_c*>(); }
+    Bool_t  Form_t::Is_Component_Name()         { return As_Component_Name() != none<Name_c*>(); }
+    Bool_t  Form_t::Is_Container()              { return As_Container() != none<Container_t*>(); }
+    Bool_t  Form_t::Is_Leveled_Item()           { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
 
-    maybe<Actor_t*>         Form_t::As_Actor()          { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
-    maybe<Actor_Base_t*>    Form_t::As_Actor_Base()     { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
-    maybe<Name_c*>          Form_t::As_Component_Name() { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
-    maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()   { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Actor_t*>         Form_t::As_Actor()                  { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
+    maybe<Actor_Base_t*>    Form_t::As_Actor_Base()             { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
+    maybe<Container_c*>     Form_t::As_Component_Container()    { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
+    maybe<Name_c*>          Form_t::As_Component_Name()         { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
+    maybe<Container_t*>     Form_t::As_Container()              { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
+    maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()           { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
     {
@@ -163,7 +169,7 @@ namespace doticu_skylib {
 
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            "Form",
+            SCRIPT_NAME,
             "RegisterForModEvent",
             &arguments, &vcallback
         );
@@ -187,7 +193,7 @@ namespace doticu_skylib {
 
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            "Form",
+            SCRIPT_NAME,
             "UnregisterForModEvent",
             &arguments,
             &vcallback
@@ -198,7 +204,7 @@ namespace doticu_skylib {
     {
         Virtual::Machine_t::Self()->Call_Method(
             this,
-            "Form",
+            SCRIPT_NAME,
             "UnregisterForAllModEvents",
             nullptr,
             &vcallback

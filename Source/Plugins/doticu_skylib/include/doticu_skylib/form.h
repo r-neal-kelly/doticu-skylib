@@ -18,9 +18,11 @@ namespace doticu_skylib {
     class Actor_t;
     class Actor_Base_t;
     class Bound_Object_t;
-    class Name_c;
+    class Container_c;
+    class Container_t;
     class Leveled_Item_t;
     class Mod_t;
+    class Name_c;
     class Race_t;
     class Reference_t;
 
@@ -30,8 +32,8 @@ namespace doticu_skylib {
 
     }
 
-    class Form_t :
-        public Form_Data_c
+    class Form_t :          // TESForm
+        public Form_Data_c  // 00
     {
     public:
         enum
@@ -39,11 +41,14 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::FORM,
         };
 
+        static constexpr const char* SCRIPT_NAME = "Form";
+
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI = 0x01E10E30, // 513848
             };
@@ -158,12 +163,16 @@ namespace doticu_skylib {
     public:
         Bool_t                  Is_Actor();
         Bool_t                  Is_Actor_Base();
+        Bool_t                  Is_Component_Container();
         Bool_t                  Is_Component_Name();
+        Bool_t                  Is_Container();
         Bool_t                  Is_Leveled_Item();
 
         maybe<Actor_t*>         As_Actor();
         maybe<Actor_Base_t*>    As_Actor_Base();
+        maybe<Container_c*>     As_Component_Container();
         maybe<Name_c*>          As_Component_Name();
+        maybe<Container_t*>     As_Container();
         maybe<Leveled_Item_t*>  As_Leveled_Item();
 
     public:

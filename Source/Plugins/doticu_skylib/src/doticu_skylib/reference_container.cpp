@@ -20,7 +20,7 @@ namespace doticu_skylib {
     {
         this->reference = reference;
         SKYLIB_ASSERT_SOME(this->reference);
-        this->base_container = this->reference->Component_Container()();
+        this->base_container = this->reference->Base_Component_Container()();
         this->reference_container = this->reference->Container_Changes(false);
 
         if (Is_Valid()) {

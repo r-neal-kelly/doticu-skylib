@@ -27,12 +27,13 @@ namespace doticu_skylib {
         };
 
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum enum_type : value_type
             {
-                V_TABLE = 0x0152C9A0,
+                V_TABLE = 0x0152C9A0, // 229615
             };
             using Enum_t::Enum_t;
         };
@@ -44,6 +45,9 @@ namespace doticu_skylib {
             maybe<Quest_t*>             quest;      // 00
             maybe<Alias_Base_t*>        alias_base; // 08
             maybe<Array_t<Package_t*>*> packages;   // 10
+
+        public:
+            void Log(std::string indent = "");
         };
         STATIC_ASSERT(sizeof(Instance_t) == 0x18);
 
@@ -66,6 +70,9 @@ namespace doticu_skylib {
         void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
         Vector_t<some<Quest_t*>>            Quests();
         void                                Quests(Vector_t<some<Quest_t*>>& results);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Aliases_t) == 0x30);
 

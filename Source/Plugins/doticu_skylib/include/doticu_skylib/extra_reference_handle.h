@@ -9,6 +9,9 @@
 
 namespace doticu_skylib {
 
+    class Actor_t;
+    class Actor_Base_t;
+    class Container_t;
     class Reference_t;
 
     class Extra_Reference_Handle_t :    // ExtraReferenceHandle
@@ -20,6 +23,7 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::REFERENCE_HANDLE,
         };
 
+    public:
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -35,6 +39,9 @@ namespace doticu_skylib {
         static some<Extra_Reference_Handle_t*>  Create(some<Reference_t*> reference);
         static void                             Destroy(some<Extra_Reference_Handle_t*> x_reference_handle);
 
+        static Bool_t                           Is_For_Reference_Extra_List(some<Reference_t*> reference);
+        static Bool_t                           Is_For_Container_Changes_Extra_List(some<Reference_t*> reference);
+
     public:
         virtual ~Extra_Reference_Handle_t(); // 0
 
@@ -43,8 +50,15 @@ namespace doticu_skylib {
         u32                 pad_14;             // 14
 
     public:
-        maybe<Reference_t*> Reference();
-        void                Reference(some<Reference_t*> reference);
+        maybe<Reference_t*>     Reference();
+        void                    Reference(some<Reference_t*> reference);
+
+        maybe<Actor_t*>         As_Actor();
+        maybe<Actor_Base_t*>    As_Actor_Base();
+        maybe<Container_t*>     As_Container();
+
+        maybe<Bool_t>           Is_For_Reference_Extra_List();
+        maybe<Bool_t>           Is_For_Container_Changes_Extra_List();
 
     public:
         void Log(std::string indent = "");

@@ -32,6 +32,20 @@ namespace doticu_skylib {
         Extra_Data_t::Destroy<Extra_Reference_Handle_t>(x_reference_handle);
     }
 
+    Bool_t Extra_Reference_Handle_t::Is_For_Reference_Extra_List(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+
+        return reference->Is_From_Component_Container();
+    }
+
+    Bool_t Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List(some<Reference_t*> reference)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+
+        return !reference->Is_From_Component_Container();
+    }
+
     maybe<Reference_t*> Extra_Reference_Handle_t::Reference()
     {
         return Reference_t::From_Handle(this->reference_handle);
@@ -42,6 +56,56 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(reference);
 
         this->reference_handle = reference->To_Handle();
+    }
+
+    maybe<Actor_t*> Extra_Reference_Handle_t::As_Actor()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference) {
+            return reference->As_Actor();
+        } else {
+            return none<Actor_t*>();
+        }
+    }
+
+    maybe<Actor_Base_t*> Extra_Reference_Handle_t::As_Actor_Base()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference && reference->base_form) {
+            return reference->base_form->As_Actor_Base();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    maybe<Container_t*> Extra_Reference_Handle_t::As_Container()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference && reference->base_form) {
+            return reference->base_form->As_Container();
+        } else {
+            return none<Container_t*>();
+        }
+    }
+
+    maybe<Bool_t> Extra_Reference_Handle_t::Is_For_Reference_Extra_List()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference) {
+            return Is_For_Reference_Extra_List(reference());
+        } else {
+            return none<Bool_t>();
+        }
+    }
+
+    maybe<Bool_t> Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference) {
+            return Is_For_Container_Changes_Extra_List(reference());
+        } else {
+            return none<Bool_t>();
+        }
     }
 
     void Extra_Reference_Handle_t::Log(std::string indent)
@@ -64,6 +128,14 @@ namespace doticu_skylib {
             }
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference: (none)");
+        }
+
+        maybe<Bool_t> maybe_is_for_container_changes = Is_For_Container_Changes_Extra_List();
+        if (maybe_is_for_container_changes) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "is_for_container_changes_extra_list: %s",
+                       maybe_is_for_container_changes() ? "true" : "false");
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "is_for_container_changes_extra_list: (unknown)");
         }
 
         SKYLIB_LOG(indent + "}");
