@@ -48,6 +48,15 @@ namespace doticu_skylib { namespace Virtual {
         }
     }
 
+    Bool_t Machine_t::Call_Global(String_t class_name,
+                                  String_t function_name,
+                                  Arguments_i&& varguments,
+                                  maybe<Callback_i*> vcallback)
+    {
+        some<Callback_i*> some_vcallback = vcallback ? vcallback() : new Callback_t();
+        return Call_Global(&class_name, &function_name, &varguments, &some_vcallback);
+    }
+
     Bool_t Machine_t::Call_Method(Handle_t handle,
                                   String_t class_name,
                                   String_t function_name,

@@ -1140,6 +1140,9 @@
     <ClInclude Include="include\doticu_skylib\virtual_utility.h">
       <Filter>Header Files\virtual</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1464,6 +1467,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\virtual_utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\virtual_input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,8 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "skse64/PapyrusInput.h"
-
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -13,178 +11,227 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    void Utility_t::Wait(Float_t seconds, Callback_i* vcallback)
+    void Utility_t::Wait_Out_Of_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback)
     {
-        struct Arguments : public Arguments_t {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
             Float_t seconds;
-            Arguments(Float_t seconds) :
+
+        public:
+            Virtual_Arguments(Float_t seconds) :
                 seconds(seconds)
             {
             }
-            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
             {
-                arguments->Resize(1);
-                arguments->At(0).Float(seconds);
+                args->Resize(1);
+                args->At(0).As<Float_t>(seconds);
                 return true;
             }
-        } arguments(seconds);
+        };
 
-        Machine_t::Self()->Call_Global(
-            "Utility",
-            "WaitMenuMode",
-            &arguments,
-            &vcallback
-        );
-    }
+        SKYLIB_ASSERT_SOME(v_callback);
 
-    void Utility_t::Wait_Out_Of_Menu(Float_t seconds, Callback_i* vcallback)
-    {
-        struct Arguments : public Arguments_t {
-            Float_t seconds;
-            Arguments(Float_t seconds) :
-                seconds(seconds)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
-            {
-                arguments->Resize(1);
-                arguments->At(0).Float(seconds);
-                return true;
-            }
-        } arguments(seconds);
-
-        Machine_t::Self()->Call_Global(
-            "Utility",
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
             "Wait",
-            &arguments,
-            &vcallback
+            Virtual_Arguments(seconds),
+            v_callback()
         );
     }
 
-    void Utility_t::Is_In_Menu_Mode(Callback_i* vcallback)
+    void Utility_t::Wait_Out_Of_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback)
     {
-        Machine_t::Self()->Call_Global(
-            "Utility",
+        using Callback = some<unique<doticu_skylib::Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                (*this->callback)();
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Wait_Out_Of_Menu(seconds, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Utility_t::Wait_Even_In_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t seconds;
+
+        public:
+            Virtual_Arguments(Float_t seconds) :
+                seconds(seconds)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Float_t>(seconds);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
+            "WaitMenuMode",
+            Virtual_Arguments(seconds),
+            v_callback()
+        );
+    }
+
+    void Utility_t::Wait_Even_In_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback)
+    {
+        using Callback = some<unique<doticu_skylib::Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                (*this->callback)();
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Wait_Even_In_Menu(seconds, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Utility_t::Wait_For_Game_Time(Float_t hours, some<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t hours;
+
+        public:
+            Virtual_Arguments(Float_t hours) :
+                hours(hours)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Float_t>(hours);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
+            "WaitGameTime",
+            Virtual_Arguments(hours),
+            v_callback()
+        );
+    }
+
+    void Utility_t::Wait_For_Game_Time(Float_t hours, some<unique<doticu_skylib::Callback_i<>>> callback)
+    {
+        using Callback = some<unique<doticu_skylib::Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                (*this->callback)();
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Wait_For_Game_Time(hours, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Utility_t::Is_In_Menu_Mode(some<Virtual::Callback_i*> v_callback)
+    {
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
             "IsInMenuMode",
-            nullptr,
-            vcallback ? &vcallback : nullptr
+            none<Virtual::Arguments_i*>(),
+            v_callback()
         );
     }
 
-    void Utility_t::Tap_Key(Int_t key, Callback_i* vcallback)
+    void Utility_t::Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback)
     {
-        struct Arguments : public Arguments_t
+        using Callback = some<unique<doticu_skylib::Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
         {
-            Int_t key;
-            Arguments(Int_t key) :
-                key(key)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Variable_t>* arguments)
-            {
-                arguments->Resize(1);
-                arguments->At(0).Int(key);
-                return true;
-            }
-        } arguments(key);
+        public:
+            Callback callback;
 
-        Machine_t::Self()->Call_Global(
-            "Input",
-            "TapKey",
-            &arguments,
-            vcallback ? &vcallback : nullptr
-        );
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                (*this->callback)(result ? result->As<Bool_t>() : false);
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Is_In_Menu_Mode(new Virtual_Callback(std::move(callback)));
     }
-
-    void Utility_t::Close_Menus(doticu_skylib::Callback_i<Bool_t>* ucallback)
-    {
-        using UCallback_t = doticu_skylib::Callback_i<Bool_t>;
-
-        Int_t key = papyrusInput::GetMappedKey(0, "Tween Menu", 0xFF);
-        if (key > -1) {
-            class Is_Open_VCallback : public Callback_t
-            {
-            public:
-                Int_t key;
-                UCallback_t* ucallback;
-                Is_Open_VCallback(Int_t key, UCallback_t* ucallback) :
-                    key(key), ucallback(ucallback)
-                {
-                }
-                void operator()(Variable_t* result)
-                {
-                    if (result && result->Bool()) {
-                        class Tap_VCallback : public Callback_t
-                        {
-                        public:
-                            Int_t key;
-                            UCallback_t* ucallback;
-                            Tap_VCallback(Int_t key, UCallback_t* ucallback) :
-                                key(key), ucallback(ucallback)
-                            {
-                            }
-                            void operator()(Variable_t*)
-                            {
-                                class Wait_VCallback : public Callback_t
-                                {
-                                public:
-                                    Int_t key;
-                                    UCallback_t* ucallback;
-                                    Wait_VCallback(Int_t key, UCallback_t* ucallback) :
-                                        key(key), ucallback(ucallback)
-                                    {
-                                    }
-                                    void operator()(Variable_t*)
-                                    {
-                                        Is_In_Menu_Mode(new Is_Open_VCallback(key, ucallback));
-                                    }
-                                };
-                                Wait(0.1f, new Wait_VCallback(key, ucallback));
-                            }
-                        };
-                        Tap_Key(key, new Tap_VCallback(key, ucallback));
-                    } else {
-                        if (ucallback) {
-                            ucallback->operator()(true);
-                            delete ucallback;
-                        }
-                    }
-                }
-            };
-            Is_In_Menu_Mode(new Is_Open_VCallback(key, ucallback));
-        } else {
-            if (ucallback) {
-                ucallback->operator()(false);
-                delete ucallback;
-            }
-        }
-    }
-
-    /*void Funcs_t::Open_Container(Reference_t* container, Virtual_Callback_i* vcallback)
-    {
-        struct Arguments : public Virtual_Arguments_t
-        {
-            Reference_t* container;
-            Arguments(Reference_t* container) :
-                container(container)
-            {
-            }
-            Bool_t operator()(Arguments_t* arguments)
-            {
-                arguments->Resize(1);
-                arguments->At(0)->Pack(container);
-                return true;
-            }
-        } arguments(container);
-
-        Virtual_Machine_t::Self()->Call_Method(
-            Consts::Funcs_Quest(),
-            Class_Name(),
-            "Open_Container",
-            &arguments,
-            vcallback ? &vcallback : nullptr
-        );
-    }
-    */
 
 }}

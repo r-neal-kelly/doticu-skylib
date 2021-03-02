@@ -12,8 +12,8 @@ namespace doticu_skylib {
     class Functor_i
     {
     public:
-        virtual ~Functor_i() = default;
-        virtual Return_t operator()(Arguments...) = 0;
+        virtual             ~Functor_i()                = default;
+        virtual Return_t    operator()(Arguments...)    = 0;
     };
 
     template <typename ...Arguments>

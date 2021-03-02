@@ -40,11 +40,11 @@ namespace doticu_skylib { namespace Virtual {
         maybe<Machine_t*>   machine;                // 0200
 
     public:
-        void Force_First_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);              // ForceFirstPerson
-        void Force_First_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr); // ForceFirstPerson
+        static void Force_First_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);               // ForceFirstPerson
+        static void Force_First_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);  // ForceFirstPerson
 
-        void Force_Third_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);              // ForceThirdPerson
-        void Force_Third_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr); // ForceThirdPerson
+        static void Force_Third_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);               // ForceThirdPerson
+        static void Force_Third_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);  // ForceThirdPerson
     };
 
 }}
