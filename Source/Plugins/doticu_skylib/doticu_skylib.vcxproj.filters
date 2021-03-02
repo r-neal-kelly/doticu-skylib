@@ -1472,6 +1472,9 @@
     <ClCompile Include="src\doticu_skylib\virtual_input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\component_form_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\ui.inl">

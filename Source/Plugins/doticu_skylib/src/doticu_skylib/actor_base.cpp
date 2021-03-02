@@ -104,8 +104,8 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
-            SKYLIB_ASSERT(actor_base->template_base);
-            for (maybe<Actor_Base_t*> it = actor_base->template_base; it != nullptr; it = it->template_base) {
+            SKYLIB_ASSERT(actor_base->base_template);
+            for (maybe<Actor_Base_t*> it = actor_base->base_template; it != nullptr; it = it->base_template) {
                 SKYLIB_LOG(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
             }
         }
@@ -180,7 +180,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_t::Has_Template_FF000800()
     {
-        for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
+        for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
             if (it->form_id == 0xFF000800) {
                 return true;
             }
@@ -242,7 +242,7 @@ namespace doticu_skylib {
     {
         if (include_templates) {
             size_t reserve_count = keyword_count;
-            for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
+            for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
                 reserve_count += it->keyword_count;
             }
             results.reserve(reserve_count);
@@ -260,7 +260,7 @@ namespace doticu_skylib {
         }
 
         if (include_templates) {
-            for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
+            for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
                 if (it->keywords) {
                     for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
                         Keyword_t* keyword = it->keywords[idx];
@@ -303,7 +303,7 @@ namespace doticu_skylib {
     some<Actor_Base_t*> Actor_Base_t::Template_Root()
     {
         some<Actor_Base_t*> it = this;
-        for (; it->template_base; it = it->template_base()) {
+        for (; it->base_template; it = it->base_template()) {
         }
         return it;
     }
@@ -313,7 +313,7 @@ namespace doticu_skylib {
         if (Is_Static()) {
             return this;
         } else {
-            for (maybe<Actor_Base_t*> it = this->template_base; it; it = it->template_base) {
+            for (maybe<Actor_Base_t*> it = this->base_template; it; it = it->base_template) {
                 if (it->Is_Static()) {
                     return it;
                 }
@@ -324,7 +324,7 @@ namespace doticu_skylib {
 
     Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
     {
-        if (template_base) {
+        if (base_template) {
             Vector_t<Actor_Base_t*> results;
             results.reserve(4);
             Templates(results);
@@ -336,7 +336,7 @@ namespace doticu_skylib {
 
     void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
     {
-        for (maybe<Actor_Base_t*> it = template_base; it != nullptr; it = it->template_base) {
+        for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
             results.push_back(it());
         }
     }
@@ -386,19 +386,6 @@ namespace doticu_skylib {
         } else {
             return name;
         }
-    }
-
-    void Actor_Base_t::Log_Factions_And_Ranks(std::string indent)
-    {
-        SKYLIB_LOG(indent + "Actor_Base_t::Log_Factions_And_Ranks: %s", Any_Name());
-        SKYLIB_LOG(indent + "{");
-
-        Vector_t<Faction_And_Rank_t> factions_and_ranks = Factions_And_Ranks();
-        for (Index_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
-            factions_and_ranks[idx].Log(indent + SKYLIB_TAB);
-        }
-
-        SKYLIB_LOG(indent + "}");
     }
 
 }

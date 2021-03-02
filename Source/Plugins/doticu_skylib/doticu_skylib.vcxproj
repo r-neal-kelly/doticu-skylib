@@ -428,6 +428,7 @@
     <ClCompile Include="src\doticu_skylib\alias_reference.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
+    <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
     <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />

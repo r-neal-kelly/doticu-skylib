@@ -23,6 +23,32 @@ namespace doticu_skylib {
         public Form_Data_c      // 00
     {
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E15430, // 513939
+            };
+            using Enum_t::Enum_t;
+        };
+
+        class Form_Change_Flags_e :
+            public Enum_t<u32>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                ACTOR_BASE_DATA = static_cast<value_type>(1 << 1),
+                ATTRIBUTES      = static_cast<value_type>(1 << 2),
+                FACTIONS        = static_cast<value_type>(1 << 6),
+                GENDER          = static_cast<value_type>(1 << 24),
+            };
+            using Enum_t::Enum_t;
+        };
+
+    public:
         virtual ~Actor_Base_Data_c(); // 0
 
     public:
@@ -44,21 +70,29 @@ namespace doticu_skylib {
         Factions_And_Ranks_t                        factions_and_ranks;         // 40
 
     public:
-        Bool_t Is_Male();
-        Bool_t Is_Female();
-        Bool_t Is_Unique();
-        Bool_t Is_Generic();
-        Bool_t Is_Ghost();
-        Bool_t Is_Mortal();
-        Bool_t Is_Protected();
-        Bool_t Is_Essential();
-        Bool_t Is_Invulnerable();
+        Bool_t  Is_Male();
+        Bool_t  Is_Female();
+        Bool_t  Is_Unique();
+        Bool_t  Is_Generic();
+        Bool_t  Is_Ghost();
+
+        Bool_t  Is_Mortal();
+        void    Is_Mortal(Bool_t value);
+        Bool_t  Is_Protected();
+        void    Is_Protected(Bool_t value);
+        Bool_t  Is_Essential();
+        void    Is_Essential(Bool_t value);
+        Bool_t  Is_Invulnerable();
+        void    Is_Invulnerable(Bool_t value);
 
     public:
         maybe<Raw_Faction_Rank_t>       Faction_Rank(some<Faction_t*> faction);
         void                            Faction_Rank(some<Faction_t*> faction, some<Raw_Faction_Rank_t> rank);
         Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
+
+    public:
+        void    Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_Base_Data_c) == 0x58);
 

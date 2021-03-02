@@ -38,22 +38,22 @@ namespace doticu_skylib {
     class Form_List_t;
     class Outfit_t;
 
-    class Actor_Base_t :
-        public Animated_Object_t,
-        public Actor_Base_Data_c,
-        public Container_c,
-        public Spells_c,
-        public AI_c,
-        public Name_c,
-        public Actor_Values_t,
-        public Destructible_c,
-        public Skin_c,
-        public Keywords_c,
-        public Attack_Data_c,
-        public Perks_c,
-        public Race_c,
-        public Package_Override_c,
-        public Event_Sink_t<void*>
+    class Actor_Base_t :            // TESNPC
+        public Animated_Object_t,   // 000
+        public Actor_Base_Data_c,   // 030
+        public Container_c,         // 088
+        public Spells_c,            // 0A0
+        public AI_c,                // 0B0
+        public Name_c,              // 0D8
+        public Actor_Values_t,      // 0E8
+        public Destructible_c,      // 0F0
+        public Skin_c,              // 100
+        public Keywords_c,          // 110
+        public Attack_Data_c,       // 128
+        public Perks_c,             // 138
+        public Race_c,              // 150
+        public Package_Override_c,  // 160
+        public Event_Sink_t<void*>  // 188
     {
     public:
         enum
@@ -61,11 +61,14 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ACTOR_BASE,
         };
 
+        static constexpr const char* SCRIPT_NAME = "ActorBase";
+
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI = 0x01E14C08, // 513923
             };
@@ -76,7 +79,7 @@ namespace doticu_skylib {
             public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 ACTOR_BASE_DATA = static_cast<value_type>(1 << 1),
                 ATTRIBUTES      = static_cast<value_type>(1 << 2),
@@ -120,7 +123,7 @@ namespace doticu_skylib {
         u32                     file_offset;        // 1E0
         u32                     pad_1E4;            // 1E4
         Race_t*                 extra_race;         // 1E8
-        maybe<Actor_Base_t*>    template_base;      // 1F0
+        maybe<Actor_Base_t*>    base_template;      // 1F0
         Float_t                 height;             // 1F8
         Float_t                 weight;             // 1FC
         void*                   sounds;             // 200
@@ -173,8 +176,6 @@ namespace doticu_skylib {
         void                            Crime_Faction(maybe<Faction_t*> faction);
 
         String_t                        Any_Name();
-
-        void                            Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_Base_t) == 0x268);
 

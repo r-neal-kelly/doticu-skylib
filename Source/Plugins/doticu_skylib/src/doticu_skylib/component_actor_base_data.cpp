@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/component_actor_base_data.h"
 #include "doticu_skylib/dynamic_array.inl"
@@ -38,9 +39,33 @@ namespace doticu_skylib {
         return !Is_Protected() && !Is_Essential() && !Is_Invulnerable();
     }
 
+    void Actor_Base_Data_c::Is_Mortal(Bool_t value)
+    {
+        if (value) {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+        }
+
+        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+    }
+
     Bool_t Actor_Base_Data_c::Is_Protected()
     {
         return (actor_base_flags & Actor_Base_Flags_e::IS_PROTECTED) != 0;
+    }
+
+    void Actor_Base_Data_c::Is_Protected(Bool_t value)
+    {
+        if (value) {
+            this->actor_base_flags |= Actor_Base_Flags_e::IS_PROTECTED;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+        } else {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
+        }
+
+        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
     }
 
     Bool_t Actor_Base_Data_c::Is_Essential()
@@ -48,9 +73,35 @@ namespace doticu_skylib {
         return (actor_base_flags & Actor_Base_Flags_e::IS_ESSENTIAL) != 0;
     }
 
+    void Actor_Base_Data_c::Is_Essential(Bool_t value)
+    {
+        if (value) {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
+            this->actor_base_flags |= Actor_Base_Flags_e::IS_ESSENTIAL;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+        } else {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
+        }
+
+        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+    }
+
     Bool_t Actor_Base_Data_c::Is_Invulnerable()
     {
         return (actor_base_flags & Actor_Base_Flags_e::IS_INVULNERABLE) != 0;
+    }
+
+    void Actor_Base_Data_c::Is_Invulnerable(Bool_t value)
+    {
+        if (value) {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
+            this->actor_base_flags |= Actor_Base_Flags_e::IS_INVULNERABLE;
+        } else {
+            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+        }
+
+        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
     }
 
     maybe<Raw_Faction_Rank_t> Actor_Base_Data_c::Faction_Rank(some<Faction_t*> faction)
@@ -65,6 +116,9 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(faction);
 
         this->factions_and_ranks.Faction_Rank(faction, rank);
+
+        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        Component_Flag_Form_Change(Form_Change_Flags_e::FACTIONS);
     }
 
     Vector_t<Faction_And_Rank_t> Actor_Base_Data_c::Factions_And_Ranks(Bool_t remove_negatives)
@@ -107,6 +161,19 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    void Actor_Base_Data_c::Log_Factions_And_Ranks(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_Base_Data_c::Log_Factions_And_Ranks");
+        SKYLIB_LOG(indent + "{");
+
+        Vector_t<Faction_And_Rank_t> factions_and_ranks = Factions_And_Ranks();
+        for (Index_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
+            factions_and_ranks[idx].Log(indent + SKYLIB_TAB);
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }
