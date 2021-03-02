@@ -39,9 +39,6 @@ namespace doticu_skylib {
         static some<Extra_Reference_Handle_t*>  Create(some<Reference_t*> reference);
         static void                             Destroy(some<Extra_Reference_Handle_t*> x_reference_handle);
 
-        static Bool_t                           Is_For_Reference_Extra_List(some<Reference_t*> reference);
-        static Bool_t                           Is_For_Container_Changes_Extra_List(some<Reference_t*> reference);
-
     public:
         virtual ~Extra_Reference_Handle_t(); // 0
 
@@ -57,8 +54,7 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*>    As_Actor_Base();
         maybe<Container_t*>     As_Container();
 
-        maybe<Bool_t>           Is_For_Reference_Extra_List();
-        maybe<Bool_t>           Is_For_Container_Changes_Extra_List();
+        maybe<Bool_t>           Is_Based_On_Component_Container();
 
     public:
         void Log(std::string indent = "");

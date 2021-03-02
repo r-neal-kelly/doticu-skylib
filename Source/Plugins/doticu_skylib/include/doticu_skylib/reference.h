@@ -235,9 +235,9 @@ namespace doticu_skylib {
         u32                                 pad_94;             // 94
 
     public:
-        Bool_t Is_From_Actor_Base();
-        Bool_t Is_From_Component_Container();
-        Bool_t Is_From_Container();
+        Bool_t Is_Based_On_Actor_Base();
+        Bool_t Is_Based_On_Component_Container();
+        Bool_t Is_Based_On_Container();
 
     public:
         Bool_t Is_Alive();
@@ -305,6 +305,9 @@ namespace doticu_skylib {
     public:
         void Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback);
         void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback);
+
+    public:
+        void Log_Extra_List(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

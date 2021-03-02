@@ -32,20 +32,6 @@ namespace doticu_skylib {
         Extra_Data_t::Destroy<Extra_Reference_Handle_t>(x_reference_handle);
     }
 
-    Bool_t Extra_Reference_Handle_t::Is_For_Reference_Extra_List(some<Reference_t*> reference)
-    {
-        SKYLIB_ASSERT_SOME(reference);
-
-        return reference->Is_From_Component_Container();
-    }
-
-    Bool_t Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List(some<Reference_t*> reference)
-    {
-        SKYLIB_ASSERT_SOME(reference);
-
-        return !reference->Is_From_Component_Container();
-    }
-
     maybe<Reference_t*> Extra_Reference_Handle_t::Reference()
     {
         return Reference_t::From_Handle(this->reference_handle);
@@ -88,21 +74,11 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Bool_t> Extra_Reference_Handle_t::Is_For_Reference_Extra_List()
+    maybe<Bool_t> Extra_Reference_Handle_t::Is_Based_On_Component_Container()
     {
         maybe<Reference_t*> reference = Reference();
         if (reference) {
-            return Is_For_Reference_Extra_List(reference());
-        } else {
-            return none<Bool_t>();
-        }
-    }
-
-    maybe<Bool_t> Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List()
-    {
-        maybe<Reference_t*> reference = Reference();
-        if (reference) {
-            return Is_For_Container_Changes_Extra_List(reference());
+            return reference->Is_Based_On_Component_Container();
         } else {
             return none<Bool_t>();
         }
@@ -116,26 +92,27 @@ namespace doticu_skylib {
         maybe<Reference_t*> reference = Reference();
         if (reference) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference:");
-            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_type: %s, form_id: %s, name: %s",
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_type: %s, form_id: %s, any_name: %s",
                        Form_Type_e::To_String(reference->form_type),
                        reference->Form_ID_String(),
                        reference->Any_Name());
             if (reference->base_form) {
-                SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "base_form_type: %s, base_form_id: %s, base_name: %s",
+                SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "base_form_type: %s, base_form_id: %s, component_name: %s",
                            Form_Type_e::To_String(reference->base_form->form_type),
                            reference->base_form->Form_ID_String(),
                            reference->base_form->Component_Name());
             }
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "is_quest_item: %s", reference->Is_Quest_Item() ? "true" : "false");
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference: (none)");
         }
 
-        maybe<Bool_t> maybe_is_for_container_changes = Is_For_Container_Changes_Extra_List();
-        if (maybe_is_for_container_changes) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "is_for_container_changes_extra_list: %s",
-                       maybe_is_for_container_changes() ? "true" : "false");
+        maybe<Bool_t> maybe_is_based_on_component_container = Is_Based_On_Component_Container();
+        if (maybe_is_based_on_component_container) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "is_based_on_component_container: %s",
+                       maybe_is_based_on_component_container() ? "true" : "false");
         } else {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "is_for_container_changes_extra_list: (unknown)");
+            SKYLIB_LOG(indent + SKYLIB_TAB + "is_based_on_component_container: (unknown)");
         }
 
         SKYLIB_LOG(indent + "}");

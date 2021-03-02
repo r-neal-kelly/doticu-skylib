@@ -321,10 +321,10 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
 
         maybe<Reference_t*> reference = Reference();
-        if (reference && Extra_Reference_Handle_t::Is_For_Container_Changes_Extra_List(reference())) {
+        if (reference && !reference->Is_Based_On_Component_Container()) {
             x_aliases = reference->x_list.Get<Extra_Aliases_t>();
         } else {
-            x_aliases = Get<Extra_Aliases_t>();
+            x_aliases = this->Get<Extra_Aliases_t>();
         }
 
         if (x_aliases) {

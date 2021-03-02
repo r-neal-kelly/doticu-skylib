@@ -180,9 +180,9 @@ namespace doticu_skylib {
         return *invalid_reference_handle;
     }
 
-    Bool_t  Reference_t::Is_From_Actor_Base()           { return this->base_form && this->base_form->Is_Actor_Base(); }
-    Bool_t  Reference_t::Is_From_Component_Container()  { return this->base_form && this->base_form->Is_Component_Container(); }
-    Bool_t  Reference_t::Is_From_Container()            { return this->base_form && this->base_form->Is_Container(); }
+    Bool_t  Reference_t::Is_Based_On_Actor_Base()           { return this->base_form && this->base_form->Is_Actor_Base(); }
+    Bool_t  Reference_t::Is_Based_On_Component_Container()  { return this->base_form && this->base_form->Is_Component_Container(); }
+    Bool_t  Reference_t::Is_Based_On_Container()            { return this->base_form && this->base_form->Is_Container(); }
 
     Bool_t Reference_t::Is_Alive()
     {
@@ -794,6 +794,27 @@ namespace doticu_skylib {
             nullptr,
             new Virtual_Callback(std::move(callback))
         );
+    }
+
+    void Reference_t::Log_Extra_List(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Reference_t::Log_Extra_List");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_type: %s, form_id: %s, any_name: %s",
+                   Form_Type_e::To_String(this->form_type),
+                   this->Form_ID_String(),
+                   this->Any_Name());
+        if (this->base_form) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "base_form_type: %s, base_form_id: %s, component_name: %s",
+                       Form_Type_e::To_String(this->base_form->form_type),
+                       this->base_form->Form_ID_String(),
+                       this->base_form->Component_Name());
+        }
+        
+        this->x_list.Log(indent + SKYLIB_TAB);
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }
