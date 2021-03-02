@@ -9,11 +9,11 @@
 
 namespace doticu_skylib { namespace Virtual {
 
-    Machine_t* Machine_t::Self()
+    some<Machine_t*> Machine_t::Self()
     {
-        static Machine_t* self = Virtual::Game_t::Self()->machine;
+        static maybe<Machine_t*> self = Virtual::Game_t::Self()->machine;
         SKYLIB_ASSERT(self);
-        return self;
+        return self();
     }
 
     Bool_t Machine_t::Call_Global(String_t class_name,

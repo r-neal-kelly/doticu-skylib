@@ -157,7 +157,7 @@ namespace doticu_skylib {
             <Reference_t*(*)(Virtual::Machine_t*, Virtual::Raw_Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
             (Game_t::Base_Address() + Offset_e::PLACE_AT_ME);
 
-        return place_at_me(Virtual::Machine_t::Self(), 0, at(), base(), count, force_persist, initially_disable);
+        return place_at_me(Virtual::Machine_t::Self()(), 0, at(), base(), count, force_persist, initially_disable);
     }
 
     Reference_t* Reference_t::From_Handle(Reference_Handle_t reference_handle)

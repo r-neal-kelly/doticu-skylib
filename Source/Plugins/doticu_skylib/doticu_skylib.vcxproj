@@ -404,7 +404,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_stack_id.h" />
     <ClInclude Include="include\doticu_skylib\virtual_static.h" />
     <ClInclude Include="include\doticu_skylib\virtual_type.h" />
-    <ClInclude Include="include\doticu_skylib\virtual_utils.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_utility.h" />
     <ClInclude Include="include\doticu_skylib\virtual_variable.h" />
     <ClInclude Include="include\doticu_skylib\virtual.h" />
     <ClInclude Include="include\doticu_skylib\math.h" />
@@ -520,7 +520,7 @@
     <ClCompile Include="src\doticu_skylib\string.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_stack_id.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_type.cpp" />
-    <ClCompile Include="src\doticu_skylib\virtual_utils.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_utility.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />
     <ClCompile Include="src\doticu_skylib\vitality.cpp" />
     <ClCompile Include="src\doticu_skylib\worldspace.cpp" />

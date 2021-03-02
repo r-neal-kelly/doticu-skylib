@@ -96,27 +96,27 @@ namespace doticu_skylib { namespace Virtual {
         if (vclass) {
             Handle_t handle(scriptable);
             if (handle.Is_Valid()) {
-                Machine_t* machine = Machine_t::Self();
-                Object_t* object = nullptr;
+                some<Machine_t*> machine = Machine_t::Self();
+                maybe<Object_t*> object = none<Object_t*>();
                 if (machine->Find_Bound_Object(handle, vclass->name, &object) && object) {
                     if (do_decrement_on_find) {
                         object->Decrement_Lock();
                     }
                     return object;
                 } else {
-                    object = nullptr;
+                    object = none<Object_t*>();
                     if (machine->Create_Object2(&vclass->name, &object) && object) {
                         machine->Object_Policy()->Bind_Object(&object, handle);
                         return object;
                     } else {
-                        return nullptr;
+                        return none<Object_t*>();
                     }
                 }
             } else {
-                return nullptr;
+                return none<Object_t*>();
             }
         } else {
-            return nullptr;
+            return none<Object_t*>();
         }
     }
 

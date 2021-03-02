@@ -30,10 +30,10 @@ namespace doticu_skylib { namespace Virtual {
     class Machine_t
     {
     public:
-        static Machine_t*   Self();
+        static some<Machine_t*> Self();
 
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
-        static Bool_t       Ready_Scriptable(some<Scriptable_t> scriptable);
+        static Bool_t           Ready_Scriptable(some<Scriptable_t> scriptable);
 
     public:
         virtual ~Machine_t(); // 00

@@ -24,7 +24,7 @@ namespace doticu_skylib { namespace Virtual {
     class Object_t;
     class Object_Policy_t;
     class Stack_ID_t;
-    class Utils_t;
+    class Utility_t;
     class Variable_t;
 
     template <typename T>

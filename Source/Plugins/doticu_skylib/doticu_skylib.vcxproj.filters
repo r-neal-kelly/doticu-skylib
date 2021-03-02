@@ -465,9 +465,6 @@
     <ClInclude Include="include\doticu_skylib\virtual_type.h">
       <Filter>Header Files\virtual</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\virtual_utils.h">
-      <Filter>Header Files\virtual</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\virtual_variable.h">
       <Filter>Header Files\virtual</Filter>
     </ClInclude>
@@ -1140,6 +1137,9 @@
     <ClInclude Include="include\doticu_skylib\package_dialogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_utility.h">
+      <Filter>Header Files\virtual</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1170,9 +1170,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\form.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\virtual_utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\string.cpp">
@@ -1464,6 +1461,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\virtual_utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

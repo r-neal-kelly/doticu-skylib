@@ -303,7 +303,7 @@ namespace doticu_skylib {
         void Add_Item(some<Form_t*> item, s16 delta);
 
     public:
-        void Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback);
+        void Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback = nullptr);
         void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback);
 
     public:

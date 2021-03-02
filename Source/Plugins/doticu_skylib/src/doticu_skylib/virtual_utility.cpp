@@ -5,16 +5,15 @@
 #include "skse64/PapyrusInput.h"
 
 #include "doticu_skylib/scrap_array.inl"
-
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
-#include "doticu_skylib/virtual_utils.h"
+#include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib { namespace Virtual {
 
-    void Utils_t::Wait(Float_t seconds, Callback_i* vcallback)
+    void Utility_t::Wait(Float_t seconds, Callback_i* vcallback)
     {
         struct Arguments : public Arguments_t {
             Float_t seconds;
@@ -38,7 +37,7 @@ namespace doticu_skylib { namespace Virtual {
         );
     }
 
-    void Utils_t::Wait_Out_Of_Menu(Float_t seconds, Callback_i* vcallback)
+    void Utility_t::Wait_Out_Of_Menu(Float_t seconds, Callback_i* vcallback)
     {
         struct Arguments : public Arguments_t {
             Float_t seconds;
@@ -62,7 +61,7 @@ namespace doticu_skylib { namespace Virtual {
         );
     }
 
-    void Utils_t::Is_In_Menu_Mode(Callback_i* vcallback)
+    void Utility_t::Is_In_Menu_Mode(Callback_i* vcallback)
     {
         Machine_t::Self()->Call_Global(
             "Utility",
@@ -72,7 +71,7 @@ namespace doticu_skylib { namespace Virtual {
         );
     }
 
-    void Utils_t::Tap_Key(Int_t key, Callback_i* vcallback)
+    void Utility_t::Tap_Key(Int_t key, Callback_i* vcallback)
     {
         struct Arguments : public Arguments_t
         {
@@ -97,7 +96,7 @@ namespace doticu_skylib { namespace Virtual {
         );
     }
 
-    void Utils_t::Close_Menus(doticu_skylib::Callback_i<Bool_t>* ucallback)
+    void Utility_t::Close_Menus(doticu_skylib::Callback_i<Bool_t>* ucallback)
     {
         using UCallback_t = doticu_skylib::Callback_i<Bool_t>;
 
@@ -186,15 +185,6 @@ namespace doticu_skylib { namespace Virtual {
             vcallback ? &vcallback : nullptr
         );
     }
-    
-    void Funcs_t::Force_Third_Person(Virtual_Callback_i* vcallback)
-    {
-        Virtual_Machine_t::Self()->Call_Global(
-            "Game",
-            "ForceThirdPerson",
-            nullptr,
-            vcallback ? &vcallback : nullptr
-        );
-    }*/
+    */
 
 }}
