@@ -11,6 +11,7 @@
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/quest_objective_state.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/unique.h"
 #include "doticu_skylib/unknown.h"
 
 namespace doticu_skylib {
@@ -139,6 +140,10 @@ namespace doticu_skylib {
         u32                                 Teammate_Count();
         u32                                 Increment_Teammate_Count();
         u32                                 Decrement_Teammate_Count();
+
+    public:
+        static void Open_Inventory(maybe<Virtual::Callback_i*> v_callback = nullptr);
+        static void Open_Inventory(maybe<unique<Callback_i<>>> callback = nullptr);
 
     public:
         void Log_Objectives(std::string indent = "");

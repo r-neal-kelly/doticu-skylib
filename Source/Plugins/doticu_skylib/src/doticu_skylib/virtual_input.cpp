@@ -134,6 +134,20 @@ namespace doticu_skylib { namespace Virtual {
         Tap_Key(key, new Virtual_Callback(std::move(callback)));
     }
 
+    void Input_t::Tap_Inventory_Key(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Int_t inventory_key = papyrusInput::GetMappedKey(0, "Quick Inventory", 0xFF);
+        SKYLIB_ASSERT(inventory_key > -1);
+        Tap_Key(inventory_key, v_callback);
+    }
+
+    void Input_t::Tap_Inventory_Key(maybe<unique<doticu_skylib::Callback_i<>>> callback)
+    {
+        Int_t inventory_key = papyrusInput::GetMappedKey(0, "Quick Inventory", 0xFF);
+        SKYLIB_ASSERT(inventory_key > -1);
+        Tap_Key(inventory_key, std::move(callback));
+    }
+
     void Input_t::Close_Menus(maybe<unique<doticu_skylib::Callback_i<Bool_t>>> callback)
     {
         using Callback = maybe<unique<doticu_skylib::Callback_i<Bool_t>>>;

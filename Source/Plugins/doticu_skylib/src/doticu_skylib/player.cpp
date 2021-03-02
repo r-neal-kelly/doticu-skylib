@@ -13,6 +13,7 @@
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/quest_objective.h"
+#include "doticu_skylib/virtual_input.h"
 
 namespace doticu_skylib {
 
@@ -72,6 +73,16 @@ namespace doticu_skylib {
     u32 Player_t::Decrement_Teammate_Count()
     {
         return teammate_count.Decrement_Atomic();
+    }
+
+    void Player_t::Open_Inventory(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Input_t::Tap_Inventory_Key(v_callback);
+    }
+
+    void Player_t::Open_Inventory(maybe<unique<Callback_i<>>> callback)
+    {
+        Virtual::Input_t::Tap_Inventory_Key(std::move(callback));
     }
 
     void Player_t::Log_Objectives(std::string indent)

@@ -29,7 +29,7 @@ namespace doticu_skylib {
             }
 
         public:
-            virtual Bool_t operator () (Scrap_Array_t<Virtual::Variable_t>* args) override
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
             {
                 args->Resize(1);
                 args->At(0).As<Reference_t*>(reference());
@@ -66,7 +66,7 @@ namespace doticu_skylib {
             }
 
         public:
-            virtual void operator () (Virtual::Variable_t*) override
+            virtual void operator()(Virtual::Variable_t*) override
             {
                 if (this->callback) {
                     (*this->callback)();
@@ -108,7 +108,7 @@ namespace doticu_skylib {
             }
 
         public:
-            virtual void operator () (Virtual::Variable_t*) override
+            virtual void operator()(Virtual::Variable_t*) override
             {
                 if (this->callback) {
                     (*this->callback)();
@@ -150,7 +150,7 @@ namespace doticu_skylib {
             }
 
         public:
-            virtual void operator () (Virtual::Variable_t* result) override
+            virtual void operator()(Virtual::Variable_t* result) override
             {
                 (*this->callback)(result ? result->As<Reference_t*>() : nullptr);
             }

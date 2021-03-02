@@ -26,6 +26,9 @@ namespace doticu_skylib { namespace Virtual {
         static void Tap_Key(Int_t key, maybe<Virtual::Callback_i*> v_callback = nullptr);                   // TapKey
         static void Tap_Key(Int_t key, maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);      // TapKey
 
+        static void Tap_Inventory_Key(maybe<Virtual::Callback_i*> v_callback = nullptr);
+        static void Tap_Inventory_Key(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);
+
     public:
         static void Close_Menus(maybe<unique<doticu_skylib::Callback_i<Bool_t>>> callback = nullptr);
     };

@@ -384,7 +384,10 @@ namespace doticu_skylib {
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
 
     public:
-        void Stop_Bard_Performance(maybe<Virtual::Callback_i*> v_callback = nullptr);
+        void Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback = nullptr);  // OpenInventory
+        void Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback = nullptr);    // OpenInventory
+
+    public:
         void Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback = nullptr);
 
     public:

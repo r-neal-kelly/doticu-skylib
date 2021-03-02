@@ -21,6 +21,7 @@
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_node.h"
+#include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_attached_state.h"
@@ -34,7 +35,9 @@
 
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
-#include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_input.h"
+#include "doticu_skylib/virtual_machine.inl"
+#include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
@@ -719,36 +722,65 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback)
+    void Reference_t::Activate(some<Reference_t*> activator,
+                               Bool_t do_only_default_processing,
+                               maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            some<Reference_t*>  activator;
+            Bool_t              do_only_default_processing;
+
+        public:
+            Virtual_Arguments(some<Reference_t*> activator, Bool_t do_only_default_processing) :
+                activator(activator), do_only_default_processing(do_only_default_processing)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(2);
+                args->At(0).As<Reference_t*>(this->activator());
+                args->At(1).As<Bool_t>(this->do_only_default_processing);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(activator);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "Activate",
+            Virtual_Arguments(activator, do_only_default_processing),
+            v_callback
+        );
+    }
+
+    void Reference_t::Activate(some<Reference_t*> activator,
+                               Bool_t do_only_default_processing,
+                               maybe<unique<Callback_i<Bool_t>>> callback)
     {
         using Callback = maybe<unique<Callback_i<Bool_t>>>;
 
-        struct Virtual_Arguments :
-            public Virtual::Arguments_t
-        {
-            some<Reference_t*> activator;
-            Virtual_Arguments(some<Reference_t*> activator) :
-                activator(activator)
-            {
-            }
-            Bool_t operator ()(Scrap_Array_t<Virtual::Variable_t>* args)
-            {
-                args->Resize(2);
-                args->At(0).As<Reference_t*>(activator());
-                args->At(1).As<Bool_t>(false);
-                return true;
-            }
-        } arguments(activator);
-
-        struct Virtual_Callback :
+        class Virtual_Callback :
             public Virtual::Callback_t
         {
+        public:
             Callback callback;
+
+        public:
             Virtual_Callback(Callback callback) :
                 callback(std::move(callback))
             {
             }
-            void operator ()(Virtual::Variable_t* result)
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
             {
                 if (this->callback) {
                     (*this->callback)(result ? result->As<Bool_t>() : false);
@@ -758,12 +790,20 @@ namespace doticu_skylib {
 
         SKYLIB_ASSERT_SOME(activator);
 
+        Activate(activator, do_only_default_processing, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Is_In_Dialogue_With_Player(some<Virtual::Callback_i*> v_callback)
+    {
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
         Virtual::Machine_t::Self()->Call_Method(
             this,
             SCRIPT_NAME,
-            "Activate",
-            &arguments,
-            new Virtual_Callback(std::move(callback))
+            "IsInDialogueWithPlayer",
+            none<Virtual::Arguments_i*>(),
+            v_callback()
         );
     }
 
@@ -771,15 +811,20 @@ namespace doticu_skylib {
     {
         using Callback = some<unique<Callback_i<Bool_t>>>;
 
-        struct Virtual_Callback :
+        class Virtual_Callback :
             public Virtual::Callback_t
         {
+        public:
             Callback callback;
+
+        public:
             Virtual_Callback(Callback callback) :
                 callback(std::move(callback))
             {
             }
-            void operator ()(Virtual::Variable_t* result)
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
             {
                 (*this->callback)(result ? result->As<Bool_t>() : false);
             }
@@ -787,13 +832,64 @@ namespace doticu_skylib {
 
         SKYLIB_ASSERT_SOME(callback);
 
-        Virtual::Machine_t::Self()->Call_Method(
-            this,
-            SCRIPT_NAME,
-            "IsInDialogueWithPlayer",
-            nullptr,
-            new Virtual_Callback(std::move(callback))
-        );
+        Is_In_Dialogue_With_Player(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Open_Inventory(maybe<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
+
+        class Open_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Open_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                class Wait_Callback :
+                    public Virtual::Callback_t
+                {
+                public:
+                    Callback callback;
+
+                public:
+                    Wait_Callback(Callback callback) :
+                        callback(std::move(callback))
+                    {
+                    }
+
+                public:
+                    virtual void operator()(Virtual::Variable_t*) override
+                    {
+                        if (this->callback) {
+                            (*this->callback)(true);
+                        }
+                    }
+                };
+                Virtual::Utility_t::Wait_Out_Of_Menu(0.1f, new Wait_Callback(std::move(this->callback)));
+            }
+        };
+
+        if (Is_Based_On_Component_Container()) {
+            maybe<Actor_t*> actor = As_Actor();
+            if (actor) {
+                actor->Open_Inventory(true, new Open_Callback(std::move(callback)));
+            } else {
+                Activate(Player_t::Self(), false, new Open_Callback(std::move(callback)));
+            }
+        } else {
+            if (callback) {
+                (*callback)(false);
+            }
+        }
     }
 
     void Reference_t::Log_Extra_List(std::string indent)

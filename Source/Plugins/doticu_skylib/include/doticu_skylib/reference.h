@@ -303,8 +303,18 @@ namespace doticu_skylib {
         void Add_Item(some<Form_t*> item, s16 delta);
 
     public:
-        void Activate(some<Reference_t*> activator, maybe<unique<Callback_i<Bool_t>>> callback = nullptr);
-        void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback);
+        void Activate(some<Reference_t*> activator,
+                      Bool_t do_only_default_processing = false,
+                      maybe<Virtual::Callback_i*> v_callback = nullptr);            // Activate
+        void Activate(some<Reference_t*> activator,
+                      Bool_t do_only_default_processing = false,
+                      maybe<unique<Callback_i<Bool_t>>> callback = nullptr);        // Activate
+        
+        void Is_In_Dialogue_With_Player(some<Virtual::Callback_i*> v_callback);     // IsInDialogueWithPlayer
+        void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback); // IsInDialogueWithPlayer
+
+    public:
+        void Open_Inventory(maybe<unique<Callback_i<Bool_t>>> callback = nullptr);
 
     public:
         void Log_Extra_List(std::string indent = "");

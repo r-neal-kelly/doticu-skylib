@@ -676,6 +676,71 @@ namespace doticu_skylib {
         return queue_ni_node_update(this, do_update_weight);
     }
 
+    void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t allow_non_teammates;
+
+        public:
+            Virtual_Arguments(Bool_t allow_non_teammates) :
+                allow_non_teammates(allow_non_teammates)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->allow_non_teammates);
+                return true;
+            }
+        };
+
+        if (this == Player_t::Self()()) {
+            Player_t::Open_Inventory(v_callback);
+        } else {
+            Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
+            Virtual::Machine_t::Self()->Call_Method(
+                this,
+                SCRIPT_NAME,
+                "OpenInventory",
+                Virtual_Arguments(allow_non_teammates),
+                v_callback
+            );
+        }
+    }
+
+    void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Open_Inventory(allow_non_teammates, new Virtual_Callback(std::move(callback)));
+    }
+
     /*void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)
     {
         static some<Quest_t*> bard_songs_quest = static_cast<Quest_t*>(Game_t::Form(0x00074A55)());
