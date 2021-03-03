@@ -10,6 +10,8 @@
 
 namespace doticu_skylib {
 
+    // this is a juicy type we need to better define
+
     class AI_c : public Form_Data_c // TESAIForm
     {
     public:

@@ -26,7 +26,7 @@ namespace doticu_skylib {
             KEYWORD                 = 0x04, // KYWD
             LOCATION_REFERENCE_TYPE = 0X05, // LCRT
             // 0x06 AACT
-            // 0x07 TXST
+            TEXTURE_SET             = 0x07, // TXST
             MENU_ICON               = 0x08, // MICN
             GLOBAL                  = 0x09, // GLOB
             // 0x0A CLAS
@@ -117,7 +117,7 @@ namespace doticu_skylib {
             // 0x5F AVIF
             // 0x60 CAMS
             // 0x61 CPTH
-            // 0x62 VTYP
+            VOICE_TYPE              = 0x62, // VTYP
             // 0x63 MATT
             // 0x64 IPCT
             // 0x65 IPDS

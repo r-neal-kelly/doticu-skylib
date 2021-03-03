@@ -9,6 +9,7 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/actor_head_data.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.h"
@@ -371,6 +372,25 @@ namespace doticu_skylib {
     void Actor_Base_t::Crime_Faction(maybe<Faction_t*> faction)
     {
         this->crime_faction = faction;
+    }
+
+    maybe<Color_t*> Actor_Base_t::Hair_Color()
+    {
+        if (this->head_data) {
+            return this->head_data->hair_color;
+        } else {
+            return none<Color_t*>();
+        }
+    }
+
+    void Actor_Base_t::Hair_Color(maybe<Color_t*> hair_color)
+    {
+        // interestingly, this is saved in the save file, but one must update the actor's 3d anyway?
+
+        if (this->head_data) {
+            this->head_data->hair_color = hair_color;
+            Flag_Form_Change(Form_Change_Flags_e::FACE);
+        }
     }
 
     String_t Actor_Base_t::Any_Name()

@@ -22,6 +22,9 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::COLOR,
         };
 
+        static constexpr const char* SCRIPT_NAME = "ColorForm";
+
+    public:
         class Offset_e : public Enum_t<Word_t>
         {
         public:

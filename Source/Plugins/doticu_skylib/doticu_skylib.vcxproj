@@ -58,6 +58,8 @@
     <ClInclude Include="include\doticu_skylib\actor_ai.h" />
     <ClInclude Include="include\doticu_skylib\actor_ai_cached_value.h" />
     <ClInclude Include="include\doticu_skylib\actor_ai_cached_values.h" />
+    <ClInclude Include="include\doticu_skylib\actor_face_data.h" />
+    <ClInclude Include="include\doticu_skylib\actor_head_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
@@ -70,6 +72,8 @@
     <ClInclude Include="include\doticu_skylib\enum_attack_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_face_morph_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_face_part_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_life_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
@@ -78,9 +82,13 @@
     <ClInclude Include="include\doticu_skylib\enum_sit_sleep_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_fly_state.h" />
+    <ClInclude Include="include\doticu_skylib\enum_texture_set_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_texture_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_voice_type_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
+    <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
@@ -364,6 +372,7 @@
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
     <ClInclude Include="include\doticu_skylib\sync_object.h" />
+    <ClInclude Include="include\doticu_skylib\texture_set.h" />
     <ClInclude Include="include\doticu_skylib\traits.h" />
     <ClInclude Include="include\doticu_skylib\translations.h" />
     <ClInclude Include="include\doticu_skylib\object.h" />
@@ -411,6 +420,7 @@
     <ClInclude Include="include\doticu_skylib\math.h" />
     <ClInclude Include="include\doticu_skylib\vitality.h" />
     <ClInclude Include="include\doticu_skylib\os.h" />
+    <ClInclude Include="include\doticu_skylib\voice_type.h" />
     <ClInclude Include="include\doticu_skylib\weapon.h" />
     <ClInclude Include="include\doticu_skylib\worldspace.h" />
     <ClInclude Include="include\doticu_skylib\extra_data.h" />

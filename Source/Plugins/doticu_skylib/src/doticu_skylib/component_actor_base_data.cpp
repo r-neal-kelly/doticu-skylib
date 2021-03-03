@@ -163,6 +163,16 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Voice_Type_t*> Actor_Base_Data_c::Voice_Type()
+    {
+        return this->voice_type;
+    }
+
+    void Actor_Base_Data_c::Voice_Type(maybe<Voice_Type_t*> voice_type)
+    {
+        this->voice_type = voice_type;
+    }
+
     void Actor_Base_Data_c::Log_Factions_And_Ranks(std::string indent)
     {
         SKYLIB_LOG(indent + "Actor_Base_Data_c::Log_Factions_And_Ranks");

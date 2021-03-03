@@ -119,6 +119,7 @@ namespace doticu_skylib {
     class Static_t;
     class Translations_t;
     class UI_t;
+    class Voice_Type_t;
     class Weapon_t;
     class Worldspace_t;
 

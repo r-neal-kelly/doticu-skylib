@@ -32,10 +32,14 @@
 namespace doticu_skylib {
 
     class Actor_Class_t; // TESClass
+    class Actor_Face_Data_t;
+    class Actor_Head_Data_t;
     class Armor_t;
+    class Color_t;
     class Combat_Style_t; // TESCombatStyle
     class Faction_t;
     class Form_List_t;
+    class Head_Part_t;
     class Outfit_t;
 
     class Actor_Base_t :            // TESNPC
@@ -115,37 +119,37 @@ namespace doticu_skylib {
         virtual ~Actor_Base_t(); // 0
 
     public:
-        Actor_Skills_t          actor_skills;       // 190
-        Actor_Class_t*          actor_class;        // 1C0
-        void*                   head_data;          // 1C8
-        void*                   unk_1D0;            // 1D0
-        Combat_Style_t*         combat_style;       // 1D8
-        u32                     file_offset;        // 1E0
-        u32                     pad_1E4;            // 1E4
-        Race_t*                 extra_race;         // 1E8
-        maybe<Actor_Base_t*>    base_template;      // 1F0
-        Float_t                 height;             // 1F8
-        Float_t                 weight;             // 1FC
-        void*                   sounds;             // 200
-        String_t                short_name;         // 208 (SHRT)
-        Armor_t*                far_skin;           // 210
-        maybe<Outfit_t*>        default_outfit;     // 218 (DOFT)
-        maybe<Outfit_t*>        sleep_outfit;       // 220
-        Form_List_t*            unk_228;            // 228
-        maybe<Faction_t*>       crime_faction;      // 230
-        void*                   head_parts;         // 238
-        s8                      head_part_count;    // 240
-        u8                      unk_241;            // 241
-        u8                      unk_242;            // 242
-        u8                      unk_243;            // 243
-        u8                      unk_244;            // 244
-        Sound_Level_e           sound_level;        // 245
-        u8_rgba                 body_tint;          // 246
-        u16                     pad_24A;            // 24A
-        u32                     pad_24C;            // 24C
-        Array_t<void*>*         relationships;      // 250
-        void*                   face_data;          // 258
-        Array_t<void*>*         tint_layers;        // 260
+        Actor_Skills_t              actor_skills;           // 190
+        Actor_Class_t*              actor_class;            // 1C0
+        maybe<Actor_Head_Data_t*>   head_data;              // 1C8
+        maybe<Form_List_t*>         gift_filter;            // 1D0
+        Combat_Style_t*             combat_style;           // 1D8
+        u32                         file_offset;            // 1E0
+        u32                         pad_1E4;                // 1E4
+        Race_t*                     original_race;          // 1E8
+        maybe<Actor_Base_t*>        base_template;          // 1F0
+        Float_t                     height;                 // 1F8
+        Float_t                     weight;                 // 1FC
+        void*                       sounds;                 // 200
+        String_t                    short_name;             // 208 (SHRT)
+        Armor_t*                    far_skin;               // 210
+        maybe<Outfit_t*>            default_outfit;         // 218 (DOFT)
+        maybe<Outfit_t*>            sleep_outfit;           // 220
+        maybe<Form_List_t*>         default_package_list;   // 228 (DPLT)
+        maybe<Faction_t*>           crime_faction;          // 230
+        maybe<Head_Part_t*>         head_parts;             // 238
+        s8                          head_part_count;        // 240
+        u8                          unk_241;                // 241
+        u8                          unk_242;                // 242
+        u8                          unk_243;                // 243
+        u8                          unk_244;                // 244
+        Sound_Level_e               sound_level;            // 245
+        u8_rgba                     body_tint;              // 246
+        u16                         pad_24A;                // 24A
+        u32                         pad_24C;                // 24C
+        maybe<Array_t<void*>*>      relationships;          // 250
+        maybe<Actor_Face_Data_t*>   face_data;              // 258
+        maybe<Array_t<void*>*>      tint_layers;            // 260
 
     public:
         Bool_t                          Has_Template_FF000800();
@@ -174,6 +178,9 @@ namespace doticu_skylib {
 
         maybe<Faction_t*>               Crime_Faction();
         void                            Crime_Faction(maybe<Faction_t*> faction);
+
+        maybe<Color_t*>                 Hair_Color();
+        void                            Hair_Color(maybe<Color_t*> hair_color);
 
         String_t                        Any_Name();
     };
