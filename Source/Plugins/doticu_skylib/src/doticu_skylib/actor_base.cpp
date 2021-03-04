@@ -232,6 +232,16 @@ namespace doticu_skylib {
         return race;
     }
 
+    Float_t Actor_Base_t::Weight()
+    {
+        return this->weight;
+    }
+
+    void Actor_Base_t::Weight(Float_t weight)
+    {
+        this->weight = weight;
+    }
+
     Vector_t<Keyword_t*> Actor_Base_t::Keywords(Bool_t include_templates)
     {
         Vector_t<Keyword_t*> results;

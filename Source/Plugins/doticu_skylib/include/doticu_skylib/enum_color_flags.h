@@ -8,10 +8,11 @@
 
 namespace doticu_skylib {
 
-    class Color_Flags_e : public Enum_t<u8>
+    class Color_Flags_e :
+        public Enum_t<u8>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             IS_PLAYABLE = static_cast<value_type>(1 << 0),
         };

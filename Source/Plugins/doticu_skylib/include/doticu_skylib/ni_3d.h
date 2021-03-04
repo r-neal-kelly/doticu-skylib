@@ -56,9 +56,16 @@ namespace doticu_skylib {
         u64                     unk_108;                    // 108
 
     public:
+        Vector_t<some<NI_3D_t*>>            Children();
+        void                                Children(Vector_t<some<NI_3D_t*>>& results);
         Vector_t<some<NI_Collidable_t*>>    Collidables();
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         void                                Update(NI_Update_t& ni_update);
+
+        String_t                            Name();
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(NI_3D_t) == 0x110);
 

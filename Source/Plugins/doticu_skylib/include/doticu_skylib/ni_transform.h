@@ -15,6 +15,9 @@ namespace doticu_skylib {
         NI_Matrix_3_t   rotation;       // 00
         NI_Point_3_t    translation;    // 24
         Float_t         scale;          // 30
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(NI_Transform_t) == 0x34);
 

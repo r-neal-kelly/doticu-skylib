@@ -161,6 +161,9 @@ namespace doticu_skylib {
         void                            Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
         Race_t*                         Race();
 
+        Float_t                         Weight();
+        void                            Weight(Float_t weight);
+
         Vector_t<Keyword_t*>            Keywords(Bool_t include_templates = true);
         void                            Keywords(Vector_t<Keyword_t*>& results, Bool_t include_templates = true);
 

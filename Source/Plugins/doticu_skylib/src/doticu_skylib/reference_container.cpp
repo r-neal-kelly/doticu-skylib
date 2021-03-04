@@ -8,6 +8,7 @@
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/player.h"
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/reference_container_entry.h"
 
@@ -54,6 +55,13 @@ namespace doticu_skylib {
 
     Reference_Container_t::~Reference_Container_t()
     {
+        if (Is_Valid()) {
+            maybe<Actor_t*> actor = this->reference->As_Actor();
+            if (actor) {
+                actor->Update_Equipment();
+            }
+        }
+
         this->entries.~Vector_t<Reference_Container_Entry_t>();
         this->reference_container = static_cast<Container_Changes_t*>(nullptr);
         this->base_container = static_cast<Container_c*>(nullptr);

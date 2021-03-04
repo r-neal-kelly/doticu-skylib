@@ -31,6 +31,7 @@ namespace doticu_skylib {
     class Actor_Base_t;
     class Actor_High_AI_t;
     class Actor_Mover_t;
+    class Color_t;
     class Dialogue_Branch_t;
     class Faction_t;
     class Havok_Actor_Controller_t;
@@ -71,7 +72,6 @@ namespace doticu_skylib {
                 ADD_SPELL               = 0x0062F560, // 37771
                 EVALUATE_PACKAGE        = 0x005DB310, // 36407
                 QUEUE_NI_NODE_UPDATE    = 0x00693110, // 39181
-                UPDATE_3D_MODEL         = 0x00650DF0, // 38404 (this maybe goes on an actor_ai type?)
             };
             using Enum_t::Enum_t;
         };
@@ -382,12 +382,16 @@ namespace doticu_skylib {
 
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
+        void                                        Update_3D();
+        void                                        Update_Equipment();
+
+    public:
+        void Base_Weight(Float_t weight);
 
     public:
         void Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback = nullptr);  // OpenInventory
         void Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback = nullptr);    // OpenInventory
 
-    public:
         void Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback = nullptr);
 
     public:

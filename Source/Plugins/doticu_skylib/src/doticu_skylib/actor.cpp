@@ -21,9 +21,11 @@
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/misc.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/race.h"
+#include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
@@ -674,6 +676,33 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::QUEUE_NI_NODE_UPDATE);
 
         return queue_ni_node_update(this, do_update_weight);
+    }
+
+    void Actor_t::Update_3D()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            Float_t weight = actor_base->Weight();
+            Base_Weight(weight);
+        }
+    }
+
+    void Actor_t::Update_Equipment()
+    {
+        static some<Misc_t*> gold = static_cast<Misc_t*>(Game_t::Form(0x0000000F)());
+        SKYLIB_ASSERT(gold);
+
+        Add_Item(gold, 0);
+    }
+
+    void Actor_t::Base_Weight(Float_t weight)
+    {
+        some<Script_t*> script = Script_t::Create();
+        script->Command(
+            (std::string("SetNPCWeight ") + std::to_string(weight)).c_str()
+        );
+        script->Execute(this);
+        Script_t::Destroy(script);
     }
 
     void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback)

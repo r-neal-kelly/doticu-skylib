@@ -12,6 +12,9 @@ namespace doticu_skylib {
     {
     public:
         Float_t matrix[3][3];
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(NI_Matrix_3_t) == 0x24);
 

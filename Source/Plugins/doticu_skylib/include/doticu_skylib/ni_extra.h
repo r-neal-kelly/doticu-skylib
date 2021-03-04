@@ -18,6 +18,9 @@ namespace doticu_skylib {
 
     public:
         String_t extra_name; // 10
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(NI_Extra_t) == 0x18);
 

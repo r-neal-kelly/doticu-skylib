@@ -84,6 +84,7 @@
     <ClInclude Include="include\doticu_skylib\enum_fly_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_texture_set_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_texture_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_update_3d_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_voice_type_flags.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
@@ -430,6 +431,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
+    <ClCompile Include="src\doticu_skylib\actor_ai.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_cached_values.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_processor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_base.cpp" />
@@ -440,6 +442,11 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_matrix.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_point.cpp" />
+    <ClCompile Include="src\doticu_skylib\ni_transform.cpp" />
     <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_container.cpp" />

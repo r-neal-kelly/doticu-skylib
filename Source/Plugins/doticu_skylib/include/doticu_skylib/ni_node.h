@@ -29,6 +29,10 @@ namespace doticu_skylib {
 
     public:
         Short_Array_t<maybe<NI_3D_t*>> children; // 110
+
+    public:
+        Vector_t<some<NI_3D_t*>>    Children();
+        void                        Children(Vector_t<some<NI_3D_t*>>& results);
     };
     STATIC_ASSERT(sizeof(NI_Node_t) == 0x128);
 
