@@ -152,7 +152,7 @@ namespace doticu_skylib {
         virtual void        _5B(void);                                  // 5B
         virtual void        _5C(void);                                  // 5C
         virtual void        _5D(void);                                  // 5D
-        virtual void        _5E(void);                                  // 5E
+        virtual Bool_t      Get_Is_Child() const;                       // 5E
         virtual void        _5F(void);                                  // 5F
         virtual void        _60(void);                                  // 60
         virtual void        _61(void);                                  // 61

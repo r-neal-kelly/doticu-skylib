@@ -5,6 +5,7 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_ai.h"
 #include "doticu_skylib/actor_ai_cached_values.h"
+#include "doticu_skylib/actor_ai_processor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_high_ai.h"
 #include "doticu_skylib/actor_middle_high_ai.h"
@@ -152,6 +153,16 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Actor_t::Is_Child()
+    {
+        return Get_Is_Child();
+    }
+
+    Bool_t Actor_t::Isnt_Child()
+    {
+        return !Is_Child();
+    }
+
     Bool_t Actor_t::Is_Vampire()
     {
         return Has_Keyword(Keyword_t::Vampire()());
@@ -160,6 +171,16 @@ namespace doticu_skylib {
     Bool_t Actor_t::Isnt_Vampire()
     {
         return !Is_Vampire();
+    }
+
+    Bool_t Actor_t::Is_In_Combat()
+    {
+        return Get_Is_In_Combat();
+    }
+
+    Bool_t Actor_t::Isnt_In_Combat()
+    {
+        return !Is_In_Combat();
     }
 
     Bool_t Actor_t::Has_Mount()
@@ -669,6 +690,13 @@ namespace doticu_skylib {
         return evaluate_package(this, do_immediately, do_reset_ai);
     }
 
+    void Actor_t::Pacify()
+    {
+        Set_Actor_Value(Actor_Value_e::AGGRESSION, 0.0f);
+        Stop_Combat_And_Alarm();
+        Evaluate_Package(true, true);
+    }
+
     void Actor_t::Queue_NI_Node_Update(Bool_t do_update_weight)
     {
         static auto queue_ni_node_update = reinterpret_cast
@@ -676,6 +704,16 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::QUEUE_NI_NODE_UPDATE);
 
         return queue_ni_node_update(this, do_update_weight);
+    }
+
+    void Actor_t::Stop_Combat()
+    {
+        Do_Stop_Combat();
+    }
+
+    void Actor_t::Stop_Combat_And_Alarm()
+    {
+        Actor_AI_Processor_t::Self()->Stop_Combat_And_Alarm(this, false);
     }
 
     void Actor_t::Update_3D()

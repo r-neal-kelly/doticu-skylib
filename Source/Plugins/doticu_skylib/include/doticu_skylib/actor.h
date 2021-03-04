@@ -179,9 +179,9 @@ namespace doticu_skylib {
         virtual void    _0E0(void);                                     // 0E0
         virtual void    _0E1(void);                                     // 0E1
         virtual void    _0E2(void);                                     // 0E2
-        virtual void    _0E3(void);                                     // 0E3
-        virtual void    _0E4(void);                                     // 0E4
-        virtual void    _0E5(void);                                     // 0E5
+        virtual Bool_t  Get_Is_In_Combat();                             // 0E3
+        virtual void    Do_Update_Combat();                             // 0E4
+        virtual void    Do_Stop_Combat();                               // 0E5
         virtual void    _0E6(void);                                     // 0E6
         virtual void    _0E7(void);                                     // 0E7
         virtual void    _0E8(void);                                     // 0E8
@@ -313,8 +313,12 @@ namespace doticu_skylib {
     public:
         Bool_t                                      Is_Unique();
         Bool_t                                      Is_Generic();
+        Bool_t                                      Is_Child();
+        Bool_t                                      Isnt_Child();
         Bool_t                                      Is_Vampire();
         Bool_t                                      Isnt_Vampire();
+        Bool_t                                      Is_In_Combat();
+        Bool_t                                      Isnt_In_Combat();
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();
 
@@ -381,7 +385,10 @@ namespace doticu_skylib {
         void                                        Is_Ghost(Bool_t value);
 
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
+        void                                        Pacify();
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
+        void                                        Stop_Combat();
+        void                                        Stop_Combat_And_Alarm();
         void                                        Update_3D();
         void                                        Update_Equipment();
 
