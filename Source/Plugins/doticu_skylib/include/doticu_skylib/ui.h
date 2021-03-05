@@ -29,7 +29,7 @@ namespace doticu_skylib {
         void Value(Type value);
     };
 
-    class UI_t
+    class UI_t // UI, MenuManager
     {
     public:
         template <typename Type>

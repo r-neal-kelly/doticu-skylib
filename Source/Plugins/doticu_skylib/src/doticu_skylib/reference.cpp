@@ -716,6 +716,18 @@ namespace doticu_skylib {
         }
     }
 
+    void Reference_t::Push_Away(some<Actor_t*> actor, Int_t force)
+    {
+        SKYLIB_ASSERT_SOME(actor);
+
+        if (Is_Valid()) {
+            some<Script_t*> script = Script_t::Create();
+            script->Command(std::string("PushActorAway ") + actor->Form_ID_String().data + " " + std::to_string(force));
+            script->Execute(this);
+            Script_t::Destroy(script);
+        }
+    }
+
     void Reference_t::Select_In_Console()
     {
         if (Is_Valid()) {
@@ -724,6 +736,128 @@ namespace doticu_skylib {
             script->Execute(this);
             Script_t::Destroy(script);
         }
+    }
+
+    void Reference_t::Is_Activation_Blocked(Bool_t value, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t value;
+
+        public:
+            Virtual_Arguments(Bool_t value) :
+                value(value)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->value);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "BlockActivation",
+            Virtual_Arguments(value),
+            v_callback
+        );
+    }
+
+    void Reference_t::Is_Activation_Blocked(Bool_t value, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Is_Activation_Blocked(value, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Is_Open(Bool_t value, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t value;
+
+        public:
+            Virtual_Arguments(Bool_t value) :
+                value(value)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->value);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetOpen",
+            Virtual_Arguments(value),
+            v_callback
+        );
+    }
+
+    void Reference_t::Is_Open(Bool_t value, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Is_Open(value, new Virtual_Callback(std::move(callback)));
     }
 
     void Reference_t::Activate(some<Reference_t*> activator,
@@ -882,6 +1016,271 @@ namespace doticu_skylib {
     void Reference_t::Reset_Animation(maybe<unique<Callback_i<>>> callback)
     {
         Play_Animation("IdleForceDefaultState", std::move(callback));
+    }
+
+    void Reference_t::Push_Away(some<Actor_t*> actor, Float_t force, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            some<Actor_t*>  actor;
+            Float_t         force;
+
+        public:
+            Virtual_Arguments(some<Actor_t*> actor, Float_t force) :
+                actor(actor), force(force)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(2);
+                args->At(0).As<Actor_t*>(this->actor());
+                args->At(1).As<Float_t>(this->force);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(actor);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "PushActorAway",
+            Virtual_Arguments(actor, force),
+            v_callback
+        );
+    }
+
+    void Reference_t::Push_Away(some<Actor_t*> actor, Float_t force, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(actor);
+
+        Push_Away(actor, force, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
+                                           Float_t x_degree, Float_t y_degree, Float_t z_degree,
+                                           Float_t movement_speed, Float_t max_rotation_speed,
+                                           maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t x_position;
+            Float_t y_position;
+            Float_t z_position;
+            Float_t x_degree;
+            Float_t y_degree;
+            Float_t z_degree;
+            Float_t movement_speed;
+            Float_t max_rotation_speed;
+
+        public:
+            Virtual_Arguments(Float_t x_position, Float_t y_position, Float_t z_position,
+                              Float_t x_degree, Float_t y_degree, Float_t z_degree,
+                              Float_t movement_speed, Float_t max_rotation_speed) :
+                x_position(x_position), y_position(y_position), z_position(z_position),
+                x_degree(x_degree), y_degree(y_degree), z_degree(z_degree),
+                movement_speed(movement_speed), max_rotation_speed(max_rotation_speed)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(8);
+                args->At(0).As<Float_t>(this->x_position);
+                args->At(1).As<Float_t>(this->y_position);
+                args->At(2).As<Float_t>(this->z_position);
+                args->At(3).As<Float_t>(this->x_degree);
+                args->At(4).As<Float_t>(this->y_degree);
+                args->At(5).As<Float_t>(this->z_degree);
+                args->At(6).As<Float_t>(this->movement_speed);
+                args->At(7).As<Float_t>(this->max_rotation_speed);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "TranslateTo",
+            Virtual_Arguments(x_position, y_position, z_position,
+                              x_degree, y_degree, z_degree,
+                              movement_speed, max_rotation_speed),
+            v_callback
+        );
+    }
+
+    void Reference_t::Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
+                                           Float_t x_degree, Float_t y_degree, Float_t z_degree,
+                                           Float_t movement_speed, Float_t max_rotation_speed,
+                                           maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Start_Translation_To(x_position, y_position, z_position,
+                             x_degree, y_degree, z_degree,
+                             movement_speed, max_rotation_speed,
+                             new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Stop_Translation(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "StopTranslation",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Reference_t::Stop_Translation(maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Stop_Translation(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force,
+                                          maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t x;
+            Float_t y;
+            Float_t z;
+            Float_t force;
+
+        public:
+            Virtual_Arguments(Float_t x, Float_t y, Float_t z, Float_t force) :
+                x(x), y(y), z(z), force(force)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(4);
+                args->At(0).As<Float_t>(this->x);
+                args->At(1).As<Float_t>(this->y);
+                args->At(2).As<Float_t>(this->z);
+                args->At(3).As<Float_t>(this->force);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "ApplyHavokImpulse",
+            Virtual_Arguments(x, y, z, force),
+            v_callback
+        );
+    }
+
+    void Reference_t::Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force,
+                                          maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Apply_Havok_Impulse(x, y, z, force, new Virtual_Callback(std::move(callback)));
     }
 
     void Reference_t::Log_Extra_List(std::string indent)

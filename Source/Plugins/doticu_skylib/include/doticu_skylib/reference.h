@@ -297,22 +297,30 @@ namespace doticu_skylib {
         void Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
 
     public:
-        void Add_Item(some<Form_t*> item, s16 delta);   // AddItem
+        void Add_Item(some<Form_t*> item, s16 delta);           // AddItem
 
-        void Enable();                                  // Enable
-        void Disable();                                 // Disable
+        void Enable();                                          // Enable
+        void Disable();                                         // Disable
 
-        void Mark_For_Delete(Bool_t do_disable = true); // MarkForDelete
+        void Mark_For_Delete(Bool_t do_disable = true);         // MarkForDelete
 
-        void Select_In_Console();                       // prid
+        void Push_Away(some<Actor_t*> actor, Int_t force);      // PushActorAway
+
+        void Select_In_Console();                               // prid
 
     public:
+        void Is_Activation_Blocked(Bool_t value, maybe<Virtual::Callback_i*> v_callback);               // BlockActivation
+        void Is_Activation_Blocked(Bool_t value, maybe<unique<Callback_i<>>> callback);                 // BlockActivation
+
+        void Is_Open(Bool_t value, maybe<Virtual::Callback_i*> v_callback);                             // SetOpen
+        void Is_Open(Bool_t value, maybe<unique<Callback_i<>>> callback);                               // SetOpen
+
         void Activate(some<Reference_t*> activator,
                       Bool_t do_only_default_processing = false,
-                      maybe<Virtual::Callback_i*> v_callback = nullptr);            // Activate
+                      maybe<Virtual::Callback_i*> v_callback = nullptr);                                // Activate
         void Activate(some<Reference_t*> activator,
                       Bool_t do_only_default_processing = false,
-                      maybe<unique<Callback_i<Bool_t>>> callback = nullptr);        // Activate
+                      maybe<unique<Callback_i<Bool_t>>> callback = nullptr);                            // Activate
 
         void Find_Closest_Actor(Float_t radius, some<Virtual::Callback_i*> v_callback);
         void Find_Closest_Actor(Float_t radius, some<unique<Callback_i<maybe<Actor_t*>>>> callback);
@@ -323,6 +331,25 @@ namespace doticu_skylib {
         void Play_Animation(String_t animation_event_name, maybe<unique<Callback_i<>>> callback);
         void Reset_Animation(maybe<Virtual::Callback_i*> v_callback);
         void Reset_Animation(maybe<unique<Callback_i<>>> callback);
+
+        void Push_Away(some<Actor_t*> actor, Float_t force, maybe<Virtual::Callback_i*> v_callback);    // PushActorAway
+        void Push_Away(some<Actor_t*> actor, Float_t force, maybe<unique<Callback_i<>>> callback);      // PushActorAway
+
+        void Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
+                                  Float_t x_degree, Float_t y_degree, Float_t z_degree,
+                                  Float_t movement_speed, Float_t max_rotation_speed,
+                                  maybe<Virtual::Callback_i*> v_callback);                              // TranslateTo
+        void Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
+                                  Float_t x_degree, Float_t y_degree, Float_t z_degree,
+                                  Float_t movement_speed, Float_t max_rotation_speed,
+                                  maybe<unique<Callback_i<>>> callback);                                // TranslateTo
+        void Stop_Translation(maybe<Virtual::Callback_i*> v_callback);                                  // StopTranslation
+        void Stop_Translation(maybe<unique<Callback_i<>>> callback);                                    // StopTranslation
+
+        void Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force,
+                                 maybe<Virtual::Callback_i*> v_callback);                               // ApplyHavokImpulse
+        void Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force,
+                                 maybe<unique<Callback_i<>>> callback);                                 // ApplyHavokImpulse
 
     public:
         void Log_Extra_List(std::string indent = "");
