@@ -7,7 +7,11 @@
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/dialogue_manager.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_container_changes.h"
+#include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/form_list.h"
@@ -27,18 +31,15 @@
 #include "doticu_skylib/reference_attached_state.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/script.h"
-#include "doticu_skylib/worldspace.h"
-
-#include "doticu_skylib/extra_aliases.h"
-#include "doticu_skylib/extra_container_changes.h"
-#include "doticu_skylib/extra_list.inl"
-
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_debug.h"
+#include "doticu_skylib/virtual_game.h"
 #include "doticu_skylib/virtual_input.h"
 #include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
+#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 
@@ -235,6 +236,11 @@ namespace doticu_skylib {
     Bool_t Reference_t::Is_Detached()
     {
         return !Is_Attached();
+    }
+
+    Bool_t Reference_t::Is_In_Dialogue_With_Player()
+    {
+        return this == Dialogue_Manager_t::Self()->Current_Speaker()();
     }
 
     Bool_t Reference_t::Is_Quest_Item()
@@ -662,11 +668,13 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Select_In_Console()
+    void Reference_t::Add_Item(some<Form_t*> item, s16 delta)
     {
+        SKYLIB_ASSERT_SOME(item);
+
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
-            script->Command((std::string("prid ") + Form_ID_String().data).c_str());
+            script->Command(std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta));
             script->Execute(this);
             Script_t::Destroy(script);
         }
@@ -708,15 +716,11 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Add_Item(some<Form_t*> item, s16 delta)
+    void Reference_t::Select_In_Console()
     {
-        SKYLIB_ASSERT_SOME(item);
-
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
-            script->Command(
-                (std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta)).c_str()
-            );
+            script->Command(std::string("prid ") + Form_ID_String().data);
             script->Execute(this);
             Script_t::Destroy(script);
         }
@@ -793,46 +797,14 @@ namespace doticu_skylib {
         Activate(activator, do_only_default_processing, new Virtual_Callback(std::move(callback)));
     }
 
-    void Reference_t::Is_In_Dialogue_With_Player(some<Virtual::Callback_i*> v_callback)
+    void Reference_t::Find_Closest_Actor(Float_t radius, some<Virtual::Callback_i*> v_callback)
     {
-        SKYLIB_ASSERT_SOME(v_callback);
-
-        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
-        Virtual::Machine_t::Self()->Call_Method(
-            this,
-            SCRIPT_NAME,
-            "IsInDialogueWithPlayer",
-            none<Virtual::Arguments_i*>(),
-            v_callback()
-        );
+        Virtual::Game_t::Find_Closest_Actor_From(this, radius, v_callback);
     }
 
-    void Reference_t::Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback)
+    void Reference_t::Find_Closest_Actor(Float_t radius, some<unique<Callback_i<maybe<Actor_t*>>>> callback)
     {
-        using Callback = some<unique<Callback_i<Bool_t>>>;
-
-        class Virtual_Callback :
-            public Virtual::Callback_t
-        {
-        public:
-            Callback callback;
-
-        public:
-            Virtual_Callback(Callback callback) :
-                callback(std::move(callback))
-            {
-            }
-
-        public:
-            virtual void operator()(Virtual::Variable_t* result) override
-            {
-                (*this->callback)(result ? result->As<Bool_t>() : false);
-            }
-        };
-
-        SKYLIB_ASSERT_SOME(callback);
-
-        Is_In_Dialogue_With_Player(new Virtual_Callback(std::move(callback)));
+        Virtual::Game_t::Find_Closest_Actor_From(this, radius, std::move(callback));
     }
 
     void Reference_t::Open_Inventory(maybe<unique<Callback_i<Bool_t>>> callback)
@@ -890,6 +862,26 @@ namespace doticu_skylib {
                 (*callback)(false);
             }
         }
+    }
+
+    void Reference_t::Play_Animation(String_t animation_event_name, maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Debug_t::Send_Animation_Event(this, animation_event_name, v_callback);
+    }
+
+    void Reference_t::Play_Animation(String_t animation_event_name, maybe<unique<Callback_i<>>> callback)
+    {
+        Virtual::Debug_t::Send_Animation_Event(this, animation_event_name, std::move(callback));
+    }
+
+    void Reference_t::Reset_Animation(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Play_Animation("IdleForceDefaultState", v_callback);
+    }
+
+    void Reference_t::Reset_Animation(maybe<unique<Callback_i<>>> callback)
+    {
+        Play_Animation("IdleForceDefaultState", std::move(callback));
     }
 
     void Reference_t::Log_Extra_List(std::string indent)

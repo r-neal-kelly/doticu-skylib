@@ -14,6 +14,17 @@
 
 namespace doticu_skylib { namespace Virtual {
 
+    Int_t Input_t::Control_To_Key(String_t control, u32 device_type)
+    {
+        return papyrusInput::GetMappedKey(0, reinterpret_cast<BSFixedString&>(control), device_type);
+    }
+
+    String_t Input_t::Key_To_Control(Int_t key)
+    {
+        BSFixedString result = papyrusInput::GetMappedControl(0, key);
+        return reinterpret_cast<String_t&>(result);
+    }
+
     void Input_t::Is_Key_Pressed(Int_t key, some<Virtual::Callback_i*> v_callback)
     {
         class Virtual_Arguments :
@@ -136,13 +147,13 @@ namespace doticu_skylib { namespace Virtual {
 
     void Input_t::Tap_Inventory_Key(maybe<Virtual::Callback_i*> v_callback)
     {
-        Int_t inventory_key = papyrusInput::GetMappedKey(0, "Quick Inventory", 0xFF);
+        Int_t inventory_key = Control_To_Key("Quick Inventory");
         Tap_Key(inventory_key, v_callback);
     }
 
     void Input_t::Tap_Inventory_Key(maybe<unique<doticu_skylib::Callback_i<>>> callback)
     {
-        Int_t inventory_key = papyrusInput::GetMappedKey(0, "Quick Inventory", 0xFF);
+        Int_t inventory_key = Control_To_Key("Quick Inventory");
         Tap_Key(inventory_key, std::move(callback));
     }
 
@@ -214,7 +225,7 @@ namespace doticu_skylib { namespace Virtual {
             }
         };
 
-        Int_t menu_key = papyrusInput::GetMappedKey(0, "Tween Menu", 0xFF);
+        Int_t menu_key = Control_To_Key("Tween Menu");
         if (menu_key > -1) {
             Utility_t::Is_In_Menu_Mode(new Is_In_Menu_Mode_Callback(menu_key, std::move(callback)));
         } else {

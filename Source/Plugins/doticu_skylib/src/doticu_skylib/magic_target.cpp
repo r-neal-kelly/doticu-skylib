@@ -14,6 +14,7 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::HAS_MAGIC_EFFECT);
 
         SKYLIB_ASSERT_SOME(magic_effect);
+
         return has_magic_effect(this, magic_effect());
     }
 

@@ -63,9 +63,12 @@
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
+    <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
+    <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
+    <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
     <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
@@ -402,6 +405,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_binder.h" />
     <ClInclude Include="include\doticu_skylib\virtual_callback.h" />
     <ClInclude Include="include\doticu_skylib\virtual_class.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_debug.h" />
     <ClInclude Include="include\doticu_skylib\virtual_function.h" />
     <ClInclude Include="include\doticu_skylib\virtual_game.h" />
     <ClInclude Include="include\doticu_skylib\virtual_handle.h" />
@@ -441,7 +445,9 @@
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
+    <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_matrix.cpp" />
@@ -531,6 +537,7 @@
     <ClCompile Include="src\doticu_skylib\virtual_array.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_callback.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_class.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_debug.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_game.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_input.cpp" />
@@ -548,6 +555,7 @@
     <ClCompile Include="src\doticu_skylib\extra_list.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="include\doticu_skylib\atomic.inl" />
     <None Include="include\doticu_skylib\atomic_number.inl" />
     <None Include="include\doticu_skylib\dynamic_array.inl" />
     <None Include="include\doticu_skylib\extra_data.inl" />

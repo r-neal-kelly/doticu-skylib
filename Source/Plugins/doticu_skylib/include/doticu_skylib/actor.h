@@ -72,6 +72,7 @@ namespace doticu_skylib {
                 ADD_SPELL               = 0x0062F560, // 37771
                 EVALUATE_PACKAGE        = 0x005DB310, // 36407
                 QUEUE_NI_NODE_UPDATE    = 0x00693110, // 39181
+                REMOVE_SPELL            = 0x0062F720, // 37772
             };
             using Enum_t::Enum_t;
         };
@@ -176,9 +177,9 @@ namespace doticu_skylib {
         virtual void    _0DD(void);                                     // 0DD
         virtual void    _0DE(void);                                     // 0DE
         virtual void    _0DF(void);                                     // 0DF
-        virtual void    _0E0(void);                                     // 0E0
-        virtual void    _0E1(void);                                     // 0E1
-        virtual void    _0E2(void);                                     // 0E2
+        virtual void    Do_Update_Alpha();                              // 0E0
+        virtual void    Set_Alpha(Float_t alpha);                       // 0E1
+        virtual Float_t Get_Alpha();                                    // 0E2
         virtual Bool_t  Get_Is_In_Combat();                             // 0E3
         virtual void    Do_Update_Combat();                             // 0E4
         virtual void    Do_Stop_Combat();                               // 0E5
@@ -325,6 +326,7 @@ namespace doticu_skylib {
         Bool_t                                      Is_Owner_Of(some<Reference_t*> reference);
         Bool_t                                      Is_Potential_Thief_Of(some<Reference_t*> reference);
 
+    public:
         Sex_e                                       Sex();
         maybe<Race_t*>                              Race();
 
@@ -381,6 +383,9 @@ namespace doticu_skylib {
         void                                        Has_AI(Bool_t value);
         void                                        Reset_AI();
 
+        Bool_t                                      Add_Spell(some<Spell_t*> spell);
+        Bool_t                                      Remove_Spell(some<Spell_t*> spell);
+
         Bool_t                                      Is_Ghost();
         void                                        Is_Ghost(Bool_t value);
 
@@ -393,13 +398,22 @@ namespace doticu_skylib {
         void                                        Update_Equipment();
 
     public:
-        void Base_Weight(Float_t weight);
+        Float_t Alpha();
+        void    Alpha(Float_t alpha);                                   // SetActorAlpha
+
+        Float_t Base_Weight();
+        void    Base_Weight(Float_t weight);                            // SetNPCWeight
+
+        void    Is_Doing_Favor(Bool_t value);                           // SetFavorState
 
     public:
-        void Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback = nullptr);  // OpenInventory
-        void Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback = nullptr);    // OpenInventory
+        void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback = nullptr);      // SetAlpha
+        void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<unique<Callback_i<>>> callback = nullptr);        // SetAlpha
 
-        void Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback = nullptr);
+        void    Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback = nullptr);   // OpenInventory
+        void    Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback = nullptr);     // OpenInventory
+
+        void    Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback = nullptr);
 
     public:
         void Log_Factions_And_Ranks(std::string indent = "");

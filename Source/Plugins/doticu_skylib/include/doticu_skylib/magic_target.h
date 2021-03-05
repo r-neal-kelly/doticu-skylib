@@ -14,10 +14,11 @@ namespace doticu_skylib {
     class Magic_Target_t // MagicTarget
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 HAS_MAGIC_EFFECT = 0x005530D0, // 33733
             };

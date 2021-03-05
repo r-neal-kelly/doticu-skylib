@@ -1176,6 +1176,18 @@
     <ClInclude Include="include\doticu_skylib\enum_update_3d_flags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\virtual_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\atomic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1526,6 +1538,15 @@
     <ClCompile Include="src\doticu_skylib\ni_point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\magic_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\virtual_debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\ui.inl">
@@ -1562,6 +1583,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="include\doticu_skylib\virtual_machine.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="include\doticu_skylib\atomic.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

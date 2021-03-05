@@ -12,7 +12,7 @@ namespace doticu_skylib {
         public Enum_t<u32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             DO_PROCESS_AI       = static_cast<value_type>(1 << 1),
             DO_RESET_AI         = static_cast<value_type>(1 << 17),
@@ -28,7 +28,7 @@ namespace doticu_skylib {
         public Enum_t<u32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             IS_MOUNT                    = static_cast<value_type>(1 << 1),
             CAN_DO_FAVORS               = static_cast<value_type>(1 << 7),

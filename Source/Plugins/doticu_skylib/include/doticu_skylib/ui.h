@@ -9,6 +9,7 @@
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
 
@@ -48,8 +49,8 @@ namespace doticu_skylib {
         static void     Message_Box(String_t message, Virtual::Callback_i* vcallback = nullptr);
 
         static Bool_t   Is_Menu_Open(String_t menu);
-        static void     Is_In_Menu_Mode(Virtual::Callback_i* vcallback);
-        static void     Is_In_Menu_Mode(Callback_i<Bool_t>* ucallback);
+        static void     Is_In_Menu_Mode(some<Virtual::Callback_i*> v_callback);
+        static void     Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);
     };
 
 }

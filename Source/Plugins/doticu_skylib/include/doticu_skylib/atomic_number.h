@@ -21,22 +21,25 @@ namespace doticu_skylib {
         Atomic_Number_t(const T value);
 
     public:
-        operator T ();
-        T operator () ();
-        T operator + (const T other);
-        T operator - (const T other);
-        T operator += (const T other);
-        T operator -= (const T other);
-        T operator ++ ();
-        T operator ++ (int);
-        T operator -- ();
-        T operator -- (int);
-        T operator | (const T other);
-        T operator & (const T other);
-        T operator ^ (const T other);
-        T operator |= (const T other);
-        T operator &= (const T other);
-        T operator ^= (const T other);
+        operator T();
+
+    public:
+        T operator ()();
+        T operator =(const T other);
+        T operator +(const T other);
+        T operator -(const T other);
+        T operator +=(const T other);
+        T operator -=(const T other);
+        T operator ++();
+        T operator ++(int);
+        T operator --();
+        T operator --(int);
+        T operator |(const T other);
+        T operator &(const T other);
+        T operator ^(const T other);
+        T operator |=(const T other);
+        T operator &=(const T other);
+        T operator ^=(const T other);
     };
     STATIC_ASSERT(sizeof(Atomic_Number_t<u32>) == 0x4);
 

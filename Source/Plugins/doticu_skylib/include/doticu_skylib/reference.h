@@ -250,6 +250,9 @@ namespace doticu_skylib {
         Bool_t Is_Temporary();
         Bool_t Is_Attached();
         Bool_t Is_Detached();
+
+        Bool_t Is_In_Dialogue_With_Player();
+
         Bool_t Is_Quest_Item();
         Bool_t Is_Aliased();
         Bool_t Is_Aliased(some<Quest_t*> quest);
@@ -293,14 +296,15 @@ namespace doticu_skylib {
         void Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation);
         void Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
 
-        void Select_In_Console();
+    public:
+        void Add_Item(some<Form_t*> item, s16 delta);   // AddItem
 
-        void Enable();
-        void Disable();
+        void Enable();                                  // Enable
+        void Disable();                                 // Disable
 
-        void Mark_For_Delete(Bool_t do_disable = true);
+        void Mark_For_Delete(Bool_t do_disable = true); // MarkForDelete
 
-        void Add_Item(some<Form_t*> item, s16 delta);
+        void Select_In_Console();                       // prid
 
     public:
         void Activate(some<Reference_t*> activator,
@@ -309,12 +313,16 @@ namespace doticu_skylib {
         void Activate(some<Reference_t*> activator,
                       Bool_t do_only_default_processing = false,
                       maybe<unique<Callback_i<Bool_t>>> callback = nullptr);        // Activate
-        
-        void Is_In_Dialogue_With_Player(some<Virtual::Callback_i*> v_callback);     // IsInDialogueWithPlayer
-        void Is_In_Dialogue_With_Player(some<unique<Callback_i<Bool_t>>> callback); // IsInDialogueWithPlayer
 
-    public:
+        void Find_Closest_Actor(Float_t radius, some<Virtual::Callback_i*> v_callback);
+        void Find_Closest_Actor(Float_t radius, some<unique<Callback_i<maybe<Actor_t*>>>> callback);
+
         void Open_Inventory(maybe<unique<Callback_i<Bool_t>>> callback = nullptr);
+
+        void Play_Animation(String_t animation_event_name, maybe<Virtual::Callback_i*> v_callback);
+        void Play_Animation(String_t animation_event_name, maybe<unique<Callback_i<>>> callback);
+        void Reset_Animation(maybe<Virtual::Callback_i*> v_callback);
+        void Reset_Animation(maybe<unique<Callback_i<>>> callback);
 
     public:
         void Log_Extra_List(std::string indent = "");

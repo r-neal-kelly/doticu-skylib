@@ -14,6 +14,7 @@ namespace doticu_skylib {
             (Game_t::Base_Address() + Offset_e::SELF);
 
         SKYLIB_ASSERT(self && *self);
+
         return *self;
     }
 

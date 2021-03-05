@@ -49,8 +49,8 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Event_Source_t<Int_t>) == 0x58);
 
-    template <typename Event>
-    class Event_Sink_t
+    template <typename T>
+    class Event_Sink_t // BSTEventSink
     {
     public:
         virtual ~Event_Sink_t() = default;  // 0

@@ -4,10 +4,10 @@
 
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/ui.h"
-
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
@@ -73,6 +73,16 @@ namespace doticu_skylib {
         } else {
             return false;
         }
+    }
+
+    void UI_t::Is_In_Menu_Mode(some<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Utility_t::Is_In_Menu_Mode(v_callback);
+    }
+
+    void UI_t::Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback)
+    {
+        Virtual::Utility_t::Is_In_Menu_Mode(std::move(callback));
     }
 
 }

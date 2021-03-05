@@ -53,15 +53,22 @@ namespace doticu_skylib {
         }
     }
 
-    void Script_t::Command(some<const char*> command)
+    void Script_t::Command(const char* command)
     {
-        SKYLIB_ASSERT_SOME(command);
+        if (!command) {
+            command = "";
+        }
 
-        size_t length = CString_t::Length(command(), true);
+        size_t length = CString_t::Length(command, true);
         if (length > 0) {
             Allocate_Command(length);
-            memcpy(this->text(), command(), length);
+            memcpy(this->text(), command, length);
         }
+    }
+
+    void Script_t::Command(std::string command)
+    {
+        Command(command.c_str());
     }
 
     void Script_t::Execute(some<Reference_t*> reference, Compiler_e compiler_e)

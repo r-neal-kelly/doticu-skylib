@@ -80,7 +80,8 @@ namespace doticu_skylib {
         void                Deallocate_Command();
 
         some<const char*>   Command();
-        void                Command(some<const char*> command);
+        void                Command(const char* command);
+        void                Command(std::string command);
 
         void                Execute(some<Reference_t*> reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
     };

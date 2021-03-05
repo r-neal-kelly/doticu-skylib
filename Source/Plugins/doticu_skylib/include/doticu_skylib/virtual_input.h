@@ -20,6 +20,10 @@ namespace doticu_skylib { namespace Virtual {
         static constexpr const char* SCRIPT_NAME = "Input";
 
     public:
+        static Int_t    Control_To_Key(String_t control, u32 device_type = 0xFF);
+        static String_t Key_To_Control(Int_t key);
+
+    public:
         static void Is_Key_Pressed(Int_t key, some<Virtual::Callback_i*> v_callback);                       // IsKeyPressed
         static void Is_Key_Pressed(Int_t key, some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);    // IsKeyPressed
 

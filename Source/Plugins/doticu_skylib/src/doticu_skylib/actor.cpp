@@ -22,6 +22,7 @@
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"
+#include "doticu_skylib/math.h"
 #include "doticu_skylib/misc.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
@@ -656,6 +657,28 @@ namespace doticu_skylib {
         Evaluate_Package(true, true);
     }
 
+    Bool_t Actor_t::Add_Spell(some<Spell_t*> spell)
+    {
+        static auto add_spell = reinterpret_cast
+            <Bool_t(*)(Actor_t*, Spell_t*)>
+            (Game_t::Base_Address() + Offset_e::ADD_SPELL);
+
+        SKYLIB_ASSERT_SOME(spell);
+
+        return add_spell(this, spell());
+    }
+
+    Bool_t Actor_t::Remove_Spell(some<Spell_t*> spell)
+    {
+        static auto remove_spell = reinterpret_cast
+            <Bool_t(*)(Actor_t*, Spell_t*)>
+            (Game_t::Base_Address() + Offset_e::REMOVE_SPELL);
+
+        SKYLIB_ASSERT_SOME(spell);
+
+        return remove_spell(this, spell());
+    }
+
     Bool_t Actor_t::Is_Ghost()
     {
         Boolean_e is_ghost = this->x_list.Is_Ghost();
@@ -733,14 +756,106 @@ namespace doticu_skylib {
         Add_Item(gold, 0);
     }
 
+    Float_t Actor_t::Alpha()
+    {
+        return Get_Alpha();
+    }
+
+    void Actor_t::Alpha(Float_t alpha)
+    {
+        some<Script_t*> script = Script_t::Create();
+        script->Command(std::string("SetActorAlpha ") + std::to_string(alpha));
+        script->Execute(this);
+        Script_t::Destroy(script);
+    }
+
+    Float_t Actor_t::Base_Weight()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Weight();
+        } else {
+            return 50.0f;
+        }
+    }
+
     void Actor_t::Base_Weight(Float_t weight)
     {
         some<Script_t*> script = Script_t::Create();
-        script->Command(
-            (std::string("SetNPCWeight ") + std::to_string(weight)).c_str()
-        );
+        script->Command(std::string("SetNPCWeight ") + std::to_string(weight));
         script->Execute(this);
         Script_t::Destroy(script);
+    }
+
+    void Actor_t::Is_Doing_Favor(Bool_t value)
+    {
+        some<Script_t*> script = Script_t::Create();
+        script->Command(std::string("SetFavorState ") + (value ? "1" : "0"));
+        script->Execute(this);
+        Script_t::Destroy(script);
+    }
+
+    void Actor_t::Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t alpha;
+            Bool_t  do_fade_in;
+
+        public:
+            Virtual_Arguments(Float_t alpha, Bool_t do_fade_in) :
+                alpha(alpha), do_fade_in(do_fade_in)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(2);
+                args->At(0).As<Float_t>(this->alpha);
+                args->At(1).As<Bool_t>(this->do_fade_in);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetAlpha",
+            Virtual_Arguments(alpha, do_fade_in),
+            v_callback
+        );
+    }
+
+    void Actor_t::Alpha(Float_t alpha, Bool_t do_fade_in, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Alpha(alpha, do_fade_in, new Virtual_Callback(std::move(callback)));
     }
 
     void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback)
