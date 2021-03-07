@@ -217,7 +217,7 @@ namespace doticu_skylib {
 
     Bool_t Mod_t::Is_Light()
     {
-        return (mod_flags & Mod_Flags_e::IS_LIGHT) != 0;
+        return this->mod_flags.Is_Flagged(Mod_Flags_e::IS_LIGHT);
     }
 
     Bool_t Mod_t::Has_Form(some<Form_t*> form)

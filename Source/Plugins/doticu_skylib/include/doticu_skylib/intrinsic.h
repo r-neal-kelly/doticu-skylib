@@ -16,8 +16,15 @@
 
 #define SKYLIB_TAB "    "
 
-#define SKYLIB_ENUM_TO_STRING(ENUM_) \
-    ENUM_ ? #ENUM_ : #ENUM_
+#define SKYLIB_ENUM_TO_STRING(ENUM_)    \
+(                                       \
+    ENUM_ ? #ENUM_ : #ENUM_             \
+)
+
+#define SKYLIB_ENUM_IS_FLAGGED_STRING(ENUM_)                                    \
+(                                                                               \
+    std::string(SKYLIB_ENUM_TO_STRING(ENUM_)) + ": " + Is_Flagged_String(ENUM_) \
+)
 
 #define SKYLIB_LOG(MESSAGE_, ...)\
     _MESSAGE(std::string(MESSAGE_).c_str(), __VA_ARGS__)

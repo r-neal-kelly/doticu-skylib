@@ -8,14 +8,17 @@
 
 namespace doticu_skylib {
 
-    class Text_Display_Type_e : public Enum_t<s32>
+    class Text_Display_Type_e :
+        public Enum_t<s32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             DEFAULT = -1,
             CUSTOM  = -2,
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

@@ -5,6 +5,8 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
+#include "doticu_skylib/alias_reference.h"
+#include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
 #include "doticu_skylib/dialogue_manager.h"
@@ -200,7 +202,7 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Is_Deleted()
     {
-        return (form_flags & Form_Flags_e::IS_DELETED) != 0;
+        return this->form_flags.Is_Flagged(Form_Flags_e::IS_DELETED);
     }
 
     Bool_t Reference_t::Isnt_Deleted()
@@ -215,12 +217,12 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Is_Disabled()
     {
-        return (form_flags & Form_Flags_e::IS_DISABLED) != 0;
+        return this->form_flags.Is_Flagged(Form_Flags_e::IS_DISABLED);
     }
 
     Bool_t Reference_t::Is_Persistent()
     {
-        return (form_flags & Form_Flags_e::IS_PERSISTENT) != 0;
+        return this->form_flags.Is_Flagged(Form_Flags_e::IS_PERSISTENT);
     }
 
     Bool_t Reference_t::Is_Temporary()
@@ -243,11 +245,6 @@ namespace doticu_skylib {
         return this == Dialogue_Manager_t::Self()->Current_Speaker()();
     }
 
-    Bool_t Reference_t::Is_Quest_Item()
-    {
-        return this->x_list.Is_Quest_Item();
-    }
-
     Bool_t Reference_t::Is_Aliased()
     {
         return this->x_list.Is_Aliased();
@@ -261,6 +258,21 @@ namespace doticu_skylib {
     Bool_t Reference_t::Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id)
     {
         return this->x_list.Is_Aliased(quest, alias_id);
+    }
+
+    Bool_t Reference_t::Is_Aliased_As_Protected()
+    {
+        return this->x_list.Is_Protected();
+    }
+
+    Bool_t Reference_t::Is_Aliased_As_Essential()
+    {
+        return this->x_list.Is_Essential();
+    }
+
+    Bool_t Reference_t::Is_Quest_Item()
+    {
+        return this->x_list.Is_Quest_Item();
     }
 
     Bool_t Reference_t::Has_Owner(some<Actor_t*> actor)
@@ -363,14 +375,14 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Base_t*> Reference_t::Actor_Base_Owner()
+    Vector_t<some<Alias_Base_t*>> Reference_t::Alias_Bases()
     {
-        maybe<Form_t*> owner = Owner();
-        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
-            return static_cast<maybe<Actor_Base_t*>>(owner);
-        } else {
-            return none<Actor_Base_t*>();
-        }
+        return this->x_list.Alias_Bases();
+    }
+
+    Vector_t<some<Alias_Reference_t*>> Reference_t::Alias_References()
+    {
+        return this->x_list.Alias_References();
     }
 
     Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
@@ -480,16 +492,6 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Faction_t*> Reference_t::Faction_Owner()
-    {
-        maybe<Form_t*> owner = Owner();
-        if (owner && owner->form_type == Form_Type_e::FACTION) {
-            return static_cast<maybe<Faction_t*>>(owner);
-        } else {
-            return none<Faction_t*>();
-        }
-    }
-
     Location_t* Reference_t::Location()
     {
         Cell_t* cell = Cell(true);
@@ -498,15 +500,6 @@ namespace doticu_skylib {
         } else {
             return nullptr;
         }
-    }
-
-    maybe<Form_t*> Reference_t::Owner()
-    {
-        static auto get_owner = reinterpret_cast
-            <Form_t*(*)(Reference_t*)>
-            (Game_t::Base_Address() + Offset_e::GET_OWNER);
-
-        return get_owner(this);
     }
 
     maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)
@@ -716,13 +709,80 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Form_t*> Reference_t::Owner()
+    {
+        static auto get_owner = reinterpret_cast
+            <Form_t * (*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::GET_OWNER);
+
+        return get_owner(this);
+    }
+
+    void Reference_t::Owner(maybe<Form_t*> form)
+    {
+        if (Is_Valid()) {
+            some<Script_t*> script = Script_t::Create();
+            if (form) {
+                script->Command(std::string("SetOwnership ") + form->Form_ID_String().data);
+            } else {
+                script->Command("SetOwnership");
+            }
+            script->Execute(this);
+            Script_t::Destroy(script);
+        }
+    }
+
+    maybe<Actor_Base_t*> Reference_t::Actor_Base_Owner()
+    {
+        maybe<Form_t*> owner = Owner();
+        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
+            return static_cast<maybe<Actor_Base_t*>>(owner);
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    void Reference_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
+    {
+        Owner(actor_base);
+    }
+
+    maybe<Faction_t*> Reference_t::Faction_Owner()
+    {
+        maybe<Form_t*> owner = Owner();
+        if (owner && owner->form_type == Form_Type_e::FACTION) {
+            return static_cast<maybe<Faction_t*>>(owner);
+        } else {
+            return none<Faction_t*>();
+        }
+    }
+
+    void Reference_t::Faction_Owner(maybe<Faction_t*> faction)
+    {
+        Owner(faction);
+    }
+
     void Reference_t::Push_Away(some<Actor_t*> actor, Int_t force)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        if (Is_Valid()) {
+        if (Is_Valid() && Is_Attached()) {
             some<Script_t*> script = Script_t::Create();
             script->Command(std::string("PushActorAway ") + actor->Form_ID_String().data + " " + std::to_string(force));
+            script->Execute(this);
+            Script_t::Destroy(script);
+        }
+    }
+
+    void Reference_t::Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force)
+    {
+        if (Is_Valid() && Is_Attached()) {
+            some<Script_t*> script = Script_t::Create();
+            script->Command(
+                std::string("ApplyHavokImpulse ") +
+                std::to_string(x) + " " + std::to_string(y) + " " +
+                std::to_string(z) + " " +
+                std::to_string(force));
             script->Execute(this);
             Script_t::Destroy(script);
         }
@@ -1281,6 +1341,45 @@ namespace doticu_skylib {
         };
 
         Apply_Havok_Impulse(x, y, z, force, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Unfill_Aliases(maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Unfill_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Vector_t<some<Alias_Reference_t*>>  aliases;
+            size_t                              idx;
+            size_t                              end;
+            Callback                            callback;
+
+        public:
+            Unfill_Callback(Vector_t<some<Alias_Reference_t*>> aliases, size_t idx, size_t end, Callback callback) :
+                aliases(std::move(aliases)), idx(idx), end(end), callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                if (this->idx < this->end) {
+                    _MESSAGE("w");
+                    this->aliases[this->idx]->Unfill(
+                        new Unfill_Callback(std::move(this->aliases), this->idx + 1, this->end, std::move(this->callback))
+                    );
+                } else {
+                    if (this->callback) {
+                        (*this->callback)();
+                    }
+                }
+            }
+        };
+
+        Vector_t<some<Alias_Reference_t*>> aliases = Alias_References();
+        Unfill_Callback(std::move(aliases), 0, aliases.size(), std::move(callback)).operator ()(nullptr);
     }
 
     void Reference_t::Log_Extra_List(std::string indent)

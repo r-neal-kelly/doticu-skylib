@@ -446,6 +446,8 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />

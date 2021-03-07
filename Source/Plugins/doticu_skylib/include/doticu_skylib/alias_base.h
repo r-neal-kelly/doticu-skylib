@@ -57,7 +57,7 @@ namespace doticu_skylib {
 
     public:
         String_t            name;               // 08
-        Quest_t*            quest;              // 10
+        maybe<Quest_t*>     quest;              // 10
         Alias_ID_t          id;                 // 18
         Alias_Base_Flags_e  alias_base_flags;   // 1C
         Alias_Fill_e        fill_type;          // 20
@@ -66,9 +66,14 @@ namespace doticu_skylib {
 
     public:
         Bool_t                      Is_Alias_Reference();
-        Bool_t                      Is_Quest_Item();
-
         maybe<Alias_Reference_t*>   As_Alias_Reference();
+
+        Bool_t                      Is_Protected();
+        void                        Is_Protected(Bool_t value);
+        Bool_t                      Is_Essential();
+        void                        Is_Essential(Bool_t value);
+        Bool_t                      Is_Quest_Item();
+        void                        Is_Quest_Item(Bool_t value);
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);
 

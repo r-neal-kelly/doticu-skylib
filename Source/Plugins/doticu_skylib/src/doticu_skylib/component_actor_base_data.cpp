@@ -16,12 +16,12 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_Data_c::Is_Female()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_FEMALE) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_FEMALE);
     }
 
     Bool_t Actor_Base_Data_c::Is_Unique()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_UNIQUE) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_UNIQUE);
     }
 
     Bool_t Actor_Base_Data_c::Is_Generic()
@@ -31,7 +31,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_Data_c::Is_Ghost()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_GHOST) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_GHOST);
     }
 
     Bool_t Actor_Base_Data_c::Is_Mortal()
@@ -42,9 +42,9 @@ namespace doticu_skylib {
     void Actor_Base_Data_c::Is_Mortal(Bool_t value)
     {
         if (value) {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_ESSENTIAL);
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_INVULNERABLE);
         }
 
         Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
@@ -52,17 +52,16 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_Data_c::Is_Protected()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_PROTECTED) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_PROTECTED);
     }
 
     void Actor_Base_Data_c::Is_Protected(Bool_t value)
     {
         if (value) {
-            this->actor_base_flags |= Actor_Base_Flags_e::IS_PROTECTED;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+            this->actor_base_flags.Flag(Actor_Base_Flags_e::IS_PROTECTED);
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_ESSENTIAL);
         } else {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
         }
 
         Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
@@ -70,17 +69,16 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_Data_c::Is_Essential()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_ESSENTIAL) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_ESSENTIAL);
     }
 
     void Actor_Base_Data_c::Is_Essential(Bool_t value)
     {
         if (value) {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
-            this->actor_base_flags |= Actor_Base_Flags_e::IS_ESSENTIAL;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
+            this->actor_base_flags.Flag(Actor_Base_Flags_e::IS_ESSENTIAL);
         } else {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_ESSENTIAL);
         }
 
         Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
@@ -88,17 +86,15 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_Data_c::Is_Invulnerable()
     {
-        return (actor_base_flags & Actor_Base_Flags_e::IS_INVULNERABLE) != 0;
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_INVULNERABLE);
     }
 
     void Actor_Base_Data_c::Is_Invulnerable(Bool_t value)
     {
         if (value) {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_PROTECTED;
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_ESSENTIAL;
-            this->actor_base_flags |= Actor_Base_Flags_e::IS_INVULNERABLE;
+            this->actor_base_flags.Flag(Actor_Base_Flags_e::IS_INVULNERABLE);
         } else {
-            this->actor_base_flags &= ~Actor_Base_Flags_e::IS_INVULNERABLE;
+            this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_INVULNERABLE);
         }
 
         Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
@@ -163,6 +159,19 @@ namespace doticu_skylib {
         }
     }
 
+    Vitality_e Actor_Base_Data_c::Vitality()
+    {
+        if (Is_Invulnerable()) {
+            return Vitality_e::INVULNERABLE;
+        } else if (Is_Essential()) {
+            return Vitality_e::ESSENTIAL;
+        } else if (Is_Protected()) {
+            return Vitality_e::PROTECTED;
+        } else {
+            return Vitality_e::MORTAL;
+        }
+    }
+
     maybe<Voice_Type_t*> Actor_Base_Data_c::Voice_Type()
     {
         return this->voice_type;
@@ -171,6 +180,33 @@ namespace doticu_skylib {
     void Actor_Base_Data_c::Voice_Type(maybe<Voice_Type_t*> voice_type)
     {
         this->voice_type = voice_type;
+    }
+
+    void Actor_Base_Data_c::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_Base_Data_c::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base_flags:");
+        this->actor_base_flags.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base_template_flags:");
+        this->actor_base_template_flags.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+
+        if (this->base_template_form) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "base_template_form:");
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_type: %s, form_id: %s, component_name: %s",
+                       Form_Type_e::To_String(this->base_template_form->form_type),
+                       this->base_template_form->Form_ID_String(),
+                       this->base_template_form->Component_Name());
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "base_template_form: (none)");
+        }
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "unk_38: 0x%X", this->unk_38);
+        SKYLIB_LOG(indent + SKYLIB_TAB + "unk_3C: 0x%X", this->unk_3C);
+
+        SKYLIB_LOG(indent + "}");
     }
 
     void Actor_Base_Data_c::Log_Factions_And_Ranks(std::string indent)

@@ -62,6 +62,8 @@ namespace doticu_skylib {
         Bool_t                              Is_Aliased();
         Bool_t                              Is_Aliased(some<Quest_t*> quest);
         Bool_t                              Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
+        Bool_t                              Is_Protected();
+        Bool_t                              Is_Essential();
         Bool_t                              Is_Quest_Item();
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();

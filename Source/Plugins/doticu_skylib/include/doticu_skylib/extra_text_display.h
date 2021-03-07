@@ -25,6 +25,7 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::TEXT_DISPLAY,
         };
 
+    public:
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -39,8 +40,12 @@ namespace doticu_skylib {
     public:
         union Conditional_u
         {
+        public:
             Text_Display_Type_e type;
             u32                 owner_instance;
+
+        public:
+            ~Conditional_u() = delete;
         };
         STATIC_ASSERT(sizeof(Conditional_u) == 0x4);
 

@@ -58,8 +58,8 @@ namespace doticu_skylib {
         Relation_e()                            : Enum_t(_NONE_) {}
         Relation_e(enum_type value)             : Enum_t(value < _TOTAL_ ? value : _NONE_) {}
         Relation_e(value_type value)            : Enum_t(Relation_e(static_cast<enum_type>(value)).value) {}
-        Relation_e(const Relation_e& other)     : Enum_t(other.value) {}
-        Relation_e(Relation_e&& other) noexcept : Enum_t(std::exchange(other.value, _NONE_)) {}
+        Relation_e(const Relation_e& other)     : Enum_t(other) {}
+        Relation_e(Relation_e&& other) noexcept : Enum_t(std::move(other)) {}
 
         Relation_e& operator = (const Relation_e& other)
         {

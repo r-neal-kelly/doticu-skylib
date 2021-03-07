@@ -29,10 +29,10 @@ namespace doticu_skylib { namespace Virtual {
     public:
         static void Send_Animation_Event(some<Reference_t*> reference,
                                          String_t event_name,
-                                         maybe<Virtual::Callback_i*> v_callback = nullptr);                 // SendAnimationEvent
+                                         maybe<Virtual::Callback_i*> v_callback);               // SendAnimationEvent
         static void Send_Animation_Event(some<Reference_t*> reference,
                                          String_t event_name,
-                                         maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);    // SendAnimationEvent
+                                         maybe<unique<doticu_skylib::Callback_i<>>> callback);
     };
 
 }}

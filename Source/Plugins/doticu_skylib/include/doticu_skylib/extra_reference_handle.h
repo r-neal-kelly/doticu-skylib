@@ -49,6 +49,8 @@ namespace doticu_skylib {
     public:
         maybe<Reference_t*>     Reference();
         void                    Reference(some<Reference_t*> reference);
+        maybe<Reference_t*>     Representative_Reference();
+        maybe<Reference_t*>     Containing_Reference();
 
         maybe<Actor_t*>         As_Actor();
         maybe<Actor_Base_t*>    As_Actor_Base();

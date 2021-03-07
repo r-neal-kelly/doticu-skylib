@@ -12,7 +12,7 @@ namespace doticu_skylib {
         public Enum_t<u32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             IS_RESERVED             = static_cast<value_type>(1 << 0),
             IS_OPTIONAL             = static_cast<value_type>(1 << 1),

@@ -2,6 +2,7 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.h"
@@ -31,7 +32,7 @@ namespace doticu_skylib {
 
     Bool_t Worldspace_t::Cant_Fast_Travel()
     {
-        return (worldspace_flags & Worldspace_Flags_e::CANT_FAST_TRAVEL) != 0;
+        return this->worldspace_flags.Is_Flagged(Worldspace_Flags_e::CANT_FAST_TRAVEL);
     }
 
     Bool_t Worldspace_t::Has_Location(some<Location_t*> location)

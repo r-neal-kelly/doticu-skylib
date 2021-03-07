@@ -131,15 +131,15 @@ namespace doticu_skylib {
         static s32      Xor(volatile s32& a, s32 b);
         static s64      Xor(volatile s64& a, s64 b);
 
-        static void*    Access(volatile void*& a);
-        static u8       Access(volatile u8& a);
-        static u16      Access(volatile u16& a);
-        static u32      Access(volatile u32& a);
-        static u64      Access(volatile u64& a);
-        static s8       Access(volatile s8& a);
-        static s16      Access(volatile s16& a);
-        static s32      Access(volatile s32& a);
-        static s64      Access(volatile s64& a);
+        static void*    Access(const volatile void*& a);
+        static u8       Access(const volatile u8& a);
+        static u16      Access(const volatile u16& a);
+        static u32      Access(const volatile u32& a);
+        static u64      Access(const volatile u64& a);
+        static s8       Access(const volatile s8& a);
+        static s16      Access(const volatile s16& a);
+        static s32      Access(const volatile s32& a);
+        static s64      Access(const volatile s64& a);
     };
 
 }

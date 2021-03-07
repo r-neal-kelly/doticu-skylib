@@ -37,11 +37,11 @@ namespace doticu_skylib {
         virtual ~Voice_Type_t(); // 0
 
     public:
-        Atomic_Enum_t<Voice_Type_Flags_e>   voice_type_flags;   // 20
-        u8                                  pad_21;             // 21
-        u16                                 pad_22;             // 22
-        u16                                 pad_24;             // 24
-        Dynamic_String_t                    form_editor_id;     // 28
+        Voice_Type_Flags_e  voice_type_flags;   // 20
+        u8                  pad_21;             // 21
+        u16                 pad_22;             // 22
+        u16                 pad_24;             // 24
+        Dynamic_String_t    form_editor_id;     // 28
     };
     STATIC_ASSERT(sizeof(Voice_Type_t) == 0x38);
 

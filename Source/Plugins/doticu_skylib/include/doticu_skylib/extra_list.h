@@ -113,6 +113,8 @@ namespace doticu_skylib {
         Bool_t                              Is_Aliased();
         Bool_t                              Is_Aliased(some<Quest_t*> quest);
         Bool_t                              Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
+        Bool_t                              Is_Protected();
+        Bool_t                              Is_Essential();
         Bool_t                              Is_Quest_Item();
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);
@@ -159,6 +161,8 @@ namespace doticu_skylib {
         void                                Reference(some<Reference_t*> reference);
         Reference_Handle_t                  Reference_Handle();
         void                                Reference_Handle(Reference_Handle_t reference_handle);
+        maybe<Reference_t*>                 Representative_Reference();
+        maybe<Reference_t*>                 Containing_Reference();
 
         // Extra_Reference_Interaction_t
         maybe<Reference_t*>                 Reference_Interactor_A();

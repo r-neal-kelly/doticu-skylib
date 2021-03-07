@@ -18,28 +18,44 @@ namespace doticu_skylib {
         volatile T value; // 0
 
     public:
+        Atomic_Number_t();
         Atomic_Number_t(const T value);
+        Atomic_Number_t(const Atomic_Number_t& other);
+        Atomic_Number_t(Atomic_Number_t&& other) noexcept;
+        Atomic_Number_t& operator =(const Atomic_Number_t& other);
+        Atomic_Number_t& operator =(Atomic_Number_t&& other) noexcept;
+        ~Atomic_Number_t();
 
     public:
-        operator T();
+        operator T() const;
 
     public:
-        T operator ()();
+        T operator ()() const;
+
         T operator =(const T other);
-        T operator +(const T other);
-        T operator -(const T other);
+        T operator +(const T other) const;
+        T operator -(const T other) const;
         T operator +=(const T other);
         T operator -=(const T other);
         T operator ++();
         T operator ++(int);
         T operator --();
         T operator --(int);
-        T operator |(const T other);
-        T operator &(const T other);
-        T operator ^(const T other);
+
+        T operator ~() const;
+        T operator |(const T other) const;
+        T operator &(const T other) const;
+        T operator ^(const T other) const;
         T operator |=(const T other);
         T operator &=(const T other);
         T operator ^=(const T other);
+
+        Bool_t operator ==(const T other) const;
+        Bool_t operator !=(const T other) const;
+        Bool_t operator <(const T other) const;
+        Bool_t operator >(const T other) const;
+        Bool_t operator <=(const T other) const;
+        Bool_t operator >=(const T other) const;
     };
     STATIC_ASSERT(sizeof(Atomic_Number_t<u32>) == 0x4);
 

@@ -56,6 +56,34 @@ namespace doticu_skylib {
         return false;
     }
 
+    Bool_t Extra_Aliases_t::Is_Protected()
+    {
+        Read_Locker_t locker(this->lock);
+
+        for (size_t idx = 0, end = this->instances.Count(); idx < end; idx += 1) {
+            maybe<Extra_Aliases_t::Instance_t*> instance = this->instances[idx];
+            if (instance && instance->alias_base && instance->alias_base->Is_Protected()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    Bool_t Extra_Aliases_t::Is_Essential()
+    {
+        Read_Locker_t locker(this->lock);
+
+        for (size_t idx = 0, end = this->instances.Count(); idx < end; idx += 1) {
+            maybe<Extra_Aliases_t::Instance_t*> instance = this->instances[idx];
+            if (instance && instance->alias_base && instance->alias_base->Is_Essential()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     Bool_t Extra_Aliases_t::Is_Quest_Item()
     {
         Read_Locker_t locker(this->lock);

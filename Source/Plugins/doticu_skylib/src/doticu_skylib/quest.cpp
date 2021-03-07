@@ -78,13 +78,13 @@ namespace doticu_skylib {
         return Compare_Any_Names(reinterpret_cast<Quest_t**>(a), reinterpret_cast<Quest_t**>(b));
     }
 
-    Bool_t Quest_t::Is_Enabled()            { return (quest_flags & Quest_Flags_e::IS_ENABLED) > 0; }
-    Bool_t Quest_t::Is_Completed()          { return (quest_flags & Quest_Flags_e::IS_COMPLETED) > 0; }
-    Bool_t Quest_t::Does_Start_Enabled()    { return (quest_flags & Quest_Flags_e::DOES_START_ENABLED) > 0; }
-    Bool_t Quest_t::Is_Displayed_In_HUD()   { return (quest_flags & Quest_Flags_e::IS_DISPLAYED_IN_HUD) > 0; }
-    Bool_t Quest_t::Is_Failed()             { return (quest_flags & Quest_Flags_e::IS_FAILED) > 0; }
-    Bool_t Quest_t::Does_Run_Once()         { return (quest_flags & Quest_Flags_e::DOES_RUN_ONCE) > 0; }
-    Bool_t Quest_t::Is_Active()             { return (quest_flags & Quest_Flags_e::IS_ACTIVE) > 0; }
+    Bool_t Quest_t::Is_Enabled()            { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_ENABLED); }
+    Bool_t Quest_t::Is_Completed()          { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_COMPLETED); }
+    Bool_t Quest_t::Does_Start_Enabled()    { return this->quest_flags.Is_Flagged(Quest_Flags_e::DOES_START_ENABLED); }
+    Bool_t Quest_t::Is_Displayed_In_HUD()   { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_DISPLAYED_IN_HUD); }
+    Bool_t Quest_t::Is_Failed()             { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_FAILED); }
+    Bool_t Quest_t::Does_Run_Once()         { return this->quest_flags.Is_Flagged(Quest_Flags_e::DOES_RUN_ONCE); }
+    Bool_t Quest_t::Is_Active()             { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_ACTIVE); }
 
     Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
     {

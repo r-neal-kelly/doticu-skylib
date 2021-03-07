@@ -316,12 +316,48 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Extra_List_t::Is_Protected()
+    {
+        maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
+
+        maybe<Reference_t*> reference = Representative_Reference();
+        if (reference) {
+            x_aliases = reference->x_list.Get<Extra_Aliases_t>();
+        } else {
+            x_aliases = this->Get<Extra_Aliases_t>();
+        }
+
+        if (x_aliases) {
+            return x_aliases->Is_Protected();
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Extra_List_t::Is_Essential()
+    {
+        maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
+
+        maybe<Reference_t*> reference = Representative_Reference();
+        if (reference) {
+            x_aliases = reference->x_list.Get<Extra_Aliases_t>();
+        } else {
+            x_aliases = this->Get<Extra_Aliases_t>();
+        }
+
+        if (x_aliases) {
+            return x_aliases->Is_Essential();
+        } else {
+            return false;
+        }
+    }
+
     Bool_t Extra_List_t::Is_Quest_Item()
     {
         maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
 
-        maybe<Reference_t*> reference = Reference();
-        if (reference && !reference->Is_Based_On_Component_Container()) {
+        maybe<Reference_t*> reference = Representative_Reference();
+        if (reference) {
             x_aliases = reference->x_list.Get<Extra_Aliases_t>();
         } else {
             x_aliases = this->Get<Extra_Aliases_t>();
@@ -638,6 +674,26 @@ namespace doticu_skylib {
             x_reference_handle->reference_handle = reference_handle;
         } else {
             Add<Extra_Reference_Handle_t>(Extra_Reference_Handle_t::Create(reference_handle));
+        }
+    }
+
+    maybe<Reference_t*> Extra_List_t::Representative_Reference()
+    {
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            return x_reference_handle->Representative_Reference();
+        } else {
+            return none<Reference_t*>();
+        }
+    }
+
+    maybe<Reference_t*> Extra_List_t::Containing_Reference()
+    {
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        if (x_reference_handle) {
+            return x_reference_handle->Containing_Reference();
+        } else {
+            return none<Reference_t*>();
         }
     }
 

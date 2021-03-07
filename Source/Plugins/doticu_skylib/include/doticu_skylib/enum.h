@@ -7,7 +7,7 @@
 #undef TRUE
 #undef FALSE
 
-#include "doticu_skylib/atomic_number.h"
+#include "doticu_skylib/atomic_number.inl" // should be .h
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
@@ -32,7 +32,7 @@ namespace doticu_skylib {
         using value_type = T;
 
     protected:
-        T value;
+        Atomic_Number_t<T> value;
 
     public:
         Enum_t() :
@@ -51,11 +51,11 @@ namespace doticu_skylib {
         }
 
         Enum_t(Enum_t&& other) :
-            value(std::exchange(other.value, 0))
+            value(std::move(other.value))
         {
         }
 
-        Enum_t& operator = (const Enum_t& other)
+        Enum_t& operator =(const Enum_t& other)
         {
             if (std::addressof(other) != this) {
                 this->value = other.value;
@@ -63,51 +63,51 @@ namespace doticu_skylib {
             return *this;
         }
 
-        Enum_t& operator = (Enum_t&& other)
+        Enum_t& operator =(Enum_t&& other)
         {
             if (std::addressof(other) != this) {
-                this->value = std::exchange(other.value, 0);
+                this->value = std::move(other.value);
             }
             return *this;
         }
 
+        ~Enum_t()
+        {
+            this->value = 0;
+        }
+
     public:
-        operator T () const
+        operator T() const
         {
             return this->value;
         }
 
-        T operator () () const
+        T operator ()() const
         {
             return this->value;
         }
 
-        Enum_t operator ~() const
+    public:
+        Bool_t Is_Flagged(T flag)
         {
-            return ~this->value;
+            return (this->value & flag) != 0;
         }
 
-        Enum_t& operator |=(const T other)
+        const char* Is_Flagged_String(T flag)
         {
-            this->value |= other;
-            return *this;
+            return Is_Flagged(flag) ? "true" : "false";
         }
 
-        Enum_t& operator &=(const T other)
+        void Flag(T flag)
         {
-            this->value &= other;
-            return *this;
+            this->value |= flag;
         }
 
-        Enum_t& operator ^=(const T other)
+        void Unflag(T flag)
         {
-            this->value ^= other;
-            return *this;
+            this->value &= ~flag;
         }
     };
-
-    template <typename T>
-    using Atomic_Enum_t = Atomic_Number_t<typename T::value_type>;
 
     class Binary_e :
         public Enum_t<s64>

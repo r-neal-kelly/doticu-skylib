@@ -24,10 +24,11 @@
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/enum_sound_level.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/rarity.h"
+#include "doticu_skylib/unique.h"
 #include "doticu_skylib/unknown.h"
-#include "doticu_skylib/vitality.h"
 
 namespace doticu_skylib {
 
@@ -120,19 +121,19 @@ namespace doticu_skylib {
 
     public:
         Actor_Skills_t              actor_skills;           // 190
-        Actor_Class_t*              actor_class;            // 1C0
+        maybe<Actor_Class_t*>       actor_class;            // 1C0
         maybe<Actor_Head_Data_t*>   head_data;              // 1C8
         maybe<Form_List_t*>         gift_filter;            // 1D0
-        Combat_Style_t*             combat_style;           // 1D8
+        maybe<Combat_Style_t*>      combat_style;           // 1D8
         u32                         file_offset;            // 1E0
         u32                         pad_1E4;                // 1E4
-        Race_t*                     original_race;          // 1E8
-        maybe<Actor_Base_t*>        base_template;          // 1F0
+        maybe<Race_t*>              original_race;          // 1E8 (attack_race?) (ATKR)
+        maybe<Actor_Base_t*>        face_template;          // 1F0
         Float_t                     height;                 // 1F8
         Float_t                     weight;                 // 1FC
         void*                       sounds;                 // 200
         String_t                    short_name;             // 208 (SHRT)
-        Armor_t*                    far_skin;               // 210
+        maybe<Armor_t*>             far_skin;               // 210 (maybe worn armor?) (WNAM)
         maybe<Outfit_t*>            default_outfit;         // 218 (DOFT)
         maybe<Outfit_t*>            sleep_outfit;           // 220
         maybe<Form_List_t*>         default_package_list;   // 228 (DPLT)
@@ -156,7 +157,6 @@ namespace doticu_skylib {
 
         Sex_e                           Sex();
         Rarity_e                        Rarity();
-        Vitality_e                      Vitality();
         some<Relation_e>                Relation(some<Actor_Base_t*> other);
         void                            Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
         Race_t*                         Race();
@@ -186,6 +186,25 @@ namespace doticu_skylib {
         void                            Hair_Color(maybe<Color_t*> hair_color);
 
         String_t                        Any_Name();
+
+    public:
+        void    Is_Protected(maybe<Virtual::Callback_i*> v_callback);                   // IsProtected
+        void    Is_Protected(maybe<unique<Callback_i<Bool_t>>> callback);               // IsProtected
+        void    Is_Protected(Bool_t value, maybe<Virtual::Callback_i*> v_callback);     // SetProtected
+        void    Is_Protected(Bool_t value, maybe<unique<Callback_i<>>> callback);       // SetProtected
+
+        void    Is_Essential(maybe<Virtual::Callback_i*> v_callback);                   // IsEssential
+        void    Is_Essential(maybe<unique<Callback_i<Bool_t>>> callback);               // IsEssential
+        void    Is_Essential(Bool_t value, maybe<Virtual::Callback_i*> v_callback);     // SetEssential
+        void    Is_Essential(Bool_t value, maybe<unique<Callback_i<>>> callback);       // SetEssential
+
+        void    Is_Invulnerable(maybe<Virtual::Callback_i*> v_callback);                // IsInvulnerable
+        void    Is_Invulnerable(maybe<unique<Callback_i<Bool_t>>> callback);            // IsInvulnerable
+        void    Is_Invulnerable(Bool_t value, maybe<Virtual::Callback_i*> v_callback);  // SetInvulnerable
+        void    Is_Invulnerable(Bool_t value, maybe<unique<Callback_i<>>> callback);    // SetInvulnerable
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_Base_t) == 0x268);
 

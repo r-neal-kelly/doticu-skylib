@@ -44,6 +44,26 @@ namespace doticu_skylib {
         this->reference_handle = reference->To_Handle();
     }
 
+    maybe<Reference_t*> Extra_Reference_Handle_t::Representative_Reference()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference && !reference->Is_Based_On_Component_Container()) {
+            return reference;
+        } else {
+            return none<Reference_t*>();
+        }
+    }
+
+    maybe<Reference_t*> Extra_Reference_Handle_t::Containing_Reference()
+    {
+        maybe<Reference_t*> reference = Reference();
+        if (reference && reference->Is_Based_On_Component_Container()) {
+            return reference;
+        } else {
+            return none<Reference_t*>();
+        }
+    }
+
     maybe<Actor_t*> Extra_Reference_Handle_t::As_Actor()
     {
         maybe<Reference_t*> reference = Reference();

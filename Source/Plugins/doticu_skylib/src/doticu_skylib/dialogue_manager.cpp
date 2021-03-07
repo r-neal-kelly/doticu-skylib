@@ -28,7 +28,7 @@ namespace doticu_skylib {
     maybe<Dialogue_Info_t*> Dialogue_Manager_t::Current_Dialogue_Info()
     {
         return static_cast<Dialogue_Info_t*>
-            (Atomic_t::Access(reinterpret_cast<volatile void*&>(this->current_info)));
+            (Atomic_t::Access(reinterpret_cast<const volatile void*&>(this->current_info)));
     }
 
 }

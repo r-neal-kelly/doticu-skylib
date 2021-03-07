@@ -123,7 +123,7 @@ namespace doticu_skylib {
     public:
         maybe()                         : value(nullptr) {}
         maybe(std::nullptr_t value)     : value(nullptr) {}
-        maybe(none<value_type> other)   : value(nullptr) {}
+        maybe(none<value_type> value)   : value(nullptr) {}
         maybe(value_type value)         : value(std::move(value)) {}
         maybe(const maybe& other)       = delete;
         maybe(maybe&& other) noexcept   : value(std::move(other.value)) {}
@@ -171,9 +171,9 @@ namespace doticu_skylib {
         value_type value;
 
     public:
-        some()                          : value(nullptr) {}
-        some(std::nullptr_t value)      : value(nullptr) {}
-        some(none<value_type> other)    : value(nullptr) {}
+        some()                          = delete;
+        some(std::nullptr_t value)      = delete;
+        some(none<value_type> value)    = delete;
         some(value_type value)          : value(std::move(value)) {}
         some(const some& other)         = delete;
         some(some&& other) noexcept     : value(std::move(other.value)) {}
@@ -183,6 +183,9 @@ namespace doticu_skylib {
             value(value)
         {
         }
+
+        template <typename TT, enable_if_convertible_t<TT*, T*> = true>
+        some(none<TT*> value) = delete;
 
         some& operator =(const some& other) = delete;
 

@@ -552,7 +552,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Is_Player_Teammate()
     {
-        return (actor_flags_1 & Actor_Flags_1_e::IS_PLAYER_TEAMMATE) != 0;
+        return this->actor_flags_1.Is_Flagged(Actor_Flags_1_e::IS_PLAYER_TEAMMATE);
     }
 
     void Actor_t::Is_Player_Teammate(Bool_t value)
@@ -561,12 +561,12 @@ namespace doticu_skylib {
         if (this != player()) {
             if (value) {
                 if (!Is_Player_Teammate()) {
-                    this->actor_flags_1 |= Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                    this->actor_flags_1.Flag(Actor_Flags_1_e::IS_PLAYER_TEAMMATE);
                     player->Increment_Teammate_Count();
                 }
             } else {
                 if (Is_Player_Teammate()) {
-                    this->actor_flags_1 &= ~Actor_Flags_1_e::IS_PLAYER_TEAMMATE;
+                    this->actor_flags_1.Unflag(Actor_Flags_1_e::IS_PLAYER_TEAMMATE);
                     player->Decrement_Teammate_Count();
                 }
             }
@@ -575,15 +575,15 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Can_Do_Favors()
     {
-        return (actor_flags_2 & Actor_Flags_2_e::CAN_DO_FAVORS) != 0;
+        return this->actor_flags_2.Is_Flagged(Actor_Flags_2_e::CAN_DO_FAVORS);
     }
 
     void Actor_t::Can_Do_Favors(Bool_t value)
     {
         if (value) {
-            this->actor_flags_2 |= Actor_Flags_2_e::CAN_DO_FAVORS;
+            this->actor_flags_2.Flag(Actor_Flags_2_e::CAN_DO_FAVORS);
         } else {
-            this->actor_flags_2 &= ~Actor_Flags_2_e::CAN_DO_FAVORS;
+            this->actor_flags_2.Unflag(Actor_Flags_2_e::CAN_DO_FAVORS);
         }
     }
 
@@ -611,44 +611,44 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Ignores_Ally_Hits()
     {
-        return (this->form_flags & Form_Flags_e::IGNORES_ALLY_HITS) != 0;
+        return this->form_flags.Is_Flagged(Form_Flags_e::IGNORES_ALLY_HITS);
     }
 
     void Actor_t::Ignores_Ally_Hits(Bool_t value)
     {
         if (value) {
-            this->form_flags |= Form_Flags_e::IGNORES_ALLY_HITS;
+            this->form_flags.Flag(Form_Flags_e::IGNORES_ALLY_HITS);
         } else {
-            this->form_flags &= ~Form_Flags_e::IGNORES_ALLY_HITS;
+            this->form_flags.Unflag(Form_Flags_e::IGNORES_ALLY_HITS);
         }
         Flag_Form_Change(Form_Change_Flags_e::FORM_FLAGS);
     }
 
     Bool_t Actor_t::Is_Hidden_From_Stealth_Eye()
     {
-        return (this->actor_flags_2 & Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE) != 0;
+        return this->actor_flags_2.Is_Flagged(Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE);
     }
 
     void Actor_t::Is_Hidden_From_Stealth_Eye(Bool_t value)
     {
         if (value) {
-            this->actor_flags_2 |= Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE;
+            this->actor_flags_2.Flag(Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE);
         } else {
-            this->actor_flags_2 &= ~Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE;
+            this->actor_flags_2.Unflag(Actor_Flags_2_e::IS_HIDDEN_FROM_STEALTH_EYE);
         }
     }
 
     Bool_t Actor_t::Has_AI()
     {
-        return (this->actor_flags_1 & Actor_Flags_1_e::DO_PROCESS_AI) != 0;
+        return this->actor_flags_1.Is_Flagged(Actor_Flags_1_e::DO_PROCESS_AI);
     }
 
     void Actor_t::Has_AI(Bool_t value)
     {
         if (value) {
-            this->actor_flags_1 |= Actor_Flags_1_e::DO_PROCESS_AI;
+            this->actor_flags_1.Flag(Actor_Flags_1_e::DO_PROCESS_AI);
         } else {
-            this->actor_flags_1 &= ~Actor_Flags_1_e::DO_PROCESS_AI;
+            this->actor_flags_1.Unflag(Actor_Flags_1_e::DO_PROCESS_AI);
         }
     }
 
@@ -756,6 +756,33 @@ namespace doticu_skylib {
         Add_Item(gold, 0);
     }
 
+    /*Bool_t Actor_t::Kill(maybe<Actor_t*> killer, Bool_t do_send_event, Bool_t do_ragdoll_instantly)
+    {
+        if (Is_Alive()) {
+            Do_Kill(killer ? killer() : this, 0.0f, do_send_event, do_ragdoll_instantly);
+            return Is_Dead();
+        } else {
+            return true;
+        }
+    }
+
+    Bool_t Actor_t::Resurrect(Bool_t do_reset_inventory)
+    {
+        if (Is_Dead()) {
+            //Do_Resurrect(do_reset_inventory, true);
+            {
+                some<Script_t*> script = Script_t::Create();
+                script->Command(std::string("Resurrect ") + (do_reset_inventory ? "0" : "1"));
+                script->Execute(this);
+                Script_t::Destroy(script);
+            }
+            //Pacify();
+            return Is_Alive();
+        } else {
+            return true;
+        }
+    }*/
+
     Float_t Actor_t::Alpha()
     {
         return Get_Alpha();
@@ -858,6 +885,67 @@ namespace doticu_skylib {
         Alpha(alpha, do_fade_in, new Virtual_Callback(std::move(callback)));
     }
 
+    void Actor_t::Kill(maybe<Actor_t*> killer, Bool_t do_silently, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            some<Actor_t*> killer;
+
+        public:
+            Virtual_Arguments(some<Actor_t*> killer) :
+                killer(killer)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Actor_t*>(this->killer());
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            do_silently ? "KillSilent" : "Kill",
+            Virtual_Arguments(killer ? killer() : this),
+            v_callback
+        );
+    }
+
+    void Actor_t::Kill(maybe<Actor_t*> killer, Bool_t do_silently, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Kill(killer, do_silently, new Virtual_Callback(std::move(callback)));
+    }
+
     void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback)
     {
         class Virtual_Arguments :
@@ -921,6 +1009,51 @@ namespace doticu_skylib {
         };
 
         Open_Inventory(allow_non_teammates, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_t::Resurrect(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "Resurrect",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Actor_t::Resurrect(Bool_t do_pacify, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            some<Actor_t*>  actor;
+            Bool_t          do_pacify;
+            Callback        callback;
+
+        public:
+            Virtual_Callback(some<Actor_t*> actor, Bool_t do_pacify, Callback callback) :
+                actor(actor), do_pacify(do_pacify), callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (do_pacify) {
+                    this->actor->Pacify();
+                }
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Resurrect(new Virtual_Callback(this, do_pacify, std::move(callback)));
     }
 
     /*void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)

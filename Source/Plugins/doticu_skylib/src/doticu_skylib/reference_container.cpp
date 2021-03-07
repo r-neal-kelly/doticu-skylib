@@ -60,6 +60,8 @@ namespace doticu_skylib {
             if (actor) {
                 actor->Update_Equipment();
             }
+
+            this->reference->Flag_Form_Change(Reference_t::Form_Change_Flags_e::CONTAINER);
         }
 
         this->entries.~Vector_t<Reference_Container_Entry_t>();

@@ -16,6 +16,10 @@
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/reference.h"
+#include "doticu_skylib/virtual_arguments.h"
+#include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_machine.inl"
+#include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
 
@@ -105,8 +109,8 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
-            SKYLIB_ASSERT(actor_base->base_template);
-            for (maybe<Actor_Base_t*> it = actor_base->base_template; it != nullptr; it = it->base_template) {
+            SKYLIB_ASSERT(actor_base->face_template);
+            for (maybe<Actor_Base_t*> it = actor_base->face_template; it != nullptr; it = it->face_template) {
                 SKYLIB_LOG(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
             }
         }
@@ -181,7 +185,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_t::Has_Template_FF000800()
     {
-        for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
+        for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
             if (it->form_id == 0xFF000800) {
                 return true;
             }
@@ -197,19 +201,6 @@ namespace doticu_skylib {
     Rarity_e Actor_Base_t::Rarity()
     {
         return Is_Unique() ? Rarity_e::UNIQUE : Rarity_e::GENERIC;
-    }
-
-    Vitality_e Actor_Base_t::Vitality()
-    {
-        if (Is_Invulnerable()) {
-            return Vitality_e::INVULNERABLE;
-        } else if (Is_Essential()) {
-            return Vitality_e::ESSENTIAL;
-        } else if (Is_Protected()) {
-            return Vitality_e::PROTECTED;
-        } else {
-            return Vitality_e::MORTAL;
-        }
     }
 
     some<Relation_e> Actor_Base_t::Relation(some<Actor_Base_t*> other)
@@ -253,7 +244,7 @@ namespace doticu_skylib {
     {
         if (include_templates) {
             size_t reserve_count = keyword_count;
-            for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
+            for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
                 reserve_count += it->keyword_count;
             }
             results.reserve(reserve_count);
@@ -271,7 +262,7 @@ namespace doticu_skylib {
         }
 
         if (include_templates) {
-            for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
+            for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
                 if (it->keywords) {
                     for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
                         Keyword_t* keyword = it->keywords[idx];
@@ -314,7 +305,7 @@ namespace doticu_skylib {
     some<Actor_Base_t*> Actor_Base_t::Template_Root()
     {
         some<Actor_Base_t*> it = this;
-        for (; it->base_template; it = it->base_template()) {
+        for (; it->face_template; it = it->face_template()) {
         }
         return it;
     }
@@ -324,7 +315,7 @@ namespace doticu_skylib {
         if (Is_Static()) {
             return this;
         } else {
-            for (maybe<Actor_Base_t*> it = this->base_template; it; it = it->base_template) {
+            for (maybe<Actor_Base_t*> it = this->face_template; it; it = it->face_template) {
                 if (it->Is_Static()) {
                     return it;
                 }
@@ -335,7 +326,7 @@ namespace doticu_skylib {
 
     Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
     {
-        if (base_template) {
+        if (face_template) {
             Vector_t<Actor_Base_t*> results;
             results.reserve(4);
             Templates(results);
@@ -347,7 +338,7 @@ namespace doticu_skylib {
 
     void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
     {
-        for (maybe<Actor_Base_t*> it = base_template; it != nullptr; it = it->base_template) {
+        for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
             results.push_back(it());
         }
     }
@@ -416,6 +407,331 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    void Actor_Base_t::Is_Protected(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "IsProtected",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Protected(maybe<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                if (this->callback) {
+                    (*this->callback)(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Is_Protected(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Is_Protected(Bool_t value, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t value;
+
+        public:
+            Virtual_Arguments(Bool_t value) :
+                value(value)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->value);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetProtected",
+            Virtual_Arguments(value),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Protected(Bool_t value, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Is_Protected(value, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Is_Essential(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "IsEssential",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Essential(maybe<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                if (this->callback) {
+                    (*this->callback)(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Is_Essential(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Is_Essential(Bool_t value, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t value;
+
+        public:
+            Virtual_Arguments(Bool_t value) :
+                value(value)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->value);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetEssential",
+            Virtual_Arguments(value),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Essential(Bool_t value, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Is_Essential(value, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Is_Invulnerable(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "IsInvulnerable",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Invulnerable(maybe<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                if (this->callback) {
+                    (*this->callback)(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Is_Invulnerable(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Is_Invulnerable(Bool_t value, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Bool_t value;
+
+        public:
+            Virtual_Arguments(Bool_t value) :
+                value(value)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Bool_t>(this->value);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Actor_Base_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetInvulnerable",
+            Virtual_Arguments(value),
+            v_callback
+        );
+    }
+
+    void Actor_Base_t::Is_Invulnerable(Bool_t value, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Is_Invulnerable(value, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Actor_Base_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_Base_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_id: %s, any_name: %s",
+                   this->Form_ID_String(),
+                   this->Any_Name());
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base_data_c:");
+        Actor_Base_Data_c::Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+
+        if (this->face_template) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "face_template:");
+            this->face_template->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "face_template: (none)");
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

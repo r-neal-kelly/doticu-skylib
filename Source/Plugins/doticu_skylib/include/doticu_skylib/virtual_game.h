@@ -48,7 +48,7 @@ namespace doticu_skylib { namespace Virtual {
 
     public:
         static void Current_Crosshair_Reference(some<Virtual::Callback_i*> v_callback);                                 // GetCurrentCrosshairRef
-        static void Current_Crosshair_Reference(some<unique<doticu_skylib::Callback_i<maybe<Reference_t*>>>> callback); // GetCurrentCrosshairRef
+        static void Current_Crosshair_Reference(some<unique<doticu_skylib::Callback_i<maybe<Reference_t*>>>> callback);
 
         static void Find_Closest_Actor(Float_t origin_x,
                                        Float_t origin_y,
@@ -59,20 +59,20 @@ namespace doticu_skylib { namespace Virtual {
                                        Float_t origin_y,
                                        Float_t origin_z,
                                        Float_t radius,
-                                       some<unique<doticu_skylib::Callback_i<maybe<Actor_t*>>>> callback);              // FindClosestActor
+                                       some<unique<doticu_skylib::Callback_i<maybe<Actor_t*>>>> callback);
 
         static void Find_Closest_Actor_From(some<Reference_t*> origin,
                                             Float_t radius,
                                             some<Virtual::Callback_i*> v_callback);                                     // FindClosestActorFromRef
         static void Find_Closest_Actor_From(some<Reference_t*> origin,
                                             Float_t radius,
-                                            some<unique<doticu_skylib::Callback_i<maybe<Actor_t*>>>> callback);         // FindClosestActorFromRef
+                                            some<unique<doticu_skylib::Callback_i<maybe<Actor_t*>>>> callback);
 
-        static void Force_First_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);                               // ForceFirstPerson
-        static void Force_First_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);                  // ForceFirstPerson
+        static void Force_First_Person(maybe<Virtual::Callback_i*> v_callback);                                         // ForceFirstPerson
+        static void Force_First_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback);
 
-        static void Force_Third_Person(maybe<Virtual::Callback_i*> v_callback = nullptr);                               // ForceThirdPerson
-        static void Force_Third_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);                  // ForceThirdPerson
+        static void Force_Third_Person(maybe<Virtual::Callback_i*> v_callback);                                         // ForceThirdPerson
+        static void Force_Third_Person(maybe<unique<doticu_skylib::Callback_i<>>> callback);
     };
 
 }}

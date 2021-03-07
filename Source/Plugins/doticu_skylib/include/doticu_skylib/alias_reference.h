@@ -61,14 +61,14 @@ namespace doticu_skylib {
         void*   conditions; // 40
 
     public:
-        void Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> v_callback = nullptr);  // ForceRefTo
-        void Fill(some<Reference_t*> reference, maybe<unique<Callback_i<>>> callback = nullptr);    // ForceRefTo
+        void Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> v_callback);    // ForceRefTo
+        void Fill(some<Reference_t*> reference, maybe<unique<Callback_i<>>> callback);
 
-        void Unfill(maybe<Virtual::Callback_i*> v_callback = nullptr);  // Clear
-        void Unfill(maybe<unique<Callback_i<>>> callback = nullptr);    // Clear
+        void Unfill(maybe<Virtual::Callback_i*> v_callback);                                // Clear
+        void Unfill(maybe<unique<Callback_i<>>> callback);
 
-        void To_Reference(some<Virtual::Callback_i*> v_callback);                   // GetReference
-        void To_Reference(some<unique<Callback_i<maybe<Reference_t*>>>> callback);  // GetReference
+        void To_Reference(some<Virtual::Callback_i*> v_callback);                           // GetReference
+        void To_Reference(some<unique<Callback_i<maybe<Reference_t*>>>> callback);
     };
     STATIC_ASSERT(sizeof(Alias_Reference_t) == 0x48);
 

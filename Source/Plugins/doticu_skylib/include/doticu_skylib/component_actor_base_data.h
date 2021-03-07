@@ -12,6 +12,7 @@
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/vitality.h"
 
 namespace doticu_skylib {
 
@@ -52,22 +53,23 @@ namespace doticu_skylib {
         virtual ~Actor_Base_Data_c(); // 0
 
     public:
-        Atomic_Enum_t<Actor_Base_Flags_e>           actor_base_flags;           // 08
-        s16                                         magicka_offset;             // 0C
-        s16                                         stamina_offset;             // 0E
-        u16                                         level;                      // 10
-        u16                                         min_level_calc;             // 12
-        u16                                         max_level_calc;             // 14
-        u16                                         speed_multiplier;           // 16
-        u16                                         base_disposition;           // 18
-        Atomic_Enum_t<Actor_Base_Template_Flags_e>  actor_base_template_flags;  // 1A
-        s16                                         health_offset;              // 1C
-        s16                                         bleedout_override;          // 1E
-        maybe<Leveled_Item_t*>                      death_leveled_item;         // 20
-        maybe<Voice_Type_t*>                        voice_type;                 // 28
-        Form_t*                                     base_template_form;         // 30
-        Form_t**                                    template_forms;             // 38
-        Factions_And_Ranks_t                        factions_and_ranks;         // 40
+        Actor_Base_Flags_e          actor_base_flags;           // 08
+        s16                         magicka_offset;             // 0C
+        s16                         stamina_offset;             // 0E
+        u16                         level;                      // 10
+        u16                         min_level_calc;             // 12
+        u16                         max_level_calc;             // 14
+        u16                         speed_multiplier;           // 16
+        u16                         base_disposition;           // 18
+        Actor_Base_Template_Flags_e actor_base_template_flags;  // 1A
+        s16                         health_offset;              // 1C
+        s16                         bleedout_override;          // 1E
+        maybe<Leveled_Item_t*>      death_leveled_item;         // 20
+        maybe<Voice_Type_t*>        voice_type;                 // 28
+        maybe<Form_t*>              base_template_form;         // 30 (TPLT, but resolved)
+        u32                         unk_38;                     // 38
+        u32                         unk_3C;                     // 3C
+        Factions_And_Ranks_t        factions_and_ranks;         // 40
 
     public:
         Bool_t  Is_Male();
@@ -91,10 +93,13 @@ namespace doticu_skylib {
         Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
 
+        Vitality_e                      Vitality();
+
         maybe<Voice_Type_t*>            Voice_Type();
         void                            Voice_Type(maybe<Voice_Type_t*> voice_type);
 
     public:
+        void    Log(std::string indent = "");
         void    Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_Base_Data_c) == 0x58);

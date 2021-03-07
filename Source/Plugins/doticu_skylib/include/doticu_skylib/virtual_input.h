@@ -25,16 +25,16 @@ namespace doticu_skylib { namespace Virtual {
 
     public:
         static void Is_Key_Pressed(Int_t key, some<Virtual::Callback_i*> v_callback);                       // IsKeyPressed
-        static void Is_Key_Pressed(Int_t key, some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);    // IsKeyPressed
+        static void Is_Key_Pressed(Int_t key, some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);
 
-        static void Tap_Key(Int_t key, maybe<Virtual::Callback_i*> v_callback = nullptr);                   // TapKey
-        static void Tap_Key(Int_t key, maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);      // TapKey
+        static void Tap_Key(Int_t key, maybe<Virtual::Callback_i*> v_callback);                             // TapKey
+        static void Tap_Key(Int_t key, maybe<unique<doticu_skylib::Callback_i<>>> callback);
 
-        static void Tap_Inventory_Key(maybe<Virtual::Callback_i*> v_callback = nullptr);
-        static void Tap_Inventory_Key(maybe<unique<doticu_skylib::Callback_i<>>> callback = nullptr);
+        static void Tap_Inventory_Key(maybe<Virtual::Callback_i*> v_callback);
+        static void Tap_Inventory_Key(maybe<unique<doticu_skylib::Callback_i<>>> callback);
 
     public:
-        static void Close_Menus(maybe<unique<doticu_skylib::Callback_i<Bool_t>>> callback = nullptr);
+        static void Close_Menus(maybe<unique<doticu_skylib::Callback_i<Bool_t>>> callback);
     };
 
 }}

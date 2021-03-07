@@ -17,10 +17,10 @@ namespace doticu_skylib {
 
     class Actor_Base_t;
 
-    class Leveled_Actor_Base_t :
-        public Animated_Object_t,
-        public Leveled_c,
-        public Model_Alternates_c
+    class Leveled_Actor_Base_t :    // TESLevCharacter
+        public Animated_Object_t,   // 00
+        public Leveled_c,           // 30
+        public Model_Alternates_c   // 58
     {
     public:
         enum
@@ -28,6 +28,7 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::LEVELED_ACTOR_BASE,
         };
 
+    public:
         static size_t                           Leveled_Actor_Base_Count();
         static Vector_t<Leveled_Actor_Base_t*>  Leveled_Actor_Bases();
         static void                             Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results);
@@ -35,7 +36,7 @@ namespace doticu_skylib {
         static void                             Log_Leveled_Actor_Bases();
 
     public:
-        virtual                 ~Leveled_Actor_Base_t();
+        virtual                 ~Leveled_Actor_Base_t(); // 0
 
     public:
         void                    Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator);

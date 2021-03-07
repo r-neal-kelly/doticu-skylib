@@ -14,14 +14,14 @@ namespace doticu_skylib {
     void Actor_AI_t::Flag_Update_3D(Update_3D_Flags_e flag)
     {
         if (this->middle_high_ai) {
-            this->middle_high_ai->update_3d_flags |= flag;
+            this->middle_high_ai->update_3d_flags.Flag(flag);
         }
     }
 
     void Actor_AI_t::Unflag_Update_3D(Update_3D_Flags_e flag)
     {
         if (this->middle_high_ai) {
-            this->middle_high_ai->update_3d_flags &= ~flag;
+            this->middle_high_ai->update_3d_flags.Unflag(flag);
         }
     }
 

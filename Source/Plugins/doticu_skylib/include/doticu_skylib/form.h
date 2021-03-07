@@ -128,13 +128,13 @@ namespace doticu_skylib {
         virtual void        _3A(void);                                      // 3A
 
     public:
-        Static_Array_t<Mod_t*>*             form_mods;          // 08
-        Atomic_Enum_t<Form_Flags_e>         form_flags;         // 10
-        Form_ID_t                           form_id;            // 14
-        Atomic_Enum_t<Form_Flags_Extra_e>   form_flags_extra;   // 18
-        Form_Type_e                         form_type;          // 1A
-        u8                                  pad_1B;             // 1B
-        u32                                 pad_1C;             // 1C
+        Static_Array_t<Mod_t*>* form_mods;          // 08
+        Form_Flags_e            form_flags;         // 10
+        Form_ID_t               form_id;            // 14
+        Form_Flags_Extra_e      form_flags_extra;   // 18
+        Form_Type_e             form_type;          // 1A
+        u8                      pad_1B;             // 1B
+        u32                     pad_1C;             // 1C
 
     public:
         Bool_t                      Is_Valid();

@@ -151,12 +151,12 @@ namespace doticu_skylib {
 
     Bool_t Cell_t::Is_Interior()
     {
-        return (cell_flags & Cell_Flags_e::IS_INTERIOR) != 0;
+        return this->cell_flags.Is_Flagged(Cell_Flags_e::IS_INTERIOR);
     }
 
     Bool_t Cell_t::Is_Exterior()
     {
-        return (cell_flags & Cell_Flags_e::IS_INTERIOR) == 0;
+        return !Is_Interior();
     }
 
     Bool_t Cell_t::Is_Attached()
@@ -166,7 +166,7 @@ namespace doticu_skylib {
 
     Bool_t Cell_t::Can_Travel_From()
     {
-        return (cell_flags & Cell_Flags_e::CAN_TRAVEL_FROM) != 0;
+        return this->cell_flags.Is_Flagged(Cell_Flags_e::CAN_TRAVEL_FROM);
     }
 
     Bool_t Cell_t::Has_Reference(some<Reference_t*> reference)

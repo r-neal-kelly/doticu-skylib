@@ -128,14 +128,14 @@ namespace doticu_skylib {
     inline s32      Atomic_t::Xor(volatile s32& a, s32 b)                                       { return Exchange_Xor(a, b) ^ b; }
     inline s64      Atomic_t::Xor(volatile s64& a, s64 b)                                       { return Exchange_Xor(a, b) ^ b; }
 
-    inline void*    Atomic_t::Access(volatile void*& a)                                         { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline u8       Atomic_t::Access(volatile u8& a)                                            { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline u16      Atomic_t::Access(volatile u16& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline u32      Atomic_t::Access(volatile u32& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline u64      Atomic_t::Access(volatile u64& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline s8       Atomic_t::Access(volatile s8& a)                                            { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline s16      Atomic_t::Access(volatile s16& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline s32      Atomic_t::Access(volatile s32& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
-    inline s64      Atomic_t::Access(volatile s64& a)                                           { return Exchange_Assign_If_Equals(a, 0, 0); }
+    inline void*    Atomic_t::Access(const volatile void*& a)                                   { return Exchange_Assign_If_Equals((volatile void*&)a, 0, 0); }
+    inline u8       Atomic_t::Access(const volatile u8& a)                                      { return Exchange_Assign_If_Equals((volatile u8&)a, 0, 0); }
+    inline u16      Atomic_t::Access(const volatile u16& a)                                     { return Exchange_Assign_If_Equals((volatile u16&)a, 0, 0); }
+    inline u32      Atomic_t::Access(const volatile u32& a)                                     { return Exchange_Assign_If_Equals((volatile u32&)a, 0, 0); }
+    inline u64      Atomic_t::Access(const volatile u64& a)                                     { return Exchange_Assign_If_Equals((volatile u64&)a, 0, 0); }
+    inline s8       Atomic_t::Access(const volatile s8& a)                                      { return Exchange_Assign_If_Equals((volatile s8&)a, 0, 0); }
+    inline s16      Atomic_t::Access(const volatile s16& a)                                     { return Exchange_Assign_If_Equals((volatile s16&)a, 0, 0); }
+    inline s32      Atomic_t::Access(const volatile s32& a)                                     { return Exchange_Assign_If_Equals((volatile s32&)a, 0, 0); }
+    inline s64      Atomic_t::Access(const volatile s64& a)                                     { return Exchange_Assign_If_Equals((volatile s64&)a, 0, 0); }
 
 }
