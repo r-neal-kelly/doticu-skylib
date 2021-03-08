@@ -97,27 +97,17 @@ namespace doticu_skylib {
         }
 
     public:
-        explicit operator Bool_t() const
+        Bool_t Has_Value() const
         {
             return this->has_value;
         }
 
-        template <typename TT>
-        operator maybe<TT>() const
+        T Value() const
         {
-            if (operator Bool_t()) {
-                return static_cast<TT>(value);
-            } else {
-                return none<TT>();
-            }
+            return this->value;
         }
 
     public:
-        Bool_t operator !() const
-        {
-            return !static_cast<Bool_t>(*this);
-        }
-
         T operator ()() const
         {
             return this->value;
@@ -171,15 +161,15 @@ namespace doticu_skylib {
         }
 
     public:
-        operator T() const
+        T Value() const
         {
             return this->value;
         }
 
-        template <typename TT>
-        operator some<TT>() const
+    public:
+        operator T() const
         {
-            return static_cast<TT>(value);
+            return this->value;
         }
 
     public:

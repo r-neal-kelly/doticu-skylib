@@ -21,10 +21,10 @@ namespace doticu_skylib {
 
     class Actor_Base_t;
 
-    class Faction_t :
-        public Form_t,
-        public Name_c,
-        public Reaction_c
+    class Faction_t :       // TESFaction
+        public Form_t,      // 000
+        public Name_c,      // 020
+        public Reaction_c   // 030
     {
     public:
         enum
@@ -32,6 +32,19 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::FACTION,
         };
 
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E138A0, // 513906
+            };
+            using Enum_t::Enum_t;
+        };
+
+    public:
         static Vector_t<const char*>    editor_ids;
         static std::mutex               editor_ids_mutex;
 
@@ -47,17 +60,20 @@ namespace doticu_skylib {
     public:
         virtual ~Faction_t(); // 00
 
-        Hash_Map_t<Actor_Base_t*, u32>* actor_base_to_crime_gold;   // 050
-        Faction_Flags_e                 faction_flags;              // 058
-        u32                             editor_id_index;            // 05C (pad_05C)
-        // ...
+    public:
+        maybe<Hash_Map_t<maybe<Actor_Base_t*>, u32>*>   actor_base_to_crime_gold;   // 050
+        Faction_Flags_e                                 faction_flags;              // 058
+        u32                                             editor_id_index;            // 05C (pad_05C)
+        Byte_t                                          unk_060[0xA0];              // 060
 
     public:
         String_t    Any_Name();
         const char* Editor_ID();
         String_t    Editor_Or_Form_ID();
 
+    public:
         void        Log(std::string indent = "");
     };
+    STATIC_ASSERT(sizeof(Faction_t) == 0x100);
 
 }

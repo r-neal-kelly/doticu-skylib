@@ -116,7 +116,7 @@ namespace doticu_skylib {
                 Actor_t* actor = static_cast<Actor_t*>
                     (Reference_t::Create(base, 1, Player_t::Self(), false, true));
                 if (actor && actor->Is_Valid()) {
-                    maybe<Actor_Base_t*> actor_base = static_cast<maybe<Actor_Base_t*>>(actor->base_form);
+                    maybe<Actor_Base_t*> actor_base = actor->Actor_Base();
                     actor->Mark_For_Delete();
                     if (actor_base) {
                         return Create(actor_base(), do_static, do_persist, do_uncombative);
@@ -184,6 +184,35 @@ namespace doticu_skylib {
         return !Is_In_Combat();
     }
 
+    maybe<Bool_t> Actor_t::Is_Owner(some<Form_t*> owner)
+    {
+        SKYLIB_ASSERT_SOME(owner);
+
+        maybe<Faction_t*> owner_faction = owner->As_Faction();
+        if (owner_faction) {
+            return Is_In_Faction(owner_faction());
+        } else {
+            maybe<Actor_Base_t*> owner_actor_base = owner->As_Actor_Base();
+            if (owner_actor_base) {
+                return Has_Actor_Base(owner_actor_base());
+            } else {
+                return none<Bool_t>();
+            }
+        }
+    }
+
+    maybe<Bool_t> Actor_t::Isnt_Owner(some<Form_t*> owner)
+    {
+        SKYLIB_ASSERT_SOME(owner);
+
+        maybe<Bool_t> maybe_is_owner = Is_Owner(owner);
+        if (maybe_is_owner.Has_Value()) {
+            return !maybe_is_owner();
+        } else {
+            return none<Bool_t>();
+        }
+    }
+
     Bool_t Actor_t::Has_Mount()
     {
         return !!Mount();
@@ -192,6 +221,36 @@ namespace doticu_skylib {
     Bool_t Actor_t::Has_Rider()
     {
         return !!Rider();
+    }
+
+    Bool_t Actor_t::Has_Actor_Base(some<Actor_Base_t*> actor_base)
+    {
+        SKYLIB_ASSERT_SOME(actor_base);
+
+        maybe<Actor_Base_t*> this_actor_base = Actor_Base();
+        if (this_actor_base) {
+            return this_actor_base() == actor_base();
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Actor_t::Hasnt_Actor_Base(some<Actor_Base_t*> actor_base)
+    {
+        SKYLIB_ASSERT_SOME(actor_base);
+        return !Has_Actor_Base(actor_base);
+    }
+
+    Bool_t Actor_t::Is_In_Faction(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+        return Get_Is_In_Faction(faction());
+    }
+
+    Bool_t Actor_t::Isnt_In_Faction(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+        return !Get_Is_In_Faction(faction());
     }
 
     Bool_t Actor_t::Is_Owner_Of(some<Reference_t*> reference)
@@ -382,7 +441,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(faction);
 
         maybe<Raw_Faction_Rank_t> rank = this->x_list.Faction_Rank(faction);
-        if (rank) {
+        if (rank.Has_Value()) {
             return rank;
         } else {
             return Base_Faction_Rank(faction);

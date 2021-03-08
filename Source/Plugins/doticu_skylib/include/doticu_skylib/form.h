@@ -20,6 +20,7 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Container_c;
     class Container_t;
+    class Faction_t;
     class Leveled_Item_t;
     class Mod_t;
     class Name_c;
@@ -166,6 +167,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Component_Container();
         Bool_t                  Is_Component_Name();
         Bool_t                  Is_Container();
+        Bool_t                  Is_Faction();
         Bool_t                  Is_Leveled_Item();
 
         maybe<Actor_t*>         As_Actor();
@@ -173,6 +175,7 @@ namespace doticu_skylib {
         maybe<Container_c*>     As_Component_Container();
         maybe<Name_c*>          As_Component_Name();
         maybe<Container_t*>     As_Container();
+        maybe<Faction_t*>       As_Faction();
         maybe<Leveled_Item_t*>  As_Leveled_Item();
 
     public:

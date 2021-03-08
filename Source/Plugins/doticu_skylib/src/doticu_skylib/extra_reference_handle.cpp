@@ -128,7 +128,7 @@ namespace doticu_skylib {
         }
 
         maybe<Bool_t> maybe_is_based_on_component_container = Is_Based_On_Component_Container();
-        if (maybe_is_based_on_component_container) {
+        if (maybe_is_based_on_component_container.Has_Value()) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "is_based_on_component_container: %s",
                        maybe_is_based_on_component_container() ? "true" : "false");
         } else {

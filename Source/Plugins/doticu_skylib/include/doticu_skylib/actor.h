@@ -202,7 +202,7 @@ namespace doticu_skylib {
         virtual void    _0F6(void);                                                                                     // 0F6
         virtual void    _0F7(void);                                                                                     // 0F7
         virtual void    _0F8(void);                                                                                     // 0F8
-        virtual Bool_t  Is_In_Faction(const Faction_t* faction) const;                                                  // 0F9
+        virtual Bool_t  Get_Is_In_Faction(const Faction_t* faction) const;                                              // 0F9
         virtual void    _0FA(void);                                                                                     // 0FA
         virtual void    _0FB(void);                                                                                     // 0FB
         virtual void    _0FC(void);                                                                                     // 0FC
@@ -320,9 +320,16 @@ namespace doticu_skylib {
         Bool_t                                      Isnt_Vampire();
         Bool_t                                      Is_In_Combat();
         Bool_t                                      Isnt_In_Combat();
+        maybe<Bool_t>                               Is_Owner(some<Form_t*> owner);
+        maybe<Bool_t>                               Isnt_Owner(some<Form_t*> owner);
+
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();
+        Bool_t                                      Has_Actor_Base(some<Actor_Base_t*> actor_base);
+        Bool_t                                      Hasnt_Actor_Base(some<Actor_Base_t*> actor_base);
 
+        Bool_t                                      Is_In_Faction(some<Faction_t*> faction);
+        Bool_t                                      Isnt_In_Faction(some<Faction_t*> faction);
         Bool_t                                      Is_Owner_Of(some<Reference_t*> reference);
         Bool_t                                      Is_Potential_Thief_Of(some<Reference_t*> reference);
 

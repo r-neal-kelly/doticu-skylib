@@ -279,32 +279,20 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Cell_t*> cell = this->Cell();
-        if (cell) {
-            maybe<Form_t*> cell_owner = cell->Owner();
-            if (cell_owner) {
-                if (cell_owner->form_type == Form_Type_e::FACTION) {
-                    some<Faction_t*> cell_faction_owner = static_cast<Faction_t*>(cell_owner());
-                    if (actor->Is_In_Faction(cell_faction_owner())) {
-                        return true;
-                    }
-                } else if (cell_owner->form_type == Form_Type_e::ACTOR_BASE) {
-                    if (actor->base_form == cell_owner()) {
-                        return true;
-                    }
-                }
+        maybe<Form_t*> this_owner = this->Owner();
+        if (this_owner) {
+            maybe<Bool_t> maybe_is_this_owner = actor->Is_Owner(this_owner());
+            if (maybe_is_this_owner.Has_Value() && maybe_is_this_owner()) {
+                return true;
             }
         }
 
-        maybe<Form_t*> ref_owner = this->Owner();
-        if (ref_owner) {
-            if (ref_owner->form_type == Form_Type_e::FACTION) {
-                some<Faction_t*> ref_faction_owner = static_cast<Faction_t*>(ref_owner());
-                if (actor->Is_In_Faction(ref_faction_owner())) {
-                    return true;
-                }
-            } else if (ref_owner->form_type == Form_Type_e::ACTOR_BASE) {
-                if (actor->base_form == ref_owner()) {
+        maybe<Cell_t*> cell = this->Cell();
+        if (cell) {
+            maybe<Form_t*> cell_owner = cell->Owner();
+            if (cell_owner && cell_owner != this_owner) {
+                maybe<Bool_t> maybe_is_cell_owner = actor->Is_Owner(cell_owner());
+                if (maybe_is_cell_owner.Has_Value() && maybe_is_cell_owner()) {
                     return true;
                 }
             }
@@ -317,32 +305,20 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Cell_t*> cell = this->Cell();
-        if (cell) {
-            maybe<Form_t*> cell_owner = cell->Owner();
-            if (cell_owner) {
-                if (cell_owner->form_type == Form_Type_e::FACTION) {
-                    some<Faction_t*> cell_faction_owner = static_cast<Faction_t*>(cell_owner());
-                    if (!actor->Is_In_Faction(cell_faction_owner())) {
-                        return true;
-                    }
-                } else if (cell_owner->form_type == Form_Type_e::ACTOR_BASE) {
-                    if (actor->base_form != cell_owner()) {
-                        return true;
-                    }
-                }
+        maybe<Form_t*> this_owner = this->Owner();
+        if (this_owner) {
+            maybe<Bool_t> maybe_isnt_this_owner = actor->Isnt_Owner(this_owner());
+            if (maybe_isnt_this_owner.Has_Value() && maybe_isnt_this_owner()) {
+                return true;
             }
         }
 
-        maybe<Form_t*> ref_owner = this->Owner();
-        if (ref_owner) {
-            if (ref_owner->form_type == Form_Type_e::FACTION) {
-                some<Faction_t*> ref_faction_owner = static_cast<Faction_t*>(ref_owner());
-                if (!actor->Is_In_Faction(ref_faction_owner())) {
-                    return true;
-                }
-            } else if (ref_owner->form_type == Form_Type_e::ACTOR_BASE) {
-                if (actor->base_form != ref_owner()) {
+        maybe<Cell_t*> cell = this->Cell();
+        if (cell) {
+            maybe<Form_t*> cell_owner = cell->Owner();
+            if (cell_owner && cell_owner != this_owner) {
+                maybe<Bool_t> maybe_isnt_cell_owner = actor->Isnt_Owner(cell_owner());
+                if (maybe_isnt_cell_owner.Has_Value() && maybe_isnt_cell_owner()) {
                     return true;
                 }
             }
@@ -735,8 +711,8 @@ namespace doticu_skylib {
     maybe<Actor_Base_t*> Reference_t::Actor_Base_Owner()
     {
         maybe<Form_t*> owner = Owner();
-        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
-            return static_cast<maybe<Actor_Base_t*>>(owner);
+        if (owner) {
+            return owner->As_Actor_Base();
         } else {
             return none<Actor_Base_t*>();
         }
@@ -750,8 +726,8 @@ namespace doticu_skylib {
     maybe<Faction_t*> Reference_t::Faction_Owner()
     {
         maybe<Form_t*> owner = Owner();
-        if (owner && owner->form_type == Form_Type_e::FACTION) {
-            return static_cast<maybe<Faction_t*>>(owner);
+        if (owner) {
+            return owner->As_Faction();
         } else {
             return none<Faction_t*>();
         }
@@ -780,7 +756,8 @@ namespace doticu_skylib {
             some<Script_t*> script = Script_t::Create();
             script->Command(
                 std::string("ApplyHavokImpulse ") +
-                std::to_string(x) + " " + std::to_string(y) + " " +
+                std::to_string(x) + " " +
+                std::to_string(y) + " " +
                 std::to_string(z) + " " +
                 std::to_string(force));
             script->Execute(this);
