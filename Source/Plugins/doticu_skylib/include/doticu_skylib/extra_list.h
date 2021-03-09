@@ -5,9 +5,11 @@
 #pragma once
 
 #include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/faction_rank.h"
+#include "doticu_skylib/form_owner.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
@@ -149,12 +151,8 @@ namespace doticu_skylib {
         void                                Outfit(maybe<Outfit_t*> outfit);
 
         // Extra_Owner_t
-        maybe<maybe<Form_t*>>               Owner();
-        void                                Owner(maybe<Form_t*> form);
-        maybe<maybe<Faction_t*>>            Faction_Owner();
-        void                                Faction_Owner(maybe<Faction_t*> faction);
-        maybe<maybe<Actor_Base_t*>>         Actor_Base_Owner();
-        void                                Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+        maybe<Form_Owner_t>                 Owner();
+        void                                Owner(Form_Owner_t owner);
 
         // Extra_Reference_Handle_t
         maybe<Reference_t*>                 Reference();

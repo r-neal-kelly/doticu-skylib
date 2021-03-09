@@ -18,6 +18,7 @@
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/faction_and_rank.h"
+#include "doticu_skylib/form_owner.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/magic_target.h"
 #include "doticu_skylib/maybe.h"
@@ -320,8 +321,8 @@ namespace doticu_skylib {
         Bool_t                                      Isnt_Vampire();
         Bool_t                                      Is_In_Combat();
         Bool_t                                      Isnt_In_Combat();
-        maybe<Bool_t>                               Is_Owner(some<Form_t*> owner);
-        maybe<Bool_t>                               Isnt_Owner(some<Form_t*> owner);
+        maybe<Bool_t>                               Is_Owner(Form_Owner_t owner);
+        maybe<Bool_t>                               Isnt_Owner(Form_Owner_t owner);
 
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();

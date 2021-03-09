@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/form_owner.h"
 
 namespace doticu_skylib {
 
@@ -19,6 +20,7 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::OWNER,
         };
 
+    public:
         class Offset_e : public Enum_t<Word_t>
         {
         public:
@@ -30,14 +32,14 @@ namespace doticu_skylib {
         };
 
     public:
-        static some<Extra_Owner_t*> Create(maybe<Form_t*> owner);
+        static some<Extra_Owner_t*> Create(Form_Owner_t owner);
         static void                 Destroy(some<Extra_Owner_t*> x_count);
 
     public:
         virtual ~Extra_Owner_t(); // 0
 
     public:
-        maybe<Form_t*> owner; // 10
+        Form_Owner_t    owner; // 10
     };
     STATIC_ASSERT(sizeof(Extra_Owner_t) == 0x18);
 

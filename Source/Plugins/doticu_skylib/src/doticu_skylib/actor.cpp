@@ -184,15 +184,13 @@ namespace doticu_skylib {
         return !Is_In_Combat();
     }
 
-    maybe<Bool_t> Actor_t::Is_Owner(some<Form_t*> owner)
+    maybe<Bool_t> Actor_t::Is_Owner(Form_Owner_t owner)
     {
-        SKYLIB_ASSERT_SOME(owner);
-
-        maybe<Faction_t*> owner_faction = owner->As_Faction();
+        maybe<Faction_t*> owner_faction = owner.As_Faction();
         if (owner_faction) {
             return Is_In_Faction(owner_faction());
         } else {
-            maybe<Actor_Base_t*> owner_actor_base = owner->As_Actor_Base();
+            maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
             if (owner_actor_base) {
                 return Has_Actor_Base(owner_actor_base());
             } else {
@@ -201,13 +199,11 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Bool_t> Actor_t::Isnt_Owner(some<Form_t*> owner)
+    maybe<Bool_t> Actor_t::Isnt_Owner(Form_Owner_t owner)
     {
-        SKYLIB_ASSERT_SOME(owner);
-
         maybe<Bool_t> is_owner = Is_Owner(owner);
         if (is_owner.Has_Value()) {
-            return !is_owner();
+            return !is_owner.Value();
         } else {
             return none<Bool_t>();
         }

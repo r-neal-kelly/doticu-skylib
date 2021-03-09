@@ -10,6 +10,7 @@
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/form_owner.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_point.h"
@@ -312,16 +313,16 @@ namespace doticu_skylib {
 
         void                        Mark_For_Delete(Bool_t do_disable = true);                              // MarkForDelete
 
-        maybe<Form_t*>              This_Or_Cell_Owner();
+        Form_Owner_t                This_Or_Cell_Owner();
         maybe<Actor_Base_t*>        This_Or_Cell_Actor_Base_Owner();
         maybe<Faction_t*>           This_Or_Cell_Faction_Owner();
-        maybe<maybe<Form_t*>>       This_Owner();
-        void                        This_Owner(maybe<Form_t*> form);                                        // SetOwnership
+        maybe<Form_Owner_t>         This_Owner();
+        void                        This_Owner(Form_Owner_t owner);                                         // SetOwnership
         maybe<maybe<Actor_Base_t*>> This_Actor_Base_Owner();
         void                        This_Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
         maybe<maybe<Faction_t*>>    This_Faction_Owner();
         void                        This_Faction_Owner(maybe<Faction_t*> faction);
-        maybe<Form_t*>              Cell_Owner();
+        Form_Owner_t                Cell_Owner();
 
         void                        Push_Away(some<Actor_t*> actor, Int_t force);                           // PushActorAway
         void                        Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force);    // ApplyHavokImpulse

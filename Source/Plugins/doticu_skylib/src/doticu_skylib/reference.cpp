@@ -284,11 +284,11 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        Form_Owner_t owner = This_Or_Cell_Owner();
         if (owner) {
-            maybe<Bool_t> is_owner = actor->Is_Owner(owner());
+            maybe<Bool_t> is_owner = actor->Is_Owner(owner);
             if (is_owner.Has_Value()) {
-                return is_owner();
+                return is_owner.Value();
             } else {
                 return false;
             }
@@ -301,11 +301,11 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        Form_Owner_t owner = This_Or_Cell_Owner();
         if (owner) {
-            maybe<Bool_t> isnt_owner = actor->Isnt_Owner(owner());
+            maybe<Bool_t> isnt_owner = actor->Isnt_Owner(owner);
             if (isnt_owner.Has_Value()) {
-                return isnt_owner();
+                return isnt_owner.Value();
             } else {
                 return false;
             }
@@ -672,7 +672,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Form_t*> Reference_t::This_Or_Cell_Owner()
+    Form_Owner_t Reference_t::This_Or_Cell_Owner()
     {
         static auto get_this_or_cell_owner = reinterpret_cast
             <Form_t*(*)(Reference_t*)>
@@ -683,35 +683,25 @@ namespace doticu_skylib {
 
     maybe<Actor_Base_t*> Reference_t::This_Or_Cell_Actor_Base_Owner()
     {
-        maybe<Form_t*> owner = This_Or_Cell_Owner();
-        if (owner) {
-            return owner->As_Actor_Base();
-        } else {
-            return none<Actor_Base_t*>();
-        }
+        return This_Or_Cell_Owner().As_Actor_Base();
     }
 
     maybe<Faction_t*> Reference_t::This_Or_Cell_Faction_Owner()
     {
-        maybe<Form_t*> owner = This_Or_Cell_Owner();
-        if (owner) {
-            return owner->As_Faction();
-        } else {
-            return none<Faction_t*>();
-        }
+        return This_Or_Cell_Owner().As_Faction();
     }
 
-    maybe<maybe<Form_t*>> Reference_t::This_Owner()
+    maybe<Form_Owner_t> Reference_t::This_Owner()
     {
         return this->x_list.Owner();
     }
 
-    void Reference_t::This_Owner(maybe<Form_t*> form)
+    void Reference_t::This_Owner(Form_Owner_t owner)
     {
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
-            if (form) {
-                script->Command(std::string("SetOwnership ") + form->Form_ID_String().data);
+            if (owner) {
+                script->Command(std::string("SetOwnership ") + owner()->Form_ID_String().data);
             } else {
                 script->Command("SetOwnership");
             }
@@ -722,7 +712,12 @@ namespace doticu_skylib {
 
     maybe<maybe<Actor_Base_t*>> Reference_t::This_Actor_Base_Owner()
     {
-        return this->x_list.Actor_Base_Owner();
+        maybe<Form_Owner_t> owner = This_Owner();
+        if (owner.Has_Value()) {
+            return owner.Value().As_Actor_Base();
+        } else {
+            return none<maybe<Actor_Base_t*>>();
+        }
     }
 
     void Reference_t::This_Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
@@ -732,7 +727,12 @@ namespace doticu_skylib {
 
     maybe<maybe<Faction_t*>> Reference_t::This_Faction_Owner()
     {
-        return this->x_list.Faction_Owner();
+        maybe<Form_Owner_t> owner = This_Owner();
+        if (owner.Has_Value()) {
+            return owner.Value().As_Faction();
+        } else {
+            return none<maybe<Faction_t*>>();
+        }
     }
 
     void Reference_t::This_Faction_Owner(maybe<Faction_t*> faction)
@@ -740,7 +740,7 @@ namespace doticu_skylib {
         This_Owner(faction);
     }
 
-    maybe<Form_t*> Reference_t::Cell_Owner()
+    Form_Owner_t Reference_t::Cell_Owner()
     {
         maybe<Cell_t*> cell = this->Cell();
         if (cell) {

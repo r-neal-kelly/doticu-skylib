@@ -92,6 +92,7 @@
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
+    <ClInclude Include="include\doticu_skylib\form_owner.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
@@ -449,6 +450,7 @@
     <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
+    <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />

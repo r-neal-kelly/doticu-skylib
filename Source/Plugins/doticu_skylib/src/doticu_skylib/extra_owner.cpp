@@ -7,7 +7,7 @@
 
 namespace doticu_skylib {
 
-    some<Extra_Owner_t*> Extra_Owner_t::Create(maybe<Form_t*> owner)
+    some<Extra_Owner_t*> Extra_Owner_t::Create(Form_Owner_t owner)
     {
         some<Extra_Owner_t*> x_owner = Extra_Data_t::Create<Extra_Owner_t>();
 

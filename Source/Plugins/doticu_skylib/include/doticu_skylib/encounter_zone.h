@@ -14,7 +14,8 @@ namespace doticu_skylib {
     class Faction_t;
     class Location_t;
 
-    class Encounter_Zone_t : public Form_t // BGSEncounterZone
+    class Encounter_Zone_t :    // BGSEncounterZone
+        public Form_t           // 00
     {
     public:
         enum
@@ -22,13 +23,15 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ENCOUNTER_ZONE,
         };
 
-        class Changes_e : public Enum_t<u32>
+    public:
+        class Form_Change_Flags_e :
+            public Enum_t<u32>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
-                FLAGS           = 1 << 1,
-                TIMES_OR_LEVEL  = static_cast<value_type>(1) << 31,
+                FLAGS           = static_cast<value_type>(1 << 1),
+                TIMES_OR_LEVEL  = static_cast<value_type>(1 << 31), // this may include more
             };
             using Enum_t::Enum_t;
         };
@@ -37,8 +40,8 @@ namespace doticu_skylib {
         virtual ~Encounter_Zone_t(); // 0
 
     public:
-        Faction_t*              owner;                  // 20
-        Location_t*             location;               // 28
+        maybe<Faction_t*>       owner;                  // 20
+        maybe<Location_t*>      location;               // 28
         Raw_Faction_Rank_t      required_owner_rank;    // 30
         s8                      min_level;              // 31
         Encounter_Zone_Flags_e  encounter_zone_flags;   // 32

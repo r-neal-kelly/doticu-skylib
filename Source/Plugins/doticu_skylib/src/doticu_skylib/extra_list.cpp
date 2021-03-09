@@ -595,54 +595,24 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<maybe<Form_t*>> Extra_List_t::Owner()
+    maybe<Form_Owner_t> Extra_List_t::Owner()
     {
         maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
         if (x_owner) {
             return x_owner->owner;
         } else {
-            return none<maybe<Form_t*>>();
+            return none<Form_Owner_t>();
         }
     }
 
-    void Extra_List_t::Owner(maybe<Form_t*> form)
+    void Extra_List_t::Owner(Form_Owner_t owner)
     {
         maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
         if (x_owner) {
-            x_owner->owner = form;
+            x_owner->owner = owner;
         } else {
-            Add<Extra_Owner_t>(Extra_Owner_t::Create(form));
+            Add<Extra_Owner_t>(Extra_Owner_t::Create(owner));
         }
-    }
-
-    maybe<maybe<Faction_t*>> Extra_List_t::Faction_Owner()
-    {
-        maybe<maybe<Form_t*>> owner = Owner();
-        if (owner.Has_Value()) {
-            return static_cast<maybe<Faction_t*>>(owner());
-        } else {
-            return none<maybe<Faction_t*>>();
-        }
-    }
-
-    void Extra_List_t::Faction_Owner(maybe<Faction_t*> faction)
-    {
-        Owner(static_cast<maybe<Form_t*>>(faction));
-    }
-
-    maybe<maybe<Actor_Base_t*>> Extra_List_t::Actor_Base_Owner()
-    {
-        maybe<maybe<Form_t*>> owner = Owner();
-        if (owner.Has_Value()) {
-            return static_cast<maybe<Actor_Base_t*>>(owner());
-        } else {
-            return none<maybe<Actor_Base_t*>>();
-        }
-    }
-
-    void Extra_List_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
-    {
-        Owner(static_cast<maybe<Form_t*>>(actor_base));
     }
 
     maybe<Reference_t*> Extra_List_t::Reference()

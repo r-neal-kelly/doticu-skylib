@@ -176,16 +176,6 @@ namespace doticu_skylib {
         return references.Has(reference());
     }
 
-    maybe<Actor_Base_t*> Cell_t::Actor_Base_Owner(Bool_t do_check_locations)
-    {
-        maybe<Form_t*> owner = Owner(do_check_locations);
-        if (owner && owner->form_type == Form_Type_e::ACTOR_BASE) {
-            return static_cast<maybe<Actor_Base_t*>>(owner);
-        } else {
-            return nullptr;
-        }
-    }
-
     maybe<Encounter_Zone_t*> Cell_t::Encounter_Zone(Bool_t do_check_locations)
     {
         if (this->attached_cell && this->attached_cell->encounter_zone) {
@@ -202,16 +192,6 @@ namespace doticu_skylib {
                     return nullptr;
                 }
             }
-        }
-    }
-
-    maybe<Faction_t*> Cell_t::Faction_Owner(Bool_t do_check_locations)
-    {
-        maybe<Form_t*> owner = Owner(do_check_locations);
-        if (owner && owner->form_type == Form_Type_e::FACTION) {
-            return static_cast<maybe<Faction_t*>>(owner);
-        } else {
-            return nullptr;
         }
     }
 
@@ -295,19 +275,29 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Form_t*> Cell_t::Owner(Bool_t do_check_locations)
+    Form_Owner_t Cell_t::Owner(Bool_t do_check_locations)
     {
-        maybe<Extra_Owner_t*> xowner = this->x_list.Get<Extra_Owner_t>();
-        if (xowner && xowner->owner) {
-            return xowner->owner;
+        maybe<Form_Owner_t> owner = this->x_list.Owner();
+        if (owner.Has_Value()) {
+            return owner.Value();
         } else {
             maybe<Encounter_Zone_t*> encounter_zone = Encounter_Zone(do_check_locations);
             if (encounter_zone) {
                 return encounter_zone->owner;
             } else {
-                return nullptr;
+                return none<Form_t*>();
             }
         }
+    }
+
+    maybe<Actor_Base_t*> Cell_t::Actor_Base_Owner(Bool_t do_check_locations)
+    {
+        return Owner(do_check_locations).As_Actor_Base();
+    }
+
+    maybe<Faction_t*> Cell_t::Faction_Owner(Bool_t do_check_locations)
+    {
+        return Owner(do_check_locations).As_Faction();
     }
 
     maybe<Worldspace_t*> Cell_t::Worldspace(Bool_t do_check_locations)

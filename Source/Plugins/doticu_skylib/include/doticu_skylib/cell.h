@@ -4,20 +4,18 @@
 
 #pragma once
 
+#include "doticu_skylib/component_name.h"
 #include "doticu_skylib/dynamic_array.h"
-#include "doticu_skylib/forward_list.h"
-#include "doticu_skylib/interface.h"
-
 #include "doticu_skylib/enum_cell_flags.h"
 #include "doticu_skylib/enum_cell_state.h"
-
-#include "doticu_skylib/component_name.h"
-
-#include "doticu_skylib/form.h"
-#include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/enum_script_type.h"
-
 #include "doticu_skylib/extra_list.h"
+#include "doticu_skylib/form.h"
+#include "doticu_skylib/form_owner.h"
+#include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/interface.h"
+#include "doticu_skylib/maybe.h"
+#include "doticu_skylib/reference_handle.h"
 
 namespace doticu_skylib {
 
@@ -136,15 +134,18 @@ namespace doticu_skylib {
         Bool_t                          Can_Travel_From();
         Bool_t                          Has_Reference(some<Reference_t*> reference);
 
-        maybe<Actor_Base_t*>            Actor_Base_Owner(Bool_t do_check_locations = true);
         maybe<Encounter_Zone_t*>        Encounter_Zone(Bool_t do_check_locations = true);
-        maybe<Faction_t*>               Faction_Owner(Bool_t do_check_locations = true);
+        
         Location_t*                     Location();
         Vector_t<Location_t*>           Locations();
         void                            Locations(Vector_t<Location_t*>& results);
         Vector_t<String_t>              Location_Names();
         void                            Location_Names(Vector_t<String_t>& results);
-        maybe<Form_t*>                  Owner(Bool_t do_check_locations = true);
+
+        Form_Owner_t                    Owner(Bool_t do_check_locations = true);
+        maybe<Actor_Base_t*>            Actor_Base_Owner(Bool_t do_check_locations = true);
+        maybe<Faction_t*>               Faction_Owner(Bool_t do_check_locations = true);
+
         maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
         Vector_t<some<Worldspace_t*>>   Worldspaces();
         void                            Worldspaces(Vector_t<some<Worldspace_t*>>& results);
