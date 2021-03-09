@@ -275,56 +275,43 @@ namespace doticu_skylib {
         return this->x_list.Is_Quest_Item();
     }
 
+    Bool_t Reference_t::Has_Owner()
+    {
+        return !!This_Or_Cell_Owner();
+    }
+
     Bool_t Reference_t::Has_Owner(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Form_t*> this_owner = this->Owner();
-        if (this_owner) {
-            maybe<Bool_t> maybe_is_this_owner = actor->Is_Owner(this_owner());
-            if (maybe_is_this_owner.Has_Value() && maybe_is_this_owner()) {
-                return true;
+        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        if (owner) {
+            maybe<Bool_t> is_owner = actor->Is_Owner(owner());
+            if (is_owner.Has_Value()) {
+                return is_owner();
+            } else {
+                return false;
             }
+        } else {
+            return false;
         }
-
-        maybe<Cell_t*> cell = this->Cell();
-        if (cell) {
-            maybe<Form_t*> cell_owner = cell->Owner();
-            if (cell_owner && cell_owner != this_owner) {
-                maybe<Bool_t> maybe_is_cell_owner = actor->Is_Owner(cell_owner());
-                if (maybe_is_cell_owner.Has_Value() && maybe_is_cell_owner()) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
     }
 
     Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        maybe<Form_t*> this_owner = this->Owner();
-        if (this_owner) {
-            maybe<Bool_t> maybe_isnt_this_owner = actor->Isnt_Owner(this_owner());
-            if (maybe_isnt_this_owner.Has_Value() && maybe_isnt_this_owner()) {
-                return true;
+        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        if (owner) {
+            maybe<Bool_t> isnt_owner = actor->Isnt_Owner(owner());
+            if (isnt_owner.Has_Value()) {
+                return isnt_owner();
+            } else {
+                return false;
             }
+        } else {
+            return false;
         }
-
-        maybe<Cell_t*> cell = this->Cell();
-        if (cell) {
-            maybe<Form_t*> cell_owner = cell->Owner();
-            if (cell_owner && cell_owner != this_owner) {
-                maybe<Bool_t> maybe_isnt_cell_owner = actor->Isnt_Owner(cell_owner());
-                if (maybe_isnt_cell_owner.Has_Value() && maybe_isnt_cell_owner()) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
     }
 
     const char* Reference_t::Name()
@@ -685,16 +672,41 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Form_t*> Reference_t::Owner()
+    maybe<Form_t*> Reference_t::This_Or_Cell_Owner()
     {
-        static auto get_owner = reinterpret_cast
-            <Form_t * (*)(Reference_t*)>
-            (Game_t::Base_Address() + Offset_e::GET_OWNER);
+        static auto get_this_or_cell_owner = reinterpret_cast
+            <Form_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::GET_THIS_OR_CELL_OWNER);
 
-        return get_owner(this);
+        return get_this_or_cell_owner(this);
     }
 
-    void Reference_t::Owner(maybe<Form_t*> form)
+    maybe<Actor_Base_t*> Reference_t::This_Or_Cell_Actor_Base_Owner()
+    {
+        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        if (owner) {
+            return owner->As_Actor_Base();
+        } else {
+            return none<Actor_Base_t*>();
+        }
+    }
+
+    maybe<Faction_t*> Reference_t::This_Or_Cell_Faction_Owner()
+    {
+        maybe<Form_t*> owner = This_Or_Cell_Owner();
+        if (owner) {
+            return owner->As_Faction();
+        } else {
+            return none<Faction_t*>();
+        }
+    }
+
+    maybe<maybe<Form_t*>> Reference_t::This_Owner()
+    {
+        return this->x_list.Owner();
+    }
+
+    void Reference_t::This_Owner(maybe<Form_t*> form)
     {
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
@@ -708,34 +720,34 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Base_t*> Reference_t::Actor_Base_Owner()
+    maybe<maybe<Actor_Base_t*>> Reference_t::This_Actor_Base_Owner()
     {
-        maybe<Form_t*> owner = Owner();
-        if (owner) {
-            return owner->As_Actor_Base();
+        return this->x_list.Actor_Base_Owner();
+    }
+
+    void Reference_t::This_Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
+    {
+        This_Owner(actor_base);
+    }
+
+    maybe<maybe<Faction_t*>> Reference_t::This_Faction_Owner()
+    {
+        return this->x_list.Faction_Owner();
+    }
+
+    void Reference_t::This_Faction_Owner(maybe<Faction_t*> faction)
+    {
+        This_Owner(faction);
+    }
+
+    maybe<Form_t*> Reference_t::Cell_Owner()
+    {
+        maybe<Cell_t*> cell = this->Cell();
+        if (cell) {
+            return cell->Owner();
         } else {
-            return none<Actor_Base_t*>();
+            return none<Form_t*>();
         }
-    }
-
-    void Reference_t::Actor_Base_Owner(maybe<Actor_Base_t*> actor_base)
-    {
-        Owner(actor_base);
-    }
-
-    maybe<Faction_t*> Reference_t::Faction_Owner()
-    {
-        maybe<Form_t*> owner = Owner();
-        if (owner) {
-            return owner->As_Faction();
-        } else {
-            return none<Faction_t*>();
-        }
-    }
-
-    void Reference_t::Faction_Owner(maybe<Faction_t*> faction)
-    {
-        Owner(faction);
     }
 
     void Reference_t::Push_Away(some<Actor_t*> actor, Int_t force)

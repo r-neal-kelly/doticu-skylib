@@ -205,9 +205,9 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(owner);
 
-        maybe<Bool_t> maybe_is_owner = Is_Owner(owner);
-        if (maybe_is_owner.Has_Value()) {
-            return !maybe_is_owner();
+        maybe<Bool_t> is_owner = Is_Owner(owner);
+        if (is_owner.Has_Value()) {
+            return !is_owner();
         } else {
             return none<Bool_t>();
         }

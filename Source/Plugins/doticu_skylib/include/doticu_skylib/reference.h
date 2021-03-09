@@ -65,7 +65,7 @@ namespace doticu_skylib {
                 INVALID_REFERENCE_HANDLE        = 0x01EBEABC, // 514164
 
                 GET_NAME                        = 0x002961F0, // 19354
-                GET_OWNER                       = 0x002A6670, // 19789
+                GET_THIS_OR_CELL_OWNER          = 0x002A6670, // 19789
                 GET_WORLDSPACE                  = 0x00299750, // 19389
 
                 INITIALIZE_CONTAINER_CHANGES    = 0x001D8E40, // 15802
@@ -262,6 +262,7 @@ namespace doticu_skylib {
         Bool_t Is_Aliased_As_Essential();
         Bool_t Is_Quest_Item();
 
+        Bool_t Has_Owner();
         Bool_t Has_Owner(some<Actor_t*> actor);
         Bool_t Has_Potential_Thief(some<Actor_t*> actor);
 
@@ -304,24 +305,28 @@ namespace doticu_skylib {
         void Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
 
     public:
-        void                    Add_Item(some<Form_t*> item, s16 delta);                                // AddItem
+        void                        Add_Item(some<Form_t*> item, s16 delta);                                // AddItem
 
-        void                    Enable();                                                               // Enable
-        void                    Disable();                                                              // Disable
+        void                        Enable();                                                               // Enable
+        void                        Disable();                                                              // Disable
 
-        void                    Mark_For_Delete(Bool_t do_disable = true);                              // MarkForDelete
+        void                        Mark_For_Delete(Bool_t do_disable = true);                              // MarkForDelete
 
-        maybe<Form_t*>          Owner();
-        void                    Owner(maybe<Form_t*> form);                                             // SetOwnership
-        maybe<Actor_Base_t*>    Actor_Base_Owner();
-        void                    Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
-        maybe<Faction_t*>       Faction_Owner();
-        void                    Faction_Owner(maybe<Faction_t*> faction);
+        maybe<Form_t*>              This_Or_Cell_Owner();
+        maybe<Actor_Base_t*>        This_Or_Cell_Actor_Base_Owner();
+        maybe<Faction_t*>           This_Or_Cell_Faction_Owner();
+        maybe<maybe<Form_t*>>       This_Owner();
+        void                        This_Owner(maybe<Form_t*> form);                                        // SetOwnership
+        maybe<maybe<Actor_Base_t*>> This_Actor_Base_Owner();
+        void                        This_Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
+        maybe<maybe<Faction_t*>>    This_Faction_Owner();
+        void                        This_Faction_Owner(maybe<Faction_t*> faction);
+        maybe<Form_t*>              Cell_Owner();
 
-        void                    Push_Away(some<Actor_t*> actor, Int_t force);                           // PushActorAway
-        void                    Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force);    // ApplyHavokImpulse
+        void                        Push_Away(some<Actor_t*> actor, Int_t force);                           // PushActorAway
+        void                        Apply_Havok_Impulse(Float_t x, Float_t y, Float_t z, Float_t force);    // ApplyHavokImpulse
 
-        void                    Select_In_Console();                                                    // prid
+        void                        Select_In_Console();                                                    // prid
 
     public:
         void Is_Activation_Blocked(Bool_t value, maybe<Virtual::Callback_i*> v_callback);               // BlockActivation

@@ -149,11 +149,11 @@ namespace doticu_skylib {
         void                                Outfit(maybe<Outfit_t*> outfit);
 
         // Extra_Owner_t
-        maybe<Form_t*>                      Owner();
+        maybe<maybe<Form_t*>>               Owner();
         void                                Owner(maybe<Form_t*> form);
-        maybe<Faction_t*>                   Faction_Owner();
+        maybe<maybe<Faction_t*>>            Faction_Owner();
         void                                Faction_Owner(maybe<Faction_t*> faction);
-        maybe<Actor_Base_t*>                Actor_Base_Owner();
+        maybe<maybe<Actor_Base_t*>>         Actor_Base_Owner();
         void                                Actor_Base_Owner(maybe<Actor_Base_t*> actor_base);
 
         // Extra_Reference_Handle_t
