@@ -162,12 +162,12 @@ namespace doticu_skylib {
         virtual void                _62(void);                                  // 62
         virtual void                _63(void);                                  // 63
         virtual void                _64(void);                                  // 64
-        virtual void                _65(void);                                  // 65
-        virtual void                _66(void);                                  // 66
+        virtual Bool_t              Do_Detach_3D(NI_3D_t* ni_3d);               // 65
+        virtual void                Do_Init_3D();                               // 66
         virtual void                _67(void);                                  // 67
         virtual void                _68(void);                                  // 68
         virtual void                _69(void);                                  // 69
-        virtual void                _6A(void);                                  // 6A
+        virtual NI_3D_t*            Do_Load_3D(Bool_t unk_1);                   // 6A
         virtual void                _6B(void);                                  // 6B
         virtual void                _6C(void);                                  // 6C
         virtual void                _6D(void);                                  // 6D
@@ -194,7 +194,7 @@ namespace doticu_skylib {
         virtual void                _82(void);                                  // 82
         virtual void                _83(void);                                  // 83
         virtual void                _84(void);                                  // 84
-        virtual void                _85(void);                                  // 85
+        virtual void                Do_Havok_Move(Bool_t do_force);             // 85
         virtual void                _86(void);                                  // 86
         virtual void                _87(void);                                  // 87
         virtual void                _88(void);                                  // 88
@@ -348,7 +348,7 @@ namespace doticu_skylib {
 
         void Open_Inventory(maybe<unique<Callback_i<Bool_t>>> callback);
 
-        void Play_Animation(String_t animation_event_name, maybe<Virtual::Callback_i*> v_callback);
+        void Play_Animation(String_t animation_event_name, maybe<Virtual::Callback_i*> v_callback); // (we can use consle SendAnimEvent)
         void Play_Animation(String_t animation_event_name, maybe<unique<Callback_i<>>> callback);
         void Reset_Animation(maybe<Virtual::Callback_i*> v_callback);
         void Reset_Animation(maybe<unique<Callback_i<>>> callback);

@@ -9,6 +9,47 @@
 
 namespace doticu_skylib {
 
+    some<Container_Changes_t*> Container_Changes_t::Create(some<Reference_t*> owner)
+    {
+        some<Container_Changes_t*> container_changes = Game_t::Allocate<Container_Changes_t>();
+        new (container_changes()) Container_Changes_t(owner);
+        return container_changes;
+    }
+
+    void Container_Changes_t::Destroy(some<Container_Changes_t*> container_changes)
+    {
+        SKYLIB_ASSERT_SOME(container_changes);
+        container_changes->~Container_Changes_t();
+        Game_t::Deallocate<Container_Changes_t>(container_changes);
+    }
+
+    Container_Changes_t::Container_Changes_t(some<Reference_t*> owner) :
+        entries(List_t<maybe<Container_Changes_Entry_t*>>::Create()()),
+        owner(owner()),
+        total_weight(1.0f), // double check
+        armor_weight(1.0f), // double check
+        has_changed(true),
+        pad_19(0),
+        pad_1A(0),
+        pad_1B(0),
+        pad_1C(0)
+    {
+        SKYLIB_ASSERT_SOME(owner);
+    }
+
+    Container_Changes_t::~Container_Changes_t()
+    {
+        Destroy_Entries();
+        this->owner = none<Reference_t*>();
+        this->total_weight = 0.0f;
+        this->armor_weight = 0.0f;
+        this->has_changed = false;
+        this->pad_19 = 0;
+        this->pad_1A = 0;
+        this->pad_1B = 0;
+        this->pad_1C = 0;
+    }
+
     maybe<Container_Changes_Entry_t*> Container_Changes_t::Maybe_Entry(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
@@ -62,6 +103,23 @@ namespace doticu_skylib {
             this->entries->Add(entry());
             this->has_changed = true;
             return true;
+        }
+    }
+
+    void Container_Changes_t::Destroy_Entries()
+    {
+        if (this->entries) {
+            if (!this->entries->Is_Empty()) {
+                for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
+                    maybe<Container_Changes_Entry_t*> entry = it->value;
+                    if (entry) {
+                        Container_Changes_Entry_t::Destroy(entry());
+                        it->value = none<Container_Changes_Entry_t*>();
+                    }
+                }
+            }
+            List_t<maybe<Container_Changes_Entry_t*>>::Destroy(this->entries());
+            this->entries = none<List_t<maybe<Container_Changes_Entry_t*>>*>();
         }
     }
 

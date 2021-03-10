@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/atomic_number.h"
 #include "doticu_skylib/component_form_data.h"
 #include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/maybe.h"
@@ -13,13 +14,15 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Container_Entry_t;
 
-    class Container_c : public Form_Data_c // TESContainer
+    class Container_c :     // TESContainer
+        public Form_Data_c  // 00
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI = 0x01E15488, // 513941
             };
@@ -31,7 +34,7 @@ namespace doticu_skylib {
 
     public:
         maybe<maybe<Container_Entry_t*>*>   container_entries;      // 08 (CNTO - Container Object)
-        u32                                 container_entry_count;  // 10 (COCT - Container Count)
+        Atomic_Number_t<u32>                container_entry_count;  // 10 (COCT - Container Count)
         u32                                 pad_14;                 // 14
 
     public:

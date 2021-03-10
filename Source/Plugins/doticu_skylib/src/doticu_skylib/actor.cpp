@@ -12,7 +12,9 @@
 #include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/game.inl"
@@ -24,9 +26,11 @@
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/misc.h"
+#include "doticu_skylib/outfit.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/race.h"
+#include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -386,6 +390,42 @@ namespace doticu_skylib {
         if (actor_base && base_form->Is_Valid()) {
             results.push_back(actor_base());
             actor_base->Templates(results);
+        }
+    }
+
+    maybe<Outfit_t*> Actor_t::Base_Default_Outfit()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Default_Outfit();
+        } else {
+            return none<Outfit_t*>();
+        }
+    }
+
+    void Actor_t::Base_Default_Outfit(maybe<Outfit_t*> outfit)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Default_Outfit(outfit);
+        }
+    }
+
+    maybe<Outfit_t*> Actor_t::Base_Sleep_Outfit()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Sleep_Outfit();
+        } else {
+            return none<Outfit_t*>();
+        }
+    }
+
+    void Actor_t::Base_Sleep_Outfit(maybe<Outfit_t*> outfit)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Sleep_Outfit(outfit);
         }
     }
 
@@ -998,7 +1038,13 @@ namespace doticu_skylib {
             }
         };
 
-        Kill(killer, do_silently, new Virtual_Callback(std::move(callback)));
+        if (Is_Alive()) {
+            Kill(killer, do_silently, new Virtual_Callback(std::move(callback)));
+        } else {
+            if (callback) {
+                (*callback)();
+            }
+        }
     }
 
     void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback)
@@ -1078,21 +1124,114 @@ namespace doticu_skylib {
         );
     }
 
-    void Actor_t::Resurrect(Bool_t do_pacify, maybe<unique<Callback_i<>>> callback)
+    void Actor_t::Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;
+
+        class Inventory_Cache_t
+        {
+        public:
+            maybe<Actor_t*>             actor;
+            u32                         base_container_entry_count;
+            maybe<Outfit_t*>            base_default_outfit;
+            maybe<Container_Changes_t*> container_changes;
+
+        public:
+            Inventory_Cache_t(maybe<Actor_t*> actor) :
+                actor(actor),
+                base_container_entry_count(0),
+                base_default_outfit(nullptr),
+                container_changes(nullptr)
+            {
+                if (this->actor) {
+                    maybe<Actor_Base_t*> actor_base = this->actor->Actor_Base();
+                    if (actor_base) {
+                        maybe<Container_c*> component_container = actor_base->As_Component_Container();
+                        if (component_container) {
+                            this->base_container_entry_count = component_container->container_entry_count;
+                            component_container->container_entry_count = 0;
+                        }
+
+                        this->base_default_outfit = actor_base->default_outfit;
+                        actor_base->default_outfit = nullptr;
+                    }
+
+                    maybe<Extra_Container_Changes_t*> x_container_changes = this->actor->x_list.Get<Extra_Container_Changes_t>();
+                    if (x_container_changes && x_container_changes->container_changes) {
+                        this->container_changes = x_container_changes->container_changes;
+                        x_container_changes->container_changes = nullptr;
+                    }
+                }
+            }
+
+            Inventory_Cache_t(const Inventory_Cache_t& other) = delete;
+
+            Inventory_Cache_t(Inventory_Cache_t&& other) noexcept :
+                actor(std::exchange(other.actor, nullptr)),
+                base_container_entry_count(std::exchange(other.base_container_entry_count, 0)),
+                base_default_outfit(std::exchange(other.base_default_outfit, nullptr)),
+                container_changes(std::exchange(other.container_changes, nullptr))
+            {
+            }
+
+            Inventory_Cache_t& operator =(const Inventory_Cache_t& other) = delete;
+
+            Inventory_Cache_t& operator =(Inventory_Cache_t&& other) noexcept = delete;
+
+            ~Inventory_Cache_t()
+            {
+                this->actor = nullptr;
+                this->base_container_entry_count = 0;
+                this->base_default_outfit = nullptr;
+                this->container_changes = nullptr;
+            }
+
+        public:
+            void Apply()
+            {
+                if (this->actor) {
+                    maybe<Actor_Base_t*> actor_base = this->actor->Actor_Base();
+                    if (actor_base) {
+                        maybe<Container_c*> component_container = actor_base->As_Component_Container();
+                        if (component_container) {
+                            component_container->container_entry_count = this->base_container_entry_count;
+                        }
+
+                        actor_base->default_outfit = this->base_default_outfit;
+                    }
+
+                    maybe<Extra_Container_Changes_t*> x_container_changes = this->actor->x_list.Get<Extra_Container_Changes_t>();
+                    if (x_container_changes && x_container_changes->container_changes) {
+                        maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
+                        x_container_changes->container_changes = this->container_changes;
+                        if (old_container_changes) {
+                            Container_Changes_t::Destroy(old_container_changes());
+                        }
+                    }
+
+                    this->actor->Update_Equipment();
+                }
+            }
+        };
 
         class Virtual_Callback :
             public Virtual::Callback_t
         {
         public:
-            some<Actor_t*>  actor;
-            Bool_t          do_pacify;
-            Callback        callback;
+            some<Actor_t*>      actor;
+            Inventory_Cache_t   inventory_cache;
+            Bool_t              do_pacify;
+            Callback            callback;
 
         public:
-            Virtual_Callback(some<Actor_t*> actor, Bool_t do_pacify, Callback callback) :
-                actor(actor), do_pacify(do_pacify), callback(std::move(callback))
+            Virtual_Callback(some<Actor_t*> actor,
+                             Inventory_Cache_t inventory_cache,
+                             Bool_t do_pacify,
+                             Callback callback) :
+                actor(actor),
+                inventory_cache(std::move(inventory_cache)),
+                do_pacify(do_pacify),
+                callback(std::move(callback))
             {
             }
 
@@ -1102,13 +1241,33 @@ namespace doticu_skylib {
                 if (do_pacify) {
                     this->actor->Pacify();
                 }
+                inventory_cache.Apply();
                 if (this->callback) {
                     (*this->callback)();
                 }
             }
         };
 
-        Resurrect(new Virtual_Callback(this, do_pacify, std::move(callback)));
+        // the only problem with using the inventory cache is that if the game is saved before
+        // the callback above is called, the inventory will be lost. I don't know if it's
+        // actually possible for that to happen, but it seems likely. the only way to prevent it
+        // is to have a reference counter that is waited upon to be zero on the Before_Save event,
+        // which in order to work would have to be scheduled by the dependent code using this library.
+
+        // otherwise, this seems to work very well, although I need to test it with quest items and how that behaves.
+
+        if (Is_Dead()) {
+            Resurrect(new Virtual_Callback(
+                this,
+                do_keep_inventory ? Inventory_Cache_t(this) : Inventory_Cache_t(nullptr),
+                do_pacify,
+                std::move(callback)
+            ));
+        } else {
+            if (callback) {
+                (*callback)();
+            }
+        }
     }
 
     /*void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)

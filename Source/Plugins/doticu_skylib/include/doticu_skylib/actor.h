@@ -41,6 +41,7 @@ namespace doticu_skylib {
     class Leveled_Actor_Base_t;
     class Magic_Base_t;
     class Movement_Actor_Controller_t;
+    class Outfit_t;
     class Race_t;
     class Spell_t;
 
@@ -127,7 +128,7 @@ namespace doticu_skylib {
         virtual void    _0AA(void);                                                                                     // 0AA
         virtual void    Do_Resurrect(Bool_t do_reset_inventory, Bool_t do_attach_3d);                                   // 0AB
         virtual void    _0AC(void);                                                                                     // 0AC
-        virtual void    _0AD(void);                                                                                     // 0AD
+        virtual void    Do_Update(Float_t delta);                                                                       // 0AD
         virtual void    _0AE(void);                                                                                     // 0AE
         virtual void    _0AF(some<Havok_Actor_Controller_t*> actor_controller);                                         // 0AF
         virtual void    _0B0(void);                                                                                     // 0B0
@@ -352,6 +353,11 @@ namespace doticu_skylib {
         Vector_t<Actor_Base_t*>                     Actor_Bases();
         void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
 
+        maybe<Outfit_t*>                            Base_Default_Outfit();
+        void                                        Base_Default_Outfit(maybe<Outfit_t*> outfit);
+        maybe<Outfit_t*>                            Base_Sleep_Outfit();
+        void                                        Base_Sleep_Outfit(maybe<Outfit_t*> outfit);
+
         maybe<Actor_AI_t*>                          Actor_AI();
         maybe<Actor_High_AI_t*>                     Actor_High_AI();
 
@@ -430,7 +436,7 @@ namespace doticu_skylib {
 
         // we can temporarily disable base container and/or outfit to stop inventory reset (by changing the count member atomically)
         void    Resurrect(maybe<Virtual::Callback_i*> v_callback);                                                  // Resurrect
-        void    Resurrect(Bool_t do_pacify, maybe<unique<Callback_i<>>> callback);
+        void    Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, maybe<unique<Callback_i<>>> callback);
 
         void    Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback);
 

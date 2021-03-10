@@ -24,6 +24,7 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::SCRIPT,
         };
 
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {

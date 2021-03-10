@@ -15,8 +15,12 @@ namespace doticu_skylib {
     class Container_Changes_t // InventoryChanges
     {
     public:
-        maybe<List_t<maybe<Container_Changes_Entry_t*>>*>   entries;        // 00
-        maybe<Reference_t*>                                 owner;          // 08
+        static some<Container_Changes_t*>   Create(some<Reference_t*> owner);
+        static void                         Destroy(some<Container_Changes_t*> container_changes);
+
+    public:
+        maybe<List_t<maybe<Container_Changes_Entry_t*>>*>   entries;        // 00 (this is probably a some<>)
+        maybe<Reference_t*>                                 owner;          // 08 ("")
         Float_t                                             total_weight;   // 10
         Float_t                                             armor_weight;   // 14
         Bool_t                                              has_changed;    // 18
@@ -26,11 +30,17 @@ namespace doticu_skylib {
         u32                                                 pad_1C;         // 1C
 
     public:
+        Container_Changes_t(some<Reference_t*> owner);
+        ~Container_Changes_t();
+
+    public:
         maybe<Container_Changes_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> object);
         some<Container_Changes_Entry_t*>    Some_Entry(some<Bound_Object_t*> object);
         Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
 
-        // removing entries can cause a crash when loading a previous save, so we just let the save mechanism handle it.
+        // removing entries can cause a crash when loading a previous save. in most cases we let the game handle empty entries.
+
+        void                                Destroy_Entries();
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
 

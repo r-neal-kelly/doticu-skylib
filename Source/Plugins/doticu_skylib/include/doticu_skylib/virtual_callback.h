@@ -13,7 +13,7 @@ namespace doticu_skylib { namespace Virtual {
     class Variable_t;
 
     class Callback_i :          // IStackCallbackFunctor
-        public Atomic_Count_t   // 00
+        public Atomic_Count_t   // 08
     {
     public:
         static void*    operator new(size_t byte_count);

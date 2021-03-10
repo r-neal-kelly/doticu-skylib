@@ -58,13 +58,15 @@ namespace doticu_skylib { namespace Virtual {
     };
     STATIC_ASSERT(sizeof(Property_Info_t) == 0x48);
 
-    class Class_t : public Atomic_Count_t
+    class Class_t :             // ObjectTypeInfo
+        public Atomic_Count_t   // 00
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 DESTROY = 0x01237240,
             };
@@ -76,15 +78,15 @@ namespace doticu_skylib { namespace Virtual {
         static maybe<Class_t*> Find_Or_Load(Script_Type_e script_type, Bool_t do_decrement_on_find);
 
     public:
-        u32             pad_04;             // 04
-        String_t        name;               // 08
-        Class_t*        parent;             // 10
-        String_t        unk_18;             // 18
-        u32             flags_20;           // 20
-        u32             flags_24;           // 24
-        u32             flags_28;           // 28
-        u32             pad_2C;             // 2C
-        u8*             data;               // 30
+        u32             pad_04;     // 04
+        String_t        name;       // 08
+        Class_t*        parent;     // 10
+        String_t        unk_18;     // 18
+        u32             flags_20;   // 20
+        u32             flags_24;   // 24
+        u32             flags_28;   // 28
+        u32             pad_2C;     // 2C
+        Byte_t*         data;       // 30
 
     public:
         void Destroy();
@@ -109,6 +111,7 @@ namespace doticu_skylib { namespace Virtual {
 
         maybe<Script_Type_e> Script_Type();
 
+    public:
         void Log();
         //void Log_Setting_Infos();
         void Log_Variable_Infos();
