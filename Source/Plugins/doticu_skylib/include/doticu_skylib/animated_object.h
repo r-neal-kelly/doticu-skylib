@@ -8,8 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Animated_Object_t :
-        public Bound_Object_t
+    class Animated_Object_t :   // TESBoundAnimObject
+        public Bound_Object_t   // 00
     {
     public:
         virtual ~Animated_Object_t();

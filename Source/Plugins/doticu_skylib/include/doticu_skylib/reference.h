@@ -98,6 +98,7 @@ namespace doticu_skylib {
             enum enum_type : value_type
             {
                 CONTAINER   = static_cast<value_type>(1 << 5),
+                BASE_FORM   = static_cast<value_type>(1 << 7),
                 EXTRA_LIST  = static_cast<value_type>(1 << 10), // this might be more specific
             };
             using Enum_t::Enum_t;
@@ -345,6 +346,15 @@ namespace doticu_skylib {
         void Activate(some<Reference_t*> activator,
                       Bool_t do_only_default_processing,
                       maybe<unique<Callback_i<Bool_t>>> callback);
+
+        void Add_Item(some<Form_t*> item,
+                      Int_t count,
+                      Bool_t do_silently,
+                      maybe<Virtual::Callback_i*> v_callback);                                          // AddItem
+        void Add_Item(some<Form_t*> item,
+                      Int_t count,
+                      Bool_t do_silently,
+                      maybe<unique<Callback_i<>>> callback);
 
         void Find_Closest_Actor(Float_t radius, some<Virtual::Callback_i*> v_callback);
         void Find_Closest_Actor(Float_t radius, some<unique<Callback_i<maybe<Actor_t*>>>> callback);

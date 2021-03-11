@@ -18,9 +18,6 @@ namespace doticu_skylib { namespace Virtual {
     class Callback_i :          // IStackCallbackFunctor
         public Atomic_Count_t   // 08
     {
-    public:
-        friend Main_t;
-
     private:
         static u64                                  callback_count;
         static std::mutex                           callback_count_lock;
@@ -28,11 +25,15 @@ namespace doticu_skylib { namespace Virtual {
         static std::unique_lock<std::timed_mutex>   active_callbacks_locker;
 
     public:
+        static std::unique_lock<std::timed_mutex>   Before_Save();
+        static void                                 After_Load();
+
+    public:
         static void*    operator new(size_t byte_count);
         static void     operator delete(void* data);
 
     public:
-        Callback_i(Bool_t do_wait_to_finish = true);
+        Callback_i(Bool_t do_finish_before_save = true);
 
     public:
         virtual         ~Callback_i();                          // 00
@@ -41,9 +42,9 @@ namespace doticu_skylib { namespace Virtual {
         virtual void    Set_Object(Object_t*& object)   = 0;    // 03
 
     public:
-        const Bool_t    do_wait_to_finish;  // 0C
-        u8              pad_0D;             // 0D
-        u16             pad_0E;             // 0E
+        const Bool_t    do_finish_before_save;  // 0C
+        u8              pad_0D;                 // 0D
+        u16             pad_0E;                 // 0E
     };
     STATIC_ASSERT(sizeof(Callback_i) == 0x10);
 

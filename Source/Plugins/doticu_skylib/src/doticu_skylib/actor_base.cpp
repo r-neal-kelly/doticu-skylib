@@ -12,6 +12,7 @@
 #include "doticu_skylib/actor_head_data.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/player.h"
@@ -181,6 +182,30 @@ namespace doticu_skylib {
                 return result;
             }
         }
+    }
+
+    some<Actor_Base_t*> Actor_Base_t::Create_Temporary_Copy(some<Actor_Base_t*> source)
+    {
+        SKYLIB_ASSERT_SOME(source);
+
+        static some<Form_Factory_i*> factory = Form_Factory_i::Form_Factory(some<Form_Type_e>(SCRIPT_TYPE));
+        SKYLIB_ASSERT_SOME(factory);
+
+        some<Actor_Base_t*> copy = static_cast<Actor_Base_t*>(factory->Create());
+        copy->Initialize_Data();
+        copy->Do_Copy(source());
+
+        return copy;
+
+        //return static_cast<Actor_Base_t*>(source->Do_Duplicate_Form(true, nullptr));
+    }
+
+    void Actor_Base_t::Destroy(some<Actor_Base_t*> actor_base)
+    {
+        SKYLIB_ASSERT_SOME(actor_base);
+
+        actor_base->~Actor_Base_t();
+        Game_t::Deallocate<Actor_Base_t>(actor_base);
     }
 
     Bool_t Actor_Base_t::Has_Template_FF000800()

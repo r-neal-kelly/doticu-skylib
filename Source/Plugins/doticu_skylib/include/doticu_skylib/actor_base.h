@@ -122,8 +122,16 @@ namespace doticu_skylib {
 
         static Int_t                    Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
 
+        static some<Actor_Base_t*>      Create_Temporary_Copy(some<Actor_Base_t*> source);
+        static void                     Destroy(some<Actor_Base_t*> actor_base);
+
     public:
-        virtual ~Actor_Base_t(); // 0
+        virtual                 ~Actor_Base_t();                                // 00
+
+        virtual Bool_t          _53() const;                                    // 53
+        virtual Combat_Style_t* Get_Combat_Style() const;                       // 54
+        virtual void            Set_Combat_Style(Combat_Style_t* combat_style); // 55
+        virtual Form_t*         Get_As_Form() const;                            // 56
 
     public:
         Actor_Skills_t              actor_skills;           // 190

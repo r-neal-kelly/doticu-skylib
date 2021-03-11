@@ -14,6 +14,20 @@ namespace doticu_skylib { namespace Virtual {
     std::timed_mutex                    Callback_i::active_callbacks_lock;
     std::unique_lock<std::timed_mutex>  Callback_i::active_callbacks_locker(active_callbacks_lock, std::defer_lock);
 
+    std::unique_lock<std::timed_mutex> Callback_i::Before_Save()
+    {
+        return std::move(
+            std::unique_lock<std::timed_mutex>(active_callbacks_lock, std::chrono::seconds(6))
+        );
+    }
+
+    void Callback_i::After_Load()
+    {
+        std::lock_guard<std::mutex> locker(callback_count_lock);
+
+        callback_count = 0;
+    }
+
     void* Callback_i::operator new(size_t byte_count)
     {
         maybe<Byte_t*> data = Memory_t::Self()->Allocate(byte_count);
@@ -27,10 +41,10 @@ namespace doticu_skylib { namespace Virtual {
         Memory_t::Self()->Deallocate(static_cast<Byte_t*>(data));
     }
 
-    Callback_i::Callback_i(Bool_t do_wait_to_finish) :
-        do_wait_to_finish(do_wait_to_finish), pad_0D(0), pad_0E(0)
+    Callback_i::Callback_i(Bool_t do_finish_before_save) :
+        do_finish_before_save(do_finish_before_save), pad_0D(0), pad_0E(0)
     {
-        if (this->do_wait_to_finish) {
+        if (this->do_finish_before_save) {
             std::lock_guard<std::mutex> locker(this->callback_count_lock);
 
             if (this->callback_count < std::numeric_limits<u64>::max()) {
@@ -45,7 +59,7 @@ namespace doticu_skylib { namespace Virtual {
 
     Callback_i::~Callback_i()
     {
-        if (this->do_wait_to_finish) {
+        if (this->do_finish_before_save) {
             std::lock_guard<std::mutex> locker(this->callback_count_lock);
 
             if (this->callback_count > 0) {

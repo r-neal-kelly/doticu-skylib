@@ -64,12 +64,12 @@ namespace doticu_skylib {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor() && actor->Is_Attached()) {
-                        actor->Stop_Bard_Performance(none<unique<doticu_skylib::Callback_i<>>>());
-                        /*if (actor->Is_Alive()) {
+                        //actor->Stop_Bard_Performance(none<unique<doticu_skylib::Callback_i<>>>());
+                        if (actor->Is_Alive()) {
                             actor->Kill(none<Actor_t*>(), true, true, none<unique<doticu_skylib::Callback_i<>>>()); // interesting, I think this makes bleedout's get back up.
                         } else {
                             actor->Resurrect(true, true, none<unique<doticu_skylib::Callback_i<>>>());
-                        }*/
+                        }
                     }
                 }
                 Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_t());
@@ -84,7 +84,6 @@ namespace doticu_skylib {
             void operator ()(Virtual::Variable_t*)
             {
                 // we have to wait on reload of game, because the game itself is massively messing with inventories.
-                // but it still crashes after doing mass kill/resurrect and after changing a cell. strange!
 
                 UI_t::Notification("Hello!");
 
@@ -111,9 +110,6 @@ namespace doticu_skylib {
 
                         Reference_Container_t container(reference);
                         if (container.Is_Valid()) {
-
-                        }
-                        /*if (container.Is_Valid()) {
                             for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
                                 Reference_Container_Entry_t& entry = container.entries[idx];
                                 if (!entry.Is_Leveled_Item()) {
@@ -138,7 +134,7 @@ namespace doticu_skylib {
                             }
 
                             //container.Log();
-                        }*/
+                        }
                     }
                 }
             }
@@ -171,11 +167,13 @@ namespace doticu_skylib {
 
     void Main_t::Before_Save()
     {
-        std::unique_lock<std::timed_mutex> locker(Virtual::Callback_i::active_callbacks_lock, std::chrono::seconds(6));
+        std::unique_lock<std::timed_mutex> virtual_callback_locker = Virtual::Callback_i::Before_Save();
     }
 
     void Main_t::After_Load()
     {
+        Virtual::Callback_i::After_Load();
+
         //temp
         Temp();
         //

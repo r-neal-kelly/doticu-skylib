@@ -446,6 +446,8 @@ namespace doticu_skylib {
 
         void    Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback);
 
+        void    Update_Equipment(maybe<unique<Callback_i<>>> callback);
+
     public:
         void Log_Factions_And_Ranks(std::string indent = "");
     };

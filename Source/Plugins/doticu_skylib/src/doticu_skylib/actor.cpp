@@ -38,6 +38,7 @@
 #include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
+#include "doticu_skylib/weapon.h"
 #include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
@@ -847,38 +848,11 @@ namespace doticu_skylib {
 
     void Actor_t::Update_Equipment()
     {
-        static some<Misc_t*> gold = static_cast<Misc_t*>(Game_t::Form(0x0000000F)());
-        SKYLIB_ASSERT(gold);
+        static some<Weapon_t*> iron_sword = static_cast<Weapon_t*>(Game_t::Form(0x00012EB7)());
+        SKYLIB_ASSERT(iron_sword);
 
-        Add_Item(gold, 0);
+        Add_Item(iron_sword, 0);
     }
-
-    /*Bool_t Actor_t::Kill(maybe<Actor_t*> killer, Bool_t do_send_event, Bool_t do_ragdoll_instantly)
-    {
-        if (Is_Alive()) {
-            Do_Kill(killer ? killer() : this, 0.0f, do_send_event, do_ragdoll_instantly);
-            return Is_Dead();
-        } else {
-            return true;
-        }
-    }
-
-    Bool_t Actor_t::Resurrect(Bool_t do_reset_inventory)
-    {
-        if (Is_Dead()) {
-            //Do_Resurrect(do_reset_inventory, true);
-            {
-                some<Script_t*> script = Script_t::Create();
-                script->Command(std::string("Resurrect ") + (do_reset_inventory ? "0" : "1"));
-                script->Execute(this);
-                Script_t::Destroy(script);
-            }
-            //Pacify();
-            return Is_Alive();
-        } else {
-            return true;
-        }
-    }*/
 
     Float_t Actor_t::Alpha()
     {
@@ -1204,7 +1178,9 @@ namespace doticu_skylib {
         {
         public:
             some<Actor_t*>              actor;
+            maybe<Actor_Base_t*>        original_actor_base;
             maybe<Container_Changes_t*> container_changes;
+            Bool_t                      do_keep_inventory;
             Bool_t                      do_pacify;
             Callback                    callback;
 
@@ -1214,11 +1190,21 @@ namespace doticu_skylib {
                              Bool_t do_pacify,
                              Callback callback) :
                 actor(actor),
+                original_actor_base(nullptr),
                 container_changes(nullptr),
+                do_keep_inventory(do_keep_inventory),
                 do_pacify(do_pacify),
                 callback(std::move(callback))
             {
-                if (do_keep_inventory) {
+                if (this->do_keep_inventory) {
+                    this->original_actor_base = this->actor->Actor_Base();
+                    if (this->original_actor_base) {
+                        some<Actor_Base_t*> copy = Actor_Base_t::Create_Temporary_Copy(this->original_actor_base());
+                        copy->container_entry_count = 0;
+                        copy->default_outfit = nullptr;
+                        this->actor->base_form = static_cast<maybe<Form_t*>>(copy());
+                    }
+
                     maybe<Extra_Container_Changes_t*> x_container_changes = this->actor->Maybe_Extra_Container_Changes();
                     if (x_container_changes) {
                         this->container_changes = x_container_changes->container_changes;
@@ -1230,20 +1216,34 @@ namespace doticu_skylib {
         public:
             virtual void operator()(Virtual::Variable_t*) override
             {
-                if (this->container_changes) {
-                    some<Extra_Container_Changes_t*> x_container_changes = this->actor->Some_Extra_Container_Changes();
-                    maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
-                    x_container_changes->container_changes = this->container_changes;
-                    if (old_container_changes) {
-                        Container_Changes_t::Destroy(old_container_changes());
-                    }
-                    this->actor->Update_Equipment();
-                }
                 if (this->do_pacify) {
                     this->actor->Pacify();
                 }
-                if (this->callback) {
-                    (*this->callback)();
+
+                if (this->do_keep_inventory) {
+                    if (this->original_actor_base) {
+                        maybe<Actor_Base_t*> copy = this->actor->Actor_Base();
+                        this->actor->base_form = this->original_actor_base;
+                        if (copy) {
+                            Actor_Base_t::Destroy(copy());
+                        }
+                    }
+
+                    if (this->container_changes) {
+                        some<Extra_Container_Changes_t*> x_container_changes = this->actor->Some_Extra_Container_Changes();
+                        maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
+                        x_container_changes->container_changes = this->container_changes;
+                        if (old_container_changes) {
+                            // this may be causing reload crashes. we can just destroy x_lists and set every entry to zero instead
+                            Container_Changes_t::Destroy(old_container_changes());
+                        }
+                    }
+
+                    this->actor->Update_Equipment(std::move(callback));
+                } else {
+                    if (this->callback) {
+                        (*this->callback)();
+                    }
                 }
             }
         };
@@ -1261,6 +1261,7 @@ namespace doticu_skylib {
     {
         using Callback = maybe<unique<Callback_i<>>>;
 
+        // there may be a second quest we need to look at. we may want to target specific alias ids too.
         static some<Quest_t*> bard_songs_quest = static_cast<Quest_t*>(Game_t::Form(0x00074A55)());
         SKYLIB_ASSERT_SOME(bard_songs_quest);
 
@@ -1325,8 +1326,6 @@ namespace doticu_skylib {
                 }
             };
 
-            _MESSAGE("will stop %s from performing", this->Any_Name());
-
             Virtual::Machine_t::Ready_Scriptable<Quest_t*>(bard_songs_quest);
             Virtual::Machine_t::Self()->Call_Method(
                 bard_songs_quest(),
@@ -1335,6 +1334,53 @@ namespace doticu_skylib {
                 none<Virtual::Arguments_i*>(),
                 new Stop_All_Songs_Callback(this, std::move(bard_aliases), std::move(callback))
             );
+        } else {
+            if (callback) {
+                (*callback)();
+            }
+        }
+    }
+
+    void Actor_t::Update_Equipment(maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            some<Actor_t*>  actor;
+            Callback        callback;
+
+        public:
+            Virtual_Callback(some<Actor_t*> actor, Callback callback) :
+                actor(actor), callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                this->actor->Is_Player_Teammate(false);
+
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        static some<Weapon_t*> iron_sword = static_cast<Weapon_t*>(Game_t::Form(0x00012EB7)());
+        SKYLIB_ASSERT(iron_sword);
+
+        Bool_t is_player_teammate = Is_Player_Teammate();
+        if (!is_player_teammate) {
+            Is_Player_Teammate(true);
+        }
+
+        Add_Item(iron_sword, 0);
+
+        if (!is_player_teammate) {
+            Virtual::Utility_t::Wait_Even_In_Menu(2.0f, new Virtual_Callback(this, std::move(callback)));
         } else {
             if (callback) {
                 (*callback)();

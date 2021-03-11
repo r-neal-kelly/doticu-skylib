@@ -995,6 +995,81 @@ namespace doticu_skylib {
         Activate(activator, do_only_default_processing, new Virtual_Callback(std::move(callback)));
     }
 
+    void Reference_t::Add_Item(some<Form_t*> item,
+                               Int_t count,
+                               Bool_t do_silently,
+                               maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            some<Form_t*>   item;
+            Int_t           count;
+            Bool_t          do_silently;
+
+        public:
+            Virtual_Arguments(some<Form_t*> item, Int_t count, Bool_t do_silently) :
+                item(item), count(count), do_silently(do_silently)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(3);
+                args->At(0).As<Form_t*>(this->item());
+                args->At(1).As<Int_t>(this->count);
+                args->At(2).As<Bool_t>(this->do_silently);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(item);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "AddItem",
+            Virtual_Arguments(item, count, do_silently),
+            v_callback
+        );
+    }
+
+    void Reference_t::Add_Item(some<Form_t*> item,
+                               Int_t count,
+                               Bool_t do_silently,
+                               maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(item);
+
+        Add_Item(item, count, do_silently, new Virtual_Callback(std::move(callback)));
+    }
+
     void Reference_t::Find_Closest_Actor(Float_t radius, some<Virtual::Callback_i*> v_callback)
     {
         Virtual::Game_t::Find_Closest_Actor_From(this, radius, v_callback);

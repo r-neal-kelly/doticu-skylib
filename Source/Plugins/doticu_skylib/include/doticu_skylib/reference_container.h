@@ -12,6 +12,10 @@ namespace doticu_skylib {
 
     // we may want to rename Container_Entry_t to Component_Container_Entry_t and Container_c to Component_Container_t
 
+    // also, we could set container_changes on reference to nullptr while we operate. that way we "lock" the container.
+    // if there is a new container_changes by the time we're done, it's probably safe enough to delete it. maybe we could
+    // make sure quest items are moved over.
+
     class Bound_Object_t;
     class Container_c;
     class Container_Changes_t;
