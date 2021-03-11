@@ -17,6 +17,7 @@
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_list.inl"
+#include "doticu_skylib/faction.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
 #include "doticu_skylib/havok_actor_rigid_body_controller.h"
@@ -802,6 +803,22 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Actor_t::Can_Autostart_Bard_Performance()
+    {
+        static some<Faction_t*> bard_singer_no_autostart_faction = static_cast<Faction_t*>(Game_t::Form(0x000163FA)());
+        SKYLIB_ASSERT_SOME(bard_singer_no_autostart_faction);
+
+        return !Is_In_Faction(bard_singer_no_autostart_faction);
+    }
+
+    void Actor_t::Can_Autostart_Bard_Performance(Bool_t value)
+    {
+        static some<Faction_t*> bard_singer_no_autostart_faction = static_cast<Faction_t*>(Game_t::Form(0x000163FA)());
+        SKYLIB_ASSERT_SOME(bard_singer_no_autostart_faction);
+
+        Faction_Rank(bard_singer_no_autostart_faction, value ? -1 : 0);
+    }
+
     void Actor_t::Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai)
     {
         static auto evaluate_package = reinterpret_cast
@@ -1261,15 +1278,17 @@ namespace doticu_skylib {
     {
         using Callback = maybe<unique<Callback_i<>>>;
 
-        // there may be a second quest we need to look at. we may want to target specific alias ids too.
         static some<Quest_t*> bard_songs_quest = static_cast<Quest_t*>(Game_t::Form(0x00074A55)());
+        static some<Quest_t*> bard_songs_instrumental_quest = static_cast<Quest_t*>(Game_t::Form(0x0006E53F)());
         SKYLIB_ASSERT_SOME(bard_songs_quest);
+        SKYLIB_ASSERT_SOME(bard_songs_instrumental_quest);
 
         Vector_t<some<Alias_Reference_t*>> bard_aliases;
         Vector_t<some<Alias_Reference_t*>> aliases = this->x_list.Alias_References();
         for (size_t idx = 0, end = aliases.size(); idx < end; idx += 1) {
             some<Alias_Reference_t*> alias = aliases[idx];
-            if (alias->quest() == bard_songs_quest()) {
+            if ((alias->quest() == bard_songs_quest() && alias->id != 24) ||
+                (alias->quest() == bard_songs_instrumental_quest())) {
                 bard_aliases.push_back(alias);
             }
         }

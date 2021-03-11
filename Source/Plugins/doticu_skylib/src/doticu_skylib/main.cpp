@@ -64,12 +64,13 @@ namespace doticu_skylib {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor() && actor->Is_Attached()) {
-                        //actor->Stop_Bard_Performance(none<unique<doticu_skylib::Callback_i<>>>());
-                        if (actor->Is_Alive()) {
+                        actor->Stop_Bard_Performance(none<unique<doticu_skylib::Callback_i<>>>());
+                        actor->Can_Autostart_Bard_Performance(false);
+                        /*if (actor->Is_Alive()) {
                             actor->Kill(none<Actor_t*>(), true, true, none<unique<doticu_skylib::Callback_i<>>>()); // interesting, I think this makes bleedout's get back up.
                         } else {
                             actor->Resurrect(true, true, none<unique<doticu_skylib::Callback_i<>>>());
-                        }
+                        }*/
                     }
                 }
                 Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_t());
