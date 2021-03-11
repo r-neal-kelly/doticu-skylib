@@ -427,14 +427,17 @@ namespace doticu_skylib {
         void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback);                    // SetAlpha
         void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<unique<Callback_i<>>> callback);
 
-        void    Kill(maybe<Actor_t*> killer, Bool_t do_silently, maybe<Virtual::Callback_i*> v_callback);           // Kill, KillSilent
-        void    Kill(maybe<Actor_t*> killer, Bool_t do_silently, maybe<unique<Callback_i<>>> callback);
-        //void    Force_Kill(maybe<Actor_t*> killer, Bool_t do_send_event, maybe<unique<Callback_i<>>> callback);
+        void    Kill(maybe<Actor_t*> killer,
+                     Bool_t do_silently,
+                     maybe<Virtual::Callback_i*> v_callback);                                                       // Kill, KillSilent
+        void    Kill(maybe<Actor_t*> killer,
+                     Bool_t do_silently,
+                     Bool_t do_force,
+                     maybe<unique<Callback_i<>>> callback);
 
         void    Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback);                 // OpenInventory
         void    Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback);
 
-        // we can temporarily disable base container and/or outfit to stop inventory reset (by changing the count member atomically)
         void    Resurrect(maybe<Virtual::Callback_i*> v_callback);                                                  // Resurrect
         void    Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, maybe<unique<Callback_i<>>> callback);
 

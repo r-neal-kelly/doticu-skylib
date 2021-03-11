@@ -9,6 +9,7 @@
 #include "doticu_skylib/enum_script_type.h"
 
 #include "doticu_skylib/virtual.h"
+#include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_handle.h"
 
 namespace doticu_skylib { namespace Virtual {
@@ -19,10 +20,11 @@ namespace doticu_skylib { namespace Virtual {
     class Object_t
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum enum_type : Word_t
             {
                 GET_HANDLE      = 0x01233720, // 97463
                 INCREMENT_LOCK  = 0x01234360, // 97468

@@ -75,6 +75,20 @@ namespace doticu_skylib {
         return !!this->base_container;
     }
 
+    Bool_t Reference_Container_t::Has_Quest_Item()
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
+            Reference_Container_Entry_t& entry = this->entries[idx];
+            if (entry.Has_Quest_Item()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     some<Container_c*> Reference_Container_t::Some_Base_Container()
     {
         SKYLIB_ASSERT(Is_Valid());

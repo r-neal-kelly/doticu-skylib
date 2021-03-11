@@ -35,6 +35,7 @@ namespace doticu_skylib {
     public:
         Bool_t                              Is_Valid();
         Bool_t                              Is_Leveled_Item();
+        Bool_t                              Has_Quest_Item();
 
         some<Bound_Object_t*>               Some_Object();
         maybe<Leveled_Item_t*>              Maybe_Leveled_Item();

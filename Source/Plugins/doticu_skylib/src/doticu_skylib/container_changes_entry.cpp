@@ -242,6 +242,20 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Container_Changes_Entry_t::Has_Quest_Item()
+    {
+        if (this->x_lists && !this->x_lists->Is_Empty()) {
+            for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
+                maybe<Extra_List_t*> x_list = it->value;
+                if (x_list && x_list->Is_Quest_Item()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     Bool_t Container_Changes_Entry_t::Should_Be_Destroyed()
     {
         return this->delta == 0 && Extra_Lists_Count() == 0;

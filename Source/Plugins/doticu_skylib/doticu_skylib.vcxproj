@@ -93,6 +93,7 @@
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
     <ClInclude Include="include\doticu_skylib\form_owner.h" />
+    <ClInclude Include="include\doticu_skylib\main.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
@@ -401,6 +402,7 @@
     <ClInclude Include="include\doticu_skylib\unique.h" />
     <ClInclude Include="include\doticu_skylib\unknown.h" />
     <ClInclude Include="include\doticu_skylib\version.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_actor_base.h" />
     <ClInclude Include="include\doticu_skylib\virtual_arguments.h" />
     <ClInclude Include="include\doticu_skylib\virtual_array.h" />
     <ClInclude Include="include\doticu_skylib\virtual_binder.h" />
@@ -452,6 +454,7 @@
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
+    <ClCompile Include="src\doticu_skylib\main.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_matrix.cpp" />
@@ -538,6 +541,7 @@
     <ClCompile Include="src\doticu_skylib\enum_sex.cpp" />
     <ClCompile Include="src\doticu_skylib\ui.cpp" />
     <ClCompile Include="src\doticu_skylib\cstring.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_actor_base.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_array.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_callback.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_class.cpp" />

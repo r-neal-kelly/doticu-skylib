@@ -43,6 +43,12 @@ namespace doticu_skylib {
     class Head_Part_t;
     class Outfit_t;
 
+    namespace Virtual {
+
+        class Actor_Base_t;
+
+    }
+
     class Actor_Base_t :            // TESNPC
         public Animated_Object_t,   // 000
         public Actor_Base_Data_c,   // 030
@@ -186,22 +192,6 @@ namespace doticu_skylib {
         void                            Hair_Color(maybe<Color_t*> hair_color);
 
         String_t                        Any_Name();
-
-    public:
-        void    Is_Protected(maybe<Virtual::Callback_i*> v_callback);                   // IsProtected
-        void    Is_Protected(maybe<unique<Callback_i<Bool_t>>> callback);               // IsProtected
-        void    Is_Protected(Bool_t value, maybe<Virtual::Callback_i*> v_callback);     // SetProtected
-        void    Is_Protected(Bool_t value, maybe<unique<Callback_i<>>> callback);       // SetProtected
-
-        void    Is_Essential(maybe<Virtual::Callback_i*> v_callback);                   // IsEssential
-        void    Is_Essential(maybe<unique<Callback_i<Bool_t>>> callback);               // IsEssential
-        void    Is_Essential(Bool_t value, maybe<Virtual::Callback_i*> v_callback);     // SetEssential
-        void    Is_Essential(Bool_t value, maybe<unique<Callback_i<>>> callback);       // SetEssential
-
-        void    Is_Invulnerable(maybe<Virtual::Callback_i*> v_callback);                // IsInvulnerable
-        void    Is_Invulnerable(maybe<unique<Callback_i<Bool_t>>> callback);            // IsInvulnerable
-        void    Is_Invulnerable(Bool_t value, maybe<Virtual::Callback_i*> v_callback);  // SetInvulnerable
-        void    Is_Invulnerable(Bool_t value, maybe<unique<Callback_i<>>> callback);    // SetInvulnerable
 
     public:
         void Log(std::string indent = "");

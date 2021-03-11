@@ -80,6 +80,17 @@ namespace doticu_skylib {
         return Maybe_Leveled_Item() != none<Leveled_Item_t*>();
     }
 
+    Bool_t Reference_Container_Entry_t::Has_Quest_Item()
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        if (this->reference_entry) {
+            return this->reference_entry->Has_Quest_Item();
+        } else {
+            return false;
+        }
+    }
+
     some<Bound_Object_t*> Reference_Container_Entry_t::Some_Object()
     {
         SKYLIB_ASSERT(Is_Valid());

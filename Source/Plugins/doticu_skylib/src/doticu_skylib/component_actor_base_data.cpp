@@ -39,7 +39,7 @@ namespace doticu_skylib {
         return !Is_Protected() && !Is_Essential() && !Is_Invulnerable();
     }
 
-    void Actor_Base_Data_c::Is_Mortal(Bool_t value)
+    void Actor_Base_Data_c::Is_Mortal(Bool_t value, Bool_t do_save)
     {
         if (value) {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
@@ -47,7 +47,9 @@ namespace doticu_skylib {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_INVULNERABLE);
         }
 
-        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        if (do_save) {
+            Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        }
     }
 
     Bool_t Actor_Base_Data_c::Is_Protected()
@@ -55,7 +57,7 @@ namespace doticu_skylib {
         return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_PROTECTED);
     }
 
-    void Actor_Base_Data_c::Is_Protected(Bool_t value)
+    void Actor_Base_Data_c::Is_Protected(Bool_t value, Bool_t do_save)
     {
         if (value) {
             this->actor_base_flags.Flag(Actor_Base_Flags_e::IS_PROTECTED);
@@ -64,7 +66,9 @@ namespace doticu_skylib {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
         }
 
-        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        if (do_save) {
+            Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        }
     }
 
     Bool_t Actor_Base_Data_c::Is_Essential()
@@ -72,7 +76,7 @@ namespace doticu_skylib {
         return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_ESSENTIAL);
     }
 
-    void Actor_Base_Data_c::Is_Essential(Bool_t value)
+    void Actor_Base_Data_c::Is_Essential(Bool_t value, Bool_t do_save)
     {
         if (value) {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_PROTECTED);
@@ -81,7 +85,9 @@ namespace doticu_skylib {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_ESSENTIAL);
         }
 
-        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        if (do_save) {
+            Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        }
     }
 
     Bool_t Actor_Base_Data_c::Is_Invulnerable()
@@ -89,7 +95,7 @@ namespace doticu_skylib {
         return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_INVULNERABLE);
     }
 
-    void Actor_Base_Data_c::Is_Invulnerable(Bool_t value)
+    void Actor_Base_Data_c::Is_Invulnerable(Bool_t value, Bool_t do_save)
     {
         if (value) {
             this->actor_base_flags.Flag(Actor_Base_Flags_e::IS_INVULNERABLE);
@@ -97,7 +103,9 @@ namespace doticu_skylib {
             this->actor_base_flags.Unflag(Actor_Base_Flags_e::IS_INVULNERABLE);
         }
 
-        Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        if (do_save) {
+            Component_Flag_Form_Change(Form_Change_Flags_e::ACTOR_BASE_DATA);
+        }
     }
 
     maybe<Raw_Faction_Rank_t> Actor_Base_Data_c::Faction_Rank(some<Faction_t*> faction)

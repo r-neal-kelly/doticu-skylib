@@ -79,13 +79,13 @@ namespace doticu_skylib {
         Bool_t  Is_Ghost();
 
         Bool_t  Is_Mortal();
-        void    Is_Mortal(Bool_t value);
+        void    Is_Mortal(Bool_t value, Bool_t do_save);
         Bool_t  Is_Protected();
-        void    Is_Protected(Bool_t value);
+        void    Is_Protected(Bool_t value, Bool_t do_save);
         Bool_t  Is_Essential();
-        void    Is_Essential(Bool_t value);
+        void    Is_Essential(Bool_t value, Bool_t do_save);
         Bool_t  Is_Invulnerable();
-        void    Is_Invulnerable(Bool_t value);
+        void    Is_Invulnerable(Bool_t value, Bool_t do_save);
 
     public:
         maybe<Raw_Faction_Rank_t>       Faction_Rank(some<Faction_t*> faction);

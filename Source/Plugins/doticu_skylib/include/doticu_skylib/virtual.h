@@ -28,6 +28,8 @@ namespace doticu_skylib { namespace Virtual {
     class Utility_t;
     class Variable_t;
 
+    template <typename ...Ts>
+    using Callback_ii = doticu_skylib::Callback_i<Ts...>;
     template <typename T>
     class Variable_tt;
 
