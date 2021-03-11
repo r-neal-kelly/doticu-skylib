@@ -1210,27 +1210,32 @@ namespace doticu_skylib {
 
         public:
             Virtual_Callback(some<Actor_t*> actor,
-                             maybe<Container_Changes_t*> container_changes,
+                             Bool_t do_keep_inventory,
                              Bool_t do_pacify,
                              Callback callback) :
                 actor(actor),
-                container_changes(container_changes),
+                container_changes(nullptr),
                 do_pacify(do_pacify),
                 callback(std::move(callback))
             {
+                if (do_keep_inventory) {
+                    maybe<Extra_Container_Changes_t*> x_container_changes = this->actor->Maybe_Extra_Container_Changes();
+                    if (x_container_changes) {
+                        this->container_changes = x_container_changes->container_changes;
+                        x_container_changes->container_changes = nullptr;
+                    }
+                }
             }
 
         public:
             virtual void operator()(Virtual::Variable_t*) override
             {
                 if (this->container_changes) {
-                    maybe<Extra_Container_Changes_t*> x_container_changes = this->actor->x_list.Get<Extra_Container_Changes_t>();
-                    if (x_container_changes && x_container_changes->container_changes) {
-                        maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
-                        x_container_changes->container_changes = this->container_changes;
-                        if (old_container_changes) {
-                            Container_Changes_t::Destroy(old_container_changes());
-                        }
+                    some<Extra_Container_Changes_t*> x_container_changes = this->actor->Some_Extra_Container_Changes();
+                    maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
+                    x_container_changes->container_changes = this->container_changes;
+                    if (old_container_changes) {
+                        Container_Changes_t::Destroy(old_container_changes());
                     }
                     this->actor->Update_Equipment();
                 }
@@ -1244,16 +1249,7 @@ namespace doticu_skylib {
         };
 
         if (Is_Dead()) {
-            maybe<Container_Changes_t*> container_changes = none<Container_Changes_t*>();
-            if (do_keep_inventory) {
-                maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
-                if (x_container_changes && x_container_changes->container_changes) {
-                    container_changes = x_container_changes->container_changes;
-                    x_container_changes->container_changes = nullptr;
-                }
-            }
-
-            Resurrect(new Virtual_Callback(this, container_changes, do_pacify, std::move(callback)));
+            Resurrect(new Virtual_Callback(this, do_keep_inventory, do_pacify, std::move(callback)));
         } else {
             if (callback) {
                 (*callback)();
@@ -1261,11 +1257,90 @@ namespace doticu_skylib {
         }
     }
 
-    /*void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)
+    void Actor_t::Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback)
     {
+        using Callback = maybe<unique<Callback_i<>>>;
+
         static some<Quest_t*> bard_songs_quest = static_cast<Quest_t*>(Game_t::Form(0x00074A55)());
         SKYLIB_ASSERT_SOME(bard_songs_quest);
-    }*/
+
+        Vector_t<some<Alias_Reference_t*>> bard_aliases;
+        Vector_t<some<Alias_Reference_t*>> aliases = this->x_list.Alias_References();
+        for (size_t idx = 0, end = aliases.size(); idx < end; idx += 1) {
+            some<Alias_Reference_t*> alias = aliases[idx];
+            if (alias->quest() == bard_songs_quest()) {
+                bard_aliases.push_back(alias);
+            }
+        }
+
+        if (bard_aliases.size() > 0) {
+            class Stop_All_Songs_Callback :
+                public Virtual::Callback_t
+            {
+            public:
+                some<Actor_t*>                      actor;
+                Vector_t<some<Alias_Reference_t*>>  bard_aliases;
+                Callback                            callback;
+
+            public:
+                Stop_All_Songs_Callback(some<Actor_t*> actor,
+                                        Vector_t<some<Alias_Reference_t*>> bard_aliases,
+                                        Callback callback) :
+                    actor(actor),
+                    bard_aliases(std::move(bard_aliases)),
+                    callback(std::move(callback))
+                {
+                }
+
+            public:
+                virtual void operator ()(Virtual::Variable_t*) override
+                {
+                    class Unfill_Callback :
+                        public doticu_skylib::Callback_i<>
+                    {
+                    public:
+                        some<Actor_t*>  actor;
+                        Callback        callback;
+
+                    public:
+                        Unfill_Callback(some<Actor_t*> actor, Callback callback) :
+                            actor(actor), callback(std::move(callback))
+                        {
+                        }
+
+                    public:
+                        virtual void operator ()() override
+                        {
+                            this->actor->Reset_AI();
+                            if (this->callback) {
+                                (*this->callback)();
+                            }
+                        }
+                    };
+
+                    Alias_Reference_t::Unfill(
+                        std::move(this->bard_aliases),
+                        new Unfill_Callback(this->actor, std::move(this->callback))
+                    );
+                }
+            };
+
+            _MESSAGE("will stop %s from performing", this->Any_Name());
+
+            Virtual::Machine_t::Ready_Scriptable<Quest_t*>(bard_songs_quest);
+            Virtual::Machine_t::Self()->Call_Method(
+                bard_songs_quest(),
+                "BardSongsScript",
+                "StopAllSongs",
+                none<Virtual::Arguments_i*>(),
+                new Stop_All_Songs_Callback(this, std::move(bard_aliases), std::move(callback))
+            );
+        } else {
+            if (callback) {
+                (*callback)();
+            }
+        }
+    }
 
     void Actor_t::Log_Factions_And_Ranks(std::string indent)
     {

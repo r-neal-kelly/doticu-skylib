@@ -442,7 +442,7 @@ namespace doticu_skylib {
     maybe<Container_Changes_t*> Reference_t::Container_Changes(Bool_t do_force_create)
     {
         static auto initialize_container_changes = reinterpret_cast
-            <Container_Changes_t*(*)(Reference_t*)>
+            <Container_Changes_t * (*)(Reference_t*)>
             (Game_t::Base_Address() + Offset_e::INITIALIZE_CONTAINER_CHANGES);
 
         maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
@@ -453,6 +453,21 @@ namespace doticu_skylib {
         } else {
             return none<Container_Changes_t*>();
         }
+    }
+
+    maybe<Extra_Container_Changes_t*> Reference_t::Maybe_Extra_Container_Changes()
+    {
+        return this->x_list.Get<Extra_Container_Changes_t>();
+    }
+
+    some<Extra_Container_Changes_t*> Reference_t::Some_Extra_Container_Changes()
+    {
+        if (!this->x_list.Has<Extra_Container_Changes_t>()) {
+            Container_Changes(true);
+        }
+        some<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>()();
+        SKYLIB_ASSERT_SOME(x_container_changes);
+        return x_container_changes;
     }
 
     Location_t* Reference_t::Location()
@@ -1334,40 +1349,7 @@ namespace doticu_skylib {
 
     void Reference_t::Unfill_Aliases(maybe<unique<Callback_i<>>> callback)
     {
-        using Callback = maybe<unique<Callback_i<>>>;
-
-        class Unfill_Callback :
-            public Virtual::Callback_t
-        {
-        public:
-            Vector_t<some<Alias_Reference_t*>>  aliases;
-            size_t                              idx;
-            size_t                              end;
-            Callback                            callback;
-
-        public:
-            Unfill_Callback(Vector_t<some<Alias_Reference_t*>> aliases, size_t idx, size_t end, Callback callback) :
-                aliases(std::move(aliases)), idx(idx), end(end), callback(std::move(callback))
-            {
-            }
-
-        public:
-            virtual void operator ()(Virtual::Variable_t*) override
-            {
-                if (this->idx < this->end) {
-                    this->aliases[this->idx]->Unfill(
-                        new Unfill_Callback(std::move(this->aliases), this->idx + 1, this->end, std::move(this->callback))
-                    );
-                } else {
-                    if (this->callback) {
-                        (*this->callback)();
-                    }
-                }
-            }
-        };
-
-        Vector_t<some<Alias_Reference_t*>> aliases = Alias_References();
-        Unfill_Callback(std::move(aliases), 0, aliases.size(), std::move(callback)).operator ()(nullptr);
+        Alias_Reference_t::Unfill(Alias_References(), std::move(callback));
     }
 
     void Reference_t::Log_Extra_List(std::string indent)

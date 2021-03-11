@@ -29,6 +29,7 @@ namespace doticu_skylib {
     class Container_c;
     class Container_Changes_t;
     class Dialogue_Branch_t;
+    class Extra_Container_Changes_t;
     class Faction_t;
     class Form_List_t;
     class Keyword_t;
@@ -281,7 +282,9 @@ namespace doticu_skylib {
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
         maybe<Container_c*>                 Base_Component_Container();
         maybe<Container_Changes_t*>         Container_Changes(Bool_t do_force_create);
-        
+        maybe<Extra_Container_Changes_t*>   Maybe_Extra_Container_Changes();
+        some<Extra_Container_Changes_t*>    Some_Extra_Container_Changes();
+
         Location_t*                         Location();
         
         maybe<Worldspace_t*>                Worldspace(Bool_t do_check_locations = true);

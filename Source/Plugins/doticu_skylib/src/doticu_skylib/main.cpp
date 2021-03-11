@@ -64,11 +64,12 @@ namespace doticu_skylib {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor() && actor->Is_Attached()) {
-                        if (actor->Is_Alive()) {
+                        actor->Stop_Bard_Performance(none<unique<doticu_skylib::Callback_i<>>>());
+                        /*if (actor->Is_Alive()) {
                             actor->Kill(none<Actor_t*>(), true, true, none<unique<doticu_skylib::Callback_i<>>>()); // interesting, I think this makes bleedout's get back up.
                         } else {
                             actor->Resurrect(true, true, none<unique<doticu_skylib::Callback_i<>>>());
-                        }
+                        }*/
                     }
                 }
                 Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_t());
@@ -84,6 +85,8 @@ namespace doticu_skylib {
             {
                 // we have to wait on reload of game, because the game itself is massively messing with inventories.
                 // but it still crashes after doing mass kill/resurrect and after changing a cell. strange!
+
+                UI_t::Notification("Hello!");
 
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
@@ -108,7 +111,10 @@ namespace doticu_skylib {
 
                         Reference_Container_t container(reference);
                         if (container.Is_Valid()) {
-                            /*for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
+
+                        }
+                        /*if (container.Is_Valid()) {
+                            for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
                                 Reference_Container_Entry_t& entry = container.entries[idx];
                                 if (!entry.Is_Leveled_Item()) {
                                     entry.Decrement_Count(&container, std::numeric_limits<s32>::max());
@@ -129,10 +135,10 @@ namespace doticu_skylib {
                                     x_list->Outfit(outfit);
                                     container.Add(circlet, x_list);
                                 }
-                            }*/
+                            }
 
                             //container.Log();
-                        }
+                        }*/
                     }
                 }
             }
@@ -171,7 +177,7 @@ namespace doticu_skylib {
     void Main_t::After_Load()
     {
         //temp
-        //Temp();
+        Temp();
         //
     }
 

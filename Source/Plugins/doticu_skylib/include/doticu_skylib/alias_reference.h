@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/alias_base.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/reference_handle.h"
@@ -49,6 +50,9 @@ namespace doticu_skylib {
             Forced_Fill_t   forced;
         };
         STATIC_ASSERT(sizeof(Fill_u) == 0x18);
+
+    public:
+        static void Unfill(Vector_t<some<Alias_Reference_t*>> aliases, maybe<unique<Callback_i<>>> callback);
 
     public:
         virtual             ~Alias_Reference_t();       // 0

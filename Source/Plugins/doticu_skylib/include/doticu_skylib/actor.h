@@ -403,6 +403,9 @@ namespace doticu_skylib {
         Bool_t                                      Is_Ghost();
         void                                        Is_Ghost(Bool_t value);
 
+        Bool_t                                      Can_Do_Bard_Performance();
+        void                                        Can_Do_Bard_Performance(Bool_t value); // there's a particular faction we can set
+
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Pacify();
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);

@@ -14,6 +14,44 @@
 
 namespace doticu_skylib {
 
+    void Alias_Reference_t::Unfill(Vector_t<some<Alias_Reference_t*>> aliases, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Vector_t<some<Alias_Reference_t*>>  aliases;
+            size_t                              idx;
+            size_t                              end;
+            Callback                            callback;
+
+        public:
+            Virtual_Callback(Vector_t<some<Alias_Reference_t*>> aliases, size_t idx, size_t end, Callback callback) :
+                aliases(std::move(aliases)), idx(idx), end(end), callback(std::move(callback))
+            {
+                this->operator ()(nullptr);
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                if (this->idx < this->end) {
+                    this->aliases[this->idx]->Unfill(
+                        new Virtual_Callback(std::move(this->aliases), this->idx + 1, this->end, std::move(this->callback))
+                    );
+                } else {
+                    if (this->callback) {
+                        (*this->callback)();
+                    }
+                }
+            }
+        };
+
+        Virtual_Callback(std::move(aliases), 0, aliases.size(), std::move(callback));
+    }
+
     void Alias_Reference_t::Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> v_callback)
     {
         class Virtual_Arguments :
