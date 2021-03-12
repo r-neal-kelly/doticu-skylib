@@ -456,6 +456,7 @@ namespace doticu_skylib {
         void    Update_Equipment(maybe<unique<Callback_i<>>> callback);
 
     public:
+        void Log_Actor_Values(std::string indent = "");
         void Log_Factions_And_Ranks(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_t) == 0x2B0);

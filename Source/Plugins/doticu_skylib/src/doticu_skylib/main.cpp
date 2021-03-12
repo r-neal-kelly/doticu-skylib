@@ -72,6 +72,7 @@ namespace doticu_skylib {
                         }
                     }
                 }
+                player_actor->Log_Actor_Values();
                 Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_t());
             }
         };
@@ -101,8 +102,6 @@ namespace doticu_skylib {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {
-                        _MESSAGE("actor: %s %s", actor->Any_Name(), actor->Form_ID_String());
-
                         //actor->Base_Relation(player_actor_base, Relation_e::ALLY); // this is causing random crashes! try virtual instead.
                         actor->Faction_Rank(current_follower_faction, 0);
                         actor->Crime_Faction(player_faction());

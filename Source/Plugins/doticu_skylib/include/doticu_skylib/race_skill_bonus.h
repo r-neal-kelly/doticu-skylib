@@ -11,7 +11,7 @@ namespace doticu_skylib {
     class Race_Skill_Bonus_t // SkillBoost
     {
     public:
-        Actor_Skill_e   skill; // 0 (Actor_Value_e?)
+        Actor_Skill_e   skill; // 0
         u8              bonus; // 1
     };
     STATIC_ASSERT(sizeof(Race_Skill_Bonus_t) == 0x2);

@@ -19,8 +19,8 @@
 
 namespace doticu_skylib {
 
-    class Actor_Value_e;
     class Actor_Value_Modifier_e;
+    class Actor_Value_Type_e;
     class Extra_Type_e;
     class Form_Type_e;
     class Logic_Gate_e;

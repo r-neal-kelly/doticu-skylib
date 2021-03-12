@@ -351,9 +351,6 @@
     <ClInclude Include="include\doticu_skylib\enum_actor_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_actor_value.h">
-      <Filter>Header Files\enum</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_actor_value_modifier.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -1197,6 +1194,9 @@
     <ClInclude Include="include\doticu_skylib\virtual_actor_base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_actor_value_type.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1575,6 +1575,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\actor_values.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

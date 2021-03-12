@@ -16,6 +16,9 @@ namespace doticu_skylib { namespace Virtual {
 
     std::unique_lock<std::timed_mutex> Callback_i::Before_Save()
     {
+        // I think virtual Waits may not finish until after the pause event.
+        // That means we may find it more useful to use our own threads in some circumstances, so
+        // that certain callbacks get to finish while we wait here.
         return std::move(
             std::unique_lock<std::timed_mutex>(active_callbacks_lock, std::chrono::seconds(6))
         );
