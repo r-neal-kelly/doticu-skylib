@@ -6,6 +6,7 @@
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/memory.h"
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/script.h"
 
 namespace doticu_skylib {
@@ -86,6 +87,17 @@ namespace doticu_skylib {
 
         Compiler_t compiler;
         execute(this, &compiler, compiler_e, reference());
+    }
+
+    void Script_t::Console_Add_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+        SKYLIB_ASSERT_SOME(item);
+
+        if (reference->Is_Valid()) {
+            Command(std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta));
+            Execute(reference);
+        }
     }
 
 }

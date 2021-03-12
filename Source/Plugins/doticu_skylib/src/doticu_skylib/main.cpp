@@ -16,8 +16,10 @@
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/color.h"
 #include "doticu_skylib/console_log.h"
+#include "doticu_skylib/container.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
+#include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/dialogue_manager.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_owner.h"
@@ -95,10 +97,20 @@ namespace doticu_skylib {
                 some<Color_t*> white_color = static_cast<Color_t*>(Game_t::Form(0x00099D86)());
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
                 some<Spell_t*> ghost_ability = static_cast<Spell_t*>(Game_t::Form(0x0005030B)());
+                some<Container_t*> container = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
+                some<Actor_Base_t*> vici_actor_base = static_cast<Actor_Base_t*>(Game_t::Form(0x0001327A)());
 
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
+
+                    if (reference() == player_actor()) {
+                        Reference_Container_t temp(reference);
+                        if (temp.Is_Valid()) {
+                            temp.Log();
+                        }
+                    }
+
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {
                         //actor->Base_Relation(player_actor_base, Relation_e::ALLY); // this is causing random crashes! try virtual instead.

@@ -9,6 +9,7 @@
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/dialogue_manager.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/extra_aliases.h"
@@ -482,19 +483,29 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Container_Changes_t*> Reference_t::Container_Changes(Bool_t do_force_create)
+    maybe<Container_Changes_t*> Reference_t::Maybe_Container_Changes()
     {
-        static auto initialize_container_changes = reinterpret_cast
-            <Container_Changes_t * (*)(Reference_t*)>
-            (Game_t::Base_Address() + Offset_e::INITIALIZE_CONTAINER_CHANGES);
-
         maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
         if (x_container_changes && x_container_changes->container_changes) {
             return x_container_changes->container_changes;
-        } else if (do_force_create) {
-            return initialize_container_changes(this);
         } else {
             return none<Container_Changes_t*>();
+        }
+    }
+
+    some<Container_Changes_t*> Reference_t::Some_Container_Changes()
+    {
+        static auto some_container_changes = reinterpret_cast
+            <Container_Changes_t*(*)(Reference_t*)>
+            (Game_t::Base_Address() + Offset_e::SOME_CONTAINER_CHANGES);
+
+        maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
+        if (x_container_changes && x_container_changes->container_changes) {
+            return x_container_changes->container_changes();
+        } else {
+            some<Container_Changes_t*> container_changes = some_container_changes(this);
+            SKYLIB_ASSERT_SOME(container_changes);
+            return container_changes;
         }
     }
 
@@ -506,7 +517,7 @@ namespace doticu_skylib {
     some<Extra_Container_Changes_t*> Reference_t::Some_Extra_Container_Changes()
     {
         if (!this->x_list.Has<Extra_Container_Changes_t>()) {
-            Container_Changes(true);
+            Some_Container_Changes();
         }
         some<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>()();
         SKYLIB_ASSERT_SOME(x_container_changes);
@@ -682,14 +693,30 @@ namespace doticu_skylib {
         }
     }
 
+    void Reference_t::Cache_Component_Container_Items(some<Container_c*> component_container)
+    {
+        SKYLIB_ASSERT_SOME(component_container);
+
+        if (Is_Valid()) {
+            if (component_container->container_entries && component_container->container_entry_count > 0) {
+                some<unique<Script_t>> script = Script_t::Create()();
+                for (size_t idx = 0, end = component_container->container_entry_count; idx < end; idx += 1) {
+                    maybe<Container_Entry_t*> entry = component_container->container_entries[idx];
+                    if (entry && entry->object && entry->count > 0) {
+                        script->Console_Add_Item(this, entry->object(), entry->count);
+                    }
+                }
+            }
+        }
+    }
+
     void Reference_t::Add_Item(some<Form_t*> item, s16 delta)
     {
         SKYLIB_ASSERT_SOME(item);
 
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
-            script->Command(std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta));
-            script->Execute(this);
+            script->Console_Add_Item(this, item, delta);
             Script_t::Destroy(script);
         }
     }

@@ -50,12 +50,12 @@ namespace doticu_skylib {
         T operator &=(const T other);
         T operator ^=(const T other);
 
-        Bool_t operator ==(const T other) const;
+        /*Bool_t operator ==(const T other) const;
         Bool_t operator !=(const T other) const;
         Bool_t operator <(const T other) const;
         Bool_t operator >(const T other) const;
         Bool_t operator <=(const T other) const;
-        Bool_t operator >=(const T other) const;
+        Bool_t operator >=(const T other) const;*/
     };
     STATIC_ASSERT(sizeof(Atomic_Number_t<u32>) == 0x4);
 

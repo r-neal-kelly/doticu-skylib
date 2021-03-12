@@ -19,12 +19,14 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::SOUL_LEVEL,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
-                //V_TABLE = 0x,
+                V_TABLE = 0x0152F2E0, // 229890
             };
             using Enum_t::Enum_t;
         };

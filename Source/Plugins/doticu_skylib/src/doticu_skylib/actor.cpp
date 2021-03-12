@@ -858,6 +858,14 @@ namespace doticu_skylib {
         return queue_ni_node_update(this, do_update_weight);
     }
 
+    void Actor_t::Reset_Actor_Value(Actor_Value_Type_e actor_value_type)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            Set_Default_Actor_Value(actor_value_type, actor_base->Get_Default_Actor_Value(actor_value_type));
+        }
+    }
+
     void Actor_t::Stop_Combat()
     {
         Do_Stop_Combat();

@@ -52,11 +52,12 @@ namespace doticu_skylib {
         maybe<Reference_t*>     Representative_Reference();
         maybe<Reference_t*>     Containing_Reference();
 
+        Bool_t                  Is_Representative_Reference();  // I've only seen these on container_changes' entries' x_lists.
+        Bool_t                  Is_Containing_Reference();      // I've only seen these on non-container references' x_lists.
+
         maybe<Actor_t*>         As_Actor();
         maybe<Actor_Base_t*>    As_Actor_Base();
         maybe<Container_t*>     As_Container();
-
-        maybe<Bool_t>           Is_Based_On_Component_Container();
 
     public:
         void Log(std::string indent = "");

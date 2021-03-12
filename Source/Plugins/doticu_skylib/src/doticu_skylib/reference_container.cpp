@@ -22,7 +22,7 @@ namespace doticu_skylib {
         this->reference = reference;
         SKYLIB_ASSERT_SOME(this->reference);
         this->base_container = this->reference->Base_Component_Container()();
-        this->reference_container = this->reference->Container_Changes(false);
+        this->reference_container = this->reference->Maybe_Container_Changes();
 
         if (Is_Valid()) {
             Vector_t<some<Bound_Object_t*>> handled_objects;
@@ -108,7 +108,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
 
         if (!this->reference_container) {
-            this->reference_container = this->reference->Container_Changes(true)();
+            this->reference_container = this->reference->Some_Container_Changes()();
             SKYLIB_ASSERT(this->reference_container);
         }
         return this->reference_container();

@@ -60,20 +60,20 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                RTTI                            = 0x01E13798, // 513899
+                RTTI                        = 0x01E13798, // 513899
 
-                CREATE_REFERENCE_HANDLE         = 0x001320F0, // 12193
-                LOOKUP_REFERENCE_HANDLE_1       = 0x001328A0, // 12203
-                INVALID_REFERENCE_HANDLE        = 0x01EBEABC, // 514164
+                CREATE_REFERENCE_HANDLE     = 0x001320F0, // 12193
+                LOOKUP_REFERENCE_HANDLE_1   = 0x001328A0, // 12203
+                INVALID_REFERENCE_HANDLE    = 0x01EBEABC, // 514164
 
-                GET_NAME                        = 0x002961F0, // 19354
-                GET_THIS_OR_CELL_OWNER          = 0x002A6670, // 19789
-                GET_WORLDSPACE                  = 0x00299750, // 19389
+                GET_NAME                    = 0x002961F0, // 19354
+                GET_THIS_OR_CELL_OWNER      = 0x002A6670, // 19789
+                GET_WORLDSPACE              = 0x00299750, // 19389
 
-                INITIALIZE_CONTAINER_CHANGES    = 0x001D8E40, // 15802
+                SOME_CONTAINER_CHANGES      = 0x001D8E40, // 15802
 
-                PLACE_AT_ME                     = 0x009951F0, // 55672
-                MOVE_TO_OFFSET                  = 0x009AE5C0, // 56227
+                PLACE_AT_ME                 = 0x009951F0, // 55672
+                MOVE_TO_OFFSET              = 0x009AE5C0, // 56227
             };
             using Enum_t::Enum_t;
         };
@@ -290,8 +290,10 @@ namespace doticu_skylib {
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
+
         maybe<Container_c*>                 Base_Component_Container();
-        maybe<Container_Changes_t*>         Container_Changes(Bool_t do_force_create);
+        maybe<Container_Changes_t*>         Maybe_Container_Changes();
+        some<Container_Changes_t*>          Some_Container_Changes();
         maybe<Extra_Container_Changes_t*>   Maybe_Extra_Container_Changes();
         some<Extra_Container_Changes_t*>    Some_Extra_Container_Changes();
 
@@ -306,17 +308,19 @@ namespace doticu_skylib {
         Vector_t<some<Worldspace_t*>>       Worldspaces();
         void                                Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 
-        Reference_Handle_t  To_Handle();
+        Reference_Handle_t                  To_Handle();
 
-        Float_t Distance_Between(some<Reference_t*> other);
+        Float_t                             Distance_Between(some<Reference_t*> other);
 
-        void Move_To_Offset(some<Reference_t*> target,
-                            maybe<Cell_t*> target_cell,
-                            maybe<Worldspace_t*> target_worldspace,
-                            f32_xyz& offset,
-                            f32_xyz& rotation);
-        void Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation);
-        void Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
+        void                                Move_To_Offset(some<Reference_t*> target,
+                                                           maybe<Cell_t*> target_cell,
+                                                           maybe<Worldspace_t*> target_worldspace,
+                                                           f32_xyz& offset,
+                                                           f32_xyz& rotation);
+        void                                Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation);
+        void                                Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
+
+        void                                Cache_Component_Container_Items(some<Container_c*> component_container);
 
     public:
         void                        Add_Item(some<Form_t*> item, s16 delta);                                // AddItem

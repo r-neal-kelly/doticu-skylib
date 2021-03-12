@@ -63,19 +63,32 @@ namespace doticu_skylib {
 
     /*
         Extra_Type_e that we know we can find on these x_lists:
-            OUTFIT
-            OWNER
-            LEVELED_ITEM
-            COUNT
-            UNIQUE_ID
+
+            (ones that are typically temporary or too unique to copy)
             ALIASES
-            REFERENCE_HANDLE
             FROM_ALIAS
+            LEVELED_ITEM
+            OUTFIT
+            REFERENCE_HANDLE
+            UNIQUE_ID
             WORN
             WORN_LEFT
-            TEXT_DISPLAY
-            HEALTH
+
+            (ones we typically want to dupe when copying an x_list)
             CHARGE
+            COUNT
+            ENCHANTMENT
+            HEALTH
+            OWNER
+            POISON
+            SOUL_LEVEL
+            TEXT_DISPLAY
+
+            (there may be more, like CANNOT_WEAR, SHOULD_WEAR)
+
+            we can have two modes of copying, black and white listing.
+            it's safer to white list, but we won't miss anything important if we black list.
+            however, technically we may only be capable of white listing, because not every is so easily copied.
     */
 
 }

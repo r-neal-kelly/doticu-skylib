@@ -413,6 +413,7 @@ namespace doticu_skylib {
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Pacify();
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
+        void                                        Reset_Actor_Value(Actor_Value_Type_e actor_value_type);
         void                                        Stop_Combat();
         void                                        Stop_Combat_And_Alarm();
         void                                        Update_3D();

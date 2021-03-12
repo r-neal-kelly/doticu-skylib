@@ -64,6 +64,16 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Extra_Reference_Handle_t::Is_Representative_Reference()
+    {
+        return Representative_Reference() != none<Reference_t*>();
+    }
+
+    Bool_t Extra_Reference_Handle_t::Is_Containing_Reference()
+    {
+        return Containing_Reference() != none<Reference_t*>();
+    }
+
     maybe<Actor_t*> Extra_Reference_Handle_t::As_Actor()
     {
         maybe<Reference_t*> reference = Reference();
@@ -94,16 +104,6 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Bool_t> Extra_Reference_Handle_t::Is_Based_On_Component_Container()
-    {
-        maybe<Reference_t*> reference = Reference();
-        if (reference) {
-            return reference->Is_Based_On_Component_Container();
-        } else {
-            return none<Bool_t>();
-        }
-    }
-
     void Extra_Reference_Handle_t::Log(std::string indent)
     {
         SKYLIB_LOG(indent + "Extra_Reference_Handle_t::Log");
@@ -127,13 +127,8 @@ namespace doticu_skylib {
             SKYLIB_LOG(indent + SKYLIB_TAB + "reference: (none)");
         }
 
-        maybe<Bool_t> maybe_is_based_on_component_container = Is_Based_On_Component_Container();
-        if (maybe_is_based_on_component_container.Has_Value()) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "is_based_on_component_container: %s",
-                       maybe_is_based_on_component_container() ? "true" : "false");
-        } else {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "is_based_on_component_container: (unknown)");
-        }
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_representative_reference: %s", Is_Representative_Reference() ? "true" : "false");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_containing_reference: %s", Is_Containing_Reference() ? "true" : "false");
 
         SKYLIB_LOG(indent + "}");
     }
