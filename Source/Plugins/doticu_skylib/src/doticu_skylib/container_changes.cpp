@@ -12,11 +12,11 @@ namespace doticu_skylib {
 
     some<Container_Changes_t*> Container_Changes_t::Create(some<Reference_t*> owner)
     {
-        /*some<Container_Changes_t*> container_changes = Game_t::Allocate<Container_Changes_t>();
+        some<Container_Changes_t*> container_changes = Game_t::Allocate<Container_Changes_t>();
         new (container_changes()) Container_Changes_t(owner);
-        return container_changes;*/
+        return container_changes;
 
-        return owner->Some_Container_Changes();
+        //return owner->Some_Container_Changes();
     }
 
     void Container_Changes_t::Destroy(some<Container_Changes_t*> container_changes)
