@@ -13,8 +13,11 @@
 #include "doticu_skylib/component_weight.h"
 #include "doticu_skylib/enum_container_flags.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
+
+    class Reference_t;
 
     class Container_t :             // TESObjectCONT
         public Animated_Object_t,   // 00
@@ -44,6 +47,9 @@ namespace doticu_skylib {
             };
             using Enum_t::Enum_t;
         };
+
+    public:
+        static maybe<Reference_t*> Create_Container(some<Container_t*> container, maybe<Reference_t*> at);
 
     public:
         virtual ~Container_t(); // 0

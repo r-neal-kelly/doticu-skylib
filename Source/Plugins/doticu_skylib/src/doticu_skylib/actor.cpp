@@ -80,16 +80,16 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative)
+    maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify)
     {
         SKYLIB_ASSERT_SOME(base);
 
         if (base->Is_Valid()) {
-            Actor_t* actor = static_cast<Actor_t*>
-                (Reference_t::Create(base, 1, Player_t::Self(), do_persist, false));
+            maybe<Actor_t*> actor = static_cast<maybe<Actor_t*>>
+                (Reference_t::Create(base, 1, Player_t::Self()(), do_persist, false, false));
             if (actor && actor->Is_Valid()) {
-                if (do_uncombative) {
-                    actor->Set_Actor_Value(Actor_Value_e::AGGRESSION, 0.0f);
+                if (do_pacify) {
+                    actor->Pacify();
                 }
                 return actor;
             } else {
@@ -100,34 +100,34 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_t*> Actor_t::Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    maybe<Actor_t*> Actor_t::Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static)
     {
         SKYLIB_ASSERT_SOME(base);
 
         if (do_static) {
             if (base->Is_Valid()) {
-                return Create(static_cast<some<Form_t*>>(base->Base_Root()), do_persist, do_uncombative);
+                return Create(static_cast<some<Form_t*>>(base->Base_Root()), do_persist, do_pacify);
             } else {
                 return nullptr;
             }
         } else {
-            return Create(static_cast<some<Form_t*>>(base), do_persist, do_uncombative);
+            return Create(static_cast<some<Form_t*>>(base), do_persist, do_pacify);
         }
     }
 
-    maybe<Actor_t*> Actor_t::Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static)
+    maybe<Actor_t*> Actor_t::Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static)
     {
         SKYLIB_ASSERT_SOME(base);
 
         if (do_static) {
             if (base->Is_Valid()) {
-                Actor_t* actor = static_cast<Actor_t*>
-                    (Reference_t::Create(base, 1, Player_t::Self(), false, true));
+                maybe<Actor_t*> actor = static_cast<maybe<Actor_t*>>
+                    (Reference_t::Create(base, 1, Player_t::Self()(), false, true, false));
                 if (actor && actor->Is_Valid()) {
                     maybe<Actor_Base_t*> actor_base = actor->Actor_Base();
                     actor->Mark_For_Delete();
                     if (actor_base) {
-                        return Create(actor_base(), do_static, do_persist, do_uncombative);
+                        return Create(actor_base(), do_static, do_persist, do_pacify);
                     } else {
                         return nullptr;
                     }
@@ -138,7 +138,7 @@ namespace doticu_skylib {
                 return nullptr;
             }
         } else {
-            return Create(static_cast<some<Form_t*>>(base), do_persist, do_uncombative);
+            return Create(static_cast<some<Form_t*>>(base), do_persist, do_pacify);
         }
     }
 
@@ -1278,7 +1278,6 @@ namespace doticu_skylib {
                         maybe<Container_Changes_t*> old_container_changes = x_container_changes->container_changes;
                         x_container_changes->container_changes = this->container_changes;
                         if (old_container_changes) {
-                            // this may be causing reload crashes. we can just destroy x_lists and set every entry to zero instead
                             Container_Changes_t::Destroy(old_container_changes());
                         }
                     }

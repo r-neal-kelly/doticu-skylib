@@ -107,9 +107,9 @@ namespace doticu_skylib {
         static void                 Loaded_Actors(Vector_t<Actor_t*>& results);
         static void                 Log_Loaded_Actors();
 
-        static maybe<Actor_t*>      Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_uncombative);
-        static maybe<Actor_t*>      Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
-        static maybe<Actor_t*>      Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_uncombative, Bool_t do_static);
+        static maybe<Actor_t*>      Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify);
+        static maybe<Actor_t*>      Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
+        static maybe<Actor_t*>      Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
 
     public:
         virtual         ~Actor_t();                                                                                     // 000

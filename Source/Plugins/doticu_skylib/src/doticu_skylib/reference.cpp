@@ -154,16 +154,39 @@ namespace doticu_skylib {
         }
     }
 
-    Reference_t* Reference_t::Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable)
+    maybe<Reference_t*> Reference_t::Create(some<Form_t*> base,
+                                            u32 count,
+                                            maybe<Reference_t*> at,
+                                            Bool_t do_force_persist,
+                                            Bool_t do_initially_disable,
+                                            Bool_t do_place_exactly)
     {
-        SKYLIB_ASSERT_SOME(base);
-        SKYLIB_ASSERT_SOME(at);
-
         static auto place_at_me = reinterpret_cast
             <Reference_t*(*)(Virtual::Machine_t*, Virtual::Raw_Stack_ID_t, Reference_t*, Form_t*, u32, Bool_t, Bool_t)>
             (Game_t::Base_Address() + Offset_e::PLACE_AT_ME);
 
-        return place_at_me(Virtual::Machine_t::Self()(), 0, at(), base(), count, force_persist, initially_disable);
+        SKYLIB_ASSERT_SOME(base);
+
+        if (!at) {
+            at = Player_t::Self()();
+        }
+
+        maybe<Reference_t*> reference =
+            place_at_me(Virtual::Machine_t::Self()(), 0, at(), base(), count, do_force_persist, do_initially_disable);
+
+        if (reference && do_place_exactly) {
+            reference->position.x = at->position.x;
+            reference->position.y = at->position.y;
+            reference->position.z = at->position.z;
+
+            reference->rotation.x = at->rotation.x;
+            reference->rotation.y = at->rotation.y;
+            reference->rotation.z = at->rotation.z;
+
+            reference->Do_Update_3D_Position(true);
+        }
+
+        return reference;
     }
 
     Reference_t* Reference_t::From_Handle(Reference_Handle_t reference_handle)
@@ -238,6 +261,26 @@ namespace doticu_skylib {
     Bool_t Reference_t::Is_Detached()
     {
         return !Is_Attached();
+    }
+
+    maybe<Bool_t> Reference_t::Is_In_Interior_Cell()
+    {
+        maybe<Cell_t*> cell = Cell();
+        if (cell) {
+            return cell->Is_Interior();
+        } else {
+            return none<Bool_t>();
+        }
+    }
+
+    maybe<Bool_t> Reference_t::Is_In_Exterior_Cell()
+    {
+        maybe<Cell_t*> cell = Cell();
+        if (cell) {
+            return cell->Is_Exterior();
+        } else {
+            return none<Bool_t>();
+        }
     }
 
     Bool_t Reference_t::Is_In_Dialogue_With_Player()

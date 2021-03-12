@@ -317,7 +317,10 @@ namespace doticu_skylib {
 
     some<Actor_Base_t*> Actor_Base_t::Instantiated_Base()
     {
-        some<Actor_t*> actor = static_cast<Actor_t*>(Reference_t::Create(this, 1, Player_t::Self(), false, false));
+        some<Actor_t*> actor = static_cast<Actor_t*>
+            (Reference_t::Create(this, 1, nullptr, false, false, false)());
+        SKYLIB_ASSERT_SOME(actor);
+
         maybe<Actor_Base_t*> base = actor->Actor_Base();
         actor->Mark_For_Delete();
         if (base) {

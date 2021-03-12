@@ -83,7 +83,7 @@ namespace doticu_skylib {
         public:
             void operator ()(Virtual::Variable_t*)
             {
-                // we have to wait on reload of game, because the game itself is massively messing with inventories.
+                // we have to wait on reload of game, because the game itself is massively messing with inventories, I think.
 
                 UI_t::Notification("Hello!");
 
@@ -96,18 +96,19 @@ namespace doticu_skylib {
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
                 some<Spell_t*> ghost_ability = static_cast<Spell_t*>(Game_t::Form(0x0005030B)());
 
-                Vector_t<some<Reference_t*>> references = Reference_t::Loaded_Grid_References();
+                Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
-
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {
-                        actor->Base_Relation(player_actor_base, Relation_e::ALLY);
+                        _MESSAGE("actor: %s %s", actor->Any_Name(), actor->Form_ID_String());
+
+                        //actor->Base_Relation(player_actor_base, Relation_e::ALLY); // this is causing random crashes! try virtual instead.
                         actor->Faction_Rank(current_follower_faction, 0);
                         actor->Crime_Faction(player_faction());
                         actor->Is_Player_Teammate(true);
                         actor->Ignores_Ally_Hits(true);
-
+                        
                         Reference_Container_t container(reference);
                         if (container.Is_Valid()) {
                             for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
@@ -122,7 +123,6 @@ namespace doticu_skylib {
                                     }
                                 }
                             }
-
                             maybe<Actor_Base_t*> actor_base = actor->Actor_Base();
                             if (actor_base) {
                                 maybe<Outfit_t*> outfit = actor_base->Default_Outfit();
@@ -132,7 +132,6 @@ namespace doticu_skylib {
                                     container.Add(circlet, x_list);
                                 }
                             }
-
                             //container.Log();
                         }
                     }

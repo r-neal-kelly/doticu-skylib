@@ -448,6 +448,7 @@
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
@@ -527,6 +528,7 @@
     <ClCompile Include="src\doticu_skylib\reference_container.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_interaction.cpp" />
+    <ClCompile Include="src\doticu_skylib\static.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />

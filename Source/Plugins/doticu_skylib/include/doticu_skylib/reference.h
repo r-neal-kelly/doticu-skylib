@@ -115,7 +115,13 @@ namespace doticu_skylib {
         static void                         Loaded_Grid_References(some<Form_List_t*> results,
                                                                    Filter_i<some<Reference_t*>>* filter = nullptr);
 
-        static Reference_t*                 Create(some<Form_t*> base, u32 count, some<Reference_t*> at, Bool_t force_persist, Bool_t initially_disable);
+        static maybe<Reference_t*>          Create(some<Form_t*> base,
+                                                   u32 count,
+                                                   maybe<Reference_t*> at,
+                                                   Bool_t do_force_persist,
+                                                   Bool_t do_initially_disable,
+                                                   Bool_t do_place_exactly);
+
         static Reference_t*                 From_Handle(Reference_Handle_t reference_handle);
         static Reference_Handle_t           Invalid_Handle(); // this should go on Reference_Handle_t, but I need to be careful that we don't use it with virtual functions from Skyrim types
 
@@ -126,7 +132,7 @@ namespace doticu_skylib {
         virtual void                _3C(void);                                  // 3C
         virtual void                _3D(void);                                  // 3D
         virtual void                _3E(void);                                  // 3E
-        virtual void                _3F(void);                                  // 3F
+        virtual void                Do_Update_3D_Position(Bool_t do_warp);      // 3F
         virtual void                _40(void);                                  // 40
         virtual void                _41(void);                                  // 41
         virtual void                _42(void);                                  // 42
@@ -245,29 +251,32 @@ namespace doticu_skylib {
         Bool_t Is_Based_On_Container();
 
     public:
-        Bool_t Is_Alive();
-        Bool_t Is_Dead();
-        Bool_t Is_Deleted();
-        Bool_t Isnt_Deleted();
-        Bool_t Is_Enabled();
-        Bool_t Is_Disabled();
-        Bool_t Is_Persistent();
-        Bool_t Is_Temporary();
-        Bool_t Is_Attached();
-        Bool_t Is_Detached();
+        Bool_t          Is_Alive();
+        Bool_t          Is_Dead();
+        Bool_t          Is_Deleted();
+        Bool_t          Isnt_Deleted();
+        Bool_t          Is_Enabled();
+        Bool_t          Is_Disabled();
+        Bool_t          Is_Persistent();
+        Bool_t          Is_Temporary();
+        Bool_t          Is_Attached();
+        Bool_t          Is_Detached();
 
-        Bool_t Is_In_Dialogue_With_Player();
+        maybe<Bool_t>   Is_In_Interior_Cell();
+        maybe<Bool_t>   Is_In_Exterior_Cell();
 
-        Bool_t Is_Aliased();
-        Bool_t Is_Aliased(some<Quest_t*> quest);
-        Bool_t Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
-        Bool_t Is_Aliased_As_Protected();
-        Bool_t Is_Aliased_As_Essential();
-        Bool_t Is_Quest_Item();
+        Bool_t          Is_In_Dialogue_With_Player();
 
-        Bool_t Has_Owner();
-        Bool_t Has_Owner(some<Actor_t*> actor);
-        Bool_t Has_Potential_Thief(some<Actor_t*> actor);
+        Bool_t          Is_Aliased();
+        Bool_t          Is_Aliased(some<Quest_t*> quest);
+        Bool_t          Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
+        Bool_t          Is_Aliased_As_Protected();
+        Bool_t          Is_Aliased_As_Essential();
+        Bool_t          Is_Quest_Item();
+
+        Bool_t          Has_Owner();
+        Bool_t          Has_Owner(some<Actor_t*> actor);
+        Bool_t          Has_Potential_Thief(some<Actor_t*> actor);
 
     public:
         const char*                         Name();
