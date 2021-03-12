@@ -5,8 +5,19 @@
 #pragma once
 
 #include "doticu_skylib/actor_values.h"
+#include "doticu_skylib/math.h"
 
 namespace doticu_skylib {
+
+    void Actor_Values_t::Damage_Actor_Value(Actor_Value_Type_e actor_value_type, Float_t amount)
+    {
+        Do_Mod_Current_Actor_Value(Actor_Value_Modifier_e::DAMAGE, actor_value_type, -abs(amount));
+    }
+
+    void Actor_Values_t::Restore_Actor_Value(Actor_Value_Type_e actor_value_type, Float_t amount)
+    {
+        Do_Mod_Current_Actor_Value(Actor_Value_Modifier_e::DAMAGE, actor_value_type, abs(amount));
+    }
 
     void Actor_Values_t::Log_Actor_Value(Actor_Value_Type_e actor_value_type, std::string indent)
     {
@@ -14,9 +25,8 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "{");
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "current: %16.8f", Get_Current_Actor_Value(actor_value_type));
-        SKYLIB_LOG(indent + SKYLIB_TAB + "current_maximum: %16.8f", Get_Current_Maximum_Actor_Value(actor_value_type));
-        SKYLIB_LOG(indent + SKYLIB_TAB + "base: %16.8f", Get_Base_Actor_Value(actor_value_type));
-        SKYLIB_LOG(indent + SKYLIB_TAB + "is_player_values: %s", Get_Is_Player_Values() ? "true" : "false");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "maximum: %16.8f", Get_Maximum_Actor_Value(actor_value_type));
+        SKYLIB_LOG(indent + SKYLIB_TAB + "default: %16.8f", Get_Default_Actor_Value(actor_value_type));
 
         SKYLIB_LOG(indent + "}");
     }

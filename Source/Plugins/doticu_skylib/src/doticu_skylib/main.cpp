@@ -72,7 +72,6 @@ namespace doticu_skylib {
                         }
                     }
                 }
-                player_actor->Log_Actor_Values();
                 Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_t());
             }
         };

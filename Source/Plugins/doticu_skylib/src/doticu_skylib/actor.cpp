@@ -844,7 +844,7 @@ namespace doticu_skylib {
 
     void Actor_t::Pacify()
     {
-        Set_Current_Actor_Value(Actor_Value_Type_e::AGGRESSION, 0.0f);
+        Set_Default_Actor_Value(Actor_Value_Type_e::AGGRESSION, 0.0f);
         Stop_Combat_And_Alarm();
         Evaluate_Package(true, true);
     }
@@ -1441,6 +1441,16 @@ namespace doticu_skylib {
         Log_Actor_Value(Actor_Value_Type_e::HEALTH, indent + SKYLIB_TAB);
         Log_Actor_Value(Actor_Value_Type_e::MAGICKA, indent + SKYLIB_TAB);
         Log_Actor_Value(Actor_Value_Type_e::STAMINA, indent + SKYLIB_TAB);
+
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base:");
+            actor_base->Log_Actor_Value(Actor_Value_Type_e::HEALTH, indent + SKYLIB_TAB + SKYLIB_TAB);
+            actor_base->Log_Actor_Value(Actor_Value_Type_e::MAGICKA, indent + SKYLIB_TAB + SKYLIB_TAB);
+            actor_base->Log_Actor_Value(Actor_Value_Type_e::STAMINA, indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base: (none)");
+        }
 
         SKYLIB_LOG(indent + "}");
     }
