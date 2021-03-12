@@ -85,7 +85,8 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                IGNORES_ALLY_HITS = static_cast<value_type>(1 << 20),
+                STARTS_DEAD         = static_cast<value_type>(1 << 9),
+                IGNORES_ALLY_HITS   = static_cast<value_type>(1 << 20),
             };
             using Enum_t::Enum_t;
         };
@@ -406,6 +407,9 @@ namespace doticu_skylib {
         Bool_t                                      Can_Autostart_Bard_Performance();
         void                                        Can_Autostart_Bard_Performance(Bool_t value);
 
+        Bool_t                                      Can_Be_Resurrected();
+        void                                        Can_Be_Resurrected(Bool_t value);
+
         void                                        Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai);
         void                                        Pacify();
         void                                        Queue_NI_Node_Update(Bool_t do_update_weight);
@@ -442,7 +446,10 @@ namespace doticu_skylib {
         void    Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback);
 
         void    Resurrect(maybe<Virtual::Callback_i*> v_callback);                                                  // Resurrect
-        void    Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, maybe<unique<Callback_i<>>> callback);
+        void    Resurrect(Bool_t do_keep_inventory,
+                          Bool_t do_pacify,
+                          Bool_t do_force,
+                          maybe<unique<Callback_i<>>> callback);
 
         void    Stop_Bard_Performance(maybe<unique<Callback_i<>>> callback);
 

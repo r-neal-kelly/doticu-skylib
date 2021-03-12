@@ -819,6 +819,20 @@ namespace doticu_skylib {
         Faction_Rank(bard_singer_no_autostart_faction, value ? -1 : 0);
     }
 
+    Bool_t Actor_t::Can_Be_Resurrected()
+    {
+        return !this->form_flags.Is_Flagged(Form_Flags_e::STARTS_DEAD);
+    }
+
+    void Actor_t::Can_Be_Resurrected(Bool_t value)
+    {
+        if (value) {
+            this->form_flags.Unflag(Form_Flags_e::STARTS_DEAD);
+        } else {
+            this->form_flags.Flag(Form_Flags_e::STARTS_DEAD);
+        }
+    }
+
     void Actor_t::Evaluate_Package(Bool_t do_immediately, Bool_t do_reset_ai)
     {
         static auto evaluate_package = reinterpret_cast
@@ -1186,7 +1200,7 @@ namespace doticu_skylib {
         );
     }
 
-    void Actor_t::Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, maybe<unique<Callback_i<>>> callback)
+    void Actor_t::Resurrect(Bool_t do_keep_inventory, Bool_t do_pacify, Bool_t do_force, maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;
 
@@ -1195,23 +1209,28 @@ namespace doticu_skylib {
         {
         public:
             some<Actor_t*>              actor;
-            maybe<Actor_Base_t*>        original_actor_base;
-            maybe<Container_Changes_t*> container_changes;
             Bool_t                      do_keep_inventory;
             Bool_t                      do_pacify;
+            Bool_t                      do_force;
             Callback                    callback;
+            maybe<Actor_Base_t*>        original_actor_base;
+            maybe<Container_Changes_t*> container_changes;
+            Bool_t                      can_be_resurrected;
 
         public:
             Virtual_Callback(some<Actor_t*> actor,
                              Bool_t do_keep_inventory,
                              Bool_t do_pacify,
+                             Bool_t do_force,
                              Callback callback) :
                 actor(actor),
-                original_actor_base(nullptr),
-                container_changes(nullptr),
                 do_keep_inventory(do_keep_inventory),
                 do_pacify(do_pacify),
-                callback(std::move(callback))
+                do_force(do_force),
+                callback(std::move(callback)),
+                original_actor_base(nullptr),
+                container_changes(nullptr),
+                can_be_resurrected(false)
             {
                 if (this->do_keep_inventory) {
                     this->original_actor_base = this->actor->Actor_Base();
@@ -1228,6 +1247,10 @@ namespace doticu_skylib {
                         x_container_changes->container_changes = nullptr;
                     }
                 }
+                if (this->do_force) {
+                    this->can_be_resurrected = this->actor->Can_Be_Resurrected();
+                    this->actor->Can_Be_Resurrected(true);
+                }
             }
 
         public:
@@ -1235,6 +1258,10 @@ namespace doticu_skylib {
             {
                 if (this->do_pacify) {
                     this->actor->Pacify();
+                }
+
+                if (this->do_force) {
+                    this->actor->Can_Be_Resurrected(this->can_be_resurrected);
                 }
 
                 if (this->do_keep_inventory) {
@@ -1266,7 +1293,7 @@ namespace doticu_skylib {
         };
 
         if (Is_Dead()) {
-            Resurrect(new Virtual_Callback(this, do_keep_inventory, do_pacify, std::move(callback)));
+            Resurrect(new Virtual_Callback(this, do_keep_inventory, do_pacify, do_force, std::move(callback)));
         } else {
             if (callback) {
                 (*callback)();
