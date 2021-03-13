@@ -11,9 +11,11 @@
 #include "doticu_skylib/reference.h"
 
 #include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_charge.h"
 #include "doticu_skylib/extra_collision_layer.h"
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/extra_enchantment.h"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/extra_list.h"
@@ -224,13 +226,12 @@ namespace doticu_skylib {
     void Extra_Data_t::Log(std::string indent)
     {
         Extra_Type_e type = Type();
-        if (type == Extra_Type_e::ALIASES) {
-            static_cast<Extra_Aliases_t*>(this)->Log(indent);
-        } else if (type == Extra_Type_e::REFERENCE_HANDLE) {
-            static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
-        } else if (type == Extra_Type_e::TEXT_DISPLAY) {
-            static_cast<Extra_Text_Display_t*>(this)->Log(indent);
-        } else {
+        if (type == Extra_Type_e::ALIASES)                  static_cast<Extra_Aliases_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::CHARGE)              static_cast<Extra_Charge_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::ENCHANTMENT)         static_cast<Extra_Enchantment_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::REFERENCE_HANDLE)    static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::TEXT_DISPLAY)        static_cast<Extra_Text_Display_t*>(this)->Log(indent);
+        else {
             SKYLIB_LOG(indent + "Extra_Data_t::Log");
             SKYLIB_LOG(indent + "{");
 

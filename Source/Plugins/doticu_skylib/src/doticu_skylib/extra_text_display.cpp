@@ -46,7 +46,7 @@ namespace doticu_skylib {
         }
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "temper_health: %f", this->temper_health);
-        SKYLIB_LOG(indent + SKYLIB_TAB + "custom_length: %u", this->custom_length);
+        SKYLIB_LOG(indent + SKYLIB_TAB + "custom_length: %u", this->name_length);
 
         SKYLIB_LOG(indent + "}");
     }

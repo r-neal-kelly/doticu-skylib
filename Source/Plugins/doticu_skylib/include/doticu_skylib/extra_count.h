@@ -17,18 +17,22 @@ namespace doticu_skylib {
             EXTRA_TYPE = Extra_Type_e::COUNT,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
-                V_TABLE = 0x0152BFE0,
+                V_TABLE = 0x0152BFE0, // 229537
             };
             using Enum_t::Enum_t;
         };
 
     public:
+        static some<Extra_Count_t*> Create();
         static some<Extra_Count_t*> Create(s16 count);
+        static some<Extra_Count_t*> Create(const Extra_Count_t& other);
         static void                 Destroy(some<Extra_Count_t*> x_count);
 
     public:

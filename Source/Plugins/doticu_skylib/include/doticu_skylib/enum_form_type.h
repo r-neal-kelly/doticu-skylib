@@ -40,7 +40,7 @@ namespace doticu_skylib {
             MAGIC_EFFECT            = 0x12, // MGEF
             SCRIPT                  = 0x13, // SCPT
             // 0x14 LTEX
-            // 0x15 ENCH
+            ENCHANTMENT             = 0x15, // ENCH
             SPELL                   = 0x16, // SPEL
             // 0x17 SCRL
             ACTIVATOR               = 0x18, // ACTI

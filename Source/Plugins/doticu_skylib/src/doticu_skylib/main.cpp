@@ -100,16 +100,16 @@ namespace doticu_skylib {
                 some<Container_t*> container = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
                 some<Actor_Base_t*> vici_actor_base = static_cast<Actor_Base_t*>(Game_t::Form(0x0001327A)());
 
+                Reference_Container_t player_actor_container(player_actor);
+                if (player_actor_container.Is_Valid()) {
+                    player_actor_container.Log();
+                }
+
+                Extra_Data_t::Log_Text_Displays();
+
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
-
-                    if (reference() == player_actor()) {
-                        Reference_Container_t temp(reference);
-                        if (temp.Is_Valid()) {
-                            temp.Log();
-                        }
-                    }
 
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {

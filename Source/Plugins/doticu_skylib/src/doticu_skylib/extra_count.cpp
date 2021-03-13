@@ -8,10 +8,34 @@
 
 namespace doticu_skylib {
 
-    some<Extra_Count_t*> Extra_Count_t::Create(s16 count)
+    some<Extra_Count_t*> Extra_Count_t::Create()
     {
         some<Extra_Count_t*> x_count = Extra_Data_t::Create<Extra_Count_t>();
+
+        x_count->count = 0;
+        x_count->pad_12 = 0;
+        x_count->pad_14 = 0;
+
+        return x_count;
+    }
+
+    some<Extra_Count_t*> Extra_Count_t::Create(s16 count)
+    {
+        some<Extra_Count_t*> x_count = Create();
+
         x_count->Count(count);
+
+        return x_count;
+    }
+
+    some<Extra_Count_t*> Extra_Count_t::Create(const Extra_Count_t& other)
+    {
+        some<Extra_Count_t*> x_count = Extra_Data_t::Create<Extra_Count_t>();
+
+        x_count->count = other.count;
+        x_count->pad_12 = other.pad_12;
+        x_count->pad_14 = other.pad_14;
+
         return x_count;
     }
 

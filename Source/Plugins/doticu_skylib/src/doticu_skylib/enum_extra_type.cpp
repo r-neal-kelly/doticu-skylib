@@ -166,7 +166,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x98),
             SKYLIB_ENUM_TO_STRING(TEXT_DISPLAY),
             SKYLIB_ENUM_TO_STRING(0x9A),
-            SKYLIB_ENUM_TO_STRING(0x9B),
+            SKYLIB_ENUM_TO_STRING(ENCHANTMENT),
             SKYLIB_ENUM_TO_STRING(SOUL_LEVEL),
             SKYLIB_ENUM_TO_STRING(0x9D),
             SKYLIB_ENUM_TO_STRING(0x9E),

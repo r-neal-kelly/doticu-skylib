@@ -11,7 +11,7 @@
 #include "doticu_skylib/enum_actor_value_type.h"
 #include "doticu_skylib/enum_magic_archetype.h"
 #include "doticu_skylib/enum_magic_cast_type.h"
-#include "doticu_skylib/enum_magic_delivery.h"
+#include "doticu_skylib/enum_magic_delivery_type.h"
 #include "doticu_skylib/enum_magic_effect_flags.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sound_level.h"
@@ -77,7 +77,7 @@ namespace doticu_skylib {
         maybe<Projectile_t*>            projectile;                 // 0C8
         maybe<Explosion_t*>             explosion;                  // 0D0
         Magic_Cast_Type_e               magic_cast_type;            // 0D8
-        Magic_Delivery_e                magic_delivery_type;        // 0DC
+        Magic_Delivery_Type_e           magic_delivery_type;        // 0DC
         Actor_Value_Type_e              secondary_actor_value;      // 0E0
         u32                             pad_0E4;                    // 0E4
         maybe<Art_Object_t*>            cast_art_object;            // 0E8

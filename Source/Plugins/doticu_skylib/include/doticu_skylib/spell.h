@@ -4,17 +4,15 @@
 
 #pragma once
 
-#include "doticu_skylib/enum_magic_cast_type.h"
-#include "doticu_skylib/enum_magic_delivery.h"
-#include "doticu_skylib/enum_magic_type.h"
-#include "doticu_skylib/enum_spell_flags.h"
-
 #include "doticu_skylib/component_description.h"
 #include "doticu_skylib/component_equip_slot.h"
 #include "doticu_skylib/component_menu_display.h"
-
-#include "doticu_skylib/magic_base.h"
+#include "doticu_skylib/enum_magic_cast_type.h"
+#include "doticu_skylib/enum_magic_delivery_type.h"
+#include "doticu_skylib/enum_magic_type.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/enum_spell_flags.h"
+#include "doticu_skylib/magic_base.h"
 
 namespace doticu_skylib {
 
@@ -38,15 +36,15 @@ namespace doticu_skylib {
         virtual ~Spell_t(); // 0
 
     public:
-        s32                 base_cost;          // C0
-        Spell_Flags_e       spell_flags;        // C4
-        Magic_Type_e        magic_type;         // C8
-        Float_t             charge_time;        // CC
-        Magic_Cast_Type_e   magic_cast_type;    // D0
-        Magic_Delivery_e    magic_delivery;     // D4
-        Float_t             cast_duration;      // D8
-        Float_t             range;              // DC
-        maybe<Perk_t*>      half_cost_perk;     // E0
+        s32                     cost_override;          // C0
+        Spell_Flags_e           spell_flags;            // C4
+        Magic_Type_e            magic_type;             // C8
+        Float_t                 charge_time;            // CC
+        Magic_Cast_Type_e       magic_cast_type;        // D0
+        Magic_Delivery_Type_e   magic_delivery_type;    // D4
+        Float_t                 cast_duration;          // D8
+        Float_t                 range;                  // DC
+        maybe<Perk_t*>          half_cost_perk;         // E0
     };
     STATIC_ASSERT(sizeof(Spell_t) == 0xE8);
 

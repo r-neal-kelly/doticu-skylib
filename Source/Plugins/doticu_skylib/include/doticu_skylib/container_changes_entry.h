@@ -75,9 +75,9 @@ namespace doticu_skylib {
             WORN_LEFT
 
             (ones we typically want to dupe when copying an x_list)
-            CHARGE
-            COUNT
-            ENCHANTMENT
+            x CHARGE
+            x COUNT
+            x ENCHANTMENT
             HEALTH
             OWNER
             POISON

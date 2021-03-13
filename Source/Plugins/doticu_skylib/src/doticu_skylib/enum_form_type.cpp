@@ -32,7 +32,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(MAGIC_EFFECT),
             SKYLIB_ENUM_TO_STRING(SCRIPT),
             SKYLIB_ENUM_TO_STRING(0x14),
-            SKYLIB_ENUM_TO_STRING(0x15),
+            SKYLIB_ENUM_TO_STRING(ENCHANTMENT),
             SKYLIB_ENUM_TO_STRING(SPELL),
             SKYLIB_ENUM_TO_STRING(0x17),
             SKYLIB_ENUM_TO_STRING(ACTIVATOR),

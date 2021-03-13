@@ -19,6 +19,12 @@ namespace doticu_skylib { namespace Virtual {
         // I think virtual Waits may not finish until after the pause event.
         // That means we may find it more useful to use our own threads in some circumstances, so
         // that certain callbacks get to finish while we wait here.
+
+        // actually the problem is more severe. we can't use the game's virtual callback facilities
+        // because the game will not finish executing them until after the save. this means that
+        // we'll need to somehow directly create the script calls we're looking for (which are almost
+        // all native) and then we can use this system for its intended purpose. the alternative
+        // is to figure out how to save the game's callbacks.
         return std::move(
             std::unique_lock<std::timed_mutex>(active_callbacks_lock, std::chrono::seconds(6))
         );

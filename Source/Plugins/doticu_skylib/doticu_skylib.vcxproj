@@ -70,11 +70,13 @@
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
     <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
+    <ClInclude Include="include\doticu_skylib\enchantment.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_attack_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_enchantment_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_morph_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_part_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
@@ -91,6 +93,8 @@
     <ClInclude Include="include\doticu_skylib\enum_texture_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_update_3d_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_voice_type_flags.h" />
+    <ClInclude Include="include\doticu_skylib\extra_charge.h" />
+    <ClInclude Include="include\doticu_skylib\extra_enchantment.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
@@ -179,7 +183,7 @@
     <ClInclude Include="include\doticu_skylib\enum_havok_collidable_base_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_havok_collidable_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_cast_type.h" />
-    <ClInclude Include="include\doticu_skylib\enum_magic_delivery.h" />
+    <ClInclude Include="include\doticu_skylib\enum_magic_delivery_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_message_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_model_update_flags.h" />
@@ -454,11 +458,14 @@
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
+    <ClCompile Include="src\doticu_skylib\enchantment.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_charge.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_enchantment.cpp" />
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\main.cpp" />

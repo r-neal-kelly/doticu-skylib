@@ -58,7 +58,7 @@ namespace doticu_skylib {
         Quest_t*        owner;          // 20
         Conditional_u   conditional;    // 28
         Float_t         temper_health;  // 2C
-        u16             custom_length;  // 30
+        u16             name_length;    // 30
         u16             pad_32;         // 32
         u32             pad_34;         // 34
 

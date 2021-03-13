@@ -864,13 +864,7 @@
     <ClInclude Include="include\doticu_skylib\enum_magic_cast_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_magic_delivery.h">
-      <Filter>Header Files\enum</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h">
-      <Filter>Header Files\enum</Filter>
-    </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_magic_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_ni_3d_flags.h">
@@ -1205,6 +1199,24 @@
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\projectile.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_charge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\extra_enchantment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enchantment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_enchantment_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_type.h">
+      <Filter>Header Files\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_delivery_type.h">
+      <Filter>Header Files\enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1593,6 +1605,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_charge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\extra_enchantment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enchantment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
