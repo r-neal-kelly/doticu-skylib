@@ -9,7 +9,8 @@
 
 namespace doticu_skylib {
 
-    class Effect_Shader_t : public Form_t
+    class Effect_Shader_t : // TESEffectShader
+        public Form_t       // 000
     {
     public:
         enum

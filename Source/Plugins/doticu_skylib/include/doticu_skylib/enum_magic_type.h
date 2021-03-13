@@ -8,10 +8,11 @@
 
 namespace doticu_skylib {
 
-    class Magic_Type_e : public Enum_t<u32>
+    class Magic_Type_e :
+        public Enum_t<u32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             SPELL           = 0,
             DISEASE         = 1,

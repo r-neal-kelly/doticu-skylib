@@ -419,9 +419,6 @@ namespace doticu_skylib {
         void                                        Update_3D();
         void                                        Update_Equipment();
 
-        //Bool_t                                      Kill(maybe<Actor_t*> killer, Bool_t do_send_event, Bool_t do_ragdoll_instantly);
-        //Bool_t                                      Resurrect(Bool_t do_reset_inventory);
-
     public:
         Float_t Alpha();
         void    Alpha(Float_t alpha);           // SetActorAlpha

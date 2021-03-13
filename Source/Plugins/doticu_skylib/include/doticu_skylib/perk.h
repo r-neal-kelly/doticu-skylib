@@ -15,7 +15,7 @@
 
 namespace doticu_skylib {
 
-    class Perk_t :
+    class Perk_t :              // BGSPerk
         public Form_t,          // 00
         public Name_c,          // 20
         public Description_c,   // 30

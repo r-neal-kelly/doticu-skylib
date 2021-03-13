@@ -13,13 +13,15 @@ namespace doticu_skylib {
 
     class Form_t;
 
-    class Description_c : public Form_Data_c // TESDescription
+    class Description_c :   // TESDescription
+        public Form_Data_c  // 00
     {
     public:
-        class Offset_e : Enum_t<Word_t>
+        class Offset_e :
+            Enum_t<Word_t>
         {
         public:
-            enum
+            enum enum_type : value_type
             {
                 GET = 0x00190480,
             };

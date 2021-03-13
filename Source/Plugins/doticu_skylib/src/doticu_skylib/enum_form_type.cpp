@@ -61,7 +61,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x2F),
             SKYLIB_ENUM_TO_STRING(0x30),
             SKYLIB_ENUM_TO_STRING(0x31),
-            SKYLIB_ENUM_TO_STRING(0x32),
+            SKYLIB_ENUM_TO_STRING(PROJECTILE),
             SKYLIB_ENUM_TO_STRING(0x33),
             SKYLIB_ENUM_TO_STRING(0x34),
             SKYLIB_ENUM_TO_STRING(LEVELED_ITEM),

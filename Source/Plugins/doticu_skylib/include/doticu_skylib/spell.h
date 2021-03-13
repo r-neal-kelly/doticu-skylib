@@ -32,11 +32,13 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::SPELL,
         };
 
+        static constexpr const char* SCRIPT_NAME = "Spell";
+
     public:
         virtual ~Spell_t(); // 0
 
     public:
-        s32                 cost_override;      // C0
+        s32                 base_cost;          // C0
         Spell_Flags_e       spell_flags;        // C4
         Magic_Type_e        magic_type;         // C8
         Float_t             charge_time;        // CC
@@ -44,7 +46,7 @@ namespace doticu_skylib {
         Magic_Delivery_e    magic_delivery;     // D4
         Float_t             cast_duration;      // D8
         Float_t             range;              // DC
-        maybe<Perk_t*>      cast_perk;          // E0
+        maybe<Perk_t*>      half_cast_perk;     // E0
     };
     STATIC_ASSERT(sizeof(Spell_t) == 0xE8);
 

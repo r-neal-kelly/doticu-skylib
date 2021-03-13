@@ -1197,6 +1197,15 @@
     <ClInclude Include="include\doticu_skylib\enum_actor_value_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_effect_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_archetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">

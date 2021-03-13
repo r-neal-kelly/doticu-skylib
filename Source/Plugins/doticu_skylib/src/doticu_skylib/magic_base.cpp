@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/magic_base.h"
+#include "doticu_skylib/magic_effect.h"
 #include "doticu_skylib/magic_effect_instance.h"
 
 namespace doticu_skylib {
@@ -23,6 +24,31 @@ namespace doticu_skylib {
                 results.push_back(magic_effect_instance->base());
             }
         }
+    }
+
+    Bool_t Magic_Base_t::Can_Damage_Health()
+    {
+        for (size_t idx = 0, end = this->magic_effect_instances.Count(); idx < end; idx += 1) {
+            maybe<Magic_Effect_Instance_t*> magic_effect_instance = this->magic_effect_instances[idx];
+            if (magic_effect_instance) {
+                maybe<Magic_Effect_t*> magic_effect = magic_effect_instance->base;
+                if (magic_effect) {
+                    if (magic_effect->magic_effect_flags.Is_Flagged(Magic_Effect_Flags_e::DETRIMENTAL)) {
+                        if (magic_effect->archetype == Magic_Archetype_e::VALUE_MODIFIER) {
+                            if (magic_effect->primary_actor_value == Actor_Value_Type_e::HEALTH) {
+                                return true;
+                            }
+                        } else if (magic_effect->archetype == Magic_Archetype_e::DUAL_VALUE_MODIFIER) {
+                            if (magic_effect->primary_actor_value == Actor_Value_Type_e::HEALTH ||
+                                magic_effect->secondary_actor_value == Actor_Value_Type_e::HEALTH) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }

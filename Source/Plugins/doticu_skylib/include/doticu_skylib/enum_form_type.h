@@ -69,7 +69,7 @@ namespace doticu_skylib {
             // 0x2F IDLM
             // 0x30 NOTE
             // 0x31 COBJ
-            // 0x32 PROJ
+            PROJECTILE              = 0x32, // PROJ
             // 0x33 HAZD
             // 0x34 SLGM
             LEVELED_ITEM            = 0x35, // LVLI

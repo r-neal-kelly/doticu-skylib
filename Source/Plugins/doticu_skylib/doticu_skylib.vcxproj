@@ -79,6 +79,8 @@
     <ClInclude Include="include\doticu_skylib\enum_face_part_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_life_state.h" />
+    <ClInclude Include="include\doticu_skylib\enum_magic_archetype.h" />
+    <ClInclude Include="include\doticu_skylib\enum_magic_effect_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
@@ -96,6 +98,7 @@
     <ClInclude Include="include\doticu_skylib\main.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
+    <ClInclude Include="include\doticu_skylib\projectile.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
