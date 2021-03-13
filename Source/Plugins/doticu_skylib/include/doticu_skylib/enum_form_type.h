@@ -65,7 +65,7 @@ namespace doticu_skylib {
             ACTOR_BASE              = 0x2B, // NPC_
             LEVELED_ACTOR_BASE      = 0x2C, // LVLN
             // 0x2D KEYM
-            // 0x2E ALCH
+            POTION                  = 0x2E, // ALCH
             // 0x2F IDLM
             // 0x30 NOTE
             // 0x31 COBJ

@@ -16,7 +16,9 @@
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/extra_enchantment.h"
+#include "doticu_skylib/extra_poison.h"
 #include "doticu_skylib/extra_reference_handle.h"
+#include "doticu_skylib/extra_soul_level.h"
 #include "doticu_skylib/extra_temper_level.h"
 #include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/extra_list.h"
@@ -230,7 +232,9 @@ namespace doticu_skylib {
         if (type == Extra_Type_e::ALIASES)                  static_cast<Extra_Aliases_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::CHARGE)              static_cast<Extra_Charge_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::ENCHANTMENT)         static_cast<Extra_Enchantment_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::POISON)              static_cast<Extra_Poison_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::REFERENCE_HANDLE)    static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::SOUL_LEVEL)          static_cast<Extra_Soul_Level_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::TEMPER_LEVEL)        static_cast<Extra_Temper_Level_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::TEXT_DISPLAY)        static_cast<Extra_Text_Display_t*>(this)->Log(indent);
         else {

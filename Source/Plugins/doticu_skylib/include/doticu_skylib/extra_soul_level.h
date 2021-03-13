@@ -5,7 +5,6 @@
 #pragma once
 
 #include "doticu_skylib/enum_soul_level.h"
-
 #include "doticu_skylib/extra_data.h"
 
 namespace doticu_skylib {
@@ -32,13 +31,26 @@ namespace doticu_skylib {
         };
 
     public:
+        static some<Extra_Soul_Level_t*>    Create();
+        static some<Extra_Soul_Level_t*>    Create(Soul_Level_e soul_level);
+        static some<Extra_Soul_Level_t*>    Create(const Extra_Soul_Level_t& other);
+        static void                         Destroy(some<Extra_Soul_Level_t*> x_soul_level);
+
+    public:
         virtual ~Extra_Soul_Level_t(); // 0
 
     public:
-        Soul_Level_e    level;  // 10
-        u8              pad_11; // 11
-        u16             pad_12; // 12
-        u32             pad_14; // 14
+        Soul_Level_e    soul_level; // 10
+        u8              pad_11;     // 11
+        u16             pad_12;     // 12
+        u32             pad_14;     // 14
+
+    public:
+        Soul_Level_e    Soul_Level();
+        void            Soul_Level(Soul_Level_e soul_level);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Soul_Level_t) == 0x18);
 

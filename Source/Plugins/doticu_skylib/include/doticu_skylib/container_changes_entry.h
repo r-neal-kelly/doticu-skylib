@@ -73,22 +73,17 @@ namespace doticu_skylib {
             UNIQUE_ID
             WORN
             WORN_LEFT
+            (there may be more, like CANNOT_WEAR, SHOULD_WEAR)
 
             (ones we typically want to dupe when copying an x_list)
             x CHARGE
             x COUNT
             x ENCHANTMENT
             x OWNER
-            POISON
-            SOUL_LEVEL
+            x POISON
+            x SOUL_LEVEL
             x TEMPER_LEVEL
-            TEXT_DISPLAY
-
-            (there may be more, like CANNOT_WEAR, SHOULD_WEAR)
-
-            we can have two modes of copying, black and white listing.
-            it's safer to white list, but we won't miss anything important if we black list.
-            however, technically we may only be capable of white listing, because not every is so easily copied.
+            x TEXT_DISPLAY (we should probably only copy this one if it's a custom name.)
     */
 
 }

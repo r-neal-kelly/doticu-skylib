@@ -78,7 +78,7 @@ namespace doticu_skylib {
             // 0x3B
             // 0x3C 0x0152C5C0
             // 0x3D
-            // 0x3E
+            POISON                  = 0x3E, // 
             // 0x3F
             // 0x40 0x0152C4A0
             // 0x41 0x0152C5A0

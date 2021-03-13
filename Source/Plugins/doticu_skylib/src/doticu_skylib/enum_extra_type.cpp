@@ -73,7 +73,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x3B),
             SKYLIB_ENUM_TO_STRING(0x3C),
             SKYLIB_ENUM_TO_STRING(0x3D),
-            SKYLIB_ENUM_TO_STRING(0x3E),
+            SKYLIB_ENUM_TO_STRING(POISON),
             SKYLIB_ENUM_TO_STRING(0x3F),
             SKYLIB_ENUM_TO_STRING(0x40),
             SKYLIB_ENUM_TO_STRING(0x41),

@@ -57,7 +57,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(ACTOR_BASE),
             SKYLIB_ENUM_TO_STRING(LEVELED_ACTOR_BASE),
             SKYLIB_ENUM_TO_STRING(0x2D),
-            SKYLIB_ENUM_TO_STRING(0x2E),
+            SKYLIB_ENUM_TO_STRING(POTION),
             SKYLIB_ENUM_TO_STRING(0x2F),
             SKYLIB_ENUM_TO_STRING(0x30),
             SKYLIB_ENUM_TO_STRING(0x31),

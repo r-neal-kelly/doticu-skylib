@@ -9,32 +9,37 @@
 
 namespace doticu_skylib {
 
-    class Soul_Level_e : public Enum_t<u8>
+    class Soul_Level_e :
+        public Enum_t<u8>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
-            NONE    = 0,
-            PETTY   = 1,
-            LESSER  = 2,
-            COMMON  = 3,
-            GREATER = 4,
-            GRAND   = 5,
+            _NONE_  = static_cast<value_type>(-1),
+
+            EMPTY   = static_cast<value_type>(0),
+            PETTY   = static_cast<value_type>(1),
+            LESSER  = static_cast<value_type>(2),
+            COMMON  = static_cast<value_type>(3),
+            GREATER = static_cast<value_type>(4),
+            GRAND   = static_cast<value_type>(5),
+
+            _TOTAL_ = static_cast<value_type>(6),
         };
 
-        static constexpr const char* NONE_STRING    = "None";
-        static constexpr const char* PETTY_STRING   = "Petty";
-        static constexpr const char* LESSER_STRING  = "Lesser";
-        static constexpr const char* COMMON_STRING  = "Common";
-        static constexpr const char* GREATER_STRING = "Greater";
-        static constexpr const char* GRAND_STRING   = "Grand";
+    public:
+        static some<const char* const*> Strings();
+        static some<const char*>        To_String(Soul_Level_e soul_level);
+        static Soul_Level_e             From_String(maybe<const char*> soul_level);
 
     public:
         using Enum_t::Enum_t;
 
     public:
-        static some<const char*>    To_String(Soul_Level_e soul_level_e);
-        static Soul_Level_e         From_String(maybe<const char*> soul_level_cstr);
+        some<const char*> As_String();
+
+    public:
+        explicit operator Bool_t() const;
     };
 
 }

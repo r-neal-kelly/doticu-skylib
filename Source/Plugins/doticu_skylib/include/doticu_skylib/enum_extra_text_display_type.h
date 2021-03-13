@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Text_Display_Type_e :
+    class Extra_Text_Display_Type_e :
         public Enum_t<s32>
     {
     public:

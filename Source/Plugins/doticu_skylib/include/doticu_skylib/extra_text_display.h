@@ -25,28 +25,35 @@ namespace doticu_skylib {
         };
 
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 V_TABLE     = 0x0152CAE0, // 229625
+
                 SET_NAME    = 0x0013C870, // 12628
             };
             using Enum_t::Enum_t;
         };
 
-    public:
         union Conditional_u
         {
         public:
-            Text_Display_Type_e type;
-            u32                 owner_instance;
+            Extra_Text_Display_Type_e   type;
+            u32                         owner_instance;
 
         public:
-            ~Conditional_u() = delete;
+            Conditional_u();
+            ~Conditional_u();
         };
         STATIC_ASSERT(sizeof(Conditional_u) == 0x4);
+
+    public:
+        static some<Extra_Text_Display_t*>  Create();
+        static some<Extra_Text_Display_t*>  Create(const Extra_Text_Display_t& other);
+        static void                         Destroy(some<Extra_Text_Display_t*> x_text_display);
 
     public:
         virtual ~Extra_Text_Display_t(); // 0

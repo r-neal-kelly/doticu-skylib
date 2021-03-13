@@ -2,13 +2,62 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/extra_data.inl"
+#include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/message.h"
 #include "doticu_skylib/quest.h"
 
-#include "doticu_skylib/extra_text_display.h"
-
 namespace doticu_skylib {
+
+    Extra_Text_Display_t::Conditional_u::Conditional_u() :
+        type(Extra_Text_Display_Type_e::DEFAULT)
+    {
+    }
+
+    Extra_Text_Display_t::Conditional_u::~Conditional_u()
+    {
+        this->type = Extra_Text_Display_Type_e::DEFAULT;
+    }
+
+    some<Extra_Text_Display_t*> Extra_Text_Display_t::Create()
+    {
+        some<Extra_Text_Display_t*> x_text_display = Extra_Data_t::Create<Extra_Text_Display_t>();
+
+        x_text_display->name = "";
+        x_text_display->message = none<Message_t*>();
+        x_text_display->owner = none<Quest_t*>();
+        x_text_display->conditional.type = Extra_Text_Display_Type_e::DEFAULT;
+        x_text_display->temper_level = Temper_Level_e::STANDARD;
+        x_text_display->name_length = 0;
+        x_text_display->pad_32 = 0;
+        x_text_display->pad_34 = 0;
+
+        return x_text_display;
+    }
+
+    some<Extra_Text_Display_t*> Extra_Text_Display_t::Create(const Extra_Text_Display_t& other)
+    {
+        some<Extra_Text_Display_t*> x_text_display = Extra_Data_t::Create<Extra_Text_Display_t>();
+
+        x_text_display->name = other.name;
+        x_text_display->message = other.message;
+        x_text_display->owner = other.owner;
+        x_text_display->conditional.type = other.conditional.type;
+        x_text_display->temper_level = other.temper_level;
+        x_text_display->name_length = other.name_length;
+        x_text_display->pad_32 = other.pad_32;
+        x_text_display->pad_34 = other.pad_34;
+
+        return x_text_display;
+    }
+
+    void Extra_Text_Display_t::Destroy(some<Extra_Text_Display_t*> x_text_display)
+    {
+        SKYLIB_ASSERT_SOME(x_text_display);
+
+        Extra_Data_t::Destroy<Extra_Text_Display_t>(x_text_display);
+    }
 
     void Extra_Text_Display_t::Name(some<const char*> name, Bool_t do_force)
     {
