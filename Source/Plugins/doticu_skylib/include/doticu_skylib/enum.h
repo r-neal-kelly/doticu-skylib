@@ -15,7 +15,7 @@ namespace doticu_skylib {
     template <typename T>
     using enable_if_enumable_t = std::enable_if_t<
         std::is_integral<T>::value &&
-        !std::is_pointer<T>::value,
+        !std::is_same<T, Bool_t>::value,
         Bool_t
     >;
 

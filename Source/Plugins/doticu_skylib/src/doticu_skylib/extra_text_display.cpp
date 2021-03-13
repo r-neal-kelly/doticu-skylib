@@ -32,7 +32,7 @@ namespace doticu_skylib {
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "name: %s", this->name ? name.data : "");
         if (this->message) {
-            DString_t message_dstring = this->message->Description(this->message);
+            DString_t message_dstring = this->message->Description(this->message());
             SKYLIB_LOG(indent + SKYLIB_TAB + "message: %s", message_dstring ? message_dstring.data : "");
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "message: (nullptr)");
@@ -45,8 +45,8 @@ namespace doticu_skylib {
             SKYLIB_LOG(indent + SKYLIB_TAB + "type: %i", this->conditional.type);
         }
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "temper_health: %f", this->temper_health);
-        SKYLIB_LOG(indent + SKYLIB_TAB + "custom_length: %u", this->name_length);
+        SKYLIB_LOG(indent + SKYLIB_TAB + "temper_level: %s", this->temper_level.As_String()());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "name_length: %u", this->name_length);
 
         SKYLIB_LOG(indent + "}");
     }

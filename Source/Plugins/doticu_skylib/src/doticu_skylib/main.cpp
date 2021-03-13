@@ -105,8 +105,6 @@ namespace doticu_skylib {
                     player_actor_container.Log();
                 }
 
-                Extra_Data_t::Log_Text_Displays();
-
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];

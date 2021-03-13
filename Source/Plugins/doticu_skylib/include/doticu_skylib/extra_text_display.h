@@ -4,12 +4,11 @@
 
 #pragma once
 
+#include "doticu_skylib/enum_extra_text_display_type.h"
+#include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/string.h"
-
-#include "doticu_skylib/enum_extra_text_display_type.h"
-
-#include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/temper_level.h"
 
 namespace doticu_skylib {
 
@@ -53,14 +52,14 @@ namespace doticu_skylib {
         virtual ~Extra_Text_Display_t(); // 0
 
     public:
-        String_t        name;           // 10
-        Message_t*      message;        // 18
-        Quest_t*        owner;          // 20
-        Conditional_u   conditional;    // 28
-        Float_t         temper_health;  // 2C
-        u16             name_length;    // 30
-        u16             pad_32;         // 32
-        u32             pad_34;         // 34
+        String_t            name;           // 10
+        maybe<Message_t*>   message;        // 18
+        maybe<Quest_t*>     owner;          // 20
+        Conditional_u       conditional;    // 28
+        Temper_Level_t      temper_level;   // 2C
+        u16                 name_length;    // 30
+        u16                 pad_32;         // 32
+        u32                 pad_34;         // 34
 
     public:
         void Name(some<const char*> name, Bool_t do_force);

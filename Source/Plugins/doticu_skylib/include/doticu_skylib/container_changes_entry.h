@@ -78,10 +78,10 @@ namespace doticu_skylib {
             x CHARGE
             x COUNT
             x ENCHANTMENT
-            HEALTH
-            OWNER
+            x OWNER
             POISON
             SOUL_LEVEL
+            x TEMPER_LEVEL
             TEXT_DISPLAY
 
             (there may be more, like CANNOT_WEAR, SHOULD_WEAR)

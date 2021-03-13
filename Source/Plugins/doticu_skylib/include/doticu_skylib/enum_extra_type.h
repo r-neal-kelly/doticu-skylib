@@ -53,10 +53,10 @@ namespace doticu_skylib {
             // 0x22
             // 0x23
             COUNT                   = 0x24,
-            HEALTH                  = 0x25, // 
+            TEMPER_LEVEL            = 0x25, // 
             // 0x26
             // 0x27
-            CHARGE                  = 0x28, // 
+            CHARGE                  = 0x28, // XCHG
             // 0x29 0x0152F1E0
             // 0x2A 0x0152BEA0
             // 0x2B 0x0152BF00

@@ -48,7 +48,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x22),
             SKYLIB_ENUM_TO_STRING(0x23),
             SKYLIB_ENUM_TO_STRING(COUNT),
-            SKYLIB_ENUM_TO_STRING(HEALTH),
+            SKYLIB_ENUM_TO_STRING(TEMPER_LEVEL),
             SKYLIB_ENUM_TO_STRING(0x26),
             SKYLIB_ENUM_TO_STRING(0x27),
             SKYLIB_ENUM_TO_STRING(CHARGE),

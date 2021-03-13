@@ -9,8 +9,6 @@
 
 namespace doticu_skylib {
 
-    class Form_t;
-
     class Extra_Owner_t :   // ExtraOwnership
         public Extra_Data_t // 00
     {
@@ -21,10 +19,11 @@ namespace doticu_skylib {
         };
 
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 V_TABLE = 0x0152BF80,
             };
@@ -32,14 +31,23 @@ namespace doticu_skylib {
         };
 
     public:
-        static some<Extra_Owner_t*> Create(Form_Owner_t owner);
+        static some<Extra_Owner_t*> Create();
+        static some<Extra_Owner_t*> Create(Form_Owner_t form_owner);
+        static some<Extra_Owner_t*> Create(const Extra_Owner_t& other);
         static void                 Destroy(some<Extra_Owner_t*> x_count);
 
     public:
         virtual ~Extra_Owner_t(); // 0
 
     public:
-        Form_Owner_t    owner; // 10
+        Form_Owner_t    form_owner; // 10
+
+    public:
+        Form_Owner_t    Form_Owner();
+        void            Form_Owner(Form_Owner_t form_owner);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Owner_t) == 0x18);
 

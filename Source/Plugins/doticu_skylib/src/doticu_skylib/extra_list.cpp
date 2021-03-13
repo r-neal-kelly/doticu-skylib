@@ -599,7 +599,7 @@ namespace doticu_skylib {
     {
         maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
         if (x_owner) {
-            return x_owner->owner;
+            return x_owner->Form_Owner();
         } else {
             return none<Form_Owner_t>();
         }
@@ -609,7 +609,7 @@ namespace doticu_skylib {
     {
         maybe<Extra_Owner_t*> x_owner = Get<Extra_Owner_t>();
         if (x_owner) {
-            x_owner->owner = owner;
+            x_owner->Form_Owner(owner);
         } else {
             Add<Extra_Owner_t>(Extra_Owner_t::Create(owner));
         }
