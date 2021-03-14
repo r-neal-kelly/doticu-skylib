@@ -4,17 +4,23 @@
 
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_charge.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
+#include "doticu_skylib/extra_enchantment.h"
 #include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_ghost.h"
 #include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_outfit.h"
 #include "doticu_skylib/extra_owner.h"
+#include "doticu_skylib/extra_poison.h"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_reference_interaction.h"
+#include "doticu_skylib/extra_soul_level.h"
 #include "doticu_skylib/extra_talk_to_player.h"
+#include "doticu_skylib/extra_temper_level.h"
+#include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/extra_worn.h"
 #include "doticu_skylib/extra_worn_left.h"
 #include "doticu_skylib/reference_handle.h"
@@ -280,6 +286,33 @@ namespace doticu_skylib {
         }
 
         return extra_datas;
+    }
+
+    maybe<Extra_List_t*> Extra_List_t::Copy(Filter_i<Extra_Type_e>& filter)
+    {
+        Vector_t<some<Extra_Data_t*>> data_copies;
+        {
+            Read_Locker_t locker(this->lock);
+            for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
+                if (filter(it->Type())) {
+                    maybe<Extra_Data_t*> data_copy = it->Copy();
+                    if (data_copy) {
+                        data_copies.push_back(data_copy());
+                    }
+                }
+            }
+        }
+
+        size_t data_copy_count = data_copies.size();
+        if (data_copy_count > 0) {
+            some<Extra_List_t*> list_copy = Create();
+            for (size_t idx = 0, end = data_copy_count; idx < end; idx += 1) {
+                list_copy->Add(data_copies[idx]);
+            }
+            return list_copy();
+        } else {
+            return none<Extra_List_t*>();
+        }
     }
 
     Bool_t Extra_List_t::Is_Aliased()

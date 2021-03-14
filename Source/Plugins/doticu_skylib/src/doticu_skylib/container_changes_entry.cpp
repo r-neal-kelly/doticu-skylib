@@ -163,6 +163,49 @@ namespace doticu_skylib {
         return new_delta;
     }
 
+    s32 Container_Changes_Entry_t::Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    {
+        class Filter :
+            public Filter_i<Extra_Type_e>
+        {
+        public:
+            virtual Bool_t operator ()(Extra_Type_e extra_type) override
+            {
+                if (extra_type == Extra_Type_e::CHARGE ||
+                    extra_type == Extra_Type_e::COUNT ||
+                    extra_type == Extra_Type_e::ENCHANTMENT ||
+                    extra_type == Extra_Type_e::OWNER ||
+                    extra_type == Extra_Type_e::POISON ||
+                    extra_type == Extra_Type_e::SOUL_LEVEL ||
+                    extra_type == Extra_Type_e::TEMPER_LEVEL ||
+                    extra_type == Extra_Type_e::TEXT_DISPLAY) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(extra_list);
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
+
+        Filter filter;
+        maybe<Extra_List_t*> extra_list_copy = extra_list->Copy(filter);
+        if (extra_list_copy) {
+            s32 new_delta = Increment_Delta(base_count, extra_list_copy->Count());
+
+            if (!this->x_lists) {
+                this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list_copy())();
+            } else {
+                this->x_lists->Add(extra_list_copy());
+            }
+
+            return new_delta;
+        } else {
+            return Increment_Delta(base_count, 1);
+        }
+    }
+
     s32 Container_Changes_Entry_t::Remove(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);

@@ -32,6 +32,7 @@
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_attached_state.h"
+#include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual_arguments.h"
@@ -693,7 +694,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Cache_Component_Container_Items(some<Container_c*> component_container)
+    void Reference_t::Add_Component_Container_Items(some<Container_c*> component_container)
     {
         SKYLIB_ASSERT_SOME(component_container);
 
@@ -704,6 +705,26 @@ namespace doticu_skylib {
                     maybe<Container_Entry_t*> entry = component_container->container_entries[idx];
                     if (entry && entry->object && entry->count > 0) {
                         script->Console_Add_Item(this, entry->object(), entry->count);
+                    }
+                }
+            }
+        }
+    }
+
+    void Reference_t::Copy_Worn_Items(some<Reference_t*> other)
+    {
+        Reference_Container_t this_container(this);
+        Reference_Container_t other_container(other);
+        if (this_container.Is_Valid() && other_container.Is_Valid()) {
+            for (size_t idx = 0, end = other_container.entries.size(); idx < end; idx += 1) {
+                Reference_Container_Entry_t& other_entry = other_container.entries[idx];
+                if (!other_entry.Is_Leveled_Item()) {
+                    Vector_t<some<Extra_List_t*>> x_lists = other_entry.Some_Extra_Lists();
+                    for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
+                        some<Extra_List_t*> x_list = x_lists[idx];
+                        if (x_list->Is_Worn_Item()) {
+                            this_container.Add_Copy_Or_Increment(other_entry.Some_Object(), x_list);
+                        }
                     }
                 }
             }

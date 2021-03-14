@@ -2,26 +2,26 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/forward_list.inl"
-
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
-#include "doticu_skylib/game.inl"
-#include "doticu_skylib/reference.h"
-
 #include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_charge.h"
+#include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_collision_layer.h"
 #include "doticu_skylib/extra_container_changes.h"
-#include "doticu_skylib/extra_data.h"
+#include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_enchantment.h"
+#include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/extra_poison.h"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_soul_level.h"
 #include "doticu_skylib/extra_temper_level.h"
 #include "doticu_skylib/extra_text_display.h"
 #include "doticu_skylib/extra_list.h"
+#include "doticu_skylib/forward_list.inl"
+#include "doticu_skylib/game.inl"
+#include "doticu_skylib/reference.h"
 
 namespace doticu_skylib {
 
@@ -224,6 +224,20 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(other);
 
         return Get_Isnt_Equal(other());
+    }
+
+    maybe<Extra_Data_t*> Extra_Data_t::Copy()
+    {
+        Extra_Type_e type = Type();
+        if (type == Extra_Type_e::CHARGE)               return Create<Extra_Charge_t>(*this)();
+        else if (type == Extra_Type_e::COUNT)           return Create<Extra_Count_t>(*this)();
+        else if (type == Extra_Type_e::ENCHANTMENT)     return Create<Extra_Enchantment_t>(*this)();
+        else if (type == Extra_Type_e::OWNER)           return Create<Extra_Owner_t>(*this)();
+        else if (type == Extra_Type_e::POISON)          return Create<Extra_Poison_t>(*this)();
+        else if (type == Extra_Type_e::SOUL_LEVEL)      return Create<Extra_Soul_Level_t>(*this)();
+        else if (type == Extra_Type_e::TEMPER_LEVEL)    return Create<Extra_Temper_Level_t>(*this)();
+        else if (type == Extra_Type_e::TEXT_DISPLAY)    return Create<Extra_Text_Display_t>(*this)();
+        else                                            return none<Extra_Data_t*>();
     }
 
     void Extra_Data_t::Log(std::string indent)

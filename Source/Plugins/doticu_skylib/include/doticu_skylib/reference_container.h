@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/reference_container_entry.h"
 
@@ -56,6 +57,7 @@ namespace doticu_skylib {
         Container_Entry_Count_t             Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
 
         Container_Entry_Count_t             Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t             Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Bool_t                              Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);

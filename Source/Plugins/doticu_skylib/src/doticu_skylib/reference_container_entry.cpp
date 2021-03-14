@@ -226,6 +226,17 @@ namespace doticu_skylib {
         return Some_Reference_Entry(owner)->Add(base_count, extra_list) + base_count;
     }
 
+    Container_Entry_Count_t Reference_Container_Entry_t::Add_Copy_Or_Increment(some<Reference_Container_t*> owner,
+                                                                               some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(owner);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        Container_Entry_Count_t base_count = Base_Count();
+        return Some_Reference_Entry(owner)->Add_Copy_Or_Increment(base_count, extra_list) + base_count;
+    }
+
     Container_Entry_Count_t Reference_Container_Entry_t::Remove(some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());

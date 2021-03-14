@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/container_entry_count.h"
+#include "doticu_skylib/enum_extra_type.h"
 #include "doticu_skylib/forward_list.h"
 
 namespace doticu_skylib {
@@ -45,6 +46,7 @@ namespace doticu_skylib {
         Vector_t<some<Extra_List_t*>>   Extra_Lists();
         Container_Entry_Count_t         Extra_Lists_Count();
         s32                             Add(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
+        s32                             Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove_And_Destroy(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
@@ -74,16 +76,6 @@ namespace doticu_skylib {
             WORN
             WORN_LEFT
             (there may be more, like CANNOT_WEAR, SHOULD_WEAR)
-
-            (ones we typically want to dupe when copying an x_list)
-            x CHARGE
-            x COUNT
-            x ENCHANTMENT
-            x OWNER
-            x POISON
-            x SOUL_LEVEL
-            x TEMPER_LEVEL
-            x TEXT_DISPLAY (we should probably only copy this one if it's a custom name.)
     */
 
 }

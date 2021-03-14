@@ -22,6 +22,12 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline some<T*> Extra_Data_t::Create(const Extra_Data_t& other)
+    {
+        return T::Create(static_cast<const T&>(other));
+    }
+
+    template <typename T>
     inline void Extra_Data_t::Destroy(some<T*> x_data)
     {
         SKYLIB_ASSERT_SOME(x_data);

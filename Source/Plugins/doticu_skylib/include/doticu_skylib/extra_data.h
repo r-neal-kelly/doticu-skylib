@@ -16,6 +16,8 @@ namespace doticu_skylib {
         template <typename T>
         static some<T*> Create();
         template <typename T>
+        static some<T*> Create(const Extra_Data_t& other);
+        template <typename T>
         static void     Destroy(some<T*> x_data);
 
     public:
@@ -32,10 +34,12 @@ namespace doticu_skylib {
         maybe<Extra_Data_t*> next; // 08
 
     public:
-        Extra_Type_e    Type();
+        Extra_Type_e            Type();
 
-        Bool_t          Is_Equal(some<Extra_Data_t*> other);
-        Bool_t          Isnt_Equal(some<Extra_Data_t*> other);
+        Bool_t                  Is_Equal(some<Extra_Data_t*> other);
+        Bool_t                  Isnt_Equal(some<Extra_Data_t*> other);
+
+        maybe<Extra_Data_t*>    Copy();
 
     public:
         void Log(std::string indent = "");

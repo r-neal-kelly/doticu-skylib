@@ -7,9 +7,11 @@
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_extra_type.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/faction_rank.h"
 #include "doticu_skylib/form_owner.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
@@ -93,6 +95,10 @@ namespace doticu_skylib {
         template <typename T>
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
+        Bool_t                  Add_Copy(T& x_data);
+        template <typename T>
+        Bool_t                  Add_Copy(Extra_Data_t& x_data);
+        template <typename T>
         Bool_t                  Remove(some<T*> x_data);
 
         Bool_t                  Has_Extra_Aliases();
@@ -110,6 +116,7 @@ namespace doticu_skylib {
 
     public:
         Vector_t<some<Extra_Data_t*>>       Extra_Datas();
+        maybe<Extra_List_t*>                Copy(Filter_i<Extra_Type_e>& filter);
 
         // Extra_Aliases_t
         Bool_t                              Is_Aliased();

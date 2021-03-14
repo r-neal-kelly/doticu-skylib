@@ -320,7 +320,8 @@ namespace doticu_skylib {
         void                                Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation);
         void                                Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
 
-        void                                Cache_Component_Container_Items(some<Container_c*> component_container);
+        void                                Add_Component_Container_Items(some<Container_c*> component_container);
+        void                                Copy_Worn_Items(some<Reference_t*> other);
 
     public:
         void                        Add_Item(some<Form_t*> item, s16 delta);                                // AddItem

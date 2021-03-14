@@ -100,12 +100,14 @@ namespace doticu_skylib {
                 some<Container_t*> container = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
                 some<Actor_Base_t*> vici_actor_base = static_cast<Actor_Base_t*>(Game_t::Form(0x0001327A)());
 
-                Reference_Container_t player_actor_container(player_actor);
-                if (player_actor_container.Is_Valid()) {
-                    player_actor_container.Log();
+                maybe<Reference_t*> container_reference = Container_t::Create_Container(container, nullptr);
+                if (container_reference) {
+                    container_reference->x_list.Owner(player_actor_base);
+                    container_reference->Copy_Worn_Items(player_actor);
+                    Reference_Container_t(container_reference()).Log();
                 }
 
-                Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
+                /*Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
 
@@ -143,7 +145,7 @@ namespace doticu_skylib {
                             //container.Log();
                         }
                     }
-                }
+                }*/
             }
         };
         Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_2_t());

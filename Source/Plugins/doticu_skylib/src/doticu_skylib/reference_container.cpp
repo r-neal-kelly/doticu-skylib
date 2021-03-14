@@ -186,6 +186,15 @@ namespace doticu_skylib {
         return Some_Entry(object)->Add(this, extra_list);
     }
 
+    Container_Entry_Count_t Reference_Container_t::Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        return Some_Entry(object)->Add_Copy_Or_Increment(this, extra_list);
+    }
+
     Container_Entry_Count_t Reference_Container_t::Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());

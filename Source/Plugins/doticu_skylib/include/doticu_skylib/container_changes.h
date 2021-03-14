@@ -39,7 +39,6 @@ namespace doticu_skylib {
         Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
 
         // removing entries can cause a crash when loading a previous save. in most cases we let the game handle empty entries.
-
         void                                Destroy_Entries();
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
