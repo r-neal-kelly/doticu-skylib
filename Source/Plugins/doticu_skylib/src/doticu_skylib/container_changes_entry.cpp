@@ -165,7 +165,7 @@ namespace doticu_skylib {
 
     s32 Container_Changes_Entry_t::Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
-        class Filter :
+        class Copy_Filter :
             public Filter_i<Extra_Type_e>
         {
         public:
@@ -179,18 +179,19 @@ namespace doticu_skylib {
                     extra_type == Extra_Type_e::SOUL_LEVEL ||
                     extra_type == Extra_Type_e::TEMPER_LEVEL ||
                     extra_type == Extra_Type_e::TEXT_DISPLAY) {
+                    // should probably check what kind of text_display it is.
                     return true;
                 } else {
                     return false;
                 }
             }
         };
+        static Copy_Filter copy_filter;
 
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
-        Filter filter;
-        maybe<Extra_List_t*> extra_list_copy = extra_list->Copy(filter);
+        maybe<Extra_List_t*> extra_list_copy = extra_list->Copy(copy_filter);
         if (extra_list_copy) {
             s32 new_delta = Increment_Delta(base_count, extra_list_copy->Count());
 
@@ -202,7 +203,7 @@ namespace doticu_skylib {
 
             return new_delta;
         } else {
-            return Increment_Delta(base_count, 1);
+            return Increment_Delta(base_count, extra_list->Count());
         }
     }
 

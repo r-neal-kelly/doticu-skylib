@@ -30,23 +30,19 @@ namespace doticu_skylib {
         if (temper_level) {
             return Floats()[temper_level];
         } else {
-            return Temper_Level_e::STANDARD;
+            return Floats()[Temper_Level_e::STANDARD];
         }
     }
 
     Temper_Level_e Temper_Level_e::From_Float(Float_t temper_level)
     {
         some<const Float_t*> floats = Floats();
-        for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
-            if (floats[idx] == temper_level) {
+        for (size_t begin = 0, idx = _TOTAL_; idx-- > begin;) {
+            if (temper_level >= floats[idx]) {
                 return static_cast<Temper_Level_e::value_type>(idx);
             }
         }
-        if (temper_level > floats[Temper_Level_e::LEGENDARY]) {
-            return Temper_Level_e::LEGENDARY;
-        } else {
-            return Temper_Level_e::STANDARD;
-        }
+        return Temper_Level_e::STANDARD;
     }
 
     some<const char* const*> Temper_Level_e::Strings()

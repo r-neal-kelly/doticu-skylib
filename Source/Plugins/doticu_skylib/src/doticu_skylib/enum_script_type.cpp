@@ -17,6 +17,8 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(ALIAS_LOCATION),
             SKYLIB_ENUM_TO_STRING(ACTIVE_MAGIC_EFFECT),
         };
+
+        return strings;
     }
 
     some<const char*> Script_Type_e::To_String(Script_Type_e script_type)
