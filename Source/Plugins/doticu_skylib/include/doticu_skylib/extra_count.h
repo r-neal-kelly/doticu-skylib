@@ -48,6 +48,9 @@ namespace doticu_skylib {
         void    Count(s16 count);
         s16     Increment_Count(s16 amount);
         s16     Decrement_Count(s16 amount);
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Count_t) == 0x18);
 

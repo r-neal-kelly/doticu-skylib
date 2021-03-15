@@ -89,4 +89,14 @@ namespace doticu_skylib {
         return this->count;
     }
 
+    void Extra_Count_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Extra_Count_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "count: %i", Count());
+
+        SKYLIB_LOG(indent + "}");
+    }
+
 }

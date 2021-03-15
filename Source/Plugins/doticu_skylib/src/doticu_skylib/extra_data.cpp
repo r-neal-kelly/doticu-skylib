@@ -245,6 +245,7 @@ namespace doticu_skylib {
         Extra_Type_e type = Type();
         if (type == Extra_Type_e::ALIASES)                  static_cast<Extra_Aliases_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::CHARGE)              static_cast<Extra_Charge_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::COUNT)               static_cast<Extra_Count_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::ENCHANTMENT)         static_cast<Extra_Enchantment_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::POISON)              static_cast<Extra_Poison_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::REFERENCE_HANDLE)    static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);

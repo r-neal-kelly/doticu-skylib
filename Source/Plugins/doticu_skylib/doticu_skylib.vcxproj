@@ -87,6 +87,7 @@
     <ClInclude Include="include\doticu_skylib\enum_potion_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
+    <ClInclude Include="include\doticu_skylib\enum_remove_reason.h" />
     <ClInclude Include="include\doticu_skylib\enum_sit_sleep_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
     <ClInclude Include="include\doticu_skylib\enum_fly_state.h" />
@@ -469,6 +470,7 @@
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_remove_reason.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_charge.cpp" />

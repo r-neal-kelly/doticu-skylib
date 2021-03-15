@@ -164,6 +164,7 @@ namespace doticu_skylib {
     public:
         Bool_t                  Is_Actor();
         Bool_t                  Is_Actor_Base();
+        Bool_t                  Is_Bound_Object();
         Bool_t                  Is_Component_Container();
         Bool_t                  Is_Component_Name();
         Bool_t                  Is_Container();
@@ -172,6 +173,7 @@ namespace doticu_skylib {
 
         maybe<Actor_t*>         As_Actor();
         maybe<Actor_Base_t*>    As_Actor_Base();
+        maybe<Bound_Object_t*>  As_Bound_Object();
         maybe<Container_c*>     As_Component_Container();
         maybe<Name_c*>          As_Component_Name();
         maybe<Container_t*>     As_Container();

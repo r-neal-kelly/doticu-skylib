@@ -148,6 +148,8 @@ namespace doticu_skylib {
 
     Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
     {
+        // we need to disallow consuming x_lists with reference_handles on them
+
         SKYLIB_ASSERT_SOME(other);
 
         Read_Locker_t this_locker(this->lock);
@@ -460,6 +462,8 @@ namespace doticu_skylib {
 
     s16 Extra_List_t::Increment_Count(s16 amount)
     {
+        // I think we need to diallow incrementing x_lists with Reference_Handles attached.
+
         if (amount > 0) {
             maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
             if (x_count) {
@@ -476,6 +480,8 @@ namespace doticu_skylib {
 
     s16 Extra_List_t::Decrement_Count(s16 amount)
     {
+        // I think we need to diallow decrementing x_lists with Reference_Handles attached.
+
         if (amount > 0) {
             maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
             if (x_count) {

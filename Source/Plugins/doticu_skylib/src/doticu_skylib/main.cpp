@@ -93,24 +93,78 @@ namespace doticu_skylib {
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());
                 some<Faction_t*> current_follower_faction = static_cast<Faction_t*>(Game_t::Form(0x0005C84E)());
-                some<Voice_Type_t*> a_voice_type = static_cast<Voice_Type_t*>(Game_t::Form(0x00013AED)());
-                some<Color_t*> white_color = static_cast<Color_t*>(Game_t::Form(0x00099D86)());
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
-                some<Spell_t*> ghost_ability = static_cast<Spell_t*>(Game_t::Form(0x0005030B)());
-                some<Container_t*> container = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
-                some<Actor_Base_t*> vici_actor_base = static_cast<Actor_Base_t*>(Game_t::Form(0x0001327A)());
 
                 Reference_Container_t player_container(player_actor);
+                maybe<Reference_t*> reference = static_cast<Reference_t*>(Game_t::Form(0xFF000D5F)());
+                if (reference) {
+                    maybe<Bound_Object_t*> bound_object = reference->base_form->As_Bound_Object();
+                    maybe<Reference_t*> containing_reference = reference->x_list.Reference();
+                    if (bound_object && containing_reference) {
+                        Reference_Container_t container(containing_reference());
+                        Reference_Container_t player_container(player_actor);
+                        if (container.Is_Valid()) {
+                            maybe<Reference_Container_Entry_t*> entry = container.Maybe_Entry(bound_object());
+                            if (entry) {
+                                Vector_t<some<Extra_List_t*>> x_lists = entry->Some_Extra_Lists();
+                                if (x_lists.size() > 0) {
+                                    reference->x_list.Log();
+                                    some<Extra_List_t*> x_list = x_lists[0];
+                                    x_list->Increment_Count(1); // this should silently fail or assert, because it has a reference_handle on it.
+                                    entry->Remove(x_list);
+                                    x_list->Is_Worn(true);
+                                    //player_container.Add(bound_object(), x_list);
+                                    player_actor->Do_Add_Item(bound_object(), x_list(), 0, 0); // this does seem to work, as long as we remove it first. we also need to remove any x_datas we don't want.
+                                    reference->x_list.Log();
+                                    Reference_Container_t(containing_reference()).Log();
+                                    Reference_Container_t(player_actor).Log();
+                                    // let's check what happens when we remove a reference that has a count of more than 1
+                                    class Test :
+                                        public Virtual::Callback_t
+                                    {
+                                    public:
+                                        some<Reference_t*> reference;
+                                        some<Reference_t*> player;
+                                        some<Reference_t*> other;
 
-                maybe<Reference_t*> container_reference = Container_t::Create_Container(container, nullptr);
-                if (container_reference) {
-                    container_reference->x_list.Owner(player_actor_base);
+                                    public:
+                                        Test(some<Reference_t*> reference, some<Reference_t*> player, some<Reference_t*> other) :
+                                            reference(reference), player(player), other(other)
+                                        {
+                                        }
+
+                                    public:
+                                        virtual void operator ()(Virtual::Variable_t*) override
+                                        {
+                                            reference->x_list.Log();
+                                            Reference_Container_t(other).Log();
+                                            Reference_Container_t(player).Log();
+                                        }
+                                    };
+                                    reference->x_list.Log();
+                                    player_actor->Remove_Item(
+                                        bound_object(),
+                                        1,
+                                        true,
+                                        containing_reference,
+                                        new Test(reference(), player_actor(), containing_reference())
+                                    );
+                                    player_actor->Remove_Item(
+                                        bound_object(),
+                                        1,
+                                        true,
+                                        containing_reference,
+                                        new Test(reference(), player_actor(), containing_reference())
+                                    );
+                                }
+                            }
+                        }
+                    }
                 }
 
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
-                    container_reference->Copy_Worn_Items(reference);
 
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {
@@ -122,7 +176,8 @@ namespace doticu_skylib {
 
                         Reference_Container_t container(reference);
                         if (container.Is_Valid()) {
-                            for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
+                            //container.Log();
+                            /*for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
                                 Reference_Container_Entry_t& entry = container.entries[idx];
                                 if (!entry.Is_Leveled_Item()) {
                                     entry.Decrement_Count(&container, std::numeric_limits<s32>::max());
@@ -130,10 +185,7 @@ namespace doticu_skylib {
                                     Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                                     for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                                         some<Extra_List_t*> x_list = x_lists[idx];
-                                        entry.Remove(x_list);
-                                        if (!player_container.Try_To_Consume(entry.Some_Object(), x_list).Has_Value()) {
-                                            Extra_List_t::Destroy(x_list);
-                                        }
+                                        entry.Remove_And_Destroy(x_list);
                                     }
                                 }
                             }
@@ -145,13 +197,10 @@ namespace doticu_skylib {
                                     x_list->Outfit(outfit);
                                     container.Add(circlet, x_list);
                                 }
-                            }
-                            //container.Log();
+                            }*/
                         }
                     }
                 }
-
-                Reference_Container_t(container_reference()).Log();
             }
         };
         Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_2_t());

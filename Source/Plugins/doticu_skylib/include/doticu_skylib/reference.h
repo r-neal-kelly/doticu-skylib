@@ -7,6 +7,7 @@
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/enum_collision_layer_type.h"
+#include "doticu_skylib/enum_remove_reason.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/form.h"
@@ -25,17 +26,21 @@ namespace doticu_skylib {
     class Actor_Base_t;
     class Alias_Base_t;
     class Alias_Reference_t;
+    class Bound_Object_t;
     class Cell_t;
     class Container_c;
     class Container_Changes_t;
     class Dialogue_Branch_t;
     class Extra_Container_Changes_t;
+    class Extra_List_t;
     class Faction_t;
     class Form_List_t;
     class Keyword_t;
     class Location_t;
     class NI_3D_t;
+    class NI_Point_3_t;
     class Quest_t;
+    class Reference_t;
     class Reference_Attached_State_t;
     class Worldspace_t;
 
@@ -126,111 +131,120 @@ namespace doticu_skylib {
         static Reference_Handle_t           Invalid_Handle(); // this should go on Reference_Handle_t, but I need to be careful that we don't use it with virtual functions from Skyrim types
 
     public:
-        virtual                     ~Reference_t();                             // 00
+        virtual                     ~Reference_t();                                     // 00
 
-        virtual void                _3B(void);                                  // 3B
-        virtual void                _3C(void);                                  // 3C
-        virtual void                _3D(void);                                  // 3D
-        virtual void                _3E(void);                                  // 3E
-        virtual void                Do_Update_3D_Position(Bool_t do_warp);      // 3F
-        virtual void                _40(void);                                  // 40
-        virtual void                _41(void);                                  // 41
-        virtual void                _42(void);                                  // 42
-        virtual void                _43(void);                                  // 43
-        virtual void                _44(void);                                  // 44
-        virtual void                _45(void);                                  // 45
-        virtual void                _46(void);                                  // 46
-        virtual void                _47(void);                                  // 47
-        virtual Bool_t              Has_Keyword(const Keyword_t* keyword);      // 48
-        virtual void                _49(void);                                  // 49
-        virtual void                _4A(void);                                  // 4A
-        virtual void                _4B(void);                                  // 4B
-        virtual void                _4C(void);                                  // 4C
-        virtual Dialogue_Branch_t*  Get_Exclusive_Dialogue_Branch();            // 4D
-        virtual void                _4E(void);                                  // 4E
-        virtual void                _4F(void);                                  // 4F
-        virtual void                _50(void);                                  // 50
-        virtual void                _51(void);                                  // 51
-        virtual void                _52(void);                                  // 52
-        virtual void                _53(void);                                  // 53
-        virtual void                _54(void);                                  // 54
-        virtual void                _55(void);                                  // 55
-        virtual void                _56(void);                                  // 56
-        virtual void                _57(void);                                  // 57
-        virtual void                _58(void);                                  // 58
-        virtual void                _59(void);                                  // 59
-        virtual void                _5A(void);                                  // 5A
-        virtual NI_Point_3_t        _5B(void);                                  // 5B
-        virtual void                _5C(void);                                  // 5C
-        virtual void                _5D(void);                                  // 5D
-        virtual Bool_t              Get_Is_Child() const;                       // 5E
-        virtual void                _5F(void);                                  // 5F
-        virtual void                _60(void);                                  // 60
-        virtual void                _61(void);                                  // 61
-        virtual void                _62(void);                                  // 62
-        virtual void                _63(void);                                  // 63
-        virtual void                _64(void);                                  // 64
-        virtual Bool_t              Do_Detach_3D(NI_3D_t* ni_3d);               // 65
-        virtual void                Do_Init_3D();                               // 66
-        virtual void                _67(void);                                  // 67
-        virtual void                _68(void);                                  // 68
-        virtual void                _69(void);                                  // 69
-        virtual NI_3D_t*            Do_Load_3D(Bool_t unk_1);                   // 6A
-        virtual void                _6B(void);                                  // 6B
-        virtual void                _6C(void);                                  // 6C
-        virtual void                _6D(void);                                  // 6D
-        virtual void                _6E(void);                                  // 6E
-        virtual NI_3D_t*            Get_3D_1(Bool_t get_first_person);          // 6F
-        virtual NI_3D_t*            Get_3D_2();                                 // 70
-        virtual void                _71(void);                                  // 71
-        virtual void                _72(void);                                  // 72
-        virtual void                _73(void);                                  // 73
-        virtual void                _74(void);                                  // 74
-        virtual void                _75(void);                                  // 75
-        virtual void                _76(void);                                  // 76
-        virtual void                _77(void);                                  // 77
-        virtual void                _78(void);                                  // 78
-        virtual void                _79(void);                                  // 79
-        virtual void                _7A(void);                                  // 7A
-        virtual void                _7B(void);                                  // 7B
-        virtual void                _7C(void);                                  // 7C
-        virtual void                Do_Update_Animation(Float_t delta);         // 7D
-        virtual void                _7E(void);                                  // 7E
-        virtual void                _7F(void);                                  // 7F
-        virtual void                _80(void);                                  // 80
-        virtual void                _81(void);                                  // 81
-        virtual void                _82(void);                                  // 82
-        virtual void                _83(void);                                  // 83
-        virtual void                _84(void);                                  // 84
-        virtual void                Do_Havok_Move(Bool_t do_force);             // 85
-        virtual void                _86(void);                                  // 86
-        virtual void                _87(void);                                  // 87
-        virtual void                _88(void);                                  // 88
-        virtual void                _89(void);                                  // 89
-        virtual void                Do_Reset_Inventory(Bool_t do_only_leveled); // 8A
-        virtual void                _8B(void);                                  // 8B
-        virtual void                _8C(void);                                  // 8C
-        virtual NI_3D_t*            Get_Current_3D() const;                     // 8D (this is getting skeleton for actors.)
-        virtual void                _8E(void);                                  // 8E
-        virtual void                _8F(void);                                  // 8F
-        virtual void                _90(void);                                  // 90
-        virtual void                _91(void);                                  // 91
-        virtual void                _92(void);                                  // 92
-        virtual void                _93(void);                                  // 93
-        virtual void                _94(void);                                  // 94
-        virtual void                _95(void);                                  // 95
-        virtual void                _96(void);                                  // 96
-        virtual void                _97(void);                                  // 97
-        virtual void                _98(void);                                  // 98
-        virtual Bool_t              Get_Is_Dead(Bool_t is_not_essential);       // 99 (not sure about the bool...)
-        virtual void                _9A(void);                                  // 9A
-        virtual void                _9B(void);                                  // 9B
-        virtual void                _9C(void);                                  // 9C
-        virtual void                _9D(void);                                  // 9D
-        virtual void                _9E(void);                                  // 9E
-        virtual void                _9F(void);                                  // 9F
-        virtual void                _A0(void);                                  // A0
-        virtual void                _A1(void);                                  // A1
+        virtual void                _3B(void);                                          // 3B
+        virtual void                _3C(void);                                          // 3C
+        virtual void                _3D(void);                                          // 3D
+        virtual void                _3E(void);                                          // 3E
+        virtual void                Do_Update_3D_Position(Bool_t do_warp);              // 3F
+        virtual void                _40(void);                                          // 40
+        virtual void                _41(void);                                          // 41
+        virtual void                _42(void);                                          // 42
+        virtual void                _43(void);                                          // 43
+        virtual void                _44(void);                                          // 44
+        virtual void                _45(void);                                          // 45
+        virtual void                _46(void);                                          // 46
+        virtual void                _47(void);                                          // 47
+        virtual Bool_t              Has_Keyword(const Keyword_t* keyword);              // 48
+        virtual void                _49(void);                                          // 49
+        virtual void                _4A(void);                                          // 4A
+        virtual void                _4B(void);                                          // 4B
+        virtual void                _4C(void);                                          // 4C
+        virtual Dialogue_Branch_t*  Get_Exclusive_Dialogue_Branch();                    // 4D
+        virtual void                _4E(void);                                          // 4E
+        virtual void                _4F(void);                                          // 4F
+        virtual void                _50(void);                                          // 50
+        virtual void                _51(void);                                          // 51
+        virtual void                _52(void);                                          // 52
+        virtual void                _53(void);                                          // 53
+        virtual void                _54(void);                                          // 54
+        virtual void                _55(void);                                          // 55
+        virtual Reference_Handle_t  Do_Remove_Item(Bound_Object_t*      object,
+                                                   s32                  count,
+                                                   Raw_Remove_Reason_t  remove_reason,
+                                                   Extra_List_t*        x_list,
+                                                   Reference_t*         to,
+                                                   NI_Point_3_t*        drop_position,
+                                                   NI_Point_3_t*        rotation);      // 56 (keeps crashing.)
+        virtual void                _57(void);                                          // 57
+        virtual void                _58(void);                                          // 58
+        virtual void                _59(void);                                          // 59
+        virtual void                Do_Add_Item(Bound_Object_t* object,
+                                                Extra_List_t*   x_list,
+                                                s32             non_x_list_count,
+                                                Reference_t*    from);                  // 5A (moves x_list and changes Reference_Handle. however, does not remove from other reference)
+        virtual NI_Point_3_t        _5B(void);                                          // 5B
+        virtual void                _5C(void);                                          // 5C
+        virtual void                _5D(void);                                          // 5D
+        virtual Bool_t              Get_Is_Child() const;                               // 5E
+        virtual void                _5F(void);                                          // 5F
+        virtual void                _60(void);                                          // 60
+        virtual void                _61(void);                                          // 61
+        virtual void                _62(void);                                          // 62
+        virtual void                _63(void);                                          // 63
+        virtual void                _64(void);                                          // 64
+        virtual Bool_t              Do_Detach_3D(NI_3D_t* ni_3d);                       // 65
+        virtual void                Do_Init_3D();                                       // 66
+        virtual void                _67(void);                                          // 67
+        virtual void                _68(void);                                          // 68
+        virtual void                _69(void);                                          // 69
+        virtual NI_3D_t*            Do_Load_3D(Bool_t unk_1);                           // 6A
+        virtual void                _6B(void);                                          // 6B
+        virtual void                _6C(void);                                          // 6C
+        virtual void                _6D(void);                                          // 6D
+        virtual void                _6E(void);                                          // 6E
+        virtual NI_3D_t*            Get_3D_1(Bool_t get_first_person);                  // 6F
+        virtual NI_3D_t*            Get_3D_2();                                         // 70
+        virtual void                _71(void);                                          // 71
+        virtual void                _72(void);                                          // 72
+        virtual void                _73(void);                                          // 73
+        virtual void                _74(void);                                          // 74
+        virtual void                _75(void);                                          // 75
+        virtual void                _76(void);                                          // 76
+        virtual void                _77(void);                                          // 77
+        virtual void                _78(void);                                          // 78
+        virtual void                _79(void);                                          // 79
+        virtual void                _7A(void);                                          // 7A
+        virtual void                _7B(void);                                          // 7B
+        virtual void                _7C(void);                                          // 7C
+        virtual void                Do_Update_Animation(Float_t delta);                 // 7D
+        virtual void                _7E(void);                                          // 7E
+        virtual void                _7F(void);                                          // 7F
+        virtual void                _80(void);                                          // 80
+        virtual void                _81(void);                                          // 81
+        virtual void                _82(void);                                          // 82
+        virtual void                _83(void);                                          // 83
+        virtual void                _84(void);                                          // 84
+        virtual void                Do_Havok_Move(Bool_t do_force);                     // 85
+        virtual void                _86(void);                                          // 86
+        virtual void                _87(void);                                          // 87
+        virtual void                _88(void);                                          // 88
+        virtual void                _89(void);                                          // 89
+        virtual void                Do_Reset_Inventory(Bool_t do_only_leveled);         // 8A
+        virtual void                _8B(void);                                          // 8B
+        virtual void                _8C(void);                                          // 8C
+        virtual NI_3D_t*            Get_Current_3D() const;                             // 8D (this is getting skeleton for actors.)
+        virtual void                _8E(void);                                          // 8E
+        virtual void                _8F(void);                                          // 8F
+        virtual void                _90(void);                                          // 90
+        virtual void                _91(void);                                          // 91
+        virtual void                _92(void);                                          // 92
+        virtual void                _93(void);                                          // 93
+        virtual void                _94(void);                                          // 94
+        virtual void                _95(void);                                          // 95
+        virtual void                _96(void);                                          // 96
+        virtual void                _97(void);                                          // 97
+        virtual void                _98(void);                                          // 98
+        virtual Bool_t              Get_Is_Dead(Bool_t is_not_essential);               // 99 (not sure about the bool...)
+        virtual void                _9A(void);                                          // 9A
+        virtual void                _9B(void);                                          // 9B
+        virtual void                _9C(void);                                          // 9C
+        virtual void                _9D(void);                                          // 9D
+        virtual void                _9E(void);                                          // 9E
+        virtual void                _9F(void);                                          // 9F
+        virtual void                _A0(void);                                          // A0
+        virtual void                _A1(void);                                          // A1
 
     public:
         maybe<Form_t*>                      base_form;          // 40
@@ -382,6 +396,17 @@ namespace doticu_skylib {
 
         void Push_Away(some<Actor_t*> actor, Float_t force, maybe<Virtual::Callback_i*> v_callback);    // PushActorAway
         void Push_Away(some<Actor_t*> actor, Float_t force, maybe<unique<Callback_i<>>> callback);
+
+        void    Remove_Item(some<Form_t*> form,
+                            Int_t count,
+                            Bool_t do_silently,
+                            maybe<Reference_t*> to,
+                            maybe<Virtual::Callback_i*> v_callback);                                                // RemoveItem
+        void    Remove_Item(some<Form_t*> form,
+                            Int_t count,
+                            Bool_t do_silently,
+                            maybe<Reference_t*> to,
+                            maybe<unique<Callback_i<>>> callback);
 
         void Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
                                   Float_t x_degree, Float_t y_degree, Float_t z_degree,

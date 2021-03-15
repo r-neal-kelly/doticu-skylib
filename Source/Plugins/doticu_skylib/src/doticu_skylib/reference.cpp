@@ -1315,6 +1315,81 @@ namespace doticu_skylib {
         Push_Away(actor, force, new Virtual_Callback(std::move(callback)));
     }
 
+    void Reference_t::Remove_Item(some<Form_t*> form,
+                                  Int_t count,
+                                  Bool_t do_silently,
+                                  maybe<Reference_t*> to,
+                                  maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            some<Form_t*>       form;
+            Int_t               count;
+            Bool_t              do_silently;
+            maybe<Reference_t*> to;
+
+        public:
+            Virtual_Arguments(some<Form_t*> form, Int_t count, Bool_t do_silently, maybe<Reference_t*> to) :
+                form(form), count(count), do_silently(do_silently), to(to)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(4);
+                args->At(0).As<Form_t*>(this->form());
+                args->At(1).As<Int_t>(this->count);
+                args->At(2).As<Bool_t>(this->do_silently);
+                args->At(3).As<Reference_t*>(this->to());
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "RemoveItem",
+            Virtual_Arguments(form, count, do_silently, to),
+            v_callback
+        );
+    }
+
+    void Reference_t::Remove_Item(some<Form_t*> form,
+                                  Int_t count,
+                                  Bool_t do_silently,
+                                  maybe<Reference_t*> to,
+                                  maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Remove_Item(form, count, do_silently, to, new Virtual_Callback(std::move(callback)));
+    }
+
     void Reference_t::Start_Translation_To(Float_t x_position, Float_t y_position, Float_t z_position,
                                            Float_t x_degree, Float_t y_degree, Float_t z_degree,
                                            Float_t movement_speed, Float_t max_rotation_speed,

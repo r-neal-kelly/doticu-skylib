@@ -66,7 +66,7 @@ namespace doticu_skylib {
 
     Container_Entry_Count_t Container_Changes_Entry_t::Count(Container_Entry_Count_t base_count)
     {
-        return Container_Entry_Count_t(Delta(base_count));
+        return Delta(base_count);
     }
 
     s32 Container_Changes_Entry_t::Delta(Container_Entry_Count_t base_count)
@@ -198,6 +198,8 @@ namespace doticu_skylib {
             if (!this->x_lists) {
                 this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list_copy())();
             } else {
+                // we could try to have it consumed by another x_list.
+                // I'm just not sure how unique x_lists would handle being altered.
                 this->x_lists->Add(extra_list_copy());
             }
 
