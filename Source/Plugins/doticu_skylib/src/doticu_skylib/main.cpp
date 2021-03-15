@@ -87,7 +87,7 @@ namespace doticu_skylib {
             {
                 // we have to wait on reload of game, because the game itself is massively messing with inventories, I think.
 
-                UI_t::Notification("Hello!");
+                UI_t::Notification(Game_t::Version());
 
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();

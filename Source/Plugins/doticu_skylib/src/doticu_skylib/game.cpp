@@ -2,118 +2,13 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#pragma comment(lib, "version.lib")
-
-#include "psapi.h"
-
 #include "doticu_skylib/cstring.h"
-
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/mod.h"
+#include "doticu_skylib/os.h"
 
 namespace doticu_skylib {
-
-    template <typename Type_t>
-    class smart_ptr
-    {
-    public:
-        Type_t* ptr;
-
-        smart_ptr() :
-            ptr(nullptr)
-        {
-        }
-
-        smart_ptr(Type_t* ptr) :
-            ptr(ptr)
-        {
-        }
-
-        smart_ptr(const smart_ptr&) = delete;
-
-        smart_ptr(smart_ptr&& other) noexcept :
-            ptr(std::exchange(other.ptr, nullptr))
-        {
-        }
-
-        ~smart_ptr()
-        {
-            if (ptr) {
-                delete ptr;
-            }
-        }
-
-        smart_ptr& operator=(const smart_ptr&) = delete;
-
-        smart_ptr& operator=(smart_ptr&& other) noexcept
-        {
-            if (this != &other) {
-                ptr = std::exchange(other.ptr, nullptr);
-            }
-        }
-
-        operator Type_t*()
-        {
-            return ptr;
-        }
-    };
-
-    static Bool_t Write_Version(Version_t<u16>& game_version, const char* version_csv)
-    {
-        int major;
-        int minor;
-        int patch;
-        int build;
-        if (sscanf_s(version_csv, "%d.%d.%d.%d", &major, &minor, &patch, &build) == 4) {
-            game_version.major = major;
-            game_version.minor = minor;
-            game_version.patch = patch;
-            game_version.build = build;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    static Bool_t Read_Version(Version_t<u16>& game_version)
-    {
-        static constexpr const char* product_version = "\\StringFileInfo\\040904B0\\ProductVersion";
-        static constexpr const char* file_version = "\\StringFileInfo\\040904B0\\FileVersion";
-
-        char file_path[MAX_PATH];
-        file_path[0] = 0;
-        if (GetModuleFileNameA(0, file_path, sizeof(file_path)) && file_path[0]) {
-            DWORD unused = 0;
-            DWORD version_size = GetFileVersionInfoSizeA(file_path, &unused);
-            if (version_size > 0) {
-                smart_ptr<char> version_info = new char[version_size];
-                if (GetFileVersionInfoA(file_path, unused, version_size, version_info)) {
-                    char* version_csv = nullptr;
-                    UINT version_csv_size = 0;
-                    if (VerQueryValueA(version_info, product_version, (LPVOID*)&version_csv, &version_csv_size) &&
-                        version_csv_size > 0 && version_csv && version_csv[0]) {
-                        return Write_Version(game_version, version_csv);
-                    } else {
-                        version_csv = nullptr;
-                        version_csv_size = 0;
-                        if (VerQueryValueA(version_info, file_version, (LPVOID*)&version_csv, &version_csv_size) &&
-                            version_csv_size > 0 && version_csv && version_csv[0]) {
-                            return Write_Version(game_version, version_csv);
-                        } else {
-                            return false;
-                        }
-                    }
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
 
     some<Game_t*> Game_t::Self()
     {
@@ -127,7 +22,7 @@ namespace doticu_skylib {
 
     Word_t Game_t::Base_Address()
     {
-        static Word_t base_address = reinterpret_cast<Word_t>(GetModuleHandle(0));
+        static Word_t base_address = OS_t::Module_Address(none<const char*>());
         SKYLIB_ASSERT(base_address);
         return base_address;
     }
@@ -139,21 +34,18 @@ namespace doticu_skylib {
 
     size_t Game_t::Base_Address_Size()
     {
-        MODULEINFO module_info;
-        memset(&module_info, 0, sizeof(module_info));
-        GetModuleInformation(GetCurrentProcess(), GetModuleHandle(0), &module_info, sizeof(MODULEINFO));
-        return module_info.SizeOfImage;
+        static size_t base_address_size = OS_t::Module_Size(none<const char*>());
+        SKYLIB_ASSERT(base_address_size);
+        return base_address_size;
     }
 
     const Version_t<u16>& Game_t::Version()
     {
-        static const Version_t<u16> version;
-
+        static Version_t<u16> version;
         static Bool_t has_read = false;
         if (!has_read) {
-            has_read = Read_Version(const_cast<Version_t<u16>&>(version));
+            has_read = OS_t::Module_Version(none<const char*>(), version);
         }
-
         return version;
     }
 

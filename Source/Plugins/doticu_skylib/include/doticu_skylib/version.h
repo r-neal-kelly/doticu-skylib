@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/math.h"
+#include "doticu_skylib/string.h"
 #include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
@@ -53,6 +54,28 @@ namespace doticu_skylib {
         {
         }
 
+    public:
+        template <typename TT>
+        operator Version_t<TT>() const
+        {
+            return Version_t<TT>(this->major, this->minor, this->patch, this->build);
+        }
+
+        operator std::string() const
+        {
+            return
+                std::to_string(this->major) + "." +
+                std::to_string(this->minor) + "." +
+                std::to_string(this->patch) + "." +
+                std::to_string(this->build);
+        }
+
+        operator String_t() const
+        {
+            return static_cast<std::string>(*this);
+        }
+
+    public:
         Bool_t operator==(const Version_t<T>& other) const
         {
             return
@@ -93,12 +116,6 @@ namespace doticu_skylib {
         Bool_t operator>=(const Version_t<T>& other) const
         {
             return !operator<(other);
-        }
-
-        template <typename TT>
-        operator Version_t<TT>() const
-        {
-            return Version_t<TT>(this->major, this->minor, this->patch, this->build);
         }
     };
 
