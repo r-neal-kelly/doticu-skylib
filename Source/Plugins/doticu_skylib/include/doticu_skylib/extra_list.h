@@ -77,10 +77,10 @@ namespace doticu_skylib {
         ~Extra_List_t();
 
     public:
-        void    Validate();
-        Bool_t  Should_Be_Destroyed();
-        Bool_t  Can_Consume(some<Extra_List_t*> other);
-        Bool_t  Try_To_Consume(some<Extra_List_t*> other);
+        void        Validate();
+        Bool_t      Should_Be_Destroyed();
+        Bool_t      Can_Consume(some<Extra_List_t*> other);
+        maybe<s16>  Try_To_Consume(some<Extra_List_t*> other);
 
     public:
         Bool_t                  Has(Extra_Type_e type);

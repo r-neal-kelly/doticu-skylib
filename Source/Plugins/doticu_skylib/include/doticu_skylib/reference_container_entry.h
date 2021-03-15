@@ -58,7 +58,7 @@ namespace doticu_skylib {
         Container_Entry_Count_t             Remove_And_Destroy(some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Increment_Count(some<Extra_List_t*> extra_list, s16 amount);
         Container_Entry_Count_t             Decrement_Count(some<Extra_List_t*> extra_list, s16 amount);
-        Bool_t                              Try_To_Consume(some<Extra_List_t*> extra_list);
+        maybe<Container_Entry_Count_t>      Try_To_Consume(some<Extra_List_t*> extra_list);
 
     public:
         void Log(std::string indent = "");

@@ -174,16 +174,16 @@ namespace doticu_skylib {
         return true;
     }
 
-    Bool_t Extra_List_t::Try_To_Consume(some<Extra_List_t*> other)
+    maybe<s16> Extra_List_t::Try_To_Consume(some<Extra_List_t*> other)
     {
         SKYLIB_ASSERT_SOME(other);
 
         if (Can_Consume(other)) {
-            Increment_Count(other->Count());
+            s16 other_count = other->Count();
             Destroy(other);
-            return true;
+            return Increment_Count(other_count);
         } else {
-            return false;
+            return none<s16>();
         }
     }
 

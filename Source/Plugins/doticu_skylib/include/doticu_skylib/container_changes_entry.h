@@ -51,7 +51,7 @@ namespace doticu_skylib {
         s32                             Remove_And_Destroy(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
         s32                             Decrement_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
-        Bool_t                          Try_To_Consume(some<Extra_List_t*> extra_list);
+        maybe<s32>                      Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
 
         Bool_t                          Has_Quest_Item();
         Bool_t                          Should_Be_Destroyed();

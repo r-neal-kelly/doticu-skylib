@@ -269,20 +269,24 @@ namespace doticu_skylib {
         return Decrement_Delta(base_count, count - new_count);
     }
 
-    Bool_t Container_Changes_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
+    maybe<s32> Container_Changes_Entry_t::Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
 
         if (this->x_lists && !this->x_lists->Is_Empty()) {
             for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
                 maybe<Extra_List_t*> x_list = it->value;
-                if (x_list && x_list->Try_To_Consume(extra_list)) {
-                    return true;
+                if (x_list) {
+                    s16 old_count = x_list->Count();
+                    maybe<s16> new_count = x_list->Try_To_Consume(extra_list);
+                    if (new_count.Has_Value()) {
+                        return Increment_Delta(base_count, new_count.Value() - old_count);
+                    }
                 }
             }
-            return false;
+            return none<s32>();
         } else {
-            return false;
+            return none<s32>();
         }
     }
 

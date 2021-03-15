@@ -219,7 +219,7 @@ namespace doticu_skylib {
         return entry->Remove_And_Destroy(extra_list);
     }
 
-    Bool_t Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    maybe<Container_Entry_Count_t> Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -229,7 +229,7 @@ namespace doticu_skylib {
         if (entry) {
             return entry->Try_To_Consume(extra_list);
         } else {
-            return false;
+            return none<Container_Entry_Count_t>();
         }
     }
 

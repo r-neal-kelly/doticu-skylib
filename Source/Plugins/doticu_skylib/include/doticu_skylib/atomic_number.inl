@@ -165,40 +165,4 @@ namespace doticu_skylib {
         return Atomic_t::Xor(this->value, other);
     }
 
-    /*template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator ==(const T other) const
-    {
-        return Atomic_t::Access(this->value) == other;
-    }
-
-    template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator !=(const T other) const
-    {
-        return Atomic_t::Access(this->value) != other;
-    }
-
-    template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator <(const T other) const
-    {
-        return Atomic_t::Access(this->value) < other;
-    }
-
-    template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator >(const T other) const
-    {
-        return Atomic_t::Access(this->value) > other;
-    }
-
-    template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator <=(const T other) const
-    {
-        return Atomic_t::Access(this->value) <= other;
-    }
-
-    template <typename T>
-    inline Bool_t Atomic_Number_t<T>::operator >=(const T other) const
-    {
-        return Atomic_t::Access(this->value) >= other;
-    }*/
-
 }

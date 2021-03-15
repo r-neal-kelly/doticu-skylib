@@ -277,15 +277,21 @@ namespace doticu_skylib {
         return this->reference_entry->Decrement_Count(base_count, extra_list, amount) + base_count;
     }
 
-    Bool_t Reference_Container_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
+    maybe<Container_Entry_Count_t> Reference_Container_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(extra_list);
 
         if (this->reference_entry) {
-            return this->reference_entry->Try_To_Consume(extra_list);
+            Container_Entry_Count_t base_count = Base_Count();
+            maybe<s32> reference_entry_delta = this->reference_entry->Try_To_Consume(base_count, extra_list);
+            if (reference_entry_delta.Has_Value()) {
+                return Container_Entry_Count_t(reference_entry_delta.Value() + base_count);
+            } else {
+                return none<Container_Entry_Count_t>();
+            }
         } else {
-            return false;
+            return none<Container_Entry_Count_t>();
         }
     }
 

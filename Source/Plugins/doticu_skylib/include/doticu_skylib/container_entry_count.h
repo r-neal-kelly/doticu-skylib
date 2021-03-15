@@ -14,9 +14,6 @@ namespace doticu_skylib {
     {
     public:
         using value_type = Raw_Container_Entry_Count_t;
-        
-    public:
-        static constexpr value_type NONE_VALUE = 0;
 
     protected:
         const value_type value;
