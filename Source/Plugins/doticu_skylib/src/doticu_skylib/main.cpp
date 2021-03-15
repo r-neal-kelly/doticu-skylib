@@ -100,6 +100,8 @@ namespace doticu_skylib {
                 some<Container_t*> container = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
                 some<Actor_Base_t*> vici_actor_base = static_cast<Actor_Base_t*>(Game_t::Form(0x0001327A)());
 
+                Reference_Container_t player_container(player_actor);
+
                 maybe<Reference_t*> container_reference = Container_t::Create_Container(container, nullptr);
                 if (container_reference) {
                     container_reference->x_list.Owner(player_actor_base);
@@ -128,7 +130,10 @@ namespace doticu_skylib {
                                     Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                                     for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                                         some<Extra_List_t*> x_list = x_lists[idx];
-                                        entry.Remove_And_Destroy(x_list);
+                                        entry.Remove(x_list);
+                                        if (!player_container.Try_To_Consume(entry.Some_Object(), x_list).Has_Value()) {
+                                            Extra_List_t::Destroy(x_list);
+                                        }
                                     }
                                 }
                             }

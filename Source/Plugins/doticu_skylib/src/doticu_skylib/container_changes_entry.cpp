@@ -276,12 +276,8 @@ namespace doticu_skylib {
         if (this->x_lists && !this->x_lists->Is_Empty()) {
             for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {
                 maybe<Extra_List_t*> x_list = it->value;
-                if (x_list) {
-                    s16 old_count = x_list->Count();
-                    maybe<s16> new_count = x_list->Try_To_Consume(extra_list);
-                    if (new_count.Has_Value()) {
-                        return Increment_Delta(base_count, new_count.Value() - old_count);
-                    }
+                if (x_list && x_list->Try_To_Consume(extra_list).Has_Value()) {
+                    return Delta(base_count); // counts the modified x_list
                 }
             }
             return none<s32>();
