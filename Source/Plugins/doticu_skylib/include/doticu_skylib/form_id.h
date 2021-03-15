@@ -36,6 +36,9 @@ namespace doticu_skylib {
         Form_ID_t(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
 
     public:
+        String_t As_String() const;
+
+    public:
         Bool_t Is_Static() const;
         Bool_t Is_Dynamic() const;
 

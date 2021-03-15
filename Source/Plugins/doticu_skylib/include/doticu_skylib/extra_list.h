@@ -111,6 +111,7 @@ namespace doticu_skylib {
         Bool_t                  Has_Extra_Reference_Handle();
         Bool_t                  Has_Extra_Reference_Interaction();
         Bool_t                  Has_Extra_Talk_To_Player();
+        Bool_t                  Has_Extra_Unique_ID();
         Bool_t                  Has_Extra_Worn();
         Bool_t                  Has_Extra_Worn_Left();
 
@@ -136,6 +137,7 @@ namespace doticu_skylib {
         s16                                 Count();
         s16                                 Increment_Count(s16 amount);
         s16                                 Decrement_Count(s16 amount);
+        Bool_t                              May_Change_Count();
 
         // Extra_Factions_t
         maybe<Raw_Faction_Rank_t>           Faction_Rank(some<Faction_t*> faction);

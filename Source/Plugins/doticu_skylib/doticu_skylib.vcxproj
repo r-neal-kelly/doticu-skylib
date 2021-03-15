@@ -101,6 +101,7 @@
     <ClInclude Include="include\doticu_skylib\extra_poison.h" />
     <ClInclude Include="include\doticu_skylib\extra_temper_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
+    <ClInclude Include="include\doticu_skylib\extra_unique_id.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
     <ClInclude Include="include\doticu_skylib\form_owner.h" />
@@ -478,6 +479,7 @@
     <ClCompile Include="src\doticu_skylib\extra_poison.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_soul_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_temper_level.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_unique_id.cpp" />
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\main.cpp" />

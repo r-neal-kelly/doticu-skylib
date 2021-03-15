@@ -12,13 +12,14 @@
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_enchantment.h"
+#include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/extra_poison.h"
 #include "doticu_skylib/extra_reference_handle.h"
 #include "doticu_skylib/extra_soul_level.h"
 #include "doticu_skylib/extra_temper_level.h"
 #include "doticu_skylib/extra_text_display.h"
-#include "doticu_skylib/extra_list.h"
+#include "doticu_skylib/extra_unique_id.h"
 #include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/reference.h"
@@ -237,6 +238,7 @@ namespace doticu_skylib {
         else if (type == Extra_Type_e::SOUL_LEVEL)      return Create<Extra_Soul_Level_t>(*this)();
         else if (type == Extra_Type_e::TEMPER_LEVEL)    return Create<Extra_Temper_Level_t>(*this)();
         else if (type == Extra_Type_e::TEXT_DISPLAY)    return Create<Extra_Text_Display_t>(*this)();
+        else if (type == Extra_Type_e::UNIQUE_ID)       return Create<Extra_Unique_ID_t>(*this)();
         else                                            return none<Extra_Data_t*>();
     }
 
@@ -252,6 +254,7 @@ namespace doticu_skylib {
         else if (type == Extra_Type_e::SOUL_LEVEL)          static_cast<Extra_Soul_Level_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::TEMPER_LEVEL)        static_cast<Extra_Temper_Level_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::TEXT_DISPLAY)        static_cast<Extra_Text_Display_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::UNIQUE_ID)           static_cast<Extra_Unique_ID_t*>(this)->Log(indent);
         else {
             SKYLIB_LOG(indent + "Extra_Data_t::Log");
             SKYLIB_LOG(indent + "{");

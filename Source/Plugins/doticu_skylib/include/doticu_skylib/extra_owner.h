@@ -25,7 +25,7 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                V_TABLE = 0x0152BF80,
+                V_TABLE = 0x0152BF80, // 229534
             };
             using Enum_t::Enum_t;
         };

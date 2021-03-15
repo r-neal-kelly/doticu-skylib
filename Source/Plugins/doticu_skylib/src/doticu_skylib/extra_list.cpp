@@ -21,6 +21,7 @@
 #include "doticu_skylib/extra_talk_to_player.h"
 #include "doticu_skylib/extra_temper_level.h"
 #include "doticu_skylib/extra_text_display.h"
+#include "doticu_skylib/extra_unique_id.h"
 #include "doticu_skylib/extra_worn.h"
 #include "doticu_skylib/extra_worn_left.h"
 #include "doticu_skylib/reference_handle.h"
@@ -148,32 +149,32 @@ namespace doticu_skylib {
 
     Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
     {
-        // we need to disallow consuming x_lists with reference_handles on them
-
         SKYLIB_ASSERT_SOME(other);
 
-        Read_Locker_t this_locker(this->lock);
-        Read_Locker_t other_locker(other->lock);
-
-        for (maybe<Extra_Data_t*> other_it = other->x_datas; other_it; other_it = other_it->next) {
-            Extra_Type_e other_type = other_it->Type();
-            if (other_type != Extra_Type_e::COUNT) {
-                Bool_t this_has_other_type = false;
-                for (maybe<Extra_Data_t*> this_it = this->x_datas; this_it; this_it = this_it->next) {
-                    if (this_it->Type() == other_type) {
-                        this_has_other_type = true;
-                        if (this_it->Isnt_Equal(other_it())) {
-                            return false;
+        if (!Has_Extra_Reference_Handle() && !other->Has_Extra_Reference_Handle()) {
+            Read_Locker_t this_locker(this->lock);
+            Read_Locker_t other_locker(other->lock);
+            for (maybe<Extra_Data_t*> other_it = other->x_datas; other_it; other_it = other_it->next) {
+                Extra_Type_e other_type = other_it->Type();
+                if (other_type != Extra_Type_e::COUNT) {
+                    Bool_t this_has_other_type = false;
+                    for (maybe<Extra_Data_t*> this_it = this->x_datas; this_it; this_it = this_it->next) {
+                        if (this_it->Type() == other_type) {
+                            this_has_other_type = true;
+                            if (this_it->Isnt_Equal(other_it())) {
+                                return false;
+                            }
                         }
                     }
-                }
-                if (!this_has_other_type) {
-                    return false;
+                    if (!this_has_other_type) {
+                        return false;
+                    }
                 }
             }
+            return true;
+        } else {
+            return false;
         }
-
-        return true;
     }
 
     maybe<s16> Extra_List_t::Try_To_Consume(some<Extra_List_t*> other)
@@ -274,6 +275,7 @@ namespace doticu_skylib {
     Bool_t Extra_List_t::Has_Extra_Reference_Handle()       { return Has<Extra_Reference_Handle_t>(); }
     Bool_t Extra_List_t::Has_Extra_Reference_Interaction()  { return Has<Extra_Reference_Interaction_t>(); }
     Bool_t Extra_List_t::Has_Extra_Talk_To_Player()         { return Has<Extra_Talk_To_Player_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Unique_ID()              { return Has<Extra_Unique_ID_t>(); }
     Bool_t Extra_List_t::Has_Extra_Worn()                   { return Has<Extra_Worn_t>(); }
     Bool_t Extra_List_t::Has_Extra_Worn_Left()              { return Has<Extra_Worn_Left_t>(); }
 
@@ -462,7 +464,7 @@ namespace doticu_skylib {
 
     s16 Extra_List_t::Increment_Count(s16 amount)
     {
-        // I think we need to diallow incrementing x_lists with Reference_Handles attached.
+        SKYLIB_ASSERT(May_Change_Count());
 
         if (amount > 0) {
             maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
@@ -480,7 +482,7 @@ namespace doticu_skylib {
 
     s16 Extra_List_t::Decrement_Count(s16 amount)
     {
-        // I think we need to diallow decrementing x_lists with Reference_Handles attached.
+        SKYLIB_ASSERT(May_Change_Count());
 
         if (amount > 0) {
             maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
@@ -494,6 +496,12 @@ namespace doticu_skylib {
         } else {
             return Count();
         }
+    }
+
+    Bool_t Extra_List_t::May_Change_Count()
+    {
+        // Extra_Unique_ID_t and Extra_From_Alias_t can be found on x_lists that have an Extra_Count_t.
+        return !Has_Extra_Reference_Handle();
     }
 
     maybe<Raw_Faction_Rank_t> Extra_List_t::Faction_Rank(some<Faction_t*> faction)

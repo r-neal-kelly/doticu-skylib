@@ -179,4 +179,9 @@ namespace doticu_skylib {
         }
     }
 
+    some<const char*> Form_Type_e::As_String()
+    {
+        return To_String(*this);
+    }
+
 }

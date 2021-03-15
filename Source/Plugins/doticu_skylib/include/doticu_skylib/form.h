@@ -170,6 +170,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Container();
         Bool_t                  Is_Faction();
         Bool_t                  Is_Leveled_Item();
+        Bool_t                  Is_Reference();
 
         maybe<Actor_t*>         As_Actor();
         maybe<Actor_Base_t*>    As_Actor_Base();
@@ -179,6 +180,7 @@ namespace doticu_skylib {
         maybe<Container_t*>     As_Container();
         maybe<Faction_t*>       As_Faction();
         maybe<Leveled_Item_t*>  As_Leveled_Item();
+        maybe<Reference_t*>     As_Reference();
 
     public:
         void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);

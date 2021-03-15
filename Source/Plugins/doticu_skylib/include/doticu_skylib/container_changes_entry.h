@@ -64,18 +64,30 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
 
     /*
-        Extra_Type_e that we know we can find on these x_lists:
+    To move an x_list between containers:
+        ALIASES:
+            this seems to always appear with Extra_Reference_Handle_t. see what happens with Reference_t::Do_Add_Item.
+        CANNOT_WEAR:
+            probably should be deleted?
+        FROM_ALIAS:
+            see what happens with Reference_t::Do_Add_Item.
+        HOTKEY:
+            probably should be deleted.
+        LEVELED_ITEM:
+            should be deleted.
+        OUTFIT:
+            should be deleted.
+        REFERENCE_HANDLE:
+            if representative, it must have its linked reference's handle set to the new container.
+        UNIQUE_ID:
+            its form_id must be set to the new container, and it's unique_id set to the next available id on new container.
+        WORN:
+            should be deleted.
+        WORN_LEFT:
+            should be deleted.
 
-            (ones that are typically temporary or too unique to copy)
-            ALIASES
-            FROM_ALIAS
-            LEVELED_ITEM
-            OUTFIT
-            REFERENCE_HANDLE
-            UNIQUE_ID
-            WORN
-            WORN_LEFT
-            (there may be more, like CANNOT_WEAR, SHOULD_WEAR)
+        there may be more like SHOULD_WEAR, but I've not yet seen them.
+        we can just use Reference_t::Do_Add_Item, but it may be too slow when scaled to our purposes.
     */
 
 }

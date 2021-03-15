@@ -24,7 +24,7 @@ namespace doticu_skylib {
         public:
             enum : Word_t
             {
-                V_TABLE = 0x0152C180,
+                V_TABLE = 0x0152C180, // 229550
             };
             using Enum_t::Enum_t;
         };

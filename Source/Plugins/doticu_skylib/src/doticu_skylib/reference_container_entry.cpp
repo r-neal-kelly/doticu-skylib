@@ -302,7 +302,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Reference_Container_Entry_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s %s", Some_Object()->Component_Name(), Some_Object()->Form_ID_String());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s, %s", Some_Object()->Component_Name(), Some_Object()->Form_ID_String());
         SKYLIB_LOG(indent + SKYLIB_TAB + "base_count: %d", Base_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "reference_count: %d", Reference_Count());
         SKYLIB_LOG(indent + SKYLIB_TAB + "extra_lists_count: %d", Extra_Lists_Count());

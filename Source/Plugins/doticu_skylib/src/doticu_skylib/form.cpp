@@ -145,6 +145,7 @@ namespace doticu_skylib {
     Bool_t  Form_t::Is_Container()              { return As_Container() != none<Container_t*>(); }
     Bool_t  Form_t::Is_Faction()                { return As_Faction() != none<Faction_t*>(); }
     Bool_t  Form_t::Is_Leveled_Item()           { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t  Form_t::Is_Reference()              { return As_Reference() != none<Reference_t*>(); }
 
     maybe<Actor_t*>         Form_t::As_Actor()                  { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
     maybe<Actor_Base_t*>    Form_t::As_Actor_Base()             { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
@@ -154,6 +155,7 @@ namespace doticu_skylib {
     maybe<Container_t*>     Form_t::As_Container()              { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
     maybe<Faction_t*>       Form_t::As_Faction()                { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()           { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Reference_t*>     Form_t::As_Reference()              { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
 
     void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
     {

@@ -72,7 +72,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x3A),
             SKYLIB_ENUM_TO_STRING(0x3B),
             SKYLIB_ENUM_TO_STRING(0x3C),
-            SKYLIB_ENUM_TO_STRING(0x3D),
+            SKYLIB_ENUM_TO_STRING(CANNOT_WEAR),
             SKYLIB_ENUM_TO_STRING(POISON),
             SKYLIB_ENUM_TO_STRING(0x3F),
             SKYLIB_ENUM_TO_STRING(0x40),
@@ -84,7 +84,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x46),
             SKYLIB_ENUM_TO_STRING(0x47),
             SKYLIB_ENUM_TO_STRING(0x48),
-            SKYLIB_ENUM_TO_STRING(0x49),
+            SKYLIB_ENUM_TO_STRING(HOTKEY),
             SKYLIB_ENUM_TO_STRING(0x4A),
             SKYLIB_ENUM_TO_STRING(0x4B),
             SKYLIB_ENUM_TO_STRING(0x4C),
@@ -231,6 +231,11 @@ namespace doticu_skylib {
         } else {
             return _NONE_;
         }
+    }
+
+    some<const char*> Extra_Type_e::As_String()
+    {
+        return To_String(*this);
     }
 
 }

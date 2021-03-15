@@ -13,7 +13,7 @@ namespace doticu_skylib {
         public Enum_t<u8>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             _NONE_                  = 0x00,
 
@@ -53,7 +53,7 @@ namespace doticu_skylib {
             // 0x22
             // 0x23
             COUNT                   = 0x24,
-            TEMPER_LEVEL            = 0x25, // 
+            TEMPER_LEVEL            = 0x25,
             // 0x26
             // 0x27
             CHARGE                  = 0x28, // XCHG
@@ -77,8 +77,8 @@ namespace doticu_skylib {
             // 0x3A
             // 0x3B
             // 0x3C 0x0152C5C0
-            // 0x3D
-            POISON                  = 0x3E, // 
+            CANNOT_WEAR             = 0x3D, // 0x0152C040
+            POISON                  = 0x3E,
             // 0x3F
             // 0x40 0x0152C4A0
             // 0x41 0x0152C5A0
@@ -89,7 +89,7 @@ namespace doticu_skylib {
             // 0x46
             // 0x47
             // 0x48 0x0152C640
-            // 0x49
+            HOTKEY                  = 0x49, // 0x0152C120
             // 0x4A
             // 0x4B
             // 0x4C
@@ -125,7 +125,7 @@ namespace doticu_skylib {
             // 0x6A
             // 0x6B 0x0152C8A0
             // 0x6C 0x0152C920
-            // 0x6D
+            // 0x6D 0x0152F400
             COLLISION_LAYER         = 0x6E, // XTRI
             // 0x6F
             ENCOUNTER_ZONE          = 0x70,
@@ -171,11 +171,11 @@ namespace doticu_skylib {
             // 0x98 0x0152CB00
             TEXT_DISPLAY            = 0x99,
             // 0x9A 0x0152CB20
-            ENCHANTMENT             = 0x9B, // 
-            SOUL_LEVEL              = 0x9C, // 
+            ENCHANTMENT             = 0x9B,
+            SOUL_LEVEL              = 0x9C,
             // 0x9D 0x0152CB60
             // 0x9E
-            UNIQUE_ID               = 0x9F, // 0x0152CBA0
+            UNIQUE_ID               = 0x9F,
             FLAGS                   = 0xA0,
             // 0xA1 0x0152CBE0
             // 0xA2 0x0152CC00
@@ -192,7 +192,7 @@ namespace doticu_skylib {
             // 0xAD 0x0152C2A0
             // 0xAE
             // 0xAF 0x0152CC80
-            // 0xB0
+            // 0xB0 0x0152C100
             // 0xB1
             // 0xB2
             // 0xB3
@@ -219,6 +219,9 @@ namespace doticu_skylib {
         static some<const char* const*> Strings();
         static some<const char*>        To_String(Extra_Type_e extra_type);
         static Extra_Type_e             From_String(maybe<const char*> extra_type);
+
+    public:
+        some<const char*> As_String();
     };
 
 }

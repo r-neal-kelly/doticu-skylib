@@ -240,7 +240,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Reference_Container_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "Reference: %s", this->reference->Any_Name());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "Reference: %s, %s", this->reference->Any_Name(), this->reference->Form_ID_String());
 
         size_t entries_size = this->entries.size();
         if (entries_size > 0) {

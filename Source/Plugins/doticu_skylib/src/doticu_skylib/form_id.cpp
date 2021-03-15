@@ -68,6 +68,33 @@ namespace doticu_skylib {
         }
     }
 
+    String_t Form_ID_t::As_String() const
+    {
+        static const char hex_values[16] =
+        {
+            '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+        };
+
+        char form_id_string[11] =
+        {
+            '0', 'x',
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+            '\0'
+        };
+
+        form_id_string[2] = hex_values[(this->value & 0xF0000000) >> 28];
+        form_id_string[3] = hex_values[(this->value & 0x0F000000) >> 24];
+        form_id_string[4] = hex_values[(this->value & 0x00F00000) >> 20];
+        form_id_string[5] = hex_values[(this->value & 0x000F0000) >> 16];
+        form_id_string[6] = hex_values[(this->value & 0x0000F000) >> 12];
+        form_id_string[7] = hex_values[(this->value & 0x00000F00) >> 8];
+        form_id_string[8] = hex_values[(this->value & 0x000000F0) >> 4];
+        form_id_string[9] = hex_values[(this->value & 0x0000000F) >> 0];
+
+        return form_id_string;
+    }
+
     Bool_t Form_ID_t::Is_Static() const
     {
         return !Is_Dynamic();
@@ -290,29 +317,7 @@ namespace doticu_skylib {
 
     Form_ID_t::operator String_t() const
     {
-        static const char hex_values[16] =
-        {
-            '0', '1', '2', '3', '4', '5', '6', '7',
-            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-        };
-
-        char form_id_string[11] =
-        {
-            '0', 'x',
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-            '\0'
-        };
-
-        form_id_string[2] = hex_values[(this->value & 0xF0000000) >> 28];
-        form_id_string[3] = hex_values[(this->value & 0x0F000000) >> 24];
-        form_id_string[4] = hex_values[(this->value & 0x00F00000) >> 20];
-        form_id_string[5] = hex_values[(this->value & 0x000F0000) >> 16];
-        form_id_string[6] = hex_values[(this->value & 0x0000F000) >> 12];
-        form_id_string[7] = hex_values[(this->value & 0x00000F00) >> 8];
-        form_id_string[8] = hex_values[(this->value & 0x000000F0) >> 4];
-        form_id_string[9] = hex_values[(this->value & 0x0000000F) >> 0];
-
-        return form_id_string;
+        return As_String();
     }
 
     template <>

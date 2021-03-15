@@ -370,16 +370,21 @@ namespace doticu_skylib {
 
     String_t Reference_t::Any_Name()
     {
-        const char* name = Name();
-        if (!name || !name[0]) {
-            name = Get_Editor_ID();
+        maybe<Actor_t*> actor = As_Actor();
+        if (actor) {
+            return actor->Any_Name();
+        } else {
+            const char* name = Name();
             if (!name || !name[0]) {
-                return Form_ID_String();
+                name = Get_Editor_ID();
+                if (!name || !name[0]) {
+                    return Form_ID_String();
+                } else {
+                    return name;
+                }
             } else {
                 return name;
             }
-        } else {
-            return name;
         }
     }
 

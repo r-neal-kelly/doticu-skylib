@@ -1030,6 +1030,8 @@ namespace doticu_skylib {
 
     void Actor_t::Kill(maybe<Actor_t*> killer, Bool_t do_silently, Bool_t do_force, maybe<unique<Callback_i<>>> callback)
     {
+        // it would be nice if we could disable alias protect/essential. we could just cache the data and switch it back.
+
         using Callback = maybe<unique<Callback_i<>>>;
 
         class Virtual_Callback :
