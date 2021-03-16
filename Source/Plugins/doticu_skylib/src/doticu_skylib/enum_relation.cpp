@@ -54,7 +54,7 @@ namespace doticu_skylib {
     some<Relation_e> Relation_e::Between(some<Form_t*> form_a, some<Form_t*> form_b)
     {
         static auto get = reinterpret_cast
-            <Relation_e::value_type(*)(Form_t*, Form_t*)>
+            <u32(*)(Form_t*, Form_t*)>
             (Game_t::Base_Address() + Offset_e::GET);
 
         SKYLIB_ASSERT_SOME(form_a);
@@ -71,7 +71,7 @@ namespace doticu_skylib {
     void Relation_e::Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation)
     {
         static auto set = reinterpret_cast
-            <void(*)(Form_t*, Form_t*, Relation_e::value_type)>
+            <void(*)(Form_t*, Form_t*, u32)>
             (Game_t::Base_Address() + Offset_e::SET);
 
         SKYLIB_ASSERT_SOME(form_a);
@@ -79,6 +79,77 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(relation);
 
         set(form_a(), form_b(), relation());
+    }
+
+    Relation_e::Relation_e() :
+        Enum_t(_NONE_)
+    {
+    }
+
+    Relation_e::Relation_e(enum_type value) :
+        Enum_t(value < _TOTAL_ ? value : _NONE_)
+    {
+    }
+
+    Relation_e::Relation_e(value_type value) :
+        Relation_e(static_cast<enum_type>(value))
+    {
+    }
+
+    Relation_e::Relation_e(const Relation_e& other) :
+        Enum_t(other.value)
+    {
+    }
+
+    Relation_e::Relation_e(Relation_e&& other) noexcept :
+        Enum_t(std::move(other.value))
+    {
+    }
+
+    Relation_e& Relation_e::operator =(const Relation_e& other)
+    {
+        if (this != std::addressof(other)) {
+            this->value = other.value;
+        }
+        return *this;
+    }
+
+    Relation_e& Relation_e::operator =(Relation_e&& other) noexcept
+    {
+        if (this != std::addressof(other)) {
+            this->value = std::move(other.value);
+        }
+        return *this;
+    }
+
+    Relation_e::~Relation_e()
+    {
+        this->value = _NONE_;
+    }
+
+    some<const char*> Relation_e::As_String()
+    {
+        return To_String(*this);
+    }
+
+    Relation_e::operator Bool_t() const
+    {
+        return this->value < _TOTAL_;
+    }
+
+    Relation_e::operator value_type() const
+    {
+        return static_cast<Bool_t>(*this) ? this->value : _NONE_;
+    }
+
+    Bool_t Relation_e::operator !() const
+    {
+        return !static_cast<Bool_t>(*this);
+    }
+
+    Relation_e::value_type Relation_e::operator ()() const
+    {
+        return static_cast<value_type>(*this);
     }
 
 }

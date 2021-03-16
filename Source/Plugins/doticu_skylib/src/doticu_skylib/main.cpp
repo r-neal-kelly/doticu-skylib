@@ -21,6 +21,7 @@
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/dialogue_manager.h"
+#include "doticu_skylib/enum_virtual_relation.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/faction.h"
@@ -34,6 +35,7 @@
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/spell.h"
+#include "doticu_skylib/traits.h"
 #include "doticu_skylib/ui.h"
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/voice_type.h"
@@ -86,6 +88,8 @@ namespace doticu_skylib {
             void operator ()(Virtual::Variable_t*)
             {
                 UI_t::Notification(Game_t::Version());
+
+                Virtual_Relation_e::Log_Test();
 
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();

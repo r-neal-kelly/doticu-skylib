@@ -160,6 +160,18 @@ namespace doticu_skylib {
         Bool_t
     >;
 
+    template <typename T>
+    using enable_if_is_class_t = std::enable_if_t<
+        std::is_class<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
+    using enable_if_isnt_class_t = std::enable_if_t<
+        !std::is_class<T>::value,
+        Bool_t
+    >;
+
     template <typename T, typename _ = void>
     struct is_signed_integral : public std::false_type {};
     template <typename T>

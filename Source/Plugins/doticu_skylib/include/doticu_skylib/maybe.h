@@ -23,7 +23,9 @@ namespace doticu_skylib {
         using value_type = T;
 
     public:
-        none() {}
+        none()
+        {
+        }
     };
 
     template <typename T>

@@ -20,17 +20,17 @@ namespace doticu_skylib {
         {
             _NONE_          = static_cast<value_type>(-1),
 
-            LOVER           = 0,
-            ALLY            = 1,
-            CONFIDANT       = 2,
-            FRIEND          = 3,
-            ACQUAINTANCE    = 4,
-            RIVAL           = 5,
-            FOE             = 6,
-            ENEMY           = 7,
-            ARCHNEMESIS     = 8,
+            LOVER           = static_cast<value_type>(0),
+            ALLY            = static_cast<value_type>(1),
+            CONFIDANT       = static_cast<value_type>(2),
+            FRIEND          = static_cast<value_type>(3),
+            ACQUAINTANCE    = static_cast<value_type>(4),
+            RIVAL           = static_cast<value_type>(5),
+            FOE             = static_cast<value_type>(6),
+            ENEMY           = static_cast<value_type>(7),
+            ARCHNEMESIS     = static_cast<value_type>(8),
 
-            _TOTAL_         = 9,
+            _TOTAL_         = static_cast<value_type>(9),
             _DEFAULT_       = ACQUAINTANCE,
         };
 
@@ -55,40 +55,25 @@ namespace doticu_skylib {
         static void             Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation);
 
     public:
-        Relation_e()                            : Enum_t(_NONE_) {}
-        Relation_e(enum_type value)             : Enum_t(value < _TOTAL_ ? value : _NONE_) {}
-        Relation_e(value_type value)            : Enum_t(Relation_e(static_cast<enum_type>(value)).value) {}
-        Relation_e(const Relation_e& other)     : Enum_t(other) {}
-        Relation_e(Relation_e&& other) noexcept : Enum_t(std::move(other)) {}
-
-        Relation_e& operator = (const Relation_e& other)
-        {
-            if (std::addressof(other) != this) {
-                this->value = other.value;
-            }
-            return *this;
-        }
-
-        Relation_e& operator = (Relation_e&& other) noexcept
-        {
-            if (std::addressof(other) != this) {
-                this->value = std::exchange(other.value, _NONE_);
-            }
-            return *this;
-        }
-
-        ~Relation_e()
-        {
-            this->value = _NONE_;
-        }
+        Relation_e();
+        Relation_e(enum_type value);
+        Relation_e(value_type value);
+        Relation_e(const Relation_e& other);
+        Relation_e(Relation_e&& other) noexcept;
+        Relation_e& operator =(const Relation_e& other);
+        Relation_e& operator =(Relation_e&& other) noexcept;
+        ~Relation_e();
 
     public:
-        explicit operator   Bool_t () const     { return this->value < _TOTAL_; }
-        operator            value_type () const { return static_cast<Bool_t>(*this) ? this->value : _NONE_; }
+        some<const char*> As_String();
 
     public:
-        Bool_t      operator !  () const    { return !static_cast<Bool_t>(*this); }
-        value_type  operator () () const    { return static_cast<value_type>(*this); }
+        explicit operator   Bool_t() const;
+        operator            value_type() const;
+
+    public:
+        Bool_t      operator !() const;
+        value_type  operator ()() const;
     };
 
     template <>
