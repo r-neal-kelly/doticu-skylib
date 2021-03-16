@@ -161,7 +161,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(0x93),
             SKYLIB_ENUM_TO_STRING(0x94),
             SKYLIB_ENUM_TO_STRING(FROM_ALIAS),
-            SKYLIB_ENUM_TO_STRING(0x96),
+            SKYLIB_ENUM_TO_STRING(SHOULD_WEAR),
             SKYLIB_ENUM_TO_STRING(0x97),
             SKYLIB_ENUM_TO_STRING(0x98),
             SKYLIB_ENUM_TO_STRING(TEXT_DISPLAY),

@@ -172,8 +172,8 @@ namespace doticu_skylib {
         virtual void                _59(void);                                          // 59
         virtual void                Do_Add_Item(Bound_Object_t* object,
                                                 Extra_List_t*   x_list,
-                                                s32             non_x_list_count,
-                                                Reference_t*    from);                  // 5A (moves x_list and changes Reference_Handle. however, does not remove from other reference)
+                                                s32             count,
+                                                Reference_t*    from);                  // 5A
         virtual NI_Point_3_t        _5B(void);                                          // 5B
         virtual void                _5C(void);                                          // 5C
         virtual void                _5D(void);                                          // 5D
@@ -295,6 +295,11 @@ namespace doticu_skylib {
     public:
         const char*                         Name();
         String_t                            Any_Name();
+
+        void                                Add_Item(some<Bound_Object_t*> object,
+                                                     maybe<Extra_List_t*> x_list,
+                                                     s32 count,
+                                                     maybe<Reference_t*> from);
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         Vector_t<some<Alias_Reference_t*>>  Alias_References();

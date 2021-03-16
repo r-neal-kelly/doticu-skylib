@@ -89,7 +89,7 @@ namespace doticu_skylib {
         virtual void        _16(void);                                                  // 16
         virtual void        _17(void);                                                  // 17
         virtual void        _18(void);                                                  // 18
-        virtual void        _19(void);                                                  // 19
+        virtual Bool_t      Get_Is_Playable() const;                                    // 19
         virtual void        _1A(void);                                                  // 1A
         virtual void        _1B(void);                                                  // 1B
         virtual void        _1C(void);                                                  // 1C
@@ -143,6 +143,7 @@ namespace doticu_skylib {
         Bool_t                      Is_Dynamic();
         Bool_t                      Is_Heavy();
         Bool_t                      Is_Light();
+        Bool_t                      Is_Playable();
 
         maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index();
         maybe<Light_Mod_Index_t>    Light_Mod_Index();

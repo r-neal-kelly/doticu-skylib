@@ -388,6 +388,19 @@ namespace doticu_skylib {
         }
     }
 
+    void Reference_t::Add_Item(some<Bound_Object_t*> object, maybe<Extra_List_t*> x_list, s32 count, maybe<Reference_t*> from)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        // if not given an x_list, it will either increment or decrement by count. doesn't go below x_list count.
+        // if given an x_list, it will move it and make updates to certain types, like Extra_Reference_Handle_t.
+        // if the x_list is on another reference, you MUST remove it from that reference first.
+        // if given a valid x_list, it ignores count. however, it's probably wise to just pass the x_list count anyway.
+        // if given an empty x_list, it increments the object by the given count or by one if count is zero, or not at all if negative.
+
+        Do_Add_Item(object(), x_list(), count, from());
+    }
+
     Vector_t<some<Alias_Base_t*>> Reference_t::Alias_Bases()
     {
         return this->x_list.Alias_Bases();

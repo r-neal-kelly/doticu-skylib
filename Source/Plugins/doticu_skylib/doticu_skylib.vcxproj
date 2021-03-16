@@ -97,8 +97,10 @@
     <ClInclude Include="include\doticu_skylib\enum_update_3d_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_virtual_relation.h" />
     <ClInclude Include="include\doticu_skylib\enum_voice_type_flags.h" />
+    <ClInclude Include="include\doticu_skylib\extra_cannot_wear.h" />
     <ClInclude Include="include\doticu_skylib\extra_charge.h" />
     <ClInclude Include="include\doticu_skylib\extra_enchantment.h" />
+    <ClInclude Include="include\doticu_skylib\extra_from_alias.h" />
     <ClInclude Include="include\doticu_skylib\extra_poison.h" />
     <ClInclude Include="include\doticu_skylib\extra_temper_level.h" />
     <ClInclude Include="include\doticu_skylib\extra_reference_handle.h" />
@@ -476,8 +478,10 @@
     <ClCompile Include="src\doticu_skylib\enum_temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_virtual_relation.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_aliases.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_cannot_wear.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_charge.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_enchantment.cpp" />
+    <ClCompile Include="src\doticu_skylib\extra_from_alias.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_poison.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_soul_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_temper_level.cpp" />

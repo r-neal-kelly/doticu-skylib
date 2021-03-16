@@ -77,7 +77,7 @@ namespace doticu_skylib {
             // 0x3A
             // 0x3B
             // 0x3C 0x0152C5C0
-            CANNOT_WEAR             = 0x3D, // 0x0152C040
+            CANNOT_WEAR             = 0x3D, // 
             POISON                  = 0x3E,
             // 0x3F
             // 0x40 0x0152C4A0
@@ -165,8 +165,8 @@ namespace doticu_skylib {
             // 0x92 0x0152CA20
             // 0x93 0x0152CA40
             // 0x94
-            FROM_ALIAS              = 0x95, // 0x0152BEC0
-            // 0x96
+            FROM_ALIAS              = 0x95, // 
+            SHOULD_WEAR             = 0x96, // 0x?
             // 0x97 0x0152CA80
             // 0x98 0x0152CB00
             TEXT_DISPLAY            = 0x99,

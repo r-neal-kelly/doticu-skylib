@@ -4,11 +4,13 @@
 
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_cannot_wear.h"
 #include "doticu_skylib/extra_charge.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_enchantment.h"
 #include "doticu_skylib/extra_factions.h"
+#include "doticu_skylib/extra_from_alias.h"
 #include "doticu_skylib/extra_ghost.h"
 #include "doticu_skylib/extra_leveled_item.h"
 #include "doticu_skylib/extra_list.inl"
@@ -266,8 +268,10 @@ namespace doticu_skylib {
     }
 
     Bool_t Extra_List_t::Has_Extra_Aliases()                { return Has<Extra_Aliases_t>(); }
+    Bool_t Extra_List_t::Has_Extra_Cannot_Wear()            { return Has<Extra_Cannot_Wear_t>(); }
     Bool_t Extra_List_t::Has_Extra_Count()                  { return Has<Extra_Count_t>(); }
     Bool_t Extra_List_t::Has_Extra_Factions()               { return Has<Extra_Factions_t>(); }
+    Bool_t Extra_List_t::Has_Extra_From_Alias()             { return Has<Extra_From_Alias_t>(); }
     Bool_t Extra_List_t::Has_Extra_Ghost()                  { return Has<Extra_Ghost_t>(); }
     Bool_t Extra_List_t::Has_Extra_Leveled_Item()           { return Has<Extra_Leveled_Item_t>(); }
     Bool_t Extra_List_t::Has_Extra_Outfit()                 { return Has<Extra_Outfit_t>(); }
@@ -449,6 +453,25 @@ namespace doticu_skylib {
         maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
         if (x_aliases) {
             x_aliases->Quests(results);
+        }
+    }
+
+    Bool_t Extra_List_t::Cannot_Wear()
+    {
+        return Has_Extra_Cannot_Wear();
+    }
+
+    void Extra_List_t::Cannot_Wear(Bool_t cannot_wear)
+    {
+        if (cannot_wear) {
+            if (!Cannot_Wear()) {
+                Add<Extra_Cannot_Wear_t>(Extra_Cannot_Wear_t::Create());
+            }
+        } else {
+            maybe<Extra_Cannot_Wear_t*> x_cannot_wear = Get<Extra_Cannot_Wear_t>();
+            if (x_cannot_wear) {
+                Remove<Extra_Cannot_Wear_t>(x_cannot_wear());
+            }
         }
     }
 

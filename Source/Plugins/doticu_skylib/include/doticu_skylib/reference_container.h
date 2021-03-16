@@ -60,6 +60,9 @@ namespace doticu_skylib {
         Container_Entry_Count_t             Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t             Remove_To(some<Bound_Object_t*> object,
+                                                      some<Extra_List_t*> extra_list,
+                                                      some<Reference_t*> to);
         maybe<Container_Entry_Count_t>      Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
 
     public:

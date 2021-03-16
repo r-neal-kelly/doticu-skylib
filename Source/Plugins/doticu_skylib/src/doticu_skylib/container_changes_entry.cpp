@@ -8,6 +8,7 @@
 #include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/math.h"
+#include "doticu_skylib/reference.h"
 
 namespace doticu_skylib {
 
@@ -179,6 +180,7 @@ namespace doticu_skylib {
                     extra_type == Extra_Type_e::SOUL_LEVEL ||
                     extra_type == Extra_Type_e::TEMPER_LEVEL ||
                     extra_type == Extra_Type_e::TEXT_DISPLAY) {
+                    // TODO:
                     // should probably check what kind of text_display it is.
                     return true;
                 } else {
@@ -198,6 +200,7 @@ namespace doticu_skylib {
             if (!this->x_lists) {
                 this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list_copy())();
             } else {
+                // TODO:
                 // we could try to have it consumed by another x_list.
                 // I'm just not sure how unique x_lists would handle being altered.
                 this->x_lists->Add(extra_list_copy());
@@ -237,6 +240,49 @@ namespace doticu_skylib {
         }
 
         return Decrement_Delta(base_count, x_list_count);
+    }
+
+    s32 Container_Changes_Entry_t::Remove_To(Container_Entry_Count_t base_count,
+                                             some<Extra_List_t*> extra_list,
+                                             maybe<Reference_t*> this_owner,
+                                             some<Reference_t*> new_owner)
+    {
+        /*
+            To move an x_list between containers:
+            ALIASES:
+                this seems to always appear with Extra_Reference_Handle_t. see what happens with Reference_t::Do_Add_Item.
+            FROM_ALIAS:
+                Can move the x_list, but Reference_t::Do_Add_Item will combine it with other From_Alias, even with different alias_id
+            REFERENCE_HANDLE:
+                if representative, it must have its linked reference's handle set to the new container.
+            UNIQUE_ID:
+                its form_id must be set to the new container, and it's unique_id set to the next available id on new container.
+        */
+
+        SKYLIB_ASSERT_SOME(this->object);
+        SKYLIB_ASSERT_SOME(new_owner);
+        SKYLIB_ASSERT(new_owner() != this_owner());
+
+        s32 new_delta = Remove(base_count, extra_list);
+
+        Vector_t<some<Extra_Data_t*>> x_datas = extra_list->Extra_Datas();
+        for (size_t idx = 0, end = x_datas.size(); idx < end; idx += 1) {
+            some<Extra_Data_t*> x_data = x_datas[idx];
+            Extra_Type_e x_type = x_data->Type();
+            if (x_type == Extra_Type_e::CANNOT_WEAR ||
+                x_type == Extra_Type_e::LEVELED_ITEM ||
+                x_type == Extra_Type_e::OUTFIT ||
+                x_type == Extra_Type_e::SHOULD_WEAR ||
+                x_type == Extra_Type_e::WORN ||
+                x_type == Extra_Type_e::WORN_LEFT) { // maybe HOTKEY too?
+                extra_list->Remove(x_data);
+                Extra_Data_t::Destroy(x_data);
+            }
+        }
+
+        new_owner->Add_Item(this->object(), extra_list(), extra_list->Count(), this_owner);
+
+        return new_delta;
     }
 
     s32 Container_Changes_Entry_t::Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount)

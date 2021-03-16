@@ -6,12 +6,14 @@
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/extra_aliases.h"
+#include "doticu_skylib/extra_cannot_wear.h"
 #include "doticu_skylib/extra_charge.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_collision_layer.h"
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_enchantment.h"
+#include "doticu_skylib/extra_from_alias.h"
 #include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/extra_poison.h"
@@ -230,9 +232,11 @@ namespace doticu_skylib {
     maybe<Extra_Data_t*> Extra_Data_t::Copy()
     {
         Extra_Type_e type = Type();
-        if (type == Extra_Type_e::CHARGE)               return Create<Extra_Charge_t>(*this)();
+        if (type == Extra_Type_e::CANNOT_WEAR)          return Create<Extra_Cannot_Wear_t>(*this)();
+        else if (type == Extra_Type_e::CHARGE)          return Create<Extra_Charge_t>(*this)();
         else if (type == Extra_Type_e::COUNT)           return Create<Extra_Count_t>(*this)();
         else if (type == Extra_Type_e::ENCHANTMENT)     return Create<Extra_Enchantment_t>(*this)();
+        else if (type == Extra_Type_e::FROM_ALIAS)      return Create<Extra_From_Alias_t>(*this)();
         else if (type == Extra_Type_e::OWNER)           return Create<Extra_Owner_t>(*this)();
         else if (type == Extra_Type_e::POISON)          return Create<Extra_Poison_t>(*this)();
         else if (type == Extra_Type_e::SOUL_LEVEL)      return Create<Extra_Soul_Level_t>(*this)();
@@ -246,9 +250,11 @@ namespace doticu_skylib {
     {
         Extra_Type_e type = Type();
         if (type == Extra_Type_e::ALIASES)                  static_cast<Extra_Aliases_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::CANNOT_WEAR)         static_cast<Extra_Cannot_Wear_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::CHARGE)              static_cast<Extra_Charge_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::COUNT)               static_cast<Extra_Count_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::ENCHANTMENT)         static_cast<Extra_Enchantment_t*>(this)->Log(indent);
+        else if (type == Extra_Type_e::FROM_ALIAS)          static_cast<Extra_From_Alias_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::POISON)              static_cast<Extra_Poison_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::REFERENCE_HANDLE)    static_cast<Extra_Reference_Handle_t*>(this)->Log(indent);
         else if (type == Extra_Type_e::SOUL_LEVEL)          static_cast<Extra_Soul_Level_t*>(this)->Log(indent);

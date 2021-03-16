@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include "doticu_skylib/enum_soul_level.h"
 #include "doticu_skylib/extra_data.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/maybe.h"

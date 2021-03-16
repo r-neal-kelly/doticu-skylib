@@ -35,6 +35,7 @@ namespace doticu_skylib {
     public:
         Bool_t                              Is_Valid();
         Bool_t                              Is_Leveled_Item();
+        Bool_t                              Is_Playable_Item();
         Bool_t                              Has_Quest_Item();
 
         some<Bound_Object_t*>               Some_Object();
@@ -56,6 +57,9 @@ namespace doticu_skylib {
         Container_Entry_Count_t             Add_Copy_Or_Increment(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove(some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Remove_And_Destroy(some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t             Remove_To(some<Reference_Container_t*> owner,
+                                                      some<Extra_List_t*> extra_list,
+                                                      some<Reference_t*> to);
         Container_Entry_Count_t             Increment_Count(some<Extra_List_t*> extra_list, s16 amount);
         Container_Entry_Count_t             Decrement_Count(some<Extra_List_t*> extra_list, s16 amount);
         maybe<Container_Entry_Count_t>      Try_To_Consume(some<Extra_List_t*> extra_list);

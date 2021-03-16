@@ -80,6 +80,13 @@ namespace doticu_skylib {
         return Maybe_Leveled_Item() != none<Leveled_Item_t*>();
     }
 
+    Bool_t Reference_Container_Entry_t::Is_Playable_Item()
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        return Some_Object()->Get_Is_Playable();
+    }
+
     Bool_t Reference_Container_Entry_t::Has_Quest_Item()
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -255,6 +262,20 @@ namespace doticu_skylib {
 
         Container_Entry_Count_t base_count = Base_Count();
         return this->reference_entry->Remove_And_Destroy(base_count, extra_list) + base_count;
+    }
+
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_To(some<Reference_Container_t*> owner,
+                                                                   some<Extra_List_t*> extra_list,
+                                                                   some<Reference_t*> to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(this->reference_entry);
+        SKYLIB_ASSERT_SOME(owner);
+        SKYLIB_ASSERT_SOME(extra_list);
+        SKYLIB_ASSERT_SOME(to);
+
+        Container_Entry_Count_t base_count = Base_Count();
+        return this->reference_entry->Remove_To(base_count, extra_list, owner->reference(), to) + base_count;
     }
 
     Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Extra_List_t*> extra_list, s16 amount)

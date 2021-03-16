@@ -102,8 +102,10 @@ namespace doticu_skylib {
         Bool_t                  Remove(some<T*> x_data);
 
         Bool_t                  Has_Extra_Aliases();
+        Bool_t                  Has_Extra_Cannot_Wear();
         Bool_t                  Has_Extra_Count();
         Bool_t                  Has_Extra_Factions();
+        Bool_t                  Has_Extra_From_Alias();
         Bool_t                  Has_Extra_Ghost();
         Bool_t                  Has_Extra_Leveled_Item();
         Bool_t                  Has_Extra_Outfit();
@@ -132,6 +134,10 @@ namespace doticu_skylib {
         void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
         Vector_t<some<Quest_t*>>            Quests();
         void                                Quests(Vector_t<some<Quest_t*>>& results);
+
+        // Extra_Cannot_Wear_t
+        Bool_t                              Cannot_Wear();
+        void                                Cannot_Wear(Bool_t cannot_wear);
 
         // Extra_Count_t
         s16                                 Count();

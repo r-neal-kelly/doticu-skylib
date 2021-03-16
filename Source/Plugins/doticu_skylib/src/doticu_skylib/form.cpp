@@ -36,11 +36,12 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Form_t::Is_Valid()   { return static_cast<Bool_t>(form_id); }
-    Bool_t Form_t::Is_Static()  { return form_id.Is_Static(); }
-    Bool_t Form_t::Is_Dynamic() { return form_id.Is_Dynamic(); }
-    Bool_t Form_t::Is_Heavy()   { return form_id.Is_Heavy(); }
-    Bool_t Form_t::Is_Light()   { return form_id.Is_Light(); }
+    Bool_t Form_t::Is_Valid()       { return static_cast<Bool_t>(form_id); }
+    Bool_t Form_t::Is_Static()      { return form_id.Is_Static(); }
+    Bool_t Form_t::Is_Dynamic()     { return form_id.Is_Dynamic(); }
+    Bool_t Form_t::Is_Heavy()       { return form_id.Is_Heavy(); }
+    Bool_t Form_t::Is_Light()       { return form_id.Is_Light(); }
+    Bool_t Form_t::Is_Playable()    { return Get_Is_Playable(); }
 
     maybe<Heavy_Mod_Index_t>    Form_t::Heavy_Mod_Index()   { return form_id.Heavy_Mod_Index(); }
     maybe<Light_Mod_Index_t>    Form_t::Light_Mod_Index()   { return form_id.Light_Mod_Index(); }

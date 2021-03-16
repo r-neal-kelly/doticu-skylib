@@ -219,6 +219,21 @@ namespace doticu_skylib {
         return entry->Remove_And_Destroy(extra_list);
     }
 
+    Container_Entry_Count_t Reference_Container_t::Remove_To(some<Bound_Object_t*> object,
+                                                             some<Extra_List_t*> extra_list,
+                                                             some<Reference_t*> to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(extra_list);
+        SKYLIB_ASSERT_SOME(to);
+
+        maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
+        SKYLIB_ASSERT(entry);
+
+        return entry->Remove_To(this, extra_list, to);
+    }
+
     maybe<Container_Entry_Count_t> Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());

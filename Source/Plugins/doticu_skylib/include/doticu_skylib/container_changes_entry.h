@@ -49,6 +49,10 @@ namespace doticu_skylib {
         s32                             Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
         s32                             Remove_And_Destroy(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
+        s32                             Remove_To(Container_Entry_Count_t base_count,
+                                                  some<Extra_List_t*> extra_list,
+                                                  maybe<Reference_t*> this_owner,
+                                                  some<Reference_t*> new_owner);
         s32                             Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
         s32                             Decrement_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
         maybe<s32>                      Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
@@ -62,32 +66,5 @@ namespace doticu_skylib {
         void Log(std::string indent);
     };
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
-
-    /*
-    To move an x_list between containers:
-        ALIASES:
-            this seems to always appear with Extra_Reference_Handle_t. see what happens with Reference_t::Do_Add_Item.
-        CANNOT_WEAR:
-            probably should be deleted?
-        FROM_ALIAS:
-            see what happens with Reference_t::Do_Add_Item.
-        HOTKEY:
-            probably should be deleted.
-        LEVELED_ITEM:
-            should be deleted.
-        OUTFIT:
-            should be deleted.
-        REFERENCE_HANDLE:
-            if representative, it must have its linked reference's handle set to the new container.
-        UNIQUE_ID:
-            its form_id must be set to the new container, and it's unique_id set to the next available id on new container.
-        WORN:
-            should be deleted.
-        WORN_LEFT:
-            should be deleted.
-
-        there may be more like SHOULD_WEAR, but I've not yet seen them.
-        we can just use Reference_t::Do_Add_Item, but it may be too slow when scaled to our purposes.
-    */
 
 }

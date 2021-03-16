@@ -46,6 +46,50 @@
 
 namespace doticu_skylib {
 
+    //for NPC Party
+    static void Split_Inventory(some<Actor_t*> actor, some<Reference_t*> worn_cache, some<Reference_t*> other_cache)
+    {
+        SKYLIB_ASSERT_SOME(actor);
+        SKYLIB_ASSERT_SOME(worn_cache);
+        SKYLIB_ASSERT_SOME(other_cache);
+
+        Reference_Container_t actor_container(actor);
+        actor_container.Log(); // temp
+        for (size_t idx = 0, end = actor_container.entries.size(); idx < end; idx += 1) {
+            Reference_Container_Entry_t& entry = actor_container.entries[idx];
+            some<Bound_Object_t*> object = entry.Some_Object();
+            if (!object->Is_Leveled_Item() && object->Is_Playable()) {
+                Container_Entry_Count_t non_x_lists_count = entry.Non_Extra_Lists_Count();
+                if (non_x_lists_count > 0) {
+                    entry.Decrement_Count(&actor_container, non_x_lists_count);
+                    other_cache->Add_Item(object, none<Extra_List_t*>(), non_x_lists_count, none<Reference_t*>()); // this does something funky with count at 0. need to examine why and fix it.
+                }
+
+                Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
+                for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
+                    some<Extra_List_t*> x_list = x_lists[idx];
+                    if (!x_list->Is_Quest_Item()) {
+                        if (x_list->Is_Worn_Item()) {
+                            entry.Remove_To(&actor_container, x_list, worn_cache);
+                        } else {
+                            entry.Remove_To(&actor_container, x_list, other_cache);
+                        }
+                    }
+                }
+            }
+        }
+
+        //temp
+        _MESSAGE("actor");
+        Reference_Container_t(actor).Log();
+        _MESSAGE("worn");
+        Reference_Container_t(worn_cache).Log();
+        _MESSAGE("other");
+        Reference_Container_t(other_cache).Log();
+    }
+    // it's working really well!
+    //
+
     //temp
     static void Temp()
     {
@@ -89,37 +133,20 @@ namespace doticu_skylib {
             {
                 UI_t::Notification(Game_t::Version());
 
-                Virtual_Relation_e::Log_Test();
-
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());
                 some<Faction_t*> current_follower_faction = static_cast<Faction_t*>(Game_t::Form(0x0005C84E)());
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
+                some<Container_t*> cache_base = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
+
+                some<Reference_t*> worn_cache = Container_t::Create_Container(cache_base, nullptr)();
+                some<Reference_t*> other_cache = Container_t::Create_Container(cache_base, nullptr)();
+                Split_Inventory(player_actor, worn_cache, other_cache);
 
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
-
-                    Reference_Container_t container(reference);
-                    if (container.Is_Valid()) {
-                        container.Log();
-                        /*for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
-                            Reference_Container_Entry_t& entry = container.entries[idx];
-                            if (!entry.Is_Leveled_Item()) {
-                                Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
-                                for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
-                                    some<Extra_List_t*> x_list = x_lists[idx];
-                                    if (x_list->Has_Extra_Unique_ID()) {
-                                        x_list->Log();
-                                        entry.Remove(x_list);
-                                        player_actor->Do_Add_Item(entry.Some_Object()(), x_list(), 0, reference()); // reference maybe not necessary?
-                                        x_list->Log();
-                                    }
-                                }
-                            }
-                        }*/
-                    }
 
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor()) {
