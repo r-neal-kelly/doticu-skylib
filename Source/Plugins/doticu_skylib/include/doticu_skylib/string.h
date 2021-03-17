@@ -49,6 +49,7 @@ namespace doticu_skylib {
     public:
         explicit operator   Bool_t() const;
         operator            const char*() const;
+        operator            maybe<const char*>() const;
         operator            some<const char*>() const;
         operator            std::string() const;
 

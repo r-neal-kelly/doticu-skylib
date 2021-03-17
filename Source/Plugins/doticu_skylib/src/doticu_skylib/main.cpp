@@ -215,7 +215,7 @@ namespace doticu_skylib {
         Virtual::Callback_i::After_Load();
 
         //temp
-        Temp();
+        //Temp();
         //
     }
 

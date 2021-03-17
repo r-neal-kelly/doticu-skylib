@@ -21,7 +21,7 @@
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
 #include "doticu_skylib/havok_actor_rigid_body_controller.h"
-#include "doticu_skylib/interface.h"
+#include "doticu_skylib/interface.inl"
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/leveled_actor_base.h"
 #include "doticu_skylib/location.h"

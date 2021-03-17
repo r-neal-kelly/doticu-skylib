@@ -120,6 +120,11 @@ namespace doticu_skylib {
         return this->value ? this->value() : "";
     }
 
+    Static_String_t::operator maybe<const char*>() const
+    {
+        return static_cast<const char*>(*this);
+    }
+
     Static_String_t::operator some<const char*>() const
     {
         return static_cast<const char*>(*this);
