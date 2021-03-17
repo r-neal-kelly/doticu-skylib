@@ -25,7 +25,7 @@
 
 namespace doticu_skylib {
 
-    class Weapon_t :
+    class Weapon_t :                // TESObjectWEAP
         public Bound_Object_t,      // 000
         public Name_c,              // 030
         public Model_Alternates_c,  // 040
@@ -47,6 +47,20 @@ namespace doticu_skylib {
         enum
         {
             SCRIPT_TYPE = Script_Type_e::WEAPON,
+        };
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E14AF8, // 513916
+            };
+
+        public:
+            using Enum_t::Enum_t;
         };
 
     public:

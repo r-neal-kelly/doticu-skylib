@@ -211,7 +211,7 @@ namespace doticu_skylib { namespace Filter {
             static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
                 for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
-                    if (filterable->Has_Keyword(keywords[idx]())) {
+                    if (filterable->Has_Keyword(keywords[idx])) {
                         return Result_e::IS_MATCH;
                     }
                 }
@@ -222,7 +222,7 @@ namespace doticu_skylib { namespace Filter {
             static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
                 for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
-                    if (!filterable->Has_Keyword(keywords[idx]())) {
+                    if (!filterable->Has_Keyword(keywords[idx])) {
                         return Result_e::ISNT_MATCH;
                     }
                 }
@@ -234,7 +234,7 @@ namespace doticu_skylib { namespace Filter {
             {
                 Bool_t did_match = false;
                 for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
-                    if (filterable->Has_Keyword(keywords[idx]())) {
+                    if (filterable->Has_Keyword(keywords[idx])) {
                         if (did_match) {
                             return Result_e::ISNT_MATCH;
                         } else {

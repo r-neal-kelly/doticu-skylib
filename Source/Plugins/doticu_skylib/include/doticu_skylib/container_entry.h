@@ -20,6 +20,10 @@ namespace doticu_skylib {
         u32                             pad_04; // 04
         maybe<Bound_Object_t*>          object; // 08
         maybe<Container_Entry_Extra_t*> extra;  // 10 (COED - Container Object Extra Data)
+
+    public:
+        Container_Entry_Count_t Count();
+        void                    Count(Container_Entry_Count_t count);
     };
     STATIC_ASSERT(sizeof(Container_Entry_t) == 0x18);
 

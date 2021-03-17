@@ -46,7 +46,7 @@ namespace doticu_skylib {
             ACTIVATOR               = 0x18, // ACTI
             // 0x19 TACT
             ARMOR                   = 0x1A, // ARMO
-            // 0x1B BOOK
+            BOOK                    = 0x1B, // BOOK
             CONTAINER               = 0x1C, // CONT
             // 0x1D DOOR
             // 0x1E INGR

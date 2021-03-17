@@ -403,7 +403,7 @@ namespace doticu_skylib {
 
     public:
         maybe()                             : value(none<T*>()()) {}
-        maybe(T* value)                     : value(value) {}
+        maybe(T* const value)               : value(value) {}
         maybe(const none<T*> other)         : value(other()) {}
         maybe(const maybe<T*>& other)       : value(other.value) {}
         maybe(maybe<T*>&& other) noexcept   : value(std::exchange(other.value, none<T*>()())) {}
@@ -468,7 +468,7 @@ namespace doticu_skylib {
     public:
         some()                          = delete;
         some(Nullptr_t)                 = delete;
-        some(T* value)                  : value(value) {}
+        some(T* const value)            : value(value) {}
         some(const some<T*>& other)     : value(other.value) {}
         some(some<T*>&& other) noexcept : value(std::exchange(other.value, none<T*>()())) {}
 

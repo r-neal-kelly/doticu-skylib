@@ -4,8 +4,10 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/book.h"
 #include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
 #include "doticu_skylib/container.h"
 #include "doticu_skylib/cstring.h"
@@ -14,11 +16,13 @@
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/mod.h"
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_variable.inl"
+#include "doticu_skylib/weapon.h"
 
 namespace doticu_skylib {
 
@@ -43,6 +47,23 @@ namespace doticu_skylib {
     Bool_t Form_t::Is_Heavy()       { return form_id.Is_Heavy(); }
     Bool_t Form_t::Is_Light()       { return form_id.Is_Light(); }
     Bool_t Form_t::Is_Playable()    { return Get_Is_Playable(); }
+
+    Bool_t Form_t::Has_Keyword(some<Keyword_t*> keyword) const
+    {
+        SKYLIB_ASSERT_SOME(keyword);
+
+        maybe<Reference_t*> reference = As_Reference();
+        if (reference) {
+            return reference->Has_Keyword(keyword);
+        } else {
+            maybe<Keywords_c*> component_keywords = As_Component_Keywords();
+            if (component_keywords) {
+                return component_keywords->Component_Has_Keyword(keyword);
+            } else {
+                return false;
+            }
+        }
+    }
 
     maybe<Heavy_Mod_Index_t>    Form_t::Heavy_Mod_Index()   { return form_id.Heavy_Mod_Index(); }
     maybe<Light_Mod_Index_t>    Form_t::Light_Mod_Index()   { return form_id.Light_Mod_Index(); }
@@ -139,25 +160,31 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t  Form_t::Is_Actor()                  { return As_Actor() != none<Actor_t*>(); }
-    Bool_t  Form_t::Is_Actor_Base()             { return As_Actor_Base() != none<Actor_Base_t*>(); }
-    Bool_t  Form_t::Is_Bound_Object()           { return As_Bound_Object() != none<Bound_Object_t*>(); }
-    Bool_t  Form_t::Is_Component_Container()    { return As_Component_Container() != none<Container_c*>(); }
-    Bool_t  Form_t::Is_Component_Name()         { return As_Component_Name() != none<Name_c*>(); }
-    Bool_t  Form_t::Is_Container()              { return As_Container() != none<Container_t*>(); }
-    Bool_t  Form_t::Is_Faction()                { return As_Faction() != none<Faction_t*>(); }
-    Bool_t  Form_t::Is_Leveled_Item()           { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
-    Bool_t  Form_t::Is_Reference()              { return As_Reference() != none<Reference_t*>(); }
+    Bool_t                  Form_t::Is_Actor() const                { return As_Actor() != none<Actor_t*>(); }
+    Bool_t                  Form_t::Is_Actor_Base() const           { return As_Actor_Base() != none<Actor_Base_t*>(); }
+    Bool_t                  Form_t::Is_Book() const                 { return As_Book() != none<Book_t*>(); }
+    Bool_t                  Form_t::Is_Bound_Object() const         { return As_Bound_Object() != none<Bound_Object_t*>(); }
+    Bool_t                  Form_t::Is_Component_Container() const  { return As_Component_Container() != none<Container_c*>(); }
+    Bool_t                  Form_t::Is_Component_Keywords() const   { return As_Component_Keywords() != none<Keywords_c*>(); }
+    Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
+    Bool_t                  Form_t::Is_Container() const            { return As_Container() != none<Container_t*>(); }
+    Bool_t                  Form_t::Is_Faction() const              { return As_Faction() != none<Faction_t*>(); }
+    Bool_t                  Form_t::Is_Leveled_Item() const         { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
+    Bool_t                  Form_t::Is_Weapon() const               { return As_Weapon() != none<Weapon_t*>(); }
 
-    maybe<Actor_t*>         Form_t::As_Actor()                  { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
-    maybe<Actor_Base_t*>    Form_t::As_Actor_Base()             { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
-    maybe<Bound_Object_t*>  Form_t::As_Bound_Object()           { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
-    maybe<Container_c*>     Form_t::As_Component_Container()    { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
-    maybe<Name_c*>          Form_t::As_Component_Name()         { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
-    maybe<Container_t*>     Form_t::As_Container()              { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
-    maybe<Faction_t*>       Form_t::As_Faction()                { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
-    maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()           { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
-    maybe<Reference_t*>     Form_t::As_Reference()              { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
+    maybe<Actor_t*>         Form_t::As_Actor() const                { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
+    maybe<Actor_Base_t*>    Form_t::As_Actor_Base() const           { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
+    maybe<Book_t*>          Form_t::As_Book() const                 { return Game_t::Runtime_Cast<Form_t, Book_t>(this); }
+    maybe<Bound_Object_t*>  Form_t::As_Bound_Object() const         { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
+    maybe<Container_c*>     Form_t::As_Component_Container() const  { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
+    maybe<Keywords_c*>      Form_t::As_Component_Keywords() const   { return Game_t::Runtime_Cast<Form_t, Keywords_c>(this); }
+    maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
+    maybe<Container_t*>     Form_t::As_Container() const            { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
+    maybe<Faction_t*>       Form_t::As_Faction() const              { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
+    maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item() const         { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
+    maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
 
     void Form_t::Register_SKSE_Event(String_t event_name, String_t callback_name, maybe<Virtual::Callback_i*> v_callback)
     {

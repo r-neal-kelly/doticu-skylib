@@ -89,6 +89,21 @@ namespace doticu_skylib {
         return false;
     }
 
+    Bool_t Reference_Container_t::Has_Entry(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+
+        for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
+            Reference_Container_Entry_t& entry = this->entries[idx];
+            if (entry.Some_Object() == object) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     some<Container_c*> Reference_Container_t::Some_Base_Container()
     {
         SKYLIB_ASSERT(Is_Valid());

@@ -23,6 +23,8 @@ namespace doticu_skylib {
                 DESTROY = 0x00C28D40, // 67822
                 SET     = 0x00C28D60, // 67823
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
@@ -58,9 +60,12 @@ namespace doticu_skylib {
         Bool_t  operator ==(const Static_String_t& other) const;
         Bool_t  operator !=(const Static_String_t& other) const;
 
+    public:
         friend std::string operator +(const std::string& a, const Static_String_t& b);
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
+
+    using String_t = Static_String_t;
 
     class Dynamic_String_t
     {
@@ -99,7 +104,6 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Dynamic_String_t) == 0x10);
 
-    using String_t = Static_String_t;
     using DString_t = Dynamic_String_t;
 
 }

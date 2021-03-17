@@ -43,6 +43,7 @@ namespace doticu_skylib {
     public:
         Bool_t                              Is_Valid();
         Bool_t                              Has_Quest_Item();
+        Bool_t                              Has_Entry(some<Bound_Object_t*> object);
 
         some<Container_c*>                  Some_Base_Container();
         maybe<Container_Changes_t*>         Maybe_Reference_Container();

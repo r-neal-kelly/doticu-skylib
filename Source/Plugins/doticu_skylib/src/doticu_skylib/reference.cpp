@@ -9,6 +9,7 @@
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/dialogue_manager.h"
 #include "doticu_skylib/dynamic_array.inl"
@@ -33,6 +34,7 @@
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_attached_state.h"
 #include "doticu_skylib/reference_container.h"
+#include "doticu_skylib/reference_container_entry.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual_arguments.h"
@@ -359,6 +361,13 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Reference_t::Has_Keyword(some<Keyword_t*> keyword) const
+    {
+        SKYLIB_ASSERT_SOME(keyword);
+
+        return Get_Has_Keyword(keyword());
+    }
+
     const char* Reference_t::Name()
     {
         static auto get_name = reinterpret_cast
@@ -514,6 +523,33 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Container_Entry_t*> Reference_t::Base_Component_Container_Entry(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        maybe<Container_c*> base_component_container = Base_Component_Container();
+        if (base_component_container) {
+            return base_component_container->Maybe_Entry(object);
+        } else {
+            return none<Container_Entry_t*>();
+        }
+    }
+
+    maybe<Extra_Container_Changes_t*> Reference_t::Maybe_Extra_Container_Changes()
+    {
+        return this->x_list.Get<Extra_Container_Changes_t>();
+    }
+
+    some<Extra_Container_Changes_t*> Reference_t::Some_Extra_Container_Changes()
+    {
+        if (!this->x_list.Has<Extra_Container_Changes_t>()) {
+            Some_Container_Changes();
+        }
+        some<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>()();
+        SKYLIB_ASSERT_SOME(x_container_changes);
+        return x_container_changes;
+    }
+
     maybe<Container_Changes_t*> Reference_t::Maybe_Container_Changes()
     {
         maybe<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>();
@@ -540,19 +576,35 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Extra_Container_Changes_t*> Reference_t::Maybe_Extra_Container_Changes()
+    maybe<Container_Changes_Entry_t*> Reference_t::Maybe_Container_Changes_Entry(some<Bound_Object_t*> object)
     {
-        return this->x_list.Get<Extra_Container_Changes_t>();
+        SKYLIB_ASSERT_SOME(object);
+
+        maybe<Container_Changes_t*> container_changes = Maybe_Container_Changes();
+        if (container_changes) {
+            return container_changes->Maybe_Entry(object);
+        } else {
+            return none<Container_Changes_Entry_t*>();
+        }
     }
 
-    some<Extra_Container_Changes_t*> Reference_t::Some_Extra_Container_Changes()
+    some<Container_Changes_Entry_t*> Reference_t::Some_Container_Changes_Entry(some<Bound_Object_t*> object)
     {
-        if (!this->x_list.Has<Extra_Container_Changes_t>()) {
-            Some_Container_Changes();
+        SKYLIB_ASSERT_SOME(object);
+
+        return Some_Container_Changes()->Some_Entry(object);
+    }
+
+    Container_Entry_Count_t Reference_t::Container_Entry_Count(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        Reference_Container_Entry_t entry(Base_Component_Container_Entry(object), Maybe_Container_Changes_Entry(object));
+        if (entry.Is_Valid()) {
+            return entry.Count();
+        } else {
+            return 0;
         }
-        some<Extra_Container_Changes_t*> x_container_changes = this->x_list.Get<Extra_Container_Changes_t>()();
-        SKYLIB_ASSERT_SOME(x_container_changes);
-        return x_container_changes;
     }
 
     Location_t* Reference_t::Location()

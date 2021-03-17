@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/enum_collision_layer_type.h"
 #include "doticu_skylib/enum_remove_reason.h"
 #include "doticu_skylib/enum_script_type.h"
@@ -30,6 +31,8 @@ namespace doticu_skylib {
     class Cell_t;
     class Container_c;
     class Container_Changes_t;
+    class Container_Changes_Entry_t;
+    class Container_Entry_t;
     class Dialogue_Branch_t;
     class Extra_Container_Changes_t;
     class Extra_List_t;
@@ -146,7 +149,7 @@ namespace doticu_skylib {
         virtual void                _45(void);                                          // 45
         virtual void                _46(void);                                          // 46
         virtual void                _47(void);                                          // 47
-        virtual Bool_t              Has_Keyword(const Keyword_t* keyword);              // 48
+        virtual Bool_t              Get_Has_Keyword(const Keyword_t* keyword) const;    // 48
         virtual void                _49(void);                                          // 49
         virtual void                _4A(void);                                          // 4A
         virtual void                _4B(void);                                          // 4B
@@ -292,6 +295,8 @@ namespace doticu_skylib {
         Bool_t          Has_Owner(some<Actor_t*> actor);
         Bool_t          Has_Potential_Thief(some<Actor_t*> actor);
 
+        Bool_t          Has_Keyword(some<Keyword_t*> keyword) const;
+
     public:
         const char*                         Name();
         void                                Name(String_t name);
@@ -312,10 +317,14 @@ namespace doticu_skylib {
         void                                Collision_Layer_Type(some<Collision_Layer_Type_e> collision_layer_type);
 
         maybe<Container_c*>                 Base_Component_Container();
-        maybe<Container_Changes_t*>         Maybe_Container_Changes();
-        some<Container_Changes_t*>          Some_Container_Changes();
+        maybe<Container_Entry_t*>           Base_Component_Container_Entry(some<Bound_Object_t*> object);
         maybe<Extra_Container_Changes_t*>   Maybe_Extra_Container_Changes();
         some<Extra_Container_Changes_t*>    Some_Extra_Container_Changes();
+        maybe<Container_Changes_t*>         Maybe_Container_Changes();
+        some<Container_Changes_t*>          Some_Container_Changes();
+        maybe<Container_Changes_Entry_t*>   Maybe_Container_Changes_Entry(some<Bound_Object_t*> object);
+        some<Container_Changes_Entry_t*>    Some_Container_Changes_Entry(some<Bound_Object_t*> object);
+        Container_Entry_Count_t             Container_Entry_Count(some<Bound_Object_t*> object);
 
         Location_t*                         Location();
         

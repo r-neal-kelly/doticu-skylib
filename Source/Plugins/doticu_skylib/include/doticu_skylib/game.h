@@ -64,7 +64,7 @@ namespace doticu_skylib {
         static maybe<Form_t*>           Form(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
 
         template <typename From_t, typename To_t>
-        static maybe<To_t*>             Runtime_Cast(some<From_t*> from);
+        static maybe<To_t*>             Runtime_Cast(some<const From_t*> from);
 
         static Word_t                   V_Table_Offset(const void* instance);
         static void                     Write_V_Table(void* instance, Word_t v_table_offset);

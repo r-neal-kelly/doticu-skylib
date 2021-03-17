@@ -65,6 +65,7 @@
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
+    <ClInclude Include="include\doticu_skylib\book.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
@@ -75,6 +76,8 @@
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
     <ClInclude Include="include\doticu_skylib\enum_attack_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_book_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_book_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_enchantment_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_morph_type.h" />
@@ -466,9 +469,12 @@
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_reference.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
+    <ClCompile Include="src\doticu_skylib\book.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\component_keywords.cpp" />
     <ClCompile Include="src\doticu_skylib\container.cpp" />
+    <ClCompile Include="src\doticu_skylib\container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
     <ClCompile Include="src\doticu_skylib\enchantment.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />

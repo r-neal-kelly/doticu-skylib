@@ -4,36 +4,44 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
-
 #include "doticu_skylib/component_form_data.h"
+#include "doticu_skylib/enum.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
 
     class Keyword_t;
 
-    class Keywords_c : public Form_Data_c // BGSKeywordForm
+    class Keywords_c :      // BGSKeywordForm
+        public Form_Data_c  // 00
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
                 RTTI = 0x01E10F28, // 513855
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
     public:
-        virtual             ~Keywords_c();                          // 0
+        virtual             ~Keywords_c();                                      // 0
 
-        virtual Bool_t      Has(const Keyword_t* keyword) const;    // 4
-        virtual Keyword_t*  Default_Keyword() const;                // 5
+        virtual Bool_t      Get_Has_Keyword(const Keyword_t* keyword) const;    // 4
+        virtual Keyword_t*  Get_Default_Keyword() const;                        // 5
 
-        Keyword_t** keywords;       // 08
-        u32         keyword_count;  // 10
-        u32         pad_14;         // 14
+    public:
+        maybe<maybe<Keyword_t*>*>   keywords;       // 08
+        u32                         keyword_count;  // 10
+        u32                         pad_14;         // 14
+
+    public:
+        Bool_t Component_Has_Keyword(some<Keyword_t*> keyword) const;
     };
     STATIC_ASSERT(sizeof(Keywords_c) == 0x18);
 

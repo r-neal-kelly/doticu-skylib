@@ -47,10 +47,10 @@ namespace doticu_skylib {
     }
 
     template <typename From_t, typename To_t>
-    inline maybe<To_t*> Game_t::Runtime_Cast(some<From_t*> from)
+    inline maybe<To_t*> Game_t::Runtime_Cast(some<const From_t*> from)
     {
         static auto runtime_cast = reinterpret_cast
-            <void *(*)(void* from, u32 unk_01, Word_t from_rtti, Word_t to_rtti, u32 unk_02)>
+            <void *(*)(const void* from, u32 unk_01, Word_t from_rtti, Word_t to_rtti, u32 unk_02)>
             (Game_t::Base_Address() + Offset_e::RUNTIME_CAST);
 
         SKYLIB_ASSERT_SOME(from);

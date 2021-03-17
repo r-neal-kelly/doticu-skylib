@@ -174,7 +174,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Is_Vampire()
     {
-        return Has_Keyword(Keyword_t::Vampire()());
+        return Has_Keyword(Keyword_t::Vampire());
     }
 
     Bool_t Actor_t::Isnt_Vampire()

@@ -279,9 +279,9 @@ namespace doticu_skylib {
 
         if (keywords) {
             for (Index_t idx = 0, end = keyword_count; idx < end; idx += 1) {
-                Keyword_t* keyword = keywords[idx];
-                if (keyword && keyword->Is_Valid() && !results.Has(keyword)) {
-                    results.push_back(keyword);
+                maybe<Keyword_t*> keyword = keywords[idx];
+                if (keyword && keyword->Is_Valid() && !results.Has(keyword())) {
+                    results.push_back(keyword());
                 }
             }
         }
@@ -290,9 +290,9 @@ namespace doticu_skylib {
             for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
                 if (it->keywords) {
                     for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
-                        Keyword_t* keyword = it->keywords[idx];
-                        if (keyword && keyword->Is_Valid() && !results.Has(keyword)) {
-                            results.push_back(keyword);
+                        maybe<Keyword_t*> keyword = it->keywords[idx];
+                        if (keyword && keyword->Is_Valid() && !results.Has(keyword())) {
+                            results.push_back(keyword());
                         }
                     }
                 }

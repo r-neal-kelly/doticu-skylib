@@ -30,7 +30,7 @@ namespace doticu_skylib {
 
         maybe<Container_Entry_t*> maybe_entry = Maybe_Entry(object);
         if (maybe_entry) {
-            return maybe_entry->count;
+            return maybe_entry->Count();
         } else {
             return 0;
         }

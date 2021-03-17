@@ -38,7 +38,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(ACTIVATOR),
             SKYLIB_ENUM_TO_STRING(0x19),
             SKYLIB_ENUM_TO_STRING(ARMOR),
-            SKYLIB_ENUM_TO_STRING(0x1B),
+            SKYLIB_ENUM_TO_STRING(BOOK),
             SKYLIB_ENUM_TO_STRING(CONTAINER),
             SKYLIB_ENUM_TO_STRING(0x1D),
             SKYLIB_ENUM_TO_STRING(0x1E),

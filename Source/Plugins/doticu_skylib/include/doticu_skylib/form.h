@@ -19,15 +19,19 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Actor_Base_t;
+    class Book_t;
     class Bound_Object_t;
     class Container_c;
     class Container_t;
     class Faction_t;
+    class Keyword_t;
+    class Keywords_c;
     class Leveled_Item_t;
     class Mod_t;
     class Name_c;
     class Race_t;
     class Reference_t;
+    class Weapon_t;
 
     namespace Virtual {
 
@@ -147,6 +151,8 @@ namespace doticu_skylib {
         Bool_t                      Is_Light();
         Bool_t                      Is_Playable();
 
+        Bool_t                      Has_Keyword(some<Keyword_t*> keyword) const;
+
         maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index();
         maybe<Light_Mod_Index_t>    Light_Mod_Index();
         maybe<Heavy_Form_Index_t>   Heavy_Form_Index();
@@ -165,25 +171,31 @@ namespace doticu_skylib {
         some<const char*>           Component_Name();
 
     public:
-        Bool_t                  Is_Actor();
-        Bool_t                  Is_Actor_Base();
-        Bool_t                  Is_Bound_Object();
-        Bool_t                  Is_Component_Container();
-        Bool_t                  Is_Component_Name();
-        Bool_t                  Is_Container();
-        Bool_t                  Is_Faction();
-        Bool_t                  Is_Leveled_Item();
-        Bool_t                  Is_Reference();
+        Bool_t                  Is_Actor() const;
+        Bool_t                  Is_Actor_Base() const;
+        Bool_t                  Is_Book() const;
+        Bool_t                  Is_Bound_Object() const;
+        Bool_t                  Is_Component_Container() const;
+        Bool_t                  Is_Component_Keywords() const;
+        Bool_t                  Is_Component_Name() const;
+        Bool_t                  Is_Container() const;
+        Bool_t                  Is_Faction() const;
+        Bool_t                  Is_Leveled_Item() const;
+        Bool_t                  Is_Reference() const;
+        Bool_t                  Is_Weapon() const;
 
-        maybe<Actor_t*>         As_Actor();
-        maybe<Actor_Base_t*>    As_Actor_Base();
-        maybe<Bound_Object_t*>  As_Bound_Object();
-        maybe<Container_c*>     As_Component_Container();
-        maybe<Name_c*>          As_Component_Name();
-        maybe<Container_t*>     As_Container();
-        maybe<Faction_t*>       As_Faction();
-        maybe<Leveled_Item_t*>  As_Leveled_Item();
-        maybe<Reference_t*>     As_Reference();
+        maybe<Actor_t*>         As_Actor() const;
+        maybe<Actor_Base_t*>    As_Actor_Base() const;
+        maybe<Book_t*>          As_Book() const;
+        maybe<Bound_Object_t*>  As_Bound_Object() const;
+        maybe<Container_c*>     As_Component_Container() const;
+        maybe<Keywords_c*>      As_Component_Keywords() const;
+        maybe<Name_c*>          As_Component_Name() const;
+        maybe<Container_t*>     As_Container() const;
+        maybe<Faction_t*>       As_Faction() const;
+        maybe<Leveled_Item_t*>  As_Leveled_Item() const;
+        maybe<Reference_t*>     As_Reference() const;
+        maybe<Weapon_t*>        As_Weapon() const;
 
     public:
         void Register_SKSE_Event(String_t event_name,
