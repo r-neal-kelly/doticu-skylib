@@ -16,7 +16,8 @@
 #include "doticu_skylib/mod.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/virtual_arguments.h"
-#include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
@@ -78,7 +79,7 @@ namespace doticu_skylib {
     Bool_t Form_t::Has_Indexed_Mod(maybe<Mod_t*> mod)
     {
         if (mod) {
-            return Indexed_Mod() == mod();
+            return Indexed_Mod() == mod;
         } else {
             return Is_Dynamic();
         }
@@ -158,66 +159,168 @@ namespace doticu_skylib {
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item()           { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
     maybe<Reference_t*>     Form_t::As_Reference()              { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
 
-    void Form_t::Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback)
+    void Form_t::Register_SKSE_Event(String_t event_name, String_t callback_name, maybe<Virtual::Callback_i*> v_callback)
     {
-        struct VArguments_t : public Virtual::Arguments_t {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
             String_t event_name;
             String_t callback_name;
-            VArguments_t(String_t event_name, String_t callback_name) :
+
+        public:
+            Virtual_Arguments(String_t event_name, String_t callback_name) :
                 event_name(event_name), callback_name(callback_name)
             {
             }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
             {
                 args->Resize(2);
-                args->At(0).String(event_name);
-                args->At(1).String(callback_name);
+                args->At(0).As<String_t>(this->event_name);
+                args->At(1).As<String_t>(this->callback_name);
                 return true;
             }
-        } arguments(event_name, callback_name);
+        };
 
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
         Virtual::Machine_t::Self()->Call_Method(
             this,
             SCRIPT_NAME,
             "RegisterForModEvent",
-            &arguments, &vcallback
+            Virtual_Arguments(event_name, callback_name),
+            v_callback
         );
     }
 
-    void Form_t::Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback)
+    void Form_t::Register_SKSE_Event(String_t event_name, String_t callback_name, maybe<unique<Callback_i<>>> callback)
     {
-        struct VArguments_t : public Virtual::Arguments_t {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Register_SKSE_Event(event_name, callback_name, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Form_t::Unregister_SKSE_Event(String_t event_name, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
             String_t event_name;
-            VArguments_t(String_t event_name) :
+
+        public:
+            Virtual_Arguments(String_t event_name) :
                 event_name(event_name)
             {
             }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args)
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
             {
                 args->Resize(1);
-                args->At(0).String(event_name);
+                args->At(0).As<String_t>(this->event_name);
                 return true;
             }
-        } arguments(event_name);
+        };
 
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
         Virtual::Machine_t::Self()->Call_Method(
             this,
             SCRIPT_NAME,
             "UnregisterForModEvent",
-            &arguments,
-            &vcallback
+            Virtual_Arguments(event_name),
+            v_callback
         );
     }
 
-    void Form_t::Unregister_Mod_Events(Virtual::Callback_i* vcallback)
+    void Form_t::Unregister_SKSE_Event(String_t event_name, maybe<unique<Callback_i<>>> callback)
     {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Unregister_SKSE_Event(event_name, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Form_t::Unregister_All_SKSE_Events(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
         Virtual::Machine_t::Self()->Call_Method(
             this,
             SCRIPT_NAME,
             "UnregisterForAllModEvents",
-            nullptr,
-            &vcallback
+            none<Virtual::Arguments_i*>(),
+            v_callback
         );
+    }
+
+    void Form_t::Unregister_All_SKSE_Events(maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Unregister_All_SKSE_Events(new Virtual_Callback(std::move(callback)));
     }
 
 }

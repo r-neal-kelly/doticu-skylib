@@ -111,7 +111,7 @@ namespace doticu_skylib {
             Actor_Base_t* actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
             SKYLIB_ASSERT(actor_base->face_template);
-            for (maybe<Actor_Base_t*> it = actor_base->face_template; it != nullptr; it = it->face_template) {
+            for (maybe<Actor_Base_t*> it = actor_base->face_template; it; it = it->face_template) {
                 SKYLIB_LOG(TAB TAB "template: %8.8X %s", it->form_id, it->Any_Name());
             }
         }
@@ -146,7 +146,7 @@ namespace doticu_skylib {
                     name = "(none)";
                 }
 
-                const char* form_id = actor_base->Form_ID_String().data + 2;
+                const char* form_id = static_cast<const char*>(actor_base->Form_ID_String()) + 2;
 
                 fstream << "index: "
                     << std::left
@@ -159,7 +159,7 @@ namespace doticu_skylib {
                     << form_id
                     << TAB;
                 fstream << "name: "
-                    << name.data
+                    << name
                     << std::endl;
             }
         }
@@ -210,7 +210,7 @@ namespace doticu_skylib {
 
     Bool_t Actor_Base_t::Has_Template_FF000800()
     {
-        for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
+        for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
             if (it->form_id == 0xFF000800) {
                 return true;
             }
@@ -269,7 +269,7 @@ namespace doticu_skylib {
     {
         if (include_templates) {
             size_t reserve_count = keyword_count;
-            for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
+            for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
                 reserve_count += it->keyword_count;
             }
             results.reserve(reserve_count);
@@ -287,7 +287,7 @@ namespace doticu_skylib {
         }
 
         if (include_templates) {
-            for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
+            for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
                 if (it->keywords) {
                     for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
                         Keyword_t* keyword = it->keywords[idx];
@@ -366,7 +366,7 @@ namespace doticu_skylib {
 
     void Actor_Base_t::Templates(Vector_t<Actor_Base_t*>& results)
     {
-        for (maybe<Actor_Base_t*> it = face_template; it != nullptr; it = it->face_template) {
+        for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
             results.push_back(it());
         }
     }

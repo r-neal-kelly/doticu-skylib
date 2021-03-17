@@ -18,111 +18,79 @@ namespace doticu_skylib { namespace Virtual {
 
     Bool_t Machine_t::Call_Global(String_t class_name,
                                   String_t function_name,
-                                  Arguments_i* arguments,
-                                  Callback_i** vcallback)
+                                  maybe<Arguments_i*> arguments,
+                                  maybe<Callback_i*> callback)
     {
-        Callback_i* default_vcallback;
-        if (!vcallback || !*vcallback) {
-            default_vcallback = new Callback_t();
-            vcallback = &default_vcallback;
-        }
+        some<Callback_i*> some_callback = callback ? callback() : new Callback_t();
         if (arguments) {
-            return Call_Global(&class_name, &function_name, arguments, vcallback);
+            return Do_Call_Global(class_name, function_name, *arguments, static_cast<Callback_i*&>(some_callback));
         } else {
             Arguments_t default_arguments;
-            return Call_Global(&class_name, &function_name, &default_arguments, vcallback);
+            return Do_Call_Global(class_name, function_name, default_arguments, static_cast<Callback_i*&>(some_callback));
         }
     }
 
     Bool_t Machine_t::Call_Global(String_t class_name,
                                   String_t function_name,
-                                  maybe<Arguments_i*> varguments,
-                                  maybe<Callback_i*> vcallback)
+                                  Arguments_i&& arguments,
+                                  maybe<Callback_i*> callback)
     {
-        some<Callback_i*> some_vcallback = vcallback ? vcallback() : new Callback_t();
-        if (varguments) {
-            return Call_Global(&class_name, &function_name, varguments(), &some_vcallback);
-        } else {
-            Arguments_t default_arguments;
-            return Call_Global(&class_name, &function_name, &default_arguments, &some_vcallback);
-        }
-    }
-
-    Bool_t Machine_t::Call_Global(String_t class_name,
-                                  String_t function_name,
-                                  Arguments_i&& varguments,
-                                  maybe<Callback_i*> vcallback)
-    {
-        some<Callback_i*> some_vcallback = vcallback ? vcallback() : new Callback_t();
-        return Call_Global(&class_name, &function_name, &varguments, &some_vcallback);
+        some<Callback_i*> some_callback = callback ? callback() : new Callback_t();
+        return Do_Call_Global(class_name, function_name, arguments, static_cast<Callback_i*&>(some_callback));
     }
 
     Bool_t Machine_t::Call_Method(Handle_t handle,
                                   String_t class_name,
                                   String_t function_name,
-                                  Arguments_i* arguments,
-                                  Callback_i** vcallback)
+                                  maybe<Arguments_i*> arguments,
+                                  maybe<Callback_i*> callback)
     {
-        Callback_i* default_vcallback;
-        if (!vcallback || !*vcallback) {
-            default_vcallback = new Callback_t();
-            vcallback = &default_vcallback;
-        }
+        some<Callback_i*> some_callback = callback ? callback() : new Callback_t();
         if (arguments) {
-            return Call_Method2(handle, &class_name, &function_name, arguments, vcallback);
+            return Do_Call_Method_2(handle, class_name, function_name, *arguments, static_cast<Callback_i*&>(some_callback));
         } else {
             Arguments_t default_arguments;
-            return Call_Method2(handle, &class_name, &function_name, &default_arguments, vcallback);
+            return Do_Call_Method_2(handle, class_name, function_name, default_arguments, static_cast<Callback_i*&>(some_callback));
         }
     }
 
     Bool_t Machine_t::Call_Method(Handle_t handle,
                                   String_t class_name,
                                   String_t function_name,
-                                  maybe<Arguments_i*> maybe_varguments,
-                                  maybe<Callback_i*> maybe_vcallback)
+                                  Arguments_i&& arguments,
+                                  maybe<Callback_i*> callback)
     {
-        Callback_i* vcallback;
-        if (maybe_vcallback) {
-            vcallback = maybe_vcallback();
-        } else {
-            vcallback = new Callback_t();
-        }
-
-        if (maybe_varguments) {
-            return Call_Method2(handle, &class_name, &function_name, maybe_varguments(), &vcallback);
-        } else {
-            Arguments_t default_varguments;
-            return Call_Method2(handle, &class_name, &function_name, &default_varguments, &vcallback);
-        }
-    }
-
-    Bool_t Machine_t::Call_Method(Handle_t handle,
-                                  String_t class_name,
-                                  String_t function_name,
-                                  Arguments_i&& varguments,
-                                  maybe<Callback_i*> maybe_vcallback)
-    {
-        Callback_i* vcallback;
-        if (maybe_vcallback) {
-            vcallback = maybe_vcallback();
-        } else {
-            vcallback = new Callback_t();
-        }
-
-        return Call_Method2(handle, &class_name, &function_name, &varguments, &vcallback);
+        some<Callback_i*> some_callback = callback ? callback() : new Callback_t();
+        return Do_Call_Method_2(handle, class_name, function_name, arguments, static_cast<Callback_i*&>(some_callback));
     }
 
     void Machine_t::Send_Event(Handle_t handle,
                                String_t event_name,
-                               maybe<Arguments_i*> maybe_varguments)
+                               maybe<Arguments_i*> arguments)
     {
-        if (maybe_varguments) {
-            return Send_Event(handle, &event_name, maybe_varguments());
+        if (arguments) {
+            return Do_Send_Event(handle, event_name, *arguments);
         } else {
-            Arguments_t default_varguments;
-            return Send_Event(handle, &event_name, &default_varguments);
+            Arguments_t default_arguments;
+            return Do_Send_Event(handle, event_name, default_arguments);
         }
+    }
+
+    void Machine_t::Send_Event(Handle_t handle,
+                               String_t event_name,
+                               Arguments_i&& arguments)
+    {
+        return Do_Send_Event(handle, event_name, arguments);
+    }
+
+    void Machine_t::Return_Latent_Function(Stack_ID_t stack_id, const Variable_t& return_variable)
+    {
+        Do_Return_Latent_Function(stack_id, return_variable);
+    }
+
+    void Machine_t::Return_Latent_Function(Stack_ID_t stack_id, const Variable_t&& return_variable)
+    {
+        Do_Return_Latent_Function(stack_id, return_variable);
     }
 
 }}

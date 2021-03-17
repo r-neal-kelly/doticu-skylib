@@ -177,6 +177,22 @@ namespace doticu_skylib {
         }
     }
 
+    Container_Entry_Count_t Reference_Container_t::Remove_Count_To(some<Bound_Object_t*> object,
+                                                                   Container_Entry_Count_t amount,
+                                                                   some<Reference_t*> to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT_SOME(to);
+
+        maybe<Reference_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
+        if (maybe_entry) {
+            return maybe_entry->Remove_Count_To(this, amount, to);
+        } else {
+            return 0;
+        }
+    }
+
     Container_Entry_Count_t Reference_Container_t::Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());

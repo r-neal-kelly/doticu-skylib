@@ -189,7 +189,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         Destroy();
         type = Type_e::STRING;
-        data.str.Value(value.data);
+        data.str.Write(value);
     }
 
     template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
@@ -217,7 +217,7 @@ namespace doticu_skylib { namespace Virtual {
         if (value_count > 0) {
             Array_t* varray = nullptr;
             Type_e item_type = Type_e::From<Arrayable_t::value_type>();
-            if (Machine_t::Self()->Create_Array(item_type.mangled, value_count, varray) && varray) {
+            if (Machine_t::Self()->Do_Create_Array_1(item_type.mangled, value_count, varray) && varray) {
                 varray->Pack(values);
                 this->data.arr = varray;
             }

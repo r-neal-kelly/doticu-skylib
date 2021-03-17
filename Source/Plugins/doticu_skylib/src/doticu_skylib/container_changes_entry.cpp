@@ -274,10 +274,11 @@ namespace doticu_skylib {
                 x_type == Extra_Type_e::OUTFIT ||
                 x_type == Extra_Type_e::SHOULD_WEAR ||
                 x_type == Extra_Type_e::WORN ||
-                x_type == Extra_Type_e::WORN_LEFT) { // maybe HOTKEY too?
+                x_type == Extra_Type_e::WORN_LEFT) { // maybe HOTKEY too? Add_Item doesn't though
                 extra_list->Remove(x_data);
                 Extra_Data_t::Destroy(x_data);
             }
+            // maybe remove nullptr Extra_Reference_Handle_t
         }
 
         new_owner->Add_Item(this->object(), extra_list(), extra_list->Count(), this_owner);

@@ -248,13 +248,13 @@ namespace doticu_skylib {
 
         Extra_Type_e type = x_data->Type();
         if (this->presence && this->presence->Has(type)) {
-            if (this->x_datas == x_data()) {
+            if (this->x_datas == x_data) {
                 this->x_datas = x_data->next;
                 this->presence->Remove(type);
                 return true;
             } else {
                 for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
-                    if (it->next == x_data()) {
+                    if (it->next == x_data) {
                         it->next = x_data->next;
                         this->presence->Remove(type);
                         return true;
@@ -784,6 +784,26 @@ namespace doticu_skylib {
             x_talk_to_player->can_talk_to_player = can_talk_to_player;
         } else {
             Add<Extra_Talk_To_Player_t>(Extra_Talk_To_Player_t::Create(can_talk_to_player));
+        }
+    }
+
+    maybe<String_t> Extra_List_t::Name()
+    {
+        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>();
+        if (x_text_display) {
+            return x_text_display->Name();
+        } else {
+            return none<String_t>();
+        }
+    }
+
+    void Extra_List_t::Name(String_t name)
+    {
+        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>();
+        if (x_text_display) {
+            x_text_display->Name(name, true);
+        } else {
+            Add<Extra_Text_Display_t>(Extra_Text_Display_t::Create(name));
         }
     }
 

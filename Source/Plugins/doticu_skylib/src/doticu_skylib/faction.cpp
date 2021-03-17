@@ -138,7 +138,7 @@ namespace doticu_skylib {
             }
 
             String_t editor_id = Editor_ID();
-            if (editor_id.data && editor_id.data[0]) {
+            if (editor_id) {
                 SKYLIB_LOG(indent + SKYLIB_TAB + "editor_id: %s", editor_id);
             } else {
                 SKYLIB_LOG(indent + SKYLIB_TAB + "editor_id: (none)");

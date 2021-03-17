@@ -25,6 +25,7 @@
 #include "doticu_skylib/ni_point.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 

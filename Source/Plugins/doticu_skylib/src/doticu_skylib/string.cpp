@@ -3,91 +3,131 @@
 */
 
 #include "doticu_skylib/cstring.h"
-#include "doticu_skylib/string.h"
-
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/memory.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
     /* Static_String_t */
 
-    static void Create_Impl(Static_String_t* self, const char* string)
+    static void Create_Impl(some<Static_String_t*> self, some<const char*> string)
     {
         static auto create = reinterpret_cast
             <void(*)(Static_String_t*, const char*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::CREATE);
 
-        create(self, string);
+        create(self(), string());
     }
 
-    static void Destroy_Impl(Static_String_t* self)
+    static void Destroy_Impl(some<Static_String_t*> self)
     {
         static auto destroy = reinterpret_cast
             <void(*)(Static_String_t*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::DESTROY);
 
-        destroy(self);
+        destroy(self());
     }
 
-    static void Set_Impl(Static_String_t* self, const char* string)
+    static void Set_Impl(some<Static_String_t*> self, some<const char*> string)
     {
         static auto set = reinterpret_cast
             <Static_String_t * (*)(Static_String_t*, const char*)>
             (Game_t::Base_Address() + Static_String_t::Offset_e::SET);
 
-        set(self, string ? string : "");
+        set(self(), string());
     }
 
-    Static_String_t::Static_String_t()
+    Static_String_t::Static_String_t() :
+        Static_String_t("")
     {
-        Create_Impl(this, "");
     }
 
     Static_String_t::Static_String_t(const char* string)
     {
-        Create_Impl(this, string);
+        Create_Impl(this, string ? string : "");
     }
 
-    Static_String_t::Static_String_t(std::string& string)
+    Static_String_t::Static_String_t(maybe<const char*> string) :
+        Static_String_t(string())
     {
-        Create_Impl(this, string.c_str());
     }
 
-    Static_String_t::Static_String_t(std::string&& string) noexcept
+    Static_String_t::Static_String_t(some<const char*> string) :
+        Static_String_t(string())
     {
-        Create_Impl(this, string.c_str());
+    }
+
+    Static_String_t::Static_String_t(std::string& string) :
+        Static_String_t(string.c_str())
+    {
+    }
+
+    Static_String_t::Static_String_t(std::string&& string) noexcept :
+        Static_String_t(string.c_str())
+    {
+    }
+
+    Static_String_t::Static_String_t(const Static_String_t& other) :
+        value(other.value)
+    {
+    }
+
+    Static_String_t::Static_String_t(Static_String_t&& other) noexcept :
+        value(std::exchange(other.value, ""))
+    {
+    }
+
+    Static_String_t& Static_String_t::operator =(const Static_String_t& other)
+    {
+        if (this != std::addressof(other)) {
+            this->value = other.value;
+        }
+        return *this;
+    }
+
+    Static_String_t& Static_String_t::operator =(Static_String_t&& other) noexcept
+    {
+        if (this != std::addressof(other)) {
+            this->value = std::exchange(other.value, "");
+        }
+        return *this;
+    }
+
+    Static_String_t::~Static_String_t()
+    {
+        this->value = "";
     }
 
     void Static_String_t::Destroy()
     {
         Destroy_Impl(this);
-        data = "";
+        this->value = "";
     }
 
-    const char* Static_String_t::Value()
+    void Static_String_t::Write(const char* value)
     {
-        return data ? data : "";
-    }
-
-    void Static_String_t::Value(const char* value)
-    {
-        Set_Impl(this, value);
-    }
-
-    Bool_t Static_String_t::operator==(const Static_String_t& other) const
-    {
-        return CString_t::Is_Same(this->data, other.data, true);
-    }
-
-    Bool_t Static_String_t::operator!=(const Static_String_t& other) const
-    {
-        return !operator==(other);
+        Set_Impl(this, value ? value : "");
     }
 
     Static_String_t::operator Bool_t() const
     {
-        return data && data[0];
+        return static_cast<const char*>(*this)[0] != 0;
+    }
+
+    Static_String_t::operator const char*() const
+    {
+        return this->value ? this->value() : "";
+    }
+
+    Static_String_t::operator some<const char*>() const
+    {
+        return static_cast<const char*>(*this);
+    }
+
+    Static_String_t::operator std::string() const
+    {
+        return static_cast<const char*>(*this);
     }
 
     Bool_t Static_String_t::operator !() const
@@ -95,9 +135,19 @@ namespace doticu_skylib {
         return !static_cast<Bool_t>(*this);
     }
 
-    Static_String_t::operator const char*() const
+    Bool_t Static_String_t::operator ==(const Static_String_t& other) const
     {
-        return data;
+        return CString_t::Is_Same(*this, other, true);
+    }
+
+    Bool_t Static_String_t::operator !=(const Static_String_t& other) const
+    {
+        return !operator ==(other);
+    }
+
+    std::string operator +(const std::string& a, const Static_String_t& b)
+    {
+        return a + static_cast<const char*>(b);
     }
 
     /* Dynamic_String_t */

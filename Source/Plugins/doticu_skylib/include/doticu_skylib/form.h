@@ -9,9 +9,11 @@
 #include "doticu_skylib/enum_form_flags.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form_id.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/mod_index.h"
 #include "doticu_skylib/string.h"
+#include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
 
@@ -184,9 +186,18 @@ namespace doticu_skylib {
         maybe<Reference_t*>     As_Reference();
 
     public:
-        void Register_Mod_Event(String_t event_name, String_t callback_name, Virtual::Callback_i* vcallback = nullptr);
-        void Unregister_Mod_Event(String_t event_name, Virtual::Callback_i* vcallback = nullptr);
-        void Unregister_Mod_Events(Virtual::Callback_i* vcallback = nullptr);
+        void Register_SKSE_Event(String_t event_name,
+                                 String_t callback_name,
+                                 maybe<Virtual::Callback_i*> v_callback);                           // RegisterForModEvent
+        void Register_SKSE_Event(String_t event_name,
+                                 String_t callback_name,
+                                 maybe<unique<Callback_i<>>> callback);
+
+        void Unregister_SKSE_Event(String_t event_name, maybe<Virtual::Callback_i*> v_callback);    // UnregisterForModEvent
+        void Unregister_SKSE_Event(String_t event_name, maybe<unique<Callback_i<>>> callback);
+
+        void Unregister_All_SKSE_Events(maybe<Virtual::Callback_i*> v_callback);                    // UnregisterForAllModEvents
+        void Unregister_All_SKSE_Events(maybe<unique<Callback_i<>>> callback);
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
 

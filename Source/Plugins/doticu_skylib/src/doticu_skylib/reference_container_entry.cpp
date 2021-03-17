@@ -6,6 +6,7 @@
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/container_entry.h"
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/reference_container_entry.h"
 
@@ -205,7 +206,8 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount)
+    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Reference_Container_t*> owner,
+                                                                         Container_Entry_Count_t amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(owner);
@@ -214,13 +216,46 @@ namespace doticu_skylib {
         return Some_Reference_Entry(owner)->Increment_Delta(base_count, amount) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount)
+    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Count(some<Reference_Container_t*> owner,
+                                                                         Container_Entry_Count_t amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(owner);
 
         Container_Entry_Count_t base_count = Base_Count();
-        return Some_Reference_Entry(owner)->Decrement_Delta(base_count, amount) + base_count;
+        if (base_count > 0) {
+            return Some_Reference_Entry(owner)->Decrement_Delta(base_count, amount) + base_count;
+        } else {
+            maybe<Container_Changes_Entry_t*> reference_entry = Maybe_Reference_Entry();
+            if (reference_entry) {
+                return reference_entry->Decrement_Delta(base_count, amount);
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_Count_To(some<Reference_Container_t*> owner,
+                                                                         Container_Entry_Count_t amount,
+                                                                         some<Reference_t*> to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(owner);
+        SKYLIB_ASSERT_SOME(to);
+
+        if (amount > 0) {
+            Container_Entry_Count_t old_count = Count();
+            Container_Entry_Count_t new_count = Decrement_Count(owner, amount);
+
+            Container_Entry_Count_t difference = old_count - new_count;
+            if (difference > 0) {
+                to->Add_Item(Some_Object(), none<Extra_List_t*>(), difference, none<Reference_t*>());
+            }
+
+            return new_count;
+        } else {
+            return Count();
+        }
     }
 
     Container_Entry_Count_t Reference_Container_Entry_t::Add(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list)

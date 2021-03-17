@@ -27,9 +27,15 @@ namespace doticu_skylib { namespace Virtual {
         static constexpr const char* SCRIPT_NAME = "Debug";
 
     public:
+        static void Create_Message_Box(String_t message, maybe<Virtual::Callback_i*> v_callback);               // MessageBox
+        static void Create_Message_Box(String_t message, maybe<unique<doticu_skylib::Callback_i<>>> callback);
+
+        static void Create_Notification(String_t note, maybe<Virtual::Callback_i*> v_callback);                 // Notification
+        static void Create_Notification(String_t note, maybe<unique<doticu_skylib::Callback_i<>>> callback);
+
         static void Send_Animation_Event(some<Reference_t*> reference,
                                          String_t event_name,
-                                         maybe<Virtual::Callback_i*> v_callback);               // SendAnimationEvent
+                                         maybe<Virtual::Callback_i*> v_callback);                               // SendAnimationEvent
         static void Send_Animation_Event(some<Reference_t*> reference,
                                          String_t event_name,
                                          maybe<unique<doticu_skylib::Callback_i<>>> callback);

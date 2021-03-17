@@ -64,7 +64,7 @@ namespace doticu_skylib {
 
         for (size_t idx = 0, end = Count(); idx < end; idx += 1) {
             Faction_And_Rank_t& faction_and_rank = At(idx);
-            if (faction_and_rank.faction == faction()) {
+            if (faction_and_rank.faction == faction) {
                 return faction_and_rank.rank;
             }
         }
@@ -77,7 +77,7 @@ namespace doticu_skylib {
 
         for (size_t idx = 0, end = Count(); idx < end; idx += 1) {
             Faction_And_Rank_t& faction_and_rank = At(idx);
-            if (faction_and_rank.faction == faction()) {
+            if (faction_and_rank.faction == faction) {
                 faction_and_rank.rank = rank;
                 return;
             }

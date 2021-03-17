@@ -95,7 +95,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(item);
 
         if (reference->Is_Valid()) {
-            Command(std::string("AddItem ") + item->Form_ID_String().data + " " + std::to_string(delta));
+            Command(std::string("AddItem ") + item->Form_ID_String() + " " + std::to_string(delta));
             Execute(reference);
         }
     }

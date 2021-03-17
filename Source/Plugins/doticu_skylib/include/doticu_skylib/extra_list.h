@@ -15,6 +15,7 @@
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
@@ -184,6 +185,10 @@ namespace doticu_skylib {
         // Extra_Talk_To_Player_t
         Boolean_e                           Can_Talk_To_Player();
         void                                Can_Talk_To_Player(Bool_t can_talk_to_player);
+
+        // Extra_Text_Display_t
+        maybe<String_t>                     Name();
+        void                                Name(String_t name);
 
         // Extra_Worn_t, Extra_Worn_Left_t
         Bool_t                              Is_Worn_Item();

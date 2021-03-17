@@ -10,19 +10,19 @@ namespace doticu_skylib {
     Bool_t Dialogue_Info_t::Is_In_Branch(some<Dialogue_Branch_t*> branch)
     {
         SKYLIB_ASSERT_SOME(branch);
-        return Branch() == branch();
+        return Branch() == branch;
     }
 
     Bool_t Dialogue_Info_t::Is_In_Quest(some<Quest_t*> quest)
     {
         SKYLIB_ASSERT_SOME(quest);
-        return Quest() == quest();
+        return Quest() == quest;
     }
 
     Bool_t Dialogue_Info_t::Is_In_Topic(some<Dialogue_Topic_t*> topic)
     {
         SKYLIB_ASSERT_SOME(topic);
-        return Topic() == topic();
+        return Topic() == topic;
     }
 
     maybe<Dialogue_Branch_t*> Dialogue_Info_t::Branch()

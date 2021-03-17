@@ -6,7 +6,6 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
@@ -196,27 +195,5 @@ namespace doticu_skylib {
     struct is_enum : public std::false_type {};
     template <typename T>
     struct is_enum<T, std::conditional_t<false, enable_if_enum_t<T>, void>> : public std::true_type {};
-
-    template <typename T>
-    using enable_if_virtual_bool_t = enable_if_boolean_t<T>;
-
-    template <typename T>
-    using enable_if_virtual_int_t = std::enable_if_t<
-        is_integer_32_or_less<T>::value ||
-        is_enum<T>::value,
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_virtual_float_t = enable_if_float_32_t<T>;
-
-    template <typename T>
-    using enable_if_virtual_string_t = std::enable_if_t<
-        std::is_same<T, String_t>::value,
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_virtual_script_t = enable_if_pointer_t<T>;
 
 }

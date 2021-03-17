@@ -55,6 +55,9 @@ namespace doticu_skylib {
 
         Container_Entry_Count_t             Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
+        Container_Entry_Count_t             Remove_Count_To(some<Bound_Object_t*> object,
+                                                            Container_Entry_Count_t amount,
+                                                            some<Reference_t*> to);
 
         Container_Entry_Count_t             Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);

@@ -42,7 +42,7 @@ namespace doticu_skylib {
         {
         public:
             Extra_Text_Display_Type_e   type;
-            u32                         owner_instance;
+            u32                         owning_quest_instance;
 
         public:
             Conditional_u();
@@ -52,6 +52,7 @@ namespace doticu_skylib {
 
     public:
         static some<Extra_Text_Display_t*>  Create();
+        static some<Extra_Text_Display_t*>  Create(String_t name);
         static some<Extra_Text_Display_t*>  Create(const Extra_Text_Display_t& other);
         static void                         Destroy(some<Extra_Text_Display_t*> x_text_display);
 
@@ -61,7 +62,7 @@ namespace doticu_skylib {
     public:
         String_t            name;           // 10
         maybe<Message_t*>   message;        // 18
-        maybe<Quest_t*>     owner;          // 20
+        maybe<Quest_t*>     owning_quest;   // 20
         Conditional_u       conditional;    // 28
         Temper_Level_t      temper_level;   // 2C
         u16                 name_length;    // 30
@@ -69,7 +70,8 @@ namespace doticu_skylib {
         u32                 pad_34;         // 34
 
     public:
-        void Name(some<const char*> name, Bool_t do_force);
+        maybe<String_t> Name();
+        void            Name(String_t name, Bool_t do_force);
 
     public:
         void Log(std::string indent = "");

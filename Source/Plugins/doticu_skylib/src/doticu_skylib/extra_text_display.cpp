@@ -26,12 +26,21 @@ namespace doticu_skylib {
 
         x_text_display->name = "";
         x_text_display->message = none<Message_t*>();
-        x_text_display->owner = none<Quest_t*>();
+        x_text_display->owning_quest = none<Quest_t*>();
         x_text_display->conditional.type = Extra_Text_Display_Type_e::DEFAULT;
         x_text_display->temper_level = Temper_Level_e::STANDARD;
         x_text_display->name_length = 0;
         x_text_display->pad_32 = 0;
         x_text_display->pad_34 = 0;
+
+        return x_text_display;
+    }
+
+    some<Extra_Text_Display_t*> Extra_Text_Display_t::Create(String_t name)
+    {
+        some<Extra_Text_Display_t*> x_text_display = Create();
+
+        x_text_display->Name(name, true);
 
         return x_text_display;
     }
@@ -42,7 +51,7 @@ namespace doticu_skylib {
 
         x_text_display->name = other.name;
         x_text_display->message = other.message;
-        x_text_display->owner = other.owner;
+        x_text_display->owning_quest = other.owning_quest;
         x_text_display->conditional.type = other.conditional.type;
         x_text_display->temper_level = other.temper_level;
         x_text_display->name_length = other.name_length;
@@ -59,19 +68,26 @@ namespace doticu_skylib {
         Extra_Data_t::Destroy<Extra_Text_Display_t>(x_text_display);
     }
 
-    void Extra_Text_Display_t::Name(some<const char*> name, Bool_t do_force)
+    maybe<String_t> Extra_Text_Display_t::Name()
+    {
+        if (!this->owning_quest && this->conditional.type == Extra_Text_Display_Type_e::CUSTOM) {
+            return this->name;
+        } else {
+            return none<String_t>();
+        }
+    }
+
+    void Extra_Text_Display_t::Name(String_t name, Bool_t do_force)
     {
         static auto set_name = reinterpret_cast
             <void(*)(Extra_Text_Display_t*, const char*)>
             (Game_t::Base_Address() + Offset_e::SET_NAME);
 
-        SKYLIB_ASSERT_SOME(name);
-
         if (do_force) {
             this->message = nullptr;
-            this->owner = nullptr;
+            this->owning_quest = nullptr;
         }
-        set_name(this, name());
+        set_name(this, name);
     }
 
     void Extra_Text_Display_t::Log(std::string indent)
@@ -79,16 +95,16 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Extra_Text_Display_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "name: %s", this->name ? name.data : "");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "name: %s", this->name ? name : "");
         if (this->message) {
             DString_t message_dstring = this->message->Description(this->message());
             SKYLIB_LOG(indent + SKYLIB_TAB + "message: %s", message_dstring ? message_dstring.data : "");
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "message: (nullptr)");
         }
-        if (this->owner) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "owner: %s", this->owner->Any_Name().data);
-            SKYLIB_LOG(indent + SKYLIB_TAB + "owner_instance: %i", this->conditional.owner_instance);
+        if (this->owning_quest) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "owner: %s", this->owning_quest->Any_Name());
+            SKYLIB_LOG(indent + SKYLIB_TAB + "owner_instance: %i", this->conditional.owning_quest_instance);
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "owner: (nullptr)");
             SKYLIB_LOG(indent + SKYLIB_TAB + "type: %i", this->conditional.type);

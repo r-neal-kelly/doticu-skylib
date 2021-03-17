@@ -67,27 +67,19 @@ namespace doticu_skylib {
     template <>
     inline void GFx_Value_t::Value<String_t>(String_t value)
     {
-        if (value.data) {
-            SetString(value.data);
-        } else {
-            SetString("");
-        }
+        SetString(value);
     }
 
     template <typename Type>
     inline Type UI_t::Value(String_t menu, String_t target)
     {
-        if (menu.data && target.data) {
-            MenuManager* menu_manager = MenuManager::GetSingleton();
-            if (menu_manager) {
-                GFxMovieView* view = menu_manager->GetMovieView(reinterpret_cast<BSFixedString*>(&menu));
-                if (view) {
-                    GFx_Value_t gfx_value;
-                    if (view->GetVariable(&gfx_value, target.data)) {
-                        return gfx_value.Value<Type>();
-                    } else {
-                        return 0;
-                    }
+        MenuManager* menu_manager = MenuManager::GetSingleton();
+        if (menu_manager) {
+            GFxMovieView* view = menu_manager->GetMovieView(reinterpret_cast<BSFixedString*>(&menu));
+            if (view) {
+                GFx_Value_t gfx_value;
+                if (view->GetVariable(&gfx_value, target)) {
+                    return gfx_value.Value<Type>();
                 } else {
                     return 0;
                 }
@@ -102,15 +94,13 @@ namespace doticu_skylib {
     template <typename Type>
     inline void UI_t::Value(String_t menu, String_t target, Type value)
     {
-        if (menu.data && target.data) {
-            MenuManager* menu_manager = MenuManager::GetSingleton();
-            if (menu_manager) {
-                GFxMovieView* view = menu_manager->GetMovieView(reinterpret_cast<BSFixedString*>(&menu));
-                if (view) {
-                    GFx_Value_t gfx_value;
-                    gfx_value.Value<Type>(value);
-                    view->SetVariable(target.data, &gfx_value, 1);
-                }
+        MenuManager* menu_manager = MenuManager::GetSingleton();
+        if (menu_manager) {
+            GFxMovieView* view = menu_manager->GetMovieView(reinterpret_cast<BSFixedString*>(&menu));
+            if (view) {
+                GFx_Value_t gfx_value;
+                gfx_value.Value<Type>(value);
+                view->SetVariable(target, &gfx_value, 1);
             }
         }
     }
@@ -118,51 +108,45 @@ namespace doticu_skylib {
     template <typename Type>
     inline void UI_t::Run(String_t menu, String_t target, Type argument)
     {
-        if (menu.data && target.data) {
-            UIManager* ui_manager = UIManager::GetSingleton();
-            if (ui_manager) {
-                UIInvokeDelegate delegate(menu.data, target.data);
-                delegate.args.resize(1);
-                reinterpret_cast<GFx_Value_t*>
-                    (&delegate.args[0])->Value<Type>(argument);
-                delegate.Run();
-            }
+        UIManager* ui_manager = UIManager::GetSingleton();
+        if (ui_manager) {
+            UIInvokeDelegate delegate(menu, target);
+            delegate.args.resize(1);
+            reinterpret_cast<GFx_Value_t*>
+                (&delegate.args[0])->Value<Type>(argument);
+            delegate.Run();
         }
     }
 
     template <typename Type>
     inline void UI_t::Run(String_t menu, String_t target, Vector_t<Type> arguments)
     {
-        if (menu.data && target.data) {
-            UIManager* ui_manager = UIManager::GetSingleton();
-            if (ui_manager) {
-                size_t argument_count = arguments.size();
-                UIInvokeDelegate delegate(menu.data, target.data);
-                delegate.args.resize(argument_count);
-                for (size_t idx = 0; idx < argument_count; idx += 1) {
-                    reinterpret_cast<GFx_Value_t*>
-                        (&delegate.args[idx])->Value<Type>(arguments[idx]);
-                }
-                delegate.Run();
+        UIManager* ui_manager = UIManager::GetSingleton();
+        if (ui_manager) {
+            size_t argument_count = arguments.size();
+            UIInvokeDelegate delegate(menu, target);
+            delegate.args.resize(argument_count);
+            for (size_t idx = 0; idx < argument_count; idx += 1) {
+                reinterpret_cast<GFx_Value_t*>
+                    (&delegate.args[idx])->Value<Type>(arguments[idx]);
             }
+            delegate.Run();
         }
     }
 
     template <typename Type>
     inline void UI_t::Run(String_t menu, String_t target, Virtual::Array_t* arguments)
     {
-        if (menu.data && target.data) {
-            UIManager* ui_manager = UIManager::GetSingleton();
-            if (ui_manager) {
-                size_t argument_count = arguments->count;
-                UIInvokeDelegate delegate(menu.data, target.data);
-                delegate.args.resize(argument_count);
-                for (size_t idx = 0; idx < argument_count; idx += 1) {
-                    reinterpret_cast<GFx_Value_t*>
-                        (&delegate.args[idx])->Value<Type>(*reinterpret_cast<Type*>(&arguments->Point(idx)->data));
-                }
-                delegate.Run();
+        UIManager* ui_manager = UIManager::GetSingleton();
+        if (ui_manager) {
+            size_t argument_count = arguments->count;
+            UIInvokeDelegate delegate(menu, target);
+            delegate.args.resize(argument_count);
+            for (size_t idx = 0; idx < argument_count; idx += 1) {
+                reinterpret_cast<GFx_Value_t*>
+                    (&delegate.args[idx])->Value<Type>(*reinterpret_cast<Type*>(&arguments->Point(idx)->data));
             }
+            delegate.Run();
         }
     }
 

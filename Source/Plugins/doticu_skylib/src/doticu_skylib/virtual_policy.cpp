@@ -11,12 +11,12 @@ namespace doticu_skylib { namespace Virtual {
 
     Handle_Policy_t* Handle_Policy_t::Self()
     {
-        return Machine_t::Self()->Handle_Policy();
+        return Machine_t::Self()->Get_Handle_Policy_1();
     }
 
     Object_Policy_t* Object_Policy_t::Self()
     {
-        return Machine_t::Self()->Object_Policy();
+        return Machine_t::Self()->Get_Object_Policy_1();
     }
 
     void Object_Policy_t::Bind_Object(Object_t** object, Raw_Handle_t handle)

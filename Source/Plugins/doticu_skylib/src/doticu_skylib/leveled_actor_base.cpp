@@ -205,7 +205,7 @@ namespace doticu_skylib {
                     actor_bases.push_back(actor_base);
                     if (char_count < MAX_CHARS) {
                         String_t name = actor_base->Any_Name();
-                        if (name.data && name.data[0] && !names.Has(name)) {
+                        if (name && !names.Has(name)) {
                             names.push_back(name);
                             size_t name_char_count = CString_t::Length(name, false);
                             char_count += name_char_count;
@@ -224,7 +224,7 @@ namespace doticu_skylib {
         size_t name_count = names.size();
         if (name_count > 0) {
             for (Index_t idx = 0, end = name_count - 1; idx < end; idx += 1) {
-                leveled_name += std::string(names[idx]) + ", ";
+                leveled_name += names[idx] + ", ";
             }
             size_t char_difference = iterator.Char_Difference();
             if (char_difference > 0) {
@@ -235,12 +235,12 @@ namespace doticu_skylib {
                 String_t name = names[name_count - 1];
                 Index_t idx = 0, end = char_difference;
                 for (; idx < end; idx += 1) {
-                    remaining_chars[idx] = name.data[idx];
+                    remaining_chars[idx] = name[idx];
                 }
                 remaining_chars[idx] = 0;
                 leveled_name += std::string(remaining_chars) + "... " + std::to_string(iterator.Actor_Base_Count());
             } else {
-                leveled_name += std::string(names[name_count - 1]) + " " + std::to_string(iterator.Actor_Base_Count());
+                leveled_name += names[name_count - 1] + " " + std::to_string(iterator.Actor_Base_Count());
             }
         } else {
             leveled_name += std::to_string(iterator.Actor_Base_Count());

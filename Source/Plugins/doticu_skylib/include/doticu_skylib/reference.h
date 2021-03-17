@@ -294,11 +294,12 @@ namespace doticu_skylib {
 
     public:
         const char*                         Name();
+        void                                Name(String_t name);
         String_t                            Any_Name();
 
         void                                Add_Item(some<Bound_Object_t*> object,
-                                                     maybe<Extra_List_t*> x_list,
-                                                     s32 count,
+                                                     maybe<Extra_List_t*> loose_x_list,
+                                                     s32 non_zero_count,
                                                      maybe<Reference_t*> from);
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();

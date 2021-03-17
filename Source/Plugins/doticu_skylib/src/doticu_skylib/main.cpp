@@ -54,17 +54,12 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(other_cache);
 
         Reference_Container_t actor_container(actor);
-        actor_container.Log(); // temp
+        actor_container.Log();
         for (size_t idx = 0, end = actor_container.entries.size(); idx < end; idx += 1) {
             Reference_Container_Entry_t& entry = actor_container.entries[idx];
             some<Bound_Object_t*> object = entry.Some_Object();
             if (!object->Is_Leveled_Item() && object->Is_Playable()) {
-                Container_Entry_Count_t non_x_lists_count = entry.Non_Extra_Lists_Count();
-                if (non_x_lists_count > 0) {
-                    entry.Decrement_Count(&actor_container, non_x_lists_count);
-                    other_cache->Add_Item(object, none<Extra_List_t*>(), non_x_lists_count, none<Reference_t*>()); // this does something funky with count at 0. need to examine why and fix it.
-                }
-
+                entry.Remove_Count_To(&actor_container, entry.Non_Extra_Lists_Count(), other_cache);
                 Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                 for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                     some<Extra_List_t*> x_list = x_lists[idx];
@@ -111,7 +106,7 @@ namespace doticu_skylib {
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
-                    if (actor && actor != player_actor() && actor->Is_Attached()) {
+                    if (actor && actor != player_actor && actor->Is_Attached()) {
                         if (actor->Is_Alive()) {
                             // interesting, I think this makes essential bleedout's get back up.
                             actor->Kill(none<Actor_t*>(), true, true, none<unique<doticu_skylib::Callback_i<>>>());
@@ -131,7 +126,7 @@ namespace doticu_skylib {
         public:
             void operator ()(Virtual::Variable_t*)
             {
-                UI_t::Notification(Game_t::Version());
+                UI_t::Create_Notification(Game_t::Version(), none<Virtual::Callback_i*>());
 
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
@@ -149,7 +144,7 @@ namespace doticu_skylib {
                     some<Reference_t*> reference = references[idx];
 
                     maybe<Actor_t*> actor = reference->As_Actor();
-                    if (actor && actor != player_actor()) {
+                    if (actor && actor != player_actor) {
                         //actor->Base_Relation(player_actor_base, Relation_e::ALLY); // this is causing random crashes! try virtual instead.
                         actor->Faction_Rank(current_follower_faction, 0);
                         actor->Crime_Faction(player_faction());

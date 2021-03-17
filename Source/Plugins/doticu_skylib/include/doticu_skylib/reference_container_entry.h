@@ -52,6 +52,9 @@ namespace doticu_skylib {
 
         Container_Entry_Count_t             Increment_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Decrement_Count(some<Reference_Container_t*> owner, Container_Entry_Count_t amount);
+        Container_Entry_Count_t             Remove_Count_To(some<Reference_Container_t*> owner,
+                                                            Container_Entry_Count_t amount,
+                                                            some<Reference_t*> to);
 
         Container_Entry_Count_t             Add(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t             Add_Copy_Or_Increment(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list);

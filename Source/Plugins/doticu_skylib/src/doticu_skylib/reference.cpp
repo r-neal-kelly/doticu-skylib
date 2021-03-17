@@ -368,6 +368,11 @@ namespace doticu_skylib {
         return get_name(this);
     }
 
+    void Reference_t::Name(String_t name)
+    {
+        this->x_list.Name(name);
+    }
+
     String_t Reference_t::Any_Name()
     {
         maybe<Actor_t*> actor = As_Actor();
@@ -388,17 +393,24 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Add_Item(some<Bound_Object_t*> object, maybe<Extra_List_t*> x_list, s32 count, maybe<Reference_t*> from)
+    void Reference_t::Add_Item(some<Bound_Object_t*> object,
+                               maybe<Extra_List_t*> loose_x_list,
+                               s32 non_zero_count,
+                               maybe<Reference_t*> from)
     {
         SKYLIB_ASSERT_SOME(object);
+        SKYLIB_ASSERT(non_zero_count != 0);
 
-        // if not given an x_list, it will either increment or decrement by count. doesn't go below x_list count.
-        // if given an x_list, it will move it and make updates to certain types, like Extra_Reference_Handle_t.
-        // if the x_list is on another reference, you MUST remove it from that reference first.
-        // if given a valid x_list, it ignores count. however, it's probably wise to just pass the x_list count anyway.
-        // if given an empty x_list, it increments the object by the given count or by one if count is zero, or not at all if negative.
+        // This will create the container_changes and container_changes_entry if necessary.
+        // If count is zero, it sets to one. positive increments, negative decrements.
+        // If not given an x_list, it will either increment or decrement by count. doesn't go below x_list count.
+        // If given an x_list, it will move it and make updates to certain types, like Extra_Reference_Handle_t.
+        // If the x_list is on another reference, you MUST remove it from that reference first.
+        // If given a valid x_list, it ignores count. however, it's probably wise to just pass the x_list count anyway.
+        // If given an unuseful x_list, it increments the object normally.
+        // From doesn't have it's x_list removed automatically. perhaps it's decremented when there is no x_list?
 
-        Do_Add_Item(object(), x_list(), count, from());
+        Do_Add_Item(object(), loose_x_list(), non_zero_count, from());
     }
 
     Vector_t<some<Alias_Base_t*>> Reference_t::Alias_Bases()
@@ -825,7 +837,7 @@ namespace doticu_skylib {
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
             if (owner) {
-                script->Command(std::string("SetOwnership ") + owner()->Form_ID_String().data);
+                script->Command(std::string("SetOwnership ") + owner()->Form_ID_String());
             } else {
                 script->Command("SetOwnership");
             }
@@ -880,7 +892,7 @@ namespace doticu_skylib {
 
         if (Is_Valid() && Is_Attached()) {
             some<Script_t*> script = Script_t::Create();
-            script->Command(std::string("PushActorAway ") + actor->Form_ID_String().data + " " + std::to_string(force));
+            script->Command(std::string("PushActorAway ") + actor->Form_ID_String() + " " + std::to_string(force));
             script->Execute(this);
             Script_t::Destroy(script);
         }
@@ -905,7 +917,7 @@ namespace doticu_skylib {
     {
         if (Is_Valid()) {
             some<Script_t*> script = Script_t::Create();
-            script->Command(std::string("prid ") + Form_ID_String().data);
+            script->Command(std::string("prid ") + Form_ID_String());
             script->Execute(this);
             Script_t::Destroy(script);
         }
@@ -1500,6 +1512,7 @@ namespace doticu_skylib {
 
     void Reference_t::Stop_Translation(maybe<Virtual::Callback_i*> v_callback)
     {
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
         Virtual::Machine_t::Self()->Call_Method(
             this,
             SCRIPT_NAME,

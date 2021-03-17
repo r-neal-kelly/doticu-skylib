@@ -4,26 +4,24 @@
 
 #pragma once
 
+#include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/component_name.h"
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
-#include "doticu_skylib/forward_list.h"
-#include "doticu_skylib/interface.h"
-#include "doticu_skylib/maybe.h"
-#include "doticu_skylib/string.h"
-
 #include "doticu_skylib/enum_dialogue_branch_type.h"
 #include "doticu_skylib/enum_dialogue_topic_type.h"
 #include "doticu_skylib/enum_quest_event.h"
 #include "doticu_skylib/enum_quest_flags.h"
 #include "doticu_skylib/enum_quest_type.h"
-
-#include "doticu_skylib/component_name.h"
-
-#include "doticu_skylib/alias_id.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form.h"
+#include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/interface.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
-#include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/string.h"
+#include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
 
@@ -61,6 +59,8 @@ namespace doticu_skylib {
         {
             SCRIPT_TYPE = Script_Type_e::QUEST,
         };
+
+        static constexpr const char* SCRIPT_NAME = "Quest";
 
     public:
         static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
@@ -116,15 +116,22 @@ namespace doticu_skylib {
 
         String_t Any_Name();
 
-        void Log_Objectives(std::string indent = "");
-        void Log_Promoted_References();
+    public:
+        void Start(maybe<Virtual::Callback_i*> v_callback);                 // Start
+        void Start(maybe<unique<Callback_i<Bool_t>>> callback);
+
+        void Do_Display_Objective(Int_t objective,
+                                  Bool_t do_display,
+                                  Bool_t do_force,
+                                  maybe<Virtual::Callback_i*> v_callback);  // SetObjectiveDisplayed
+        void Do_Display_Objective(Int_t objective,
+                                  Bool_t do_display,
+                                  Bool_t do_force,
+                                  maybe<unique<Callback_i<>>> callback);
 
     public:
-        void Start(Virtual::Callback_i* vcallback = nullptr);
-        void Start(Callback_i<Bool_t>* ucallback = nullptr);
-
-        void Display_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback = nullptr);
-        void Undisplay_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback = nullptr);
+        void Log_Objectives(std::string indent = "");
+        void Log_Promoted_References();
     };
     STATIC_ASSERT(sizeof(Quest_t) == 0x268);
 

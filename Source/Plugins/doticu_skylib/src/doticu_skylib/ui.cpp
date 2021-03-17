@@ -6,6 +6,7 @@
 #include "doticu_skylib/ui.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_debug.h"
 #include "doticu_skylib/virtual_machine.h"
 #include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
@@ -17,52 +18,24 @@ namespace doticu_skylib {
         return Run<Bool_t>(menu, target, false);
     }
 
-    void UI_t::Notification(String_t note, Virtual::Callback_i* vcallback)
+    void UI_t::Create_Message_Box(String_t message, maybe<Virtual::Callback_i*> v_callback)
     {
-        struct VArguments : public Virtual::Arguments_t {
-            String_t note;
-            VArguments(String_t note) :
-                note(note)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* arguments)
-            {
-                arguments->Resize(1);
-                arguments->At(0).String(note);
-                return true;
-            }
-        } arguments(note);
-
-        Virtual::Machine_t::Self()->Call_Global(
-            "Debug",
-            "Notification",
-            &arguments,
-            &vcallback
-        );
+        Virtual::Debug_t::Create_Message_Box(message, v_callback);
     }
 
-    void UI_t::Message_Box(String_t message, Virtual::Callback_i* vcallback)
+    void UI_t::Create_Message_Box(String_t message, maybe<unique<Callback_i<>>> callback)
     {
-        struct VArguments : public Virtual::Arguments_t {
-            String_t message;
-            VArguments(String_t message) :
-                message(message)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* arguments)
-            {
-                arguments->Resize(1);
-                arguments->At(0).String(message);
-                return true;
-            }
-        } arguments(message);
+        Virtual::Debug_t::Create_Message_Box(message, std::move(callback));
+    }
 
-        Virtual::Machine_t::Self()->Call_Global(
-            "Debug",
-            "MessageBox",
-            &arguments,
-            &vcallback
-        );
+    void UI_t::Create_Notification(String_t note, maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Debug_t::Create_Notification(note, v_callback);
+    }
+
+    void UI_t::Create_Notification(String_t note, maybe<unique<Callback_i<>>> callback)
+    {
+        Virtual::Debug_t::Create_Notification(note, std::move(callback));
     }
 
     Bool_t UI_t::Is_Menu_Open(String_t menu)
@@ -80,7 +53,7 @@ namespace doticu_skylib {
         Virtual::Utility_t::Is_In_Menu_Mode(v_callback);
     }
 
-    void UI_t::Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback)
+    void UI_t::Is_In_Menu_Mode(some<unique<Callback_i<Bool_t>>> callback)
     {
         Virtual::Utility_t::Is_In_Menu_Mode(std::move(callback));
     }

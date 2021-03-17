@@ -13,8 +13,8 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "{");
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "this: 0x%p", this);
-        if (display_text.data) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "display_text: %s", display_text.data);
+        if (display_text) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "display_text: %s", display_text);
         }
         if (quest) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "quest: %p %s", quest, quest->Get_Editor_ID());

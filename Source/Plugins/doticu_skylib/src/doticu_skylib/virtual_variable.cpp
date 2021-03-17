@@ -13,6 +13,37 @@ namespace doticu_skylib { namespace Virtual {
     {
     }
 
+    Variable_u::Variable_u(const Variable_u& other) :
+        ptr(other.ptr)
+    {
+    }
+
+    Variable_u::Variable_u(Variable_u&& other) noexcept :
+        ptr(std::exchange(other.ptr, nullptr))
+    {
+    }
+
+    Variable_u& Variable_u::operator =(const Variable_u& other)
+    {
+        if (this != std::addressof(other)) {
+            this->ptr = other.ptr;
+        }
+        return *this;
+    }
+
+    Variable_u& Variable_u::operator =(Variable_u&& other) noexcept
+    {
+        if (this != std::addressof(other)) {
+            this->ptr = std::exchange(other.ptr, nullptr);
+        }
+        return *this;
+    }
+
+    Variable_u::~Variable_u()
+    {
+        this->ptr = nullptr;
+    }
+
     Variable_t::Variable_t() :
         type(Type_e()), data(Variable_u())
     {

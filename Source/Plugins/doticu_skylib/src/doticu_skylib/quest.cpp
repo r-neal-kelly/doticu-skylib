@@ -4,14 +4,13 @@
 
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/forward_list.inl"
-#include "doticu_skylib/reference.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/quest_objective.h"
+#include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.h"
-
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
-#include "doticu_skylib/virtual_machine.h"
+#include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
@@ -106,6 +105,117 @@ namespace doticu_skylib {
         }
     }
 
+    void Quest_t::Start(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Quest_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "Start",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Quest_t::Start(maybe<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                if (this->callback) {
+                    (*this->callback)(result ? result->As<Bool_t>() : false);
+                }
+            }
+        };
+
+        Start(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Quest_t::Do_Display_Objective(Int_t objective,
+                                       Bool_t do_display,
+                                       Bool_t do_force,
+                                       maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Int_t   objective;
+            Bool_t  do_display;
+            Bool_t  do_force;
+
+        public:
+            Virtual_Arguments(Int_t objective, Bool_t do_display, Bool_t do_force) :
+                objective(objective), do_display(do_display), do_force(do_force)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(3);
+                args->At(0).As<Int_t>(this->objective);
+                args->At(1).As<Bool_t>(this->do_display);
+                args->At(2).As<Bool_t>(this->do_force);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Quest_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "SetObjectiveDisplayed",
+            Virtual_Arguments(objective, do_display, do_force),
+            v_callback
+        );
+    }
+
+    void Quest_t::Do_Display_Objective(Int_t objective,
+                                       Bool_t do_display,
+                                       Bool_t do_force,
+                                       maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Do_Display_Objective(objective, do_display, do_force, new Virtual_Callback(std::move(callback)));
+    }
+
     void Quest_t::Log_Objectives(std::string indent)
     {
         SKYLIB_LOG(indent + "Quest_t::Log_Objectives");
@@ -132,99 +242,6 @@ namespace doticu_skylib {
                 SKYLIB_LOG("%s", reference->Any_Name());
             }
         }
-    }
-
-    void Quest_t::Start(Virtual::Callback_i* vcallback)
-    {
-        Virtual::Machine_t::Self()->Call_Method(
-            this,
-            "Quest",
-            "Start",
-            nullptr,
-            &vcallback
-        );
-    }
-
-    void Quest_t::Start(Callback_i<Bool_t>* ucallback)
-    {
-        using UCallback_t = Callback_i<Bool_t>;
-
-        struct VCallback : public Virtual::Callback_t {
-            UCallback_t* ucallback;
-            VCallback(UCallback_t* ucallback) :
-                ucallback(ucallback)
-            {
-            }
-            void operator()(Virtual::Variable_t* result)
-            {
-                if (ucallback) {
-                    Bool_t did_start = result ? result->Bool() : false;
-                    ucallback->operator()(did_start);
-                    delete ucallback;
-                }
-            }
-        };
-        Start(new VCallback(ucallback));
-    }
-
-    void Quest_t::Display_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback)
-    {
-        class Arguments_t : public Virtual::Arguments_t
-        {
-        public:
-            Int_t objective;
-            Bool_t do_force;
-            Arguments_t(Int_t objective, Bool_t do_force) :
-                objective(objective), do_force(do_force)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* variables)
-            {
-                variables->Resize(3);
-                variables->At(0).Int(objective);
-                variables->At(1).Bool(true);
-                variables->At(2).Bool(do_force);
-                return true;
-            }
-        } varguments(objective, do_force);
-
-        Virtual::Machine_t::Self()->Call_Method(
-            this,
-            "Quest",
-            "SetObjectiveDisplayed",
-            &varguments,
-            vcallback
-        );
-    }
-
-    void Quest_t::Undisplay_Objective(Int_t objective, Bool_t do_force, maybe<Virtual::Callback_i*> vcallback)
-    {
-        class Arguments_t : public Virtual::Arguments_t
-        {
-        public:
-            Int_t objective;
-            Bool_t do_force;
-            Arguments_t(Int_t objective, Bool_t do_force) :
-                objective(objective), do_force(do_force)
-            {
-            }
-            Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* variables)
-            {
-                variables->Resize(3);
-                variables->At(0).Int(objective);
-                variables->At(1).Bool(false);
-                variables->At(2).Bool(do_force);
-                return true;
-            }
-        } varguments(objective, do_force);
-
-        Virtual::Machine_t::Self()->Call_Method(
-            this,
-            "Quest",
-            "SetObjectiveDisplayed",
-            &varguments,
-            vcallback
-        );
     }
 
 }

@@ -443,13 +443,9 @@ namespace doticu_skylib {
         T& operator[](size_t idx)       { return *(value + idx); }
         T& operator[](size_t idx) const { return *(value + idx); }
 
-        Bool_t operator==(const maybe<T*>& other)       { return value == other(); }
-        Bool_t operator==(const maybe<T*>& other) const { return value == other(); }
-        Bool_t operator!=(const maybe<T*>& other)       { return !operator==(other); }
-        Bool_t operator!=(const maybe<T*>& other) const { return !operator==(other); }
-
         explicit operator Bool_t()          { return value != none<T*>()(); }
         explicit operator Bool_t() const    { return value != none<T*>()(); }
+        explicit operator T*&()             { return this->value; }
 
         Bool_t operator !()         { return !static_cast<Bool_t>(*this); }
         Bool_t operator !() const   { return !static_cast<Bool_t>(*this); }
@@ -511,13 +507,9 @@ namespace doticu_skylib {
         T& operator[](size_t idx)       { return *(value + idx); }
         T& operator[](size_t idx) const { return *(value + idx); }
 
-        Bool_t operator==(const some<T*>& other)        { return value == other(); }
-        Bool_t operator==(const some<T*>& other) const  { return value == other(); }
-        Bool_t operator!=(const some<T*>& other)        { return !operator==(other); }
-        Bool_t operator!=(const some<T*>& other) const  { return !operator==(other); }
-
         explicit operator Bool_t()          { return value != none<T*>()(); }
         explicit operator Bool_t() const    { return value != none<T*>()(); }
+        explicit operator T*&()             { return this->value; }
 
         Bool_t operator !()         { return !static_cast<Bool_t>(*this); }
         Bool_t operator !() const   { return !static_cast<Bool_t>(*this); }
@@ -534,5 +526,41 @@ namespace doticu_skylib {
     public:
         some() = delete;
     };
+
+    template <
+        typename T,
+        template <typename> typename TT_1,
+        template <typename> typename TT_2,
+        std::enable_if_t<
+            (std::is_same<TT_1<T*>, none<T*>>::value ||
+            std::is_same<TT_1<T*>, maybe<T*>>::value ||
+            std::is_same<TT_1<T*>, some<T*>>::value) &&
+            (std::is_same<TT_2<T*>, none<T*>>::value ||
+            std::is_same<TT_2<T*>, maybe<T*>>::value ||
+            std::is_same<TT_2<T*>, some<T*>>::value),
+            Bool_t
+        > = true
+    > inline Bool_t operator ==(const TT_1<T*>& a, const TT_2<T*>& b)
+    {
+        return a() == b();
+    }
+
+    template <
+        typename T,
+        template <typename> typename TT_1,
+        template <typename> typename TT_2,
+        std::enable_if_t<
+            (std::is_same<TT_1<T*>, none<T*>>::value ||
+            std::is_same<TT_1<T*>, maybe<T*>>::value ||
+            std::is_same<TT_1<T*>, some<T*>>::value) &&
+            (std::is_same<TT_2<T*>, none<T*>>::value ||
+            std::is_same<TT_2<T*>, maybe<T*>>::value ||
+            std::is_same<TT_2<T*>, some<T*>>::value),
+            Bool_t
+        > = true
+    > inline Bool_t operator !=(const TT_1<T*>& a, const TT_2<T*>& b)
+    {
+        return a() != b();
+    }
 
 }

@@ -32,7 +32,7 @@ namespace doticu_skylib {
 
         for (size_t idx = 0, end = this->instances.Count(); idx < end; idx += 1) {
             maybe<Extra_Aliases_t::Instance_t*> instance = this->instances[idx];
-            if (instance && instance->quest == quest()) {
+            if (instance && instance->quest == quest) {
                 return true;
             }
         }
@@ -48,7 +48,7 @@ namespace doticu_skylib {
 
         for (size_t idx = 0, end = this->instances.Count(); idx < end; idx += 1) {
             maybe<Extra_Aliases_t::Instance_t*> instance = this->instances[idx];
-            if (instance && instance->quest == quest() && instance->alias_base && instance->alias_base->id == alias_id) {
+            if (instance && instance->quest == quest && instance->alias_base && instance->alias_base->id == alias_id) {
                 return true;
             }
         }

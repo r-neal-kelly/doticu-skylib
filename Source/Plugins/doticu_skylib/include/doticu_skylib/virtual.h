@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/skylib.h"
+#include "doticu_skylib/virtual_traits.h"
 
 namespace doticu_skylib { namespace Virtual {
 

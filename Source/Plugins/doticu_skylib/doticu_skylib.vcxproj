@@ -439,6 +439,7 @@
     <ClInclude Include="include\doticu_skylib\string.h" />
     <ClInclude Include="include\doticu_skylib\virtual_stack_id.h" />
     <ClInclude Include="include\doticu_skylib\virtual_static.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_traits.h" />
     <ClInclude Include="include\doticu_skylib\virtual_type.h" />
     <ClInclude Include="include\doticu_skylib\virtual_utility.h" />
     <ClInclude Include="include\doticu_skylib\virtual_variable.h" />

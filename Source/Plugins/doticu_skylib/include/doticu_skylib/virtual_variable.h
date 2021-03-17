@@ -22,6 +22,7 @@ namespace doticu_skylib { namespace Virtual {
 
     union Variable_u
     {
+    public:
         void*       ptr;
         Bool_t      b;
         Int_t       i;
@@ -30,7 +31,13 @@ namespace doticu_skylib { namespace Virtual {
         Object_t*   obj;
         Array_t*    arr;
 
+    public:
         Variable_u();
+        Variable_u(const Variable_u& other);
+        Variable_u(Variable_u&& other) noexcept;
+        Variable_u& operator =(const Variable_u& other);
+        Variable_u& operator =(Variable_u&& other) noexcept;
+        ~Variable_u();
     };
 
     class Variable_t

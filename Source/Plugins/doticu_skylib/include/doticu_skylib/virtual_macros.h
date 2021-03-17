@@ -89,19 +89,19 @@ namespace doticu_skylib { namespace Virtual {
     #define BIND_STATIC(MACHINE_, CLASS_NAME_, STATIC_NAME_, WAITS_FOR_FRAME_, RETURN_, STATIC_, ...)   \
     SKYLIB_M                                                                                            \
         namespace V = doticu_skylib::Virtual;                                                           \
-        MACHINE_->Bind_Function(reinterpret_cast<V::Function_i*>(                                       \
+        MACHINE_->Do_Bind_Function(reinterpret_cast<V::Function_i*>(                                    \
             new V::Static_t<RETURN_, __VA_ARGS__>(CLASS_NAME_, STATIC_NAME_, &STATIC_)                  \
         ));                                                                                             \
-        MACHINE_->Function_Skips_Frame_Wait(CLASS_NAME_, STATIC_NAME_, !WAITS_FOR_FRAME_);              \
+        MACHINE_->Set_Function_Skips_Frame_Wait_2(CLASS_NAME_, STATIC_NAME_, !WAITS_FOR_FRAME_);        \
     SKYLIB_W
 
     #define BIND_METHOD(MACHINE_, CLASS_NAME_, BASE_TYPE_, METHOD_NAME_, WAITS_FOR_FRAME_, RETURN_, METHOD_, ...)   \
     SKYLIB_M                                                                                                        \
         namespace V = doticu_skylib::Virtual;                                                                       \
-        MACHINE_->Bind_Function(reinterpret_cast<V::Function_i*>(                                                   \
+        MACHINE_->Do_Bind_Function(reinterpret_cast<V::Function_i*>(                                                \
             new V::Method_t<RETURN_, BASE_TYPE_, __VA_ARGS__>(CLASS_NAME_, METHOD_NAME_, &METHOD_)                  \
         ));                                                                                                         \
-        MACHINE_->Function_Skips_Frame_Wait(CLASS_NAME_, METHOD_NAME_, !WAITS_FOR_FRAME_);                          \
+        MACHINE_->Set_Function_Skips_Frame_Wait_2(CLASS_NAME_, METHOD_NAME_, !WAITS_FOR_FRAME_);                    \
     SKYLIB_W
 
 }}

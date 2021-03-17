@@ -15,7 +15,7 @@ namespace doticu_skylib { namespace Virtual {
     maybe<Class_t*> Class_t::Find_Or_Load(String_t class_name, Bool_t do_decrement_on_find)
     {
         Class_t* vclass = nullptr;
-        if (Machine_t::Self()->Find_Or_Load_Class(class_name, vclass) && vclass) {
+        if (Machine_t::Self()->Do_Find_Or_Load_Class_1(class_name, vclass) && vclass) {
             if (do_decrement_on_find && vclass->Reference_Count() > 1) {
                 vclass->Decrement_Reference();
             }
@@ -28,7 +28,7 @@ namespace doticu_skylib { namespace Virtual {
     maybe<Class_t*> Class_t::Find_Or_Load(Script_Type_e script_type, Bool_t do_decrement_on_find)
     {
         Class_t* vclass = nullptr;
-        if (Machine_t::Self()->Find_Or_Load_Class_2(script_type.Raw(), vclass) && vclass) {
+        if (Machine_t::Self()->Do_Find_Or_Load_Class_2(script_type.Raw(), vclass) && vclass) {
             if (do_decrement_on_find && vclass->Reference_Count() > 1) {
                 vclass->Decrement_Reference();
             }
@@ -153,7 +153,7 @@ namespace doticu_skylib { namespace Virtual {
         // user defined types do not have script types.
 
         Raw_Script_Type_t script_type;
-        if (Machine_t::Self()->Class_Script_Type(name, script_type)) {
+        if (Machine_t::Self()->Get_Class_Script_Type(name, script_type)) {
             return Script_Type_e(script_type);
         } else {
             return none<Script_Type_e>();

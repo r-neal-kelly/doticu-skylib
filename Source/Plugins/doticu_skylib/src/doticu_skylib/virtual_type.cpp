@@ -126,7 +126,7 @@ namespace doticu_skylib { namespace Virtual {
             case Type_e::FLOAT:         return "Float";
             case Type_e::BOOL:          return "Bool";
             case Type_e::NONE_ARRAY:    return "None[]";
-            case Type_e::OBJECT_ARRAY:  return std::string(Class()->name.data) + "[]";
+            case Type_e::OBJECT_ARRAY:  return Class()->name + "[]";
             case Type_e::STRING_ARRAY:  return "String[]";
             case Type_e::INT_ARRAY:     return "Int[]";
             case Type_e::FLOAT_ARRAY:   return "Float[]";

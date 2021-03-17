@@ -4,18 +4,20 @@
 
 #pragma once
 
-#include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
 
     class Static_String_t
     {
     public:
-        class Offset_e : Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum
+            enum enum_type : value_type
             {
                 CREATE  = 0x00C28BF0, // 67819
                 DESTROY = 0x00C28D40, // 67822
@@ -24,29 +26,38 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-    public:
-        const char* data;
+    protected:
+        maybe<const char*> value;
 
     public:
         Static_String_t();
         Static_String_t(const char* string);
+        Static_String_t(maybe<const char*> string);
+        Static_String_t(some<const char*> string);
         Static_String_t(std::string& string);
         Static_String_t(std::string&& string) noexcept;
+        Static_String_t(const Static_String_t& other);
+        Static_String_t(Static_String_t&& other) noexcept;
+        Static_String_t& operator =(const Static_String_t& other);
+        Static_String_t& operator =(Static_String_t&& other) noexcept;
+        ~Static_String_t();
 
     public:
-        void        Destroy();
-
-        const char* Value();
-        void        Value(const char* value);
+        void    Destroy();
+        void    Write(const char* value);
 
     public:
-        Bool_t      operator==(const Static_String_t& other) const;
-        Bool_t      operator!=(const Static_String_t& other) const;
+        explicit operator   Bool_t() const;
+        operator            const char*() const;
+        operator            some<const char*>() const;
+        operator            std::string() const;
 
     public:
-        explicit operator Bool_t() const;
-        Bool_t operator !() const;
-        operator const char*() const;
+        Bool_t  operator !() const;
+        Bool_t  operator ==(const Static_String_t& other) const;
+        Bool_t  operator !=(const Static_String_t& other) const;
+
+        friend std::string operator +(const std::string& a, const Static_String_t& b);
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
 
