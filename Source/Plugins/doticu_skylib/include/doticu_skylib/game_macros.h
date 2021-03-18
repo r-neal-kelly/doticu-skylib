@@ -12,10 +12,17 @@
 
 namespace doticu_skylib {
 
-    #define DEFINE_MOD(NAME_)                                   \
-    SKYLIB_M                                                    \
-        static maybe<Mod_t*> mod = Mod_t::Active_Mod(NAME_);    \
-        return mod;                                             \
+    #define DEFINE_MOD(NAME_)                                               \
+    SKYLIB_M                                                                \
+        static maybe<Mod_t*> mod = doticu_skylib::Mod_t::Active_Mod(NAME_); \
+        return mod;                                                         \
+    SKYLIB_W
+
+    #define DEFINE_SOME_MOD(NAME_)                                              \
+    SKYLIB_M                                                                    \
+        static some<Mod_t*> mod = doticu_skylib::Mod_t::Active_Mod(NAME_)();    \
+        SKYLIB_ASSERT_SOME(mod);                                                \
+        return mod;                                                             \
     SKYLIB_W
 
     #define DEFINE_FORM(MOD_, TYPE_, LOWER_FORM_ID_)            \

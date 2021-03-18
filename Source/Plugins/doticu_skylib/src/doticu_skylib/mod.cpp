@@ -174,13 +174,6 @@ namespace doticu_skylib {
         return nullptr;
     }
 
-    some<Mod_t*> Mod_t::Skyrim()
-    {
-        static maybe<Mod_t*> skyrim = Active_Mod("Skyrim.esm");
-        SKYLIB_ASSERT(skyrim);
-        return skyrim();
-    }
-
     static void Log_Mods(const char* title, Vector_t<some<Mod_t*>> mods)
     {
         #define TAB "    "

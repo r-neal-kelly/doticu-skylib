@@ -23,8 +23,8 @@
 
 namespace doticu_skylib {
 
-    class Armor_t :
-        public Bound_Object_t,
+    class Armor_t :             // TESObjectARMO
+        public Bound_Object_t,  // 000
         public Name_c,
         public Race_c,
         public Enchantable_c,
@@ -45,9 +45,26 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::ARMOR,
         };
 
+        static constexpr const char* SCRIPT_NAME = "Armor";
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E153C0, // 513936
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual ~Armor_t(); // 00
 
+    public:
         u32             rating;     // 200
         u32             pad_204;    // 204
         Array_t<void*>  addons;     // 208

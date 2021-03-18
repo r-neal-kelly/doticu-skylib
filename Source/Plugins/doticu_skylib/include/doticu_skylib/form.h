@@ -19,6 +19,7 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Actor_Base_t;
+    class Armor_t;
     class Book_t;
     class Bound_Object_t;
     class Container_c;
@@ -173,6 +174,7 @@ namespace doticu_skylib {
     public:
         Bool_t                  Is_Actor() const;
         Bool_t                  Is_Actor_Base() const;
+        Bool_t                  Is_Armor() const;
         Bool_t                  Is_Book() const;
         Bool_t                  Is_Bound_Object() const;
         Bool_t                  Is_Component_Container() const;
@@ -186,6 +188,7 @@ namespace doticu_skylib {
 
         maybe<Actor_t*>         As_Actor() const;
         maybe<Actor_Base_t*>    As_Actor_Base() const;
+        maybe<Armor_t*>         As_Armor() const;
         maybe<Book_t*>          As_Book() const;
         maybe<Bound_Object_t*>  As_Bound_Object() const;
         maybe<Container_c*>     As_Component_Container() const;

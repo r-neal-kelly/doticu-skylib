@@ -18,20 +18,24 @@ namespace doticu_skylib {
             SCRIPT_TYPE = Script_Type_e::KEYWORD,
         };
 
-        class Offset_e : public Enum_t<Word_t>
+        static constexpr const char* SCRIPT_NAME = "Keyword";
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : value_type
+            enum enum_type : value_type
             {
-                RTTI = 0x01E13958,
+                RTTI = 0x01E13958, // 513911
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
     public:
         static Int_t Compare_Any_Names(Keyword_t** a, Keyword_t** b);
-
-        static some<Keyword_t*> Vampire();
 
     public:
         virtual ~Keyword_t(); // 0

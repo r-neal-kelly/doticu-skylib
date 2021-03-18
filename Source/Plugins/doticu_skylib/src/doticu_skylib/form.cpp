@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/armor.h"
 #include "doticu_skylib/book.h"
 #include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/component_container.h"
@@ -162,6 +163,7 @@ namespace doticu_skylib {
 
     Bool_t                  Form_t::Is_Actor() const                { return As_Actor() != none<Actor_t*>(); }
     Bool_t                  Form_t::Is_Actor_Base() const           { return As_Actor_Base() != none<Actor_Base_t*>(); }
+    Bool_t                  Form_t::Is_Armor() const                { return As_Armor() != none<Armor_t*>(); }
     Bool_t                  Form_t::Is_Book() const                 { return As_Book() != none<Book_t*>(); }
     Bool_t                  Form_t::Is_Bound_Object() const         { return As_Bound_Object() != none<Bound_Object_t*>(); }
     Bool_t                  Form_t::Is_Component_Container() const  { return As_Component_Container() != none<Container_c*>(); }
@@ -175,6 +177,7 @@ namespace doticu_skylib {
 
     maybe<Actor_t*>         Form_t::As_Actor() const                { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
     maybe<Actor_Base_t*>    Form_t::As_Actor_Base() const           { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
+    maybe<Armor_t*>         Form_t::As_Armor() const                { return Game_t::Runtime_Cast<Form_t, Armor_t>(this); }
     maybe<Book_t*>          Form_t::As_Book() const                 { return Game_t::Runtime_Cast<Form_t, Book_t>(this); }
     maybe<Bound_Object_t*>  Form_t::As_Bound_Object() const         { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
     maybe<Container_c*>     Form_t::As_Component_Container() const  { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }

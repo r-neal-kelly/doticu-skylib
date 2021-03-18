@@ -127,8 +127,6 @@ namespace doticu_skylib {
         u32                         pad_21C;                // 21C
 
     public:
-        Bool_t  Is_Dummy() const;
-
         Bool_t  Is_Sword() const;
         Bool_t  Is_Greatsword() const;
         Bool_t  Is_Waraxe() const;
@@ -139,12 +137,29 @@ namespace doticu_skylib {
         Bool_t  Is_Staff() const;
         Bool_t  Is_Bow() const;
         Bool_t  Is_Crossbow() const;
+        Bool_t  Is_Bow_Or_Crossbow() const;
 
+        Bool_t  Is_Wood() const;
         Bool_t  Is_Iron() const;
-        // ...
+        Bool_t  Is_Steel() const;
+        Bool_t  Is_Silver() const;
+        Bool_t  Is_Imperial() const;
+        Bool_t  Is_Nordic() const;
+        Bool_t  Is_Draugr() const;
+        Bool_t  Is_Draugr_Honed() const;
+        Bool_t  Is_Falmer() const;
+        Bool_t  Is_Falmer_Honed() const;
+        Bool_t  Is_Dwarven() const;
+        Bool_t  Is_Orcish() const;
+        Bool_t  Is_Elven() const;
+        Bool_t  Is_Glass() const;
+        Bool_t  Is_Ebony() const;
         Bool_t  Is_Daedric() const;
+        Bool_t  Is_Dragonbone() const;
+        Bool_t  Is_Stalhrim() const;
+        Bool_t  Is_Aetherium() const;
 
-        // etc.
+        Bool_t  Is_Daedric_Artifact() const;
     };
     STATIC_ASSERT(sizeof(Weapon_t) == 0x220);
 

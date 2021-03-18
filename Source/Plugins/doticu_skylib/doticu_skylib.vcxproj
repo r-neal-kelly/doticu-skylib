@@ -68,6 +68,8 @@
     <ClInclude Include="include\doticu_skylib\book.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
+    <ClInclude Include="include\doticu_skylib\const_keyword.h" />
+    <ClInclude Include="include\doticu_skylib\const_mod.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
     <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
@@ -479,6 +481,8 @@
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_keywords.cpp" />
+    <ClCompile Include="src\doticu_skylib\const_keyword.cpp" />
+    <ClCompile Include="src\doticu_skylib\const_mod.cpp" />
     <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
