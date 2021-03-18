@@ -8,10 +8,11 @@
 
 namespace doticu_skylib {
 
-    class Sound_Level_e : public Enum_t<u8>
+    class Sound_Level_e :
+        public Enum_t<u8>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             LOUD        = 0,
             NORMAL      = 1,
@@ -19,6 +20,8 @@ namespace doticu_skylib {
             VERY_LOUD   = 3,
             QUIET       = 4,
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

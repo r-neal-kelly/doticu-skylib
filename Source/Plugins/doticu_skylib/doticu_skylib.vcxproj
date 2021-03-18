@@ -100,6 +100,12 @@
     <ClInclude Include="include\doticu_skylib\enum_update_3d_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_virtual_relation.h" />
     <ClInclude Include="include\doticu_skylib\enum_voice_type_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_attack_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_critical_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_hit_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_rumble_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_weapon_animation_type.h" />
     <ClInclude Include="include\doticu_skylib\extra_cannot_wear.h" />
     <ClInclude Include="include\doticu_skylib\extra_charge.h" />
     <ClInclude Include="include\doticu_skylib\extra_enchantment.h" />
@@ -602,6 +608,7 @@
     <ClCompile Include="src\doticu_skylib\virtual_utility.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />
     <ClCompile Include="src\doticu_skylib\vitality.cpp" />
+    <ClCompile Include="src\doticu_skylib\weapon.cpp" />
     <ClCompile Include="src\doticu_skylib\worldspace.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_data.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_list.cpp" />

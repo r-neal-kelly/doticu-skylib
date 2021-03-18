@@ -32,12 +32,12 @@
 
 namespace doticu_skylib {
 
-    class Actor_Class_t; // TESClass
+    class Actor_Class_t;        // TESClass
     class Actor_Face_Data_t;
     class Actor_Head_Data_t;
     class Armor_t;
     class Color_t;
-    class Combat_Style_t; // TESCombatStyle
+    class Combat_Style_t;       // TESCombatStyle
     class Faction_t;
     class Form_List_t;
     class Head_Part_t;

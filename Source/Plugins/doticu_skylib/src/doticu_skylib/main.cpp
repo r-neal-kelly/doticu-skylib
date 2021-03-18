@@ -28,6 +28,7 @@
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/interface.h"
+#include "doticu_skylib/keyword.h"
 #include "doticu_skylib/magic_effect.h"
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/package_dialogue.h"
@@ -42,6 +43,7 @@
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_game.h"
 #include "doticu_skylib/virtual_utility.h"
+#include "doticu_skylib/weapon.h"
 //
 
 namespace doticu_skylib {
@@ -128,16 +130,26 @@ namespace doticu_skylib {
             {
                 UI_t::Create_Notification(Game_t::Version(), none<Virtual::Callback_i*>());
 
+                Array_t<Form_t*>& weapons = Game_t::Self()->form_caches[Form_Type_e::WEAPON];
+                for (size_t idx = 0, end = weapons.Count(); idx < end; idx += 1) {
+                    maybe<Weapon_t*> weapon = static_cast<Weapon_t*>(weapons[idx]);
+                    if (weapon) {
+                        _MESSAGE("weapon: %s", weapon->Component_Name());
+                        for (size_t idx = 0, end = weapon->keyword_count; idx < end; idx += 1) {
+                            maybe<Keyword_t*> keyword = weapon->keywords[idx];
+                            if (keyword) {
+                                _MESSAGE("    keyword: %s", keyword->Any_Name());
+                            }
+                        }
+                    }
+                }
+
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());
                 some<Faction_t*> current_follower_faction = static_cast<Faction_t*>(Game_t::Form(0x0005C84E)());
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
                 some<Container_t*> cache_base = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
-
-                some<Reference_t*> worn_cache = Container_t::Create_Container(cache_base, nullptr)();
-                some<Reference_t*> other_cache = Container_t::Create_Container(cache_base, nullptr)();
-                Split_Inventory(player_actor, worn_cache, other_cache);
 
                 Vector_t<some<Reference_t*>> references = Reference_t::Loaded_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
@@ -215,7 +227,7 @@ namespace doticu_skylib {
         Virtual::Callback_i::After_Load();
 
         //temp
-        //Temp();
+        Temp();
         //
     }
 
