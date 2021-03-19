@@ -13,6 +13,7 @@
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/armor.h"
+#include "doticu_skylib/book.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/color.h"
 #include "doticu_skylib/console_log.h"
@@ -30,6 +31,7 @@
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/magic_effect.h"
+#include "doticu_skylib/misc.h"
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/package_dialogue.h"
 #include "doticu_skylib/player.h"
@@ -131,36 +133,6 @@ namespace doticu_skylib {
             {
                 UI_t::Create_Notification(Game_t::Version(), none<Virtual::Callback_i*>());
 
-                if (false) {
-                    Array_t<Form_t*>& weapons = Game_t::Self()->form_caches[Form_Type_e::WEAPON];
-                    for (size_t idx = 0, end = weapons.Count(); idx < end; idx += 1) {
-                        maybe<Weapon_t*> weapon = static_cast<Weapon_t*>(weapons[idx]);
-                        if (weapon) {
-                            weapon->Log();
-                        }
-                    }
-                }
-
-                if (false) {
-                    Array_t<Form_t*>& armors = Game_t::Self()->form_caches[Form_Type_e::ARMOR];
-                    for (size_t idx = 0, end = armors.Count(); idx < end; idx += 1) {
-                        maybe<Armor_t*> armor = static_cast<Armor_t*>(armors[idx]);
-                        if (armor) {
-                            armor->Log();
-                        }
-                    }
-                }
-
-                if (true) {
-                    Array_t<Form_t*>& potions = Game_t::Self()->form_caches[Form_Type_e::POTION];
-                    for (size_t idx = 0, end = potions.Count(); idx < end; idx += 1) {
-                        maybe<Potion_t*> potion = static_cast<Potion_t*>(potions[idx]);
-                        if (potion) {
-                            potion->Log();
-                        }
-                    }
-                }
-
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());
@@ -174,6 +146,7 @@ namespace doticu_skylib {
 
                     maybe<Actor_t*> actor = reference->As_Actor();
                     if (actor && actor != player_actor) {
+                        // we may have fixed this by supplying better parameters in the raw function ptrs, in the Relations definitions
                         //actor->Base_Relation(player_actor_base, Relation_e::ALLY); // this is causing random crashes! try virtual instead.
                         actor->Faction_Rank(current_follower_faction, 0);
                         actor->Crime_Faction(player_faction());

@@ -63,6 +63,7 @@ namespace doticu_skylib {
     class Alias_Reference_t;
     class Animated_Object_t;
     class Armor_t;
+    class Book_t;
     class Bound_Object_t;
     class Cell_t;
     class Character_t;

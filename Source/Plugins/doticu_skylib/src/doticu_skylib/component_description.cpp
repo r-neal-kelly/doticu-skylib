@@ -8,20 +8,21 @@
 
 namespace doticu_skylib {
 
-    DString_t Description_c::Description(some<Form_t*> parent, u32 sub_type)
+    DString_t Description_c::Description(some<const Form_t*> parent, u32 sub_type) const
     {
         DString_t description;
-        Description(description, parent, sub_type);
+        Description(parent, sub_type, description);
         return std::move(description);
     }
 
-    void Description_c::Description(DString_t& result, some<Form_t*> parent, u32 sub_type)
+    void Description_c::Description(some<const Form_t*> parent, u32 sub_type, DString_t& result) const
     {
         static auto get = reinterpret_cast
-            <void(*)(Description_c*, DString_t&, Form_t*, u32)>
+            <void(*)(const Description_c*, DString_t&, const Form_t*, u32)>
             (Game_t::Base_Address() + Offset_e::GET);
 
         SKYLIB_ASSERT_SOME(parent);
+
         get(this, result, parent(), sub_type);
     }
 

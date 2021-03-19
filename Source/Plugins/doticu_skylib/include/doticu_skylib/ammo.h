@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/bound_object.h"
+#include "doticu_skylib/component_description.h"
 #include "doticu_skylib/component_destructible.h"
 #include "doticu_skylib/component_grab_sounds.h"
 #include "doticu_skylib/component_icon.h"
@@ -14,29 +15,34 @@
 #include "doticu_skylib/component_name.h"
 #include "doticu_skylib/component_value.h"
 #include "doticu_skylib/component_weight.h"
+#include "doticu_skylib/enum_ammo_flags.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
-    class Misc_t :                  // TESObjectMISC
+    class Projectile_t;
+
+    class Ammo_t :                  // TESAmmo
         public Bound_Object_t,      // 000
         public Name_c,              // 030
         public Model_Alternates_c,  // 040
         public Icon_c,              // 078
-        public Value_c,             // 088
-        public Weight_c,            // 098
-        public Destructible_c,      // 0A8
-        public Message_Icon_c,      // 0B8
+        public Message_Icon_c,      // 088
+        public Value_c,             // 0A0
+        public Weight_c,            // 0B0
+        public Destructible_c,      // 0C0
         public Grab_Sounds_c,       // 0D0
-        public Keywords_c           // 0E8
+        public Description_c,       // 0E8
+        public Keywords_c           // 0F8
     {
     public:
         enum
         {
-            SCRIPT_TYPE = Script_Type_e::MISC,
+            SCRIPT_TYPE = Script_Type_e::AMMO,
         };
 
-        static constexpr const char* SCRIPT_NAME = "MiscObject";
+        static constexpr const char* SCRIPT_NAME = "Ammo";
 
     public:
         class Offset_e :
@@ -45,7 +51,7 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                RTTI = 0x01E14BB8, // 513921
+                RTTI = 0x01E137E8, // 513901
             };
 
         public:
@@ -53,22 +59,16 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Misc_t(); // 00
+        virtual ~Ammo_t(); // 00
 
     public:
-        Bool_t  Is_Animal_Hide() const;
-        Bool_t  Is_Animal_Part() const;
-        Bool_t  Is_Child_Clothing() const;
-        Bool_t  Is_Firewood() const;
-        Bool_t  Is_Gem() const;
-        Bool_t  Is_Ore_Or_Ingot() const;
-        Bool_t  Is_Tool() const;
-
-        Bool_t  Is_Daedric_Artifact() const;
-
-    public:
-        void Log(std::string indent = "");
+        maybe<Projectile_t*>    projectile; // 110
+        Ammo_Flags_e            ammo_flags; // 118
+        u8                      pad_119;    // 119
+        u16                     pad_11A;    // 11A
+        Float_t                 damage;     // 11C
+        String_t                unk_120;    // 120 (ONAM)
     };
-    STATIC_ASSERT(sizeof(Misc_t) == 0x100);
+    STATIC_ASSERT(sizeof(Ammo_t) == 0x128);
 
 }

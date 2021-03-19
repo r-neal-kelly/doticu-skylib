@@ -4,6 +4,7 @@
 
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/ammo.h"
 #include "doticu_skylib/armor.h"
 #include "doticu_skylib/book.h"
 #include "doticu_skylib/bound_object.h"
@@ -15,11 +16,16 @@
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.inl"
+#include "doticu_skylib/ingredient.h"
+#include "doticu_skylib/key.h"
 #include "doticu_skylib/leveled_item.h"
+#include "doticu_skylib/misc.h"
 #include "doticu_skylib/mod.h"
 #include "doticu_skylib/potion.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.inl"
+#include "doticu_skylib/scroll.h"
+#include "doticu_skylib/soul_gem.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
@@ -164,6 +170,7 @@ namespace doticu_skylib {
 
     Bool_t                  Form_t::Is_Actor() const                { return As_Actor() != none<Actor_t*>(); }
     Bool_t                  Form_t::Is_Actor_Base() const           { return As_Actor_Base() != none<Actor_Base_t*>(); }
+    Bool_t                  Form_t::Is_Ammo() const                 { return As_Ammo() != none<Ammo_t*>(); }
     Bool_t                  Form_t::Is_Armor() const                { return As_Armor() != none<Armor_t*>(); }
     Bool_t                  Form_t::Is_Book() const                 { return As_Book() != none<Book_t*>(); }
     Bool_t                  Form_t::Is_Bound_Object() const         { return As_Bound_Object() != none<Bound_Object_t*>(); }
@@ -172,13 +179,19 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
     Bool_t                  Form_t::Is_Container() const            { return As_Container() != none<Container_t*>(); }
     Bool_t                  Form_t::Is_Faction() const              { return As_Faction() != none<Faction_t*>(); }
+    Bool_t                  Form_t::Is_Ingredient() const           { return As_Ingredient() != none<Ingredient_t*>(); }
+    Bool_t                  Form_t::Is_Key() const                  { return As_Key() != none<Key_t*>(); }
     Bool_t                  Form_t::Is_Leveled_Item() const         { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t                  Form_t::Is_Misc() const                 { return As_Misc() != none<Misc_t*>(); }
     Bool_t                  Form_t::Is_Potion() const               { return As_Potion() != none<Potion_t*>(); }
     Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
+    Bool_t                  Form_t::Is_Scroll() const               { return As_Scroll() != none<Scroll_t*>(); }
+    Bool_t                  Form_t::Is_Soul_Gem() const             { return As_Soul_Gem() != none<Soul_Gem_t*>(); }
     Bool_t                  Form_t::Is_Weapon() const               { return As_Weapon() != none<Weapon_t*>(); }
 
     maybe<Actor_t*>         Form_t::As_Actor() const                { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
     maybe<Actor_Base_t*>    Form_t::As_Actor_Base() const           { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
+    maybe<Ammo_t*>          Form_t::As_Ammo() const                 { return Game_t::Runtime_Cast<Form_t, Ammo_t>(this); }
     maybe<Armor_t*>         Form_t::As_Armor() const                { return Game_t::Runtime_Cast<Form_t, Armor_t>(this); }
     maybe<Book_t*>          Form_t::As_Book() const                 { return Game_t::Runtime_Cast<Form_t, Book_t>(this); }
     maybe<Bound_Object_t*>  Form_t::As_Bound_Object() const         { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
@@ -187,9 +200,14 @@ namespace doticu_skylib {
     maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
     maybe<Container_t*>     Form_t::As_Container() const            { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
     maybe<Faction_t*>       Form_t::As_Faction() const              { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
+    maybe<Ingredient_t*>    Form_t::As_Ingredient() const           { return Game_t::Runtime_Cast<Form_t, Ingredient_t>(this); }
+    maybe<Key_t*>           Form_t::As_Key() const                  { return Game_t::Runtime_Cast<Form_t, Key_t>(this); }
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item() const         { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Misc_t*>          Form_t::As_Misc() const                 { return Game_t::Runtime_Cast<Form_t, Misc_t>(this); }
     maybe<Potion_t*>        Form_t::As_Potion() const               { return Game_t::Runtime_Cast<Form_t, Potion_t>(this); }
     maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
+    maybe<Scroll_t*>        Form_t::As_Scroll() const               { return Game_t::Runtime_Cast<Form_t, Scroll_t>(this); }
+    maybe<Soul_Gem_t*>      Form_t::As_Soul_Gem() const             { return Game_t::Runtime_Cast<Form_t, Soul_Gem_t>(this); }
     maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
 
     void Form_t::Register_SKSE_Event(String_t event_name, String_t callback_name, maybe<Virtual::Callback_i*> v_callback)

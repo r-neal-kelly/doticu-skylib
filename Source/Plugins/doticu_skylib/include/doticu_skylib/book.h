@@ -84,17 +84,19 @@ namespace doticu_skylib {
         Description_c       inventory_description;  // 128 (CNAM)
 
     public:
-        Bool_t      Is_Codex();
-        Bool_t      Is_Note_Or_Scroll();
+        Bool_t      Can_Take() const;
+        Bool_t      Cant_Take() const;
+        Bool_t      Can_Teach_Skill() const;
+        Bool_t      Can_Teach_Spell() const;
 
-        Bool_t      Can_Teach_Skill();
-        Bool_t      Can_Teach_Spell();
+        Bool_t      Has_Been_Read() const;
+        Bool_t      Hasnt_Been_Read() const;
 
-        Bool_t      Is_Skill_Book();
-        Bool_t      Is_Spell_Tome();
-        Bool_t      Is_Recipe();
+        Bool_t      Is_Skill_Book() const;
+        Bool_t      Is_Spell_Tome() const;
+        Bool_t      Is_Recipe() const;
 
-        DString_t   Unparsed_Text();
+        DString_t   Unparsed_Text() const;
 
     public:
         void Log(std::string indent = "");

@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/component_form_data.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe.h"
@@ -41,7 +42,10 @@ namespace doticu_skylib {
         u32                         pad_14;         // 14
 
     public:
-        Bool_t Component_Has_Keyword(some<Keyword_t*> keyword) const;
+        Bool_t                      Component_Has_Keyword(some<Keyword_t*> keyword) const;
+
+        Vector_t<some<Keyword_t*>>  Component_Keywords() const;
+        void                        Component_Keywords(Vector_t<some<Keyword_t*>>& results) const;
 
     public:
         void Log_Component_Keywords(std::string indent = "");

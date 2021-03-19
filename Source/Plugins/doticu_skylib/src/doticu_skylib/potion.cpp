@@ -9,7 +9,7 @@
 
 namespace doticu_skylib {
 
-    Bool_t Potion_t::Is_Medicine() const
+    Bool_t Potion_t::Is_Potion() const
     {
         return Component_Has_Keyword(Const::Keyword::Vendor_Item_Potion());
     }
@@ -21,10 +21,10 @@ namespace doticu_skylib {
 
     Bool_t Potion_t::Is_Food() const
     {
-        return !Is_Medicine() && !Is_Poison();
+        return !Is_Potion() && !Is_Poison();
     }
 
-    Bool_t Potion_t::Is_Edible_Food() const
+    Bool_t Potion_t::Is_Prepared_Food() const
     {
         return Is_Food() && !Is_Raw_Food();
     }
@@ -42,13 +42,13 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + SKYLIB_TAB + "component_name: %s", Component_Name());
         SKYLIB_LOG(indent + SKYLIB_TAB + "form_id: %s", this->form_id.As_String());
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "is_medicine: %s", Is_Medicine() ? "true" : "false");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_potion: %s", Is_Potion() ? "true" : "false");
         SKYLIB_LOG(indent + SKYLIB_TAB + "is_poison: %s", Is_Poison() ? "true" : "false");
         SKYLIB_LOG(indent + SKYLIB_TAB + "is_food: %s", Is_Food() ? "true" : "false");
-        SKYLIB_LOG(indent + SKYLIB_TAB + "is_edible_food: %s", Is_Edible_Food() ? "true" : "false");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_prepared_food: %s", Is_Prepared_Food() ? "true" : "false");
         SKYLIB_LOG(indent + SKYLIB_TAB + "is_raw_food: %s", Is_Raw_Food() ? "true" : "false");
 
-        if (Is_Medicine() && Is_Poison()) {
+        if (Is_Potion() && Is_Poison()) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "is both medicine and poison.");
         }
 

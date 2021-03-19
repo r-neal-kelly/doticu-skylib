@@ -105,9 +105,9 @@ namespace doticu_skylib {
         this->value = "";
     }
 
-    void Static_String_t::Write(const char* value)
+    void Static_String_t::Write(maybe<const char*> value)
     {
-        Set_Impl(this, value ? value : "");
+        Set_Impl(this, value ? value() : "");
     }
 
     Static_String_t::operator Bool_t() const
@@ -115,7 +115,7 @@ namespace doticu_skylib {
         return static_cast<const char*>(*this)[0] != 0;
     }
 
-    Static_String_t::operator const char*() const
+    Static_String_t::operator const char* () const
     {
         return this->value ? this->value() : "";
     }
@@ -126,11 +126,6 @@ namespace doticu_skylib {
     }
 
     Static_String_t::operator some<const char*>() const
-    {
-        return static_cast<const char*>(*this);
-    }
-
-    Static_String_t::operator std::string() const
     {
         return static_cast<const char*>(*this);
     }
@@ -150,68 +145,124 @@ namespace doticu_skylib {
         return !operator ==(other);
     }
 
+    std::string operator +(const Static_String_t& a, const Static_String_t& b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const Static_String_t& a, const char* b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const char* a, const Static_String_t& b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const Static_String_t& a, const std::string& b)
+    {
+        return std::string(a) + b;
+    }
+
     std::string operator +(const std::string& a, const Static_String_t& b)
     {
-        return a + static_cast<const char*>(b);
+        return a + std::string(b);
     }
 
     /* Dynamic_String_t */
 
-    static Bool_t Set_Impl(Dynamic_String_t* self, some<const char*> string)
-    {
-        static auto set = reinterpret_cast
-            <Bool_t(*)(Dynamic_String_t*, const char*, u32)>
-            (Game_t::Base_Address() + Dynamic_String_t::Offset_e::SET);
-
-        SKYLIB_ASSERT_SOME(string);
-        return set(self, string(), CString_t::Length(string(), false));
-    }
-
     Dynamic_String_t::Dynamic_String_t() :
-        data(nullptr), length(0), capacity(0)
+        value(none<char*>()), length(0), capacity(0), pad_0C(0)
     {
     }
 
-    Dynamic_String_t::Dynamic_String_t(const char* other) :
-        data(nullptr), length(0), capacity(0)
+    Dynamic_String_t::Dynamic_String_t(const char* string)
     {
-        Set_Impl(this, other ? other : "");
+        Write(string);
+    }
+
+    Dynamic_String_t::Dynamic_String_t(const Dynamic_String_t& other)
+    {
+        Write(other);
     }
 
     Dynamic_String_t::Dynamic_String_t(Dynamic_String_t&& other) noexcept :
-        data(std::exchange(other.data, nullptr)), length(other.length), capacity(other.capacity)
+        value(std::exchange(other.value, none<char*>())),
+        length(std::exchange(other.length, 0)),
+        capacity(std::exchange(other.capacity, 0)),
+        pad_0C(std::exchange(other.pad_0C, 0))
     {
     }
 
-    Dynamic_String_t& Dynamic_String_t::operator=(const char* other)
+    Dynamic_String_t& Dynamic_String_t::operator =(const Dynamic_String_t& other)
     {
-        data = nullptr;
-        length = 0;
-        capacity = 0;
-        Set_Impl(this, other ? other : "");
+        if (this != std::addressof(other)) {
+            Write(other);
+        }
+        return *this;
+    }
+
+    Dynamic_String_t& Dynamic_String_t::operator =(Dynamic_String_t&& other) noexcept
+    {
+        if (this != std::addressof(other)) {
+            this->value = std::exchange(other.value, none<char*>());
+            this->length = std::exchange(other.length, 0);
+            this->capacity = std::exchange(other.capacity, 0);
+            this->pad_0C = std::exchange(other.pad_0C, 0);
+        }
+        return *this;
     }
 
     Dynamic_String_t::~Dynamic_String_t()
     {
-        if (data) {
-            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(data));
-            data = nullptr;
+        Clear();
+    }
+
+    void Dynamic_String_t::Write(maybe<const char*> string)
+    {
+        static auto set = reinterpret_cast
+            <Bool_t(*)(Dynamic_String_t*, const char*, u32 length_without_null)>
+            (Game_t::Base_Address() + Dynamic_String_t::Offset_e::SET);
+
+        if (!string) {
+            string = "";
         }
+
+        Clear();
+
+        set(this, string(), CString_t::Length(string(), false));
     }
 
-    Bool_t Dynamic_String_t::operator==(const char* other) const
+    void Dynamic_String_t::Clear()
     {
-        return CString_t::Is_Same(this->data, other, true);
-    }
-
-    Bool_t Dynamic_String_t::operator!=(const char* other) const
-    {
-        return !operator==(other);
+        if (this->value) {
+            Memory_t::Self()->Deallocate(reinterpret_cast<Byte_t*>(this->value()));
+            value = none<char*>();
+        }
+        this->length = 0;
+        this->capacity = 0;
+        this->pad_0C = 0;
     }
 
     Dynamic_String_t::operator Bool_t() const
     {
-        return data && data[0];
+        return static_cast<const char*>(*this)[0] != 0;
+    }
+
+    Dynamic_String_t::operator const char* () const
+    {
+        return this->value ? this->value() : "";
+    }
+
+    Dynamic_String_t::operator maybe<const char*>() const
+    {
+        return static_cast<const char*>(*this);
+    }
+
+    Dynamic_String_t::operator some<const char*>() const
+    {
+        return static_cast<const char*>(*this);
     }
 
     Bool_t Dynamic_String_t::operator !() const
@@ -219,9 +270,34 @@ namespace doticu_skylib {
         return !static_cast<Bool_t>(*this);
     }
 
-    Dynamic_String_t::operator const char* () const
+    some<const char*> Dynamic_String_t::operator ()() const
     {
-        return data ? data : "";
+        return static_cast<const char*>(*this);
+    }
+
+    std::string operator +(const Dynamic_String_t& a, const Dynamic_String_t& b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const Dynamic_String_t& a, const char* b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const char* a, const Dynamic_String_t& b)
+    {
+        return std::string(a) + std::string(b);
+    }
+
+    std::string operator +(const Dynamic_String_t& a, const std::string& b)
+    {
+        return std::string(a) + b;
+    }
+
+    std::string operator +(const std::string& a, const Dynamic_String_t& b)
+    {
+        return a + std::string(b);
     }
 
 }

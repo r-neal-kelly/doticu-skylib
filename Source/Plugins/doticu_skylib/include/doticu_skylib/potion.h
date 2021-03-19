@@ -65,10 +65,10 @@ namespace doticu_skylib {
         Icon_c                      unk_icon;           // 158
 
     public:
-        Bool_t Is_Medicine() const;
+        Bool_t Is_Potion() const;
         Bool_t Is_Poison() const;
         Bool_t Is_Food() const;
-        Bool_t Is_Edible_Food() const;
+        Bool_t Is_Prepared_Food() const;
         Bool_t Is_Raw_Food() const;
 
     public:

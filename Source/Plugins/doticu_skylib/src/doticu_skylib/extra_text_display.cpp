@@ -97,8 +97,7 @@ namespace doticu_skylib {
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "name: %s", this->name ? name : "");
         if (this->message) {
-            DString_t message_dstring = this->message->Description(this->message());
-            SKYLIB_LOG(indent + SKYLIB_TAB + "message: %s", message_dstring ? message_dstring.data : "");
+            SKYLIB_LOG(indent + SKYLIB_TAB + "message: %s", this->message->Description(this->message())());
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "message: (nullptr)");
         }

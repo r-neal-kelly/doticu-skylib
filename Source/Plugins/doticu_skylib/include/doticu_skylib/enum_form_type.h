@@ -42,14 +42,14 @@ namespace doticu_skylib {
             // 0x14 LTEX
             ENCHANTMENT             = 0x15, // ENCH
             SPELL                   = 0x16, // SPEL
-            // 0x17 SCRL
+            SCROLL                  = 0x17, // SCRL
             ACTIVATOR               = 0x18, // ACTI
             // 0x19 TACT
             ARMOR                   = 0x1A, // ARMO
             BOOK                    = 0x1B, // BOOK
             CONTAINER               = 0x1C, // CONT
             // 0x1D DOOR
-            // 0x1E INGR
+            INGREDIENT              = 0x1E, // INGR
             // 0x1F LIGH
             MISC                    = 0x20, // MISC
             // 0x21 APPA
@@ -61,17 +61,17 @@ namespace doticu_skylib {
             FLORA                   = 0x27, // FLOR
             FURNITURE               = 0x28, // FURN
             WEAPON                  = 0x29, // WEAP
-            // 0x2A AMMO
+            AMMO                    = 0x2A, // AMMO
             ACTOR_BASE              = 0x2B, // NPC_
             LEVELED_ACTOR_BASE      = 0x2C, // LVLN
-            // 0x2D KEYM
+            KEY                     = 0x2D, // KEYM
             POTION                  = 0x2E, // ALCH
             // 0x2F IDLM
             // 0x30 NOTE
             // 0x31 COBJ
             PROJECTILE              = 0x32, // PROJ
             // 0x33 HAZD
-            // 0x34 SLGM
+            SOUL_GEM                = 0x34, // SLGM
             LEVELED_ITEM            = 0x35, // LVLI
             // 0x36 WTHR
             // 0x37 CLMT

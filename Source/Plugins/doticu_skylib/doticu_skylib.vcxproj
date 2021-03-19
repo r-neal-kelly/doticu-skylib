@@ -63,6 +63,7 @@
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
+    <ClInclude Include="include\doticu_skylib\ammo.h" />
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\book.h" />
@@ -76,6 +77,7 @@
     <ClInclude Include="include\doticu_skylib\enchantment.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_skill.h" />
+    <ClInclude Include="include\doticu_skylib\enum_ammo_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_attack_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_biped_object_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_book_flags.h" />
@@ -84,6 +86,7 @@
     <ClInclude Include="include\doticu_skylib\enum_enchantment_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_morph_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_part_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_ingredient_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_life_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_archetype.h" />
@@ -119,6 +122,8 @@
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
     <ClInclude Include="include\doticu_skylib\form_owner.h" />
+    <ClInclude Include="include\doticu_skylib\ingredient.h" />
+    <ClInclude Include="include\doticu_skylib\key.h" />
     <ClInclude Include="include\doticu_skylib\main.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
@@ -402,7 +407,9 @@
     <ClInclude Include="include\doticu_skylib\enum_script_type.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array_allocator.h" />
+    <ClInclude Include="include\doticu_skylib\scroll.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
+    <ClInclude Include="include\doticu_skylib\soul_gem.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
     <ClInclude Include="include\doticu_skylib\sync_object.h" />
@@ -476,6 +483,7 @@
     <ClCompile Include="src\doticu_skylib\actor_values.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_reference.cpp" />
+    <ClCompile Include="src\doticu_skylib\ammo.cpp" />
     <ClCompile Include="src\doticu_skylib\armor.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\book.cpp" />
@@ -507,6 +515,7 @@
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\main.cpp" />
+    <ClCompile Include="src\doticu_skylib\misc.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_matrix.cpp" />

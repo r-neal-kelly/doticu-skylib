@@ -98,7 +98,7 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*>    Vendor_Item_Ingredient()                { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDEB); }
     some<Keyword_t*>    Vendor_Item_Jewelry()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08F95A); }
     some<Keyword_t*>    Vendor_Item_Key()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EF); }
-    some<Keyword_t*>    Vendor_Item_Ore_Ingot()                 { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EC); }
+    some<Keyword_t*>    Vendor_Item_Ore_Or_Ingot()              { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EC); }
     some<Keyword_t*>    Vendor_Item_Poison()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDED); }
     some<Keyword_t*>    Vendor_Item_Potion()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDEC); }
     some<Keyword_t*>    Vendor_Item_Recipe()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0F5CB0); }

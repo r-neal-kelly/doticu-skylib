@@ -101,7 +101,7 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*> Vendor_Item_Ingredient();
     some<Keyword_t*> Vendor_Item_Jewelry();
     some<Keyword_t*> Vendor_Item_Key();
-    some<Keyword_t*> Vendor_Item_Ore_Ingot();
+    some<Keyword_t*> Vendor_Item_Ore_Or_Ingot();
     some<Keyword_t*> Vendor_Item_Poison();
     some<Keyword_t*> Vendor_Item_Potion();
     some<Keyword_t*> Vendor_Item_Recipe();

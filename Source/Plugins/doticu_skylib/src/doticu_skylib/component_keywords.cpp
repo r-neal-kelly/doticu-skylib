@@ -14,6 +14,25 @@ namespace doticu_skylib {
         return Get_Has_Keyword(keyword());
     }
 
+    Vector_t<some<Keyword_t*>> Keywords_c::Component_Keywords() const
+    {
+        Vector_t<some<Keyword_t*>> results;
+        Component_Keywords(results);
+        return std::move(results);
+    }
+
+    void Keywords_c::Component_Keywords(Vector_t<some<Keyword_t*>>& results) const
+    {
+        if (this->keywords) {
+            for (size_t idx = 0, end = this->keyword_count; idx < end; idx += 1) {
+                maybe<Keyword_t*> keyword = this->keywords[idx];
+                if (keyword && !results.Has(keyword())) {
+                    results.push_back(keyword());
+                }
+            }
+        }
+    }
+
     void Keywords_c::Log_Component_Keywords(std::string indent)
     {
         SKYLIB_LOG(indent + "Keywords_c::Log_Component_Keywords");

@@ -36,8 +36,8 @@ namespace doticu_skylib {
         u32 description_text_id;    // C
 
     public:
-        DString_t   Description(some<Form_t*> parent, u32 sub_type = 'DESC');
-        void        Description(DString_t& result, some<Form_t*> parent, u32 sub_type = 'DESC');
+        DString_t   Description(some<const Form_t*> parent, u32 sub_type = 'DESC') const;
+        void        Description(some<const Form_t*> parent, u32 sub_type, DString_t& result) const;
     };
     STATIC_ASSERT(sizeof(Description_c) == 0x10);
 

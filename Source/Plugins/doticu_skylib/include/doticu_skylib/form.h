@@ -19,20 +19,26 @@ namespace doticu_skylib {
 
     class Actor_t;
     class Actor_Base_t;
+    class Ammo_t;
     class Armor_t;
     class Book_t;
     class Bound_Object_t;
     class Container_c;
     class Container_t;
     class Faction_t;
+    class Ingredient_t;
+    class Key_t;
     class Keyword_t;
     class Keywords_c;
     class Leveled_Item_t;
+    class Misc_t;
     class Mod_t;
     class Name_c;
     class Potion_t;
     class Race_t;
     class Reference_t;
+    class Scroll_t;
+    class Soul_Gem_t;
     class Weapon_t;
 
     namespace Virtual {
@@ -175,6 +181,7 @@ namespace doticu_skylib {
     public:
         Bool_t                  Is_Actor() const;
         Bool_t                  Is_Actor_Base() const;
+        Bool_t                  Is_Ammo() const;
         Bool_t                  Is_Armor() const;
         Bool_t                  Is_Book() const;
         Bool_t                  Is_Bound_Object() const;
@@ -183,13 +190,19 @@ namespace doticu_skylib {
         Bool_t                  Is_Component_Name() const;
         Bool_t                  Is_Container() const;
         Bool_t                  Is_Faction() const;
+        Bool_t                  Is_Ingredient() const;
+        Bool_t                  Is_Key() const;
         Bool_t                  Is_Leveled_Item() const;
+        Bool_t                  Is_Misc() const;
         Bool_t                  Is_Potion() const;
         Bool_t                  Is_Reference() const;
+        Bool_t                  Is_Scroll() const;
+        Bool_t                  Is_Soul_Gem() const;
         Bool_t                  Is_Weapon() const;
 
         maybe<Actor_t*>         As_Actor() const;
         maybe<Actor_Base_t*>    As_Actor_Base() const;
+        maybe<Ammo_t*>          As_Ammo() const;
         maybe<Armor_t*>         As_Armor() const;
         maybe<Book_t*>          As_Book() const;
         maybe<Bound_Object_t*>  As_Bound_Object() const;
@@ -198,9 +211,14 @@ namespace doticu_skylib {
         maybe<Name_c*>          As_Component_Name() const;
         maybe<Container_t*>     As_Container() const;
         maybe<Faction_t*>       As_Faction() const;
+        maybe<Ingredient_t*>    As_Ingredient() const;
+        maybe<Key_t*>           As_Key() const;
         maybe<Leveled_Item_t*>  As_Leveled_Item() const;
+        maybe<Misc_t*>          As_Misc() const;
         maybe<Potion_t*>        As_Potion() const;
         maybe<Reference_t*>     As_Reference() const;
+        maybe<Scroll_t*>        As_Scroll() const;
+        maybe<Soul_Gem_t*>      As_Soul_Gem() const;
         maybe<Weapon_t*>        As_Weapon() const;
 
     public:
