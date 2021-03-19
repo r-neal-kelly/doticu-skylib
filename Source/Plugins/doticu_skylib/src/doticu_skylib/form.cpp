@@ -17,6 +17,7 @@
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/leveled_item.h"
 #include "doticu_skylib/mod.h"
+#include "doticu_skylib/potion.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/virtual_arguments.h"
@@ -172,6 +173,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Container() const            { return As_Container() != none<Container_t*>(); }
     Bool_t                  Form_t::Is_Faction() const              { return As_Faction() != none<Faction_t*>(); }
     Bool_t                  Form_t::Is_Leveled_Item() const         { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t                  Form_t::Is_Potion() const               { return As_Potion() != none<Potion_t*>(); }
     Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
     Bool_t                  Form_t::Is_Weapon() const               { return As_Weapon() != none<Weapon_t*>(); }
 
@@ -186,6 +188,7 @@ namespace doticu_skylib {
     maybe<Container_t*>     Form_t::As_Container() const            { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
     maybe<Faction_t*>       Form_t::As_Faction() const              { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item() const         { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Potion_t*>        Form_t::As_Potion() const               { return Game_t::Runtime_Cast<Form_t, Potion_t>(this); }
     maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
     maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
 

@@ -88,12 +88,12 @@ namespace doticu_skylib {
         }
 
     public:
-        Bool_t Is_Flagged(T flag)
+        Bool_t Is_Flagged(T flag) const
         {
             return (this->value & flag) != 0;
         }
 
-        const char* Is_Flagged_String(T flag)
+        const char* Is_Flagged_String(T flag) const
         {
             return Is_Flagged(flag) ? "true" : "false";
         }

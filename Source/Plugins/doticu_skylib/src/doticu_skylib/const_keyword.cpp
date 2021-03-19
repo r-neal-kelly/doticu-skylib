@@ -84,15 +84,30 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*>    Magic_Vampire_Drain()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x101BDE); }
     some<Keyword_t*>    Vampire()                               { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0A82BB); }
     some<Keyword_t*>    Vendor_Item_Animal_Hide()               { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EA); }
+    some<Keyword_t*>    Vendor_Item_Animal_Part()               { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EB); }
+    some<Keyword_t*>    Vendor_Item_Armor()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08F959); }
+    some<Keyword_t*>    Vendor_Item_Arrow()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0917E7); }
+    some<Keyword_t*>    Vendor_Item_Book()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0937A2); }
+    some<Keyword_t*>    Vendor_Item_Clothing()                  { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08F95B); }
+    some<Keyword_t*>    Vendor_Item_Clutter()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914E9); }
     some<Keyword_t*>    Vendor_Item_Daedric_Artifact()          { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0917E8); }
+    some<Keyword_t*>    Vendor_Item_Firewood()                  { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0BECD7); }
+    some<Keyword_t*>    Vendor_Item_Food()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDEA); }
+    some<Keyword_t*>    Vendor_Item_Food_Raw()                  { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0A0E56); }
     some<Keyword_t*>    Vendor_Item_Gem()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914ED); }
+    some<Keyword_t*>    Vendor_Item_Ingredient()                { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDEB); }
     some<Keyword_t*>    Vendor_Item_Jewelry()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08F95A); }
+    some<Keyword_t*>    Vendor_Item_Key()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EF); }
     some<Keyword_t*>    Vendor_Item_Ore_Ingot()                 { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EC); }
     some<Keyword_t*>    Vendor_Item_Poison()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDED); }
     some<Keyword_t*>    Vendor_Item_Potion()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08CDEC); }
     some<Keyword_t*>    Vendor_Item_Recipe()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0F5CB0); }
+    some<Keyword_t*>    Vendor_Item_Scroll()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0A0E57); }
+    some<Keyword_t*>    Vendor_Item_Soul_Gem()                  { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0937A3); }
     some<Keyword_t*>    Vendor_Item_Spell_Tome()                { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0937A5); }
     some<Keyword_t*>    Vendor_Item_Staff()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0937A4); }
+    some<Keyword_t*>    Vendor_Item_Tool()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0914EE); }
+    some<Keyword_t*>    Vendor_Item_Weapon()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x08F958); }
     some<Keyword_t*>    Weapon_Material_Daedric()               { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x01E71F); }
     some<Keyword_t*>    Weapon_Material_Dragonbone()            { DEFINE_FORM(Const::Mod::Dawnguard(),  Keyword_t, 0x019822); }
     some<Keyword_t*>    Weapon_Material_Draugr()                { DEFINE_FORM(Const::Mod::Skyrim(),     Keyword_t, 0x0C5C01); }

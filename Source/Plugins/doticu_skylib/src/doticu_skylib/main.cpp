@@ -33,6 +33,7 @@
 #include "doticu_skylib/ni_3d.h"
 #include "doticu_skylib/package_dialogue.h"
 #include "doticu_skylib/player.h"
+#include "doticu_skylib/potion.h"
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/script.h"
 #include "doticu_skylib/spell.h"
@@ -140,12 +141,22 @@ namespace doticu_skylib {
                     }
                 }
 
-                if (true) {
+                if (false) {
                     Array_t<Form_t*>& armors = Game_t::Self()->form_caches[Form_Type_e::ARMOR];
                     for (size_t idx = 0, end = armors.Count(); idx < end; idx += 1) {
                         maybe<Armor_t*> armor = static_cast<Armor_t*>(armors[idx]);
                         if (armor) {
                             armor->Log();
+                        }
+                    }
+                }
+
+                if (true) {
+                    Array_t<Form_t*>& potions = Game_t::Self()->form_caches[Form_Type_e::POTION];
+                    for (size_t idx = 0, end = potions.Count(); idx < end; idx += 1) {
+                        maybe<Potion_t*> potion = static_cast<Potion_t*>(potions[idx]);
+                        if (potion) {
+                            potion->Log();
                         }
                     }
                 }

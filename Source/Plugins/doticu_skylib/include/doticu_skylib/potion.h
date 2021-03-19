@@ -39,6 +39,20 @@ namespace doticu_skylib {
         static constexpr const char* SCRIPT_NAME = "Potion";
 
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E10E70, // 513850
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
         virtual ~Potion_t(); // 0
 
     public:
@@ -49,6 +63,13 @@ namespace doticu_skylib {
         u32                         pad_14C;            // 14C
         maybe<Sound_Descriptor_t*>  consumption_sound;  // 150
         Icon_c                      unk_icon;           // 158
+
+    public:
+        Bool_t Is_Medicine() const;
+        Bool_t Is_Poison() const;
+        Bool_t Is_Food() const;
+        Bool_t Is_Edible_Food() const;
+        Bool_t Is_Raw_Food() const;
 
     public:
         void Log(std::string indent = "");

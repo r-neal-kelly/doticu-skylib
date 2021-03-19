@@ -30,6 +30,7 @@ namespace doticu_skylib {
     class Leveled_Item_t;
     class Mod_t;
     class Name_c;
+    class Potion_t;
     class Race_t;
     class Reference_t;
     class Weapon_t;
@@ -183,6 +184,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Container() const;
         Bool_t                  Is_Faction() const;
         Bool_t                  Is_Leveled_Item() const;
+        Bool_t                  Is_Potion() const;
         Bool_t                  Is_Reference() const;
         Bool_t                  Is_Weapon() const;
 
@@ -197,6 +199,7 @@ namespace doticu_skylib {
         maybe<Container_t*>     As_Container() const;
         maybe<Faction_t*>       As_Faction() const;
         maybe<Leveled_Item_t*>  As_Leveled_Item() const;
+        maybe<Potion_t*>        As_Potion() const;
         maybe<Reference_t*>     As_Reference() const;
         maybe<Weapon_t*>        As_Weapon() const;
 
