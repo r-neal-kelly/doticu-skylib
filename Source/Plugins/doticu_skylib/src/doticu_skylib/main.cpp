@@ -130,16 +130,22 @@ namespace doticu_skylib {
             {
                 UI_t::Create_Notification(Game_t::Version(), none<Virtual::Callback_i*>());
 
-                Array_t<Form_t*>& weapons = Game_t::Self()->form_caches[Form_Type_e::WEAPON];
-                for (size_t idx = 0, end = weapons.Count(); idx < end; idx += 1) {
-                    maybe<Weapon_t*> weapon = static_cast<Weapon_t*>(weapons[idx]);
-                    if (weapon) {
-                        _MESSAGE("weapon: %s", weapon->Component_Name());
-                        for (size_t idx = 0, end = weapon->keyword_count; idx < end; idx += 1) {
-                            maybe<Keyword_t*> keyword = weapon->keywords[idx];
-                            if (keyword) {
-                                _MESSAGE("    keyword: %s", keyword->Any_Name());
-                            }
+                if (false) {
+                    Array_t<Form_t*>& weapons = Game_t::Self()->form_caches[Form_Type_e::WEAPON];
+                    for (size_t idx = 0, end = weapons.Count(); idx < end; idx += 1) {
+                        maybe<Weapon_t*> weapon = static_cast<Weapon_t*>(weapons[idx]);
+                        if (weapon) {
+                            weapon->Log();
+                        }
+                    }
+                }
+
+                if (true) {
+                    Array_t<Form_t*>& armors = Game_t::Self()->form_caches[Form_Type_e::ARMOR];
+                    for (size_t idx = 0, end = armors.Count(); idx < end; idx += 1) {
+                        maybe<Armor_t*> armor = static_cast<Armor_t*>(armors[idx]);
+                        if (armor) {
+                            armor->Log();
                         }
                     }
                 }

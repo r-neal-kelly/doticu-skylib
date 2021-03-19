@@ -476,6 +476,7 @@
     <ClCompile Include="src\doticu_skylib\actor_values.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_base.cpp" />
     <ClCompile Include="src\doticu_skylib\alias_reference.cpp" />
+    <ClCompile Include="src\doticu_skylib\armor.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\book.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />

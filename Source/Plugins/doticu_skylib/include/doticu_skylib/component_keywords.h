@@ -42,6 +42,9 @@ namespace doticu_skylib {
 
     public:
         Bool_t Component_Has_Keyword(some<Keyword_t*> keyword) const;
+
+    public:
+        void Log_Component_Keywords(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Keywords_c) == 0x18);
 

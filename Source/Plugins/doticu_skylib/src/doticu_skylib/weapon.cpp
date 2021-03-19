@@ -69,99 +69,99 @@ namespace doticu_skylib {
         return Component_Has_Keyword(Const::Keyword::Weapon_Type_Bow());
     }
 
-    Bool_t Weapon_t::Is_Wood() const
+    Bool_t Weapon_t::Is_Wood_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Wood());
     }
 
-    Bool_t Weapon_t::Is_Iron() const
+    Bool_t Weapon_t::Is_Iron_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Iron());
     }
 
-    Bool_t Weapon_t::Is_Steel() const
+    Bool_t Weapon_t::Is_Steel_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Steel());
     }
 
-    Bool_t Weapon_t::Is_Silver() const
+    Bool_t Weapon_t::Is_Silver_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Silver());
     }
 
-    Bool_t Weapon_t::Is_Imperial() const
+    Bool_t Weapon_t::Is_Imperial_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Imperial());
     }
 
-    Bool_t Weapon_t::Is_Nordic() const
+    Bool_t Weapon_t::Is_Nordic_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Nordic());
     }
 
-    Bool_t Weapon_t::Is_Draugr() const
+    Bool_t Weapon_t::Is_Draugr_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Draugr());
     }
 
-    Bool_t Weapon_t::Is_Draugr_Honed() const
+    Bool_t Weapon_t::Is_Draugr_Honed_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Draugr_Honed());
     }
 
-    Bool_t Weapon_t::Is_Falmer() const
+    Bool_t Weapon_t::Is_Falmer_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Falmer());
     }
 
-    Bool_t Weapon_t::Is_Falmer_Honed() const
+    Bool_t Weapon_t::Is_Falmer_Honed_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Falmer_Honed());
     }
 
-    Bool_t Weapon_t::Is_Dwarven() const
+    Bool_t Weapon_t::Is_Dwarven_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Dwarven());
     }
 
-    Bool_t Weapon_t::Is_Orcish() const
+    Bool_t Weapon_t::Is_Orcish_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Orcish());
     }
 
-    Bool_t Weapon_t::Is_Elven() const
+    Bool_t Weapon_t::Is_Elven_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Elven());
     }
 
-    Bool_t Weapon_t::Is_Glass() const
+    Bool_t Weapon_t::Is_Glass_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Glass());
     }
 
-    Bool_t Weapon_t::Is_Ebony() const
+    Bool_t Weapon_t::Is_Ebony_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Ebony());
     }
 
-    Bool_t Weapon_t::Is_Daedric() const
+    Bool_t Weapon_t::Is_Daedric_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Daedric());
     }
 
-    Bool_t Weapon_t::Is_Dragonbone() const
+    Bool_t Weapon_t::Is_Dragonbone_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Dragonbone());
     }
 
-    Bool_t Weapon_t::Is_Stalhrim() const
+    Bool_t Weapon_t::Is_Stalhrim_Material() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Material_Stalhrim());
     }
 
-    Bool_t Weapon_t::Is_Aetherium() const
+    Bool_t Weapon_t::Is_Aetherium_Material() const
     {
-        return Component_Has_Keyword(Const::Keyword::Weapon_Material_Aetherium());
+        return Component_Has_Keyword(Const::Keyword::Crafting_Material_Aetherium());
     }
 
     Bool_t Weapon_t::Is_Daedric_Artifact() const
@@ -169,6 +169,16 @@ namespace doticu_skylib {
         return
             Component_Has_Keyword(Const::Keyword::Daedric_Artifact()) ||
             Component_Has_Keyword(Const::Keyword::Vendor_Item_Daedric_Artifact());
+    }
+
+    void Weapon_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Weapon_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        Keywords_c::Log_Component_Keywords(indent + SKYLIB_TAB);
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

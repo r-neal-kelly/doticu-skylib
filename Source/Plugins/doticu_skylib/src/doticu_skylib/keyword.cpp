@@ -38,4 +38,20 @@ namespace doticu_skylib {
         }
     }
 
+    void Keyword_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Keyword_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        if (this->editor_id) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "editor_id: %s", this->editor_id);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "editor_id: (none)");
+        }
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_id: %s", this->form_id.As_String());
+
+        SKYLIB_LOG(indent + "}");
+    }
+
 }

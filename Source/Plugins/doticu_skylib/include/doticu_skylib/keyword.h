@@ -45,6 +45,9 @@ namespace doticu_skylib {
 
     public:
         String_t Any_Name();
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Keyword_t) == 0x28);
 

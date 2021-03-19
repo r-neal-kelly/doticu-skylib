@@ -139,27 +139,30 @@ namespace doticu_skylib {
         Bool_t  Is_Crossbow() const;
         Bool_t  Is_Bow_Or_Crossbow() const;
 
-        Bool_t  Is_Wood() const;
-        Bool_t  Is_Iron() const;
-        Bool_t  Is_Steel() const;
-        Bool_t  Is_Silver() const;
-        Bool_t  Is_Imperial() const;
-        Bool_t  Is_Nordic() const;
-        Bool_t  Is_Draugr() const;
-        Bool_t  Is_Draugr_Honed() const;
-        Bool_t  Is_Falmer() const;
-        Bool_t  Is_Falmer_Honed() const;
-        Bool_t  Is_Dwarven() const;
-        Bool_t  Is_Orcish() const;
-        Bool_t  Is_Elven() const;
-        Bool_t  Is_Glass() const;
-        Bool_t  Is_Ebony() const;
-        Bool_t  Is_Daedric() const;
-        Bool_t  Is_Dragonbone() const;
-        Bool_t  Is_Stalhrim() const;
-        Bool_t  Is_Aetherium() const;
+        Bool_t  Is_Wood_Material() const;
+        Bool_t  Is_Iron_Material() const;
+        Bool_t  Is_Steel_Material() const;
+        Bool_t  Is_Silver_Material() const;
+        Bool_t  Is_Imperial_Material() const;
+        Bool_t  Is_Nordic_Material() const;
+        Bool_t  Is_Draugr_Material() const;
+        Bool_t  Is_Draugr_Honed_Material() const;
+        Bool_t  Is_Falmer_Material() const;
+        Bool_t  Is_Falmer_Honed_Material() const;
+        Bool_t  Is_Dwarven_Material() const;
+        Bool_t  Is_Orcish_Material() const;
+        Bool_t  Is_Elven_Material() const;
+        Bool_t  Is_Glass_Material() const;
+        Bool_t  Is_Ebony_Material() const;
+        Bool_t  Is_Daedric_Material() const;
+        Bool_t  Is_Dragonbone_Material() const;
+        Bool_t  Is_Stalhrim_Material() const;
+        Bool_t  Is_Aetherium_Material() const;
 
         Bool_t  Is_Daedric_Artifact() const;
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Weapon_t) == 0x220);
 
