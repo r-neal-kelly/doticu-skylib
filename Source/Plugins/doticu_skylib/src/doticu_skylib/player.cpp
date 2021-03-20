@@ -14,7 +14,9 @@
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/quest_objective.h"
+#include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_input.h"
+#include "doticu_skylib/virtual_utility.h"
 
 namespace doticu_skylib {
 
@@ -76,14 +78,67 @@ namespace doticu_skylib {
         return teammate_count.Decrement_Atomic();
     }
 
-    void Player_t::Open_Inventory(maybe<Virtual::Callback_i*> v_callback)
-    {
-        Virtual::Input_t::Tap_Inventory_Key(v_callback);
-    }
-
     void Player_t::Open_Inventory(maybe<unique<Callback_i<>>> callback)
     {
-        Virtual::Input_t::Tap_Inventory_Key(std::move(callback));
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Close_Menus_Callback :
+            public Callback_i<Bool_t>
+        {
+        public:
+            Callback callback;
+
+        public:
+            Close_Menus_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Bool_t) override
+            {
+                class Tap_Inventory_Key_Callback :
+                    public Virtual::Callback_t
+                {
+                public:
+                    Callback callback;
+
+                public:
+                    Tap_Inventory_Key_Callback(Callback callback) :
+                        callback(std::move(callback))
+                    {
+                    }
+
+                public:
+                    virtual void operator()(Virtual::Variable_t*) override
+                    {
+                        class Wait_Callback :
+                            public Virtual::Callback_t
+                        {
+                        public:
+                            Callback callback;
+
+                        public:
+                            Wait_Callback(Callback callback) :
+                                callback(std::move(callback))
+                            {
+                            }
+
+                        public:
+                            virtual void operator()(Virtual::Variable_t*) override
+                            {
+                                if (this->callback) {
+                                    (*this->callback)();
+                                }
+                            }
+                        };
+                        Virtual::Utility_t::Wait_Out_Of_Menu(0.1f, new Wait_Callback(std::move(this->callback)));
+                    }
+                };
+                Virtual::Input_t::Tap_Inventory_Key(new Tap_Inventory_Key_Callback(std::move(this->callback)));
+            }
+        };
+        Virtual::Input_t::Close_Menus(new Close_Menus_Callback(std::move(callback)));
     }
 
     void Player_t::Log_Objectives(std::string indent)

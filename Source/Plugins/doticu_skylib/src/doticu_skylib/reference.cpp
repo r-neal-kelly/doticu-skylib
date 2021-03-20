@@ -1257,29 +1257,30 @@ namespace doticu_skylib {
     {
         using Callback = maybe<unique<Callback_i<Bool_t>>>;
 
-        class Open_Callback :
-            public Virtual::Callback_t
+        class Close_Menus_Callback :
+            public Callback_i<Bool_t>
         {
         public:
-            Callback callback;
+            some<Reference_t*>  self;
+            Callback            callback;
 
         public:
-            Open_Callback(Callback callback) :
-                callback(std::move(callback))
+            Close_Menus_Callback(some<Reference_t*> self, Callback callback) :
+                self(self), callback(std::move(callback))
             {
             }
 
         public:
-            virtual void operator()(Virtual::Variable_t*) override
+            virtual void operator()(Bool_t) override
             {
-                class Wait_Callback :
+                class Activate_Callback :
                     public Virtual::Callback_t
                 {
                 public:
                     Callback callback;
 
                 public:
-                    Wait_Callback(Callback callback) :
+                    Activate_Callback(Callback callback) :
                         callback(std::move(callback))
                     {
                     }
@@ -1287,21 +1288,60 @@ namespace doticu_skylib {
                 public:
                     virtual void operator()(Virtual::Variable_t*) override
                     {
-                        if (this->callback) {
-                            (*this->callback)(true);
-                        }
+                        class Wait_Callback :
+                            public Virtual::Callback_t
+                        {
+                        public:
+                            Callback callback;
+
+                        public:
+                            Wait_Callback(Callback callback) :
+                                callback(std::move(callback))
+                            {
+                            }
+
+                        public:
+                            virtual void operator()(Virtual::Variable_t*) override
+                            {
+                                if (this->callback) {
+                                    (*this->callback)(true);
+                                }
+                            }
+                        };
+                        Virtual::Utility_t::Wait_Out_Of_Menu(0.1f, new Wait_Callback(std::move(this->callback)));
                     }
                 };
-                Virtual::Utility_t::Wait_Out_Of_Menu(0.1f, new Wait_Callback(std::move(this->callback)));
+                this->self->Activate(Player_t::Self(), false, new Activate_Callback(std::move(this->callback)));
+            }
+        };
+
+        class Actor_Open_Inventory_Callback :
+            public Callback_i<>
+        {
+        public:
+            Callback callback;
+
+        public:
+            Actor_Open_Inventory_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()() override
+            {
+                if (this->callback) {
+                    (*this->callback)(true);
+                }
             }
         };
 
         if (Is_Based_On_Component_Container()) {
             maybe<Actor_t*> actor = As_Actor();
             if (actor) {
-                actor->Open_Inventory(true, new Open_Callback(std::move(callback)));
+                actor->Open_Inventory(true, new Actor_Open_Inventory_Callback(std::move(callback)));
             } else {
-                Activate(Player_t::Self(), false, new Open_Callback(std::move(callback)));
+                Virtual::Input_t::Close_Menus(new Close_Menus_Callback(this, std::move(callback)));
             }
         } else {
             if (callback) {

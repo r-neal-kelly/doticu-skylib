@@ -142,7 +142,6 @@ namespace doticu_skylib {
         u32                                 Decrement_Teammate_Count();
 
     public:
-        static void Open_Inventory(maybe<Virtual::Callback_i*> v_callback);
         static void Open_Inventory(maybe<unique<Callback_i<>>> callback);
 
     public:

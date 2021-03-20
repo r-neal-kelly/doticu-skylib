@@ -37,6 +37,7 @@
 #include "doticu_skylib/virtual_actor_base.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
+#include "doticu_skylib/virtual_input.h"
 #include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
@@ -1157,46 +1158,84 @@ namespace doticu_skylib {
             }
         };
 
-        if (this == Player_t::Self()()) {
-            Player_t::Open_Inventory(v_callback);
-        } else {
-            Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
-            Virtual::Machine_t::Self()->Call_Method(
-                this,
-                SCRIPT_NAME,
-                "OpenInventory",
-                Virtual_Arguments(allow_non_teammates),
-                v_callback
-            );
-        }
+        Virtual::Machine_t::Ready_Scriptable<Actor_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "OpenInventory",
+            Virtual_Arguments(allow_non_teammates),
+            v_callback
+        );
     }
 
     void Actor_t::Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;
 
-        class Virtual_Callback :
-            public Virtual::Callback_t
+        class Close_Menus_Callback :
+            public Callback_i<Bool_t>
         {
         public:
-            Callback callback;
+            some<Actor_t*>  self;
+            Bool_t          allow_non_teammates;
+            Callback        callback;
 
         public:
-            Virtual_Callback(Callback callback) :
-                callback(std::move(callback))
+            Close_Menus_Callback(some<Actor_t*> self, Bool_t allow_non_teammates, Callback callback) :
+                self(self), allow_non_teammates(allow_non_teammates), callback(std::move(callback))
             {
             }
 
         public:
-            virtual void operator()(Virtual::Variable_t*) override
+            virtual void operator()(Bool_t) override
             {
-                if (this->callback) {
-                    (*this->callback)();
-                }
+                class Open_Inventory_Callback :
+                    public Virtual::Callback_t
+                {
+                public:
+                    Callback callback;
+
+                public:
+                    Open_Inventory_Callback(Callback callback) :
+                        callback(std::move(callback))
+                    {
+                    }
+
+                public:
+                    virtual void operator()(Virtual::Variable_t*) override
+                    {
+                        class Wait_Callback :
+                            public Virtual::Callback_t
+                        {
+                        public:
+                            Callback callback;
+
+                        public:
+                            Wait_Callback(Callback callback) :
+                                callback(std::move(callback))
+                            {
+                            }
+
+                        public:
+                            virtual void operator()(Virtual::Variable_t*) override
+                            {
+                                if (this->callback) {
+                                    (*this->callback)();
+                                }
+                            }
+                        };
+                        Virtual::Utility_t::Wait_Out_Of_Menu(0.1f, new Wait_Callback(std::move(this->callback)));
+                    }
+                };
+                this->self->Open_Inventory(this->allow_non_teammates, new Open_Inventory_Callback(std::move(this->callback)));
             }
         };
 
-        Open_Inventory(allow_non_teammates, new Virtual_Callback(std::move(callback)));
+        if (this == Player_t::Self()()) {
+            Player_t::Open_Inventory(std::move(callback));
+        } else {
+            Virtual::Input_t::Close_Menus(new Close_Menus_Callback(this, allow_non_teammates, std::move(callback)));
+        }
     }
 
     void Actor_t::Resurrect(maybe<Virtual::Callback_i*> v_callback)
