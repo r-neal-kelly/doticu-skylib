@@ -59,7 +59,7 @@ namespace doticu_skylib {
         Clear();
     }
 
-    Bool_t Extra_List_t::Presence_t::Has(Extra_Type_e type)
+    Bool_t Extra_List_t::Presence_t::Has(Extra_Type_e type) const
     {
         if (type < MAX_FLAGS) {
             Byte_t mask = 1 << (type % 8);
@@ -192,7 +192,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Has(Extra_Type_e type)
+    Bool_t Extra_List_t::Has(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
 
@@ -203,7 +203,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type)
+    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
 
@@ -393,7 +393,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Is_Quest_Item()
+    Bool_t Extra_List_t::Is_Quest_Item() const
     {
         maybe<Extra_Aliases_t*> x_aliases = none<Extra_Aliases_t*>();
 
@@ -727,7 +727,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Reference_t*> Extra_List_t::Representative_Reference()
+    maybe<Reference_t*> Extra_List_t::Representative_Reference() const
     {
         maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
         if (x_reference_handle) {

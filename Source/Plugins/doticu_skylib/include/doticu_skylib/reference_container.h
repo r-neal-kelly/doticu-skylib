@@ -41,8 +41,8 @@ namespace doticu_skylib {
         ~Reference_Container_t();
 
     public:
-        Bool_t                              Is_Valid();
-        Bool_t                              Has_Quest_Item();
+        Bool_t                              Is_Valid() const;
+        Bool_t                              Has_Quest_Item() const;
         Bool_t                              Has_Entry(some<Bound_Object_t*> object);
 
         some<Container_c*>                  Some_Base_Container();
@@ -52,8 +52,9 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> Maybe_Entry(some<Bound_Object_t*> object);
         some<Reference_Container_Entry_t*>  Some_Entry(some<Bound_Object_t*> object);
 
-        Container_Entry_Count_t             Count(some<Bound_Object_t*> object);
+        size_t                              Count() const;
 
+        Container_Entry_Count_t             Count(some<Bound_Object_t*> object);
         Container_Entry_Count_t             Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
         Container_Entry_Count_t             Remove_Count_To(some<Bound_Object_t*> object,
@@ -68,6 +69,10 @@ namespace doticu_skylib {
                                                       some<Extra_List_t*> extra_list,
                                                       some<Reference_t*> to);
         maybe<Container_Entry_Count_t>      Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+
+    public:
+        Reference_Container_Entry_t&        operator [](size_t index);
+        const Reference_Container_Entry_t&  operator [](size_t index) const;
 
     public:
         void Log(std::string indent = "");

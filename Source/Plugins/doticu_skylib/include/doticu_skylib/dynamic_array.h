@@ -37,16 +37,16 @@ namespace doticu_skylib {
 
         Bool_t      Is_Empty();
         maybe<T*>   Entries();
-        u32         Count();
+        u32         Count() const;
 
         maybe<T*>   Point(u32 index);
-        T&          At(u32 index);
+        T&          At(u32 index) const;
         void        Push(T& value);
         void        Push(T&& value);
         void        Clear();
 
     public:
-        T& operator [] (u32 index);
+        T& operator [](u32 index) const;
     };
     STATIC_ASSERT(sizeof(Dynamic_Array_t<void*>) == 0x18);
 

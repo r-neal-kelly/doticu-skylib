@@ -57,7 +57,7 @@ namespace doticu_skylib {
         s32                             Decrement_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
         maybe<s32>                      Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
 
-        Bool_t                          Has_Quest_Item();
+        Bool_t                          Has_Quest_Item() const;
         Bool_t                          Should_Be_Destroyed();
 
         void                            Destroy_Extra_Lists();

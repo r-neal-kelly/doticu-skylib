@@ -54,7 +54,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Alias_Base_t::Is_Quest_Item()
+    Bool_t Alias_Base_t::Is_Quest_Item() const
     {
         return this->alias_base_flags.Is_Flagged(Alias_Base_Flags_e::IS_QUEST_ITEM);
     }

@@ -53,7 +53,7 @@ namespace doticu_skylib {
             ~Presence_t();
 
         public:
-            Bool_t  Has(Extra_Type_e type);
+            Bool_t  Has(Extra_Type_e type) const;
             void    Add(Extra_Type_e type);
             void    Remove(Extra_Type_e type);
             void    Clear();
@@ -65,9 +65,9 @@ namespace doticu_skylib {
         static void                 Destroy(some<Extra_List_t*> x_list);
 
     public:
-        maybe<Extra_Data_t*>    x_datas;    // 00
-        maybe<Presence_t*>      presence;   // 08
-        Read_Write_Lock_t       lock;       // 10
+        maybe<Extra_Data_t*>        x_datas;    // 00
+        maybe<Presence_t*>          presence;   // 08
+        mutable Read_Write_Lock_t   lock;       // 10
 
     public:
         Extra_List_t();
@@ -84,15 +84,15 @@ namespace doticu_skylib {
         maybe<s16>  Try_To_Consume(some<Extra_List_t*> other);
 
     public:
-        Bool_t                  Has(Extra_Type_e type);
-        maybe<Extra_Data_t*>    Get(Extra_Type_e type);
+        Bool_t                  Has(Extra_Type_e type) const;
+        maybe<Extra_Data_t*>    Get(Extra_Type_e type) const;
         Bool_t                  Add(some<Extra_Data_t*> x_data);
         Bool_t                  Remove(some<Extra_Data_t*> x_data);
 
         template <typename T>
-        Bool_t                  Has();
+        Bool_t                  Has() const;
         template <typename T>
-        maybe<T*>               Get();
+        maybe<T*>               Get() const;
         template <typename T>
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
@@ -128,7 +128,7 @@ namespace doticu_skylib {
         Bool_t                              Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
         Bool_t                              Is_Protected();
         Bool_t                              Is_Essential();
-        Bool_t                              Is_Quest_Item();
+        Bool_t                              Is_Quest_Item() const;
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
@@ -175,7 +175,7 @@ namespace doticu_skylib {
         void                                Reference(some<Reference_t*> reference);
         Reference_Handle_t                  Reference_Handle();
         void                                Reference_Handle(Reference_Handle_t reference_handle);
-        maybe<Reference_t*>                 Representative_Reference();
+        maybe<Reference_t*>                 Representative_Reference() const;
         maybe<Reference_t*>                 Containing_Reference();
 
         // Extra_Reference_Interaction_t

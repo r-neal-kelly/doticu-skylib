@@ -335,7 +335,7 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Container_Changes_Entry_t::Has_Quest_Item()
+    Bool_t Container_Changes_Entry_t::Has_Quest_Item() const
     {
         if (this->x_lists && !this->x_lists->Is_Empty()) {
             for (maybe<List_t<maybe<Extra_List_t*>>::Node_t*> it = &this->x_lists->head; it; it = it->next) {

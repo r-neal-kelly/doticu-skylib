@@ -72,7 +72,7 @@ namespace doticu_skylib {
         void                        Is_Protected(Bool_t value);
         Bool_t                      Is_Essential();
         void                        Is_Essential(Bool_t value);
-        Bool_t                      Is_Quest_Item();
+        Bool_t                      Is_Quest_Item() const;
         void                        Is_Quest_Item(Bool_t value);
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);

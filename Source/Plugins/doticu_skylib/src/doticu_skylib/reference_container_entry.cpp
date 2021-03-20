@@ -67,7 +67,7 @@ namespace doticu_skylib {
         this->base_entry = none<Container_Entry_t*>();
     }
 
-    Bool_t Reference_Container_Entry_t::Is_Valid()
+    Bool_t Reference_Container_Entry_t::Is_Valid() const
     {
         return
             (this->base_entry && this->base_entry->object) ||
@@ -88,7 +88,7 @@ namespace doticu_skylib {
         return Some_Object()->Get_Is_Playable();
     }
 
-    Bool_t Reference_Container_Entry_t::Has_Quest_Item()
+    Bool_t Reference_Container_Entry_t::Has_Quest_Item() const
     {
         SKYLIB_ASSERT(Is_Valid());
 

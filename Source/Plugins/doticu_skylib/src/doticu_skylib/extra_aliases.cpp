@@ -84,7 +84,7 @@ namespace doticu_skylib {
         return false;
     }
 
-    Bool_t Extra_Aliases_t::Is_Quest_Item()
+    Bool_t Extra_Aliases_t::Is_Quest_Item() const
     {
         Read_Locker_t locker(this->lock);
 

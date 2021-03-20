@@ -33,10 +33,10 @@ namespace doticu_skylib {
         ~Reference_Container_Entry_t();
 
     public:
-        Bool_t                              Is_Valid();
+        Bool_t                              Is_Valid() const;
         Bool_t                              Is_Leveled_Item();
         Bool_t                              Is_Playable_Item();
-        Bool_t                              Has_Quest_Item();
+        Bool_t                              Has_Quest_Item() const;
 
         some<Bound_Object_t*>               Some_Object();
         maybe<Leveled_Item_t*>              Maybe_Leveled_Item();

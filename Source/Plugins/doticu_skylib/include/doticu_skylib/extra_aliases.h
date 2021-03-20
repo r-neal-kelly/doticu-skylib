@@ -56,7 +56,7 @@ namespace doticu_skylib {
 
     public:
         Array_t<maybe<Instance_t*>> instances;  // 10
-        Read_Write_Lock_t           lock;       // 28
+        mutable Read_Write_Lock_t   lock;       // 28
 
     public:
         Bool_t                              Is_Aliased();
@@ -64,7 +64,7 @@ namespace doticu_skylib {
         Bool_t                              Is_Aliased(some<Quest_t*> quest, Alias_ID_t alias_id);
         Bool_t                              Is_Protected();
         Bool_t                              Is_Essential();
-        Bool_t                              Is_Quest_Item();
+        Bool_t                              Is_Quest_Item() const;
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);

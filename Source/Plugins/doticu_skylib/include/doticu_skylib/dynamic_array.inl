@@ -88,7 +88,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    inline u32 Dynamic_Array_t<T>::Count()
+    inline u32 Dynamic_Array_t<T>::Count() const
     {
         if (this->entries) {
             return this->count;
@@ -108,7 +108,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    inline T& Dynamic_Array_t<T>::At(u32 index)
+    inline T& Dynamic_Array_t<T>::At(u32 index) const
     {
         SKYLIB_ASSERT(this->entries);
         SKYLIB_ASSERT(index < this->count);
@@ -148,7 +148,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    inline T& Dynamic_Array_t<T>::operator [] (u32 index)
+    inline T& Dynamic_Array_t<T>::operator [](u32 index) const
     {
         return At(index);
     }

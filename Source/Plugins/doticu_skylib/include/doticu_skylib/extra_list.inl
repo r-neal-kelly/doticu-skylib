@@ -9,13 +9,13 @@
 namespace doticu_skylib {
 
     template <typename T>
-    inline Bool_t Extra_List_t::Has()
+    inline Bool_t Extra_List_t::Has() const
     {
         return Has(T::EXTRA_TYPE);
     }
 
     template <typename T>
-    inline maybe<T*> Extra_List_t::Get()
+    inline maybe<T*> Extra_List_t::Get() const
     {
         return static_cast<maybe<T*>>(Get(T::EXTRA_TYPE));
     }

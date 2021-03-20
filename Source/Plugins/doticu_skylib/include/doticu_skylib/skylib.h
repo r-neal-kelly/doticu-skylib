@@ -116,6 +116,8 @@ namespace doticu_skylib {
     class Quest_t;
     class Race_t;
     class Reference_t;
+    class Reference_Container_t;
+    class Reference_Container_Entry_t;
     class Script_t;
     class Spell_t;
     class Static_t;

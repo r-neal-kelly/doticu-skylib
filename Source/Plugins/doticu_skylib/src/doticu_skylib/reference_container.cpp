@@ -70,17 +70,17 @@ namespace doticu_skylib {
         this->reference = static_cast<Reference_t*>(nullptr);
     }
 
-    Bool_t Reference_Container_t::Is_Valid()
+    Bool_t Reference_Container_t::Is_Valid() const
     {
         return !!this->base_container;
     }
 
-    Bool_t Reference_Container_t::Has_Quest_Item()
+    Bool_t Reference_Container_t::Has_Quest_Item() const
     {
         SKYLIB_ASSERT(Is_Valid());
 
         for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
-            Reference_Container_Entry_t& entry = this->entries[idx];
+            const Reference_Container_Entry_t& entry = this->entries[idx];
             if (entry.Has_Quest_Item()) {
                 return true;
             }
@@ -156,6 +156,13 @@ namespace doticu_skylib {
             this->entries.push_back(Some_Reference_Container()->Some_Entry(object));
             return &this->entries[this->entries.size() - 1];
         }
+    }
+
+    size_t Reference_Container_t::Count() const
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        return this->entries.size();
     }
 
     Container_Entry_Count_t Reference_Container_t::Count(some<Bound_Object_t*> object)
@@ -277,6 +284,16 @@ namespace doticu_skylib {
         } else {
             return none<Container_Entry_Count_t>();
         }
+    }
+
+    Reference_Container_Entry_t& Reference_Container_t::operator [](size_t index)
+    {
+        return this->entries[index];
+    }
+
+    const Reference_Container_Entry_t& Reference_Container_t::operator [](size_t index) const
+    {
+        return this->entries[index];
     }
 
     void Reference_Container_t::Log(std::string indent)
