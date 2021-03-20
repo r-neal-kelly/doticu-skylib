@@ -170,6 +170,16 @@ namespace doticu_skylib {
         return a + std::string(b);
     }
 
+    Bool_t operator ==(const Static_String_t& a, const char* b)
+    {
+        return CString_t::Is_Same(a, b, true);
+    }
+
+    Bool_t operator ==(const char* a, const Static_String_t& b)
+    {
+        return CString_t::Is_Same(a, b, true);
+    }
+
     /* Dynamic_String_t */
 
     Dynamic_String_t::Dynamic_String_t() :

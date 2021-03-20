@@ -65,6 +65,9 @@ namespace doticu_skylib {
         friend std::string operator +(const char* a, const Static_String_t& b);
         friend std::string operator +(const Static_String_t& a, const std::string& b);
         friend std::string operator +(const std::string& a, const Static_String_t& b);
+
+        friend Bool_t operator ==(const Static_String_t& a, const char* b);
+        friend Bool_t operator ==(const char* a, const Static_String_t& b);
     };
     STATIC_ASSERT(sizeof(Static_String_t) == 0x8);
 
