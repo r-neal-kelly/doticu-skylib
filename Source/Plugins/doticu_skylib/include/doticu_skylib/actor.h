@@ -349,6 +349,7 @@ namespace doticu_skylib {
         maybe<Actor_t*>                             Rider();
 
         maybe<Actor_Base_t*>                        Actor_Base();
+        void                                        Actor_Base(some<Actor_Base_t*> actor_base);
         maybe<Actor_Base_t*>                        Actor_Base_Root();
         maybe<Actor_Base_t*>                        Actor_Base_Template_Root();
         maybe<Actor_Base_t*>                        Actor_Base_Highest_Static_Template();

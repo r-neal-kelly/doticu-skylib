@@ -56,6 +56,15 @@ namespace doticu_skylib { namespace Virtual {
         return object();                                                    \
     SKYLIB_W
 
+    #define DEFINE_COMPONENT_OBJECT_METHOD(_OBJECT)                             \
+    SKYLIB_M                                                                    \
+        using Object_t = doticu_skylib::Virtual::Object_t;                      \
+                                                                                \
+        maybe<Object_t*> object = Object_t::Find(_OBJECT, Class_Name(), true);  \
+        SKYLIB_ASSERT(object);                                                  \
+        return object();                                                        \
+    SKYLIB_W
+
     #define DEFINE_VARIABLE_POINTER(TYPE_, NAME_)                   \
     SKYLIB_M                                                        \
         using namespace doticu_skylib;                              \
