@@ -61,6 +61,7 @@ namespace doticu_skylib {
     class Actor_Values_t;
     class Alias_Base_t;
     class Alias_Reference_t;
+    class Ammo_t;
     class Animated_Object_t;
     class Armor_t;
     class Book_t;
@@ -84,6 +85,7 @@ namespace doticu_skylib {
     class Furniture_t;
     class Game_t;
     class Global_t;
+    class Ingredient_t;
     class Keyword_t;
     class Leveled_Actor_Base_t;
     class Leveled_Item_t;
@@ -119,6 +121,7 @@ namespace doticu_skylib {
     class Reference_Container_t;
     class Reference_Container_Entry_t;
     class Script_t;
+    class Scroll_t;
     class Spell_t;
     class Static_t;
     class Translations_t;

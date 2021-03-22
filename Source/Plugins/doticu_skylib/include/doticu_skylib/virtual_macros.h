@@ -26,43 +26,52 @@ namespace doticu_skylib { namespace Virtual {
                                                     \
         static const String_t class_name = NAME_;   \
         SKYLIB_ASSERT(class_name);                  \
+                                                    \
         return class_name;                          \
     SKYLIB_W
 
-    #define DEFINE_CLASS()                                                          \
-    SKYLIB_M                                                                        \
-        using Class_t = doticu_skylib::Virtual::Class_t;                            \
-                                                                                    \
-        static maybe<Class_t*> vclass = Class_t::Find_Or_Load(Class_Name(), false); \
-        SKYLIB_ASSERT(vclass);                                                      \
-        return vclass();                                                            \
+    #define DEFINE_CLASS()                                  \
+    SKYLIB_M                                                \
+        using Class_t = doticu_skylib::Virtual::Class_t;    \
+                                                            \
+        static maybe<Class_t*> v_class =                    \
+            Class_t::Find_Or_Load(Class_Name(), false);     \
+        SKYLIB_ASSERT(v_class);                             \
+                                                            \
+        return v_class();                                   \
     SKYLIB_W
 
-    #define DEFINE_OBJECT_STATIC()                                              \
-    SKYLIB_M                                                                    \
-        using Object_t = doticu_skylib::Virtual::Object_t;                      \
-                                                                                \
-        maybe<Object_t*> object = Object_t::Find(Self()(), Class_Name(), true); \
-        SKYLIB_ASSERT(object);                                                  \
-        return object();                                                        \
+    #define DEFINE_OBJECT_STATIC()                                  \
+    SKYLIB_M                                                        \
+        using Object_t = doticu_skylib::Virtual::Object_t;          \
+                                                                    \
+        maybe<Object_t*> object =                                   \
+            Object_t::Find(Self()(), Class_Name(), true);           \
+        SKYLIB_ASSERT(object);                                      \
+                                                                    \
+        return object();                                            \
     SKYLIB_W
 
-    #define DEFINE_OBJECT_METHOD()                                          \
-    SKYLIB_M                                                                \
-        using Object_t = doticu_skylib::Virtual::Object_t;                  \
-                                                                            \
-        maybe<Object_t*> object = Object_t::Find(this, Class_Name(), true); \
-        SKYLIB_ASSERT(object);                                              \
-        return object();                                                    \
+    #define DEFINE_OBJECT_METHOD()                              \
+    SKYLIB_M                                                    \
+        using Object_t = doticu_skylib::Virtual::Object_t;      \
+                                                                \
+        maybe<Object_t*> object =                               \
+            Object_t::Find(this, Class_Name(), true);           \
+        SKYLIB_ASSERT(object);                                  \
+                                                                \
+        return object();                                        \
     SKYLIB_W
 
-    #define DEFINE_COMPONENT_OBJECT_METHOD(_OBJECT)                             \
-    SKYLIB_M                                                                    \
-        using Object_t = doticu_skylib::Virtual::Object_t;                      \
-                                                                                \
-        maybe<Object_t*> object = Object_t::Find(_OBJECT, Class_Name(), true);  \
-        SKYLIB_ASSERT(object);                                                  \
-        return object();                                                        \
+    #define DEFINE_COMPONENT_OBJECT_METHOD(_OBJECT)                 \
+    SKYLIB_M                                                        \
+        using Object_t = doticu_skylib::Virtual::Object_t;          \
+                                                                    \
+        maybe<Object_t*> object =                                   \
+            Object_t::Find(_OBJECT, Class_Name(), true);            \
+        SKYLIB_ASSERT(object);                                      \
+                                                                    \
+        return object();                                            \
     SKYLIB_W
 
     #define DEFINE_VARIABLE_POINTER(TYPE_, NAME_)                   \

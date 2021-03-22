@@ -4,10 +4,9 @@
 
 #pragma once
 
-#include "doticu_skylib/string.h"
-
 #include "doticu_skylib/enum_script_type.h"
-
+#include "doticu_skylib/maybe.h"
+#include "doticu_skylib/string.h"
 #include "doticu_skylib/virtual.h"
 #include "doticu_skylib/virtual_class.h"
 #include "doticu_skylib/virtual_handle.h"
@@ -37,6 +36,10 @@ namespace doticu_skylib { namespace Virtual {
     public:
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         static maybe<Object_t*> Find(Scriptable_t scriptable, String_t class_name, Bool_t do_decrement);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static maybe<Object_t*> Find_Or_Create(Scriptable_t scriptable, String_t class_name, Bool_t do_decrement_on_find);
+        template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        static maybe<Object_t*> Find_Or_Create(Scriptable_t scriptable, some<Class_t*> v_class, Bool_t do_decrement_on_find);
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         static maybe<Object_t*> Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
 
@@ -91,32 +94,48 @@ namespace doticu_skylib { namespace Virtual {
     }
 
     template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    inline maybe<Object_t*> Object_t::Find_Or_Create(Scriptable_t scriptable, String_t v_class_name, Bool_t do_decrement_on_find)
+    {
+        SKYLIB_ASSERT(v_class_name);
+
+        Handle_t handle(scriptable);
+        if (handle.Is_Valid()) {
+            some<Machine_t*> machine = Machine_t::Self();
+            maybe<Object_t*> object = none<Object_t*>();
+            if (machine->Do_Find_Bound_Object(handle, v_class_name, static_cast<Object_t*&>(object)) && object) {
+                if (do_decrement_on_find) {
+                    object->Decrement_Lock();
+                }
+                return object;
+            } else {
+                object = none<Object_t*>();
+                if (machine->Do_Create_Object_2(v_class_name, static_cast<Object_t*&>(object)) && object) {
+                    machine->Get_Object_Policy_1()->Bind_Object(&object, handle);
+                    return object;
+                } else {
+                    return none<Object_t*>();
+                }
+            }
+        } else {
+            return none<Object_t*>();
+        }
+    }
+
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
+    inline maybe<Object_t*> Object_t::Find_Or_Create(Scriptable_t scriptable, some<Class_t*> v_class, Bool_t do_decrement_on_find)
+    {
+        SKYLIB_ASSERT_SOME(v_class);
+
+        return Find_Or_Create(scriptable, v_class->name, do_decrement_on_find);
+    }
+
+    template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t>>
     inline maybe<Object_t*> Object_t::Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find)
     {
         some<Script_Type_e> script_type = Script_Type_e::From<Scriptable_t>();
-        maybe<Class_t*> vclass = script_type().Class();
-        if (vclass) {
-            Handle_t handle(scriptable);
-            if (handle.Is_Valid()) {
-                some<Machine_t*> machine = Machine_t::Self();
-                maybe<Object_t*> object = none<Object_t*>();
-                if (machine->Do_Find_Bound_Object(handle, vclass->name, static_cast<Object_t*&>(object)) && object) {
-                    if (do_decrement_on_find) {
-                        object->Decrement_Lock();
-                    }
-                    return object;
-                } else {
-                    object = none<Object_t*>();
-                    if (machine->Do_Create_Object_2(vclass->name, static_cast<Object_t*&>(object)) && object) {
-                        machine->Get_Object_Policy_1()->Bind_Object(&object, handle);
-                        return object;
-                    } else {
-                        return none<Object_t*>();
-                    }
-                }
-            } else {
-                return none<Object_t*>();
-            }
+        maybe<Class_t*> v_class = script_type().Class();
+        if (v_class) {
+            return Find_Or_Create(scriptable, v_class->name, do_decrement_on_find);
         } else {
             return none<Object_t*>();
         }

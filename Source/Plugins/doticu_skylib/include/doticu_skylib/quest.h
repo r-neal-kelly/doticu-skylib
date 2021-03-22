@@ -75,7 +75,7 @@ namespace doticu_skylib {
         Array_t<void*>                                              instances;                                  // 038
         u32                                                         current_instance_id;                        // 050
         u32                                                         pad_054;                                    // 054
-        Array_t<Alias_Base_t*>                                      aliases;                                    // 058
+        Array_t<maybe<Alias_Base_t*>>                               aliases;                                    // 058
         Set_t<Alias_ID_t>                                           filled_aliases;                             // 070
         Hash_Map_t<Int_t, Int_t>                                    unk_alias_map;                              // 0A0
         Read_Write_Lock_t                                           aliases_lock;                               // 0D0
