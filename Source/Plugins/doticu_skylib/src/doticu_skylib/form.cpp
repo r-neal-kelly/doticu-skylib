@@ -210,6 +210,168 @@ namespace doticu_skylib {
     maybe<Soul_Gem_t*>      Form_t::As_Soul_Gem() const             { return Game_t::Runtime_Cast<Form_t, Soul_Gem_t>(this); }
     maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
 
+    void Form_t::Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Int_t key_code;
+
+        public:
+            Virtual_Arguments(Int_t key_code) :
+                key_code(key_code)
+            {
+            }
+
+        public:
+            virtual Bool_t operator ()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Int_t>(this->key_code);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "RegisterForKey",
+            Virtual_Arguments(key_code),
+            v_callback
+        );
+    }
+
+    void Form_t::Register_Key_Event(Int_t key_code, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Register_Key_Event(key_code, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Form_t::Unregister_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Int_t key_code;
+
+        public:
+            Virtual_Arguments(Int_t key_code) :
+                key_code(key_code)
+            {
+            }
+
+        public:
+            virtual Bool_t operator ()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Int_t>(this->key_code);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "UnregisterForKey",
+            Virtual_Arguments(key_code),
+            v_callback
+        );
+    }
+
+    void Form_t::Unregister_Key_Event(Int_t key_code, maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Unregister_Key_Event(key_code, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Form_t::Unregister_All_Key_Events(maybe<Virtual::Callback_i*> v_callback)
+    {
+        Virtual::Machine_t::Ready_Scriptable<Form_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "UnregisterForAllKeys",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Form_t::Unregister_All_Key_Events(maybe<unique<Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Unregister_All_Key_Events(new Virtual_Callback(std::move(callback)));
+    }
+
     void Form_t::Register_SKSE_Event(String_t event_name, String_t callback_name, maybe<Virtual::Callback_i*> v_callback)
     {
         class Virtual_Arguments :

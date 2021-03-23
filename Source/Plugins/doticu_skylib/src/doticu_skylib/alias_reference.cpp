@@ -22,16 +22,21 @@ namespace doticu_skylib {
             public Virtual::Callback_t
         {
         public:
-            Vector_t<some<Alias_Reference_t*>>  aliases;
-            size_t                              idx;
-            size_t                              end;
-            Callback                            callback;
+            const Vector_t<some<Alias_Reference_t*>>    aliases;
+            const size_t                                idx;
+            const size_t                                end;
+            Callback                                    callback;
 
         public:
-            Virtual_Callback(Vector_t<some<Alias_Reference_t*>> aliases, size_t idx, size_t end, Callback callback) :
-                aliases(std::move(aliases)), idx(idx), end(end), callback(std::move(callback))
+            Virtual_Callback(const Vector_t<some<Alias_Reference_t*>> aliases,
+                             const size_t idx,
+                             const size_t end,
+                             Callback callback) :
+                aliases(std::move(aliases)),
+                idx(idx),
+                end(end),
+                callback(std::move(callback))
             {
-                this->operator ()(nullptr);
             }
 
         public:
@@ -49,7 +54,15 @@ namespace doticu_skylib {
             }
         };
 
-        Virtual_Callback(std::move(aliases), 0, aliases.size(), std::move(callback));
+        const size_t idx = 0;
+        const size_t end = aliases.size();
+        if (end > 0) {
+            aliases[0]->Unfill(new Virtual_Callback(std::move(aliases), idx + 1, end, std::move(callback)));
+        } else {
+            if (callback) {
+                (*callback)();
+            }
+        }
     }
 
     void Alias_Reference_t::Fill(some<Reference_t*> reference, maybe<Virtual::Callback_i*> v_callback)

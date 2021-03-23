@@ -53,6 +53,59 @@ namespace doticu_skylib {
         quest->Start(new VCallback(quests, index + 1, true, ucallback));
     }
 
+    void Quest_t::Are_Running(const Vector_t<some<Quest_t*>> quests, some<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = some<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            const Vector_t<some<Quest_t*>>  quests;
+            const size_t                    idx;
+            const size_t                    end;
+            Callback                        callback;
+
+        public:
+            Virtual_Callback(const Vector_t<some<Quest_t*>> quests,
+                             const size_t idx,
+                             const size_t end,
+                             Callback callback) :
+                quests(std::move(quests)),
+                idx(idx),
+                end(end),
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t* result) override
+            {
+                if (result && result->As<Bool_t>()) {
+                    if (this->idx < this->end) {
+                        this->quests[this->idx]->Is_Running(
+                            new Virtual_Callback(std::move(this->quests), this->idx + 1, this->end, std::move(this->callback))
+                        );
+                    } else {
+                        (*this->callback)(true);
+                    }
+                } else {
+                    (*this->callback)(false);
+                }
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        const size_t idx = 0;
+        const size_t end = quests.size();
+        if (end > 0) {
+            quests[0]->Is_Running(new Virtual_Callback(std::move(quests), idx + 1, end, std::move(callback)));
+        } else {
+            (*callback)(false);
+        }
+    }
+
     Int_t Quest_t::Compare_Any_Names(Quest_t** a, Quest_t** b)
     {
         if (!a || !*a) {
@@ -143,6 +196,48 @@ namespace doticu_skylib {
         };
 
         Start(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Quest_t::Is_Running(some<Virtual::Callback_i*> v_callback)
+    {
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Ready_Scriptable<Quest_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "IsRunning",
+            none<Virtual::Arguments_i*>(),
+            v_callback()
+        );
+    }
+
+    void Quest_t::Is_Running(some<unique<Callback_i<Bool_t>>> callback)
+    {
+        using Callback = some<unique<Callback_i<Bool_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t* result) override
+            {
+                (*this->callback)(result ? result->As<Bool_t>() : false);
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Is_Running(new Virtual_Callback(std::move(callback)));
     }
 
     void Quest_t::Do_Display_Objective(Int_t objective,

@@ -449,6 +449,7 @@
     <ClInclude Include="include\doticu_skylib\virtual_game.h" />
     <ClInclude Include="include\doticu_skylib\virtual_handle.h" />
     <ClInclude Include="include\doticu_skylib\virtual_input.h" />
+    <ClInclude Include="include\doticu_skylib\virtual_latent_id.h" />
     <ClInclude Include="include\doticu_skylib\virtual_machine.h" />
     <ClInclude Include="include\doticu_skylib\virtual_macros.h" />
     <ClInclude Include="include\doticu_skylib\virtual_method.h" />
@@ -613,6 +614,7 @@
     <ClCompile Include="src\doticu_skylib\virtual_game.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_handle.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_input.cpp" />
+    <ClCompile Include="src\doticu_skylib\virtual_latent_id.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_machine.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_object.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_policy.cpp" />

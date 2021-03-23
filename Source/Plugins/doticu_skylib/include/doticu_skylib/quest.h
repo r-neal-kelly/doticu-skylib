@@ -64,6 +64,7 @@ namespace doticu_skylib {
 
     public:
         static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
+        static void     Are_Running(const Vector_t<some<Quest_t*>> quests, some<unique<Callback_i<Bool_t>>> callback);
 
         static Int_t    Compare_Any_Names(Quest_t** a, Quest_t** b);
         static Int_t    Compare_Any_Names(some<Quest_t*>* a, some<Quest_t*>* b);
@@ -119,6 +120,9 @@ namespace doticu_skylib {
     public:
         void Start(maybe<Virtual::Callback_i*> v_callback);                 // Start
         void Start(maybe<unique<Callback_i<Bool_t>>> callback);
+
+        void Is_Running(some<Virtual::Callback_i*> v_callback);             // IsRunning
+        void Is_Running(some<unique<Callback_i<Bool_t>>> callback);
 
         void Do_Display_Objective(Int_t objective,
                                   Bool_t do_display,

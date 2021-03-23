@@ -222,6 +222,15 @@ namespace doticu_skylib {
         maybe<Weapon_t*>        As_Weapon() const;
 
     public:
+        void Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback);            // RegisterForKey
+        void Register_Key_Event(Int_t key_code, maybe<unique<Callback_i<>>> callback);
+
+        void Unregister_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback);          // UnregisterForKey
+        void Unregister_Key_Event(Int_t key_code, maybe<unique<Callback_i<>>> callback);
+
+        void Unregister_All_Key_Events(maybe<Virtual::Callback_i*> v_callback);                     // UnregisterForAllKeys
+        void Unregister_All_Key_Events(maybe<unique<Callback_i<>>> callback);
+
         void Register_SKSE_Event(String_t event_name,
                                  String_t callback_name,
                                  maybe<Virtual::Callback_i*> v_callback);                           // RegisterForModEvent
