@@ -133,6 +133,22 @@ namespace doticu_skylib {
             {
                 UI_t::Create_Notification(Game_t::Version(), none<Virtual::Callback_i*>());
 
+                class Forms_Filter :
+                    public Filter_i<some<Form_t*>>
+                {
+                public:
+                    virtual Bool_t operator ()(some<Form_t*> form) override
+                    {
+                        return form->Is_Actor_Base();
+                    }
+                } forms_filter;
+                Vector_t<some<Form_t*>> forms = Game_t::Forms(forms_filter);
+                for (size_t idx = 0, end = forms.size(); idx < end; idx += 1) {
+                    _MESSAGE("form_id: %s, form_type: %s", forms[idx]->form_id.As_String(), forms[idx]->form_type.As_String());
+                }
+                _MESSAGE("new count: %zu", forms.size());
+                _MESSAGE("old count: %zu", Actor_Base_t::Actor_Bases().size());
+
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Actor_Base_t*> player_actor_base = player_actor->Actor_Base()();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());

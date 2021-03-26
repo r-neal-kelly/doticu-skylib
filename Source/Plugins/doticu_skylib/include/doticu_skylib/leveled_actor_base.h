@@ -4,14 +4,12 @@
 
 #pragma once
 
+#include "doticu_skylib/animated_object.h"
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/interface.h"
-
 #include "doticu_skylib/component_leveled.h"
 #include "doticu_skylib/component_model_alternates.h"
-
-#include "doticu_skylib/animated_object.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/interface.h"
 
 namespace doticu_skylib {
 
@@ -39,7 +37,7 @@ namespace doticu_skylib {
         virtual                 ~Leveled_Actor_Base_t(); // 0
 
     public:
-        void                    Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator);
+        void                    Iterate_Actor_Bases(Iterator_i<Actor_Base_t*>& iterator);
 
         Bool_t                  Has_Actor_Base(Actor_Base_t* actor_base);
 

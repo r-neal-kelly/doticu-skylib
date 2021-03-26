@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/enum_iterator.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
@@ -28,9 +29,9 @@ namespace doticu_skylib {
         virtual ~Callback_i() = default;
     };
 
-    template <typename Return_t, typename ...Arguments>
+    template <typename ...Arguments>
     class Iterator_i :
-        public Functor_i<Return_t, Arguments...>
+        public Functor_i<Iterator_e, Arguments...>
     {
     public:
         virtual ~Iterator_i() = default;

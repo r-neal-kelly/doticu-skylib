@@ -13,6 +13,7 @@
 #include "doticu_skylib/component_name.h"
 #include "doticu_skylib/container.h"
 #include "doticu_skylib/cstring.h"
+#include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.inl"

@@ -10,7 +10,9 @@
 #include "doticu_skylib/enum_form_type.h"
 #include "doticu_skylib/form_id.h"
 #include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/version.h"
 
 namespace doticu_skylib {
@@ -30,15 +32,24 @@ namespace doticu_skylib {
     class Game_t // TESDataHandler
     {
     public:
-        class Offset_e : public Enum_t<Word_t>
+        class Offset_e :
+            public Enum_t<Word_t>
         {
         public:
-            enum : Word_t
+            enum enum_type : value_type
             {
-                SELF            = 0x01EBE428,
-                GET_FORM        = 0x00194230,
-                RUNTIME_CAST    = 0x0134BDB0,
+                SELF                        = 0x01EBE428, // 514141
+
+                GET_FORM                    = 0x00194230, // 14461
+                FORM_IDS_TO_FORMS           = 0x01EC3CB8, // 514351
+                FORM_IDS_TO_FORMS_LOCK      = 0x01EC4150, // 514360
+                EDITOR_IDS_TO_FORMS         = 0x01EC3CC0, // 514352
+                EDITOR_IDS_TO_FORMS_LOCK    = 0x01EC4158, // 514361
+
+                RUNTIME_CAST                = 0x0134BDB0, // 102238
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
@@ -60,9 +71,6 @@ namespace doticu_skylib {
         template <typename T>
         static void                     Deallocate(some<T*> data);
 
-        static maybe<Form_t*>           Form(Raw_Form_ID_t raw_form_id);
-        static maybe<Form_t*>           Form(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
-
         template <typename From_t, typename To_t>
         static maybe<To_t*>             Runtime_Cast(some<const From_t*> from);
 
@@ -78,6 +86,20 @@ namespace doticu_skylib {
         static void                     Log_Value_Offsets(Value_t value, std::string indent = "");
 
         static void                     Log_u64s(void* data, size_t count, std::string indent = "");
+
+    public:
+        static Hash_Map_t<Form_ID_t, maybe<Form_t*>>&   Form_IDs_To_Forms();
+        static Read_Write_Lock_t&                       Form_IDs_To_Forms_Lock();
+        static Hash_Map_t<String_t, maybe<Form_t*>>&    Editor_IDs_To_Forms();
+        static Read_Write_Lock_t&                       Editor_IDs_To_Forms_Lock();
+
+        static maybe<Form_t*>                           Form(Raw_Form_ID_t raw_form_id);
+        static maybe<Form_t*>                           Form(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
+        static Vector_t<some<Form_t*>>                  Forms();
+        static Vector_t<some<Form_t*>>                  Forms(Filter_i<some<Form_t*>>& filter);
+        static void                                     Forms(Vector_t<some<Form_t*>>& results);
+        static void                                     Forms(Vector_t<some<Form_t*>>& results, Filter_i<some<Form_t*>>& filter);
+        static void                                     Iterate_Forms(Iterator_i<some<Form_t*>>& iterator);
 
     public:
         u64                             unk_000;                            // 000

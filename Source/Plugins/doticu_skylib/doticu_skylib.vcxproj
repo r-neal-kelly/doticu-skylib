@@ -83,10 +83,12 @@
     <ClInclude Include="include\doticu_skylib\enum_book_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_book_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_color_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_comparator.h" />
     <ClInclude Include="include\doticu_skylib\enum_enchantment_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_morph_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_face_part_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_ingredient_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_iterator.h" />
     <ClInclude Include="include\doticu_skylib\enum_knock_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_life_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_archetype.h" />

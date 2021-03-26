@@ -49,6 +49,66 @@ namespace doticu_skylib {
         return version;
     }
 
+    Word_t Game_t::V_Table_Offset(const void* instance)
+    {
+        return *reinterpret_cast<const Word_t*>(instance) - Game_t::Base_Address();
+    }
+
+    void Game_t::Write_V_Table(void* instance, Word_t v_table_offset)
+    {
+        static_cast<Word_t*>(instance)[0] = Game_t::Base_Address() + v_table_offset;
+    }
+
+    void Game_t::Log_u64s(void* data, size_t count, std::string indent)
+    {
+        SKYLIB_ASSERT(data);
+
+        u64* ptr = static_cast<u64*>(data);
+        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+            SKYLIB_LOG(indent + "idx: %8i, %p", idx, *(ptr + idx));
+        }
+    }
+
+    Hash_Map_t<Form_ID_t, maybe<Form_t*>>& Game_t::Form_IDs_To_Forms()
+    {
+        static auto form_ids_to_forms = *reinterpret_cast
+            <Hash_Map_t<Form_ID_t, maybe<Form_t*>>**>
+            (Game_t::Base_Address() + Offset_e::FORM_IDS_TO_FORMS);
+
+        SKYLIB_ASSERT(form_ids_to_forms);
+
+        return *form_ids_to_forms;
+    }
+
+    Read_Write_Lock_t& Game_t::Form_IDs_To_Forms_Lock()
+    {
+        static auto form_ids_to_forms_lock = reinterpret_cast
+            <Read_Write_Lock_t*>
+            (Game_t::Base_Address() + Offset_e::FORM_IDS_TO_FORMS_LOCK);
+
+        return *form_ids_to_forms_lock;
+    }
+
+    Hash_Map_t<String_t, maybe<Form_t*>>& Game_t::Editor_IDs_To_Forms()
+    {
+        static auto editor_ids_to_forms = *reinterpret_cast
+            <Hash_Map_t<String_t, maybe<Form_t*>>**>
+            (Game_t::Base_Address() + Offset_e::EDITOR_IDS_TO_FORMS);
+
+        SKYLIB_ASSERT(editor_ids_to_forms);
+
+        return *editor_ids_to_forms;
+    }
+
+    Read_Write_Lock_t& Game_t::Editor_IDs_To_Forms_Lock()
+    {
+        static auto editor_ids_to_forms_lock = reinterpret_cast
+            <Read_Write_Lock_t*>
+            (Game_t::Base_Address() + Offset_e::EDITOR_IDS_TO_FORMS_LOCK);
+
+        return *editor_ids_to_forms_lock;
+    }
+
     maybe<Form_t*> Game_t::Form(Raw_Form_ID_t raw_form_id)
     {
         static auto get_form = reinterpret_cast
@@ -69,23 +129,58 @@ namespace doticu_skylib {
         return Form(Form_ID_t(mod, raw_form_index));
     }
 
-    Word_t Game_t::V_Table_Offset(const void* instance)
+    Vector_t<some<Form_t*>> Game_t::Forms()
     {
-        return *reinterpret_cast<const Word_t*>(instance) - Game_t::Base_Address();
+        Vector_t<some<Form_t*>> results;
+        Forms(results);
+        return results;
     }
 
-    void Game_t::Write_V_Table(void* instance, Word_t v_table_offset)
+    Vector_t<some<Form_t*>> Game_t::Forms(Filter_i<some<Form_t*>>& filter)
     {
-        static_cast<Word_t*>(instance)[0] = Game_t::Base_Address() + v_table_offset;
+        Vector_t<some<Form_t*>> results;
+        Forms(results, filter);
+        return results;
     }
 
-    void Game_t::Log_u64s(void* data, size_t count, std::string indent)
+    void Game_t::Forms(Vector_t<some<Form_t*>>& results)
     {
-        SKYLIB_ASSERT(data);
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
 
-        u64* ptr = static_cast<u64*>(data);
-        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
-            SKYLIB_LOG(indent + "idx: %8i, %p", idx, *(ptr + idx));
+        for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
+            Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
+            if (entry.chain && entry.second) {
+                results.push_back(entry.second());
+            }
+        }
+    }
+
+    void Game_t::Forms(Vector_t<some<Form_t*>>& results, Filter_i<some<Form_t*>>& filter)
+    {
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+
+        for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
+            Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
+            if (entry.chain && entry.second && filter(entry.second())) {
+                results.push_back(entry.second());
+            }
+        }
+    }
+
+    void Game_t::Iterate_Forms(Iterator_i<some<Form_t*>>& iterator)
+    {
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+
+        for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
+            Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
+            if (entry.chain && entry.second) {
+                if (iterator(entry.second()) == Iterator_e::BREAK) {
+                    return;
+                }
+            }
         }
     }
 

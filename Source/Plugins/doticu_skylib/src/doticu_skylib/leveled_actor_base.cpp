@@ -52,7 +52,7 @@ namespace doticu_skylib {
         #undef TAB
     }
 
-    void Leveled_Actor_Base_t::Iterate_Actor_Bases(Iterator_i<Iterator_e, Actor_Base_t*>& iterator)
+    void Leveled_Actor_Base_t::Iterate_Actor_Bases(Iterator_i<Actor_Base_t*>& iterator)
     {
         if (Is_Valid()) {
             Vector_t<Leveled_Actor_Base_t*> leveled_bases_backup;
@@ -107,7 +107,8 @@ namespace doticu_skylib {
 
     Bool_t Leveled_Actor_Base_t::Has_Actor_Base(Actor_Base_t* actor_base)
     {
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        class Iterator_t :
+            public Iterator_i<Actor_Base_t*>
         {
         public:
             Actor_Base_t* base_to_compare;
@@ -118,7 +119,7 @@ namespace doticu_skylib {
             {
             }
 
-            Iterator_e operator()(Actor_Base_t* actor_base)
+            Iterator_e operator ()(Actor_Base_t* actor_base)
             {
                 if (actor_base == base_to_compare) {
                     result = true;
@@ -149,7 +150,8 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        class Iterator_t :
+            public Iterator_i<Actor_Base_t*>
         {
         public:
             Vector_t<Actor_Base_t*>& results;
@@ -158,7 +160,7 @@ namespace doticu_skylib {
             {
             }
 
-            Iterator_e operator()(Actor_Base_t* actor_base)
+            Iterator_e operator ()(Actor_Base_t* actor_base)
             {
                 if (!results.Has(actor_base)) {
                     results.push_back(actor_base);
@@ -176,7 +178,8 @@ namespace doticu_skylib {
         Vector_t<String_t> names;
         names.reserve(16);
 
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        class Iterator_t :
+            public Iterator_i<Actor_Base_t*>
         {
         public:
             Vector_t<Actor_Base_t*> actor_bases;
@@ -199,7 +202,7 @@ namespace doticu_skylib {
                 return char_difference;
             }
 
-            Iterator_e operator()(Actor_Base_t* actor_base)
+            Iterator_e operator() (Actor_Base_t* actor_base)
             {
                 if (!actor_bases.Has(actor_base)) {
                     actor_bases.push_back(actor_base);
@@ -273,7 +276,8 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Race_Names(Vector_t<String_t>& results)
     {
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        class Iterator_t :
+            public Iterator_i<Actor_Base_t*>
         {
         public:
             Vector_t<String_t>& results;
@@ -282,7 +286,7 @@ namespace doticu_skylib {
             {
             }
 
-            Iterator_e operator()(Actor_Base_t* actor_base)
+            Iterator_e operator ()(Actor_Base_t* actor_base)
             {
                 Race_t* race = actor_base->Race();
                 if (race) {
@@ -306,7 +310,8 @@ namespace doticu_skylib {
 
     void Leveled_Actor_Base_t::Actor_Base_Names(Vector_t<String_t>& results)
     {
-        class Iterator_t : public Iterator_i<Iterator_e, Actor_Base_t*>
+        class Iterator_t :
+            public Iterator_i<Actor_Base_t*>
         {
         public:
             Vector_t<String_t>& results;
@@ -315,7 +320,7 @@ namespace doticu_skylib {
             {
             }
 
-            Iterator_e operator()(Actor_Base_t* actor_base)
+            Iterator_e operator ()(Actor_Base_t* actor_base)
             {
                 String_t name = actor_base->Any_Name();
                 if (!results.Has(name)) {

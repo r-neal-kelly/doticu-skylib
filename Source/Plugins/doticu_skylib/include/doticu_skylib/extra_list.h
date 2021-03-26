@@ -153,7 +153,7 @@ namespace doticu_skylib {
         void                                Crime_Faction(maybe<Faction_t*> crime_faction);
 
         // Extra_Ghost_t
-        Boolean_e                           Is_Ghost();
+        maybe<Bool_t>                       Is_Ghost();
         void                                Is_Ghost(Bool_t is_ghost);
 
         // Extra_Leveled_Item_t
@@ -183,7 +183,7 @@ namespace doticu_skylib {
         maybe<Reference_t*>                 Reference_Interactor_B();
 
         // Extra_Talk_To_Player_t
-        Boolean_e                           Can_Talk_To_Player();
+        maybe<Bool_t>                       Can_Talk_To_Player();
         void                                Can_Talk_To_Player(Bool_t can_talk_to_player);
 
         // Extra_Text_Display_t

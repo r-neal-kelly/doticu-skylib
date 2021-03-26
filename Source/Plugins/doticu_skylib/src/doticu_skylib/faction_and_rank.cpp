@@ -3,6 +3,7 @@
 */
 
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/faction.h"
 #include "doticu_skylib/faction_and_rank.h"
 

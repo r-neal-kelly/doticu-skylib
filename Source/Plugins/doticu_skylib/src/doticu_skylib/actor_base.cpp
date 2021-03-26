@@ -5,15 +5,15 @@
 #include <fstream>
 #include <iomanip>
 
-#include "doticu_skylib/interface.h"
-
 #include "doticu_skylib/actor.h"
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_head_data.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/interface.h"
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/reference.h"
@@ -61,7 +61,8 @@ namespace doticu_skylib {
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
         for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
-            class Iterator_t : public Iterator_i<void, Reference_t*>
+            class Iterator_t :
+                public Iterator_i<Reference_t*>
             {
             public:
                 Vector_t<Actor_Base_t*>& results;
@@ -70,7 +71,7 @@ namespace doticu_skylib {
                     results(results), cell(cell)
                 {
                 }
-                void operator()(Reference_t* reference)
+                Iterator_e operator ()(Reference_t* reference)
                 {
                     if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
                         maybe<Actor_Base_t*> actor_base = static_cast<maybe<Actor_Base_t*>>(reference->base_form);
@@ -80,6 +81,8 @@ namespace doticu_skylib {
                             }
                         }
                     }
+
+                    return Iterator_e::CONTINUE;
                 }
             } iterator(results, cell);
             cell->References(iterator);

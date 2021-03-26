@@ -152,7 +152,7 @@ namespace doticu_skylib {
 
         String_t                        Any_Name();
 
-        void                            References(Iterator_i<void, Reference_t*>& iterator);
+        void                            References(Iterator_i<Reference_t*>& iterator);
     };
     STATIC_ASSERT(sizeof(Cell_t) == 0x140);
 

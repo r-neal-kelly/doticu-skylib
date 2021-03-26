@@ -60,7 +60,8 @@ namespace doticu_skylib {
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
         for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
-            class Iterator_t : public Iterator_i<void, Reference_t*>
+            class Iterator_t :
+                public Iterator_i<Reference_t*>
             {
             public:
                 Vector_t<Actor_t*>& results;
@@ -68,7 +69,7 @@ namespace doticu_skylib {
                     results(results)
                 {
                 }
-                void operator()(Reference_t* reference)
+                Iterator_e operator ()(Reference_t* reference)
                 {
                     if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
                         Actor_t* actor = static_cast<Actor_t*>(reference);
@@ -76,6 +77,8 @@ namespace doticu_skylib {
                             results.push_back(actor);
                         }
                     }
+
+                    return Iterator_e::CONTINUE;
                 }
             } iterator(results);
             cell->References(iterator);
@@ -701,9 +704,9 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Can_Talk_To_Player()
     {
-        Boolean_e can_talk_to_player = this->x_list.Can_Talk_To_Player();
-        if (can_talk_to_player != Boolean_e::NEITHER) {
-            return can_talk_to_player();
+        maybe<Bool_t> can_talk_to_player = this->x_list.Can_Talk_To_Player();
+        if (can_talk_to_player.Has_Value()) {
+            return can_talk_to_player.Value();
         } else {
             maybe<Race_t*> race = Race();
             if (race) {
@@ -793,9 +796,9 @@ namespace doticu_skylib {
 
     Bool_t Actor_t::Is_Ghost()
     {
-        Boolean_e is_ghost = this->x_list.Is_Ghost();
-        if (is_ghost != Boolean_e::NEITHER) {
-            return is_ghost();
+        maybe<Bool_t> is_ghost = this->x_list.Is_Ghost();
+        if (is_ghost.Has_Value()) {
+            return is_ghost.Value();
         } else {
             maybe<Actor_Base_t*> actor_base = Actor_Base();
             if (actor_base) {

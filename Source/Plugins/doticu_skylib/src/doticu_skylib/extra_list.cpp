@@ -567,13 +567,13 @@ namespace doticu_skylib {
         }
     }
 
-    Boolean_e Extra_List_t::Is_Ghost()
+    maybe<Bool_t> Extra_List_t::Is_Ghost()
     {
         maybe<Extra_Ghost_t*> x_ghost = Get<Extra_Ghost_t>();
         if (x_ghost) {
             return x_ghost->is_ghost;
         } else {
-            return Boolean_e::NEITHER;
+            return none<Bool_t>();
         }
     }
 
@@ -767,13 +767,13 @@ namespace doticu_skylib {
         }
     }
 
-    Boolean_e Extra_List_t::Can_Talk_To_Player()
+    maybe<Bool_t> Extra_List_t::Can_Talk_To_Player()
     {
         maybe<Extra_Talk_To_Player_t*> x_talk_to_player = Get<Extra_Talk_To_Player_t>();
         if (x_talk_to_player) {
             return x_talk_to_player->can_talk_to_player;
         } else {
-            return Boolean_e::NEITHER;
+            return none<Bool_t>();
         }
     }
 

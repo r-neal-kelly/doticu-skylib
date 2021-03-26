@@ -60,13 +60,15 @@ namespace doticu_skylib {
     }
 
     template <typename Results_t>
-    class Loaded_Reference_Iterator_t : public Iterator_i<void, Reference_t*>
+    class Loaded_Reference_Iterator_t :
+        public Iterator_i<Reference_t*>
     {
     public:
     };
 
     template <>
-    class Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> : public Iterator_i<void, Reference_t*>
+    class Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> :
+        public Iterator_i<Reference_t*>
     {
     public:
         Vector_t<some<Reference_t*>>& results;
@@ -75,18 +77,21 @@ namespace doticu_skylib {
             results(results), filter(filter)
         {
         }
-        void operator()(Reference_t* reference)
+        Iterator_e operator ()(Reference_t* reference)
         {
             if (reference && reference->Is_Valid() && !results.Has(reference)) {
                 if (!filter || (*filter)(reference)) {
                     results.push_back(reference);
                 }
             }
+
+            return Iterator_e::CONTINUE;
         }
     };
 
     template <>
-    class Loaded_Reference_Iterator_t<some<Form_List_t*>> : public Iterator_i<void, Reference_t*>
+    class Loaded_Reference_Iterator_t<some<Form_List_t*>> :
+        public Iterator_i<Reference_t*>
     {
     public:
         some<Form_List_t*> results;
@@ -95,13 +100,15 @@ namespace doticu_skylib {
             results(results), filter(filter)
         {
         }
-        void operator()(Reference_t* reference)
+        Iterator_e operator ()(Reference_t* reference)
         {
             if (reference && reference->Is_Valid()) {
                 if (!filter || (*filter)(reference)) {
                     results->Add_Form(reference);
                 }
             }
+
+            return Iterator_e::CONTINUE;
         }
     };
 
