@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/alias_base.h"
+#include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/quest.h"
@@ -11,6 +13,7 @@
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
+#include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
@@ -106,6 +109,70 @@ namespace doticu_skylib {
         }
     }
 
+    void Quest_t::Wait_For(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, some<unique<Callback_i<>>> callback)
+    {
+        using Callback = some<unique<Callback_i<>>>;
+
+        struct Wait_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            const Vector_t<some<Quest_t*>>  quests;
+            Float_t                         wait_interval;
+            Callback                        callback;
+
+        public:
+            Wait_Callback(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, Callback callback) :
+                quests(std::move(quests)), wait_interval(wait_interval), callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator ()(Virtual::Variable_t*) override
+            {
+                class Are_Running_Callback :
+                    public doticu_skylib::Callback_i<Bool_t>
+                {
+                public:
+                    const Vector_t<some<Quest_t*>>  quests;
+                    Float_t                         wait_interval;
+                    Callback                        callback;
+
+                public:
+                    Are_Running_Callback(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, Callback callback) :
+                        quests(std::move(quests)), wait_interval(wait_interval), callback(std::move(callback))
+                    {
+                    }
+
+                public:
+                    virtual void operator ()(Bool_t are_running) override
+                    {
+                        if (are_running) {
+                            (*this->callback)();
+                        } else {
+                            Virtual::Utility_t::Wait_Out_Of_Menu(
+                                this->wait_interval,
+                                new Wait_Callback(std::move(this->quests), this->wait_interval, std::move(this->callback))
+                            );
+                        }
+                    }
+                };
+                Quest_t::Are_Running(
+                    this->quests,
+                    new Are_Running_Callback(std::move(this->quests), this->wait_interval, std::move(this->callback))
+                );
+            }
+        };
+
+        SKYLIB_ASSERT(wait_interval > 0.0f);
+        SKYLIB_ASSERT_SOME(callback);
+
+        Virtual::Utility_t::Wait_Out_Of_Menu(
+            wait_interval,
+            new Wait_Callback(std::move(quests), wait_interval, std::move(callback))
+        );
+    }
+
     Int_t Quest_t::Compare_Any_Names(Quest_t** a, Quest_t** b)
     {
         if (!a || !*a) {
@@ -140,6 +207,8 @@ namespace doticu_skylib {
 
     Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
     {
+        Read_Locker_t locker(this->aliases_lock);
+
         return filled_aliases.Has(alias_id);
     }
 
@@ -155,6 +224,51 @@ namespace doticu_skylib {
             } else {
                 return Form_ID_String();
             }
+        }
+    }
+
+    maybe<Alias_Base_t*> Quest_t::Index_To_Alias_Base(size_t index)
+    {
+        Read_Locker_t locker(this->aliases_lock);
+
+        if (index < this->aliases.Count()) {
+            return this->aliases[index];
+        } else {
+            return none<Alias_Base_t*>();
+        }
+    }
+
+    maybe<Alias_Base_t*> Quest_t::ID_To_Alias_Base(Alias_ID_t id)
+    {
+        Read_Locker_t locker(this->aliases_lock);
+
+        for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
+            maybe<Alias_Base_t*> alias_base = this->aliases[idx];
+            if (alias_base && alias_base->id == id) {
+                return alias_base;
+            }
+        }
+
+        return none<Alias_Base_t*>();
+    }
+
+    maybe<Alias_Reference_t*> Quest_t::Index_To_Alias_Reference(size_t index)
+    {
+        maybe<Alias_Base_t*> alias_base = Index_To_Alias_Base(index);
+        if (alias_base) {
+            return alias_base->As_Alias_Reference();
+        } else {
+            return none<Alias_Reference_t*>();
+        }
+    }
+
+    maybe<Alias_Reference_t*> Quest_t::ID_To_Alias_Reference(Alias_ID_t id)
+    {
+        maybe<Alias_Base_t*> alias_base = ID_To_Alias_Base(id);
+        if (alias_base) {
+            return alias_base->As_Alias_Reference();
+        } else {
+            return none<Alias_Reference_t*>();
         }
     }
 

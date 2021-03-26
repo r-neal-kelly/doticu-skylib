@@ -26,6 +26,7 @@
 namespace doticu_skylib {
 
     class Alias_Base_t;
+    class Alias_Reference_t;
     class Dialogue_Branch_t;
     class Dialogue_Topic_t;
     class Form_List_t;
@@ -65,6 +66,7 @@ namespace doticu_skylib {
     public:
         static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
         static void     Are_Running(const Vector_t<some<Quest_t*>> quests, some<unique<Callback_i<Bool_t>>> callback);
+        static void     Wait_For(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, some<unique<Callback_i<>>> callback);
 
         static Int_t    Compare_Any_Names(Quest_t** a, Quest_t** b);
         static Int_t    Compare_Any_Names(some<Quest_t*>* a, some<Quest_t*>* b);
@@ -116,6 +118,11 @@ namespace doticu_skylib {
         Bool_t Has_Filled_Alias(Alias_ID_t alias_id);
 
         String_t Any_Name();
+
+        maybe<Alias_Base_t*> Index_To_Alias_Base(size_t index);
+        maybe<Alias_Base_t*> ID_To_Alias_Base(Alias_ID_t id);
+        maybe<Alias_Reference_t*> Index_To_Alias_Reference(size_t index);
+        maybe<Alias_Reference_t*> ID_To_Alias_Reference(Alias_ID_t id);
 
     public:
         void Start(maybe<Virtual::Callback_i*> v_callback);                 // Start

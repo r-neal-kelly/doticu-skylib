@@ -35,18 +35,14 @@ namespace doticu_skylib { namespace Virtual {
 
     void Latent_ID_t::Return(Variable_t& variable) const
     {
-        if (this->stack_id) {
-            Machine_t::Self()->Return_Latent_Function(stack_id(), variable);
-            this->stack_id = none<Stack_ID_t>();
-        }
+        SKYLIB_ASSERT(this->stack_id);
+        Machine_t::Self()->Return_Latent_Function(stack_id(), variable);
+        this->stack_id = none<Stack_ID_t>();
     }
 
     void Latent_ID_t::Return(Variable_t&& variable) const
     {
-        if (this->stack_id) {
-            Machine_t::Self()->Return_Latent_Function(stack_id(), std::move(variable));
-            this->stack_id = none<Stack_ID_t>();
-        }
+        Return(variable);
     }
 
 }}

@@ -11,6 +11,7 @@
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/skse.h"
 #include "doticu_skylib/string.h"
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/version.h"
@@ -122,6 +123,7 @@ namespace doticu_skylib {
     class Reference_Container_Entry_t;
     class Script_t;
     class Scroll_t;
+    class SKSE_Plugin_t;
     class Spell_t;
     class Static_t;
     class Translations_t;

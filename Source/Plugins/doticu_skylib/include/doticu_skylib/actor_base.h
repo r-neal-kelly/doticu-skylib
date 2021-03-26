@@ -86,6 +86,17 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
+        class Form_Flags_e :
+            public Enum_t<u32>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                IS_DELETED = static_cast<value_type>(1 << 5),
+            };
+            using Enum_t::Enum_t;
+        };
+
         class Form_Change_Flags_e :
             public Enum_t<u32>
         {
@@ -167,6 +178,9 @@ namespace doticu_skylib {
         maybe<Array_t<void*>*>      tint_layers;            // 260
 
     public:
+        Bool_t                          Is_Deleted();
+        Bool_t                          Isnt_Deleted();
+
         Bool_t                          Has_Template_FF000800();
 
         Sex_e                           Sex();

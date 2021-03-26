@@ -348,12 +348,15 @@ namespace doticu_skylib {
         }
     }
 
-    void Actor_t::Actor_Base(some<Actor_Base_t*> actor_base)
+    void Actor_t::Actor_Base(some<Actor_Base_t*> actor_base, Bool_t do_save)
     {
         SKYLIB_ASSERT_SOME(actor_base);
 
         this->base_form = actor_base();
-        Flag_Form_Change(Reference_t::Form_Change_Flags_e::BASE_FORM);
+
+        if (do_save) {
+            Flag_Form_Change(Reference_t::Form_Change_Flags_e::BASE_FORM);
+        }
     }
 
     maybe<Actor_Base_t*> Actor_t::Actor_Base_Root()

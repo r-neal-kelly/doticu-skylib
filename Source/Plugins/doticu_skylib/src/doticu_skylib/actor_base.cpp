@@ -208,6 +208,16 @@ namespace doticu_skylib {
         Game_t::Deallocate<Actor_Base_t>(actor_base);
     }
 
+    Bool_t Actor_Base_t::Is_Deleted()
+    {
+        return this->form_flags.Is_Flagged(Form_Flags_e::IS_DELETED);
+    }
+
+    Bool_t Actor_Base_t::Isnt_Deleted()
+    {
+        return !Is_Deleted();
+    }
+
     Bool_t Actor_Base_t::Has_Template_FF000800()
     {
         for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
