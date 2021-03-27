@@ -527,40 +527,66 @@ namespace doticu_skylib {
         some() = delete;
     };
 
-    template <
-        typename T,
-        template <typename> typename TT_1,
-        template <typename> typename TT_2,
-        std::enable_if_t<
-            (std::is_same<TT_1<T*>, none<T*>>::value ||
-            std::is_same<TT_1<T*>, maybe<T*>>::value ||
-            std::is_same<TT_1<T*>, some<T*>>::value) &&
-            (std::is_same<TT_2<T*>, none<T*>>::value ||
-            std::is_same<TT_2<T*>, maybe<T*>>::value ||
-            std::is_same<TT_2<T*>, some<T*>>::value),
-            Bool_t
-        > = true
-    > inline Bool_t operator ==(const TT_1<T*>& a, const TT_2<T*>& b)
+    template <typename T, template <typename> typename TT>
+    using enable_if_none_maybe_some_t = std::enable_if_t<
+        std::is_same<TT<T>, none<T>>::value ||
+        std::is_same<TT<T>, maybe<T>>::value ||
+        std::is_same<TT<T>, some<T>>::value,
+        Bool_t
+    >;
+
+    template <typename T, template <typename> typename TT, typename _ = void>
+    struct is_none_maybe_some :
+        public std::false_type
+    {
+    };
+
+    template <typename T, template <typename> typename TT>
+    struct is_none_maybe_some<T, TT, std::conditional_t<false, enable_if_none_maybe_some_t<T, TT>, void>> :
+        public std::true_type
+    {
+    };
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator ==(const T& a, const TT<T>& b)
+    {
+        return a == b();
+    }
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator ==(const TT<T>& a, const T& b)
+    {
+        return a() == b;
+    }
+
+    template <typename T, template <typename> typename A, template <typename> typename B,
+        std::enable_if_t<is_none_maybe_some<T, A>::value && is_none_maybe_some<T, B>::value, Bool_t> = true
+    > inline Bool_t operator ==(const A<T>& a, const B<T>& b)
     {
         return a() == b();
     }
 
-    template <
-        typename T,
-        template <typename> typename TT_1,
-        template <typename> typename TT_2,
-        std::enable_if_t<
-            (std::is_same<TT_1<T*>, none<T*>>::value ||
-            std::is_same<TT_1<T*>, maybe<T*>>::value ||
-            std::is_same<TT_1<T*>, some<T*>>::value) &&
-            (std::is_same<TT_2<T*>, none<T*>>::value ||
-            std::is_same<TT_2<T*>, maybe<T*>>::value ||
-            std::is_same<TT_2<T*>, some<T*>>::value),
-            Bool_t
-        > = true
-    > inline Bool_t operator !=(const TT_1<T*>& a, const TT_2<T*>& b)
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator !=(const T& a, const TT<T>& b)
     {
-        return a() != b();
+        return !(operator ==(a, b));
+    }
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator !=(const TT<T>& a, const T& b)
+    {
+        return !(operator ==(a, b));
+    }
+
+    template <typename T, template <typename> typename A, template <typename> typename B,
+        std::enable_if_t<is_none_maybe_some<T, A>::value && is_none_maybe_some<T, B>::value, Bool_t> = true
+    > inline Bool_t operator !=(const A<T>& a, const B<T>& b)
+    {
+        return !(operator ==(a, b));
     }
 
 }

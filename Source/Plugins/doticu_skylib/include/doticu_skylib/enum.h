@@ -54,7 +54,7 @@ namespace doticu_skylib {
 
         Enum_t& operator =(const Enum_t& other)
         {
-            if (std::addressof(other) != this) {
+            if (this != std::addressof(other)) {
                 this->value = other.value;
             }
             return *this;
@@ -62,7 +62,7 @@ namespace doticu_skylib {
 
         Enum_t& operator =(Enum_t&& other)
         {
-            if (std::addressof(other) != this) {
+            if (this != std::addressof(other)) {
                 this->value = std::move(other.value);
             }
             return *this;

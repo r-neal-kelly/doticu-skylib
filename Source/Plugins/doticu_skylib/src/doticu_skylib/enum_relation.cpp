@@ -8,6 +8,16 @@
 
 namespace doticu_skylib {
 
+    Bool_t Relation_e::Is_Valid(enum_type value)
+    {
+        return value > -1 && value < _TOTAL_;
+    }
+
+    Bool_t Relation_e::Is_Valid(value_type value)
+    {
+        return Is_Valid(static_cast<enum_type>(value));
+    }
+
     some<const char* const*> Relation_e::Strings()
     {
         static const char* const strings[_TOTAL_] =
@@ -87,7 +97,7 @@ namespace doticu_skylib {
     }
 
     Relation_e::Relation_e(enum_type value) :
-        Enum_t(value < _TOTAL_ ? value : _NONE_)
+        Enum_t(Is_Valid(value) ? value : _NONE_)
     {
     }
 
@@ -97,29 +107,23 @@ namespace doticu_skylib {
     }
 
     Relation_e::Relation_e(const Relation_e& other) :
-        Enum_t(other.value)
+        Enum_t(other)
     {
     }
 
     Relation_e::Relation_e(Relation_e&& other) noexcept :
-        Enum_t(std::move(other.value))
+        Enum_t(std::move(other))
     {
     }
 
     Relation_e& Relation_e::operator =(const Relation_e& other)
     {
-        if (this != std::addressof(other)) {
-            this->value = other.value;
-        }
-        return *this;
+        return static_cast<Relation_e&>(Enum_t::operator =(other));
     }
 
     Relation_e& Relation_e::operator =(Relation_e&& other) noexcept
     {
-        if (this != std::addressof(other)) {
-            this->value = std::move(other.value);
-        }
-        return *this;
+        return static_cast<Relation_e&>(Enum_t::operator =(std::move(other)));
     }
 
     Relation_e::~Relation_e()
@@ -127,14 +131,14 @@ namespace doticu_skylib {
         this->value = _NONE_;
     }
 
-    some<const char*> Relation_e::As_String()
+    some<const char*> Relation_e::As_String() const
     {
         return To_String(*this);
     }
 
     Relation_e::operator Bool_t() const
     {
-        return this->value < _TOTAL_;
+        return Is_Valid(this->value);
     }
 
     Relation_e::operator value_type() const

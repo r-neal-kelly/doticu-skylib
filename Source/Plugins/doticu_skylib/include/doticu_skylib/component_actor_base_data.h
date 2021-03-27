@@ -9,10 +9,10 @@
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum_actor_base_flags.h"
 #include "doticu_skylib/enum_actor_base_template_flags.h"
+#include "doticu_skylib/enum_vitality.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/string.h"
-#include "doticu_skylib/vitality.h"
 
 namespace doticu_skylib {
 

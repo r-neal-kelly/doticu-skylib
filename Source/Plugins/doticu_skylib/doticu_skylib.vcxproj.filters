@@ -141,7 +141,7 @@
     <ClInclude Include="include\doticu_skylib\faction_and_rank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\vitality.h">
+    <ClInclude Include="include\doticu_skylib\enum_vitality.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\version.h">
@@ -1329,6 +1329,12 @@
     <ClInclude Include="include\doticu_skylib\enum_comparator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\maybe_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1457,7 +1463,7 @@
     <ClCompile Include="src\doticu_skylib\read_write_lock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\vitality.cpp">
+    <ClCompile Include="src\doticu_skylib\enum_vitality.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp">

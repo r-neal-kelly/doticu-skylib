@@ -6,31 +6,31 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe.h"
-#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/maybe_enum.h"
 
 namespace doticu_skylib {
 
     class Form_t;
 
     class Relation_e :
-        public Enum_t<u8>
+        public Enum_t<s8>
     {
     public:
         enum enum_type : value_type
         {
-            _NONE_          = static_cast<value_type>(-1),
+            _NONE_          = -1,
 
-            LOVER           = static_cast<value_type>(0),
-            ALLY            = static_cast<value_type>(1),
-            CONFIDANT       = static_cast<value_type>(2),
-            FRIEND          = static_cast<value_type>(3),
-            ACQUAINTANCE    = static_cast<value_type>(4),
-            RIVAL           = static_cast<value_type>(5),
-            FOE             = static_cast<value_type>(6),
-            ENEMY           = static_cast<value_type>(7),
-            ARCHNEMESIS     = static_cast<value_type>(8),
+            LOVER           = 0,
+            ALLY            = 1,
+            CONFIDANT       = 2,
+            FRIEND          = 3,
+            ACQUAINTANCE    = 4,
+            RIVAL           = 5,
+            FOE             = 6,
+            ENEMY           = 7,
+            ARCHNEMESIS     = 8,
 
-            _TOTAL_         = static_cast<value_type>(9),
+            _TOTAL_         = 9,
             _DEFAULT_       = ACQUAINTANCE,
         };
 
@@ -46,13 +46,15 @@ namespace doticu_skylib {
         };
 
     public:
+        static Bool_t                   Is_Valid(enum_type value);
+        static Bool_t                   Is_Valid(value_type value);
+
         static some<const char* const*> Strings();
         static some<const char*>        To_String(maybe<Relation_e> relation);
         static maybe<Relation_e>        From_String(maybe<const char*> relation);
 
-    public:
-        static some<Relation_e> Between(some<Form_t*> form_a, some<Form_t*> form_b);
-        static void             Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation);
+        static some<Relation_e>         Between(some<Form_t*> form_a, some<Form_t*> form_b);
+        static void                     Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation);
 
     public:
         Relation_e();
@@ -65,7 +67,7 @@ namespace doticu_skylib {
         ~Relation_e();
 
     public:
-        some<const char*> As_String();
+        some<const char*>   As_String() const;
 
     public:
         explicit operator   Bool_t() const;
@@ -77,30 +79,27 @@ namespace doticu_skylib {
     };
 
     template <>
-    inline Bool_t Is_Equal(const none<Relation_e>& a, const Relation_e& b)
-    {
-        return !b;
-    }
-
-    template <>
-    class none<Relation_e> : public none_numeric<Relation_e>
+    class none<Relation_e> :
+        public none_enum<Relation_e>
     {
     public:
-        none() : none_numeric(Relation_e::_NONE_) {}
+        using none_enum::none_enum;
     };
 
     template <>
-    class maybe<Relation_e> : public maybe_numeric<Relation_e>
+    class maybe<Relation_e> :
+        public maybe_enum<Relation_e>
     {
     public:
-        using maybe_numeric::maybe_numeric;
+        using maybe_enum::maybe_enum;
     };
 
     template <>
-    class some<Relation_e> : public some_numeric<Relation_e>
+    class some<Relation_e> :
+        public some_enum<Relation_e>
     {
     public:
-        using some_numeric::some_numeric;
+        using some_enum::some_enum;
     };
 
 }

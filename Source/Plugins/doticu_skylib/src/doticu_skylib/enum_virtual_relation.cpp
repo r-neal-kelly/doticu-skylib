@@ -6,40 +6,94 @@
 
 namespace doticu_skylib {
 
+    Bool_t Virtual_Relation_e::Is_Valid(enum_type value)
+    {
+        return value <= LOVER && value >= ARCHNEMESIS;
+    }
+
+    Bool_t Virtual_Relation_e::Is_Valid(value_type value)
+    {
+        return Is_Valid(static_cast<enum_type>(value));
+    }
+
+    maybe<Relation_e> Virtual_Relation_e::To_Relation(Virtual_Relation_e::enum_type v_relation)
+    {
+        return To_Relation(maybe<Virtual_Relation_e>(v_relation));
+    }
+
+    maybe<Relation_e> Virtual_Relation_e::To_Relation(Virtual_Relation_e::value_type v_relation)
+    {
+        return To_Relation(maybe<Virtual_Relation_e>(v_relation));
+    }
+
+    maybe<Relation_e> Virtual_Relation_e::To_Relation(Virtual_Relation_e v_relation)
+    {
+        return To_Relation(maybe<Virtual_Relation_e>(v_relation));
+    }
+
     maybe<Relation_e> Virtual_Relation_e::To_Relation(maybe<Virtual_Relation_e> v_relation)
     {
         if (v_relation) {
-            if (v_relation == Virtual_Relation_e::LOVER)                return Relation_e::LOVER;
-            else if (v_relation == Virtual_Relation_e::ALLY)            return Relation_e::ALLY;
-            else if (v_relation == Virtual_Relation_e::CONFIDANT)       return Relation_e::CONFIDANT;
-            else if (v_relation == Virtual_Relation_e::FRIEND)          return Relation_e::FRIEND;
-            else if (v_relation == Virtual_Relation_e::ACQUAINTANCE)    return Relation_e::ACQUAINTANCE;
-            else if (v_relation == Virtual_Relation_e::RIVAL)           return Relation_e::RIVAL;
-            else if (v_relation == Virtual_Relation_e::FOE)             return Relation_e::FOE;
-            else if (v_relation == Virtual_Relation_e::ENEMY)           return Relation_e::ENEMY;
-            else if (v_relation == Virtual_Relation_e::ARCHNEMESIS)     return Relation_e::ARCHNEMESIS;
-            else                                                        return Relation_e::_DEFAULT_;
+            return To_Relation(some<Virtual_Relation_e>(v_relation()));
         } else {
             return Relation_e::_NONE_;
         }
     }
 
+    some<Relation_e> Virtual_Relation_e::To_Relation(some<Virtual_Relation_e> v_relation)
+    {
+        SKYLIB_ASSERT_SOME(v_relation);
+
+        if (v_relation == Virtual_Relation_e::LOVER)                return Relation_e::LOVER;
+        else if (v_relation == Virtual_Relation_e::ALLY)            return Relation_e::ALLY;
+        else if (v_relation == Virtual_Relation_e::CONFIDANT)       return Relation_e::CONFIDANT;
+        else if (v_relation == Virtual_Relation_e::FRIEND)          return Relation_e::FRIEND;
+        else if (v_relation == Virtual_Relation_e::ACQUAINTANCE)    return Relation_e::ACQUAINTANCE;
+        else if (v_relation == Virtual_Relation_e::RIVAL)           return Relation_e::RIVAL;
+        else if (v_relation == Virtual_Relation_e::FOE)             return Relation_e::FOE;
+        else if (v_relation == Virtual_Relation_e::ENEMY)           return Relation_e::ENEMY;
+        else if (v_relation == Virtual_Relation_e::ARCHNEMESIS)     return Relation_e::ARCHNEMESIS;
+        else                                                        return Relation_e::_DEFAULT_;
+    }
+
+    maybe<Virtual_Relation_e> Virtual_Relation_e::From_Relation(Relation_e::enum_type relation)
+    {
+        return From_Relation(maybe<Relation_e>(relation));
+    }
+
+    maybe<Virtual_Relation_e> Virtual_Relation_e::From_Relation(Relation_e::value_type relation)
+    {
+        return From_Relation(maybe<Relation_e>(relation));
+    }
+
+    maybe<Virtual_Relation_e> Virtual_Relation_e::From_Relation(Relation_e relation)
+    {
+        return From_Relation(maybe<Relation_e>(relation));
+    }
+
     maybe<Virtual_Relation_e> Virtual_Relation_e::From_Relation(maybe<Relation_e> relation)
     {
         if (relation) {
-            if (relation == Relation_e::LOVER)              return Virtual_Relation_e::LOVER;
-            else if (relation == Relation_e::ALLY)          return Virtual_Relation_e::ALLY;
-            else if (relation == Relation_e::CONFIDANT)     return Virtual_Relation_e::CONFIDANT;
-            else if (relation == Relation_e::FRIEND)        return Virtual_Relation_e::FRIEND;
-            else if (relation == Relation_e::ACQUAINTANCE)  return Virtual_Relation_e::ACQUAINTANCE;
-            else if (relation == Relation_e::RIVAL)         return Virtual_Relation_e::RIVAL;
-            else if (relation == Relation_e::FOE)           return Virtual_Relation_e::FOE;
-            else if (relation == Relation_e::ENEMY)         return Virtual_Relation_e::ENEMY;
-            else if (relation == Relation_e::ARCHNEMESIS)   return Virtual_Relation_e::ARCHNEMESIS;
-            else                                            return Virtual_Relation_e::_DEFAULT_;
+            return From_Relation(some<Relation_e>(relation()));
         } else {
             return Virtual_Relation_e::_NONE_;
         }
+    }
+
+    some<Virtual_Relation_e> Virtual_Relation_e::From_Relation(some<Relation_e> relation)
+    {
+        SKYLIB_ASSERT_SOME(relation);
+
+        if (relation == Relation_e::LOVER)              return Virtual_Relation_e::LOVER;
+        else if (relation == Relation_e::ALLY)          return Virtual_Relation_e::ALLY;
+        else if (relation == Relation_e::CONFIDANT)     return Virtual_Relation_e::CONFIDANT;
+        else if (relation == Relation_e::FRIEND)        return Virtual_Relation_e::FRIEND;
+        else if (relation == Relation_e::ACQUAINTANCE)  return Virtual_Relation_e::ACQUAINTANCE;
+        else if (relation == Relation_e::RIVAL)         return Virtual_Relation_e::RIVAL;
+        else if (relation == Relation_e::FOE)           return Virtual_Relation_e::FOE;
+        else if (relation == Relation_e::ENEMY)         return Virtual_Relation_e::ENEMY;
+        else if (relation == Relation_e::ARCHNEMESIS)   return Virtual_Relation_e::ARCHNEMESIS;
+        else                                            return Virtual_Relation_e::_DEFAULT_;
     }
 
     some<const char*> Virtual_Relation_e::To_String(maybe<Virtual_Relation_e> v_relation)
@@ -58,7 +112,7 @@ namespace doticu_skylib {
     }
 
     Virtual_Relation_e::Virtual_Relation_e(enum_type value) :
-        Enum_t(value <= LOVER && value >= ARCHNEMESIS ? value : _NONE_)
+        Enum_t(Is_Valid(value) ? value : _NONE_)
     {
     }
 
@@ -68,29 +122,23 @@ namespace doticu_skylib {
     }
 
     Virtual_Relation_e::Virtual_Relation_e(const Virtual_Relation_e& other) :
-        Enum_t(other.value)
+        Enum_t(other)
     {
     }
 
     Virtual_Relation_e::Virtual_Relation_e(Virtual_Relation_e&& other) noexcept :
-        Enum_t(std::move(other.value))
+        Enum_t(std::move(other))
     {
     }
 
     Virtual_Relation_e& Virtual_Relation_e::operator =(const Virtual_Relation_e& other)
     {
-        if (this != std::addressof(other)) {
-            this->value = other.value;
-        }
-        return *this;
+        return static_cast<Virtual_Relation_e&>(Enum_t::operator =(other));
     }
 
     Virtual_Relation_e& Virtual_Relation_e::operator =(Virtual_Relation_e&& other) noexcept
     {
-        if (this != std::addressof(other)) {
-            this->value = std::move(other.value);
-        }
-        return *this;
+        return static_cast<Virtual_Relation_e&>(Enum_t::operator =(std::move(other)));
     }
 
     Virtual_Relation_e::~Virtual_Relation_e()
@@ -98,19 +146,19 @@ namespace doticu_skylib {
         this->value = _NONE_;
     }
 
-    maybe<Relation_e> Virtual_Relation_e::As_Relation()
+    maybe<Relation_e> Virtual_Relation_e::As_Relation() const
     {
         return To_Relation(*this);
     }
 
-    some<const char*> Virtual_Relation_e::As_String()
+    some<const char*> Virtual_Relation_e::As_String() const
     {
         return To_String(*this);
     }
 
     Virtual_Relation_e::operator Bool_t() const
     {
-        return this->value <= LOVER && this->value >= ARCHNEMESIS;
+        return Is_Valid(this->value);
     }
 
     Virtual_Relation_e::operator value_type() const

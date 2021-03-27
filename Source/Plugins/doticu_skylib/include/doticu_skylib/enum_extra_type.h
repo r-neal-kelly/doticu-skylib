@@ -213,12 +213,12 @@ namespace doticu_skylib {
         };
 
     public:
-        using Enum_t::Enum_t;
-
-    public:
         static some<const char* const*> Strings();
         static some<const char*>        To_String(Extra_Type_e extra_type);
         static Extra_Type_e             From_String(maybe<const char*> extra_type);
+
+    public:
+        using Enum_t::Enum_t;
 
     public:
         some<const char*> As_String();

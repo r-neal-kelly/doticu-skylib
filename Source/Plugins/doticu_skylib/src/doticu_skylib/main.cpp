@@ -22,6 +22,7 @@
 #include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/container_entry.h"
 #include "doticu_skylib/dialogue_manager.h"
+#include "doticu_skylib/enum_type.h"
 #include "doticu_skylib/enum_virtual_relation.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_owner.h"
@@ -50,6 +51,13 @@
 //
 
 namespace doticu_skylib {
+
+    void Test()
+    {
+        maybe<Vitality_e> vitality = Vitality_e::From_String("MORTAL");
+
+        vitality == Vitality_e::MORTAL;
+    }
 
     //for NPC Party
     static void Split_Inventory(some<Actor_t*> actor, some<Reference_t*> worn_cache, some<Reference_t*> other_cache)
@@ -220,7 +228,6 @@ namespace doticu_skylib {
 
     void Main_t::Initialize()
     {
-
     }
 
     void Main_t::Before_Save()
