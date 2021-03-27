@@ -10,17 +10,8 @@
 
 namespace doticu_skylib {
 
-    Form_ID_t::Form_ID_t() :
-        value(NONE_VALUE)
-    {
-    }
-
-    Form_ID_t::Form_ID_t(value_type value) :
-        value(value)
-    {
-    }
-
-    Form_ID_t::Form_ID_t(some<Heavy_Mod_Index_t> mod_index, some<Heavy_Form_Index_t> form_index)
+    Form_ID_t::Form_ID_t(some<Heavy_Mod_Index_t> mod_index, some<Heavy_Form_Index_t> form_index) :
+        Form_ID_t()
     {
         SKYLIB_ASSERT_SOME(mod_index);
         SKYLIB_ASSERT_SOME(form_index);
@@ -30,7 +21,8 @@ namespace doticu_skylib {
             (static_cast<value_type>(form_index()) & 0x00FFFFFF);
     }
 
-    Form_ID_t::Form_ID_t(some<Light_Mod_Index_t> mod_index, some<Light_Form_Index_t> form_index)
+    Form_ID_t::Form_ID_t(some<Light_Mod_Index_t> mod_index, some<Light_Form_Index_t> form_index) :
+        Form_ID_t()
     {
         SKYLIB_ASSERT_SOME(mod_index);
         SKYLIB_ASSERT_SOME(form_index);
@@ -41,7 +33,8 @@ namespace doticu_skylib {
             (static_cast<value_type>(form_index()) & 0x00000FFF);
     }
 
-    Form_ID_t::Form_ID_t(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index)
+    Form_ID_t::Form_ID_t(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index) :
+        Form_ID_t()
     {
         SKYLIB_ASSERT_SOME(mod);
 
@@ -51,7 +44,7 @@ namespace doticu_skylib {
             if (heavy_form_index) {
                 this->value = Form_ID_t(heavy_mod_index(), heavy_form_index());
             } else {
-                this->value = NONE_VALUE;
+                this->value = _NONE_;
             }
         } else {
             maybe<Light_Mod_Index_t> light_mod_index = mod->Light_Mod_Index();
@@ -60,39 +53,12 @@ namespace doticu_skylib {
                 if (light_form_index) {
                     this->value = Form_ID_t(light_mod_index(), light_form_index());
                 } else {
-                    this->value = NONE_VALUE;
+                    this->value = _NONE_;
                 }
             } else {
-                this->value = NONE_VALUE;
+                this->value = _NONE_;
             }
         }
-    }
-
-    String_t Form_ID_t::As_String() const
-    {
-        static const char hex_values[16] =
-        {
-            '0', '1', '2', '3', '4', '5', '6', '7',
-            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-        };
-
-        char form_id_string[11] =
-        {
-            '0', 'x',
-            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-            '\0'
-        };
-
-        form_id_string[2] = hex_values[(this->value & 0xF0000000) >> 28];
-        form_id_string[3] = hex_values[(this->value & 0x0F000000) >> 24];
-        form_id_string[4] = hex_values[(this->value & 0x00F00000) >> 20];
-        form_id_string[5] = hex_values[(this->value & 0x000F0000) >> 16];
-        form_id_string[6] = hex_values[(this->value & 0x0000F000) >> 12];
-        form_id_string[7] = hex_values[(this->value & 0x00000F00) >> 8];
-        form_id_string[8] = hex_values[(this->value & 0x000000F0) >> 4];
-        form_id_string[9] = hex_values[(this->value & 0x0000000F) >> 0];
-
-        return form_id_string;
     }
 
     Bool_t Form_ID_t::Is_Static() const
@@ -230,7 +196,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Mod_t*> Form_ID_t::Mod()
+    maybe<Mod_t*> Form_ID_t::Mod() const
     {
         if (Is_Static()) {
             maybe<Heavy_Mod_Index_t> heavy_mod_index = Heavy_Mod_Index();
@@ -278,7 +244,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Form_t*> Form_ID_t::Form()
+    maybe<Form_t*> Form_ID_t::Form() const
     {
         return Game_t::Form(*this);
     }
@@ -300,30 +266,36 @@ namespace doticu_skylib {
         }
     }
 
-    Form_ID_t::operator value_type() const
+    String_t Form_ID_t::As_String() const
     {
-        return this->value;
-    }
+        static const char hex_values[16] =
+        {
+            '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
+        };
 
-    Form_ID_t::operator Bool_t() const
-    {
-        return this->value != NONE_VALUE;
-    }
+        char result[11] =
+        {
+            '0', 'x',
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+            '\0'
+        };
 
-    Bool_t Form_ID_t::operator !() const
-    {
-        return !static_cast<Bool_t>(*this);
+        result[2] = hex_values[(this->value & 0xF0000000) >> 28];
+        result[3] = hex_values[(this->value & 0x0F000000) >> 24];
+        result[4] = hex_values[(this->value & 0x00F00000) >> 20];
+        result[5] = hex_values[(this->value & 0x000F0000) >> 16];
+        result[6] = hex_values[(this->value & 0x0000F000) >> 12];
+        result[7] = hex_values[(this->value & 0x00000F00) >> 8];
+        result[8] = hex_values[(this->value & 0x000000F0) >> 4];
+        result[9] = hex_values[(this->value & 0x0000000F) >> 0];
+
+        return result;
     }
 
     Form_ID_t::operator String_t() const
     {
         return As_String();
-    }
-
-    template <>
-    Bool_t Is_Equal(const none<Form_ID_t>& a, const Form_ID_t& b)
-    {
-        return !b;
     }
 
 }

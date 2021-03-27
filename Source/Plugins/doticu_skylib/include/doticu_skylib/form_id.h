@@ -4,50 +4,50 @@
 
 #pragma once
 
+#include "doticu_skylib/form_index.h"
 #include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/mod_index.h"
 #include "doticu_skylib/string.h"
 
-#include "doticu_skylib/mod_index.h"
-#include "doticu_skylib/form_index.h"
-
 namespace doticu_skylib {
-
-    using Raw_Form_ID_t = u32;
 
     class Form_t;
     class Mod_t;
 
-    class Form_ID_t
+    using Raw_Form_ID_t = u32;
+
+    class Form_ID_t_data :
+        public Numeric_Data_t<Raw_Form_ID_t, 0>
     {
     public:
-        using value_type = Raw_Form_ID_t;
-        
-    public:
-        static constexpr value_type NONE_VALUE = 0;
+        static Bool_t Is_Valid(value_type value)
+        {
+            return value != _NONE_;
+        }
+    };
 
-    protected:
-        value_type value;
+    class Form_ID_t :
+        public Numeric_t<Form_ID_t_data>
+    {
+    public:
+        using Numeric_t::Numeric_t;
 
     public:
-        Form_ID_t();
-        Form_ID_t(value_type value);
+        Form_ID_t() = default;
         Form_ID_t(some<Heavy_Mod_Index_t> mod_index, some<Heavy_Form_Index_t> form_index);
         Form_ID_t(some<Light_Mod_Index_t> mod_index, some<Light_Form_Index_t> form_index);
         Form_ID_t(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
 
     public:
-        String_t As_String() const;
+        Bool_t  Is_Static() const;
+        Bool_t  Is_Dynamic() const;
 
-    public:
-        Bool_t Is_Static() const;
-        Bool_t Is_Dynamic() const;
+        Bool_t  Is_Heavy() const;
+        Bool_t  Is_Light() const;
 
-        Bool_t Is_Heavy() const;
-        Bool_t Is_Light() const;
-
-        Bool_t Has_Mod(some<Heavy_Mod_Index_t> heavy_mod_index) const;
-        Bool_t Has_Mod(some<Light_Mod_Index_t> light_mod_index) const;
-        Bool_t Has_Mod(some<Mod_t*> mod) const;
+        Bool_t  Has_Mod(some<Heavy_Mod_Index_t> heavy_mod_index) const;
+        Bool_t  Has_Mod(some<Light_Mod_Index_t> light_mod_index) const;
+        Bool_t  Has_Mod(some<Mod_t*> mod) const;
 
     public:
         maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index() const;
@@ -63,38 +63,38 @@ namespace doticu_skylib {
         Bool_t                      Light_Form_Index(some<Light_Form_Index_t> form_index);
 
     public:
-        maybe<Mod_t*>   Mod();
+        maybe<Mod_t*>   Mod() const;
         Bool_t          Mod(maybe<Mod_t*> mod); // sets to dynamic mod (0xFF) if none
 
-        maybe<Form_t*>  Form();
+        maybe<Form_t*>  Form() const;
         Bool_t          Form(some<Form_t*> form);
 
     public:
-        operator            value_type() const;
-        explicit operator   Bool_t() const;
-        Bool_t operator     !() const;
-        operator            String_t() const;
+        String_t    As_String() const;
+
+    public:
+        operator    String_t() const;
     };
 
     template <>
-    Bool_t Is_Equal(const none<Form_ID_t>& a, const Form_ID_t& b);
-
-    template <>
-    class none<Form_ID_t> : public none_numeric<Form_ID_t>
+    class none<Form_ID_t> :
+        public none_numeric<Form_ID_t>
     {
     public:
-        none() : none_numeric(Form_ID_t::NONE_VALUE) {}
+        using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Form_ID_t> : public maybe_numeric<Form_ID_t>
+    class maybe<Form_ID_t> :
+        public maybe_numeric<Form_ID_t>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Form_ID_t> : public some_numeric<Form_ID_t>
+    class some<Form_ID_t> :
+        public some_numeric<Form_ID_t>
     {
     public:
         using some_numeric::some_numeric;

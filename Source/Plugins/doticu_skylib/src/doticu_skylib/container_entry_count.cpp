@@ -3,7 +3,6 @@
 */
 
 #include "doticu_skylib/container_entry_count.h"
-#include "doticu_skylib/math.h"
 
 namespace doticu_skylib {
 

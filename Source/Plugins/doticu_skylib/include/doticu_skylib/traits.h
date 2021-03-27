@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
@@ -84,6 +83,12 @@ namespace doticu_skylib {
     >;
 
     template <typename T>
+    using enable_if_arithmetic_t = std::enable_if_t<
+        std::is_arithmetic<T>::value,
+        Bool_t
+    >;
+
+    template <typename T>
     using enable_if_boolean_t = std::enable_if_t<
         std::is_same<T, bool>::value,
         Bool_t
@@ -97,26 +102,6 @@ namespace doticu_skylib {
         std::is_same<T, s8>::value ||
         std::is_same<T, s16>::value ||
         std::is_same<T, s32>::value,
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_enum_32_or_less_t = std::enable_if_t<
-        (std::is_enum<T>::value ||
-         std::is_convertible<T, Enum_t<typename T::value_type>>::value) &&
-        (std::is_same<typename T::value_type, u8>::value ||
-         std::is_same<typename T::value_type, u16>::value ||
-         std::is_same<typename T::value_type, u32>::value ||
-         std::is_same<typename T::value_type, s8>::value ||
-         std::is_same<typename T::value_type, s16>::value ||
-         std::is_same<typename T::value_type, s32>::value),
-        Bool_t
-    >;
-
-    template <typename T>
-    using enable_if_enum_t = std::enable_if_t<
-        std::is_enum<T>::value ||
-        std::is_convertible<T, Enum_t<typename T::value_type>>::value,
         Bool_t
     >;
 
@@ -186,14 +171,22 @@ namespace doticu_skylib {
     template <typename T>
     struct is_integer_32_or_less<T, std::conditional_t<false, enable_if_integer_32_or_less_t<T>, void>> : public std::true_type {};
 
-    template <typename T, typename _ = void>
-    struct is_enum_32_or_less : public std::false_type {};
+    // all traits should look like this
     template <typename T>
-    struct is_enum_32_or_less<T, std::conditional_t<false, enable_if_enum_32_or_less_t<T>, void>> : public std::true_type {};
-
+    using enable_if_enumable_t = std::enable_if_t<
+        std::is_integral<T>::value &&
+        !std::is_same<T, Bool_t>::value,
+        Bool_t
+    >;
     template <typename T, typename _ = void>
-    struct is_enum : public std::false_type {};
+    struct is_enumable :
+        public std::false_type
+    {
+    };
     template <typename T>
-    struct is_enum<T, std::conditional_t<false, enable_if_enum_t<T>, void>> : public std::true_type {};
+    struct is_enumable<T, std::conditional_t<false, enable_if_enumable_t<T>, void>> :
+        public std::true_type
+    {
+    };
 
 }

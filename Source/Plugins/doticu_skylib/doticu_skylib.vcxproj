@@ -128,8 +128,8 @@
     <ClInclude Include="include\doticu_skylib\ingredient.h" />
     <ClInclude Include="include\doticu_skylib\key.h" />
     <ClInclude Include="include\doticu_skylib\main.h" />
-    <ClInclude Include="include\doticu_skylib\maybe_enum.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
+    <ClInclude Include="include\doticu_skylib\numeric.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
     <ClInclude Include="include\doticu_skylib\potion.h" />
     <ClInclude Include="include\doticu_skylib\projectile.h" />
@@ -507,6 +507,7 @@
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_collision_layer_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_remove_reason.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_virtual_relation.cpp" />
@@ -565,7 +566,6 @@
     <ClCompile Include="src\doticu_skylib\form.cpp" />
     <ClCompile Include="src\doticu_skylib\form_factory.cpp" />
     <ClCompile Include="src\doticu_skylib\form_id.cpp" />
-    <ClCompile Include="src\doticu_skylib\form_index.cpp" />
     <ClCompile Include="src\doticu_skylib\form_list.cpp" />
     <ClCompile Include="src\doticu_skylib\game.cpp" />
     <ClCompile Include="src\doticu_skylib\global.cpp" />
@@ -582,7 +582,6 @@
     <ClCompile Include="src\doticu_skylib\memory.cpp" />
     <ClCompile Include="src\doticu_skylib\memory_virtual_heap.cpp" />
     <ClCompile Include="src\doticu_skylib\mod.cpp" />
-    <ClCompile Include="src\doticu_skylib\mod_index.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_3d.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_collidable.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra_bounds.cpp" />
@@ -626,7 +625,6 @@
     <ClCompile Include="src\doticu_skylib\virtual_object.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_policy.cpp" />
     <ClCompile Include="src\doticu_skylib\string.cpp" />
-    <ClCompile Include="src\doticu_skylib\virtual_stack_id.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_type.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_utility.cpp" />
     <ClCompile Include="src\doticu_skylib\virtual_variable.cpp" />

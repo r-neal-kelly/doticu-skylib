@@ -5,8 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
-#include "doticu_skylib/maybe.h"
-#include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
@@ -80,26 +79,26 @@ namespace doticu_skylib {
 
     template <>
     class none<Relation_e> :
-        public none_enum<Relation_e>
+        public none_numeric<Relation_e>
     {
     public:
-        using none_enum::none_enum;
+        using none_numeric::none_numeric;
     };
 
     template <>
     class maybe<Relation_e> :
-        public maybe_enum<Relation_e>
+        public maybe_numeric<Relation_e>
     {
     public:
-        using maybe_enum::maybe_enum;
+        using maybe_numeric::maybe_numeric;
     };
 
     template <>
     class some<Relation_e> :
-        public some_enum<Relation_e>
+        public some_numeric<Relation_e>
     {
     public:
-        using some_enum::some_enum;
+        using some_numeric::some_numeric;
     };
 
 }

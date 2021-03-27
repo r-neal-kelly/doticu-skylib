@@ -6,7 +6,7 @@
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/enum_relation.h"
-#include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
@@ -78,26 +78,26 @@ namespace doticu_skylib {
 
     template <>
     class none<Virtual_Relation_e> :
-        public none_enum<Virtual_Relation_e>
+        public none_numeric<Virtual_Relation_e>
     {
     public:
-        using none_enum::none_enum;
+        using none_numeric::none_numeric;
     };
 
     template <>
     class maybe<Virtual_Relation_e> :
-        public maybe_enum<Virtual_Relation_e>
+        public maybe_numeric<Virtual_Relation_e>
     {
     public:
-        using maybe_enum::maybe_enum;
+        using maybe_numeric::maybe_numeric;
     };
 
     template <>
     class some<Virtual_Relation_e> :
-        public some_enum<Virtual_Relation_e>
+        public some_numeric<Virtual_Relation_e>
     {
     public:
-        using some_enum::some_enum;
+        using some_numeric::some_numeric;
     };
 
 }

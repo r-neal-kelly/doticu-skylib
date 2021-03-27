@@ -181,12 +181,6 @@ namespace doticu_skylib {
         }
     };
 
-    template <typename T>
-    Bool_t Is_Equal(const none<T>& a, const T& b)
-    {
-        static_assert(false, "You must define Is_Equal() for your none type.");
-    }
-
     // <Index_t>
 
     template <>
@@ -561,6 +555,20 @@ namespace doticu_skylib {
         return a() == b;
     }
 
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator ==(const typename T::value_type a, const TT<T>& b)
+    {
+        return a == b();
+    }
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator ==(const TT<T>& a, const typename T::value_type b)
+    {
+        return a() == b;
+    }
+
     template <typename T, template <typename> typename A, template <typename> typename B,
         std::enable_if_t<is_none_maybe_some<T, A>::value && is_none_maybe_some<T, B>::value, Bool_t> = true
     > inline Bool_t operator ==(const A<T>& a, const B<T>& b)
@@ -578,6 +586,20 @@ namespace doticu_skylib {
     template <typename T, template <typename> typename TT,
         std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
     > inline Bool_t operator !=(const TT<T>& a, const T& b)
+    {
+        return !(operator ==(a, b));
+    }
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator !=(const typename T::value_type a, const TT<T>& b)
+    {
+        return !(operator ==(a, b));
+    }
+
+    template <typename T, template <typename> typename TT,
+        std::enable_if_t<is_none_maybe_some<T, TT>::value, Bool_t> = true
+    > inline Bool_t operator !=(const TT<T>& a, const typename T::value_type b)
     {
         return !(operator ==(a, b));
     }

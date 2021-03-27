@@ -6,7 +6,6 @@
 
 #include "doticu_skylib/enum_temper_level.h"
 #include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 

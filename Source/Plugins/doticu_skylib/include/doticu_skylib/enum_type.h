@@ -5,34 +5,50 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
-#include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
     template <typename T, enable_if_enumable_t<T> = true>
-    class Enum_Values_t
+    class Enum_Type_Data_t
     {
     public:
         using value_type = T;
     };
 
-    template <typename Enum_Values>
-    class Enum_Type_t : // as opposed to Enum_Flags_t
-        public Enum_Values
+    template <typename T>
+    using enable_if_enum_type_data_t = std::enable_if_t<
+        std::is_convertible<T, Enum_Type_Data_t<typename T::value_type>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_enum_type_data :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_enum_type_data<T, std::conditional_t<false, enable_if_enum_type_data_t<T>, void>> :
+        public std::true_type
+    {
+    };
+
+    template <typename Data_t, enable_if_enum_type_data_t<Data_t> = true>
+    class Enum_Type_t :
+        public Data_t
     {
     public:
-        using enum_type = typename Enum_Values::enum_type;
-        using value_type = typename Enum_Values::value_type;
+        using data_type = typename Data_t;
+        using value_type = typename Data_t::value_type;
 
     public:
         static some<const char*> To_String(maybe<Enum_Type_t> value)
         {
-            return Enum_Values::To_String(value());
+            return Data_t::To_String(value());
         }
 
         static maybe<Enum_Type_t> From_String(maybe<const char*> string)
         {
-            return Enum_Values::From_String(string);
+            return Data_t::From_String(string);
         }
 
     protected:
@@ -40,12 +56,12 @@ namespace doticu_skylib {
 
     public:
         Enum_Type_t() :
-            value(_NONE_)
+            value(Data_t::_NONE_)
         {
         }
 
         Enum_Type_t(value_type value) :
-            value(Is_Valid(value) ? value : _NONE_)
+            value(Data_t::Is_Valid(value) ? value : Data_t::_NONE_)
         {
         }
 
@@ -55,7 +71,7 @@ namespace doticu_skylib {
         }
 
         Enum_Type_t(Enum_Type_t&& other) noexcept :
-            value(std::move(other.value))
+            value(std::exchange(other.value, Data_t::_NONE_))
         {
         }
 
@@ -70,31 +86,36 @@ namespace doticu_skylib {
         Enum_Type_t& operator =(Enum_Type_t&& other) noexcept
         {
             if (this != std::addressof(other)) {
-                this->value = std::move(other.value);
+                this->value = std::exchange(other.value, Data_t::_NONE_);
             }
             return *this;
         }
 
         ~Enum_Type_t()
         {
-            this->value = _NONE_;
+            this->value = Data_t::_NONE_;
         }
 
     public:
         some<const char*> As_String() const
         {
-            return To_String(*this);
+            return Data_t::To_String(*this);
         }
 
     public:
         explicit operator Bool_t() const
         {
-            return Is_Valid(this->value);
+            return Data_t::Is_Valid(this->value);
         }
 
         operator value_type() const
         {
-            return static_cast<Bool_t>(*this) ? this->value : _NONE_;
+            return static_cast<Bool_t>(*this) ? this->value : Data_t::_NONE_;
+        }
+
+        operator some<const char*>() const
+        {
+            return As_String();
         }
 
     public:
@@ -111,26 +132,42 @@ namespace doticu_skylib {
 
     template <typename T>
     class none<Enum_Type_t<T>> :
-        public none_enum<Enum_Type_t<T>>
+        public none_numeric<Enum_Type_t<T>>
     {
     public:
-        using none_enum::none_enum;
+        using none_numeric::none_numeric;
     };
 
     template <typename T>
     class maybe<Enum_Type_t<T>> :
-        public maybe_enum<Enum_Type_t<T>>
+        public maybe_numeric<Enum_Type_t<T>>
     {
     public:
-        using maybe_enum::maybe_enum;
+        using maybe_numeric::maybe_numeric;
     };
 
     template <typename T>
     class some<Enum_Type_t<T>> :
-        public some_enum<Enum_Type_t<T>>
+        public some_numeric<Enum_Type_t<T>>
     {
     public:
-        using some_enum::some_enum;
+        using some_numeric::some_numeric;
+    };
+
+    template <typename T>
+    using enable_if_enum_type_t = std::enable_if_t<
+        std::is_convertible<T, Enum_Type_t<typename T::data_type>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_enum_type :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_enum_type<T, std::conditional_t<false, enable_if_enum_type_t<T>, void>> :
+        public std::true_type
+    {
     };
 
 }

@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/numeric.h"
 
 namespace doticu_skylib {
 
@@ -12,45 +13,42 @@ namespace doticu_skylib {
 
     /* Heavy_Form_Index_t */
 
-    class Heavy_Form_Index_t
+    class Heavy_Form_Index_t_data :
+        public Numeric_Data_t<Raw_Form_Index_t, 0x01000000>
     {
     public:
-        using value_type = Raw_Form_Index_t;
+        static Bool_t Is_Valid(value_type value)
+        {
+            return value < _NONE_;
+        }
+    };
 
+    class Heavy_Form_Index_t :
+        public Numeric_t<Heavy_Form_Index_t_data>
+    {
     public:
-        static constexpr value_type NONE_VALUE = 0x01000000;
-
-    protected:
-        value_type value;
-
-    public:
-        Heavy_Form_Index_t(value_type value);
-
-    public:
-        operator            value_type() const;
-        explicit operator   Bool_t() const;
-        Bool_t operator     !() const;
+        using Numeric_t::Numeric_t;
     };
 
     template <>
-    Bool_t Is_Equal(const none<Heavy_Form_Index_t>& a, const Heavy_Form_Index_t& b);
-
-    template <>
-    class none<Heavy_Form_Index_t> : public none_numeric<Heavy_Form_Index_t>
+    class none<Heavy_Form_Index_t> :
+        public none_numeric<Heavy_Form_Index_t>
     {
     public:
-        none() : none_numeric(Heavy_Form_Index_t::NONE_VALUE) {}
+        using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Heavy_Form_Index_t> : public maybe_numeric<Heavy_Form_Index_t>
+    class maybe<Heavy_Form_Index_t> :
+        public maybe_numeric<Heavy_Form_Index_t>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Heavy_Form_Index_t> : public some_numeric<Heavy_Form_Index_t>
+    class some<Heavy_Form_Index_t> :
+        public some_numeric<Heavy_Form_Index_t>
     {
     public:
         using some_numeric::some_numeric;
@@ -58,45 +56,42 @@ namespace doticu_skylib {
 
     /* Light_Form_Index_t */
 
-    class Light_Form_Index_t
+    class Light_Form_Index_t_data :
+        public Numeric_Data_t<Raw_Form_Index_t, 0x1000>
     {
     public:
-        using value_type = Raw_Form_Index_t;
+        static Bool_t Is_Valid(value_type value)
+        {
+            return value < _NONE_;
+        }
+    };
 
+    class Light_Form_Index_t :
+        public Numeric_t<Light_Form_Index_t_data>
+    {
     public:
-        static constexpr value_type NONE_VALUE = 0x1000;
-
-    protected:
-        value_type value;
-
-    public:
-        Light_Form_Index_t(value_type value);
-
-    public:
-        operator            value_type() const;
-        explicit operator   Bool_t() const;
-        Bool_t operator     !() const;
+        using Numeric_t::Numeric_t;
     };
 
     template <>
-    Bool_t Is_Equal(const none<Light_Form_Index_t>& a, const Light_Form_Index_t& b);
-
-    template <>
-    class none<Light_Form_Index_t> : public none_numeric<Light_Form_Index_t>
+    class none<Light_Form_Index_t> :
+        public none_numeric<Light_Form_Index_t>
     {
     public:
-        none() : none_numeric(Light_Form_Index_t::NONE_VALUE) {}
+        using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Light_Form_Index_t> : public maybe_numeric<Light_Form_Index_t>
+    class maybe<Light_Form_Index_t> :
+        public maybe_numeric<Light_Form_Index_t>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Light_Form_Index_t> : public some_numeric<Light_Form_Index_t>
+    class some<Light_Form_Index_t> :
+        public some_numeric<Light_Form_Index_t>
     {
     public:
         using some_numeric::some_numeric;

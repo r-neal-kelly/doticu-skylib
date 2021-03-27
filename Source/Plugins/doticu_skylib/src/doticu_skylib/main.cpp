@@ -24,6 +24,7 @@
 #include "doticu_skylib/dialogue_manager.h"
 #include "doticu_skylib/enum_type.h"
 #include "doticu_skylib/enum_virtual_relation.h"
+#include "doticu_skylib/enum_vitality.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_owner.h"
 #include "doticu_skylib/faction.h"
@@ -46,6 +47,7 @@
 #include "doticu_skylib/voice_type.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_game.h"
+#include "doticu_skylib/virtual_traits.h"
 #include "doticu_skylib/virtual_utility.h"
 #include "doticu_skylib/weapon.h"
 //
@@ -54,9 +56,7 @@ namespace doticu_skylib {
 
     void Test()
     {
-        maybe<Vitality_e> vitality = Vitality_e::From_String("MORTAL");
-
-        vitality == Vitality_e::MORTAL;
+        constexpr bool test = is_any_enum<Vitality_e>::value;
     }
 
     //for NPC Party

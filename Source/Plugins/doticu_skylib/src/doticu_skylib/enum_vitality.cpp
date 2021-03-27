@@ -7,12 +7,12 @@
 
 namespace doticu_skylib {
 
-    Bool_t Vitality_ev::Is_Valid(value_type value)
+    Bool_t Vitality_e_data::Is_Valid(value_type value)
     {
         return value > -1 && value < _TOTAL_;
     }
 
-    some<const char* const*> Vitality_ev::Strings()
+    some<const char* const*> Vitality_e_data::Strings()
     {
         static const char* const strings[_TOTAL_] =
         {
@@ -25,7 +25,7 @@ namespace doticu_skylib {
         return strings;
     }
 
-    some<const char*> Vitality_ev::To_String(value_type value)
+    some<const char*> Vitality_e_data::To_String(value_type value)
     {
         if (Is_Valid(value)) {
             return Strings()[value];
@@ -34,14 +34,13 @@ namespace doticu_skylib {
         }
     }
 
-    Vitality_ev::value_type Vitality_ev::From_String(maybe<const char*> vitality)
+    Vitality_e_data::value_type Vitality_e_data::From_String(maybe<const char*> string)
     {
-        if (vitality) {
+        if (string) {
             some<const char* const*> strings = Strings();
             for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
-                some<const char*> string = strings[idx];
-                if (CString_t::Is_Same(string(), vitality(), true)) {
-                    return static_cast<Vitality_e::value_type>(idx);
+                if (CString_t::Is_Same(strings[idx], string(), true)) {
+                    return static_cast<value_type>(idx);
                 }
             }
             return _NONE_;

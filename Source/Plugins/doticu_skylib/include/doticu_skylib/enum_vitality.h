@@ -5,12 +5,12 @@
 #pragma once
 
 #include "doticu_skylib/enum_type.h"
-#include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
-    class Vitality_ev :
-        public Enum_Values_t<s8>
+    class Vitality_e_data :
+        public Enum_Type_Data_t<s8>
     {
     public:
         enum enum_type : value_type
@@ -29,12 +29,12 @@ namespace doticu_skylib {
         static Bool_t                   Is_Valid(value_type value);
 
         static some<const char* const*> Strings();
-        static some<const char*>        To_String(value_type vitality);
-        static value_type               From_String(maybe<const char*> vitality);
+        static some<const char*>        To_String(value_type value);
+        static value_type               From_String(maybe<const char*> string);
     };
 
     class Vitality_e :
-        public Enum_Type_t<Vitality_ev>
+        public Enum_Type_t<Vitality_e_data>
     {
     public:
         using Enum_Type_t::Enum_Type_t;
@@ -42,26 +42,26 @@ namespace doticu_skylib {
 
     template <>
     class none<Vitality_e> :
-        public none_enum<Vitality_e>
+        public none_numeric<Vitality_e>
     {
     public:
-        using none_enum::none_enum;
+        using none_numeric::none_numeric;
     };
 
     template <>
     class maybe<Vitality_e> :
-        public maybe_enum<Vitality_e>
+        public maybe_numeric<Vitality_e>
     {
     public:
-        using maybe_enum::maybe_enum;
+        using maybe_numeric::maybe_numeric;
     };
 
     template <>
     class some<Vitality_e> :
-        public some_enum<Vitality_e>
+        public some_numeric<Vitality_e>
     {
     public:
-        using some_enum::some_enum;
+        using some_numeric::some_numeric;
     };
 
 }

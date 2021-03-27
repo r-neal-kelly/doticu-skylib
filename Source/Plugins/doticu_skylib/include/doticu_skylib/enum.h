@@ -6,15 +6,9 @@
 
 #include "doticu_skylib/atomic_number.inl" // should be .h
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
-
-    template <typename T>
-    using enable_if_enumable_t = std::enable_if_t<
-        std::is_integral<T>::value &&
-        !std::is_same<T, Bool_t>::value,
-        Bool_t
-    >;
 
     template <typename T, enable_if_enumable_t<T> = true>
     class Enum_Base_t
@@ -104,6 +98,22 @@ namespace doticu_skylib {
         {
             this->value &= ~flag;
         }
+    };
+
+    template <typename T>
+    using enable_if_enum_t = std::enable_if_t<
+        std::is_convertible<T, Enum_t<typename T::value_type>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_enum :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_enum<T, std::conditional_t<false, enable_if_enum_t<T>, void>> :
+        public std::true_type
+    {
     };
 
     class Binary_e :

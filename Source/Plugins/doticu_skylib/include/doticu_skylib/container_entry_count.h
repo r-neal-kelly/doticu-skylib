@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/intrinsic.h"
 
 namespace doticu_skylib {
 

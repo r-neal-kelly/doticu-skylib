@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe.h"
 
 #include "doticu_skylib/dynatomic_count.h"

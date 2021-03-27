@@ -4,59 +4,56 @@
 
 #pragma once
 
+#include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/numeric.h"
 
 namespace doticu_skylib { namespace Virtual {
 
     using Raw_Stack_ID_t = u32;
 
-    class Stack_ID_t
+    class Stack_ID_t_data :
+        public Numeric_Data_t<Raw_Stack_ID_t, ~0>
     {
     public:
-        using value_type = Raw_Stack_ID_t;
-        
-    public:
-        static constexpr value_type NONE_VALUE = static_cast<value_type>(~0);
+        static Bool_t Is_Valid(value_type value)
+        {
+            return value != _NONE_;
+        }
+    };
 
-    protected:
-        value_type value;
-
+    class Stack_ID_t :
+        public Numeric_t<Stack_ID_t_data>
+    {
     public:
-        Stack_ID_t();
-        Stack_ID_t(value_type value);
-
-    public:
-        operator            value_type() const;
-        explicit operator   Bool_t() const;
-        Bool_t operator     !() const;
+        using Numeric_t::Numeric_t;
     };
 
 }}
 
 namespace doticu_skylib {
 
-    template <>
-    inline Bool_t Is_Equal(const none<Virtual::Stack_ID_t>& a, const Virtual::Stack_ID_t& b)
-    {
-        return !b;
-    }
+    // why is this in this namespace?
 
     template <>
-    class none<Virtual::Stack_ID_t> : public none_numeric<Virtual::Stack_ID_t>
+    class none<Virtual::Stack_ID_t> :
+        public none_numeric<Virtual::Stack_ID_t>
     {
     public:
-        none() : none_numeric(Virtual::Stack_ID_t::NONE_VALUE) {}
+        using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Virtual::Stack_ID_t> : public maybe_numeric<Virtual::Stack_ID_t>
+    class maybe<Virtual::Stack_ID_t> :
+        public maybe_numeric<Virtual::Stack_ID_t>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Virtual::Stack_ID_t> : public some_numeric<Virtual::Stack_ID_t>
+    class some<Virtual::Stack_ID_t> :
+        public some_numeric<Virtual::Stack_ID_t>
     {
     public:
         using some_numeric::some_numeric;

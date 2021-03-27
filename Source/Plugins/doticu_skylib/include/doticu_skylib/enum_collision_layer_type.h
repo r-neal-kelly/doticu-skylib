@@ -4,19 +4,20 @@
 
 #pragma once
 
-#undef TRANSPARENT // why Microsoft?
+#undef TRANSPARENT
 
-#include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_type.h"
 #include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
-    class Collision_Layer_Type_e : public Enum_t<u16>
+    class Collision_Layer_Type_e_data :
+        public Enum_Type_Data_t<s16>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
-            _NONE_                          = static_cast<value_type>(~0),
+            _NONE_                          = -1,
 
             UNIDENTIFIED                    = 0,
             STATIC                          = 1,
@@ -74,46 +75,43 @@ namespace doticu_skylib {
             DETECTION                       = 53,
             TRAP_TRIGGER                    = 54,
 
-            _END_,
+            _TOTAL_,
         };
 
     public:
-        using Enum_t::Enum_t;
+        static Bool_t                   Is_Valid(value_type value);
 
+        static some<const char* const*> Strings();
+        static some<const char*>        To_String(value_type value);
+        static value_type               From_String(maybe<const char*> string);
+    };
+
+    class Collision_Layer_Type_e :
+        public Enum_Type_t<Collision_Layer_Type_e_data>
+    {
     public:
-        explicit operator Bool_t() const
-        {
-            return this->value != _NONE_ && this->value < _END_;
-        }
-
-        Bool_t operator!() const
-        {
-            return !static_cast<Bool_t>(*this);
-        }
+        using Enum_Type_t::Enum_Type_t;
     };
 
     template <>
-    inline Bool_t Is_Equal(const none<Collision_Layer_Type_e>& a, const Collision_Layer_Type_e& b)
-    {
-        return !b;
-    }
-
-    template <>
-    class none<Collision_Layer_Type_e> : public none_numeric<Collision_Layer_Type_e>
+    class none<Collision_Layer_Type_e> :
+        public none_numeric<Collision_Layer_Type_e>
     {
     public:
-        none() : none_numeric(Collision_Layer_Type_e::_NONE_) {}
+        using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Collision_Layer_Type_e> : public maybe_numeric<Collision_Layer_Type_e>
+    class maybe<Collision_Layer_Type_e> :
+        public maybe_numeric<Collision_Layer_Type_e>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Collision_Layer_Type_e> : public some_numeric<Collision_Layer_Type_e>
+    class some<Collision_Layer_Type_e> :
+        public some_numeric<Collision_Layer_Type_e>
     {
     public:
         using some_numeric::some_numeric;
