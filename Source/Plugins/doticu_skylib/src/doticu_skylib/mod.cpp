@@ -78,14 +78,14 @@ namespace doticu_skylib {
         Vector_t<some<Mod_t*>> results;
         results.reserve(heavy_mods.Count() + light_mods.Count());
 
-        for (Index_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = heavy_mods[idx];
             if (mod) {
                 results.push_back(mod);
             }
         }
 
-        for (Index_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = light_mods[idx];
             if (mod) {
                 results.push_back(mod);
@@ -102,7 +102,7 @@ namespace doticu_skylib {
         Vector_t<some<Mod_t*>> results;
         results.reserve(heavy_mods.Count());
 
-        for (Index_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = heavy_mods[idx];
             if (mod) {
                 results.push_back(mod);
@@ -119,7 +119,7 @@ namespace doticu_skylib {
         Vector_t<some<Mod_t*>> results;
         results.reserve(light_mods.Count());
 
-        for (Index_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = light_mods[idx];
             if (mod) {
                 results.push_back(mod);
@@ -153,7 +153,7 @@ namespace doticu_skylib {
         Array_t<Mod_t*>& heavy_mods = Game_t::Self()->heavy_mods;
         Array_t<Mod_t*>& light_mods = Game_t::Self()->light_mods;
 
-        for (Index_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = heavy_mods[idx];
             if (mod) {
                 if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
@@ -162,7 +162,7 @@ namespace doticu_skylib {
             }
         }
 
-        for (Index_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
             Mod_t* mod = light_mods[idx];
             if (mod) {
                 if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
@@ -291,7 +291,7 @@ namespace doticu_skylib {
 
     Bool_t Mod_t::Find_Record(const char* type, Form_ID_t form_id)
     {
-        for (Index_t offset = 0; Seek(offset) && offset < file_size;) {
+        for (size_t offset = 0; Seek(offset) && offset < file_size;) {
             if (Has_Current_Record_Type("GRUP")) {
                 Record_Group_t& record_group = reinterpret_cast<Record_Group_t&>(current_record_header);
                 if (record_group.Has_Inner_Type(type)) {
@@ -338,7 +338,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Mod_t::Log_Records");
         SKYLIB_LOG(indent + "{");
 
-        for (Index_t offset = 0; Seek(offset) && offset < file_size; offset += sizeof(Record_Header_t) + current_record_header.body_size) {
+        for (size_t offset = 0; Seek(offset) && offset < file_size; offset += sizeof(Record_Header_t) + current_record_header.body_size) {
             current_record_header.Log(this, indent + SKYLIB_TAB);
         }
 

@@ -79,7 +79,7 @@ namespace doticu_skylib { namespace Virtual {
     inline void Array_t::Unpack(Arrayable_t& results)
     {
         results.reserve(count);
-        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+        for (size_t idx = 0, end = count; idx < end; idx += 1) {
             Variable_t* variable = Point(idx);
             if (variable) {
                 results.push_back(variable->Unpack<Arrayable_t::value_type>());
@@ -90,7 +90,7 @@ namespace doticu_skylib { namespace Virtual {
     template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
     inline void Array_t::Pack(const Arrayable_t& values)
     {
-        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+        for (size_t idx = 0, end = count; idx < end; idx += 1) {
             Variable_t* variable = Point(idx);
             if (variable) {
                 variable->Pack<Arrayable_t::value_type>(values[idx]);

@@ -32,7 +32,7 @@ namespace doticu_skylib {
     {
         Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
         size_t exterior_cell_count = 0;
-        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces[idx];
             if (worldspace) {
                 if (worldspace->persistent_cell) {
@@ -49,7 +49,7 @@ namespace doticu_skylib {
     static void Interior_Cells(Vector_t<Cell_t*>& accumulator)
     {
         Short_Array_t<Cell_t*>& interior_cells = Game_t::Self()->interior_cells;
-        for (Index_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
+        for (size_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
             Cell_t* cell = interior_cells.entries[idx];
             if (cell) {
                 accumulator.push_back(cell);
@@ -60,13 +60,13 @@ namespace doticu_skylib {
     static void Loaded_Exterior_Cells(Vector_t<Cell_t*>& accumulator)
     {
         Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
-        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
             Worldspace_t* worldspace = worldspaces[idx];
             if (worldspace) {
                 if (worldspace->persistent_cell) {
                     accumulator.push_back(worldspace->persistent_cell);
                 }
-                for (Index_t idx = 0, end = worldspace->xy_to_cell.capacity; idx < end; idx += 1) {
+                for (size_t idx = 0, end = worldspace->xy_to_cell.capacity; idx < end; idx += 1) {
                     Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = worldspace->xy_to_cell.entries[idx];
                     if (entry.chain && entry.second) {
                         accumulator.push_back(entry.second);
@@ -308,10 +308,10 @@ namespace doticu_skylib {
             Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
 
             Vector_t<Location_t*> locations = Locations();
-            for (Index_t idx = 0, end = locations.size(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = locations.size(); idx < end; idx += 1) {
                 Location_t* location = locations[idx];
                 if (location && location->Is_Valid()) {
-                    for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+                    for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
                         Worldspace_t* worldspace = worldspaces[idx];
                         if (worldspace && worldspace->Is_Valid()) {
                             if (worldspace->Has_Location(location)) {
@@ -363,7 +363,7 @@ namespace doticu_skylib {
 
     void Cell_t::References(Iterator_i<Reference_t*>& iterator)
     {
-        for (Index_t idx = 0, end = references.capacity; idx < end; idx += 1) {
+        for (size_t idx = 0, end = references.capacity; idx < end; idx += 1) {
             Set_t<Reference_t*>::Entry_t& entry = references.entries[idx];
             if (entry.chain && entry.first) {
                 if (iterator(entry.first) == Iterator_e::BREAK) {

@@ -40,7 +40,7 @@ namespace doticu_skylib {
     void Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
         auto& actor_bases = Game_t::Self()->Actor_Bases();
-        for (Index_t idx = 0, end = actor_bases.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = actor_bases.Count(); idx < end; idx += 1) {
             Actor_Base_t* actor_base = actor_bases[idx];
             if (actor_base) {
                 results.push_back(actor_base);
@@ -59,7 +59,7 @@ namespace doticu_skylib {
     void Actor_Base_t::Dynamic_Actor_Bases(Vector_t<Actor_Base_t*>& results)
     {
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
-        for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
             class Iterator_t :
                 public Iterator_i<Reference_t*>
@@ -140,7 +140,7 @@ namespace doticu_skylib {
                 actor_bases_count < 100000 ? 5 :
                 6;
 
-            for (Index_t idx = 0, end = actor_bases_count; idx < end; idx += 1) {
+            for (size_t idx = 0, end = actor_bases_count; idx < end; idx += 1) {
                 some<Actor_Base_t*> actor_base = actor_bases[idx];
                 SKYLIB_ASSERT_SOME(actor_base);
 
@@ -291,7 +291,7 @@ namespace doticu_skylib {
         }
 
         if (keywords) {
-            for (Index_t idx = 0, end = keyword_count; idx < end; idx += 1) {
+            for (size_t idx = 0, end = keyword_count; idx < end; idx += 1) {
                 maybe<Keyword_t*> keyword = keywords[idx];
                 if (keyword && keyword->Is_Valid() && !results.Has(keyword())) {
                     results.push_back(keyword());
@@ -302,7 +302,7 @@ namespace doticu_skylib {
         if (include_templates) {
             for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
                 if (it->keywords) {
-                    for (Index_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
+                    for (size_t idx = 0, end = it->keyword_count; idx < end; idx += 1) {
                         maybe<Keyword_t*> keyword = it->keywords[idx];
                         if (keyword && keyword->Is_Valid() && !results.Has(keyword())) {
                             results.push_back(keyword());

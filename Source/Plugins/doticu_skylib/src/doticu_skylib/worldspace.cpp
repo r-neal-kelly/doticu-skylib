@@ -18,7 +18,7 @@ namespace doticu_skylib {
         Vector_t<Worldspace_t*> results;
         results.reserve(worldspaces.Count());
 
-        for (Index_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
             results.push_back(worldspaces[idx]);
         }
 
@@ -68,7 +68,7 @@ namespace doticu_skylib {
         SKYLIB_LOG("worldspace: %8.8X, %s", form_id, Get_Editor_ID());
         {
             SKYLIB_LOG(TAB "xy_to_cell capacity: %u", xy_to_cell.capacity);
-            for (Index_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
+            for (size_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
                 Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = xy_to_cell.entries[idx];
                 if (entry.chain) {
                     if (entry.second) {
@@ -91,14 +91,14 @@ namespace doticu_skylib {
         {
             auto& cell_xy_to_filtered_form_ids = form_id_maps.cell_xy_to_filtered_form_ids;
             SKYLIB_LOG(TAB "cell_xy_to_filtered_form_ids capacity: %u", cell_xy_to_filtered_form_ids.capacity);
-            for (Index_t idx = 0, end = cell_xy_to_filtered_form_ids.capacity; idx < end; idx += 1) {
+            for (size_t idx = 0, end = cell_xy_to_filtered_form_ids.capacity; idx < end; idx += 1) {
                 auto& entry = cell_xy_to_filtered_form_ids.entries[idx];
                 if (entry.chain) {
                     auto& cell_xy = entry.first;
                     auto& arr = entry.second;
                     if (arr) {
                         SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, count: %u", cell_xy.x, cell_xy.y, arr->count);
-                        for (Index_t idx = 0, end = arr->count; idx < end; idx += 1) {
+                        for (size_t idx = 0, end = arr->count; idx < end; idx += 1) {
                             Form_ID_t form_id = arr->At(idx);
                             maybe<Form_t*> form = Game_t::Form(form_id);
                             if (form) {

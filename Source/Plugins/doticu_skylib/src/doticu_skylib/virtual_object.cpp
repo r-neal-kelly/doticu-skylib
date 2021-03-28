@@ -53,20 +53,20 @@ namespace doticu_skylib { namespace Virtual {
 
     Variable_t* Object_t::Variable(String_t variable_name)
     {
-        Class_t* info = this->info;
-        SInt64 idx = -1;
-        SInt64 offset = 0;
-        while (info) {
-            if (idx < 0) {
-                idx = info->Variable_Index(variable_name);
+        maybe<Class_t*> v_class = this->v_class;
+        maybe<size_t> variable_idx = none<size_t>();
+        size_t variable_offset = 0;
+        while (v_class) {
+            if (variable_idx.Has_Value()) {
+                variable_offset += v_class->Count_Variable_Infos();
             } else {
-                offset += info->Count_Variable_Infos();
+                variable_idx = v_class->Variable_Index(variable_name);
             }
-            info = info->parent != info ? info->parent : nullptr;
+            v_class = v_class->parent != v_class ? v_class->parent : nullptr;
         }
 
-        if (idx > -1) {
-            return Variables() + offset + idx;
+        if (variable_idx.Has_Value()) {
+            return Variables() + variable_offset + variable_idx.Value();
         } else {
             return nullptr;
         }
@@ -74,20 +74,20 @@ namespace doticu_skylib { namespace Virtual {
 
     Variable_t* Object_t::Property(String_t property_name)
     {
-        Class_t* info = this->info;
-        SInt64 idx = -1;
-        SInt64 offset = 0;
-        while (info) {
-            if (idx < 0) {
-                idx = info->Property_Index(property_name);
+        maybe<Class_t*> v_class = this->v_class;
+        maybe<size_t> property_idx = none<size_t>();
+        size_t property_offset = 0;
+        while (v_class) {
+            if (property_idx.Has_Value()) {
+                property_offset += v_class->Count_Variable_Infos(); // or v_class->Count_Property_Infos()?
             } else {
-                offset += info->Count_Variable_Infos();
+                property_idx = v_class->Property_Index(property_name);
             }
-            info = info->parent != info ? info->parent : nullptr;
+            v_class = v_class->parent != v_class ? v_class->parent : nullptr;
         }
 
-        if (idx > -1) {
-            return Variables() + offset + idx;
+        if (property_idx.Has_Value()) {
+            return Variables() + property_offset + property_idx.Value();
         } else {
             return nullptr;
         }
@@ -95,18 +95,18 @@ namespace doticu_skylib { namespace Virtual {
 
     void Object_t::Log_Variables()
     {
-        SKYLIB_LOG("Logging Object Variables: %s", info->name);
-        Variable_Info_t* variables_infos = info->Variable_Infos();
-        for (u64 idx = 0, size = info->Count_Variable_Infos(); idx < size; idx += 1) {
+        SKYLIB_LOG("Logging Object Variables: %s", v_class->name);
+        Variable_Info_t* variables_infos = v_class->Variable_Infos();
+        for (size_t idx = 0, size = v_class->Count_Variable_Infos(); idx < size; idx += 1) {
             Variable_t& variable = Variables()[idx];
-            Variable_Info_t& info = variables_infos[idx];
-            SKYLIB_LOG("Variable: %s", info.name);
-            if (info.type.Is_Int()) {
-                SKYLIB_LOG("    type: %s, val: %i\n", info.type.To_String(), variable.data.i);
-            } else if (info.type.Is_String()) {
-                SKYLIB_LOG("    type: %s, val: %s\n", info.type.To_String(), variable.data.str);
+            Variable_Info_t& variable_info = variables_infos[idx];
+            SKYLIB_LOG("Variable: %s", variable_info.name);
+            if (variable_info.type.Is_Int()) {
+                SKYLIB_LOG("    type: %s, val: %i\n", variable_info.type.To_String(), variable.data.i);
+            } else if (variable_info.type.Is_String()) {
+                SKYLIB_LOG("    type: %s, val: %s\n", variable_info.type.To_String(), variable.data.str);
             } else {
-                SKYLIB_LOG("    type: %s, val: %p\n", info.type.To_String(), variable.data.ptr);
+                SKYLIB_LOG("    type: %s, val: %p\n", variable_info.type.To_String(), variable.data.ptr);
             }
         }
     }

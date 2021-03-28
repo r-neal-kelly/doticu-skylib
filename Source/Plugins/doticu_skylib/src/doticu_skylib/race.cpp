@@ -20,7 +20,7 @@ namespace doticu_skylib {
         Vector_t<Race_t*> results;
         results.reserve(races.Count());
 
-        for (Index_t idx = 0, end = races.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = races.Count(); idx < end; idx += 1) {
             Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
             if (race) {
                 results.push_back(race);
@@ -37,7 +37,7 @@ namespace doticu_skylib {
         Vector_t<const char*> results;
         results.reserve(races.Count());
 
-        for (Index_t idx = 0, end = races.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = races.Count(); idx < end; idx += 1) {
             Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
             if (race) {
                 results.push_back(race->Get_Editor_ID());

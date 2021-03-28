@@ -145,12 +145,12 @@ namespace doticu_skylib {
             results.reserve(factions_and_ranks.Count());
         }
 
-        for (Index_t idx = 0, end = factions_and_ranks.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = factions_and_ranks.Count(); idx < end; idx += 1) {
             Faction_And_Rank_t& faction_and_rank = factions_and_ranks[idx];
             if (faction_and_rank.Is_Valid()) {
-                maybe<Index_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
-                if (output_idx) {
-                    output->operator[](idx).rank = faction_and_rank.rank;
+                maybe<size_t> output_idx = output->Index_Of(faction_and_rank, &Faction_And_Rank_t::Has_Same_Faction);
+                if (output_idx.Has_Value()) {
+                    output->at(output_idx.Value()).rank = faction_and_rank.rank;
                 } else {
                     output->push_back(faction_and_rank);
                 }
@@ -158,7 +158,7 @@ namespace doticu_skylib {
         }
 
         if (remove_negatives) {
-            for (Index_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = buffer.size(); idx < end; idx += 1) {
                 Faction_And_Rank_t& faction_and_rank = buffer[idx];
                 if (faction_and_rank.rank > -1) {
                     results.push_back(faction_and_rank);
@@ -223,7 +223,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "{");
 
         Vector_t<Faction_And_Rank_t> factions_and_ranks = Factions_And_Ranks();
-        for (Index_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = factions_and_ranks.size(); idx < end; idx += 1) {
             factions_and_ranks[idx].Log(indent + SKYLIB_TAB);
         }
 

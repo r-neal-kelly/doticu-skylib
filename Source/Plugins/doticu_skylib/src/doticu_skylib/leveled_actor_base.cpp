@@ -29,7 +29,7 @@ namespace doticu_skylib {
     void Leveled_Actor_Base_t::Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results)
     {
         auto& leveled_actor_bases = Game_t::Self()->Leveled_Actor_Bases();
-        for (Index_t idx = 0, end = leveled_actor_bases.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = leveled_actor_bases.Count(); idx < end; idx += 1) {
             Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases[idx];
             if (leveled_actor_base) {
                 results.push_back(leveled_actor_base);
@@ -59,9 +59,9 @@ namespace doticu_skylib {
             {
                 Stack_Array_t<Leveled_Actor_Base_t*, 256> leveled_bases;
                 leveled_bases.Push(this);
-                for (Index_t idx = 0; idx < leveled_bases.count; idx += 1) {
+                for (size_t idx = 0; idx < leveled_bases.count; idx += 1) {
                     Leveled_Actor_Base_t* leveled_base = leveled_bases[idx];
-                    for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
+                    for (size_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
                         Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
@@ -83,9 +83,9 @@ namespace doticu_skylib {
                 }
             }
             {
-                for (Index_t idx = 0; idx < leveled_bases_backup.size(); idx += 1) {
+                for (size_t idx = 0; idx < leveled_bases_backup.size(); idx += 1) {
                     Leveled_Actor_Base_t* leveled_base = leveled_bases_backup[idx];
-                    for (Index_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
+                    for (size_t idx = 0, end = leveled_base->leveled_entry_count; idx < end; idx += 1) {
                         Form_t* form = leveled_base->leveled_entries[idx].object;
                         if (form && form->Is_Valid()) {
                             if (form->form_type == Form_Type_e::LEVELED_ACTOR_BASE) {
@@ -226,7 +226,7 @@ namespace doticu_skylib {
         std::string leveled_name = "";
         size_t name_count = names.size();
         if (name_count > 0) {
-            for (Index_t idx = 0, end = name_count - 1; idx < end; idx += 1) {
+            for (size_t idx = 0, end = name_count - 1; idx < end; idx += 1) {
                 leveled_name += names[idx] + ", ";
             }
             size_t char_difference = iterator.Char_Difference();
@@ -236,7 +236,7 @@ namespace doticu_skylib {
                 }
                 char remaining_chars[MAX_CHARS + 1];
                 String_t name = names[name_count - 1];
-                Index_t idx = 0, end = char_difference;
+                size_t idx = 0, end = char_difference;
                 for (; idx < end; idx += 1) {
                     remaining_chars[idx] = name[idx];
                 }

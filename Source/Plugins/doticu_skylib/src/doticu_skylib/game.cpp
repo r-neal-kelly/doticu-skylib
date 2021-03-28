@@ -64,7 +64,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(data);
 
         u64* ptr = static_cast<u64*>(data);
-        for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+        for (size_t idx = 0, end = count; idx < end; idx += 1) {
             SKYLIB_LOG(indent + "idx: %8i, %p", idx, *(ptr + idx));
         }
     }

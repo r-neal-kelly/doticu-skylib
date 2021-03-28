@@ -115,32 +115,32 @@ namespace doticu_skylib { namespace Virtual {
         return reinterpret_cast<Property_Info_t*>(Default_Infos() + Count_Default_Infos());
     }
 
-    Index_t Class_t::Variable_Index(String_t variable_name)
+    maybe<size_t> Class_t::Variable_Index(String_t variable_name)
     {
         Variable_Info_t* variables = Variable_Infos();
-        for (Index_t idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
+        for (size_t idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
             if (CString_t::Is_Same(variables[idx].name, variable_name, true)) {
                 return idx;
             }
         }
-        return -1;
+        return none<size_t>();
     }
 
-    Index_t Class_t::Property_Index(String_t property_name)
+    maybe<size_t> Class_t::Property_Index(String_t property_name)
     {
         Property_Info_t* properties = Property_Infos();
-        for (Index_t idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
+        for (size_t idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
             if (CString_t::Is_Same(properties[idx].name, property_name, true)) {
                 return properties[idx].auto_var_idx;
             }
         }
-        return -1;
+        return none<size_t>();
     }
 
     Property_Info_t* Class_t::Property_Info(String_t property_name)
     {
         Property_Info_t* properties = Property_Infos();
-        for (Index_t idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
+        for (size_t idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
             if (CString_t::Is_Same(properties[idx].name, property_name, true)) {
                 return &properties[idx];
             }
@@ -164,7 +164,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         SKYLIB_LOG("Logging Variables: %s", name);
         Variable_Info_t* variables = Variable_Infos();
-        for (u64 idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
+        for (size_t idx = 0, size = Count_Variable_Infos(); idx < size; idx += 1) {
             Variable_Info_t& variable = variables[idx];
             SKYLIB_LOG("name: %s", variable.name);
             SKYLIB_LOG("    type: %u", variable.type);
@@ -176,7 +176,7 @@ namespace doticu_skylib { namespace Virtual {
     {
         SKYLIB_LOG("Logging Properties: %s", name);
         Property_Info_t* properties = Property_Infos();
-        for (u64 idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
+        for (size_t idx = 0, size = Count_Property_Infos(); idx < size; idx += 1) {
             Property_Info_t& property = properties[idx];
             SKYLIB_LOG("name: %s", property.name);
             SKYLIB_LOG("    parent_name: %s", property.parent_name);

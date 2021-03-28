@@ -37,7 +37,7 @@ namespace doticu_skylib {
             if (sub) {
                 size_t buffer_size = CString_t::Length(sub, false);
                 std::wstring buffer(buffer_size, L' ');
-                for (Index_t idx = 0, end = buffer_size; idx < end; idx += 1) {
+                for (size_t idx = 0, end = buffer_size; idx < end; idx += 1) {
                     buffer[idx] = sub[idx];
                 }
                 return buffer;

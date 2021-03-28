@@ -13,7 +13,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(form);
 
         if (!forms.Is_Empty()) {
-            for (Index_t idx = 0, end = forms.Count(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = forms.Count(); idx < end; idx += 1) {
                 if (forms[idx] == form()) {
                     return true;
                 }
@@ -21,7 +21,7 @@ namespace doticu_skylib {
         }
 
         if (added_form_ids && !added_form_ids->Is_Empty()) {
-            for (Index_t idx = 0, end = added_form_ids->Count(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = added_form_ids->Count(); idx < end; idx += 1) {
                 if (added_form_ids->At(idx) == form->form_id) {
                     return true;
                 }

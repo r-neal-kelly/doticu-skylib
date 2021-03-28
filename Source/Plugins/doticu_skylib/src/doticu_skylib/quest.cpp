@@ -25,10 +25,10 @@ namespace doticu_skylib {
 
         struct VCallback : public Virtual::Callback_t {
             const Vector_t<some<Quest_t*>> quests;
-            Index_t index;
+            size_t index;
             Bool_t did_start_all;
             UCallback_t ucallback;
-            VCallback(const Vector_t<some<Quest_t*>> quests, Index_t index, Bool_t did_start_all, UCallback_t ucallback) :
+            VCallback(const Vector_t<some<Quest_t*>> quests, size_t index, Bool_t did_start_all, UCallback_t ucallback) :
                 quests(quests), index(index), did_start_all(did_start_all), ucallback(ucallback)
             {
             }
@@ -51,7 +51,7 @@ namespace doticu_skylib {
             }
         };
 
-        Index_t index = 0;
+        size_t index = 0;
         some<Quest_t*> quest = quests[index];
         SKYLIB_ASSERT_SOME(quest);
         quest->Start(new VCallback(quests, index + 1, true, ucallback));
@@ -445,7 +445,7 @@ namespace doticu_skylib {
 
     void Quest_t::Log_Promoted_References()
     {
-        for (Index_t idx = 0, end = promoted_references.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = promoted_references.Count(); idx < end; idx += 1) {
             Reference_Handle_t reference_handle = promoted_references[idx];
             Reference_t* reference = Reference_t::From_Handle(reference_handle);
             if (reference) {

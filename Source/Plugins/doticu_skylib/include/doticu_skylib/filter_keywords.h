@@ -81,7 +81,7 @@ namespace doticu_skylib { namespace Filter {
             static Result_e Run(some<Keywords_c*> filterable, some<Keyword_t*> keyword)
             {
                 if (filterable->keywords) {
-                    for (Index_t idx = 0, end = filterable->keyword_count; idx < end; idx += 1) {
+                    for (size_t idx = 0, end = filterable->keyword_count; idx < end; idx += 1) {
                         if (Compare_f<Keyword_t*, some<Keyword_t*>>::Run<MODE>(filterable->keywords[idx], keyword) == Result_e::IS_MATCH) {
                             return Result_e::IS_MATCH;
                         }
@@ -100,7 +100,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::OR, Bool_t> = true>
             static Result_e Run(some<Keywords_c*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (Compare_f<some<Keywords_c*>, some<Keyword_t*>>::Run<MODE>(filterable, keywords[idx]) == Result_e::IS_MATCH) {
                         return Result_e::IS_MATCH;
                     }
@@ -111,7 +111,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::AND, Bool_t> = true>
             static Result_e Run(some<Keywords_c*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (Compare_f<some<Keywords_c*>, some<Keyword_t*>>::Run<MODE>(filterable, keywords[idx]) == Result_e::ISNT_MATCH) {
                         return Result_e::ISNT_MATCH;
                     }
@@ -123,7 +123,7 @@ namespace doticu_skylib { namespace Filter {
             static Result_e Run(some<Keywords_c*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
                 Bool_t did_match = false;
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (Compare_f<some<Keywords_c*>, some<Keyword_t*>>::Run<MODE>(filterable, keywords[idx]) == Result_e::IS_MATCH) {
                         if (did_match) {
                             return Result_e::ISNT_MATCH;
@@ -210,7 +210,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::OR, Bool_t> = true>
             static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (filterable->Has_Keyword(keywords[idx])) {
                         return Result_e::IS_MATCH;
                     }
@@ -221,7 +221,7 @@ namespace doticu_skylib { namespace Filter {
             template <const Logic_Gate_e::value_type MODE, std::enable_if_t<MODE == Logic_Gate_e::AND, Bool_t> = true>
             static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (!filterable->Has_Keyword(keywords[idx])) {
                         return Result_e::ISNT_MATCH;
                     }
@@ -233,7 +233,7 @@ namespace doticu_skylib { namespace Filter {
             static Result_e Run(some<Reference_t*> filterable, Vector_t<some<Keyword_t*>>& keywords)
             {
                 Bool_t did_match = false;
-                for (Index_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
                     if (filterable->Has_Keyword(keywords[idx])) {
                         if (did_match) {
                             return Result_e::ISNT_MATCH;

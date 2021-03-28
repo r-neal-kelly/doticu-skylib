@@ -77,10 +77,10 @@ namespace doticu_skylib {
                 some<Altered_Translation_t*> altered_translation = Altered_Translation(key(), translation());
                 SKYLIB_ASSERT_SOME(altered_translation);
 
-                Index_t translation_end = altered_translation->value_length + 1;
-                Index_t value_end = wcslen(value_to_copy()) + 1;
-                Index_t end = value_end > translation_end ? translation_end - 1 : value_end;
-                for (Index_t idx = 0; idx < end; idx += 1) {
+                size_t translation_end = altered_translation->value_length + 1;
+                size_t value_end = wcslen(value_to_copy()) + 1;
+                size_t end = value_end > translation_end ? translation_end - 1 : value_end;
+                for (size_t idx = 0; idx < end; idx += 1) {
                     translation[idx] = value_to_copy[idx];
                 }
                 translation[translation_end - 1] = L'\0';
@@ -107,7 +107,7 @@ namespace doticu_skylib {
         static Hash_Map_t<const wchar_t*, wchar_t*>& translations = Translations();
 
         if (key) {
-            for (Index_t idx = 0, end = translations.capacity; idx < end; idx += 1) {
+            for (size_t idx = 0, end = translations.capacity; idx < end; idx += 1) {
                 auto* entry = translations.entries + idx;
                 if (entry && entry->chain != nullptr) {
                     if (lstrcmpiW(key(), entry->first) == 0) {
@@ -128,9 +128,9 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(key);
         SKYLIB_ASSERT_SOME(value);
 
-        maybe<Index_t> index = altered_translations.Index_Of(key);
-        if (index) {
-            return &altered_translations[index()];
+        maybe<size_t> index = altered_translations.Index_Of(key);
+        if (index.Has_Value()) {
+            return &altered_translations[index.Value()];
         } else {
             Altered_Translation_t new_altered_translation(key, value);
             altered_translations.push_back(new_altered_translation);

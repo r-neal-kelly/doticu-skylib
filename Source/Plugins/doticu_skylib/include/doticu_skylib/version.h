@@ -10,7 +10,7 @@
 
 namespace doticu_skylib {
 
-    template <typename T, enable_if_unsigned_integral_t<T> = true>
+    template <typename T, enable_if_unsigned_t<T> = true>
     class Version_t
     {
     public:

@@ -73,7 +73,6 @@ namespace doticu_skylib {
 
     using Byte_t    = u8;
     using Word_t    = size_t;
-    using Index_t   = s64;
     using Nullptr_t = decltype(nullptr);
 
 }

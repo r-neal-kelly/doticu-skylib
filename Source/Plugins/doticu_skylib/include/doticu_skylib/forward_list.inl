@@ -168,14 +168,12 @@ namespace doticu_skylib {
     }
 
     template <typename Type_t>
-    inline maybe<Type_t*> Forward_List_t<Type_t>::Point(some<Index_t> index)
+    inline maybe<Type_t*> Forward_List_t<Type_t>::Point(size_t index)
     {
-        SKYLIB_ASSERT_SOME(index);
-
         if (!Is_Empty()) {
-            Index_t idx = 0;
+            size_t idx = 0;
             for (maybe<Node_t*> node = &head; node; node = node->next, idx += 1) {
-                if (idx == index()) {
+                if (idx == index) {
                     return &node->value;
                 }
             }

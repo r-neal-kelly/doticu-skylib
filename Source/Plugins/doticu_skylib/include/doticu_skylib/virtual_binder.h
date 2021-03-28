@@ -11,6 +11,8 @@
 
 namespace doticu_skylib { namespace Virtual {
 
+    // Handle_t should be Raw_Handle_t. fix it!
+
     class Object_t;
 
     class Binder_t {
@@ -25,7 +27,7 @@ namespace doticu_skylib { namespace Virtual {
         virtual void Unbind_All_Objects2(Handle_t handle); // 06 (not sure what this does differently)
         virtual void Unbind_All_Objects3(Handle_t handle); // 07 (this one may also delete stuff for us?)
         virtual void Unbind_Object(Object_t*& object); // 08
-        virtual void Create_Object(String_t& class_name, UInt32 property_count, Object_t** object_out); // 09
+        virtual void Create_Object(String_t& class_name, u32 property_count, Object_t** object_out); // 09
         virtual void Initialize_Object_Properties(Object_t*& object, void* unk_property, Bool_t unk_bool); // 0A
     };
 

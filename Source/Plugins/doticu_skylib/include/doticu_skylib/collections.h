@@ -168,7 +168,7 @@ namespace doticu_skylib {
 
         void Clear()
         {
-            for (Index_t idx = 0, end = count; idx < end; idx += 1) {
+            for (size_t idx = 0, end = count; idx < end; idx += 1) {
                 Entries()[idx].~Type_t();
             }
             count = 0;
@@ -183,12 +183,13 @@ namespace doticu_skylib {
         Type_t  count; // 0
         Type_t  head;
 
-        Type_t At(Index_t index)
+        Type_t& At(size_t index)
         {
-            SKYLIB_ASSERT(index > -1 && index < count);
+            SKYLIB_ASSERT(index < count);
             return *(&head + index);
         }
     };
+    STATIC_ASSERT(sizeof(Type_Array_t<u16>) == 0x4);
 
     template <typename Type_t>
     class Static_Array_t
@@ -220,40 +221,40 @@ namespace doticu_skylib {
     public:
         using std::vector<Type>::vector;
 
-        Index_t Index_Of(const Type& item) const
+        maybe<size_t> Index_Of(const Type& item) const
         {
-            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = size(); idx < end; idx += 1) {
                 if (at(idx) == item) {
                     return idx;
                 }
             }
-            return -1;
+            return none<size_t>();
         }
 
         template <typename TT>
-        Index_t Index_Of(const TT& item) const
+        maybe<size_t> Index_Of(const TT& item) const
         {
-            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = size(); idx < end; idx += 1) {
                 if (at(idx) == item) {
                     return idx;
                 }
             }
-            return -1;
+            return none<size_t>();
         }
 
         Bool_t Has(const Type& item) const
         {
-            return Index_Of(item) > -1;
+            return Index_Of(item).Has_Value();
         }
 
-        Index_t Index_Of(const Type& item, Bool_t(*is_same)(const Type&, const Type&))
+        maybe<size_t> Index_Of(const Type& item, Bool_t(*is_same)(const Type&, const Type&))
         {
-            for (Index_t idx = 0, end = size(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = size(); idx < end; idx += 1) {
                 if (is_same(at(idx), item)) {
                     return idx;
                 }
             }
-            return -1;
+            return none<size_t>();
         }
 
         void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))
@@ -353,7 +354,7 @@ namespace doticu_skylib {
         Entry_t* Entry(First_t first)
         {
             if (entries) {
-                Index_t idx = CRC32_Hash_t::Hash(first) & (capacity - 1);
+                size_t idx = CRC32_Hash_t::Hash(first) & (capacity - 1);
                 Entry_t* entry = entries + idx;
                 if (entry && entry->chain != nullptr) {
                     for (; entry != end_of_chain; entry = entry->chain) {

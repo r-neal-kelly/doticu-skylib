@@ -25,12 +25,23 @@ namespace doticu_skylib {
         std::is_convertible<T, Numeric_Data_t<typename T::value_type, T::_NONE_>>::value,
         Bool_t
     >;
+    template <typename T, typename _ = void>
+    struct is_numeric_data :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_numeric_data<T, std::conditional_t<false, enable_if_numeric_data_t<T>, void>> :
+        public std::true_type
+    {
+    };
 
     template <typename Data_t, enable_if_numeric_data_t<Data_t> = true>
     class Numeric_t :
         public Data_t
     {
     public:
+        using data_type = typename Data_t;
         using value_type = typename Data_t::value_type;
 
     protected:
@@ -123,6 +134,22 @@ namespace doticu_skylib {
     {
     public:
         using some_numeric::some_numeric;
+    };
+
+    template <typename T>
+    using enable_if_numeric_t = std::enable_if_t<
+        std::is_convertible<T, Numeric_t<typename T::data_type>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_numeric :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_numeric<T, std::conditional_t<false, enable_if_numeric_t<T>, void>> :
+        public std::true_type
+    {
     };
 
 }

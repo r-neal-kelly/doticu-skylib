@@ -105,8 +105,8 @@ namespace doticu_skylib { namespace Virtual {
         Default_Info_t* Default_Infos();
         Property_Info_t* Property_Infos();
 
-        Index_t Variable_Index(String_t variable_name);
-        Index_t Property_Index(String_t property_name);
+        maybe<size_t> Variable_Index(String_t variable_name);
+        maybe<size_t> Property_Index(String_t property_name);
         Property_Info_t* Property_Info(String_t property_name);
 
         maybe<Script_Type_e> Script_Type();

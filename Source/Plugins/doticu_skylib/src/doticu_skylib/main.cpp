@@ -56,7 +56,7 @@ namespace doticu_skylib {
 
     void Test()
     {
-        constexpr bool test = is_any_enum<Vitality_e>::value;
+        constexpr bool test = std::is_same<UInt32, u32>::value;
     }
 
     //for NPC Party

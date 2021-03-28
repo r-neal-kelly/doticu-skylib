@@ -682,6 +682,7 @@ namespace doticu_skylib { namespace Virtual {
             return true;
         }
 
+        // until we write our own base class, we have to keep the UInt32 as well as the rest of the types here.
         virtual Bool_t Run(VMValue* _base, VMClassRegistry* _registry, UInt32 stack_id, VMValue* _return, VMState* _state) override
         {
             Base_t* base = reinterpret_cast<Variable_t*>(_base)->Unpack<Base_t*>();

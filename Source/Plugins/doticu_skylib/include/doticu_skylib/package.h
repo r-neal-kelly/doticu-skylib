@@ -64,7 +64,7 @@ namespace doticu_skylib {
         Package_Procedure_e     procedure_type_2;       // D8
         u8                      pad_D9;                 // D9
         u16                     pad_DA;                 // DA
-        UInt32                  ref_count;              // DC
+        u32                     ref_count;              // DC
 
     public:
         Bool_t  Is_Flagged(Package_Flags_e flag);

@@ -126,7 +126,7 @@ namespace doticu_skylib {
         results.reserve(2048);
 
         Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
-        for (Index_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
             Cell_t* cell = loaded_cells[idx];
             if (cell && cell->Is_Valid()) {
                 cell->References(iterator);
@@ -148,7 +148,7 @@ namespace doticu_skylib {
         results.reserve(2048);
 
         Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
-        for (Index_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->References(iterator);
         }
     }
@@ -160,7 +160,7 @@ namespace doticu_skylib {
         Loaded_Reference_Iterator_t<some<Form_List_t*>> iterator(results, filter);
 
         Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
-        for (Index_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->References(iterator);
         }
     }

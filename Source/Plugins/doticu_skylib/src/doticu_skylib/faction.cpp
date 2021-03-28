@@ -20,7 +20,7 @@ namespace doticu_skylib {
         std::lock_guard<std::mutex> guard(editor_ids_mutex);
         if (!has_initialized) {
             auto& factions = Game_t::Self()->Factions();
-            for (Index_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
+            for (size_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
                 Faction_t* faction = factions[idx];
                 if (faction) {
                     if (faction->Is_Valid()) {
@@ -62,7 +62,7 @@ namespace doticu_skylib {
         auto& factions = Game_t::Self()->Factions();
         results.reserve(factions.Count());
 
-        for (Index_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
             Faction_t* faction = factions[idx];
             if (faction && faction->Is_Valid()) {
                 results.push_back(faction);

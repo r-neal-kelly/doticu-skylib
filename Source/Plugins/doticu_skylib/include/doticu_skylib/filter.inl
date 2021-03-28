@@ -67,14 +67,14 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (do_negate) {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable) == Result_e::ISNT_MATCH) {
                         state.write->push_back(filterable);
                     }
                 }
             } else {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable) == Result_e::IS_MATCH) {
                         state.write->push_back(filterable);
@@ -92,14 +92,14 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (do_negate) {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable, compare_a) == Result_e::ISNT_MATCH) {
                         state.write->push_back(filterable);
                     }
                 }
             } else {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable, compare_a) == Result_e::IS_MATCH) {
                         state.write->push_back(filterable);
@@ -117,14 +117,14 @@ namespace doticu_skylib { namespace Filter {
             SKYLIB_ASSERT_SOME(compare_f);
 
             if (do_negate) {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable, compare_a, compare_b) == Result_e::ISNT_MATCH) {
                         state.write->push_back(filterable);
                     }
                 }
             } else {
-                for (Index_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
+                for (size_t idx = 0, end = state.read->size(); idx < end; idx += 1) {
                     Filterable_t filterable = state.read->at(idx);
                     if (compare_f()(filterable, compare_a, compare_b) == Result_e::IS_MATCH) {
                         state.write->push_back(filterable);

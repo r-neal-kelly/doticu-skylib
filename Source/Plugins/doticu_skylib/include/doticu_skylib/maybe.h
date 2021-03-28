@@ -5,7 +5,6 @@
 #pragma once
 
 #include "doticu_skylib/intrinsic.h"
-#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
 
@@ -39,38 +38,38 @@ namespace doticu_skylib {
         Bool_t  has_value;
 
     public:
-        maybe()
-            : value(T()), has_value(false)
+        maybe() :
+            value(T()), has_value(false)
         {
         }
 
-        maybe(const none<T> none)
-            : value(T()), has_value(false)
+        maybe(const none<T> none) :
+            value(T()), has_value(false)
         {
         }
 
-        maybe(const T value)
-            : value(value), has_value(true)
+        maybe(const T value) :
+            value(value), has_value(true)
         {
         }
 
-        maybe(const T value, Bool_t has_value)
-            : value(value), has_value(has_value)
+        maybe(const T value, Bool_t has_value) :
+            value(value), has_value(has_value)
         {
         }
 
-        maybe(const some<T>& other)
-            : value(other()), has_value(true)
+        maybe(const some<T>& other) :
+            value(other()), has_value(true)
         {
         }
 
-        maybe(const maybe& other)
-            : value(other.value), has_value(other.has_value)
+        maybe(const maybe& other) :
+            value(other.value), has_value(other.has_value)
         {
         }
 
-        maybe(maybe&& other) noexcept
-            : value(std::exchange(other.value, T())), has_value(std::exchange(other.has_value, false))
+        maybe(maybe&& other) noexcept :
+            value(std::exchange(other.value, T())), has_value(std::exchange(other.has_value, false))
         {
         }
 
@@ -87,7 +86,7 @@ namespace doticu_skylib {
         {
             if (this != std::addressof(other)) {
                 this->value = std::exchange(other.value, T());
-                this->has_value = std::exchange(other.value, false);
+                this->has_value = std::exchange(other.has_value, false);
             }
             return *this;
         }
@@ -126,18 +125,18 @@ namespace doticu_skylib {
         T value;
 
     public:
-        some(const T value)
-            : value(value)
+        some(const T value) :
+            value(value)
         {
         }
 
-        some(const some& other)
-            : value(other.value)
+        some(const some& other) :
+            value(other.value)
         {
         }
 
-        some(some&& other) noexcept
-            : value(std::exchange(other.value, T()))
+        some(some&& other) noexcept :
+            value(std::exchange(other.value, T()))
         {
         }
 
@@ -178,187 +177,6 @@ namespace doticu_skylib {
         T operator ()() const
         {
             return this->value;
-        }
-    };
-
-    // <Index_t>
-
-    template <>
-    class none<Index_t>
-    {
-    private:
-        Index_t value;
-
-    public:
-        none() :
-            value(-1)
-        {
-        }
-
-        Bool_t operator==(const Index_t& other)
-        {
-            return other <= value;
-        }
-
-        Bool_t operator!=(const Index_t& other)
-        {
-            return !operator==(other);
-        }
-
-        Index_t operator()()
-        {
-            return operator Index_t();
-        }
-
-        operator Index_t()
-        {
-            return value;
-        }
-
-        template <typename TT>
-        operator none<TT>()
-        {
-            return static_cast<TT>(value);
-        }
-    };
-
-    template <>
-    class maybe<Index_t>
-    {
-    private:
-        Index_t value;
-
-    public:
-        maybe() :
-            value(none<Index_t>())
-        {
-        }
-
-        maybe(none<Index_t> value) :
-            value(value)
-        {
-        }
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        maybe(T value) :
-            value(value)
-        {
-        }
-
-        maybe(const maybe& other) :
-            value(other.value)
-        {
-        }
-
-        maybe(maybe&& other) noexcept :
-            value(std::exchange(other.value, none<Index_t>()))
-        {
-        }
-
-        maybe& operator=(const maybe& other)
-        {
-            if (this != &other) {
-                value = other.value;
-            }
-            return *this;
-        }
-
-        maybe& operator=(maybe&& other)
-        {
-            if (this != &other) {
-                value = std::exchange(other.value, none<Index_t>());
-            }
-            return *this;
-        }
-
-        Index_t operator()()
-        {
-            return operator Index_t();
-        }
-
-        operator Index_t()
-        {
-            return value;
-        }
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        operator some<T>()
-        {
-            return static_cast<T>(value);
-        }
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        operator maybe<T>()
-        {
-            return static_cast<T>(value);
-        }
-
-        operator Bool_t()
-        {
-            return value != none<Index_t>();
-        }
-    };
-
-    template <>
-    class some<Index_t>
-    {
-    private:
-        Index_t value;
-
-    public:
-        some() = delete;
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        some(T value) :
-            value(value)
-        {
-        }
-
-        some(const some& other) :
-            value(other.value)
-        {
-        }
-
-        some(some&& other) noexcept :
-            value(std::exchange(other.value, none<Index_t>()))
-        {
-        }
-
-        some& operator=(const some& other)
-        {
-            if (this != &other) {
-                value = other.value;
-            }
-            return *this;
-        }
-
-        some& operator=(some&& other) noexcept
-        {
-            if (this != &other) {
-                value = std::exchange(other.value, none<Index_t>());
-            }
-            return *this;
-        }
-
-        Index_t operator()()
-        {
-            return operator Index_t();
-        }
-
-        operator Index_t()
-        {
-            return value;
-        }
-
-        template <typename T, enable_if_signed_integral_t<T> = true>
-        operator some<T>()
-        {
-            return static_cast<T>(value);
-        }
-
-        operator Bool_t()
-        {
-            return value != none<Index_t>();
         }
     };
 

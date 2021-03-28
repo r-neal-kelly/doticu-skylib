@@ -146,9 +146,9 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Player_t::Log_Objectives");
         SKYLIB_LOG(indent + "{");
 
-        for (Index_t idx = 0, end = objectives.Count(); idx < end; idx += 1) {
+        for (size_t idx = 0, end = objectives.Count(); idx < end; idx += 1) {
             Player_Objective_t& player_objective = objectives[idx];
-            SKYLIB_LOG(indent + SKYLIB_TAB + "index: %i", idx);
+            SKYLIB_LOG(indent + SKYLIB_TAB + "index: %zu", idx);
             player_objective.Log(indent + SKYLIB_TAB SKYLIB_TAB);
         }
 

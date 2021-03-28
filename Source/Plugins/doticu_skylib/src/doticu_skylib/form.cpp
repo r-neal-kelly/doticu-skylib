@@ -119,7 +119,7 @@ namespace doticu_skylib {
     {
         Vector_t<Mod_t*> mods;
         if (form_mods) {
-            for (Index_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
+            for (size_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
                 Mod_t* mod = form_mods->entries[idx];
                 if (mod) {
                     mods.push_back(mod);
@@ -145,7 +145,7 @@ namespace doticu_skylib {
     {
         if (form_mods) {
             results.reserve(form_mods->count);
-            for (Index_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
+            for (size_t idx = 0, end = form_mods->count; idx < end; idx += 1) {
                 Mod_t* mod = form_mods->entries[idx];
                 if (mod) {
                     results.push_back(mod->Name());

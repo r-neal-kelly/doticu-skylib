@@ -56,13 +56,13 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_virtual_int_t = std::enable_if_t<
-        is_integer_32_or_less<T>::value ||
+        is_i32_or_less<T>::value ||
         is_any_enum<T>::value,
         Bool_t
     >;
 
     template <typename T>
-    using enable_if_virtual_float_t = enable_if_float_32_t<T>;
+    using enable_if_virtual_float_t = enable_if_f32_t<T>;
 
     template <typename T>
     using enable_if_virtual_string_t = std::enable_if_t<

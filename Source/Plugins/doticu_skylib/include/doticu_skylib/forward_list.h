@@ -57,7 +57,7 @@ namespace doticu_skylib {
 
     public:
         Bool_t      Is_Empty();
-        maybe<T*>   Point(some<Index_t> index);
+        maybe<T*>   Point(size_t index);
         Bool_t      Has(const T& value);
         void        Add(const T& value);
         Bool_t      Remove(const T& value);

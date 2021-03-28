@@ -44,13 +44,13 @@ namespace doticu_skylib { namespace Virtual {
         static maybe<Object_t*> Find_Or_Create(Scriptable_t scriptable, Bool_t do_decrement_on_find);
 
     public:
-        UInt64              unk_00;         // 00
-        Class_t*            info;           // 08
+        u64                 unk_00;         // 00
+        maybe<Class_t*>     v_class;        // 08
         String_t            unk_10;         // 10
         void*               unk_18;         // 18
         volatile Handle_t   handle;         // 20
-        volatile SInt32     lock;           // 28
-        UInt32              pad_2C;         // 2C
+        volatile s32        lock;           // 28
+        u32                 pad_2C;         // 2C
         //Variable_t        variables[0];   // 30
 
     public:
