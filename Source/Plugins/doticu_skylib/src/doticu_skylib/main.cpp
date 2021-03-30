@@ -48,7 +48,9 @@
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_game.h"
 #include "doticu_skylib/virtual_traits.h"
+#include "doticu_skylib/virtual_type.h"
 #include "doticu_skylib/virtual_utility.h"
+#include "doticu_skylib/virtual_variable.inl"
 #include "doticu_skylib/weapon.h"
 //
 
@@ -56,7 +58,13 @@ namespace doticu_skylib {
 
     void Test()
     {
-        constexpr bool test = std::is_same<UInt32, u32>::value;
+        constexpr bool b = is_wrapped_virtual_script<maybe<Actor_t*>>::value;
+        Virtual::Type_e type = Virtual::Type_e::From<Vector_t<maybe<Actor_t*>>::value_type>();
+
+        Virtual::Variable_t var;
+        var.Unpack<maybe<Actor_t*>>();
+
+        var.Pack<maybe<Actor_t*>>(nullptr);
     }
 
     //for NPC Party

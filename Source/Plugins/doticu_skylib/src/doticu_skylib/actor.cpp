@@ -358,6 +358,7 @@ namespace doticu_skylib {
         this->base_form = actor_base();
 
         if (do_save) {
+            // not sure if this works yet.
             Flag_Form_Change(Reference_t::Form_Change_Flags_e::BASE_FORM);
         }
     }
@@ -446,6 +447,75 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base) {
             actor_base->Sleep_Outfit(outfit);
+        }
+    }
+
+    maybe<Voice_Type_t*> Actor_t::Base_Voice_Type()
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            return actor_base->Voice_Type();
+        } else {
+            return none<Voice_Type_t*>();
+        }
+    }
+
+    void Actor_t::Base_Voice_Type(maybe<Voice_Type_t*> voice_type)
+    {
+        maybe<Actor_Base_t*> actor_base = Actor_Base();
+        if (actor_base) {
+            actor_base->Voice_Type(voice_type);
+        }
+    }
+
+    maybe<Voice_Type_t*> Actor_t::Race_Voice_Type()
+    {
+        maybe<Race_t*> race = Race();
+        if (race) {
+            maybe<Actor_Base_t*> actor_base = Actor_Base();
+            if (actor_base) {
+                if (actor_base->Is_Female()) {
+                    return race->voice_types[1];
+                } else {
+                    return race->voice_types[0];
+                }
+            } else {
+                return race->voice_types[0]; // I think 0 is male, and 1 female, need to verify.
+            }
+        } else {
+            return none<Voice_Type_t*>();
+        }
+    }
+
+    void Actor_t::Race_Voice_Type(maybe<Voice_Type_t*> voice_type)
+    {
+        maybe<Race_t*> race = Race();
+        if (race) {
+            maybe<Actor_Base_t*> actor_base = Actor_Base();
+            if (actor_base) {
+                if (actor_base->Is_Female()) {
+                    race->voice_types[1] = voice_type;
+                } else {
+                    race->voice_types[0] = voice_type;
+                }
+            } else {
+                race->voice_types[0] = voice_type;
+            }
+        }
+    }
+
+    maybe<Voice_Type_t*> Actor_t::Voice_Type()
+    {
+        maybe<Voice_Type_t*> base_voice_type = Base_Voice_Type();
+        if (base_voice_type) {
+            return base_voice_type;
+        } else {
+            maybe<Voice_Type_t*> race_voice_type = Race_Voice_Type();
+            if (race_voice_type) {
+                return race_voice_type;
+            } else {
+                return none<Voice_Type_t*>();
+            }
         }
     }
 

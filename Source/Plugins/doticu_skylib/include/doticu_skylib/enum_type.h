@@ -4,8 +4,9 @@
 
 #pragma once
 
+#include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum.h"
-#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/maybe_enum.h"
 
 namespace doticu_skylib {
 
@@ -14,6 +15,38 @@ namespace doticu_skylib {
     {
     public:
         using value_type = T;
+
+    public:
+        static some<const char*> Enum_Type_Data_t::To_String(some<const char* const*> strings,
+                                                             some<const char*> none_string,
+                                                             Bool_t(*Is_Valid_f)(value_type),
+                                                             value_type value)
+        {
+            SKYLIB_ASSERT_SOME(strings);
+
+            if (Is_Valid_f(value)) {
+                return strings[value];
+            } else {
+                return none_string;
+            }
+        }
+
+        static value_type Enum_Type_Data_t::From_String(some<const char* const*> strings,
+                                                        value_type _NONE_,
+                                                        value_type _TOTAL_,
+                                                        maybe<const char*> string)
+        {
+            if (string) {
+                for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
+                    if (CString_t::Is_Same(strings[idx], string(), true)) {
+                        return static_cast<value_type>(idx);
+                    }
+                }
+                return _NONE_;
+            } else {
+                return _NONE_;
+            }
+        }
     };
 
     template <typename T>
@@ -62,6 +95,61 @@ namespace doticu_skylib {
 
         Enum_Type_t(value_type value) :
             value(Data_t::Is_Valid(value) ? value : Data_t::_NONE_)
+        {
+        }
+
+        Enum_Type_t(const char* string) :
+            Enum_Type_t(From_String(string)())
+        {
+        }
+
+        Enum_Type_t(const none<const char*>& string) :
+            Enum_Type_t(Data_t::_NONE_)
+        {
+        }
+
+        Enum_Type_t(none<const char*>&& string) noexcept :
+            Enum_Type_t(Data_t::_NONE_)
+        {
+        }
+
+        Enum_Type_t(const maybe<const char*>& string) :
+            Enum_Type_t(string())
+        {
+        }
+
+        Enum_Type_t(maybe<const char*>&& string) noexcept :
+            Enum_Type_t(string())
+        {
+        }
+
+        Enum_Type_t(const some<const char*>& string) :
+            Enum_Type_t(string())
+        {
+        }
+
+        Enum_Type_t(some<const char*>&& string) noexcept :
+            Enum_Type_t(string())
+        {
+        }
+
+        Enum_Type_t(const String_t& string) :
+            Enum_Type_t(static_cast<const char*>(string))
+        {
+        }
+
+        Enum_Type_t(String_t&& string) noexcept :
+            Enum_Type_t(static_cast<const char*>(string))
+        {
+        }
+
+        Enum_Type_t(const std::string& string) :
+            Enum_Type_t(string.c_str())
+        {
+        }
+
+        Enum_Type_t(std::string&& string) noexcept :
+            Enum_Type_t(string.c_str())
         {
         }
 
@@ -132,26 +220,26 @@ namespace doticu_skylib {
 
     template <typename T>
     class none<Enum_Type_t<T>> :
-        public none_numeric<Enum_Type_t<T>>
+        public none_enum<Enum_Type_t<T>>
     {
     public:
-        using none_numeric::none_numeric;
+        using none_enum::none_enum;
     };
 
     template <typename T>
     class maybe<Enum_Type_t<T>> :
-        public maybe_numeric<Enum_Type_t<T>>
+        public maybe_enum<Enum_Type_t<T>>
     {
     public:
-        using maybe_numeric::maybe_numeric;
+        using maybe_enum::maybe_enum;
     };
 
     template <typename T>
     class some<Enum_Type_t<T>> :
-        public some_numeric<Enum_Type_t<T>>
+        public some_enum<Enum_Type_t<T>>
     {
     public:
-        using some_numeric::some_numeric;
+        using some_enum::some_enum;
     };
 
     template <typename T>

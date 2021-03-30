@@ -119,10 +119,13 @@ namespace doticu_skylib {
 
         String_t Any_Name();
 
-        maybe<Alias_Base_t*> Index_To_Alias_Base(size_t index);
-        maybe<Alias_Base_t*> ID_To_Alias_Base(Alias_ID_t id);
-        maybe<Alias_Reference_t*> Index_To_Alias_Reference(size_t index);
-        maybe<Alias_Reference_t*> ID_To_Alias_Reference(Alias_ID_t id);
+        maybe<Alias_Base_t*>        Index_To_Alias_Base(size_t index);
+        maybe<Alias_Base_t*>        ID_To_Alias_Base(Alias_ID_t id);
+        maybe<Alias_Reference_t*>   Index_To_Alias_Reference(size_t index);
+        maybe<Alias_Reference_t*>   ID_To_Alias_Reference(Alias_ID_t id);
+
+        Bool_t                      Has_Alias_Index(size_t index);
+        Bool_t                      Has_Alias_ID(Alias_ID_t id);
 
     public:
         void Start(maybe<Virtual::Callback_i*> v_callback);                 // Start

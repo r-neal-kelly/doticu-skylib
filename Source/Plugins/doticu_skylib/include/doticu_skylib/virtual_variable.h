@@ -97,6 +97,10 @@ namespace doticu_skylib { namespace Virtual {
         Stringable_t    Unpack();
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         Scriptable_t    Unpack();
+        template <typename Scriptable_t, enable_if_maybe_virtual_script_t<Scriptable_t> = true>
+        Scriptable_t    Unpack();
+        template <typename Scriptable_t, enable_if_some_virtual_script_t<Scriptable_t> = true>
+        Scriptable_t    Unpack();
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         Arrayable_t     Unpack();
 
@@ -109,6 +113,10 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t> = true>
         void            Unpack(Stringable_t& result);
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        void            Unpack(Scriptable_t& result);
+        template <typename Scriptable_t, enable_if_maybe_virtual_script_t<Scriptable_t> = true>
+        void            Unpack(Scriptable_t& result);
+        template <typename Scriptable_t, enable_if_some_virtual_script_t<Scriptable_t> = true>
         void            Unpack(Scriptable_t& result);
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         void            Unpack(Arrayable_t& results);
@@ -125,6 +133,10 @@ namespace doticu_skylib { namespace Virtual {
         void            Pack(const Stringable_t& value);
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         void            Pack(const Scriptable_t& value);
+        template <typename Scriptable_t, enable_if_maybe_virtual_script_t<Scriptable_t> = true>
+        void            Pack(const Scriptable_t& value);
+        template <typename Scriptable_t, enable_if_some_virtual_script_t<Scriptable_t> = true>
+        void            Pack(const Scriptable_t& value);
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         void            Pack(const Arrayable_t& values);
 
@@ -137,6 +149,10 @@ namespace doticu_skylib { namespace Virtual {
         template <typename Stringable_t, enable_if_virtual_string_t<Stringable_t> = true>
         void            Pack(Stringable_t&& value);
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
+        void            Pack(Scriptable_t&& value);
+        template <typename Scriptable_t, enable_if_maybe_virtual_script_t<Scriptable_t> = true>
+        void            Pack(Scriptable_t&& value);
+        template <typename Scriptable_t, enable_if_some_virtual_script_t<Scriptable_t> = true>
         void            Pack(Scriptable_t&& value);
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         void            Pack(Arrayable_t&& values);

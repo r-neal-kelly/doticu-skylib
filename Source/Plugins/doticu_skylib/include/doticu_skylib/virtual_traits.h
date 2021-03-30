@@ -71,6 +71,68 @@ namespace doticu_skylib {
     >;
 
     template <typename T>
-    using enable_if_virtual_script_t = enable_if_pointer_t<T>;
+    using enable_if_virtual_script_t = std::enable_if_t<
+        is_pointer<T>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_virtual_script :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_virtual_script<T, std::conditional_t<false, enable_if_virtual_script_t<T>, void>> :
+        public std::true_type
+    {
+    };
+
+    template <typename T>
+    using enable_if_maybe_virtual_script_t = std::enable_if_t<
+        std::is_same<T, maybe<typename T::value_type*>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_maybe_virtual_script :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_maybe_virtual_script<T, std::conditional_t<false, enable_if_maybe_virtual_script_t<T>, void>> :
+        public std::true_type
+    {
+    };
+
+    template <typename T>
+    using enable_if_some_virtual_script_t = std::enable_if_t<
+        std::is_same<T, some<typename T::value_type*>>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_some_virtual_script :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_some_virtual_script<T, std::conditional_t<false, enable_if_some_virtual_script_t<T>, void>> :
+        public std::true_type
+    {
+    };
+
+    template <typename T>
+    using enable_if_wrapped_virtual_script_t = std::enable_if_t<
+        is_maybe_virtual_script<T>::value ||
+        is_some_virtual_script<T>::value,
+        Bool_t
+    >;
+    template <typename T, typename _ = void>
+    struct is_wrapped_virtual_script :
+        public std::false_type
+    {
+    };
+    template <typename T>
+    struct is_wrapped_virtual_script<T, std::conditional_t<false, enable_if_wrapped_virtual_script_t<T>, void>> :
+        public std::true_type
+    {
+    };
 
 }

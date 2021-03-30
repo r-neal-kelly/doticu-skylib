@@ -273,6 +273,16 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Quest_t::Has_Alias_Index(size_t index)
+    {
+        return Index_To_Alias_Base(index) != none<Alias_Base_t*>();
+    }
+
+    Bool_t Quest_t::Has_Alias_ID(Alias_ID_t id)
+    {
+        return ID_To_Alias_Base(id) != none<Alias_Base_t*>();
+    }
+
     void Quest_t::Start(maybe<Virtual::Callback_i*> v_callback)
     {
         Virtual::Machine_t::Ready_Scriptable<Quest_t*>(this);

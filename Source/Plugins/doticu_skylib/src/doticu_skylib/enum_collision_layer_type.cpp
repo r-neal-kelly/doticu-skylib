@@ -78,26 +78,12 @@ namespace doticu_skylib {
 
     some<const char*> Collision_Layer_Type_e_data::To_String(value_type value)
     {
-        if (Is_Valid(value)) {
-            return Strings()[value];
-        } else {
-            return "NONE";
-        }
+        return Enum_Type_Data_t::To_String(Strings(), "NONE", &Is_Valid, value);
     }
 
     Collision_Layer_Type_e_data::value_type Collision_Layer_Type_e_data::From_String(maybe<const char*> string)
     {
-        if (string) {
-            some<const char* const*> strings = Strings();
-            for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
-                if (CString_t::Is_Same(strings[idx], string(), true)) {
-                    return static_cast<value_type>(idx);
-                }
-            }
-            return _NONE_;
-        } else {
-            return _NONE_;
-        }
+        return Enum_Type_Data_t::From_String(Strings(), _NONE_, _TOTAL_, string);
     }
 
 }

@@ -128,6 +128,7 @@
     <ClInclude Include="include\doticu_skylib\ingredient.h" />
     <ClInclude Include="include\doticu_skylib\key.h" />
     <ClInclude Include="include\doticu_skylib\main.h" />
+    <ClInclude Include="include\doticu_skylib\maybe_enum.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\numeric.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />

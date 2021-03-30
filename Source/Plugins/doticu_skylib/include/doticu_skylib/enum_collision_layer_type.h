@@ -7,7 +7,6 @@
 #undef TRANSPARENT
 
 #include "doticu_skylib/enum_type.h"
-#include "doticu_skylib/maybe_numeric.h"
 
 namespace doticu_skylib {
 
@@ -95,26 +94,26 @@ namespace doticu_skylib {
 
     template <>
     class none<Collision_Layer_Type_e> :
-        public none_numeric<Collision_Layer_Type_e>
+        public none_enum<Collision_Layer_Type_e>
     {
     public:
-        using none_numeric::none_numeric;
+        using none_enum::none_enum;
     };
 
     template <>
     class maybe<Collision_Layer_Type_e> :
-        public maybe_numeric<Collision_Layer_Type_e>
+        public maybe_enum<Collision_Layer_Type_e>
     {
     public:
-        using maybe_numeric::maybe_numeric;
+        using maybe_enum::maybe_enum;
     };
 
     template <>
     class some<Collision_Layer_Type_e> :
-        public some_numeric<Collision_Layer_Type_e>
+        public some_enum<Collision_Layer_Type_e>
     {
     public:
-        using some_numeric::some_numeric;
+        using some_enum::some_enum;
     };
 
 }

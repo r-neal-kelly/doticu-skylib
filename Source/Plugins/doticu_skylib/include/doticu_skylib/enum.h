@@ -84,6 +84,15 @@ namespace doticu_skylib {
             return (this->value & flag) != 0;
         }
 
+        void Is_Flagged(T flag, Bool_t value)
+        {
+            if (value) {
+                Flag(flag);
+            } else {
+                Unflag(flag);
+            }
+        }
+
         const char* Is_Flagged_String(T flag) const
         {
             return Is_Flagged(flag) ? "true" : "false";

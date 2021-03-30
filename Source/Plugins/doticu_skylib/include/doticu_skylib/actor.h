@@ -45,6 +45,7 @@ namespace doticu_skylib {
     class Outfit_t;
     class Race_t;
     class Spell_t;
+    class Voice_Type_t;
 
     class Actor_t :                     // Actor
         public Reference_t,             // 000
@@ -360,6 +361,12 @@ namespace doticu_skylib {
         void                                        Base_Default_Outfit(maybe<Outfit_t*> outfit);
         maybe<Outfit_t*>                            Base_Sleep_Outfit();
         void                                        Base_Sleep_Outfit(maybe<Outfit_t*> outfit);
+
+        maybe<Voice_Type_t*>                        Base_Voice_Type();
+        void                                        Base_Voice_Type(maybe<Voice_Type_t*> voice_type);
+        maybe<Voice_Type_t*>                        Race_Voice_Type();
+        void                                        Race_Voice_Type(maybe<Voice_Type_t*> voice_type);
+        maybe<Voice_Type_t*>                        Voice_Type();
 
         maybe<Actor_AI_t*>                          Actor_AI();
         maybe<Actor_High_AI_t*>                     Actor_High_AI();

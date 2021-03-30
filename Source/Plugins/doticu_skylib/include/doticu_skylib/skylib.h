@@ -7,15 +7,20 @@
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_type.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/numeric.h"
 #include "doticu_skylib/skse.h"
 #include "doticu_skylib/string.h"
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/version.h"
 
+#include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form_id.h"
 
 namespace doticu_skylib {

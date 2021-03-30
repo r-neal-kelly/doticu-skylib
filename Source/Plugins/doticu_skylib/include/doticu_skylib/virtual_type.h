@@ -49,6 +49,8 @@ namespace doticu_skylib { namespace Virtual {
         static Type_e From();
         template <typename Scriptable_t, enable_if_virtual_script_t<Scriptable_t> = true>
         static Type_e From();
+        template <typename Scriptable_t, enable_if_wrapped_virtual_script_t<Scriptable_t> = true>
+        static Type_e From();
         template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t> = true>
         static Type_e From();
 
@@ -137,6 +139,12 @@ namespace doticu_skylib { namespace Virtual {
     inline Type_e Type_e::From()
     {
         return Script_Type_e::From<Scriptable_t>()();
+    }
+
+    template <typename Scriptable_t, enable_if_wrapped_virtual_script_t<Scriptable_t>>
+    inline Type_e Type_e::From()
+    {
+        return Script_Type_e::From<typename Scriptable_t::value_type>()();
     }
 
     template <typename Arrayable_t, enable_if_arrayable_t<Arrayable_t>>
