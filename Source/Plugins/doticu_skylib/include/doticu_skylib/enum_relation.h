@@ -4,15 +4,14 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
-#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/enum_type.h"
 
 namespace doticu_skylib {
 
     class Form_t;
 
-    class Relation_e :
-        public Enum_t<s8>
+    class Relation_e_data :
+        public Enum_Type_Data_t<s8>
     {
     public:
         enum enum_type : value_type
@@ -33,6 +32,18 @@ namespace doticu_skylib {
             _DEFAULT_       = ACQUAINTANCE,
         };
 
+    public:
+        static Bool_t                   Is_Valid(value_type value);
+
+        static some<const char* const*> Strings();
+        static some<const char*>        To_String(value_type value);
+        static value_type               From_String(maybe<const char*> string);
+    };
+
+    class Relation_e :
+        public Enum_Type_t<Relation_e_data>
+    {
+    public:
         class Offset_e :
             public Enum_t<Word_t>
         {
@@ -45,60 +56,35 @@ namespace doticu_skylib {
         };
 
     public:
-        static Bool_t                   Is_Valid(enum_type value);
-        static Bool_t                   Is_Valid(value_type value);
-
-        static some<const char* const*> Strings();
-        static some<const char*>        To_String(maybe<Relation_e> relation);
-        static maybe<Relation_e>        From_String(maybe<const char*> relation);
-
-        static some<Relation_e>         Between(some<Form_t*> form_a, some<Form_t*> form_b);
-        static void                     Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation);
+        static some<Relation_e> Between(some<Form_t*> form_a, some<Form_t*> form_b);
+        static void             Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation);
 
     public:
-        Relation_e();
-        Relation_e(enum_type value);
-        Relation_e(value_type value);
-        Relation_e(const Relation_e& other);
-        Relation_e(Relation_e&& other) noexcept;
-        Relation_e& operator =(const Relation_e& other);
-        Relation_e& operator =(Relation_e&& other) noexcept;
-        ~Relation_e();
-
-    public:
-        some<const char*>   As_String() const;
-
-    public:
-        explicit operator   Bool_t() const;
-        operator            value_type() const;
-
-    public:
-        Bool_t      operator !() const;
-        value_type  operator ()() const;
+        using Enum_Type_t::Enum_Type_t;
     };
 
     template <>
     class none<Relation_e> :
-        public none_numeric<Relation_e>
+        public none_enum<Relation_e>
     {
     public:
-        using none_numeric::none_numeric;
+        using none_enum::none_enum;
     };
 
     template <>
     class maybe<Relation_e> :
-        public maybe_numeric<Relation_e>
+        public maybe_enum<Relation_e>
     {
     public:
-        using maybe_numeric::maybe_numeric;
+        using maybe_enum::maybe_enum;
     };
 
     template <>
     class some<Relation_e> :
-        public some_numeric<Relation_e>
+        public some_enum<Relation_e>
     {
     public:
-        using some_numeric::some_numeric;
+        using some_enum::some_enum;
     };
 
 }

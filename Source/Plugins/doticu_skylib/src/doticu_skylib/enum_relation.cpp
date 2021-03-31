@@ -2,23 +2,17 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum_relation.h"
 #include "doticu_skylib/game.h"
 
 namespace doticu_skylib {
 
-    Bool_t Relation_e::Is_Valid(enum_type value)
+    Bool_t Relation_e_data::Is_Valid(value_type value)
     {
-        return value > -1 && value < _TOTAL_;
+        return value > _NONE_ && value < _TOTAL_;
     }
 
-    Bool_t Relation_e::Is_Valid(value_type value)
-    {
-        return Is_Valid(static_cast<enum_type>(value));
-    }
-
-    some<const char* const*> Relation_e::Strings()
+    some<const char* const*> Relation_e_data::Strings()
     {
         static const char* const strings[_TOTAL_] =
         {
@@ -36,29 +30,14 @@ namespace doticu_skylib {
         return strings;
     }
 
-    some<const char*> Relation_e::To_String(maybe<Relation_e> relation)
+    some<const char*> Relation_e_data::To_String(value_type value)
     {
-        if (relation) {
-            return Strings()[relation()];
-        } else {
-            return "NONE";
-        }
+        return Enum_Type_Data_t::To_String(Strings(), "NONE", &Is_Valid, value);
     }
 
-    maybe<Relation_e> Relation_e::From_String(maybe<const char*> relation)
+    Relation_e_data::value_type Relation_e_data::From_String(maybe<const char*> string)
     {
-        if (relation) {
-            some<const char* const*> strings = Strings();
-            for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
-                some<const char*> string = strings[idx];
-                if (CString_t::Is_Same(string(), relation(), true)) {
-                    return static_cast<Relation_e::value_type>(idx);
-                }
-            }
-            return _NONE_;
-        } else {
-            return _NONE_;
-        }
+        return Enum_Type_Data_t::From_String(Strings(), _NONE_, _TOTAL_, string);
     }
 
     some<Relation_e> Relation_e::Between(some<Form_t*> form_a, some<Form_t*> form_b)
@@ -89,71 +68,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(relation);
 
         set(form_a(), form_b(), relation());
-    }
-
-    Relation_e::Relation_e() :
-        Enum_t(_NONE_)
-    {
-    }
-
-    Relation_e::Relation_e(enum_type value) :
-        Enum_t(Is_Valid(value) ? value : _NONE_)
-    {
-    }
-
-    Relation_e::Relation_e(value_type value) :
-        Relation_e(static_cast<enum_type>(value))
-    {
-    }
-
-    Relation_e::Relation_e(const Relation_e& other) :
-        Enum_t(other)
-    {
-    }
-
-    Relation_e::Relation_e(Relation_e&& other) noexcept :
-        Enum_t(std::move(other))
-    {
-    }
-
-    Relation_e& Relation_e::operator =(const Relation_e& other)
-    {
-        return static_cast<Relation_e&>(Enum_t::operator =(other));
-    }
-
-    Relation_e& Relation_e::operator =(Relation_e&& other) noexcept
-    {
-        return static_cast<Relation_e&>(Enum_t::operator =(std::move(other)));
-    }
-
-    Relation_e::~Relation_e()
-    {
-        this->value = _NONE_;
-    }
-
-    some<const char*> Relation_e::As_String() const
-    {
-        return To_String(*this);
-    }
-
-    Relation_e::operator Bool_t() const
-    {
-        return Is_Valid(this->value);
-    }
-
-    Relation_e::operator value_type() const
-    {
-        return static_cast<Bool_t>(*this) ? this->value : _NONE_;
-    }
-
-    Bool_t Relation_e::operator !() const
-    {
-        return !static_cast<Bool_t>(*this);
-    }
-
-    Relation_e::value_type Relation_e::operator ()() const
-    {
-        return static_cast<value_type>(*this);
     }
 
 }

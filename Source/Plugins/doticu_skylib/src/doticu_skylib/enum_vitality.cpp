@@ -9,7 +9,7 @@ namespace doticu_skylib {
 
     Bool_t Vitality_e_data::Is_Valid(value_type value)
     {
-        return value > -1 && value < _TOTAL_;
+        return value > _NONE_ && value < _TOTAL_;
     }
 
     some<const char* const*> Vitality_e_data::Strings()

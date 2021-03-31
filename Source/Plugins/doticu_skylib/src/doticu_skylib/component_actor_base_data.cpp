@@ -167,7 +167,7 @@ namespace doticu_skylib {
         }
     }
 
-    Vitality_e Actor_Base_Data_c::Vitality()
+    some<Vitality_e> Actor_Base_Data_c::Vitality()
     {
         if (Is_Invulnerable()) {
             return Vitality_e::INVULNERABLE;
@@ -177,6 +177,21 @@ namespace doticu_skylib {
             return Vitality_e::PROTECTED;
         } else {
             return Vitality_e::MORTAL;
+        }
+    }
+
+    void Actor_Base_Data_c::Vitality(some<Vitality_e> vitality, Bool_t do_save)
+    {
+        SKYLIB_ASSERT_SOME(vitality);
+
+        if (vitality == Vitality_e::INVULNERABLE) {
+            Is_Invulnerable(true, do_save);
+        } else if (vitality == Vitality_e::ESSENTIAL) {
+            Is_Essential(true, do_save);
+        } else if (vitality == Vitality_e::PROTECTED) {
+            Is_Protected(true, do_save);
+        } else {
+            Is_Mortal(true, do_save);
         }
     }
 

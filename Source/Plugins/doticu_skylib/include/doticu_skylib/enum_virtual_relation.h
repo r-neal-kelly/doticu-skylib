@@ -4,14 +4,13 @@
 
 #pragma once
 
-#include "doticu_skylib/enum.h"
 #include "doticu_skylib/enum_relation.h"
-#include "doticu_skylib/maybe_numeric.h"
+#include "doticu_skylib/enum_type.h"
 
 namespace doticu_skylib {
 
-    class Virtual_Relation_e :
-        public Enum_t<s8>
+    class Virtual_Relation_e_data :
+        public Enum_Type_Data_t<s8>
     {
     public:
         enum enum_type : value_type
@@ -33,44 +32,24 @@ namespace doticu_skylib {
         };
 
     public:
-        static Bool_t                       Is_Valid(enum_type value);
-        static Bool_t                       Is_Valid(value_type value);
+        static Bool_t               Is_Valid(value_type value);
 
-        static maybe<Relation_e>            To_Relation(Virtual_Relation_e::enum_type v_relation);
-        static maybe<Relation_e>            To_Relation(Virtual_Relation_e::value_type v_relation);
-        static maybe<Relation_e>            To_Relation(Virtual_Relation_e v_relation);
+        static some<const char*>    To_String(value_type value);
+        static value_type           From_String(maybe<const char*> string);
+    };
+
+    class Virtual_Relation_e :
+        public Enum_Type_t<Virtual_Relation_e_data>
+    {
+    public:
         static maybe<Relation_e>            To_Relation(maybe<Virtual_Relation_e> v_relation);
-        static some<Relation_e>             To_Relation(some<Virtual_Relation_e> v_relation);
-        static maybe<Virtual_Relation_e>    From_Relation(Relation_e::enum_type relation);
-        static maybe<Virtual_Relation_e>    From_Relation(Relation_e::value_type relation);
-        static maybe<Virtual_Relation_e>    From_Relation(Relation_e relation);
         static maybe<Virtual_Relation_e>    From_Relation(maybe<Relation_e> relation);
-        static some<Virtual_Relation_e>     From_Relation(some<Relation_e> relation);
-
-        static some<const char*>            To_String(maybe<Virtual_Relation_e> v_relation);
-        static maybe<Virtual_Relation_e>    From_String(maybe<const char*> v_relation);
 
     public:
-        Virtual_Relation_e();
-        Virtual_Relation_e(enum_type value);
-        Virtual_Relation_e(value_type value);
-        Virtual_Relation_e(const Virtual_Relation_e& other);
-        Virtual_Relation_e(Virtual_Relation_e&& other) noexcept;
-        Virtual_Relation_e& operator =(const Virtual_Relation_e& other);
-        Virtual_Relation_e& operator =(Virtual_Relation_e&& other) noexcept;
-        ~Virtual_Relation_e();
+        using Enum_Type_t::Enum_Type_t;
 
     public:
         maybe<Relation_e>   As_Relation() const;
-        some<const char*>   As_String() const;
-
-    public:
-        explicit operator   Bool_t() const;
-        operator            value_type() const;
-
-    public:
-        Bool_t      operator !() const;
-        value_type  operator ()() const;
 
     public:
         static void Log_Test(std::string indent = "");
@@ -78,26 +57,26 @@ namespace doticu_skylib {
 
     template <>
     class none<Virtual_Relation_e> :
-        public none_numeric<Virtual_Relation_e>
+        public none_enum<Virtual_Relation_e>
     {
     public:
-        using none_numeric::none_numeric;
+        using none_enum::none_enum;
     };
 
     template <>
     class maybe<Virtual_Relation_e> :
-        public maybe_numeric<Virtual_Relation_e>
+        public maybe_enum<Virtual_Relation_e>
     {
     public:
-        using maybe_numeric::maybe_numeric;
+        using maybe_enum::maybe_enum;
     };
 
     template <>
     class some<Virtual_Relation_e> :
-        public some_numeric<Virtual_Relation_e>
+        public some_enum<Virtual_Relation_e>
     {
     public:
-        using some_numeric::some_numeric;
+        using some_enum::some_enum;
     };
 
 }

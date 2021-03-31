@@ -61,12 +61,6 @@ namespace doticu_skylib {
             return false;
         }
 
-        template <typename TT>
-        operator none<TT>() const
-        {
-            return none<TT>(static_cast<TT>(value_type::_NONE_));
-        }
-
     public:
         Bool_t operator !() const
         {
@@ -222,9 +216,9 @@ namespace doticu_skylib {
         }
 
         template <typename TT>
-        operator maybe<TT>() const
+        operator maybe<TT>()
         {
-            return maybe<TT>(static_cast<TT>(this->value));
+            return maybe<TT>(static_cast<TT&>(this->value));
         }
 
     public:
@@ -342,9 +336,9 @@ namespace doticu_skylib {
         }
 
         template <typename TT>
-        operator some<TT>() const
+        operator some<TT>()
         {
-            return some<TT>(static_cast<TT>(this->value));
+            return some<TT>(static_cast<TT&>(this->value));
         }
 
     public:

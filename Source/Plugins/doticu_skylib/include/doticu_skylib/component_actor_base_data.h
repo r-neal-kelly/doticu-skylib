@@ -93,7 +93,8 @@ namespace doticu_skylib {
         Vector_t<Faction_And_Rank_t>    Factions_And_Ranks(Bool_t remove_negatives = true);
         void                            Factions_And_Ranks(Vector_t<Faction_And_Rank_t>& results, Bool_t remove_negatives = true);
 
-        Vitality_e                      Vitality();
+        some<Vitality_e>                Vitality();
+        void                            Vitality(some<Vitality_e> vitality, Bool_t do_save);
 
         maybe<Voice_Type_t*>            Voice_Type();
         void                            Voice_Type(maybe<Voice_Type_t*> voice_type);
