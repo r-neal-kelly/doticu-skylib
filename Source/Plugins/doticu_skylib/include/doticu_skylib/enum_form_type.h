@@ -99,7 +99,7 @@ namespace doticu_skylib {
             QUEST                   = 0x4D, // QUST
             // 0x4E IDLE
             PACKAGE                 = 0x4F, // PACK
-            // 0x50 CSTY
+            COMBAT_STYLE            = 0x50, // CSTY
             // 0x51 LSCR
             // 0x52 LVSP
             // 0x53 ANIO

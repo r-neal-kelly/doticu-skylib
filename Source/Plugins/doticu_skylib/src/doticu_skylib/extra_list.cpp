@@ -267,21 +267,23 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Extra_List_t::Has_Extra_Aliases()                { return Has<Extra_Aliases_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Cannot_Wear()            { return Has<Extra_Cannot_Wear_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Count()                  { return Has<Extra_Count_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Factions()               { return Has<Extra_Factions_t>(); }
-    Bool_t Extra_List_t::Has_Extra_From_Alias()             { return Has<Extra_From_Alias_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Ghost()                  { return Has<Extra_Ghost_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Leveled_Item()           { return Has<Extra_Leveled_Item_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Outfit()                 { return Has<Extra_Outfit_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Owner()                  { return Has<Extra_Owner_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Reference_Handle()       { return Has<Extra_Reference_Handle_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Reference_Interaction()  { return Has<Extra_Reference_Interaction_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Talk_To_Player()         { return Has<Extra_Talk_To_Player_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Unique_ID()              { return Has<Extra_Unique_ID_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Worn()                   { return Has<Extra_Worn_t>(); }
-    Bool_t Extra_List_t::Has_Extra_Worn_Left()              { return Has<Extra_Worn_Left_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Aliases()               { return Has<Extra_Aliases_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Cannot_Wear()           { return Has<Extra_Cannot_Wear_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Count()                 { return Has<Extra_Count_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Factions()              { return Has<Extra_Factions_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_From_Alias()            { return Has<Extra_From_Alias_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Ghost()                 { return Has<Extra_Ghost_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Leveled_Item()          { return Has<Extra_Leveled_Item_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Outfit()                { return Has<Extra_Outfit_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Owner()                 { return Has<Extra_Owner_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Reference_Handle()      { return Has<Extra_Reference_Handle_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Reference_Interaction() { return Has<Extra_Reference_Interaction_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Talk_To_Player()        { return Has<Extra_Talk_To_Player_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Unique_ID()             { return Has<Extra_Unique_ID_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Worn()                  { return Has<Extra_Worn_t>(); }
+    Bool_t  Extra_List_t::Has_Extra_Worn_Left()             { return Has<Extra_Worn_Left_t>(); }
+
+    Bool_t  Extra_List_t::Destroy_Extra_Text_Display()      { return Destroy_Extra_Data<Extra_Text_Display_t>(); }
 
     Vector_t<some<Extra_Data_t*>> Extra_List_t::Extra_Datas()
     {

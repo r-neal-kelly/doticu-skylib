@@ -1,0 +1,140 @@
+/*
+    Copyright © 2020 r-neal-kelly, aka doticu
+*/
+
+#include "doticu_skylib/const_mods.h"
+#include "doticu_skylib/const_voice_types.h"
+#include "doticu_skylib/game_macros.h"
+#include "doticu_skylib/voice_type.h"
+
+namespace doticu_skylib { namespace Const { namespace Voice_Type {
+
+    some<Voice_Type_t*> Female_Argonian()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AEF); }
+    some<Voice_Type_t*> Female_Child()                              { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE9); }
+    some<Voice_Type_t*> Female_Commander()                          { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE3); }
+    some<Voice_Type_t*> Female_Commoner()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013ADE); }
+    some<Voice_Type_t*> Female_Condescending()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE4); }
+    some<Voice_Type_t*> Female_Coward()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE5); }
+    some<Voice_Type_t*> Female_Dark_Elf()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AF3); }
+    some<Voice_Type_t*> Female_Dark_Elf_Commoner()                  { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x0247E5); }
+    some<Voice_Type_t*> Female_Elf_Haughty()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AF1); }
+    some<Voice_Type_t*> Female_Even_Toned()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013ADD); }
+    some<Voice_Type_t*> Female_Khajiit()                            { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AED); }
+    some<Voice_Type_t*> Female_Nord()                               { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE7); }
+    some<Voice_Type_t*> Female_Old_Grumpy()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE2); }
+    some<Voice_Type_t*> Female_Old_Kindly()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE1); }
+    some<Voice_Type_t*> Female_Orc()                                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AEB); }
+    some<Voice_Type_t*> Female_Shrill()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013BC3); }
+    some<Voice_Type_t*> Female_Soldier()                            { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01B560); }
+    some<Voice_Type_t*> Female_Sultry()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE0); }
+    some<Voice_Type_t*> Female_Unique_Astrid()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01BDB5); }
+    some<Voice_Type_t*> Female_Unique_Azura()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x00002E); }
+    some<Voice_Type_t*> Female_Unique_Boethiah()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x02422B); }
+    some<Voice_Type_t*> Female_Unique_Delphine()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x014432); }
+    some<Voice_Type_t*> Female_Unique_Elenwen()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01A63B); }
+    some<Voice_Type_t*> Female_Unique_Frea()                        { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x017F80); }
+    some<Voice_Type_t*> Female_Unique_Fura()                        { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007C48); }
+    some<Voice_Type_t*> Female_Unique_Ghost()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0854EC); }
+    some<Voice_Type_t*> Female_Unique_Gormlaith()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09823B); }
+    some<Voice_Type_t*> Female_Unique_Karliah()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01B080); }
+    some<Voice_Type_t*> Female_Unique_Katria()                      { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x00A2BD); }
+    some<Voice_Type_t*> Female_Unique_Maven()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09F17B); }
+    some<Voice_Type_t*> Female_Unique_Mephala()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x028D8C); }
+    some<Voice_Type_t*> Female_Unique_Meridia()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x04E500); }
+    some<Voice_Type_t*> Female_Unique_Mirabelle_Ervine()            { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x03924E); }
+    some<Voice_Type_t*> Female_Unique_Namira()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x08797B); }
+    some<Voice_Type_t*> Female_Unique_Night_Mother()                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01BDB6); }
+    some<Voice_Type_t*> Female_Unique_Nocturnal()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x031894); }
+    some<Voice_Type_t*> Female_Unique_Serana()                      { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x002B6F); }
+    some<Voice_Type_t*> Female_Unique_Vaermina()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E16CE); }
+    some<Voice_Type_t*> Female_Unique_Valerica()                    { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007A32); }
+    some<Voice_Type_t*> Female_Unique_Vex()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x03B5A2); }
+    some<Voice_Type_t*> Female_Vampire()                            { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x0176F8); }
+    some<Voice_Type_t*> Female_Young_Eager()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013ADC); }
+    some<Voice_Type_t*> Male_Argonian()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AEE); }
+    some<Voice_Type_t*> Male_Bandit()                               { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09843B); }
+    some<Voice_Type_t*> Male_Brute()                                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013ADA); }
+    some<Voice_Type_t*> Male_Child()                                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE8); }
+    some<Voice_Type_t*> Male_Commander()                            { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD8); }
+    some<Voice_Type_t*> Male_Commoner()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD3); }
+    some<Voice_Type_t*> Male_Commoner_Accented()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0EA266); }
+    some<Voice_Type_t*> Male_Condescending()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD9); }
+    some<Voice_Type_t*> Male_Coward()                               { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013ADB); }
+    some<Voice_Type_t*> Male_Dark_Elf()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AF2); }
+    some<Voice_Type_t*> Male_Dark_Elf_Commoner()                    { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x0247E4); }
+    some<Voice_Type_t*> Male_Dark_Elf_Cynical()                     { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x018469); }
+    some<Voice_Type_t*> Male_Drunk()                                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD4); }
+    some<Voice_Type_t*> Male_Elf_Haughty()                          { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AF0); }
+    some<Voice_Type_t*> Male_Even_Toned()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD2); }
+    some<Voice_Type_t*> Male_Even_Toned_Accented()                  { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0EA267); }
+    some<Voice_Type_t*> Male_Forsworn()                             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09844F); }
+    some<Voice_Type_t*> Male_Guard()                                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0AA8D3); }
+    some<Voice_Type_t*> Male_Khajiit()                              { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AEC); }
+    some<Voice_Type_t*> Male_Nord()                                 { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AE6); }
+    some<Voice_Type_t*> Male_Nord_Commander()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E5003); }
+    some<Voice_Type_t*> Male_Old_Grumpy()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD7); }
+    some<Voice_Type_t*> Male_Old_Kindly()                           { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD6); }
+    some<Voice_Type_t*> Male_Orc()                                  { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AEA); }
+    some<Voice_Type_t*> Male_Sly_Cynical()                          { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD5); }
+    some<Voice_Type_t*> Male_Soldier()                              { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01B55F); }
+    some<Voice_Type_t*> Male_Unique_Adril()                         { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x01846B); }
+    some<Voice_Type_t*> Male_Unique_Amaund_Motierre()               { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E2FC8); }
+    some<Voice_Type_t*> Male_Unique_Ancano()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x03924F); }
+    some<Voice_Type_t*> Male_Unique_Arngeir()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x02F7C1); }
+    some<Voice_Type_t*> Male_Unique_Aventus_Aretino()               { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x047496); }
+    some<Voice_Type_t*> Male_Unique_Borri()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x02F7C3); }
+    some<Voice_Type_t*> Male_Unique_Brynjolf()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01B07E); }
+    some<Voice_Type_t*> Male_Unique_Cicero()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01BDAF); }
+    some<Voice_Type_t*> Male_Unique_Clavicus_Vile()                 { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x028CA4); }
+    some<Voice_Type_t*> Male_Unique_Dark_Brotherhood_Black_Door()   { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x025BF5); }
+    some<Voice_Type_t*> Male_Unique_Dark_Brotherhood_Guardian()     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x074764); }
+    some<Voice_Type_t*> Male_Unique_Dark_Brotherhood_Lachance()     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x074765); }
+    some<Voice_Type_t*> Male_Unique_Delvin_Mallory()                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x029DA8); }
+    some<Voice_Type_t*> Male_Unique_Dexion()                        { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x0181C3); }
+    some<Voice_Type_t*> Male_Unique_Einarth()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x02F7C4); }
+    some<Voice_Type_t*> Male_Unique_Emperor()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01D4B8); }
+    some<Voice_Type_t*> Male_Unique_Esbern()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x03BDA4); }
+    some<Voice_Type_t*> Male_Unique_Felldir()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09823A); }
+    some<Voice_Type_t*> Male_Unique_Florentius()                    { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007C46); }
+    some<Voice_Type_t*> Male_Unique_Gallus()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01BB5F); }
+    some<Voice_Type_t*> Male_Unique_Galmar()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E5002); }
+    some<Voice_Type_t*> Male_Unique_Garan()                         { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007C47); }
+    some<Voice_Type_t*> Male_Unique_Gelebor()                       { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x01681D); }
+    some<Voice_Type_t*> Male_Unique_Ghost()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0854ED); }
+    some<Voice_Type_t*> Male_Unique_Gunmar()                        { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007C45); }
+    some<Voice_Type_t*> Male_Unique_Hadvar()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x1074BF); }
+    some<Voice_Type_t*> Male_Unique_Hakon()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x098239); }
+    some<Voice_Type_t*> Male_Unique_Harkon()                        { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007D86); }
+    some<Voice_Type_t*> Male_Unique_Hermaeus_Mora()                 { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x035817); }
+    some<Voice_Type_t*> Male_Unique_Hircine()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x090CF3); }
+    some<Voice_Type_t*> Male_Unique_Isran()                         { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x007C44); }
+    some<Voice_Type_t*> Male_Unique_Jiub()                          { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x01400A); }
+    some<Voice_Type_t*> Male_Unique_Kodlak_Whitemane()              { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01C242); }
+    some<Voice_Type_t*> Male_Unique_Lleril()                        { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x01846A); }
+    some<Voice_Type_t*> Male_Unique_Mages_Guild_Augur()             { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0411FB); }
+    some<Voice_Type_t*> Male_Unique_Malacath()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x03BC2A); }
+    some<Voice_Type_t*> Male_Unique_Mehrunes_Dagon()                { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01CA04); }
+    some<Voice_Type_t*> Male_Unique_Mercer_Frey()                   { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01B07B); }
+    some<Voice_Type_t*> Male_Unique_Miraak()                        { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x017F7E); }
+    some<Voice_Type_t*> Male_Unique_Modyn()                         { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x023FF6); }
+    some<Voice_Type_t*> Male_Unique_Molag_Bal()                     { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x00002D); }
+    some<Voice_Type_t*> Male_Unique_Nazir()                         { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01C3AC); }
+    some<Voice_Type_t*> Male_Unique_Neloth()                        { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x01777B); }
+    some<Voice_Type_t*> Male_Unique_Peryite()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0A8064); }
+    some<Voice_Type_t*> Male_Unique_Septimus()                      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x048786); }
+    some<Voice_Type_t*> Male_Unique_Sheogorath()                    { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0D87D4); }
+    some<Voice_Type_t*> Male_Unique_Snow_Elf_Ghost()                { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x01667D); }
+    some<Voice_Type_t*> Male_Unique_Song_Of_The_Dragonborn_1()      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E0C99); }
+    some<Voice_Type_t*> Male_Unique_Song_Of_The_Dragonborn_2()      { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0E0C9A); }
+    some<Voice_Type_t*> Male_Unique_Storn()                         { DEFINE_FORM(Const::Mod::Dragonborn(), Voice_Type_t, 0x017F7F); }
+    some<Voice_Type_t*> Male_Unique_Svaknir()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0F4C8C); }
+    some<Voice_Type_t*> Male_Unique_Tsun()                          { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x0947D0); }
+    some<Voice_Type_t*> Male_Unique_Tullius()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x01A63A); }
+    some<Voice_Type_t*> Male_Unique_Ulfric()                        { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x020C1A); }
+    some<Voice_Type_t*> Male_Unique_Vyrthur()                       { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x014FC2); }
+    some<Voice_Type_t*> Male_Unique_Wulfgar()                       { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x02F7C2); }
+    some<Voice_Type_t*> Male_Vampire()                              { DEFINE_FORM(Const::Mod::Dawnguard(),  Voice_Type_t, 0x0176F7); }
+    some<Voice_Type_t*> Male_Warlock()                              { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x09843A); }
+    some<Voice_Type_t*> Male_Young_Eager()                          { DEFINE_FORM(Const::Mod::Skyrim(),     Voice_Type_t, 0x013AD1); }
+
+}}}

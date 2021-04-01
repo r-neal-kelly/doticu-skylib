@@ -45,7 +45,7 @@
     )
 
     #define SKYLIB_ASSERT_SOME(SOME_, ...) \
-        SKYLIB_ASSERT(SOME_, "Missing a required pointer. " __VA_ARGS__)
+        SKYLIB_ASSERT(SOME_, "Missing a some required object. " __VA_ARGS__)
 #else
     #define SKYLIB_ASSERT(IGNORED_)
     #define SKYLIB_ASSERT_SOME(IGNORED_)

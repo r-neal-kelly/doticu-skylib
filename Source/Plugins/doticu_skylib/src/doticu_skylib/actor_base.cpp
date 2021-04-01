@@ -435,6 +435,16 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Combat_Style_t*> Actor_Base_t::Combat_Style()
+    {
+        return this->combat_style;
+    }
+
+    void Actor_Base_t::Combat_Style(maybe<Combat_Style_t*> combat_style)
+    {
+        this->combat_style = combat_style;
+    }
+
     String_t Actor_Base_t::Any_Name()
     {
         const char* name = Name();

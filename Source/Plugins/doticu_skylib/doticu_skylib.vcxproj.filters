@@ -1287,10 +1287,10 @@
     <ClInclude Include="include\doticu_skylib\enum_weapon_critical_flags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\const_keyword.h">
+    <ClInclude Include="include\doticu_skylib\const_keywords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\const_mod.h">
+    <ClInclude Include="include\doticu_skylib\const_mods.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\ammo.h">
@@ -1336,6 +1336,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\maybe_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_actor_bases.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_voice_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_actors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\combat_style.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1772,10 +1784,10 @@
     <ClCompile Include="src\doticu_skylib\weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\const_keyword.cpp">
+    <ClCompile Include="src\doticu_skylib\const_keywords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\const_mod.cpp">
+    <ClCompile Include="src\doticu_skylib\const_mods.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\armor.cpp">
@@ -1794,6 +1806,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\enum_collision_layer_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_actor_bases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_voice_types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_actors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\component_name.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

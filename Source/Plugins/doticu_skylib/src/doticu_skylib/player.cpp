@@ -4,7 +4,7 @@
 
 #include "doticu_skylib/maybe.h"
 
-#include "doticu_skylib/const_mod.h"
+#include "doticu_skylib/const_actors.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/havok_actor_controller.h"
@@ -36,11 +36,7 @@ namespace doticu_skylib {
 
     some<Player_t*> Player_t::Self()
     {
-        static maybe<Player_t*> self = static_cast<maybe<Player_t*>>
-            (Game_t::Form(Const::Mod::Skyrim(), 0x000014));
-
-        SKYLIB_ASSERT(self);
-        return self();
+        return Const::Actor::Player();
     }
 
     maybe<Havok_Player_t*> Player_t::Havok_Player()

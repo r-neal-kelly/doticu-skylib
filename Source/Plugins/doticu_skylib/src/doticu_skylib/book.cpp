@@ -3,7 +3,7 @@
 */
 
 #include "doticu_skylib/book.h"
-#include "doticu_skylib/const_keyword.h"
+#include "doticu_skylib/const_keywords.h"
 
 namespace doticu_skylib {
 

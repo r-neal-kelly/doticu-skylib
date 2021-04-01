@@ -75,6 +75,7 @@ namespace doticu_skylib {
     class Bound_Object_t;
     class Cell_t;
     class Character_t;
+    class Combat_Style_t;
     class Consts_t;
     class Container_t;
     class Dialogue_Branch_t;

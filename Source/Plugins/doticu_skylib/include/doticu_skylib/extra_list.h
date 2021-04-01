@@ -101,6 +101,8 @@ namespace doticu_skylib {
         Bool_t                  Add_Copy(Extra_Data_t& x_data);
         template <typename T>
         Bool_t                  Remove(some<T*> x_data);
+        template <typename T>
+        Bool_t                  Destroy_Extra_Data();
 
         Bool_t                  Has_Extra_Aliases();
         Bool_t                  Has_Extra_Cannot_Wear();
@@ -117,6 +119,8 @@ namespace doticu_skylib {
         Bool_t                  Has_Extra_Unique_ID();
         Bool_t                  Has_Extra_Worn();
         Bool_t                  Has_Extra_Worn_Left();
+
+        Bool_t                  Destroy_Extra_Text_Display();
 
     public:
         Vector_t<some<Extra_Data_t*>>       Extra_Datas();

@@ -44,4 +44,17 @@ namespace doticu_skylib {
         return Remove(static_cast<some<Extra_Data_t*>>(x_data));
     }
 
+    template <typename T>
+    inline Bool_t Extra_List_t::Destroy_Extra_Data()
+    {
+        maybe<T*> x_data = Get<T>();
+        if (x_data) {
+            Remove<T>(x_data());
+            T::Destroy(x_data());
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

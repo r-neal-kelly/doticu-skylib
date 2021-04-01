@@ -37,7 +37,7 @@ namespace doticu_skylib {
     class Actor_Head_Data_t;
     class Armor_t;
     class Color_t;
-    class Combat_Style_t;       // TESCombatStyle
+    class Combat_Style_t;
     class Faction_t;
     class Form_List_t;
     class Head_Part_t;
@@ -212,6 +212,9 @@ namespace doticu_skylib {
 
         maybe<Color_t*>                 Hair_Color();
         void                            Hair_Color(maybe<Color_t*> hair_color);
+
+        maybe<Combat_Style_t*>          Combat_Style();
+        void                            Combat_Style(maybe<Combat_Style_t*> combat_style);
 
         String_t                        Any_Name();
 

@@ -91,7 +91,7 @@ namespace doticu_skylib {
             SKYLIB_ENUM_TO_STRING(QUEST),
             SKYLIB_ENUM_TO_STRING(0x4E),
             SKYLIB_ENUM_TO_STRING(PACKAGE),
-            SKYLIB_ENUM_TO_STRING(0x50),
+            SKYLIB_ENUM_TO_STRING(COMBAT_STYLE),
             SKYLIB_ENUM_TO_STRING(0x51),
             SKYLIB_ENUM_TO_STRING(0x52),
             SKYLIB_ENUM_TO_STRING(0x53),

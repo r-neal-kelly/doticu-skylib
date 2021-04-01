@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "doticu_skylib/const_keyword.h"
+#include "doticu_skylib/const_keywords.h"
 #include "doticu_skylib/potion.h"
 
 namespace doticu_skylib {

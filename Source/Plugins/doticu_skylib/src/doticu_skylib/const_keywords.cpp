@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "doticu_skylib/const_keyword.h"
-#include "doticu_skylib/const_mod.h"
+#include "doticu_skylib/const_keywords.h"
+#include "doticu_skylib/const_mods.h"
 #include "doticu_skylib/game_macros.h"
 #include "doticu_skylib/keyword.h"
 
