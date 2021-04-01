@@ -33,6 +33,20 @@ namespace doticu_skylib {
         static constexpr const char* SCRIPT_NAME = "Spell";
 
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E10E50, // 513849
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
         virtual ~Spell_t(); // 0
 
     public:

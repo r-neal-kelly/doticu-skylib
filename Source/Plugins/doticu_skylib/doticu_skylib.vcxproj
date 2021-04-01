@@ -63,6 +63,7 @@
     <ClInclude Include="include\doticu_skylib\actor_skills.h" />
     <ClInclude Include="include\doticu_skylib\actor_values_data.h" />
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
+    <ClInclude Include="include\doticu_skylib\alpha.h" />
     <ClInclude Include="include\doticu_skylib\ammo.h" />
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
@@ -74,6 +75,7 @@
     <ClInclude Include="include\doticu_skylib\const_actor_bases.h" />
     <ClInclude Include="include\doticu_skylib\const_keywords.h" />
     <ClInclude Include="include\doticu_skylib\const_mods.h" />
+    <ClInclude Include="include\doticu_skylib\const_spells.h" />
     <ClInclude Include="include\doticu_skylib\const_voice_types.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
@@ -507,6 +509,7 @@
     <ClCompile Include="src\doticu_skylib\const_actor_bases.cpp" />
     <ClCompile Include="src\doticu_skylib\const_keywords.cpp" />
     <ClCompile Include="src\doticu_skylib\const_mods.cpp" />
+    <ClCompile Include="src\doticu_skylib\const_spells.cpp" />
     <ClCompile Include="src\doticu_skylib\const_voice_types.cpp" />
     <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry.cpp" />

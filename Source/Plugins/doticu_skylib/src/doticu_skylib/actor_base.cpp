@@ -9,6 +9,7 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/actor_head_data.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/const_actor_bases.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/form_factory.h"
@@ -206,6 +207,9 @@ namespace doticu_skylib {
     void Actor_Base_t::Destroy(some<Actor_Base_t*> actor_base)
     {
         SKYLIB_ASSERT_SOME(actor_base);
+
+        // this will prevent a potential crash on game reload
+        actor_base->Relation(Const::Actor_Base::Player(), Relation_e::ACQUAINTANCE);
 
         actor_base->~Actor_Base_t();
         Game_t::Deallocate<Actor_Base_t>(actor_base);

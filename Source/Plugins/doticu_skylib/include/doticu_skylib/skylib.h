@@ -68,6 +68,7 @@ namespace doticu_skylib {
     class Actor_Values_t;
     class Alias_Base_t;
     class Alias_Reference_t;
+    class Alpha_t;
     class Ammo_t;
     class Animated_Object_t;
     class Armor_t;

@@ -14,8 +14,11 @@ namespace doticu_skylib {
     /* Heavy_Mod_Index_t */
 
     class Heavy_Mod_Index_t_data :
-        public Numeric_Data_t<Raw_Mod_Index_t, 0x100>
+        public Numeric_Data_t<Raw_Mod_Index_t>
     {
+    public:
+        static constexpr value_type _NONE_  = 0x100;
+
     public:
         static Bool_t Is_Valid(value_type value)
         {
@@ -57,8 +60,11 @@ namespace doticu_skylib {
     /* Light_Mod_Index_t */
 
     class Light_Mod_Index_t_data :
-        public Numeric_Data_t<Raw_Mod_Index_t, 0x1000>
+        public Numeric_Data_t<Raw_Mod_Index_t>
     {
+    public:
+        static constexpr value_type _NONE_  = 0x1000;
+
     public:
         static Bool_t Is_Valid(value_type value)
         {

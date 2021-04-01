@@ -17,8 +17,11 @@ namespace doticu_skylib {
     using Raw_Form_ID_t = u32;
 
     class Form_ID_t_data :
-        public Numeric_Data_t<Raw_Form_ID_t, 0>
+        public Numeric_Data_t<Raw_Form_ID_t>
     {
+    public:
+        static constexpr value_type _NONE_ = 0;
+
     public:
         static Bool_t Is_Valid(value_type value)
         {

@@ -438,21 +438,21 @@ namespace doticu_skylib {
         void    Is_Doing_Favor(Bool_t value);   // SetFavorState
 
     public:
-        void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback);                    // SetAlpha
+        void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback);    // SetAlpha
         void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<unique<Callback_i<>>> callback);
 
         void    Kill(maybe<Actor_t*> killer,
                      Bool_t do_silently,
-                     maybe<Virtual::Callback_i*> v_callback);                                                       // Kill, KillSilent
+                     maybe<Virtual::Callback_i*> v_callback);                                       // Kill, KillSilent
         void    Kill(maybe<Actor_t*> killer,
                      Bool_t do_silently,
                      Bool_t do_force,
                      maybe<unique<Callback_i<>>> callback);
 
-        void    Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback);                 // OpenInventory
+        void    Open_Inventory(Bool_t allow_non_teammates, maybe<Virtual::Callback_i*> v_callback); // OpenInventory
         void    Open_Inventory(Bool_t allow_non_teammates, maybe<unique<Callback_i<>>> callback);
 
-        void    Resurrect(maybe<Virtual::Callback_i*> v_callback);                                                  // Resurrect
+        void    Resurrect(maybe<Virtual::Callback_i*> v_callback);                                  // Resurrect
         void    Resurrect(Bool_t do_keep_inventory,
                           Bool_t do_pacify,
                           Bool_t do_force,

@@ -10,19 +10,16 @@
 
 namespace doticu_skylib {
 
-    template <typename T, T none_value, enable_if_arithmetic_t<T> = true>
+    template <typename T, enable_if_arithmetic_t<T> = true>
     class Numeric_Data_t
     {
     public:
         using value_type = T;
-
-    public:
-        static constexpr const T _NONE_ = static_cast<value_type>(none_value);
     };
 
     template <typename T>
     using enable_if_numeric_data_t = std::enable_if_t<
-        std::is_convertible<T, Numeric_Data_t<typename T::value_type, T::_NONE_>>::value,
+        std::is_convertible<T, Numeric_Data_t<typename T::value_type>>::value,
         Bool_t
     >;
     template <typename T, typename _ = void>

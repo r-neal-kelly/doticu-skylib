@@ -27,6 +27,7 @@
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/scroll.h"
 #include "doticu_skylib/soul_gem.h"
+#include "doticu_skylib/spell.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
@@ -188,6 +189,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
     Bool_t                  Form_t::Is_Scroll() const               { return As_Scroll() != none<Scroll_t*>(); }
     Bool_t                  Form_t::Is_Soul_Gem() const             { return As_Soul_Gem() != none<Soul_Gem_t*>(); }
+    Bool_t                  Form_t::Is_Spell() const                { return As_Spell() != none<Spell_t*>(); }
     Bool_t                  Form_t::Is_Weapon() const               { return As_Weapon() != none<Weapon_t*>(); }
 
     maybe<Actor_t*>         Form_t::As_Actor() const                { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
@@ -209,6 +211,7 @@ namespace doticu_skylib {
     maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
     maybe<Scroll_t*>        Form_t::As_Scroll() const               { return Game_t::Runtime_Cast<Form_t, Scroll_t>(this); }
     maybe<Soul_Gem_t*>      Form_t::As_Soul_Gem() const             { return Game_t::Runtime_Cast<Form_t, Soul_Gem_t>(this); }
+    maybe<Spell_t*>         Form_t::As_Spell() const                { return Game_t::Runtime_Cast<Form_t, Spell_t>(this); }
     maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
 
     void Form_t::Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback)

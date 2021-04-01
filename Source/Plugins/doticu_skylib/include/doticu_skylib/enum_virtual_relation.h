@@ -48,6 +48,11 @@ namespace doticu_skylib {
     public:
         using Enum_Type_t::Enum_Type_t;
 
+        Virtual_Relation_e() = default;
+        Virtual_Relation_e(Relation_e relation);
+        Virtual_Relation_e(maybe<Relation_e> relation);
+        Virtual_Relation_e(some<Relation_e> relation);
+
     public:
         maybe<Relation_e>   As_Relation() const;
 
@@ -69,6 +74,13 @@ namespace doticu_skylib {
     {
     public:
         using maybe_enum::maybe_enum;
+
+        maybe() = default;
+
+        maybe(maybe<Relation_e> relation) :
+            maybe_enum(Virtual_Relation_e(relation))
+        {
+        }
     };
 
     template <>
@@ -77,6 +89,13 @@ namespace doticu_skylib {
     {
     public:
         using some_enum::some_enum;
+
+        some() = default;
+
+        some(some<Relation_e> relation) :
+            some_enum(Virtual_Relation_e(relation))
+        {
+        }
     };
 
 }

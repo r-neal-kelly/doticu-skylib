@@ -15,6 +15,7 @@
 #include "doticu_skylib/const_keywords.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/enum_virtual_relation.h"
 #include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_factions.h"
 #include "doticu_skylib/extra_list.inl"

@@ -39,6 +39,7 @@ namespace doticu_skylib {
     class Reference_t;
     class Scroll_t;
     class Soul_Gem_t;
+    class Spell_t;
     class Weapon_t;
 
     namespace Virtual {
@@ -198,6 +199,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Reference() const;
         Bool_t                  Is_Scroll() const;
         Bool_t                  Is_Soul_Gem() const;
+        Bool_t                  Is_Spell() const;
         Bool_t                  Is_Weapon() const;
 
         maybe<Actor_t*>         As_Actor() const;
@@ -219,6 +221,7 @@ namespace doticu_skylib {
         maybe<Reference_t*>     As_Reference() const;
         maybe<Scroll_t*>        As_Scroll() const;
         maybe<Soul_Gem_t*>      As_Soul_Gem() const;
+        maybe<Spell_t*>         As_Spell() const;
         maybe<Weapon_t*>        As_Weapon() const;
 
     public:

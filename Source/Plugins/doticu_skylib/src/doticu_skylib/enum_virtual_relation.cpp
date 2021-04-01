@@ -57,6 +57,21 @@ namespace doticu_skylib {
         }
     }
 
+    Virtual_Relation_e::Virtual_Relation_e(Relation_e relation) :
+        Enum_Type_t(From_Relation(relation)())
+    {
+    }
+
+    Virtual_Relation_e::Virtual_Relation_e(maybe<Relation_e> relation) :
+        Virtual_Relation_e(relation())
+    {
+    }
+
+    Virtual_Relation_e::Virtual_Relation_e(some<Relation_e> relation) :
+        Virtual_Relation_e(relation())
+    {
+    }
+
     maybe<Relation_e> Virtual_Relation_e::As_Relation() const
     {
         return To_Relation(*this);
