@@ -430,6 +430,8 @@ namespace doticu_skylib {
         void                                        Update_3D();
         void                                        Update_Equipment();
 
+        maybe<Actor_t*>                             Current_Combat_Target();
+
     public:
         Float_t Alpha();
         void    Alpha(Float_t alpha);           // SetActorAlpha

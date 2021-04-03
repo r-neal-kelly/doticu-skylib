@@ -1365,6 +1365,9 @@
     <ClInclude Include="include\doticu_skylib\enum_magic_target_flags.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_factions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1839,6 +1842,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\dispelled_magic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_factions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -944,7 +944,8 @@ namespace doticu_skylib {
     {
         Set_Default_Actor_Value(Actor_Value_Type_e::AGGRESSION, 0.0f);
         Stop_Combat_And_Alarm();
-        Evaluate_Package(true, true);
+        this->actor_flags_2.Unflag(Actor_Flags_2_e::IS_ANGRY_WITH_PLAYER);
+        Reset_AI();
     }
 
     void Actor_t::Queue_NI_Node_Update(Bool_t do_update_weight)
@@ -989,6 +990,11 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(iron_sword);
 
         Add_Item(iron_sword, 0);
+    }
+
+    maybe<Actor_t*> Actor_t::Current_Combat_Target()
+    {
+        return static_cast<Actor_t*>(Reference_t::From_Handle(Atomic_t::Access(this->current_combat_target)));
     }
 
     Float_t Actor_t::Alpha()

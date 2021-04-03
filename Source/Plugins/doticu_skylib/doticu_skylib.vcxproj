@@ -73,6 +73,7 @@
     <ClInclude Include="include\doticu_skylib\console_log.h" />
     <ClInclude Include="include\doticu_skylib\const_actors.h" />
     <ClInclude Include="include\doticu_skylib\const_actor_bases.h" />
+    <ClInclude Include="include\doticu_skylib\const_factions.h" />
     <ClInclude Include="include\doticu_skylib\const_keywords.h" />
     <ClInclude Include="include\doticu_skylib\const_mods.h" />
     <ClInclude Include="include\doticu_skylib\const_spells.h" />
@@ -510,6 +511,7 @@
     <ClCompile Include="src\doticu_skylib\component_name.cpp" />
     <ClCompile Include="src\doticu_skylib\const_actors.cpp" />
     <ClCompile Include="src\doticu_skylib\const_actor_bases.cpp" />
+    <ClCompile Include="src\doticu_skylib\const_factions.cpp" />
     <ClCompile Include="src\doticu_skylib\const_keywords.cpp" />
     <ClCompile Include="src\doticu_skylib\const_mods.cpp" />
     <ClCompile Include="src\doticu_skylib\const_spells.cpp" />
