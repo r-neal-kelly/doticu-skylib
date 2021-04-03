@@ -1356,6 +1356,15 @@
     <ClInclude Include="include\doticu_skylib\alpha.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\small_dynamic_array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\dispelled_magic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_magic_target_flags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1584,9 +1593,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\extra_count.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\container_entry_count.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\container_changes.cpp">
@@ -1829,6 +1835,12 @@
     <ClCompile Include="src\doticu_skylib\const_spells.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\doticu_skylib\spell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\dispelled_magic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\doticu_skylib\ui.inl">
@@ -1869,6 +1881,9 @@
     </None>
     <None Include="include\doticu_skylib\global.inl">
       <Filter>Header Files\scriptables</Filter>
+    </None>
+    <None Include="include\doticu_skylib\small_dynamic_array.inl">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

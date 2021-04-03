@@ -25,6 +25,7 @@
 #include "doticu_skylib/ni_point.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/small_dynamic_array.h"
 #include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
@@ -287,7 +288,7 @@ namespace doticu_skylib {
         u32                                 unk_178;                                    // 178
         u32                                 unk_17C;                                    // 17C
         u64                                 unk_180;                                    // 180
-        Array_t<maybe<Spell_t*>>            added_spells;                               // 188
+        Small_Array_t<maybe<Spell_t*>>      added_spells;                               // 188
         void*                               actor_magic_casters[Magic_Slot_e::_TOTAL_]; // 1A0
         maybe<Magic_Base_t*>                equipped_spells[Magic_Slot_e::_TOTAL_];     // 1C0
         maybe<Form_t*>                      equipped_power;                             // 1E0
@@ -409,6 +410,7 @@ namespace doticu_skylib {
 
         Bool_t                                      Add_Spell(some<Spell_t*> spell);
         Bool_t                                      Remove_Spell(some<Spell_t*> spell);
+        void                                        Reset_Spell(some<Spell_t*> spell);
 
         Bool_t                                      Is_Ghost();
         void                                        Is_Ghost(Bool_t value);
@@ -463,8 +465,10 @@ namespace doticu_skylib {
         void    Update_Equipment(maybe<unique<Callback_i<>>> callback);
 
     public:
-        void Log_Actor_Values(std::string indent = "");
-        void Log_Factions_And_Ranks(std::string indent = "");
+        void    Log_Actor_Values(std::string indent = "");
+        void    Log_Added_Spells(std::string indent = "");
+        void    Log_Factions_And_Ranks(std::string indent = "");
+        void    Log_Magic_Target(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Actor_t) == 0x2B0);
 

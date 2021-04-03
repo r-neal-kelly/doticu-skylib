@@ -211,7 +211,7 @@ namespace doticu_skylib {
         void                            Crime_Faction(maybe<Faction_t*> faction);
 
         maybe<Color_t*>                 Hair_Color();
-        void                            Hair_Color(maybe<Color_t*> hair_color);
+        void                            Hair_Color(maybe<Color_t*> hair_color, Bool_t do_save);
 
         maybe<Combat_Style_t*>          Combat_Style();
         void                            Combat_Style(maybe<Combat_Style_t*> combat_style);

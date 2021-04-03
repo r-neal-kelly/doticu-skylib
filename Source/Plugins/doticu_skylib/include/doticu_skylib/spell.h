@@ -59,6 +59,9 @@ namespace doticu_skylib {
         Float_t                 cast_duration;          // D8
         Float_t                 range;                  // DC
         maybe<Perk_t*>          half_cost_perk;         // E0
+
+    public:
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Spell_t) == 0xE8);
 

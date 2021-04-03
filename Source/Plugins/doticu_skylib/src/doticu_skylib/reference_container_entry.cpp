@@ -12,8 +12,45 @@
 
 namespace doticu_skylib {
 
+    Reference_Container_Entry_t::Reference_Container_Entry_t() :
+        base_entry(none<Container_Entry_t*>()),
+        reference_entry(none<Container_Changes_Entry_t*>())
+    {
+    }
+
+    Reference_Container_Entry_t::Reference_Container_Entry_t(some<Container_Entry_t*> base_entry) :
+        base_entry(base_entry()),
+        reference_entry(none<Container_Changes_Entry_t*>())
+    {
+        SKYLIB_ASSERT(Is_Valid());
+    }
+
     Reference_Container_Entry_t::Reference_Container_Entry_t(some<Container_Changes_Entry_t*> reference_entry) :
         base_entry(none<Container_Entry_t*>()),
+        reference_entry(reference_entry())
+    {
+        SKYLIB_ASSERT(Is_Valid());
+    }
+
+    Reference_Container_Entry_t::Reference_Container_Entry_t(some<Container_Entry_t*> base_entry,
+                                                             some<Container_Changes_Entry_t*> reference_entry) :
+        base_entry(base_entry()),
+        reference_entry(reference_entry())
+    {
+        SKYLIB_ASSERT(Is_Valid());
+    }
+
+    Reference_Container_Entry_t::Reference_Container_Entry_t(some<Container_Entry_t*> base_entry,
+                                                             maybe<Container_Changes_Entry_t*> reference_entry) :
+        base_entry(base_entry()),
+        reference_entry(reference_entry)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+    }
+
+    Reference_Container_Entry_t::Reference_Container_Entry_t(maybe<Container_Entry_t*> base_entry,
+                                                             some<Container_Changes_Entry_t*> reference_entry) :
+        base_entry(base_entry),
         reference_entry(reference_entry())
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -24,7 +61,6 @@ namespace doticu_skylib {
         base_entry(base_entry),
         reference_entry(reference_entry)
     {
-        SKYLIB_ASSERT(Is_Valid());
     }
 
     Reference_Container_Entry_t::Reference_Container_Entry_t(const Reference_Container_Entry_t& other) :
@@ -349,6 +385,16 @@ namespace doticu_skylib {
         } else {
             return none<Container_Entry_Count_t>();
         }
+    }
+
+    Reference_Container_Entry_t::operator Bool_t() const
+    {
+        return Is_Valid();
+    }
+
+    Bool_t Reference_Container_Entry_t::operator !() const
+    {
+        return !static_cast<Bool_t>(*this);
     }
 
     void Reference_Container_Entry_t::Log(std::string indent)

@@ -35,7 +35,7 @@ namespace doticu_skylib {
     public:
         Reference_Container_t(some<Reference_t*> reference);
         Reference_Container_t(const Reference_Container_t& other)                   = delete;
-        Reference_Container_t(Reference_Container_t&& other) noexcept               = delete;
+        Reference_Container_t(Reference_Container_t&& other) noexcept;
         Reference_Container_t& operator =(const Reference_Container_t& other)       = delete;
         Reference_Container_t& operator =(Reference_Container_t&& other) noexcept   = delete;
         ~Reference_Container_t();

@@ -31,6 +31,11 @@ namespace doticu_skylib {
         return Milliseconds() / 1000.0;
     }
 
+    void OS_t::Sleep(u32 milliseconds)
+    {
+        ::Sleep(milliseconds);
+    }
+
     Word_t OS_t::Module_Address(maybe<const char*> module_name)
     {
         return reinterpret_cast<Word_t>(GetModuleHandle(module_name()));

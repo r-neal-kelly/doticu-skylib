@@ -16,6 +16,7 @@
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_point.h"
+#include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/reference_count.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unique.h"
@@ -324,6 +325,9 @@ namespace doticu_skylib {
         some<Container_Changes_t*>          Some_Container_Changes();
         maybe<Container_Changes_Entry_t*>   Maybe_Container_Changes_Entry(some<Bound_Object_t*> object);
         some<Container_Changes_Entry_t*>    Some_Container_Changes_Entry(some<Bound_Object_t*> object);
+        Reference_Container_t               Container();
+        maybe<Reference_Container_Entry_t>  Maybe_Container_Entry(some<Bound_Object_t*> object);
+        some<Reference_Container_Entry_t>   Some_Container_Entry(some<Bound_Object_t*> object);
         Container_Entry_Count_t             Container_Entry_Count(some<Bound_Object_t*> object);
 
         Location_t*                         Location();

@@ -8,6 +8,6 @@
 
 namespace doticu_skylib {
 
-    using Actor_Handle_t = Reference_Handle_t;
+    using Actor_Handle_t = Reference_Handle_t; // ActorHandle
 
 }

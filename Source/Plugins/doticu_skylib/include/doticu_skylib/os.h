@@ -17,6 +17,8 @@ namespace doticu_skylib {
         static Double_t Milliseconds();
         static Double_t Seconds();
 
+        static void     Sleep(u32 milliseconds);
+
         static Word_t   Module_Address(maybe<const char*> module_name);
         static size_t   Module_Size(maybe<const char*> module_name);
         static Bool_t   Module_Version(maybe<const char*> module_name, Version_t<u16>& result);

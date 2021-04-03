@@ -602,12 +602,31 @@ namespace doticu_skylib {
         return Some_Container_Changes()->Some_Entry(object);
     }
 
+    Reference_Container_t Reference_t::Container()
+    {
+        return std::move(Reference_Container_t(this));
+    }
+
+    maybe<Reference_Container_Entry_t> Reference_t::Maybe_Container_Entry(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        return maybe<Reference_Container_Entry_t>(Base_Component_Container_Entry(object), Maybe_Container_Changes_Entry(object));
+    }
+
+    some<Reference_Container_Entry_t> Reference_t::Some_Container_Entry(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        return some<Reference_Container_Entry_t>(Base_Component_Container_Entry(object), Some_Container_Changes_Entry(object));
+    }
+
     Container_Entry_Count_t Reference_t::Container_Entry_Count(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
 
-        Reference_Container_Entry_t entry(Base_Component_Container_Entry(object), Maybe_Container_Changes_Entry(object));
-        if (entry.Is_Valid()) {
+        maybe<Reference_Container_Entry_t> entry = Maybe_Container_Entry(object);
+        if (entry) {
             return entry.Count();
         } else {
             return 0;

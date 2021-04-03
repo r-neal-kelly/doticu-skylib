@@ -8,6 +8,6 @@
 
 namespace doticu_skylib {
 
-    using Reference_Handle_t = u32;
+    using Reference_Handle_t = u32; // ObjectRefHandle
 
 }

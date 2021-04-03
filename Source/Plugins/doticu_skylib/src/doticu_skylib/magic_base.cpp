@@ -51,4 +51,19 @@ namespace doticu_skylib {
         return false;
     }
 
+    void Magic_Base_t::Log(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Magic_Base_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "component_name: %s", Name());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_id: %s", this->form_id.As_String());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_type: %s", this->form_type.As_String());
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "keywords:");
+        Keywords_c::Log_Component_Keywords(indent + SKYLIB_TAB + SKYLIB_TAB);
+
+        SKYLIB_LOG(indent + "}");
+    }
+
 }

@@ -36,6 +36,9 @@ namespace doticu_skylib {
         void                            Magic_Effects(Vector_t<some<Magic_Effect_t*>>& results);
 
         Bool_t                          Can_Damage_Health();
+
+    public:
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Magic_Base_t) == 0x90);
 

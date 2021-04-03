@@ -43,7 +43,7 @@ namespace doticu_skylib {
     some<Relation_e> Relation_e::Between(some<Form_t*> form_a, some<Form_t*> form_b)
     {
         static auto get = reinterpret_cast
-            <u8(*)(Form_t*, Form_t*)>
+            <u32(*)(Form_t*, Form_t*)>
             (Game_t::Base_Address() + Offset_e::GET);
 
         SKYLIB_ASSERT_SOME(form_a);
@@ -60,7 +60,7 @@ namespace doticu_skylib {
     void Relation_e::Between(some<Form_t*> form_a, some<Form_t*> form_b, some<Relation_e> relation)
     {
         static auto set = reinterpret_cast
-            <void(*)(Form_t*, Form_t*, u8)>
+            <void(*)(Form_t*, Form_t*, u32)>
             (Game_t::Base_Address() + Offset_e::SET);
 
         SKYLIB_ASSERT_SOME(form_a);

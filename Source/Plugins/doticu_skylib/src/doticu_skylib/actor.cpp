@@ -35,6 +35,9 @@
 #include "doticu_skylib/race.h"
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/script.h"
+#include "doticu_skylib/small_dynamic_array.inl"
+#include "doticu_skylib/spell.h"
+#include "doticu_skylib/unique.h"
 #include "doticu_skylib/virtual_actor_base.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
@@ -865,6 +868,14 @@ namespace doticu_skylib {
         return remove_spell(this, spell());
     }
 
+    void Actor_t::Reset_Spell(some<Spell_t*> spell)
+    {
+        SKYLIB_ASSERT_SOME(spell);
+
+        Remove_Spell(spell);
+        Add_Spell(spell);
+    }
+
     Bool_t Actor_t::Is_Ghost()
     {
         maybe<Bool_t> is_ghost = this->x_list.Is_Ghost();
@@ -1590,6 +1601,22 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "}");
     }
 
+    void Actor_t::Log_Added_Spells(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Actor_t::Log_Added_Spells: %s", Any_Name());
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "count: %zu", this->added_spells.Count());
+        for (size_t idx = 0, end = this->added_spells.Count(); idx < end; idx += 1) {
+            maybe<Spell_t*> added_spell = this->added_spells[idx];
+            if (added_spell) {
+                added_spell->Log(indent + SKYLIB_TAB);
+            }
+        }
+
+        SKYLIB_LOG(indent + "}");
+    }
+
     void Actor_t::Log_Factions_And_Ranks(std::string indent)
     {
         SKYLIB_LOG(indent + "Actor_t::Log_Factions_And_Ranks: %s", Any_Name());
@@ -1601,6 +1628,11 @@ namespace doticu_skylib {
         }
 
         SKYLIB_LOG(indent + "}");
+    }
+
+    void Actor_t::Log_Magic_Target(std::string indent)
+    {
+        Magic_Target_t::Log(indent);
     }
 
 }

@@ -53,6 +53,14 @@ namespace doticu_skylib {
         }
     }
 
+    Reference_Container_t::Reference_Container_t(Reference_Container_t&& other) noexcept :
+        reference(std::move(other.reference)),
+        base_container(std::move(other.base_container)),
+        reference_container(std::move(other.reference_container)),
+        entries(std::move(other.entries))
+    {
+    }
+
     Reference_Container_t::~Reference_Container_t()
     {
         if (Is_Valid()) {
@@ -60,14 +68,8 @@ namespace doticu_skylib {
             if (actor) {
                 actor->Update_Equipment();
             }
-
             this->reference->Flag_Form_Change(Reference_t::Form_Change_Flags_e::CONTAINER);
         }
-
-        this->entries.~Vector_t<Reference_Container_Entry_t>();
-        this->reference_container = static_cast<Container_Changes_t*>(nullptr);
-        this->base_container = static_cast<Container_c*>(nullptr);
-        this->reference = static_cast<Reference_t*>(nullptr);
     }
 
     Bool_t Reference_Container_t::Is_Valid() const

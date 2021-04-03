@@ -429,13 +429,15 @@ namespace doticu_skylib {
         }
     }
 
-    void Actor_Base_t::Hair_Color(maybe<Color_t*> hair_color)
+    void Actor_Base_t::Hair_Color(maybe<Color_t*> hair_color, Bool_t do_save)
     {
-        // interestingly, this is saved in the save file, but one must update the actor's 3d anyway?
-
         if (this->head_data) {
             this->head_data->hair_color = hair_color;
-            Flag_Form_Change(Form_Change_Flags_e::FACE);
+
+            if (do_save) {
+                // interestingly, this is saved in the save file, but one must update the actor's 3d anyway?
+                Flag_Form_Change(Form_Change_Flags_e::FACE);
+            }
         }
     }
 

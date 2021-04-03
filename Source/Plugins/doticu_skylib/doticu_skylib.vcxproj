@@ -79,6 +79,7 @@
     <ClInclude Include="include\doticu_skylib\const_voice_types.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
+    <ClInclude Include="include\doticu_skylib\dispelled_magic.h" />
     <ClInclude Include="include\doticu_skylib\dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\enchantment.h" />
     <ClInclude Include="include\doticu_skylib\enum_actor_ai_cached_values_flags.h" />
@@ -100,6 +101,7 @@
     <ClInclude Include="include\doticu_skylib\enum_magic_archetype.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_effect_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
+    <ClInclude Include="include\doticu_skylib\enum_magic_target_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_potion_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
@@ -422,6 +424,7 @@
     <ClInclude Include="include\doticu_skylib\season.h" />
     <ClInclude Include="include\doticu_skylib\skse.h" />
     <ClInclude Include="include\doticu_skylib\skse_plugin.h" />
+    <ClInclude Include="include\doticu_skylib\small_dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\soul_gem.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
@@ -514,6 +517,7 @@
     <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />
+    <ClCompile Include="src\doticu_skylib\dispelled_magic.cpp" />
     <ClCompile Include="src\doticu_skylib\enchantment.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_flags.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_base_template_flags.cpp" />
@@ -549,7 +553,6 @@
     <ClCompile Include="src\doticu_skylib\console_log.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes.cpp" />
     <ClCompile Include="src\doticu_skylib\container_changes_entry.cpp" />
-    <ClCompile Include="src\doticu_skylib\container_entry_count.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_info_instance.cpp" />
     <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
@@ -608,6 +611,7 @@
     <ClCompile Include="src\doticu_skylib\reference_container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\reference_interaction.cpp" />
     <ClCompile Include="src\doticu_skylib\skse_plugin.cpp" />
+    <ClCompile Include="src\doticu_skylib\spell.cpp" />
     <ClCompile Include="src\doticu_skylib\static.cpp" />
     <ClCompile Include="src\doticu_skylib\temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\translations.cpp" />
@@ -657,6 +661,7 @@
     <None Include="include\doticu_skylib\global.inl" />
     <None Include="include\doticu_skylib\interface.inl" />
     <None Include="include\doticu_skylib\scrap_array.inl" />
+    <None Include="include\doticu_skylib\small_dynamic_array.inl" />
     <None Include="include\doticu_skylib\ui.inl" />
     <None Include="include\doticu_skylib\virtual_machine.inl" />
     <None Include="include\doticu_skylib\virtual_variable.inl" />
