@@ -2,7 +2,6 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum_vitality.h"
 
 namespace doticu_skylib {

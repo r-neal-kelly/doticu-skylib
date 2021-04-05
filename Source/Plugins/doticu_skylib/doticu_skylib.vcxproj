@@ -526,6 +526,7 @@
     <ClCompile Include="src\doticu_skylib\enum_actor_value_modifier.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_collision_layer_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_preferred_speed.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_remove_reason.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_virtual_relation.cpp" />
