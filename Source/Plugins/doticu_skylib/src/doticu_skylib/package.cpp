@@ -3,35 +3,22 @@
 */
 
 #include "doticu_skylib/package.h"
+#include "doticu_skylib/package_data.h"
 
 namespace doticu_skylib {
 
-    Bool_t Package_t::Is_Flagged(Package_Flags_e flag)
+    void Package_t::Log_Data(std::string indent) const
     {
-        return this->package_flags.Is_Flagged(flag);
-    }
+        SKYLIB_LOG(indent + "Package_t::Log_Data");
+        SKYLIB_LOG(indent + "{");
 
-    Bool_t Package_t::Is_Flagged(Package_Interrupts_e flag)
-    {
-        return this->interrupt_flags.Is_Flagged(flag);
-    }
-
-    void Package_t::Flag(Package_Flags_e flag, Bool_t value)
-    {
-        if (value) {
-            this->package_flags.Flag(flag);
+        if (this->data) {
+            this->data->Log(indent + SKYLIB_TAB);
         } else {
-            this->package_flags.Unflag(flag);
+            SKYLIB_LOG(indent + SKYLIB_TAB + "(none)");
         }
-    }
 
-    void Package_t::Flag(Package_Interrupts_e flag, Bool_t value)
-    {
-        if (value) {
-            this->interrupt_flags.Flag(flag);
-        } else {
-            this->interrupt_flags.Unflag(flag);
-        }
+        SKYLIB_LOG(indent + "}");
     }
 
 }

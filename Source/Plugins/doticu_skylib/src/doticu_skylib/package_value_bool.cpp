@@ -1,0 +1,55 @@
+/*
+    Copyright © 2020 r-neal-kelly, aka doticu
+*/
+
+#pragma once
+
+#include "doticu_skylib/package_value_bool.h"
+
+namespace doticu_skylib {
+
+    Bool_t Package_Value_Bool_t::Value() const
+    {
+        SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
+
+        return this->value != IS_FALSE;
+    }
+
+    void Package_Value_Bool_t::Value(Bool_t value)
+    {
+        SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
+
+        if (value) {
+            this->value = IS_TRUE;
+        } else {
+            this->value = IS_FALSE;
+        }
+    }
+
+    Package_Value_Bool_t::operator Bool_t() const
+    {
+        return Value();
+    }
+
+    Bool_t Package_Value_Bool_t::operator !() const
+    {
+        return !static_cast<Bool_t>(*this);
+    }
+
+    Package_Value_Bool_t& Package_Value_Bool_t::operator =(Bool_t value)
+    {
+        Value(value);
+        return *this;
+    }
+
+    void Package_Value_Bool_t::Log(std::string indent) const
+    {
+        SKYLIB_LOG(indent + "Package_Value_Bool_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "value: %s", Value() ? "true" : "false");
+
+        SKYLIB_LOG(indent + "}");
+    }
+
+}

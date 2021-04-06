@@ -8,14 +8,17 @@
 
 namespace doticu_skylib {
 
-    class Package_Location_e : public Enum_t<u8>
+    class Package_Location_Type_e :
+        public Enum_t<u8>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
             NEAR_REFERENCE  = 0,    // handle
             NEAR_SELF       = 12,   // nullptr
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

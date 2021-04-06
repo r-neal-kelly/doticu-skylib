@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Package_Procedure_e : public Enum_t<u8>
+    class Package_Procedure_Type_e :
+        public Enum_t<u8>
     {
     public:
         enum : value_type

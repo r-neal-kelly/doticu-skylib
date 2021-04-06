@@ -446,7 +446,8 @@ namespace doticu_skylib {
         void Unfill_Aliases(maybe<unique<Callback_i<>>> callback);
 
     public:
-        void Log_Extra_List(std::string indent = "");
+        void    Log_Name_And_Type(std::string indent = "");
+        void    Log_Extra_List(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
 

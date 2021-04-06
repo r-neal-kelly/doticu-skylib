@@ -315,22 +315,22 @@
     <ClInclude Include="include\doticu_skylib\enum_package_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_interrupt.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_interrupt_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_interrupts.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_interrupt_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_location.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_location_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_procedure.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_procedure_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_target.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_target_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_package_value.h">
+    <ClInclude Include="include\doticu_skylib\enum_package_value_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_preferred_speed.h">
@@ -432,25 +432,25 @@
     <ClInclude Include="include\doticu_skylib\filter_keywords.h">
       <Filter>Header Files\filter</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_bool_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_bool.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\package_data.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_float_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_float.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_int_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_int.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\package_location.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_location_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_location.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_reference_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_reference.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\package_schedule.h">
@@ -459,7 +459,7 @@
     <ClInclude Include="include\doticu_skylib\package_target.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\package_topic_value.h">
+    <ClInclude Include="include\doticu_skylib\package_value_topic.h">
       <Filter>Header Files\package</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\package_value.h">
@@ -1368,6 +1368,12 @@
     <ClInclude Include="include\doticu_skylib\const_factions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_value_target.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\package_value_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1848,6 +1854,42 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\enum_preferred_speed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_package_interrupt_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_bool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_float.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_topic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_reference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_target.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_value_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\package_target.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\enum_package_target_type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,22 +8,27 @@
 
 namespace doticu_skylib {
 
-    class Package_Value_e : public Enum_t<Word_t>
+    class Package_Value_Type_e :
+        public Enum_t<s64>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
-            NONE = 0,
+            _NONE_ = -1,
 
             BOOL,
-            INT,
             FLOAT,
+            INT,
+            LIST,
             LOCATION,
-            REFERENCE, // SINGLE_REFERENCE
+            REFERENCE,
+            TARGET,
             TOPIC,
 
-            _END_,
+            _TOTAL_,
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

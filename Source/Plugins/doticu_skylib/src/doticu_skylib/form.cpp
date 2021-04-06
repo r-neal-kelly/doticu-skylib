@@ -543,4 +543,17 @@ namespace doticu_skylib {
         Unregister_All_SKSE_Events(new Virtual_Callback(std::move(callback)));
     }
 
+    void Form_t::Log_Name_And_Type(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Form_t::Log_Name_And_Type");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "form_type: %s, form_id: %s, component_name: %s",
+                   this->form_type.As_String(),
+                   this->form_id.As_String(),
+                   Component_Name());
+
+        SKYLIB_LOG(indent + "}");
+    }
+
 }

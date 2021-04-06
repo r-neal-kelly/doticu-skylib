@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Package_Schedule_t
+    class Package_Schedule_t    // PackageSchedule
     {
     public:
         s8      month;                  // 0

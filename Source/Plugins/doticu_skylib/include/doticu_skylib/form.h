@@ -251,6 +251,9 @@ namespace doticu_skylib {
 
         void Unregister_All_SKSE_Events(maybe<Virtual::Callback_i*> v_callback);                    // UnregisterForAllModEvents
         void Unregister_All_SKSE_Events(maybe<unique<Callback_i<>>> callback);
+
+    public:
+        void    Log_Name_And_Type(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Form_t) == 0x20);
 
