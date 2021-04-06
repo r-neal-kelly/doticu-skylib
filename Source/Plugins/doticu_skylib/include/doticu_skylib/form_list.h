@@ -43,18 +43,26 @@ namespace doticu_skylib {
         virtual ~Form_List_t(); // 0
 
     public:
-        Array_t<Form_t*>    forms;                  // 20
-        Array_t<Form_ID_t>* added_form_ids;         // 38
-        u32                 added_form_id_count;    // 40
-        u32                 pad_44;                 // 44
+        Array_t<maybe<Form_t*>>     static_forms;           // 20
+        maybe<Array_t<Form_ID_t>*>  dynamic_form_ids;       // 38
+        u32                         dynamic_form_id_count;  // 40
+        u32                         pad_44;                 // 44
 
     public:
-        Bool_t  Has(some<Form_t*> form);
-        size_t  Count();
+        Bool_t          Has(some<Form_t*> form);
+        size_t          Count();
 
-        void    Add_Form(some<Form_t*> form);
-        void    Remove_Added_Form(some<Form_t*> form);
-        void    Revert();
+        void            Add_Form(some<Form_t*> form);
+        void            Remove_Added_Form(some<Form_t*> form);
+        void            Revert();
+
+        maybe<Form_t*>  At(size_t index);
+        maybe<Form_t*>& Static_At(size_t index);
+        Form_ID_t&      Dynamic_At(size_t index);
+
+    public:
+        maybe<Form_t*>& operator [](size_t index);
+        maybe<Form_t*>  operator ()(size_t index);
 
     public:
         void Log(std::string indent = "");

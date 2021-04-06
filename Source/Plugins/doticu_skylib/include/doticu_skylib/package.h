@@ -9,10 +9,9 @@
 #include "doticu_skylib/enum_package_interrupts.h"
 #include "doticu_skylib/enum_package_procedure.h"
 #include "doticu_skylib/enum_preferred_speed.h"
-
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/package_schedule.h"
-#include "doticu_skylib/enum_script_type.h"
 
 namespace doticu_skylib {
 
@@ -23,7 +22,8 @@ namespace doticu_skylib {
     class Package_Target_t;
     class Quest_t;
 
-    class Package_t : public Form_t
+    class Package_t :   // TESPackage
+        public Form_t   // 00
     {
     public:
         enum
@@ -32,13 +32,27 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Package_t();
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E13808, // 513902
+            };
 
-        virtual Bool_t Is_Actor_At_Location(Actor_t* actor, Bool_t arg_2, Float_t arg_3, Bool_t arg_4);
-        virtual Bool_t Is_Actor_At_Location_2(Actor_t* actor_1, Actor_t* actor_2, Bool_t arg_3, Float_t arg_4, Bool_t arg_5);
-        virtual Bool_t Is_Actor_At_Target(Actor_t* actor, s32 arg_2);
-        virtual Bool_t Is_Target_At_Location(Actor_t* actor, s32 arg_2);
-        virtual Bool_t Is_Package_Owner(Actor_t* actor);
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
+        virtual         ~Package_t();
+
+        virtual Bool_t  Is_Actor_At_Location(Actor_t* actor, Bool_t arg_2, Float_t arg_3, Bool_t arg_4);
+        virtual Bool_t  Is_Actor_At_Location_2(Actor_t* actor_1, Actor_t* actor_2, Bool_t arg_3, Float_t arg_4, Bool_t arg_5);
+        virtual Bool_t  Is_Actor_At_Target(Actor_t* actor, s32 arg_2);
+        virtual Bool_t  Is_Target_At_Location(Actor_t* actor, s32 arg_2);
+        virtual Bool_t  Is_Package_Owner(Actor_t* actor);
 
     public:
         Package_Flags_e         package_flags;          // 20

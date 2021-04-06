@@ -34,6 +34,7 @@ namespace doticu_skylib {
     class Misc_t;
     class Mod_t;
     class Name_c;
+    class Package_t;
     class Potion_t;
     class Race_t;
     class Reference_t;
@@ -68,6 +69,8 @@ namespace doticu_skylib {
             {
                 RTTI = 0x01E10E30, // 513848
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
@@ -195,6 +198,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Key() const;
         Bool_t                  Is_Leveled_Item() const;
         Bool_t                  Is_Misc() const;
+        Bool_t                  Is_Package() const;
         Bool_t                  Is_Potion() const;
         Bool_t                  Is_Reference() const;
         Bool_t                  Is_Scroll() const;
@@ -217,6 +221,7 @@ namespace doticu_skylib {
         maybe<Key_t*>           As_Key() const;
         maybe<Leveled_Item_t*>  As_Leveled_Item() const;
         maybe<Misc_t*>          As_Misc() const;
+        maybe<Package_t*>       As_Package() const;
         maybe<Potion_t*>        As_Potion() const;
         maybe<Reference_t*>     As_Reference() const;
         maybe<Scroll_t*>        As_Scroll() const;
