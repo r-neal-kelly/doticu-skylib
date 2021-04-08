@@ -8,18 +8,18 @@
 
 namespace doticu_skylib {
 
-    maybe<Topic_t*> Package_Value_Topic_t::Topic() const
+    maybe<Dialogue_Topic_t*> Package_Value_Topic_t::Topic() const
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
 
         if (!this->is_sub_type) {
             return this->value.topic;
         } else {
-            return none<Topic_t*>();
+            return none<Dialogue_Topic_t*>();
         }
     }
 
-    void Package_Value_Topic_t::Topic(maybe<Topic_t*> value)
+    void Package_Value_Topic_t::Topic(maybe<Dialogue_Topic_t*> value)
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
 
@@ -46,7 +46,7 @@ namespace doticu_skylib {
         this->value.sub_type = value;
     }
 
-    Package_Value_Topic_t::operator maybe<Topic_t*>() const
+    Package_Value_Topic_t::operator maybe<Dialogue_Topic_t*>() const
     {
         return Topic();
     }
@@ -56,7 +56,7 @@ namespace doticu_skylib {
         return Sub_Type();
     }
 
-    Package_Value_Topic_t& Package_Value_Topic_t::operator =(maybe<Topic_t*> value)
+    Package_Value_Topic_t& Package_Value_Topic_t::operator =(maybe<Dialogue_Topic_t*> value)
     {
         Topic(value);
         return *this;

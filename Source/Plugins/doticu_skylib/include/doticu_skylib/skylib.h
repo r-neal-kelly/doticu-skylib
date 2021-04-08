@@ -32,6 +32,8 @@ namespace doticu_skylib {
     class Form_Type_e;
     class Logic_Gate_e;
     class Operator_e;
+    class Package_Flags_e;
+    class Package_Interrupt_Flags_e;
     class Rarity_e;
     class Relation_e;
     class Script_Type_e;

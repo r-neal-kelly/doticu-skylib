@@ -8,14 +8,14 @@
 
 namespace doticu_skylib {
 
-    Bool_t Package_Value_Bool_t::Value() const
+    Bool_t Package_Value_Bool_t::Bool() const
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
 
         return this->value != IS_FALSE;
     }
 
-    void Package_Value_Bool_t::Value(Bool_t value)
+    void Package_Value_Bool_t::Bool(Bool_t value)
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
 
@@ -28,7 +28,7 @@ namespace doticu_skylib {
 
     Package_Value_Bool_t::operator Bool_t() const
     {
-        return Value();
+        return Bool();
     }
 
     Bool_t Package_Value_Bool_t::operator !() const
@@ -38,7 +38,7 @@ namespace doticu_skylib {
 
     Package_Value_Bool_t& Package_Value_Bool_t::operator =(Bool_t value)
     {
-        Value(value);
+        Bool(value);
         return *this;
     }
 
@@ -47,7 +47,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Package_Value_Bool_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "value: %s", Value() ? "true" : "false");
+        SKYLIB_LOG(indent + SKYLIB_TAB + "value: %s", Bool() ? "true" : "false");
 
         SKYLIB_LOG(indent + "}");
     }

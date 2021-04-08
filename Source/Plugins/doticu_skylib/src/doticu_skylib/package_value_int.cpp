@@ -8,14 +8,14 @@
 
 namespace doticu_skylib {
 
-    Int_t Package_Value_Int_t::Value() const
+    Int_t Package_Value_Int_t::Int() const
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::INT);
 
         return this->value;
     }
 
-    void Package_Value_Int_t::Value(Int_t value)
+    void Package_Value_Int_t::Int(Int_t value)
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::INT);
 
@@ -24,12 +24,12 @@ namespace doticu_skylib {
 
     Package_Value_Int_t::operator Int_t() const
     {
-        return Value();
+        return Int();
     }
 
     Package_Value_Int_t& Package_Value_Int_t::operator =(Int_t value)
     {
-        Value(value);
+        Int(value);
         return *this;
     }
 
@@ -38,7 +38,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Package_Value_Int_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "value: %i", Value());
+        SKYLIB_LOG(indent + SKYLIB_TAB + "value: %i", Int());
 
         SKYLIB_LOG(indent + "}");
     }

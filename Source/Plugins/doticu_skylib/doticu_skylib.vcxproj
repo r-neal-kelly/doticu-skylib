@@ -529,6 +529,7 @@
     <ClCompile Include="src\doticu_skylib\enum_actor_value_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_collision_layer_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_package_interrupt_type.cpp" />
+    <ClCompile Include="src\doticu_skylib\enum_package_location_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_package_target_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_preferred_speed.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_remove_reason.cpp" />
@@ -553,6 +554,7 @@
     <ClCompile Include="src\doticu_skylib\ni_point.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_transform.cpp" />
     <ClCompile Include="src\doticu_skylib\package_data.cpp" />
+    <ClCompile Include="src\doticu_skylib\package_location.cpp" />
     <ClCompile Include="src\doticu_skylib\package_target.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value_bool.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value_float.cpp" />

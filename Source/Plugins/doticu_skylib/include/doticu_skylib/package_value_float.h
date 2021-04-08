@@ -35,8 +35,8 @@ namespace doticu_skylib {
         u32     pad_14; // 14
 
     public:
-        Float_t Value() const;
-        void    Value(Float_t value);
+        Float_t Float() const;
+        void    Float(Float_t value);
 
     public:
         operator    Float_t() const;

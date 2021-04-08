@@ -17,11 +17,11 @@ namespace doticu_skylib {
             _NONE_      = -1,
 
             SPECIFIC    = 0,
-            FORM_ID     = 1, // form_id. need to verify this isn't 5 instead.
+            FORM_ID     = 1,
             FORM_TYPE   = 2,
             LINKED      = 3,
             ALIAS_ID    = 4,
-            UNKNOWN     = 5, // unknown, interrupt flag?
+            UNKNOWN     = 5,
             SELF        = 6,
 
             _TOTAL_     = 7,

@@ -9,7 +9,10 @@
 
 namespace doticu_skylib {
 
+    class Dialogue_Topic_t;
     class Package_t;
+    class Package_Location_t;
+    class Package_Target_t;
     class Package_Value_t;
 
     class Package_Data_t    // TESPackageData
@@ -36,8 +39,31 @@ namespace doticu_skylib {
         u16                             pad_3E;             // 3E
 
     public:
-        size_t                  Value_Count() const;
-        maybe<Package_Value_t*> Value(size_t index) const;
+        size_t                      Value_Count() const;
+        maybe<Package_Value_t*>     Value(size_t index) const;
+
+        Bool_t                      Bool(size_t index) const;
+        void                        Bool(size_t index, Bool_t value);
+
+        Float_t                     Float(size_t index) const;
+        void                        Float(size_t index, Float_t value);
+
+        Int_t                       Int(size_t index) const;
+        void                        Int(size_t index, Int_t value);
+
+        maybe<Package_Location_t*>  Location(size_t index) const;
+        void                        Location(size_t index, maybe<Package_Location_t*> value);
+
+        maybe<Package_Target_t*>    Reference_Target(size_t index) const;
+        void                        Reference_Target(size_t index, maybe<Package_Target_t*> value);
+
+        maybe<Package_Target_t*>    Target(size_t index) const;
+        void                        Target(size_t index, maybe<Package_Target_t*> value);
+
+        maybe<Dialogue_Topic_t*>    Topic(size_t index) const;
+        void                        Topic(size_t index, maybe<Dialogue_Topic_t*> value);
+        u32                         Topic_Sub_type(size_t index) const;
+        void                        Topic_Sub_type(size_t index, u32 value);
 
     public:
         void    Log(std::string indent = "") const;

@@ -23,6 +23,7 @@ namespace doticu_skylib {
     class Armor_t;
     class Book_t;
     class Bound_Object_t;
+    class Cell_t;
     class Container_c;
     class Container_t;
     class Faction_t;
@@ -189,6 +190,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Armor() const;
         Bool_t                  Is_Book() const;
         Bool_t                  Is_Bound_Object() const;
+        Bool_t                  Is_Cell() const;
         Bool_t                  Is_Component_Container() const;
         Bool_t                  Is_Component_Keywords() const;
         Bool_t                  Is_Component_Name() const;
@@ -212,6 +214,7 @@ namespace doticu_skylib {
         maybe<Armor_t*>         As_Armor() const;
         maybe<Book_t*>          As_Book() const;
         maybe<Bound_Object_t*>  As_Bound_Object() const;
+        maybe<Cell_t*>          As_Cell() const;
         maybe<Container_c*>     As_Component_Container() const;
         maybe<Keywords_c*>      As_Component_Keywords() const;
         maybe<Name_c*>          As_Component_Name() const;

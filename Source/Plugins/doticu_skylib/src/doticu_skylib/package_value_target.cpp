@@ -9,6 +9,31 @@
 
 namespace doticu_skylib {
 
+    maybe<Package_Target_t*> Package_Value_Target_t::Target() const
+    {
+        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TARGET);
+
+        return this->value;
+    }
+
+    void Package_Value_Target_t::Target(maybe<Package_Target_t*> value)
+    {
+        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TARGET);
+
+        this->value = value;
+    }
+
+    Package_Value_Target_t::operator maybe<Package_Target_t*>() const
+    {
+        return Target();
+    }
+
+    Package_Value_Target_t& Package_Value_Target_t::operator =(maybe<Package_Target_t*> value)
+    {
+        Target(value);
+        return *this;
+    }
+
     void Package_Value_Target_t::Log(std::string indent) const
     {
         SKYLIB_LOG(indent + "Package_Value_Target_t::Log");

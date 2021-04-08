@@ -8,6 +8,7 @@
 #include "doticu_skylib/armor.h"
 #include "doticu_skylib/book.h"
 #include "doticu_skylib/bound_object.h"
+#include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
@@ -177,6 +178,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Armor() const                { return As_Armor() != none<Armor_t*>(); }
     Bool_t                  Form_t::Is_Book() const                 { return As_Book() != none<Book_t*>(); }
     Bool_t                  Form_t::Is_Bound_Object() const         { return As_Bound_Object() != none<Bound_Object_t*>(); }
+    Bool_t                  Form_t::Is_Cell() const                 { return As_Cell() != none<Cell_t*>(); }
     Bool_t                  Form_t::Is_Component_Container() const  { return As_Component_Container() != none<Container_c*>(); }
     Bool_t                  Form_t::Is_Component_Keywords() const   { return As_Component_Keywords() != none<Keywords_c*>(); }
     Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
@@ -200,6 +202,7 @@ namespace doticu_skylib {
     maybe<Armor_t*>         Form_t::As_Armor() const                { return Game_t::Runtime_Cast<Form_t, Armor_t>(this); }
     maybe<Book_t*>          Form_t::As_Book() const                 { return Game_t::Runtime_Cast<Form_t, Book_t>(this); }
     maybe<Bound_Object_t*>  Form_t::As_Bound_Object() const         { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
+    maybe<Cell_t*>          Form_t::As_Cell() const                 { return Game_t::Runtime_Cast<Form_t, Cell_t>(this); }
     maybe<Container_c*>     Form_t::As_Component_Container() const  { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
     maybe<Keywords_c*>      Form_t::As_Component_Keywords() const   { return Game_t::Runtime_Cast<Form_t, Keywords_c>(this); }
     maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }

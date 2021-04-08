@@ -37,8 +37,8 @@ namespace doticu_skylib {
         void*                       unk_18; // 18
 
     public:
-        maybe<Package_Target_t*>    Value() const;
-        void                        Value(maybe<Package_Target_t*> value);
+        maybe<Package_Target_t*>    Target() const;
+        void                        Target(maybe<Package_Target_t*> value);
 
     public:
         operator    maybe<Package_Target_t*>() const;

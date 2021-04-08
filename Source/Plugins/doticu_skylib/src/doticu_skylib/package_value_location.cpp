@@ -4,18 +4,19 @@
 
 #pragma once
 
+#include "doticu_skylib/package_location.h"
 #include "doticu_skylib/package_value_location.h"
 
 namespace doticu_skylib {
 
-    maybe<Package_Location_t*> Package_Value_Location_t::Value() const
+    maybe<Package_Location_t*> Package_Value_Location_t::Location() const
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::LOCATION);
 
         return this->value;
     }
 
-    void Package_Value_Location_t::Value(maybe<Package_Location_t*> value)
+    void Package_Value_Location_t::Location(maybe<Package_Location_t*> value)
     {
         SKYLIB_ASSERT(Type() == Package_Value_Type_e::LOCATION);
 
@@ -24,12 +25,12 @@ namespace doticu_skylib {
 
     Package_Value_Location_t::operator maybe<Package_Location_t*>() const
     {
-        return Value();
+        return Location();
     }
 
     Package_Value_Location_t& Package_Value_Location_t::operator =(maybe<Package_Location_t*> value)
     {
-        Value(value);
+        Location(value);
         return *this;
     }
 
@@ -38,7 +39,13 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Package_Value_Location_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "value: 0x%p", Value());
+        maybe<Package_Location_t*> location = Location();
+        if (location) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "location:");
+            location->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "location: (none)");
+        }
 
         SKYLIB_LOG(indent + "}");
     }

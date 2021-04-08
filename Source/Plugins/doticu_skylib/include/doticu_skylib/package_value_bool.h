@@ -41,8 +41,8 @@ namespace doticu_skylib {
         u32 pad_0C; // 0C
 
     public:
-        Bool_t  Value() const;
-        void    Value(Bool_t value);
+        Bool_t  Bool() const;
+        void    Bool(Bool_t value);
 
     public:
         operator    Bool_t() const;

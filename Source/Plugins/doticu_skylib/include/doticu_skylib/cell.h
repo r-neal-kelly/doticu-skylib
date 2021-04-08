@@ -73,14 +73,28 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Attached_Cell_t) == 0x180);
 
-    class Cell_t :
-        public Form_t,
-        public Name_c
+    class Cell_t :      // TESObjectCELL
+        public Form_t,  // 000
+        public Name_c   // 020
     {
     public:
         enum
         {
             SCRIPT_TYPE = Script_Type_e::CELL,
+        };
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E13680, // 513892
+            };
+
+        public:
+            using Enum_t::Enum_t;
         };
 
         union Cellterior_u

@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Topic_t;
+    class Dialogue_Topic_t;
 
     class Package_Value_Topic_t :   // BGSPackageDataTopic
         public Package_Value_t      // 00
@@ -30,18 +30,18 @@ namespace doticu_skylib {
 
         union Value_u
         {
-            maybe<Topic_t*> topic;
-            u32             sub_type;
+            maybe<Dialogue_Topic_t*>    topic;
+            u32                         sub_type;
 
         public:
             Value_u() :
-                topic(none<Topic_t*>())
+                topic(none<Dialogue_Topic_t*>())
             {
             }
 
             ~Value_u()
             {
-                this->topic = none<Topic_t*>();
+                this->topic = none<Dialogue_Topic_t*>();
             }
         };
         STATIC_ASSERT(sizeof(Value_u) == 0x8);
@@ -58,17 +58,17 @@ namespace doticu_skylib {
         Value_u value;          // 18
 
     public:
-        maybe<Topic_t*> Topic() const;
-        void            Topic(maybe<Topic_t*> value);
-        u32             Sub_Type() const;
-        void            Sub_Type(u32 value);
+        maybe<Dialogue_Topic_t*>    Topic() const;
+        void                        Topic(maybe<Dialogue_Topic_t*> value);
+        u32                         Sub_Type() const;
+        void                        Sub_Type(u32 value);
 
     public:
-        operator    maybe<Topic_t*>() const;
+        operator    maybe<Dialogue_Topic_t*>() const;
         operator    u32() const;
 
     public:
-        Package_Value_Topic_t&  operator =(maybe<Topic_t*> value);
+        Package_Value_Topic_t&  operator =(maybe<Dialogue_Topic_t*> value);
         Package_Value_Topic_t&  operator =(u32 value);
 
     public:
