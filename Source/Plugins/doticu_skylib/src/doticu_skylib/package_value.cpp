@@ -17,16 +17,15 @@ namespace doticu_skylib {
 
     Package_Value_Type_e Package_Value_t::Type() const
     {
-        Word_t v_table_offset = Game_t::V_Table_Offset(this);
-        if (v_table_offset == Package_Value_Bool_t::Offset_e::V_TABLE)              return Package_Value_Type_e::BOOL;
-        else if (v_table_offset == Package_Value_Float_t::Offset_e::V_TABLE)        return Package_Value_Type_e::FLOAT;
-        else if (v_table_offset == Package_Value_Int_t::Offset_e::V_TABLE)          return Package_Value_Type_e::INT;
-        else if (v_table_offset == Package_Value_List_t::Offset_e::V_TABLE)         return Package_Value_Type_e::LIST;
-        else if (v_table_offset == Package_Value_Location_t::Offset_e::V_TABLE)     return Package_Value_Type_e::LOCATION;
-        else if (v_table_offset == Package_Value_Reference_t::Offset_e::V_TABLE)    return Package_Value_Type_e::REFERENCE;
-        else if (v_table_offset == Package_Value_Target_t::Offset_e::V_TABLE)       return Package_Value_Type_e::TARGET;
-        else if (v_table_offset == Package_Value_Topic_t::Offset_e::V_TABLE)        return Package_Value_Type_e::TOPIC;
-        else                                                                        return Package_Value_Type_e::_NONE_;
+        if (Is_Bool())              return Package_Value_Type_e::BOOL;
+        else if (Is_Float())        return Package_Value_Type_e::FLOAT;
+        else if (Is_Int())          return Package_Value_Type_e::INT;
+        else if (Is_List())         return Package_Value_Type_e::LIST;
+        else if (Is_Location())     return Package_Value_Type_e::LOCATION;
+        else if (Is_Reference())    return Package_Value_Type_e::REFERENCE;
+        else if (Is_Target())       return Package_Value_Type_e::TARGET;
+        else if (Is_Topic())        return Package_Value_Type_e::TOPIC;
+        else                        return Package_Value_Type_e::_NONE_;
     }
 
     Bool_t Package_Value_t::Is_Bool() const
@@ -111,14 +110,14 @@ namespace doticu_skylib {
 
     void Package_Value_t::Log(std::string indent) const
     {
-        if (Is_Bool())              static_cast<const Package_Value_Bool_t*>(this)->Log(indent);
-        else if (Is_Float())        static_cast<const Package_Value_Float_t*>(this)->Log(indent);
-        else if (Is_Int())          static_cast<const Package_Value_Int_t*>(this)->Log(indent);
-        else if (Is_List())         static_cast<const Package_Value_List_t*>(this)->Log(indent);
-        else if (Is_Location())     static_cast<const Package_Value_Location_t*>(this)->Log(indent);
-        else if (Is_Reference())    static_cast<const Package_Value_Reference_t*>(this)->Log(indent);
-        else if (Is_Target())       static_cast<const Package_Value_Target_t*>(this)->Log(indent);
-        else if (Is_Topic())        static_cast<const Package_Value_Topic_t*>(this)->Log(indent);
+        if (Is_Bool())              As_Bool()->Log(indent);
+        else if (Is_Float())        As_Float()->Log(indent);
+        else if (Is_Int())          As_Int()->Log(indent);
+        else if (Is_List())         As_List()->Log(indent);
+        else if (Is_Location())     As_Location()->Log(indent);
+        else if (Is_Reference())    As_Reference()->Log(indent);
+        else if (Is_Target())       As_Target()->Log(indent);
+        else if (Is_Topic())        As_Topic()->Log(indent);
         else {
             SKYLIB_LOG(indent + "Package_Value_t::Log");
             SKYLIB_LOG(indent + "{");

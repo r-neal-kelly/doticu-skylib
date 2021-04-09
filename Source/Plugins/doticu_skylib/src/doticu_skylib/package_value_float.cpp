@@ -10,14 +10,14 @@ namespace doticu_skylib {
 
     Float_t Package_Value_Float_t::Float() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::FLOAT);
+        SKYLIB_ASSERT(Is_Float());
 
         return this->value;
     }
 
     void Package_Value_Float_t::Float(Float_t value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::FLOAT);
+        SKYLIB_ASSERT(Is_Float());
 
         this->value = value;
     }

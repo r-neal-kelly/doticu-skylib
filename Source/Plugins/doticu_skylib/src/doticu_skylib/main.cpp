@@ -83,16 +83,7 @@ namespace doticu_skylib {
                 }
             }
         }
-
-        //temp
-        _MESSAGE("actor");
-        Reference_Container_t(actor).Log();
-        _MESSAGE("worn");
-        Reference_Container_t(worn_cache).Log();
-        _MESSAGE("other");
-        Reference_Container_t(other_cache).Log();
     }
-    // it's working really well!
     //
 
     //temp

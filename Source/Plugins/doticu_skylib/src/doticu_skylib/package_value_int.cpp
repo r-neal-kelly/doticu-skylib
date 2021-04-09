@@ -10,14 +10,14 @@ namespace doticu_skylib {
 
     Int_t Package_Value_Int_t::Int() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::INT);
+        SKYLIB_ASSERT(Is_Int());
 
         return this->value;
     }
 
     void Package_Value_Int_t::Int(Int_t value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::INT);
+        SKYLIB_ASSERT(Is_Int());
 
         this->value = value;
     }

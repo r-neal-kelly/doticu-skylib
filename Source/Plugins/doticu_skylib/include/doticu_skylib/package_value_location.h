@@ -4,14 +4,16 @@
 
 #pragma once
 
+#include "doticu_skylib/ai_location_handle.h"
 #include "doticu_skylib/package_value.h"
 
 namespace doticu_skylib {
 
     class Package_Location_t;
 
-    class Package_Value_Location_t :    // BGSPackageDataLocation (BGSPackageDataLocationWrapper?)
-        public Package_Value_t          // 00
+    class Package_Value_Location_t :    // BGSPackageDataLocation
+        public AI_Location_Handle_t,    // 00
+        public Package_Value_t          // 08
     {
     public:
         class Offset_e :
@@ -20,8 +22,7 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                RTTI    = 0x01E232A8, // 685607
-                V_TABLE = 0x01606520, // 252956
+                RTTI = 0x01E232A8, // 685607
             };
 
         public:
@@ -29,12 +30,11 @@ namespace doticu_skylib {
         };
 
     public:
-        virtual ~Package_Value_Location_t(); // 0
+        virtual ~Package_Value_Location_t(); // 00
 
     public:
-        u64                         pad_08; // 08
-        maybe<Package_Location_t*>  value;  // 10
-        void*                       unk_18; // 18
+        u64                         pad_08; // 10
+        maybe<Package_Location_t*>  value;  // 18
 
     public:
         maybe<Package_Location_t*>  Location() const;

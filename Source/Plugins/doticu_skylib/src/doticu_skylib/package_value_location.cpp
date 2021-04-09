@@ -11,14 +11,14 @@ namespace doticu_skylib {
 
     maybe<Package_Location_t*> Package_Value_Location_t::Location() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::LOCATION);
+        SKYLIB_ASSERT(Is_Location());
 
         return this->value;
     }
 
     void Package_Value_Location_t::Location(maybe<Package_Location_t*> value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::LOCATION);
+        SKYLIB_ASSERT(Is_Location());
 
         this->value = value;
     }

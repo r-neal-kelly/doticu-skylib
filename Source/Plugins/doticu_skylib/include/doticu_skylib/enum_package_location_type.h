@@ -20,9 +20,9 @@ namespace doticu_skylib {
             CELL                = 1,
             PACKAGE_START       = 2,
             EDITOR_LOCATION     = 3,
-            BOUND_OBJECT        = 4,
+            OBJECT              = 4,
             FORM_TYPE           = 5,
-            LINKED_REFERENCE    = 6,
+            LINKED_FORM         = 6,
             PACKAGE_LOCATION    = 7,
             ALIAS_REFERENCE     = 8,
             ALIAS_LOCATION      = 9,
@@ -34,11 +34,42 @@ namespace doticu_skylib {
         };
 
     public:
-        static Bool_t                   Is_Valid(value_type value);
+        static inline Bool_t Is_Valid(value_type value)
+        {
+            return value > _NONE_ && value < _TOTAL_;
+        }
 
-        static some<const char* const*> Strings();
-        static some<const char*>        To_String(value_type value);
-        static value_type               From_String(maybe<const char*> string);
+        static inline some<const char* const*> Strings()
+        {
+            static const char* const strings[_TOTAL_] =
+            {
+                SKYLIB_ENUM_TO_STRING(REFERENCE_HANDLE),
+                SKYLIB_ENUM_TO_STRING(CELL),
+                SKYLIB_ENUM_TO_STRING(PACKAGE_START),
+                SKYLIB_ENUM_TO_STRING(EDITOR_LOCATION),
+                SKYLIB_ENUM_TO_STRING(OBJECT),
+                SKYLIB_ENUM_TO_STRING(FORM_TYPE),
+                SKYLIB_ENUM_TO_STRING(LINKED_FORM),
+                SKYLIB_ENUM_TO_STRING(PACKAGE_LOCATION),
+                SKYLIB_ENUM_TO_STRING(ALIAS_REFERENCE),
+                SKYLIB_ENUM_TO_STRING(ALIAS_LOCATION),
+                SKYLIB_ENUM_TO_STRING(UNKNOWN_10),
+                SKYLIB_ENUM_TO_STRING(UNKNOWN_11),
+                SKYLIB_ENUM_TO_STRING(SELF),
+            };
+
+            return strings;
+        }
+
+        static inline some<const char*> To_String(value_type value)
+        {
+            return Enum_Type_Data_t::To_String(Strings(), "NONE", &Is_Valid, value);
+        }
+
+        static inline value_type From_String(maybe<const char*> string)
+        {
+            return Enum_Type_Data_t::From_String(Strings(), _NONE_, _TOTAL_, string);
+        }
     };
 
     class Package_Location_Type_e :

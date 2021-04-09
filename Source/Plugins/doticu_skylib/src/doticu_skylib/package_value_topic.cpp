@@ -10,7 +10,7 @@ namespace doticu_skylib {
 
     maybe<Dialogue_Topic_t*> Package_Value_Topic_t::Topic() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
+        SKYLIB_ASSERT(Is_Topic());
 
         if (!this->is_sub_type) {
             return this->value.topic;
@@ -21,7 +21,7 @@ namespace doticu_skylib {
 
     void Package_Value_Topic_t::Topic(maybe<Dialogue_Topic_t*> value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
+        SKYLIB_ASSERT(Is_Topic());
 
         this->is_sub_type = false;
         this->value.topic = value;
@@ -29,7 +29,7 @@ namespace doticu_skylib {
 
     u32 Package_Value_Topic_t::Sub_Type() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
+        SKYLIB_ASSERT(Is_Topic());
 
         if (this->is_sub_type) {
             return this->value.sub_type;
@@ -40,7 +40,7 @@ namespace doticu_skylib {
 
     void Package_Value_Topic_t::Sub_Type(u32 value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::TOPIC);
+        SKYLIB_ASSERT(Is_Topic());
 
         this->is_sub_type = true;
         this->value.sub_type = value;

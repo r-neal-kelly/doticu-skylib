@@ -10,14 +10,14 @@ namespace doticu_skylib {
 
     Bool_t Package_Value_Bool_t::Bool() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
+        SKYLIB_ASSERT(Is_Bool());
 
         return this->value != IS_FALSE;
     }
 
     void Package_Value_Bool_t::Bool(Bool_t value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::BOOL);
+        SKYLIB_ASSERT(Is_Bool());
 
         if (value) {
             this->value = IS_TRUE;

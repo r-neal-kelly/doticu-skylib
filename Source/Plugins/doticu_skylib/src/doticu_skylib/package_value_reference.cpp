@@ -11,14 +11,14 @@ namespace doticu_skylib {
 
     maybe<Package_Target_t*> Package_Value_Reference_t::Target() const
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::REFERENCE);
+        SKYLIB_ASSERT(Is_Reference());
 
         return this->value;
     }
 
     void Package_Value_Reference_t::Target(maybe<Package_Target_t*> value)
     {
-        SKYLIB_ASSERT(Type() == Package_Value_Type_e::REFERENCE);
+        SKYLIB_ASSERT(Is_Reference());
 
         this->value = value;
     }
@@ -39,10 +39,10 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Package_Value_Reference_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        maybe<Package_Target_t*> value = Target();
-        if (this->value) {
+        maybe<Package_Target_t*> target = Target();
+        if (target) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "target:");
-            this->value->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+            target->Log(indent + SKYLIB_TAB + SKYLIB_TAB);
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "target: (none)");
         }

@@ -10,12 +10,12 @@ namespace doticu_skylib {
 
     void Package_Value_List_t::Log(std::string indent) const
     {
+        SKYLIB_ASSERT(Is_List());
+
         SKYLIB_LOG(indent + "Package_Value_List_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "pad_08: %zu", this->pad_08);
-        SKYLIB_LOG(indent + SKYLIB_TAB + "value: 0x%X", this->value);
-        SKYLIB_LOG(indent + SKYLIB_TAB + "unk_18: 0x%p", this->unk_18);
+
 
         SKYLIB_LOG(indent + "}");
     }

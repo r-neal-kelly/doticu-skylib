@@ -19,7 +19,7 @@ namespace doticu_skylib {
     class Package_Value_Target_t;
     class Package_Value_Topic_t;
 
-    class Package_Value_t   // IPackageData
+    class Package_Value_t   // IPackageData, BGSNamedPackageData
     {
     public:
         class Offset_e :
@@ -39,25 +39,25 @@ namespace doticu_skylib {
         virtual ~Package_Value_t(); // 0
 
     public:
-        Package_Value_Type_e                Type() const;
+        Package_Value_Type_e                        Type() const;
 
-        Bool_t                              Is_Bool() const;
-        Bool_t                              Is_Float() const;
-        Bool_t                              Is_Int() const;
-        Bool_t                              Is_List() const;
-        Bool_t                              Is_Location() const;
-        Bool_t                              Is_Reference() const;
-        Bool_t                              Is_Target() const;
-        Bool_t                              Is_Topic() const;
+        Bool_t                                      Is_Bool() const;
+        Bool_t                                      Is_Float() const;
+        Bool_t                                      Is_Int() const;
+        Bool_t                                      Is_List() const;
+        Bool_t                                      Is_Location() const;
+        Bool_t                                      Is_Reference() const;
+        Bool_t                                      Is_Target() const;
+        Bool_t                                      Is_Topic() const;
 
-        maybe<Package_Value_Bool_t*>        As_Bool() const;
-        maybe<Package_Value_Float_t*>       As_Float() const;
-        maybe<Package_Value_Int_t*>         As_Int() const;
-        maybe<Package_Value_List_t*>        As_List() const;
-        maybe<Package_Value_Location_t*>    As_Location() const;
-        maybe<Package_Value_Reference_t*>   As_Reference() const;
-        maybe<Package_Value_Target_t*>      As_Target() const;
-        maybe<Package_Value_Topic_t*>       As_Topic() const;
+        maybe<Package_Value_Bool_t*>                As_Bool() const;
+        maybe<Package_Value_Float_t*>               As_Float() const;
+        maybe<Package_Value_Int_t*>                 As_Int() const;
+        maybe<Package_Value_List_t*>                As_List() const;
+        maybe<Package_Value_Location_t*>            As_Location() const;
+        maybe<Package_Value_Reference_t*>           As_Reference() const;
+        maybe<Package_Value_Target_t*>              As_Target() const;
+        maybe<Package_Value_Topic_t*>               As_Topic() const;
 
     public:
         void    Log(std::string indent = "") const;

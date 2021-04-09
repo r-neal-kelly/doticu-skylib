@@ -79,7 +79,10 @@ namespace doticu_skylib {
 
     maybe<Package_Location_t*> Package_Data_t::Location(size_t index) const
     {
-        some<Package_Value_Location_t*> location_value = Value(index)()->As_Location()();
+        some<Package_Value_t*> value_base = Value(index)();
+        SKYLIB_ASSERT_SOME(value_base);
+
+        some<Package_Value_Location_t*> location_value = value_base->As_Location()();
         SKYLIB_ASSERT_SOME(location_value);
 
         return location_value->Location();
@@ -87,7 +90,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Location(size_t index, maybe<Package_Location_t*> value)
     {
-        some<Package_Value_Location_t*> location_value = Value(index)()->As_Location()();
+        some<Package_Value_t*> value_base = Value(index)();
+        SKYLIB_ASSERT_SOME(value_base);
+
+        some<Package_Value_Location_t*> location_value = value_base->As_Location()();
         SKYLIB_ASSERT_SOME(location_value);
 
         location_value->Location(value);

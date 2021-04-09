@@ -2,21 +2,22 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/form.h"
+#include "doticu_skylib/object.h"
 #include "doticu_skylib/package_location.h"
 #include "doticu_skylib/reference.h"
 
 namespace doticu_skylib {
 
     Package_Location_t::Location_u::Location_u() :
-        linked_reference(none<Form_t*>())
+        linked_form(none<Form_t*>())
     {
     }
 
     Package_Location_t::Location_u::~Location_u()
     {
-        this->linked_reference = none<Form_t*>();
+        this->linked_form = none<Form_t*>();
     }
 
     Alias_ID_t Package_Location_t::Alias_ID() const
@@ -33,20 +34,6 @@ namespace doticu_skylib {
                       this->location_type == Package_Location_Type_e::ALIAS_REFERENCE);
 
         this->location.alias_id = alias_id;
-    }
-
-    maybe<Bound_Object_t*> Package_Location_t::Bound_Object() const
-    {
-        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::BOUND_OBJECT);
-
-        return this->location.bound_object;
-    }
-
-    void Package_Location_t::Bound_Object(maybe<Bound_Object_t*> bound_object)
-    {
-        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::BOUND_OBJECT);
-
-        this->location.bound_object = bound_object;
     }
 
     maybe<Cell_t*> Package_Location_t::Cell() const
@@ -77,18 +64,32 @@ namespace doticu_skylib {
         this->location.form_type = form_type;
     }
 
-    maybe<Form_t*> Package_Location_t::Linked_Reference() const
+    maybe<Form_t*> Package_Location_t::Linked_Form() const
     {
-        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::LINKED_REFERENCE);
+        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::LINKED_FORM);
 
-        return this->location.linked_reference;
+        return this->location.linked_form;
     }
 
-    void Package_Location_t::Linked_Reference(maybe<Form_t*> linked_reference)
+    void Package_Location_t::Linked_Form(maybe<Form_t*> linked_form)
     {
-        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::LINKED_REFERENCE);
+        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::LINKED_FORM);
 
-        this->location.linked_reference = linked_reference;
+        this->location.linked_form = linked_form;
+    }
+
+    maybe<Object_t*> Package_Location_t::Object() const
+    {
+        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::OBJECT);
+
+        return this->location.object;
+    }
+
+    void Package_Location_t::Object(maybe<Object_t*> object)
+    {
+        SKYLIB_ASSERT(this->location_type == Package_Location_Type_e::OBJECT);
+
+        this->location.object = object;
     }
 
     u32 Package_Location_t::Radius() const
@@ -130,15 +131,6 @@ namespace doticu_skylib {
             SKYLIB_LOG(indent + SKYLIB_TAB + "alias_location_id: %u", Alias_ID());
         } else if (this->location_type == Package_Location_Type_e::ALIAS_REFERENCE) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "alias_reference_id: %u", Alias_ID());
-        } else if (this->location_type == Package_Location_Type_e::BOUND_OBJECT) {
-            maybe<Bound_Object_t*> bound_object = Bound_Object();
-            if (bound_object) {
-                SKYLIB_ASSERT(bound_object->Is_Bound_Object());
-                SKYLIB_LOG(indent + SKYLIB_TAB + "bound_object:");
-                bound_object->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
-            } else {
-                SKYLIB_LOG(indent + SKYLIB_TAB + "bound_object: (none)");
-            }
         } else if (this->location_type == Package_Location_Type_e::CELL) {
             maybe<Cell_t*> cell = Cell();
             if (cell) {
@@ -155,13 +147,21 @@ namespace doticu_skylib {
             } else {
                 SKYLIB_LOG(indent + SKYLIB_TAB + "form_type: (none)");
             }
-        } else if (this->location_type == Package_Location_Type_e::LINKED_REFERENCE) {
-            maybe<Form_t*> linked_reference = Linked_Reference();
-            if (linked_reference) {
-                SKYLIB_LOG(indent + SKYLIB_TAB + "linked_reference:");
-                linked_reference->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else if (this->location_type == Package_Location_Type_e::LINKED_FORM) {
+            maybe<Form_t*> linked_form = Linked_Form();
+            if (linked_form) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "linked_form:");
+                linked_form->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
             } else {
-                SKYLIB_LOG(indent + SKYLIB_TAB + "linked_reference: (none)");
+                SKYLIB_LOG(indent + SKYLIB_TAB + "linked_form: (none)");
+            }
+        } else if (this->location_type == Package_Location_Type_e::OBJECT) {
+            maybe<Object_t*> object = Object();
+            if (object) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "object:");
+                object->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+            } else {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "object: (none)");
             }
         } else if (this->location_type == Package_Location_Type_e::REFERENCE_HANDLE) {
             maybe<Reference_t*> reference = Reference();
@@ -173,7 +173,7 @@ namespace doticu_skylib {
             }
         } else if (this->location_type == Package_Location_Type_e::UNKNOWN_10 ||
                    this->location_type == Package_Location_Type_e::UNKNOWN_11) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "unknown: %p", this->location.linked_reference);
+            SKYLIB_LOG(indent + SKYLIB_TAB + "unknown: %p", this->location.linked_form);
         }
 
         SKYLIB_LOG(indent + "}");

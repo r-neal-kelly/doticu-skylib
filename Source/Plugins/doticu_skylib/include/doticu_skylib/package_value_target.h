@@ -20,8 +20,7 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                RTTI    = 0x01E23310, // 685609
-                V_TABLE = 0x016066A0, // 252960
+                RTTI = 0x01E23310, // 685609
             };
 
         public:
@@ -34,7 +33,6 @@ namespace doticu_skylib {
     public:
         u64                         pad_08; // 08
         maybe<Package_Target_t*>    value;  // 10
-        void*                       unk_18; // 18
 
     public:
         maybe<Package_Target_t*>    Target() const;
@@ -49,6 +47,6 @@ namespace doticu_skylib {
     public:
         void    Log(std::string indent = "") const;
     };
-    STATIC_ASSERT(sizeof(Package_Value_Target_t) == 0x20);
+    STATIC_ASSERT(sizeof(Package_Value_Target_t) == 0x18);
 
 }

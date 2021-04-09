@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/ai_location_handle.h"
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/enum_form_type.h"
 #include "doticu_skylib/enum_package_location_type.h"
@@ -12,22 +13,23 @@
 
 namespace doticu_skylib {
 
-    class Bound_Object_t;
     class Cell_t;
     class Form_t;
+    class Object_t;
     class Reference_t;
 
-    class Package_Location_t    // PackageLocation
+    class Package_Location_t:       // PackageLocation
+        public AI_Location_Handle_t // 00
     {
     public:
         union Location_u
         {
         public:
             Alias_ID_t              alias_id;
-            maybe<Bound_Object_t*>  bound_object;
             maybe<Cell_t*>          cell;
             maybe<Form_Type_e>      form_type;
-            maybe<Form_t*>          linked_reference;
+            maybe<Form_t*>          linked_form;
+            maybe<Object_t*>        object;
             Reference_Handle_t      reference_handle;
             u32                     unknown_10;
             u8                      unknown_11;
@@ -49,26 +51,26 @@ namespace doticu_skylib {
         Location_u              location;       // 10
 
     public:
-        Alias_ID_t              Alias_ID() const;
-        void                    Alias_ID(Alias_ID_t alias_id);
+        Alias_ID_t          Alias_ID() const;
+        void                Alias_ID(Alias_ID_t alias_id);
 
-        maybe<Bound_Object_t*>  Bound_Object() const;
-        void                    Bound_Object(maybe<Bound_Object_t*> bound_object);
+        maybe<Cell_t*>      Cell() const;
+        void                Cell(maybe<Cell_t*> cell);
 
-        maybe<Cell_t*>          Cell() const;
-        void                    Cell(maybe<Cell_t*> cell);
+        maybe<Form_Type_e>  Form_Type() const;
+        void                Form_Type(maybe<Form_Type_e> form_type);
 
-        maybe<Form_Type_e>      Form_Type() const;
-        void                    Form_Type(maybe<Form_Type_e> form_type);
+        maybe<Form_t*>      Linked_Form() const;
+        void                Linked_Form(maybe<Form_t*> linked_form);
 
-        maybe<Form_t*>          Linked_Reference() const;
-        void                    Linked_Reference(maybe<Form_t*> linked_reference);
+        maybe<Object_t*>    Object() const;
+        void                Object(maybe<Object_t*> object);
 
-        u32                     Radius() const;
-        void                    Radius(u32 radius);
+        u32                 Radius() const;
+        void                Radius(u32 radius);
 
-        maybe<Reference_t*>     Reference() const;
-        void                    Reference(maybe<Reference_t*> reference);
+        maybe<Reference_t*> Reference() const;
+        void                Reference(maybe<Reference_t*> reference);
 
     public:
         void    Log(std::string indent = "") const;

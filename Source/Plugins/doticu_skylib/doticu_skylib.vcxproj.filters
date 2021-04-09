@@ -1374,6 +1374,12 @@
     <ClInclude Include="include\doticu_skylib\package_value_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\ai_location_handle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\ai_target_handle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1889,13 +1895,7 @@
     <ClCompile Include="src\doticu_skylib\package_target.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\doticu_skylib\enum_package_target_type.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\doticu_skylib\package_location.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\enum_package_location_type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
