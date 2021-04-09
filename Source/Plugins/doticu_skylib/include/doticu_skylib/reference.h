@@ -43,6 +43,7 @@ namespace doticu_skylib {
     class Location_t;
     class NI_3D_t;
     class NI_Point_3_t;
+    class Package_t;
     class Quest_t;
     class Reference_t;
     class Reference_Attached_State_t;
@@ -151,7 +152,7 @@ namespace doticu_skylib {
         virtual void                _46(void);                                          // 46
         virtual void                _47(void);                                          // 47
         virtual Bool_t              Get_Has_Keyword(const Keyword_t* keyword) const;    // 48
-        virtual void                _49(void);                                          // 49
+        virtual Package_t*          Get_Current_Alias_Package();                        // 49
         virtual void                _4A(void);                                          // 4A
         virtual void                _4B(void);                                          // 4B
         virtual void                _4C(void);                                          // 4C
@@ -358,6 +359,7 @@ namespace doticu_skylib {
 
     public:
         void                        Add_Item(some<Form_t*> item, s16 delta);                                // AddItem
+        void                        Remove_Item(some<Form_t*> item, s16 delta);                             // RemoveItem
 
         void                        Enable();                                                               // Enable
         void                        Disable();                                                              // Disable

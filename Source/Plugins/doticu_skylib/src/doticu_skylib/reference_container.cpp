@@ -64,10 +64,19 @@ namespace doticu_skylib {
     Reference_Container_t::~Reference_Container_t()
     {
         if (Is_Valid()) {
+            for (size_t idx = 0, end = this->entries.size(); idx < end; idx += 1) {
+                Reference_Container_Entry_t& entry = this->entries[idx];
+                if (entry.reference_entry && entry.reference_entry->Should_Be_Destroyed()) {
+                    this->reference_container->Remove_And_Destroy_Entry(entry.reference_entry());
+                    entry.reference_entry = none<Container_Changes_Entry_t*>();
+                }
+            }
+
             maybe<Actor_t*> actor = this->reference->As_Actor();
             if (actor) {
                 actor->Update_Equipment();
             }
+
             this->reference->Flag_Form_Change(Reference_t::Form_Change_Flags_e::CONTAINER);
         }
     }

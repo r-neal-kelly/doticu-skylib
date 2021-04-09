@@ -31,7 +31,10 @@ namespace doticu_skylib {
 
     Bool_t Package_Data_t::Bool(size_t index) const
     {
-        some<Package_Value_Bool_t*> bool_value = Value(index)()->As_Bool()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Bool_t*> bool_value = base_value->As_Bool()();
         SKYLIB_ASSERT_SOME(bool_value);
 
         return bool_value->Bool();
@@ -39,7 +42,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Bool(size_t index, Bool_t value)
     {
-        some<Package_Value_Bool_t*> bool_value = Value(index)()->As_Bool()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Bool_t*> bool_value = base_value->As_Bool()();
         SKYLIB_ASSERT_SOME(bool_value);
 
         bool_value->Bool(value);
@@ -47,7 +53,10 @@ namespace doticu_skylib {
 
     Float_t Package_Data_t::Float(size_t index) const
     {
-        some<Package_Value_Float_t*> float_value = Value(index)()->As_Float()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Float_t*> float_value = base_value->As_Float()();
         SKYLIB_ASSERT_SOME(float_value);
 
         return float_value->Float();
@@ -55,7 +64,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Float(size_t index, Float_t value)
     {
-        some<Package_Value_Float_t*> float_value = Value(index)()->As_Float()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Float_t*> float_value = base_value->As_Float()();
         SKYLIB_ASSERT_SOME(float_value);
 
         float_value->Float(value);
@@ -63,7 +75,10 @@ namespace doticu_skylib {
 
     Int_t Package_Data_t::Int(size_t index) const
     {
-        some<Package_Value_Int_t*> int_value = Value(index)()->As_Int()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Int_t*> int_value = base_value->As_Int()();
         SKYLIB_ASSERT_SOME(int_value);
 
         return int_value->Int();
@@ -71,7 +86,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Int(size_t index, Int_t value)
     {
-        some<Package_Value_Int_t*> int_value = Value(index)()->As_Int()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Int_t*> int_value = base_value->As_Int()();
         SKYLIB_ASSERT_SOME(int_value);
 
         int_value->Int(value);
@@ -79,10 +97,10 @@ namespace doticu_skylib {
 
     maybe<Package_Location_t*> Package_Data_t::Location(size_t index) const
     {
-        some<Package_Value_t*> value_base = Value(index)();
-        SKYLIB_ASSERT_SOME(value_base);
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
 
-        some<Package_Value_Location_t*> location_value = value_base->As_Location()();
+        some<Package_Value_Location_t*> location_value = base_value->As_Location()();
         SKYLIB_ASSERT_SOME(location_value);
 
         return location_value->Location();
@@ -90,10 +108,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Location(size_t index, maybe<Package_Location_t*> value)
     {
-        some<Package_Value_t*> value_base = Value(index)();
-        SKYLIB_ASSERT_SOME(value_base);
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
 
-        some<Package_Value_Location_t*> location_value = value_base->As_Location()();
+        some<Package_Value_Location_t*> location_value = base_value->As_Location()();
         SKYLIB_ASSERT_SOME(location_value);
 
         location_value->Location(value);
@@ -101,7 +119,10 @@ namespace doticu_skylib {
 
     maybe<Package_Target_t*> Package_Data_t::Reference_Target(size_t index) const
     {
-        some<Package_Value_Reference_t*> reference_value = Value(index)()->As_Reference()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Reference_t*> reference_value = base_value->As_Reference()();
         SKYLIB_ASSERT_SOME(reference_value);
 
         return reference_value->Target();
@@ -109,7 +130,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Reference_Target(size_t index, maybe<Package_Target_t*> value)
     {
-        some<Package_Value_Reference_t*> reference_value = Value(index)()->As_Reference()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Reference_t*> reference_value = base_value->As_Reference()();
         SKYLIB_ASSERT_SOME(reference_value);
 
         reference_value->Target(value);
@@ -117,7 +141,10 @@ namespace doticu_skylib {
 
     maybe<Package_Target_t*> Package_Data_t::Target(size_t index) const
     {
-        some<Package_Value_Target_t*> target_value = Value(index)()->As_Target()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Target_t*> target_value = base_value->As_Target()();
         SKYLIB_ASSERT_SOME(target_value);
 
         return target_value->Target();
@@ -125,7 +152,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Target(size_t index, maybe<Package_Target_t*> value)
     {
-        some<Package_Value_Target_t*> target_value = Value(index)()->As_Target()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Target_t*> target_value = base_value->As_Target()();
         SKYLIB_ASSERT_SOME(target_value);
 
         target_value->Target(value);
@@ -133,7 +163,10 @@ namespace doticu_skylib {
 
     maybe<Dialogue_Topic_t*> Package_Data_t::Topic(size_t index) const
     {
-        some<Package_Value_Topic_t*> topic_value = Value(index)()->As_Topic()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Topic_t*> topic_value = base_value->As_Topic()();
         SKYLIB_ASSERT_SOME(topic_value);
 
         return topic_value->Topic();
@@ -141,7 +174,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Topic(size_t index, maybe<Dialogue_Topic_t*> value)
     {
-        some<Package_Value_Topic_t*> topic_value = Value(index)()->As_Topic()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Topic_t*> topic_value = base_value->As_Topic()();
         SKYLIB_ASSERT_SOME(topic_value);
 
         topic_value->Topic(value);
@@ -149,7 +185,10 @@ namespace doticu_skylib {
 
     u32 Package_Data_t::Topic_Sub_type(size_t index) const
     {
-        some<Package_Value_Topic_t*> topic_value = Value(index)()->As_Topic()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Topic_t*> topic_value = base_value->As_Topic()();
         SKYLIB_ASSERT_SOME(topic_value);
 
         return topic_value->Sub_Type();
@@ -157,7 +196,10 @@ namespace doticu_skylib {
 
     void Package_Data_t::Topic_Sub_type(size_t index, u32 value)
     {
-        some<Package_Value_Topic_t*> topic_value = Value(index)()->As_Topic()();
+        some<Package_Value_t*> base_value = Value(index)();
+        SKYLIB_ASSERT_SOME(base_value);
+
+        some<Package_Value_Topic_t*> topic_value = base_value->As_Topic()();
         SKYLIB_ASSERT_SOME(topic_value);
 
         topic_value->Sub_Type(value);

@@ -110,17 +110,17 @@ namespace doticu_skylib {
     };
 
     template <typename T>
-    using enable_if_enum_t = std::enable_if_t<
+    using enable_if_enum_2_t = std::enable_if_t<
         std::is_convertible<T, Enum_t<typename T::value_type>>::value,
         Bool_t
     >;
     template <typename T, typename _ = void>
-    struct is_enum :
+    struct is_enum_2 :
         public std::false_type
     {
     };
     template <typename T>
-    struct is_enum<T, std::conditional_t<false, enable_if_enum_t<T>, void>> :
+    struct is_enum_2<T, std::conditional_t<false, enable_if_enum_2_t<T>, void>> :
         public std::true_type
     {
     };

@@ -100,4 +100,15 @@ namespace doticu_skylib {
         }
     }
 
+    void Script_t::Console_Remove_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta)
+    {
+        SKYLIB_ASSERT_SOME(reference);
+        SKYLIB_ASSERT_SOME(item);
+
+        if (reference->Is_Valid()) {
+            Command(std::string("RemoveItem ") + item->Form_ID_String() + " " + std::to_string(delta));
+            Execute(reference);
+        }
+    }
+
 }

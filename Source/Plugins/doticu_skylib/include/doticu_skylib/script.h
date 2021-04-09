@@ -86,7 +86,8 @@ namespace doticu_skylib {
 
         void                Execute(some<Reference_t*> reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
 
-        void                Console_Add_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta); // AddItem
+        void                Console_Add_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta);      // AddItem
+        void                Console_Remove_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta);   // RemoveItem
     };
     STATIC_ASSERT(sizeof(Script_t) == 0x80);
 

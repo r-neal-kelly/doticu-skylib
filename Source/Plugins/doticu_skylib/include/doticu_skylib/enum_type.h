@@ -7,6 +7,7 @@
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/maybe_enum.h"
+#include "doticu_skylib/traits.h"
 
 namespace doticu_skylib {
 
@@ -98,11 +99,6 @@ namespace doticu_skylib {
         {
         }
 
-        Enum_Type_t(const char* string) :
-            Enum_Type_t(From_String(string)())
-        {
-        }
-
         Enum_Type_t(const none<const char*>& string) :
             Enum_Type_t(Data_t::_NONE_)
         {
@@ -114,32 +110,12 @@ namespace doticu_skylib {
         }
 
         Enum_Type_t(const maybe<const char*>& string) :
-            Enum_Type_t(string())
+            Enum_Type_t(From_String(string)())
         {
         }
 
         Enum_Type_t(maybe<const char*>&& string) noexcept :
-            Enum_Type_t(string())
-        {
-        }
-
-        Enum_Type_t(const some<const char*>& string) :
-            Enum_Type_t(string())
-        {
-        }
-
-        Enum_Type_t(some<const char*>&& string) noexcept :
-            Enum_Type_t(string())
-        {
-        }
-
-        Enum_Type_t(const String_t& string) :
-            Enum_Type_t(static_cast<const char*>(string))
-        {
-        }
-
-        Enum_Type_t(String_t&& string) noexcept :
-            Enum_Type_t(static_cast<const char*>(string))
+            Enum_Type_t(From_String(string)())
         {
         }
 

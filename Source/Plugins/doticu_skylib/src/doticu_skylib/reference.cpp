@@ -850,6 +850,17 @@ namespace doticu_skylib {
         }
     }
 
+    void Reference_t::Remove_Item(some<Form_t*> item, s16 delta)
+    {
+        SKYLIB_ASSERT_SOME(item);
+
+        if (Is_Valid()) {
+            some<Script_t*> script = Script_t::Create();
+            script->Console_Remove_Item(this, item, delta);
+            Script_t::Destroy(script);
+        }
+    }
+
     void Reference_t::Enable()
     {
         if (Is_Valid()) {

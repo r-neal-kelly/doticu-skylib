@@ -240,6 +240,12 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline Bool_t Forward_List_t<T>::Remove(T&& value)
+    {
+        return Remove(value);
+    }
+
+    template <typename T>
     inline void Forward_List_t<T>::Log(std::string indent)
     {
         Forward_List_Logger_t<T>::Log(*this, indent);

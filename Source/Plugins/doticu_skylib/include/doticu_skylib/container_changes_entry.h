@@ -63,7 +63,7 @@ namespace doticu_skylib {
         void                            Destroy_Extra_Lists();
 
     public:
-        void Log(std::string indent);
+        void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
 

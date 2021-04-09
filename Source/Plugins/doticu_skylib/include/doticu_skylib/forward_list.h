@@ -61,6 +61,7 @@ namespace doticu_skylib {
         Bool_t      Has(const T& value);
         void        Add(const T& value);
         Bool_t      Remove(const T& value);
+        Bool_t      Remove(T&& value);
 
     public:
         void Log(std::string indent = "");

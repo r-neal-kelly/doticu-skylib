@@ -56,6 +56,11 @@
 
 namespace doticu_skylib {
 
+    Relation_e Test()
+    {  
+        return Relation_e(0);
+    }
+
     //for NPC Party
     static void Split_Inventory(some<Actor_t*> actor, some<Reference_t*> worn_cache, some<Reference_t*> other_cache)
     {
@@ -147,7 +152,7 @@ namespace doticu_skylib {
                         actor->Is_Player_Teammate(true);
                         actor->Ignores_Ally_Hits(true);
 
-                        /*Reference_Container_t container(reference);
+                        Reference_Container_t container(reference);
                         if (container.Is_Valid()) {
                             for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
                                 Reference_Container_Entry_t& entry = container.entries[idx];
@@ -170,20 +175,12 @@ namespace doticu_skylib {
                                     container.Add(circlet, x_list);
                                 }
                             }
-                        }*/
+                        }
                     }
                 }
             }
         };
         Virtual::Utility_t::Wait_Out_Of_Menu(5.0f, new Waiter_2_t());
-
-        /*Vector_t<Actor_Base_t*> actor_bases = Actor_Base_t::Actor_Bases();
-        for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
-            maybe<Actor_Base_t*> actor_base = actor_bases[idx];
-            if (actor_base) {
-                //actor_base->Log();
-            }
-        }*/
 
         /* NOTES */
         // base_template_form is dynamically updated to resolve past bases that carry a leveled list as base_template_form
@@ -210,7 +207,7 @@ namespace doticu_skylib {
         Virtual::Callback_i::After_Load();
 
         //temp
-        //Temp();
+        Temp();
         //
     }
 

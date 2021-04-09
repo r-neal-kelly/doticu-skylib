@@ -51,6 +51,84 @@ namespace doticu_skylib {
         this->pad_1C = 0;
     }
 
+    Bool_t Container_Changes_t::Has_Entry(some<Container_Changes_Entry_t*> entry)
+    {
+        SKYLIB_ASSERT_SOME(entry);
+
+        if (this->entries && !this->entries->Is_Empty()) {
+            for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
+                maybe<Container_Changes_Entry_t*> maybe_entry = it->value;
+                if (maybe_entry == entry) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Container_Changes_t::Has_Entry(some<Bound_Object_t*> object)
+    {
+        SKYLIB_ASSERT_SOME(object);
+
+        if (this->entries && !this->entries->Is_Empty()) {
+            for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
+                maybe<Container_Changes_Entry_t*> maybe_entry = it->value;
+                if (maybe_entry && maybe_entry->object == object) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Container_Changes_t::Add_Entry(some<Container_Changes_Entry_t*> entry)
+    {
+        SKYLIB_ASSERT_SOME(entry);
+        SKYLIB_ASSERT_SOME(entry->object);
+
+        if (!this->entries) {
+            this->entries = List_t<maybe<Container_Changes_Entry_t*>>::Create()();
+        }
+
+        if (Has_Entry(entry->object())) {
+            return false;
+        } else {
+            this->entries->Add(entry());
+            this->has_changed = true;
+            return true;
+        }
+    }
+
+    Bool_t Container_Changes_t::Remove_Entry(some<Container_Changes_Entry_t*> entry)
+    {
+        SKYLIB_ASSERT_SOME(entry);
+
+        if (Has_Entry(entry)) {
+            Bool_t did_remove = this->entries->Remove(entry());
+            SKYLIB_ASSERT(did_remove);
+            this->has_changed = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Container_Changes_t::Remove_And_Destroy_Entry(some<Container_Changes_Entry_t*> entry)
+    {
+        SKYLIB_ASSERT_SOME(entry);
+
+        if (Remove_Entry(entry)) {
+            Container_Changes_Entry_t::Destroy(entry);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     maybe<Container_Changes_Entry_t*> Container_Changes_t::Maybe_Entry(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
@@ -85,25 +163,6 @@ namespace doticu_skylib {
             this->entries->Add(some_entry());
             this->has_changed = true;
             return some_entry;
-        }
-    }
-
-    Bool_t Container_Changes_t::Add_Entry(some<Container_Changes_Entry_t*> entry)
-    {
-        SKYLIB_ASSERT_SOME(entry);
-        SKYLIB_ASSERT_SOME(entry->object);
-
-        if (!this->entries) {
-            this->entries = List_t<maybe<Container_Changes_Entry_t*>>::Create()();
-        }
-
-        maybe<Container_Changes_Entry_t*> maybe_entry = Maybe_Entry(entry->object());
-        if (maybe_entry) {
-            return false;
-        } else {
-            this->entries->Add(entry());
-            this->has_changed = true;
-            return true;
         }
     }
 

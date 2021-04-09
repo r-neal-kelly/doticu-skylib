@@ -13,8 +13,8 @@ namespace doticu_skylib {
 
     template <typename T>
     using enable_if_any_enum_t = std::enable_if_t<
-        std::is_enum<T>::value ||
         is_enum<T>::value ||
+        is_enum_2<T>::value ||
         is_enum_type<T>::value,
         Bool_t
     >;

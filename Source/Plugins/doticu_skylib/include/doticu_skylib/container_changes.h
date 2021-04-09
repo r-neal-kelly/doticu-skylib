@@ -34,11 +34,15 @@ namespace doticu_skylib {
         ~Container_Changes_t();
 
     public:
+        Bool_t                              Has_Entry(some<Container_Changes_Entry_t*> entry);
+        Bool_t                              Has_Entry(some<Bound_Object_t*> object);
+        Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
+        Bool_t                              Remove_Entry(some<Container_Changes_Entry_t*> entry);
+        Bool_t                              Remove_And_Destroy_Entry(some<Container_Changes_Entry_t*> entry);
+
         maybe<Container_Changes_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> object);
         some<Container_Changes_Entry_t*>    Some_Entry(some<Bound_Object_t*> object);
-        Bool_t                              Add_Entry(some<Container_Changes_Entry_t*> entry);
 
-        // removing entries can cause a crash when loading a previous save. in most cases we let the game handle empty entries.
         void                                Destroy_Entries();
     };
     STATIC_ASSERT(sizeof(Container_Changes_t) == 0x20);
