@@ -18,7 +18,7 @@ namespace doticu_skylib {
             MAINTAIN_SPEED_AT_GOAL          = 1 << 3,
             UNLOCKS_DOORS_AT_PACKAGE_START  = 1 << 6,
             UNLOCKS_DOORS_AT_PACKAGE_END    = 1 << 7,
-            CONTINUE_IF_PC_NEAR             = 1 << 9,
+            CONTINUE_IF_NEAR_PC             = 1 << 9,
             ONLY_ONCE_PER_DAY               = 1 << 10,
             ALLOW_PREFERRED_SPEED           = 1 << 13,
             ALWAYS_SNEAK                    = 1 << 17,

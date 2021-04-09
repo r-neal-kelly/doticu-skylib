@@ -219,6 +219,8 @@ namespace doticu_skylib {
         maybe(const none<T*> other)         : value(other()) {}
         maybe(const maybe<T*>& other)       : value(other.value) {}
         maybe(maybe<T*>&& other) noexcept   : value(std::exchange(other.value, none<T*>()())) {}
+        maybe(const some<T*>& other)        : value(other()) {}
+        maybe(some<T*>&& other) noexcept    : value(other()) {}
 
         maybe<T*>& operator=(const maybe<T*>& other)
         {

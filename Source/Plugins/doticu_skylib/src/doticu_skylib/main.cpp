@@ -56,11 +56,6 @@
 
 namespace doticu_skylib {
 
-    Relation_e Test()
-    {  
-        return Relation_e(0);
-    }
-
     //for NPC Party
     static void Split_Inventory(some<Actor_t*> actor, some<Reference_t*> worn_cache, some<Reference_t*> other_cache)
     {
