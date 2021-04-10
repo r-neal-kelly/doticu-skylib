@@ -17,7 +17,9 @@ namespace doticu_skylib {
     Reference_Container_t::Reference_Container_t(some<Reference_t*> reference) :
         reference(static_cast<Reference_t*>(nullptr)),
         base_container(static_cast<Container_c*>(nullptr)),
-        reference_container(static_cast<Container_Changes_t*>(nullptr))
+        reference_container(static_cast<Container_Changes_t*>(nullptr)),
+        entries(),
+        has_changed(false)
     {
         this->reference = reference;
         SKYLIB_ASSERT_SOME(this->reference);
@@ -57,7 +59,8 @@ namespace doticu_skylib {
         reference(std::move(other.reference)),
         base_container(std::move(other.base_container)),
         reference_container(std::move(other.reference_container)),
-        entries(std::move(other.entries))
+        entries(std::move(other.entries)),
+        has_changed(std::move(other.has_changed))
     {
     }
 
@@ -72,12 +75,18 @@ namespace doticu_skylib {
                 }
             }
 
-            maybe<Actor_t*> actor = this->reference->As_Actor();
-            if (actor) {
-                actor->Update_Equipment();
-            }
+            if (Has_Changed()) {
+                this->reference->Flag_Form_Change(Reference_t::Form_Change_Flags_e::CONTAINER);
 
-            this->reference->Flag_Form_Change(Reference_t::Form_Change_Flags_e::CONTAINER);
+                if (this->reference_container) {
+                    this->reference_container->has_changed = true;
+                }
+
+                maybe<Actor_t*> actor = this->reference->As_Actor();
+                if (actor) {
+                    actor->Update_Equipment();
+                }
+            }
         }
     }
 
@@ -115,6 +124,20 @@ namespace doticu_skylib {
         return false;
     }
 
+    Bool_t Reference_Container_t::Has_Changed() const
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        return this->has_changed;
+    }
+
+    void Reference_Container_t::Has_Changed(Bool_t value)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        this->has_changed = value;
+    }
+
     some<Container_c*> Reference_Container_t::Some_Base_Container()
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -134,6 +157,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
 
         if (!this->reference_container) {
+            Has_Changed(true);
             this->reference_container = this->reference->Some_Container_Changes()();
             SKYLIB_ASSERT(this->reference_container);
         }
@@ -164,6 +188,7 @@ namespace doticu_skylib {
         if (maybe_entry) {
             return maybe_entry();
         } else {
+            Has_Changed(true);
             this->entries.push_back(Some_Reference_Container()->Some_Entry(object));
             return &this->entries[this->entries.size() - 1];
         }
@@ -253,7 +278,7 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         SKYLIB_ASSERT(entry);
 
-        return entry->Remove(extra_list);
+        return entry->Remove(this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
@@ -265,7 +290,7 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         SKYLIB_ASSERT(entry);
 
-        return entry->Remove_And_Destroy(extra_list);
+        return entry->Remove_And_Destroy(this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Remove_To(some<Bound_Object_t*> object,
@@ -291,7 +316,7 @@ namespace doticu_skylib {
 
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         if (entry) {
-            return entry->Try_To_Consume(extra_list);
+            return entry->Try_To_Consume(this, extra_list);
         } else {
             return none<Container_Entry_Count_t>();
         }
@@ -299,11 +324,15 @@ namespace doticu_skylib {
 
     Reference_Container_Entry_t& Reference_Container_t::operator [](size_t index)
     {
+        SKYLIB_ASSERT(Is_Valid());
+
         return this->entries[index];
     }
 
     const Reference_Container_Entry_t& Reference_Container_t::operator [](size_t index) const
     {
+        SKYLIB_ASSERT(Is_Valid());
+
         return this->entries[index];
     }
 

@@ -31,6 +31,7 @@ namespace doticu_skylib {
         some<Container_c*>                      base_container;
         maybe<Container_Changes_t*>             reference_container;
         Vector_t<Reference_Container_Entry_t>   entries;
+        Bool_t                                  has_changed;
 
     public:
         Reference_Container_t(some<Reference_t*> reference);
@@ -44,6 +45,8 @@ namespace doticu_skylib {
         Bool_t                              Is_Valid() const;
         Bool_t                              Has_Quest_Item() const;
         Bool_t                              Has_Entry(some<Bound_Object_t*> object);
+        Bool_t                              Has_Changed() const;
+        void                                Has_Changed(Bool_t value);
 
         some<Container_c*>                  Some_Base_Container();
         maybe<Container_Changes_t*>         Maybe_Reference_Container();

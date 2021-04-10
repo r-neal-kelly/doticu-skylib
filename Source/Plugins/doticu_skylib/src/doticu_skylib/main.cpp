@@ -157,7 +157,7 @@ namespace doticu_skylib {
                                     Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                                     for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                                         some<Extra_List_t*> x_list = x_lists[idx];
-                                        entry.Remove_And_Destroy(x_list);
+                                        entry.Remove_And_Destroy(&container, x_list);
                                     }
                                 }
                             }

@@ -171,6 +171,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(!Some_Object()->Is_Leveled_Item());
 
         if (!this->reference_entry) {
+            owner->Has_Changed(true);
             this->reference_entry = owner->Some_Reference_Container()->Some_Entry(Some_Object())();
             SKYLIB_ASSERT_SOME(this->reference_entry);
         }
@@ -249,6 +250,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(owner);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return Some_Reference_Entry(owner)->Increment_Delta(base_count, amount) + base_count;
     }
 
@@ -260,10 +262,12 @@ namespace doticu_skylib {
 
         Container_Entry_Count_t base_count = Base_Count();
         if (base_count > 0) {
+            owner->Has_Changed(true);
             return Some_Reference_Entry(owner)->Decrement_Delta(base_count, amount) + base_count;
         } else {
             maybe<Container_Changes_Entry_t*> reference_entry = Maybe_Reference_Entry();
             if (reference_entry) {
+                owner->Has_Changed(true);
                 return reference_entry->Decrement_Delta(base_count, amount);
             } else {
                 return 0;
@@ -285,6 +289,7 @@ namespace doticu_skylib {
 
             Container_Entry_Count_t difference = old_count - new_count;
             if (difference > 0) {
+                owner->Has_Changed(true);
                 to->Add_Item(Some_Object(), none<Extra_List_t*>(), difference, none<Reference_t*>());
             }
 
@@ -294,13 +299,15 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Add(some<Reference_Container_t*> owner, some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Add(some<Reference_Container_t*> owner,
+                                                             some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(owner);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return Some_Reference_Entry(owner)->Add(base_count, extra_list) + base_count;
     }
 
@@ -312,26 +319,31 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return Some_Reference_Entry(owner)->Add_Copy_Or_Increment(base_count, extra_list) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Remove(some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove(some<Reference_Container_t*> owner,
+                                                                some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return this->reference_entry->Remove(base_count, extra_list) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Remove_And_Destroy(some<Extra_List_t*> extra_list)
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_And_Destroy(some<Reference_Container_t*> owner,
+                                                                            some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return this->reference_entry->Remove_And_Destroy(base_count, extra_list) + base_count;
     }
 
@@ -346,30 +358,38 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(to);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return this->reference_entry->Remove_To(base_count, extra_list, owner->reference(), to) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Extra_List_t*> extra_list, s16 amount)
+    Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(some<Reference_Container_t*> owner,
+                                                                         some<Extra_List_t*> extra_list,
+                                                                         s16 amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return this->reference_entry->Increment_Count(base_count, extra_list, amount) + base_count;
     }
 
-    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Count(some<Extra_List_t*> extra_list, s16 amount)
+    Container_Entry_Count_t Reference_Container_Entry_t::Decrement_Count(some<Reference_Container_t*> owner,
+                                                                         some<Extra_List_t*> extra_list,
+                                                                         s16 amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT(this->reference_entry);
         SKYLIB_ASSERT_SOME(extra_list);
 
         Container_Entry_Count_t base_count = Base_Count();
+        owner->Has_Changed(true);
         return this->reference_entry->Decrement_Count(base_count, extra_list, amount) + base_count;
     }
 
-    maybe<Container_Entry_Count_t> Reference_Container_Entry_t::Try_To_Consume(some<Extra_List_t*> extra_list)
+    maybe<Container_Entry_Count_t> Reference_Container_Entry_t::Try_To_Consume(some<Reference_Container_t*> owner,
+                                                                               some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(extra_list);
@@ -378,6 +398,7 @@ namespace doticu_skylib {
             Container_Entry_Count_t base_count = Base_Count();
             maybe<s32> reference_entry_delta = this->reference_entry->Try_To_Consume(base_count, extra_list);
             if (reference_entry_delta.Has_Value()) {
+                owner->Has_Changed(true);
                 return Container_Entry_Count_t(reference_entry_delta.Value() + base_count);
             } else {
                 return none<Container_Entry_Count_t>();

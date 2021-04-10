@@ -180,6 +180,7 @@ namespace doticu_skylib {
             }
             List_t<maybe<Container_Changes_Entry_t*>>::Destroy(this->entries());
             this->entries = none<List_t<maybe<Container_Changes_Entry_t*>>*>();
+            this->has_changed = true;
         }
     }
 
