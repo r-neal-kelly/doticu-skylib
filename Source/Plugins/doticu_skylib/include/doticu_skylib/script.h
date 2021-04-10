@@ -54,6 +54,9 @@ namespace doticu_skylib {
         static void             Destroy(some<Script_t*> script);
 
     public:
+        static void operator delete(void* bytes);
+
+    public:
         virtual ~Script_t(); // 0
 
     public:

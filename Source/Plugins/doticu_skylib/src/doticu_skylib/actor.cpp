@@ -975,12 +975,12 @@ namespace doticu_skylib {
         Actor_AI_Processor_t::Self()->Stop_Combat_And_Alarm(this, false);
     }
 
-    void Actor_t::Update_3D()
+    void Actor_t::Update_3D(maybe<Script_t*> script)
     {
         maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base) {
             Float_t weight = actor_base->Weight();
-            Base_Weight(weight);
+            Base_Weight(weight, script);
         }
     }
 
@@ -1002,12 +1002,15 @@ namespace doticu_skylib {
         return Get_Alpha();
     }
 
-    void Actor_t::Alpha(Float_t alpha)
+    void Actor_t::Alpha(Float_t alpha, maybe<Script_t*> script)
     {
-        some<Script_t*> script = Script_t::Create();
+        maybe<unique<Script_t>> temp;
+        if (!script) {
+            temp = Script_t::Create()();
+            script = temp();
+        }
         script->Command(std::string("SetActorAlpha ") + std::to_string(alpha));
         script->Execute(this);
-        Script_t::Destroy(script);
     }
 
     Float_t Actor_t::Base_Weight()
@@ -1020,20 +1023,26 @@ namespace doticu_skylib {
         }
     }
 
-    void Actor_t::Base_Weight(Float_t weight)
+    void Actor_t::Base_Weight(Float_t weight, maybe<Script_t*> script)
     {
-        some<Script_t*> script = Script_t::Create();
+        maybe<unique<Script_t>> temp;
+        if (!script) {
+            temp = Script_t::Create()();
+            script = temp();
+        }
         script->Command(std::string("SetNPCWeight ") + std::to_string(weight));
         script->Execute(this);
-        Script_t::Destroy(script);
     }
 
-    void Actor_t::Is_Doing_Favor(Bool_t value)
+    void Actor_t::Is_Doing_Favor(Bool_t value, maybe<Script_t*> script)
     {
-        some<Script_t*> script = Script_t::Create();
+        maybe<unique<Script_t>> temp;
+        if (!script) {
+            temp = Script_t::Create()();
+            script = temp();
+        }
         script->Command(std::string("SetFavorState ") + (value ? "1" : "0"));
         script->Execute(this);
-        Script_t::Destroy(script);
     }
 
     void Actor_t::Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback)

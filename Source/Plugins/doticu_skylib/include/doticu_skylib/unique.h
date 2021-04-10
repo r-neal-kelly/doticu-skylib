@@ -71,6 +71,7 @@ namespace doticu_skylib {
             if (this != std::addressof(other)) {
                 this->value = static_cast<maybe<T*>>(std::exchange(other.value, none<TT*>()));
             }
+            return *this;
         }
 
         ~unique()

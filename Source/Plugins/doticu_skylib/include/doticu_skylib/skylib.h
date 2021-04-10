@@ -95,6 +95,7 @@ namespace doticu_skylib {
     class Form_t;
     class Form_Factory_i;
     class Form_List_t;
+    class Form_Owner_t;
     class Furniture_t;
     class Game_t;
     class Global_t;

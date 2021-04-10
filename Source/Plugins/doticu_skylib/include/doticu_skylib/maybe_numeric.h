@@ -66,9 +66,9 @@ namespace doticu_skylib {
             return true;
         }
 
-        value_type operator ()() const
+        const value_type operator ()() const
         {
-            return value_type::_NONE_;
+            return this->value;
         }
     };
 
@@ -171,7 +171,12 @@ namespace doticu_skylib {
             return !static_cast<Bool_t>(*this);
         }
 
-        value_type operator ()() const
+        value_type& operator ()()
+        {
+            return this->value;
+        }
+
+        const value_type& operator ()() const
         {
             return this->value;
         }
@@ -256,7 +261,12 @@ namespace doticu_skylib {
             return !static_cast<Bool_t>(*this);
         }
 
-        value_type operator ()() const
+        value_type& operator ()()
+        {
+            return this->value;
+        }
+
+        const value_type& operator ()() const
         {
             return this->value;
         }

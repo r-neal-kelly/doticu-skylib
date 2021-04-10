@@ -28,6 +28,12 @@ namespace doticu_skylib {
         Game_t::Deallocate<Script_t>(script);
     }
 
+    void Script_t::operator delete(void* bytes)
+    {
+        SKYLIB_ASSERT(bytes);
+        Destroy(static_cast<Script_t*>(bytes));
+    }
+
     void Script_t::Allocate_Command(size_t byte_count)
     {
         Deallocate_Command();

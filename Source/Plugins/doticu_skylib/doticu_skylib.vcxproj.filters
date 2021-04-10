@@ -1380,6 +1380,9 @@
     <ClInclude Include="include\doticu_skylib\ai_target_handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_furnitures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1896,6 +1899,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\package_location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_furnitures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

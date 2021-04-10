@@ -36,8 +36,6 @@ namespace doticu_skylib { namespace Virtual {
 
 namespace doticu_skylib {
 
-    // why is this in this namespace?
-
     template <>
     class none<Virtual::Stack_ID_t> :
         public none_numeric<Virtual::Stack_ID_t>

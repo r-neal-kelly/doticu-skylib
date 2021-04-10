@@ -45,6 +45,7 @@ namespace doticu_skylib {
     class Movement_Actor_Controller_t;
     class Outfit_t;
     class Race_t;
+    class Script_t;
     class Spell_t;
     class Voice_Type_t;
 
@@ -427,19 +428,19 @@ namespace doticu_skylib {
         void                                        Reset_Actor_Value(Actor_Value_Type_e actor_value_type);
         void                                        Stop_Combat();
         void                                        Stop_Combat_And_Alarm();
-        void                                        Update_3D();
+        void                                        Update_3D(maybe<Script_t*> script);
         void                                        Update_Equipment();
 
         maybe<Actor_t*>                             Current_Combat_Target();
 
     public:
         Float_t Alpha();
-        void    Alpha(Float_t alpha);           // SetActorAlpha
+        void    Alpha(Float_t alpha, maybe<Script_t*> script);          // SetActorAlpha
 
         Float_t Base_Weight();
-        void    Base_Weight(Float_t weight);    // SetNPCWeight
+        void    Base_Weight(Float_t weight, maybe<Script_t*> script);   // SetNPCWeight
 
-        void    Is_Doing_Favor(Bool_t value);   // SetFavorState
+        void    Is_Doing_Favor(Bool_t value, maybe<Script_t*> script);  // SetFavorState
 
     public:
         void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback);    // SetAlpha
