@@ -2,8 +2,10 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_owner.h"
+#include "doticu_skylib/faction.h"
 
 namespace doticu_skylib {
 
@@ -49,6 +51,21 @@ namespace doticu_skylib {
     void Extra_Owner_t::Form_Owner(Form_Owner_t form_owner)
     {
         this->form_owner = form_owner;
+    }
+
+    void Extra_Owner_t::Log(std::string indent) const
+    {
+        SKYLIB_LOG(indent + "Extra_Owner_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        if (this->form_owner) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "form_owner:");
+            this->form_owner.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "form_owner: (none)");
+        }
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

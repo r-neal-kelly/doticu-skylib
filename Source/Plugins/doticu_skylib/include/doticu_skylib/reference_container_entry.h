@@ -20,6 +20,11 @@ namespace doticu_skylib {
     class Reference_Container_Entry_t
     {
     public:
+        static some<Extra_List_t*>  Some_Extra_List(Container_Entry_Count_t count);
+        static maybe<Extra_List_t*> Maybe_Extra_List_Copy(some<Extra_List_t*> extra_list);
+        static some<Extra_List_t*>  Some_Extra_List_Copy(some<Extra_List_t*> extra_list);
+
+    public:
         maybe<Container_Entry_t*>           base_entry;
         maybe<Container_Changes_Entry_t*>   reference_entry;
 
@@ -38,50 +43,38 @@ namespace doticu_skylib {
         ~Reference_Container_Entry_t();
 
     public:
-        Bool_t                              Is_Valid() const;
-        Bool_t                              Is_Leveled_Item();
-        Bool_t                              Is_Playable_Item();
-        Bool_t                              Has_Quest_Item() const;
+        Bool_t  Is_Valid() const;
+        Bool_t  Is_Leveled_Item();
+        Bool_t  Is_Playable_Item();
+        Bool_t  Has_Quest_Item() const;
 
+    public:
         some<Bound_Object_t*>               Some_Object();
         maybe<Leveled_Item_t*>              Maybe_Leveled_Item();
         maybe<Container_Changes_Entry_t*>   Maybe_Reference_Entry();
-        some<Container_Changes_Entry_t*>    Some_Reference_Entry(some<Reference_Container_t*> owner);
+        some<Container_Changes_Entry_t*>    Some_Reference_Entry(Reference_Container_t& owner);
         Vector_t<some<Extra_List_t*>>       Some_Extra_Lists();
 
-        Container_Entry_Count_t             Base_Count();
-        Container_Entry_Count_t             Reference_Count();
-        Container_Entry_Count_t             Extra_Lists_Count();
-        Container_Entry_Count_t             Non_Extra_Lists_Count();
-        Container_Entry_Count_t             Count();
+    public:
+        Container_Entry_Count_t Base_Count();
+        Container_Entry_Count_t Extra_Lists_Count();
+        Container_Entry_Count_t Non_Extra_Lists_Count();
+        Container_Entry_Count_t Count();
 
-        Container_Entry_Count_t             Increment_Count(some<Reference_Container_t*> owner,
-                                                            Container_Entry_Count_t amount);
-        Container_Entry_Count_t             Decrement_Count(some<Reference_Container_t*> owner,
-                                                            Container_Entry_Count_t amount);
-        Container_Entry_Count_t             Remove_Count_To(some<Reference_Container_t*> owner,
-                                                            Container_Entry_Count_t amount,
-                                                            some<Reference_t*> to);
+    public:
+        Container_Entry_Count_t Increment_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
+        Container_Entry_Count_t Decrement_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
+        Container_Entry_Count_t Remove_Count_To(Reference_Container_t& owner, Container_Entry_Count_t amount, some<Reference_t*> to);
 
-        Container_Entry_Count_t             Add(some<Reference_Container_t*> owner,
-                                                some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Add_Copy_Or_Increment(some<Reference_Container_t*> owner,
-                                                                  some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove(some<Reference_Container_t*> owner,
-                                                   some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove_And_Destroy(some<Reference_Container_t*> owner,
-                                                               some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove_To(some<Reference_Container_t*> owner,
-                                                      some<Extra_List_t*> extra_list,
-                                                      some<Reference_t*> to);
-        Container_Entry_Count_t             Increment_Count(some<Reference_Container_t*> owner,
-                                                            some<Extra_List_t*> extra_list,
-                                                            s16 amount);
-        Container_Entry_Count_t             Decrement_Count(some<Reference_Container_t*> owner,
-                                                            some<Extra_List_t*> extra_list,
-                                                            s16 amount);
-        maybe<Container_Entry_Count_t>      Try_To_Consume(some<Reference_Container_t*> owner,
-                                                           some<Extra_List_t*> extra_list);
+    public:
+        Container_Entry_Count_t         Add(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t         Add_Copy_Or_Increment(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t         Remove(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t         Remove_And_Destroy(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        Container_Entry_Count_t         Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, some<Reference_t*> to);
+        Container_Entry_Count_t         Increment_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
+        Container_Entry_Count_t         Decrement_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
+        maybe<Container_Entry_Count_t>  Try_To_Consume(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
 
     public:
         explicit operator   Bool_t() const;

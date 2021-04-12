@@ -48,6 +48,8 @@ namespace doticu_skylib {
         Bool_t                              Has_Changed() const;
         void                                Has_Changed(Bool_t value);
 
+        some<Reference_t*>                  Reference() const;
+
         some<Container_c*>                  Some_Base_Container();
         maybe<Container_Changes_t*>         Maybe_Reference_Container();
         some<Container_Changes_t*>          Some_Reference_Container();

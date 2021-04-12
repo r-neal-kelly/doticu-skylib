@@ -142,9 +142,10 @@ namespace doticu_skylib {
         u64                     unk_138;            // 138
 
     public:
-        Bool_t                          Is_Interior();
-        Bool_t                          Is_Exterior();
         Bool_t                          Is_Attached();
+        Bool_t                          Is_Exterior();
+        Bool_t                          Is_Interior();
+
         Bool_t                          Can_Travel_From();
         Bool_t                          Has_Reference(some<Reference_t*> reference);
 

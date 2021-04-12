@@ -32,6 +32,7 @@ namespace doticu_skylib {
     class Keyword_t;
     class Keywords_c;
     class Leveled_Item_t;
+    class Location_t;
     class Misc_t;
     class Mod_t;
     class Name_c;
@@ -199,6 +200,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Ingredient() const;
         Bool_t                  Is_Key() const;
         Bool_t                  Is_Leveled_Item() const;
+        Bool_t                  Is_Location() const;
         Bool_t                  Is_Misc() const;
         Bool_t                  Is_Package() const;
         Bool_t                  Is_Potion() const;
@@ -223,6 +225,7 @@ namespace doticu_skylib {
         maybe<Ingredient_t*>    As_Ingredient() const;
         maybe<Key_t*>           As_Key() const;
         maybe<Leveled_Item_t*>  As_Leveled_Item() const;
+        maybe<Location_t*>      As_Location() const;
         maybe<Misc_t*>          As_Misc() const;
         maybe<Package_t*>       As_Package() const;
         maybe<Potion_t*>        As_Potion() const;

@@ -47,7 +47,7 @@ namespace doticu_skylib {
         void            Form_Owner(Form_Owner_t form_owner);
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Extra_Owner_t) == 0x18);
 

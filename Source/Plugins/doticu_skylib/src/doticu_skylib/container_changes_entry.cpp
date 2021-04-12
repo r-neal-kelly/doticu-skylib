@@ -12,6 +12,26 @@
 
 namespace doticu_skylib {
 
+    Bool_t Container_Changes_Entry_t::Extra_List_Copy_Filter_t::operator ()(Extra_Type_e extra_type)
+    {
+        // we don't copy COUNT here, because if it's the only data on the list we can increment instead.
+        if (extra_type == Extra_Type_e::CHARGE ||
+            extra_type == Extra_Type_e::ENCHANTMENT ||
+            extra_type == Extra_Type_e::OWNER ||
+            extra_type == Extra_Type_e::POISON ||
+            extra_type == Extra_Type_e::SOUL_LEVEL ||
+            extra_type == Extra_Type_e::TEMPER_LEVEL ||
+            extra_type == Extra_Type_e::TEXT_DISPLAY) {
+            // TODO:
+            // should probably check what kind of text_display it is.
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    Container_Changes_Entry_t::Extra_List_Copy_Filter_t Container_Changes_Entry_t::extra_list_copy_filter;
+
     some<Container_Changes_Entry_t*> Container_Changes_Entry_t::Create(some<Bound_Object_t*> object)
     {
         some<Container_Changes_Entry_t*> container_changes_entry = Game_t::Allocate<Container_Changes_Entry_t>();
@@ -22,8 +42,49 @@ namespace doticu_skylib {
     void Container_Changes_Entry_t::Destroy(some<Container_Changes_Entry_t*> container_changes_entry)
     {
         SKYLIB_ASSERT_SOME(container_changes_entry);
+
         container_changes_entry->~Container_Changes_Entry_t();
         Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry);
+    }
+
+    some<Extra_List_t*> Container_Changes_Entry_t::Some_Extra_List(Container_Entry_Count_t count)
+    {
+        some<Extra_List_t*> x_list = Extra_List_t::Create();
+        if (count > std::numeric_limits<s16>::max()) {
+            x_list->Count(std::numeric_limits<s16>::max());
+        } else {
+            x_list->Count(static_cast<s16>(count));
+        }
+        return x_list;
+    }
+
+    maybe<Extra_List_t*> Container_Changes_Entry_t::Maybe_Extra_List_Copy(some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        maybe<Extra_List_t*> copy = extra_list->Copy(extra_list_copy_filter);
+        if (copy) {
+            if (copy->May_Change_Count()) {
+                copy->Count(extra_list->Count());
+            }
+            return copy;
+        } else {
+            return none<Extra_List_t*>();
+        }
+    }
+
+    some<Extra_List_t*> Container_Changes_Entry_t::Some_Extra_List_Copy(some<Extra_List_t*> extra_list)
+    {
+        SKYLIB_ASSERT_SOME(extra_list);
+
+        maybe<Extra_List_t*> maybe_copy = Maybe_Extra_List_Copy(extra_list);
+        if (maybe_copy) {
+            return maybe_copy();
+        } else {
+            some<Extra_List_t*> some_copy = Extra_List_t::Create();
+            some_copy->Count(extra_list->Count());
+            return some_copy;
+        }
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t() :
@@ -63,11 +124,6 @@ namespace doticu_skylib {
         Destroy_Extra_Lists();
         this->delta = 0;
         this->pad_14 = 0;
-    }
-
-    Container_Entry_Count_t Container_Changes_Entry_t::Count(Container_Entry_Count_t base_count)
-    {
-        return Delta(base_count);
     }
 
     s32 Container_Changes_Entry_t::Delta(Container_Entry_Count_t base_count)
@@ -166,43 +222,16 @@ namespace doticu_skylib {
 
     s32 Container_Changes_Entry_t::Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
     {
-        class Copy_Filter :
-            public Filter_i<Extra_Type_e>
-        {
-        public:
-            virtual Bool_t operator ()(Extra_Type_e extra_type) override
-            {
-                if (extra_type == Extra_Type_e::CHARGE ||
-                    extra_type == Extra_Type_e::COUNT ||
-                    extra_type == Extra_Type_e::ENCHANTMENT ||
-                    extra_type == Extra_Type_e::OWNER ||
-                    extra_type == Extra_Type_e::POISON ||
-                    extra_type == Extra_Type_e::SOUL_LEVEL ||
-                    extra_type == Extra_Type_e::TEMPER_LEVEL ||
-                    extra_type == Extra_Type_e::TEXT_DISPLAY) {
-                    // TODO:
-                    // should probably check what kind of text_display it is.
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        };
-        static Copy_Filter copy_filter;
-
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
 
-        maybe<Extra_List_t*> extra_list_copy = extra_list->Copy(copy_filter);
+        maybe<Extra_List_t*> extra_list_copy = Maybe_Extra_List_Copy(extra_list);
         if (extra_list_copy) {
             s32 new_delta = Increment_Delta(base_count, extra_list_copy->Count());
 
             if (!this->x_lists) {
                 this->x_lists = List_t<maybe<Extra_List_t*>>::Create(extra_list_copy())();
             } else {
-                // TODO:
-                // we could try to have it consumed by another x_list.
-                // I'm just not sure how unique x_lists would handle being altered.
                 this->x_lists->Add(extra_list_copy());
             }
 
@@ -274,7 +303,7 @@ namespace doticu_skylib {
                 x_type == Extra_Type_e::OUTFIT ||
                 x_type == Extra_Type_e::SHOULD_WEAR ||
                 x_type == Extra_Type_e::WORN ||
-                x_type == Extra_Type_e::WORN_LEFT) { // maybe HOTKEY too? Add_Item doesn't though
+                x_type == Extra_Type_e::WORN_LEFT) {
                 extra_list->Remove(x_data);
                 Extra_Data_t::Destroy(x_data);
             }

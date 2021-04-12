@@ -138,6 +138,13 @@ namespace doticu_skylib {
         this->has_changed = value;
     }
 
+    some<Reference_t*> Reference_Container_t::Reference() const
+    {
+        SKYLIB_ASSERT(Is_Valid());
+
+        return this->reference;
+    }
+
     some<Container_c*> Reference_Container_t::Some_Base_Container()
     {
         SKYLIB_ASSERT(Is_Valid());
@@ -219,7 +226,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
 
-        return Some_Entry(object)->Increment_Count(this, amount);
+        return Some_Entry(object)->Increment_Count(*this, amount);
     }
 
     Container_Entry_Count_t Reference_Container_t::Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount)
@@ -229,7 +236,7 @@ namespace doticu_skylib {
 
         maybe<Reference_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
         if (maybe_entry) {
-            return maybe_entry->Decrement_Count(this, amount);
+            return maybe_entry->Decrement_Count(*this, amount);
         } else {
             return 0;
         }
@@ -245,7 +252,7 @@ namespace doticu_skylib {
 
         maybe<Reference_Container_Entry_t*> maybe_entry = Maybe_Entry(object);
         if (maybe_entry) {
-            return maybe_entry->Remove_Count_To(this, amount, to);
+            return maybe_entry->Remove_Count_To(*this, amount, to);
         } else {
             return 0;
         }
@@ -257,7 +264,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(object);
         SKYLIB_ASSERT_SOME(extra_list);
 
-        return Some_Entry(object)->Add(this, extra_list);
+        return Some_Entry(object)->Add(*this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
@@ -266,7 +273,7 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(object);
         SKYLIB_ASSERT_SOME(extra_list);
 
-        return Some_Entry(object)->Add_Copy_Or_Increment(this, extra_list);
+        return Some_Entry(object)->Add_Copy_Or_Increment(*this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
@@ -278,7 +285,7 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         SKYLIB_ASSERT(entry);
 
-        return entry->Remove(this, extra_list);
+        return entry->Remove(*this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
@@ -290,7 +297,7 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         SKYLIB_ASSERT(entry);
 
-        return entry->Remove_And_Destroy(this, extra_list);
+        return entry->Remove_And_Destroy(*this, extra_list);
     }
 
     Container_Entry_Count_t Reference_Container_t::Remove_To(some<Bound_Object_t*> object,
@@ -305,7 +312,7 @@ namespace doticu_skylib {
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         SKYLIB_ASSERT(entry);
 
-        return entry->Remove_To(this, extra_list, to);
+        return entry->Remove_To(*this, extra_list, to);
     }
 
     maybe<Container_Entry_Count_t> Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
@@ -316,7 +323,7 @@ namespace doticu_skylib {
 
         maybe<Reference_Container_Entry_t*> entry = Maybe_Entry(object);
         if (entry) {
-            return entry->Try_To_Consume(this, extra_list);
+            return entry->Try_To_Consume(*this, extra_list);
         } else {
             return none<Container_Entry_Count_t>();
         }

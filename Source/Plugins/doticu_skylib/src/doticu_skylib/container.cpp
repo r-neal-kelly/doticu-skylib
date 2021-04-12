@@ -7,11 +7,14 @@
 
 namespace doticu_skylib {
 
-    maybe<Reference_t*> Container_t::Create_Container(some<Container_t*> container, maybe<Reference_t*> at)
+    some<Reference_t*> Container_t::Create_Reference(some<Container_t*> container, maybe<Reference_t*> at)
     {
         SKYLIB_ASSERT_SOME(container);
 
-        return Reference_t::Create(container, 1, at, true, false, true);
+        maybe<Reference_t*> reference = Reference_t::Create(container, 1, at, true, false, true);
+        SKYLIB_ASSERT_SOME(reference);
+
+        return reference();
     }
 
 }

@@ -161,4 +161,27 @@ namespace doticu_skylib {
         return this->form;
     }
 
+    void Form_Owner_t::Log(std::string indent) const
+    {
+        SKYLIB_LOG(indent + "Form_Owner_t::Log");
+        SKYLIB_LOG(indent + "{");
+
+        if (this->form) {
+            if (this->form->Is_Actor_Base()) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base:");
+                this->form->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+            } else if (this->form->Is_Faction()) {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "faction:");
+                this->form->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+            } else {
+                SKYLIB_LOG(indent + SKYLIB_TAB + "form:");
+                this->form->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+            }
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "form: (none)");
+        }
+
+        SKYLIB_LOG(indent + "}");
+    }
+
 }

@@ -4,15 +4,13 @@
 
 #pragma once
 
-#include "doticu_skylib/dynamic_array.h"
-#include "doticu_skylib/string.h"
-
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
-
+#include "doticu_skylib/dynamic_array.h"
+#include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/reference_handle.h"
-#include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
@@ -21,15 +19,29 @@ namespace doticu_skylib {
     class Keyword_t;
     class Location_Reference_Type;
 
-    class Location_t :
-        public Form_t,
-        public Name_c,
-        public Keywords_c
+    class Location_t :      // BGSLocation
+        public Form_t,      // 00
+        public Name_c,      // 20
+        public Keywords_c   // 30
     {
     public:
         enum
         {
             SCRIPT_TYPE = Script_Type_e::LOCATION,
+        };
+
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E197F0, // 513980
+            };
+
+        public:
+            using Enum_t::Enum_t;
         };
 
         class Unloaded_Reference_t
@@ -80,6 +92,7 @@ namespace doticu_skylib {
     public:
         virtual ~Location_t();
 
+    public:
         Location_t*                 parent_location;        // 48
         Faction_t*                  crime_faction;          // 50
         void*                       music_type;             // 58
@@ -100,7 +113,12 @@ namespace doticu_skylib {
         Bool_t                      was_ever_cleared;       // ED
         u16                         pad_EE;                 // EE
 
-        String_t Any_Name();
+    public:
+        Bool_t      Is_Likely_Civilized() const;
+        Bool_t      Is_Likely_Dangerous() const;
+        Bool_t      Is_Likely_Regional() const;
+
+        String_t    Any_Name();
     };
     STATIC_ASSERT(sizeof(Location_t) == 0xF0);
 

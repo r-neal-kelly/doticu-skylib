@@ -487,6 +487,25 @@ namespace doticu_skylib {
         }
     }
 
+    void Extra_List_t::Count(s16 count)
+    {
+        SKYLIB_ASSERT(count > -1);
+        SKYLIB_ASSERT(May_Change_Count() ? true : count == 1);
+
+        maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
+        if (x_count) {
+            if (count != 1) {
+                x_count->Count(count);
+            } else {
+                Remove<Extra_Count_t>(x_count());
+            }
+        } else {
+            if (count != 1) {
+                Add<Extra_Count_t>(Extra_Count_t::Create(count));
+            }
+        }
+    }
+
     s16 Extra_List_t::Increment_Count(s16 amount)
     {
         SKYLIB_ASSERT(May_Change_Count());

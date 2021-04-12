@@ -42,7 +42,7 @@ namespace doticu_skylib {
         maybe<Extra_Data_t*>    Copy();
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_Data_t) == 0x10);
 

@@ -2,24 +2,22 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
-#include "doticu_skylib/collections.h"
-#include "doticu_skylib/interface.h"
-
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/encounter_zone.h"
-#include "doticu_skylib/faction.h"
-#include "doticu_skylib/game.h"
-#include "doticu_skylib/game_ini.h"
-#include "doticu_skylib/location.h"
-#include "doticu_skylib/player.h"
-#include "doticu_skylib/worldspace.h"
-
 #include "doticu_skylib/extra_encounter_zone.h"
 #include "doticu_skylib/extra_list.inl"
 #include "doticu_skylib/extra_location.h"
 #include "doticu_skylib/extra_owner.h"
+#include "doticu_skylib/faction.h"
+#include "doticu_skylib/game.h"
+#include "doticu_skylib/game_ini.h"
+#include "doticu_skylib/interface.h"
+#include "doticu_skylib/location.h"
+#include "doticu_skylib/player.h"
+#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 
@@ -149,9 +147,9 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Cell_t::Is_Interior()
+    Bool_t Cell_t::Is_Attached()
     {
-        return this->cell_flags.Is_Flagged(Cell_Flags_e::IS_INTERIOR);
+        return this->cell_state == Cell_State_e::IS_ATTACHED;
     }
 
     Bool_t Cell_t::Is_Exterior()
@@ -159,9 +157,9 @@ namespace doticu_skylib {
         return !Is_Interior();
     }
 
-    Bool_t Cell_t::Is_Attached()
+    Bool_t Cell_t::Is_Interior()
     {
-        return cell_state == Cell_State_e::IS_ATTACHED;
+        return this->cell_flags.Is_Flagged(Cell_Flags_e::IS_INTERIOR);
     }
 
     Bool_t Cell_t::Can_Travel_From()

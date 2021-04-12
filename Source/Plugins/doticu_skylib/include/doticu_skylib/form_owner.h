@@ -52,6 +52,9 @@ namespace doticu_skylib {
 
     public:
         maybe<Form_t*> operator ()() const;
+
+    public:
+        void    Log(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Form_Owner_t) == 0x8);
 

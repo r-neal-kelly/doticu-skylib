@@ -146,6 +146,7 @@ namespace doticu_skylib {
 
         // Extra_Count_t
         s16                                 Count();
+        void                                Count(s16 count);
         s16                                 Increment_Count(s16 amount);
         s16                                 Decrement_Count(s16 amount);
         Bool_t                              May_Change_Count();

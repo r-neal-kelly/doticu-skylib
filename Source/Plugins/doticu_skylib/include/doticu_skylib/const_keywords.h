@@ -69,6 +69,7 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*> Armor_Type_Jewelry();
     some<Keyword_t*> Armor_Type_Light();
     some<Keyword_t*> Armor_Type_Shield();
+
     some<Keyword_t*> Clothing_Type_Body();
     some<Keyword_t*> Clothing_Type_Circlet();
     some<Keyword_t*> Clothing_Type_Feet();
@@ -79,12 +80,75 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*> Clothing_Type_Rich();
     some<Keyword_t*> Clothing_Type_Ring();
     some<Keyword_t*> Crafting_Material_Aetherium();
+
     some<Keyword_t*> Daedric_Artifact();
+
     some<Keyword_t*> Jewelry_Type_Expensive();
+
+    some<Keyword_t*> Location_Set_Cave();
+    some<Keyword_t*> Location_Set_Cave_Ice();
+    some<Keyword_t*> Location_Set_Dwarven_Ruin();
+    some<Keyword_t*> Location_Set_Military_Camp();
+    some<Keyword_t*> Location_Set_Military_Fort();
+    some<Keyword_t*> Location_Set_Nordic_Ruin();
+    some<Keyword_t*> Location_Set_Outdoor();
+    some<Keyword_t*> Location_Type_Animal_Den();
+    some<Keyword_t*> Location_Type_Ash_Spawn_Lair();
+    some<Keyword_t*> Location_Type_Bandit_Camp();
+    some<Keyword_t*> Location_Type_Barracks();
+    some<Keyword_t*> Location_Type_Castle();
+    some<Keyword_t*> Location_Type_Cemetery();
+    some<Keyword_t*> Location_Type_City();
+    some<Keyword_t*> Location_Type_Clearable();
+    some<Keyword_t*> Location_Type_Dragon_Lair();
+    some<Keyword_t*> Location_Type_Dragon_Priest_Lair();
+    some<Keyword_t*> Location_Type_Draugr_Crypt();
+    some<Keyword_t*> Location_Type_Dungeon();
+    some<Keyword_t*> Location_Type_Dwarven_Automaton_Ruin();
+    some<Keyword_t*> Location_Type_Dwelling();
+    some<Keyword_t*> Location_Type_Falmer_Hive();
+    some<Keyword_t*> Location_Type_Farm();
+    some<Keyword_t*> Location_Type_Forsworn_Camp();
+    some<Keyword_t*> Location_Type_Giant_Camp();
+    some<Keyword_t*> Location_Type_Guild();
+    some<Keyword_t*> Location_Type_Habitation();
+    some<Keyword_t*> Location_Type_Habitation_With_Inn();
+    some<Keyword_t*> Location_Type_Hagraven_Nest();
+    some<Keyword_t*> Location_Type_Hold();
+    some<Keyword_t*> Location_Type_Hold_Capital();
+    some<Keyword_t*> Location_Type_Hold_Major();
+    some<Keyword_t*> Location_Type_Hold_Minor();
+    some<Keyword_t*> Location_Type_Homestead();
+    some<Keyword_t*> Location_Type_Homestead_With_Shrine();
+    some<Keyword_t*> Location_Type_House();
+    some<Keyword_t*> Location_Type_Inn();
+    some<Keyword_t*> Location_Type_Jail();
+    some<Keyword_t*> Location_Type_Lumber_Mill();
+    some<Keyword_t*> Location_Type_Military_Camp();
+    some<Keyword_t*> Location_Type_Military_Fort();
+    some<Keyword_t*> Location_Type_Mine();
+    some<Keyword_t*> Location_Type_Nature_Pillar();
+    some<Keyword_t*> Location_Type_Orc_Stronghold();
+    some<Keyword_t*> Location_Type_Player_House();
+    some<Keyword_t*> Location_Type_Riekling_Camp();
+    some<Keyword_t*> Location_Type_Settlement();
+    some<Keyword_t*> Location_Type_Ship();
+    some<Keyword_t*> Location_Type_Shipwreck();
+    some<Keyword_t*> Location_Type_Spriggan_Grove();
+    some<Keyword_t*> Location_Type_Stewards_Dwelling();
+    some<Keyword_t*> Location_Type_Store();
+    some<Keyword_t*> Location_Type_Temple();
+    some<Keyword_t*> Location_Type_Town();
+    some<Keyword_t*> Location_Type_Vampire_Lair();
+    some<Keyword_t*> Location_Type_Warlock_Lair();
+    some<Keyword_t*> Location_Type_Werebear_Lair();
+    some<Keyword_t*> Location_Type_Werewolf_Lair();
+
     some<Keyword_t*> Magic_Damage_Fire();
     some<Keyword_t*> Magic_Damage_Frost();
     some<Keyword_t*> Magic_Damage_Shock();
     some<Keyword_t*> Magic_Vampire_Drain();
+
     some<Keyword_t*> Vampire();
     some<Keyword_t*> Vendor_Item_Animal_Hide();
     some<Keyword_t*> Vendor_Item_Animal_Part();
@@ -111,6 +175,7 @@ namespace doticu_skylib { namespace Const { namespace Keyword {
     some<Keyword_t*> Vendor_Item_Staff();
     some<Keyword_t*> Vendor_Item_Tool();
     some<Keyword_t*> Vendor_Item_Weapon();
+
     some<Keyword_t*> Weapon_Material_Daedric();
     some<Keyword_t*> Weapon_Material_Dragonbone();
     some<Keyword_t*> Weapon_Material_Draugr();

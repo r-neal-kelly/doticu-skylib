@@ -17,8 +17,23 @@ namespace doticu_skylib {
     class Container_Changes_Entry_t // InventoryEntryData
     {
     public:
+        class Extra_List_Copy_Filter_t :
+            public Filter_i<Extra_Type_e>
+        {
+        public:
+            virtual Bool_t operator ()(Extra_Type_e extra_type) override;
+        };
+
+    public:
+        static Extra_List_Copy_Filter_t extra_list_copy_filter;
+
+    public:
         static some<Container_Changes_Entry_t*> Create(some<Bound_Object_t*> object);
         static void                             Destroy(some<Container_Changes_Entry_t*> container_changes_entry);
+
+        static some<Extra_List_t*>              Some_Extra_List(Container_Entry_Count_t count);
+        static maybe<Extra_List_t*>             Maybe_Extra_List_Copy(some<Extra_List_t*> extra_list);
+        static some<Extra_List_t*>              Some_Extra_List_Copy(some<Extra_List_t*> extra_list);
 
     public:
         maybe<Bound_Object_t*>                  object;     // 00
@@ -36,7 +51,6 @@ namespace doticu_skylib {
         ~Container_Changes_Entry_t();
 
     public:
-        Container_Entry_Count_t         Count(Container_Entry_Count_t base_count);
         s32                             Delta(Container_Entry_Count_t base_count);
         s32                             Minimum_Delta(Container_Entry_Count_t base_count);
         s32                             Maximum_Delta(Container_Entry_Count_t base_count);

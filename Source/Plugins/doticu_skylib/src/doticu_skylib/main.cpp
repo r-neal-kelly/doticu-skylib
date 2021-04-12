@@ -69,15 +69,15 @@ namespace doticu_skylib {
             Reference_Container_Entry_t& entry = actor_container.entries[idx];
             some<Bound_Object_t*> object = entry.Some_Object();
             if (!object->Is_Leveled_Item() && object->Is_Playable()) {
-                entry.Remove_Count_To(&actor_container, entry.Non_Extra_Lists_Count(), other_cache);
+                entry.Remove_Count_To(actor_container, entry.Non_Extra_Lists_Count(), other_cache);
                 Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                 for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                     some<Extra_List_t*> x_list = x_lists[idx];
                     if (!x_list->Is_Quest_Item()) {
                         if (x_list->Is_Worn_Item()) {
-                            entry.Remove_To(&actor_container, x_list, worn_cache);
+                            entry.Remove_To(actor_container, x_list, worn_cache);
                         } else {
-                            entry.Remove_To(&actor_container, x_list, other_cache);
+                            entry.Remove_To(actor_container, x_list, other_cache);
                         }
                     }
                 }
@@ -152,12 +152,12 @@ namespace doticu_skylib {
                             for (size_t idx = 0, end = container.entries.size(); idx < end; idx += 1) {
                                 Reference_Container_Entry_t& entry = container.entries[idx];
                                 if (!entry.Is_Leveled_Item()) {
-                                    entry.Decrement_Count(&container, std::numeric_limits<s32>::max());
+                                    entry.Decrement_Count(container, std::numeric_limits<s32>::max());
 
                                     Vector_t<some<Extra_List_t*>> x_lists = entry.Some_Extra_Lists();
                                     for (size_t idx = 0, end = x_lists.size(); idx < end; idx += 1) {
                                         some<Extra_List_t*> x_list = x_lists[idx];
-                                        entry.Remove_And_Destroy(&container, x_list);
+                                        entry.Remove_And_Destroy(container, x_list);
                                     }
                                 }
                             }

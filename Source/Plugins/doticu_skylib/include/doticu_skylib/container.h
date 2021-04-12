@@ -49,7 +49,7 @@ namespace doticu_skylib {
         };
 
     public:
-        static maybe<Reference_t*> Create_Container(some<Container_t*> container, maybe<Reference_t*> at);
+        static some<Reference_t*> Create_Reference(some<Container_t*> container, maybe<Reference_t*> at);
 
     public:
         virtual ~Container_t(); // 0
