@@ -216,11 +216,13 @@ namespace doticu_skylib {
     STATIC_ASSERT(sizeof(Short_Array_t<void*>) == 0x18);
 
     template <typename Type>
-    class Vector_t : public std::vector<Type>
+    class Vector_t :
+        public std::vector<Type>
     {
     public:
         using std::vector<Type>::vector;
 
+    public:
         maybe<size_t> Index_Of(const Type& item) const
         {
             for (size_t idx = 0, end = size(); idx < end; idx += 1) {
@@ -269,6 +271,26 @@ namespace doticu_skylib {
                 begin = end - 1;
             }
             qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
+        }
+
+        Bool_t Unstable_Remove(const Type& item)
+        {
+            size_t count = size();
+            if (count > 0) {
+                maybe<size_t> idx = Index_Of(item);
+                if (idx.Has_Value()) {
+                    size_t last = count - 1;
+                    if (idx() != last) {
+                        at(idx()) = at(last);
+                    }
+                    erase(end() - 1);
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
     };
 

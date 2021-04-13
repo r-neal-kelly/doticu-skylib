@@ -300,6 +300,17 @@ namespace doticu_skylib {
         }
     }
 
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_Count_To(Reference_Container_t& owner,
+                                                                         Container_Entry_Count_t amount,
+                                                                         Reference_Container_t& to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT(to.Is_Valid());
+
+        to.Has_Changed(true);
+        return Remove_Count_To(owner, amount, to.Reference());
+    }
+
     Container_Entry_Count_t Reference_Container_Entry_t::Add(Reference_Container_t& owner,
                                                              some<Extra_List_t*> extra_list)
     {
@@ -358,6 +369,19 @@ namespace doticu_skylib {
         Container_Entry_Count_t base_count = Base_Count();
         owner.Has_Changed(true);
         return this->reference_entry->Remove_To(base_count, extra_list, owner.Reference(), to) + base_count;
+    }
+
+    Container_Entry_Count_t Reference_Container_Entry_t::Remove_To(Reference_Container_t& owner,
+                                                                   some<Extra_List_t*> extra_list,
+                                                                   Reference_Container_t& to)
+    {
+        SKYLIB_ASSERT(Is_Valid());
+        SKYLIB_ASSERT_SOME(this->reference_entry);
+        SKYLIB_ASSERT_SOME(extra_list);
+        SKYLIB_ASSERT(to.Is_Valid());
+
+        to.Has_Changed(true);
+        return Remove_To(owner, extra_list, to.Reference());
     }
 
     Container_Entry_Count_t Reference_Container_Entry_t::Increment_Count(Reference_Container_t& owner,

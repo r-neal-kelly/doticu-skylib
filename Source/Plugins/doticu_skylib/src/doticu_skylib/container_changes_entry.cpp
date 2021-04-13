@@ -276,19 +276,8 @@ namespace doticu_skylib {
                                              maybe<Reference_t*> this_owner,
                                              some<Reference_t*> new_owner)
     {
-        /*
-            To move an x_list between containers:
-            ALIASES:
-                this seems to always appear with Extra_Reference_Handle_t. see what happens with Reference_t::Do_Add_Item.
-            FROM_ALIAS:
-                Can move the x_list, but Reference_t::Do_Add_Item will combine it with other From_Alias, even with different alias_id
-            REFERENCE_HANDLE:
-                if representative, it must have its linked reference's handle set to the new container.
-            UNIQUE_ID:
-                its form_id must be set to the new container, and it's unique_id set to the next available id on new container.
-        */
-
         SKYLIB_ASSERT_SOME(this->object);
+        SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
         SKYLIB_ASSERT_SOME(new_owner);
         SKYLIB_ASSERT(new_owner() != this_owner());
 

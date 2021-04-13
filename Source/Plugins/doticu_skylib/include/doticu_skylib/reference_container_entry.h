@@ -65,6 +65,7 @@ namespace doticu_skylib {
         Container_Entry_Count_t Increment_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
         Container_Entry_Count_t Decrement_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
         Container_Entry_Count_t Remove_Count_To(Reference_Container_t& owner, Container_Entry_Count_t amount, some<Reference_t*> to);
+        Container_Entry_Count_t Remove_Count_To(Reference_Container_t& owner, Container_Entry_Count_t amount, Reference_Container_t& to);
 
     public:
         Container_Entry_Count_t         Add(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
@@ -72,6 +73,7 @@ namespace doticu_skylib {
         Container_Entry_Count_t         Remove(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t         Remove_And_Destroy(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
         Container_Entry_Count_t         Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, some<Reference_t*> to);
+        Container_Entry_Count_t         Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, Reference_Container_t& to);
         Container_Entry_Count_t         Increment_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
         Container_Entry_Count_t         Decrement_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
         maybe<Container_Entry_Count_t>  Try_To_Consume(Reference_Container_t& owner, some<Extra_List_t*> extra_list);

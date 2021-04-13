@@ -27,7 +27,7 @@ namespace doticu_skylib {
     class Explosion_t;          // BGSExplosion
     class Image_Adapter_t;      // TESImageSpaceModifier
     class Impact_Data_Set_t;    // BGSImpactDataSet
-    class Light_t;              // TESObjectLIGH
+    class Light_t;
     class Perk_t;
     class Projectile_t;
     class Reference_Effect_t;   // BGSReferenceEffect

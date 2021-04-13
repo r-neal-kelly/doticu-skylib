@@ -50,7 +50,7 @@ namespace doticu_skylib {
             CONTAINER               = 0x1C, // CONT
             // 0x1D DOOR
             INGREDIENT              = 0x1E, // INGR
-            // 0x1F LIGH
+            LIGHT                   = 0x1F, // LIGH
             MISC                    = 0x20, // MISC
             // 0x21 APPA
             STATIC                  = 0x22, // STAT

@@ -21,6 +21,7 @@
 #include "doticu_skylib/ingredient.h"
 #include "doticu_skylib/key.h"
 #include "doticu_skylib/leveled_item.h"
+#include "doticu_skylib/light.h"
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/misc.h"
 #include "doticu_skylib/mod.h"
@@ -188,6 +189,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Ingredient() const           { return As_Ingredient() != none<Ingredient_t*>(); }
     Bool_t                  Form_t::Is_Key() const                  { return As_Key() != none<Key_t*>(); }
     Bool_t                  Form_t::Is_Leveled_Item() const         { return As_Leveled_Item() != none<Leveled_Item_t*>(); }
+    Bool_t                  Form_t::Is_Light() const                { return As_Light() != none<Light_t*>(); }
     Bool_t                  Form_t::Is_Location() const             { return As_Location() != none<Location_t*>(); }
     Bool_t                  Form_t::Is_Misc() const                 { return As_Misc() != none<Misc_t*>(); }
     Bool_t                  Form_t::Is_Package() const              { return As_Package() != none<Package_t*>(); }
@@ -213,6 +215,7 @@ namespace doticu_skylib {
     maybe<Ingredient_t*>    Form_t::As_Ingredient() const           { return Game_t::Runtime_Cast<Form_t, Ingredient_t>(this); }
     maybe<Key_t*>           Form_t::As_Key() const                  { return Game_t::Runtime_Cast<Form_t, Key_t>(this); }
     maybe<Leveled_Item_t*>  Form_t::As_Leveled_Item() const         { return Game_t::Runtime_Cast<Form_t, Leveled_Item_t>(this); }
+    maybe<Light_t*>         Form_t::As_Light() const                { return Game_t::Runtime_Cast<Form_t, Light_t>(this); }
     maybe<Location_t*>      Form_t::As_Location() const             { return Game_t::Runtime_Cast<Form_t, Location_t>(this); }
     maybe<Misc_t*>          Form_t::As_Misc() const                 { return Game_t::Runtime_Cast<Form_t, Misc_t>(this); }
     maybe<Package_t*>       Form_t::As_Package() const              { return Game_t::Runtime_Cast<Form_t, Package_t>(this); }

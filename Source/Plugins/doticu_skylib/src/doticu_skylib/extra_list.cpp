@@ -149,26 +149,43 @@ namespace doticu_skylib {
         return Count() < 1;
     }
 
+    Bool_t Extra_List_t::Has_Equal_Extra_Data(some<Extra_Data_t*> x_data)
+    {
+        SKYLIB_ASSERT_SOME(x_data);
+
+        Extra_Type_e type = x_data->Type();
+        Read_Locker_t locker(this->lock);
+        for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
+            if (it->Type() == type) {
+                return it->Is_Equal(x_data);
+            }
+        }
+        return false;
+    }
+
+    Bool_t Extra_List_t::Has_Equal_Extra_Datas(some<Extra_List_t*> other, Filter_i<Extra_Type_e>& filter)
+    {
+        Read_Locker_t locker(other->lock);
+        for (maybe<Extra_Data_t*> it = other->x_datas; it; it = it->next) {
+            Extra_Type_e type = it->Type();
+            if (filter(type)) {
+                if (!Has_Equal_Extra_Data(it())) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
     {
         SKYLIB_ASSERT_SOME(other);
 
         if (!Has_Extra_Reference_Handle() && !other->Has_Extra_Reference_Handle()) {
-            Read_Locker_t this_locker(this->lock);
-            Read_Locker_t other_locker(other->lock);
-            for (maybe<Extra_Data_t*> other_it = other->x_datas; other_it; other_it = other_it->next) {
-                Extra_Type_e other_type = other_it->Type();
-                if (other_type != Extra_Type_e::COUNT) {
-                    Bool_t this_has_other_type = false;
-                    for (maybe<Extra_Data_t*> this_it = this->x_datas; this_it; this_it = this_it->next) {
-                        if (this_it->Type() == other_type) {
-                            this_has_other_type = true;
-                            if (this_it->Isnt_Equal(other_it())) {
-                                return false;
-                            }
-                        }
-                    }
-                    if (!this_has_other_type) {
+            Read_Locker_t locker(other->lock);
+            for (maybe<Extra_Data_t*> it = other->x_datas; it; it = it->next) {
+                if (it->Type() != Extra_Type_e::COUNT) {
+                    if (!Has_Equal_Extra_Data(it())) {
                         return false;
                     }
                 }
