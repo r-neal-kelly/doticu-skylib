@@ -82,6 +82,7 @@ namespace doticu_skylib {
         Bool_t      Should_Be_Destroyed();
         Bool_t      Has_Equal_Extra_Data(some<Extra_Data_t*> x_data);
         Bool_t      Has_Equal_Extra_Datas(some<Extra_List_t*> other, Filter_i<Extra_Type_e>& filter);
+        Bool_t      Is_Equal(some<Extra_List_t*> other, Filter_i<Extra_Type_e>& filter);
         Bool_t      Can_Consume(some<Extra_List_t*> other);
         maybe<s16>  Try_To_Consume(some<Extra_List_t*> other);
 

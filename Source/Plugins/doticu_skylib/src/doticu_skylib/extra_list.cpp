@@ -177,6 +177,11 @@ namespace doticu_skylib {
         return true;
     }
 
+    Bool_t Extra_List_t::Is_Equal(some<Extra_List_t*> other, Filter_i<Extra_Type_e>& filter)
+    {
+        return this->Has_Equal_Extra_Datas(other, filter) && other->Has_Equal_Extra_Datas(this, filter);
+    }
+
     Bool_t Extra_List_t::Can_Consume(some<Extra_List_t*> other)
     {
         SKYLIB_ASSERT_SOME(other);
