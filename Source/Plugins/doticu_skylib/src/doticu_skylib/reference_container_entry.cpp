@@ -121,8 +121,8 @@ namespace doticu_skylib {
     Bool_t Reference_Container_Entry_t::Is_Valid() const
     {
         return
-            (this->base_entry && this->base_entry->object) ||
-            (this->reference_entry && this->reference_entry->object);
+            (this->base_entry && this->base_entry->bound_object) ||
+            (this->reference_entry && this->reference_entry->bound_object);
     }
 
     Bool_t Reference_Container_Entry_t::Is_Leveled_Item()
@@ -155,9 +155,9 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(Is_Valid());
 
         if (this->reference_entry) {
-            return this->reference_entry->object();
+            return this->reference_entry->bound_object();
         } else {
-            return this->base_entry->object();
+            return this->base_entry->bound_object();
         }
     }
 
@@ -165,8 +165,8 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT(Is_Valid());
 
-        if (this->base_entry) {
-            return this->base_entry->object->As_Leveled_Item();
+        if (this->base_entry && this->base_entry->bound_object) {
+            return this->base_entry->bound_object->As_Leveled_Item();
         } else {
             return none<Leveled_Item_t*>();
         }

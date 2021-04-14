@@ -556,6 +556,7 @@
     <ClCompile Include="src\doticu_skylib\ni_matrix.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_point.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_transform.cpp" />
+    <ClCompile Include="src\doticu_skylib\outfit.cpp" />
     <ClCompile Include="src\doticu_skylib\package_data.cpp" />
     <ClCompile Include="src\doticu_skylib\package_location.cpp" />
     <ClCompile Include="src\doticu_skylib\package_target.cpp" />

@@ -802,23 +802,6 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Add_Component_Container_Items(some<Container_c*> component_container)
-    {
-        SKYLIB_ASSERT_SOME(component_container);
-
-        if (Is_Valid()) {
-            if (component_container->container_entries && component_container->container_entry_count > 0) {
-                some<unique<Script_t>> script = Script_t::Create()();
-                for (size_t idx = 0, end = component_container->container_entry_count; idx < end; idx += 1) {
-                    maybe<Container_Entry_t*> entry = component_container->container_entries[idx];
-                    if (entry && entry->object && entry->count > 0) {
-                        script->Console_Add_Item(this, entry->object(), entry->count);
-                    }
-                }
-            }
-        }
-    }
-
     void Reference_t::Copy_Worn_Items(some<Reference_t*> other)
     {
         Reference_Container_t this_container(this);
@@ -832,6 +815,26 @@ namespace doticu_skylib {
                         some<Extra_List_t*> x_list = x_lists[idx];
                         if (x_list->Is_Worn_Item()) {
                             this_container.Add_Copy_Or_Increment(other_entry.Some_Object(), x_list);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void Reference_t::Destroy_Non_Quest_Items()
+    {
+        Reference_Container_t this_container(this);
+        if (this_container.Is_Valid()) {
+            for (size_t idx = 0, end = this_container.Count(); idx < end; idx += 1) {
+                Reference_Container_Entry_t& this_entry = this_container.entries[idx];
+                if (!this_entry.Is_Leveled_Item()) {
+                    this_entry.Decrement_Count(this_container, Container_Entry_Count_t::_MAX_);
+                    Vector_t<some<Extra_List_t*>> this_x_lists = this_entry.Some_Extra_Lists();
+                    for (size_t idx = 0, end = this_x_lists.size(); idx < end; idx += 1) {
+                        some<Extra_List_t*> this_x_list = this_x_lists[idx];
+                        if (!this_x_list->Is_Quest_Item()) {
+                            this_entry.Remove_And_Destroy(this_container, this_x_list);
                         }
                     }
                 }

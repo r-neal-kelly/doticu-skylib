@@ -13,6 +13,7 @@ namespace doticu_skylib {
 
     class Bound_Object_t;
     class Container_Entry_t;
+    class Reference_t;
 
     class Container_c :     // TESContainer
         public Form_Data_c  // 00
@@ -38,8 +39,10 @@ namespace doticu_skylib {
         u32                                 pad_14;                 // 14
 
     public:
-        maybe<Container_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> object);
-        Container_Entry_Count_t     Entry_Count(some<Bound_Object_t*> object);
+        maybe<Container_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> bound_object);
+        Container_Entry_Count_t     Entry_Count(some<Bound_Object_t*> bound_object);
+
+        void                        Container_Add_Items_To(some<Reference_t*> reference);
     };
     STATIC_ASSERT(sizeof(Container_c) == 0x18);
 

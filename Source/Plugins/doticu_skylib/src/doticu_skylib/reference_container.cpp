@@ -34,11 +34,11 @@ namespace doticu_skylib {
                 if (reference_entries && !reference_entries->Is_Empty()) {
                     for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &reference_entries->head; it; it = it->next) {
                         maybe<Container_Changes_Entry_t*> reference_entry = it->value;
-                        if (reference_entry && reference_entry->object) {
+                        if (reference_entry && reference_entry->bound_object) {
                             maybe<Container_Entry_t*> base_entry = none<Container_Entry_t*>();
-                            base_entry = this->base_container->Maybe_Entry(reference_entry->object());
+                            base_entry = this->base_container->Maybe_Entry(reference_entry->bound_object());
                             if (base_entry) {
-                                handled_objects.push_back(base_entry->object());
+                                handled_objects.push_back(base_entry->bound_object());
                             }
                             this->entries.push_back(Reference_Container_Entry_t(base_entry, reference_entry));
                         }
@@ -48,7 +48,7 @@ namespace doticu_skylib {
 
             for (size_t idx = 0, end = this->base_container->container_entry_count; idx < end; idx += 1) {
                 maybe<Container_Entry_t*> base_entry = this->base_container->container_entries[idx];
-                if (base_entry && base_entry->object && !handled_objects.Has(base_entry->object())) {
+                if (base_entry && base_entry->bound_object && !handled_objects.Has(base_entry->bound_object())) {
                     this->entries.push_back(Reference_Container_Entry_t(base_entry, none<Container_Changes_Entry_t*>()));
                 }
             }

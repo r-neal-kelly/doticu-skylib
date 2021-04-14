@@ -36,10 +36,10 @@ namespace doticu_skylib {
         static some<Extra_List_t*>              Some_Extra_List_Copy(some<Extra_List_t*> extra_list);
 
     public:
-        maybe<Bound_Object_t*>                  object;     // 00
-        maybe<List_t<maybe<Extra_List_t*>>*>    x_lists;    // 08
-        s32                                     delta;      // 10
-        u32                                     pad_14;     // 14
+        maybe<Bound_Object_t*>                  bound_object;   // 00
+        maybe<List_t<maybe<Extra_List_t*>>*>    x_lists;        // 08
+        s32                                     delta;          // 10
+        u32                                     pad_14;         // 14
 
     public:
         Container_Changes_Entry_t();

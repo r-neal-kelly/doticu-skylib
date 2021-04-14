@@ -37,6 +37,7 @@ namespace doticu_skylib {
     class Misc_t;
     class Mod_t;
     class Name_c;
+    class Outfit_t;
     class Package_t;
     class Potion_t;
     class Race_t;
@@ -204,6 +205,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Light() const;
         Bool_t                  Is_Location() const;
         Bool_t                  Is_Misc() const;
+        Bool_t                  Is_Outfit() const;
         Bool_t                  Is_Package() const;
         Bool_t                  Is_Potion() const;
         Bool_t                  Is_Reference() const;
@@ -230,6 +232,7 @@ namespace doticu_skylib {
         maybe<Light_t*>         As_Light() const;
         maybe<Location_t*>      As_Location() const;
         maybe<Misc_t*>          As_Misc() const;
+        maybe<Outfit_t*>        As_Outfit() const;
         maybe<Package_t*>       As_Package() const;
         maybe<Potion_t*>        As_Potion() const;
         maybe<Reference_t*>     As_Reference() const;

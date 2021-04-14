@@ -79,6 +79,11 @@ namespace doticu_skylib {
         }
 
     public:
+        Bool_t Has_Flags() const
+        {
+            return this->value != 0;
+        }
+
         Bool_t Is_Flagged(T flag) const
         {
             return (this->value & flag) != 0;

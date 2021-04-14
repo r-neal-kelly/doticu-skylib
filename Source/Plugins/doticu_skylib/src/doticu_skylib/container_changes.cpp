@@ -75,7 +75,7 @@ namespace doticu_skylib {
         if (this->entries && !this->entries->Is_Empty()) {
             for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
                 maybe<Container_Changes_Entry_t*> maybe_entry = it->value;
-                if (maybe_entry && maybe_entry->object == object) {
+                if (maybe_entry && maybe_entry->bound_object == object) {
                     return true;
                 }
             }
@@ -88,13 +88,13 @@ namespace doticu_skylib {
     Bool_t Container_Changes_t::Add_Entry(some<Container_Changes_Entry_t*> entry)
     {
         SKYLIB_ASSERT_SOME(entry);
-        SKYLIB_ASSERT_SOME(entry->object);
+        SKYLIB_ASSERT_SOME(entry->bound_object);
 
         if (!this->entries) {
             this->entries = List_t<maybe<Container_Changes_Entry_t*>>::Create()();
         }
 
-        if (Has_Entry(entry->object())) {
+        if (Has_Entry(entry->bound_object())) {
             return false;
         } else {
             this->entries->Add(entry());
@@ -136,7 +136,7 @@ namespace doticu_skylib {
         if (this->entries && !this->entries->Is_Empty()) {
             for (maybe<List_t<maybe<Container_Changes_Entry_t*>>::Node_t*> it = &this->entries->head; it; it = it->next) {
                 maybe<Container_Changes_Entry_t*> maybe_entry = it->value;
-                if (maybe_entry && maybe_entry->object() == object()) {
+                if (maybe_entry && maybe_entry->bound_object() == object()) {
                     return maybe_entry;
                 }
             }

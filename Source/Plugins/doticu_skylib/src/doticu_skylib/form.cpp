@@ -25,6 +25,7 @@
 #include "doticu_skylib/location.h"
 #include "doticu_skylib/misc.h"
 #include "doticu_skylib/mod.h"
+#include "doticu_skylib/outfit.h"
 #include "doticu_skylib/package.h"
 #include "doticu_skylib/potion.h"
 #include "doticu_skylib/reference.h"
@@ -192,6 +193,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Light() const                { return As_Light() != none<Light_t*>(); }
     Bool_t                  Form_t::Is_Location() const             { return As_Location() != none<Location_t*>(); }
     Bool_t                  Form_t::Is_Misc() const                 { return As_Misc() != none<Misc_t*>(); }
+    Bool_t                  Form_t::Is_Outfit() const               { return As_Outfit() != none<Outfit_t*>(); }
     Bool_t                  Form_t::Is_Package() const              { return As_Package() != none<Package_t*>(); }
     Bool_t                  Form_t::Is_Potion() const               { return As_Potion() != none<Potion_t*>(); }
     Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
@@ -218,6 +220,7 @@ namespace doticu_skylib {
     maybe<Light_t*>         Form_t::As_Light() const                { return Game_t::Runtime_Cast<Form_t, Light_t>(this); }
     maybe<Location_t*>      Form_t::As_Location() const             { return Game_t::Runtime_Cast<Form_t, Location_t>(this); }
     maybe<Misc_t*>          Form_t::As_Misc() const                 { return Game_t::Runtime_Cast<Form_t, Misc_t>(this); }
+    maybe<Outfit_t*>        Form_t::As_Outfit() const               { return Game_t::Runtime_Cast<Form_t, Outfit_t>(this); }
     maybe<Package_t*>       Form_t::As_Package() const              { return Game_t::Runtime_Cast<Form_t, Package_t>(this); }
     maybe<Potion_t*>        Form_t::As_Potion() const               { return Game_t::Runtime_Cast<Form_t, Potion_t>(this); }
     maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }

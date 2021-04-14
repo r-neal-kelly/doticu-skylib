@@ -16,6 +16,9 @@
 
 #define SKYLIB_TAB "    "
 
+#define SKYLIB_DEFINE_FLAG(ENUM_BASE_, ENUM_)                           \
+    ENUM_ = static_cast<ENUM_BASE_::value_type>(1 << ENUM_BASE_::ENUM_)
+
 #define SKYLIB_ENUM_TO_STRING(ENUM_)    \
 (                                       \
     ENUM_ ? #ENUM_ : #ENUM_             \

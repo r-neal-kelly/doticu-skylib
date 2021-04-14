@@ -88,18 +88,18 @@ namespace doticu_skylib {
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t() :
-        object(none<Bound_Object_t*>()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
+        bound_object(none<Bound_Object_t*>()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
     {
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t(some<Bound_Object_t*> object) :
-        object(object()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
+        bound_object(object()), x_lists(none<List_t<maybe<Extra_List_t*>>*>()), delta(0), pad_14(0)
     {
         SKYLIB_ASSERT(!object->Is_Leveled_Item());
     }
 
     Container_Changes_Entry_t::Container_Changes_Entry_t(Container_Changes_Entry_t&& other) noexcept :
-        object(std::exchange(other.object, none<Bound_Object_t*>())),
+        bound_object(std::exchange(other.bound_object, none<Bound_Object_t*>())),
         x_lists(std::exchange(other.x_lists, none<List_t<maybe<Extra_List_t*>>*>())),
         delta(std::exchange(other.delta, 0)),
         pad_14(std::exchange(other.pad_14, 0))
@@ -110,17 +110,17 @@ namespace doticu_skylib {
     {
         if (this != std::addressof(other)) {
             this->~Container_Changes_Entry_t();
-            object = std::exchange(other.object, none<Bound_Object_t*>());
-            x_lists = std::exchange(other.x_lists, none<List_t<maybe<Extra_List_t*>>*>());
-            delta = std::exchange(other.delta, 0);
-            pad_14 = std::exchange(other.pad_14, 0);
+            this->bound_object = std::exchange(other.bound_object, none<Bound_Object_t*>());
+            this->x_lists = std::exchange(other.x_lists, none<List_t<maybe<Extra_List_t*>>*>());
+            this->delta = std::exchange(other.delta, 0);
+            this->pad_14 = std::exchange(other.pad_14, 0);
         }
         return *this;
     }
 
     Container_Changes_Entry_t::~Container_Changes_Entry_t()
     {
-        this->object = none<Bound_Object_t*>();
+        this->bound_object = none<Bound_Object_t*>();
         Destroy_Extra_Lists();
         this->delta = 0;
         this->pad_14 = 0;
@@ -276,7 +276,7 @@ namespace doticu_skylib {
                                              maybe<Reference_t*> this_owner,
                                              some<Reference_t*> new_owner)
     {
-        SKYLIB_ASSERT_SOME(this->object);
+        SKYLIB_ASSERT_SOME(this->bound_object);
         SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
         SKYLIB_ASSERT_SOME(new_owner);
         SKYLIB_ASSERT(new_owner() != this_owner());
@@ -299,7 +299,7 @@ namespace doticu_skylib {
             // maybe remove nullptr Extra_Reference_Handle_t
         }
 
-        new_owner->Add_Item(this->object(), extra_list(), extra_list->Count(), this_owner);
+        new_owner->Add_Item(this->bound_object(), extra_list(), extra_list->Count(), this_owner);
 
         return new_delta;
     }
@@ -394,8 +394,10 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Container_Changes_Entry_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        if (this->object) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s %s", this->object->Component_Name(), this->object->Form_ID_String());
+        if (this->bound_object) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "object: %s %s",
+                       this->bound_object->Component_Name(),
+                       this->bound_object->Form_ID_String());
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "object: (none)");
         }
