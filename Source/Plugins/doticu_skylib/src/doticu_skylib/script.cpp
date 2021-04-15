@@ -2,6 +2,8 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor.h"
+#include "doticu_skylib/const_actors.h"
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.inl"
@@ -95,25 +97,58 @@ namespace doticu_skylib {
         execute(this, &compiler, compiler_e, reference());
     }
 
-    void Script_t::Console_Add_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta)
+    void Script_t::Console_Activate(some<Reference_t*> self, some<Reference_t*> activator, Bool_t only_default_event)
     {
-        SKYLIB_ASSERT_SOME(reference);
-        SKYLIB_ASSERT_SOME(item);
+        SKYLIB_ASSERT_SOME(self);
+        SKYLIB_ASSERT_SOME(activator);
 
-        if (reference->Is_Valid()) {
-            Command(std::string("AddItem ") + item->Form_ID_String() + " " + std::to_string(delta));
-            Execute(reference);
+        if (self->Is_Valid() && activator->Is_Valid()) {
+            Command(std::string("Activate ") + activator->Form_ID_String() + " " + (only_default_event ? "1" : "0"));
+            Execute(self);
         }
     }
 
-    void Script_t::Console_Remove_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta)
+    void Script_t::Console_Add_Item(some<Reference_t*> self, some<Form_t*> item, s16 delta)
     {
-        SKYLIB_ASSERT_SOME(reference);
+        SKYLIB_ASSERT_SOME(self);
         SKYLIB_ASSERT_SOME(item);
 
-        if (reference->Is_Valid()) {
+        if (self->Is_Valid()) {
+            Command(std::string("AddItem ") + item->Form_ID_String() + " " + std::to_string(delta));
+            Execute(self);
+        }
+    }
+
+    void Script_t::Console_Remove_Item(some<Reference_t*> self, some<Form_t*> item, s16 delta)
+    {
+        SKYLIB_ASSERT_SOME(self);
+        SKYLIB_ASSERT_SOME(item);
+
+        if (self->Is_Valid()) {
             Command(std::string("RemoveItem ") + item->Form_ID_String() + " " + std::to_string(delta));
-            Execute(reference);
+            Execute(self);
+        }
+    }
+
+    void Script_t::Console_Open_Container(some<Reference_t*> self)
+    {
+        SKYLIB_ASSERT_SOME(self);
+
+        maybe<Actor_t*> actor = self->As_Actor();
+        if (actor) {
+            Console_Open_Container(actor(), true);
+        } else {
+            Console_Activate(self, Const::Actor::Player(), false);
+        }
+    }
+
+    void Script_t::Console_Open_Container(some<Actor_t*> self, Bool_t allow_non_teammates)
+    {
+        SKYLIB_ASSERT_SOME(self);
+
+        if (self->Is_Valid()) {
+            Command(std::string("OpenActorContainer ") + (allow_non_teammates ? "1" : "0"));
+            Execute(self);
         }
     }
 

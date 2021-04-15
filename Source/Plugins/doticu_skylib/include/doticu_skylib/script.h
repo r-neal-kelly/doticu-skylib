@@ -89,8 +89,14 @@ namespace doticu_skylib {
 
         void                Execute(some<Reference_t*> reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
 
-        void                Console_Add_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta);      // AddItem
-        void                Console_Remove_Item(some<Reference_t*> reference, some<Form_t*> item, s16 delta);   // RemoveItem
+    public:
+        void    Console_Activate(some<Reference_t*> self, some<Reference_t*> activator, Bool_t only_default_event);
+
+        void    Console_Add_Item(some<Reference_t*> self, some<Form_t*> item, s16 delta);
+        void    Console_Remove_Item(some<Reference_t*> self, some<Form_t*> item, s16 delta);
+
+        void    Console_Open_Container(some<Reference_t*> self);
+        void    Console_Open_Container(some<Actor_t*> self, Bool_t allow_non_teammates);
     };
     STATIC_ASSERT(sizeof(Script_t) == 0x80);
 
