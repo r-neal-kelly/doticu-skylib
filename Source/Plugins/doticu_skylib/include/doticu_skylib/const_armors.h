@@ -15,6 +15,59 @@ namespace doticu_skylib {
 namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Amulet_Ancient_Nord();
+    some<Armor_t*>  Amulet_Ancient_Nord_Kynes_Token();
+    some<Armor_t*>  Amulet_Ancient_Nord_Saarthal();
+
+    some<Armor_t*>  Amulet_Articulation_0();
+    some<Armor_t*>  Amulet_Articulation_1();
+    some<Armor_t*>  Amulet_Articulation_2();
+    some<Armor_t*>  Amulet_Articulation_3();
+    some<Armor_t*>  Amulet_Articulation_4();
+    some<Armor_t*>  Amulet_Articulation_5();
+    some<Armor_t*>  Amulet_Articulation_6();
+    some<Armor_t*>  Amulet_Articulation_Unenchanted();
+
+    some<Armor_t*>  Amulet_Divine_Akatosh();
+    some<Armor_t*>  Amulet_Divine_Arkay();
+    some<Armor_t*>  Amulet_Divine_Arkay_Andurs();
+    some<Armor_t*>  Amulet_Divine_Dibella();
+    some<Armor_t*>  Amulet_Divine_Julianos();
+    some<Armor_t*>  Amulet_Divine_Kynareth();
+    some<Armor_t*>  Amulet_Divine_Mara();
+    some<Armor_t*>  Amulet_Divine_Stendarr();
+    some<Armor_t*>  Amulet_Divine_Talos();
+    some<Armor_t*>  Amulet_Divine_Talos_Ogmund();
+    some<Armor_t*>  Amulet_Divine_Zenithar();
+    some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee();
+
+    some<Armor_t*>  Amulet_Elder_Council_0();
+    some<Armor_t*>  Amulet_Elder_Council_1();
+
+    some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
+
+    some<Armor_t*>  Amulet_Gauldur();
+    some<Armor_t*>  Amulet_Gauldur_Folgunthur();
+    some<Armor_t*>  Amulet_Gauldur_Geirmund();
+    some<Armor_t*>  Amulet_Gauldur_Saarthal();
+
+    some<Armor_t*>  Amulet_Gold();
+    some<Armor_t*>  Amulet_Gold_Charmed();
+    some<Armor_t*>  Amulet_Gold_Diamond();
+    some<Armor_t*>  Amulet_Gold_Jeweled();
+    some<Armor_t*>  Amulet_Gold_Ruby();
+
+    some<Armor_t*>  Amulet_Necromancer();
+    some<Armor_t*>  Amulet_Necromancer_Enchanted();
+
+    some<Armor_t*>  Amulet_Silver();
+    some<Armor_t*>  Amulet_Silver_Emerald();
+    some<Armor_t*>  Amulet_Silver_Grosta();
+    some<Armor_t*>  Amulet_Silver_Jeweled();
+    some<Armor_t*>  Amulet_Silver_Moon();
+    some<Armor_t*>  Amulet_Silver_Reyda();
+    some<Armor_t*>  Amulet_Silver_Sapphire();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Savos_Aren();
+    some<Armor_t*>  Amulet_Silver_Yisra();
 
     some<Armor_t*>  Armor_Ancient_Nord_Boots();
     some<Armor_t*>  Armor_Ancient_Nord_Cuirass();
@@ -38,6 +91,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Gauntlets();
     some<Armor_t*>  Armor_Daedric_Helmet();
     some<Armor_t*>  Armor_Daedric_Shield();
+
+    some<Armor_t*>  Armor_Daedric_Dremora_Boots();
+    some<Armor_t*>  Armor_Daedric_Dremora_Cuirass();
+    some<Armor_t*>  Armor_Daedric_Dremora_Gauntlets();
+    some<Armor_t*>  Armor_Daedric_Dremora_Helmet();
 
     some<Armor_t*>  Armor_Dragon_Priest_Mask_Bromjunaar();
     some<Armor_t*>  Armor_Dragon_Priest_Mask_Hevnoraak();
@@ -80,6 +138,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Gauntlets();
     some<Armor_t*>  Armor_Elven_Helmet();
     some<Armor_t*>  Armor_Elven_Shield();
+    some<Armor_t*>  Armor_Elven_Shield_Herebanes_Fortress();
 
     some<Armor_t*>  Armor_Elven_Light_Boots();
     some<Armor_t*>  Armor_Elven_Light_Cuirass();
@@ -92,6 +151,16 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Falmer_Helmet();
     some<Armor_t*>  Armor_Falmer_Shield();
 
+    some<Armor_t*>  Armor_Forsworn_Boots();
+    some<Armor_t*>  Armor_Forsworn_Cuirass();
+    some<Armor_t*>  Armor_Forsworn_Gauntlets();
+    some<Armor_t*>  Armor_Forsworn_Helmet();
+
+    some<Armor_t*>  Armor_Forsworn_Old_Gods_Boots();
+    some<Armor_t*>  Armor_Forsworn_Old_Gods_Cuirass();
+    some<Armor_t*>  Armor_Forsworn_Old_Gods_Gauntlets();
+    some<Armor_t*>  Armor_Forsworn_Old_Gods_Helmet();
+
     some<Armor_t*>  Armor_Fur_Boots();
     some<Armor_t*>  Armor_Fur_Cuirass_0();
     some<Armor_t*>  Armor_Fur_Cuirass_1();
@@ -99,6 +168,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Fur_Cuirass_3();
     some<Armor_t*>  Armor_Fur_Gauntlets();
     some<Armor_t*>  Armor_Fur_Helmet();
+
+    some<Armor_t*>  Armor_General_Tullius_Cuirass();
 
     some<Armor_t*>  Armor_Glass_Boots();
     some<Armor_t*>  Armor_Glass_Cuirass();
@@ -108,6 +179,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Guard_Boots();
     some<Armor_t*>  Armor_Guard_Gauntlets();
+    some<Armor_t*>  Armor_Guard_Gauntlets_Pugilist();
 
     some<Armor_t*>  Armor_Guard_Falkreath_Cuirass();
     some<Armor_t*>  Armor_Guard_Falkreath_Helmet();
@@ -132,6 +204,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Guard_Solitude_Cuirass();
     some<Armor_t*>  Armor_Guard_Solitude_Helmet();
     some<Armor_t*>  Armor_Guard_Solitude_Shield();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_0();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_1();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_2();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_3();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_4();
 
     some<Armor_t*>  Armor_Guard_Whiterun_Cuirass();
     some<Armor_t*>  Armor_Guard_Whiterun_Helmet();
@@ -148,6 +225,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Guard_Winterhold_Shield();
 
     some<Armor_t*>  Armor_Hide_Boots();
+    some<Armor_t*>  Armor_Hide_Boots_Movarth();
+    some<Armor_t*>  Armor_Hide_Boots_Predators_Grace();
     some<Armor_t*>  Armor_Hide_Cuirass();
     some<Armor_t*>  Armor_Hide_Cuirass_Studded();
     some<Armor_t*>  Armor_Hide_Gauntlets();
@@ -167,15 +246,19 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Light_Cuirass();
     some<Armor_t*>  Armor_Imperial_Light_Gauntlets();
     some<Armor_t*>  Armor_Imperial_Light_Helmet();
+    some<Armor_t*>  Armor_Imperial_Light_Helmet_Noster();
     some<Armor_t*>  Armor_Imperial_Light_Shield();
 
     some<Armor_t*>  Armor_Iron_Boots();
     some<Armor_t*>  Armor_Iron_Cuirass();
     some<Armor_t*>  Armor_Iron_Cuirass_Banded();
     some<Armor_t*>  Armor_Iron_Gauntlets();
+    some<Armor_t*>  Armor_Iron_Gauntlets_Forgemasters_Fingers();
     some<Armor_t*>  Armor_Iron_Helmet();
     some<Armor_t*>  Armor_Iron_Shield();
     some<Armor_t*>  Armor_Iron_Shield_Banded();
+    some<Armor_t*>  Armor_Iron_Shield_Family();
+    some<Armor_t*>  Armor_Iron_Shield_Roggi();
 
     some<Armor_t*>  Armor_Leather_Boots();
     some<Armor_t*>  Armor_Leather_Cuirass();
@@ -219,20 +302,43 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Scaled_Gauntlets();
     some<Armor_t*>  Armor_Scaled_Helmet();
 
+    some<Armor_t*>  Armor_Shrouded_Boots();
+    some<Armor_t*>  Armor_Shrouded_Cuirass();
+    some<Armor_t*>  Armor_Shrouded_Cuirass_Short_Sleeved();
+    some<Armor_t*>  Armor_Shrouded_Gauntlets();
+    some<Armor_t*>  Armor_Shrouded_Gauntlets_Tumblerbane();
+    some<Armor_t*>  Armor_Shrouded_Helmet();
+    some<Armor_t*>  Armor_Shrouded_Helmet_Maskless();
+
+    some<Armor_t*>  Armor_Shrouded_Ancient_Boots();
+    some<Armor_t*>  Armor_Shrouded_Ancient_Cuirass();
+    some<Armor_t*>  Armor_Shrouded_Ancient_Gauntlets();
+    some<Armor_t*>  Armor_Shrouded_Ancient_Helmet();
+
+    some<Armor_t*>  Armor_Shrouded_Worn_Boots();
+    some<Armor_t*>  Armor_Shrouded_Worn_Cuirass();
+    some<Armor_t*>  Armor_Shrouded_Worn_Gauntlets();
+    some<Armor_t*>  Armor_Shrouded_Worn_Helmet();
+
     some<Armor_t*>  Armor_Steel_Boots_Cuffed();
     some<Armor_t*>  Armor_Steel_Boots_Shin();
     some<Armor_t*>  Armor_Steel_Cuirass_0();
     some<Armor_t*>  Armor_Steel_Cuirass_1();
     some<Armor_t*>  Armor_Steel_Gauntlets_Imperial();
+    some<Armor_t*>  Armor_Steel_Gauntlets_Ironhand();
     some<Armor_t*>  Armor_Steel_Gauntlets_Nordic();
     some<Armor_t*>  Armor_Steel_Helmet();
     some<Armor_t*>  Armor_Steel_Helmet_Horned();
     some<Armor_t*>  Armor_Steel_Shield();
+    some<Armor_t*>  Armor_Steel_Shield_Hrolfdir();
+    some<Armor_t*>  Armor_Steel_Shield_Targe_Of_The_Blooded();
 
     some<Armor_t*>  Armor_Steel_Plate_Boots();
     some<Armor_t*>  Armor_Steel_Plate_Cuirass();
     some<Armor_t*>  Armor_Steel_Plate_Gauntlets();
     some<Armor_t*>  Armor_Steel_Plate_Helmet();
+    some<Armor_t*>  Armor_Steel_Plate_Helmet_Winterhold();
+    some<Armor_t*>  Armor_Steel_Plate_Helmet_Yngol();
 
     some<Armor_t*>  Armor_Stormcloak_Officer_Boots();
     some<Armor_t*>  Armor_Stormcloak_Officer_Cuirass();
@@ -253,6 +359,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Cuirass();
     some<Armor_t*>  Armor_Thieves_Guild_Gauntlets();
     some<Armor_t*>  Armor_Thieves_Guild_Helmet();
+    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_0();
+    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_1();
+
+    some<Armor_t*>  Armor_Thieves_Guild_Improved_Boots();
+    some<Armor_t*>  Armor_Thieves_Guild_Improved_Cuirass();
+    some<Armor_t*>  Armor_Thieves_Guild_Improved_Gauntlets();
+    some<Armor_t*>  Armor_Thieves_Guild_Improved_Helmet();
 
     some<Armor_t*>  Armor_Thieves_Guild_Karliah_Boots();
     some<Armor_t*>  Armor_Thieves_Guild_Karliah_Cuirass();
@@ -268,15 +381,10 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Mercer_Cuirass();
     some<Armor_t*>  Armor_Thieves_Guild_Mercer_Gauntlets();
 
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Boots();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Cuirass();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Gauntlets();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Helmet();
-
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Improved_Boots();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Improved_Cuirass();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Improved_Gauntlets();
-    some<Armor_t*>  Armor_Thieves_Guild_Player_Improved_Helmet();
+    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Boots();
+    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Cuirass();
+    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Gauntlets();
+    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Helmet();
 
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Boots();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Cuirass();
@@ -284,12 +392,33 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_0();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_1();
 
-    some<Armor_t*>  Armor_Torturer_Helmet();
-
     some<Armor_t*>  Armor_Wolf_Boots();
     some<Armor_t*>  Armor_Wolf_Cuirass();
     some<Armor_t*>  Armor_Wolf_Gauntlets();
     some<Armor_t*>  Armor_Wolf_Helmet();
+
+    some<Armor_t*>  Circlet_Copper_And_Moonstone();
+    some<Armor_t*>  Circlet_Copper_And_Onyx();
+    some<Armor_t*>  Circlet_Copper_And_Ruby();
+    some<Armor_t*>  Circlet_Copper_And_Sapphire();
+    some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage();
+
+    some<Armor_t*>  Circlet_Gag();
+
+    some<Armor_t*>  Circlet_Gold_And_Emerald();
+    some<Armor_t*>  Circlet_Gold_And_Ruby();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Diadem_Of_The_Savant();
+
+    some<Armor_t*>  Circlet_Jade_And_Emerald();
+    some<Armor_t*>  Circlet_Jade_And_Sapphire();
+
+    some<Armor_t*>  Circlet_Silver_And_Moonstone();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_0();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire();
 
     some<Armor_t*>  Clothes_Bandages_Hands();
     some<Armor_t*>  Clothes_Bandages_Head();
@@ -313,33 +442,56 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Child_Body_0();
     some<Armor_t*>  Clothes_Child_Body_1();
     some<Armor_t*>  Clothes_Child_Body_2();
+    some<Armor_t*>  Clothes_Child_Body_3();
+    some<Armor_t*>  Clothes_Child_Body_4();
     some<Armor_t*>  Clothes_Child_Feet();
 
-    some<Armor_t*>  Clothes_Circlet_Copper_And_Moonstone();
-    some<Armor_t*>  Clothes_Circlet_Copper_And_Onyx();
-    some<Armor_t*>  Clothes_Circlet_Copper_And_Ruby();
-    some<Armor_t*>  Clothes_Circlet_Copper_And_Sapphire();
-    some<Armor_t*>  Clothes_Circlet_Gag();
-    some<Armor_t*>  Clothes_Circlet_Gold_And_Emerald();
-    some<Armor_t*>  Clothes_Circlet_Gold_And_Ruby();
-    some<Armor_t*>  Clothes_Circlet_Jade_And_Emerald();
-    some<Armor_t*>  Clothes_Circlet_Jade_And_Sapphire();
-    some<Armor_t*>  Clothes_Circlet_Silver_And_Moonstone();
-    some<Armor_t*>  Clothes_Circlet_Silver_And_Sapphire();
+    some<Armor_t*>  Clothes_College_Adept_Body();
+    some<Armor_t*>  Clothes_College_Adept_Head();
 
-    some<Armor_t*>  Clothes_College_Apprentice_Body_0();
-    some<Armor_t*>  Clothes_College_Apprentice_Body_1();
-    some<Armor_t*>  Clothes_College_Apprentice_Body_2();
+    some<Armor_t*>  Clothes_College_Apprentice_Body();
     some<Armor_t*>  Clothes_College_Apprentice_Feet();
-    some<Armor_t*>  Clothes_College_Apprentice_Head_0();
-    some<Armor_t*>  Clothes_College_Apprentice_Head_1();
-    some<Armor_t*>  Clothes_College_Apprentice_Head_2();
+    some<Armor_t*>  Clothes_College_Apprentice_Head();
 
-    some<Armor_t*>  Clothes_College_Common_Body_0();
-    some<Armor_t*>  Clothes_College_Common_Body_1();
-    some<Armor_t*>  Clothes_College_Common_Feet();
+    some<Armor_t*>  Clothes_College_Archmage_Body();
+    some<Armor_t*>  Clothes_College_Archmage_Body_Hooded();
+    some<Armor_t*>  Clothes_College_Archmage_Feet();
+
+    some<Armor_t*>  Clothes_College_Expert_Body();
+
+    some<Armor_t*>  Clothes_College_Master_Body();
+    some<Armor_t*>  Clothes_College_Master_Feet();
+
+    some<Armor_t*>  Clothes_College_Novice_Body();
+    some<Armor_t*>  Clothes_College_Novice_Feet();
+    some<Armor_t*>  Clothes_College_Novice_Head();
+
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Body();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Feet();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Hands();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Head();
+
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Cicero_Body();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Cicero_Feet();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Cicero_Hands();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Cicero_Head();
+
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Jester_Body();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Jester_Feet();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Jester_Hands();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Jester_Head();
+
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Redguard_Body();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Redguard_Feet();
+    some<Armor_t*>  Clothes_Dark_Brotherhood_Redguard_Head();
+
+    some<Armor_t*>  Clothes_Dremora_Body();
+    some<Armor_t*>  Clothes_Dremora_Feet();
 
     some<Armor_t*>  Clothes_Emperor_Body();
+
+    some<Armor_t*>  Clothes_Execution_Head_0();
+    some<Armor_t*>  Clothes_Execution_Head_1();
 
     some<Armor_t*>  Clothes_Executioner_Body();
     some<Armor_t*>  Clothes_Executioner_Feet();
@@ -369,21 +521,242 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Fine_1_Body_0();
     some<Armor_t*>  Clothes_Fine_1_Body_1();
+    some<Armor_t*>  Clothes_Fine_1_Body_Radiant_Raiment();
     some<Armor_t*>  Clothes_Fine_1_Feet();
 
     some<Armor_t*>  Clothes_Fine_2_Body_0();
     some<Armor_t*>  Clothes_Fine_2_Body_1();
+    some<Armor_t*>  Clothes_Fine_2_Body_Party();
     some<Armor_t*>  Clothes_Fine_2_Feet();
+    some<Armor_t*>  Clothes_Fine_2_Feet_Party();
     some<Armor_t*>  Clothes_Fine_2_Head();
 
-    some<Armor_t*>  Clothes_Guard_Sleep_Body();
+    some<Armor_t*>  Clothes_Greybeard_Body();
+    some<Armor_t*>  Clothes_Greybeard_Feet();
+    some<Armor_t*>  Clothes_Greybeard_Head();
 
+    some<Armor_t*>  Clothes_Jarl_1_Body_0();
+    some<Armor_t*>  Clothes_Jarl_1_Body_1();
+    some<Armor_t*>  Clothes_Jarl_1_Feet();
+    some<Armor_t*>  Clothes_Jarl_1_Hands();
+
+    some<Armor_t*>  Clothes_Jarl_2_Body_0();
+    some<Armor_t*>  Clothes_Jarl_2_Body_1();
+    some<Armor_t*>  Clothes_Jarl_2_Feet();
+    some<Armor_t*>  Clothes_Jarl_2_Hands();
+
+    some<Armor_t*>  Clothes_Jarl_3_Body_0();
+    some<Armor_t*>  Clothes_Jarl_3_Body_1();
+    some<Armor_t*>  Clothes_Jarl_3_Feet();
+
+    some<Armor_t*>  Clothes_Merchant_Body_0();
+    some<Armor_t*>  Clothes_Merchant_Body_1();
+    some<Armor_t*>  Clothes_Merchant_Feet();
+    some<Armor_t*>  Clothes_Merchant_Head();
+
+    some<Armor_t*>  Clothes_Miner_Body_0();
+    some<Armor_t*>  Clothes_Miner_Body_1();
+    some<Armor_t*>  Clothes_Miner_Body_Sleep();
+    some<Armor_t*>  Clothes_Miner_Feet();
+
+    some<Armor_t*>  Clothes_Monk_Body();
+    some<Armor_t*>  Clothes_Monk_Body_Hooded();
+    some<Armor_t*>  Clothes_Monk_Feet();
+
+    some<Armor_t*>  Clothes_Monk_Brown_Body();
+    some<Armor_t*>  Clothes_Monk_Brown_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Monk_Green_Body();
+    some<Armor_t*>  Clothes_Monk_Green_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Monk_Grey_Body();
+    some<Armor_t*>  Clothes_Monk_Grey_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Monk_Red_Body();
+    some<Armor_t*>  Clothes_Monk_Red_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Mourner_Body();
+    some<Armor_t*>  Clothes_Mourner_Head();
+
+    some<Armor_t*>  Clothes_Mythic_Dawn_Body();
+    some<Armor_t*>  Clothes_Mythic_Dawn_Body_Hooded();
+    some<Armor_t*>  Clothes_Mythic_Dawn_Feet();
+    some<Armor_t*>  Clothes_Mythic_Dawn_Hands();
+
+    some<Armor_t*>  Clothes_Necromancer_Body();
+    some<Armor_t*>  Clothes_Necromancer_Body_Hooded();
+    some<Armor_t*>  Clothes_Necromancer_Feet();
+
+    some<Armor_t*>  Clothes_Nocturnal_Body();
+    some<Armor_t*>  Clothes_Nocturnal_Head();
+
+    some<Armor_t*>  Clothes_Prisoner_Body_Rags();
+    some<Armor_t*>  Clothes_Prisoner_Body_Tunic();
+    some<Armor_t*>  Clothes_Prisoner_Feet();
+    some<Armor_t*>  Clothes_Prisoner_Hands();
+
+    some<Armor_t*>  Clothes_Prisoner_Bloody_Body_Rags();
+    some<Armor_t*>  Clothes_Prisoner_Bloody_Feet();
+
+    some<Armor_t*>  Clothes_Psiijic_Body();
+    some<Armor_t*>  Clothes_Psiijic_Feet();
+    some<Armor_t*>  Clothes_Psiijic_Hands();
+    some<Armor_t*>  Clothes_Psiijic_Head();
+
+    some<Armor_t*>  Clothes_Redguard_Body();
+    some<Armor_t*>  Clothes_Redguard_Feet();
+    some<Armor_t*>  Clothes_Redguard_Head();
+
+    some<Armor_t*>  Clothes_Robes_Black_Body();
+    some<Armor_t*>  Clothes_Robes_Black_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Robes_Blue_Body();
+    some<Armor_t*>  Clothes_Robes_Blue_Body_Hooded();
+
+    some<Armor_t*>  Clothes_Sheogorath_Body();
+    some<Armor_t*>  Clothes_Sheogorath_Feet();
+
+    some<Armor_t*>  Clothes_Thalmor_Body();
+    some<Armor_t*>  Clothes_Thalmor_Body_Hooded();
+    some<Armor_t*>  Clothes_Thalmor_Feet();
+    some<Armor_t*>  Clothes_Thalmor_Hands();
+
+    some<Armor_t*>  Clothes_Tuning_Hands();
+    some<Armor_t*>  Clothes_Tuning_Hands_Mystic();
+
+    some<Armor_t*>  Clothes_Ulfric_Body();
+    some<Armor_t*>  Clothes_Ulfric_Feet();
+    some<Armor_t*>  Clothes_Ulfric_Hands();
+
+    some<Armor_t*>  Clothes_Warlock_Body();
+    some<Armor_t*>  Clothes_Warlock_Body_Hooded();
+    some<Armor_t*>  Clothes_Warlock_Feet();
+    some<Armor_t*>  Clothes_Warlock_Head();
+
+    some<Armor_t*>  Clothes_Wedding_Dress_Body();
+    some<Armor_t*>  Clothes_Wedding_Dress_Feet();
+    some<Armor_t*>  Clothes_Wedding_Dress_Head();
+
+    some<Armor_t*>  Clothes_Wench_Body();
     some<Armor_t*>  Clothes_Wench_Feet();
 
+    some<Armor_t*>  Clothes_Wounded_Body_Arivanya();
+    some<Armor_t*>  Clothes_Wounded_Body_Susanna();
+
+    some<Armor_t*>  Daedric_Ebony_Mail();
     some<Armor_t*>  Daedric_Masque_Of_Clavicus_Vile();
+    some<Armor_t*>  Daedric_Meridia_Ball_Of_Light();
+    some<Armor_t*>  Daedric_Ring_Of_Hircine();
+    some<Armor_t*>  Daedric_Ring_Of_Hircine_Cursed();
+    some<Armor_t*>  Daedric_Ring_Of_Namira();
+    some<Armor_t*>  Daedric_Saviors_Hide();
+    some<Armor_t*>  Daedric_Spellbreaker();
+    some<Armor_t*>  Daedric_Vaermina_Robes();
+
+    some<Armor_t*>  Ring_Gold();
+    some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony();
+    some<Armor_t*>  Ring_Gold_Diamond();
+    some<Armor_t*>  Ring_Gold_Emerald();
+    some<Armor_t*>  Ring_Gold_Enchanted();
+    some<Armor_t*>  Ring_Gold_Pure_Mixtures();
+    some<Armor_t*>  Ring_Gold_Sapphire();
+    some<Armor_t*>  Ring_Gold_Viola();
+    some<Armor_t*>  Ring_Gold_Wedding_Asgeir();
+    some<Armor_t*>  Ring_Gold_Wedding_Vittoria();
+
+    some<Armor_t*>  Ring_Silver();
+    some<Armor_t*>  Ring_Silver_Amethyst();
+    some<Armor_t*>  Ring_Silver_Amethyst_Ilas_Tei();
+    some<Armor_t*>  Ring_Silver_Amethyst_Nightweavers();
+    some<Armor_t*>  Ring_Silver_Calcelmo();
+    some<Armor_t*>  Ring_Silver_Garnet();
+    some<Armor_t*>  Ring_Silver_Madesi();
+    some<Armor_t*>  Ring_Silver_Muiri();
+    some<Armor_t*>  Ring_Silver_Muiri_Enchanted();
+    some<Armor_t*>  Ring_Silver_Ruby();
+    some<Armor_t*>  Ring_Silver_Silver_Blood_Family();
+    some<Armor_t*>  Ring_Silver_Wedding_Fjola_0();
+    some<Armor_t*>  Ring_Silver_Wedding_Fjola_1();
 
     some<Armor_t*>  Skin_Afflicted();
     some<Armor_t*>  Skin_Astrid();
     some<Armor_t*>  Skin_Mannequin();
+    some<Armor_t*>  Skin_Naked();
+
+    //////////
+
+    some<Armor_t*>  Amulet_Bone_Hawk();
+
+    some<Armor_t*>  Amulet_Gold_Jeweled_Saint_Jiub();
+
+    some<Armor_t*>  Armor_Ancient_Falmer_Boots();
+    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_0();
+    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_1();
+    some<Armor_t*>  Armor_Ancient_Falmer_Gauntlets();
+    some<Armor_t*>  Armor_Ancient_Falmer_Helmet();
+    some<Armor_t*>  Armor_Ancient_Falmer_Shield_Auriels();
+
+    some<Armor_t*>  Armor_Dawnguard_Shield();
+    some<Armor_t*>  Armor_Dawnguard_Shield_Rune();
+
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Boots();
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_0();
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_1();
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Gauntlets();
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Helmet();
+
+    some<Armor_t*>  Armor_Dawnguard_Hunter_Boots();
+    some<Armor_t*>  Armor_Dawnguard_Hunter_Cuirass();
+    some<Armor_t*>  Armor_Dawnguard_Hunter_Gauntlets();
+
+    some<Armor_t*>  Armor_Dawnguard_Light_Boots();
+    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_0();
+    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_1();
+    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_2();
+    some<Armor_t*>  Armor_Dawnguard_Light_Gauntlets();
+    some<Armor_t*>  Armor_Dawnguard_Light_Helmet();
+
+    some<Armor_t*>  Armor_Dragonplate_Keeper_Boots();
+    some<Armor_t*>  Armor_Dragonplate_Keeper_Cuirass();
+    some<Armor_t*>  Armor_Dragonplate_Keeper_Gauntlets();
+    some<Armor_t*>  Armor_Dragonplate_Keeper_Shield();
+
+    some<Armor_t*>  Armor_Falmer_Hardened_Boots();
+    some<Armor_t*>  Armor_Falmer_Hardened_Cuirass();
+    some<Armor_t*>  Armor_Falmer_Hardened_Gauntlets();
+    some<Armor_t*>  Armor_Falmer_Hardened_Helmet();
+
+    some<Armor_t*>  Armor_Falmer_Heavy_Boots();
+    some<Armor_t*>  Armor_Falmer_Heavy_Cuirass();
+    some<Armor_t*>  Armor_Falmer_Heavy_Gauntlets();
+    some<Armor_t*>  Armor_Falmer_Heavy_Helmet();
+    some<Armor_t*>  Armor_Falmer_Heavy_Helmet_Shellbug();
+
+    some<Armor_t*>  Armor_Vampire_Boots();
+    some<Armor_t*>  Armor_Vampire_Cuirass_Grey();
+    some<Armor_t*>  Armor_Vampire_Cuirass_Light_Grey();
+    some<Armor_t*>  Armor_Vampire_Cuirass_Red();
+    some<Armor_t*>  Armor_Vampire_Gauntlets();
+
+    some<Armor_t*>  Armor_Vampire_Royal_Cuirass();
+    some<Armor_t*>  Armor_Vampire_Royal_Cuirass_Valerica();
+
+    some<Armor_t*>  Clothes_Blind_Priest_Body();
+    some<Armor_t*>  Clothes_Blind_Priest_Feet();
+    some<Armor_t*>  Clothes_Blind_Priest_Head();
+
+    some<Armor_t*>  Clothes_Monk_Prelate_Body();
+    some<Armor_t*>  Clothes_Monk_Prelate_Feet();
+
+    some<Armor_t*>  Clothes_Reaper_Body();
+    some<Armor_t*>  Clothes_Reaper_Hands();
+    some<Armor_t*>  Clothes_Reaper_Head();
+
+    some<Armor_t*>  Clothes_Vampire_Body();
+    some<Armor_t*>  Clothes_Vampire_Feet();
+    some<Armor_t*>  Clothes_Vampire_Hands();
+    some<Armor_t*>  Clothes_Vampire_Head();
+
+    some<Armor_t*>  Ring_Bone_Hawk();
 
 }}}
