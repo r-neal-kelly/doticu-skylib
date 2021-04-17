@@ -80,6 +80,7 @@
     <ClInclude Include="include\doticu_skylib\const_mods.h" />
     <ClInclude Include="include\doticu_skylib\const_spells.h" />
     <ClInclude Include="include\doticu_skylib\const_voice_types.h" />
+    <ClInclude Include="include\doticu_skylib\const_weapons.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_manager.h" />
     <ClInclude Include="include\doticu_skylib\dialogue_topic_instance.h" />
     <ClInclude Include="include\doticu_skylib\dispelled_magic.h" />
@@ -525,6 +526,7 @@
     <ClCompile Include="src\doticu_skylib\const_mods.cpp" />
     <ClCompile Include="src\doticu_skylib\const_spells.cpp" />
     <ClCompile Include="src\doticu_skylib\const_voice_types.cpp" />
+    <ClCompile Include="src\doticu_skylib\const_weapons.cpp" />
     <ClCompile Include="src\doticu_skylib\container.cpp" />
     <ClCompile Include="src\doticu_skylib\container_entry.cpp" />
     <ClCompile Include="src\doticu_skylib\dialogue_manager.cpp" />

@@ -14,9 +14,9 @@ namespace doticu_skylib {
 
 namespace doticu_skylib { namespace Const { namespace Armor {
 
-    some<Armor_t*>  Amulet_Ancient_Nord();
-    some<Armor_t*>  Amulet_Ancient_Nord_Kynes_Token();
-    some<Armor_t*>  Amulet_Ancient_Nord_Saarthal();
+    some<Armor_t*>  Amulet_Ancient_Nordic();
+    some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
+    some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
 
     some<Armor_t*>  Amulet_Articulation_0();
     some<Armor_t*>  Amulet_Articulation_1();
@@ -99,21 +99,21 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Ancient_Falmer_Shield_Auriels();
     some<Armor_t*>  Armor_Ancient_Falmer_Shield_Reflecting();
 
-    some<Armor_t*>  Armor_Ancient_Nord_Boots();
-    some<Armor_t*>  Armor_Ancient_Nord_Cuirass();
-    some<Armor_t*>  Armor_Ancient_Nord_Gauntlets();
-    some<Armor_t*>  Armor_Ancient_Nord_Helmet();
-    some<Armor_t*>  Armor_Ancient_Nord_Helmet_Jagged_Crown();
+    some<Armor_t*>  Armor_Ancient_Nordic_Boots();
+    some<Armor_t*>  Armor_Ancient_Nordic_Cuirass();
+    some<Armor_t*>  Armor_Ancient_Nordic_Gauntlets();
+    some<Armor_t*>  Armor_Ancient_Nordic_Helmet();
+    some<Armor_t*>  Armor_Ancient_Nordic_Helmet_Jagged_Crown();
 
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Boots();
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Cuirass();
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Gauntlets();
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Helmet();
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Boots();
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Cuirass();
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Gauntlets();
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Helmet();
 
-    some<Armor_t*>  Armor_Ancient_Nord_Tsun_Boots();
-    some<Armor_t*>  Armor_Ancient_Nord_Tsun_Cuirass();
+    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Boots();
+    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Cuirass();
 
-    some<Armor_t*>  Armor_Ancient_Nord_Ysgramor_Shield();
+    some<Armor_t*>  Armor_Ancient_Nordic_Ysgramor_Shield();
 
     some<Armor_t*>  Armor_Blades_Boots();
     some<Armor_t*>  Armor_Blades_Cuirass();

@@ -9,9 +9,9 @@
 
 namespace doticu_skylib { namespace Const { namespace Armor {
 
-    some<Armor_t*>  Amulet_Ancient_Nord()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC842); }
-    some<Armor_t*>  Amulet_Ancient_Nord_Kynes_Token()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x107E2D); }
-    some<Armor_t*>  Amulet_Ancient_Nord_Saarthal()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0233D0); }
+    some<Armor_t*>  Amulet_Ancient_Nordic()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC842); }
+    some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x107E2D); }
+    some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0233D0); }
 
     some<Armor_t*>  Amulet_Articulation_0()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09DFF7); }
     some<Armor_t*>  Amulet_Articulation_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6904); }
@@ -94,21 +94,21 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Ancient_Falmer_Shield_Auriels()           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00284D); }
     some<Armor_t*>  Armor_Ancient_Falmer_Shield_Reflecting()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00488A); }
 
-    some<Armor_t*>  Armor_Ancient_Nord_Boots()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9D); }
-    some<Armor_t*>  Armor_Ancient_Nord_Cuirass()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x018388); }
-    some<Armor_t*>  Armor_Ancient_Nord_Gauntlets()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056B17); }
-    some<Armor_t*>  Armor_Ancient_Nord_Helmet()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9E); }
-    some<Armor_t*>  Armor_Ancient_Nord_Helmet_Jagged_Crown()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Boots()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9D); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x018388); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Gauntlets()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056B17); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9E); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Helmet_Jagged_Crown()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
 
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Boots()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Cuirass()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Gauntlets()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
-    some<Armor_t*>  Armor_Ancient_Nord_Ahzidal_Helmet()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Boots()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Cuirass()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Gauntlets()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Helmet()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
 
-    some<Armor_t*>  Armor_Ancient_Nord_Tsun_Boots()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
-    some<Armor_t*>  Armor_Ancient_Nord_Tsun_Cuirass()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Boots()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Cuirass()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
 
-    some<Armor_t*>  Armor_Ancient_Nord_Ysgramor_Shield()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
+    some<Armor_t*>  Armor_Ancient_Nordic_Ysgramor_Shield()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
 
     some<Armor_t*>  Armor_Blades_Boots()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B288); }
     some<Armor_t*>  Armor_Blades_Cuirass()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28B); }

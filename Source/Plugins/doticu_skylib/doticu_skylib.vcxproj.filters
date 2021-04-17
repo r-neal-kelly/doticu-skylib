@@ -1389,6 +1389,9 @@
     <ClInclude Include="include\doticu_skylib\const_armors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\const_weapons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1914,6 +1917,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\const_armors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\const_weapons.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
