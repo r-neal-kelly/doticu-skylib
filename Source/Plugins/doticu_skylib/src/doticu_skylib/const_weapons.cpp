@@ -21,6 +21,13 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Battleaxe_Bound()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x058F5E); }
     some<Weapon_t*> Battleaxe_Bound_Mystic()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0424F7); }
     some<Weapon_t*> Battleaxe_Daedric()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B4); }
+    some<Weapon_t*> Battleaxe_Dragonbone()                          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FC3); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_0()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0113B7); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_1()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0113B8); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_2()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0113B9); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_3()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0113BA); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_4()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0113BB); }
+    some<Weapon_t*> Battleaxe_Dragonbone_Wrathman()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014CA0); }
     some<Weapon_t*> Battleaxe_Dwarven()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013994); }
     some<Weapon_t*> Battleaxe_Ebony()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139AC); }
     some<Weapon_t*> Battleaxe_Ebony_Rueful_Axe()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01C4E6); }
@@ -46,9 +53,17 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Bound()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x058F60); }
     some<Weapon_t*> Bow_Bound_Mystic()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0424F8); }
     some<Weapon_t*> Bow_Daedric()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B5); }
+    some<Weapon_t*> Bow_Dragonbone()                                { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0176F1); }
+    some<Weapon_t*> Bow_Dragonbone_Keeper_0()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A179); }
+    some<Weapon_t*> Bow_Dragonbone_Keeper_1()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A17A); }
+    some<Weapon_t*> Bow_Dragonbone_Keeper_2()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A17B); }
+    some<Weapon_t*> Bow_Dragonbone_Keeper_3()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A17C); }
+    some<Weapon_t*> Bow_Dragonbone_Keeper_4()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A17D); }
     some<Weapon_t*> Bow_Dwarven()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013995); }
     some<Weapon_t*> Bow_Dwarven_Sphere_Crossbow_0()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07F6DF); }
     some<Weapon_t*> Bow_Dwarven_Sphere_Crossbow_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10EC8A); }
+    some<Weapon_t*> Bow_Dwarven_Zephyr()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00CFB6); }
+    some<Weapon_t*> Bow_Dwarven_Zephyr_NPC()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00CFB5); }
     some<Weapon_t*> Bow_Ebony()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139AD); }
     some<Weapon_t*> Bow_Ebony_Nightingale_0()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07E5C3); }
     some<Weapon_t*> Bow_Ebony_Nightingale_1()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F6529); }
@@ -57,6 +72,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Ebony_Nightingale_4()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F652C); }
     some<Weapon_t*> Bow_Ebony_Nightingale_NPC()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0DEED8); }
     some<Weapon_t*> Bow_Elven()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01399D); }
+    some<Weapon_t*> Bow_Elven_Auriel()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x000800); }
     some<Weapon_t*> Bow_Elven_Firiniels_End()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x017059); }
     some<Weapon_t*> Bow_Falmer()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x038340); }
     some<Weapon_t*> Bow_Falmer_Supple()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x083167); }
@@ -72,10 +88,48 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Wood_Froki()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C0186); }
     some<Weapon_t*> Bow_Wood_Long()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B562); }
 
+    some<Weapon_t*> Crossbow_Dwarven()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00B647); }
+    some<Weapon_t*> Crossbow_Dwarven_Enhanced()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00F19F); }
+    some<Weapon_t*> Crossbow_Dwarven_Fire_1_Scorching()             { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0DB); }
+    some<Weapon_t*> Crossbow_Dwarven_Fire_2_Fire()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0DC); }
+    some<Weapon_t*> Crossbow_Dwarven_Fire_3_Blaze()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0DD); }
+    some<Weapon_t*> Crossbow_Dwarven_Magicka_1_Diminishing()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D8); }
+    some<Weapon_t*> Crossbow_Dwarven_Magicka_2_Depleting()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D9); }
+    some<Weapon_t*> Crossbow_Dwarven_Magicka_3_Enervating()         { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0DA); }
+    some<Weapon_t*> Crossbow_Dwarven_Paralyze_1_Stunning()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D6); }
+    some<Weapon_t*> Crossbow_Dwarven_Paralyze_2_Immobilizing()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D7); }
+    some<Weapon_t*> Crossbow_Dwarven_Shock_1_Shocks()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D3); }
+    some<Weapon_t*> Crossbow_Dwarven_Shock_2_Thunderbolts()         { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D4); }
+    some<Weapon_t*> Crossbow_Dwarven_Shock_3_Lightning()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D5); }
+    some<Weapon_t*> Crossbow_Dwarven_Soul_Trap_1_Binding()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D0); }
+    some<Weapon_t*> Crossbow_Dwarven_Soul_Trap_2_Animus()           { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D1); }
+    some<Weapon_t*> Crossbow_Dwarven_Soul_Trap_3_Malediction()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D2); }
+    some<Weapon_t*> Crossbow_Dwarven_Turn_Undead_1_Reverent()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CD); }
+    some<Weapon_t*> Crossbow_Dwarven_Turn_Undead_2_Hallowed()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CE); }
+    some<Weapon_t*> Crossbow_Dwarven_Turn_Undead_3_Virtuous()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CF); }
+    some<Weapon_t*> Crossbow_Steel()                                { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x000801); }
+    some<Weapon_t*> Crossbow_Steel_Enhanced()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00F19E); }
+    some<Weapon_t*> Crossbow_Steel_Fire_1_Embers()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CA); }
+    some<Weapon_t*> Crossbow_Steel_Fire_2_Burning()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CB); }
+    some<Weapon_t*> Crossbow_Steel_Fire_3_Scorching()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0CC); }
+    some<Weapon_t*> Crossbow_Steel_Magicka_1_Sapping()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C6); }
+    some<Weapon_t*> Crossbow_Steel_Magicka_2_Draining()             { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C7); }
+    some<Weapon_t*> Crossbow_Steel_Magicka_3_Diminishing()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C9); }
+    some<Weapon_t*> Crossbow_Steel_Shock_1_Sparks()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C3); }
+    some<Weapon_t*> Crossbow_Steel_Shock_2_Arcing()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C4); }
+    some<Weapon_t*> Crossbow_Steel_Shock_3_Shocks()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C5); }
+    some<Weapon_t*> Crossbow_Steel_Soul_Trap_1_Souls()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C0); }
+    some<Weapon_t*> Crossbow_Steel_Soul_Trap_2_Soul_Snares()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C1); }
+    some<Weapon_t*> Crossbow_Steel_Soul_Trap_3_Binding()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0C2); }
+    some<Weapon_t*> Crossbow_Steel_Turn_Undead_1_Blessed()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0BD); }
+    some<Weapon_t*> Crossbow_Steel_Turn_Undead_2_Sanctified()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0BE); }
+    some<Weapon_t*> Crossbow_Steel_Turn_Undead_3_Reverent()         { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0BF); }
+
     some<Weapon_t*> Dagger_Ancient_Nordic_Dragon_Priest()           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01C1FE); }
     some<Weapon_t*> Dagger_Ancient_Nordic_Kahvozeins_Fang()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0D0758); }
     some<Weapon_t*> Dagger_Daedric()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B6); }
     some<Weapon_t*> Dagger_Daedric_Mehrunes_Razor()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0240D2); }
+    some<Weapon_t*> Dagger_Dragonbone()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FCB); }
     some<Weapon_t*> Dagger_Dwarven()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013996); }
     some<Weapon_t*> Dagger_Dwarven_Keening()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06A13C); }
     some<Weapon_t*> Dagger_Ebony()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139AE); }
@@ -83,6 +137,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Dagger_Ebony_Nettlebane()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01C492); }
     some<Weapon_t*> Dagger_Elven()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01399E); }
     some<Weapon_t*> Dagger_Elven_Borvir()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ECD54); }
+    some<Weapon_t*> Dagger_Elven_Prelate()                          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01681F); }
     some<Weapon_t*> Dagger_Glass()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139A6); }
     some<Weapon_t*> Dagger_Iron()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01397E); }
     some<Weapon_t*> Dagger_Iron_Alessandra()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x043E1E); }
@@ -96,6 +151,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Dagger_Steel_Bloodthorn()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A4DCE); }
     some<Weapon_t*> Dagger_Steel_Rundi()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ECD53); }
     some<Weapon_t*> Dagger_Steel_Skyforge()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09F25D); }
+    some<Weapon_t*> Dagger_Steel_Skyforge_NPC()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00CFB4); }
     some<Weapon_t*> Dagger_Steel_Valdrs_Lucky()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0B994E); }
 
     some<Weapon_t*> Greatsword_Ancient_Nordic()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0236A5); }
@@ -105,6 +161,8 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Greatsword_Daedric_Ebony_Blade()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04A38F); }
     some<Weapon_t*> Greatsword_Daedric_Ebony_Blade_Full()           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0EA29C); }
     some<Weapon_t*> Greatsword_Daedric_Scorching()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x017288); }
+    some<Weapon_t*> Greatsword_Dragonbone()                         { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FCC); }
+    some<Weapon_t*> Greatsword_Dragonbone_Wrathman()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014C9F); }
     some<Weapon_t*> Greatsword_Dwarven()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013997); }
     some<Weapon_t*> Greatsword_Ebony()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139AF); }
     some<Weapon_t*> Greatsword_Elven()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01399F); }
@@ -114,18 +172,22 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Greatsword_Silver()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10C6FB); }
     some<Weapon_t*> Greatsword_Steel()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013987); }
     some<Weapon_t*> Greatsword_Steel_Balgruuf()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0946FC); }
-    some<Weapon_t*> Greatsword_Steel_Giant_Club_0()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0461DA); }
-    some<Weapon_t*> Greatsword_Steel_Giant_Club_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0CDEC9); }
-    some<Weapon_t*> Greatsword_Steel_Giant_Club_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C334F); }
     some<Weapon_t*> Greatsword_Steel_Skyforge()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09F25E); }
 
     some<Weapon_t*> Mace_Daedric()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B8); }
     some<Weapon_t*> Mace_Daedric_Inferno()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10FD5E); }
     some<Weapon_t*> Mace_Daedric_Molag_Bal()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0233E3); }
     some<Weapon_t*> Mace_Daedric_Molag_Bal_Rusty()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x022F0F); }
+    some<Weapon_t*> Mace_Dragonbone()                               { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FCD); }
+    some<Weapon_t*> Mace_Dragonbone_Keeper_0()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A173); }
+    some<Weapon_t*> Mace_Dragonbone_Keeper_1()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A174); }
+    some<Weapon_t*> Mace_Dragonbone_Keeper_2()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A175); }
+    some<Weapon_t*> Mace_Dragonbone_Keeper_3()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A176); }
+    some<Weapon_t*> Mace_Dragonbone_Keeper_4()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A177); }
     some<Weapon_t*> Mace_Dwarven()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013998); }
     some<Weapon_t*> Mace_Ebony()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B0); }
     some<Weapon_t*> Mace_Elven()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139A0); }
+    some<Weapon_t*> Mace_Elven_Prelate()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01681E); }
     some<Weapon_t*> Mace_Glass()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139A8); }
     some<Weapon_t*> Mace_Iron()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013982); }
     some<Weapon_t*> Mace_Iron_Lunar_0()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0BF); }
@@ -185,8 +247,19 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Dragon_Priest_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07E5BB); }
     some<Weapon_t*> Staff_Dragon_Priest_2_Hevnoraak()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10076D); }
 
+    some<Weapon_t*> Staff_Dwarven_Aetherial()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00575E); }
     some<Weapon_t*> Staff_Dwarven_Spider_Control_Rod()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0E57F0); }
     some<Weapon_t*> Staff_Dwarven_Spider_Control_Rod_Fake()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C19FF); }
+
+    some<Weapon_t*> Staff_Falmer()                                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x003629); }
+    some<Weapon_t*> Staff_Falmer_Chain_Lightning()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D56); }
+    some<Weapon_t*> Staff_Falmer_Fireballs()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D57); }
+    some<Weapon_t*> Staff_Falmer_Firebolts()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D5D); }
+    some<Weapon_t*> Staff_Falmer_Flame_Atronach()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D58); }
+    some<Weapon_t*> Staff_Falmer_Frost_Atronach()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D59); }
+    some<Weapon_t*> Staff_Falmer_Ice_Spikes()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D5E); }
+    some<Weapon_t*> Staff_Falmer_Ice_Storms()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D5F); }
+    some<Weapon_t*> Staff_Falmer_Lightning_Bolts()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011D60); }
 
     some<Weapon_t*> Staff_Forsworn()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0CC826); }
     some<Weapon_t*> Staff_Forsworn_Eye_Of_Melka()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0B3DFA); }
@@ -204,6 +277,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Illusion_Gadnors_Charming()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x046E0B); }
     some<Weapon_t*> Staff_Illusion_Halldir()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AB704); }
     some<Weapon_t*> Staff_Illusion_Inspiration()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B8E); }
+    some<Weapon_t*> Staff_Illusion_Ruunvald()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01958C); }
     some<Weapon_t*> Staff_Illusion_Vanquishment()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B92); }
 
     some<Weapon_t*> Staff_Magnus()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x035369); }
@@ -244,6 +318,12 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Bound_Right_Hand()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BA30E); }
     some<Weapon_t*> Sword_Daedric()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B9); }
     some<Weapon_t*> Sword_Daedric_Dawnbreaker()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04E4EE); }
+    some<Weapon_t*> Sword_Dragonbone()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FCE); }
+    some<Weapon_t*> Sword_Dragonbone_Keeper_0()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A180); }
+    some<Weapon_t*> Sword_Dragonbone_Keeper_1()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A181); }
+    some<Weapon_t*> Sword_Dragonbone_Keeper_2()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A182); }
+    some<Weapon_t*> Sword_Dragonbone_Keeper_3()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A183); }
+    some<Weapon_t*> Sword_Dragonbone_Keeper_4()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01A184); }
     some<Weapon_t*> Sword_Dwarven()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013999); }
     some<Weapon_t*> Sword_Ebony()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B1); }
     some<Weapon_t*> Sword_Ebony_Nightingale_0()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07A917); }
@@ -276,11 +356,13 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Steel()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013989); }
     some<Weapon_t*> Sword_Steel_Blades()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03AEB9); }
     some<Weapon_t*> Sword_Steel_Bolars_Oathblade()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C1989); }
+    some<Weapon_t*> Sword_Steel_Dexion_Evicus()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014555); }
     some<Weapon_t*> Sword_Steel_Dragonbane_0()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F1AC1); }
     some<Weapon_t*> Sword_Steel_Dragonbane_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F71CD); }
     some<Weapon_t*> Sword_Steel_Dragonbane_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F71CE); }
     some<Weapon_t*> Sword_Steel_Dragonbane_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F71CF); }
     some<Weapon_t*> Sword_Steel_Dragonbane_4()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0F71D0); }
+    some<Weapon_t*> Sword_Steel_Harkon()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0067CF); }
     some<Weapon_t*> Sword_Steel_Harrald()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0557F5); }
     some<Weapon_t*> Sword_Steel_Imperial()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0135B8); }
     some<Weapon_t*> Sword_Steel_Lunar_0()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0B7); }
@@ -290,6 +372,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Steel_Scimitar()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07A91A); }
     some<Weapon_t*> Sword_Steel_Skyforge()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09F25C); }
     some<Weapon_t*> Sword_Steel_Windshear()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06EA8B); }
+    some<Weapon_t*> Sword_Wooden()                                  { DEFINE_FORM(Const::Mod::Hearthfires(),    Weapon_t, 0x004D91); }
 
     some<Weapon_t*> Unarmed()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0001F4); }
 
@@ -300,6 +383,7 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Ancient_Nordic_Illusory()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0E7A31); }
     some<Weapon_t*> Waraxe_Ancient_Nordic_Okin()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x08FFDE); }
     some<Weapon_t*> Waraxe_Daedric()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B3); }
+    some<Weapon_t*> Waraxe_Dragonbone()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FCF); }
     some<Weapon_t*> Waraxe_Dwarven()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013993); }
     some<Weapon_t*> Waraxe_Ebony()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139AB); }
     some<Weapon_t*> Waraxe_Elven()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01399B); }
@@ -320,6 +404,8 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Iron_Woodcutter()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x02F2F4); }
     some<Weapon_t*> Waraxe_Orcish()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398B); }
     some<Weapon_t*> Waraxe_Steel()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013983); }
+    some<Weapon_t*> Waraxe_Steel_Dawnguard()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D098); }
+    some<Weapon_t*> Waraxe_Steel_Dawnguard_Rune()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01668C); }
     some<Weapon_t*> Waraxe_Steel_Lunar_0()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0B8); }
     some<Weapon_t*> Waraxe_Steel_Lunar_1()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0BB); }
     some<Weapon_t*> Waraxe_Steel_Lunar_2()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0BE); }
@@ -327,6 +413,8 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
 
     some<Weapon_t*> Warhammer_Daedric()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139BA); }
     some<Weapon_t*> Warhammer_Daedric_Volendrung()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x02ACD2); }
+    some<Weapon_t*> Warhammer_Dragonbone()                          { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014FD0); }
+    some<Weapon_t*> Warhammer_Dragonbone_Wrathman()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x014C9E); }
     some<Weapon_t*> Warhammer_Dwarven()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01399A); }
     some<Weapon_t*> Warhammer_Ebony()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139B2); }
     some<Weapon_t*> Warhammer_Elven()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0139A2); }
@@ -337,6 +425,12 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Warhammer_Orcish_Longhammer()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AE085); }
     some<Weapon_t*> Warhammer_Orcish_Shagrol()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0223FB); }
     some<Weapon_t*> Warhammer_Steel()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398A); }
+    some<Weapon_t*> Warhammer_Steel_Dawnguard()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00DD55); }
+    some<Weapon_t*> Warhammer_Steel_Dawnguard_Rune()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x011BAD); }
+    some<Weapon_t*> Warhammer_Steel_Giant_Club_0()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0461DA); }
+    some<Weapon_t*> Warhammer_Steel_Giant_Club_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0CDEC9); }
+    some<Weapon_t*> Warhammer_Steel_Giant_Club_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C334F); }
+    some<Weapon_t*> Warhammer_Steel_Giant_Club_Frost()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x012D14); }
     some<Weapon_t*> Warhammer_Steel_Trollsbane()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06AF63); }
 
 }}}
