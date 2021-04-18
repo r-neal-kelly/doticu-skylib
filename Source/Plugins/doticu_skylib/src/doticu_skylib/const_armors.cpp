@@ -926,3 +926,23 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Skin_Naked()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x000D64); }
 
 }}}
+
+namespace doticu_skylib { namespace Const { namespace Armors {
+
+    Vector_t<some<Armor_t*>> Armor_Blades()
+    {
+        Vector_t<some<Armor_t*>> results;
+        Armor_Blades(results);
+        return results;
+    }
+
+    void Armor_Blades(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Armor_Blades_Boots());
+        results.push_back(Armor::Armor_Blades_Cuirass());
+        results.push_back(Armor::Armor_Blades_Gauntlets());
+        results.push_back(Armor::Armor_Blades_Helmet());
+        results.push_back(Armor::Armor_Blades_Shield());
+    }
+
+}}}

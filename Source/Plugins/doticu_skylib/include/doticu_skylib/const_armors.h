@@ -931,3 +931,10 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Skin_Naked();
 
 }}}
+
+namespace doticu_skylib { namespace Const { namespace Armors {
+
+    Vector_t<some<Armor_t*>>    Armor_Blades();
+    void                        Armor_Blades(Vector_t<some<Armor_t*>>& results);
+
+}}}
