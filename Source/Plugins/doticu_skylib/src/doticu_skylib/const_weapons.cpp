@@ -263,6 +263,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Battleaxe_Iron_Woodsmans_Friend()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x022265); }
 
     some<Weapon_t*> Battleaxe_Nordic()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDAD); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Health_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028396); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Health_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028395); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Health_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028394); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Magicka_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028393); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Magicka_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028392); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Magicka_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028391); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Stamina_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028390); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Stamina_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838F); }
+    some<Weapon_t*> Battleaxe_Nordic_Absorb_Stamina_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838E); }
+    some<Weapon_t*> Battleaxe_Nordic_Banish_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838D); }
+    some<Weapon_t*> Battleaxe_Nordic_Banish_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838C); }
+    some<Weapon_t*> Battleaxe_Nordic_Chaos_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C473); }
+    some<Weapon_t*> Battleaxe_Nordic_Chaos_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C474); }
+    some<Weapon_t*> Battleaxe_Nordic_Chaos_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C475); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Magicka_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028382); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Magicka_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028381); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Magicka_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028380); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Stamina_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028377); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Stamina_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028376); }
+    some<Weapon_t*> Battleaxe_Nordic_Damage_Stamina_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028375); }
+    some<Weapon_t*> Battleaxe_Nordic_Fear_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838B); }
+    some<Weapon_t*> Battleaxe_Nordic_Fear_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02838A); }
+    some<Weapon_t*> Battleaxe_Nordic_Fear_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028389); }
+    some<Weapon_t*> Battleaxe_Nordic_Fire_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028388); }
+    some<Weapon_t*> Battleaxe_Nordic_Fire_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028387); }
+    some<Weapon_t*> Battleaxe_Nordic_Fire_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028386); }
+    some<Weapon_t*> Battleaxe_Nordic_Frost_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028385); }
+    some<Weapon_t*> Battleaxe_Nordic_Frost_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028384); }
+    some<Weapon_t*> Battleaxe_Nordic_Frost_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028383); }
+    some<Weapon_t*> Battleaxe_Nordic_Paralyze_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837F); }
+    some<Weapon_t*> Battleaxe_Nordic_Paralyze_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837E); }
+    some<Weapon_t*> Battleaxe_Nordic_Shock_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837D); }
+    some<Weapon_t*> Battleaxe_Nordic_Shock_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837C); }
+    some<Weapon_t*> Battleaxe_Nordic_Shock_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837B); }
+    some<Weapon_t*> Battleaxe_Nordic_Soul_Trap_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02837A); }
+    some<Weapon_t*> Battleaxe_Nordic_Soul_Trap_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028379); }
+    some<Weapon_t*> Battleaxe_Nordic_Soul_Trap_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028378); }
+    some<Weapon_t*> Battleaxe_Nordic_Turn_Undead_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028374); }
+    some<Weapon_t*> Battleaxe_Nordic_Turn_Undead_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028373); }
+    some<Weapon_t*> Battleaxe_Nordic_Turn_Undead_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028372); }
 
     some<Weapon_t*> Battleaxe_Orcish()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398C); }
     some<Weapon_t*> Battleaxe_Orcish_Absorb_Health_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA166); }
@@ -300,6 +340,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Battleaxe_Orcish_Turn_Undead_3()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA12C); }
 
     some<Weapon_t*> Battleaxe_Stalhrim()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB4); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Health_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C5); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Health_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C4); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Health_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C3); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C2); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C1); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284C0); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Stamina_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BC); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Stamina_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BB); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Absorb_Stamina_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BA); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Banish_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B9); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Banish_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B8); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Banish_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B7); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Chaos_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B6); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Chaos_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B5); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Chaos_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B4); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B0); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AF); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AE); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Stamina_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A4); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Stamina_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A3); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Damage_Stamina_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A2); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Fear_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BF); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Fear_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BD); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Fear_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284BE); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Frost_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B3); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Frost_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B2); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Frost_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284B1); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Paralyze_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AD); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Paralyze_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AC); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Paralyze_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AB); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Shock_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284AA); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Shock_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A9); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Shock_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A8); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Soul_Trap_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A7); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Soul_Trap_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A6); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Soul_Trap_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A5); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Turn_Undead_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A1); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Turn_Undead_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0284A0); }
+    some<Weapon_t*> Battleaxe_Stalhrim_Turn_Undead_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849F); }
 
     some<Weapon_t*> Battleaxe_Steel()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013984); }
     some<Weapon_t*> Battleaxe_Steel_Damage_Magicka_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A697E); }
@@ -549,6 +628,37 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Iron_Imperial_Turn_Undead_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB24); }
 
     some<Weapon_t*> Bow_Nordic()                                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x026232); }
+    some<Weapon_t*> Bow_Nordic_Banish_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028371); }
+    some<Weapon_t*> Bow_Nordic_Banish_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028370); }
+    some<Weapon_t*> Bow_Nordic_Chaos_1()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C476); }
+    some<Weapon_t*> Bow_Nordic_Chaos_2()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C477); }
+    some<Weapon_t*> Bow_Nordic_Chaos_3()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C478); }
+    some<Weapon_t*> Bow_Nordic_Damage_Magicka_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028366); }
+    some<Weapon_t*> Bow_Nordic_Damage_Magicka_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028365); }
+    some<Weapon_t*> Bow_Nordic_Damage_Magicka_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028364); }
+    some<Weapon_t*> Bow_Nordic_Damage_Stamina_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835B); }
+    some<Weapon_t*> Bow_Nordic_Damage_Stamina_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835A); }
+    some<Weapon_t*> Bow_Nordic_Damage_Stamina_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028359); }
+    some<Weapon_t*> Bow_Nordic_Fear_1()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836F); }
+    some<Weapon_t*> Bow_Nordic_Fear_2()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836E); }
+    some<Weapon_t*> Bow_Nordic_Fear_3()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836D); }
+    some<Weapon_t*> Bow_Nordic_Fire_1()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836C); }
+    some<Weapon_t*> Bow_Nordic_Fire_2()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836B); }
+    some<Weapon_t*> Bow_Nordic_Fire_3()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02836A); }
+    some<Weapon_t*> Bow_Nordic_Frost_1()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028369); }
+    some<Weapon_t*> Bow_Nordic_Frost_2()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028368); }
+    some<Weapon_t*> Bow_Nordic_Frost_3()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028367); }
+    some<Weapon_t*> Bow_Nordic_Paralyze_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028363); }
+    some<Weapon_t*> Bow_Nordic_Paralyze_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028362); }
+    some<Weapon_t*> Bow_Nordic_Shock_1()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028361); }
+    some<Weapon_t*> Bow_Nordic_Shock_2()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028360); }
+    some<Weapon_t*> Bow_Nordic_Shock_3()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835F); }
+    some<Weapon_t*> Bow_Nordic_Soul_Trap_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835E); }
+    some<Weapon_t*> Bow_Nordic_Soul_Trap_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835D); }
+    some<Weapon_t*> Bow_Nordic_Soul_Trap_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02835C); }
+    some<Weapon_t*> Bow_Nordic_Turn_Undead_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028358); }
+    some<Weapon_t*> Bow_Nordic_Turn_Undead_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028357); }
+    some<Weapon_t*> Bow_Nordic_Turn_Undead_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028356); }
 
     some<Weapon_t*> Bow_Orcish()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398D); }
     some<Weapon_t*> Bow_Orcish_Damage_Magicka_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB37); }
@@ -577,6 +687,36 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Orcish_Turn_Undead_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ACB6B); }
 
     some<Weapon_t*> Bow_Stalhrim()                                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x026231); }
+    some<Weapon_t*> Bow_Stalhrim_Banish_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849E); }
+    some<Weapon_t*> Bow_Stalhrim_Banish_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849D); }
+    some<Weapon_t*> Bow_Stalhrim_Banish_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849C); }
+    some<Weapon_t*> Bow_Stalhrim_Chaos_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028498); }
+    some<Weapon_t*> Bow_Stalhrim_Chaos_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028497); }
+    some<Weapon_t*> Bow_Stalhrim_Chaos_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028496); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Magicka_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028492); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Magicka_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028491); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Magicka_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028490); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Stamina_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028486); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Stamina_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028485); }
+    some<Weapon_t*> Bow_Stalhrim_Damage_Stamina_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028484); }
+    some<Weapon_t*> Bow_Stalhrim_Fear_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849B); }
+    some<Weapon_t*> Bow_Stalhrim_Fear_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02849A); }
+    some<Weapon_t*> Bow_Stalhrim_Fear_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028499); }
+    some<Weapon_t*> Bow_Stalhrim_Frost_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028495); }
+    some<Weapon_t*> Bow_Stalhrim_Frost_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028494); }
+    some<Weapon_t*> Bow_Stalhrim_Frost_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028493); }
+    some<Weapon_t*> Bow_Stalhrim_Paralyze_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848F); }
+    some<Weapon_t*> Bow_Stalhrim_Paralyze_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848E); }
+    some<Weapon_t*> Bow_Stalhrim_Paralyze_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848D); }
+    some<Weapon_t*> Bow_Stalhrim_Shock_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848C); }
+    some<Weapon_t*> Bow_Stalhrim_Shock_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848B); }
+    some<Weapon_t*> Bow_Stalhrim_Shock_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02848A); }
+    some<Weapon_t*> Bow_Stalhrim_Soul_Trap_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028489); }
+    some<Weapon_t*> Bow_Stalhrim_Soul_Trap_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028488); }
+    some<Weapon_t*> Bow_Stalhrim_Soul_Trap_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028487); }
+    some<Weapon_t*> Bow_Stalhrim_Turn_Undead_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028483); }
+    some<Weapon_t*> Bow_Stalhrim_Turn_Undead_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028482); }
+    some<Weapon_t*> Bow_Stalhrim_Turn_Undead_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028481); }
 
     some<Weapon_t*> Bow_Steel_Angi()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0CC392); }
     some<Weapon_t*> Bow_Steel_Dravin()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06B9AD); }
@@ -889,6 +1029,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Dagger_Iron_Turn_Undead_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0896F5); }
 
     some<Weapon_t*> Dagger_Nordic()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDAE); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Health_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028355); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Health_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028354); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Health_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028353); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028352); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028351); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028350); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834F); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834E); }
+    some<Weapon_t*> Dagger_Nordic_Absorb_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834D); }
+    some<Weapon_t*> Dagger_Nordic_Banish_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834C); }
+    some<Weapon_t*> Dagger_Nordic_Banish_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834B); }
+    some<Weapon_t*> Dagger_Nordic_Chaos_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C479); }
+    some<Weapon_t*> Dagger_Nordic_Chaos_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47A); }
+    some<Weapon_t*> Dagger_Nordic_Chaos_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47B); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028341); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028340); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833F); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028336); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028335); }
+    some<Weapon_t*> Dagger_Nordic_Damage_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028334); }
+    some<Weapon_t*> Dagger_Nordic_Fear_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02834A); }
+    some<Weapon_t*> Dagger_Nordic_Fear_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028349); }
+    some<Weapon_t*> Dagger_Nordic_Fear_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028348); }
+    some<Weapon_t*> Dagger_Nordic_Fire_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028347); }
+    some<Weapon_t*> Dagger_Nordic_Fire_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028346); }
+    some<Weapon_t*> Dagger_Nordic_Fire_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028345); }
+    some<Weapon_t*> Dagger_Nordic_Frost_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028344); }
+    some<Weapon_t*> Dagger_Nordic_Frost_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028343); }
+    some<Weapon_t*> Dagger_Nordic_Frost_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028342); }
+    some<Weapon_t*> Dagger_Nordic_Paralyze_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833E); }
+    some<Weapon_t*> Dagger_Nordic_Paralyze_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833D); }
+    some<Weapon_t*> Dagger_Nordic_Shock_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833C); }
+    some<Weapon_t*> Dagger_Nordic_Shock_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833B); }
+    some<Weapon_t*> Dagger_Nordic_Shock_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02833A); }
+    some<Weapon_t*> Dagger_Nordic_Soul_Trap_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028339); }
+    some<Weapon_t*> Dagger_Nordic_Soul_Trap_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028338); }
+    some<Weapon_t*> Dagger_Nordic_Soul_Trap_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028337); }
+    some<Weapon_t*> Dagger_Nordic_Turn_Undead_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028333); }
+    some<Weapon_t*> Dagger_Nordic_Turn_Undead_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028332); }
+    some<Weapon_t*> Dagger_Nordic_Turn_Undead_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028331); }
 
     some<Weapon_t*> Dagger_Orcish()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398E); }
     some<Weapon_t*> Dagger_Orcish_Absorb_Health_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA16F); }
@@ -926,6 +1106,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Dagger_Orcish_Turn_Undead_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA144); }
 
     some<Weapon_t*> Dagger_Stalhrim()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB5); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Health_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028480); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Health_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847F); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Health_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847E); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Magicka_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847D); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Magicka_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847C); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Magicka_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847B); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Stamina_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02847A); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Stamina_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028479); }
+    some<Weapon_t*> Dagger_Stalhrim_Absorb_Stamina_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028478); }
+    some<Weapon_t*> Dagger_Stalhrim_Banish_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028477); }
+    some<Weapon_t*> Dagger_Stalhrim_Banish_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028476); }
+    some<Weapon_t*> Dagger_Stalhrim_Banish_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028475); }
+    some<Weapon_t*> Dagger_Stalhrim_Chaos_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028471); }
+    some<Weapon_t*> Dagger_Stalhrim_Chaos_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028470); }
+    some<Weapon_t*> Dagger_Stalhrim_Chaos_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846F); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Magicka_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846B); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Magicka_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846A); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Magicka_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028469); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Stamina_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845F); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Stamina_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845E); }
+    some<Weapon_t*> Dagger_Stalhrim_Damage_Stamina_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845D); }
+    some<Weapon_t*> Dagger_Stalhrim_Fear_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028474); }
+    some<Weapon_t*> Dagger_Stalhrim_Fear_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028473); }
+    some<Weapon_t*> Dagger_Stalhrim_Fear_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028472); }
+    some<Weapon_t*> Dagger_Stalhrim_Frost_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846E); }
+    some<Weapon_t*> Dagger_Stalhrim_Frost_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846D); }
+    some<Weapon_t*> Dagger_Stalhrim_Frost_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02846C); }
+    some<Weapon_t*> Dagger_Stalhrim_Paralyze_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028468); }
+    some<Weapon_t*> Dagger_Stalhrim_Paralyze_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028467); }
+    some<Weapon_t*> Dagger_Stalhrim_Paralyze_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028466); }
+    some<Weapon_t*> Dagger_Stalhrim_Shock_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028465); }
+    some<Weapon_t*> Dagger_Stalhrim_Shock_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028464); }
+    some<Weapon_t*> Dagger_Stalhrim_Shock_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028463); }
+    some<Weapon_t*> Dagger_Stalhrim_Soul_Trap_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028462); }
+    some<Weapon_t*> Dagger_Stalhrim_Soul_Trap_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028461); }
+    some<Weapon_t*> Dagger_Stalhrim_Soul_Trap_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028460); }
+    some<Weapon_t*> Dagger_Stalhrim_Turn_Undead_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845C); }
+    some<Weapon_t*> Dagger_Stalhrim_Turn_Undead_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845B); }
+    some<Weapon_t*> Dagger_Stalhrim_Turn_Undead_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02845A); }
 
     some<Weapon_t*> Dagger_Steel()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013986); }
     some<Weapon_t*> Dagger_Steel_Blade_Of_Woe()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09CCDC); }
@@ -1199,6 +1418,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Greatsword_Iron_Turn_Undead_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0896F8); }
 
     some<Weapon_t*> Greatsword_Nordic()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDAF); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Health_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028330); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Health_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832F); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Health_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832E); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Magicka_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832D); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Magicka_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832C); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Magicka_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832B); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02832A); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028329); }
+    some<Weapon_t*> Greatsword_Nordic_Absorb_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028328); }
+    some<Weapon_t*> Greatsword_Nordic_Banish_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028327); }
+    some<Weapon_t*> Greatsword_Nordic_Banish_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028326); }
+    some<Weapon_t*> Greatsword_Nordic_Chaos_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47C); }
+    some<Weapon_t*> Greatsword_Nordic_Chaos_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47D); }
+    some<Weapon_t*> Greatsword_Nordic_Chaos_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47E); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Magicka_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831C); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Magicka_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831B); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Magicka_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831A); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028311); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028310); }
+    some<Weapon_t*> Greatsword_Nordic_Damage_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830F); }
+    some<Weapon_t*> Greatsword_Nordic_Fear_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028325); }
+    some<Weapon_t*> Greatsword_Nordic_Fear_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028324); }
+    some<Weapon_t*> Greatsword_Nordic_Fear_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028323); }
+    some<Weapon_t*> Greatsword_Nordic_Fire_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028322); }
+    some<Weapon_t*> Greatsword_Nordic_Fire_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028321); }
+    some<Weapon_t*> Greatsword_Nordic_Fire_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028320); }
+    some<Weapon_t*> Greatsword_Nordic_Frost_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831F); }
+    some<Weapon_t*> Greatsword_Nordic_Frost_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831E); }
+    some<Weapon_t*> Greatsword_Nordic_Frost_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02831D); }
+    some<Weapon_t*> Greatsword_Nordic_Paralyze_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028319); }
+    some<Weapon_t*> Greatsword_Nordic_Paralyze_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028318); }
+    some<Weapon_t*> Greatsword_Nordic_Shock_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028317); }
+    some<Weapon_t*> Greatsword_Nordic_Shock_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028316); }
+    some<Weapon_t*> Greatsword_Nordic_Shock_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028315); }
+    some<Weapon_t*> Greatsword_Nordic_Soul_Trap_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028314); }
+    some<Weapon_t*> Greatsword_Nordic_Soul_Trap_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028313); }
+    some<Weapon_t*> Greatsword_Nordic_Soul_Trap_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028312); }
+    some<Weapon_t*> Greatsword_Nordic_Turn_Undead_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830E); }
+    some<Weapon_t*> Greatsword_Nordic_Turn_Undead_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830D); }
+    some<Weapon_t*> Greatsword_Nordic_Turn_Undead_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830C); }
 
     some<Weapon_t*> Greatsword_Orcish()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398F); }
     some<Weapon_t*> Greatsword_Orcish_Absorb_Health_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA178); }
@@ -1239,6 +1498,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Greatsword_Silver_Bloodskal()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01AEA4); }
 
     some<Weapon_t*> Greatsword_Stalhrim()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB6); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028459); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028458); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028457); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Magicka_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028456); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Magicka_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028455); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Magicka_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028454); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028453); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028452); }
+    some<Weapon_t*> Greatsword_Stalhrim_Absorb_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028451); }
+    some<Weapon_t*> Greatsword_Stalhrim_Banish_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028450); }
+    some<Weapon_t*> Greatsword_Stalhrim_Banish_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844F); }
+    some<Weapon_t*> Greatsword_Stalhrim_Banish_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844E); }
+    some<Weapon_t*> Greatsword_Stalhrim_Chaos_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844A); }
+    some<Weapon_t*> Greatsword_Stalhrim_Chaos_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028449); }
+    some<Weapon_t*> Greatsword_Stalhrim_Chaos_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028448); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Magicka_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028444); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Magicka_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028443); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Magicka_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028442); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028438); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028437); }
+    some<Weapon_t*> Greatsword_Stalhrim_Damage_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028436); }
+    some<Weapon_t*> Greatsword_Stalhrim_Fear_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844D); }
+    some<Weapon_t*> Greatsword_Stalhrim_Fear_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844C); }
+    some<Weapon_t*> Greatsword_Stalhrim_Fear_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02844B); }
+    some<Weapon_t*> Greatsword_Stalhrim_Frost_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028447); }
+    some<Weapon_t*> Greatsword_Stalhrim_Frost_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028446); }
+    some<Weapon_t*> Greatsword_Stalhrim_Frost_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028445); }
+    some<Weapon_t*> Greatsword_Stalhrim_Paralyze_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028441); }
+    some<Weapon_t*> Greatsword_Stalhrim_Paralyze_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028440); }
+    some<Weapon_t*> Greatsword_Stalhrim_Paralyze_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843F); }
+    some<Weapon_t*> Greatsword_Stalhrim_Shock_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843E); }
+    some<Weapon_t*> Greatsword_Stalhrim_Shock_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843D); }
+    some<Weapon_t*> Greatsword_Stalhrim_Shock_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843C); }
+    some<Weapon_t*> Greatsword_Stalhrim_Soul_Trap_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843B); }
+    some<Weapon_t*> Greatsword_Stalhrim_Soul_Trap_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02843A); }
+    some<Weapon_t*> Greatsword_Stalhrim_Soul_Trap_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028439); }
+    some<Weapon_t*> Greatsword_Stalhrim_Turn_Undead_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028435); }
+    some<Weapon_t*> Greatsword_Stalhrim_Turn_Undead_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028434); }
+    some<Weapon_t*> Greatsword_Stalhrim_Turn_Undead_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028433); }
 
     some<Weapon_t*> Greatsword_Steel()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013987); }
     some<Weapon_t*> Greatsword_Steel_Balgruuf()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0946FC); }
@@ -1505,6 +1803,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Mace_Iron_Turn_Undead_3()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x05BEF6); }
 
     some<Weapon_t*> Mace_Nordic()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB0); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Health_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830B); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Health_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02830A); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Health_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028309); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Magicka_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028308); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Magicka_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028307); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Magicka_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028306); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Stamina_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028305); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Stamina_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028304); }
+    some<Weapon_t*> Mace_Nordic_Absorb_Stamina_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028303); }
+    some<Weapon_t*> Mace_Nordic_Banish_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028302); }
+    some<Weapon_t*> Mace_Nordic_Banish_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028301); }
+    some<Weapon_t*> Mace_Nordic_Chaos_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C47F); }
+    some<Weapon_t*> Mace_Nordic_Chaos_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C480); }
+    some<Weapon_t*> Mace_Nordic_Chaos_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C481); }
+    some<Weapon_t*> Mace_Nordic_Damage_Magicka_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F7); }
+    some<Weapon_t*> Mace_Nordic_Damage_Magicka_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F6); }
+    some<Weapon_t*> Mace_Nordic_Damage_Magicka_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F5); }
+    some<Weapon_t*> Mace_Nordic_Damage_Stamina_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282EC); }
+    some<Weapon_t*> Mace_Nordic_Damage_Stamina_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282EB); }
+    some<Weapon_t*> Mace_Nordic_Damage_Stamina_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282EA); }
+    some<Weapon_t*> Mace_Nordic_Fear_1()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028300); }
+    some<Weapon_t*> Mace_Nordic_Fear_2()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FF); }
+    some<Weapon_t*> Mace_Nordic_Fear_3()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FE); }
+    some<Weapon_t*> Mace_Nordic_Fire_1()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FD); }
+    some<Weapon_t*> Mace_Nordic_Fire_2()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FC); }
+    some<Weapon_t*> Mace_Nordic_Fire_3()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FB); }
+    some<Weapon_t*> Mace_Nordic_Frost_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282FA); }
+    some<Weapon_t*> Mace_Nordic_Frost_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F9); }
+    some<Weapon_t*> Mace_Nordic_Frost_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F8); }
+    some<Weapon_t*> Mace_Nordic_Paralyze_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F4); }
+    some<Weapon_t*> Mace_Nordic_Paralyze_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F3); }
+    some<Weapon_t*> Mace_Nordic_Shock_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F2); }
+    some<Weapon_t*> Mace_Nordic_Shock_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F1); }
+    some<Weapon_t*> Mace_Nordic_Shock_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282F0); }
+    some<Weapon_t*> Mace_Nordic_Soul_Trap_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282EF); }
+    some<Weapon_t*> Mace_Nordic_Soul_Trap_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282EE); }
+    some<Weapon_t*> Mace_Nordic_Soul_Trap_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282ED); }
+    some<Weapon_t*> Mace_Nordic_Turn_Undead_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E9); }
+    some<Weapon_t*> Mace_Nordic_Turn_Undead_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E8); }
+    some<Weapon_t*> Mace_Nordic_Turn_Undead_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E7); }
 
     some<Weapon_t*> Mace_Orcish()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013990); }
     some<Weapon_t*> Mace_Orcish_Absorb_Health_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA18A); }
@@ -1542,6 +1880,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Mace_Orcish_Turn_Undead_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA1AA); }
 
     some<Weapon_t*> Mace_Stalhrim()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB7); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Health_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028432); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Health_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028431); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Health_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028430); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842F); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842E); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842D); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842C); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842B); }
+    some<Weapon_t*> Mace_Stalhrim_Absorb_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02842A); }
+    some<Weapon_t*> Mace_Stalhrim_Banish_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028429); }
+    some<Weapon_t*> Mace_Stalhrim_Banish_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028428); }
+    some<Weapon_t*> Mace_Stalhrim_Banish_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028427); }
+    some<Weapon_t*> Mace_Stalhrim_Chaos_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028423); }
+    some<Weapon_t*> Mace_Stalhrim_Chaos_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028422); }
+    some<Weapon_t*> Mace_Stalhrim_Chaos_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028421); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841D); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841C); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841B); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028411); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028410); }
+    some<Weapon_t*> Mace_Stalhrim_Damage_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840F); }
+    some<Weapon_t*> Mace_Stalhrim_Fear_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028426); }
+    some<Weapon_t*> Mace_Stalhrim_Fear_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028425); }
+    some<Weapon_t*> Mace_Stalhrim_Fear_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028424); }
+    some<Weapon_t*> Mace_Stalhrim_Frost_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028420); }
+    some<Weapon_t*> Mace_Stalhrim_Frost_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841F); }
+    some<Weapon_t*> Mace_Stalhrim_Frost_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841E); }
+    some<Weapon_t*> Mace_Stalhrim_Paralyze_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02841A); }
+    some<Weapon_t*> Mace_Stalhrim_Paralyze_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028419); }
+    some<Weapon_t*> Mace_Stalhrim_Paralyze_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028418); }
+    some<Weapon_t*> Mace_Stalhrim_Shock_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028417); }
+    some<Weapon_t*> Mace_Stalhrim_Shock_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028416); }
+    some<Weapon_t*> Mace_Stalhrim_Shock_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028415); }
+    some<Weapon_t*> Mace_Stalhrim_Soul_Trap_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028414); }
+    some<Weapon_t*> Mace_Stalhrim_Soul_Trap_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028413); }
+    some<Weapon_t*> Mace_Stalhrim_Soul_Trap_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028412); }
+    some<Weapon_t*> Mace_Stalhrim_Turn_Undead_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840E); }
+    some<Weapon_t*> Mace_Stalhrim_Turn_Undead_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840D); }
+    some<Weapon_t*> Mace_Stalhrim_Turn_Undead_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840C); }
 
     some<Weapon_t*> Mace_Steel()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013988); }
     some<Weapon_t*> Mace_Steel_Damage_Magicka_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A69BA); }
@@ -1967,6 +2344,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Miraak_2()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FB4); }
 
     some<Weapon_t*> Sword_Nordic()                                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB1); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Health_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E6); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Health_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E5); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Health_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E4); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Magicka_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E3); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Magicka_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E2); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Magicka_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E1); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Stamina_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E0); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Stamina_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DF); }
+    some<Weapon_t*> Sword_Nordic_Absorb_Stamina_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DE); }
+    some<Weapon_t*> Sword_Nordic_Banish_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DD); }
+    some<Weapon_t*> Sword_Nordic_Banish_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DC); }
+    some<Weapon_t*> Sword_Nordic_Chaos_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C482); }
+    some<Weapon_t*> Sword_Nordic_Chaos_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C483); }
+    some<Weapon_t*> Sword_Nordic_Chaos_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C484); }
+    some<Weapon_t*> Sword_Nordic_Damage_Magicka_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D2); }
+    some<Weapon_t*> Sword_Nordic_Damage_Magicka_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D1); }
+    some<Weapon_t*> Sword_Nordic_Damage_Magicka_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D0); }
+    some<Weapon_t*> Sword_Nordic_Damage_Stamina_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C7); }
+    some<Weapon_t*> Sword_Nordic_Damage_Stamina_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C6); }
+    some<Weapon_t*> Sword_Nordic_Damage_Stamina_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C5); }
+    some<Weapon_t*> Sword_Nordic_Fear_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DB); }
+    some<Weapon_t*> Sword_Nordic_Fear_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282DA); }
+    some<Weapon_t*> Sword_Nordic_Fear_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D9); }
+    some<Weapon_t*> Sword_Nordic_Fire_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D8); }
+    some<Weapon_t*> Sword_Nordic_Fire_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D7); }
+    some<Weapon_t*> Sword_Nordic_Fire_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D6); }
+    some<Weapon_t*> Sword_Nordic_Frost_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D5); }
+    some<Weapon_t*> Sword_Nordic_Frost_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D4); }
+    some<Weapon_t*> Sword_Nordic_Frost_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282D3); }
+    some<Weapon_t*> Sword_Nordic_Paralyze_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CF); }
+    some<Weapon_t*> Sword_Nordic_Paralyze_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CE); }
+    some<Weapon_t*> Sword_Nordic_Shock_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CD); }
+    some<Weapon_t*> Sword_Nordic_Shock_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CC); }
+    some<Weapon_t*> Sword_Nordic_Shock_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CB); }
+    some<Weapon_t*> Sword_Nordic_Soul_Trap_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282CA); }
+    some<Weapon_t*> Sword_Nordic_Soul_Trap_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C9); }
+    some<Weapon_t*> Sword_Nordic_Soul_Trap_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C8); }
+    some<Weapon_t*> Sword_Nordic_Turn_Undead_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C4); }
+    some<Weapon_t*> Sword_Nordic_Turn_Undead_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C3); }
+    some<Weapon_t*> Sword_Nordic_Turn_Undead_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C2); }
 
     some<Weapon_t*> Sword_Orcish()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013991); }
     some<Weapon_t*> Sword_Orcish_Absorb_Health_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA1AB); }
@@ -2006,6 +2423,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Silver()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10AA19); }
 
     some<Weapon_t*> Sword_Stalhrim()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB8); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Health_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840B); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Health_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02840A); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Health_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028409); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Magicka_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028408); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Magicka_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028407); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Magicka_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028406); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Stamina_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028405); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Stamina_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028404); }
+    some<Weapon_t*> Sword_Stalhrim_Absorb_Stamina_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028403); }
+    some<Weapon_t*> Sword_Stalhrim_Banish_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028402); }
+    some<Weapon_t*> Sword_Stalhrim_Banish_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028401); }
+    some<Weapon_t*> Sword_Stalhrim_Banish_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028400); }
+    some<Weapon_t*> Sword_Stalhrim_Chaos_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FC); }
+    some<Weapon_t*> Sword_Stalhrim_Chaos_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FB); }
+    some<Weapon_t*> Sword_Stalhrim_Chaos_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FA); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Magicka_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F6); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Magicka_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F5); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Magicka_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F4); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Stamina_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283EA); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Stamina_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E9); }
+    some<Weapon_t*> Sword_Stalhrim_Damage_Stamina_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E8); }
+    some<Weapon_t*> Sword_Stalhrim_Fear_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FF); }
+    some<Weapon_t*> Sword_Stalhrim_Fear_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FE); }
+    some<Weapon_t*> Sword_Stalhrim_Fear_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283FD); }
+    some<Weapon_t*> Sword_Stalhrim_Frost_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F9); }
+    some<Weapon_t*> Sword_Stalhrim_Frost_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F8); }
+    some<Weapon_t*> Sword_Stalhrim_Frost_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F7); }
+    some<Weapon_t*> Sword_Stalhrim_Paralyze_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F3); }
+    some<Weapon_t*> Sword_Stalhrim_Paralyze_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F2); }
+    some<Weapon_t*> Sword_Stalhrim_Paralyze_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F1); }
+    some<Weapon_t*> Sword_Stalhrim_Shock_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283F0); }
+    some<Weapon_t*> Sword_Stalhrim_Shock_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283EF); }
+    some<Weapon_t*> Sword_Stalhrim_Shock_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283EE); }
+    some<Weapon_t*> Sword_Stalhrim_Soul_Trap_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283ED); }
+    some<Weapon_t*> Sword_Stalhrim_Soul_Trap_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283EC); }
+    some<Weapon_t*> Sword_Stalhrim_Soul_Trap_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283EB); }
+    some<Weapon_t*> Sword_Stalhrim_Turn_Undead_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E7); }
+    some<Weapon_t*> Sword_Stalhrim_Turn_Undead_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E6); }
+    some<Weapon_t*> Sword_Stalhrim_Turn_Undead_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E5); }
 
     some<Weapon_t*> Sword_Steel()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013989); }
     some<Weapon_t*> Sword_Steel_Blades()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03AEB9); }
@@ -2335,6 +2791,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Iron_Woodcutter()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x02F2F4); }
 
     some<Weapon_t*> Waraxe_Nordic()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB2); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Health_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C1); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Health_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282C0); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Health_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BF); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BE); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BD); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BC); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BB); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282BA); }
+    some<Weapon_t*> Waraxe_Nordic_Absorb_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B9); }
+    some<Weapon_t*> Waraxe_Nordic_Banish_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B8); }
+    some<Weapon_t*> Waraxe_Nordic_Banish_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B7); }
+    some<Weapon_t*> Waraxe_Nordic_Chaos_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C485); }
+    some<Weapon_t*> Waraxe_Nordic_Chaos_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C486); }
+    some<Weapon_t*> Waraxe_Nordic_Chaos_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C487); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Magicka_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AD); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Magicka_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AC); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Magicka_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AB); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Stamina_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A2); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Stamina_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A1); }
+    some<Weapon_t*> Waraxe_Nordic_Damage_Stamina_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A0); }
+    some<Weapon_t*> Waraxe_Nordic_Fear_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B6); }
+    some<Weapon_t*> Waraxe_Nordic_Fear_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B5); }
+    some<Weapon_t*> Waraxe_Nordic_Fear_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B4); }
+    some<Weapon_t*> Waraxe_Nordic_Fire_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B3); }
+    some<Weapon_t*> Waraxe_Nordic_Fire_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B2); }
+    some<Weapon_t*> Waraxe_Nordic_Fire_3()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B1); }
+    some<Weapon_t*> Waraxe_Nordic_Frost_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282B0); }
+    some<Weapon_t*> Waraxe_Nordic_Frost_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AF); }
+    some<Weapon_t*> Waraxe_Nordic_Frost_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AE); }
+    some<Weapon_t*> Waraxe_Nordic_Paralyze_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282AA); }
+    some<Weapon_t*> Waraxe_Nordic_Paralyze_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A9); }
+    some<Weapon_t*> Waraxe_Nordic_Shock_1()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A8); }
+    some<Weapon_t*> Waraxe_Nordic_Shock_2()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A7); }
+    some<Weapon_t*> Waraxe_Nordic_Shock_3()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A6); }
+    some<Weapon_t*> Waraxe_Nordic_Soul_Trap_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A5); }
+    some<Weapon_t*> Waraxe_Nordic_Soul_Trap_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A4); }
+    some<Weapon_t*> Waraxe_Nordic_Soul_Trap_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282A3); }
+    some<Weapon_t*> Waraxe_Nordic_Turn_Undead_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829F); }
+    some<Weapon_t*> Waraxe_Nordic_Turn_Undead_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829E); }
+    some<Weapon_t*> Waraxe_Nordic_Turn_Undead_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829D); }
 
     some<Weapon_t*> Waraxe_Orcish()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398B); }
     some<Weapon_t*> Waraxe_Orcish_Absorb_Health_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA1C9); }
@@ -2372,6 +2868,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Orcish_Turn_Undead_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA1EA); }
 
     some<Weapon_t*> Waraxe_Stalhrim()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB9); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Health_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E4); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Health_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E3); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Health_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E2); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Magicka_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E1); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Magicka_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283E0); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Magicka_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DF); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Stamina_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DE); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Stamina_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DD); }
+    some<Weapon_t*> Waraxe_Stalhrim_Absorb_Stamina_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DC); }
+    some<Weapon_t*> Waraxe_Stalhrim_Banish_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DB); }
+    some<Weapon_t*> Waraxe_Stalhrim_Banish_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283DA); }
+    some<Weapon_t*> Waraxe_Stalhrim_Banish_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D9); }
+    some<Weapon_t*> Waraxe_Stalhrim_Chaos_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D5); }
+    some<Weapon_t*> Waraxe_Stalhrim_Chaos_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D4); }
+    some<Weapon_t*> Waraxe_Stalhrim_Chaos_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D3); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Magicka_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CF); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Magicka_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CE); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Magicka_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CD); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Stamina_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C3); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Stamina_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C2); }
+    some<Weapon_t*> Waraxe_Stalhrim_Damage_Stamina_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C1); }
+    some<Weapon_t*> Waraxe_Stalhrim_Fear_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D8); }
+    some<Weapon_t*> Waraxe_Stalhrim_Fear_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D7); }
+    some<Weapon_t*> Waraxe_Stalhrim_Fear_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D6); }
+    some<Weapon_t*> Waraxe_Stalhrim_Frost_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D2); }
+    some<Weapon_t*> Waraxe_Stalhrim_Frost_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D1); }
+    some<Weapon_t*> Waraxe_Stalhrim_Frost_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283D0); }
+    some<Weapon_t*> Waraxe_Stalhrim_Paralyze_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CC); }
+    some<Weapon_t*> Waraxe_Stalhrim_Paralyze_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CB); }
+    some<Weapon_t*> Waraxe_Stalhrim_Paralyze_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283CA); }
+    some<Weapon_t*> Waraxe_Stalhrim_Shock_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C9); }
+    some<Weapon_t*> Waraxe_Stalhrim_Shock_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C8); }
+    some<Weapon_t*> Waraxe_Stalhrim_Shock_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C7); }
+    some<Weapon_t*> Waraxe_Stalhrim_Soul_Trap_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C6); }
+    some<Weapon_t*> Waraxe_Stalhrim_Soul_Trap_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C5); }
+    some<Weapon_t*> Waraxe_Stalhrim_Soul_Trap_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C4); }
+    some<Weapon_t*> Waraxe_Stalhrim_Turn_Undead_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283C0); }
+    some<Weapon_t*> Waraxe_Stalhrim_Turn_Undead_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BF); }
+    some<Weapon_t*> Waraxe_Stalhrim_Turn_Undead_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BE); }
 
     some<Weapon_t*> Waraxe_Steel()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013983); }
     some<Weapon_t*> Waraxe_Steel_Damage_Magicka_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A69D9); }
@@ -2632,6 +3167,46 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Warhammer_Iron_Turn_Undead_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0896FB); }
 
     some<Weapon_t*> Warhammer_Nordic()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB3); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Health_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829C); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Health_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829B); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Health_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02829A); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Magicka_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028299); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Magicka_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028298); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Magicka_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028297); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Stamina_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028296); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Stamina_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028295); }
+    some<Weapon_t*> Warhammer_Nordic_Absorb_Stamina_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028294); }
+    some<Weapon_t*> Warhammer_Nordic_Banish_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028293); }
+    some<Weapon_t*> Warhammer_Nordic_Banish_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028292); }
+    some<Weapon_t*> Warhammer_Nordic_Chaos_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C488); }
+    some<Weapon_t*> Warhammer_Nordic_Chaos_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C489); }
+    some<Weapon_t*> Warhammer_Nordic_Chaos_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02C48A); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Magicka_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028288); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Magicka_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028287); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Magicka_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028286); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Stamina_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827D); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Stamina_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827C); }
+    some<Weapon_t*> Warhammer_Nordic_Damage_Stamina_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827B); }
+    some<Weapon_t*> Warhammer_Nordic_Fear_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028291); }
+    some<Weapon_t*> Warhammer_Nordic_Fear_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028290); }
+    some<Weapon_t*> Warhammer_Nordic_Fear_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828F); }
+    some<Weapon_t*> Warhammer_Nordic_Fire_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828E); }
+    some<Weapon_t*> Warhammer_Nordic_Fire_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828D); }
+    some<Weapon_t*> Warhammer_Nordic_Fire_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828C); }
+    some<Weapon_t*> Warhammer_Nordic_Frost_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828B); }
+    some<Weapon_t*> Warhammer_Nordic_Frost_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02828A); }
+    some<Weapon_t*> Warhammer_Nordic_Frost_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028289); }
+    some<Weapon_t*> Warhammer_Nordic_Paralyze_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028285); }
+    some<Weapon_t*> Warhammer_Nordic_Paralyze_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028284); }
+    some<Weapon_t*> Warhammer_Nordic_Shock_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028283); }
+    some<Weapon_t*> Warhammer_Nordic_Shock_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028282); }
+    some<Weapon_t*> Warhammer_Nordic_Shock_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028281); }
+    some<Weapon_t*> Warhammer_Nordic_Soul_Trap_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028280); }
+    some<Weapon_t*> Warhammer_Nordic_Soul_Trap_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827F); }
+    some<Weapon_t*> Warhammer_Nordic_Soul_Trap_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827E); }
+    some<Weapon_t*> Warhammer_Nordic_Turn_Undead_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02827A); }
+    some<Weapon_t*> Warhammer_Nordic_Turn_Undead_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028279); }
+    some<Weapon_t*> Warhammer_Nordic_Turn_Undead_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028278); }
 
     some<Weapon_t*> Warhammer_Orcish()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013992); }
     some<Weapon_t*> Warhammer_Orcish_Absorb_Health_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA1EB); }
@@ -2671,6 +3246,45 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Warhammer_Orcish_Turn_Undead_3()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AA20B); }
 
     some<Weapon_t*> Warhammer_Stalhrim()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDBA); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Health_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BD); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Health_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BC); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Health_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BB); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283BA); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B9); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B8); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Stamina_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B7); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Stamina_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B6); }
+    some<Weapon_t*> Warhammer_Stalhrim_Absorb_Stamina_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B5); }
+    some<Weapon_t*> Warhammer_Stalhrim_Banish_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B4); }
+    some<Weapon_t*> Warhammer_Stalhrim_Banish_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B3); }
+    some<Weapon_t*> Warhammer_Stalhrim_Banish_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B2); }
+    some<Weapon_t*> Warhammer_Stalhrim_Chaos_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AE); }
+    some<Weapon_t*> Warhammer_Stalhrim_Chaos_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AD); }
+    some<Weapon_t*> Warhammer_Stalhrim_Chaos_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AC); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A8); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A7); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A6); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Stamina_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839C); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Stamina_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839B); }
+    some<Weapon_t*> Warhammer_Stalhrim_Damage_Stamina_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839A); }
+    some<Weapon_t*> Warhammer_Stalhrim_Fear_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B1); }
+    some<Weapon_t*> Warhammer_Stalhrim_Fear_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283B0); }
+    some<Weapon_t*> Warhammer_Stalhrim_Fear_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AF); }
+    some<Weapon_t*> Warhammer_Stalhrim_Frost_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AB); }
+    some<Weapon_t*> Warhammer_Stalhrim_Frost_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283AA); }
+    some<Weapon_t*> Warhammer_Stalhrim_Frost_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A9); }
+    some<Weapon_t*> Warhammer_Stalhrim_Paralyze_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A5); }
+    some<Weapon_t*> Warhammer_Stalhrim_Paralyze_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A4); }
+    some<Weapon_t*> Warhammer_Stalhrim_Paralyze_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A3); }
+    some<Weapon_t*> Warhammer_Stalhrim_Shock_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A2); }
+    some<Weapon_t*> Warhammer_Stalhrim_Shock_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A1); }
+    some<Weapon_t*> Warhammer_Stalhrim_Shock_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0283A0); }
+    some<Weapon_t*> Warhammer_Stalhrim_Soul_Trap_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839F); }
+    some<Weapon_t*> Warhammer_Stalhrim_Soul_Trap_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839E); }
+    some<Weapon_t*> Warhammer_Stalhrim_Soul_Trap_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x02839D); }
+    some<Weapon_t*> Warhammer_Stalhrim_Turn_Undead_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028399); }
+    some<Weapon_t*> Warhammer_Stalhrim_Turn_Undead_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028398); }
+    some<Weapon_t*> Warhammer_Stalhrim_Turn_Undead_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028397); }
 
     some<Weapon_t*> Warhammer_Steel()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01398A); }
     some<Weapon_t*> Warhammer_Steel_Damage_Magicka_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A69A9); }
