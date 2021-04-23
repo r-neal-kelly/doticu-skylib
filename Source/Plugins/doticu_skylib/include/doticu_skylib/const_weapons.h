@@ -3331,5 +3331,9 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
 
     Vector_t<some<Weapon_t*>>   Battleaxes_Ancient_Nordic();
     void                        Battleaxes_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results);
+    Vector_t<some<Weapon_t*>>   Battleaxes_Ash_Spawn();
+    void                        Battleaxes_Ash_Spawn(Vector_t<some<Weapon_t*>>& results);
+    Vector_t<some<Weapon_t*>>   Battleaxes_Bound();
+    void                        Battleaxes_Bound(Vector_t<some<Weapon_t*>>& results);
 
 }}}

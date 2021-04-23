@@ -55,6 +55,8 @@ namespace doticu_skylib {
         Magic_Type_e            magic_type;             // C8
         Float_t                 charge_time;            // CC
         Magic_Cast_Type_e       magic_cast_type;        // D0
+        u8                      pad_D1;                 // D1
+        u16                     pad_D2;                 // D2
         Magic_Delivery_Type_e   magic_delivery_type;    // D4
         Float_t                 cast_duration;          // D8
         Float_t                 range;                  // DC

@@ -33,6 +33,8 @@ namespace doticu_skylib {
         s32                     cost_override;          // 90
         Enchantment_Flags_e     enchantment_flags;      // 94
         Magic_Cast_Type_e       magic_cast_type;        // 98
+        u8                      pad_99;                 // 99
+        u16                     pad_9A;                 // 9A
         s32                     charge_override;        // 9C
         Magic_Delivery_Type_e   magic_delivery_type;    // A0
         Magic_Type_e            magic_type;             // A4

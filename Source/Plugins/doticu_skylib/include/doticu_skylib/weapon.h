@@ -127,6 +127,8 @@ namespace doticu_skylib {
         u32                         pad_21C;                // 21C
 
     public:
+        Bool_t  Is_Enchanted() const;
+
         Bool_t  Is_Sword() const;
         Bool_t  Is_Greatsword() const;
         Bool_t  Is_Waraxe() const;
@@ -162,7 +164,7 @@ namespace doticu_skylib {
         Bool_t  Is_Daedric_Artifact() const;
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Weapon_t) == 0x220);
 

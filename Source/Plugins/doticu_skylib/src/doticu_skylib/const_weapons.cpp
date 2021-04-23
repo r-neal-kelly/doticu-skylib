@@ -3333,7 +3333,6 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
     void Battleaxes_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
     {
         results.reserve(15);
-
         results.push_back(Weapon::Battleaxe_Ancient_Nordic());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Drainblood());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Frost_1());
@@ -3349,6 +3348,33 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Tsun_3());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Tsun_4());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Wuuthrad());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxes_Ash_Spawn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxes_Ash_Spawn(results);
+        return results;
+    }
+
+    void Battleaxes_Ash_Spawn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.reserve(1);
+        results.push_back(Weapon::Battleaxe_Ash_Spawn());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxes_Bound()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxes_Bound(results);
+        return results;
+    }
+
+    void Battleaxes_Bound(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.reserve(2);
+        results.push_back(Weapon::Battleaxe_Bound());
+        results.push_back(Weapon::Battleaxe_Bound_Mystic());
     }
 
 }}}

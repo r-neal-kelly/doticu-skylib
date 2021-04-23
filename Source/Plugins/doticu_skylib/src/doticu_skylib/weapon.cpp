@@ -8,6 +8,11 @@
 
 namespace doticu_skylib {
 
+    Bool_t Weapon_t::Is_Enchanted() const
+    {
+        return !!this->enchantment;
+    }
+
     Bool_t Weapon_t::Is_Sword() const
     {
         return Component_Has_Keyword(Const::Keyword::Weapon_Type_Sword());

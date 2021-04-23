@@ -77,6 +77,8 @@ namespace doticu_skylib {
         maybe<Projectile_t*>            projectile;                 // 0C8
         maybe<Explosion_t*>             explosion;                  // 0D0
         Magic_Cast_Type_e               magic_cast_type;            // 0D8
+        u8                              pad_0D9;                    // 0D9
+        u16                             pad_0DA;                    // 0DA
         Magic_Delivery_Type_e           magic_delivery_type;        // 0DC
         Actor_Value_Type_e              secondary_actor_value;      // 0E0
         u32                             pad_0E4;                    // 0E4
