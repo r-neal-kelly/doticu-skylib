@@ -273,6 +273,11 @@ namespace doticu_skylib {
             qsort(data() + begin, end - begin, sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
 
+        Type& Random()
+        {
+            return at(Math_t::Random<size_t>(0, size() - 1));
+        }
+
         Bool_t Unstable_Remove(const Type& item)
         {
             size_t count = size();

@@ -7,6 +7,10 @@
 
 namespace doticu_skylib {
 
+    std::random_device  Math_t::random_device;
+    std::mt19937_64     Math_t::random_generator(Math_t::random_device());
+    std::mutex          Math_t::random_lock;
+
     u32 CRC32_Hash_t::Hash(void* value, u32 size)
     {
         static auto hash_size = reinterpret_cast

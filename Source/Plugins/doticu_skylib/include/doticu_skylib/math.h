@@ -4,9 +4,12 @@
 
 #pragma once
 
-#include <limits>
 #undef max
 #undef min
+
+#include <limits>
+#include <mutex>
+#include <random>
 
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
@@ -50,6 +53,28 @@ namespace doticu_skylib {
         } else {
             return value;
         }
+    }
+
+    class Math_t
+    {
+    public:
+        static std::random_device   random_device;
+        static std::mt19937_64      random_generator;
+        static std::mutex           random_lock;
+
+    public:
+        template <typename T>
+        static T Random(T min, T max)
+        {
+            std::lock_guard<std::mutex> random_locker(random_lock);
+            return std::uniform_int_distribution<T>(min, max)(Math_t::random_generator);
+        }
+    };
+
+    template <typename T>
+    inline T Random(T min, T max)
+    {
+
     }
 
     class CRC32_Hash_t
