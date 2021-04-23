@@ -18,13 +18,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
 
-    some<Armor_t*>  Amulet_Articulation_0();
     some<Armor_t*>  Amulet_Articulation_1();
     some<Armor_t*>  Amulet_Articulation_2();
     some<Armor_t*>  Amulet_Articulation_3();
     some<Armor_t*>  Amulet_Articulation_4();
     some<Armor_t*>  Amulet_Articulation_5();
     some<Armor_t*>  Amulet_Articulation_6();
+    some<Armor_t*>  Amulet_Articulation_7();
     some<Armor_t*>  Amulet_Articulation_Unenchanted();
 
     some<Armor_t*>  Amulet_Bone_Hawk();
@@ -42,11 +42,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Divine_Zenithar();
     some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee();
 
-    some<Armor_t*>  Amulet_East_Empire_Company_0();
     some<Armor_t*>  Amulet_East_Empire_Company_1();
+    some<Armor_t*>  Amulet_East_Empire_Company_2();
 
-    some<Armor_t*>  Amulet_Elder_Council_0();
     some<Armor_t*>  Amulet_Elder_Council_1();
+    some<Armor_t*>  Amulet_Elder_Council_2();
 
     some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
 
@@ -219,8 +219,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Aetherial_Shield();
 
     some<Armor_t*>  Armor_Ancient_Falmer_Boots();
-    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_0();
     some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_1();
+    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_2();
     some<Armor_t*>  Armor_Ancient_Falmer_Gauntlets();
     some<Armor_t*>  Armor_Ancient_Falmer_Helmet();
     some<Armor_t*>  Armor_Ancient_Falmer_Shield_Auriels();
@@ -662,8 +662,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dawnguard_Shield_Rune();
 
     some<Armor_t*>  Armor_Dawnguard_Heavy_Boots();
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_0();
     some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_1();
+    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_2();
     some<Armor_t*>  Armor_Dawnguard_Heavy_Gauntlets();
     some<Armor_t*>  Armor_Dawnguard_Heavy_Helmet();
 
@@ -672,9 +672,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dawnguard_Hunter_Gauntlets();
 
     some<Armor_t*>  Armor_Dawnguard_Light_Boots();
-    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_0();
     some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_1();
     some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_2();
+    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_3();
     some<Armor_t*>  Armor_Dawnguard_Light_Gauntlets();
     some<Armor_t*>  Armor_Dawnguard_Light_Helmet();
 
@@ -1318,10 +1318,10 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Forsworn_Old_Gods_Helmet();
 
     some<Armor_t*>  Armor_Fur_Boots();
-    some<Armor_t*>  Armor_Fur_Cuirass_0();
     some<Armor_t*>  Armor_Fur_Cuirass_1();
     some<Armor_t*>  Armor_Fur_Cuirass_2();
     some<Armor_t*>  Armor_Fur_Cuirass_3();
+    some<Armor_t*>  Armor_Fur_Cuirass_4();
     some<Armor_t*>  Armor_Fur_Gauntlets();
     some<Armor_t*>  Armor_Fur_Helmet();
 
@@ -1479,11 +1479,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Guard_Solitude_Cuirass();
     some<Armor_t*>  Armor_Guard_Solitude_Helmet();
     some<Armor_t*>  Armor_Guard_Solitude_Shield();
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_0();
     some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_1();
     some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_2();
     some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_3();
     some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_4();
+    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_5();
 
     some<Armor_t*>  Armor_Guard_Whiterun_Cuirass();
     some<Armor_t*>  Armor_Guard_Whiterun_Helmet();
@@ -1491,8 +1491,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Guard_Windhelm_Cuirass();
     some<Armor_t*>  Armor_Guard_Windhelm_Cuirass_Sleeved();
-    some<Armor_t*>  Armor_Guard_Windhelm_Helmet_0();
     some<Armor_t*>  Armor_Guard_Windhelm_Helmet_1();
+    some<Armor_t*>  Armor_Guard_Windhelm_Helmet_2();
     some<Armor_t*>  Armor_Guard_Windhelm_Shield();
 
     some<Armor_t*>  Armor_Guard_Winterhold_Cuirass();
@@ -1670,8 +1670,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Gauntlets_Two_Handed_2();
     some<Armor_t*>  Armor_Imperial_Gauntlets_Two_Handed_3();
 
-    some<Armor_t*>  Armor_Imperial_Helmet_0();
     some<Armor_t*>  Armor_Imperial_Helmet_1();
+    some<Armor_t*>  Armor_Imperial_Helmet_2();
     some<Armor_t*>  Armor_Imperial_Helmet_Alchemy_1();
     some<Armor_t*>  Armor_Imperial_Helmet_Alchemy_2();
     some<Armor_t*>  Armor_Imperial_Helmet_Alchemy_3();
@@ -2045,11 +2045,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Nightingale_Gauntlets();
     some<Armor_t*>  Armor_Nightingale_Helmet();
 
-    some<Armor_t*>  Armor_Nightingale_Player_0_Boots();
-    some<Armor_t*>  Armor_Nightingale_Player_0_Cuirass();
-    some<Armor_t*>  Armor_Nightingale_Player_0_Gauntlets();
-    some<Armor_t*>  Armor_Nightingale_Player_0_Helmet();
-
     some<Armor_t*>  Armor_Nightingale_Player_1_Boots();
     some<Armor_t*>  Armor_Nightingale_Player_1_Cuirass();
     some<Armor_t*>  Armor_Nightingale_Player_1_Gauntlets();
@@ -2059,6 +2054,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Nightingale_Player_2_Cuirass();
     some<Armor_t*>  Armor_Nightingale_Player_2_Gauntlets();
     some<Armor_t*>  Armor_Nightingale_Player_2_Helmet();
+
+    some<Armor_t*>  Armor_Nightingale_Player_3_Boots();
+    some<Armor_t*>  Armor_Nightingale_Player_3_Cuirass();
+    some<Armor_t*>  Armor_Nightingale_Player_3_Gauntlets();
+    some<Armor_t*>  Armor_Nightingale_Player_3_Helmet();
 
     some<Armor_t*>  Armor_Nordic_Shield();
     some<Armor_t*>  Armor_Nordic_Shield_Block_1();
@@ -2614,8 +2614,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Boots_Stamina_2();
     some<Armor_t*>  Armor_Steel_Boots_Stamina_3();
 
-    some<Armor_t*>  Armor_Steel_Cuirass_0();
     some<Armor_t*>  Armor_Steel_Cuirass_1();
+    some<Armor_t*>  Armor_Steel_Cuirass_2();
     some<Armor_t*>  Armor_Steel_Cuirass_Alteration_1();
     some<Armor_t*>  Armor_Steel_Cuirass_Alteration_2();
     some<Armor_t*>  Armor_Steel_Cuirass_Alteration_3();
@@ -2811,8 +2811,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Cuirass();
     some<Armor_t*>  Armor_Thieves_Guild_Gauntlets();
     some<Armor_t*>  Armor_Thieves_Guild_Helmet();
-    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_0();
     some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_1();
+    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_2();
 
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Boots();
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Cuirass();
@@ -2846,8 +2846,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Boots();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Cuirass();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Gauntlets();
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_0();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_1();
+    some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_2();
 
     some<Armor_t*>  Armor_Vampire_Boots();
 
@@ -2943,11 +2943,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Jade_And_Sapphire();
 
     some<Armor_t*>  Circlet_Silver_And_Moonstone();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_0();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_5();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_1();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_2();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_3();
@@ -2966,16 +2966,16 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Bandages_Hands();
     some<Armor_t*>  Clothes_Bandages_Head();
 
-    some<Armor_t*>  Clothes_Bar_Keeper_Body_0();
     some<Armor_t*>  Clothes_Bar_Keeper_Body_1();
+    some<Armor_t*>  Clothes_Bar_Keeper_Body_2();
     some<Armor_t*>  Clothes_Bar_Keeper_Feet();
 
     some<Armor_t*>  Clothes_Beggar_Body();
     some<Armor_t*>  Clothes_Beggar_Feet();
     some<Armor_t*>  Clothes_Beggar_Head();
 
-    some<Armor_t*>  Clothes_Black_Smith_Body_0();
     some<Armor_t*>  Clothes_Black_Smith_Body_1();
+    some<Armor_t*>  Clothes_Black_Smith_Body_2();
     some<Armor_t*>  Clothes_Black_Smith_Feet();
 
     some<Armor_t*>  Clothes_Blind_Priest_Body();
@@ -2986,18 +2986,18 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Chef_Feet();
     some<Armor_t*>  Clothes_Chef_Head();
 
-    some<Armor_t*>  Clothes_Child_Body_0();
     some<Armor_t*>  Clothes_Child_Body_1();
     some<Armor_t*>  Clothes_Child_Body_2();
     some<Armor_t*>  Clothes_Child_Body_3();
     some<Armor_t*>  Clothes_Child_Body_4();
+    some<Armor_t*>  Clothes_Child_Body_5();
     some<Armor_t*>  Clothes_Child_Feet();
 
     some<Armor_t*>  Clothes_Child_Skaal_Body();
     some<Armor_t*>  Clothes_Child_Skaal_Feet();
 
-    some<Armor_t*>  Clothes_Cultist_Body_0();
     some<Armor_t*>  Clothes_Cultist_Body_1();
+    some<Armor_t*>  Clothes_Cultist_Body_2();
     some<Armor_t*>  Clothes_Cultist_Feet();
     some<Armor_t*>  Clothes_Cultist_Hands();
     some<Armor_t*>  Clothes_Cultist_Head();
@@ -3039,8 +3039,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Emperor_Body();
 
-    some<Armor_t*>  Clothes_Execution_Head_0();
     some<Armor_t*>  Clothes_Execution_Head_1();
+    some<Armor_t*>  Clothes_Execution_Head_2();
 
     some<Armor_t*>  Clothes_Executioner_Body();
     some<Armor_t*>  Clothes_Executioner_Feet();
@@ -3051,30 +3051,30 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Farm_1_Feet();
     some<Armor_t*>  Clothes_Farm_1_Head();
 
-    some<Armor_t*>  Clothes_Farm_2_Body_0();
     some<Armor_t*>  Clothes_Farm_2_Body_1();
+    some<Armor_t*>  Clothes_Farm_2_Body_2();
     some<Armor_t*>  Clothes_Farm_2_Feet();
     some<Armor_t*>  Clothes_Farm_2_Head();
 
-    some<Armor_t*>  Clothes_Farm_3_Body_0();
     some<Armor_t*>  Clothes_Farm_3_Body_1();
     some<Armor_t*>  Clothes_Farm_3_Body_2();
+    some<Armor_t*>  Clothes_Farm_3_Body_3();
     some<Armor_t*>  Clothes_Farm_3_Feet();
     some<Armor_t*>  Clothes_Farm_3_Hands();
     some<Armor_t*>  Clothes_Farm_3_Head();
     some<Armor_t*>  Clothes_Farm_3_Head_Cowl();
 
-    some<Armor_t*>  Clothes_Farm_4_Body_0();
     some<Armor_t*>  Clothes_Farm_4_Body_1();
+    some<Armor_t*>  Clothes_Farm_4_Body_2();
     some<Armor_t*>  Clothes_Farm_4_Feet();
 
-    some<Armor_t*>  Clothes_Fine_1_Body_0();
     some<Armor_t*>  Clothes_Fine_1_Body_1();
+    some<Armor_t*>  Clothes_Fine_1_Body_2();
     some<Armor_t*>  Clothes_Fine_1_Body_Radiant_Raiment();
     some<Armor_t*>  Clothes_Fine_1_Feet();
 
-    some<Armor_t*>  Clothes_Fine_2_Body_0();
     some<Armor_t*>  Clothes_Fine_2_Body_1();
+    some<Armor_t*>  Clothes_Fine_2_Body_2();
     some<Armor_t*>  Clothes_Fine_2_Body_Party();
     some<Armor_t*>  Clothes_Fine_2_Feet();
     some<Armor_t*>  Clothes_Fine_2_Feet_Party();
@@ -3089,18 +3089,18 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Ildari_Body();
 
-    some<Armor_t*>  Clothes_Jarl_1_Body_0();
     some<Armor_t*>  Clothes_Jarl_1_Body_1();
+    some<Armor_t*>  Clothes_Jarl_1_Body_2();
     some<Armor_t*>  Clothes_Jarl_1_Feet();
     some<Armor_t*>  Clothes_Jarl_1_Hands();
 
-    some<Armor_t*>  Clothes_Jarl_2_Body_0();
     some<Armor_t*>  Clothes_Jarl_2_Body_1();
+    some<Armor_t*>  Clothes_Jarl_2_Body_2();
     some<Armor_t*>  Clothes_Jarl_2_Feet();
     some<Armor_t*>  Clothes_Jarl_2_Hands();
 
-    some<Armor_t*>  Clothes_Jarl_3_Body_0();
     some<Armor_t*>  Clothes_Jarl_3_Body_1();
+    some<Armor_t*>  Clothes_Jarl_3_Body_2();
     some<Armor_t*>  Clothes_Jarl_3_Feet();
 
     some<Armor_t*>  Clothes_Mage_Adept_Body();
@@ -3159,30 +3159,30 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Mage_Novice_Head();
     some<Armor_t*>  Clothes_Mage_Novice_Head_Magicka();
 
-    some<Armor_t*>  Clothes_Merchant_Body_0();
     some<Armor_t*>  Clothes_Merchant_Body_1();
+    some<Armor_t*>  Clothes_Merchant_Body_2();
     some<Armor_t*>  Clothes_Merchant_Feet();
     some<Armor_t*>  Clothes_Merchant_Head();
 
-    some<Armor_t*>  Clothes_Miner_Body_0();
     some<Armor_t*>  Clothes_Miner_Body_1();
+    some<Armor_t*>  Clothes_Miner_Body_2();
     some<Armor_t*>  Clothes_Miner_Body_Sleep();
     some<Armor_t*>  Clothes_Miner_Feet();
 
-    some<Armor_t*>  Clothes_Miraak_Body_0();
     some<Armor_t*>  Clothes_Miraak_Body_1();
-    some<Armor_t*>  Clothes_Miraak_Body_Reward_0();
+    some<Armor_t*>  Clothes_Miraak_Body_2();
     some<Armor_t*>  Clothes_Miraak_Body_Reward_1();
     some<Armor_t*>  Clothes_Miraak_Body_Reward_2();
+    some<Armor_t*>  Clothes_Miraak_Body_Reward_3();
     some<Armor_t*>  Clothes_Miraak_Feet();
     some<Armor_t*>  Clothes_Miraak_Hands();
     some<Armor_t*>  Clothes_Miraak_Head();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_0();
     some<Armor_t*>  Clothes_Miraak_Head_Reward_1();
     some<Armor_t*>  Clothes_Miraak_Head_Reward_2();
     some<Armor_t*>  Clothes_Miraak_Head_Reward_3();
     some<Armor_t*>  Clothes_Miraak_Head_Reward_4();
     some<Armor_t*>  Clothes_Miraak_Head_Reward_5();
+    some<Armor_t*>  Clothes_Miraak_Head_Reward_6();
 
     some<Armor_t*>  Clothes_Monk_Body();
     some<Armor_t*>  Clothes_Monk_Body_Hooded();
@@ -3445,9 +3445,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Daedric_Spellbreaker();
     some<Armor_t*>  Daedric_Vaermina_Robes();
 
-    some<Armor_t*>  FX_Dragonborn_Aspect_0();
     some<Armor_t*>  FX_Dragonborn_Aspect_1();
     some<Armor_t*>  FX_Dragonborn_Aspect_2();
+    some<Armor_t*>  FX_Dragonborn_Aspect_3();
 
     some<Armor_t*>  Ring_Bone_Hawk();
 
@@ -3546,8 +3546,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Muiri();
     some<Armor_t*>  Ring_Silver_Muiri_Enchanted();
     some<Armor_t*>  Ring_Silver_Silver_Blood_Family();
-    some<Armor_t*>  Ring_Silver_Wedding_Fjola_0();
     some<Armor_t*>  Ring_Silver_Wedding_Fjola_1();
+    some<Armor_t*>  Ring_Silver_Wedding_Fjola_2();
 
     some<Armor_t*>  Ring_Silver_Amethyst();
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_1();

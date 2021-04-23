@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
@@ -24,10 +25,10 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Honed_Frost_1();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Honed_Frost_2();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Honed_Frost_3();
-    some<Weapon_t*> Battleaxe_Ancient_Nordic_Tsun_0();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Tsun_1();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Tsun_2();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Tsun_3();
+    some<Weapon_t*> Battleaxe_Ancient_Nordic_Tsun_4();
     some<Weapon_t*> Battleaxe_Ancient_Nordic_Wuuthrad();
 
     some<Weapon_t*> Battleaxe_Ash_Spawn();
@@ -77,11 +78,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Battleaxe_Daedric_Turn_Undead_3();
 
     some<Weapon_t*> Battleaxe_Dragonbone();
-    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_0();
     some<Weapon_t*> Battleaxe_Dragonbone_Keeper_1();
     some<Weapon_t*> Battleaxe_Dragonbone_Keeper_2();
     some<Weapon_t*> Battleaxe_Dragonbone_Keeper_3();
     some<Weapon_t*> Battleaxe_Dragonbone_Keeper_4();
+    some<Weapon_t*> Battleaxe_Dragonbone_Keeper_5();
     some<Weapon_t*> Battleaxe_Dragonbone_Wrathman();
 
     some<Weapon_t*> Battleaxe_Dwarven();
@@ -415,11 +416,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
 
     some<Weapon_t*> Bow_Ancient_Nordic();
     some<Weapon_t*> Bow_Ancient_Nordic_Drainspell();
-    some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_0();
     some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_1();
     some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_2();
     some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_3();
     some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_4();
+    some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_5();
     some<Weapon_t*> Bow_Ancient_Nordic_Gauldur_Blackbow_NPC();
     some<Weapon_t*> Bow_Ancient_Nordic_Hero();
     some<Weapon_t*> Bow_Ancient_Nordic_Supple();
@@ -460,16 +461,16 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Daedric_Turn_Undead_3();
 
     some<Weapon_t*> Bow_Dragonbone();
-    some<Weapon_t*> Bow_Dragonbone_Keeper_0();
     some<Weapon_t*> Bow_Dragonbone_Keeper_1();
     some<Weapon_t*> Bow_Dragonbone_Keeper_2();
     some<Weapon_t*> Bow_Dragonbone_Keeper_3();
     some<Weapon_t*> Bow_Dragonbone_Keeper_4();
+    some<Weapon_t*> Bow_Dragonbone_Keeper_5();
 
     some<Weapon_t*> Bow_Dwarven();
-    some<Weapon_t*> Bow_Dwarven_Ballista_0();
     some<Weapon_t*> Bow_Dwarven_Ballista_1();
     some<Weapon_t*> Bow_Dwarven_Ballista_2();
+    some<Weapon_t*> Bow_Dwarven_Ballista_3();
     some<Weapon_t*> Bow_Dwarven_Black_Bow_Of_Fate();
     some<Weapon_t*> Bow_Dwarven_Damage_Magicka_1();
     some<Weapon_t*> Bow_Dwarven_Damage_Magicka_2();
@@ -492,8 +493,8 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Dwarven_Soul_Trap_1();
     some<Weapon_t*> Bow_Dwarven_Soul_Trap_2();
     some<Weapon_t*> Bow_Dwarven_Soul_Trap_3();
-    some<Weapon_t*> Bow_Dwarven_Sphere_Crossbow_0();
     some<Weapon_t*> Bow_Dwarven_Sphere_Crossbow_1();
+    some<Weapon_t*> Bow_Dwarven_Sphere_Crossbow_2();
     some<Weapon_t*> Bow_Dwarven_Turn_Undead_1();
     some<Weapon_t*> Bow_Dwarven_Turn_Undead_2();
     some<Weapon_t*> Bow_Dwarven_Turn_Undead_3();
@@ -519,11 +520,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Ebony_Frost_1();
     some<Weapon_t*> Bow_Ebony_Frost_2();
     some<Weapon_t*> Bow_Ebony_Frost_3();
-    some<Weapon_t*> Bow_Ebony_Nightingale_0();
     some<Weapon_t*> Bow_Ebony_Nightingale_1();
     some<Weapon_t*> Bow_Ebony_Nightingale_2();
     some<Weapon_t*> Bow_Ebony_Nightingale_3();
     some<Weapon_t*> Bow_Ebony_Nightingale_4();
+    some<Weapon_t*> Bow_Ebony_Nightingale_5();
     some<Weapon_t*> Bow_Ebony_Nightingale_NPC();
     some<Weapon_t*> Bow_Ebony_Paralyze_1();
     some<Weapon_t*> Bow_Ebony_Paralyze_2();
@@ -1618,11 +1619,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Mace_Daedric_Turn_Undead_3();
 
     some<Weapon_t*> Mace_Dragonbone();
-    some<Weapon_t*> Mace_Dragonbone_Keeper_0();
     some<Weapon_t*> Mace_Dragonbone_Keeper_1();
     some<Weapon_t*> Mace_Dragonbone_Keeper_2();
     some<Weapon_t*> Mace_Dragonbone_Keeper_3();
     some<Weapon_t*> Mace_Dragonbone_Keeper_4();
+    some<Weapon_t*> Mace_Dragonbone_Keeper_5();
 
     some<Weapon_t*> Mace_Dwarven();
     some<Weapon_t*> Mace_Dwarven_Absorb_Health_1();
@@ -1794,9 +1795,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Mace_Iron_Frost_1();
     some<Weapon_t*> Mace_Iron_Frost_2();
     some<Weapon_t*> Mace_Iron_Frost_3();
-    some<Weapon_t*> Mace_Iron_Lunar_0();
     some<Weapon_t*> Mace_Iron_Lunar_1();
     some<Weapon_t*> Mace_Iron_Lunar_2();
+    some<Weapon_t*> Mace_Iron_Lunar_3();
     some<Weapon_t*> Mace_Iron_Shock_1();
     some<Weapon_t*> Mace_Iron_Shock_2();
     some<Weapon_t*> Mace_Iron_Shock_3();
@@ -1942,9 +1943,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Mace_Steel_Frost_2();
     some<Weapon_t*> Mace_Steel_Frost_3();
     some<Weapon_t*> Mace_Steel_Horksbane();
-    some<Weapon_t*> Mace_Steel_Lunar_0();
     some<Weapon_t*> Mace_Steel_Lunar_1();
     some<Weapon_t*> Mace_Steel_Lunar_2();
+    some<Weapon_t*> Mace_Steel_Lunar_3();
     some<Weapon_t*> Mace_Steel_Shock_1();
     some<Weapon_t*> Mace_Steel_Shock_2();
     some<Weapon_t*> Mace_Steel_Shock_3();
@@ -1997,11 +1998,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Destruction_Storm_Wall();
     some<Weapon_t*> Staff_Destruction_Thunderbolts();
 
-    some<Weapon_t*> Staff_Dragon_Priest_0();
-    some<Weapon_t*> Staff_Dragon_Priest_1_Necromantic();
-    some<Weapon_t*> Staff_Dragon_Priest_1_Tandil();
-    some<Weapon_t*> Staff_Dragon_Priest_2();
-    some<Weapon_t*> Staff_Dragon_Priest_2_Hevnoraak();
+    some<Weapon_t*> Staff_Dragon_Priest_1();
+    some<Weapon_t*> Staff_Dragon_Priest_2_Necromantic();
+    some<Weapon_t*> Staff_Dragon_Priest_2_Tandil();
+    some<Weapon_t*> Staff_Dragon_Priest_3();
+    some<Weapon_t*> Staff_Dragon_Priest_3_Hevnoraak();
 
     some<Weapon_t*> Staff_Dwarven_Aetherial();
     some<Weapon_t*> Staff_Dwarven_Spider_Control_Rod();
@@ -2038,9 +2039,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
 
     some<Weapon_t*> Staff_Magnus();
 
-    some<Weapon_t*> Staff_Miraak_0();
     some<Weapon_t*> Staff_Miraak_1();
     some<Weapon_t*> Staff_Miraak_2();
+    some<Weapon_t*> Staff_Miraak_3();
     some<Weapon_t*> Staff_Miraak_NPC();
     some<Weapon_t*> Staff_Miraak_Tentacles();
 
@@ -2061,11 +2062,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Ancient_Nordic_Frost_1();
     some<Weapon_t*> Sword_Ancient_Nordic_Frost_2();
     some<Weapon_t*> Sword_Ancient_Nordic_Frost_3();
-    some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_0();
     some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_1();
     some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_2();
     some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_3();
     some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_4();
+    some<Weapon_t*> Sword_Ancient_Nordic_Gauldur_Blackblade_5();
     some<Weapon_t*> Sword_Ancient_Nordic_Ghostblade();
     some<Weapon_t*> Sword_Ancient_Nordic_Hero();
     some<Weapon_t*> Sword_Ancient_Nordic_Hjalti();
@@ -2073,11 +2074,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Ancient_Nordic_Honed_Frost_1();
     some<Weapon_t*> Sword_Ancient_Nordic_Honed_Frost_2();
     some<Weapon_t*> Sword_Ancient_Nordic_Honed_Frost_3();
-    some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_0();
     some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_1();
     some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_2();
     some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_3();
     some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_4();
+    some<Weapon_t*> Sword_Ancient_Nordic_Pale_Blade_5();
     some<Weapon_t*> Sword_Ancient_Nordic_Red_Eagles_Bane();
     some<Weapon_t*> Sword_Ancient_Nordic_Red_Eagles_Fury();
 
@@ -2135,11 +2136,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Daedric_Zahkrii_Do_Dovahkiin();
 
     some<Weapon_t*> Sword_Dragonbone();
-    some<Weapon_t*> Sword_Dragonbone_Keeper_0();
     some<Weapon_t*> Sword_Dragonbone_Keeper_1();
     some<Weapon_t*> Sword_Dragonbone_Keeper_2();
     some<Weapon_t*> Sword_Dragonbone_Keeper_3();
     some<Weapon_t*> Sword_Dragonbone_Keeper_4();
+    some<Weapon_t*> Sword_Dragonbone_Keeper_5();
 
     some<Weapon_t*> Sword_Dwarven();
     some<Weapon_t*> Sword_Dwarven_Absorb_Health_1();
@@ -2204,11 +2205,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Ebony_Frost_1();
     some<Weapon_t*> Sword_Ebony_Frost_2();
     some<Weapon_t*> Sword_Ebony_Frost_3();
-    some<Weapon_t*> Sword_Ebony_Nightingale_0();
     some<Weapon_t*> Sword_Ebony_Nightingale_1();
     some<Weapon_t*> Sword_Ebony_Nightingale_2();
     some<Weapon_t*> Sword_Ebony_Nightingale_3();
     some<Weapon_t*> Sword_Ebony_Nightingale_4();
+    some<Weapon_t*> Sword_Ebony_Nightingale_5();
     some<Weapon_t*> Sword_Ebony_Nightingale_NPC();
     some<Weapon_t*> Sword_Ebony_Paralyze_1();
     some<Weapon_t*> Sword_Ebony_Paralyze_2();
@@ -2280,12 +2281,12 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Glass_Absorb_Stamina_3();
     some<Weapon_t*> Sword_Glass_Banish_1();
     some<Weapon_t*> Sword_Glass_Banish_2();
-    some<Weapon_t*> Sword_Glass_Chillrend_0();
     some<Weapon_t*> Sword_Glass_Chillrend_1();
     some<Weapon_t*> Sword_Glass_Chillrend_2();
     some<Weapon_t*> Sword_Glass_Chillrend_3();
     some<Weapon_t*> Sword_Glass_Chillrend_4();
     some<Weapon_t*> Sword_Glass_Chillrend_5();
+    some<Weapon_t*> Sword_Glass_Chillrend_6();
     some<Weapon_t*> Sword_Glass_Damage_Magicka_1();
     some<Weapon_t*> Sword_Glass_Damage_Magicka_2();
     some<Weapon_t*> Sword_Glass_Damage_Stamina_1();
@@ -2331,9 +2332,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Iron_Frost_1();
     some<Weapon_t*> Sword_Iron_Frost_2();
     some<Weapon_t*> Sword_Iron_Frost_3();
-    some<Weapon_t*> Sword_Iron_Lunar_0();
     some<Weapon_t*> Sword_Iron_Lunar_1();
     some<Weapon_t*> Sword_Iron_Lunar_2();
+    some<Weapon_t*> Sword_Iron_Lunar_3();
     some<Weapon_t*> Sword_Iron_Shock_1();
     some<Weapon_t*> Sword_Iron_Shock_2();
     some<Weapon_t*> Sword_Iron_Shock_3();
@@ -2344,9 +2345,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Iron_Turn_Undead_2();
     some<Weapon_t*> Sword_Iron_Turn_Undead_3();
 
-    some<Weapon_t*> Sword_Miraak_0();
     some<Weapon_t*> Sword_Miraak_1();
     some<Weapon_t*> Sword_Miraak_2();
+    some<Weapon_t*> Sword_Miraak_3();
 
     some<Weapon_t*> Sword_Nordic();
     some<Weapon_t*> Sword_Nordic_Absorb_Health_1();
@@ -2478,11 +2479,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Steel_Damage_Stamina_2();
     some<Weapon_t*> Sword_Steel_Damage_Stamina_3();
     some<Weapon_t*> Sword_Steel_Dexion_Evicus();
-    some<Weapon_t*> Sword_Steel_Dragonbane_0();
     some<Weapon_t*> Sword_Steel_Dragonbane_1();
     some<Weapon_t*> Sword_Steel_Dragonbane_2();
     some<Weapon_t*> Sword_Steel_Dragonbane_3();
     some<Weapon_t*> Sword_Steel_Dragonbane_4();
+    some<Weapon_t*> Sword_Steel_Dragonbane_5();
     some<Weapon_t*> Sword_Steel_Fear_1();
     some<Weapon_t*> Sword_Steel_Fear_2();
     some<Weapon_t*> Sword_Steel_Fear_3();
@@ -2519,9 +2520,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_1();
     some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_2();
     some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_3();
-    some<Weapon_t*> Sword_Steel_Lunar_0();
     some<Weapon_t*> Sword_Steel_Lunar_1();
     some<Weapon_t*> Sword_Steel_Lunar_2();
+    some<Weapon_t*> Sword_Steel_Lunar_3();
     some<Weapon_t*> Sword_Steel_Queen_Freydis();
     some<Weapon_t*> Sword_Steel_Scimitar();
     some<Weapon_t*> Sword_Steel_Shock_1();
@@ -2553,8 +2554,8 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Ancient_Nordic_Honed_Frost_3();
     some<Weapon_t*> Waraxe_Ancient_Nordic_Illusory();
     some<Weapon_t*> Waraxe_Ancient_Nordic_Okin();
-    some<Weapon_t*> Waraxe_Ancient_Nordic_Pickaxe_0();
     some<Weapon_t*> Waraxe_Ancient_Nordic_Pickaxe_1();
+    some<Weapon_t*> Waraxe_Ancient_Nordic_Pickaxe_2();
 
     some<Weapon_t*> Waraxe_Ash_Spawn();
 
@@ -2777,9 +2778,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Iron_Frost_2();
     some<Weapon_t*> Waraxe_Iron_Frost_3();
     some<Weapon_t*> Waraxe_Iron_Ghorbashs_Ancestral();
-    some<Weapon_t*> Waraxe_Iron_Lunar_0();
     some<Weapon_t*> Waraxe_Iron_Lunar_1();
     some<Weapon_t*> Waraxe_Iron_Lunar_2();
+    some<Weapon_t*> Waraxe_Iron_Lunar_3();
     some<Weapon_t*> Waraxe_Iron_Pickaxe();
     some<Weapon_t*> Waraxe_Iron_Pickaxe_Notched();
     some<Weapon_t*> Waraxe_Iron_Poacher();
@@ -2931,9 +2932,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Waraxe_Steel_Frost_1();
     some<Weapon_t*> Waraxe_Steel_Frost_2();
     some<Weapon_t*> Waraxe_Steel_Frost_3();
-    some<Weapon_t*> Waraxe_Steel_Lunar_0();
     some<Weapon_t*> Waraxe_Steel_Lunar_1();
     some<Weapon_t*> Waraxe_Steel_Lunar_2();
+    some<Weapon_t*> Waraxe_Steel_Lunar_3();
     some<Weapon_t*> Waraxe_Steel_Shock_1();
     some<Weapon_t*> Waraxe_Steel_Shock_2();
     some<Weapon_t*> Waraxe_Steel_Shock_3();
@@ -3309,9 +3310,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Warhammer_Steel_Frost_1();
     some<Weapon_t*> Warhammer_Steel_Frost_2();
     some<Weapon_t*> Warhammer_Steel_Frost_3();
-    some<Weapon_t*> Warhammer_Steel_Giant_Club_0();
     some<Weapon_t*> Warhammer_Steel_Giant_Club_1();
     some<Weapon_t*> Warhammer_Steel_Giant_Club_2();
+    some<Weapon_t*> Warhammer_Steel_Giant_Club_3();
     some<Weapon_t*> Warhammer_Steel_Giant_Club_Frost();
     some<Weapon_t*> Warhammer_Steel_Shock_1();
     some<Weapon_t*> Warhammer_Steel_Shock_2();
@@ -3323,5 +3324,12 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Warhammer_Steel_Turn_Undead_1();
     some<Weapon_t*> Warhammer_Steel_Turn_Undead_2();
     some<Weapon_t*> Warhammer_Steel_Turn_Undead_3();
+
+}}}
+
+namespace doticu_skylib { namespace Const { namespace Weapons {
+
+    Vector_t<some<Weapon_t*>>   Battleaxes_Ancient_Nordic();
+    void                        Battleaxes_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results);
 
 }}}
