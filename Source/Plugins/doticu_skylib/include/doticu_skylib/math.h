@@ -69,13 +69,18 @@ namespace doticu_skylib {
             std::lock_guard<std::mutex> random_locker(random_lock);
             return std::uniform_int_distribution<T>(min, max)(Math_t::random_generator);
         }
+
+        static Bool_t Random_Bool(u8 probability_percent)
+        {
+            if (probability_percent == 0) {
+                return false;
+            } else if (probability_percent >= 100) {
+                return true;
+            } else {
+                return Random(1, 100) < probability_percent;
+            }
+        }
     };
-
-    template <typename T>
-    inline T Random(T min, T max)
-    {
-
-    }
 
     class CRC32_Hash_t
     {
