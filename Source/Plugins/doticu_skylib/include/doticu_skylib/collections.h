@@ -275,6 +275,7 @@ namespace doticu_skylib {
 
         Type& Random()
         {
+            SKYLIB_ASSERT(size() > 0);
             return at(Math_t::Random<size_t>(0, size() - 1));
         }
 

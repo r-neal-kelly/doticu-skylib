@@ -601,31 +601,31 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Glass_Turn_Undead_2()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BEEE5); }
     some<Weapon_t*> Bow_Glass_Turn_Undead_3()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BEEE6); }
 
-    some<Weapon_t*> Bow_Iron_Imperial()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013841); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Magicka_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB16); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Magicka_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB17); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Magicka_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB18); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Stamina_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1F); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Stamina_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB20); }
-    some<Weapon_t*> Bow_Iron_Imperial_Damage_Stamina_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB21); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fear_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0D); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fear_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0E); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fear_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0F); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fire_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB10); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fire_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB11); }
-    some<Weapon_t*> Bow_Iron_Imperial_Fire_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB12); }
-    some<Weapon_t*> Bow_Iron_Imperial_Frost_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB13); }
-    some<Weapon_t*> Bow_Iron_Imperial_Frost_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB14); }
-    some<Weapon_t*> Bow_Iron_Imperial_Frost_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB15); }
-    some<Weapon_t*> Bow_Iron_Imperial_Shock_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB19); }
-    some<Weapon_t*> Bow_Iron_Imperial_Shock_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1A); }
-    some<Weapon_t*> Bow_Iron_Imperial_Shock_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1B); }
-    some<Weapon_t*> Bow_Iron_Imperial_Soul_Trap_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1C); }
-    some<Weapon_t*> Bow_Iron_Imperial_Soul_Trap_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1D); }
-    some<Weapon_t*> Bow_Iron_Imperial_Soul_Trap_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1E); }
-    some<Weapon_t*> Bow_Iron_Imperial_Turn_Undead_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB22); }
-    some<Weapon_t*> Bow_Iron_Imperial_Turn_Undead_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB23); }
-    some<Weapon_t*> Bow_Iron_Imperial_Turn_Undead_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB24); }
+    some<Weapon_t*> Bow_Imperial()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013841); }
+    some<Weapon_t*> Bow_Imperial_Damage_Magicka_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB16); }
+    some<Weapon_t*> Bow_Imperial_Damage_Magicka_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB17); }
+    some<Weapon_t*> Bow_Imperial_Damage_Magicka_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB18); }
+    some<Weapon_t*> Bow_Imperial_Damage_Stamina_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1F); }
+    some<Weapon_t*> Bow_Imperial_Damage_Stamina_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB20); }
+    some<Weapon_t*> Bow_Imperial_Damage_Stamina_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB21); }
+    some<Weapon_t*> Bow_Imperial_Fear_1()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0D); }
+    some<Weapon_t*> Bow_Imperial_Fear_2()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0E); }
+    some<Weapon_t*> Bow_Imperial_Fear_3()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB0F); }
+    some<Weapon_t*> Bow_Imperial_Fire_1()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB10); }
+    some<Weapon_t*> Bow_Imperial_Fire_2()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB11); }
+    some<Weapon_t*> Bow_Imperial_Fire_3()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB12); }
+    some<Weapon_t*> Bow_Imperial_Frost_1()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB13); }
+    some<Weapon_t*> Bow_Imperial_Frost_2()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB14); }
+    some<Weapon_t*> Bow_Imperial_Frost_3()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB15); }
+    some<Weapon_t*> Bow_Imperial_Shock_1()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB19); }
+    some<Weapon_t*> Bow_Imperial_Shock_2()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1A); }
+    some<Weapon_t*> Bow_Imperial_Shock_3()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1B); }
+    some<Weapon_t*> Bow_Imperial_Soul_Trap_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1C); }
+    some<Weapon_t*> Bow_Imperial_Soul_Trap_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1D); }
+    some<Weapon_t*> Bow_Imperial_Soul_Trap_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB1E); }
+    some<Weapon_t*> Bow_Imperial_Turn_Undead_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB22); }
+    some<Weapon_t*> Bow_Imperial_Turn_Undead_2()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB23); }
+    some<Weapon_t*> Bow_Imperial_Turn_Undead_3()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0ABB24); }
 
     some<Weapon_t*> Bow_Nordic()                                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x026232); }
     some<Weapon_t*> Bow_Nordic_Banish_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028371); }
@@ -718,38 +718,38 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Bow_Stalhrim_Turn_Undead_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028482); }
     some<Weapon_t*> Bow_Stalhrim_Turn_Undead_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x028481); }
 
+    some<Weapon_t*> Bow_Steel()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013985); }
     some<Weapon_t*> Bow_Steel_Angi()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0CC392); }
+    some<Weapon_t*> Bow_Steel_Damage_Magicka_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734B); }
+    some<Weapon_t*> Bow_Steel_Damage_Magicka_2()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734C); }
+    some<Weapon_t*> Bow_Steel_Damage_Magicka_3()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734D); }
+    some<Weapon_t*> Bow_Steel_Damage_Stamina_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7355); }
+    some<Weapon_t*> Bow_Steel_Damage_Stamina_2()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7356); }
+    some<Weapon_t*> Bow_Steel_Damage_Stamina_3()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7357); }
     some<Weapon_t*> Bow_Steel_Dravin()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06B9AD); }
+    some<Weapon_t*> Bow_Steel_Fear_1()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7345); }
+    some<Weapon_t*> Bow_Steel_Fear_2()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7346); }
+    some<Weapon_t*> Bow_Steel_Fear_3()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7347); }
+    some<Weapon_t*> Bow_Steel_Fire_1()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09CAF3); }
+    some<Weapon_t*> Bow_Steel_Fire_2()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7343); }
+    some<Weapon_t*> Bow_Steel_Fire_3()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7344); }
     some<Weapon_t*> Bow_Steel_Follower()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10E2DD); }
+    some<Weapon_t*> Bow_Steel_Frost_1()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7348); }
+    some<Weapon_t*> Bow_Steel_Frost_2()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7349); }
+    some<Weapon_t*> Bow_Steel_Frost_3()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734A); }
     some<Weapon_t*> Bow_Steel_Hunt()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0AB705); }
-    some<Weapon_t*> Bow_Steel_Hunting()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013985); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Magicka_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734B); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Magicka_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734C); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Magicka_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734D); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Stamina_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7355); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Stamina_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7356); }
-    some<Weapon_t*> Bow_Steel_Hunting_Damage_Stamina_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7357); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fear_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7345); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fear_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7346); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fear_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7347); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fire_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x09CAF3); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fire_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7343); }
-    some<Weapon_t*> Bow_Steel_Hunting_Fire_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7344); }
-    some<Weapon_t*> Bow_Steel_Hunting_Frost_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7348); }
-    some<Weapon_t*> Bow_Steel_Hunting_Frost_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7349); }
-    some<Weapon_t*> Bow_Steel_Hunting_Frost_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734A); }
-    some<Weapon_t*> Bow_Steel_Hunting_Shock_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734F); }
-    some<Weapon_t*> Bow_Steel_Hunting_Shock_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7350); }
-    some<Weapon_t*> Bow_Steel_Hunting_Shock_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7351); }
-    some<Weapon_t*> Bow_Steel_Hunting_Soul_Trap_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7352); }
-    some<Weapon_t*> Bow_Steel_Hunting_Soul_Trap_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7353); }
-    some<Weapon_t*> Bow_Steel_Hunting_Soul_Trap_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7354); }
-    some<Weapon_t*> Bow_Steel_Hunting_Turn_Undead_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7358); }
-    some<Weapon_t*> Bow_Steel_Hunting_Turn_Undead_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7359); }
-    some<Weapon_t*> Bow_Steel_Hunting_Turn_Undead_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A735A); }
+    some<Weapon_t*> Bow_Steel_Shock_1()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A734F); }
+    some<Weapon_t*> Bow_Steel_Shock_2()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7350); }
+    some<Weapon_t*> Bow_Steel_Shock_3()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7351); }
+    some<Weapon_t*> Bow_Steel_Soul_Trap_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7352); }
+    some<Weapon_t*> Bow_Steel_Soul_Trap_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7353); }
+    some<Weapon_t*> Bow_Steel_Soul_Trap_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7354); }
+    some<Weapon_t*> Bow_Steel_Turn_Undead_1()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7358); }
+    some<Weapon_t*> Bow_Steel_Turn_Undead_2()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A7359); }
+    some<Weapon_t*> Bow_Steel_Turn_Undead_3()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0A735A); }
 
+    some<Weapon_t*> Bow_Wood()                                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B562); }
     some<Weapon_t*> Bow_Wood_Froki()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C0186); }
-    some<Weapon_t*> Bow_Wood_Long()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B562); }
 
     some<Weapon_t*> Crossbow_Dwarven()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00B647); }
     some<Weapon_t*> Crossbow_Dwarven_Damage_Magicka_1()             { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00D0D8); }
@@ -1954,6 +1954,13 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Alteration_Magelight()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BE121); }
     some<Weapon_t*> Staff_Alteration_Paralysis()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B73); }
 
+    some<Weapon_t*> Staff_Ancient_Nordic_Dragon_Priest_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04DE5B); }
+    some<Weapon_t*> Staff_Ancient_Nordic_Dragon_Priest_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07E5BB); }
+    some<Weapon_t*> Staff_Ancient_Nordic_Hevnoraak()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10076D); }
+    some<Weapon_t*> Staff_Ancient_Nordic_Magnus()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x035369); }
+    some<Weapon_t*> Staff_Ancient_Nordic_Necromantic()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0284F5); }
+    some<Weapon_t*> Staff_Ancient_Nordic_Tandil()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06A093); }
+
     some<Weapon_t*> Staff_Conjuration()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07E647); }
     some<Weapon_t*> Staff_Conjuration_Banishing()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B79); }
     some<Weapon_t*> Staff_Conjuration_Daedric_Command()             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B7B); }
@@ -1969,6 +1976,11 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Conjuration_Storm_Atronach()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B7D); }
     some<Weapon_t*> Staff_Conjuration_Zombies()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B74); }
     
+    some<Weapon_t*> Staff_Daedric_Miraak_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FA6); }
+    some<Weapon_t*> Staff_Daedric_Miraak_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FAC); }
+    some<Weapon_t*> Staff_Daedric_Miraak_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FAD); }
+    some<Weapon_t*> Staff_Daedric_Miraak_NPC()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x029A61); }
+    some<Weapon_t*> Staff_Daedric_Miraak_Tentacles()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x03A3D4); }
     some<Weapon_t*> Staff_Daedric_Sanguine_Rose()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01CB36); }
     some<Weapon_t*> Staff_Daedric_Sanguine_Rose_Broken()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x01CB30); }
     some<Weapon_t*> Staff_Daedric_Skull_Of_Corruption()             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x035066); }
@@ -1991,12 +2003,6 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Destruction_Sparks()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04DEE2); }
     some<Weapon_t*> Staff_Destruction_Storm_Wall()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B87); }
     some<Weapon_t*> Staff_Destruction_Thunderbolts()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10FCF4); }
-    
-    some<Weapon_t*> Staff_Dragon_Priest_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04DE5B); }
-    some<Weapon_t*> Staff_Dragon_Priest_2_Necromantic()             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0284F5); }
-    some<Weapon_t*> Staff_Dragon_Priest_2_Tandil()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x06A093); }
-    some<Weapon_t*> Staff_Dragon_Priest_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x07E5BB); }
-    some<Weapon_t*> Staff_Dragon_Priest_3_Hevnoraak()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x10076D); }
 
     some<Weapon_t*> Staff_Dwarven_Aetherial()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x00575E); }
     some<Weapon_t*> Staff_Dwarven_Spider_Control_Rod()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0E57F0); }
@@ -2030,14 +2036,6 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Staff_Illusion_Inspiration()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B8E); }
     some<Weapon_t*> Staff_Illusion_Ruunvald()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x01958C); }
     some<Weapon_t*> Staff_Illusion_Vanquishment()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B92); }
-
-    some<Weapon_t*> Staff_Magnus()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x035369); }
-
-    some<Weapon_t*> Staff_Miraak_1()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FA6); }
-    some<Weapon_t*> Staff_Miraak_2()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FAC); }
-    some<Weapon_t*> Staff_Miraak_3()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FAD); }
-    some<Weapon_t*> Staff_Miraak_NPC()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x029A61); }
-    some<Weapon_t*> Staff_Miraak_Tentacles()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x03A3D4); }
 
     some<Weapon_t*> Staff_Restoration()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x051B0C); }
     some<Weapon_t*> Staff_Restoration_Healing_Hand()                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x029B93); }
@@ -2113,6 +2111,9 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Daedric_Frost_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028EDB); }
     some<Weapon_t*> Sword_Daedric_Frost_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028EDC); }
     some<Weapon_t*> Sword_Daedric_Frost_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028EE9); }
+    some<Weapon_t*> Sword_Daedric_Miraak_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0397F6); }
+    some<Weapon_t*> Sword_Daedric_Miraak_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FB1); }
+    some<Weapon_t*> Sword_Daedric_Miraak_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FB4); }
     some<Weapon_t*> Sword_Daedric_Paralyze_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028F8C); }
     some<Weapon_t*> Sword_Daedric_Paralyze_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028F8D); }
     some<Weapon_t*> Sword_Daedric_Paralyze_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x028FDD); }
@@ -2308,6 +2309,32 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Glass_Turn_Undead_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BEF76); }
     some<Weapon_t*> Sword_Glass_Turn_Undead_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0BEF77); }
 
+    some<Weapon_t*> Sword_Imperial()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0135B8); }
+    some<Weapon_t*> Sword_Imperial_Damage_Magicka_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEE); }
+    some<Weapon_t*> Sword_Imperial_Damage_Magicka_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DED); }
+    some<Weapon_t*> Sword_Imperial_Damage_Magicka_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEC); }
+    some<Weapon_t*> Sword_Imperial_Damage_Stamina_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DFA); }
+    some<Weapon_t*> Sword_Imperial_Damage_Stamina_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE5); }
+    some<Weapon_t*> Sword_Imperial_Damage_Stamina_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DFB); }
+    some<Weapon_t*> Sword_Imperial_Fear_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF7); }
+    some<Weapon_t*> Sword_Imperial_Fear_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF6); }
+    some<Weapon_t*> Sword_Imperial_Fear_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF5); }
+    some<Weapon_t*> Sword_Imperial_Fire_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF4); }
+    some<Weapon_t*> Sword_Imperial_Fire_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF3); }
+    some<Weapon_t*> Sword_Imperial_Fire_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF2); }
+    some<Weapon_t*> Sword_Imperial_Frost_1()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF1); }
+    some<Weapon_t*> Sword_Imperial_Frost_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF0); }
+    some<Weapon_t*> Sword_Imperial_Frost_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEF); }
+    some<Weapon_t*> Sword_Imperial_Shock_1()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEB); }
+    some<Weapon_t*> Sword_Imperial_Shock_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEA); }
+    some<Weapon_t*> Sword_Imperial_Shock_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE9); }
+    some<Weapon_t*> Sword_Imperial_Soul_Trap_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE8); }
+    some<Weapon_t*> Sword_Imperial_Soul_Trap_2()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF8); }
+    some<Weapon_t*> Sword_Imperial_Soul_Trap_3()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF9); }
+    some<Weapon_t*> Sword_Imperial_Turn_Undead_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE6); }
+    some<Weapon_t*> Sword_Imperial_Turn_Undead_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE7); }
+    some<Weapon_t*> Sword_Imperial_Turn_Undead_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE4); }
+
     some<Weapon_t*> Sword_Iron()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x012EB7); }
     some<Weapon_t*> Sword_Iron_Amazement()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x013135); }
     some<Weapon_t*> Sword_Iron_Amrens_Family()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0647AC); }
@@ -2338,10 +2365,6 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Iron_Turn_Undead_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x05BEF7); }
     some<Weapon_t*> Sword_Iron_Turn_Undead_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x05BEF8); }
     some<Weapon_t*> Sword_Iron_Turn_Undead_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x05BEF9); }
-
-    some<Weapon_t*> Sword_Miraak_1()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0397F6); }
-    some<Weapon_t*> Sword_Miraak_2()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FB1); }
-    some<Weapon_t*> Sword_Miraak_3()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x039FB4); }
 
     some<Weapon_t*> Sword_Nordic()                                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x01CDB1); }
     some<Weapon_t*> Sword_Nordic_Absorb_Health_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Weapon_t, 0x0282E6); }
@@ -2489,31 +2512,6 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
     some<Weapon_t*> Sword_Steel_Frost_3()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x04B45F); }
     some<Weapon_t*> Sword_Steel_Harkon()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Weapon_t, 0x0067CF); }
     some<Weapon_t*> Sword_Steel_Harrald()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0557F5); }
-    some<Weapon_t*> Sword_Steel_Imperial()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0135B8); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Magicka_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEE); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Magicka_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DED); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Magicka_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEC); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Stamina_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DFA); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Stamina_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE5); }
-    some<Weapon_t*> Sword_Steel_Imperial_Damage_Stamina_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DFB); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fear_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF7); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fear_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF6); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fear_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF5); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fire_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF4); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fire_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF3); }
-    some<Weapon_t*> Sword_Steel_Imperial_Fire_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF2); }
-    some<Weapon_t*> Sword_Steel_Imperial_Frost_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF1); }
-    some<Weapon_t*> Sword_Steel_Imperial_Frost_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF0); }
-    some<Weapon_t*> Sword_Steel_Imperial_Frost_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEF); }
-    some<Weapon_t*> Sword_Steel_Imperial_Shock_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEB); }
-    some<Weapon_t*> Sword_Steel_Imperial_Shock_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DEA); }
-    some<Weapon_t*> Sword_Steel_Imperial_Shock_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE9); }
-    some<Weapon_t*> Sword_Steel_Imperial_Soul_Trap_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE8); }
-    some<Weapon_t*> Sword_Steel_Imperial_Soul_Trap_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF8); }
-    some<Weapon_t*> Sword_Steel_Imperial_Soul_Trap_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DF9); }
-    some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE6); }
-    some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE7); }
-    some<Weapon_t*> Sword_Steel_Imperial_Turn_Undead_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x0C3DE4); }
     some<Weapon_t*> Sword_Steel_Lunar_1()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0B7); }
     some<Weapon_t*> Sword_Steel_Lunar_2()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0BA); }
     some<Weapon_t*> Sword_Steel_Lunar_3()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Weapon_t, 0x03B0BD); }
@@ -3323,16 +3321,61 @@ namespace doticu_skylib { namespace Const { namespace Weapon {
 
 namespace doticu_skylib { namespace Const { namespace Weapons {
 
-    Vector_t<some<Weapon_t*>> Battleaxes_Ancient_Nordic()
+    Vector_t<some<Weapon_t*>> All()
     {
         Vector_t<some<Weapon_t*>> results;
-        Battleaxes_Ancient_Nordic(results);
+        All(results);
         return results;
     }
 
-    void Battleaxes_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    void All(Vector_t<some<Weapon_t*>>& results)
     {
-        results.reserve(15);
+        Battleaxe(results);
+        Bow(results);
+        Crossbow(results);
+        Dagger(results);
+        Greatsword(results);
+        Mace(results);
+        Staff(results);
+        Sword(results);
+        Waraxe(results);
+        Warhammer(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe(results);
+        return results;
+    }
+
+    void Battleaxe(Vector_t<some<Weapon_t*>>& results)
+    {
+        Battleaxe_Ancient_Nordic(results);
+        Battleaxe_Ash_Spawn(results);
+        Battleaxe_Bound(results);
+        Battleaxe_Daedric(results);
+        Battleaxe_Dragonbone(results);
+        Battleaxe_Dwarven(results);
+        Battleaxe_Ebony(results);
+        Battleaxe_Elven(results);
+        Battleaxe_Glass(results);
+        Battleaxe_Iron(results);
+        Battleaxe_Nordic(results);
+        Battleaxe_Orcish(results);
+        Battleaxe_Stalhrim(results);
+        Battleaxe_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Battleaxe_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
         results.push_back(Weapon::Battleaxe_Ancient_Nordic());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Drainblood());
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Frost_1());
@@ -3350,31 +3393,4722 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
         results.push_back(Weapon::Battleaxe_Ancient_Nordic_Wuuthrad());
     }
 
-    Vector_t<some<Weapon_t*>> Battleaxes_Ash_Spawn()
+    Vector_t<some<Weapon_t*>> Battleaxe_Ash_Spawn()
     {
         Vector_t<some<Weapon_t*>> results;
-        Battleaxes_Ash_Spawn(results);
+        Battleaxe_Ash_Spawn(results);
         return results;
     }
 
-    void Battleaxes_Ash_Spawn(Vector_t<some<Weapon_t*>>& results)
+    void Battleaxe_Ash_Spawn(Vector_t<some<Weapon_t*>>& results)
     {
-        results.reserve(1);
         results.push_back(Weapon::Battleaxe_Ash_Spawn());
     }
 
-    Vector_t<some<Weapon_t*>> Battleaxes_Bound()
+    Vector_t<some<Weapon_t*>> Battleaxe_Bound()
     {
         Vector_t<some<Weapon_t*>> results;
-        Battleaxes_Bound(results);
+        Battleaxe_Bound(results);
         return results;
     }
 
-    void Battleaxes_Bound(Vector_t<some<Weapon_t*>>& results)
+    void Battleaxe_Bound(Vector_t<some<Weapon_t*>>& results)
     {
-        results.reserve(2);
         results.push_back(Weapon::Battleaxe_Bound());
         results.push_back(Weapon::Battleaxe_Bound_Mystic());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Daedric(results);
+        return results;
+    }
+
+    void Battleaxe_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Daedric());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Banish_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Banish_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Banish_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Fear_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Fear_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Fear_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Fire_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Fire_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Fire_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Frost_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Frost_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Frost_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Paralyze_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Shock_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Shock_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Shock_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Dragonbone(results);
+        return results;
+    }
+
+    void Battleaxe_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Dragonbone());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Keeper_1());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Keeper_2());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Keeper_3());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Keeper_4());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Keeper_5());
+        results.push_back(Weapon::Battleaxe_Dragonbone_Wrathman());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Dwarven(results);
+        return results;
+    }
+
+    void Battleaxe_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Dwarven());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fear_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fear_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fear_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fire_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fire_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Fire_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Frost_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Frost_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Frost_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Shock_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Shock_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Shock_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Ebony(results);
+        return results;
+    }
+
+    void Battleaxe_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Ebony());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Banish_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Banish_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Banish_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Fear_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Fear_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Fear_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Fire_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Fire_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Fire_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Frost_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Frost_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Frost_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Paralyze_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Rueful_Axe());
+        results.push_back(Weapon::Battleaxe_Ebony_Shock_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Shock_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Shock_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Elven(results);
+        return results;
+    }
+
+    void Battleaxe_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Elven());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Elven_Banish_1());
+        results.push_back(Weapon::Battleaxe_Elven_Banish_2());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Elven_Fear_1());
+        results.push_back(Weapon::Battleaxe_Elven_Fear_2());
+        results.push_back(Weapon::Battleaxe_Elven_Fear_3());
+        results.push_back(Weapon::Battleaxe_Elven_Fire_1());
+        results.push_back(Weapon::Battleaxe_Elven_Fire_2());
+        results.push_back(Weapon::Battleaxe_Elven_Fire_3());
+        results.push_back(Weapon::Battleaxe_Elven_Frost_1());
+        results.push_back(Weapon::Battleaxe_Elven_Frost_2());
+        results.push_back(Weapon::Battleaxe_Elven_Frost_3());
+        results.push_back(Weapon::Battleaxe_Elven_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Elven_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Elven_Shock_1());
+        results.push_back(Weapon::Battleaxe_Elven_Shock_2());
+        results.push_back(Weapon::Battleaxe_Elven_Shock_3());
+        results.push_back(Weapon::Battleaxe_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Glass(results);
+        return results;
+    }
+
+    void Battleaxe_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Glass());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Glass_Banish_1());
+        results.push_back(Weapon::Battleaxe_Glass_Banish_2());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Glass_Fear_1());
+        results.push_back(Weapon::Battleaxe_Glass_Fear_2());
+        results.push_back(Weapon::Battleaxe_Glass_Fear_3());
+        results.push_back(Weapon::Battleaxe_Glass_Fire_1());
+        results.push_back(Weapon::Battleaxe_Glass_Fire_2());
+        results.push_back(Weapon::Battleaxe_Glass_Fire_3());
+        results.push_back(Weapon::Battleaxe_Glass_Frost_1());
+        results.push_back(Weapon::Battleaxe_Glass_Frost_2());
+        results.push_back(Weapon::Battleaxe_Glass_Frost_3());
+        results.push_back(Weapon::Battleaxe_Glass_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Glass_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Glass_Shock_1());
+        results.push_back(Weapon::Battleaxe_Glass_Shock_2());
+        results.push_back(Weapon::Battleaxe_Glass_Shock_3());
+        results.push_back(Weapon::Battleaxe_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Iron(results);
+        return results;
+    }
+
+    void Battleaxe_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Iron());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Iron_Executioner());
+        results.push_back(Weapon::Battleaxe_Iron_Fear_1());
+        results.push_back(Weapon::Battleaxe_Iron_Fear_2());
+        results.push_back(Weapon::Battleaxe_Iron_Fear_3());
+        results.push_back(Weapon::Battleaxe_Iron_Fire_1());
+        results.push_back(Weapon::Battleaxe_Iron_Fire_2());
+        results.push_back(Weapon::Battleaxe_Iron_Fire_3());
+        results.push_back(Weapon::Battleaxe_Iron_Frost_1());
+        results.push_back(Weapon::Battleaxe_Iron_Frost_2());
+        results.push_back(Weapon::Battleaxe_Iron_Frost_3());
+        results.push_back(Weapon::Battleaxe_Iron_Shock_1());
+        results.push_back(Weapon::Battleaxe_Iron_Shock_2());
+        results.push_back(Weapon::Battleaxe_Iron_Shock_3());
+        results.push_back(Weapon::Battleaxe_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Iron_Turn_Undead_3());
+        results.push_back(Weapon::Battleaxe_Iron_Woodsmans_Friend());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Nordic(results);
+        return results;
+    }
+
+    void Battleaxe_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Nordic());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Banish_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Banish_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Chaos_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Chaos_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Chaos_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Fear_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Fear_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Fear_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Fire_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Fire_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Fire_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Frost_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Frost_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Frost_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Shock_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Shock_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Shock_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Orcish(results);
+        return results;
+    }
+
+    void Battleaxe_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Orcish());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Fear_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Fear_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Fear_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Fire_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Fire_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Fire_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Frost_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Frost_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Frost_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Shock_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Shock_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Shock_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Stalhrim(results);
+        return results;
+    }
+
+    void Battleaxe_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Stalhrim());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Banish_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Banish_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Banish_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Fear_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Fear_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Fear_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Frost_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Frost_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Frost_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Shock_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Shock_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Shock_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Battleaxe_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Battleaxe_Steel(results);
+        return results;
+    }
+
+    void Battleaxe_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Battleaxe_Steel());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Battleaxe_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Battleaxe_Steel_Fear_1());
+        results.push_back(Weapon::Battleaxe_Steel_Fear_2());
+        results.push_back(Weapon::Battleaxe_Steel_Fear_3());
+        results.push_back(Weapon::Battleaxe_Steel_Fiery_Soul_Trap());
+        results.push_back(Weapon::Battleaxe_Steel_Fire_1());
+        results.push_back(Weapon::Battleaxe_Steel_Fire_2());
+        results.push_back(Weapon::Battleaxe_Steel_Fire_3());
+        results.push_back(Weapon::Battleaxe_Steel_Frost_1());
+        results.push_back(Weapon::Battleaxe_Steel_Frost_2());
+        results.push_back(Weapon::Battleaxe_Steel_Frost_3());
+        results.push_back(Weapon::Battleaxe_Steel_Shock_1());
+        results.push_back(Weapon::Battleaxe_Steel_Shock_2());
+        results.push_back(Weapon::Battleaxe_Steel_Shock_3());
+        results.push_back(Weapon::Battleaxe_Steel_Skyforge());
+        results.push_back(Weapon::Battleaxe_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Battleaxe_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Battleaxe_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Battleaxe_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Battleaxe_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Battleaxe_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow(results);
+        return results;
+    }
+
+    void Bow(Vector_t<some<Weapon_t*>>& results)
+    {
+        Bow_Ancient_Nordic(results);
+        Bow_Bound(results);
+        Bow_Daedric(results);
+        Bow_Dragonbone(results);
+        Bow_Dwarven(results);
+        Bow_Ebony(results);
+        Bow_Elven(results);
+        Bow_Falmer(results);
+        Bow_Forsworn(results);
+        Bow_Glass(results);
+        Bow_Imperial(results);
+        Bow_Nordic(results);
+        Bow_Orcish(results);
+        Bow_Stalhrim(results);
+        Bow_Steel(results);
+        Bow_Wood(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Bow_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Ancient_Nordic());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Drainspell());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_1());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_2());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_3());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_4());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_5());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Gauldur_Blackbow_NPC());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Hero());
+        results.push_back(Weapon::Bow_Ancient_Nordic_Supple());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Bound()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Bound(results);
+        return results;
+    }
+
+    void Bow_Bound(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Bound());
+        results.push_back(Weapon::Bow_Bound_Mystic());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Daedric(results);
+        return results;
+    }
+
+    void Bow_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Daedric());
+        results.push_back(Weapon::Bow_Daedric_Banish_1());
+        results.push_back(Weapon::Bow_Daedric_Banish_2());
+        results.push_back(Weapon::Bow_Daedric_Banish_3());
+        results.push_back(Weapon::Bow_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Daedric_Fear_1());
+        results.push_back(Weapon::Bow_Daedric_Fear_2());
+        results.push_back(Weapon::Bow_Daedric_Fear_3());
+        results.push_back(Weapon::Bow_Daedric_Fire_1());
+        results.push_back(Weapon::Bow_Daedric_Fire_2());
+        results.push_back(Weapon::Bow_Daedric_Fire_3());
+        results.push_back(Weapon::Bow_Daedric_Frost_1());
+        results.push_back(Weapon::Bow_Daedric_Frost_2());
+        results.push_back(Weapon::Bow_Daedric_Frost_3());
+        results.push_back(Weapon::Bow_Daedric_Paralyze_1());
+        results.push_back(Weapon::Bow_Daedric_Paralyze_2());
+        results.push_back(Weapon::Bow_Daedric_Paralyze_3());
+        results.push_back(Weapon::Bow_Daedric_Shock_1());
+        results.push_back(Weapon::Bow_Daedric_Shock_2());
+        results.push_back(Weapon::Bow_Daedric_Shock_3());
+        results.push_back(Weapon::Bow_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Dragonbone(results);
+        return results;
+    }
+
+    void Bow_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Dragonbone());
+        results.push_back(Weapon::Bow_Dragonbone_Keeper_1());
+        results.push_back(Weapon::Bow_Dragonbone_Keeper_2());
+        results.push_back(Weapon::Bow_Dragonbone_Keeper_3());
+        results.push_back(Weapon::Bow_Dragonbone_Keeper_4());
+        results.push_back(Weapon::Bow_Dragonbone_Keeper_5());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Dwarven(results);
+        return results;
+    }
+
+    void Bow_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Dwarven());
+        results.push_back(Weapon::Bow_Dwarven_Ballista_1());
+        results.push_back(Weapon::Bow_Dwarven_Ballista_2());
+        results.push_back(Weapon::Bow_Dwarven_Ballista_3());
+        results.push_back(Weapon::Bow_Dwarven_Black_Bow_Of_Fate());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Dwarven_Fear_1());
+        results.push_back(Weapon::Bow_Dwarven_Fear_2());
+        results.push_back(Weapon::Bow_Dwarven_Fear_3());
+        results.push_back(Weapon::Bow_Dwarven_Fire_1());
+        results.push_back(Weapon::Bow_Dwarven_Fire_2());
+        results.push_back(Weapon::Bow_Dwarven_Fire_3());
+        results.push_back(Weapon::Bow_Dwarven_Frost_1());
+        results.push_back(Weapon::Bow_Dwarven_Frost_2());
+        results.push_back(Weapon::Bow_Dwarven_Frost_3());
+        results.push_back(Weapon::Bow_Dwarven_Shock_1());
+        results.push_back(Weapon::Bow_Dwarven_Shock_2());
+        results.push_back(Weapon::Bow_Dwarven_Shock_3());
+        results.push_back(Weapon::Bow_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Dwarven_Sphere_Crossbow_1());
+        results.push_back(Weapon::Bow_Dwarven_Sphere_Crossbow_2());
+        results.push_back(Weapon::Bow_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Dwarven_Turn_Undead_3());
+        results.push_back(Weapon::Bow_Dwarven_Zephyr());
+        results.push_back(Weapon::Bow_Dwarven_Zephyr_NPC());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Ebony(results);
+        return results;
+    }
+
+    void Bow_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Ebony());
+        results.push_back(Weapon::Bow_Ebony_Banish_1());
+        results.push_back(Weapon::Bow_Ebony_Banish_2());
+        results.push_back(Weapon::Bow_Ebony_Banish_3());
+        results.push_back(Weapon::Bow_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Ebony_Fear_1());
+        results.push_back(Weapon::Bow_Ebony_Fear_2());
+        results.push_back(Weapon::Bow_Ebony_Fear_3());
+        results.push_back(Weapon::Bow_Ebony_Fire_1());
+        results.push_back(Weapon::Bow_Ebony_Fire_2());
+        results.push_back(Weapon::Bow_Ebony_Fire_3());
+        results.push_back(Weapon::Bow_Ebony_Frost_1());
+        results.push_back(Weapon::Bow_Ebony_Frost_2());
+        results.push_back(Weapon::Bow_Ebony_Frost_3());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_1());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_2());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_3());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_4());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_5());
+        results.push_back(Weapon::Bow_Ebony_Nightingale_NPC());
+        results.push_back(Weapon::Bow_Ebony_Paralyze_1());
+        results.push_back(Weapon::Bow_Ebony_Paralyze_2());
+        results.push_back(Weapon::Bow_Ebony_Paralyze_3());
+        results.push_back(Weapon::Bow_Ebony_Shock_1());
+        results.push_back(Weapon::Bow_Ebony_Shock_2());
+        results.push_back(Weapon::Bow_Ebony_Shock_3());
+        results.push_back(Weapon::Bow_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Elven(results);
+        return results;
+    }
+
+    void Bow_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Elven());
+        results.push_back(Weapon::Bow_Elven_Auriel());
+        results.push_back(Weapon::Bow_Elven_Banish_1());
+        results.push_back(Weapon::Bow_Elven_Banish_2());
+        results.push_back(Weapon::Bow_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Elven_Fear_1());
+        results.push_back(Weapon::Bow_Elven_Fear_2());
+        results.push_back(Weapon::Bow_Elven_Fear_3());
+        results.push_back(Weapon::Bow_Elven_Fire_1());
+        results.push_back(Weapon::Bow_Elven_Fire_2());
+        results.push_back(Weapon::Bow_Elven_Fire_3());
+        results.push_back(Weapon::Bow_Elven_Firiniels_End());
+        results.push_back(Weapon::Bow_Elven_Frost_1());
+        results.push_back(Weapon::Bow_Elven_Frost_2());
+        results.push_back(Weapon::Bow_Elven_Frost_3());
+        results.push_back(Weapon::Bow_Elven_Paralyze_1());
+        results.push_back(Weapon::Bow_Elven_Paralyze_2());
+        results.push_back(Weapon::Bow_Elven_Shock_1());
+        results.push_back(Weapon::Bow_Elven_Shock_2());
+        results.push_back(Weapon::Bow_Elven_Shock_3());
+        results.push_back(Weapon::Bow_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Falmer()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Falmer(results);
+        return results;
+    }
+
+    void Bow_Falmer(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Falmer());
+        results.push_back(Weapon::Bow_Falmer_Supple());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Forsworn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Forsworn(results);
+        return results;
+    }
+
+    void Bow_Forsworn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Forsworn());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Glass(results);
+        return results;
+    }
+
+    void Bow_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Glass());
+        results.push_back(Weapon::Bow_Glass_Banish_1());
+        results.push_back(Weapon::Bow_Glass_Banish_2());
+        results.push_back(Weapon::Bow_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Glass_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Glass_Fear_1());
+        results.push_back(Weapon::Bow_Glass_Fear_2());
+        results.push_back(Weapon::Bow_Glass_Fear_3());
+        results.push_back(Weapon::Bow_Glass_Fire_1());
+        results.push_back(Weapon::Bow_Glass_Fire_2());
+        results.push_back(Weapon::Bow_Glass_Fire_3());
+        results.push_back(Weapon::Bow_Glass_Frost_1());
+        results.push_back(Weapon::Bow_Glass_Frost_2());
+        results.push_back(Weapon::Bow_Glass_Frost_3());
+        results.push_back(Weapon::Bow_Glass_Paralyze_1());
+        results.push_back(Weapon::Bow_Glass_Paralyze_2());
+        results.push_back(Weapon::Bow_Glass_Shock_1());
+        results.push_back(Weapon::Bow_Glass_Shock_2());
+        results.push_back(Weapon::Bow_Glass_Shock_3());
+        results.push_back(Weapon::Bow_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Glass_Stag_Prince());
+        results.push_back(Weapon::Bow_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Imperial()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Imperial(results);
+        return results;
+    }
+
+    void Bow_Imperial(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Imperial());
+        results.push_back(Weapon::Bow_Imperial_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Imperial_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Imperial_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Imperial_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Imperial_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Imperial_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Imperial_Fear_1());
+        results.push_back(Weapon::Bow_Imperial_Fear_2());
+        results.push_back(Weapon::Bow_Imperial_Fear_3());
+        results.push_back(Weapon::Bow_Imperial_Fire_1());
+        results.push_back(Weapon::Bow_Imperial_Fire_2());
+        results.push_back(Weapon::Bow_Imperial_Fire_3());
+        results.push_back(Weapon::Bow_Imperial_Frost_1());
+        results.push_back(Weapon::Bow_Imperial_Frost_2());
+        results.push_back(Weapon::Bow_Imperial_Frost_3());
+        results.push_back(Weapon::Bow_Imperial_Shock_1());
+        results.push_back(Weapon::Bow_Imperial_Shock_2());
+        results.push_back(Weapon::Bow_Imperial_Shock_3());
+        results.push_back(Weapon::Bow_Imperial_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Imperial_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Imperial_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Imperial_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Imperial_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Imperial_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Nordic(results);
+        return results;
+    }
+
+    void Bow_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Nordic());
+        results.push_back(Weapon::Bow_Nordic_Banish_1());
+        results.push_back(Weapon::Bow_Nordic_Banish_2());
+        results.push_back(Weapon::Bow_Nordic_Chaos_1());
+        results.push_back(Weapon::Bow_Nordic_Chaos_2());
+        results.push_back(Weapon::Bow_Nordic_Chaos_3());
+        results.push_back(Weapon::Bow_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Nordic_Fear_1());
+        results.push_back(Weapon::Bow_Nordic_Fear_2());
+        results.push_back(Weapon::Bow_Nordic_Fear_3());
+        results.push_back(Weapon::Bow_Nordic_Fire_1());
+        results.push_back(Weapon::Bow_Nordic_Fire_2());
+        results.push_back(Weapon::Bow_Nordic_Fire_3());
+        results.push_back(Weapon::Bow_Nordic_Frost_1());
+        results.push_back(Weapon::Bow_Nordic_Frost_2());
+        results.push_back(Weapon::Bow_Nordic_Frost_3());
+        results.push_back(Weapon::Bow_Nordic_Paralyze_1());
+        results.push_back(Weapon::Bow_Nordic_Paralyze_2());
+        results.push_back(Weapon::Bow_Nordic_Shock_1());
+        results.push_back(Weapon::Bow_Nordic_Shock_2());
+        results.push_back(Weapon::Bow_Nordic_Shock_3());
+        results.push_back(Weapon::Bow_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Orcish(results);
+        return results;
+    }
+
+    void Bow_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Orcish());
+        results.push_back(Weapon::Bow_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Orcish_Fear_1());
+        results.push_back(Weapon::Bow_Orcish_Fear_2());
+        results.push_back(Weapon::Bow_Orcish_Fear_3());
+        results.push_back(Weapon::Bow_Orcish_Fire_1());
+        results.push_back(Weapon::Bow_Orcish_Fire_2());
+        results.push_back(Weapon::Bow_Orcish_Fire_3());
+        results.push_back(Weapon::Bow_Orcish_Frost_1());
+        results.push_back(Weapon::Bow_Orcish_Frost_2());
+        results.push_back(Weapon::Bow_Orcish_Frost_3());
+        results.push_back(Weapon::Bow_Orcish_Shock_1());
+        results.push_back(Weapon::Bow_Orcish_Shock_2());
+        results.push_back(Weapon::Bow_Orcish_Shock_3());
+        results.push_back(Weapon::Bow_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Stalhrim(results);
+        return results;
+    }
+
+    void Bow_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Stalhrim());
+        results.push_back(Weapon::Bow_Stalhrim_Banish_1());
+        results.push_back(Weapon::Bow_Stalhrim_Banish_2());
+        results.push_back(Weapon::Bow_Stalhrim_Banish_3());
+        results.push_back(Weapon::Bow_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Bow_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Bow_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Stalhrim_Fear_1());
+        results.push_back(Weapon::Bow_Stalhrim_Fear_2());
+        results.push_back(Weapon::Bow_Stalhrim_Fear_3());
+        results.push_back(Weapon::Bow_Stalhrim_Frost_1());
+        results.push_back(Weapon::Bow_Stalhrim_Frost_2());
+        results.push_back(Weapon::Bow_Stalhrim_Frost_3());
+        results.push_back(Weapon::Bow_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Bow_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Bow_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Bow_Stalhrim_Shock_1());
+        results.push_back(Weapon::Bow_Stalhrim_Shock_2());
+        results.push_back(Weapon::Bow_Stalhrim_Shock_3());
+        results.push_back(Weapon::Bow_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Steel(results);
+        return results;
+    }
+
+    void Bow_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Steel());
+        results.push_back(Weapon::Bow_Steel_Angi());
+        results.push_back(Weapon::Bow_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Bow_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Bow_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Bow_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Bow_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Bow_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Bow_Steel_Dravin());
+        results.push_back(Weapon::Bow_Steel_Fear_1());
+        results.push_back(Weapon::Bow_Steel_Fear_2());
+        results.push_back(Weapon::Bow_Steel_Fear_3());
+        results.push_back(Weapon::Bow_Steel_Fire_1());
+        results.push_back(Weapon::Bow_Steel_Fire_2());
+        results.push_back(Weapon::Bow_Steel_Fire_3());
+        results.push_back(Weapon::Bow_Steel_Follower());
+        results.push_back(Weapon::Bow_Steel_Frost_1());
+        results.push_back(Weapon::Bow_Steel_Frost_2());
+        results.push_back(Weapon::Bow_Steel_Frost_3());
+        results.push_back(Weapon::Bow_Steel_Hunt());
+        results.push_back(Weapon::Bow_Steel_Shock_1());
+        results.push_back(Weapon::Bow_Steel_Shock_2());
+        results.push_back(Weapon::Bow_Steel_Shock_3());
+        results.push_back(Weapon::Bow_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Bow_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Bow_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Bow_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Bow_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Bow_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Bow_Wood()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Bow_Wood(results);
+        return results;
+    }
+
+    void Bow_Wood(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Bow_Wood());
+        results.push_back(Weapon::Bow_Wood_Froki());
+    }
+
+    Vector_t<some<Weapon_t*>> Crossbow()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Crossbow(results);
+        return results;
+    }
+
+    void Crossbow(Vector_t<some<Weapon_t*>>& results)
+    {
+        Crossbow_Dwarven(results);
+        Crossbow_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Crossbow_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Crossbow_Dwarven(results);
+        return results;
+    }
+
+    void Crossbow_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Crossbow_Dwarven());
+        results.push_back(Weapon::Crossbow_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Crossbow_Dwarven_Enhanced());
+        results.push_back(Weapon::Crossbow_Dwarven_Fire_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Fire_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Fire_3());
+        results.push_back(Weapon::Crossbow_Dwarven_Paralyze_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Paralyze_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Shock_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Shock_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Shock_3());
+        results.push_back(Weapon::Crossbow_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Crossbow_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Crossbow_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Crossbow_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Crossbow_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Crossbow_Steel(results);
+        return results;
+    }
+
+    void Crossbow_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Crossbow_Steel());
+        results.push_back(Weapon::Crossbow_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Crossbow_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Crossbow_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Crossbow_Steel_Enhanced());
+        results.push_back(Weapon::Crossbow_Steel_Fire_1());
+        results.push_back(Weapon::Crossbow_Steel_Fire_2());
+        results.push_back(Weapon::Crossbow_Steel_Fire_3());
+        results.push_back(Weapon::Crossbow_Steel_Shock_1());
+        results.push_back(Weapon::Crossbow_Steel_Shock_2());
+        results.push_back(Weapon::Crossbow_Steel_Shock_3());
+        results.push_back(Weapon::Crossbow_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Crossbow_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Crossbow_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Crossbow_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Crossbow_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Crossbow_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger(results);
+        return results;
+    }
+
+    void Dagger(Vector_t<some<Weapon_t*>>& results)
+    {
+        Dagger_Ancient_Nordic(results);
+        Dagger_Bound(results);
+        Dagger_Daedric(results);
+        Dagger_Dragonbone(results);
+        Dagger_Dwarven(results);
+        Dagger_Ebony(results);
+        Dagger_Elven(results);
+        Dagger_Glass(results);
+        Dagger_Iron(results);
+        Dagger_Nordic(results);
+        Dagger_Orcish(results);
+        Dagger_Stalhrim(results);
+        Dagger_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Dagger_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Ancient_Nordic_Dragon_Priest());
+        results.push_back(Weapon::Dagger_Ancient_Nordic_Kahvozeins_Fang());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Bound()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Bound(results);
+        return results;
+    }
+
+    void Dagger_Bound(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Bound());
+        results.push_back(Weapon::Dagger_Bound_Mystic());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Daedric(results);
+        return results;
+    }
+
+    void Dagger_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Daedric());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Daedric_Banish_1());
+        results.push_back(Weapon::Dagger_Daedric_Banish_2());
+        results.push_back(Weapon::Dagger_Daedric_Banish_3());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Daedric_Fear_1());
+        results.push_back(Weapon::Dagger_Daedric_Fear_2());
+        results.push_back(Weapon::Dagger_Daedric_Fear_3());
+        results.push_back(Weapon::Dagger_Daedric_Fire_1());
+        results.push_back(Weapon::Dagger_Daedric_Fire_2());
+        results.push_back(Weapon::Dagger_Daedric_Fire_3());
+        results.push_back(Weapon::Dagger_Daedric_Frost_1());
+        results.push_back(Weapon::Dagger_Daedric_Frost_2());
+        results.push_back(Weapon::Dagger_Daedric_Frost_3());
+        results.push_back(Weapon::Dagger_Daedric_Mehrunes_Razor());
+        results.push_back(Weapon::Dagger_Daedric_Paralyze_1());
+        results.push_back(Weapon::Dagger_Daedric_Paralyze_2());
+        results.push_back(Weapon::Dagger_Daedric_Paralyze_3());
+        results.push_back(Weapon::Dagger_Daedric_Shock_1());
+        results.push_back(Weapon::Dagger_Daedric_Shock_2());
+        results.push_back(Weapon::Dagger_Daedric_Shock_3());
+        results.push_back(Weapon::Dagger_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Dragonbone(results);
+        return results;
+    }
+
+    void Dagger_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Dragonbone());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Dwarven(results);
+        return results;
+    }
+
+    void Dagger_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Dwarven());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Dwarven_Fear_1());
+        results.push_back(Weapon::Dagger_Dwarven_Fear_2());
+        results.push_back(Weapon::Dagger_Dwarven_Fear_3());
+        results.push_back(Weapon::Dagger_Dwarven_Fire_1());
+        results.push_back(Weapon::Dagger_Dwarven_Fire_2());
+        results.push_back(Weapon::Dagger_Dwarven_Fire_3());
+        results.push_back(Weapon::Dagger_Dwarven_Frost_1());
+        results.push_back(Weapon::Dagger_Dwarven_Frost_2());
+        results.push_back(Weapon::Dagger_Dwarven_Frost_3());
+        results.push_back(Weapon::Dagger_Dwarven_Keening());
+        results.push_back(Weapon::Dagger_Dwarven_Shock_1());
+        results.push_back(Weapon::Dagger_Dwarven_Shock_2());
+        results.push_back(Weapon::Dagger_Dwarven_Shock_3());
+        results.push_back(Weapon::Dagger_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Ebony(results);
+        return results;
+    }
+
+    void Dagger_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Ebony());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Ebony_Banish_1());
+        results.push_back(Weapon::Dagger_Ebony_Banish_2());
+        results.push_back(Weapon::Dagger_Ebony_Banish_3());
+        results.push_back(Weapon::Dagger_Ebony_Blade_Of_Sacrifice());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Ebony_Fear_1());
+        results.push_back(Weapon::Dagger_Ebony_Fear_2());
+        results.push_back(Weapon::Dagger_Ebony_Fear_3());
+        results.push_back(Weapon::Dagger_Ebony_Fire_1());
+        results.push_back(Weapon::Dagger_Ebony_Fire_2());
+        results.push_back(Weapon::Dagger_Ebony_Fire_3());
+        results.push_back(Weapon::Dagger_Ebony_Frost_1());
+        results.push_back(Weapon::Dagger_Ebony_Frost_2());
+        results.push_back(Weapon::Dagger_Ebony_Frost_3());
+        results.push_back(Weapon::Dagger_Ebony_Nettlebane());
+        results.push_back(Weapon::Dagger_Ebony_Paralyze_1());
+        results.push_back(Weapon::Dagger_Ebony_Paralyze_2());
+        results.push_back(Weapon::Dagger_Ebony_Paralyze_3());
+        results.push_back(Weapon::Dagger_Ebony_Shock_1());
+        results.push_back(Weapon::Dagger_Ebony_Shock_2());
+        results.push_back(Weapon::Dagger_Ebony_Shock_3());
+        results.push_back(Weapon::Dagger_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Elven(results);
+        return results;
+    }
+
+    void Dagger_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Elven());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Elven_Banish_1());
+        results.push_back(Weapon::Dagger_Elven_Banish_2());
+        results.push_back(Weapon::Dagger_Elven_Borvir());
+        results.push_back(Weapon::Dagger_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Elven_Fear_1());
+        results.push_back(Weapon::Dagger_Elven_Fear_2());
+        results.push_back(Weapon::Dagger_Elven_Fear_3());
+        results.push_back(Weapon::Dagger_Elven_Fire_1());
+        results.push_back(Weapon::Dagger_Elven_Fire_2());
+        results.push_back(Weapon::Dagger_Elven_Fire_3());
+        results.push_back(Weapon::Dagger_Elven_Frost_1());
+        results.push_back(Weapon::Dagger_Elven_Frost_2());
+        results.push_back(Weapon::Dagger_Elven_Frost_3());
+        results.push_back(Weapon::Dagger_Elven_Paralyze_1());
+        results.push_back(Weapon::Dagger_Elven_Paralyze_2());
+        results.push_back(Weapon::Dagger_Elven_Prelate());
+        results.push_back(Weapon::Dagger_Elven_Shock_1());
+        results.push_back(Weapon::Dagger_Elven_Shock_2());
+        results.push_back(Weapon::Dagger_Elven_Shock_3());
+        results.push_back(Weapon::Dagger_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Glass(results);
+        return results;
+    }
+
+    void Dagger_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Glass());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Glass_Banish_1());
+        results.push_back(Weapon::Dagger_Glass_Banish_2());
+        results.push_back(Weapon::Dagger_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Glass_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Glass_Fear_1());
+        results.push_back(Weapon::Dagger_Glass_Fear_2());
+        results.push_back(Weapon::Dagger_Glass_Fear_3());
+        results.push_back(Weapon::Dagger_Glass_Fire_1());
+        results.push_back(Weapon::Dagger_Glass_Fire_2());
+        results.push_back(Weapon::Dagger_Glass_Fire_3());
+        results.push_back(Weapon::Dagger_Glass_Frost_1());
+        results.push_back(Weapon::Dagger_Glass_Frost_2());
+        results.push_back(Weapon::Dagger_Glass_Frost_3());
+        results.push_back(Weapon::Dagger_Glass_Paralyze_1());
+        results.push_back(Weapon::Dagger_Glass_Paralyze_2());
+        results.push_back(Weapon::Dagger_Glass_Shock_1());
+        results.push_back(Weapon::Dagger_Glass_Shock_2());
+        results.push_back(Weapon::Dagger_Glass_Shock_3());
+        results.push_back(Weapon::Dagger_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Iron(results);
+        return results;
+    }
+
+    void Dagger_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Iron());
+        results.push_back(Weapon::Dagger_Iron_Alessandra());
+        results.push_back(Weapon::Dagger_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Iron_Fear_1());
+        results.push_back(Weapon::Dagger_Iron_Fear_2());
+        results.push_back(Weapon::Dagger_Iron_Fear_3());
+        results.push_back(Weapon::Dagger_Iron_Fire_1());
+        results.push_back(Weapon::Dagger_Iron_Fire_2());
+        results.push_back(Weapon::Dagger_Iron_Fire_3());
+        results.push_back(Weapon::Dagger_Iron_Fork());
+        results.push_back(Weapon::Dagger_Iron_Frost_1());
+        results.push_back(Weapon::Dagger_Iron_Frost_2());
+        results.push_back(Weapon::Dagger_Iron_Frost_3());
+        results.push_back(Weapon::Dagger_Iron_Knife());
+        results.push_back(Weapon::Dagger_Iron_Shiv());
+        results.push_back(Weapon::Dagger_Iron_Shock_1());
+        results.push_back(Weapon::Dagger_Iron_Shock_2());
+        results.push_back(Weapon::Dagger_Iron_Shock_3());
+        results.push_back(Weapon::Dagger_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Iron_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Nordic(results);
+        return results;
+    }
+
+    void Dagger_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Nordic());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Nordic_Banish_1());
+        results.push_back(Weapon::Dagger_Nordic_Banish_2());
+        results.push_back(Weapon::Dagger_Nordic_Chaos_1());
+        results.push_back(Weapon::Dagger_Nordic_Chaos_2());
+        results.push_back(Weapon::Dagger_Nordic_Chaos_3());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Nordic_Fear_1());
+        results.push_back(Weapon::Dagger_Nordic_Fear_2());
+        results.push_back(Weapon::Dagger_Nordic_Fear_3());
+        results.push_back(Weapon::Dagger_Nordic_Fire_1());
+        results.push_back(Weapon::Dagger_Nordic_Fire_2());
+        results.push_back(Weapon::Dagger_Nordic_Fire_3());
+        results.push_back(Weapon::Dagger_Nordic_Frost_1());
+        results.push_back(Weapon::Dagger_Nordic_Frost_2());
+        results.push_back(Weapon::Dagger_Nordic_Frost_3());
+        results.push_back(Weapon::Dagger_Nordic_Paralyze_1());
+        results.push_back(Weapon::Dagger_Nordic_Paralyze_2());
+        results.push_back(Weapon::Dagger_Nordic_Shock_1());
+        results.push_back(Weapon::Dagger_Nordic_Shock_2());
+        results.push_back(Weapon::Dagger_Nordic_Shock_3());
+        results.push_back(Weapon::Dagger_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Orcish(results);
+        return results;
+    }
+
+    void Dagger_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Orcish());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Orcish_Fear_1());
+        results.push_back(Weapon::Dagger_Orcish_Fear_2());
+        results.push_back(Weapon::Dagger_Orcish_Fear_3());
+        results.push_back(Weapon::Dagger_Orcish_Fire_1());
+        results.push_back(Weapon::Dagger_Orcish_Fire_2());
+        results.push_back(Weapon::Dagger_Orcish_Fire_3());
+        results.push_back(Weapon::Dagger_Orcish_Frost_1());
+        results.push_back(Weapon::Dagger_Orcish_Frost_2());
+        results.push_back(Weapon::Dagger_Orcish_Frost_3());
+        results.push_back(Weapon::Dagger_Orcish_Shock_1());
+        results.push_back(Weapon::Dagger_Orcish_Shock_2());
+        results.push_back(Weapon::Dagger_Orcish_Shock_3());
+        results.push_back(Weapon::Dagger_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Stalhrim(results);
+        return results;
+    }
+
+    void Dagger_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Stalhrim());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Banish_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Banish_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Banish_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Fear_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Fear_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Fear_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Frost_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Frost_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Frost_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Shock_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Shock_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Shock_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Dagger_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Dagger_Steel(results);
+        return results;
+    }
+
+    void Dagger_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Dagger_Steel());
+        results.push_back(Weapon::Dagger_Steel_Blade_Of_Woe());
+        results.push_back(Weapon::Dagger_Steel_Blade_Of_Woe_Astrid());
+        results.push_back(Weapon::Dagger_Steel_Bloodthorn());
+        results.push_back(Weapon::Dagger_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Dagger_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Dagger_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Dagger_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Dagger_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Dagger_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Dagger_Steel_Fear_1());
+        results.push_back(Weapon::Dagger_Steel_Fear_2());
+        results.push_back(Weapon::Dagger_Steel_Fear_3());
+        results.push_back(Weapon::Dagger_Steel_Fire_1());
+        results.push_back(Weapon::Dagger_Steel_Fire_2());
+        results.push_back(Weapon::Dagger_Steel_Fire_3());
+        results.push_back(Weapon::Dagger_Steel_Frost_1());
+        results.push_back(Weapon::Dagger_Steel_Frost_2());
+        results.push_back(Weapon::Dagger_Steel_Frost_3());
+        results.push_back(Weapon::Dagger_Steel_Rundi());
+        results.push_back(Weapon::Dagger_Steel_Shock_1());
+        results.push_back(Weapon::Dagger_Steel_Shock_2());
+        results.push_back(Weapon::Dagger_Steel_Shock_3());
+        results.push_back(Weapon::Dagger_Steel_Skyforge());
+        results.push_back(Weapon::Dagger_Steel_Skyforge_NPC());
+        results.push_back(Weapon::Dagger_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Dagger_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Dagger_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Dagger_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Dagger_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Dagger_Steel_Turn_Undead_3());
+        results.push_back(Weapon::Dagger_Steel_Valdrs_Lucky());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword(results);
+        return results;
+    }
+
+    void Greatsword(Vector_t<some<Weapon_t*>>& results)
+    {
+        Greatsword_Ancient_Nordic(results);
+        Greatsword_Daedric(results);
+        Greatsword_Dragonbone(results);
+        Greatsword_Dwarven(results);
+        Greatsword_Ebony(results);
+        Greatsword_Elven(results);
+        Greatsword_Glass(results);
+        Greatsword_Iron(results);
+        Greatsword_Nordic(results);
+        Greatsword_Orcish(results);
+        Greatsword_Silver(results);
+        Greatsword_Stalhrim(results);
+        Greatsword_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Greatsword_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Ancient_Nordic());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Frost_1());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Frost_2());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Frost_3());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Hero());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed_Fire_1());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed_Fire_2());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed_Frost_1());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed_Frost_2());
+        results.push_back(Weapon::Greatsword_Ancient_Nordic_Honed_Frost_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Daedric(results);
+        return results;
+    }
+
+    void Greatsword_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Daedric());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Daedric_Banish_1());
+        results.push_back(Weapon::Greatsword_Daedric_Banish_2());
+        results.push_back(Weapon::Greatsword_Daedric_Banish_3());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Daedric_Ebony_Blade());
+        results.push_back(Weapon::Greatsword_Daedric_Ebony_Blade_Full());
+        results.push_back(Weapon::Greatsword_Daedric_Fear_1());
+        results.push_back(Weapon::Greatsword_Daedric_Fear_2());
+        results.push_back(Weapon::Greatsword_Daedric_Fear_3());
+        results.push_back(Weapon::Greatsword_Daedric_Fire_1());
+        results.push_back(Weapon::Greatsword_Daedric_Fire_2());
+        results.push_back(Weapon::Greatsword_Daedric_Fire_3());
+        results.push_back(Weapon::Greatsword_Daedric_Frost_1());
+        results.push_back(Weapon::Greatsword_Daedric_Frost_2());
+        results.push_back(Weapon::Greatsword_Daedric_Frost_3());
+        results.push_back(Weapon::Greatsword_Daedric_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Daedric_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Daedric_Paralyze_3());
+        results.push_back(Weapon::Greatsword_Daedric_Scorching());
+        results.push_back(Weapon::Greatsword_Daedric_Shock_1());
+        results.push_back(Weapon::Greatsword_Daedric_Shock_2());
+        results.push_back(Weapon::Greatsword_Daedric_Shock_3());
+        results.push_back(Weapon::Greatsword_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Dragonbone(results);
+        return results;
+    }
+
+    void Greatsword_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Dragonbone());
+        results.push_back(Weapon::Greatsword_Dragonbone_Wrathman());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Dwarven(results);
+        return results;
+    }
+
+    void Greatsword_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Dwarven());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Fear_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Fear_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Fear_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Fire_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Fire_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Fire_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Frost_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Frost_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Frost_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Shock_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Shock_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Shock_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Ebony(results);
+        return results;
+    }
+
+    void Greatsword_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Ebony());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Ebony_Banish_1());
+        results.push_back(Weapon::Greatsword_Ebony_Banish_2());
+        results.push_back(Weapon::Greatsword_Ebony_Banish_3());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Ebony_Fear_1());
+        results.push_back(Weapon::Greatsword_Ebony_Fear_2());
+        results.push_back(Weapon::Greatsword_Ebony_Fear_3());
+        results.push_back(Weapon::Greatsword_Ebony_Fire_1());
+        results.push_back(Weapon::Greatsword_Ebony_Fire_2());
+        results.push_back(Weapon::Greatsword_Ebony_Fire_3());
+        results.push_back(Weapon::Greatsword_Ebony_Frost_1());
+        results.push_back(Weapon::Greatsword_Ebony_Frost_2());
+        results.push_back(Weapon::Greatsword_Ebony_Frost_3());
+        results.push_back(Weapon::Greatsword_Ebony_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Ebony_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Ebony_Paralyze_3());
+        results.push_back(Weapon::Greatsword_Ebony_Shock_1());
+        results.push_back(Weapon::Greatsword_Ebony_Shock_2());
+        results.push_back(Weapon::Greatsword_Ebony_Shock_3());
+        results.push_back(Weapon::Greatsword_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Elven(results);
+        return results;
+    }
+
+    void Greatsword_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Elven());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Elven_Banish_1());
+        results.push_back(Weapon::Greatsword_Elven_Banish_2());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Elven_Fear_1());
+        results.push_back(Weapon::Greatsword_Elven_Fear_2());
+        results.push_back(Weapon::Greatsword_Elven_Fear_3());
+        results.push_back(Weapon::Greatsword_Elven_Fire_1());
+        results.push_back(Weapon::Greatsword_Elven_Fire_2());
+        results.push_back(Weapon::Greatsword_Elven_Fire_3());
+        results.push_back(Weapon::Greatsword_Elven_Frost_1());
+        results.push_back(Weapon::Greatsword_Elven_Frost_2());
+        results.push_back(Weapon::Greatsword_Elven_Frost_3());
+        results.push_back(Weapon::Greatsword_Elven_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Elven_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Elven_Shock_1());
+        results.push_back(Weapon::Greatsword_Elven_Shock_2());
+        results.push_back(Weapon::Greatsword_Elven_Shock_3());
+        results.push_back(Weapon::Greatsword_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Glass(results);
+        return results;
+    }
+
+    void Greatsword_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Glass());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Glass_Banish_1());
+        results.push_back(Weapon::Greatsword_Glass_Banish_2());
+        results.push_back(Weapon::Greatsword_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Glass_Fear_1());
+        results.push_back(Weapon::Greatsword_Glass_Fear_2());
+        results.push_back(Weapon::Greatsword_Glass_Fear_3());
+        results.push_back(Weapon::Greatsword_Glass_Fire_1());
+        results.push_back(Weapon::Greatsword_Glass_Fire_2());
+        results.push_back(Weapon::Greatsword_Glass_Fire_3());
+        results.push_back(Weapon::Greatsword_Glass_Frost_1());
+        results.push_back(Weapon::Greatsword_Glass_Frost_2());
+        results.push_back(Weapon::Greatsword_Glass_Frost_3());
+        results.push_back(Weapon::Greatsword_Glass_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Glass_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Glass_Shock_1());
+        results.push_back(Weapon::Greatsword_Glass_Shock_2());
+        results.push_back(Weapon::Greatsword_Glass_Shock_3());
+        results.push_back(Weapon::Greatsword_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Iron(results);
+        return results;
+    }
+
+    void Greatsword_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Iron());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Iron_Fear_1());
+        results.push_back(Weapon::Greatsword_Iron_Fear_2());
+        results.push_back(Weapon::Greatsword_Iron_Fear_3());
+        results.push_back(Weapon::Greatsword_Iron_Fire_1());
+        results.push_back(Weapon::Greatsword_Iron_Fire_2());
+        results.push_back(Weapon::Greatsword_Iron_Fire_3());
+        results.push_back(Weapon::Greatsword_Iron_Frost_1());
+        results.push_back(Weapon::Greatsword_Iron_Frost_2());
+        results.push_back(Weapon::Greatsword_Iron_Frost_3());
+        results.push_back(Weapon::Greatsword_Iron_Shock_1());
+        results.push_back(Weapon::Greatsword_Iron_Shock_2());
+        results.push_back(Weapon::Greatsword_Iron_Shock_3());
+        results.push_back(Weapon::Greatsword_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Iron_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Nordic(results);
+        return results;
+    }
+
+    void Greatsword_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Nordic());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Nordic_Banish_1());
+        results.push_back(Weapon::Greatsword_Nordic_Banish_2());
+        results.push_back(Weapon::Greatsword_Nordic_Chaos_1());
+        results.push_back(Weapon::Greatsword_Nordic_Chaos_2());
+        results.push_back(Weapon::Greatsword_Nordic_Chaos_3());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Nordic_Fear_1());
+        results.push_back(Weapon::Greatsword_Nordic_Fear_2());
+        results.push_back(Weapon::Greatsword_Nordic_Fear_3());
+        results.push_back(Weapon::Greatsword_Nordic_Fire_1());
+        results.push_back(Weapon::Greatsword_Nordic_Fire_2());
+        results.push_back(Weapon::Greatsword_Nordic_Fire_3());
+        results.push_back(Weapon::Greatsword_Nordic_Frost_1());
+        results.push_back(Weapon::Greatsword_Nordic_Frost_2());
+        results.push_back(Weapon::Greatsword_Nordic_Frost_3());
+        results.push_back(Weapon::Greatsword_Nordic_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Nordic_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Nordic_Shock_1());
+        results.push_back(Weapon::Greatsword_Nordic_Shock_2());
+        results.push_back(Weapon::Greatsword_Nordic_Shock_3());
+        results.push_back(Weapon::Greatsword_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Orcish(results);
+        return results;
+    }
+
+    void Greatsword_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Orcish());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Orcish_Fear_1());
+        results.push_back(Weapon::Greatsword_Orcish_Fear_2());
+        results.push_back(Weapon::Greatsword_Orcish_Fear_3());
+        results.push_back(Weapon::Greatsword_Orcish_Fire_1());
+        results.push_back(Weapon::Greatsword_Orcish_Fire_2());
+        results.push_back(Weapon::Greatsword_Orcish_Fire_3());
+        results.push_back(Weapon::Greatsword_Orcish_Frost_1());
+        results.push_back(Weapon::Greatsword_Orcish_Frost_2());
+        results.push_back(Weapon::Greatsword_Orcish_Frost_3());
+        results.push_back(Weapon::Greatsword_Orcish_Shock_1());
+        results.push_back(Weapon::Greatsword_Orcish_Shock_2());
+        results.push_back(Weapon::Greatsword_Orcish_Shock_3());
+        results.push_back(Weapon::Greatsword_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Silver()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Silver(results);
+        return results;
+    }
+
+    void Greatsword_Silver(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Silver());
+        results.push_back(Weapon::Greatsword_Silver_Bloodskal());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Stalhrim(results);
+        return results;
+    }
+
+    void Greatsword_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Stalhrim());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Banish_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Banish_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Banish_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Fear_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Fear_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Fear_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Frost_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Frost_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Frost_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Shock_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Shock_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Shock_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Greatsword_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Greatsword_Steel(results);
+        return results;
+    }
+
+    void Greatsword_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Greatsword_Steel());
+        results.push_back(Weapon::Greatsword_Steel_Balgruuf());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Greatsword_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Greatsword_Steel_Fear_1());
+        results.push_back(Weapon::Greatsword_Steel_Fear_2());
+        results.push_back(Weapon::Greatsword_Steel_Fear_3());
+        results.push_back(Weapon::Greatsword_Steel_Fire_1());
+        results.push_back(Weapon::Greatsword_Steel_Fire_2());
+        results.push_back(Weapon::Greatsword_Steel_Fire_3());
+        results.push_back(Weapon::Greatsword_Steel_Frost_1());
+        results.push_back(Weapon::Greatsword_Steel_Frost_2());
+        results.push_back(Weapon::Greatsword_Steel_Frost_3());
+        results.push_back(Weapon::Greatsword_Steel_Lurker());
+        results.push_back(Weapon::Greatsword_Steel_Shock_1());
+        results.push_back(Weapon::Greatsword_Steel_Shock_2());
+        results.push_back(Weapon::Greatsword_Steel_Shock_3());
+        results.push_back(Weapon::Greatsword_Steel_Skyforge());
+        results.push_back(Weapon::Greatsword_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Greatsword_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Greatsword_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Greatsword_Steel_Stormfang());
+        results.push_back(Weapon::Greatsword_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Greatsword_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Greatsword_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace(results);
+        return results;
+    }
+
+    void Mace(Vector_t<some<Weapon_t*>>& results)
+    {
+        Mace_Daedric(results);
+        Mace_Dragonbone(results);
+        Mace_Dwarven(results);
+        Mace_Ebony(results);
+        Mace_Elven(results);
+        Mace_Glass(results);
+        Mace_Iron(results);
+        Mace_Nordic(results);
+        Mace_Orcish(results);
+        Mace_Stalhrim(results);
+        Mace_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Daedric(results);
+        return results;
+    }
+
+    void Mace_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Daedric());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Daedric_Banish_1());
+        results.push_back(Weapon::Mace_Daedric_Banish_2());
+        results.push_back(Weapon::Mace_Daedric_Banish_3());
+        results.push_back(Weapon::Mace_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Daedric_Fear_1());
+        results.push_back(Weapon::Mace_Daedric_Fear_2());
+        results.push_back(Weapon::Mace_Daedric_Fear_3());
+        results.push_back(Weapon::Mace_Daedric_Fire_1());
+        results.push_back(Weapon::Mace_Daedric_Fire_2());
+        results.push_back(Weapon::Mace_Daedric_Fire_3());
+        results.push_back(Weapon::Mace_Daedric_Frost_1());
+        results.push_back(Weapon::Mace_Daedric_Frost_2());
+        results.push_back(Weapon::Mace_Daedric_Frost_3());
+        results.push_back(Weapon::Mace_Daedric_Inferno());
+        results.push_back(Weapon::Mace_Daedric_Molag_Bal());
+        results.push_back(Weapon::Mace_Daedric_Molag_Bal_Rusty());
+        results.push_back(Weapon::Mace_Daedric_Paralyze_1());
+        results.push_back(Weapon::Mace_Daedric_Paralyze_2());
+        results.push_back(Weapon::Mace_Daedric_Paralyze_3());
+        results.push_back(Weapon::Mace_Daedric_Shock_1());
+        results.push_back(Weapon::Mace_Daedric_Shock_2());
+        results.push_back(Weapon::Mace_Daedric_Shock_3());
+        results.push_back(Weapon::Mace_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Dragonbone(results);
+        return results;
+    }
+
+    void Mace_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Dragonbone());
+        results.push_back(Weapon::Mace_Dragonbone_Keeper_1());
+        results.push_back(Weapon::Mace_Dragonbone_Keeper_2());
+        results.push_back(Weapon::Mace_Dragonbone_Keeper_3());
+        results.push_back(Weapon::Mace_Dragonbone_Keeper_4());
+        results.push_back(Weapon::Mace_Dragonbone_Keeper_5());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Dwarven(results);
+        return results;
+    }
+
+    void Mace_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Dwarven());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Dwarven_Fear_1());
+        results.push_back(Weapon::Mace_Dwarven_Fear_2());
+        results.push_back(Weapon::Mace_Dwarven_Fear_3());
+        results.push_back(Weapon::Mace_Dwarven_Fire_1());
+        results.push_back(Weapon::Mace_Dwarven_Fire_2());
+        results.push_back(Weapon::Mace_Dwarven_Fire_3());
+        results.push_back(Weapon::Mace_Dwarven_Frost_1());
+        results.push_back(Weapon::Mace_Dwarven_Frost_2());
+        results.push_back(Weapon::Mace_Dwarven_Frost_3());
+        results.push_back(Weapon::Mace_Dwarven_Shock_1());
+        results.push_back(Weapon::Mace_Dwarven_Shock_2());
+        results.push_back(Weapon::Mace_Dwarven_Shock_3());
+        results.push_back(Weapon::Mace_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Ebony(results);
+        return results;
+    }
+
+    void Mace_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Ebony());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Ebony_Banish_1());
+        results.push_back(Weapon::Mace_Ebony_Banish_2());
+        results.push_back(Weapon::Mace_Ebony_Banish_3());
+        results.push_back(Weapon::Mace_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Ebony_Fear_1());
+        results.push_back(Weapon::Mace_Ebony_Fear_2());
+        results.push_back(Weapon::Mace_Ebony_Fear_3());
+        results.push_back(Weapon::Mace_Ebony_Fire_1());
+        results.push_back(Weapon::Mace_Ebony_Fire_2());
+        results.push_back(Weapon::Mace_Ebony_Fire_3());
+        results.push_back(Weapon::Mace_Ebony_Frost_1());
+        results.push_back(Weapon::Mace_Ebony_Frost_2());
+        results.push_back(Weapon::Mace_Ebony_Frost_3());
+        results.push_back(Weapon::Mace_Ebony_Paralyze_1());
+        results.push_back(Weapon::Mace_Ebony_Paralyze_2());
+        results.push_back(Weapon::Mace_Ebony_Paralyze_3());
+        results.push_back(Weapon::Mace_Ebony_Shock_1());
+        results.push_back(Weapon::Mace_Ebony_Shock_2());
+        results.push_back(Weapon::Mace_Ebony_Shock_3());
+        results.push_back(Weapon::Mace_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Elven(results);
+        return results;
+    }
+
+    void Mace_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Elven());
+        results.push_back(Weapon::Mace_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Elven_Banish_1());
+        results.push_back(Weapon::Mace_Elven_Banish_2());
+        results.push_back(Weapon::Mace_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Elven_Fear_1());
+        results.push_back(Weapon::Mace_Elven_Fear_2());
+        results.push_back(Weapon::Mace_Elven_Fear_3());
+        results.push_back(Weapon::Mace_Elven_Fire_1());
+        results.push_back(Weapon::Mace_Elven_Fire_2());
+        results.push_back(Weapon::Mace_Elven_Fire_3());
+        results.push_back(Weapon::Mace_Elven_Frost_1());
+        results.push_back(Weapon::Mace_Elven_Frost_2());
+        results.push_back(Weapon::Mace_Elven_Frost_3());
+        results.push_back(Weapon::Mace_Elven_Paralyze_1());
+        results.push_back(Weapon::Mace_Elven_Paralyze_2());
+        results.push_back(Weapon::Mace_Elven_Prelate());
+        results.push_back(Weapon::Mace_Elven_Shock_1());
+        results.push_back(Weapon::Mace_Elven_Shock_2());
+        results.push_back(Weapon::Mace_Elven_Shock_3());
+        results.push_back(Weapon::Mace_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Glass(results);
+        return results;
+    }
+
+    void Mace_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Glass());
+        results.push_back(Weapon::Mace_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Glass_Banish_1());
+        results.push_back(Weapon::Mace_Glass_Banish_2());
+        results.push_back(Weapon::Mace_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Glass_Fear_1());
+        results.push_back(Weapon::Mace_Glass_Fear_2());
+        results.push_back(Weapon::Mace_Glass_Fear_3());
+        results.push_back(Weapon::Mace_Glass_Fire_1());
+        results.push_back(Weapon::Mace_Glass_Fire_2());
+        results.push_back(Weapon::Mace_Glass_Fire_3());
+        results.push_back(Weapon::Mace_Glass_Frost_1());
+        results.push_back(Weapon::Mace_Glass_Frost_2());
+        results.push_back(Weapon::Mace_Glass_Frost_3());
+        results.push_back(Weapon::Mace_Glass_Paralyze_1());
+        results.push_back(Weapon::Mace_Glass_Paralyze_2());
+        results.push_back(Weapon::Mace_Glass_Shock_1());
+        results.push_back(Weapon::Mace_Glass_Shock_2());
+        results.push_back(Weapon::Mace_Glass_Shock_3());
+        results.push_back(Weapon::Mace_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Iron(results);
+        return results;
+    }
+
+    void Mace_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Iron());
+        results.push_back(Weapon::Mace_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Iron_Fear_1());
+        results.push_back(Weapon::Mace_Iron_Fear_2());
+        results.push_back(Weapon::Mace_Iron_Fear_3());
+        results.push_back(Weapon::Mace_Iron_Fire_1());
+        results.push_back(Weapon::Mace_Iron_Fire_2());
+        results.push_back(Weapon::Mace_Iron_Fire_3());
+        results.push_back(Weapon::Mace_Iron_Frost_1());
+        results.push_back(Weapon::Mace_Iron_Frost_2());
+        results.push_back(Weapon::Mace_Iron_Frost_3());
+        results.push_back(Weapon::Mace_Iron_Lunar_1());
+        results.push_back(Weapon::Mace_Iron_Lunar_2());
+        results.push_back(Weapon::Mace_Iron_Lunar_3());
+        results.push_back(Weapon::Mace_Iron_Shock_1());
+        results.push_back(Weapon::Mace_Iron_Shock_2());
+        results.push_back(Weapon::Mace_Iron_Shock_3());
+        results.push_back(Weapon::Mace_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Iron_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Nordic(results);
+        return results;
+    }
+
+    void Mace_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Nordic());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Nordic_Banish_1());
+        results.push_back(Weapon::Mace_Nordic_Banish_2());
+        results.push_back(Weapon::Mace_Nordic_Chaos_1());
+        results.push_back(Weapon::Mace_Nordic_Chaos_2());
+        results.push_back(Weapon::Mace_Nordic_Chaos_3());
+        results.push_back(Weapon::Mace_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Nordic_Fear_1());
+        results.push_back(Weapon::Mace_Nordic_Fear_2());
+        results.push_back(Weapon::Mace_Nordic_Fear_3());
+        results.push_back(Weapon::Mace_Nordic_Fire_1());
+        results.push_back(Weapon::Mace_Nordic_Fire_2());
+        results.push_back(Weapon::Mace_Nordic_Fire_3());
+        results.push_back(Weapon::Mace_Nordic_Frost_1());
+        results.push_back(Weapon::Mace_Nordic_Frost_2());
+        results.push_back(Weapon::Mace_Nordic_Frost_3());
+        results.push_back(Weapon::Mace_Nordic_Paralyze_1());
+        results.push_back(Weapon::Mace_Nordic_Paralyze_2());
+        results.push_back(Weapon::Mace_Nordic_Shock_1());
+        results.push_back(Weapon::Mace_Nordic_Shock_2());
+        results.push_back(Weapon::Mace_Nordic_Shock_3());
+        results.push_back(Weapon::Mace_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Orcish(results);
+        return results;
+    }
+
+    void Mace_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Orcish());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Orcish_Fear_1());
+        results.push_back(Weapon::Mace_Orcish_Fear_2());
+        results.push_back(Weapon::Mace_Orcish_Fear_3());
+        results.push_back(Weapon::Mace_Orcish_Fire_1());
+        results.push_back(Weapon::Mace_Orcish_Fire_2());
+        results.push_back(Weapon::Mace_Orcish_Fire_3());
+        results.push_back(Weapon::Mace_Orcish_Frost_1());
+        results.push_back(Weapon::Mace_Orcish_Frost_2());
+        results.push_back(Weapon::Mace_Orcish_Frost_3());
+        results.push_back(Weapon::Mace_Orcish_Shock_1());
+        results.push_back(Weapon::Mace_Orcish_Shock_2());
+        results.push_back(Weapon::Mace_Orcish_Shock_3());
+        results.push_back(Weapon::Mace_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Stalhrim(results);
+        return results;
+    }
+
+    void Mace_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Stalhrim());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Mace_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Mace_Stalhrim_Banish_1());
+        results.push_back(Weapon::Mace_Stalhrim_Banish_2());
+        results.push_back(Weapon::Mace_Stalhrim_Banish_3());
+        results.push_back(Weapon::Mace_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Mace_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Mace_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Stalhrim_Fear_1());
+        results.push_back(Weapon::Mace_Stalhrim_Fear_2());
+        results.push_back(Weapon::Mace_Stalhrim_Fear_3());
+        results.push_back(Weapon::Mace_Stalhrim_Frost_1());
+        results.push_back(Weapon::Mace_Stalhrim_Frost_2());
+        results.push_back(Weapon::Mace_Stalhrim_Frost_3());
+        results.push_back(Weapon::Mace_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Mace_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Mace_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Mace_Stalhrim_Shock_1());
+        results.push_back(Weapon::Mace_Stalhrim_Shock_2());
+        results.push_back(Weapon::Mace_Stalhrim_Shock_3());
+        results.push_back(Weapon::Mace_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Mace_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Mace_Steel(results);
+        return results;
+    }
+
+    void Mace_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Mace_Steel());
+        results.push_back(Weapon::Mace_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Mace_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Mace_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Mace_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Mace_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Mace_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Mace_Steel_Fear_1());
+        results.push_back(Weapon::Mace_Steel_Fear_2());
+        results.push_back(Weapon::Mace_Steel_Fear_3());
+        results.push_back(Weapon::Mace_Steel_Fire_1());
+        results.push_back(Weapon::Mace_Steel_Fire_2());
+        results.push_back(Weapon::Mace_Steel_Fire_3());
+        results.push_back(Weapon::Mace_Steel_Frost_1());
+        results.push_back(Weapon::Mace_Steel_Frost_2());
+        results.push_back(Weapon::Mace_Steel_Frost_3());
+        results.push_back(Weapon::Mace_Steel_Horksbane());
+        results.push_back(Weapon::Mace_Steel_Lunar_1());
+        results.push_back(Weapon::Mace_Steel_Lunar_2());
+        results.push_back(Weapon::Mace_Steel_Lunar_3());
+        results.push_back(Weapon::Mace_Steel_Shock_1());
+        results.push_back(Weapon::Mace_Steel_Shock_2());
+        results.push_back(Weapon::Mace_Steel_Shock_3());
+        results.push_back(Weapon::Mace_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Mace_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Mace_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Mace_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Mace_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Mace_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff(results);
+        return results;
+    }
+
+    void Staff(Vector_t<some<Weapon_t*>>& results)
+    {
+        Staff_Alteration(results);
+        Staff_Ancient_Nordic(results);
+        Staff_Conjuration(results);
+        Staff_Daedric(results);
+        Staff_Destruction(results);
+        Staff_Dwarven(results);
+        Staff_Falmer(results);
+        Staff_Forsworn(results);
+        Staff_Illusion(results);
+        Staff_Restoration(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Alteration()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Alteration(results);
+        return results;
+    }
+
+    void Staff_Alteration(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Alteration());
+        results.push_back(Weapon::Staff_Alteration_Magelight());
+        results.push_back(Weapon::Staff_Alteration_Paralysis());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Staff_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Ancient_Nordic_Dragon_Priest_1());
+        results.push_back(Weapon::Staff_Ancient_Nordic_Dragon_Priest_2());
+        results.push_back(Weapon::Staff_Ancient_Nordic_Hevnoraak());
+        results.push_back(Weapon::Staff_Ancient_Nordic_Magnus());
+        results.push_back(Weapon::Staff_Ancient_Nordic_Necromantic());
+        results.push_back(Weapon::Staff_Ancient_Nordic_Tandil());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Conjuration()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Conjuration(results);
+        return results;
+    }
+
+    void Staff_Conjuration(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Conjuration());
+        results.push_back(Weapon::Staff_Conjuration_Banishing());
+        results.push_back(Weapon::Staff_Conjuration_Daedric_Command());
+        results.push_back(Weapon::Staff_Conjuration_Dread_Zombies());
+        results.push_back(Weapon::Staff_Conjuration_Expulsion());
+        results.push_back(Weapon::Staff_Conjuration_Familiar());
+        results.push_back(Weapon::Staff_Conjuration_Flame_Atronach());
+        results.push_back(Weapon::Staff_Conjuration_Frost_Atronach());
+        results.push_back(Weapon::Staff_Conjuration_Reanimation());
+        results.push_back(Weapon::Staff_Conjuration_Revenants());
+        results.push_back(Weapon::Staff_Conjuration_Sild());
+        results.push_back(Weapon::Staff_Conjuration_Soul_Trapping());
+        results.push_back(Weapon::Staff_Conjuration_Storm_Atronach());
+        results.push_back(Weapon::Staff_Conjuration_Zombies());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Daedric(results);
+        return results;
+    }
+
+    void Staff_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Daedric_Miraak_1());
+        results.push_back(Weapon::Staff_Daedric_Miraak_2());
+        results.push_back(Weapon::Staff_Daedric_Miraak_3());
+        results.push_back(Weapon::Staff_Daedric_Miraak_NPC());
+        results.push_back(Weapon::Staff_Daedric_Miraak_Tentacles());
+        results.push_back(Weapon::Staff_Daedric_Sanguine_Rose());
+        results.push_back(Weapon::Staff_Daedric_Sanguine_Rose_Broken());
+        results.push_back(Weapon::Staff_Daedric_Skull_Of_Corruption());
+        results.push_back(Weapon::Staff_Daedric_Wabbajack());
+        results.push_back(Weapon::Staff_Daedric_Wabbajack_Quest());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Destruction()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Destruction(results);
+        return results;
+    }
+
+    void Staff_Destruction(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Destruction());
+        results.push_back(Weapon::Staff_Destruction_Chain_Lightning());
+        results.push_back(Weapon::Staff_Destruction_Fireballs());
+        results.push_back(Weapon::Staff_Destruction_Firebolts());
+        results.push_back(Weapon::Staff_Destruction_Flame_Wall());
+        results.push_back(Weapon::Staff_Destruction_Flames());
+        results.push_back(Weapon::Staff_Destruction_Frost_Wall());
+        results.push_back(Weapon::Staff_Destruction_Frostbite());
+        results.push_back(Weapon::Staff_Destruction_Ice_Spikes());
+        results.push_back(Weapon::Staff_Destruction_Ice_Storms());
+        results.push_back(Weapon::Staff_Destruction_Icy_Spear());
+        results.push_back(Weapon::Staff_Destruction_Incineration());
+        results.push_back(Weapon::Staff_Destruction_Lightning_Bolts());
+        results.push_back(Weapon::Staff_Destruction_Sparks());
+        results.push_back(Weapon::Staff_Destruction_Storm_Wall());
+        results.push_back(Weapon::Staff_Destruction_Thunderbolts());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Dwarven(results);
+        return results;
+    }
+
+    void Staff_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Dwarven_Aetherial());
+        results.push_back(Weapon::Staff_Dwarven_Spider_Control_Rod());
+        results.push_back(Weapon::Staff_Dwarven_Spider_Control_Rod_Fake());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Falmer()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Falmer(results);
+        return results;
+    }
+
+    void Staff_Falmer(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Falmer());
+        results.push_back(Weapon::Staff_Falmer_Chain_Lightning());
+        results.push_back(Weapon::Staff_Falmer_Fireballs());
+        results.push_back(Weapon::Staff_Falmer_Firebolts());
+        results.push_back(Weapon::Staff_Falmer_Flame_Atronach());
+        results.push_back(Weapon::Staff_Falmer_Frost_Atronach());
+        results.push_back(Weapon::Staff_Falmer_Ice_Spikes());
+        results.push_back(Weapon::Staff_Falmer_Ice_Storms());
+        results.push_back(Weapon::Staff_Falmer_Lightning_Bolts());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Forsworn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Forsworn(results);
+        return results;
+    }
+
+    void Staff_Forsworn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Forsworn());
+        results.push_back(Weapon::Staff_Forsworn_Eye_Of_Melka());
+        results.push_back(Weapon::Staff_Forsworn_Flames());
+        results.push_back(Weapon::Staff_Forsworn_Hags_Wrath());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Illusion()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Illusion(results);
+        return results;
+    }
+
+    void Staff_Illusion(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Illusion());
+        results.push_back(Weapon::Staff_Illusion_Arcane_Authority());
+        results.push_back(Weapon::Staff_Illusion_Calm());
+        results.push_back(Weapon::Staff_Illusion_Charming());
+        results.push_back(Weapon::Staff_Illusion_Courage());
+        results.push_back(Weapon::Staff_Illusion_Fear());
+        results.push_back(Weapon::Staff_Illusion_Frenzy());
+        results.push_back(Weapon::Staff_Illusion_Fury());
+        results.push_back(Weapon::Staff_Illusion_Gadnors_Charming());
+        results.push_back(Weapon::Staff_Illusion_Halldir());
+        results.push_back(Weapon::Staff_Illusion_Inspiration());
+        results.push_back(Weapon::Staff_Illusion_Ruunvald());
+        results.push_back(Weapon::Staff_Illusion_Vanquishment());
+    }
+
+    Vector_t<some<Weapon_t*>> Staff_Restoration()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Staff_Restoration(results);
+        return results;
+    }
+
+    void Staff_Restoration(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Staff_Restoration());
+        results.push_back(Weapon::Staff_Restoration_Healing_Hand());
+        results.push_back(Weapon::Staff_Restoration_Jyrik_Gauldurson());
+        results.push_back(Weapon::Staff_Restoration_Mending());
+        results.push_back(Weapon::Staff_Restoration_Repulsion());
+        results.push_back(Weapon::Staff_Restoration_Repulsion_Grand());
+        results.push_back(Weapon::Staff_Restoration_Turning());
+        results.push_back(Weapon::Staff_Restoration_Turning_Grand());
+        results.push_back(Weapon::Staff_Restoration_Turning_Minor());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword(results);
+        return results;
+    }
+
+    void Sword(Vector_t<some<Weapon_t*>>& results)
+    {
+        Sword_Ancient_Nordic(results);
+        Sword_Bound(results);
+        Sword_Daedric(results);
+        Sword_Dragonbone(results);
+        Sword_Dwarven(results);
+        Sword_Ebony(results);
+        Sword_Elven(results);
+        Sword_Falmer(results);
+        Sword_Forsworn(results);
+        Sword_Glass(results);
+        Sword_Imperial(results);
+        Sword_Iron(results);
+        Sword_Nordic(results);
+        Sword_Orcish(results);
+        Sword_Silver(results);
+        Sword_Stalhrim(results);
+        Sword_Steel(results);
+        Sword_Wood(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Sword_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Ancient_Nordic());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Ceremonial());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Drainheart());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Eduj());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Frost_1());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Frost_2());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Frost_3());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Gauldur_Blackblade_1());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Gauldur_Blackblade_2());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Gauldur_Blackblade_3());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Gauldur_Blackblade_4());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Gauldur_Blackblade_5());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Ghostblade());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Hero());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Hjalti());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Honed());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Honed_Frost_1());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Honed_Frost_2());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Honed_Frost_3());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Pale_Blade_1());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Pale_Blade_2());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Pale_Blade_3());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Pale_Blade_4());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Pale_Blade_5());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Red_Eagles_Bane());
+        results.push_back(Weapon::Sword_Ancient_Nordic_Red_Eagles_Fury());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Bound()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Bound(results);
+        return results;
+    }
+
+    void Sword_Bound(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Bound());
+        results.push_back(Weapon::Sword_Bound_Miraak());
+        results.push_back(Weapon::Sword_Bound_Mystic());
+        results.push_back(Weapon::Sword_Bound_Phantom());
+        results.push_back(Weapon::Sword_Bound_Right_Hand());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Daedric(results);
+        return results;
+    }
+
+    void Sword_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Daedric());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Daedric_Banish_1());
+        results.push_back(Weapon::Sword_Daedric_Banish_2());
+        results.push_back(Weapon::Sword_Daedric_Banish_3());
+        results.push_back(Weapon::Sword_Daedric_Bloodscythe());
+        results.push_back(Weapon::Sword_Daedric_Bloodscythe_NPC());
+        results.push_back(Weapon::Sword_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Daedric_Dawnbreaker());
+        results.push_back(Weapon::Sword_Daedric_Fear_1());
+        results.push_back(Weapon::Sword_Daedric_Fear_2());
+        results.push_back(Weapon::Sword_Daedric_Fear_3());
+        results.push_back(Weapon::Sword_Daedric_Fire_1());
+        results.push_back(Weapon::Sword_Daedric_Fire_2());
+        results.push_back(Weapon::Sword_Daedric_Fire_3());
+        results.push_back(Weapon::Sword_Daedric_Frost_1());
+        results.push_back(Weapon::Sword_Daedric_Frost_2());
+        results.push_back(Weapon::Sword_Daedric_Frost_3());
+        results.push_back(Weapon::Sword_Daedric_Miraak_1());
+        results.push_back(Weapon::Sword_Daedric_Miraak_2());
+        results.push_back(Weapon::Sword_Daedric_Miraak_3());
+        results.push_back(Weapon::Sword_Daedric_Paralyze_1());
+        results.push_back(Weapon::Sword_Daedric_Paralyze_2());
+        results.push_back(Weapon::Sword_Daedric_Paralyze_3());
+        results.push_back(Weapon::Sword_Daedric_Shock_1());
+        results.push_back(Weapon::Sword_Daedric_Shock_2());
+        results.push_back(Weapon::Sword_Daedric_Shock_3());
+        results.push_back(Weapon::Sword_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Daedric_Soulrender());
+        results.push_back(Weapon::Sword_Daedric_Soulrender_NPC());
+        results.push_back(Weapon::Sword_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Daedric_Turn_Undead_3());
+        results.push_back(Weapon::Sword_Daedric_Zahkrii_Do_Dovahkiin());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Dragonbone(results);
+        return results;
+    }
+
+    void Sword_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Dragonbone());
+        results.push_back(Weapon::Sword_Dragonbone_Keeper_1());
+        results.push_back(Weapon::Sword_Dragonbone_Keeper_2());
+        results.push_back(Weapon::Sword_Dragonbone_Keeper_3());
+        results.push_back(Weapon::Sword_Dragonbone_Keeper_4());
+        results.push_back(Weapon::Sword_Dragonbone_Keeper_5());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Dwarven(results);
+        return results;
+    }
+
+    void Sword_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Dwarven());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Dwarven_Fear_1());
+        results.push_back(Weapon::Sword_Dwarven_Fear_2());
+        results.push_back(Weapon::Sword_Dwarven_Fear_3());
+        results.push_back(Weapon::Sword_Dwarven_Fire_1());
+        results.push_back(Weapon::Sword_Dwarven_Fire_2());
+        results.push_back(Weapon::Sword_Dwarven_Fire_3());
+        results.push_back(Weapon::Sword_Dwarven_Frost_1());
+        results.push_back(Weapon::Sword_Dwarven_Frost_2());
+        results.push_back(Weapon::Sword_Dwarven_Frost_3());
+        results.push_back(Weapon::Sword_Dwarven_Shock_1());
+        results.push_back(Weapon::Sword_Dwarven_Shock_2());
+        results.push_back(Weapon::Sword_Dwarven_Shock_3());
+        results.push_back(Weapon::Sword_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Ebony(results);
+        return results;
+    }
+
+    void Sword_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Ebony());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Ebony_Banish_1());
+        results.push_back(Weapon::Sword_Ebony_Banish_2());
+        results.push_back(Weapon::Sword_Ebony_Banish_3());
+        results.push_back(Weapon::Sword_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Ebony_Fear_1());
+        results.push_back(Weapon::Sword_Ebony_Fear_2());
+        results.push_back(Weapon::Sword_Ebony_Fear_3());
+        results.push_back(Weapon::Sword_Ebony_Fire_1());
+        results.push_back(Weapon::Sword_Ebony_Fire_2());
+        results.push_back(Weapon::Sword_Ebony_Fire_3());
+        results.push_back(Weapon::Sword_Ebony_Frost_1());
+        results.push_back(Weapon::Sword_Ebony_Frost_2());
+        results.push_back(Weapon::Sword_Ebony_Frost_3());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_1());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_2());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_3());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_4());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_5());
+        results.push_back(Weapon::Sword_Ebony_Nightingale_NPC());
+        results.push_back(Weapon::Sword_Ebony_Paralyze_1());
+        results.push_back(Weapon::Sword_Ebony_Paralyze_2());
+        results.push_back(Weapon::Sword_Ebony_Paralyze_3());
+        results.push_back(Weapon::Sword_Ebony_Shock_1());
+        results.push_back(Weapon::Sword_Ebony_Shock_2());
+        results.push_back(Weapon::Sword_Ebony_Shock_3());
+        results.push_back(Weapon::Sword_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Elven(results);
+        return results;
+    }
+
+    void Sword_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Elven());
+        results.push_back(Weapon::Sword_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Elven_Banish_1());
+        results.push_back(Weapon::Sword_Elven_Banish_2());
+        results.push_back(Weapon::Sword_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Elven_Fear_1());
+        results.push_back(Weapon::Sword_Elven_Fear_2());
+        results.push_back(Weapon::Sword_Elven_Fear_3());
+        results.push_back(Weapon::Sword_Elven_Fire_1());
+        results.push_back(Weapon::Sword_Elven_Fire_2());
+        results.push_back(Weapon::Sword_Elven_Fire_3());
+        results.push_back(Weapon::Sword_Elven_Frost_1());
+        results.push_back(Weapon::Sword_Elven_Frost_2());
+        results.push_back(Weapon::Sword_Elven_Frost_3());
+        results.push_back(Weapon::Sword_Elven_Herebanes_Courage());
+        results.push_back(Weapon::Sword_Elven_Paralyze_1());
+        results.push_back(Weapon::Sword_Elven_Paralyze_2());
+        results.push_back(Weapon::Sword_Elven_Shock_1());
+        results.push_back(Weapon::Sword_Elven_Shock_2());
+        results.push_back(Weapon::Sword_Elven_Shock_3());
+        results.push_back(Weapon::Sword_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Falmer()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Falmer(results);
+        return results;
+    }
+
+    void Sword_Falmer(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Falmer());
+        results.push_back(Weapon::Sword_Falmer_Honed());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Forsworn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Forsworn(results);
+        return results;
+    }
+
+    void Sword_Forsworn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Forsworn());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Glass(results);
+        return results;
+    }
+
+    void Sword_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Glass());
+        results.push_back(Weapon::Sword_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Glass_Banish_1());
+        results.push_back(Weapon::Sword_Glass_Banish_2());
+        results.push_back(Weapon::Sword_Glass_Chillrend_1());
+        results.push_back(Weapon::Sword_Glass_Chillrend_2());
+        results.push_back(Weapon::Sword_Glass_Chillrend_3());
+        results.push_back(Weapon::Sword_Glass_Chillrend_4());
+        results.push_back(Weapon::Sword_Glass_Chillrend_5());
+        results.push_back(Weapon::Sword_Glass_Chillrend_6());
+        results.push_back(Weapon::Sword_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Glass_Fear_1());
+        results.push_back(Weapon::Sword_Glass_Fear_2());
+        results.push_back(Weapon::Sword_Glass_Fear_3());
+        results.push_back(Weapon::Sword_Glass_Fire_1());
+        results.push_back(Weapon::Sword_Glass_Fire_2());
+        results.push_back(Weapon::Sword_Glass_Fire_3());
+        results.push_back(Weapon::Sword_Glass_Frost_1());
+        results.push_back(Weapon::Sword_Glass_Frost_2());
+        results.push_back(Weapon::Sword_Glass_Frost_3());
+        results.push_back(Weapon::Sword_Glass_Grimsever());
+        results.push_back(Weapon::Sword_Glass_Paralyze_1());
+        results.push_back(Weapon::Sword_Glass_Paralyze_2());
+        results.push_back(Weapon::Sword_Glass_Shock_1());
+        results.push_back(Weapon::Sword_Glass_Shock_2());
+        results.push_back(Weapon::Sword_Glass_Shock_3());
+        results.push_back(Weapon::Sword_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Imperial()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Imperial(results);
+        return results;
+    }
+
+    void Sword_Imperial(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Imperial());
+        results.push_back(Weapon::Sword_Imperial_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Imperial_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Imperial_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Imperial_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Imperial_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Imperial_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Imperial_Fear_1());
+        results.push_back(Weapon::Sword_Imperial_Fear_2());
+        results.push_back(Weapon::Sword_Imperial_Fear_3());
+        results.push_back(Weapon::Sword_Imperial_Fire_1());
+        results.push_back(Weapon::Sword_Imperial_Fire_2());
+        results.push_back(Weapon::Sword_Imperial_Fire_3());
+        results.push_back(Weapon::Sword_Imperial_Frost_1());
+        results.push_back(Weapon::Sword_Imperial_Frost_2());
+        results.push_back(Weapon::Sword_Imperial_Frost_3());
+        results.push_back(Weapon::Sword_Imperial_Shock_1());
+        results.push_back(Weapon::Sword_Imperial_Shock_2());
+        results.push_back(Weapon::Sword_Imperial_Shock_3());
+        results.push_back(Weapon::Sword_Imperial_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Imperial_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Imperial_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Imperial_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Imperial_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Imperial_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Iron(results);
+        return results;
+    }
+
+    void Sword_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Iron());
+        results.push_back(Weapon::Sword_Iron_Amazement());
+        results.push_back(Weapon::Sword_Iron_Amrens_Family());
+        results.push_back(Weapon::Sword_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Iron_Fear_1());
+        results.push_back(Weapon::Sword_Iron_Fear_2());
+        results.push_back(Weapon::Sword_Iron_Fear_3());
+        results.push_back(Weapon::Sword_Iron_Fire_1());
+        results.push_back(Weapon::Sword_Iron_Fire_2());
+        results.push_back(Weapon::Sword_Iron_Fire_3());
+        results.push_back(Weapon::Sword_Iron_Frost_1());
+        results.push_back(Weapon::Sword_Iron_Frost_2());
+        results.push_back(Weapon::Sword_Iron_Frost_3());
+        results.push_back(Weapon::Sword_Iron_Lunar_1());
+        results.push_back(Weapon::Sword_Iron_Lunar_2());
+        results.push_back(Weapon::Sword_Iron_Lunar_3());
+        results.push_back(Weapon::Sword_Iron_Shock_1());
+        results.push_back(Weapon::Sword_Iron_Shock_2());
+        results.push_back(Weapon::Sword_Iron_Shock_3());
+        results.push_back(Weapon::Sword_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Iron_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Nordic(results);
+        return results;
+    }
+
+    void Sword_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Nordic());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Nordic_Banish_1());
+        results.push_back(Weapon::Sword_Nordic_Banish_2());
+        results.push_back(Weapon::Sword_Nordic_Chaos_1());
+        results.push_back(Weapon::Sword_Nordic_Chaos_2());
+        results.push_back(Weapon::Sword_Nordic_Chaos_3());
+        results.push_back(Weapon::Sword_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Nordic_Fear_1());
+        results.push_back(Weapon::Sword_Nordic_Fear_2());
+        results.push_back(Weapon::Sword_Nordic_Fear_3());
+        results.push_back(Weapon::Sword_Nordic_Fire_1());
+        results.push_back(Weapon::Sword_Nordic_Fire_2());
+        results.push_back(Weapon::Sword_Nordic_Fire_3());
+        results.push_back(Weapon::Sword_Nordic_Frost_1());
+        results.push_back(Weapon::Sword_Nordic_Frost_2());
+        results.push_back(Weapon::Sword_Nordic_Frost_3());
+        results.push_back(Weapon::Sword_Nordic_Paralyze_1());
+        results.push_back(Weapon::Sword_Nordic_Paralyze_2());
+        results.push_back(Weapon::Sword_Nordic_Shock_1());
+        results.push_back(Weapon::Sword_Nordic_Shock_2());
+        results.push_back(Weapon::Sword_Nordic_Shock_3());
+        results.push_back(Weapon::Sword_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Orcish(results);
+        return results;
+    }
+
+    void Sword_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Orcish());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Orcish_Fear_1());
+        results.push_back(Weapon::Sword_Orcish_Fear_2());
+        results.push_back(Weapon::Sword_Orcish_Fear_3());
+        results.push_back(Weapon::Sword_Orcish_Fire_1());
+        results.push_back(Weapon::Sword_Orcish_Fire_2());
+        results.push_back(Weapon::Sword_Orcish_Fire_3());
+        results.push_back(Weapon::Sword_Orcish_Frost_1());
+        results.push_back(Weapon::Sword_Orcish_Frost_2());
+        results.push_back(Weapon::Sword_Orcish_Frost_3());
+        results.push_back(Weapon::Sword_Orcish_Shock_1());
+        results.push_back(Weapon::Sword_Orcish_Shock_2());
+        results.push_back(Weapon::Sword_Orcish_Shock_3());
+        results.push_back(Weapon::Sword_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Silver()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Silver(results);
+        return results;
+    }
+
+    void Sword_Silver(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Silver());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Stalhrim(results);
+        return results;
+    }
+
+    void Sword_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Stalhrim());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Sword_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Sword_Stalhrim_Banish_1());
+        results.push_back(Weapon::Sword_Stalhrim_Banish_2());
+        results.push_back(Weapon::Sword_Stalhrim_Banish_3());
+        results.push_back(Weapon::Sword_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Sword_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Sword_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Stalhrim_Fear_1());
+        results.push_back(Weapon::Sword_Stalhrim_Fear_2());
+        results.push_back(Weapon::Sword_Stalhrim_Fear_3());
+        results.push_back(Weapon::Sword_Stalhrim_Frost_1());
+        results.push_back(Weapon::Sword_Stalhrim_Frost_2());
+        results.push_back(Weapon::Sword_Stalhrim_Frost_3());
+        results.push_back(Weapon::Sword_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Sword_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Sword_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Sword_Stalhrim_Shock_1());
+        results.push_back(Weapon::Sword_Stalhrim_Shock_2());
+        results.push_back(Weapon::Sword_Stalhrim_Shock_3());
+        results.push_back(Weapon::Sword_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Steel(results);
+        return results;
+    }
+
+    void Sword_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Steel());
+        results.push_back(Weapon::Sword_Steel_Blades());
+        results.push_back(Weapon::Sword_Steel_Bolars_Oathblade());
+        results.push_back(Weapon::Sword_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Sword_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Sword_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Sword_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Sword_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Sword_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Sword_Steel_Dexion_Evicus());
+        results.push_back(Weapon::Sword_Steel_Dragonbane_1());
+        results.push_back(Weapon::Sword_Steel_Dragonbane_2());
+        results.push_back(Weapon::Sword_Steel_Dragonbane_3());
+        results.push_back(Weapon::Sword_Steel_Dragonbane_4());
+        results.push_back(Weapon::Sword_Steel_Dragonbane_5());
+        results.push_back(Weapon::Sword_Steel_Fear_1());
+        results.push_back(Weapon::Sword_Steel_Fear_2());
+        results.push_back(Weapon::Sword_Steel_Fear_3());
+        results.push_back(Weapon::Sword_Steel_Fire_1());
+        results.push_back(Weapon::Sword_Steel_Fire_2());
+        results.push_back(Weapon::Sword_Steel_Fire_3());
+        results.push_back(Weapon::Sword_Steel_Frost_1());
+        results.push_back(Weapon::Sword_Steel_Frost_2());
+        results.push_back(Weapon::Sword_Steel_Frost_3());
+        results.push_back(Weapon::Sword_Steel_Harkon());
+        results.push_back(Weapon::Sword_Steel_Harrald());
+        results.push_back(Weapon::Sword_Steel_Lunar_1());
+        results.push_back(Weapon::Sword_Steel_Lunar_2());
+        results.push_back(Weapon::Sword_Steel_Lunar_3());
+        results.push_back(Weapon::Sword_Steel_Queen_Freydis());
+        results.push_back(Weapon::Sword_Steel_Scimitar());
+        results.push_back(Weapon::Sword_Steel_Shock_1());
+        results.push_back(Weapon::Sword_Steel_Shock_2());
+        results.push_back(Weapon::Sword_Steel_Shock_3());
+        results.push_back(Weapon::Sword_Steel_Skyforge());
+        results.push_back(Weapon::Sword_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Sword_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Sword_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Sword_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Sword_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Sword_Steel_Turn_Undead_3());
+        results.push_back(Weapon::Sword_Steel_Windshear());
+    }
+
+    Vector_t<some<Weapon_t*>> Sword_Wood()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Sword_Wood(results);
+        return results;
+    }
+
+    void Sword_Wood(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Sword_Wood());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe(results);
+        return results;
+    }
+
+    void Waraxe(Vector_t<some<Weapon_t*>>& results)
+    {
+        Waraxe_Ancient_Nordic(results);
+        Waraxe_Ash_Spawn(results);
+        Waraxe_Daedric(results);
+        Waraxe_Dragonbone(results);
+        Waraxe_Dwarven(results);
+        Waraxe_Ebony(results);
+        Waraxe_Elven(results);
+        Waraxe_Falmer(results);
+        Waraxe_Forsworn(results);
+        Waraxe_Glass(results);
+        Waraxe_Iron(results);
+        Waraxe_Nordic(results);
+        Waraxe_Orcish(results);
+        Waraxe_Stalhrim(results);
+        Waraxe_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Ancient_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Ancient_Nordic(results);
+        return results;
+    }
+
+    void Waraxe_Ancient_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Ancient_Nordic());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Ceremonial());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Frost_1());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Frost_2());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Frost_3());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Hero());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Hoarfrost());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Honed());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Honed_Frost_1());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Honed_Frost_2());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Honed_Frost_3());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Illusory());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Okin());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Pickaxe_1());
+        results.push_back(Weapon::Waraxe_Ancient_Nordic_Pickaxe_2());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Ash_Spawn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Ash_Spawn(results);
+        return results;
+    }
+
+    void Waraxe_Ash_Spawn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Ash_Spawn());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Daedric(results);
+        return results;
+    }
+
+    void Waraxe_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Daedric());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Daedric_Banish_1());
+        results.push_back(Weapon::Waraxe_Daedric_Banish_2());
+        results.push_back(Weapon::Waraxe_Daedric_Banish_3());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Daedric_Fear_1());
+        results.push_back(Weapon::Waraxe_Daedric_Fear_2());
+        results.push_back(Weapon::Waraxe_Daedric_Fear_3());
+        results.push_back(Weapon::Waraxe_Daedric_Fire_1());
+        results.push_back(Weapon::Waraxe_Daedric_Fire_2());
+        results.push_back(Weapon::Waraxe_Daedric_Fire_3());
+        results.push_back(Weapon::Waraxe_Daedric_Frost_1());
+        results.push_back(Weapon::Waraxe_Daedric_Frost_2());
+        results.push_back(Weapon::Waraxe_Daedric_Frost_3());
+        results.push_back(Weapon::Waraxe_Daedric_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Daedric_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Daedric_Paralyze_3());
+        results.push_back(Weapon::Waraxe_Daedric_Shock_1());
+        results.push_back(Weapon::Waraxe_Daedric_Shock_2());
+        results.push_back(Weapon::Waraxe_Daedric_Shock_3());
+        results.push_back(Weapon::Waraxe_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Daedric_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Dragonbone(results);
+        return results;
+    }
+
+    void Waraxe_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Dragonbone());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Dwarven(results);
+        return results;
+    }
+
+    void Waraxe_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Dwarven());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Fear_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Fear_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Fear_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Fire_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Fire_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Fire_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Frost_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Frost_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Frost_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Shock_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Shock_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Shock_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Ebony(results);
+        return results;
+    }
+
+    void Waraxe_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Ebony());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Ebony_Banish_1());
+        results.push_back(Weapon::Waraxe_Ebony_Banish_2());
+        results.push_back(Weapon::Waraxe_Ebony_Banish_3());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Ebony_Fear_1());
+        results.push_back(Weapon::Waraxe_Ebony_Fear_2());
+        results.push_back(Weapon::Waraxe_Ebony_Fear_3());
+        results.push_back(Weapon::Waraxe_Ebony_Fire_1());
+        results.push_back(Weapon::Waraxe_Ebony_Fire_2());
+        results.push_back(Weapon::Waraxe_Ebony_Fire_3());
+        results.push_back(Weapon::Waraxe_Ebony_Frost_1());
+        results.push_back(Weapon::Waraxe_Ebony_Frost_2());
+        results.push_back(Weapon::Waraxe_Ebony_Frost_3());
+        results.push_back(Weapon::Waraxe_Ebony_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Ebony_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Ebony_Paralyze_3());
+        results.push_back(Weapon::Waraxe_Ebony_Shock_1());
+        results.push_back(Weapon::Waraxe_Ebony_Shock_2());
+        results.push_back(Weapon::Waraxe_Ebony_Shock_3());
+        results.push_back(Weapon::Waraxe_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Elven(results);
+        return results;
+    }
+
+    void Waraxe_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Elven());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Elven_Banish_1());
+        results.push_back(Weapon::Waraxe_Elven_Banish_2());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Elven_Fear_1());
+        results.push_back(Weapon::Waraxe_Elven_Fear_2());
+        results.push_back(Weapon::Waraxe_Elven_Fear_3());
+        results.push_back(Weapon::Waraxe_Elven_Fire_1());
+        results.push_back(Weapon::Waraxe_Elven_Fire_2());
+        results.push_back(Weapon::Waraxe_Elven_Fire_3());
+        results.push_back(Weapon::Waraxe_Elven_Frost_1());
+        results.push_back(Weapon::Waraxe_Elven_Frost_2());
+        results.push_back(Weapon::Waraxe_Elven_Frost_3());
+        results.push_back(Weapon::Waraxe_Elven_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Elven_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Elven_Shock_1());
+        results.push_back(Weapon::Waraxe_Elven_Shock_2());
+        results.push_back(Weapon::Waraxe_Elven_Shock_3());
+        results.push_back(Weapon::Waraxe_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Falmer()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Falmer(results);
+        return results;
+    }
+
+    void Waraxe_Falmer(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Falmer());
+        results.push_back(Weapon::Waraxe_Falmer_Honed());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Forsworn()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Forsworn(results);
+        return results;
+    }
+
+    void Waraxe_Forsworn(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Forsworn());
+        results.push_back(Weapon::Waraxe_Forsworn_Briarheart_Geis());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Glass(results);
+        return results;
+    }
+
+    void Waraxe_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Glass());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Glass_Banish_1());
+        results.push_back(Weapon::Waraxe_Glass_Banish_2());
+        results.push_back(Weapon::Waraxe_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Glass_Fear_1());
+        results.push_back(Weapon::Waraxe_Glass_Fear_2());
+        results.push_back(Weapon::Waraxe_Glass_Fear_3());
+        results.push_back(Weapon::Waraxe_Glass_Fire_1());
+        results.push_back(Weapon::Waraxe_Glass_Fire_2());
+        results.push_back(Weapon::Waraxe_Glass_Fire_3());
+        results.push_back(Weapon::Waraxe_Glass_Frost_1());
+        results.push_back(Weapon::Waraxe_Glass_Frost_2());
+        results.push_back(Weapon::Waraxe_Glass_Frost_3());
+        results.push_back(Weapon::Waraxe_Glass_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Glass_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Glass_Shock_1());
+        results.push_back(Weapon::Waraxe_Glass_Shock_2());
+        results.push_back(Weapon::Waraxe_Glass_Shock_3());
+        results.push_back(Weapon::Waraxe_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Iron(results);
+        return results;
+    }
+
+    void Waraxe_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Iron());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Iron_Fear_1());
+        results.push_back(Weapon::Waraxe_Iron_Fear_2());
+        results.push_back(Weapon::Waraxe_Iron_Fear_3());
+        results.push_back(Weapon::Waraxe_Iron_Fire_1());
+        results.push_back(Weapon::Waraxe_Iron_Fire_2());
+        results.push_back(Weapon::Waraxe_Iron_Fire_3());
+        results.push_back(Weapon::Waraxe_Iron_Frost_1());
+        results.push_back(Weapon::Waraxe_Iron_Frost_2());
+        results.push_back(Weapon::Waraxe_Iron_Frost_3());
+        results.push_back(Weapon::Waraxe_Iron_Ghorbashs_Ancestral());
+        results.push_back(Weapon::Waraxe_Iron_Lunar_1());
+        results.push_back(Weapon::Waraxe_Iron_Lunar_2());
+        results.push_back(Weapon::Waraxe_Iron_Lunar_3());
+        results.push_back(Weapon::Waraxe_Iron_Pickaxe());
+        results.push_back(Weapon::Waraxe_Iron_Pickaxe_Notched());
+        results.push_back(Weapon::Waraxe_Iron_Poacher());
+        results.push_back(Weapon::Waraxe_Iron_Rocksplinter());
+        results.push_back(Weapon::Waraxe_Iron_Shock_1());
+        results.push_back(Weapon::Waraxe_Iron_Shock_2());
+        results.push_back(Weapon::Waraxe_Iron_Shock_3());
+        results.push_back(Weapon::Waraxe_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Iron_Turn_Undead_3());
+        results.push_back(Weapon::Waraxe_Iron_Woodcutter());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Nordic(results);
+        return results;
+    }
+
+    void Waraxe_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Nordic());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Nordic_Banish_1());
+        results.push_back(Weapon::Waraxe_Nordic_Banish_2());
+        results.push_back(Weapon::Waraxe_Nordic_Chaos_1());
+        results.push_back(Weapon::Waraxe_Nordic_Chaos_2());
+        results.push_back(Weapon::Waraxe_Nordic_Chaos_3());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Nordic_Fear_1());
+        results.push_back(Weapon::Waraxe_Nordic_Fear_2());
+        results.push_back(Weapon::Waraxe_Nordic_Fear_3());
+        results.push_back(Weapon::Waraxe_Nordic_Fire_1());
+        results.push_back(Weapon::Waraxe_Nordic_Fire_2());
+        results.push_back(Weapon::Waraxe_Nordic_Fire_3());
+        results.push_back(Weapon::Waraxe_Nordic_Frost_1());
+        results.push_back(Weapon::Waraxe_Nordic_Frost_2());
+        results.push_back(Weapon::Waraxe_Nordic_Frost_3());
+        results.push_back(Weapon::Waraxe_Nordic_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Nordic_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Nordic_Shock_1());
+        results.push_back(Weapon::Waraxe_Nordic_Shock_2());
+        results.push_back(Weapon::Waraxe_Nordic_Shock_3());
+        results.push_back(Weapon::Waraxe_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Orcish(results);
+        return results;
+    }
+
+    void Waraxe_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Orcish());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Orcish_Fear_1());
+        results.push_back(Weapon::Waraxe_Orcish_Fear_2());
+        results.push_back(Weapon::Waraxe_Orcish_Fear_3());
+        results.push_back(Weapon::Waraxe_Orcish_Fire_1());
+        results.push_back(Weapon::Waraxe_Orcish_Fire_2());
+        results.push_back(Weapon::Waraxe_Orcish_Fire_3());
+        results.push_back(Weapon::Waraxe_Orcish_Frost_1());
+        results.push_back(Weapon::Waraxe_Orcish_Frost_2());
+        results.push_back(Weapon::Waraxe_Orcish_Frost_3());
+        results.push_back(Weapon::Waraxe_Orcish_Shock_1());
+        results.push_back(Weapon::Waraxe_Orcish_Shock_2());
+        results.push_back(Weapon::Waraxe_Orcish_Shock_3());
+        results.push_back(Weapon::Waraxe_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Stalhrim(results);
+        return results;
+    }
+
+    void Waraxe_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Stalhrim());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Banish_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Banish_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Banish_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Fear_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Fear_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Fear_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Frost_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Frost_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Frost_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Shock_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Shock_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Shock_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Waraxe_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Waraxe_Steel(results);
+        return results;
+    }
+
+    void Waraxe_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Waraxe_Steel());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Waraxe_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Waraxe_Steel_Dawnguard());
+        results.push_back(Weapon::Waraxe_Steel_Dawnguard_Rune());
+        results.push_back(Weapon::Waraxe_Steel_Fear_1());
+        results.push_back(Weapon::Waraxe_Steel_Fear_2());
+        results.push_back(Weapon::Waraxe_Steel_Fear_3());
+        results.push_back(Weapon::Waraxe_Steel_Fire_1());
+        results.push_back(Weapon::Waraxe_Steel_Fire_2());
+        results.push_back(Weapon::Waraxe_Steel_Fire_3());
+        results.push_back(Weapon::Waraxe_Steel_Frost_1());
+        results.push_back(Weapon::Waraxe_Steel_Frost_2());
+        results.push_back(Weapon::Waraxe_Steel_Frost_3());
+        results.push_back(Weapon::Waraxe_Steel_Lunar_1());
+        results.push_back(Weapon::Waraxe_Steel_Lunar_2());
+        results.push_back(Weapon::Waraxe_Steel_Lunar_3());
+        results.push_back(Weapon::Waraxe_Steel_Shock_1());
+        results.push_back(Weapon::Waraxe_Steel_Shock_2());
+        results.push_back(Weapon::Waraxe_Steel_Shock_3());
+        results.push_back(Weapon::Waraxe_Steel_Skyforge());
+        results.push_back(Weapon::Waraxe_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Waraxe_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Waraxe_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Waraxe_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Waraxe_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Waraxe_Steel_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer(results);
+        return results;
+    }
+
+    void Warhammer(Vector_t<some<Weapon_t*>>& results)
+    {
+        Warhammer_Daedric(results);
+        Warhammer_Dragonbone(results);
+        Warhammer_Dwarven(results);
+        Warhammer_Ebony(results);
+        Warhammer_Elven(results);
+        Warhammer_Glass(results);
+        Warhammer_Iron(results);
+        Warhammer_Nordic(results);
+        Warhammer_Orcish(results);
+        Warhammer_Stalhrim(results);
+        Warhammer_Steel(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Daedric()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Daedric(results);
+        return results;
+    }
+
+    void Warhammer_Daedric(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Daedric());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Daedric_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Daedric_Banish_1());
+        results.push_back(Weapon::Warhammer_Daedric_Banish_2());
+        results.push_back(Weapon::Warhammer_Daedric_Banish_3());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Daedric_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Daedric_Fear_1());
+        results.push_back(Weapon::Warhammer_Daedric_Fear_2());
+        results.push_back(Weapon::Warhammer_Daedric_Fear_3());
+        results.push_back(Weapon::Warhammer_Daedric_Fire_1());
+        results.push_back(Weapon::Warhammer_Daedric_Fire_2());
+        results.push_back(Weapon::Warhammer_Daedric_Fire_3());
+        results.push_back(Weapon::Warhammer_Daedric_Frost_1());
+        results.push_back(Weapon::Warhammer_Daedric_Frost_2());
+        results.push_back(Weapon::Warhammer_Daedric_Frost_3());
+        results.push_back(Weapon::Warhammer_Daedric_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Daedric_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Daedric_Paralyze_3());
+        results.push_back(Weapon::Warhammer_Daedric_Shock_1());
+        results.push_back(Weapon::Warhammer_Daedric_Shock_2());
+        results.push_back(Weapon::Warhammer_Daedric_Shock_3());
+        results.push_back(Weapon::Warhammer_Daedric_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Daedric_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Daedric_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Daedric_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Daedric_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Daedric_Turn_Undead_3());
+        results.push_back(Weapon::Warhammer_Daedric_Volendrung());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Dragonbone()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Dragonbone(results);
+        return results;
+    }
+
+    void Warhammer_Dragonbone(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Dragonbone());
+        results.push_back(Weapon::Warhammer_Dragonbone_Wrathman());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Dwarven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Dwarven(results);
+        return results;
+    }
+
+    void Warhammer_Dwarven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Dwarven());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Fear_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Fear_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Fear_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Fire_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Fire_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Fire_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Frost_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Frost_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Frost_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Shock_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Shock_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Shock_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Dwarven_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Dwarven_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Dwarven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Ebony()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Ebony(results);
+        return results;
+    }
+
+    void Warhammer_Ebony(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Ebony());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Ebony_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Ebony_Banish_1());
+        results.push_back(Weapon::Warhammer_Ebony_Banish_2());
+        results.push_back(Weapon::Warhammer_Ebony_Banish_3());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Ebony_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Ebony_Fear_1());
+        results.push_back(Weapon::Warhammer_Ebony_Fear_2());
+        results.push_back(Weapon::Warhammer_Ebony_Fear_3());
+        results.push_back(Weapon::Warhammer_Ebony_Fire_1());
+        results.push_back(Weapon::Warhammer_Ebony_Fire_2());
+        results.push_back(Weapon::Warhammer_Ebony_Fire_3());
+        results.push_back(Weapon::Warhammer_Ebony_Frost_1());
+        results.push_back(Weapon::Warhammer_Ebony_Frost_2());
+        results.push_back(Weapon::Warhammer_Ebony_Frost_3());
+        results.push_back(Weapon::Warhammer_Ebony_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Ebony_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Ebony_Paralyze_3());
+        results.push_back(Weapon::Warhammer_Ebony_Shock_1());
+        results.push_back(Weapon::Warhammer_Ebony_Shock_2());
+        results.push_back(Weapon::Warhammer_Ebony_Shock_3());
+        results.push_back(Weapon::Warhammer_Ebony_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Ebony_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Ebony_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Ebony_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Ebony_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Ebony_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Elven()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Elven(results);
+        return results;
+    }
+
+    void Warhammer_Elven(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Elven());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Elven_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Elven_Banish_1());
+        results.push_back(Weapon::Warhammer_Elven_Banish_2());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Elven_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Elven_Fear_1());
+        results.push_back(Weapon::Warhammer_Elven_Fear_2());
+        results.push_back(Weapon::Warhammer_Elven_Fear_3());
+        results.push_back(Weapon::Warhammer_Elven_Fire_1());
+        results.push_back(Weapon::Warhammer_Elven_Fire_2());
+        results.push_back(Weapon::Warhammer_Elven_Fire_3());
+        results.push_back(Weapon::Warhammer_Elven_Frost_1());
+        results.push_back(Weapon::Warhammer_Elven_Frost_2());
+        results.push_back(Weapon::Warhammer_Elven_Frost_3());
+        results.push_back(Weapon::Warhammer_Elven_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Elven_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Elven_Shock_1());
+        results.push_back(Weapon::Warhammer_Elven_Shock_2());
+        results.push_back(Weapon::Warhammer_Elven_Shock_3());
+        results.push_back(Weapon::Warhammer_Elven_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Elven_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Elven_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Elven_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Elven_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Elven_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Glass()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Glass(results);
+        return results;
+    }
+
+    void Warhammer_Glass(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Glass());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Glass_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Glass_Banish_1());
+        results.push_back(Weapon::Warhammer_Glass_Banish_2());
+        results.push_back(Weapon::Warhammer_Glass_Champions_Cudgel());
+        results.push_back(Weapon::Warhammer_Glass_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Glass_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Glass_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Glass_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Glass_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Glass_Fear_1());
+        results.push_back(Weapon::Warhammer_Glass_Fear_2());
+        results.push_back(Weapon::Warhammer_Glass_Fear_3());
+        results.push_back(Weapon::Warhammer_Glass_Fire_1());
+        results.push_back(Weapon::Warhammer_Glass_Fire_2());
+        results.push_back(Weapon::Warhammer_Glass_Fire_3());
+        results.push_back(Weapon::Warhammer_Glass_Frost_1());
+        results.push_back(Weapon::Warhammer_Glass_Frost_2());
+        results.push_back(Weapon::Warhammer_Glass_Frost_3());
+        results.push_back(Weapon::Warhammer_Glass_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Glass_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Glass_Shock_1());
+        results.push_back(Weapon::Warhammer_Glass_Shock_2());
+        results.push_back(Weapon::Warhammer_Glass_Shock_3());
+        results.push_back(Weapon::Warhammer_Glass_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Glass_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Glass_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Glass_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Glass_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Glass_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Iron()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Iron(results);
+        return results;
+    }
+
+    void Warhammer_Iron(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Iron());
+        results.push_back(Weapon::Warhammer_Iron_Aegisbane());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Iron_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Iron_Fear_1());
+        results.push_back(Weapon::Warhammer_Iron_Fear_2());
+        results.push_back(Weapon::Warhammer_Iron_Fear_3());
+        results.push_back(Weapon::Warhammer_Iron_Fire_1());
+        results.push_back(Weapon::Warhammer_Iron_Fire_2());
+        results.push_back(Weapon::Warhammer_Iron_Fire_3());
+        results.push_back(Weapon::Warhammer_Iron_Frost_1());
+        results.push_back(Weapon::Warhammer_Iron_Frost_2());
+        results.push_back(Weapon::Warhammer_Iron_Frost_3());
+        results.push_back(Weapon::Warhammer_Iron_Shock_1());
+        results.push_back(Weapon::Warhammer_Iron_Shock_2());
+        results.push_back(Weapon::Warhammer_Iron_Shock_3());
+        results.push_back(Weapon::Warhammer_Iron_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Iron_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Iron_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Iron_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Iron_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Iron_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Nordic()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Nordic(results);
+        return results;
+    }
+
+    void Warhammer_Nordic(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Nordic());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Nordic_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Nordic_Banish_1());
+        results.push_back(Weapon::Warhammer_Nordic_Banish_2());
+        results.push_back(Weapon::Warhammer_Nordic_Chaos_1());
+        results.push_back(Weapon::Warhammer_Nordic_Chaos_2());
+        results.push_back(Weapon::Warhammer_Nordic_Chaos_3());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Nordic_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Nordic_Fear_1());
+        results.push_back(Weapon::Warhammer_Nordic_Fear_2());
+        results.push_back(Weapon::Warhammer_Nordic_Fear_3());
+        results.push_back(Weapon::Warhammer_Nordic_Fire_1());
+        results.push_back(Weapon::Warhammer_Nordic_Fire_2());
+        results.push_back(Weapon::Warhammer_Nordic_Fire_3());
+        results.push_back(Weapon::Warhammer_Nordic_Frost_1());
+        results.push_back(Weapon::Warhammer_Nordic_Frost_2());
+        results.push_back(Weapon::Warhammer_Nordic_Frost_3());
+        results.push_back(Weapon::Warhammer_Nordic_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Nordic_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Nordic_Shock_1());
+        results.push_back(Weapon::Warhammer_Nordic_Shock_2());
+        results.push_back(Weapon::Warhammer_Nordic_Shock_3());
+        results.push_back(Weapon::Warhammer_Nordic_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Nordic_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Nordic_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Nordic_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Nordic_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Nordic_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Orcish()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Orcish(results);
+        return results;
+    }
+
+    void Warhammer_Orcish(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Orcish());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Orcish_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Orcish_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Orcish_Fear_1());
+        results.push_back(Weapon::Warhammer_Orcish_Fear_2());
+        results.push_back(Weapon::Warhammer_Orcish_Fear_3());
+        results.push_back(Weapon::Warhammer_Orcish_Fire_1());
+        results.push_back(Weapon::Warhammer_Orcish_Fire_2());
+        results.push_back(Weapon::Warhammer_Orcish_Fire_3());
+        results.push_back(Weapon::Warhammer_Orcish_Frost_1());
+        results.push_back(Weapon::Warhammer_Orcish_Frost_2());
+        results.push_back(Weapon::Warhammer_Orcish_Frost_3());
+        results.push_back(Weapon::Warhammer_Orcish_Longhammer());
+        results.push_back(Weapon::Warhammer_Orcish_Shagrol());
+        results.push_back(Weapon::Warhammer_Orcish_Shock_1());
+        results.push_back(Weapon::Warhammer_Orcish_Shock_2());
+        results.push_back(Weapon::Warhammer_Orcish_Shock_3());
+        results.push_back(Weapon::Warhammer_Orcish_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Orcish_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Orcish_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Orcish_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Orcish_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Orcish_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Stalhrim()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Stalhrim(results);
+        return results;
+    }
+
+    void Warhammer_Stalhrim(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Stalhrim());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Health_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Health_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Health_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Magicka_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Magicka_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Magicka_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Stamina_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Stamina_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Absorb_Stamina_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Banish_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Banish_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Banish_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Chaos_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Chaos_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Chaos_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Fear_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Fear_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Fear_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Frost_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Frost_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Frost_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Paralyze_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Paralyze_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Paralyze_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Shock_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Shock_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Shock_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Stalhrim_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Stalhrim_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Stalhrim_Turn_Undead_3());
+    }
+
+    Vector_t<some<Weapon_t*>> Warhammer_Steel()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Warhammer_Steel(results);
+        return results;
+    }
+
+    void Warhammer_Steel(Vector_t<some<Weapon_t*>>& results)
+    {
+        results.push_back(Weapon::Warhammer_Steel());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Magicka_1());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Magicka_2());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Magicka_3());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Stamina_1());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Stamina_2());
+        results.push_back(Weapon::Warhammer_Steel_Damage_Stamina_3());
+        results.push_back(Weapon::Warhammer_Steel_Dawnguard());
+        results.push_back(Weapon::Warhammer_Steel_Dawnguard_Rune());
+        results.push_back(Weapon::Warhammer_Steel_Fear_1());
+        results.push_back(Weapon::Warhammer_Steel_Fear_2());
+        results.push_back(Weapon::Warhammer_Steel_Fear_3());
+        results.push_back(Weapon::Warhammer_Steel_Fire_1());
+        results.push_back(Weapon::Warhammer_Steel_Fire_2());
+        results.push_back(Weapon::Warhammer_Steel_Fire_3());
+        results.push_back(Weapon::Warhammer_Steel_Frost_1());
+        results.push_back(Weapon::Warhammer_Steel_Frost_2());
+        results.push_back(Weapon::Warhammer_Steel_Frost_3());
+        results.push_back(Weapon::Warhammer_Steel_Giant_Club_1());
+        results.push_back(Weapon::Warhammer_Steel_Giant_Club_2());
+        results.push_back(Weapon::Warhammer_Steel_Giant_Club_3());
+        results.push_back(Weapon::Warhammer_Steel_Giant_Club_Frost());
+        results.push_back(Weapon::Warhammer_Steel_Shock_1());
+        results.push_back(Weapon::Warhammer_Steel_Shock_2());
+        results.push_back(Weapon::Warhammer_Steel_Shock_3());
+        results.push_back(Weapon::Warhammer_Steel_Soul_Trap_1());
+        results.push_back(Weapon::Warhammer_Steel_Soul_Trap_2());
+        results.push_back(Weapon::Warhammer_Steel_Soul_Trap_3());
+        results.push_back(Weapon::Warhammer_Steel_Trollsbane());
+        results.push_back(Weapon::Warhammer_Steel_Turn_Undead_1());
+        results.push_back(Weapon::Warhammer_Steel_Turn_Undead_2());
+        results.push_back(Weapon::Warhammer_Steel_Turn_Undead_3());
     }
 
 }}}
