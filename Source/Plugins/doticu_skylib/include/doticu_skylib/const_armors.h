@@ -216,8 +216,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Vampire_Power_Mist_Form();
     some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes();
 
-    some<Armor_t*>  Armor_Aetherial_Shield();
-
     some<Armor_t*>  Armor_Ancient_Falmer_Boots();
     some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_1();
     some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_2();
@@ -570,6 +568,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_1();
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_2();
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_3();
+    some<Armor_t*>  Armor_Daedric_Cuirass_Ebony_Mail();
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_1();
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_2();
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_3();
@@ -585,6 +584,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_1();
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_2();
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_3();
+    some<Armor_t*>  Armor_Daedric_Cuirass_Saviors_Hide();
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_1();
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_2();
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_3();
@@ -631,6 +631,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_1();
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_2();
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_3();
+    some<Armor_t*>  Armor_Daedric_Helmet_Masque_Of_Clavicus_Vile();
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_1();
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_2();
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_3();
@@ -652,6 +653,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_1();
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_3();
+    some<Armor_t*>  Armor_Daedric_Shield_Spellbreaker();
 
     some<Armor_t*>  Armor_Daedric_Dremora_Boots();
     some<Armor_t*>  Armor_Daedric_Dremora_Cuirass();
@@ -1019,6 +1021,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dwarven_Helmet_Waterbreathing();
 
     some<Armor_t*>  Armor_Dwarven_Shield();
+    some<Armor_t*>  Armor_Dwarven_Shield_Aetherial();
     some<Armor_t*>  Armor_Dwarven_Shield_Block_1();
     some<Armor_t*>  Armor_Dwarven_Shield_Block_2();
     some<Armor_t*>  Armor_Dwarven_Shield_Block_3();
@@ -2963,6 +2966,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_5();
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_6();
 
+    some<Armor_t*>  Clothes_Ball_Of_Light();
+
     some<Armor_t*>  Clothes_Bandages_Hands();
     some<Armor_t*>  Clothes_Bandages_Head();
 
@@ -3316,6 +3321,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Robes_Blue_Body_Hooded();
     some<Armor_t*>  Clothes_Robes_Blue_Body_Hooded_Magicka_Rate();
 
+    some<Armor_t*>  Clothes_Robes_Vaermina_Body();
+
     some<Armor_t*>  Clothes_Serana_Head();
 
     some<Armor_t*>  Clothes_Sheogorath_Body();
@@ -3435,21 +3442,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Wounded_Body_Arivanya();
     some<Armor_t*>  Clothes_Wounded_Body_Susanna();
 
-    some<Armor_t*>  Daedric_Ebony_Mail();
-    some<Armor_t*>  Daedric_Masque_Of_Clavicus_Vile();
-    some<Armor_t*>  Daedric_Meridia_Ball_Of_Light();
-    some<Armor_t*>  Daedric_Ring_Of_Hircine();
-    some<Armor_t*>  Daedric_Ring_Of_Hircine_Cursed();
-    some<Armor_t*>  Daedric_Ring_Of_Namira();
-    some<Armor_t*>  Daedric_Saviors_Hide();
-    some<Armor_t*>  Daedric_Spellbreaker();
-    some<Armor_t*>  Daedric_Vaermina_Robes();
-
     some<Armor_t*>  FX_Dragonborn_Aspect_1();
     some<Armor_t*>  FX_Dragonborn_Aspect_2();
     some<Armor_t*>  FX_Dragonborn_Aspect_3();
 
     some<Armor_t*>  Ring_Bone_Hawk();
+
+    some<Armor_t*>  Ring_Daedric_Hircine();
+    some<Armor_t*>  Ring_Daedric_Hircine_Cursed();
+    some<Armor_t*>  Ring_Daedric_Namira();
 
     some<Armor_t*>  Ring_Gold();
     some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony();

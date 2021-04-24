@@ -211,8 +211,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Vampire_Power_Mist_Form()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A6); }
     some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes()    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A8); }
 
-    some<Armor_t*>  Armor_Aetherial_Shield()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x005759); }
-
     some<Armor_t*>  Armor_Ancient_Falmer_Boots()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C815); }
     some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_1()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C816); }
     some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_2()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00CAD3); }
@@ -565,6 +563,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF36); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF37); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF38); }
+    some<Armor_t*>  Armor_Daedric_Cuirass_Ebony_Mail()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x052794); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A98); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_2()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A99); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_3()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A9A); }
@@ -580,6 +579,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF3C); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF3D); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Restoration_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF3E); }
+    some<Armor_t*>  Armor_Daedric_Cuirass_Saviors_Hide()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02AC61); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FE2FB); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FE2FC); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Stamina_Rate_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FE2FD); }
@@ -626,6 +626,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE7); }
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE8); }
     some<Armor_t*>  Armor_Daedric_Helmet_Marksman_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE9); }
+    some<Armor_t*>  Armor_Daedric_Helmet_Masque_Of_Clavicus_Vile()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2846); }
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AEA); }
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AEB); }
     some<Armor_t*>  Armor_Daedric_Helmet_Restoration_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AEC); }
@@ -647,6 +648,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF7); }
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF8); }
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF9); }
+    some<Armor_t*>  Armor_Daedric_Shield_Spellbreaker()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x045F96); }
 
     some<Armor_t*>  Armor_Daedric_Dremora_Boots()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABD); }
     some<Armor_t*>  Armor_Daedric_Dremora_Cuirass()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABE); }
@@ -1014,6 +1016,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dwarven_Helmet_Waterbreathing()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092A8D); }
 
     some<Armor_t*>  Armor_Dwarven_Shield()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013950); }
+    some<Armor_t*>  Armor_Dwarven_Shield_Aetherial()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x005759); }
     some<Armor_t*>  Armor_Dwarven_Shield_Block_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B9C8); }
     some<Armor_t*>  Armor_Dwarven_Shield_Block_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE031); }
     some<Armor_t*>  Armor_Dwarven_Shield_Block_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B9E2); }
@@ -2958,6 +2961,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_5()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC00A); }
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_6()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC00B); }
 
+    some<Armor_t*>  Clothes_Ball_Of_Light()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x079BE4); }
+
     some<Armor_t*>  Clothes_Bandages_Hands()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04F006); }
     some<Armor_t*>  Clothes_Bandages_Head()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04F000); }
 
@@ -3311,6 +3316,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Robes_Blue_Body_Hooded()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10710A); }
     some<Armor_t*>  Clothes_Robes_Blue_Body_Hooded_Magicka_Rate()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D1F3B); }
 
+    some<Armor_t*>  Clothes_Robes_Vaermina_Body()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E739B); }
+
     some<Armor_t*>  Clothes_Serana_Head()                           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E6A0); }
 
     some<Armor_t*>  Clothes_Sheogorath_Body()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C7CBB); }
@@ -3430,21 +3437,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Wounded_Body_Arivanya()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x106392); }
     some<Armor_t*>  Clothes_Wounded_Body_Susanna()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x106390); }
 
-    some<Armor_t*>  Daedric_Ebony_Mail()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x052794); }
-    some<Armor_t*>  Daedric_Masque_Of_Clavicus_Vile()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2846); }
-    some<Armor_t*>  Daedric_Meridia_Ball_Of_Light()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x079BE4); }
-    some<Armor_t*>  Daedric_Ring_Of_Hircine()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02AC60); }
-    some<Armor_t*>  Daedric_Ring_Of_Hircine_Cursed()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F82FE); }
-    some<Armor_t*>  Daedric_Ring_Of_Namira()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02C37B); }
-    some<Armor_t*>  Daedric_Saviors_Hide()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02AC61); }
-    some<Armor_t*>  Daedric_Spellbreaker()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x045F96); }
-    some<Armor_t*>  Daedric_Vaermina_Robes()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E739B); }
-
     some<Armor_t*>  FX_Dragonborn_Aspect_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02172F); }
     some<Armor_t*>  FX_Dragonborn_Aspect_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x021738); }
     some<Armor_t*>  FX_Dragonborn_Aspect_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x021739); }
 
     some<Armor_t*>  Ring_Bone_Hawk()                                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x011CF5); }
+
+    some<Armor_t*>  Ring_Daedric_Hircine()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02AC60); }
+    some<Armor_t*>  Ring_Daedric_Hircine_Cursed()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F82FE); }
+    some<Armor_t*>  Ring_Daedric_Namira()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02C37B); }
 
     some<Armor_t*>  Ring_Gold()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01CF2B); }
     some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C5809); }
