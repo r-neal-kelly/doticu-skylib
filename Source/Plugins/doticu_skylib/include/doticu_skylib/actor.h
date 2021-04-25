@@ -327,8 +327,8 @@ namespace doticu_skylib {
         Bool_t                                      Isnt_Vampire();
         Bool_t                                      Is_In_Combat();
         Bool_t                                      Isnt_In_Combat();
-        maybe<Bool_t>                               Is_Owner(Form_Owner_t owner);
-        maybe<Bool_t>                               Isnt_Owner(Form_Owner_t owner);
+        Bool_t                                      Is_Owner(Form_Owner_t owner);
+        Bool_t                                      Is_Potential_Thief(Form_Owner_t owner);
 
         Bool_t                                      Has_Mount();
         Bool_t                                      Has_Rider();

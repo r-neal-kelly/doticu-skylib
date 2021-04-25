@@ -3636,4 +3636,17 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Armor_Blades();
     void                        Armor_Blades(Vector_t<some<Armor_t*>>& results);
 
+    // we need different kinds of sets:
+    // Type (Armor, Ring, etc.)
+    // Material (Daedric, Dwarven, etc.)
+    // Part (Body, Head)
+    // Variant (just more specific)
+    // Outfit (the several pieces together)
+    // outfit is more meta I think, therefore the name scheme for pieces should follow the other 4?
+    // but what about Heavy/Light variants? I suppose because it's not always necessary for each item, it should just be a variant.
+
+    // before changing the naming scheme, we should go ahead and create a list of the outfits that we know we'll want, it's easier to see now
+
+    // we may also want to do a pass and change the armor body parts names to resemble the clothes names.
+
 }}}

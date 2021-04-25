@@ -201,28 +201,41 @@ namespace doticu_skylib {
         return !Is_In_Combat();
     }
 
-    maybe<Bool_t> Actor_t::Is_Owner(Form_Owner_t owner)
+    Bool_t Actor_t::Is_Owner(Form_Owner_t owner)
     {
-        maybe<Faction_t*> owner_faction = owner.As_Faction();
-        if (owner_faction) {
-            return Is_In_Faction(owner_faction());
-        } else {
-            maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
-            if (owner_actor_base) {
-                return Has_Actor_Base(owner_actor_base());
+        if (owner) {
+            maybe<Faction_t*> owner_faction = owner.As_Faction();
+            if (owner_faction) {
+                return Is_In_Faction(owner_faction());
             } else {
-                return none<Bool_t>();
+                maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
+                if (owner_actor_base) {
+                    return Has_Actor_Base(owner_actor_base());
+                } else {
+                    return false;
+                }
             }
+        } else {
+            return false;
         }
     }
 
-    maybe<Bool_t> Actor_t::Isnt_Owner(Form_Owner_t owner)
+    Bool_t Actor_t::Is_Potential_Thief(Form_Owner_t owner)
     {
-        maybe<Bool_t> is_owner = Is_Owner(owner);
-        if (is_owner.Has_Value()) {
-            return !is_owner.Value();
+        if (owner) {
+            maybe<Faction_t*> owner_faction = owner.As_Faction();
+            if (owner_faction) {
+                return !Is_In_Faction(owner_faction());
+            } else {
+                maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
+                if (owner_actor_base) {
+                    return !Has_Actor_Base(owner_actor_base());
+                } else {
+                    return false;
+                }
+            }
         } else {
-            return none<Bool_t>();
+            return false;
         }
     }
 

@@ -115,9 +115,15 @@ namespace doticu_skylib {
         };
 
     public:
-        static Vector_t<some<Reference_t*>> Loaded_References(Filter_i<some<Reference_t*>>* filter = nullptr);
+        static Vector_t<some<Reference_t*>> Loaded_References();
+        static void                         Loaded_References(Vector_t<some<Reference_t*>>& results);
+        static Vector_t<some<Reference_t*>> Loaded_References(Filter_i<some<Reference_t*>>& filter);
         static void                         Loaded_References(Vector_t<some<Reference_t*>>& results,
-                                                              Filter_i<some<Reference_t*>>* filter = nullptr);
+                                                              Filter_i<some<Reference_t*>>& filter);
+
+        static Vector_t<some<Reference_t*>> Loaded_References_Old(Filter_i<some<Reference_t*>>* filter = nullptr);
+        static void                         Loaded_References_Old(Vector_t<some<Reference_t*>>& results,
+                                                                  Filter_i<some<Reference_t*>>* filter = nullptr);
 
         static Vector_t<some<Reference_t*>> Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter = nullptr);
         static void                         Loaded_Grid_References(Vector_t<some<Reference_t*>>& results,

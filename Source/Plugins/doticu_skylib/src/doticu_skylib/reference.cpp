@@ -112,14 +112,86 @@ namespace doticu_skylib {
         }
     };
 
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_References(Filter_i<some<Reference_t*>>* filter)
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_References()
+    {
+        Vector_t<some<Reference_t*>> results;
+        Loaded_References(results);
+        return results;
+    }
+
+    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Reference_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Reference_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Reference_t*> reference = form->As_Reference();
+                if (reference && reference->Is_Valid()) {
+                    this->results.push_back(reference());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+        Iterator iterator(results);
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_References(Filter_i<some<Reference_t*>>& filter)
     {
         Vector_t<some<Reference_t*>> results;
         Loaded_References(results, filter);
         return results;
     }
 
-    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
+    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Reference_t*>>& results;
+            Filter_i<some<Reference_t*>>& filter;
+
+        public:
+            Iterator(Vector_t<some<Reference_t*>>& results,
+                     Filter_i<some<Reference_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Reference_t*> reference = form->As_Reference();
+                if (reference && reference->Is_Valid() && filter(reference())) {
+                    this->results.push_back(reference());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+        Iterator iterator(results, filter);
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Reference_t*>> Reference_t::Loaded_References_Old(Filter_i<some<Reference_t*>>* filter)
+    {
+        Vector_t<some<Reference_t*>> results;
+        Loaded_References_Old(results, filter);
+        return results;
+    }
+
+    void Reference_t::Loaded_References_Old(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
     {
         Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> iterator(results, filter);
 
@@ -338,34 +410,14 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        Form_Owner_t owner = This_Or_Cell_Owner();
-        if (owner) {
-            maybe<Bool_t> is_owner = actor->Is_Owner(owner);
-            if (is_owner.Has_Value()) {
-                return is_owner.Value();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+        return actor->Is_Owner(This_Or_Cell_Owner());
     }
 
     Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        Form_Owner_t owner = This_Or_Cell_Owner();
-        if (owner) {
-            maybe<Bool_t> isnt_owner = actor->Isnt_Owner(owner);
-            if (isnt_owner.Has_Value()) {
-                return isnt_owner.Value();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+        return actor->Is_Potential_Thief(This_Or_Cell_Owner());
     }
 
     Bool_t Reference_t::Has_Keyword(some<Keyword_t*> keyword) const
