@@ -211,41 +211,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Vampire_Power_Mist_Form()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A6); }
     some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes()    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A8); }
 
-    some<Armor_t*>  Armor_Ancient_Falmer_Boots()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C815); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_1()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C816); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Cuirass_2()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00CAD3); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Gauntlets()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C817); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Helmet()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C814); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Shield_Auriels()           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00284D); }
-    some<Armor_t*>  Armor_Ancient_Falmer_Shield_Reflecting()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00488A); }
-
-    some<Armor_t*>  Armor_Ancient_Nordic_Boots()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9D); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x018388); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Gauntlets()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056B17); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9E); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Helmet_Jagged_Crown()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Helmet_Unburned()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F494E); }
-
-    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Boots()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Cuirass()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Gauntlets()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Ahzidal_Helmet()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
-
-    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Boots()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Tsun_Cuirass()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
-
-    some<Armor_t*>  Armor_Ancient_Nordic_Ysgramor_Shield()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
-
-    some<Armor_t*>  Armor_Blades_Boots()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B288); }
-    some<Armor_t*>  Armor_Blades_Cuirass()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28B); }
-    some<Armor_t*>  Armor_Blades_Gauntlets()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28D); }
-    some<Armor_t*>  Armor_Blades_Helmet()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28F); }
-    some<Armor_t*>  Armor_Blades_Shield()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04F912); }
-
     some<Armor_t*>  Armor_Bonemold_Boots()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD92); }
     some<Armor_t*>  Armor_Bonemold_Boots_Carry_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284C6); }
     some<Armor_t*>  Armor_Bonemold_Boots_Carry_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284C7); }
     some<Armor_t*>  Armor_Bonemold_Boots_Carry_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284C8); }
+    some<Armor_t*>  Armor_Bonemold_Boots_Improved()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB25); }
     some<Armor_t*>  Armor_Bonemold_Boots_Resist_Fire_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284C9); }
     some<Armor_t*>  Armor_Bonemold_Boots_Resist_Fire_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284CA); }
     some<Armor_t*>  Armor_Bonemold_Boots_Resist_Fire_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284CB); }
@@ -264,6 +234,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Cuirass_Health_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284D5); }
     some<Armor_t*>  Armor_Bonemold_Cuirass_Health_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284D6); }
     some<Armor_t*>  Armor_Bonemold_Cuirass_Health_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284D7); }
+    some<Armor_t*>  Armor_Bonemold_Cuirass_Improved()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB26); }
     some<Armor_t*>  Armor_Bonemold_Cuirass_Light_Armor_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284D8); }
     some<Armor_t*>  Armor_Bonemold_Cuirass_Light_Armor_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284D9); }
     some<Armor_t*>  Armor_Bonemold_Cuirass_Light_Armor_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284DA); }
@@ -282,6 +253,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Destruction_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E4); }
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Destruction_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E5); }
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Destruction_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E6); }
+    some<Armor_t*>  Armor_Bonemold_Gauntlets_Improved()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB22); }
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Lockpicking_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E7); }
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Lockpicking_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E8); }
     some<Armor_t*>  Armor_Bonemold_Gauntlets_Lockpicking_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0284E9); }
@@ -317,6 +289,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Helmet_Illusion_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028505); }
     some<Armor_t*>  Armor_Bonemold_Helmet_Illusion_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028506); }
     some<Armor_t*>  Armor_Bonemold_Helmet_Illusion_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028507); }
+    some<Armor_t*>  Armor_Bonemold_Helmet_Improved()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB23); }
     some<Armor_t*>  Armor_Bonemold_Helmet_Magicka_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028508); }
     some<Armor_t*>  Armor_Bonemold_Helmet_Magicka_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028509); }
     some<Armor_t*>  Armor_Bonemold_Helmet_Magicka_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850A); }
@@ -325,6 +298,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Shield_Block_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850B); }
     some<Armor_t*>  Armor_Bonemold_Shield_Block_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850C); }
     some<Armor_t*>  Armor_Bonemold_Shield_Block_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850D); }
+    some<Armor_t*>  Armor_Bonemold_Shield_Improved()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB24); }
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Fire_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850E); }
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Fire_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02850F); }
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Fire_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028510); }
@@ -338,11 +312,175 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028515); }
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028516); }
 
-    some<Armor_t*>  Armor_Bonemold_Improved_Boots()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB25); }
-    some<Armor_t*>  Armor_Bonemold_Improved_Cuirass()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB26); }
-    some<Armor_t*>  Armor_Bonemold_Improved_Gauntlets()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB22); }
-    some<Armor_t*>  Armor_Bonemold_Improved_Helmet()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB23); }
-    some<Armor_t*>  Armor_Bonemold_Improved_Shield()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB24); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD82); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Carry_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029153); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Carry_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029154); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Carry_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029155); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Muffle()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029156); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029157); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029158); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029159); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915A); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915B); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915C); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915D); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915E); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915F); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029160); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029161); }
+    some<Armor_t*>  Armor_Chitin_Boots_Heavy_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029162); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD86); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Carry_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FDF); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Carry_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFD); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Carry_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE0); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE1); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE2); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE3); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE4); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE5); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE6); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE7); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE8); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE9); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Sneak_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEA); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Sneak_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEB); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Sneak_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEC); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FED); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEE); }
+    some<Armor_t*>  Armor_Chitin_Boots_Light_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEF); }
+
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8A); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Alteration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029163); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Alteration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029164); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Alteration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029165); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029166); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029167); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Conjuration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029168); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Destruction_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029169); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Destruction_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916A); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Destruction_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916B); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916C); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916D); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916E); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Heavy_Armor_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916F); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Heavy_Armor_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029170); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Heavy_Armor_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029171); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Illusion_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029172); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Illusion_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029173); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Illusion_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029174); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Restoration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029175); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Restoration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029176); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Heavy_Restoration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029177); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD87); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Alteration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF0); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Alteration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF1); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Alteration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF2); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF3); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF4); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Conjuration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF5); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Destruction_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF6); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Destruction_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF7); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Destruction_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF8); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF9); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFE); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFA); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFB); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFC); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFF); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Restoration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029000); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Restoration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029001); }
+    some<Armor_t*>  Armor_Chitin_Cuirass_Light_Restoration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029002); }
+
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8B); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Alchemy_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029178); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Alchemy_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029179); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Alchemy_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917A); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Marksman_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917B); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Marksman_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917C); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Marksman_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917D); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_One_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917E); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_One_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917F); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_One_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029180); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Smithing_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029181); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Smithing_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029182); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Smithing_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029183); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Two_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029184); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Two_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029185); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Heavy_Two_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029186); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD88); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Alchemy_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029003); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Alchemy_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029004); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Alchemy_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029005); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Lockpicking_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029006); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Lockpicking_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029007); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Lockpicking_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029008); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Marksman_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029009); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Marksman_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900A); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Marksman_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900B); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_One_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900C); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_One_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900D); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_One_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900E); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Pickpocket_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900F); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Pickpocket_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029010); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Pickpocket_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029011); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Smithing_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029012); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Smithing_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029013); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Smithing_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029014); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Two_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029015); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Two_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029016); }
+    some<Armor_t*>  Armor_Chitin_Gauntlets_Light_Two_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029017); }
+
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8C); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alchemy_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029187); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alchemy_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029188); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alchemy_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029189); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alteration_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918A); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alteration_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918B); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Alteration_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918C); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918D); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918E); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Conjuration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918F); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Destruction_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029190); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Destruction_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029191); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Destruction_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029192); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Illusion_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029193); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Illusion_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029194); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Illusion_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029195); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029196); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029197); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029198); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Marksman_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029199); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Marksman_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919A); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Marksman_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919B); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Restoration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919C); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Restoration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919D); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Restoration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919E); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Heavy_Waterbreathing()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919F); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD89); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alchemy_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029018); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alchemy_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029019); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alchemy_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901A); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alteration_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901B); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alteration_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901C); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Alteration_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901D); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901E); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901F); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Conjuration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029020); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Destruction_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029021); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Destruction_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029022); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Destruction_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029024); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Illusion_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029023); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Illusion_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029025); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Illusion_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029026); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029027); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029028); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029029); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Marksman_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902A); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Marksman_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902B); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Marksman_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902C); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Restoration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902D); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Restoration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902E); }
+    some<Armor_t*>  Armor_Chitin_Helmet_Light_Restoration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902F); }
 
     some<Armor_t*>  Armor_Chitin_Shield()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026235); }
     some<Armor_t*>  Armor_Chitin_Shield_Block_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029030); }
@@ -361,184 +499,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Chitin_Shield_Resist_Shock_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903D); }
     some<Armor_t*>  Armor_Chitin_Shield_Resist_Shock_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903E); }
 
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD82); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Carry_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029153); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Carry_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029154); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Carry_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029155); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Muffle()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029156); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029157); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029158); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029159); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915D); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915E); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02915F); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029160); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029161); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Boots_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029162); }
-
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Alteration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029163); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Alteration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029164); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Alteration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029165); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029166); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029167); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Conjuration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029168); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Destruction_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029169); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Destruction_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Destruction_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916D); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916E); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Heavy_Armor_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02916F); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Heavy_Armor_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029170); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Heavy_Armor_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029171); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Illusion_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029172); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Illusion_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029173); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Illusion_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029174); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Restoration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029175); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Restoration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029176); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Cuirass_Restoration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029177); }
-
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Alchemy_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029178); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Alchemy_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029179); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Alchemy_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Marksman_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Marksman_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Marksman_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917D); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_One_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917E); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_One_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02917F); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_One_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029180); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Smithing_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029181); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Smithing_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029182); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Smithing_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029183); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Two_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029184); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Two_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029185); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Gauntlets_Two_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029186); }
-
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alchemy_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029187); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alchemy_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029188); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alchemy_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029189); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alteration_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alteration_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Alteration_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918D); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918E); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Conjuration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02918F); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Destruction_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029190); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Destruction_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029191); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Destruction_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029192); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Illusion_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029193); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Illusion_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029194); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Illusion_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029195); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029196); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029197); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029198); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Marksman_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029199); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Marksman_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919A); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Marksman_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919B); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Restoration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919C); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Restoration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919D); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Restoration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919E); }
-    some<Armor_t*>  Armor_Chitin_Heavy_Helmet_Waterbreathing()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02919F); }
-
-    some<Armor_t*>  Armor_Chitin_Light_Boots()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD86); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Carry_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FDF); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Carry_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFD); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Carry_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE0); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE1); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE2); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE3); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE4); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE5); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE6); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE7); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE8); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FE9); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Sneak_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEA); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Sneak_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEB); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Sneak_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEC); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FED); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEE); }
-    some<Armor_t*>  Armor_Chitin_Light_Boots_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FEF); }
-
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD87); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Alteration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF0); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Alteration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF1); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Alteration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF2); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF3); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF4); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Conjuration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF5); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Destruction_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF6); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Destruction_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF7); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Destruction_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF8); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FF9); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFE); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFA); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFB); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFC); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028FFF); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Restoration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029000); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Restoration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029001); }
-    some<Armor_t*>  Armor_Chitin_Light_Cuirass_Restoration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029002); }
-
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD88); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Alchemy_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029003); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Alchemy_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029004); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Alchemy_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029005); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Lockpicking_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029006); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Lockpicking_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029007); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Lockpicking_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029008); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Marksman_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029009); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Marksman_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900A); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Marksman_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900B); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_One_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900C); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_One_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900D); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_One_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900E); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Pickpocket_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02900F); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Pickpocket_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029010); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Pickpocket_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029011); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Smithing_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029012); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Smithing_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029013); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Smithing_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029014); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Two_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029015); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Two_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029016); }
-    some<Armor_t*>  Armor_Chitin_Light_Gauntlets_Two_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029017); }
-
-    some<Armor_t*>  Armor_Chitin_Light_Helmet()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD89); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alchemy_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029018); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alchemy_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029019); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alchemy_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901A); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alteration_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901B); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alteration_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901C); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Alteration_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901D); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901E); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02901F); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Conjuration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029020); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Destruction_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029021); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Destruction_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029022); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Destruction_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029024); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Illusion_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029023); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Illusion_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029025); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Illusion_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029026); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029027); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029028); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029029); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Marksman_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902A); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Marksman_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902B); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Marksman_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902C); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Restoration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902D); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Restoration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902E); }
-    some<Armor_t*>  Armor_Chitin_Light_Helmet_Restoration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902F); }
-
     some<Armor_t*>  Armor_Daedric_Boots()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01396A); }
     some<Armor_t*>  Armor_Daedric_Boots_Carry_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A88); }
     some<Armor_t*>  Armor_Daedric_Boots_Carry_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A89); }
     some<Armor_t*>  Armor_Daedric_Boots_Carry_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A8A); }
+    some<Armor_t*>  Armor_Daedric_Boots_Dremora()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABD); }
     some<Armor_t*>  Armor_Daedric_Boots_Muffle()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A8B); }
     some<Armor_t*>  Armor_Daedric_Boots_Resist_Fire_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A8C); }
     some<Armor_t*>  Armor_Daedric_Boots_Resist_Fire_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A8D); }
@@ -563,6 +528,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF36); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF37); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Destruction_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF38); }
+    some<Armor_t*>  Armor_Daedric_Cuirass_Dremora()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABE); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Ebony_Mail()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x052794); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A98); }
     some<Armor_t*>  Armor_Daedric_Cuirass_Health_2()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A99); }
@@ -588,6 +554,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Gauntlets_Alchemy_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AAE); }
     some<Armor_t*>  Armor_Daedric_Gauntlets_Alchemy_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AAF); }
     some<Armor_t*>  Armor_Daedric_Gauntlets_Alchemy_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AB0); }
+    some<Armor_t*>  Armor_Daedric_Gauntlets_Dremora()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1AC0); }
     some<Armor_t*>  Armor_Daedric_Gauntlets_Marksman_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AC3); }
     some<Armor_t*>  Armor_Daedric_Gauntlets_Marksman_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AC4); }
     some<Armor_t*>  Armor_Daedric_Gauntlets_Marksman_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AC5); }
@@ -614,6 +581,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Helmet_Destruction_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7ADB); }
     some<Armor_t*>  Armor_Daedric_Helmet_Destruction_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7ADC); }
     some<Armor_t*>  Armor_Daedric_Helmet_Destruction_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7ADD); }
+    some<Armor_t*>  Armor_Daedric_Helmet_Dremora()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10F75F); }
     some<Armor_t*>  Armor_Daedric_Helmet_Illusion_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE1); }
     some<Armor_t*>  Armor_Daedric_Helmet_Illusion_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE2); }
     some<Armor_t*>  Armor_Daedric_Helmet_Illusion_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AE3); }
@@ -650,54 +618,32 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF9); }
     some<Armor_t*>  Armor_Daedric_Shield_Spellbreaker()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x045F96); }
 
-    some<Armor_t*>  Armor_Daedric_Dremora_Boots()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABD); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Cuirass()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABE); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Gauntlets()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1AC0); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Helmet()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10F75F); }
+    some<Armor_t*>  Armor_Dawnguard_Boots_Heavy()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014757); }
+    some<Armor_t*>  Armor_Dawnguard_Boots_Hunter()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C5); }
+    some<Armor_t*>  Armor_Dawnguard_Boots_Light()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F400); }
+
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Heavy_1()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3F7); }
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Heavy_2()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FA); }
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Hunter()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C6); }
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Light_1()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FB); }
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Light_2()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F402); }
+    some<Armor_t*>  Armor_Dawnguard_Cuirass_Light_3()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F404); }
+
+    some<Armor_t*>  Armor_Dawnguard_Gauntlets_Heavy()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014758); }
+    some<Armor_t*>  Armor_Dawnguard_Gauntlets_Hunter()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C7); }
+    some<Armor_t*>  Armor_Dawnguard_Gauntlets_Light()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FE); }
+
+    some<Armor_t*>  Armor_Dawnguard_Helmet_Heavy()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050D0); }
+    some<Armor_t*>  Armor_Dawnguard_Helmet_Light()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01989E); }
 
     some<Armor_t*>  Armor_Dawnguard_Shield()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0150B8); }
     some<Armor_t*>  Armor_Dawnguard_Shield_Rune()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x011BAF); }
-
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Boots()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014757); }
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_1()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3F7); }
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Cuirass_2()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FA); }
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Gauntlets()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014758); }
-    some<Armor_t*>  Armor_Dawnguard_Heavy_Helmet()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050D0); }
-
-    some<Armor_t*>  Armor_Dawnguard_Hunter_Boots()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C5); }
-    some<Armor_t*>  Armor_Dawnguard_Hunter_Cuirass()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C6); }
-    some<Armor_t*>  Armor_Dawnguard_Hunter_Gauntlets()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C7); }
-
-    some<Armor_t*>  Armor_Dawnguard_Light_Boots()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F400); }
-    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_1()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FB); }
-    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_2()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F402); }
-    some<Armor_t*>  Armor_Dawnguard_Light_Cuirass_3()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F404); }
-    some<Armor_t*>  Armor_Dawnguard_Light_Gauntlets()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FE); }
-    some<Armor_t*>  Armor_Dawnguard_Light_Helmet()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01989E); }
-
-    some<Armor_t*>  Armor_Deathbrand_Boots()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401A); }
-    some<Armor_t*>  Armor_Deathbrand_Cuirass()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401B); }
-    some<Armor_t*>  Armor_Deathbrand_Gauntlets()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401C); }
-    some<Armor_t*>  Armor_Deathbrand_Helmet()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401D); }
-
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Ahzidal()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FE); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Bromjunaar()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CCA); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Dukaan()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FF); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Hevnoraak()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC1); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Konahrik()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CD6); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Krosis()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CB9); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Morokei()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061C8B); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Nahkriin()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CA5); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Otar()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC2); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Rahgot()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC0); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Vokun()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC9); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Volsung()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CAB); }
-    some<Armor_t*>  Armor_Dragon_Priest_Mask_Zahkriisos()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024037); }
 
     some<Armor_t*>  Armor_Dragonplate_Boots()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013965); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Carry_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A1C); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Carry_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A1D); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Carry_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A1E); }
+    some<Armor_t*>  Armor_Dragonplate_Boots_Keeper()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F73); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Muffle()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A1F); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Resist_Fire_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A20); }
     some<Armor_t*>  Armor_Dragonplate_Boots_Resist_Fire_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A21); }
@@ -734,6 +680,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Illusion_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF46); }
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Illusion_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF47); }
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Illusion_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF48); }
+    some<Armor_t*>  Armor_Dragonplate_Cuirass_Keeper()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F76); }
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Restoration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF49); }
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Restoration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF4A); }
     some<Armor_t*>  Armor_Dragonplate_Cuirass_Restoration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF4B); }
@@ -745,6 +692,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Alchemy_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A3C); }
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Alchemy_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A3D); }
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Alchemy_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A3E); }
+    some<Armor_t*>  Armor_Dragonplate_Gauntlets_Keeper()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F75); }
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Marksman_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A51); }
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Marksman_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A52); }
     some<Armor_t*>  Armor_Dragonplate_Gauntlets_Marksman_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A53); }
@@ -792,6 +740,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Shield_Block_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A7C); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Block_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A7D); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Block_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A7E); }
+    some<Armor_t*>  Armor_Dragonplate_Shield_Keeper()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x018065); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A7F); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A80); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A81); }
@@ -804,11 +753,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A85); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A86); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A87); }
-
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Boots()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F73); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Cuirass()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F76); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Gauntlets()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F75); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Shield()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x018065); }
 
     some<Armor_t*>  Armor_Dragonscale_Boots()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01393D); }
     some<Armor_t*>  Armor_Dragonscale_Boots_Carry_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D79A7); }
@@ -1148,6 +1092,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Boots_Carry_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFB9); }
     some<Armor_t*>  Armor_Elven_Boots_Carry_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFBA); }
     some<Armor_t*>  Armor_Elven_Boots_Carry_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFBB); }
+    some<Armor_t*>  Armor_Elven_Boots_Light()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F11); }
     some<Armor_t*>  Armor_Elven_Boots_Resist_Fire_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFBC); }
     some<Armor_t*>  Armor_Elven_Boots_Resist_Fire_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFBD); }
     some<Armor_t*>  Armor_Elven_Boots_Resist_Fire_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFF8); }
@@ -1174,12 +1119,41 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Cuirass_Destruction_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF80); }
     some<Armor_t*>  Armor_Elven_Cuirass_Destruction_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF81); }
     some<Armor_t*>  Armor_Elven_Cuirass_Destruction_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF82); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01392A); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Alteration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF89); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Alteration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8A); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Alteration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF93); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Conjuration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8B); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Conjuration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8C); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Conjuration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF94); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Destruction_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8D); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Destruction_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8E); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Destruction_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF95); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AD); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AE); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AF); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_Rate_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1A); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_Rate_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1B); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Health_Rate_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1C); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Illusion_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8F); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Illusion_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF90); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Illusion_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF96); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B0); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B1); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B2); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Restoration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF91); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Restoration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF92); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Restoration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF97); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Stamina_Rate_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1D); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Stamina_Rate_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1E); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Gilded_Stamina_Rate_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1F); }
     some<Armor_t*>  Armor_Elven_Cuirass_Health_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFC4); }
     some<Armor_t*>  Armor_Elven_Cuirass_Health_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFC5); }
     some<Armor_t*>  Armor_Elven_Cuirass_Health_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE03D); }
     some<Armor_t*>  Armor_Elven_Cuirass_Illusion_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF83); }
     some<Armor_t*>  Armor_Elven_Cuirass_Illusion_2()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF84); }
     some<Armor_t*>  Armor_Elven_Cuirass_Illusion_3()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF85); }
+    some<Armor_t*>  Armor_Elven_Cuirass_Light()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F12); }
     some<Armor_t*>  Armor_Elven_Cuirass_Light_Armor_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFC6); }
     some<Armor_t*>  Armor_Elven_Cuirass_Light_Armor_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFC7); }
     some<Armor_t*>  Armor_Elven_Cuirass_Light_Armor_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE03E); }
@@ -1191,6 +1165,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Gauntlets_Alchemy_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B676); }
     some<Armor_t*>  Armor_Elven_Gauntlets_Alchemy_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B677); }
     some<Armor_t*>  Armor_Elven_Gauntlets_Alchemy_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B678); }
+    some<Armor_t*>  Armor_Elven_Gauntlets_Light()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F13); }
     some<Armor_t*>  Armor_Elven_Gauntlets_Lockpicking_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFDA); }
     some<Armor_t*>  Armor_Elven_Gauntlets_Lockpicking_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFDB); }
     some<Armor_t*>  Armor_Elven_Gauntlets_Lockpicking_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE048); }
@@ -1226,6 +1201,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Helmet_Illusion_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFF0); }
     some<Armor_t*>  Armor_Elven_Helmet_Illusion_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFF1); }
     some<Armor_t*>  Armor_Elven_Helmet_Illusion_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE053); }
+    some<Armor_t*>  Armor_Elven_Helmet_Light()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F14); }
     some<Armor_t*>  Armor_Elven_Helmet_Magicka_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFF2); }
     some<Armor_t*>  Armor_Elven_Helmet_Magicka_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BDFF3); }
     some<Armor_t*>  Armor_Elven_Helmet_Magicka_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BE054); }
@@ -1254,81 +1230,54 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Shield_Resist_Shock_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x084B7A); }
     some<Armor_t*>  Armor_Elven_Shield_Resist_Shock_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x084B82); }
 
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01392A); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Alteration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF89); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Alteration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8A); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Alteration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF93); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Conjuration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8B); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Conjuration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8C); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Conjuration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF94); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Destruction_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8D); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Destruction_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8E); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Destruction_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF95); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AD); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AE); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1AF); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_Rate_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1A); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_Rate_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1B); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Health_Rate_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1C); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Illusion_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF8F); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Illusion_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF90); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Illusion_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF96); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B0); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B1); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CE1B2); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Restoration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF91); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Restoration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF92); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Restoration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF97); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Stamina_Rate_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1D); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Stamina_Rate_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1E); }
-    some<Armor_t*>  Armor_Elven_Gilded_Cuirass_Stamina_Rate_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1F); }
-
-    some<Armor_t*>  Armor_Elven_Light_Boots()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F11); }
-    some<Armor_t*>  Armor_Elven_Light_Cuirass()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F12); }
-    some<Armor_t*>  Armor_Elven_Light_Gauntlets()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F13); }
-    some<Armor_t*>  Armor_Elven_Light_Helmet()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F14); }
-
     some<Armor_t*>  Armor_Falmer_Boots()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B83CD); }
+    some<Armor_t*>  Armor_Falmer_Boots_Ancient()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C815); }
+    some<Armor_t*>  Armor_Falmer_Boots_Hardened()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DD); }
+    some<Armor_t*>  Armor_Falmer_Boots_Heavy()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023EF); }
+
     some<Armor_t*>  Armor_Falmer_Cuirass()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B83CB); }
+    some<Armor_t*>  Armor_Falmer_Cuirass_Ancient_1()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C816); }
+    some<Armor_t*>  Armor_Falmer_Cuirass_Ancient_2()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00CAD3); }
+    some<Armor_t*>  Armor_Falmer_Cuirass_Hardened()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DE); }
+    some<Armor_t*>  Armor_Falmer_Cuirass_Heavy()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023E9); }
+
     some<Armor_t*>  Armor_Falmer_Gauntlets()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B83CF); }
+    some<Armor_t*>  Armor_Falmer_Gauntlets_Ancient()                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C817); }
+    some<Armor_t*>  Armor_Falmer_Gauntlets_Hardened()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DF); }
+    some<Armor_t*>  Armor_Falmer_Gauntlets_Heavy()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023ED); }
+
     some<Armor_t*>  Armor_Falmer_Helmet()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04C3CB); }
+    some<Armor_t*>  Armor_Falmer_Helmet_Ancient()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C814); }
+    some<Armor_t*>  Armor_Falmer_Helmet_Hardened()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8E0); }
+    some<Armor_t*>  Armor_Falmer_Helmet_Heavy()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023EB); }
+    some<Armor_t*>  Armor_Falmer_Helmet_Heavy_Shellbug()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x012E8A); }
+
     some<Armor_t*>  Armor_Falmer_Shield()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05C06C); }
-
-    some<Armor_t*>  Armor_Falmer_Hardened_Boots()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DD); }
-    some<Armor_t*>  Armor_Falmer_Hardened_Cuirass()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DE); }
-    some<Armor_t*>  Armor_Falmer_Hardened_Gauntlets()               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8DF); }
-    some<Armor_t*>  Armor_Falmer_Hardened_Helmet()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E8E0); }
-
-    some<Armor_t*>  Armor_Falmer_Heavy_Boots()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023EF); }
-    some<Armor_t*>  Armor_Falmer_Heavy_Cuirass()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023E9); }
-    some<Armor_t*>  Armor_Falmer_Heavy_Gauntlets()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023ED); }
-    some<Armor_t*>  Armor_Falmer_Heavy_Helmet()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0023EB); }
-    some<Armor_t*>  Armor_Falmer_Heavy_Helmet_Shellbug()            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x012E8A); }
-
-    some<Armor_t*>  Armor_Forsworn_Boots()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D4E); }
-    some<Armor_t*>  Armor_Forsworn_Cuirass()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D50); }
-    some<Armor_t*>  Armor_Forsworn_Gauntlets()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D55); }
-    some<Armor_t*>  Armor_Forsworn_Helmet()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D52); }
-
-    some<Armor_t*>  Armor_Forsworn_Old_Gods_Boots()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD3); }
-    some<Armor_t*>  Armor_Forsworn_Old_Gods_Cuirass()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD0); }
-    some<Armor_t*>  Armor_Forsworn_Old_Gods_Gauntlets()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD2); }
-    some<Armor_t*>  Armor_Forsworn_Old_Gods_Helmet()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD1); }
+    some<Armor_t*>  Armor_Falmer_Shield_Ancient_Auriels()           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00284D); }
+    some<Armor_t*>  Armor_Falmer_Shield_Ancient_Reflecting()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00488A); }
 
     some<Armor_t*>  Armor_Fur_Boots()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06F398); }
+    some<Armor_t*>  Armor_Fur_Boots_Forsworn()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D4E); }
+    some<Armor_t*>  Armor_Fur_Boots_Forsworn_Old_Gods()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD3); }
+    some<Armor_t*>  Armor_Fur_Boots_Stormcloak_Officer()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086981); }
+
     some<Armor_t*>  Armor_Fur_Cuirass_1()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06F393); }
     some<Armor_t*>  Armor_Fur_Cuirass_2()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10594B); }
     some<Armor_t*>  Armor_Fur_Cuirass_3()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10594D); }
     some<Armor_t*>  Armor_Fur_Cuirass_4()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10594F); }
+    some<Armor_t*>  Armor_Fur_Cuirass_Forsworn()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D50); }
+    some<Armor_t*>  Armor_Fur_Cuirass_Forsworn_Old_Gods()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD0); }
+    some<Armor_t*>  Armor_Fur_Cuirass_Stormcloak_Officer()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08697E); }
+
     some<Armor_t*>  Armor_Fur_Gauntlets()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06F39B); }
+    some<Armor_t*>  Armor_Fur_Gauntlets_Forsworn()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D55); }
+    some<Armor_t*>  Armor_Fur_Gauntlets_Forsworn_Old_Gods()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD2); }
+    some<Armor_t*>  Armor_Fur_Gauntlets_Stormcloak_Officer()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086983); }
+
     some<Armor_t*>  Armor_Fur_Helmet()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06F39E); }
-
-    some<Armor_t*>  Armor_General_Carius_Boots()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A573); }
-    some<Armor_t*>  Armor_General_Carius_Cuirass()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0376F1); }
-    some<Armor_t*>  Armor_General_Carius_Gauntlets()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A575); }
-    some<Armor_t*>  Armor_General_Carius_Helmet()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A576); }
-
-    some<Armor_t*>  Armor_General_Tullius_Cuirass()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05CBFE); }
+    some<Armor_t*>  Armor_Fur_Helmet_Forsworn()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8D52); }
+    some<Armor_t*>  Armor_Fur_Helmet_Forsworn_Old_Gods()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EAFD1); }
+    some<Armor_t*>  Armor_Fur_Helmet_Stormcloak_Officer()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086985); }
 
     some<Armor_t*>  Armor_Glass_Boots()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013938); }
     some<Armor_t*>  Armor_Glass_Boots_Carry_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D536E); }
@@ -1451,51 +1400,46 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Glass_Shield_Resist_Shock_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D53E5); }
 
     some<Armor_t*>  Armor_Guard_Boots()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D7F); }
+
+    some<Armor_t*>  Armor_Guard_Cuirass_Falkreath()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02151E); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Hjaalmarch()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021520); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Markarth()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021508); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Pale()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021525); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Riften()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021507); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Solitude()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C7F5B); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Whiterun()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02150D); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Windhelm()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D7B); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Windhelm_Sleeved()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD5A0); }
+    some<Armor_t*>  Armor_Guard_Cuirass_Winterhold()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021522); }
+
     some<Armor_t*>  Armor_Guard_Gauntlets()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D7D); }
     some<Armor_t*>  Armor_Guard_Gauntlets_Pugilist()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10A06A); }
 
-    some<Armor_t*>  Armor_Guard_Falkreath_Cuirass()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02151E); }
-    some<Armor_t*>  Armor_Guard_Falkreath_Helmet()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021619); }
-    some<Armor_t*>  Armor_Guard_Falkreath_Shield()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214ED); }
+    some<Armor_t*>  Armor_Guard_Helmet_Falkreath()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021619); }
+    some<Armor_t*>  Armor_Guard_Helmet_Hjaalmarch()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161B); }
+    some<Armor_t*>  Armor_Guard_Helmet_Markarth()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021613); }
+    some<Armor_t*>  Armor_Guard_Helmet_Pale()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161F); }
+    some<Armor_t*>  Armor_Guard_Helmet_Riften()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021622); }
+    some<Armor_t*>  Armor_Guard_Helmet_Solitude()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C7F5C); }
+    some<Armor_t*>  Armor_Guard_Helmet_Whiterun()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021615); }
+    some<Armor_t*>  Armor_Guard_Helmet_Windhelm_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D79); }
+    some<Armor_t*>  Armor_Guard_Helmet_Windhelm_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10559D); }
+    some<Armor_t*>  Armor_Guard_Helmet_Winterhold()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161D); }
 
-    some<Armor_t*>  Armor_Guard_Hjaalmarch_Cuirass()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021520); }
-    some<Armor_t*>  Armor_Guard_Hjaalmarch_Helmet()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161B); }
-    some<Armor_t*>  Armor_Guard_Hjaalmarch_Shield()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214EF); }
-
-    some<Armor_t*>  Armor_Guard_Markarth_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021508); }
-    some<Armor_t*>  Armor_Guard_Markarth_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021613); }
-    some<Armor_t*>  Armor_Guard_Markarth_Shield()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214DC); }
-
-    some<Armor_t*>  Armor_Guard_Pale_Cuirass()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021525); }
-    some<Armor_t*>  Armor_Guard_Pale_Helmet()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161F); }
-    some<Armor_t*>  Armor_Guard_Pale_Shield()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F7); }
-
-    some<Armor_t*>  Armor_Guard_Riften_Cuirass()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021507); }
-    some<Armor_t*>  Armor_Guard_Riften_Helmet()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021622); }
-    some<Armor_t*>  Armor_Guard_Riften_Shield()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214BA); }
-
-    some<Armor_t*>  Armor_Guard_Solitude_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C7F5B); }
-    some<Armor_t*>  Armor_Guard_Solitude_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C7F5C); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F4); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09E023); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB62); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB64); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_4()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB63); }
-    some<Armor_t*>  Armor_Guard_Solitude_Shield_Reward_5()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB65); }
-
-    some<Armor_t*>  Armor_Guard_Whiterun_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02150D); }
-    some<Armor_t*>  Armor_Guard_Whiterun_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021615); }
-    some<Armor_t*>  Armor_Guard_Whiterun_Shield()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214E0); }
-
-    some<Armor_t*>  Armor_Guard_Windhelm_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D7B); }
-    some<Armor_t*>  Armor_Guard_Windhelm_Cuirass_Sleeved()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD5A0); }
-    some<Armor_t*>  Armor_Guard_Windhelm_Helmet_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D79); }
-    some<Armor_t*>  Armor_Guard_Windhelm_Helmet_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10559D); }
-    some<Armor_t*>  Armor_Guard_Windhelm_Shield()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214EB); }
-
-    some<Armor_t*>  Armor_Guard_Winterhold_Cuirass()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021522); }
-    some<Armor_t*>  Armor_Guard_Winterhold_Helmet()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02161D); }
-    some<Armor_t*>  Armor_Guard_Winterhold_Shield()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F1); }
+    some<Armor_t*>  Armor_Guard_Shield_Falkreath()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214ED); }
+    some<Armor_t*>  Armor_Guard_Shield_Hjaalmarch()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214EF); }
+    some<Armor_t*>  Armor_Guard_Shield_Markarth()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214DC); }
+    some<Armor_t*>  Armor_Guard_Shield_Pale()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F7); }
+    some<Armor_t*>  Armor_Guard_Shield_Riften()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214BA); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F4); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude_Reward_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09E023); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude_Reward_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB62); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude_Reward_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB64); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude_Reward_4()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB63); }
+    some<Armor_t*>  Armor_Guard_Shield_Solitude_Reward_5()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB65); }
+    some<Armor_t*>  Armor_Guard_Shield_Whiterun()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214E0); }
+    some<Armor_t*>  Armor_Guard_Shield_Windhelm()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214EB); }
+    some<Armor_t*>  Armor_Guard_Shield_Winterhold()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214F1); }
 
     some<Armor_t*>  Armor_Hide_Boots()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013910); }
     some<Armor_t*>  Armor_Hide_Boots_Carry_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x07A135); }
@@ -1541,6 +1485,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Hide_Cuirass_Restoration_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFB4); }
     some<Armor_t*>  Armor_Hide_Cuirass_Restoration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFB5); }
     some<Armor_t*>  Armor_Hide_Cuirass_Restoration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFB6); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3A2); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Health_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC93); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Health_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D3); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Health_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D4); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC94); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D5); }
+    some<Armor_t*>  Armor_Hide_Cuirass_Studded_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D6); }
 
     some<Armor_t*>  Armor_Hide_Gauntlets()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013912); }
     some<Armor_t*>  Armor_Hide_Gauntlets_Alchemy_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B67F); }
@@ -1608,18 +1559,29 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D1); }
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D2); }
 
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3A2); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Health_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC93); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Health_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D3); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Health_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D4); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Light_Armor_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC94); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Light_Armor_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D5); }
-    some<Armor_t*>  Armor_Hide_Studded_Cuirass_Light_Armor_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D6); }
-
     some<Armor_t*>  Armor_Imperial_Boots()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0136D6); }
+    some<Armor_t*>  Armor_Imperial_Boots_Blades()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B288); }
+    some<Armor_t*>  Armor_Imperial_Boots_Carius()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A573); }
     some<Armor_t*>  Armor_Imperial_Boots_Carry_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCBB); }
     some<Armor_t*>  Armor_Imperial_Boots_Carry_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4DF); }
     some<Armor_t*>  Armor_Imperial_Boots_Carry_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4E0); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED7); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Carry_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970D); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Carry_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970E); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Carry_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970F); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9710); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9711); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9712); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9713); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9714); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9715); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9716); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9717); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9718); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Sneak_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9719); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Sneak_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971A); }
+    some<Armor_t*>  Armor_Imperial_Boots_Light_Sneak_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971B); }
+    some<Armor_t*>  Armor_Imperial_Boots_Penitus_Oculatus()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EA7); }
     some<Armor_t*>  Armor_Imperial_Boots_Resist_Fire_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCBC); }
     some<Armor_t*>  Armor_Imperial_Boots_Resist_Fire_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4E1); }
     some<Armor_t*>  Armor_Imperial_Boots_Resist_Fire_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4E2); }
@@ -1634,13 +1596,31 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Boots_Sneak_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4E8); }
 
     some<Armor_t*>  Armor_Imperial_Cuirass()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0136D5); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Blades()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28B); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Carius()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0376F1); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Health_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCC0); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Health_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4E9); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Health_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4EA); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Heavy_Armor_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCC1); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Heavy_Armor_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4EB); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Heavy_Armor_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4EC); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED9); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Health_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971C); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Health_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971D); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Health_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971E); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Light_Armor_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971F); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Light_Armor_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9720); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Light_Light_Armor_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9721); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Penitus_Oculatus()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EA0); }
     some<Armor_t*>  Armor_Imperial_Cuirass_Resist_Frost_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4F0); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED8); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Health_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB4); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Health_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB5); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Health_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB6); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Light_Armor_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB7); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Light_Armor_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB8); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Studded_Light_Armor_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB9); }
+    some<Armor_t*>  Armor_Imperial_Cuirass_Tullius()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05CBFE); }
 
     some<Armor_t*>  Armor_Imperial_Gauntlets()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0136D4); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Alchemy_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B682); }
@@ -1649,18 +1629,52 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Gauntlets_Alteration_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCC6); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Alteration_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4F5); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Alteration_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4F6); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Blades()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28D); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Carius()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A575); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Conjuration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCC8); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Conjuration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4F9); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Conjuration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4FA); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Destruction_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCC9); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Destruction_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4FB); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Destruction_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4FC); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013EDA); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alchemy_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B685); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alchemy_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B686); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alchemy_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B687); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alteration_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B972E); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alteration_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B972F); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Alteration_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9730); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Conjuration_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9734); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Conjuration_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9735); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Conjuration_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9736); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Destruction_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9737); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Destruction_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9738); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Destruction_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9739); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Lockpicking_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9740); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Lockpicking_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9741); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Lockpicking_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9742); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Marksman_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9743); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Marksman_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9744); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Marksman_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9745); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_One_Handed_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9746); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_One_Handed_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD505); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_One_Handed_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9748); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Pickpocket_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9749); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Pickpocket_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974A); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Pickpocket_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974B); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Smithing_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974F); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Smithing_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9750); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Smithing_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9751); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9752); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9753); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Light_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9754); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Marksman_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCCD); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Marksman_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD503); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Marksman_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD504); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_One_Handed_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCCE); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_One_Handed_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9747); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_One_Handed_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD506); }
+    some<Armor_t*>  Armor_Imperial_Gauntlets_Penitus_Oculatus()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EAB); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Smithing_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCD1); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Smithing_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD50B); }
     some<Armor_t*>  Armor_Imperial_Gauntlets_Smithing_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD50C); }
@@ -1676,6 +1690,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Helmet_Alteration_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6A5); }
     some<Armor_t*>  Armor_Imperial_Helmet_Alteration_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6A6); }
     some<Armor_t*>  Armor_Imperial_Helmet_Alteration_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6A7); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Blades()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28F); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Carius()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A576); }
     some<Armor_t*>  Armor_Imperial_Helmet_Conjuration_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6A8); }
     some<Armor_t*>  Armor_Imperial_Helmet_Conjuration_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6A9); }
     some<Armor_t*>  Armor_Imperial_Helmet_Conjuration_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6AA); }
@@ -1685,117 +1701,52 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Helmet_Illusion_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B1); }
     some<Armor_t*>  Armor_Imperial_Helmet_Illusion_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B2); }
     some<Armor_t*>  Armor_Imperial_Helmet_Illusion_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B3); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013EDB); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alchemy_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BD); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alchemy_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C3); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alchemy_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BE); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alteration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BF); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alteration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C0); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Alteration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C1); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Conjuration_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C2); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Conjuration_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C4); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Conjuration_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C5); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Destruction_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C6); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Destruction_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C7); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Destruction_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C8); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Illusion_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CC); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Illusion_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CD); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Illusion_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CE); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Magicka_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CF); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Magicka_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6D0); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Magicka_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B6); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Light_Noster()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06FE72); }
     some<Armor_t*>  Armor_Imperial_Helmet_Magicka_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B4); }
     some<Armor_t*>  Armor_Imperial_Helmet_Magicka_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B5); }
     some<Armor_t*>  Armor_Imperial_Helmet_Marksman_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B7); }
     some<Armor_t*>  Armor_Imperial_Helmet_Marksman_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B8); }
     some<Armor_t*>  Armor_Imperial_Helmet_Marksman_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B9); }
     some<Armor_t*>  Armor_Imperial_Helmet_Officer()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0136CF); }
+    some<Armor_t*>  Armor_Imperial_Helmet_Penitus_Oculatus()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EAA); }
     some<Armor_t*>  Armor_Imperial_Helmet_Restoration_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BA); }
     some<Armor_t*>  Armor_Imperial_Helmet_Restoration_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BB); }
     some<Armor_t*>  Armor_Imperial_Helmet_Restoration_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BC); }
 
     some<Armor_t*>  Armor_Imperial_Shield()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0135BA); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Boots()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED7); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Carry_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970D); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Carry_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970E); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Carry_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B970F); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9710); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9711); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9712); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9713); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9714); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9715); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9716); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9717); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9718); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Sneak_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9719); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Sneak_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971A); }
-    some<Armor_t*>  Armor_Imperial_Light_Boots_Sneak_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971B); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED9); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Health_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971C); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Health_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971D); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Health_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971E); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Light_Armor_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B971F); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Light_Armor_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9720); }
-    some<Armor_t*>  Armor_Imperial_Light_Cuirass_Light_Armor_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9721); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013EDA); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alchemy_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B685); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alchemy_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B686); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alchemy_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B687); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alteration_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B972E); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alteration_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B972F); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Alteration_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9730); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Conjuration_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9734); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Conjuration_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9735); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Conjuration_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9736); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Destruction_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9737); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Destruction_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9738); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Destruction_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9739); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Lockpicking_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9740); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Lockpicking_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9741); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Lockpicking_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9742); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Marksman_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9743); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Marksman_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9744); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Marksman_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9745); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_One_Handed_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9746); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_One_Handed_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD505); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_One_Handed_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9748); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Pickpocket_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9749); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Pickpocket_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974A); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Pickpocket_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974B); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Smithing_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B974F); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Smithing_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9750); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Smithing_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9751); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9752); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9753); }
-    some<Armor_t*>  Armor_Imperial_Light_Gauntlets_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B9754); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Helmet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013EDB); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alchemy_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BD); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alchemy_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C3); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alchemy_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BE); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alteration_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BF); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alteration_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C0); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Alteration_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C1); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Conjuration_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C2); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Conjuration_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C4); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Conjuration_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C5); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Destruction_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C6); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Destruction_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C7); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Destruction_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6C8); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Illusion_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CC); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Illusion_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CD); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Illusion_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CE); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Magicka_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6CF); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Magicka_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6D0); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Magicka_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6B6); }
-    some<Armor_t*>  Armor_Imperial_Light_Helmet_Noster()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06FE72); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Shield()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013AB2); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Block_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD448); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Block_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD50F); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Block_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD510); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Fire_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD449); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Fire_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD511); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Fire_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD512); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Frost_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD44A); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Frost_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD513); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Frost_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD514); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD44B); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD515); }
-    some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD516); }
-
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED8); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Health_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB4); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Health_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB5); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Health_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB6); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Light_Armor_1()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB7); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Light_Armor_2()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB8); }
-    some<Armor_t*>  Armor_Imperial_Studded_Cuirass_Light_Armor_3()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB9); }
+    some<Armor_t*>  Armor_Imperial_Shield_Blades()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04F912); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013AB2); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Block_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD448); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Block_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD50F); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Block_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD510); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Fire_1()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD449); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Fire_2()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD511); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Fire_3()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD512); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Frost_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD44A); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Frost_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD513); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Frost_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD514); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Shock_1()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD44B); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Shock_2()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD515); }
+    some<Armor_t*>  Armor_Imperial_Shield_Light_Resist_Shock_3()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD516); }
 
     some<Armor_t*>  Armor_Iron_Boots()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x012E4B); }
     some<Armor_t*>  Armor_Iron_Boots_Carry_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x07A120); }
@@ -1818,6 +1769,28 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Iron_Cuirass_Alteration_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFB8); }
     some<Armor_t*>  Armor_Iron_Cuirass_Alteration_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFB9); }
     some<Armor_t*>  Armor_Iron_Cuirass_Alteration_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFBB); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013948); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Alteration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC8); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Alteration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC9); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Alteration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCA); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Conjuration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCB); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Conjuration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCC); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Conjuration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCD); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Destruction_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCE); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Destruction_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCF); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Destruction_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD0); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Health_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC9D); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Health_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD51F); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Health_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD520); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Heavy_Armor_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC9E); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Heavy_Armor_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD521); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Heavy_Armor_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD522); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Illusion_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD1); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Illusion_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD2); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Illusion_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD3); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Restoration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD4); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Restoration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD5); }
+    some<Armor_t*>  Armor_Iron_Cuirass_Banded_Restoration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD6); }
     some<Armor_t*>  Armor_Iron_Cuirass_Conjuration_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFBC); }
     some<Armor_t*>  Armor_Iron_Cuirass_Conjuration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFBD); }
     some<Armor_t*>  Armor_Iron_Cuirass_Conjuration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFBE); }
@@ -1882,6 +1855,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Iron_Helmet_Restoration_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD597); }
 
     some<Armor_t*>  Armor_Iron_Shield()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x012EB6); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01394B); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Block_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB7); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Block_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD553); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Block_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD554); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB8); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD555); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD556); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB9); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD557); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD558); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Magic_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFB9); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Magic_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFBA); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Magic_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFBB); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCBA); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD559); }
+    some<Armor_t*>  Armor_Iron_Shield_Banded_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD55A); }
     some<Armor_t*>  Armor_Iron_Shield_Block_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x07A11E); }
     some<Armor_t*>  Armor_Iron_Shield_Block_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD596); }
     some<Armor_t*>  Armor_Iron_Shield_Block_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD598); }
@@ -1901,50 +1890,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Iron_Shield_Resist_Shock_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD59E); }
     some<Armor_t*>  Armor_Iron_Shield_Roggi()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06901D); }
 
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013948); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Alteration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC8); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Alteration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC9); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Alteration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCA); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Conjuration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCB); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Conjuration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCC); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Conjuration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCD); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Destruction_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCE); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Destruction_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFCF); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Destruction_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD0); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Health_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC9D); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Health_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD51F); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Health_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD520); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Heavy_Armor_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACC9E); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Heavy_Armor_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD521); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Heavy_Armor_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD522); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Illusion_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD1); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Illusion_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD2); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Illusion_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD3); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Restoration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD4); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Restoration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD5); }
-    some<Armor_t*>  Armor_Iron_Banded_Cuirass_Restoration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFD6); }
-
-    some<Armor_t*>  Armor_Iron_Banded_Shield()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01394B); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Block_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB7); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Block_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD553); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Block_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD554); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB8); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD555); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD556); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCB9); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD557); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD558); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Magic_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFB9); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Magic_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFBA); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Magic_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFBB); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCBA); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD559); }
-    some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD55A); }
-
     some<Armor_t*>  Armor_Leather_Boots()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013920); }
     some<Armor_t*>  Armor_Leather_Boots_Carry_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4225); }
     some<Armor_t*>  Armor_Leather_Boots_Carry_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4226); }
     some<Armor_t*>  Armor_Leather_Boots_Carry_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4227); }
+    some<Armor_t*>  Armor_Leather_Boots_Morag_Tong()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AB); }
     some<Armor_t*>  Armor_Leather_Boots_Resist_Fire_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4228); }
     some<Armor_t*>  Armor_Leather_Boots_Resist_Fire_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4229); }
     some<Armor_t*>  Armor_Leather_Boots_Resist_Fire_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B422A); }
@@ -1980,6 +1930,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Leather_Cuirass_Light_Armor_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4237); }
     some<Armor_t*>  Armor_Leather_Cuirass_Light_Armor_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4238); }
     some<Armor_t*>  Armor_Leather_Cuirass_Light_Armor_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B4239); }
+    some<Armor_t*>  Armor_Leather_Cuirass_Morag_Tong()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AC); }
     some<Armor_t*>  Armor_Leather_Cuirass_Restoration_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DED1); }
     some<Armor_t*>  Armor_Leather_Cuirass_Restoration_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DED2); }
     some<Armor_t*>  Armor_Leather_Cuirass_Restoration_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DED3); }
@@ -1994,6 +1945,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Leather_Gauntlets_Marksman_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5050); }
     some<Armor_t*>  Armor_Leather_Gauntlets_Marksman_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5051); }
     some<Armor_t*>  Armor_Leather_Gauntlets_Marksman_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5052); }
+    some<Armor_t*>  Armor_Leather_Gauntlets_Morag_Tong()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AD); }
     some<Armor_t*>  Armor_Leather_Gauntlets_One_Handed_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5053); }
     some<Armor_t*>  Armor_Leather_Gauntlets_One_Handed_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5054); }
     some<Armor_t*>  Armor_Leather_Gauntlets_One_Handed_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B5055); }
@@ -2029,36 +1981,123 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Leather_Helmet_Marksman_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B507D); }
     some<Armor_t*>  Armor_Leather_Helmet_Marksman_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B507E); }
     some<Armor_t*>  Armor_Leather_Helmet_Marksman_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B507F); }
+    some<Armor_t*>  Armor_Leather_Helmet_Morag_Tong()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AE); }
     some<Armor_t*>  Armor_Leather_Helmet_Restoration_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506B); }
     some<Armor_t*>  Armor_Leather_Helmet_Restoration_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506C); }
     some<Armor_t*>  Armor_Leather_Helmet_Restoration_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506D); }
 
-    some<Armor_t*>  Armor_Morag_Tong_Boots()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AB); }
-    some<Armor_t*>  Armor_Morag_Tong_Cuirass()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AC); }
-    some<Armor_t*>  Armor_Morag_Tong_Gauntlets()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AD); }
-    some<Armor_t*>  Armor_Morag_Tong_Helmet()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AE); }
+    some<Armor_t*>  Armor_Nordic_Boots()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD96); }
+    some<Armor_t*>  Armor_Nordic_Boots_Ancient()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9D); }
+    some<Armor_t*>  Armor_Nordic_Boots_Ancient_Ahzidal()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
+    some<Armor_t*>  Armor_Nordic_Boots_Ancient_Tsun()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
+    some<Armor_t*>  Armor_Nordic_Boots_Carry_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A0); }
+    some<Armor_t*>  Armor_Nordic_Boots_Carry_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A1); }
+    some<Armor_t*>  Armor_Nordic_Boots_Carry_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A2); }
+    some<Armor_t*>  Armor_Nordic_Boots_Muffle()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A3); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Fire_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A4); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Fire_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A5); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Fire_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A6); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Frost_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A7); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Frost_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A8); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Frost_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A9); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Shock_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AA); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Shock_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AB); }
+    some<Armor_t*>  Armor_Nordic_Boots_Resist_Shock_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AC); }
+    some<Armor_t*>  Armor_Nordic_Boots_Stamina_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AD); }
+    some<Armor_t*>  Armor_Nordic_Boots_Stamina_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AE); }
+    some<Armor_t*>  Armor_Nordic_Boots_Stamina_3()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AF); }
 
-    some<Armor_t*>  Armor_Nightingale_Boots()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C1); }
-    some<Armor_t*>  Armor_Nightingale_Cuirass()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C2); }
-    some<Armor_t*>  Armor_Nightingale_Gauntlets()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D1); }
-    some<Armor_t*>  Armor_Nightingale_Helmet()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D8); }
+    some<Armor_t*>  Armor_Nordic_Cuirass()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD97); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Alteration_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B0); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Alteration_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B1); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Alteration_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B2); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Ancient()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x018388); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Ancient_Ahzidal()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Ancient_Tsun()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Conjuration_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B3); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Conjuration_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B4); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Conjuration_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B5); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Destruction_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B6); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Destruction_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B7); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Destruction_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B8); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Health_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B9); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Health_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BA); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Health_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BB); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Heavy_Armor_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BC); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Heavy_Armor_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BD); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Heavy_Armor_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BE); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Illusion_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BF); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Illusion_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C0); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Illusion_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C1); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Restoration_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C2); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Restoration_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C3); }
+    some<Armor_t*>  Armor_Nordic_Cuirass_Restoration_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C4); }
 
-    some<Armor_t*>  Armor_Nightingale_Player_1_Boots()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0C); }
-    some<Armor_t*>  Armor_Nightingale_Player_1_Cuirass()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB86); }
-    some<Armor_t*>  Armor_Nightingale_Player_1_Gauntlets()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB87); }
-    some<Armor_t*>  Armor_Nightingale_Player_1_Helmet()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB88); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD98); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Alchemy_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C5); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Alchemy_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C6); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Alchemy_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C7); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Ancient()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056B17); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Ancient_Ahzidal()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Marksman_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C8); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Marksman_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C9); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Marksman_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CA); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_One_Handed_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CB); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_One_Handed_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CC); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_One_Handed_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CD); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Smithing_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CE); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Smithing_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CF); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Smithing_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D0); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Two_Handed_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D1); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Two_Handed_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D2); }
+    some<Armor_t*>  Armor_Nordic_Gauntlets_Two_Handed_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D3); }
 
-    some<Armor_t*>  Armor_Nightingale_Player_2_Boots()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB85); }
-    some<Armor_t*>  Armor_Nightingale_Player_2_Cuirass()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0E); }
-    some<Armor_t*>  Armor_Nightingale_Player_2_Gauntlets()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC10); }
-    some<Armor_t*>  Armor_Nightingale_Player_2_Helmet()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC13); }
-
-    some<Armor_t*>  Armor_Nightingale_Player_3_Boots()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0D); }
-    some<Armor_t*>  Armor_Nightingale_Player_3_Cuirass()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0F); }
-    some<Armor_t*>  Armor_Nightingale_Player_3_Gauntlets()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC11); }
-    some<Armor_t*>  Armor_Nightingale_Player_3_Helmet()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC12); }
+    some<Armor_t*>  Armor_Nordic_Helmet()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD99); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alchemy_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D4); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alchemy_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D5); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alchemy_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D6); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alteration_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D7); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alteration_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D8); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Alteration_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D9); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9E); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Ahzidal()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Jagged_Crown()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Unburned()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F494E); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Ahzidal()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FE); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Bromjunaar()   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CCA); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Dukaan()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FF); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Hevnoraak()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC1); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Konahrik()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CD6); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Krosis()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CB9); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Morokei()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061C8B); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Nahkriin()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CA5); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Otar()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC2); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Rahgot()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC0); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Vokun()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC9); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Volsung()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CAB); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Ancient_Mask_Zahkriisos()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024037); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Conjuration_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DA); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Conjuration_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DB); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Conjuration_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DC); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Destruction_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DD); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Destruction_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DE); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Destruction_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DF); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Illusion_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E0); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Illusion_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E1); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Illusion_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E2); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Magicka_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E3); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Magicka_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E4); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Magicka_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E5); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Marksman_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E6); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Marksman_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E7); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Marksman_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E8); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Restoration_1()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E9); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Restoration_2()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EA); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Restoration_3()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EB); }
+    some<Armor_t*>  Armor_Nordic_Helmet_Waterbreathing()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EC); }
 
     some<Armor_t*>  Armor_Nordic_Shield()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026236); }
+    some<Armor_t*>  Armor_Nordic_Shield_Ancient_Ysgramor()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
     some<Armor_t*>  Armor_Nordic_Shield_Block_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EE); }
     some<Armor_t*>  Armor_Nordic_Shield_Block_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EF); }
     some<Armor_t*>  Armor_Nordic_Shield_Block_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291F0); }
@@ -2074,91 +2113,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Nordic_Shield_Resist_Shock_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291F9); }
     some<Armor_t*>  Armor_Nordic_Shield_Resist_Shock_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FA); }
     some<Armor_t*>  Armor_Nordic_Shield_Resist_Shock_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FB); }
-
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD96); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Carry_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A0); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Carry_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A1); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Carry_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A2); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Muffle()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A3); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Fire_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A4); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Fire_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A5); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Fire_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A6); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Frost_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A7); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Frost_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A8); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Frost_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291A9); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Shock_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AA); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Shock_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AB); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Resist_Shock_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AC); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Stamina_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AD); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Stamina_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AE); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Boots_Stamina_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291AF); }
-
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD97); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Alteration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B0); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Alteration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B1); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Alteration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B2); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B3); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B4); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Conjuration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B5); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Destruction_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B6); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Destruction_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B7); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Destruction_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B8); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Health_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B9); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Health_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BA); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Health_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BB); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Heavy_Armor_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BC); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Heavy_Armor_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BD); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Heavy_Armor_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BE); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Illusion_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291BF); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Illusion_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C0); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Illusion_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C1); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Restoration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C2); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Restoration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C3); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Cuirass_Restoration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C4); }
-
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD98); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Alchemy_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C5); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Alchemy_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C6); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Alchemy_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C7); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Marksman_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C8); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Marksman_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291C9); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Marksman_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CA); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_One_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CB); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_One_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CC); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_One_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CD); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Smithing_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CE); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Smithing_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291CF); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Smithing_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D0); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Two_Handed_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D1); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Two_Handed_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D2); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Gauntlets_Two_Handed_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D3); }
-
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD99); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alchemy_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D4); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alchemy_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D5); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alchemy_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D6); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alteration_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D7); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alteration_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D8); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Alteration_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291D9); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DA); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DB); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Conjuration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DC); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Destruction_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DD); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Destruction_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DE); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Destruction_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291DF); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Illusion_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E0); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Illusion_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E1); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Illusion_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E2); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Magicka_1()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E3); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Magicka_2()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E4); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Magicka_3()           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E5); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Marksman_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E6); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Marksman_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E7); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Marksman_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E8); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Restoration_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291E9); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Restoration_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EA); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Restoration_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EB); }
-    some<Armor_t*>  Armor_Nordic_Heavy_Helmet_Waterbreathing()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291EC); }
 
     some<Armor_t*>  Armor_Orcish_Boots()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013956); }
     some<Armor_t*>  Armor_Orcish_Boots_Carry_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CF7AF); }
@@ -2262,10 +2216,93 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Orcish_Shield_Resist_Shock_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CF823); }
     some<Armor_t*>  Armor_Orcish_Shield_Resist_Shock_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CF822); }
 
-    some<Armor_t*>  Armor_Penitus_Oculatus_Boots()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EA7); }
-    some<Armor_t*>  Armor_Penitus_Oculatus_Cuirass()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EA0); }
-    some<Armor_t*>  Armor_Penitus_Oculatus_Gauntlets()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EAB); }
-    some<Armor_t*>  Armor_Penitus_Oculatus_Helmet()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3EAA); }
+    some<Armor_t*>  Armor_Plate_Boots()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395B); }
+    some<Armor_t*>  Armor_Plate_Boots_Carry_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B31F); }
+    some<Armor_t*>  Armor_Plate_Boots_Carry_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3FE); }
+    some<Armor_t*>  Armor_Plate_Boots_Carry_3()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3FF); }
+    some<Armor_t*>  Armor_Plate_Boots_Muffle()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092A8E); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Fire_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B400); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Fire_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B401); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Fire_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B402); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Frost_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B403); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Frost_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B404); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Frost_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B405); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Shock_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B406); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Shock_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B407); }
+    some<Armor_t*>  Armor_Plate_Boots_Resist_Shock_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B408); }
+    some<Armor_t*>  Armor_Plate_Boots_Stamina_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9E); }
+    some<Armor_t*>  Armor_Plate_Boots_Stamina_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9F); }
+    some<Armor_t*>  Armor_Plate_Boots_Stamina_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFA0); }
+
+    some<Armor_t*>  Armor_Plate_Cuirass()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395C); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Alteration_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF01); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Alteration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF02); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Alteration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF03); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Conjuration_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF04); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Conjuration_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF05); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Conjuration_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF06); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Destruction_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF07); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Destruction_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF08); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Destruction_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF09); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Health_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40C); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Health_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40D); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Health_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40E); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Heavy_Armor_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B446); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Heavy_Armor_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B54E); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Heavy_Armor_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B555); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Illusion_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0A); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Illusion_2()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0B); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Illusion_3()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0C); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Katria()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014C05); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Restoration_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0D); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Restoration_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0E); }
+    some<Armor_t*>  Armor_Plate_Cuirass_Restoration_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0F); }
+
+    some<Armor_t*>  Armor_Plate_Gauntlets()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395D); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Alchemy_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B699); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Alchemy_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B69A); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Alchemy_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B69B); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Marksman_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF2B); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Marksman_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF4C); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Marksman_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF62); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_One_Handed_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF66); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_One_Handed_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF67); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_One_Handed_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF6B); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Smithing_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF73); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Smithing_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF74); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Smithing_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF75); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Two_Handed_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF76); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Two_Handed_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF77); }
+    some<Armor_t*>  Armor_Plate_Gauntlets_Two_Handed_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF78); }
+
+    some<Armor_t*>  Armor_Plate_Helmet()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395E); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alchemy_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B670); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alchemy_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B671); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alchemy_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B672); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alteration_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF79); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alteration_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7A); }
+    some<Armor_t*>  Armor_Plate_Helmet_Alteration_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7B); }
+    some<Armor_t*>  Armor_Plate_Helmet_Conjuration_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7C); }
+    some<Armor_t*>  Armor_Plate_Helmet_Conjuration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7D); }
+    some<Armor_t*>  Armor_Plate_Helmet_Conjuration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7E); }
+    some<Armor_t*>  Armor_Plate_Helmet_Destruction_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7F); }
+    some<Armor_t*>  Armor_Plate_Helmet_Destruction_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF80); }
+    some<Armor_t*>  Armor_Plate_Helmet_Destruction_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF81); }
+    some<Armor_t*>  Armor_Plate_Helmet_Illusion_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF85); }
+    some<Armor_t*>  Armor_Plate_Helmet_Illusion_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04101E); }
+    some<Armor_t*>  Armor_Plate_Helmet_Illusion_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041020); }
+    some<Armor_t*>  Armor_Plate_Helmet_Magicka_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041021); }
+    some<Armor_t*>  Armor_Plate_Helmet_Magicka_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041022); }
+    some<Armor_t*>  Armor_Plate_Helmet_Magicka_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041027); }
+    some<Armor_t*>  Armor_Plate_Helmet_Marksman_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04102C); }
+    some<Armor_t*>  Armor_Plate_Helmet_Marksman_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041033); }
+    some<Armor_t*>  Armor_Plate_Helmet_Marksman_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041034); }
+    some<Armor_t*>  Armor_Plate_Helmet_Restoration_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041035); }
+    some<Armor_t*>  Armor_Plate_Helmet_Restoration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041036); }
+    some<Armor_t*>  Armor_Plate_Helmet_Restoration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041037); }
+    some<Armor_t*>  Armor_Plate_Helmet_Waterbreathing()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092ACA); }
+    some<Armor_t*>  Armor_Plate_Helmet_Winterhold()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0940D5); }
+    some<Armor_t*>  Armor_Plate_Helmet_Yngol()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0295F3); }
 
     some<Armor_t*>  Armor_Scaled_Boots()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B39F); }
     some<Armor_t*>  Armor_Scaled_Boots_Carry_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D53E6); }
@@ -2362,22 +2399,220 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Scaled_Helmet_Waterbreathing()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046DF0); }
 
     some<Armor_t*>  Armor_Shrouded_Boots()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2845); }
+    some<Armor_t*>  Armor_Shrouded_Boots_Ancient()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F14); }
+    some<Armor_t*>  Armor_Shrouded_Boots_Worn()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5C); }
+
     some<Armor_t*>  Armor_Shrouded_Cuirass()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2844); }
+    some<Armor_t*>  Armor_Shrouded_Cuirass_Ancient()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F15); }
     some<Armor_t*>  Armor_Shrouded_Cuirass_Short_Sleeved()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05ABC3); }
+    some<Armor_t*>  Armor_Shrouded_Cuirass_Worn()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5B); }
+
     some<Armor_t*>  Armor_Shrouded_Gauntlets()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2843); }
+    some<Armor_t*>  Armor_Shrouded_Gauntlets_Ancient()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F16); }
     some<Armor_t*>  Armor_Shrouded_Gauntlets_Tumblerbane()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F5981); }
+    some<Armor_t*>  Armor_Shrouded_Gauntlets_Worn()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5E); }
+
     some<Armor_t*>  Armor_Shrouded_Helmet()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2842); }
+    some<Armor_t*>  Armor_Shrouded_Helmet_Ancient()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F17); }
     some<Armor_t*>  Armor_Shrouded_Helmet_Maskless()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05ABC4); }
+    some<Armor_t*>  Armor_Shrouded_Helmet_Worn()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5D); }
 
-    some<Armor_t*>  Armor_Shrouded_Ancient_Boots()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F14); }
-    some<Armor_t*>  Armor_Shrouded_Ancient_Cuirass()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F15); }
-    some<Armor_t*>  Armor_Shrouded_Ancient_Gauntlets()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F16); }
-    some<Armor_t*>  Armor_Shrouded_Ancient_Helmet()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1F17); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD9E); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Carry_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FC); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Carry_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FD); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Carry_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FE); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Muffle()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FF); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029200); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029201); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029202); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029203); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029204); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029205); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029206); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029207); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029208); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029209); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920A); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Heavy_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920B); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD7E); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Carry_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029093); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Carry_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029094); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Carry_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029095); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Deathbrand()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401A); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Muffle()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029100); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029096); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029097); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029098); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029099); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909A); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909B); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909D); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909E); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909F); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Sneak_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909C); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Sneak_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A0); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Sneak_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A1); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A2); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A3); }
+    some<Armor_t*>  Armor_Stalhrim_Boots_Light_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A4); }
 
-    some<Armor_t*>  Armor_Shrouded_Worn_Boots()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5C); }
-    some<Armor_t*>  Armor_Shrouded_Worn_Cuirass()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5B); }
-    some<Armor_t*>  Armor_Shrouded_Worn_Gauntlets()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5E); }
-    some<Armor_t*>  Armor_Shrouded_Worn_Helmet()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5D); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD9F); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Alteration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920C); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Alteration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920D); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Alteration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920E); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Conjuration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920F); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Conjuration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029210); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Conjuration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029211); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Destruction_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029212); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Destruction_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029213); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Destruction_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029214); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029215); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029216); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029218); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029219); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921A); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Health_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029217); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Heavy_Armor_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921B); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Heavy_Armor_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921C); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Heavy_Armor_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921D); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Illusion_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921E); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Illusion_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921F); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Illusion_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029220); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Restoration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029221); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Restoration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029222); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Restoration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029223); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Stamina_Rate_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029224); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Stamina_Rate_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029225); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Heavy_Stamina_Rate_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029226); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA2); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Alteration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A5); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Alteration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A6); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Alteration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A7); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Conjuration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A8); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Conjuration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A9); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Conjuration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AA); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Deathbrand()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401B); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Destruction_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AB); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Destruction_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AC); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Destruction_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AD); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B1); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B2); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B3); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AE); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AF); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Health_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B0); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Illusion_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B4); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Illusion_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B5); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Illusion_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B6); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Light_Armor_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B7); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Light_Armor_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B8); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Light_Armor_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B9); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Restoration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BA); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Restoration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BB); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Restoration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BC); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Stamina_Rate_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BD); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Stamina_Rate_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BE); }
+    some<Armor_t*>  Armor_Stalhrim_Cuirass_Light_Stamina_Rate_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BF); }
+
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA0); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Alchemy_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029227); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Alchemy_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029228); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Alchemy_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029229); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Marksman_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922A); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Marksman_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922B); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Marksman_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922C); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_One_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922D); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_One_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922E); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_One_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922F); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Smithing_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029230); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Smithing_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029231); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Smithing_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029232); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029233); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029234); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Heavy_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029235); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA5); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Alchemy_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C0); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Alchemy_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C1); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Alchemy_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C2); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Deathbrand()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401C); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Lockpicking_1()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C3); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Lockpicking_2()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C4); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Lockpicking_3()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C5); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Marksman_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C6); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Marksman_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C7); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Marksman_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C8); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_One_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C9); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_One_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CA); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_One_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CB); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Pickpocket_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CC); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Pickpocket_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CD); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Pickpocket_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CE); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Smithing_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CF); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Smithing_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D0); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Smithing_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D1); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D2); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D3); }
+    some<Armor_t*>  Armor_Stalhrim_Gauntlets_Light_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D4); }
+
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA1); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alchemy_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029236); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alchemy_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029237); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alchemy_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029238); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alteration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029239); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alteration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923A); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Alteration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923B); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Conjuration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923C); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Conjuration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923D); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Conjuration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923E); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Destruction_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923F); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Destruction_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029240); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Destruction_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029241); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Illusion_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029242); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Illusion_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029243); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Illusion_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029244); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029245); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029246); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029247); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029248); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029249); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Magicka_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924A); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Marksman_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924B); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Marksman_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924C); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Marksman_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924D); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Restoration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924E); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Restoration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924F); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Restoration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029250); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Heavy_Waterbreathing()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029251); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA3); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alchemy_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D5); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alchemy_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D6); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alchemy_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D7); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alteration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D8); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alteration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D9); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Alteration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DA); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Conjuration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DB); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Conjuration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DC); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Conjuration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DD); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Deathbrand()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401D); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Destruction_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DE); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Destruction_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DF); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Destruction_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E0); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Illusion_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E1); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Illusion_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E2); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Illusion_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E3); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E4); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E5); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E6); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E7); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E8); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Magicka_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E9); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Marksman_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EA); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Marksman_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EB); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Marksman_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EC); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Restoration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290ED); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Restoration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EE); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Restoration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EF); }
+    some<Armor_t*>  Armor_Stalhrim_Helmet_Light_Waterbreathing()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FF); }
 
     some<Armor_t*>  Armor_Stalhrim_Shield()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026237); }
     some<Armor_t*>  Armor_Stalhrim_Shield_Block_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F0); }
@@ -2395,203 +2630,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Stalhrim_Shield_Resist_Shock_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FC); }
     some<Armor_t*>  Armor_Stalhrim_Shield_Resist_Shock_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FD); }
     some<Armor_t*>  Armor_Stalhrim_Shield_Resist_Shock_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FE); }
-
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD9E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Carry_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FC); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Carry_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FD); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Carry_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FE); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Muffle()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291FF); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029200); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029201); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029202); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029203); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029204); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029205); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029206); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029207); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029208); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029209); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920A); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Boots_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920B); }
-
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD9F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Alteration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920C); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Alteration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920D); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Alteration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Conjuration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Conjuration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029210); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Conjuration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029211); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Destruction_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029212); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Destruction_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029213); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Destruction_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029214); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029215); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029216); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029218); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029219); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921A); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Health_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029217); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Heavy_Armor_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921B); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Heavy_Armor_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921C); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Heavy_Armor_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921D); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Illusion_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Illusion_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02921F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Illusion_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029220); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Restoration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029221); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Restoration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029222); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Restoration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029223); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Stamina_Rate_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029224); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Stamina_Rate_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029225); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Cuirass_Stamina_Rate_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029226); }
-
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA0); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Alchemy_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029227); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Alchemy_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029228); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Alchemy_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029229); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Marksman_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922A); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Marksman_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922B); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Marksman_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922C); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_One_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922D); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_One_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_One_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02922F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Smithing_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029230); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Smithing_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029231); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Smithing_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029232); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029233); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029234); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Gauntlets_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029235); }
-
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA1); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alchemy_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029236); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alchemy_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029237); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alchemy_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029238); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alteration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029239); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alteration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923A); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Alteration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923B); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Conjuration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923C); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Conjuration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923D); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Conjuration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Destruction_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02923F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Destruction_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029240); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Destruction_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029241); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Illusion_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029242); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Illusion_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029243); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Illusion_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029244); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029245); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029246); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029247); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029248); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029249); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Magicka_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924A); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Marksman_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924B); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Marksman_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924C); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Marksman_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924D); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Restoration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924E); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Restoration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02924F); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Restoration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029250); }
-    some<Armor_t*>  Armor_Stalhrim_Heavy_Helmet_Waterbreathing()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029251); }
-
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD7E); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Carry_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029093); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Carry_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029094); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Carry_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029095); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Muffle()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029100); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Fire_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029096); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Fire_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029097); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Fire_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029098); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Frost_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029099); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Frost_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909A); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Frost_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909B); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Shock_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909D); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Shock_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909E); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Resist_Shock_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909F); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Sneak_1()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02909C); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Sneak_2()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A0); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Sneak_3()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A1); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Stamina_1()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Stamina_2()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Boots_Stamina_3()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A4); }
-
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Alteration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Alteration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A6); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Alteration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A7); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Conjuration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A8); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Conjuration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290A9); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Conjuration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AA); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Destruction_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AB); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Destruction_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AC); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Destruction_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AD); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B1); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AE); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290AF); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Health_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B0); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Illusion_1()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B4); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Illusion_2()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Illusion_3()       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B6); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Light_Armor_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B7); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Light_Armor_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B8); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Light_Armor_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290B9); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Restoration_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BA); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Restoration_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BB); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Restoration_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BC); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Stamina_Rate_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BD); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Stamina_Rate_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BE); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Cuirass_Stamina_Rate_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290BF); }
-
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Alchemy_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C0); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Alchemy_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C1); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Alchemy_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Lockpicking_1()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Lockpicking_2()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C4); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Lockpicking_3()  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Marksman_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C6); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Marksman_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C7); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Marksman_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C8); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_One_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290C9); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_One_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CA); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_One_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CB); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Pickpocket_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CC); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Pickpocket_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CD); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Pickpocket_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CE); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Smithing_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290CF); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Smithing_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D0); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Smithing_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D1); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Two_Handed_1()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Two_Handed_2()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Gauntlets_Two_Handed_3()   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D4); }
-
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CDA3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alchemy_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alchemy_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D6); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alchemy_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D7); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alteration_1()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D8); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alteration_2()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290D9); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Alteration_3()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DA); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Conjuration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DB); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Conjuration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DC); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Conjuration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DD); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Destruction_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DE); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Destruction_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290DF); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Destruction_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E0); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Illusion_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E1); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Illusion_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E2); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Illusion_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E3); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_1()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E4); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_2()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E5); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_3()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E6); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_Rate_1()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E7); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_Rate_2()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E8); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Magicka_Rate_3()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290E9); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Marksman_1()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EA); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Marksman_2()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EB); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Marksman_3()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EC); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Restoration_1()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290ED); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Restoration_2()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EE); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Restoration_3()     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EF); }
-    some<Armor_t*>  Armor_Stalhrim_Light_Helmet_Waterbreathing()    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FF); }
 
     some<Armor_t*>  Armor_Steel_Boots_Carry_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B509A); }
     some<Armor_t*>  Armor_Steel_Boots_Carry_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B509B); }
@@ -2611,6 +2649,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Boots_Stamina_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9B); }
     some<Armor_t*>  Armor_Steel_Boots_Stamina_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9C); }
     some<Armor_t*>  Armor_Steel_Boots_Stamina_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9D); }
+    some<Armor_t*>  Armor_Steel_Boots_Wolf()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CEE7C); }
 
     some<Armor_t*>  Armor_Steel_Cuirass_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013952); }
     some<Armor_t*>  Armor_Steel_Cuirass_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F22); }
@@ -2635,6 +2674,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Cuirass_Restoration_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEFE); }
     some<Armor_t*>  Armor_Steel_Cuirass_Restoration_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEFF); }
     some<Armor_t*>  Armor_Steel_Cuirass_Restoration_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF00); }
+    some<Armor_t*>  Armor_Steel_Cuirass_Wolf()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CAE15); }
 
     some<Armor_t*>  Armor_Steel_Gauntlets_Alchemy_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B691); }
     some<Armor_t*>  Armor_Steel_Gauntlets_Alchemy_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B692); }
@@ -2654,6 +2694,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Gauntlets_Two_Handed_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50C2); }
     some<Armor_t*>  Armor_Steel_Gauntlets_Two_Handed_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50D1); }
     some<Armor_t*>  Armor_Steel_Gauntlets_Two_Handed_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50D2); }
+    some<Armor_t*>  Armor_Steel_Gauntlets_Wolf()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CEE7E); }
 
     some<Armor_t*>  Armor_Steel_Helmet()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013954); }
     some<Armor_t*>  Armor_Steel_Helmet_Alchemy_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B69F); }
@@ -2682,6 +2723,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Helmet_Restoration_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50E7); }
     some<Armor_t*>  Armor_Steel_Helmet_Restoration_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50E8); }
     some<Armor_t*>  Armor_Steel_Helmet_Waterbreathing()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092A86); }
+    some<Armor_t*>  Armor_Steel_Helmet_Wolf()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04C3D0); }
 
     some<Armor_t*>  Armor_Steel_Shield()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013955); }
     some<Armor_t*>  Armor_Steel_Shield_Block_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50EB); }
@@ -2702,150 +2744,67 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Steel_Shield_Resist_Shock_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50F6); }
     some<Armor_t*>  Armor_Steel_Shield_Targe_Of_The_Blooded()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC5BF); }
 
-    some<Armor_t*>  Armor_Steel_Plate_Boots()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395B); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Carry_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B31F); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Carry_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3FE); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Carry_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3FF); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Muffle()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092A8E); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Fire_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B400); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Fire_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B401); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Fire_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B402); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Frost_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B403); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Frost_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B404); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Frost_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B405); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Shock_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B406); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Shock_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B407); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Resist_Shock_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B408); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Stamina_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9E); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Stamina_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF9F); }
-    some<Armor_t*>  Armor_Steel_Plate_Boots_Stamina_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DFA0); }
+    some<Armor_t*>  Armor_Thief_Boots()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC2); }
+    some<Armor_t*>  Armor_Thief_Boots_Blackguard()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD34); }
+    some<Armor_t*>  Armor_Thief_Boots_Improved()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACB); }
+    some<Armor_t*>  Armor_Thief_Boots_Karliah()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E7); }
+    some<Armor_t*>  Armor_Thief_Boots_Linwe()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108543); }
+    some<Armor_t*>  Armor_Thief_Boots_Master()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D6); }
+    some<Armor_t*>  Armor_Thief_Boots_Mercer()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B4); }
+    some<Armor_t*>  Armor_Thief_Boots_Nightingale_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0C); }
+    some<Armor_t*>  Armor_Thief_Boots_Nightingale_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB85); }
+    some<Armor_t*>  Armor_Thief_Boots_Nightingale_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0D); }
+    some<Armor_t*>  Armor_Thief_Boots_Nightingale_Unplayable()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C1); }
+    some<Armor_t*>  Armor_Thief_Boots_Summerset_Shadows()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10853F); }
+    some<Armor_t*>  Armor_Thief_Boots_Unplayable()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036583); }
+    some<Armor_t*>  Armor_Thief_Boots_Variant()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DA); }
 
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395C); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Alteration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF01); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Alteration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF02); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Alteration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF03); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Conjuration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF04); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Conjuration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF05); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Conjuration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF06); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Destruction_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF07); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Destruction_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF08); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Destruction_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF09); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Health_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40C); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Health_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40D); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Health_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B40E); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Heavy_Armor_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B446); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Heavy_Armor_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B54E); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Heavy_Armor_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B555); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Illusion_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0A); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Illusion_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0B); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Illusion_3()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0C); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Katria()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014C05); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Restoration_1()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0D); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Restoration_2()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0E); }
-    some<Armor_t*>  Armor_Steel_Plate_Cuirass_Restoration_3()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF0F); }
+    some<Armor_t*>  Armor_Thief_Cuirass()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC3); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Blackguard()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD33); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Improved()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACC); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Karliah()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E8); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Linwe()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108544); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Master()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D7); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Mercer()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B5); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Nightingale_1()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB86); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Nightingale_2()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0E); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Nightingale_3()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0F); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Nightingale_Unplayable()    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C2); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Summerset_Shadows()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108540); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Unplayable()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036584); }
+    some<Armor_t*>  Armor_Thief_Cuirass_Variant()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DB); }
 
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395D); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Alchemy_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B699); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Alchemy_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B69A); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Alchemy_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B69B); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Marksman_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF2B); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Marksman_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF4C); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Marksman_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF62); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_One_Handed_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF66); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_One_Handed_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF67); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_One_Handed_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF6B); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Smithing_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF73); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Smithing_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF74); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Smithing_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF75); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Two_Handed_1()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF76); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Two_Handed_2()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF77); }
-    some<Armor_t*>  Armor_Steel_Plate_Gauntlets_Two_Handed_3()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF78); }
+    some<Armor_t*>  Armor_Thief_Gauntlets()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC4); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Blackguard()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD32); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Improved()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACD); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Karliah()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E9); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Linwe()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108545); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Master()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D8); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Mercer()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B6); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Nightingale_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB87); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Nightingale_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC10); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Nightingale_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC11); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Nightingale_Unplayable()  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D1); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Summerset_Shadows()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108541); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Unplayable()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x042BE9); }
+    some<Armor_t*>  Armor_Thief_Gauntlets_Variant()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DC); }
 
-    some<Armor_t*>  Armor_Steel_Plate_Helmet()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01395E); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alchemy_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B670); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alchemy_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B671); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alchemy_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B672); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alteration_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF79); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alteration_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7A); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Alteration_3()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7B); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Conjuration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7C); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Conjuration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7D); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Conjuration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7E); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Destruction_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF7F); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Destruction_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF80); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Destruction_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF81); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Illusion_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03DF85); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Illusion_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04101E); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Illusion_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041020); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Magicka_1()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041021); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Magicka_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041022); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Magicka_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041027); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Marksman_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04102C); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Marksman_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041033); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Marksman_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041034); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Restoration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041035); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Restoration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041036); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Restoration_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041037); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Waterbreathing()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092ACA); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Winterhold()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0940D5); }
-    some<Armor_t*>  Armor_Steel_Plate_Helmet_Yngol()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0295F3); }
-
-    some<Armor_t*>  Armor_Stormcloak_Officer_Boots()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086981); }
-    some<Armor_t*>  Armor_Stormcloak_Officer_Cuirass()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08697E); }
-    some<Armor_t*>  Armor_Stormcloak_Officer_Gauntlets()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086983); }
-    some<Armor_t*>  Armor_Stormcloak_Officer_Helmet()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086985); }
-
-    some<Armor_t*>  Armor_Summerset_Shadows_Boots()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10853F); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Cuirass()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108540); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Gauntlets()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108541); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Helmet()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108542); }
-
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Boots()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108543); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Cuirass()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108544); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Gauntlets()       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108545); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Helmet()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108546); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Boots()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC2); }
-    some<Armor_t*>  Armor_Thieves_Guild_Cuirass()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC3); }
-    some<Armor_t*>  Armor_Thieves_Guild_Gauntlets()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC4); }
-    some<Armor_t*>  Armor_Thieves_Guild_Helmet()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC5); }
-    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_1()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EE5C0); }
-    some<Armor_t*>  Armor_Thieves_Guild_Helmet_Torturer_2()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x047CBE); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Boots()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD34); }
-    some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Cuirass()        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD33); }
-    some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Gauntlets()      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD32); }
-    some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Helmet()         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD31); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Improved_Boots()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACB); }
-    some<Armor_t*>  Armor_Thieves_Guild_Improved_Cuirass()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACC); }
-    some<Armor_t*>  Armor_Thieves_Guild_Improved_Gauntlets()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACD); }
-    some<Armor_t*>  Armor_Thieves_Guild_Improved_Helmet()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACE); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Karliah_Boots()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E7); }
-    some<Armor_t*>  Armor_Thieves_Guild_Karliah_Cuirass()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E8); }
-    some<Armor_t*>  Armor_Thieves_Guild_Karliah_Gauntlets()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E9); }
-    some<Armor_t*>  Armor_Thieves_Guild_Karliah_Helmet()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35EA); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Boots()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D6); }
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Cuirass()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D7); }
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Gauntlets()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D8); }
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Helmet()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D9); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Mercer_Boots()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B4); }
-    some<Armor_t*>  Armor_Thieves_Guild_Mercer_Cuirass()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B5); }
-    some<Armor_t*>  Armor_Thieves_Guild_Mercer_Gauntlets()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B6); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Boots()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036583); }
-    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Cuirass()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036584); }
-    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Gauntlets()      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x042BE9); }
-    some<Armor_t*>  Armor_Thieves_Guild_Unplayable_Helmet()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036585); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Boots()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DA); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Cuirass()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DB); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Gauntlets()         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DC); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DD); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Helmet_2()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
+    some<Armor_t*>  Armor_Thief_Helmet()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC5); }
+    some<Armor_t*>  Armor_Thief_Helmet_Blackguard()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD31); }
+    some<Armor_t*>  Armor_Thief_Helmet_Improved()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACE); }
+    some<Armor_t*>  Armor_Thief_Helmet_Karliah()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35EA); }
+    some<Armor_t*>  Armor_Thief_Helmet_Linwe()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108546); }
+    some<Armor_t*>  Armor_Thief_Helmet_Master()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D9); }
+    some<Armor_t*>  Armor_Thief_Helmet_Nightingale_1()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB88); }
+    some<Armor_t*>  Armor_Thief_Helmet_Nightingale_2()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC13); }
+    some<Armor_t*>  Armor_Thief_Helmet_Nightingale_3()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC12); }
+    some<Armor_t*>  Armor_Thief_Helmet_Nightingale_Unplayable()     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D8); }
+    some<Armor_t*>  Armor_Thief_Helmet_Summerset_Shadows()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108542); }
+    some<Armor_t*>  Armor_Thief_Helmet_Torturer_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EE5C0); }
+    some<Armor_t*>  Armor_Thief_Helmet_Torturer_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x047CBE); }
+    some<Armor_t*>  Armor_Thief_Helmet_Unplayable()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036585); }
+    some<Armor_t*>  Armor_Thief_Helmet_Variant_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DD); }
+    some<Armor_t*>  Armor_Thief_Helmet_Variant_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
 
     some<Armor_t*>  Armor_Vampire_Boots()                           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00B5DE); }
 
@@ -2856,30 +2815,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Vampire_Cuirass_Black_Destruction_2()     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CBC); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Black_Magicka_Rate_1()    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC5); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Black_Magicka_Rate_2()    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC8); }
-
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0191F2); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey_Conjuration_1()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC0); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey_Conjuration_2()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC3); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey_Destruction_1()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CBA); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey_Destruction_2()      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CBD); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Grey_Magicka_Rate()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC6); }
-
     some<Armor_t*>  Armor_Vampire_Cuirass_Red()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0191F3); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Red_Conjuration_1()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC1); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Red_Conjuration_2()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC4); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Red_Destruction_1()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CBB); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Red_Destruction_2()       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CBE); }
     some<Armor_t*>  Armor_Vampire_Cuirass_Red_Magicka_Rate()        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC7); }
+    some<Armor_t*>  Armor_Vampire_Cuirass_Royal()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00B5DB); }
+    some<Armor_t*>  Armor_Vampire_Cuirass_Royal_Valerica()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0194C5); }
 
     some<Armor_t*>  Armor_Vampire_Gauntlets()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01A51F); }
-
-    some<Armor_t*>  Armor_Vampire_Royal_Cuirass()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00B5DB); }
-    some<Armor_t*>  Armor_Vampire_Royal_Cuirass_Valerica()          { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0194C5); }
-
-    some<Armor_t*>  Armor_Wolf_Boots()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CEE7C); }
-    some<Armor_t*>  Armor_Wolf_Cuirass()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CAE15); }
-    some<Armor_t*>  Armor_Wolf_Gauntlets()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CEE7E); }
-    some<Armor_t*>  Armor_Wolf_Helmet()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04C3D0); }
 
     some<Armor_t*>  Circlet_Aetherial_Crown()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00575A); }
 
@@ -3637,11 +3588,11 @@ namespace doticu_skylib { namespace Const { namespace Armors {
 
     void Armor_Blades(Vector_t<some<Armor_t*>>& results)
     {
-        results.push_back(Armor::Armor_Blades_Boots());
-        results.push_back(Armor::Armor_Blades_Cuirass());
-        results.push_back(Armor::Armor_Blades_Gauntlets());
-        results.push_back(Armor::Armor_Blades_Helmet());
-        results.push_back(Armor::Armor_Blades_Shield());
+        results.push_back(Armor::Armor_Imperial_Boots_Blades());
+        results.push_back(Armor::Armor_Imperial_Cuirass_Blades());
+        results.push_back(Armor::Armor_Imperial_Gauntlets_Blades());
+        results.push_back(Armor::Armor_Imperial_Helmet_Blades());
+        results.push_back(Armor::Armor_Imperial_Shield_Blades());
     }
 
 }}}
