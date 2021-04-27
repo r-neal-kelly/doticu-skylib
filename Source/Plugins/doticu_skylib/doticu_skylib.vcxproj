@@ -109,6 +109,7 @@
     <ClInclude Include="include\doticu_skylib\enum_potion_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
+    <ClInclude Include="include\doticu_skylib\enum_reaction_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_remove_reason.h" />
     <ClInclude Include="include\doticu_skylib\enum_sit_sleep_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="include\doticu_skylib\potion.h" />
     <ClInclude Include="include\doticu_skylib\projectile.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
+    <ClInclude Include="include\doticu_skylib\reaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
@@ -295,7 +297,7 @@
     <ClInclude Include="include\doticu_skylib\component_perks.h" />
     <ClInclude Include="include\doticu_skylib\component_preloadable.h" />
     <ClInclude Include="include\doticu_skylib\component_race.h" />
-    <ClInclude Include="include\doticu_skylib\component_reaction.h" />
+    <ClInclude Include="include\doticu_skylib\component_reactions.h" />
     <ClInclude Include="include\doticu_skylib\component_skin.h" />
     <ClInclude Include="include\doticu_skylib\component_texture.h" />
     <ClInclude Include="include\doticu_skylib\component_value.h" />
@@ -517,6 +519,7 @@
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_keywords.cpp" />
     <ClCompile Include="src\doticu_skylib\component_name.cpp" />
+    <ClCompile Include="src\doticu_skylib\component_reactions.cpp" />
     <ClCompile Include="src\doticu_skylib\const_actors.cpp" />
     <ClCompile Include="src\doticu_skylib\const_actor_bases.cpp" />
     <ClCompile Include="src\doticu_skylib\const_armors.cpp" />
@@ -573,6 +576,7 @@
     <ClCompile Include="src\doticu_skylib\package_value_target.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value_topic.cpp" />
     <ClCompile Include="src\doticu_skylib\potion.cpp" />
+    <ClCompile Include="src\doticu_skylib\reaction.cpp" />
     <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_container.cpp" />

@@ -249,7 +249,7 @@
     <ClInclude Include="include\doticu_skylib\component_race.h">
       <Filter>Header Files\component</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\component_reaction.h">
+    <ClInclude Include="include\doticu_skylib\component_reactions.h">
       <Filter>Header Files\component</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\component_skin.h">
@@ -1392,6 +1392,12 @@
     <ClInclude Include="include\doticu_skylib\const_weapons.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\reaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\enum_reaction_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1920,6 +1926,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\const_weapons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\component_reactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\reaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

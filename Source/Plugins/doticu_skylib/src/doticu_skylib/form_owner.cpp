@@ -110,22 +110,14 @@ namespace doticu_skylib {
         this->form = none<Form_t*>();
     }
 
-    maybe<Bool_t> Form_Owner_t::Is_Actor_Base() const
+    Bool_t Form_Owner_t::Is_Actor_Base() const
     {
-        if (this->form) {
-            return this->form->Is_Actor_Base();
-        } else {
-            return none<Bool_t>();
-        }
+        return this->form && this->form->Is_Actor_Base();
     }
 
-    maybe<Bool_t> Form_Owner_t::Is_Faction() const
+    Bool_t Form_Owner_t::Is_Faction() const
     {
-        if (this->form) {
-            return this->form->Is_Faction();
-        } else {
-            return none<Bool_t>();
-        }
+        return this->form && this->form->Is_Faction();
     }
 
     maybe<Form_t*> Form_Owner_t::As_Form() const

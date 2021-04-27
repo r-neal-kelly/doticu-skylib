@@ -12,6 +12,7 @@
 #include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/atomic_number.inl"
 #include "doticu_skylib/cell.h"
+#include "doticu_skylib/const_actors.h"
 #include "doticu_skylib/const_keywords.h"
 #include "doticu_skylib/container_changes.h"
 #include "doticu_skylib/dynamic_array.inl"
@@ -201,8 +202,11 @@ namespace doticu_skylib {
         return !Is_In_Combat();
     }
 
-    Bool_t Actor_t::Is_Owner(Form_Owner_t owner)
+    Bool_t Actor_t::Is_Owner_Of(some<Reference_t*> reference)
     {
+        SKYLIB_ASSERT_SOME(reference);
+
+        Form_Owner_t owner = reference->This_Or_Cell_Owner();
         if (owner) {
             maybe<Faction_t*> owner_faction = owner.As_Faction();
             if (owner_faction) {
@@ -220,16 +224,50 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Actor_t::Is_Potential_Thief(Form_Owner_t owner)
+    Bool_t Actor_t::Is_Potential_Thief_Of(some<Reference_t*> reference)
     {
+        SKYLIB_ASSERT_SOME(reference);
+
+        Form_Owner_t owner = reference->This_Or_Cell_Owner();
         if (owner) {
-            maybe<Faction_t*> owner_faction = owner.As_Faction();
-            if (owner_faction) {
-                return !Is_In_Faction(owner_faction());
+            maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
+            if (owner_actor_base) {
+                // if this reference is in an inventory, we may need to check gold count and relation
+                return !Has_Actor_Base(owner_actor_base());
             } else {
-                maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
-                if (owner_actor_base) {
-                    return !Has_Actor_Base(owner_actor_base());
+                maybe<Faction_t*> owner_faction = owner.As_Faction();
+                if (owner_faction) {
+                    if (Is_In_Faction(owner_faction())) {
+                        return false;
+                    } else {
+                        some<Player_t*> player = Player_t::Self();
+                        if (this == player()) {
+                            maybe<Relation_Counts_t*> relation_counts = player->Relation_Counts(owner_faction());
+                            if (relation_counts) {
+                                s32 gold_value = reference->Gold_Value();
+                                if (gold_value > -1) {
+                                    // yes, the precendence is actually backwards
+                                    if (relation_counts->friend_count > 0) {
+                                        return gold_value > 25;
+                                    } else if (relation_counts->confidant_count > 0) {
+                                        return gold_value > 50;
+                                    } else if (relation_counts->ally_count > 0) {
+                                        return gold_value > 100;
+                                    } else if (relation_counts->lover_count > 0) {
+                                        return gold_value > 500;
+                                    } else {
+                                        return true;
+                                    }
+                                } else {
+                                    return true;
+                                }
+                            } else {
+                                return true;
+                            }
+                        } else {
+                            return true;
+                        }
+                    }
                 } else {
                     return false;
                 }
@@ -277,18 +315,6 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(faction);
         return !Get_Is_In_Faction(faction());
-    }
-
-    Bool_t Actor_t::Is_Owner_Of(some<Reference_t*> reference)
-    {
-        SKYLIB_ASSERT_SOME(reference);
-        return reference->Has_Owner(this);
-    }
-
-    Bool_t Actor_t::Is_Potential_Thief_Of(some<Reference_t*> reference)
-    {
-        SKYLIB_ASSERT_SOME(reference);
-        return reference->Has_Potential_Thief(this);
     }
 
     Sex_e Actor_t::Sex()

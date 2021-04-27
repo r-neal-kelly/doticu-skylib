@@ -12,6 +12,7 @@
 #include "doticu_skylib/component_container.h"
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
+#include "doticu_skylib/component_value.h"
 #include "doticu_skylib/container.h"
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/enum_comparator.h"
@@ -160,7 +161,7 @@ namespace doticu_skylib {
         }
     }
 
-    some<const char*> Form_t::Component_Name()
+    some<const char*> Form_t::Component_Name() const
     {
         maybe<Name_c*> component_name = As_Component_Name();
         if (component_name) {
@@ -175,6 +176,16 @@ namespace doticu_skylib {
         }
     }
 
+    s32 Form_t::Component_Value() const
+    {
+        maybe<Value_c*> component_value = As_Component_Value();
+        if (component_value) {
+            return component_value->value;
+        } else {
+            return -1;
+        }
+    }
+
     Bool_t                  Form_t::Is_Actor() const                { return As_Actor() != none<Actor_t*>(); }
     Bool_t                  Form_t::Is_Actor_Base() const           { return As_Actor_Base() != none<Actor_Base_t*>(); }
     Bool_t                  Form_t::Is_Ammo() const                 { return As_Ammo() != none<Ammo_t*>(); }
@@ -185,6 +196,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Component_Container() const  { return As_Component_Container() != none<Container_c*>(); }
     Bool_t                  Form_t::Is_Component_Keywords() const   { return As_Component_Keywords() != none<Keywords_c*>(); }
     Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
+    Bool_t                  Form_t::Is_Component_Value() const      { return As_Component_Value() != none<Value_c*>(); }
     Bool_t                  Form_t::Is_Container() const            { return As_Container() != none<Container_t*>(); }
     Bool_t                  Form_t::Is_Faction() const              { return As_Faction() != none<Faction_t*>(); }
     Bool_t                  Form_t::Is_Ingredient() const           { return As_Ingredient() != none<Ingredient_t*>(); }
@@ -212,6 +224,7 @@ namespace doticu_skylib {
     maybe<Container_c*>     Form_t::As_Component_Container() const  { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
     maybe<Keywords_c*>      Form_t::As_Component_Keywords() const   { return Game_t::Runtime_Cast<Form_t, Keywords_c>(this); }
     maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
+    maybe<Value_c*>         Form_t::As_Component_Value() const      { return Game_t::Runtime_Cast<Form_t, Value_c>(this); }
     maybe<Container_t*>     Form_t::As_Container() const            { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
     maybe<Faction_t*>       Form_t::As_Faction() const              { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }
     maybe<Ingredient_t*>    Form_t::As_Ingredient() const           { return Game_t::Runtime_Cast<Form_t, Ingredient_t>(this); }

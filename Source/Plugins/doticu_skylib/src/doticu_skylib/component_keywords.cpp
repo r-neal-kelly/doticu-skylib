@@ -33,7 +33,7 @@ namespace doticu_skylib {
         }
     }
 
-    void Keywords_c::Log_Component_Keywords(std::string indent)
+    void Keywords_c::Log_Component_Keywords(std::string indent) const
     {
         SKYLIB_LOG(indent + "Keywords_c::Log_Component_Keywords");
         SKYLIB_LOG(indent + "{");

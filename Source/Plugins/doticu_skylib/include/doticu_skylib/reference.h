@@ -348,6 +348,8 @@ namespace doticu_skylib {
         Vector_t<some<Worldspace_t*>>       Worldspaces();
         void                                Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 
+        s32                                 Gold_Value();
+
         Reference_Handle_t                  To_Handle();
 
         Float_t                             Distance_Between(some<Reference_t*> other);
@@ -394,6 +396,12 @@ namespace doticu_skylib {
 
         void Is_Open(Bool_t value, maybe<Virtual::Callback_i*> v_callback);                             // SetOpen
         void Is_Open(Bool_t value, maybe<unique<Callback_i<>>> callback);
+
+        void Actor_Base_Owner(some<Virtual::Callback_i*> v_callback);                                   // GetActorOwner
+        void Actor_Base_Owner(some<unique<Callback_i<maybe<Actor_Base_t*>>>> callback);
+
+        void Faction_Owner(some<Virtual::Callback_i*> v_callback);                                      // GetFactionOwner
+        void Faction_Owner(some<unique<Callback_i<maybe<Faction_t*>>>> callback);
 
         void Activate(some<Reference_t*> activator,
                       Bool_t do_only_default_processing,

@@ -56,7 +56,7 @@ namespace doticu_skylib {
         virtual ~Potion_t(); // 0
 
     public:
-        s32                         cost_override;      // 138
+        s32                         cost_override;      // 138 (gold value?)
         Potion_Flags_e              potion_flags;       // 13C
         maybe<Spell_t*>             addiction_spell;    // 140
         Float_t                     addiction_chance;   // 148
@@ -65,14 +65,14 @@ namespace doticu_skylib {
         Icon_c                      unk_icon;           // 158
 
     public:
-        Bool_t Is_Potion() const;
-        Bool_t Is_Poison() const;
-        Bool_t Is_Food() const;
-        Bool_t Is_Prepared_Food() const;
-        Bool_t Is_Raw_Food() const;
+        Bool_t  Is_Potion() const;
+        Bool_t  Is_Poison() const;
+        Bool_t  Is_Food() const;
+        Bool_t  Is_Prepared_Food() const;
+        Bool_t  Is_Raw_Food() const;
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Potion_t) == 0x168);
 

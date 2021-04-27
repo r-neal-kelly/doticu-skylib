@@ -175,7 +175,7 @@ namespace doticu_skylib {
         using Enum_t::Enum_t;
 
     public:
-        some<const char*> As_String();
+        some<const char*> As_String() const;
     };
     STATIC_ASSERT(sizeof(Form_Type_e) == 0x1);
 

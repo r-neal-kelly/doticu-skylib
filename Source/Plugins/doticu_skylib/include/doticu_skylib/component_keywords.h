@@ -48,7 +48,7 @@ namespace doticu_skylib {
         void                        Component_Keywords(Vector_t<some<Keyword_t*>>& results) const;
 
     public:
-        void Log_Component_Keywords(std::string indent = "");
+        void    Log_Component_Keywords(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Keywords_c) == 0x18);
 

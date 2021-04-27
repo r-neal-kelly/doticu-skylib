@@ -410,14 +410,14 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return actor->Is_Owner(This_Or_Cell_Owner());
+        return actor->Is_Owner_Of(this);
     }
 
     Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return actor->Is_Potential_Thief(This_Or_Cell_Owner());
+        return actor->Is_Potential_Thief_Of(this);
     }
 
     Bool_t Reference_t::Has_Keyword(some<Keyword_t*> keyword) const
@@ -749,6 +749,18 @@ namespace doticu_skylib {
             if (!results.Has(it())) {
                 results.push_back(it());
             }
+        }
+    }
+
+    s32 Reference_t::Gold_Value()
+    {
+        // getting the gold value can be difficult. some base forms have a Value_c,
+        // whereas with Potion_t we need to look at cost_override or auto calc.
+        // there may be a way to calc gold through the engine.
+        if (this->base_form) {
+            return this->base_form->Component_Value();
+        } else {
+            return -1;
         }
     }
 
@@ -1187,6 +1199,90 @@ namespace doticu_skylib {
         };
 
         Is_Open(value, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Actor_Base_Owner(some<Virtual::Callback_i*> v_callback)
+    {
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "GetActorOwner",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Reference_t::Actor_Base_Owner(some<unique<Callback_i<maybe<Actor_Base_t*>>>> callback)
+    {
+        using Callback = some<unique<Callback_i<maybe<Actor_Base_t*>>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                (*this->callback)(result ? result->As<Actor_Base_t*>() : nullptr);
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Actor_Base_Owner(new Virtual_Callback(std::move(callback)));
+    }
+
+    void Reference_t::Faction_Owner(some<Virtual::Callback_i*> v_callback)
+    {
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Ready_Scriptable<Reference_t*>(this);
+        Virtual::Machine_t::Self()->Call_Method(
+            this,
+            SCRIPT_NAME,
+            "GetFactionOwner",
+            none<Virtual::Arguments_i*>(),
+            v_callback
+        );
+    }
+
+    void Reference_t::Faction_Owner(some<unique<Callback_i<maybe<Faction_t*>>>> callback)
+    {
+        using Callback = some<unique<Callback_i<maybe<Faction_t*>>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                (*this->callback)(result ? result->As<Faction_t*>() : nullptr);
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        Faction_Owner(new Virtual_Callback(std::move(callback)));
     }
 
     void Reference_t::Activate(some<Reference_t*> activator,

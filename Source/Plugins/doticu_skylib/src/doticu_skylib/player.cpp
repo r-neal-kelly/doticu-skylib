@@ -74,6 +74,18 @@ namespace doticu_skylib {
         return teammate_count.Decrement_Atomic();
     }
 
+    maybe<Relation_Counts_t*> Player_t::Relation_Counts(some<Faction_t*> faction)
+    {
+        SKYLIB_ASSERT_SOME(faction);
+
+        maybe<Hash_Map_t<maybe<Faction_t*>, Relation_Counts_t>::Entry_t*> entry = friend_counts_map.Entry(faction);
+        if (entry) {
+            return &entry->second;
+        } else {
+            return none<Relation_Counts_t*>();
+        }
+    }
+
     void Player_t::Open_Inventory(maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;

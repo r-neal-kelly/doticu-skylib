@@ -34,7 +34,7 @@ namespace doticu_skylib {
         return Component_Has_Keyword(Const::Keyword::Vendor_Item_Food_Raw());
     }
 
-    void Potion_t::Log(std::string indent)
+    void Potion_t::Log(std::string indent) const
     {
         SKYLIB_LOG(indent + "Potion_t::Log");
         SKYLIB_LOG(indent + "{");

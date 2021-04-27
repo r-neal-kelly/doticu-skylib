@@ -45,6 +45,7 @@ namespace doticu_skylib {
     class Scroll_t;
     class Soul_Gem_t;
     class Spell_t;
+    class Value_c;
     class Weapon_t;
 
     namespace Virtual {
@@ -184,7 +185,8 @@ namespace doticu_skylib {
         Vector_t<String_t>          Mod_Names();
         void                        Mod_Names(Vector_t<String_t>& results);
 
-        some<const char*>           Component_Name();
+        some<const char*>           Component_Name() const;
+        s32                         Component_Value() const;
 
     public:
         Bool_t                  Is_Actor() const;
@@ -197,6 +199,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Component_Container() const;
         Bool_t                  Is_Component_Keywords() const;
         Bool_t                  Is_Component_Name() const;
+        Bool_t                  Is_Component_Value() const;
         Bool_t                  Is_Container() const;
         Bool_t                  Is_Faction() const;
         Bool_t                  Is_Ingredient() const;
@@ -224,6 +227,7 @@ namespace doticu_skylib {
         maybe<Container_c*>     As_Component_Container() const;
         maybe<Keywords_c*>      As_Component_Keywords() const;
         maybe<Name_c*>          As_Component_Name() const;
+        maybe<Value_c*>         As_Component_Value() const;
         maybe<Container_t*>     As_Container() const;
         maybe<Faction_t*>       As_Faction() const;
         maybe<Ingredient_t*>    As_Ingredient() const;

@@ -40,8 +40,8 @@ namespace doticu_skylib {
         ~Form_Owner_t();
 
     public:
-        maybe<Bool_t>           Is_Actor_Base() const;
-        maybe<Bool_t>           Is_Faction() const;
+        Bool_t                  Is_Actor_Base() const;
+        Bool_t                  Is_Faction() const;
 
         maybe<Form_t*>          As_Form() const;
         maybe<Actor_Base_t*>    As_Actor_Base() const;
