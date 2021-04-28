@@ -206,75 +206,14 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(reference);
 
-        Form_Owner_t owner = reference->This_Or_Cell_Owner();
-        if (owner) {
-            maybe<Faction_t*> owner_faction = owner.As_Faction();
-            if (owner_faction) {
-                return Is_In_Faction(owner_faction());
-            } else {
-                maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
-                if (owner_actor_base) {
-                    return Has_Actor_Base(owner_actor_base());
-                } else {
-                    return false;
-                }
-            }
-        } else {
-            return false;
-        }
+        return reference->Has_Owner(this);
     }
 
     Bool_t Actor_t::Is_Potential_Thief_Of(some<Reference_t*> reference)
     {
         SKYLIB_ASSERT_SOME(reference);
 
-        Form_Owner_t owner = reference->This_Or_Cell_Owner();
-        if (owner) {
-            maybe<Actor_Base_t*> owner_actor_base = owner.As_Actor_Base();
-            if (owner_actor_base) {
-                // if this reference is in an inventory, we may need to check gold count and relation
-                return !Has_Actor_Base(owner_actor_base());
-            } else {
-                maybe<Faction_t*> owner_faction = owner.As_Faction();
-                if (owner_faction) {
-                    if (Is_In_Faction(owner_faction())) {
-                        return false;
-                    } else {
-                        some<Player_t*> player = Player_t::Self();
-                        if (this == player()) {
-                            maybe<Relation_Counts_t*> relation_counts = player->Relation_Counts(owner_faction());
-                            if (relation_counts) {
-                                s32 gold_value = reference->Gold_Value();
-                                if (gold_value > -1) {
-                                    // yes, the precendence is actually backwards
-                                    if (relation_counts->friend_count > 0) {
-                                        return gold_value > 25;
-                                    } else if (relation_counts->confidant_count > 0) {
-                                        return gold_value > 50;
-                                    } else if (relation_counts->ally_count > 0) {
-                                        return gold_value > 100;
-                                    } else if (relation_counts->lover_count > 0) {
-                                        return gold_value > 500;
-                                    } else {
-                                        return true;
-                                    }
-                                } else {
-                                    return true;
-                                }
-                            } else {
-                                return true;
-                            }
-                        } else {
-                            return true;
-                        }
-                    }
-                } else {
-                    return false;
-                }
-            }
-        } else {
-            return false;
-        }
+        return reference->Has_Potential_Thief(this);
     }
 
     Bool_t Actor_t::Has_Mount()

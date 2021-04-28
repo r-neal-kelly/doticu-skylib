@@ -76,6 +76,10 @@ namespace doticu_skylib {
                 LOOKUP_REFERENCE_HANDLE_1   = 0x001328A0, // 12203
                 INVALID_REFERENCE_HANDLE    = 0x01EBEABC, // 514164
 
+                IS_STEALABLE                = 0x0029A330, // 19400
+
+                HAS_OWNER                   = 0x002A6EE0, // 19805
+
                 GET_NAME                    = 0x002961F0, // 19354
                 GET_THIS_OR_CELL_OWNER      = 0x002A6670, // 19789
                 GET_WORLDSPACE              = 0x00299750, // 19389
@@ -287,6 +291,8 @@ namespace doticu_skylib {
         Bool_t          Is_Attached();
         Bool_t          Is_Detached();
 
+        Bool_t          Is_Stealable();
+
         maybe<Bool_t>   Is_In_Interior_Cell();
         maybe<Bool_t>   Is_In_Exterior_Cell();
 
@@ -301,6 +307,7 @@ namespace doticu_skylib {
 
         Bool_t          Has_Owner();
         Bool_t          Has_Owner(some<Actor_t*> actor);
+        Bool_t          Has_Owner(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t item_must_be_owned);
         Bool_t          Has_Potential_Thief(some<Actor_t*> actor);
 
         Bool_t          Has_Keyword(some<Keyword_t*> keyword) const;

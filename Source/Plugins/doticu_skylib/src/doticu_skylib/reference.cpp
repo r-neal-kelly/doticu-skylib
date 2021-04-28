@@ -346,6 +346,15 @@ namespace doticu_skylib {
         return !Is_Attached();
     }
 
+    Bool_t Reference_t::Is_Stealable()
+    {
+        static auto is_stealable = reinterpret_cast
+            <Bool_t(*)(Reference_t*)>
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::IS_STEALABLE));
+
+        return is_stealable(this);
+    }
+
     maybe<Bool_t> Reference_t::Is_In_Interior_Cell()
     {
         maybe<Cell_t*> cell = Cell();
@@ -410,14 +419,25 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return actor->Is_Owner_Of(this);
+        return Has_Owner(actor, true, true);
+    }
+
+    Bool_t Reference_t::Has_Owner(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t item_must_be_owned)
+    {
+        static auto has_owner = reinterpret_cast
+            <Bool_t(*)(Reference_t*, Actor_t*, Bool_t, Bool_t)>
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::HAS_OWNER));
+
+        SKYLIB_ASSERT_SOME(actor);
+
+        return has_owner(this, actor(), do_test_factions, item_must_be_owned);
     }
 
     Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return actor->Is_Potential_Thief_Of(this);
+        return !Has_Owner(actor, true, false);
     }
 
     Bool_t Reference_t::Has_Keyword(some<Keyword_t*> keyword) const
