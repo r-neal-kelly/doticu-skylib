@@ -78,7 +78,7 @@ namespace doticu_skylib {
 
                 IS_STEALABLE                = 0x0029A330, // 19400
 
-                HAS_OWNER                   = 0x002A6EE0, // 19805
+                MAY_LAWFULLY_BE_TAKEN_BY    = 0x002A6EE0, // 19805
 
                 GET_NAME                    = 0x002961F0, // 19354
                 GET_THIS_OR_CELL_OWNER      = 0x002A6670, // 19789
@@ -305,9 +305,10 @@ namespace doticu_skylib {
         Bool_t          Is_Aliased_As_Essential();
         Bool_t          Is_Quest_Item();
 
+        Bool_t          May_Lawfully_Be_Taken_By(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t must_be_owned);
+
         Bool_t          Has_Owner();
         Bool_t          Has_Owner(some<Actor_t*> actor);
-        Bool_t          Has_Owner(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t item_must_be_owned);
         Bool_t          Has_Potential_Thief(some<Actor_t*> actor);
 
         Bool_t          Has_Keyword(some<Keyword_t*> keyword) const;

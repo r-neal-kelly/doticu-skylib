@@ -410,6 +410,17 @@ namespace doticu_skylib {
         return this->x_list.Is_Quest_Item();
     }
 
+    Bool_t Reference_t::May_Lawfully_Be_Taken_By(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t must_be_owned)
+    {
+        static auto may_lawfully_be_taken_by = reinterpret_cast
+            <Bool_t(*)(Reference_t*, Actor_t*, Bool_t, Bool_t)>
+            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::MAY_LAWFULLY_BE_TAKEN_BY));
+
+        SKYLIB_ASSERT_SOME(actor);
+
+        return may_lawfully_be_taken_by(this, actor(), do_test_factions, must_be_owned);
+    }
+
     Bool_t Reference_t::Has_Owner()
     {
         return !!This_Or_Cell_Owner();
@@ -419,25 +430,14 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return Has_Owner(actor, true, true);
-    }
-
-    Bool_t Reference_t::Has_Owner(some<Actor_t*> actor, Bool_t do_test_factions, Bool_t item_must_be_owned)
-    {
-        static auto has_owner = reinterpret_cast
-            <Bool_t(*)(Reference_t*, Actor_t*, Bool_t, Bool_t)>
-            (Game_t::Base_Address() + static_cast<Word_t>(Offset_e::HAS_OWNER));
-
-        SKYLIB_ASSERT_SOME(actor);
-
-        return has_owner(this, actor(), do_test_factions, item_must_be_owned);
+        return May_Lawfully_Be_Taken_By(actor, true, true);
     }
 
     Bool_t Reference_t::Has_Potential_Thief(some<Actor_t*> actor)
     {
         SKYLIB_ASSERT_SOME(actor);
 
-        return !Has_Owner(actor, true, false);
+        return !May_Lawfully_Be_Taken_By(actor, true, false);
     }
 
     Bool_t Reference_t::Has_Keyword(some<Keyword_t*> keyword) const
