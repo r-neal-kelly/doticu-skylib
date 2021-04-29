@@ -2669,6 +2669,538 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Wolf_Hands();
     some<Armor_t*>  Wolf_Head();
 
+    some<Armor_t*>  Clothes_Ball_Of_Light_Body();
+
+    some<Armor_t*>  Clothes_Bandages_Hands();
+    some<Armor_t*>  Clothes_Bandages_Head();
+
+    some<Armor_t*>  Clothes_Bar_Keeper_Feet();
+
+    some<Armor_t*>  Clothes_Bar_Keeper_Bright_Body();
+
+    some<Armor_t*>  Clothes_Bar_Keeper_Dark_Body();
+
+    some<Armor_t*>  Clothes_Beggar_Body();
+    some<Armor_t*>  Clothes_Beggar_Feet();
+    some<Armor_t*>  Clothes_Beggar_Head();
+
+    some<Armor_t*>  Clothes_Black_Smith_Feet();
+
+    some<Armor_t*>  Clothes_Black_Smith_Grey_Body();
+
+    some<Armor_t*>  Clothes_Black_Smith_Red_Body();
+
+    some<Armor_t*>  Clothes_Blind_Priest_Body();
+    some<Armor_t*>  Clothes_Blind_Priest_Feet();
+    some<Armor_t*>  Clothes_Blind_Priest_Head();
+
+    some<Armor_t*>  Clothes_Chef_Body();
+    some<Armor_t*>  Clothes_Chef_Feet();
+    some<Armor_t*>  Clothes_Chef_Head();
+
+    some<Armor_t*>  Clothes_Child_Feet();
+
+    some<Armor_t*>  Clothes_Child_Blue_Body();
+
+    some<Armor_t*>  Clothes_Child_Bright_Body();
+
+    some<Armor_t*>  Clothes_Child_Dark_Body();
+
+    some<Armor_t*>  Clothes_Child_Green_Body();
+
+    some<Armor_t*>  Clothes_Child_Red_Body();
+
+    some<Armor_t*>  Clothes_Child_Skaal_Body();
+    some<Armor_t*>  Clothes_Child_Skaal_Feet();
+
+    some<Armor_t*>  Clothes_Cultist_Body();
+    some<Armor_t*>  Clothes_Cultist_Feet();
+    some<Armor_t*>  Clothes_Cultist_Hands();
+    some<Armor_t*>  Clothes_Cultist_Head();
+
+    some<Armor_t*>  Clothes_Cultist_Cheap_Body();
+
+    some<Armor_t*>  Clothes_Dremora_Body();
+    some<Armor_t*>  Clothes_Dremora_Feet();
+
+    some<Armor_t*>  Clothes_Dremora_Butler_Body();
+    some<Armor_t*>  Clothes_Dremora_Butler_Feet();
+
+    some<Armor_t*>  Clothes_Dremora_Merchant_Body();
+    some<Armor_t*>  Clothes_Dremora_Merchant_Feet();
+
+    some<Armor_t*>  Clothes_Dunmer_Feet();
+
+    some<Armor_t*>  Clothes_Dunmer_Blue_Body();
+
+    some<Armor_t*>  Clothes_Dunmer_Blue_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Dunmer_Brown_Body();
+
+    some<Armor_t*>  Clothes_Dunmer_Brown_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Dunmer_Red_Body();
+
+    some<Armor_t*>  Clothes_Dunmer_Red_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Emperor_Body();
+
+    some<Armor_t*>  Clothes_Executionee_Bright_Head();
+    some<Armor_t*>  Clothes_Executionee_Dark_Head();
+
+    some<Armor_t*>  Clothes_Executioner_Body();
+    some<Armor_t*>  Clothes_Executioner_Feet();
+    some<Armor_t*>  Clothes_Executioner_Hands();
+    some<Armor_t*>  Clothes_Executioner_Head();
+
+    some<Armor_t*>  Clothes_Farm_A_Body();
+    some<Armor_t*>  Clothes_Farm_A_Feet();
+    some<Armor_t*>  Clothes_Farm_A_Head();
+
+    some<Armor_t*>  Clothes_Farm_B_Feet();
+    some<Armor_t*>  Clothes_Farm_B_Head();
+
+    some<Armor_t*>  Clothes_Farm_B_Bright_Body();
+
+    some<Armor_t*>  Clothes_Farm_B_Dark_Body();
+
+    some<Armor_t*>  Clothes_Farm_C_Feet();
+    some<Armor_t*>  Clothes_Farm_C_Hands();
+    some<Armor_t*>  Clothes_Farm_C_Head();
+
+    some<Armor_t*>  Clothes_Farm_C_Bright_Body();
+
+    some<Armor_t*>  Clothes_Farm_C_Bright_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Farm_C_Dark_Body();
+
+    some<Armor_t*>  Clothes_Farm_C_Head_Thick();
+
+    some<Armor_t*>  Clothes_Farm_D_Feet();
+
+    some<Armor_t*>  Clothes_Farm_D_Bright_Body();
+
+    some<Armor_t*>  Clothes_Farm_D_Dark_Body();
+
+    some<Armor_t*>  Clothes_Fine_A_Feet();
+
+    some<Armor_t*>  Clothes_Fine_A_Blue_Body();
+
+    some<Armor_t*>  Clothes_Fine_A_Green_Body();
+
+    some<Armor_t*>  Clothes_Fine_A_Radiant_Raiment_Body();
+
+    some<Armor_t*>  Clothes_Fine_B_Feet();
+    some<Armor_t*>  Clothes_Fine_B_Head();
+
+    some<Armor_t*>  Clothes_Fine_B_Blue_Body();
+
+    some<Armor_t*>  Clothes_Fine_B_Red_Body();
+
+    some<Armor_t*>  Clothes_Fine_B_Party_Body();
+    some<Armor_t*>  Clothes_Fine_B_Party_Feet();
+
+    some<Armor_t*>  Clothes_Greybeard_Body();
+    some<Armor_t*>  Clothes_Greybeard_Feet();
+    some<Armor_t*>  Clothes_Greybeard_Head();
+
+    some<Armor_t*>  Clothes_Ildari_Body();
+
+    some<Armor_t*>  Clothes_Jarl_A_Feet();
+    some<Armor_t*>  Clothes_Jarl_A_Hands();
+
+    some<Armor_t*>  Clothes_Jarl_A_Blue_Body();
+
+    some<Armor_t*>  Clothes_Jarl_A_Green_Body();
+
+    some<Armor_t*>  Clothes_Jarl_A_Yellow_Body();
+
+    some<Armor_t*>  Clothes_Jarl_B_Body();
+    some<Armor_t*>  Clothes_Jarl_B_Feet();
+    some<Armor_t*>  Clothes_Jarl_B_Hands();
+
+    some<Armor_t*>  Clothes_Jarl_C_Feet();
+
+    some<Armor_t*>  Clothes_Jarl_C_Bright_Body();
+
+    some<Armor_t*>  Clothes_Jarl_C_Dark_Body();
+
+    some<Armor_t*>  Clothes_Jester_Body();
+    some<Armor_t*>  Clothes_Jester_Feet();
+    some<Armor_t*>  Clothes_Jester_Hands();
+    some<Armor_t*>  Clothes_Jester_Head();
+
+    some<Armor_t*>  Clothes_Jester_Cicero_Body();
+    some<Armor_t*>  Clothes_Jester_Cicero_Feet();
+    some<Armor_t*>  Clothes_Jester_Cicero_Hands();
+    some<Armor_t*>  Clothes_Jester_Cicero_Head();
+
+    some<Armor_t*>  Clothes_Mage_Tuner_Hands();
+
+    some<Armor_t*>  Clothes_Mage_Tuner_Mystic_Hands();
+
+    some<Armor_t*>  Clothes_Mage_Adept_Body();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Alteration();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Conjuration();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Destruction();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Illusion();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Magicka_Rate();
+    some<Armor_t*>  Clothes_Mage_Adept_Body_Restoration();
+    some<Armor_t*>  Clothes_Mage_Adept_Head();
+    some<Armor_t*>  Clothes_Mage_Adept_Head_Magicka();
+
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Alteration();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Conjuration();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Destruction();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Illusion();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Magicka_Rate();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Body_Restoration();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Feet();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Head();
+    some<Armor_t*>  Clothes_Mage_Apprentice_Head_Magicka();
+
+    some<Armor_t*>  Clothes_Mage_Archmage_Body();
+    some<Armor_t*>  Clothes_Mage_Archmage_Feet();
+
+    some<Armor_t*>  Clothes_Mage_Archmage_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Mage_Expert_Body();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Alteration();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Conjuration();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Destruction();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Illusion();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Magicka_Rate();
+    some<Armor_t*>  Clothes_Mage_Expert_Body_Restoration();
+
+    some<Armor_t*>  Clothes_Mage_Master_Body();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Alteration();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Conjuration();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Destruction();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Illusion();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Magicka_Rate();
+    some<Armor_t*>  Clothes_Mage_Master_Body_Restoration();
+    some<Armor_t*>  Clothes_Mage_Master_Feet();
+
+    some<Armor_t*>  Clothes_Mage_Master_Taron_Dreth_Body();
+
+    some<Armor_t*>  Clothes_Mage_Novice_Body();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Alteration();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Conjuration();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Destruction();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Illusion();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Magicka_Rate();
+    some<Armor_t*>  Clothes_Mage_Novice_Body_Restoration();
+    some<Armor_t*>  Clothes_Mage_Novice_Feet();
+    some<Armor_t*>  Clothes_Mage_Novice_Feet_Sneak_1();
+    some<Armor_t*>  Clothes_Mage_Novice_Feet_Sneak_2();
+    some<Armor_t*>  Clothes_Mage_Novice_Head();
+    some<Armor_t*>  Clothes_Mage_Novice_Head_Magicka();
+
+    some<Armor_t*>  Clothes_Merchant_Feet();
+    some<Armor_t*>  Clothes_Merchant_Head();
+
+    some<Armor_t*>  Clothes_Merchant_Bright_Body();
+
+    some<Armor_t*>  Clothes_Merchant_Dark_Body();
+
+    some<Armor_t*>  Clothes_Miner_Feet();
+
+    some<Armor_t*>  Clothes_Miner_Bright_Body();
+
+    some<Armor_t*>  Clothes_Miner_Dark_Body();
+
+    some<Armor_t*>  Clothes_Miner_Sleep_Body();
+
+    some<Armor_t*>  Clothes_Miraak_Feet();
+    some<Armor_t*>  Clothes_Miraak_Hands();
+
+    some<Armor_t*>  Clothes_Miraak_1_Body();
+
+    some<Armor_t*>  Clothes_Miraak_1_Heavy_Head();
+
+    some<Armor_t*>  Clothes_Miraak_1_Light_Head();
+
+    some<Armor_t*>  Clothes_Miraak_2_Body();
+
+    some<Armor_t*>  Clothes_Miraak_2_Heavy_Head();
+
+    some<Armor_t*>  Clothes_Miraak_2_Light_Head();
+
+    some<Armor_t*>  Clothes_Miraak_3_Body();
+
+    some<Armor_t*>  Clothes_Miraak_3_Heavy_Head();
+
+    some<Armor_t*>  Clothes_Miraak_3_Light_Head();
+
+    some<Armor_t*>  Clothes_Monk_Body();
+    some<Armor_t*>  Clothes_Monk_Feet();
+
+    some<Armor_t*>  Clothes_Monk_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Monk_Prelate_Body();
+    some<Armor_t*>  Clothes_Monk_Prelate_Feet();
+
+    some<Armor_t*>  Clothes_Mourner_Body();
+    some<Armor_t*>  Clothes_Mourner_Head();
+
+    some<Armor_t*>  Clothes_Mythic_Dawn_Body();
+    some<Armor_t*>  Clothes_Mythic_Dawn_Feet();
+    some<Armor_t*>  Clothes_Mythic_Dawn_Hands();
+
+    some<Armor_t*>  Clothes_Mythic_Dawn_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Necromancer_Body();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_5();
+    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_6();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_5();
+    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_6();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_5();
+    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_6();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_5();
+    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_6();
+    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_1();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_2();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_3();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_4();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_5();
+    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_6();
+    some<Armor_t*>  Clothes_Necromancer_Feet();
+
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_5();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Alteration_6();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_5();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Conjuration_6();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_5();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Destruction_6();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_5();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Illusion_6();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Magicka_Rate_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Magicka_Rate_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Magicka_Rate_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Magicka_Rate_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_1();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_2();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_3();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_4();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_5();
+    some<Armor_t*>  Clothes_Necromancer_Hooded_Body_Restoration_6();
+
+    some<Armor_t*>  Clothes_Nocturnal_Body();
+    some<Armor_t*>  Clothes_Nocturnal_Head();
+
+    some<Armor_t*>  Clothes_Prisoner_Body();
+    some<Armor_t*>  Clothes_Prisoner_Feet();
+    some<Armor_t*>  Clothes_Prisoner_Hands();
+
+    some<Armor_t*>  Clothes_Prisoner_Tunic_Body();
+
+    some<Armor_t*>  Clothes_Prisoner_Bloody_Body();
+    some<Armor_t*>  Clothes_Prisoner_Bloody_Feet();
+
+    some<Armor_t*>  Clothes_Psiijic_Body();
+    some<Armor_t*>  Clothes_Psiijic_Feet();
+    some<Armor_t*>  Clothes_Psiijic_Hands();
+    some<Armor_t*>  Clothes_Psiijic_Head();
+
+    some<Armor_t*>  Clothes_Reaper_Body();
+    some<Armor_t*>  Clothes_Reaper_Hands();
+    some<Armor_t*>  Clothes_Reaper_Head();
+
+    some<Armor_t*>  Clothes_Redguard_Body();
+    some<Armor_t*>  Clothes_Redguard_Feet();
+    some<Armor_t*>  Clothes_Redguard_Head();
+
+    some<Armor_t*>  Clothes_Redguard_Dark_Body();
+    some<Armor_t*>  Clothes_Redguard_Dark_Feet();
+    some<Armor_t*>  Clothes_Redguard_Dark_Head();
+
+    some<Armor_t*>  Clothes_Robes_Black_Body();
+
+    some<Armor_t*>  Clothes_Robes_Black_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Robes_Blue_Body();
+
+    some<Armor_t*>  Clothes_Robes_Blue_Hooded_Body();
+    some<Armor_t*>  Clothes_Robes_Blue_Hooded_Body_Magicka_Rate();
+
+    some<Armor_t*>  Clothes_Robes_Brown_Body();
+
+    some<Armor_t*>  Clothes_Robes_Brown_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Robes_Green_Body();
+
+    some<Armor_t*>  Clothes_Robes_Green_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Robes_Grey_Body();
+
+    some<Armor_t*>  Clothes_Robes_Grey_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Robes_Red_Body();
+
+    some<Armor_t*>  Clothes_Robes_Red_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Sheogorath_Body();
+    some<Armor_t*>  Clothes_Sheogorath_Feet();
+
+    some<Armor_t*>  Clothes_Shrouded_Body();
+    some<Armor_t*>  Clothes_Shrouded_Feet();
+    some<Armor_t*>  Clothes_Shrouded_Hands();
+    some<Armor_t*>  Clothes_Shrouded_Head();
+
+    some<Armor_t*>  Clothes_Skaal_Body();
+    some<Armor_t*>  Clothes_Skaal_Feet();
+    some<Armor_t*>  Clothes_Skaal_Hands();
+    some<Armor_t*>  Clothes_Skaal_Head();
+
+    some<Armor_t*>  Clothes_Telvanni_Body();
+    some<Armor_t*>  Clothes_Telvanni_Feet();
+
+    some<Armor_t*>  Clothes_Temple_Priest_Body();
+    some<Armor_t*>  Clothes_Temple_Priest_Feet();
+    some<Armor_t*>  Clothes_Temple_Priest_Head();
+
+    some<Armor_t*>  Clothes_Thalmor_Body();
+    some<Armor_t*>  Clothes_Thalmor_Feet();
+    some<Armor_t*>  Clothes_Thalmor_Hands();
+
+    some<Armor_t*>  Clothes_Thalmor_Hooded_Body();
+
+    some<Armor_t*>  Clothes_Ulfric_Body();
+    some<Armor_t*>  Clothes_Ulfric_Feet();
+    some<Armor_t*>  Clothes_Ulfric_Hands();
+
+    some<Armor_t*>  Clothes_Vaermina_Priest_Body();
+
+    some<Armor_t*>  Clothes_Vampire_Body();
+    some<Armor_t*>  Clothes_Vampire_Feet();
+    some<Armor_t*>  Clothes_Vampire_Hands();
+    some<Armor_t*>  Clothes_Vampire_Head();
+
+    some<Armor_t*>  Clothes_Vampire_Serana_Head();
+
+    some<Armor_t*>  Clothes_Warlock_Body();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_5();
+    some<Armor_t*>  Clothes_Warlock_Body_Alteration_6();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_5();
+    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_6();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_5();
+    some<Armor_t*>  Clothes_Warlock_Body_Destruction_6();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_5();
+    some<Armor_t*>  Clothes_Warlock_Body_Illusion_6();
+    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_1();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_2();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_3();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_4();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_5();
+    some<Armor_t*>  Clothes_Warlock_Body_Restoration_6();
+    some<Armor_t*>  Clothes_Warlock_Feet();
+    some<Armor_t*>  Clothes_Warlock_Head();
+
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_5();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Alteration_6();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_5();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Conjuration_6();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_5();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Destruction_6();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_5();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Illusion_6();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Magicka_Rate_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Magicka_Rate_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Magicka_Rate_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Magicka_Rate_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_1();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_2();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_3();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_4();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_5();
+    some<Armor_t*>  Clothes_Warlock_Hooded_Body_Restoration_6();
+
+    some<Armor_t*>  Clothes_Wedding_Dress_Body();
+    some<Armor_t*>  Clothes_Wedding_Dress_Feet();
+    some<Armor_t*>  Clothes_Wedding_Dress_Head();
+
+    some<Armor_t*>  Clothes_Wench_Body();
+    some<Armor_t*>  Clothes_Wench_Feet();
+
+    some<Armor_t*>  Clothes_Wounded_Arivanya_Body();
+
+    some<Armor_t*>  Clothes_Wounded_Susanna_Body();
+
 }}}
 
 namespace doticu_skylib { namespace Const { namespace WIP {
@@ -2954,452 +3486,6 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_4();
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_5();
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_6();
-
-    some<Armor_t*>  Clothes_Ball_Of_Light_Body();
-
-    some<Armor_t*>  Clothes_Bandages_Hands();
-    some<Armor_t*>  Clothes_Bandages_Head();
-
-    some<Armor_t*>  Clothes_Bar_Keeper_Body_1();
-    some<Armor_t*>  Clothes_Bar_Keeper_Body_2();
-    some<Armor_t*>  Clothes_Bar_Keeper_Feet();
-
-    some<Armor_t*>  Clothes_Beggar_Body();
-    some<Armor_t*>  Clothes_Beggar_Feet();
-    some<Armor_t*>  Clothes_Beggar_Head();
-
-    some<Armor_t*>  Clothes_Black_Smith_Body_1();
-    some<Armor_t*>  Clothes_Black_Smith_Body_2();
-    some<Armor_t*>  Clothes_Black_Smith_Feet();
-
-    some<Armor_t*>  Clothes_Blind_Priest_Body();
-    some<Armor_t*>  Clothes_Blind_Priest_Feet();
-    some<Armor_t*>  Clothes_Blind_Priest_Head();
-
-    some<Armor_t*>  Clothes_Chef_Body();
-    some<Armor_t*>  Clothes_Chef_Feet();
-    some<Armor_t*>  Clothes_Chef_Head();
-
-    some<Armor_t*>  Clothes_Child_Body_1();
-    some<Armor_t*>  Clothes_Child_Body_2();
-    some<Armor_t*>  Clothes_Child_Body_3();
-    some<Armor_t*>  Clothes_Child_Body_4();
-    some<Armor_t*>  Clothes_Child_Body_5();
-    some<Armor_t*>  Clothes_Child_Body_Skaal();
-    some<Armor_t*>  Clothes_Child_Feet();
-    some<Armor_t*>  Clothes_Child_Feet_Skaal();
-
-    some<Armor_t*>  Clothes_Cultist_Body_1();
-    some<Armor_t*>  Clothes_Cultist_Body_2();
-    some<Armor_t*>  Clothes_Cultist_Feet();
-    some<Armor_t*>  Clothes_Cultist_Hands();
-    some<Armor_t*>  Clothes_Cultist_Head();
-
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Body();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Body_Cicero();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Body_Jester();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Body_Redguard();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Feet();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Feet_Cicero();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Feet_Jester();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Feet_Redguard();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Hands();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Hands_Cicero();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Hands_Jester();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Head();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Head_Cicero();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Head_Jester();
-    some<Armor_t*>  Clothes_Dark_Brotherhood_Head_Redguard();
-
-    some<Armor_t*>  Clothes_Dremora_Body();
-    some<Armor_t*>  Clothes_Dremora_Body_Merchant();
-    some<Armor_t*>  Clothes_Dremora_Feet();
-    some<Armor_t*>  Clothes_Dremora_Feet_Merchant();
-
-    some<Armor_t*>  Clothes_Dunmer_Body_Blue();
-    some<Armor_t*>  Clothes_Dunmer_Body_Blue_Hood();
-    some<Armor_t*>  Clothes_Dunmer_Body_Brown();
-    some<Armor_t*>  Clothes_Dunmer_Body_Brown_Hood();
-    some<Armor_t*>  Clothes_Dunmer_Body_Red();
-    some<Armor_t*>  Clothes_Dunmer_Body_Red_Hood();
-    some<Armor_t*>  Clothes_Dunmer_Feet();
-
-    some<Armor_t*>  Clothes_Emperor_Body();
-
-    some<Armor_t*>  Clothes_Executionee_Head_1();
-    some<Armor_t*>  Clothes_Executionee_Head_2();
-
-    some<Armor_t*>  Clothes_Executioner_Body();
-    some<Armor_t*>  Clothes_Executioner_Feet();
-    some<Armor_t*>  Clothes_Executioner_Hands();
-    some<Armor_t*>  Clothes_Executioner_Head();
-
-    some<Armor_t*>  Clothes_Farm_Body_A();
-    some<Armor_t*>  Clothes_Farm_Body_B_1();
-    some<Armor_t*>  Clothes_Farm_Body_B_2();
-    some<Armor_t*>  Clothes_Farm_Body_C_1();
-    some<Armor_t*>  Clothes_Farm_Body_C_2();
-    some<Armor_t*>  Clothes_Farm_Body_C_3();
-    some<Armor_t*>  Clothes_Farm_Body_D_1();
-    some<Armor_t*>  Clothes_Farm_Body_D_2();
-    some<Armor_t*>  Clothes_Farm_Feet_A();
-    some<Armor_t*>  Clothes_Farm_Feet_B();
-    some<Armor_t*>  Clothes_Farm_Feet_C();
-    some<Armor_t*>  Clothes_Farm_Feet_D();
-    some<Armor_t*>  Clothes_Farm_Hands_C();
-    some<Armor_t*>  Clothes_Farm_Head_A();
-    some<Armor_t*>  Clothes_Farm_Head_B();
-    some<Armor_t*>  Clothes_Farm_Head_C();
-    some<Armor_t*>  Clothes_Farm_Head_C_Cowl();
-
-    some<Armor_t*>  Clothes_Fine_Body_A_1();
-    some<Armor_t*>  Clothes_Fine_Body_A_2();
-    some<Armor_t*>  Clothes_Fine_Body_A_Radiant_Raiment();
-    some<Armor_t*>  Clothes_Fine_Body_B_1();
-    some<Armor_t*>  Clothes_Fine_Body_B_2();
-    some<Armor_t*>  Clothes_Fine_Body_B_Party();
-    some<Armor_t*>  Clothes_Fine_Body_C();
-    some<Armor_t*>  Clothes_Fine_Feet_A();
-    some<Armor_t*>  Clothes_Fine_Feet_B();
-    some<Armor_t*>  Clothes_Fine_Feet_B_Party();
-    some<Armor_t*>  Clothes_Fine_Feet_C();
-    some<Armor_t*>  Clothes_Fine_Head_B();
-
-    some<Armor_t*>  Clothes_Greybeard_Body();
-    some<Armor_t*>  Clothes_Greybeard_Feet();
-    some<Armor_t*>  Clothes_Greybeard_Head();
-
-    some<Armor_t*>  Clothes_Ildari_Body();
-
-    some<Armor_t*>  Clothes_Jarl_Body_A_1();
-    some<Armor_t*>  Clothes_Jarl_Body_A_2();
-    some<Armor_t*>  Clothes_Jarl_Body_B_1();
-    some<Armor_t*>  Clothes_Jarl_Body_B_2();
-    some<Armor_t*>  Clothes_Jarl_Body_C_1();
-    some<Armor_t*>  Clothes_Jarl_Body_C_2();
-    some<Armor_t*>  Clothes_Jarl_Feet_A();
-    some<Armor_t*>  Clothes_Jarl_Feet_B();
-    some<Armor_t*>  Clothes_Jarl_Feet_C();
-    some<Armor_t*>  Clothes_Jarl_Hands_A();
-    some<Armor_t*>  Clothes_Jarl_Hands_B();
-
-    some<Armor_t*>  Clothes_Mage_Body_Adept();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Alteration();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Conjuration();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Destruction();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Illusion();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Magicka_Rate();
-    some<Armor_t*>  Clothes_Mage_Body_Adept_Restoration();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Alteration();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Conjuration();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Destruction();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Illusion();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Magicka_Rate();
-    some<Armor_t*>  Clothes_Mage_Body_Apprentice_Restoration();
-    some<Armor_t*>  Clothes_Mage_Body_Archmage();
-    some<Armor_t*>  Clothes_Mage_Body_Archmage_Hood();
-    some<Armor_t*>  Clothes_Mage_Body_Expert();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Alteration();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Conjuration();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Destruction();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Illusion();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Magicka_Rate();
-    some<Armor_t*>  Clothes_Mage_Body_Expert_Restoration();
-    some<Armor_t*>  Clothes_Mage_Body_Master();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Alteration();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Conjuration();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Destruction();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Illusion();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Magicka_Rate();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Restoration();
-    some<Armor_t*>  Clothes_Mage_Body_Master_Taron_Dreth();
-    some<Armor_t*>  Clothes_Mage_Body_Novice();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Alteration();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Conjuration();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Destruction();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Illusion();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Magicka_Rate();
-    some<Armor_t*>  Clothes_Mage_Body_Novice_Restoration();
-    some<Armor_t*>  Clothes_Mage_Feet_Apprentice();
-    some<Armor_t*>  Clothes_Mage_Feet_Archmage();
-    some<Armor_t*>  Clothes_Mage_Feet_Master();
-    some<Armor_t*>  Clothes_Mage_Feet_Novice();
-    some<Armor_t*>  Clothes_Mage_Feet_Novice_Sneak_1();
-    some<Armor_t*>  Clothes_Mage_Feet_Novice_Sneak_2();
-    some<Armor_t*>  Clothes_Mage_Head_Adept();
-    some<Armor_t*>  Clothes_Mage_Head_Adept_Magicka();
-    some<Armor_t*>  Clothes_Mage_Head_Apprentice();
-    some<Armor_t*>  Clothes_Mage_Head_Apprentice_Magicka();
-    some<Armor_t*>  Clothes_Mage_Head_Novice();
-    some<Armor_t*>  Clothes_Mage_Head_Novice_Magicka();
-
-    some<Armor_t*>  Clothes_Merchant_Body_1();
-    some<Armor_t*>  Clothes_Merchant_Body_2();
-    some<Armor_t*>  Clothes_Merchant_Feet();
-    some<Armor_t*>  Clothes_Merchant_Head();
-
-    some<Armor_t*>  Clothes_Miner_Body_1();
-    some<Armor_t*>  Clothes_Miner_Body_2();
-    some<Armor_t*>  Clothes_Miner_Body_Sleep();
-    some<Armor_t*>  Clothes_Miner_Feet();
-
-    some<Armor_t*>  Clothes_Miraak_Body_1();
-    some<Armor_t*>  Clothes_Miraak_Body_2();
-    some<Armor_t*>  Clothes_Miraak_Body_Reward_1();
-    some<Armor_t*>  Clothes_Miraak_Body_Reward_2();
-    some<Armor_t*>  Clothes_Miraak_Body_Reward_3();
-    some<Armor_t*>  Clothes_Miraak_Feet();
-    some<Armor_t*>  Clothes_Miraak_Hands();
-    some<Armor_t*>  Clothes_Miraak_Head();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_1();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_2();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_3();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_4();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_5();
-    some<Armor_t*>  Clothes_Miraak_Head_Reward_6();
-
-    some<Armor_t*>  Clothes_Monk_Body();
-    some<Armor_t*>  Clothes_Monk_Body_Hood();
-    some<Armor_t*>  Clothes_Monk_Body_Prelate();
-    some<Armor_t*>  Clothes_Monk_Feet();
-    some<Armor_t*>  Clothes_Monk_Feet_Prelate();
-
-    some<Armor_t*>  Clothes_Mourner_Body();
-    some<Armor_t*>  Clothes_Mourner_Head();
-
-    some<Armor_t*>  Clothes_Mythic_Dawn_Body();
-    some<Armor_t*>  Clothes_Mythic_Dawn_Body_Hood();
-    some<Armor_t*>  Clothes_Mythic_Dawn_Feet();
-    some<Armor_t*>  Clothes_Mythic_Dawn_Hands();
-
-    some<Armor_t*>  Clothes_Necromancer_Body();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Alteration_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Conjuration_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Destruction_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Illusion_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Magicka_Rate_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Restoration_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Alteration_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Conjuration_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Destruction_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Illusion_6();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Magicka_Rate_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Magicka_Rate_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Magicka_Rate_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Magicka_Rate_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_1();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_2();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_3();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_4();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_5();
-    some<Armor_t*>  Clothes_Necromancer_Body_Hood_Restoration_6();
-    some<Armor_t*>  Clothes_Necromancer_Feet();
-
-    some<Armor_t*>  Clothes_Nocturnal_Body();
-    some<Armor_t*>  Clothes_Nocturnal_Head();
-
-    some<Armor_t*>  Clothes_Prisoner_Body();
-    some<Armor_t*>  Clothes_Prisoner_Body_Bloody();
-    some<Armor_t*>  Clothes_Prisoner_Body_Tunic();
-    some<Armor_t*>  Clothes_Prisoner_Feet();
-    some<Armor_t*>  Clothes_Prisoner_Feet_Bloody();
-    some<Armor_t*>  Clothes_Prisoner_Hands();
-
-    some<Armor_t*>  Clothes_Psiijic_Body();
-    some<Armor_t*>  Clothes_Psiijic_Feet();
-    some<Armor_t*>  Clothes_Psiijic_Hands();
-    some<Armor_t*>  Clothes_Psiijic_Head();
-
-    some<Armor_t*>  Clothes_Reaper_Body();
-    some<Armor_t*>  Clothes_Reaper_Hands();
-    some<Armor_t*>  Clothes_Reaper_Head();
-
-    some<Armor_t*>  Clothes_Redguard_Body();
-    some<Armor_t*>  Clothes_Redguard_Feet();
-    some<Armor_t*>  Clothes_Redguard_Head();
-
-    some<Armor_t*>  Clothes_Robes_Body_Black();
-    some<Armor_t*>  Clothes_Robes_Body_Black_Hood();
-    some<Armor_t*>  Clothes_Robes_Body_Blue();
-    some<Armor_t*>  Clothes_Robes_Body_Blue_Hood();
-    some<Armor_t*>  Clothes_Robes_Body_Blue_Hood_Magicka_Rate();
-    some<Armor_t*>  Clothes_Robes_Body_Brown();
-    some<Armor_t*>  Clothes_Robes_Body_Brown_Hood();
-    some<Armor_t*>  Clothes_Robes_Body_Green();
-    some<Armor_t*>  Clothes_Robes_Body_Green_Hood();
-    some<Armor_t*>  Clothes_Robes_Body_Grey();
-    some<Armor_t*>  Clothes_Robes_Body_Grey_Hood();
-    some<Armor_t*>  Clothes_Robes_Body_Red();
-    some<Armor_t*>  Clothes_Robes_Body_Red_Hood();
-
-    some<Armor_t*>  Clothes_Serana_Head();
-
-    some<Armor_t*>  Clothes_Sheogorath_Body();
-    some<Armor_t*>  Clothes_Sheogorath_Feet();
-
-    some<Armor_t*>  Clothes_Skaal_Body();
-    some<Armor_t*>  Clothes_Skaal_Feet();
-    some<Armor_t*>  Clothes_Skaal_Hands();
-    some<Armor_t*>  Clothes_Skaal_Head();
-
-    some<Armor_t*>  Clothes_Telvanni_Body();
-    some<Armor_t*>  Clothes_Telvanni_Feet();
-
-    some<Armor_t*>  Clothes_Temple_Priest_Body();
-    some<Armor_t*>  Clothes_Temple_Priest_Feet();
-    some<Armor_t*>  Clothes_Temple_Priest_Head();
-
-    some<Armor_t*>  Clothes_Thalmor_Body();
-    some<Armor_t*>  Clothes_Thalmor_Body_Hood();
-    some<Armor_t*>  Clothes_Thalmor_Feet();
-    some<Armor_t*>  Clothes_Thalmor_Hands();
-
-    some<Armor_t*>  Clothes_Tuning_Hands();
-    some<Armor_t*>  Clothes_Tuning_Hands_Mystic();
-
-    some<Armor_t*>  Clothes_Ulfric_Body();
-    some<Armor_t*>  Clothes_Ulfric_Feet();
-    some<Armor_t*>  Clothes_Ulfric_Hands();
-
-    some<Armor_t*>  Clothes_Vaermina_Priest_Body();
-
-    some<Armor_t*>  Clothes_Vampire_Body();
-    some<Armor_t*>  Clothes_Vampire_Feet();
-    some<Armor_t*>  Clothes_Vampire_Hands();
-    some<Armor_t*>  Clothes_Vampire_Head();
-
-    some<Armor_t*>  Clothes_Warlock_Body();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Alteration_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Conjuration_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Destruction_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Illusion_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Magicka_Rate_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Restoration_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Alteration_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Conjuration_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Destruction_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Illusion_6();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Magicka_Rate_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Magicka_Rate_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Magicka_Rate_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Magicka_Rate_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_1();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_2();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_3();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_4();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_5();
-    some<Armor_t*>  Clothes_Warlock_Body_Hood_Restoration_6();
-    some<Armor_t*>  Clothes_Warlock_Feet();
-    some<Armor_t*>  Clothes_Warlock_Head();
-
-    some<Armor_t*>  Clothes_Wedding_Dress_Body();
-    some<Armor_t*>  Clothes_Wedding_Dress_Feet();
-    some<Armor_t*>  Clothes_Wedding_Dress_Head();
-
-    some<Armor_t*>  Clothes_Wench_Body();
-    some<Armor_t*>  Clothes_Wench_Feet();
-
-    some<Armor_t*>  Clothes_Wounded_Body_Arivanya();
-    some<Armor_t*>  Clothes_Wounded_Body_Susanna();
 
     some<Armor_t*>  FX_Dragonborn_Aspect_1();
     some<Armor_t*>  FX_Dragonborn_Aspect_2();
