@@ -26,6 +26,7 @@ namespace doticu_skylib {
     class Cell_t;
     class Container_c;
     class Container_t;
+    class Equip_Slot_c;
     class Faction_t;
     class Ingredient_t;
     class Key_t;
@@ -168,6 +169,8 @@ namespace doticu_skylib {
         Bool_t                      Is_Light();
         Bool_t                      Is_Playable();
 
+        Bool_t                      Can_Equip() const;
+
         Bool_t                      Has_Keyword(some<Keyword_t*> keyword) const;
 
         maybe<Heavy_Mod_Index_t>    Heavy_Mod_Index();
@@ -197,6 +200,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Bound_Object() const;
         Bool_t                  Is_Cell() const;
         Bool_t                  Is_Component_Container() const;
+        Bool_t                  Is_Component_Equip_Slot() const;
         Bool_t                  Is_Component_Keywords() const;
         Bool_t                  Is_Component_Name() const;
         Bool_t                  Is_Component_Value() const;
@@ -225,6 +229,7 @@ namespace doticu_skylib {
         maybe<Bound_Object_t*>  As_Bound_Object() const;
         maybe<Cell_t*>          As_Cell() const;
         maybe<Container_c*>     As_Component_Container() const;
+        maybe<Equip_Slot_c*>    As_Component_Equip_Slot() const;
         maybe<Keywords_c*>      As_Component_Keywords() const;
         maybe<Name_c*>          As_Component_Name() const;
         maybe<Value_c*>         As_Component_Value() const;

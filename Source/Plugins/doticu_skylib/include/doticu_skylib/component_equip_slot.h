@@ -10,11 +10,27 @@
 
 namespace doticu_skylib {
 
-    class Equip_Slot_c : public Form_Data_c // BGSEquipType
+    class Equip_Slot_c :    // BGSEquipType
+        public Form_Data_c  // 00
     {
+    public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E11038, // 513861
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
     public:
         virtual ~Equip_Slot_c(); // 0
 
+    public:
         void*   equip_slot; // 08
     };
     STATIC_ASSERT(sizeof(Equip_Slot_c) == 0x10);

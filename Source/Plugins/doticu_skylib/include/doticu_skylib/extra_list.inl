@@ -45,7 +45,7 @@ namespace doticu_skylib {
     }
 
     template <typename T>
-    inline Bool_t Extra_List_t::Destroy_Extra_Data()
+    inline Bool_t Extra_List_t::Remove_And_Destroy()
     {
         maybe<T*> x_data = Get<T>();
         if (x_data) {
@@ -55,6 +55,15 @@ namespace doticu_skylib {
         } else {
             return false;
         }
+    }
+
+    template <typename T>
+    inline void Extra_List_t::Remove_And_Destroy(some<T*> x_data)
+    {
+        SKYLIB_ASSERT_SOME(x_data);
+
+        Remove<T>(x_data);
+        T::Destroy(x_data);
     }
 
 }

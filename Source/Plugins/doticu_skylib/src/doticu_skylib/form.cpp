@@ -10,6 +10,7 @@
 #include "doticu_skylib/bound_object.h"
 #include "doticu_skylib/cell.h"
 #include "doticu_skylib/component_container.h"
+#include "doticu_skylib/component_equip_slot.h"
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
 #include "doticu_skylib/component_value.h"
@@ -63,6 +64,11 @@ namespace doticu_skylib {
     Bool_t Form_t::Is_Heavy()       { return form_id.Is_Heavy(); }
     Bool_t Form_t::Is_Light()       { return form_id.Is_Light(); }
     Bool_t Form_t::Is_Playable()    { return Get_Is_Playable(); }
+
+    Bool_t Form_t::Can_Equip() const
+    {
+        return Is_Component_Equip_Slot();
+    }
 
     Bool_t Form_t::Has_Keyword(some<Keyword_t*> keyword) const
     {
@@ -194,6 +200,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Bound_Object() const         { return As_Bound_Object() != none<Bound_Object_t*>(); }
     Bool_t                  Form_t::Is_Cell() const                 { return As_Cell() != none<Cell_t*>(); }
     Bool_t                  Form_t::Is_Component_Container() const  { return As_Component_Container() != none<Container_c*>(); }
+    Bool_t                  Form_t::Is_Component_Equip_Slot() const { return As_Component_Equip_Slot() != none<Equip_Slot_c*>(); }
     Bool_t                  Form_t::Is_Component_Keywords() const   { return As_Component_Keywords() != none<Keywords_c*>(); }
     Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
     Bool_t                  Form_t::Is_Component_Value() const      { return As_Component_Value() != none<Value_c*>(); }
@@ -222,6 +229,7 @@ namespace doticu_skylib {
     maybe<Bound_Object_t*>  Form_t::As_Bound_Object() const         { return Game_t::Runtime_Cast<Form_t, Bound_Object_t>(this); }
     maybe<Cell_t*>          Form_t::As_Cell() const                 { return Game_t::Runtime_Cast<Form_t, Cell_t>(this); }
     maybe<Container_c*>     Form_t::As_Component_Container() const  { return Game_t::Runtime_Cast<Form_t, Container_c>(this); }
+    maybe<Equip_Slot_c*>    Form_t::As_Component_Equip_Slot() const { return Game_t::Runtime_Cast<Form_t, Equip_Slot_c>(this); }
     maybe<Keywords_c*>      Form_t::As_Component_Keywords() const   { return Game_t::Runtime_Cast<Form_t, Keywords_c>(this); }
     maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
     maybe<Value_c*>         Form_t::As_Component_Value() const      { return Game_t::Runtime_Cast<Form_t, Value_c>(this); }

@@ -305,7 +305,8 @@ namespace doticu_skylib {
     Bool_t  Extra_List_t::Has_Extra_Worn()                  { return Has<Extra_Worn_t>(); }
     Bool_t  Extra_List_t::Has_Extra_Worn_Left()             { return Has<Extra_Worn_Left_t>(); }
 
-    Bool_t  Extra_List_t::Destroy_Extra_Text_Display()      { return Destroy_Extra_Data<Extra_Text_Display_t>(); }
+    Bool_t  Extra_List_t::Destroy_Extra_Count()             { return Remove_And_Destroy<Extra_Count_t>(); }
+    Bool_t  Extra_List_t::Destroy_Extra_Text_Display()      { return Remove_And_Destroy<Extra_Text_Display_t>(); }
 
     Vector_t<some<Extra_Data_t*>> Extra_List_t::Extra_Datas()
     {
@@ -492,10 +493,7 @@ namespace doticu_skylib {
                 Add<Extra_Cannot_Wear_t>(Extra_Cannot_Wear_t::Create());
             }
         } else {
-            maybe<Extra_Cannot_Wear_t*> x_cannot_wear = Get<Extra_Cannot_Wear_t>();
-            if (x_cannot_wear) {
-                Remove<Extra_Cannot_Wear_t>(x_cannot_wear());
-            }
+            Remove_And_Destroy<Extra_Cannot_Wear_t>();
         }
     }
 
@@ -519,7 +517,7 @@ namespace doticu_skylib {
             if (count != 1) {
                 x_count->Count(count);
             } else {
-                Remove<Extra_Count_t>(x_count());
+                Remove_And_Destroy<Extra_Count_t>(x_count());
             }
         } else {
             if (count != 1) {
@@ -642,8 +640,7 @@ namespace doticu_skylib {
             if (x_leveled_item->leveled_item_form_id) {
                 return Game_t::Form(x_leveled_item->leveled_item_form_id());
             } else {
-                Remove<Extra_Leveled_Item_t>(x_leveled_item());
-                Extra_Leveled_Item_t::Destroy(x_leveled_item());
+                Remove_And_Destroy<Extra_Leveled_Item_t>(x_leveled_item());
                 return none<Leveled_Item_t*>();
             }
         } else {
@@ -661,11 +658,7 @@ namespace doticu_skylib {
                 Add<Extra_Leveled_Item_t>(Extra_Leveled_Item_t::Create(leveled_item()));
             }
         } else {
-            maybe<Extra_Leveled_Item_t*> x_leveled_item = Get<Extra_Leveled_Item_t>();
-            if (x_leveled_item) {
-                Remove<Extra_Leveled_Item_t>(x_leveled_item());
-                Extra_Leveled_Item_t::Destroy(x_leveled_item());
-            }
+            Remove_And_Destroy<Extra_Leveled_Item_t>();
         }
     }
 
@@ -681,8 +674,7 @@ namespace doticu_skylib {
             if (x_outfit->outfit_form_id) {
                 return Game_t::Form(x_outfit->outfit_form_id());
             } else {
-                Remove<Extra_Outfit_t>(x_outfit());
-                Extra_Outfit_t::Destroy(x_outfit());
+                Remove_And_Destroy<Extra_Outfit_t>(x_outfit());
                 return none<Outfit_t*>();
             }
         } else {
@@ -700,11 +692,7 @@ namespace doticu_skylib {
                 Add<Extra_Outfit_t>(Extra_Outfit_t::Create(outfit()));
             }
         } else {
-            maybe<Extra_Outfit_t*> x_outfit = Get<Extra_Outfit_t>();
-            if (x_outfit) {
-                Remove<Extra_Outfit_t>(x_outfit());
-                Extra_Outfit_t::Destroy(x_outfit());
-            }
+            Remove_And_Destroy<Extra_Outfit_t>();
         }
     }
 
@@ -867,10 +855,7 @@ namespace doticu_skylib {
                 Add<Extra_Worn_t>(Extra_Worn_t::Create());
             }
         } else {
-            maybe<Extra_Worn_t*> x_worn = Get<Extra_Worn_t>();
-            if (x_worn) {
-                Remove<Extra_Worn_t>(x_worn());
-            }
+            Remove_And_Destroy<Extra_Worn_t>();
         }
     }
 
@@ -886,10 +871,7 @@ namespace doticu_skylib {
                 Add<Extra_Worn_Left_t>(Extra_Worn_Left_t::Create());
             }
         } else {
-            maybe<Extra_Worn_Left_t*> x_worn_left = Get<Extra_Worn_Left_t>();
-            if (x_worn_left) {
-                Remove<Extra_Worn_Left_t>(x_worn_left());
-            }
+            Remove_And_Destroy<Extra_Worn_Left_t>();
         }
     }
 
