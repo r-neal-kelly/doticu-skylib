@@ -58,6 +58,27 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Ancient_Nordic_Mask_Zahkriisos_Head();
 
+    some<Armor_t*>  Ancient_Nordic_Miraak_Feet();
+    some<Armor_t*>  Ancient_Nordic_Miraak_Hands();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_1_Body();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_1_Heavy_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_1_Light_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_2_Body();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_2_Heavy_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_2_Light_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_3_Body();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_3_Heavy_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Miraak_3_Light_Head();
+
     some<Armor_t*>  Ancient_Nordic_Unburned_Head();
 
     some<Armor_t*>  Ancient_Nordic_Ysgramor_Shield();
@@ -2669,6 +2690,326 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Wolf_Hands();
     some<Armor_t*>  Wolf_Head();
 
+    some<Armor_t*>  Amulet_Ancient_Nordic();
+
+    some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
+
+    some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
+
+    some<Armor_t*>  Amulet_Articulation_1();
+    some<Armor_t*>  Amulet_Articulation_2();
+    some<Armor_t*>  Amulet_Articulation_3();
+    some<Armor_t*>  Amulet_Articulation_4();
+    some<Armor_t*>  Amulet_Articulation_5();
+    some<Armor_t*>  Amulet_Articulation_6();
+    some<Armor_t*>  Amulet_Articulation_7();
+
+    some<Armor_t*>  Amulet_Articulation_Unenchanted();
+
+    some<Armor_t*>  Amulet_Bone_Hawk();
+
+    some<Armor_t*>  Amulet_Divine_Akatosh();
+
+    some<Armor_t*>  Amulet_Divine_Arkay();
+
+    some<Armor_t*>  Amulet_Divine_Arkay_Andurs();
+
+    some<Armor_t*>  Amulet_Divine_Dibella();
+
+    some<Armor_t*>  Amulet_Divine_Julianos();
+
+    some<Armor_t*>  Amulet_Divine_Kynareth();
+
+    some<Armor_t*>  Amulet_Divine_Mara();
+
+    some<Armor_t*>  Amulet_Divine_Stendarr();
+
+    some<Armor_t*>  Amulet_Divine_Talos();
+
+    some<Armor_t*>  Amulet_Divine_Talos_Ogmund();
+
+    some<Armor_t*>  Amulet_Divine_Zenithar();
+
+    some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee();
+
+    some<Armor_t*>  Amulet_East_Empire_Company_1();
+
+    some<Armor_t*>  Amulet_East_Empire_Company_2();
+
+    some<Armor_t*>  Amulet_Elder_Council_1();
+
+    some<Armor_t*>  Amulet_Elder_Council_2();
+
+    some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
+
+    some<Armor_t*>  Amulet_Gauldur();
+
+    some<Armor_t*>  Amulet_Gauldur_Folgunthur();
+
+    some<Armor_t*>  Amulet_Gauldur_Geirmund();
+
+    some<Armor_t*>  Amulet_Gauldur_Saarthal();
+
+    some<Armor_t*>  Amulet_Gold();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_1();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_2();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_3();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_4();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_5();
+    some<Armor_t*>  Amulet_Gold_Heavy_Armor_6();
+    some<Armor_t*>  Amulet_Gold_One_Handed_1();
+    some<Armor_t*>  Amulet_Gold_One_Handed_2();
+    some<Armor_t*>  Amulet_Gold_One_Handed_3();
+    some<Armor_t*>  Amulet_Gold_One_Handed_4();
+    some<Armor_t*>  Amulet_Gold_One_Handed_5();
+    some<Armor_t*>  Amulet_Gold_One_Handed_6();
+    some<Armor_t*>  Amulet_Gold_Sneak_1();
+    some<Armor_t*>  Amulet_Gold_Sneak_2();
+    some<Armor_t*>  Amulet_Gold_Sneak_3();
+    some<Armor_t*>  Amulet_Gold_Sneak_4();
+    some<Armor_t*>  Amulet_Gold_Sneak_5();
+    some<Armor_t*>  Amulet_Gold_Sneak_6();
+    some<Armor_t*>  Amulet_Gold_Stamina_1();
+    some<Armor_t*>  Amulet_Gold_Stamina_2();
+    some<Armor_t*>  Amulet_Gold_Stamina_3();
+    some<Armor_t*>  Amulet_Gold_Stamina_4();
+    some<Armor_t*>  Amulet_Gold_Stamina_5();
+    some<Armor_t*>  Amulet_Gold_Stamina_6();
+
+    some<Armor_t*>  Amulet_Gold_Charmed();
+
+    some<Armor_t*>  Amulet_Gold_Diamond();
+    some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_1();
+    some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_2();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_1();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_2();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_3();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_4();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_5();
+    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_6();
+
+    some<Armor_t*>  Amulet_Gold_Jeweled();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_1();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_2();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_3();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_4();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_5();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_6();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_1();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_2();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_3();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_4();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_5();
+    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_6();
+
+    some<Armor_t*>  Amulet_Gold_Jeweled_Saint_Jiub();
+
+    some<Armor_t*>  Amulet_Gold_Ruby();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_1();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_2();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_3();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_4();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_5();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_6();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_1();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_2();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_3();
+    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_4();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_1();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_2();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_3();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_4();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_5();
+    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6();
+
+    some<Armor_t*>  Amulet_Heartstone();
+
+    some<Armor_t*>  Amulet_Necromancer();
+
+    some<Armor_t*>  Amulet_Necromancer_Enchanted();
+
+    some<Armor_t*>  Amulet_Silver();
+    some<Armor_t*>  Amulet_Silver_Alchemy_1();
+    some<Armor_t*>  Amulet_Silver_Alchemy_2();
+    some<Armor_t*>  Amulet_Silver_Alchemy_3();
+    some<Armor_t*>  Amulet_Silver_Alchemy_4();
+    some<Armor_t*>  Amulet_Silver_Alchemy_5();
+    some<Armor_t*>  Amulet_Silver_Alchemy_6();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_1();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_2();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_3();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_4();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_5();
+    some<Armor_t*>  Amulet_Silver_Light_Armor_6();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_1();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_2();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_3();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_4();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_5();
+    some<Armor_t*>  Amulet_Silver_Two_Handed_6();
+
+    some<Armor_t*>  Amulet_Silver_Grosta();
+
+    some<Armor_t*>  Amulet_Silver_Moon();
+
+    some<Armor_t*>  Amulet_Silver_Reyda();
+
+    some<Armor_t*>  Amulet_Silver_Yisra();
+
+    some<Armor_t*>  Amulet_Silver_Emerald();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_1();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_2();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_3();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_4();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_5();
+    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_6();
+    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_1();
+    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_2();
+    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_3();
+    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_4();
+
+    some<Armor_t*>  Amulet_Silver_Jeweled();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_1();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_2();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_3();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_4();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_5();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_6();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Disease_1();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Disease_2();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_1();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_2();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_3();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_4();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_5();
+    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_6();
+
+    some<Armor_t*>  Amulet_Silver_Sapphire();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_1();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_2();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_3();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_4();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_5();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Block_6();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_1();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_2();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_3();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_4();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_5();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_6();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_1();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_2();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_3();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_4();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_5();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_6();
+    some<Armor_t*>  Amulet_Silver_Sapphire_Waterbreathing();
+
+    some<Armor_t*>  Amulet_Silver_Sapphire_Bera();
+
+    some<Armor_t*>  Amulet_Silver_Sapphire_Savos_Aren();
+
+    some<Armor_t*>  Amulet_Skaal();
+
+    some<Armor_t*>  Amulet_Vampire_Drain_Magicka();
+
+    some<Armor_t*>  Amulet_Vampire_Draining_Bats();
+
+    some<Armor_t*>  Amulet_Vampire_Draining_Grip();
+
+    some<Armor_t*>  Amulet_Vampire_Gargoyle();
+
+    some<Armor_t*>  Amulet_Vampire_Power_Bats();
+
+    some<Armor_t*>  Amulet_Vampire_Power_Empath();
+
+    some<Armor_t*>  Amulet_Vampire_Power_Mist_Form();
+
+    some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes();
+
+    some<Armor_t*>  Circlet_Aetherial_Crown();
+
+    some<Armor_t*>  Circlet_Copper_And_Moonstone();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_1();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_2();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_3();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_4();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_5();
+    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_6();
+
+    some<Armor_t*>  Circlet_Copper_And_Onyx();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_1();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_2();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_3();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_4();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_5();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_6();
+    some<Armor_t*>  Circlet_Copper_And_Onyx_Waterbreathing();
+
+    some<Armor_t*>  Circlet_Copper_And_Ruby();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_1();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_2();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_3();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_4();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_5();
+    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_6();
+
+    some<Armor_t*>  Circlet_Copper_And_Sapphire();
+
+    some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage();
+
+    some<Armor_t*>  Circlet_Gag();
+
+    some<Armor_t*>  Circlet_Gold_And_Emerald();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_1();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_2();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_3();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_4();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_5();
+    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_6();
+
+    some<Armor_t*>  Circlet_Gold_And_Ruby();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_1();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_2();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_3();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_4();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_5();
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_6();
+
+    some<Armor_t*>  Circlet_Gold_And_Ruby_Diadem_Of_The_Savant();
+
+    some<Armor_t*>  Circlet_Jade_And_Emerald();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_1();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_2();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_3();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_4();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_5();
+    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_6();
+
+    some<Armor_t*>  Circlet_Jade_And_Sapphire();
+
+    some<Armor_t*>  Circlet_Silver_And_Moonstone();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_1();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_2();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_3();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_4();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_5();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_6();
+
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4();
+    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_5();
+
+    some<Armor_t*>  Circlet_Silver_And_Sapphire();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_1();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_2();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_3();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_4();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_5();
+    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_6();
+
     some<Armor_t*>  Clothes_Ball_Of_Light_Body();
 
     some<Armor_t*>  Clothes_Bandages_Hands();
@@ -2911,27 +3252,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Miner_Dark_Body();
 
     some<Armor_t*>  Clothes_Miner_Sleep_Body();
-
-    some<Armor_t*>  Clothes_Miraak_Feet();
-    some<Armor_t*>  Clothes_Miraak_Hands();
-
-    some<Armor_t*>  Clothes_Miraak_1_Body();
-
-    some<Armor_t*>  Clothes_Miraak_1_Heavy_Head();
-
-    some<Armor_t*>  Clothes_Miraak_1_Light_Head();
-
-    some<Armor_t*>  Clothes_Miraak_2_Body();
-
-    some<Armor_t*>  Clothes_Miraak_2_Heavy_Head();
-
-    some<Armor_t*>  Clothes_Miraak_2_Light_Head();
-
-    some<Armor_t*>  Clothes_Miraak_3_Body();
-
-    some<Armor_t*>  Clothes_Miraak_3_Heavy_Head();
-
-    some<Armor_t*>  Clothes_Miraak_3_Light_Head();
 
     some<Armor_t*>  Clothes_Monk_Body();
     some<Armor_t*>  Clothes_Monk_Feet();
@@ -3201,312 +3521,19 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Wounded_Susanna_Body();
 
-}}}
-
-namespace doticu_skylib { namespace Const { namespace WIP {
-
-    some<Armor_t*>  Amulet_Ancient_Nordic();
-    some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
-    some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
-
-    some<Armor_t*>  Amulet_Articulation_1();
-    some<Armor_t*>  Amulet_Articulation_2();
-    some<Armor_t*>  Amulet_Articulation_3();
-    some<Armor_t*>  Amulet_Articulation_4();
-    some<Armor_t*>  Amulet_Articulation_5();
-    some<Armor_t*>  Amulet_Articulation_6();
-    some<Armor_t*>  Amulet_Articulation_7();
-    some<Armor_t*>  Amulet_Articulation_Unenchanted();
-
-    some<Armor_t*>  Amulet_Bone_Hawk();
-
-    some<Armor_t*>  Amulet_Divine_Akatosh();
-    some<Armor_t*>  Amulet_Divine_Arkay();
-    some<Armor_t*>  Amulet_Divine_Arkay_Andurs();
-    some<Armor_t*>  Amulet_Divine_Dibella();
-    some<Armor_t*>  Amulet_Divine_Julianos();
-    some<Armor_t*>  Amulet_Divine_Kynareth();
-    some<Armor_t*>  Amulet_Divine_Mara();
-    some<Armor_t*>  Amulet_Divine_Stendarr();
-    some<Armor_t*>  Amulet_Divine_Talos();
-    some<Armor_t*>  Amulet_Divine_Talos_Ogmund();
-    some<Armor_t*>  Amulet_Divine_Zenithar();
-    some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee();
-
-    some<Armor_t*>  Amulet_East_Empire_Company_1();
-    some<Armor_t*>  Amulet_East_Empire_Company_2();
-
-    some<Armor_t*>  Amulet_Elder_Council_1();
-    some<Armor_t*>  Amulet_Elder_Council_2();
-
-    some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
-
-    some<Armor_t*>  Amulet_Gauldur();
-    some<Armor_t*>  Amulet_Gauldur_Folgunthur();
-    some<Armor_t*>  Amulet_Gauldur_Geirmund();
-    some<Armor_t*>  Amulet_Gauldur_Saarthal();
-
-    some<Armor_t*>  Amulet_Gold();
-    some<Armor_t*>  Amulet_Gold_Charmed();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_1();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_2();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_3();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_4();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_5();
-    some<Armor_t*>  Amulet_Gold_Heavy_Armor_6();
-    some<Armor_t*>  Amulet_Gold_One_Handed_1();
-    some<Armor_t*>  Amulet_Gold_One_Handed_2();
-    some<Armor_t*>  Amulet_Gold_One_Handed_3();
-    some<Armor_t*>  Amulet_Gold_One_Handed_4();
-    some<Armor_t*>  Amulet_Gold_One_Handed_5();
-    some<Armor_t*>  Amulet_Gold_One_Handed_6();
-    some<Armor_t*>  Amulet_Gold_Sneak_1();
-    some<Armor_t*>  Amulet_Gold_Sneak_2();
-    some<Armor_t*>  Amulet_Gold_Sneak_3();
-    some<Armor_t*>  Amulet_Gold_Sneak_4();
-    some<Armor_t*>  Amulet_Gold_Sneak_5();
-    some<Armor_t*>  Amulet_Gold_Sneak_6();
-    some<Armor_t*>  Amulet_Gold_Stamina_1();
-    some<Armor_t*>  Amulet_Gold_Stamina_2();
-    some<Armor_t*>  Amulet_Gold_Stamina_3();
-    some<Armor_t*>  Amulet_Gold_Stamina_4();
-    some<Armor_t*>  Amulet_Gold_Stamina_5();
-    some<Armor_t*>  Amulet_Gold_Stamina_6();
-
-    some<Armor_t*>  Amulet_Gold_Diamond();
-    some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_1();
-    some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_2();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_1();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_2();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_3();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_4();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_5();
-    some<Armor_t*>  Amulet_Gold_Diamond_Speechcraft_6();
-
-    some<Armor_t*>  Amulet_Gold_Jeweled();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_1();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_2();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_3();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_4();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_5();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Resist_Magic_6();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Saint_Jiub();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_1();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_2();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_3();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_4();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_5();
-    some<Armor_t*>  Amulet_Gold_Jeweled_Smithing_6();
-
-    some<Armor_t*>  Amulet_Gold_Ruby();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_1();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_2();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_3();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_4();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_5();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_6();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_1();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_2();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_3();
-    some<Armor_t*>  Amulet_Gold_Ruby_Health_Rate_4();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_1();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_2();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_3();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_4();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_5();
-    some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6();
-
-    some<Armor_t*>  Amulet_Heartstone();
-
-    some<Armor_t*>  Amulet_Necromancer();
-    some<Armor_t*>  Amulet_Necromancer_Enchanted();
-
-    some<Armor_t*>  Amulet_Silver();
-    some<Armor_t*>  Amulet_Silver_Alchemy_1();
-    some<Armor_t*>  Amulet_Silver_Alchemy_2();
-    some<Armor_t*>  Amulet_Silver_Alchemy_3();
-    some<Armor_t*>  Amulet_Silver_Alchemy_4();
-    some<Armor_t*>  Amulet_Silver_Alchemy_5();
-    some<Armor_t*>  Amulet_Silver_Alchemy_6();
-    some<Armor_t*>  Amulet_Silver_Grosta();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_1();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_2();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_3();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_4();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_5();
-    some<Armor_t*>  Amulet_Silver_Light_Armor_6();
-    some<Armor_t*>  Amulet_Silver_Moon();
-    some<Armor_t*>  Amulet_Silver_Reyda();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_1();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_2();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_3();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_4();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_5();
-    some<Armor_t*>  Amulet_Silver_Two_Handed_6();
-    some<Armor_t*>  Amulet_Silver_Yisra();
-
-    some<Armor_t*>  Amulet_Silver_Emerald();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_1();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_2();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_3();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_4();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_5();
-    some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_6();
-    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_1();
-    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_2();
-    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_3();
-    some<Armor_t*>  Amulet_Silver_Emerald_Stamina_Rate_4();
-    
-    some<Armor_t*>  Amulet_Silver_Jeweled();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_1();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_2();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_3();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_4();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_5();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Pickpocket_6();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Disease_1();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Disease_2();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_1();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_2();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_3();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_4();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_5();
-    some<Armor_t*>  Amulet_Silver_Jeweled_Resist_Shock_6();
-
-    some<Armor_t*>  Amulet_Silver_Sapphire();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Bera();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_1();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_2();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_3();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_4();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_5();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Block_6();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_1();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_2();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_3();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_4();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_5();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Magicka_6();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_1();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_2();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_3();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_4();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_5();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_6();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Savos_Aren();
-    some<Armor_t*>  Amulet_Silver_Sapphire_Waterbreathing();
-
-    some<Armor_t*>  Amulet_Skaal();
-
-    some<Armor_t*>  Amulet_Vampire_Drain_Magicka();
-    some<Armor_t*>  Amulet_Vampire_Draining_Bats();
-    some<Armor_t*>  Amulet_Vampire_Draining_Grip();
-    some<Armor_t*>  Amulet_Vampire_Gargoyle();
-    some<Armor_t*>  Amulet_Vampire_Power_Bats();
-    some<Armor_t*>  Amulet_Vampire_Power_Empath();
-    some<Armor_t*>  Amulet_Vampire_Power_Mist_Form();
-    some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes();
-
-    some<Armor_t*>  Circlet_Aetherial_Crown();
-
-    some<Armor_t*>  Circlet_Copper_And_Moonstone();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_1();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_2();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_3();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_4();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_5();
-    some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_6();
-
-    some<Armor_t*>  Circlet_Copper_And_Onyx();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_1();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_2();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_3();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_4();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_5();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Restoration_6();
-    some<Armor_t*>  Circlet_Copper_And_Onyx_Waterbreathing();
-
-    some<Armor_t*>  Circlet_Copper_And_Ruby();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_1();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_2();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_3();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_4();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_5();
-    some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_6();
-
-    some<Armor_t*>  Circlet_Copper_And_Sapphire();
-    some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage();
-
-    some<Armor_t*>  Circlet_Gag();
-
-    some<Armor_t*>  Circlet_Gold_And_Emerald();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_1();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_2();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_3();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_4();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_5();
-    some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_6();
-
-    some<Armor_t*>  Circlet_Gold_And_Ruby();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_1();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_2();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_3();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_4();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_5();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Alchemy_6();
-    some<Armor_t*>  Circlet_Gold_And_Ruby_Diadem_Of_The_Savant();
-
-    some<Armor_t*>  Circlet_Jade_And_Emerald();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_1();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_2();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_3();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_4();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_5();
-    some<Armor_t*>  Circlet_Jade_And_Emerald_Illusion_6();
-
-    some<Armor_t*>  Circlet_Jade_And_Sapphire();
-
-    some<Armor_t*>  Circlet_Silver_And_Moonstone();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_5();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_1();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_2();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_3();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_4();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_5();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_6();
-
-    some<Armor_t*>  Circlet_Silver_And_Sapphire();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_1();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_2();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_3();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_4();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_5();
-    some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_6();
-
     some<Armor_t*>  FX_Dragonborn_Aspect_1();
     some<Armor_t*>  FX_Dragonborn_Aspect_2();
     some<Armor_t*>  FX_Dragonborn_Aspect_3();
 
     some<Armor_t*>  Ring_Bone_Hawk();
 
-    some<Armor_t*>  Ring_Daedric_Hircine();
-    some<Armor_t*>  Ring_Daedric_Hircine_Cursed();
-    some<Armor_t*>  Ring_Daedric_Namira();
-
     some<Armor_t*>  Ring_Gold();
-    some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony();
-    some<Armor_t*>  Ring_Gold_Enchanted();
     some<Armor_t*>  Ring_Gold_Pickpocket_1();
     some<Armor_t*>  Ring_Gold_Pickpocket_2();
     some<Armor_t*>  Ring_Gold_Pickpocket_3();
     some<Armor_t*>  Ring_Gold_Pickpocket_4();
     some<Armor_t*>  Ring_Gold_Pickpocket_5();
     some<Armor_t*>  Ring_Gold_Pickpocket_6();
-    some<Armor_t*>  Ring_Gold_Pure_Mixtures();
     some<Armor_t*>  Ring_Gold_Stamina_1();
     some<Armor_t*>  Ring_Gold_Stamina_2();
     some<Armor_t*>  Ring_Gold_Stamina_3();
@@ -3517,12 +3544,20 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Gold_Stamina_Rate_2();
     some<Armor_t*>  Ring_Gold_Stamina_Rate_3();
     some<Armor_t*>  Ring_Gold_Stamina_Rate_4();
+
+    some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony();
+
+    some<Armor_t*>  Ring_Gold_Enchanted();
+
+    some<Armor_t*>  Ring_Gold_Pure_Mixtures();
+
     some<Armor_t*>  Ring_Gold_Viola();
+
     some<Armor_t*>  Ring_Gold_Wedding_Asgeir();
+
     some<Armor_t*>  Ring_Gold_Wedding_Vittoria();
 
     some<Armor_t*>  Ring_Gold_Diamond();
-    some<Armor_t*>  Ring_Gold_Diamond_Ahzidal_Arcana();
     some<Armor_t*>  Ring_Gold_Diamond_Health_1();
     some<Armor_t*>  Ring_Gold_Diamond_Health_2();
     some<Armor_t*>  Ring_Gold_Diamond_Health_3();
@@ -3540,6 +3575,8 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Gold_Diamond_Restoration_5();
     some<Armor_t*>  Ring_Gold_Diamond_Restoration_6();
 
+    some<Armor_t*>  Ring_Gold_Diamond_Ahzidal_Arcana();
+
     some<Armor_t*>  Ring_Gold_Emerald();
     some<Armor_t*>  Ring_Gold_Emerald_Illusion_1();
     some<Armor_t*>  Ring_Gold_Emerald_Illusion_2();
@@ -3555,7 +3592,6 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Gold_Emerald_Smithing_6();
 
     some<Armor_t*>  Ring_Gold_Sapphire();
-    some<Armor_t*>  Ring_Gold_Sapphire_Ahzidal_Necromancy();
     some<Armor_t*>  Ring_Gold_Sapphire_Magicka_1();
     some<Armor_t*>  Ring_Gold_Sapphire_Magicka_2();
     some<Armor_t*>  Ring_Gold_Sapphire_Magicka_3();
@@ -3573,6 +3609,14 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Gold_Sapphire_Resist_Magic_5();
     some<Armor_t*>  Ring_Gold_Sapphire_Resist_Magic_6();
 
+    some<Armor_t*>  Ring_Gold_Sapphire_Ahzidal_Necromancy();
+
+    some<Armor_t*>  Ring_Hircine();
+
+    some<Armor_t*>  Ring_Hircine_Cursed();
+
+    some<Armor_t*>  Ring_Namira();
+
     some<Armor_t*>  Ring_Silver();
     some<Armor_t*>  Ring_Silver_Block_1();
     some<Armor_t*>  Ring_Silver_Block_2();
@@ -3580,19 +3624,27 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Silver_Block_4();
     some<Armor_t*>  Ring_Silver_Block_5();
     some<Armor_t*>  Ring_Silver_Block_6();
-    some<Armor_t*>  Ring_Silver_Bloodlust();
-    some<Armor_t*>  Ring_Silver_Calcelmo();
     some<Armor_t*>  Ring_Silver_Lockpicking_1();
     some<Armor_t*>  Ring_Silver_Lockpicking_2();
     some<Armor_t*>  Ring_Silver_Lockpicking_3();
     some<Armor_t*>  Ring_Silver_Lockpicking_4();
     some<Armor_t*>  Ring_Silver_Lockpicking_5();
     some<Armor_t*>  Ring_Silver_Lockpicking_6();
+
+    some<Armor_t*>  Ring_Silver_Bloodlust();
+
+    some<Armor_t*>  Ring_Silver_Calcelmo();
+
     some<Armor_t*>  Ring_Silver_Madesi();
+
     some<Armor_t*>  Ring_Silver_Muiri();
+
     some<Armor_t*>  Ring_Silver_Muiri_Enchanted();
-    some<Armor_t*>  Ring_Silver_Silver_Blood_Family();
+
+    some<Armor_t*>  Ring_Silver_Blood_Family();
+
     some<Armor_t*>  Ring_Silver_Wedding_Fjola_1();
+
     some<Armor_t*>  Ring_Silver_Wedding_Fjola_2();
 
     some<Armor_t*>  Ring_Silver_Amethyst();
@@ -3602,21 +3654,24 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_4();
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_5();
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_6();
-    some<Armor_t*>  Ring_Silver_Amethyst_Ilas_Tei();
-    some<Armor_t*>  Ring_Silver_Amethyst_Instinct();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_1();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_2();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_3();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_4();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_5();
     some<Armor_t*>  Ring_Silver_Amethyst_Light_Armor_6();
-    some<Armor_t*>  Ring_Silver_Amethyst_Nightweavers();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_1();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_2();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_3();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_4();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_5();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_6();
+
+    some<Armor_t*>  Ring_Silver_Amethyst_Ilas_Tei();
+
+    some<Armor_t*>  Ring_Silver_Amethyst_Instinct();
+
+    some<Armor_t*>  Ring_Silver_Amethyst_Nightweavers();
 
     some<Armor_t*>  Ring_Silver_Garnet();
     some<Armor_t*>  Ring_Silver_Garnet_Alteration_1();
@@ -3637,7 +3692,9 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_4();
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_5();
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_6();
+
     some<Armor_t*>  Ring_Silver_Garnet_Moon();
+
     some<Armor_t*>  Ring_Silver_Garnet_Neloth();
 
     some<Armor_t*>  Ring_Silver_Ruby();
@@ -3647,7 +3704,6 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Silver_Ruby_Destruction_4();
     some<Armor_t*>  Ring_Silver_Ruby_Destruction_5();
     some<Armor_t*>  Ring_Silver_Ruby_Destruction_6();
-    some<Armor_t*>  Ring_Silver_Ruby_Hunt();
     some<Armor_t*>  Ring_Silver_Ruby_Sneak_1();
     some<Armor_t*>  Ring_Silver_Ruby_Sneak_2();
     some<Armor_t*>  Ring_Silver_Ruby_Sneak_3();
@@ -3661,17 +3717,28 @@ namespace doticu_skylib { namespace Const { namespace WIP {
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_5();
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_6();
 
+    some<Armor_t*>  Ring_Silver_Ruby_Hunt();
+
     some<Armor_t*>  Ring_Vampire_Beast();
+
     some<Armor_t*>  Ring_Vampire_Corpse_Curse();
+
     some<Armor_t*>  Ring_Vampire_Draining_Claws();
+
     some<Armor_t*>  Ring_Vampire_Erudite();
+
     some<Armor_t*>  Ring_Vampire_Gargoyle();
+
     some<Armor_t*>  Ring_Vampire_Reanimate_Corpse();
+
     some<Armor_t*>  Ring_Vampire_Vampiric_Grip();
 
     some<Armor_t*>  Skin_Afflicted();
+
     some<Armor_t*>  Skin_Astrid();
+
     some<Armor_t*>  Skin_Mannequin();
+
     some<Armor_t*>  Skin_Naked();
 
 }}}
