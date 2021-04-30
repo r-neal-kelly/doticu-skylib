@@ -16,7 +16,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Ancient_Falmer_Auriels_Shield()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00284D); }
 
-    some<Armor_t*>  Ancient_Falmer_Gelebor_Body()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00CAD3); }
+    some<Armor_t*>  Ancient_Falmer_Pauldronless_Body()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00CAD3); }
 
     some<Armor_t*>  Ancient_Falmer_Reflecting_Shield()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00488A); }
 
@@ -25,70 +25,46 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ancient_Nordic_Hands()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056B17); }
     some<Armor_t*>  Ancient_Nordic_Head()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x056A9E); }
 
-    some<Armor_t*>  Ancient_Nordic_Jagged_Crown_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
+    some<Armor_t*>  Ancient_Nordic_Ahzidal_Head()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FE); }
 
-    some<Armor_t*>  Ancient_Nordic_Mask_Ahzidal_Head()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FE); }
+    some<Armor_t*>  Ancient_Nordic_Bromjunaar_Head()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CCA); }
 
-    some<Armor_t*>  Ancient_Nordic_Mask_Bromjunaar_Head()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CCA); }
+    some<Armor_t*>  Ancient_Nordic_Dukaan_Head()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FF); }
 
-    some<Armor_t*>  Ancient_Nordic_Mask_Dukaan_Head()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0240FF); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Hevnoraak_Head()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC1); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Konahrik_Head()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CD6); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Krosis_Head()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CB9); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Morokei_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061C8B); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Nahkriin_Head()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CA5); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Otar_Head()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC2); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Rahgot_Head()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC0); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Vokun_Head()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC9); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Volsung_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CAB); }
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Zahkriisos_Head()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024037); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_Feet()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03D2AF); }
-    some<Armor_t*>  Ancient_Nordic_Miraak_Hands()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F9); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Body()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D1E); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Heavy_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA1); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Light_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2B); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Body()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D20); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Heavy_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA2); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Light_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2E); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Body()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D22); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Heavy_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA3); }
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Light_Head()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2F); }
-
-    some<Armor_t*>  Ancient_Nordic_Unburned_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F494E); }
-
-    some<Armor_t*>  Ancient_Nordic_Ysgramor_Shield()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
-
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Body()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Feet()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Hands()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Head()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
+    some<Armor_t*>  Ancient_Nordic_Hevnoraak_Head()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC1); }
 
     some<Armor_t*>  Ancient_Nordic_Hunter_Body()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C6); }
     some<Armor_t*>  Ancient_Nordic_Hunter_Feet()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C5); }
     some<Armor_t*>  Ancient_Nordic_Hunter_Hands()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C7); }
 
-    some<Armor_t*>  Ancient_Nordic_Tsun_Body()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
-    some<Armor_t*>  Ancient_Nordic_Tsun_Feet()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
+    some<Armor_t*>  Ancient_Nordic_Jagged_Crown_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
+
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Body()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Feet()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01C655); }
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Hands()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB99); }
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Head()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB98); }
+
+    some<Armor_t*>  Ancient_Nordic_Konahrik_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CD6); }
+
+    some<Armor_t*>  Ancient_Nordic_Krosis_Head()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CB9); }
+
+    some<Armor_t*>  Ancient_Nordic_Morokei_Head()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061C8B); }
+
+    some<Armor_t*>  Ancient_Nordic_Nahkriin_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CA5); }
+
+    some<Armor_t*>  Ancient_Nordic_Otar_Head()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC2); }
+
+    some<Armor_t*>  Ancient_Nordic_Rahgot_Head()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC0); }
+
+    some<Armor_t*>  Ancient_Nordic_Unburned_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F494E); }
+
+    some<Armor_t*>  Ancient_Nordic_Vokun_Head()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC9); }
+
+    some<Armor_t*>  Ancient_Nordic_Volsung_Head()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CAB); }
+
+    some<Armor_t*>  Ancient_Nordic_Ysgramor_Shield()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
+
+    some<Armor_t*>  Ancient_Nordic_Zahkriisos_Head()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024037); }
 
     some<Armor_t*>  Blades_Body()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B28B); }
     some<Armor_t*>  Blades_Feet()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04B288); }
@@ -1841,6 +1817,27 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Leather_Head_Restoration_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506C); }
     some<Armor_t*>  Leather_Head_Restoration_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506D); }
 
+    some<Armor_t*>  Miraak_Feet()                                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03D2AF); }
+    some<Armor_t*>  Miraak_Hands()                                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F9); }
+
+    some<Armor_t*>  Miraak_1_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D1E); }
+
+    some<Armor_t*>  Miraak_1_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA1); }
+
+    some<Armor_t*>  Miraak_1_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2B); }
+
+    some<Armor_t*>  Miraak_2_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D20); }
+
+    some<Armor_t*>  Miraak_2_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA2); }
+
+    some<Armor_t*>  Miraak_2_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2E); }
+
+    some<Armor_t*>  Miraak_3_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D22); }
+
+    some<Armor_t*>  Miraak_3_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA3); }
+
+    some<Armor_t*>  Miraak_3_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2F); }
+
     some<Armor_t*>  Morag_Tong_Body()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AC); }
     some<Armor_t*>  Morag_Tong_Feet()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AB); }
     some<Armor_t*>  Morag_Tong_Hands()                                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AD); }
@@ -2492,7 +2489,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Steel_Shield_Resist_Shock_3()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B50F6); }
 
     some<Armor_t*>  Steel_Horned_Head()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F24); }
-    some<Armor_t*>  Steel_Horned_Head_Winterhold()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0940D5); }
+
+    some<Armor_t*>  Steel_Horned_Winterhold_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0940D5); }
 
     some<Armor_t*>  Steel_Hrolfdir_Shield()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x064B71); }
 
@@ -2651,6 +2649,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Thief_Variant_Alternate_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
     
+    some<Armor_t*>  Tsun_Body()                                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
+    some<Armor_t*>  Tsun_Feet()                                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
+
     some<Armor_t*>  Vampire_Feet()                                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00B5DE); }
     some<Armor_t*>  Vampire_Hands()                                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01A51F); }
 
@@ -3740,14 +3741,338 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
 namespace doticu_skylib { namespace Const { namespace Armors {
 
-    Vector_t<some<Armor_t*>> Blades()
-    {
-        Vector_t<some<Armor_t*>> results;
-        Blades(results);
-        return results;
+    #define DEFINE_CREATE(_FUNCTION_NAME, ...)  \
+    {                                           \
+        Vector_t<some<Armor_t*>> results;       \
+        _FUNCTION_NAME(results, __VA_ARGS__);   \
+        return results;                         \
     }
 
-    void Blades(Vector_t<some<Armor_t*>>& results)
+    Vector_t<some<Armor_t*>>    Bonemold_Body_Enchanted()   { DEFINE_CREATE(Bonemold_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Bonemold_Feet_Enchanted()   { DEFINE_CREATE(Bonemold_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Bonemold_Hands_Enchanted()  { DEFINE_CREATE(Bonemold_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Bonemold_Head_Enchanted()   { DEFINE_CREATE(Bonemold_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Bonemold_Shield_Enchanted() { DEFINE_CREATE(Bonemold_Shield_Enchanted); }
+
+    void Bonemold_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Body_Health_1());
+        results.push_back(Armor::Bonemold_Body_Health_2());
+        results.push_back(Armor::Bonemold_Body_Health_3());
+        results.push_back(Armor::Bonemold_Body_Light_Armor_1());
+        results.push_back(Armor::Bonemold_Body_Light_Armor_2());
+        results.push_back(Armor::Bonemold_Body_Light_Armor_3());
+    }
+
+    void Bonemold_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Feet_Carry_1());
+        results.push_back(Armor::Bonemold_Feet_Carry_2());
+        results.push_back(Armor::Bonemold_Feet_Carry_3());
+        results.push_back(Armor::Bonemold_Feet_Resist_Fire_1());
+        results.push_back(Armor::Bonemold_Feet_Resist_Fire_2());
+        results.push_back(Armor::Bonemold_Feet_Resist_Fire_3());
+        results.push_back(Armor::Bonemold_Feet_Resist_Frost_1());
+        results.push_back(Armor::Bonemold_Feet_Resist_Frost_2());
+        results.push_back(Armor::Bonemold_Feet_Resist_Frost_3());
+        results.push_back(Armor::Bonemold_Feet_Resist_Shock_1());
+        results.push_back(Armor::Bonemold_Feet_Resist_Shock_2());
+        results.push_back(Armor::Bonemold_Feet_Resist_Shock_3());
+        results.push_back(Armor::Bonemold_Feet_Sneak_1());
+        results.push_back(Armor::Bonemold_Feet_Sneak_2());
+        results.push_back(Armor::Bonemold_Feet_Sneak_3());
+    }
+
+    void Bonemold_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Hands_Alchemy_1());
+        results.push_back(Armor::Bonemold_Hands_Alchemy_2());
+        results.push_back(Armor::Bonemold_Hands_Alchemy_3());
+        results.push_back(Armor::Bonemold_Hands_Alteration_1());
+        results.push_back(Armor::Bonemold_Hands_Alteration_2());
+        results.push_back(Armor::Bonemold_Hands_Alteration_3());
+        results.push_back(Armor::Bonemold_Hands_Conjuration_1());
+        results.push_back(Armor::Bonemold_Hands_Conjuration_2());
+        results.push_back(Armor::Bonemold_Hands_Conjuration_3());
+        results.push_back(Armor::Bonemold_Hands_Destruction_1());
+        results.push_back(Armor::Bonemold_Hands_Destruction_2());
+        results.push_back(Armor::Bonemold_Hands_Destruction_3());
+        results.push_back(Armor::Bonemold_Hands_Lockpicking_1());
+        results.push_back(Armor::Bonemold_Hands_Lockpicking_2());
+        results.push_back(Armor::Bonemold_Hands_Lockpicking_3());
+        results.push_back(Armor::Bonemold_Hands_Marksman_1());
+        results.push_back(Armor::Bonemold_Hands_Marksman_2());
+        results.push_back(Armor::Bonemold_Hands_Marksman_3());
+        results.push_back(Armor::Bonemold_Hands_One_Handed_1());
+        results.push_back(Armor::Bonemold_Hands_One_Handed_2());
+        results.push_back(Armor::Bonemold_Hands_One_Handed_3());
+        results.push_back(Armor::Bonemold_Hands_Pickpocket_1());
+        results.push_back(Armor::Bonemold_Hands_Pickpocket_2());
+        results.push_back(Armor::Bonemold_Hands_Pickpocket_3());
+        results.push_back(Armor::Bonemold_Hands_Smithing_1());
+        results.push_back(Armor::Bonemold_Hands_Smithing_2());
+        results.push_back(Armor::Bonemold_Hands_Smithing_3());
+        results.push_back(Armor::Bonemold_Hands_Two_Handed_1());
+        results.push_back(Armor::Bonemold_Hands_Two_Handed_2());
+        results.push_back(Armor::Bonemold_Hands_Two_Handed_3());
+    }
+
+    void Bonemold_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Head_Alchemy_1());
+        results.push_back(Armor::Bonemold_Head_Alchemy_2());
+        results.push_back(Armor::Bonemold_Head_Alchemy_3());
+        results.push_back(Armor::Bonemold_Head_Alteration_1());
+        results.push_back(Armor::Bonemold_Head_Alteration_2());
+        results.push_back(Armor::Bonemold_Head_Alteration_3());
+        results.push_back(Armor::Bonemold_Head_Conjuration_1());
+        results.push_back(Armor::Bonemold_Head_Conjuration_2());
+        results.push_back(Armor::Bonemold_Head_Conjuration_3());
+        results.push_back(Armor::Bonemold_Head_Destruction_1());
+        results.push_back(Armor::Bonemold_Head_Destruction_2());
+        results.push_back(Armor::Bonemold_Head_Destruction_3());
+        results.push_back(Armor::Bonemold_Head_Illusion_1());
+        results.push_back(Armor::Bonemold_Head_Illusion_2());
+        results.push_back(Armor::Bonemold_Head_Illusion_3());
+        results.push_back(Armor::Bonemold_Head_Magicka_1());
+        results.push_back(Armor::Bonemold_Head_Magicka_2());
+        results.push_back(Armor::Bonemold_Head_Magicka_3());
+    }
+
+    void Bonemold_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Shield_Block_1());
+        results.push_back(Armor::Bonemold_Shield_Block_2());
+        results.push_back(Armor::Bonemold_Shield_Block_3());
+        results.push_back(Armor::Bonemold_Shield_Resist_Fire_1());
+        results.push_back(Armor::Bonemold_Shield_Resist_Fire_2());
+        results.push_back(Armor::Bonemold_Shield_Resist_Fire_3());
+        results.push_back(Armor::Bonemold_Shield_Resist_Frost_1());
+        results.push_back(Armor::Bonemold_Shield_Resist_Frost_2());
+        results.push_back(Armor::Bonemold_Shield_Resist_Frost_3());
+        results.push_back(Armor::Bonemold_Shield_Resist_Magic_1());
+        results.push_back(Armor::Bonemold_Shield_Resist_Magic_2());
+        results.push_back(Armor::Bonemold_Shield_Resist_Magic_3());
+        results.push_back(Armor::Bonemold_Shield_Resist_Shock_1());
+        results.push_back(Armor::Bonemold_Shield_Resist_Shock_2());
+        results.push_back(Armor::Bonemold_Shield_Resist_Shock_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer()                 { DEFINE_CREATE(Outfit_Ancient_Falmer); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel()          { DEFINE_CREATE(Outfit_Ancient_Falmer_Auriel); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Pauldronless()    { DEFINE_CREATE(Outfit_Ancient_Falmer_Pauldronless); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Reflecting()      { DEFINE_CREATE(Outfit_Ancient_Falmer_Reflecting); }
+
+    void Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Falmer_Body());
+        results.push_back(Armor::Ancient_Falmer_Feet());
+        results.push_back(Armor::Ancient_Falmer_Hands());
+        results.push_back(Armor::Ancient_Falmer_Head());
+    }
+
+    void Outfit_Ancient_Falmer_Auriel(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Falmer_Body());
+        results.push_back(Armor::Ancient_Falmer_Feet());
+        results.push_back(Armor::Ancient_Falmer_Hands());
+        results.push_back(Armor::Ancient_Falmer_Head());
+        results.push_back(Armor::Ancient_Falmer_Auriels_Shield());
+    }
+
+    void Outfit_Ancient_Falmer_Pauldronless(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Falmer_Pauldronless_Body());
+        results.push_back(Armor::Ancient_Falmer_Feet());
+        results.push_back(Armor::Ancient_Falmer_Hands());
+        results.push_back(Armor::Ancient_Falmer_Head());
+    }
+
+    void Outfit_Ancient_Falmer_Reflecting(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Falmer_Body());
+        results.push_back(Armor::Ancient_Falmer_Feet());
+        results.push_back(Armor::Ancient_Falmer_Hands());
+        results.push_back(Armor::Ancient_Falmer_Head());
+        results.push_back(Armor::Ancient_Falmer_Reflecting_Shield());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic()                 { DEFINE_CREATE(Outfit_Ancient_Nordic); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Ahzidal()         { DEFINE_CREATE(Outfit_Ancient_Nordic_Ahzidal); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Bromjunaar()      { DEFINE_CREATE(Outfit_Ancient_Nordic_Bromjunaar); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Dukaan()          { DEFINE_CREATE(Outfit_Ancient_Nordic_Dukaan); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Hevnoraak()       { DEFINE_CREATE(Outfit_Ancient_Nordic_Hevnoraak); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Hunter()          { DEFINE_CREATE(Outfit_Ancient_Nordic_Hunter); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Jagged_Crown()    { DEFINE_CREATE(Outfit_Ancient_Nordic_Jagged_Crown); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Kolbjorn()        { DEFINE_CREATE(Outfit_Ancient_Nordic_Kolbjorn); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Konahrik()        { DEFINE_CREATE(Outfit_Ancient_Nordic_Konahrik); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Krosis()          { DEFINE_CREATE(Outfit_Ancient_Nordic_Krosis); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Morokei()         { DEFINE_CREATE(Outfit_Ancient_Nordic_Morokei); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Nahkriin()        { DEFINE_CREATE(Outfit_Ancient_Nordic_Nahkriin); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Otar()            { DEFINE_CREATE(Outfit_Ancient_Nordic_Otar); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Rahgot()          { DEFINE_CREATE(Outfit_Ancient_Nordic_Rahgot); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Unburned()        { DEFINE_CREATE(Outfit_Ancient_Nordic_Unburned); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Vokun()           { DEFINE_CREATE(Outfit_Ancient_Nordic_Vokun); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Volsung()         { DEFINE_CREATE(Outfit_Ancient_Nordic_Volsung); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Ysgramor()        { DEFINE_CREATE(Outfit_Ancient_Nordic_Ysgramor); }
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Zahkriisos()      { DEFINE_CREATE(Outfit_Ancient_Nordic_Zahkriisos); }
+
+    void Outfit_Ancient_Nordic(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Ahzidal(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Ahzidal_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Bromjunaar(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Bromjunaar_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Dukaan(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Dukaan_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Hevnoraak(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Hevnoraak_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Hunter(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Hunter_Body());
+        results.push_back(Armor::Ancient_Nordic_Hunter_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hunter_Hands());
+        results.push_back(Armor::Ancient_Nordic_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Jagged_Crown(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Jagged_Crown_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Kolbjorn(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Kolbjorn_Body());
+        results.push_back(Armor::Ancient_Nordic_Kolbjorn_Feet());
+        results.push_back(Armor::Ancient_Nordic_Kolbjorn_Hands());
+        results.push_back(Armor::Ancient_Nordic_Kolbjorn_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Konahrik(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Konahrik_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Krosis(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Krosis_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Morokei(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Morokei_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Nahkriin(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Nahkriin_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Otar(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Otar_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Rahgot(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Rahgot_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Unburned(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Unburned_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Vokun(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Vokun_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Volsung(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Volsung_Head());
+    }
+
+    void Outfit_Ancient_Nordic_Ysgramor(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Head());
+        results.push_back(Armor::Ancient_Nordic_Ysgramor_Shield());
+    }
+
+    void Outfit_Ancient_Nordic_Zahkriisos(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ancient_Nordic_Body());
+        results.push_back(Armor::Ancient_Nordic_Feet());
+        results.push_back(Armor::Ancient_Nordic_Hands());
+        results.push_back(Armor::Ancient_Nordic_Zahkriisos_Head());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Blades() { DEFINE_CREATE(Outfit_Blades); }
+
+    void Outfit_Blades(Vector_t<some<Armor_t*>>& results)
     {
         results.push_back(Armor::Blades_Body());
         results.push_back(Armor::Blades_Feet());
@@ -3755,5 +4080,72 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Blades_Head());
         results.push_back(Armor::Blades_Shield());
     }
+
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold(Bool_t do_enchanted)            { DEFINE_CREATE(Outfit_Bonemold, do_enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard(Bool_t do_enchanted)      { DEFINE_CREATE(Outfit_Bonemold_Guard, do_enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron(Bool_t do_enchanted)   { DEFINE_CREATE(Outfit_Bonemold_Pauldron, do_enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Improved()             { DEFINE_CREATE(Outfit_Bonemold_Pauldron_Improved); }
+
+    void Outfit_Bonemold(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    {
+        if (do_enchanted) {
+            results.push_back(Bonemold_Body_Enchanted().Random());
+            results.push_back(Bonemold_Feet_Enchanted().Random());
+            results.push_back(Bonemold_Hands_Enchanted().Random());
+            results.push_back(Bonemold_Head_Enchanted().Random());
+            results.push_back(Bonemold_Shield_Enchanted().Random());
+        } else {
+            results.push_back(Armor::Bonemold_Body());
+            results.push_back(Armor::Bonemold_Feet());
+            results.push_back(Armor::Bonemold_Hands());
+            results.push_back(Armor::Bonemold_Head());
+            results.push_back(Armor::Bonemold_Shield());
+        }
+    }
+
+    void Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    {
+        if (do_enchanted) {
+            results.push_back(Armor::Bonemold_Guard_Body());
+            results.push_back(Bonemold_Feet_Enchanted().Random());
+            results.push_back(Bonemold_Hands_Enchanted().Random());
+            results.push_back(Bonemold_Head_Enchanted().Random());
+            results.push_back(Bonemold_Shield_Enchanted().Random());
+        } else {
+            results.push_back(Armor::Bonemold_Guard_Body());
+            results.push_back(Armor::Bonemold_Feet());
+            results.push_back(Armor::Bonemold_Hands());
+            results.push_back(Armor::Bonemold_Head());
+            results.push_back(Armor::Bonemold_Shield());
+        }
+    }
+
+    void Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    {
+        if (do_enchanted) {
+            results.push_back(Armor::Bonemold_Pauldron_Body());
+            results.push_back(Bonemold_Feet_Enchanted().Random());
+            results.push_back(Bonemold_Hands_Enchanted().Random());
+            results.push_back(Bonemold_Head_Enchanted().Random());
+            results.push_back(Bonemold_Shield_Enchanted().Random());
+        } else {
+            results.push_back(Armor::Bonemold_Pauldron_Body());
+            results.push_back(Armor::Bonemold_Feet());
+            results.push_back(Armor::Bonemold_Hands());
+            results.push_back(Armor::Bonemold_Head());
+            results.push_back(Armor::Bonemold_Shield());
+        }
+    }
+
+    void Outfit_Bonemold_Pauldron_Improved(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Pauldron_Improved_Body());
+        results.push_back(Armor::Bonemold_Pauldron_Improved_Feet());
+        results.push_back(Armor::Bonemold_Pauldron_Improved_Hands());
+        results.push_back(Armor::Bonemold_Pauldron_Improved_Head());
+        results.push_back(Armor::Bonemold_Pauldron_Improved_Shield());
+    }
+
+    #undef DEFINE_CREATE
 
 }}}

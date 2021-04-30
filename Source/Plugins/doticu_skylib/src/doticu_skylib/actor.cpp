@@ -280,6 +280,15 @@ namespace doticu_skylib {
         }
     }
 
+    u16 Actor_t::Level() const
+    {
+        static auto get_level = reinterpret_cast
+            <u16(*)(const Actor_t*)>
+            (Game_t::Base_Address() + Offset_e::GET_LEVEL);
+
+        return get_level(this);
+    }
+
     maybe<Havok_Actor_Controller_t*> Actor_t::Havok_Actor_Controller()
     {
         if (this->actor_ai && this->actor_ai->middle_high_ai) {

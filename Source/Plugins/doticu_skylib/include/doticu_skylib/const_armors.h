@@ -21,7 +21,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Ancient_Falmer_Auriels_Shield();
 
-    some<Armor_t*>  Ancient_Falmer_Gelebor_Body();
+    some<Armor_t*>  Ancient_Falmer_Pauldronless_Body();
 
     some<Armor_t*>  Ancient_Falmer_Reflecting_Shield();
 
@@ -30,70 +30,46 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ancient_Nordic_Hands();
     some<Armor_t*>  Ancient_Nordic_Head();
 
-    some<Armor_t*>  Ancient_Nordic_Jagged_Crown_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Ahzidal_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Bromjunaar_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Dukaan_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Hevnoraak_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Konahrik_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Krosis_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Morokei_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Nahkriin_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Otar_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Rahgot_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Vokun_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Volsung_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Mask_Zahkriisos_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_Feet();
-    some<Armor_t*>  Ancient_Nordic_Miraak_Hands();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Body();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Heavy_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_1_Light_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Body();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Heavy_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_2_Light_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Body();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Heavy_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Miraak_3_Light_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Unburned_Head();
-
-    some<Armor_t*>  Ancient_Nordic_Ysgramor_Shield();
-
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Body();
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Feet();
-    some<Armor_t*>  Ancient_Nordic_Ahzidal_Hands();
     some<Armor_t*>  Ancient_Nordic_Ahzidal_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Bromjunaar_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Dukaan_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Hevnoraak_Head();
 
     some<Armor_t*>  Ancient_Nordic_Hunter_Body();
     some<Armor_t*>  Ancient_Nordic_Hunter_Feet();
     some<Armor_t*>  Ancient_Nordic_Hunter_Hands();
 
-    some<Armor_t*>  Ancient_Nordic_Tsun_Body();
-    some<Armor_t*>  Ancient_Nordic_Tsun_Feet();
+    some<Armor_t*>  Ancient_Nordic_Jagged_Crown_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Body();
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Feet();
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Hands();
+    some<Armor_t*>  Ancient_Nordic_Kolbjorn_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Konahrik_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Krosis_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Morokei_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Nahkriin_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Otar_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Rahgot_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Unburned_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Vokun_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Volsung_Head();
+
+    some<Armor_t*>  Ancient_Nordic_Ysgramor_Shield();
+
+    some<Armor_t*>  Ancient_Nordic_Zahkriisos_Head();
 
     some<Armor_t*>  Blades_Body();
     some<Armor_t*>  Blades_Feet();
@@ -1846,6 +1822,27 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Leather_Head_Restoration_2();
     some<Armor_t*>  Leather_Head_Restoration_3();
 
+    some<Armor_t*>  Miraak_Feet();
+    some<Armor_t*>  Miraak_Hands();
+
+    some<Armor_t*>  Miraak_1_Body();
+
+    some<Armor_t*>  Miraak_1_Heavy_Head();
+
+    some<Armor_t*>  Miraak_1_Light_Head();
+
+    some<Armor_t*>  Miraak_2_Body();
+
+    some<Armor_t*>  Miraak_2_Heavy_Head();
+
+    some<Armor_t*>  Miraak_2_Light_Head();
+
+    some<Armor_t*>  Miraak_3_Body();
+
+    some<Armor_t*>  Miraak_3_Heavy_Head();
+
+    some<Armor_t*>  Miraak_3_Light_Head();
+
     some<Armor_t*>  Morag_Tong_Body();
     some<Armor_t*>  Morag_Tong_Feet();
     some<Armor_t*>  Morag_Tong_Hands();
@@ -2497,7 +2494,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Steel_Shield_Resist_Shock_3();
 
     some<Armor_t*>  Steel_Horned_Head();
-    some<Armor_t*>  Steel_Horned_Head_Winterhold();
+
+    some<Armor_t*>  Steel_Horned_Winterhold_Head();
 
     some<Armor_t*>  Steel_Hrolfdir_Shield();
 
@@ -2655,6 +2653,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Thief_Variant_Head();
 
     some<Armor_t*>  Thief_Variant_Alternate_Head();
+
+    some<Armor_t*>  Tsun_Body();
+    some<Armor_t*>  Tsun_Feet();
     
     some<Armor_t*>  Vampire_Feet();
     some<Armor_t*>  Vampire_Hands();
@@ -3745,7 +3746,75 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
 namespace doticu_skylib { namespace Const { namespace Armors {
 
-    Vector_t<some<Armor_t*>>    Blades();
-    void                        Blades(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Bonemold_Body_Enchanted();
+    void                        Bonemold_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Bonemold_Feet_Enchanted();
+    void                        Bonemold_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Bonemold_Hands_Enchanted();
+    void                        Bonemold_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Bonemold_Head_Enchanted();
+    void                        Bonemold_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Bonemold_Shield_Enchanted();
+    void                        Bonemold_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
+    void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
+    void                        Outfit_Ancient_Falmer_Auriel(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Pauldronless();
+    void                        Outfit_Ancient_Falmer_Pauldronless(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Reflecting();
+    void                        Outfit_Ancient_Falmer_Reflecting(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic();
+    void                        Outfit_Ancient_Nordic(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Ahzidal();
+    void                        Outfit_Ancient_Nordic_Ahzidal(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Bromjunaar();
+    void                        Outfit_Ancient_Nordic_Bromjunaar(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Dukaan();
+    void                        Outfit_Ancient_Nordic_Dukaan(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Hevnoraak();
+    void                        Outfit_Ancient_Nordic_Hevnoraak(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Hunter();
+    void                        Outfit_Ancient_Nordic_Hunter(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Jagged_Crown();
+    void                        Outfit_Ancient_Nordic_Jagged_Crown(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Kolbjorn();
+    void                        Outfit_Ancient_Nordic_Kolbjorn(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Konahrik();
+    void                        Outfit_Ancient_Nordic_Konahrik(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Krosis();
+    void                        Outfit_Ancient_Nordic_Krosis(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Morokei();
+    void                        Outfit_Ancient_Nordic_Morokei(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Nahkriin();
+    void                        Outfit_Ancient_Nordic_Nahkriin(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Otar();
+    void                        Outfit_Ancient_Nordic_Otar(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Rahgot();
+    void                        Outfit_Ancient_Nordic_Rahgot(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Unburned();
+    void                        Outfit_Ancient_Nordic_Unburned(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Vokun();
+    void                        Outfit_Ancient_Nordic_Vokun(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Volsung();
+    void                        Outfit_Ancient_Nordic_Volsung(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Ysgramor();
+    void                        Outfit_Ancient_Nordic_Ysgramor(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ancient_Nordic_Zahkriisos();
+    void                        Outfit_Ancient_Nordic_Zahkriisos(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Blades();
+    void                        Outfit_Blades(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold(Bool_t do_enchanted);
+    void                        Outfit_Bonemold(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard(Bool_t do_enchanted);
+    void                        Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron(Bool_t do_enchanted);
+    void                        Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Improved();
+    void                        Outfit_Bonemold_Pauldron_Improved(Vector_t<some<Armor_t*>>& results);
 
 }}}

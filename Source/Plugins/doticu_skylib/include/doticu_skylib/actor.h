@@ -77,6 +77,7 @@ namespace doticu_skylib {
 
                 ADD_SPELL               = 0x0062F560, // 37771
                 EVALUATE_PACKAGE        = 0x005DB310, // 36407
+                GET_LEVEL               = 0x005D62E0, // 36344
                 QUEUE_NI_NODE_UPDATE    = 0x00693110, // 39181
                 REMOVE_SPELL            = 0x0062F720, // 37772
             };
@@ -341,6 +342,8 @@ namespace doticu_skylib {
     public:
         Sex_e                                       Sex();
         maybe<Race_t*>                              Race();
+
+        u16                                         Level() const;
 
         maybe<Havok_Actor_Controller_t*>            Havok_Actor_Controller();
         maybe<Havok_Actor_Rigid_Body_Controller_t*> Havok_Actor_Rigid_Body_Controller();
