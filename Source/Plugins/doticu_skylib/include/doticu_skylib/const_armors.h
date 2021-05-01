@@ -1681,14 +1681,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Iron_Shield_Resist_Shock_2();
     some<Armor_t*>  Iron_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Iron_Dented_Shield();
-
-    some<Armor_t*>  Iron_Family_Shield();
-
-    some<Armor_t*>  Iron_Forgemasters_Fingers_Hands();
-
-    some<Armor_t*>  Iron_Roggi_Shield();
-
     some<Armor_t*>  Iron_Banded_Body();
     some<Armor_t*>  Iron_Banded_Body_Alteration_1();
     some<Armor_t*>  Iron_Banded_Body_Alteration_2();
@@ -1727,6 +1719,14 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_1();
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_2();
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_3();
+
+    some<Armor_t*>  Iron_Dented_Shield();
+
+    some<Armor_t*>  Iron_Family_Shield();
+
+    some<Armor_t*>  Iron_Forgemasters_Fingers_Hands();
+
+    some<Armor_t*>  Iron_Roggi_Shield();
 
     some<Armor_t*>  Leather_Body();
     some<Armor_t*>  Leather_Body_Alteration_1();
@@ -1817,51 +1817,43 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Leather_Head_Restoration_2();
     some<Armor_t*>  Leather_Head_Restoration_3();
 
+    some<Armor_t*>  Miraak_Body();
+    some<Armor_t*>  Miraak_Body_Reward_1();
+    some<Armor_t*>  Miraak_Body_Reward_2();
+    some<Armor_t*>  Miraak_Body_Reward_3();
     some<Armor_t*>  Miraak_Feet();
     some<Armor_t*>  Miraak_Hands();
+    some<Armor_t*>  Miraak_Head();
 
-    some<Armor_t*>  Miraak_1_Body();
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_1();
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_2();
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_3();
 
-    some<Armor_t*>  Miraak_1_Heavy_Head();
-
-    some<Armor_t*>  Miraak_1_Light_Head();
-
-    some<Armor_t*>  Miraak_2_Body();
-
-    some<Armor_t*>  Miraak_2_Heavy_Head();
-
-    some<Armor_t*>  Miraak_2_Light_Head();
-
-    some<Armor_t*>  Miraak_3_Body();
-
-    some<Armor_t*>  Miraak_3_Heavy_Head();
-
-    some<Armor_t*>  Miraak_3_Light_Head();
+    some<Armor_t*>  Miraak_Light_Head_Reward_1();
+    some<Armor_t*>  Miraak_Light_Head_Reward_2();
+    some<Armor_t*>  Miraak_Light_Head_Reward_3();
 
     some<Armor_t*>  Morag_Tong_Body();
     some<Armor_t*>  Morag_Tong_Feet();
     some<Armor_t*>  Morag_Tong_Hands();
     some<Armor_t*>  Morag_Tong_Head();
     
-    some<Armor_t*>  Nightingale_1_Body();
-    some<Armor_t*>  Nightingale_1_Feet();
-    some<Armor_t*>  Nightingale_1_Hands();
-    some<Armor_t*>  Nightingale_1_Head();
-
-    some<Armor_t*>  Nightingale_2_Body();
-    some<Armor_t*>  Nightingale_2_Feet();
-    some<Armor_t*>  Nightingale_2_Hands();
-    some<Armor_t*>  Nightingale_2_Head();
-
-    some<Armor_t*>  Nightingale_3_Body();
-    some<Armor_t*>  Nightingale_3_Feet();
-    some<Armor_t*>  Nightingale_3_Hands();
-    some<Armor_t*>  Nightingale_3_Head();
-
-    some<Armor_t*>  Nightingale_Unplayable_Body();
-    some<Armor_t*>  Nightingale_Unplayable_Feet();
-    some<Armor_t*>  Nightingale_Unplayable_Hands();
-    some<Armor_t*>  Nightingale_Unplayable_Head();
+    some<Armor_t*>  Nightingale_Body();
+    some<Armor_t*>  Nightingale_Body_Reward_1();
+    some<Armor_t*>  Nightingale_Body_Reward_2();
+    some<Armor_t*>  Nightingale_Body_Reward_3();
+    some<Armor_t*>  Nightingale_Feet();
+    some<Armor_t*>  Nightingale_Feet_Reward_1();
+    some<Armor_t*>  Nightingale_Feet_Reward_2();
+    some<Armor_t*>  Nightingale_Feet_Reward_3();
+    some<Armor_t*>  Nightingale_Hands();
+    some<Armor_t*>  Nightingale_Hands_Reward_1();
+    some<Armor_t*>  Nightingale_Hands_Reward_2();
+    some<Armor_t*>  Nightingale_Hands_Reward_3();
+    some<Armor_t*>  Nightingale_Head();
+    some<Armor_t*>  Nightingale_Head_Reward_1();
+    some<Armor_t*>  Nightingale_Head_Reward_2();
+    some<Armor_t*>  Nightingale_Head_Reward_3();
 
     some<Armor_t*>  Nordic_Body();
     some<Armor_t*>  Nordic_Body_Alteration_1();
@@ -3865,6 +3857,75 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Hide_Studded_Body_Enchanted();
     void                        Hide_Studded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Body_Enchanted();
+    void                        Imperial_Heavy_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Feet_Enchanted();
+    void                        Imperial_Heavy_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Hands_Enchanted();
+    void                        Imperial_Heavy_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Head_Enchanted();
+    void                        Imperial_Heavy_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Body_Enchanted();
+    void                        Imperial_Light_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Feet_Enchanted();
+    void                        Imperial_Light_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Hands_Enchanted();
+    void                        Imperial_Light_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Head_Enchanted();
+    void                        Imperial_Light_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Shield_Enchanted();
+    void                        Imperial_Light_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Imperial_Light_Studded_Body_Enchanted();
+    void                        Imperial_Light_Studded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Iron_Body_Enchanted();
+    void                        Iron_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Feet_Enchanted();
+    void                        Iron_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Hands_Enchanted();
+    void                        Iron_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Head_Enchanted();
+    void                        Iron_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Shield_Enchanted();
+    void                        Iron_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Banded_Body_Enchanted();
+    void                        Iron_Banded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Iron_Banded_Shield_Enchanted();
+    void                        Iron_Banded_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Leather_Body_Enchanted();
+    void                        Leather_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Leather_Feet_Enchanted();
+    void                        Leather_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Leather_Hands_Enchanted();
+    void                        Leather_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Leather_Head_Enchanted();
+    void                        Leather_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Miraak_Body_Reward();
+    void                        Miraak_Body_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward();
+    void                        Miraak_Head_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_1();
+    void                        Miraak_Head_Reward_1(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_2();
+    void                        Miraak_Head_Reward_2(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_3();
+    void                        Miraak_Head_Reward_3(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Heavy_Head_Reward();
+    void                        Miraak_Heavy_Head_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Miraak_Light_Head_Reward();
+    void                        Miraak_Light_Head_Reward(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Nightingale_Body_Reward();
+    void                        Nightingale_Body_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nightingale_Feet_Reward();
+    void                        Nightingale_Feet_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nightingale_Hands_Reward();
+    void                        Nightingale_Hands_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nightingale_Head_Reward();
+    void                        Nightingale_Head_Reward(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
     void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
@@ -4094,5 +4155,111 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     void                        Outfit_Hide_Studded(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Hide_Studded_Enchanted();
     void                        Outfit_Hide_Studded_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy();
+    void                        Outfit_Imperial_Heavy(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Enchanted();
+    void                        Outfit_Imperial_Heavy_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Falx();
+    void                        Outfit_Imperial_Heavy_Falx(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Carius();
+    void                        Outfit_Imperial_Heavy_General_Carius(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Carius_Enchanted();
+    void                        Outfit_Imperial_Heavy_General_Carius_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Tullius();
+    void                        Outfit_Imperial_Heavy_General_Tullius(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Tullius_Enchanted();
+    void                        Outfit_Imperial_Heavy_General_Tullius_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Knight();
+    void                        Outfit_Imperial_Heavy_Knight(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Knight_Enchanted();
+    void                        Outfit_Imperial_Heavy_Knight_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Officer();
+    void                        Outfit_Imperial_Heavy_Officer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Officer_Enchanted();
+    void                        Outfit_Imperial_Heavy_Officer_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light();
+    void                        Outfit_Imperial_Light(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Enchanted();
+    void                        Outfit_Imperial_Light_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Noster();
+    void                        Outfit_Imperial_Light_Noster(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Noster_Enchanted();
+    void                        Outfit_Imperial_Light_Noster_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Studded();
+    void                        Outfit_Imperial_Light_Studded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Studded_Enchanted();
+    void                        Outfit_Imperial_Light_Studded_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Iron();
+    void                        Outfit_Iron(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Enchanted();
+    void                        Outfit_Iron_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Banded();
+    void                        Outfit_Iron_Banded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Banded_Enchanted();
+    void                        Outfit_Iron_Banded_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Dented();
+    void                        Outfit_Iron_Dented(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Dented_Enchanted();
+    void                        Outfit_Iron_Dented_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Family();
+    void                        Outfit_Iron_Family(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Family_Enchanted();
+    void                        Outfit_Iron_Family_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Forgemasters_Fingers();
+    void                        Outfit_Iron_Forgemasters_Fingers(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Forgemasters_Fingers_Enchanted();
+    void                        Outfit_Iron_Forgemasters_Fingers_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Roggi();
+    void                        Outfit_Iron_Roggi(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Roggi_Enchanted();
+    void                        Outfit_Iron_Roggi_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Leather();
+    void                        Outfit_Leather(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Leather_Enchanted();
+    void                        Outfit_Leather_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Miraak();
+    void                        Outfit_Miraak(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward();
+    void                        Outfit_Miraak_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_1();
+    void                        Outfit_Miraak_Reward_1(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_2();
+    void                        Outfit_Miraak_Reward_2(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_3();
+    void                        Outfit_Miraak_Reward_3(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward();
+    void                        Outfit_Miraak_Heavy_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_1();
+    void                        Outfit_Miraak_Heavy_Reward_1(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_2();
+    void                        Outfit_Miraak_Heavy_Reward_2(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_3();
+    void                        Outfit_Miraak_Heavy_Reward_3(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward();
+    void                        Outfit_Miraak_Light_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_1();
+    void                        Outfit_Miraak_Light_Reward_1(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_2();
+    void                        Outfit_Miraak_Light_Reward_2(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_3();
+    void                        Outfit_Miraak_Light_Reward_3(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Morag_Tong();
+    void                        Outfit_Morag_Tong(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale();
+    void                        Outfit_Nightingale(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward();
+    void                        Outfit_Nightingale_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_1();
+    void                        Outfit_Nightingale_Reward_1(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_2();
+    void                        Outfit_Nightingale_Reward_2(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_3();
+    void                        Outfit_Nightingale_Reward_3(Vector_t<some<Armor_t*>>& results);
 
 }}}

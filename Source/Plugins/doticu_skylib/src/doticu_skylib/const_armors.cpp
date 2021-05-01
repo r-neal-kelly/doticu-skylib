@@ -1676,14 +1676,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Iron_Shield_Resist_Shock_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD59D); }
     some<Armor_t*>  Iron_Shield_Resist_Shock_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD59E); }
 
-    some<Armor_t*>  Iron_Dented_Shield()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03399C); }
-
-    some<Armor_t*>  Iron_Family_Shield()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03521F); }
-
-    some<Armor_t*>  Iron_Forgemasters_Fingers_Hands()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C3CE6); }
-
-    some<Armor_t*>  Iron_Roggi_Shield()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06901D); }
-
     some<Armor_t*>  Iron_Banded_Body()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013948); }
     some<Armor_t*>  Iron_Banded_Body_Alteration_1()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC8); }
     some<Armor_t*>  Iron_Banded_Body_Alteration_2()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CFC9); }
@@ -1722,6 +1714,14 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0ACCBA); }
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_2()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD559); }
     some<Armor_t*>  Iron_Banded_Shield_Resist_Shock_3()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD55A); }
+
+    some<Armor_t*>  Iron_Dented_Shield()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03399C); }
+
+    some<Armor_t*>  Iron_Family_Shield()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03521F); }
+
+    some<Armor_t*>  Iron_Forgemasters_Fingers_Hands()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C3CE6); }
+
+    some<Armor_t*>  Iron_Roggi_Shield()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06901D); }
 
     some<Armor_t*>  Leather_Body()                                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03619E); }
     some<Armor_t*>  Leather_Body_Alteration_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEC5); }
@@ -1812,52 +1812,44 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Leather_Head_Restoration_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506C); }
     some<Armor_t*>  Leather_Head_Restoration_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506D); }
 
+    some<Armor_t*>  Miraak_Body()                                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F7); }
+    some<Armor_t*>  Miraak_Body_Reward_1()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D1E); }
+    some<Armor_t*>  Miraak_Body_Reward_2()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D20); }
+    some<Armor_t*>  Miraak_Body_Reward_3()                              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D22); }
     some<Armor_t*>  Miraak_Feet()                                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03D2AF); }
     some<Armor_t*>  Miraak_Hands()                                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F9); }
+    some<Armor_t*>  Miraak_Head()                                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029A62); }
 
-    some<Armor_t*>  Miraak_1_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D1E); }
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA1); }
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA2); }
+    some<Armor_t*>  Miraak_Heavy_Head_Reward_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA3); }
 
-    some<Armor_t*>  Miraak_1_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA1); }
-
-    some<Armor_t*>  Miraak_1_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2B); }
-
-    some<Armor_t*>  Miraak_2_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D20); }
-
-    some<Armor_t*>  Miraak_2_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA2); }
-
-    some<Armor_t*>  Miraak_2_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2E); }
-
-    some<Armor_t*>  Miraak_3_Body()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D22); }
-
-    some<Armor_t*>  Miraak_3_Heavy_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA3); }
-
-    some<Armor_t*>  Miraak_3_Light_Head()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2F); }
+    some<Armor_t*>  Miraak_Light_Head_Reward_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2B); }
+    some<Armor_t*>  Miraak_Light_Head_Reward_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2E); }
+    some<Armor_t*>  Miraak_Light_Head_Reward_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D2F); }
 
     some<Armor_t*>  Morag_Tong_Body()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AC); }
     some<Armor_t*>  Morag_Tong_Feet()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AB); }
     some<Armor_t*>  Morag_Tong_Hands()                                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AD); }
     some<Armor_t*>  Morag_Tong_Head()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AE); }
 
-    some<Armor_t*>  Nightingale_1_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB86); }
-    some<Armor_t*>  Nightingale_1_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0C); }
-    some<Armor_t*>  Nightingale_1_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB87); }
-    some<Armor_t*>  Nightingale_1_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB88); }
+    some<Armor_t*>  Nightingale_Body()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C2); }
+    some<Armor_t*>  Nightingale_Body_Reward_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB86); }
+    some<Armor_t*>  Nightingale_Body_Reward_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0E); }
+    some<Armor_t*>  Nightingale_Body_Reward_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0F); }
+    some<Armor_t*>  Nightingale_Feet()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C1); }
+    some<Armor_t*>  Nightingale_Feet_Reward_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0C); }
+    some<Armor_t*>  Nightingale_Feet_Reward_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB85); }
+    some<Armor_t*>  Nightingale_Feet_Reward_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0D); }
+    some<Armor_t*>  Nightingale_Hands()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D1); }
+    some<Armor_t*>  Nightingale_Hands_Reward_1()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB87); }
+    some<Armor_t*>  Nightingale_Hands_Reward_2()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC10); }
+    some<Armor_t*>  Nightingale_Hands_Reward_3()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC11); }
+    some<Armor_t*>  Nightingale_Head()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D8); }
+    some<Armor_t*>  Nightingale_Head_Reward_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB88); }
+    some<Armor_t*>  Nightingale_Head_Reward_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC13); }
+    some<Armor_t*>  Nightingale_Head_Reward_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC12); }
 
-    some<Armor_t*>  Nightingale_2_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0E); }
-    some<Armor_t*>  Nightingale_2_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB85); }
-    some<Armor_t*>  Nightingale_2_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC10); }
-    some<Armor_t*>  Nightingale_2_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC13); }
-
-    some<Armor_t*>  Nightingale_3_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0F); }
-    some<Armor_t*>  Nightingale_3_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0D); }
-    some<Armor_t*>  Nightingale_3_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC11); }
-    some<Armor_t*>  Nightingale_3_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC12); }
-
-    some<Armor_t*>  Nightingale_Unplayable_Body()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C2); }
-    some<Armor_t*>  Nightingale_Unplayable_Feet()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C1); }
-    some<Armor_t*>  Nightingale_Unplayable_Hands()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D1); }
-    some<Armor_t*>  Nightingale_Unplayable_Head()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D8); }
-    
     some<Armor_t*>  Nordic_Body()                                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD97); }
     some<Armor_t*>  Nordic_Body_Alteration_1()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B0); }
     some<Armor_t*>  Nordic_Body_Alteration_2()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0291B1); }
@@ -5145,6 +5137,566 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Hide_Studded_Body_Light_Armor_3());
     }
 
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Body_Enchanted()         { DEFINE_CREATE(Imperial_Heavy_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Feet_Enchanted()         { DEFINE_CREATE(Imperial_Heavy_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Hands_Enchanted()        { DEFINE_CREATE(Imperial_Heavy_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Heavy_Head_Enchanted()         { DEFINE_CREATE(Imperial_Heavy_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Body_Enchanted()         { DEFINE_CREATE(Imperial_Light_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Feet_Enchanted()         { DEFINE_CREATE(Imperial_Light_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Hands_Enchanted()        { DEFINE_CREATE(Imperial_Light_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Head_Enchanted()         { DEFINE_CREATE(Imperial_Light_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Shield_Enchanted()       { DEFINE_CREATE(Imperial_Light_Shield_Enchanted); }
+    Vector_t<some<Armor_t*>>    Imperial_Light_Studded_Body_Enchanted() { DEFINE_CREATE(Imperial_Light_Studded_Body_Enchanted); }
+
+    void Imperial_Heavy_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Body_Health_1());
+        results.push_back(Armor::Imperial_Heavy_Body_Health_2());
+        results.push_back(Armor::Imperial_Heavy_Body_Health_3());
+        results.push_back(Armor::Imperial_Heavy_Body_Heavy_Armor_1());
+        results.push_back(Armor::Imperial_Heavy_Body_Heavy_Armor_2());
+        results.push_back(Armor::Imperial_Heavy_Body_Heavy_Armor_3());
+        results.push_back(Armor::Imperial_Heavy_Body_Resist_Frost_1());
+    }
+
+    void Imperial_Heavy_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Feet_Carry_1());
+        results.push_back(Armor::Imperial_Heavy_Feet_Carry_2());
+        results.push_back(Armor::Imperial_Heavy_Feet_Carry_3());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Fire_1());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Fire_2());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Fire_3());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Frost_1());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Frost_2());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Frost_3());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Shock_1());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Shock_2());
+        results.push_back(Armor::Imperial_Heavy_Feet_Resist_Shock_3());
+        results.push_back(Armor::Imperial_Heavy_Feet_Sneak_1());
+        results.push_back(Armor::Imperial_Heavy_Feet_Sneak_2());
+        results.push_back(Armor::Imperial_Heavy_Feet_Sneak_3());
+    }
+
+    void Imperial_Heavy_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Hands_Alchemy_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Alchemy_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Alchemy_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Alteration_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Alteration_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Alteration_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Conjuration_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Conjuration_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Conjuration_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Destruction_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Destruction_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Destruction_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Marksman_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Marksman_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Marksman_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_One_Handed_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_One_Handed_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_One_Handed_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Smithing_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Smithing_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Smithing_3());
+        results.push_back(Armor::Imperial_Heavy_Hands_Two_Handed_1());
+        results.push_back(Armor::Imperial_Heavy_Hands_Two_Handed_2());
+        results.push_back(Armor::Imperial_Heavy_Hands_Two_Handed_3());
+    }
+
+    void Imperial_Heavy_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Head_Alchemy_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Alchemy_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Alchemy_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Alteration_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Alteration_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Alteration_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Conjuration_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Conjuration_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Conjuration_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Destruction_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Destruction_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Destruction_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Illusion_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Illusion_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Illusion_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Magicka_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Magicka_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Marksman_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Marksman_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Marksman_3());
+        results.push_back(Armor::Imperial_Heavy_Head_Restoration_1());
+        results.push_back(Armor::Imperial_Heavy_Head_Restoration_2());
+        results.push_back(Armor::Imperial_Heavy_Head_Restoration_3());
+    }
+
+    void Imperial_Light_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Body_Health_1());
+        results.push_back(Armor::Imperial_Light_Body_Health_2());
+        results.push_back(Armor::Imperial_Light_Body_Health_3());
+        results.push_back(Armor::Imperial_Light_Body_Light_Armor_1());
+        results.push_back(Armor::Imperial_Light_Body_Light_Armor_2());
+        results.push_back(Armor::Imperial_Light_Body_Light_Armor_3());
+    }
+
+    void Imperial_Light_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Feet_Carry_1());
+        results.push_back(Armor::Imperial_Light_Feet_Carry_2());
+        results.push_back(Armor::Imperial_Light_Feet_Carry_3());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Fire_1());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Fire_2());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Fire_3());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Frost_1());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Frost_2());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Frost_3());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Shock_1());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Shock_2());
+        results.push_back(Armor::Imperial_Light_Feet_Resist_Shock_3());
+        results.push_back(Armor::Imperial_Light_Feet_Sneak_1());
+        results.push_back(Armor::Imperial_Light_Feet_Sneak_2());
+        results.push_back(Armor::Imperial_Light_Feet_Sneak_3());
+    }
+
+    void Imperial_Light_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Hands_Alchemy_1());
+        results.push_back(Armor::Imperial_Light_Hands_Alchemy_2());
+        results.push_back(Armor::Imperial_Light_Hands_Alchemy_3());
+        results.push_back(Armor::Imperial_Light_Hands_Alteration_1());
+        results.push_back(Armor::Imperial_Light_Hands_Alteration_2());
+        results.push_back(Armor::Imperial_Light_Hands_Alteration_3());
+        results.push_back(Armor::Imperial_Light_Hands_Conjuration_1());
+        results.push_back(Armor::Imperial_Light_Hands_Conjuration_2());
+        results.push_back(Armor::Imperial_Light_Hands_Conjuration_3());
+        results.push_back(Armor::Imperial_Light_Hands_Destruction_1());
+        results.push_back(Armor::Imperial_Light_Hands_Destruction_2());
+        results.push_back(Armor::Imperial_Light_Hands_Destruction_3());
+        results.push_back(Armor::Imperial_Light_Hands_Lockpicking_1());
+        results.push_back(Armor::Imperial_Light_Hands_Lockpicking_2());
+        results.push_back(Armor::Imperial_Light_Hands_Lockpicking_3());
+        results.push_back(Armor::Imperial_Light_Hands_Marksman_1());
+        results.push_back(Armor::Imperial_Light_Hands_Marksman_2());
+        results.push_back(Armor::Imperial_Light_Hands_Marksman_3());
+        results.push_back(Armor::Imperial_Light_Hands_One_Handed_1());
+        results.push_back(Armor::Imperial_Light_Hands_One_Handed_2());
+        results.push_back(Armor::Imperial_Light_Hands_One_Handed_3());
+        results.push_back(Armor::Imperial_Light_Hands_Pickpocket_1());
+        results.push_back(Armor::Imperial_Light_Hands_Pickpocket_2());
+        results.push_back(Armor::Imperial_Light_Hands_Pickpocket_3());
+        results.push_back(Armor::Imperial_Light_Hands_Smithing_1());
+        results.push_back(Armor::Imperial_Light_Hands_Smithing_2());
+        results.push_back(Armor::Imperial_Light_Hands_Smithing_3());
+        results.push_back(Armor::Imperial_Light_Hands_Two_Handed_1());
+        results.push_back(Armor::Imperial_Light_Hands_Two_Handed_2());
+        results.push_back(Armor::Imperial_Light_Hands_Two_Handed_3());
+    }
+
+    void Imperial_Light_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Head_Alchemy_1());
+        results.push_back(Armor::Imperial_Light_Head_Alchemy_2());
+        results.push_back(Armor::Imperial_Light_Head_Alchemy_3());
+        results.push_back(Armor::Imperial_Light_Head_Alteration_1());
+        results.push_back(Armor::Imperial_Light_Head_Alteration_2());
+        results.push_back(Armor::Imperial_Light_Head_Alteration_3());
+        results.push_back(Armor::Imperial_Light_Head_Conjuration_1());
+        results.push_back(Armor::Imperial_Light_Head_Conjuration_2());
+        results.push_back(Armor::Imperial_Light_Head_Conjuration_3());
+        results.push_back(Armor::Imperial_Light_Head_Destruction_1());
+        results.push_back(Armor::Imperial_Light_Head_Destruction_2());
+        results.push_back(Armor::Imperial_Light_Head_Destruction_3());
+        results.push_back(Armor::Imperial_Light_Head_Illusion_1());
+        results.push_back(Armor::Imperial_Light_Head_Illusion_2());
+        results.push_back(Armor::Imperial_Light_Head_Illusion_3());
+        results.push_back(Armor::Imperial_Light_Head_Magicka_1());
+        results.push_back(Armor::Imperial_Light_Head_Magicka_2());
+        results.push_back(Armor::Imperial_Light_Head_Magicka_3());
+    }
+
+    void Imperial_Light_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Shield_Block_1());
+        results.push_back(Armor::Imperial_Light_Shield_Block_2());
+        results.push_back(Armor::Imperial_Light_Shield_Block_3());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Fire_1());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Fire_2());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Fire_3());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Frost_1());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Frost_2());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Frost_3());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Shock_1());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Shock_2());
+        results.push_back(Armor::Imperial_Light_Shield_Resist_Shock_3());
+    }
+
+    void Imperial_Light_Studded_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Studded_Body_Health_1());
+        results.push_back(Armor::Imperial_Light_Studded_Body_Health_2());
+        results.push_back(Armor::Imperial_Light_Studded_Body_Health_3());
+        results.push_back(Armor::Imperial_Light_Studded_Body_Light_Armor_1());
+        results.push_back(Armor::Imperial_Light_Studded_Body_Light_Armor_2());
+        results.push_back(Armor::Imperial_Light_Studded_Body_Light_Armor_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Iron_Body_Enchanted()           { DEFINE_CREATE(Iron_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Feet_Enchanted()           { DEFINE_CREATE(Iron_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Hands_Enchanted()          { DEFINE_CREATE(Iron_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Head_Enchanted()           { DEFINE_CREATE(Iron_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Shield_Enchanted()         { DEFINE_CREATE(Iron_Shield_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Banded_Body_Enchanted()    { DEFINE_CREATE(Iron_Banded_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Iron_Banded_Shield_Enchanted()  { DEFINE_CREATE(Iron_Banded_Shield_Enchanted); }
+
+    void Iron_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body_Alteration_1());
+        results.push_back(Armor::Iron_Body_Alteration_2());
+        results.push_back(Armor::Iron_Body_Alteration_3());
+        results.push_back(Armor::Iron_Body_Conjuration_1());
+        results.push_back(Armor::Iron_Body_Conjuration_2());
+        results.push_back(Armor::Iron_Body_Conjuration_3());
+        results.push_back(Armor::Iron_Body_Destruction_1());
+        results.push_back(Armor::Iron_Body_Destruction_2());
+        results.push_back(Armor::Iron_Body_Destruction_3());
+        results.push_back(Armor::Iron_Body_Health_1());
+        results.push_back(Armor::Iron_Body_Health_2());
+        results.push_back(Armor::Iron_Body_Health_3());
+        results.push_back(Armor::Iron_Body_Heavy_Armor_1());
+        results.push_back(Armor::Iron_Body_Heavy_Armor_2());
+        results.push_back(Armor::Iron_Body_Heavy_Armor_3());
+        results.push_back(Armor::Iron_Body_Illusion_1());
+        results.push_back(Armor::Iron_Body_Illusion_2());
+        results.push_back(Armor::Iron_Body_Illusion_3());
+        results.push_back(Armor::Iron_Body_Restoration_1());
+        results.push_back(Armor::Iron_Body_Restoration_2());
+        results.push_back(Armor::Iron_Body_Restoration_3());
+    }
+
+    void Iron_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Feet_Carry_1());
+        results.push_back(Armor::Iron_Feet_Carry_2());
+        results.push_back(Armor::Iron_Feet_Carry_3());
+        results.push_back(Armor::Iron_Feet_Resist_Fire_1());
+        results.push_back(Armor::Iron_Feet_Resist_Fire_2());
+        results.push_back(Armor::Iron_Feet_Resist_Fire_3());
+        results.push_back(Armor::Iron_Feet_Resist_Frost_1());
+        results.push_back(Armor::Iron_Feet_Resist_Frost_2());
+        results.push_back(Armor::Iron_Feet_Resist_Frost_3());
+        results.push_back(Armor::Iron_Feet_Resist_Shock_1());
+        results.push_back(Armor::Iron_Feet_Resist_Shock_2());
+        results.push_back(Armor::Iron_Feet_Resist_Shock_3());
+        results.push_back(Armor::Iron_Feet_Stamina_1());
+        results.push_back(Armor::Iron_Feet_Stamina_2());
+        results.push_back(Armor::Iron_Feet_Stamina_3());
+    }
+
+    void Iron_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Hands_Alchemy_1());
+        results.push_back(Armor::Iron_Hands_Alchemy_2());
+        results.push_back(Armor::Iron_Hands_Alchemy_3());
+        results.push_back(Armor::Iron_Hands_Marksman_1());
+        results.push_back(Armor::Iron_Hands_Marksman_2());
+        results.push_back(Armor::Iron_Hands_Marksman_3());
+        results.push_back(Armor::Iron_Hands_One_Handed_1());
+        results.push_back(Armor::Iron_Hands_One_Handed_2());
+        results.push_back(Armor::Iron_Hands_One_Handed_3());
+        results.push_back(Armor::Iron_Hands_Smithing_1());
+        results.push_back(Armor::Iron_Hands_Smithing_2());
+        results.push_back(Armor::Iron_Hands_Smithing_3());
+        results.push_back(Armor::Iron_Hands_Two_Handed_1());
+        results.push_back(Armor::Iron_Hands_Two_Handed_2());
+        results.push_back(Armor::Iron_Hands_Two_Handed_3());
+    }
+
+    void Iron_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Head_Alchemy_1());
+        results.push_back(Armor::Iron_Head_Alchemy_2());
+        results.push_back(Armor::Iron_Head_Alchemy_3());
+        results.push_back(Armor::Iron_Head_Alteration_1());
+        results.push_back(Armor::Iron_Head_Alteration_2());
+        results.push_back(Armor::Iron_Head_Alteration_3());
+        results.push_back(Armor::Iron_Head_Conjuration_1());
+        results.push_back(Armor::Iron_Head_Conjuration_2());
+        results.push_back(Armor::Iron_Head_Conjuration_3());
+        results.push_back(Armor::Iron_Head_Destruction_1());
+        results.push_back(Armor::Iron_Head_Destruction_2());
+        results.push_back(Armor::Iron_Head_Destruction_3());
+        results.push_back(Armor::Iron_Head_Illusion_1());
+        results.push_back(Armor::Iron_Head_Illusion_2());
+        results.push_back(Armor::Iron_Head_Illusion_3());
+        results.push_back(Armor::Iron_Head_Magicka_1());
+        results.push_back(Armor::Iron_Head_Magicka_2());
+        results.push_back(Armor::Iron_Head_Magicka_3());
+        results.push_back(Armor::Iron_Head_Marksman_1());
+        results.push_back(Armor::Iron_Head_Marksman_2());
+        results.push_back(Armor::Iron_Head_Marksman_3());
+        results.push_back(Armor::Iron_Head_Restoration_1());
+        results.push_back(Armor::Iron_Head_Restoration_2());
+        results.push_back(Armor::Iron_Head_Restoration_3());
+    }
+
+    void Iron_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Shield_Block_1());
+        results.push_back(Armor::Iron_Shield_Block_2());
+        results.push_back(Armor::Iron_Shield_Block_3());
+        results.push_back(Armor::Iron_Shield_Resist_Fire_1());
+        results.push_back(Armor::Iron_Shield_Resist_Fire_2());
+        results.push_back(Armor::Iron_Shield_Resist_Fire_3());
+        results.push_back(Armor::Iron_Shield_Resist_Frost_1());
+        results.push_back(Armor::Iron_Shield_Resist_Frost_2());
+        results.push_back(Armor::Iron_Shield_Resist_Frost_3());
+        results.push_back(Armor::Iron_Shield_Resist_Magic_1());
+        results.push_back(Armor::Iron_Shield_Resist_Magic_2());
+        results.push_back(Armor::Iron_Shield_Resist_Magic_3());
+        results.push_back(Armor::Iron_Shield_Resist_Shock_1());
+        results.push_back(Armor::Iron_Shield_Resist_Shock_2());
+        results.push_back(Armor::Iron_Shield_Resist_Shock_3());
+    }
+
+    void Iron_Banded_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Banded_Body_Alteration_1());
+        results.push_back(Armor::Iron_Banded_Body_Alteration_2());
+        results.push_back(Armor::Iron_Banded_Body_Alteration_3());
+        results.push_back(Armor::Iron_Banded_Body_Conjuration_1());
+        results.push_back(Armor::Iron_Banded_Body_Conjuration_2());
+        results.push_back(Armor::Iron_Banded_Body_Conjuration_3());
+        results.push_back(Armor::Iron_Banded_Body_Destruction_1());
+        results.push_back(Armor::Iron_Banded_Body_Destruction_2());
+        results.push_back(Armor::Iron_Banded_Body_Destruction_3());
+        results.push_back(Armor::Iron_Banded_Body_Health_1());
+        results.push_back(Armor::Iron_Banded_Body_Health_2());
+        results.push_back(Armor::Iron_Banded_Body_Health_3());
+        results.push_back(Armor::Iron_Banded_Body_Heavy_Armor_1());
+        results.push_back(Armor::Iron_Banded_Body_Heavy_Armor_2());
+        results.push_back(Armor::Iron_Banded_Body_Heavy_Armor_3());
+        results.push_back(Armor::Iron_Banded_Body_Illusion_1());
+        results.push_back(Armor::Iron_Banded_Body_Illusion_2());
+        results.push_back(Armor::Iron_Banded_Body_Illusion_3());
+        results.push_back(Armor::Iron_Banded_Body_Restoration_1());
+        results.push_back(Armor::Iron_Banded_Body_Restoration_2());
+        results.push_back(Armor::Iron_Banded_Body_Restoration_3());
+    }
+
+    void Iron_Banded_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Banded_Shield_Block_1());
+        results.push_back(Armor::Iron_Banded_Shield_Block_2());
+        results.push_back(Armor::Iron_Banded_Shield_Block_3());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Fire_1());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Fire_2());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Fire_3());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Frost_1());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Frost_2());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Frost_3());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Magic_1());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Magic_2());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Magic_3());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Shock_1());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Shock_2());
+        results.push_back(Armor::Iron_Banded_Shield_Resist_Shock_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Leather_Body_Enchanted()    { DEFINE_CREATE(Leather_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Leather_Feet_Enchanted()    { DEFINE_CREATE(Leather_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Leather_Hands_Enchanted()   { DEFINE_CREATE(Leather_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Leather_Head_Enchanted()    { DEFINE_CREATE(Leather_Head_Enchanted); }
+
+    void Leather_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Leather_Body_Alteration_1());
+        results.push_back(Armor::Leather_Body_Alteration_2());
+        results.push_back(Armor::Leather_Body_Alteration_3());
+        results.push_back(Armor::Leather_Body_Conjuration_1());
+        results.push_back(Armor::Leather_Body_Conjuration_2());
+        results.push_back(Armor::Leather_Body_Conjuration_3());
+        results.push_back(Armor::Leather_Body_Destruction_1());
+        results.push_back(Armor::Leather_Body_Destruction_2());
+        results.push_back(Armor::Leather_Body_Destruction_3());
+        results.push_back(Armor::Leather_Body_Health_1());
+        results.push_back(Armor::Leather_Body_Health_2());
+        results.push_back(Armor::Leather_Body_Health_3());
+        results.push_back(Armor::Leather_Body_Illusion_1());
+        results.push_back(Armor::Leather_Body_Illusion_2());
+        results.push_back(Armor::Leather_Body_Illusion_3());
+        results.push_back(Armor::Leather_Body_Light_Armor_1());
+        results.push_back(Armor::Leather_Body_Light_Armor_2());
+        results.push_back(Armor::Leather_Body_Light_Armor_3());
+        results.push_back(Armor::Leather_Body_Restoration_1());
+        results.push_back(Armor::Leather_Body_Restoration_2());
+        results.push_back(Armor::Leather_Body_Restoration_3());
+    }
+
+    void Leather_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Leather_Feet_Carry_1());
+        results.push_back(Armor::Leather_Feet_Carry_2());
+        results.push_back(Armor::Leather_Feet_Carry_3());
+        results.push_back(Armor::Leather_Feet_Resist_Fire_1());
+        results.push_back(Armor::Leather_Feet_Resist_Fire_2());
+        results.push_back(Armor::Leather_Feet_Resist_Fire_3());
+        results.push_back(Armor::Leather_Feet_Resist_Frost_1());
+        results.push_back(Armor::Leather_Feet_Resist_Frost_2());
+        results.push_back(Armor::Leather_Feet_Resist_Frost_3());
+        results.push_back(Armor::Leather_Feet_Resist_Shock_1());
+        results.push_back(Armor::Leather_Feet_Resist_Shock_2());
+        results.push_back(Armor::Leather_Feet_Resist_Shock_3());
+        results.push_back(Armor::Leather_Feet_Sneak_1());
+        results.push_back(Armor::Leather_Feet_Sneak_2());
+        results.push_back(Armor::Leather_Feet_Sneak_3());
+        results.push_back(Armor::Leather_Feet_Stamina_1());
+        results.push_back(Armor::Leather_Feet_Stamina_2());
+        results.push_back(Armor::Leather_Feet_Stamina_3());
+    }
+
+    void Leather_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Leather_Hands_Alchemy_1());
+        results.push_back(Armor::Leather_Hands_Alchemy_2());
+        results.push_back(Armor::Leather_Hands_Alchemy_3());
+        results.push_back(Armor::Leather_Hands_Lockpicking_1());
+        results.push_back(Armor::Leather_Hands_Lockpicking_2());
+        results.push_back(Armor::Leather_Hands_Lockpicking_3());
+        results.push_back(Armor::Leather_Hands_Marksman_1());
+        results.push_back(Armor::Leather_Hands_Marksman_2());
+        results.push_back(Armor::Leather_Hands_Marksman_3());
+        results.push_back(Armor::Leather_Hands_One_Handed_1());
+        results.push_back(Armor::Leather_Hands_One_Handed_2());
+        results.push_back(Armor::Leather_Hands_One_Handed_3());
+        results.push_back(Armor::Leather_Hands_Pickpocket_1());
+        results.push_back(Armor::Leather_Hands_Pickpocket_2());
+        results.push_back(Armor::Leather_Hands_Pickpocket_3());
+        results.push_back(Armor::Leather_Hands_Smithing_1());
+        results.push_back(Armor::Leather_Hands_Smithing_2());
+        results.push_back(Armor::Leather_Hands_Smithing_3());
+        results.push_back(Armor::Leather_Hands_Two_Handed_1());
+        results.push_back(Armor::Leather_Hands_Two_Handed_2());
+        results.push_back(Armor::Leather_Hands_Two_Handed_3());
+    }
+
+    void Leather_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Leather_Head_Alchemy_1());
+        results.push_back(Armor::Leather_Head_Alchemy_2());
+        results.push_back(Armor::Leather_Head_Alchemy_3());
+        results.push_back(Armor::Leather_Head_Alteration_1());
+        results.push_back(Armor::Leather_Head_Alteration_2());
+        results.push_back(Armor::Leather_Head_Alteration_3());
+        results.push_back(Armor::Leather_Head_Conjuration_1());
+        results.push_back(Armor::Leather_Head_Conjuration_2());
+        results.push_back(Armor::Leather_Head_Conjuration_3());
+        results.push_back(Armor::Leather_Head_Destruction_1());
+        results.push_back(Armor::Leather_Head_Destruction_2());
+        results.push_back(Armor::Leather_Head_Destruction_3());
+        results.push_back(Armor::Leather_Head_Illusion_1());
+        results.push_back(Armor::Leather_Head_Illusion_2());
+        results.push_back(Armor::Leather_Head_Illusion_3());
+        results.push_back(Armor::Leather_Head_Magicka_1());
+        results.push_back(Armor::Leather_Head_Magicka_2());
+        results.push_back(Armor::Leather_Head_Magicka_3());
+        results.push_back(Armor::Leather_Head_Marksman_1());
+        results.push_back(Armor::Leather_Head_Marksman_2());
+        results.push_back(Armor::Leather_Head_Marksman_3());
+        results.push_back(Armor::Leather_Head_Restoration_1());
+        results.push_back(Armor::Leather_Head_Restoration_2());
+        results.push_back(Armor::Leather_Head_Restoration_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Miraak_Body_Reward()        { DEFINE_CREATE(Miraak_Body_Reward); }
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward()        { DEFINE_CREATE(Miraak_Head_Reward); }
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_1()      { DEFINE_CREATE(Miraak_Head_Reward_1); }
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_2()      { DEFINE_CREATE(Miraak_Head_Reward_2); }
+    Vector_t<some<Armor_t*>>    Miraak_Head_Reward_3()      { DEFINE_CREATE(Miraak_Head_Reward_3); }
+    Vector_t<some<Armor_t*>>    Miraak_Heavy_Head_Reward()  { DEFINE_CREATE(Miraak_Heavy_Head_Reward); }
+    Vector_t<some<Armor_t*>>    Miraak_Light_Head_Reward()  { DEFINE_CREATE(Miraak_Light_Head_Reward); }
+
+    void Miraak_Body_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_1());
+        results.push_back(Armor::Miraak_Body_Reward_2());
+        results.push_back(Armor::Miraak_Body_Reward_3());
+    }
+
+    void Miraak_Head_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        Miraak_Heavy_Head_Reward(results);
+        Miraak_Light_Head_Reward(results);
+    }
+
+    void Miraak_Head_Reward_1(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_1());
+        results.push_back(Armor::Miraak_Light_Head_Reward_1());
+    }
+
+    void Miraak_Head_Reward_2(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_2());
+        results.push_back(Armor::Miraak_Light_Head_Reward_2());
+    }
+
+    void Miraak_Head_Reward_3(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_3());
+        results.push_back(Armor::Miraak_Light_Head_Reward_3());
+    }
+
+    void Miraak_Heavy_Head_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_1());
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_2());
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_3());
+    }
+
+    void Miraak_Light_Head_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Light_Head_Reward_1());
+        results.push_back(Armor::Miraak_Light_Head_Reward_2());
+        results.push_back(Armor::Miraak_Light_Head_Reward_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Nightingale_Body_Reward()   { DEFINE_CREATE(Nightingale_Body_Reward); }
+    Vector_t<some<Armor_t*>>    Nightingale_Feet_Reward()   { DEFINE_CREATE(Nightingale_Feet_Reward); }
+    Vector_t<some<Armor_t*>>    Nightingale_Hands_Reward()  { DEFINE_CREATE(Nightingale_Hands_Reward); }
+    Vector_t<some<Armor_t*>>    Nightingale_Head_Reward()   { DEFINE_CREATE(Nightingale_Head_Reward); }
+
+    void Nightingale_Body_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Body_Reward_1());
+        results.push_back(Armor::Nightingale_Body_Reward_2());
+        results.push_back(Armor::Nightingale_Body_Reward_3());
+    }
+
+    void Nightingale_Feet_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Feet_Reward_1());
+        results.push_back(Armor::Nightingale_Feet_Reward_2());
+        results.push_back(Armor::Nightingale_Feet_Reward_3());
+    }
+
+    void Nightingale_Hands_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Hands_Reward_1());
+        results.push_back(Armor::Nightingale_Hands_Reward_2());
+        results.push_back(Armor::Nightingale_Hands_Reward_3());
+    }
+
+    void Nightingale_Head_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Head_Reward_1());
+        results.push_back(Armor::Nightingale_Head_Reward_2());
+        results.push_back(Armor::Nightingale_Head_Reward_3());
+    }
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer()                 { DEFINE_CREATE(Outfit_Ancient_Falmer); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel()          { DEFINE_CREATE(Outfit_Ancient_Falmer_Auriel); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Pauldronless()    { DEFINE_CREATE(Outfit_Ancient_Falmer_Pauldronless); }
@@ -6192,6 +6744,491 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Hide_Hands_Enchanted().Random());
         results.push_back(Hide_Head_Enchanted().Random());
         results.push_back(Hide_Shield_Enchanted().Random());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy()                             { DEFINE_CREATE(Outfit_Imperial_Heavy); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Enchanted()                   { DEFINE_CREATE(Outfit_Imperial_Heavy_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Falx()                        { DEFINE_CREATE(Outfit_Imperial_Heavy_Falx); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Carius()              { DEFINE_CREATE(Outfit_Imperial_Heavy_General_Carius); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Carius_Enchanted()    { DEFINE_CREATE(Outfit_Imperial_Heavy_General_Carius_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Tullius()             { DEFINE_CREATE(Outfit_Imperial_Heavy_General_Tullius); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_General_Tullius_Enchanted()   { DEFINE_CREATE(Outfit_Imperial_Heavy_General_Tullius_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Knight()                      { DEFINE_CREATE(Outfit_Imperial_Heavy_Knight); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Knight_Enchanted()            { DEFINE_CREATE(Outfit_Imperial_Heavy_Knight_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Officer()                     { DEFINE_CREATE(Outfit_Imperial_Heavy_Officer); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Heavy_Officer_Enchanted()           { DEFINE_CREATE(Outfit_Imperial_Heavy_Officer_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light()                             { DEFINE_CREATE(Outfit_Imperial_Light); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Enchanted()                   { DEFINE_CREATE(Outfit_Imperial_Light_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Noster()                      { DEFINE_CREATE(Outfit_Imperial_Light_Noster); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Noster_Enchanted()            { DEFINE_CREATE(Outfit_Imperial_Light_Noster_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Studded()                     { DEFINE_CREATE(Outfit_Imperial_Light_Studded); }
+    Vector_t<some<Armor_t*>>    Outfit_Imperial_Light_Studded_Enchanted()           { DEFINE_CREATE(Outfit_Imperial_Light_Studded_Enchanted); }
+
+    void Outfit_Imperial_Heavy(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Body());
+        results.push_back(Armor::Imperial_Heavy_Feet());
+        results.push_back(Armor::Imperial_Heavy_Hands());
+        results.push_back(Armor::Imperial_Heavy_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Heavy_Body_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Feet_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Hands_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Head_Enchanted().Random());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Falx(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Falx_Body());
+        results.push_back(Armor::Imperial_Heavy_Falx_Feet());
+        results.push_back(Armor::Imperial_Heavy_Falx_Hands());
+        results.push_back(Armor::Imperial_Heavy_Falx_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_General_Carius(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_General_Carius_Body());
+        results.push_back(Armor::Imperial_Heavy_Feet());
+        results.push_back(Armor::Imperial_Heavy_Hands());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_General_Carius_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_General_Carius_Body());
+        results.push_back(Imperial_Heavy_Feet_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Hands_Enchanted().Random());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_General_Tullius(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_General_Tullius_Body());
+        results.push_back(Armor::Imperial_Heavy_Feet());
+        results.push_back(Armor::Imperial_Heavy_Hands());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_General_Tullius_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_General_Tullius_Body());
+        results.push_back(Imperial_Heavy_Feet_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Hands_Enchanted().Random());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Knight(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Body());
+        results.push_back(Armor::Imperial_Heavy_Feet());
+        results.push_back(Armor::Imperial_Heavy_Hands());
+        results.push_back(Armor::Imperial_Heavy_Knight_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Knight_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Heavy_Body_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Feet_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Hands_Enchanted().Random());
+        results.push_back(Armor::Imperial_Heavy_Knight_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Officer(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Heavy_Body());
+        results.push_back(Armor::Imperial_Heavy_Feet());
+        results.push_back(Armor::Imperial_Heavy_Hands());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Heavy_Officer_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Heavy_Body_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Feet_Enchanted().Random());
+        results.push_back(Imperial_Heavy_Hands_Enchanted().Random());
+        results.push_back(Armor::Imperial_Heavy_Officer_Head());
+        results.push_back(Armor::Imperial_Heavy_Shield());
+    }
+
+    void Outfit_Imperial_Light(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Body());
+        results.push_back(Armor::Imperial_Light_Feet());
+        results.push_back(Armor::Imperial_Light_Hands());
+        results.push_back(Armor::Imperial_Light_Head());
+        results.push_back(Armor::Imperial_Light_Shield());
+    }
+
+    void Outfit_Imperial_Light_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Light_Body_Enchanted().Random());
+        results.push_back(Imperial_Light_Feet_Enchanted().Random());
+        results.push_back(Imperial_Light_Hands_Enchanted().Random());
+        results.push_back(Imperial_Light_Head_Enchanted().Random());
+        results.push_back(Imperial_Light_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Imperial_Light_Noster(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Body());
+        results.push_back(Armor::Imperial_Light_Feet());
+        results.push_back(Armor::Imperial_Light_Hands());
+        results.push_back(Armor::Imperial_Light_Noster_Head());
+        results.push_back(Armor::Imperial_Light_Shield());
+    }
+
+    void Outfit_Imperial_Light_Noster_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Light_Body_Enchanted().Random());
+        results.push_back(Imperial_Light_Feet_Enchanted().Random());
+        results.push_back(Imperial_Light_Hands_Enchanted().Random());
+        results.push_back(Armor::Imperial_Light_Noster_Head());
+        results.push_back(Imperial_Light_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Imperial_Light_Studded(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Imperial_Light_Studded_Body());
+        results.push_back(Armor::Imperial_Light_Feet());
+        results.push_back(Armor::Imperial_Light_Hands());
+        results.push_back(Armor::Imperial_Light_Head());
+        results.push_back(Armor::Imperial_Light_Shield());
+    }
+
+    void Outfit_Imperial_Light_Studded_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Imperial_Light_Studded_Body_Enchanted().Random());
+        results.push_back(Imperial_Light_Feet_Enchanted().Random());
+        results.push_back(Imperial_Light_Hands_Enchanted().Random());
+        results.push_back(Imperial_Light_Head_Enchanted().Random());
+        results.push_back(Imperial_Light_Shield_Enchanted().Random());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Iron()                                   { DEFINE_CREATE(Outfit_Iron); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Enchanted()                         { DEFINE_CREATE(Outfit_Iron_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Banded()                            { DEFINE_CREATE(Outfit_Iron_Banded); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Banded_Enchanted()                  { DEFINE_CREATE(Outfit_Iron_Banded_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Dented()                            { DEFINE_CREATE(Outfit_Iron_Dented); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Dented_Enchanted()                  { DEFINE_CREATE(Outfit_Iron_Dented_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Family()                            { DEFINE_CREATE(Outfit_Iron_Family); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Family_Enchanted()                  { DEFINE_CREATE(Outfit_Iron_Family_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Forgemasters_Fingers()              { DEFINE_CREATE(Outfit_Iron_Forgemasters_Fingers); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Forgemasters_Fingers_Enchanted()    { DEFINE_CREATE(Outfit_Iron_Forgemasters_Fingers_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Roggi()                             { DEFINE_CREATE(Outfit_Iron_Roggi); }
+    Vector_t<some<Armor_t*>>    Outfit_Iron_Roggi_Enchanted()                   { DEFINE_CREATE(Outfit_Iron_Roggi_Enchanted); }
+
+    void Outfit_Iron(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Shield());
+    }
+
+    void Outfit_Iron_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Iron_Hands_Enchanted().Random());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Iron_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Iron_Banded(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Banded_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Banded_Shield());
+    }
+
+    void Outfit_Iron_Banded_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Banded_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Iron_Hands_Enchanted().Random());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Iron_Banded_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Iron_Dented(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Dented_Shield());
+    }
+
+    void Outfit_Iron_Dented_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Iron_Hands_Enchanted().Random());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Armor::Iron_Dented_Shield());
+    }
+
+    void Outfit_Iron_Family(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Family_Shield());
+    }
+
+    void Outfit_Iron_Family_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Iron_Hands_Enchanted().Random());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Armor::Iron_Family_Shield());
+    }
+
+    void Outfit_Iron_Forgemasters_Fingers(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Forgemasters_Fingers_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Shield());
+    }
+
+    void Outfit_Iron_Forgemasters_Fingers_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Armor::Iron_Forgemasters_Fingers_Hands());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Iron_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Iron_Roggi(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Iron_Body());
+        results.push_back(Armor::Iron_Feet());
+        results.push_back(Armor::Iron_Hands());
+        results.push_back(Armor::Iron_Head());
+        results.push_back(Armor::Iron_Roggi_Shield());
+    }
+
+    void Outfit_Iron_Roggi_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Iron_Body_Enchanted().Random());
+        results.push_back(Iron_Feet_Enchanted().Random());
+        results.push_back(Iron_Hands_Enchanted().Random());
+        results.push_back(Iron_Head_Enchanted().Random());
+        results.push_back(Armor::Iron_Roggi_Shield());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Leather()            { DEFINE_CREATE(Outfit_Leather); }
+    Vector_t<some<Armor_t*>>    Outfit_Leather_Enchanted()  { DEFINE_CREATE(Outfit_Leather_Enchanted); }
+
+    void Outfit_Leather(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Leather_Body());
+        results.push_back(Armor::Leather_Feet());
+        results.push_back(Armor::Leather_Hands());
+        results.push_back(Armor::Leather_Head());
+    }
+
+    void Outfit_Leather_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Leather_Body_Enchanted().Random());
+        results.push_back(Leather_Feet_Enchanted().Random());
+        results.push_back(Leather_Hands_Enchanted().Random());
+        results.push_back(Leather_Head_Enchanted().Random());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Miraak()                 { DEFINE_CREATE(Outfit_Miraak); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward()          { DEFINE_CREATE(Outfit_Miraak_Reward); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_1()        { DEFINE_CREATE(Outfit_Miraak_Reward_1); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_2()        { DEFINE_CREATE(Outfit_Miraak_Reward_2); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Reward_3()        { DEFINE_CREATE(Outfit_Miraak_Reward_3); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward()    { DEFINE_CREATE(Outfit_Miraak_Heavy_Reward); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_1()  { DEFINE_CREATE(Outfit_Miraak_Heavy_Reward_1); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_2()  { DEFINE_CREATE(Outfit_Miraak_Heavy_Reward_2); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Heavy_Reward_3()  { DEFINE_CREATE(Outfit_Miraak_Heavy_Reward_3); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward()    { DEFINE_CREATE(Outfit_Miraak_Light_Reward); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_1()  { DEFINE_CREATE(Outfit_Miraak_Light_Reward_1); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_2()  { DEFINE_CREATE(Outfit_Miraak_Light_Reward_2); }
+    Vector_t<some<Armor_t*>>    Outfit_Miraak_Light_Reward_3()  { DEFINE_CREATE(Outfit_Miraak_Light_Reward_3); }
+
+    void Outfit_Miraak(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Head());
+    }
+
+    void Outfit_Miraak_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Miraak_Body_Reward().Random());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Head_Reward().Random());
+    }
+
+    void Outfit_Miraak_Reward_1(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_1());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Head_Reward_1().Random());
+    }
+
+    void Outfit_Miraak_Reward_2(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_2());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Head_Reward_2().Random());
+    }
+
+    void Outfit_Miraak_Reward_3(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_3());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Head_Reward_3().Random());
+    }
+
+    void Outfit_Miraak_Heavy_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Miraak_Body_Reward().Random());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Heavy_Head_Reward().Random());
+    }
+
+    void Outfit_Miraak_Heavy_Reward_1(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_1());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_1());
+    }
+
+    void Outfit_Miraak_Heavy_Reward_2(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_2());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_2());
+    }
+
+    void Outfit_Miraak_Heavy_Reward_3(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_3());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Heavy_Head_Reward_3());
+    }
+
+    void Outfit_Miraak_Light_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Miraak_Body_Reward().Random());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Miraak_Light_Head_Reward().Random());
+    }
+
+    void Outfit_Miraak_Light_Reward_1(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_1());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Light_Head_Reward_1());
+    }
+
+    void Outfit_Miraak_Light_Reward_2(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_2());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Light_Head_Reward_2());
+    }
+
+    void Outfit_Miraak_Light_Reward_3(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Miraak_Body_Reward_3());
+        results.push_back(Armor::Miraak_Feet());
+        results.push_back(Armor::Miraak_Hands());
+        results.push_back(Armor::Miraak_Light_Head_Reward_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Morag_Tong() { DEFINE_CREATE(Outfit_Morag_Tong); }
+
+    void Outfit_Morag_Tong(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Morag_Tong_Body());
+        results.push_back(Armor::Morag_Tong_Feet());
+        results.push_back(Armor::Morag_Tong_Hands());
+        results.push_back(Armor::Morag_Tong_Head());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale()            { DEFINE_CREATE(Outfit_Nightingale); }
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward()     { DEFINE_CREATE(Outfit_Nightingale_Reward); }
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_1()   { DEFINE_CREATE(Outfit_Nightingale_Reward_1); }
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_2()   { DEFINE_CREATE(Outfit_Nightingale_Reward_2); }
+    Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_3()   { DEFINE_CREATE(Outfit_Nightingale_Reward_3); }
+
+    void Outfit_Nightingale(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Body());
+        results.push_back(Armor::Nightingale_Feet());
+        results.push_back(Armor::Nightingale_Hands());
+        results.push_back(Armor::Nightingale_Head());
+    }
+
+    void Outfit_Nightingale_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Nightingale_Body_Reward().Random());
+        results.push_back(Nightingale_Feet_Reward().Random());
+        results.push_back(Nightingale_Hands_Reward().Random());
+        results.push_back(Nightingale_Head_Reward().Random());
+    }
+
+    void Outfit_Nightingale_Reward_1(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Body_Reward_1());
+        results.push_back(Armor::Nightingale_Feet_Reward_1());
+        results.push_back(Armor::Nightingale_Hands_Reward_1());
+        results.push_back(Armor::Nightingale_Head_Reward_1());
+    }
+
+    void Outfit_Nightingale_Reward_2(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Body_Reward_2());
+        results.push_back(Armor::Nightingale_Feet_Reward_2());
+        results.push_back(Armor::Nightingale_Hands_Reward_2());
+        results.push_back(Armor::Nightingale_Head_Reward_2());
+    }
+
+    void Outfit_Nightingale_Reward_3(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Nightingale_Body_Reward_3());
+        results.push_back(Armor::Nightingale_Feet_Reward_3());
+        results.push_back(Armor::Nightingale_Hands_Reward_3());
+        results.push_back(Armor::Nightingale_Head_Reward_3());
     }
 
     #undef DEFINE_CREATE
