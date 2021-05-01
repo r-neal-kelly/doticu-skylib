@@ -172,23 +172,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Bonemold_Pauldron_Improved_Head()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB23); }
     some<Armor_t*>  Bonemold_Pauldron_Improved_Shield()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB24); }
 
-    some<Armor_t*>  Chitin_Shield()                                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026235); }
-    some<Armor_t*>  Chitin_Shield_Block_1()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029030); }
-    some<Armor_t*>  Chitin_Shield_Block_2()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029031); }
-    some<Armor_t*>  Chitin_Shield_Block_3()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029032); }
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029033); }
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029034); }
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029035); }
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029036); }
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029037); }
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029038); }
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029039); }
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903A); }
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903B); }
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903C); }
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903D); }
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_3()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903E); }
-
     some<Armor_t*>  Chitin_Heavy_Body()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD8A); }
     some<Armor_t*>  Chitin_Heavy_Body_Alteration_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029163); }
     some<Armor_t*>  Chitin_Heavy_Body_Alteration_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029164); }
@@ -356,6 +339,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Chitin_Light_Head_Restoration_1()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902D); }
     some<Armor_t*>  Chitin_Light_Head_Restoration_2()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902E); }
     some<Armor_t*>  Chitin_Light_Head_Restoration_3()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02902F); }
+    some<Armor_t*>  Chitin_Light_Shield()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026235); }
+    some<Armor_t*>  Chitin_Light_Shield_Block_1()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029030); }
+    some<Armor_t*>  Chitin_Light_Shield_Block_2()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029031); }
+    some<Armor_t*>  Chitin_Light_Shield_Block_3()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029032); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_1()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029033); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029034); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029035); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029036); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029037); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029038); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029039); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903A); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903B); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_1()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903C); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_2()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903D); }
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_3()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02903E); }
 
     some<Armor_t*>  Daedric_Body()                                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01396B); }
     some<Armor_t*>  Daedric_Body_Alteration_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF30); }
@@ -469,13 +468,10 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Daedric_Dremora_Hands()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1AC0); }
     some<Armor_t*>  Daedric_Dremora_Head()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10F75F); }
 
-    some<Armor_t*>  Dawnguard_Shield()                                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0150B8); }
-
-    some<Armor_t*>  Dawnguard_Rune_Shield()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x011BAF); }
-
     some<Armor_t*>  Dawnguard_Heavy_Feet()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014757); }
     some<Armor_t*>  Dawnguard_Heavy_Hands()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014758); }
     some<Armor_t*>  Dawnguard_Heavy_Head()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050D0); }
+    some<Armor_t*>  Dawnguard_Heavy_Shield()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0150B8); }
 
     some<Armor_t*>  Dawnguard_Heavy_Brown_Body()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3F7); }
 
@@ -484,6 +480,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Dawnguard_Light_Feet()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F400); }
     some<Armor_t*>  Dawnguard_Light_Hands()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F3FE); }
     some<Armor_t*>  Dawnguard_Light_Head()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01989E); }
+    some<Armor_t*>  Dawnguard_Light_Shield()                            { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x011BAF); }
 
     some<Armor_t*>  Dawnguard_Light_Brown_Body()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F404); }
 
@@ -2176,23 +2173,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Shrouded_Worn_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5C); }
     some<Armor_t*>  Shrouded_Worn_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5E); }
     some<Armor_t*>  Shrouded_Worn_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10EB5D); }
-    
-    some<Armor_t*>  Stalhrim_Shield()                                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026237); }
-    some<Armor_t*>  Stalhrim_Shield_Block_1()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F0); }
-    some<Armor_t*>  Stalhrim_Shield_Block_2()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F1); }
-    some<Armor_t*>  Stalhrim_Shield_Block_3()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F2); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F3); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F4); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F5); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F6); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F7); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F8); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F9); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FA); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FB); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_1()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FC); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_2()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FD); }
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_3()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FE); }
 
     some<Armor_t*>  Stalhrim_Heavy_Body()                               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01CD9F); }
     some<Armor_t*>  Stalhrim_Heavy_Body_Alteration_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02920C); }
@@ -2384,6 +2364,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Stalhrim_Light_Head_Restoration_2()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EE); }
     some<Armor_t*>  Stalhrim_Light_Head_Restoration_3()                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290EF); }
     some<Armor_t*>  Stalhrim_Light_Head_Waterbreathing()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FF); }
+    some<Armor_t*>  Stalhrim_Light_Shield()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026237); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_1()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F0); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_2()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F1); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_3()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F2); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_1()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F3); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_2()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F4); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_3()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F5); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F6); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F7); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F8); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290F9); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FA); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FB); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_1()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FC); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FD); }
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0290FE); }
 
     some<Armor_t*>  Stalhrim_Light_Deathbrand_Body()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401B); }
     some<Armor_t*>  Stalhrim_Light_Deathbrand_Feet()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02401A); }
@@ -3858,6 +3854,479 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Bonemold_Shield_Resist_Shock_3());
     }
 
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Body_Enchanted()   { DEFINE_CREATE(Chitin_Heavy_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Feet_Enchanted()   { DEFINE_CREATE(Chitin_Heavy_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Hands_Enchanted()  { DEFINE_CREATE(Chitin_Heavy_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Head_Enchanted()   { DEFINE_CREATE(Chitin_Heavy_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Light_Body_Enchanted()   { DEFINE_CREATE(Chitin_Light_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Light_Feet_Enchanted()   { DEFINE_CREATE(Chitin_Light_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Light_Hands_Enchanted()  { DEFINE_CREATE(Chitin_Light_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Light_Head_Enchanted()   { DEFINE_CREATE(Chitin_Light_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Chitin_Light_Shield_Enchanted() { DEFINE_CREATE(Chitin_Light_Shield_Enchanted); }
+
+    void Chitin_Heavy_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Heavy_Body_Alteration_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Alteration_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Alteration_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Conjuration_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Conjuration_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Conjuration_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Destruction_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Destruction_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Destruction_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Health_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Health_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Health_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Heavy_Armor_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Heavy_Armor_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Heavy_Armor_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Illusion_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Illusion_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Illusion_3());
+        results.push_back(Armor::Chitin_Heavy_Body_Restoration_1());
+        results.push_back(Armor::Chitin_Heavy_Body_Restoration_2());
+        results.push_back(Armor::Chitin_Heavy_Body_Restoration_3());
+    }
+
+    void Chitin_Heavy_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Heavy_Feet_Carry_1());
+        results.push_back(Armor::Chitin_Heavy_Feet_Carry_2());
+        results.push_back(Armor::Chitin_Heavy_Feet_Carry_3());
+        results.push_back(Armor::Chitin_Heavy_Feet_Muffle());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Fire_1());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Fire_2());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Fire_3());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Frost_1());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Frost_2());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Frost_3());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Shock_1());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Shock_2());
+        results.push_back(Armor::Chitin_Heavy_Feet_Resist_Shock_3());
+        results.push_back(Armor::Chitin_Heavy_Feet_Stamina_1());
+        results.push_back(Armor::Chitin_Heavy_Feet_Stamina_2());
+        results.push_back(Armor::Chitin_Heavy_Feet_Stamina_3());
+    }
+
+    void Chitin_Heavy_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Heavy_Hands_Alchemy_1());
+        results.push_back(Armor::Chitin_Heavy_Hands_Alchemy_2());
+        results.push_back(Armor::Chitin_Heavy_Hands_Alchemy_3());
+        results.push_back(Armor::Chitin_Heavy_Hands_Marksman_1());
+        results.push_back(Armor::Chitin_Heavy_Hands_Marksman_2());
+        results.push_back(Armor::Chitin_Heavy_Hands_Marksman_3());
+        results.push_back(Armor::Chitin_Heavy_Hands_One_Handed_1());
+        results.push_back(Armor::Chitin_Heavy_Hands_One_Handed_2());
+        results.push_back(Armor::Chitin_Heavy_Hands_One_Handed_3());
+        results.push_back(Armor::Chitin_Heavy_Hands_Smithing_1());
+        results.push_back(Armor::Chitin_Heavy_Hands_Smithing_2());
+        results.push_back(Armor::Chitin_Heavy_Hands_Smithing_3());
+        results.push_back(Armor::Chitin_Heavy_Hands_Two_Handed_1());
+        results.push_back(Armor::Chitin_Heavy_Hands_Two_Handed_2());
+        results.push_back(Armor::Chitin_Heavy_Hands_Two_Handed_3());
+    }
+
+    void Chitin_Heavy_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Heavy_Head_Alchemy_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Alchemy_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Alchemy_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Alteration_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Alteration_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Alteration_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Conjuration_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Conjuration_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Conjuration_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Destruction_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Destruction_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Destruction_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Illusion_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Illusion_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Illusion_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Magicka_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Magicka_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Magicka_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Marksman_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Marksman_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Marksman_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Restoration_1());
+        results.push_back(Armor::Chitin_Heavy_Head_Restoration_2());
+        results.push_back(Armor::Chitin_Heavy_Head_Restoration_3());
+        results.push_back(Armor::Chitin_Heavy_Head_Waterbreathing());
+    }
+
+    void Chitin_Light_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Body_Alteration_1());
+        results.push_back(Armor::Chitin_Light_Body_Alteration_2());
+        results.push_back(Armor::Chitin_Light_Body_Alteration_3());
+        results.push_back(Armor::Chitin_Light_Body_Conjuration_1());
+        results.push_back(Armor::Chitin_Light_Body_Conjuration_2());
+        results.push_back(Armor::Chitin_Light_Body_Conjuration_3());
+        results.push_back(Armor::Chitin_Light_Body_Destruction_1());
+        results.push_back(Armor::Chitin_Light_Body_Destruction_2());
+        results.push_back(Armor::Chitin_Light_Body_Destruction_3());
+        results.push_back(Armor::Chitin_Light_Body_Health_1());
+        results.push_back(Armor::Chitin_Light_Body_Health_2());
+        results.push_back(Armor::Chitin_Light_Body_Health_3());
+        results.push_back(Armor::Chitin_Light_Body_Light_Armor_1());
+        results.push_back(Armor::Chitin_Light_Body_Light_Armor_2());
+        results.push_back(Armor::Chitin_Light_Body_Light_Armor_3());
+        results.push_back(Armor::Chitin_Light_Body_Restoration_1());
+        results.push_back(Armor::Chitin_Light_Body_Restoration_2());
+        results.push_back(Armor::Chitin_Light_Body_Restoration_3());
+    }
+
+    void Chitin_Light_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Feet_Carry_1());
+        results.push_back(Armor::Chitin_Light_Feet_Carry_2());
+        results.push_back(Armor::Chitin_Light_Feet_Carry_3());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Fire_1());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Fire_2());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Fire_3());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Frost_1());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Frost_2());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Frost_3());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Shock_1());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Shock_2());
+        results.push_back(Armor::Chitin_Light_Feet_Resist_Shock_3());
+        results.push_back(Armor::Chitin_Light_Feet_Sneak_1());
+        results.push_back(Armor::Chitin_Light_Feet_Sneak_2());
+        results.push_back(Armor::Chitin_Light_Feet_Sneak_3());
+        results.push_back(Armor::Chitin_Light_Feet_Stamina_1());
+        results.push_back(Armor::Chitin_Light_Feet_Stamina_2());
+        results.push_back(Armor::Chitin_Light_Feet_Stamina_3());
+    }
+
+    void Chitin_Light_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Hands_Alchemy_1());
+        results.push_back(Armor::Chitin_Light_Hands_Alchemy_2());
+        results.push_back(Armor::Chitin_Light_Hands_Alchemy_3());
+        results.push_back(Armor::Chitin_Light_Hands_Lockpicking_1());
+        results.push_back(Armor::Chitin_Light_Hands_Lockpicking_2());
+        results.push_back(Armor::Chitin_Light_Hands_Lockpicking_3());
+        results.push_back(Armor::Chitin_Light_Hands_Marksman_1());
+        results.push_back(Armor::Chitin_Light_Hands_Marksman_2());
+        results.push_back(Armor::Chitin_Light_Hands_Marksman_3());
+        results.push_back(Armor::Chitin_Light_Hands_One_Handed_1());
+        results.push_back(Armor::Chitin_Light_Hands_One_Handed_2());
+        results.push_back(Armor::Chitin_Light_Hands_One_Handed_3());
+        results.push_back(Armor::Chitin_Light_Hands_Pickpocket_1());
+        results.push_back(Armor::Chitin_Light_Hands_Pickpocket_2());
+        results.push_back(Armor::Chitin_Light_Hands_Pickpocket_3());
+        results.push_back(Armor::Chitin_Light_Hands_Smithing_1());
+        results.push_back(Armor::Chitin_Light_Hands_Smithing_2());
+        results.push_back(Armor::Chitin_Light_Hands_Smithing_3());
+        results.push_back(Armor::Chitin_Light_Hands_Two_Handed_1());
+        results.push_back(Armor::Chitin_Light_Hands_Two_Handed_2());
+        results.push_back(Armor::Chitin_Light_Hands_Two_Handed_3());
+    }
+
+    void Chitin_Light_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Head_Alchemy_1());
+        results.push_back(Armor::Chitin_Light_Head_Alchemy_2());
+        results.push_back(Armor::Chitin_Light_Head_Alchemy_3());
+        results.push_back(Armor::Chitin_Light_Head_Alteration_1());
+        results.push_back(Armor::Chitin_Light_Head_Alteration_2());
+        results.push_back(Armor::Chitin_Light_Head_Alteration_3());
+        results.push_back(Armor::Chitin_Light_Head_Conjuration_1());
+        results.push_back(Armor::Chitin_Light_Head_Conjuration_2());
+        results.push_back(Armor::Chitin_Light_Head_Conjuration_3());
+        results.push_back(Armor::Chitin_Light_Head_Destruction_1());
+        results.push_back(Armor::Chitin_Light_Head_Destruction_2());
+        results.push_back(Armor::Chitin_Light_Head_Destruction_3());
+        results.push_back(Armor::Chitin_Light_Head_Illusion_1());
+        results.push_back(Armor::Chitin_Light_Head_Illusion_2());
+        results.push_back(Armor::Chitin_Light_Head_Illusion_3());
+        results.push_back(Armor::Chitin_Light_Head_Magicka_1());
+        results.push_back(Armor::Chitin_Light_Head_Magicka_2());
+        results.push_back(Armor::Chitin_Light_Head_Magicka_3());
+        results.push_back(Armor::Chitin_Light_Head_Marksman_1());
+        results.push_back(Armor::Chitin_Light_Head_Marksman_2());
+        results.push_back(Armor::Chitin_Light_Head_Marksman_3());
+        results.push_back(Armor::Chitin_Light_Head_Restoration_1());
+        results.push_back(Armor::Chitin_Light_Head_Restoration_2());
+        results.push_back(Armor::Chitin_Light_Head_Restoration_3());
+    }
+
+    void Chitin_Light_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Shield_Block_1());
+        results.push_back(Armor::Chitin_Light_Shield_Block_2());
+        results.push_back(Armor::Chitin_Light_Shield_Block_3());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Fire_1());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Fire_2());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Fire_3());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Frost_1());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Frost_2());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Frost_3());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Magic_1());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Magic_2());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Magic_3());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Shock_1());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Shock_2());
+        results.push_back(Armor::Chitin_Light_Shield_Resist_Shock_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Daedric_Body_Enchanted()    { DEFINE_CREATE(Daedric_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Daedric_Feet_Enchanted()    { DEFINE_CREATE(Daedric_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Daedric_Hands_Enchanted()   { DEFINE_CREATE(Daedric_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Daedric_Head_Enchanted()    { DEFINE_CREATE(Daedric_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Daedric_Shield_Enchanted()  { DEFINE_CREATE(Daedric_Shield_Enchanted); }
+
+    void Daedric_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Body_Alteration_1());
+        results.push_back(Armor::Daedric_Body_Alteration_2());
+        results.push_back(Armor::Daedric_Body_Alteration_3());
+        results.push_back(Armor::Daedric_Body_Conjuration_1());
+        results.push_back(Armor::Daedric_Body_Conjuration_2());
+        results.push_back(Armor::Daedric_Body_Conjuration_3());
+        results.push_back(Armor::Daedric_Body_Destruction_1());
+        results.push_back(Armor::Daedric_Body_Destruction_2());
+        results.push_back(Armor::Daedric_Body_Destruction_3());
+        results.push_back(Armor::Daedric_Body_Health_1());
+        results.push_back(Armor::Daedric_Body_Health_2());
+        results.push_back(Armor::Daedric_Body_Health_3());
+        results.push_back(Armor::Daedric_Body_Health_Rate_1());
+        results.push_back(Armor::Daedric_Body_Health_Rate_2());
+        results.push_back(Armor::Daedric_Body_Health_Rate_3());
+        results.push_back(Armor::Daedric_Body_Heavy_Armor_1());
+        results.push_back(Armor::Daedric_Body_Heavy_Armor_2());
+        results.push_back(Armor::Daedric_Body_Heavy_Armor_3());
+        results.push_back(Armor::Daedric_Body_Illusion_1());
+        results.push_back(Armor::Daedric_Body_Illusion_2());
+        results.push_back(Armor::Daedric_Body_Illusion_3());
+        results.push_back(Armor::Daedric_Body_Restoration_1());
+        results.push_back(Armor::Daedric_Body_Restoration_2());
+        results.push_back(Armor::Daedric_Body_Restoration_3());
+        results.push_back(Armor::Daedric_Body_Stamina_Rate_1());
+        results.push_back(Armor::Daedric_Body_Stamina_Rate_2());
+        results.push_back(Armor::Daedric_Body_Stamina_Rate_3());
+    }
+
+    void Daedric_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Feet_Carry_1());
+        results.push_back(Armor::Daedric_Feet_Carry_2());
+        results.push_back(Armor::Daedric_Feet_Carry_3());
+        results.push_back(Armor::Daedric_Feet_Muffle());
+        results.push_back(Armor::Daedric_Feet_Resist_Fire_1());
+        results.push_back(Armor::Daedric_Feet_Resist_Fire_2());
+        results.push_back(Armor::Daedric_Feet_Resist_Fire_3());
+        results.push_back(Armor::Daedric_Feet_Resist_Frost_1());
+        results.push_back(Armor::Daedric_Feet_Resist_Frost_2());
+        results.push_back(Armor::Daedric_Feet_Resist_Frost_3());
+        results.push_back(Armor::Daedric_Feet_Resist_Shock_1());
+        results.push_back(Armor::Daedric_Feet_Resist_Shock_2());
+        results.push_back(Armor::Daedric_Feet_Resist_Shock_3());
+        results.push_back(Armor::Daedric_Feet_Stamina_1());
+        results.push_back(Armor::Daedric_Feet_Stamina_2());
+        results.push_back(Armor::Daedric_Feet_Stamina_3());
+    }
+
+    void Daedric_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Hands_Alchemy_1());
+        results.push_back(Armor::Daedric_Hands_Alchemy_2());
+        results.push_back(Armor::Daedric_Hands_Alchemy_3());
+        results.push_back(Armor::Daedric_Hands_Marksman_1());
+        results.push_back(Armor::Daedric_Hands_Marksman_2());
+        results.push_back(Armor::Daedric_Hands_Marksman_3());
+        results.push_back(Armor::Daedric_Hands_One_Handed_1());
+        results.push_back(Armor::Daedric_Hands_One_Handed_2());
+        results.push_back(Armor::Daedric_Hands_One_Handed_3());
+        results.push_back(Armor::Daedric_Hands_Smithing_1());
+        results.push_back(Armor::Daedric_Hands_Smithing_2());
+        results.push_back(Armor::Daedric_Hands_Smithing_3());
+        results.push_back(Armor::Daedric_Hands_Two_Handed_1());
+        results.push_back(Armor::Daedric_Hands_Two_Handed_2());
+        results.push_back(Armor::Daedric_Hands_Two_Handed_3());
+    }
+
+    void Daedric_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Head_Alchemy_1());
+        results.push_back(Armor::Daedric_Head_Alchemy_2());
+        results.push_back(Armor::Daedric_Head_Alchemy_3());
+        results.push_back(Armor::Daedric_Head_Alteration_1());
+        results.push_back(Armor::Daedric_Head_Alteration_2());
+        results.push_back(Armor::Daedric_Head_Alteration_3());
+        results.push_back(Armor::Daedric_Head_Conjuration_1());
+        results.push_back(Armor::Daedric_Head_Conjuration_2());
+        results.push_back(Armor::Daedric_Head_Conjuration_3());
+        results.push_back(Armor::Daedric_Head_Destruction_1());
+        results.push_back(Armor::Daedric_Head_Destruction_2());
+        results.push_back(Armor::Daedric_Head_Destruction_3());
+        results.push_back(Armor::Daedric_Head_Illusion_1());
+        results.push_back(Armor::Daedric_Head_Illusion_2());
+        results.push_back(Armor::Daedric_Head_Illusion_3());
+        results.push_back(Armor::Daedric_Head_Magicka_1());
+        results.push_back(Armor::Daedric_Head_Magicka_2());
+        results.push_back(Armor::Daedric_Head_Magicka_3());
+        results.push_back(Armor::Daedric_Head_Magicka_Rate_1());
+        results.push_back(Armor::Daedric_Head_Magicka_Rate_2());
+        results.push_back(Armor::Daedric_Head_Magicka_Rate_3());
+        results.push_back(Armor::Daedric_Head_Marksman_1());
+        results.push_back(Armor::Daedric_Head_Marksman_2());
+        results.push_back(Armor::Daedric_Head_Marksman_3());
+        results.push_back(Armor::Daedric_Head_Restoration_1());
+        results.push_back(Armor::Daedric_Head_Restoration_2());
+        results.push_back(Armor::Daedric_Head_Restoration_3());
+        results.push_back(Armor::Daedric_Head_Waterbreathing());
+    }
+
+    void Daedric_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Shield_Block_1());
+        results.push_back(Armor::Daedric_Shield_Block_2());
+        results.push_back(Armor::Daedric_Shield_Block_3());
+        results.push_back(Armor::Daedric_Shield_Resist_Fire_1());
+        results.push_back(Armor::Daedric_Shield_Resist_Fire_2());
+        results.push_back(Armor::Daedric_Shield_Resist_Fire_3());
+        results.push_back(Armor::Daedric_Shield_Resist_Frost_1());
+        results.push_back(Armor::Daedric_Shield_Resist_Frost_2());
+        results.push_back(Armor::Daedric_Shield_Resist_Frost_3());
+        results.push_back(Armor::Daedric_Shield_Resist_Magic_1());
+        results.push_back(Armor::Daedric_Shield_Resist_Magic_2());
+        results.push_back(Armor::Daedric_Shield_Resist_Magic_3());
+        results.push_back(Armor::Daedric_Shield_Resist_Shock_1());
+        results.push_back(Armor::Daedric_Shield_Resist_Shock_2());
+        results.push_back(Armor::Daedric_Shield_Resist_Shock_3());
+    }
+
+    Vector_t<some<Armor_t*>>    Dragonplate_Body_Enchanted()    { DEFINE_CREATE(Dragonplate_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Dragonplate_Feet_Enchanted()    { DEFINE_CREATE(Dragonplate_Feet_Enchanted); }
+    Vector_t<some<Armor_t*>>    Dragonplate_Hands_Enchanted()   { DEFINE_CREATE(Dragonplate_Hands_Enchanted); }
+    Vector_t<some<Armor_t*>>    Dragonplate_Head_Enchanted()    { DEFINE_CREATE(Dragonplate_Head_Enchanted); }
+    Vector_t<some<Armor_t*>>    Dragonplate_Shield_Enchanted()  { DEFINE_CREATE(Dragonplate_Shield_Enchanted); }
+
+    void Dragonplate_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Body_Alteration_1());
+        results.push_back(Armor::Dragonplate_Body_Alteration_2());
+        results.push_back(Armor::Dragonplate_Body_Alteration_3());
+        results.push_back(Armor::Dragonplate_Body_Conjuration_1());
+        results.push_back(Armor::Dragonplate_Body_Conjuration_2());
+        results.push_back(Armor::Dragonplate_Body_Conjuration_3());
+        results.push_back(Armor::Dragonplate_Body_Destruction_1());
+        results.push_back(Armor::Dragonplate_Body_Destruction_2());
+        results.push_back(Armor::Dragonplate_Body_Destruction_3());
+        results.push_back(Armor::Dragonplate_Body_Health_1());
+        results.push_back(Armor::Dragonplate_Body_Health_2());
+        results.push_back(Armor::Dragonplate_Body_Health_3());
+        results.push_back(Armor::Dragonplate_Body_Health_Rate_1());
+        results.push_back(Armor::Dragonplate_Body_Health_Rate_2());
+        results.push_back(Armor::Dragonplate_Body_Health_Rate_3());
+        results.push_back(Armor::Dragonplate_Body_Heavy_Armor_1());
+        results.push_back(Armor::Dragonplate_Body_Heavy_Armor_2());
+        results.push_back(Armor::Dragonplate_Body_Heavy_Armor_3());
+        results.push_back(Armor::Dragonplate_Body_Illusion_1());
+        results.push_back(Armor::Dragonplate_Body_Illusion_2());
+        results.push_back(Armor::Dragonplate_Body_Illusion_3());
+        results.push_back(Armor::Dragonplate_Body_Restoration_1());
+        results.push_back(Armor::Dragonplate_Body_Restoration_2());
+        results.push_back(Armor::Dragonplate_Body_Restoration_3());
+        results.push_back(Armor::Dragonplate_Body_Stamina_Rate_1());
+        results.push_back(Armor::Dragonplate_Body_Stamina_Rate_2());
+        results.push_back(Armor::Dragonplate_Body_Stamina_Rate_3());
+    }
+
+    void Dragonplate_Feet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Feet_Carry_1());
+        results.push_back(Armor::Dragonplate_Feet_Carry_2());
+        results.push_back(Armor::Dragonplate_Feet_Carry_3());
+        results.push_back(Armor::Dragonplate_Feet_Muffle());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Fire_1());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Fire_2());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Fire_3());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Frost_1());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Frost_2());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Frost_3());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Shock_1());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Shock_2());
+        results.push_back(Armor::Dragonplate_Feet_Resist_Shock_3());
+        results.push_back(Armor::Dragonplate_Feet_Stamina_1());
+        results.push_back(Armor::Dragonplate_Feet_Stamina_2());
+        results.push_back(Armor::Dragonplate_Feet_Stamina_3());
+    }
+
+    void Dragonplate_Hands_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Hands_Alchemy_1());
+        results.push_back(Armor::Dragonplate_Hands_Alchemy_2());
+        results.push_back(Armor::Dragonplate_Hands_Alchemy_3());
+        results.push_back(Armor::Dragonplate_Hands_Marksman_1());
+        results.push_back(Armor::Dragonplate_Hands_Marksman_2());
+        results.push_back(Armor::Dragonplate_Hands_Marksman_3());
+        results.push_back(Armor::Dragonplate_Hands_One_Handed_1());
+        results.push_back(Armor::Dragonplate_Hands_One_Handed_2());
+        results.push_back(Armor::Dragonplate_Hands_One_Handed_3());
+        results.push_back(Armor::Dragonplate_Hands_Smithing_1());
+        results.push_back(Armor::Dragonplate_Hands_Smithing_2());
+        results.push_back(Armor::Dragonplate_Hands_Smithing_3());
+        results.push_back(Armor::Dragonplate_Hands_Two_Handed_1());
+        results.push_back(Armor::Dragonplate_Hands_Two_Handed_2());
+        results.push_back(Armor::Dragonplate_Hands_Two_Handed_3());
+    }
+
+    void Dragonplate_Head_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Head_Alchemy_1());
+        results.push_back(Armor::Dragonplate_Head_Alchemy_2());
+        results.push_back(Armor::Dragonplate_Head_Alchemy_3());
+        results.push_back(Armor::Dragonplate_Head_Alteration_1());
+        results.push_back(Armor::Dragonplate_Head_Alteration_2());
+        results.push_back(Armor::Dragonplate_Head_Alteration_3());
+        results.push_back(Armor::Dragonplate_Head_Conjuration_1());
+        results.push_back(Armor::Dragonplate_Head_Conjuration_2());
+        results.push_back(Armor::Dragonplate_Head_Conjuration_3());
+        results.push_back(Armor::Dragonplate_Head_Destruction_1());
+        results.push_back(Armor::Dragonplate_Head_Destruction_2());
+        results.push_back(Armor::Dragonplate_Head_Destruction_3());
+        results.push_back(Armor::Dragonplate_Head_Illusion_1());
+        results.push_back(Armor::Dragonplate_Head_Illusion_2());
+        results.push_back(Armor::Dragonplate_Head_Illusion_3());
+        results.push_back(Armor::Dragonplate_Head_Magicka_1());
+        results.push_back(Armor::Dragonplate_Head_Magicka_2());
+        results.push_back(Armor::Dragonplate_Head_Magicka_3());
+        results.push_back(Armor::Dragonplate_Head_Magicka_Rate_1());
+        results.push_back(Armor::Dragonplate_Head_Magicka_Rate_2());
+        results.push_back(Armor::Dragonplate_Head_Magicka_Rate_3());
+        results.push_back(Armor::Dragonplate_Head_Marksman_1());
+        results.push_back(Armor::Dragonplate_Head_Marksman_2());
+        results.push_back(Armor::Dragonplate_Head_Marksman_3());
+        results.push_back(Armor::Dragonplate_Head_Restoration_1());
+        results.push_back(Armor::Dragonplate_Head_Restoration_2());
+        results.push_back(Armor::Dragonplate_Head_Restoration_3());
+        results.push_back(Armor::Dragonplate_Head_Waterbreathing());
+    }
+
+    void Dragonplate_Shield_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Shield_Block_1());
+        results.push_back(Armor::Dragonplate_Shield_Block_2());
+        results.push_back(Armor::Dragonplate_Shield_Block_3());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Fire_1());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Fire_2());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Fire_3());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Frost_1());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Frost_2());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Frost_3());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Magic_1());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Magic_2());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Magic_3());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Shock_1());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Shock_2());
+        results.push_back(Armor::Dragonplate_Shield_Resist_Shock_3());
+    }
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer()                 { DEFINE_CREATE(Outfit_Ancient_Falmer); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel()          { DEFINE_CREATE(Outfit_Ancient_Falmer_Auriel); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Pauldronless()    { DEFINE_CREATE(Outfit_Ancient_Falmer_Pauldronless); }
@@ -4081,60 +4550,66 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Blades_Shield());
     }
 
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold(Bool_t do_enchanted)            { DEFINE_CREATE(Outfit_Bonemold, do_enchanted); }
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard(Bool_t do_enchanted)      { DEFINE_CREATE(Outfit_Bonemold_Guard, do_enchanted); }
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron(Bool_t do_enchanted)   { DEFINE_CREATE(Outfit_Bonemold_Pauldron, do_enchanted); }
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Improved()             { DEFINE_CREATE(Outfit_Bonemold_Pauldron_Improved); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold()                       { DEFINE_CREATE(Outfit_Bonemold); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Enchanted()             { DEFINE_CREATE(Outfit_Bonemold_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard()                 { DEFINE_CREATE(Outfit_Bonemold_Guard); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard_Enchanted()       { DEFINE_CREATE(Outfit_Bonemold_Guard_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron()              { DEFINE_CREATE(Outfit_Bonemold_Pauldron); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Enchanted()    { DEFINE_CREATE(Outfit_Bonemold_Pauldron_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Improved()     { DEFINE_CREATE(Outfit_Bonemold_Pauldron_Improved); }
 
-    void Outfit_Bonemold(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    void Outfit_Bonemold(Vector_t<some<Armor_t*>>& results)
     {
-        if (do_enchanted) {
-            results.push_back(Bonemold_Body_Enchanted().Random());
-            results.push_back(Bonemold_Feet_Enchanted().Random());
-            results.push_back(Bonemold_Hands_Enchanted().Random());
-            results.push_back(Bonemold_Head_Enchanted().Random());
-            results.push_back(Bonemold_Shield_Enchanted().Random());
-        } else {
-            results.push_back(Armor::Bonemold_Body());
-            results.push_back(Armor::Bonemold_Feet());
-            results.push_back(Armor::Bonemold_Hands());
-            results.push_back(Armor::Bonemold_Head());
-            results.push_back(Armor::Bonemold_Shield());
-        }
+        results.push_back(Armor::Bonemold_Body());
+        results.push_back(Armor::Bonemold_Feet());
+        results.push_back(Armor::Bonemold_Hands());
+        results.push_back(Armor::Bonemold_Head());
+        results.push_back(Armor::Bonemold_Shield());
     }
 
-    void Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    void Outfit_Bonemold_Enchanted(Vector_t<some<Armor_t*>>& results)
     {
-        if (do_enchanted) {
-            results.push_back(Armor::Bonemold_Guard_Body());
-            results.push_back(Bonemold_Feet_Enchanted().Random());
-            results.push_back(Bonemold_Hands_Enchanted().Random());
-            results.push_back(Bonemold_Head_Enchanted().Random());
-            results.push_back(Bonemold_Shield_Enchanted().Random());
-        } else {
-            results.push_back(Armor::Bonemold_Guard_Body());
-            results.push_back(Armor::Bonemold_Feet());
-            results.push_back(Armor::Bonemold_Hands());
-            results.push_back(Armor::Bonemold_Head());
-            results.push_back(Armor::Bonemold_Shield());
-        }
+        results.push_back(Bonemold_Body_Enchanted().Random());
+        results.push_back(Bonemold_Feet_Enchanted().Random());
+        results.push_back(Bonemold_Hands_Enchanted().Random());
+        results.push_back(Bonemold_Head_Enchanted().Random());
+        results.push_back(Bonemold_Shield_Enchanted().Random());
     }
 
-    void Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted)
+    void Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results)
     {
-        if (do_enchanted) {
-            results.push_back(Armor::Bonemold_Pauldron_Body());
-            results.push_back(Bonemold_Feet_Enchanted().Random());
-            results.push_back(Bonemold_Hands_Enchanted().Random());
-            results.push_back(Bonemold_Head_Enchanted().Random());
-            results.push_back(Bonemold_Shield_Enchanted().Random());
-        } else {
-            results.push_back(Armor::Bonemold_Pauldron_Body());
-            results.push_back(Armor::Bonemold_Feet());
-            results.push_back(Armor::Bonemold_Hands());
-            results.push_back(Armor::Bonemold_Head());
-            results.push_back(Armor::Bonemold_Shield());
-        }
+        results.push_back(Armor::Bonemold_Guard_Body());
+        results.push_back(Armor::Bonemold_Feet());
+        results.push_back(Armor::Bonemold_Hands());
+        results.push_back(Armor::Bonemold_Head());
+        results.push_back(Armor::Bonemold_Shield());
+    }
+
+    void Outfit_Bonemold_Guard_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Guard_Body());
+        results.push_back(Bonemold_Feet_Enchanted().Random());
+        results.push_back(Bonemold_Hands_Enchanted().Random());
+        results.push_back(Bonemold_Head_Enchanted().Random());
+        results.push_back(Bonemold_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Pauldron_Body());
+        results.push_back(Armor::Bonemold_Feet());
+        results.push_back(Armor::Bonemold_Hands());
+        results.push_back(Armor::Bonemold_Head());
+        results.push_back(Armor::Bonemold_Shield());
+    }
+
+    void Outfit_Bonemold_Pauldron_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Bonemold_Pauldron_Body());
+        results.push_back(Bonemold_Feet_Enchanted().Random());
+        results.push_back(Bonemold_Hands_Enchanted().Random());
+        results.push_back(Bonemold_Head_Enchanted().Random());
+        results.push_back(Bonemold_Shield_Enchanted().Random());
     }
 
     void Outfit_Bonemold_Pauldron_Improved(Vector_t<some<Armor_t*>>& results)
@@ -4144,6 +4619,178 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Bonemold_Pauldron_Improved_Hands());
         results.push_back(Armor::Bonemold_Pauldron_Improved_Head());
         results.push_back(Armor::Bonemold_Pauldron_Improved_Shield());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Heavy()           { DEFINE_CREATE(Outfit_Chitin_Heavy); }
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Heavy_Enchanted() { DEFINE_CREATE(Outfit_Chitin_Heavy_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Light()           { DEFINE_CREATE(Outfit_Chitin_Light); }
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Light_Enchanted() { DEFINE_CREATE(Outfit_Chitin_Light_Enchanted); }
+
+    void Outfit_Chitin_Heavy(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Heavy_Body());
+        results.push_back(Armor::Chitin_Heavy_Feet());
+        results.push_back(Armor::Chitin_Heavy_Hands());
+        results.push_back(Armor::Chitin_Heavy_Head());
+    }
+
+    void Outfit_Chitin_Heavy_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Chitin_Heavy_Body_Enchanted().Random());
+        results.push_back(Chitin_Heavy_Feet_Enchanted().Random());
+        results.push_back(Chitin_Heavy_Hands_Enchanted().Random());
+        results.push_back(Chitin_Heavy_Head_Enchanted().Random());
+    }
+
+    void Outfit_Chitin_Light(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Chitin_Light_Body());
+        results.push_back(Armor::Chitin_Light_Feet());
+        results.push_back(Armor::Chitin_Light_Hands());
+        results.push_back(Armor::Chitin_Light_Head());
+        results.push_back(Armor::Chitin_Light_Shield());
+    }
+
+    void Outfit_Chitin_Light_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Chitin_Light_Body_Enchanted().Random());
+        results.push_back(Chitin_Light_Feet_Enchanted().Random());
+        results.push_back(Chitin_Light_Hands_Enchanted().Random());
+        results.push_back(Chitin_Light_Head_Enchanted().Random());
+        results.push_back(Chitin_Light_Shield_Enchanted().Random());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Daedric()                    { DEFINE_CREATE(Outfit_Daedric); }
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Enchanted()          { DEFINE_CREATE(Outfit_Daedric_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Dremora()            { DEFINE_CREATE(Outfit_Daedric_Dremora); }
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Dremora_Enchanted()  { DEFINE_CREATE(Outfit_Daedric_Dremora_Enchanted); }
+
+    void Outfit_Daedric(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Body());
+        results.push_back(Armor::Daedric_Feet());
+        results.push_back(Armor::Daedric_Hands());
+        results.push_back(Armor::Daedric_Head());
+        results.push_back(Armor::Daedric_Shield());
+    }
+
+    void Outfit_Daedric_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Daedric_Body_Enchanted().Random());
+        results.push_back(Daedric_Feet_Enchanted().Random());
+        results.push_back(Daedric_Hands_Enchanted().Random());
+        results.push_back(Daedric_Head_Enchanted().Random());
+        results.push_back(Daedric_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Daedric_Dremora(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Dremora_Body());
+        results.push_back(Armor::Daedric_Dremora_Feet());
+        results.push_back(Armor::Daedric_Dremora_Hands());
+        results.push_back(Armor::Daedric_Dremora_Head());
+        results.push_back(Armor::Daedric_Shield());
+    }
+
+    void Outfit_Daedric_Dremora_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Daedric_Dremora_Body());
+        results.push_back(Armor::Daedric_Dremora_Feet());
+        results.push_back(Armor::Daedric_Dremora_Hands());
+        results.push_back(Armor::Daedric_Dremora_Head());
+        results.push_back(Daedric_Shield_Enchanted().Random());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Heavy_Brown()  { DEFINE_CREATE(Outfit_Dawnguard_Heavy_Brown); }
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Heavy_Grey()   { DEFINE_CREATE(Outfit_Dawnguard_Heavy_Grey); }
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Brown()  { DEFINE_CREATE(Outfit_Dawnguard_Light_Brown); }
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Grey()   { DEFINE_CREATE(Outfit_Dawnguard_Light_Grey); }
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Red()    { DEFINE_CREATE(Outfit_Dawnguard_Light_Red); }
+
+    void Outfit_Dawnguard_Heavy_Brown(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dawnguard_Heavy_Brown_Body());
+        results.push_back(Armor::Dawnguard_Heavy_Feet());
+        results.push_back(Armor::Dawnguard_Heavy_Hands());
+        results.push_back(Armor::Dawnguard_Heavy_Head());
+        results.push_back(Armor::Dawnguard_Heavy_Shield());
+    }
+
+    void Outfit_Dawnguard_Heavy_Grey(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dawnguard_Heavy_Grey_Body());
+        results.push_back(Armor::Dawnguard_Heavy_Feet());
+        results.push_back(Armor::Dawnguard_Heavy_Hands());
+        results.push_back(Armor::Dawnguard_Heavy_Head());
+        results.push_back(Armor::Dawnguard_Heavy_Shield());
+    }
+
+    void Outfit_Dawnguard_Light_Brown(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dawnguard_Light_Brown_Body());
+        results.push_back(Armor::Dawnguard_Light_Feet());
+        results.push_back(Armor::Dawnguard_Light_Hands());
+        results.push_back(Armor::Dawnguard_Light_Head());
+        results.push_back(Armor::Dawnguard_Light_Shield());
+    }
+
+    void Outfit_Dawnguard_Light_Grey(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dawnguard_Light_Grey_Body());
+        results.push_back(Armor::Dawnguard_Light_Feet());
+        results.push_back(Armor::Dawnguard_Light_Hands());
+        results.push_back(Armor::Dawnguard_Light_Head());
+        results.push_back(Armor::Dawnguard_Light_Shield());
+    }
+
+    void Outfit_Dawnguard_Light_Red(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dawnguard_Light_Red_Body());
+        results.push_back(Armor::Dawnguard_Light_Feet());
+        results.push_back(Armor::Dawnguard_Light_Hands());
+        results.push_back(Armor::Dawnguard_Light_Head());
+        results.push_back(Armor::Dawnguard_Light_Shield());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate()                    { DEFINE_CREATE(Outfit_Dragonplate); }
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Enchanted()          { DEFINE_CREATE(Outfit_Dragonplate_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Keeper()             { DEFINE_CREATE(Outfit_Dragonplate_Keeper); }
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Keeper_Enchanted()   { DEFINE_CREATE(Outfit_Dragonplate_Keeper_Enchanted); }
+
+    void Outfit_Dragonplate(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Body());
+        results.push_back(Armor::Dragonplate_Feet());
+        results.push_back(Armor::Dragonplate_Hands());
+        results.push_back(Armor::Dragonplate_Head());
+        results.push_back(Armor::Dragonplate_Shield());
+    }
+
+    void Outfit_Dragonplate_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Dragonplate_Body_Enchanted().Random());
+        results.push_back(Dragonplate_Feet_Enchanted().Random());
+        results.push_back(Dragonplate_Hands_Enchanted().Random());
+        results.push_back(Dragonplate_Head_Enchanted().Random());
+        results.push_back(Dragonplate_Shield_Enchanted().Random());
+    }
+
+    void Outfit_Dragonplate_Keeper(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Keeper_Body());
+        results.push_back(Armor::Dragonplate_Keeper_Feet());
+        results.push_back(Armor::Dragonplate_Keeper_Hands());
+        results.push_back(Armor::Dragonplate_Head());
+        results.push_back(Armor::Dragonplate_Keeper_Shield());
+    }
+
+    void Outfit_Dragonplate_Keeper_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Dragonplate_Keeper_Body());
+        results.push_back(Armor::Dragonplate_Keeper_Feet());
+        results.push_back(Armor::Dragonplate_Keeper_Hands());
+        results.push_back(Dragonplate_Head_Enchanted().Random());
+        results.push_back(Armor::Dragonplate_Keeper_Shield());
     }
 
     #undef DEFINE_CREATE

@@ -177,23 +177,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Bonemold_Pauldron_Improved_Head();
     some<Armor_t*>  Bonemold_Pauldron_Improved_Shield();
 
-    some<Armor_t*>  Chitin_Shield();
-    some<Armor_t*>  Chitin_Shield_Block_1();
-    some<Armor_t*>  Chitin_Shield_Block_2();
-    some<Armor_t*>  Chitin_Shield_Block_3();
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_1();
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_2();
-    some<Armor_t*>  Chitin_Shield_Resist_Fire_3();
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_1();
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_2();
-    some<Armor_t*>  Chitin_Shield_Resist_Frost_3();
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_1();
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_2();
-    some<Armor_t*>  Chitin_Shield_Resist_Magic_3();
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_1();
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_2();
-    some<Armor_t*>  Chitin_Shield_Resist_Shock_3();
-
     some<Armor_t*>  Chitin_Heavy_Body();
     some<Armor_t*>  Chitin_Heavy_Body_Alteration_1();
     some<Armor_t*>  Chitin_Heavy_Body_Alteration_2();
@@ -361,6 +344,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Chitin_Light_Head_Restoration_1();
     some<Armor_t*>  Chitin_Light_Head_Restoration_2();
     some<Armor_t*>  Chitin_Light_Head_Restoration_3();
+    some<Armor_t*>  Chitin_Light_Shield();
+    some<Armor_t*>  Chitin_Light_Shield_Block_1();
+    some<Armor_t*>  Chitin_Light_Shield_Block_2();
+    some<Armor_t*>  Chitin_Light_Shield_Block_3();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_1();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_2();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Fire_3();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_1();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_2();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Frost_3();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_1();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_2();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Magic_3();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_1();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_2();
+    some<Armor_t*>  Chitin_Light_Shield_Resist_Shock_3();
 
     some<Armor_t*>  Daedric_Body();
     some<Armor_t*>  Daedric_Body_Alteration_1();
@@ -474,13 +473,10 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Daedric_Dremora_Hands();
     some<Armor_t*>  Daedric_Dremora_Head();
 
-    some<Armor_t*>  Dawnguard_Shield();
-
-    some<Armor_t*>  Dawnguard_Rune_Shield();
-
     some<Armor_t*>  Dawnguard_Heavy_Feet();
     some<Armor_t*>  Dawnguard_Heavy_Hands();
     some<Armor_t*>  Dawnguard_Heavy_Head();
+    some<Armor_t*>  Dawnguard_Heavy_Shield();
 
     some<Armor_t*>  Dawnguard_Heavy_Brown_Body();
 
@@ -489,6 +485,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Dawnguard_Light_Feet();
     some<Armor_t*>  Dawnguard_Light_Hands();
     some<Armor_t*>  Dawnguard_Light_Head();
+    some<Armor_t*>  Dawnguard_Light_Shield();
 
     some<Armor_t*>  Dawnguard_Light_Brown_Body();
 
@@ -2182,23 +2179,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Shrouded_Worn_Hands();
     some<Armor_t*>  Shrouded_Worn_Head();
 
-    some<Armor_t*>  Stalhrim_Shield();
-    some<Armor_t*>  Stalhrim_Shield_Block_1();
-    some<Armor_t*>  Stalhrim_Shield_Block_2();
-    some<Armor_t*>  Stalhrim_Shield_Block_3();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_1();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_2();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Fire_3();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_1();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_2();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Frost_3();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_1();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_2();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Magic_3();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_1();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_2();
-    some<Armor_t*>  Stalhrim_Shield_Resist_Shock_3();
-
     some<Armor_t*>  Stalhrim_Heavy_Body();
     some<Armor_t*>  Stalhrim_Heavy_Body_Alteration_1();
     some<Armor_t*>  Stalhrim_Heavy_Body_Alteration_2();
@@ -2389,6 +2369,22 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Stalhrim_Light_Head_Restoration_2();
     some<Armor_t*>  Stalhrim_Light_Head_Restoration_3();
     some<Armor_t*>  Stalhrim_Light_Head_Waterbreathing();
+    some<Armor_t*>  Stalhrim_Light_Shield();
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_1();
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_2();
+    some<Armor_t*>  Stalhrim_Light_Shield_Block_3();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_1();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_2();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Fire_3();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_1();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_2();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Frost_3();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_1();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_2();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Magic_3();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_1();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_2();
+    some<Armor_t*>  Stalhrim_Light_Shield_Resist_Shock_3();
 
     some<Armor_t*>  Stalhrim_Light_Deathbrand_Body();
     some<Armor_t*>  Stalhrim_Light_Deathbrand_Feet();
@@ -3757,6 +3753,47 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Bonemold_Shield_Enchanted();
     void                        Bonemold_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Body_Enchanted();
+    void                        Chitin_Heavy_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Feet_Enchanted();
+    void                        Chitin_Heavy_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Hands_Enchanted();
+    void                        Chitin_Heavy_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Heavy_Head_Enchanted();
+    void                        Chitin_Heavy_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Light_Body_Enchanted();
+    void                        Chitin_Light_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Light_Feet_Enchanted();
+    void                        Chitin_Light_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Light_Hands_Enchanted();
+    void                        Chitin_Light_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Light_Head_Enchanted();
+    void                        Chitin_Light_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Chitin_Light_Shield_Enchanted();
+    void                        Chitin_Light_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Daedric_Body_Enchanted();
+    void                        Daedric_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Daedric_Feet_Enchanted();
+    void                        Daedric_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Daedric_Hands_Enchanted();
+    void                        Daedric_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Daedric_Head_Enchanted();
+    void                        Daedric_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Daedric_Shield_Enchanted();
+    void                        Daedric_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Dragonplate_Body_Enchanted();
+    void                        Dragonplate_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonplate_Feet_Enchanted();
+    void                        Dragonplate_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonplate_Hands_Enchanted();
+    void                        Dragonplate_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonplate_Head_Enchanted();
+    void                        Dragonplate_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonplate_Shield_Enchanted();
+    void                        Dragonplate_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
     void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
@@ -3808,13 +3845,57 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Outfit_Blades();
     void                        Outfit_Blades(Vector_t<some<Armor_t*>>& results);
 
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold(Bool_t do_enchanted);
-    void                        Outfit_Bonemold(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard(Bool_t do_enchanted);
-    void                        Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
-    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron(Bool_t do_enchanted);
-    void                        Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results, Bool_t do_enchanted);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold();
+    void                        Outfit_Bonemold(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Enchanted();
+    void                        Outfit_Bonemold_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard();
+    void                        Outfit_Bonemold_Guard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Guard_Enchanted();
+    void                        Outfit_Bonemold_Guard_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron();
+    void                        Outfit_Bonemold_Pauldron(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Enchanted();
+    void                        Outfit_Bonemold_Pauldron_Enchanted(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Bonemold_Pauldron_Improved();
     void                        Outfit_Bonemold_Pauldron_Improved(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Heavy();
+    void                        Outfit_Chitin_Heavy(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Heavy_Enchanted();
+    void                        Outfit_Chitin_Heavy_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Light();
+    void                        Outfit_Chitin_Light(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Chitin_Light_Enchanted();
+    void                        Outfit_Chitin_Light_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Daedric();
+    void                        Outfit_Daedric(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Enchanted();
+    void                        Outfit_Daedric_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Dremora();
+    void                        Outfit_Daedric_Dremora(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Daedric_Dremora_Enchanted();
+    void                        Outfit_Daedric_Dremora_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Heavy_Brown();
+    void                        Outfit_Dawnguard_Heavy_Brown(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Heavy_Grey();
+    void                        Outfit_Dawnguard_Heavy_Grey(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Brown();
+    void                        Outfit_Dawnguard_Light_Brown(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Grey();
+    void                        Outfit_Dawnguard_Light_Grey(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dawnguard_Light_Red();
+    void                        Outfit_Dawnguard_Light_Red(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate();
+    void                        Outfit_Dragonplate(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Enchanted();
+    void                        Outfit_Dragonplate_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Keeper();
+    void                        Outfit_Dragonplate_Keeper(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Keeper_Enchanted();
+    void                        Outfit_Dragonplate_Keeper_Enchanted(Vector_t<some<Armor_t*>>& results);
 
 }}}
