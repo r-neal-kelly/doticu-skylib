@@ -1040,8 +1040,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Elven_Shield_Resist_Shock_2();
     some<Armor_t*>  Elven_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Elven_Herebanes_Fortress_Shield();
-
     some<Armor_t*>  Elven_Gilded_Body();
     some<Armor_t*>  Elven_Gilded_Body_Alteration_1();
     some<Armor_t*>  Elven_Gilded_Body_Alteration_2();
@@ -1071,10 +1069,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Elven_Gilded_Body_Stamina_Rate_2();
     some<Armor_t*>  Elven_Gilded_Body_Stamina_Rate_3();
 
-    some<Armor_t*>  Elven_Light_Body();
-    some<Armor_t*>  Elven_Light_Feet();
-    some<Armor_t*>  Elven_Light_Hands();
-    some<Armor_t*>  Elven_Light_Head();
+    some<Armor_t*>  Elven_Herebanes_Fortress_Shield();
+
+    some<Armor_t*>  Elven_Pauldronless_Body();
+    some<Armor_t*>  Elven_Pauldronless_Feet();
+    some<Armor_t*>  Elven_Pauldronless_Hands();
+    some<Armor_t*>  Elven_Pauldronless_Head();
 
     some<Armor_t*>  Falmer_Body();
     some<Armor_t*>  Falmer_Feet();
@@ -1104,19 +1104,18 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Forsworn_Old_Gods_Hands();
     some<Armor_t*>  Forsworn_Old_Gods_Head();
 
+    some<Armor_t*>  Fur_Body();
     some<Armor_t*>  Fur_Feet();
     some<Armor_t*>  Fur_Hands();
     some<Armor_t*>  Fur_Head();
 
-    some<Armor_t*>  Fur_A_Body();
+    some<Armor_t*>  Fur_Topless_Body();
 
-    some<Armor_t*>  Fur_B_Body();
-
-    some<Armor_t*>  Fur_C_Body();
-
-    some<Armor_t*>  Fur_D_Body();
+    some<Armor_t*>  Fur_Topless_Pauldron_Body();
 
     some<Armor_t*>  Fur_Saviors_Hide_Body();
+
+    some<Armor_t*>  Fur_Sleeveless_Body();
 
     some<Armor_t*>  Glass_Body();
     some<Armor_t*>  Glass_Body_Alteration_1();
@@ -1253,21 +1252,20 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Guard_Pale_Head();
     some<Armor_t*>  Guard_Pale_Shield();
 
-    some<Armor_t*>  Guard_Pugilist_Hands();
-
     some<Armor_t*>  Guard_Riften_Body();
     some<Armor_t*>  Guard_Riften_Head();
     some<Armor_t*>  Guard_Riften_Shield();
 
+    some<Armor_t*>  Guard_Riften_Pugilist_Hands();
+
     some<Armor_t*>  Guard_Solitude_Body();
     some<Armor_t*>  Guard_Solitude_Head();
     some<Armor_t*>  Guard_Solitude_Shield();
-
-    some<Armor_t*>  Guard_Solitude_Reward_Shield_1();
-    some<Armor_t*>  Guard_Solitude_Reward_Shield_2();
-    some<Armor_t*>  Guard_Solitude_Reward_Shield_3();
-    some<Armor_t*>  Guard_Solitude_Reward_Shield_4();
-    some<Armor_t*>  Guard_Solitude_Reward_Shield_5();
+    some<Armor_t*>  Guard_Solitude_Shield_Reward_1();
+    some<Armor_t*>  Guard_Solitude_Shield_Reward_2();
+    some<Armor_t*>  Guard_Solitude_Shield_Reward_3();
+    some<Armor_t*>  Guard_Solitude_Shield_Reward_4();
+    some<Armor_t*>  Guard_Solitude_Shield_Reward_5();
 
     some<Armor_t*>  Guard_Whiterun_Body();
     some<Armor_t*>  Guard_Whiterun_Head();
@@ -3794,6 +3792,79 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Dragonplate_Shield_Enchanted();
     void                        Dragonplate_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Dragonscale_Body_Enchanted();
+    void                        Dragonscale_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonscale_Feet_Enchanted();
+    void                        Dragonscale_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonscale_Hands_Enchanted();
+    void                        Dragonscale_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonscale_Head_Enchanted();
+    void                        Dragonscale_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dragonscale_Shield_Enchanted();
+    void                        Dragonscale_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Dwarven_Body_Enchanted();
+    void                        Dwarven_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dwarven_Feet_Enchanted();
+    void                        Dwarven_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dwarven_Hands_Enchanted();
+    void                        Dwarven_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dwarven_Head_Enchanted();
+    void                        Dwarven_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Dwarven_Shield_Enchanted();
+    void                        Dwarven_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ebony_Body_Enchanted();
+    void                        Ebony_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ebony_Feet_Enchanted();
+    void                        Ebony_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ebony_Hands_Enchanted();
+    void                        Ebony_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ebony_Head_Enchanted();
+    void                        Ebony_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ebony_Shield_Enchanted();
+    void                        Ebony_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Elven_Body_Enchanted();
+    void                        Elven_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Elven_Feet_Enchanted();
+    void                        Elven_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Elven_Hands_Enchanted();
+    void                        Elven_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Elven_Head_Enchanted();
+    void                        Elven_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Elven_Shield_Enchanted();
+    void                        Elven_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Elven_Gilded_Body_Enchanted();
+    void                        Elven_Gilded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Glass_Body_Enchanted();
+    void                        Glass_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Glass_Feet_Enchanted();
+    void                        Glass_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Glass_Hands_Enchanted();
+    void                        Glass_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Glass_Head_Enchanted();
+    void                        Glass_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Glass_Shield_Enchanted();
+    void                        Glass_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Guard_Solitude_Shield_Reward();
+    void                        Guard_Solitude_Shield_Reward(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Hide_Body_Enchanted();
+    void                        Hide_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Hide_Feet_Enchanted();
+    void                        Hide_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Hide_Hands_Enchanted();
+    void                        Hide_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Hide_Head_Enchanted();
+    void                        Hide_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Hide_Shield_Enchanted();
+    void                        Hide_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Hide_Studded_Body_Enchanted();
+    void                        Hide_Studded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
     void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
@@ -3897,5 +3968,131 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     void                        Outfit_Dragonplate_Keeper(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Dragonplate_Keeper_Enchanted();
     void                        Outfit_Dragonplate_Keeper_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Dragonscale();
+    void                        Outfit_Dragonscale(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dragonscale_Enchanted();
+    void                        Outfit_Dragonscale_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven();
+    void                        Outfit_Dwarven(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Enchanted();
+    void                        Outfit_Dwarven_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Aetherial();
+    void                        Outfit_Dwarven_Aetherial(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Aetherial_Enchanted();
+    void                        Outfit_Dwarven_Aetherial_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Spellbreaker();
+    void                        Outfit_Dwarven_Spellbreaker(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Spellbreaker_Enchanted();
+    void                        Outfit_Dwarven_Spellbreaker_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Visage_Of_Mzund();
+    void                        Outfit_Dwarven_Visage_Of_Mzund(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Dwarven_Visage_Of_Mzund_Enchanted();
+    void                        Outfit_Dwarven_Visage_Of_Mzund_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Ebony();
+    void                        Outfit_Ebony(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ebony_Enchanted();
+    void                        Outfit_Ebony_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ebony_Mail();
+    void                        Outfit_Ebony_Mail(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ebony_Mail_Enchanted();
+    void                        Outfit_Ebony_Mail_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ebony_Masque_Of_Clavicus_Vile();
+    void                        Outfit_Ebony_Masque_Of_Clavicus_Vile(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Ebony_Masque_Of_Clavicus_Vile_Enchanted();
+    void                        Outfit_Ebony_Masque_Of_Clavicus_Vile_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Elven();
+    void                        Outfit_Elven(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Enchanted();
+    void                        Outfit_Elven_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Gilded();
+    void                        Outfit_Elven_Gilded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Gilded_Enchanted();
+    void                        Outfit_Elven_Gilded_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Herebanes_Fortress();
+    void                        Outfit_Elven_Herebanes_Fortress(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Herebanes_Fortress_Enchanted();
+    void                        Outfit_Elven_Herebanes_Fortress_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Pauldronless();
+    void                        Outfit_Elven_Pauldronless(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Elven_Pauldronless_Enchanted();
+    void                        Outfit_Elven_Pauldronless_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Falmer();
+    void                        Outfit_Falmer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Falmer_Hardened();
+    void                        Outfit_Falmer_Hardened(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Falmer_Heavy();
+    void                        Outfit_Falmer_Heavy(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Falmer_Heavy_Shellbug();
+    void                        Outfit_Falmer_Heavy_Shellbug(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Forsworn();
+    void                        Outfit_Forsworn(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Forsworn_Old_Gods();
+    void                        Outfit_Forsworn_Old_Gods(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Fur();
+    void                        Outfit_Fur(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Fur_Topless();
+    void                        Outfit_Fur_Topless(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Fur_Topless_Pauldron();
+    void                        Outfit_Fur_Topless_Pauldron(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Fur_Saviors_Hide();
+    void                        Outfit_Fur_Saviors_Hide(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Fur_Sleeveless();
+    void                        Outfit_Fur_Sleeveless(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Glass();
+    void                        Outfit_Glass(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Glass_Enchanted();
+    void                        Outfit_Glass_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Falkreath();
+    void                        Outfit_Guard_Falkreath(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Hjaalmarch();
+    void                        Outfit_Guard_Hjaalmarch(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Markarth();
+    void                        Outfit_Guard_Markarth(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Pale();
+    void                        Outfit_Guard_Pale(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Riften();
+    void                        Outfit_Guard_Riften(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Riften_Pugilist();
+    void                        Outfit_Guard_Riften_Pugilist(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Solitude();
+    void                        Outfit_Guard_Solitude(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Solitude_Reward();
+    void                        Outfit_Guard_Solitude_Reward(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Whiterun();
+    void                        Outfit_Guard_Whiterun(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Windhelm();
+    void                        Outfit_Guard_Windhelm(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Windhelm_Eastmarch();
+    void                        Outfit_Guard_Windhelm_Eastmarch(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Windhelm_Sleeved();
+    void                        Outfit_Guard_Windhelm_Sleeved(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Guard_Winterhold();
+    void                        Outfit_Guard_Winterhold(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Hide();
+    void                        Outfit_Hide(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Enchanted();
+    void                        Outfit_Hide_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Movarth();
+    void                        Outfit_Hide_Movarth(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Movarth_Enchanted();
+    void                        Outfit_Hide_Movarth_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Predators_Grace();
+    void                        Outfit_Hide_Predators_Grace(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Predators_Grace_Enchanted();
+    void                        Outfit_Hide_Predators_Grace_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Studded();
+    void                        Outfit_Hide_Studded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Hide_Studded_Enchanted();
+    void                        Outfit_Hide_Studded_Enchanted(Vector_t<some<Armor_t*>>& results);
 
 }}}
