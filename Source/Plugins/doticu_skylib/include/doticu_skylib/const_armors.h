@@ -2056,6 +2056,92 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Penitus_Oculatus_Hands();
     some<Armor_t*>  Penitus_Oculatus_Head();
 
+    some<Armor_t*>  Plate_Body();
+    some<Armor_t*>  Plate_Body_Alteration_1();
+    some<Armor_t*>  Plate_Body_Alteration_2();
+    some<Armor_t*>  Plate_Body_Alteration_3();
+    some<Armor_t*>  Plate_Body_Conjuration_1();
+    some<Armor_t*>  Plate_Body_Conjuration_2();
+    some<Armor_t*>  Plate_Body_Conjuration_3();
+    some<Armor_t*>  Plate_Body_Destruction_1();
+    some<Armor_t*>  Plate_Body_Destruction_2();
+    some<Armor_t*>  Plate_Body_Destruction_3();
+    some<Armor_t*>  Plate_Body_Health_1();
+    some<Armor_t*>  Plate_Body_Health_2();
+    some<Armor_t*>  Plate_Body_Health_3();
+    some<Armor_t*>  Plate_Body_Heavy_Armor_1();
+    some<Armor_t*>  Plate_Body_Heavy_Armor_2();
+    some<Armor_t*>  Plate_Body_Heavy_Armor_3();
+    some<Armor_t*>  Plate_Body_Illusion_1();
+    some<Armor_t*>  Plate_Body_Illusion_2();
+    some<Armor_t*>  Plate_Body_Illusion_3();
+    some<Armor_t*>  Plate_Body_Restoration_1();
+    some<Armor_t*>  Plate_Body_Restoration_2();
+    some<Armor_t*>  Plate_Body_Restoration_3();
+    some<Armor_t*>  Plate_Feet();
+    some<Armor_t*>  Plate_Feet_Carry_1();
+    some<Armor_t*>  Plate_Feet_Carry_2();
+    some<Armor_t*>  Plate_Feet_Carry_3();
+    some<Armor_t*>  Plate_Feet_Muffle();
+    some<Armor_t*>  Plate_Feet_Resist_Fire_1();
+    some<Armor_t*>  Plate_Feet_Resist_Fire_2();
+    some<Armor_t*>  Plate_Feet_Resist_Fire_3();
+    some<Armor_t*>  Plate_Feet_Resist_Frost_1();
+    some<Armor_t*>  Plate_Feet_Resist_Frost_2();
+    some<Armor_t*>  Plate_Feet_Resist_Frost_3();
+    some<Armor_t*>  Plate_Feet_Resist_Shock_1();
+    some<Armor_t*>  Plate_Feet_Resist_Shock_2();
+    some<Armor_t*>  Plate_Feet_Resist_Shock_3();
+    some<Armor_t*>  Plate_Feet_Stamina_1();
+    some<Armor_t*>  Plate_Feet_Stamina_2();
+    some<Armor_t*>  Plate_Feet_Stamina_3();
+    some<Armor_t*>  Plate_Hands();
+    some<Armor_t*>  Plate_Hands_Alchemy_1();
+    some<Armor_t*>  Plate_Hands_Alchemy_2();
+    some<Armor_t*>  Plate_Hands_Alchemy_3();
+    some<Armor_t*>  Plate_Hands_Marksman_1();
+    some<Armor_t*>  Plate_Hands_Marksman_2();
+    some<Armor_t*>  Plate_Hands_Marksman_3();
+    some<Armor_t*>  Plate_Hands_One_Handed_1();
+    some<Armor_t*>  Plate_Hands_One_Handed_2();
+    some<Armor_t*>  Plate_Hands_One_Handed_3();
+    some<Armor_t*>  Plate_Hands_Smithing_1();
+    some<Armor_t*>  Plate_Hands_Smithing_2();
+    some<Armor_t*>  Plate_Hands_Smithing_3();
+    some<Armor_t*>  Plate_Hands_Two_Handed_1();
+    some<Armor_t*>  Plate_Hands_Two_Handed_2();
+    some<Armor_t*>  Plate_Hands_Two_Handed_3();
+    some<Armor_t*>  Plate_Head();
+    some<Armor_t*>  Plate_Head_Alchemy_1();
+    some<Armor_t*>  Plate_Head_Alchemy_2();
+    some<Armor_t*>  Plate_Head_Alchemy_3();
+    some<Armor_t*>  Plate_Head_Alteration_1();
+    some<Armor_t*>  Plate_Head_Alteration_2();
+    some<Armor_t*>  Plate_Head_Alteration_3();
+    some<Armor_t*>  Plate_Head_Conjuration_1();
+    some<Armor_t*>  Plate_Head_Conjuration_2();
+    some<Armor_t*>  Plate_Head_Conjuration_3();
+    some<Armor_t*>  Plate_Head_Destruction_1();
+    some<Armor_t*>  Plate_Head_Destruction_2();
+    some<Armor_t*>  Plate_Head_Destruction_3();
+    some<Armor_t*>  Plate_Head_Illusion_1();
+    some<Armor_t*>  Plate_Head_Illusion_2();
+    some<Armor_t*>  Plate_Head_Illusion_3();
+    some<Armor_t*>  Plate_Head_Magicka_1();
+    some<Armor_t*>  Plate_Head_Magicka_2();
+    some<Armor_t*>  Plate_Head_Magicka_3();
+    some<Armor_t*>  Plate_Head_Marksman_1();
+    some<Armor_t*>  Plate_Head_Marksman_2();
+    some<Armor_t*>  Plate_Head_Marksman_3();
+    some<Armor_t*>  Plate_Head_Restoration_1();
+    some<Armor_t*>  Plate_Head_Restoration_2();
+    some<Armor_t*>  Plate_Head_Restoration_3();
+    some<Armor_t*>  Plate_Head_Waterbreathing();
+
+    some<Armor_t*>  Plate_Katria_Body();
+
+    some<Armor_t*>  Plate_Yngol_Head();
+
     some<Armor_t*>  Scaled_Body();
     some<Armor_t*>  Scaled_Body_Alteration_1();
     some<Armor_t*>  Scaled_Body_Alteration_2();
@@ -2153,16 +2239,16 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Shrouded_Hands();
     some<Armor_t*>  Shrouded_Head();
 
+    some<Armor_t*>  Shrouded_Ancient_Body();
+    some<Armor_t*>  Shrouded_Ancient_Feet();
+    some<Armor_t*>  Shrouded_Ancient_Hands();
+    some<Armor_t*>  Shrouded_Ancient_Head();
+
     some<Armor_t*>  Shrouded_Maskless_Head();
 
     some<Armor_t*>  Shrouded_Short_Sleeved_Body();
 
     some<Armor_t*>  Shrouded_Tumblerbane_Hands();
-
-    some<Armor_t*>  Shrouded_Ancient_Body();
-    some<Armor_t*>  Shrouded_Ancient_Feet();
-    some<Armor_t*>  Shrouded_Ancient_Hands();
-    some<Armor_t*>  Shrouded_Ancient_Head();
 
     some<Armor_t*>  Shrouded_Worn_Body();
     some<Armor_t*>  Shrouded_Worn_Feet();
@@ -2493,92 +2579,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Steel_Pauldron_Body();
 
     some<Armor_t*>  Steel_Targe_Of_The_Blooded_Shield();
-
-    some<Armor_t*>  Steel_Plate_Body();
-    some<Armor_t*>  Steel_Plate_Body_Alteration_1();
-    some<Armor_t*>  Steel_Plate_Body_Alteration_2();
-    some<Armor_t*>  Steel_Plate_Body_Alteration_3();
-    some<Armor_t*>  Steel_Plate_Body_Conjuration_1();
-    some<Armor_t*>  Steel_Plate_Body_Conjuration_2();
-    some<Armor_t*>  Steel_Plate_Body_Conjuration_3();
-    some<Armor_t*>  Steel_Plate_Body_Destruction_1();
-    some<Armor_t*>  Steel_Plate_Body_Destruction_2();
-    some<Armor_t*>  Steel_Plate_Body_Destruction_3();
-    some<Armor_t*>  Steel_Plate_Body_Health_1();
-    some<Armor_t*>  Steel_Plate_Body_Health_2();
-    some<Armor_t*>  Steel_Plate_Body_Health_3();
-    some<Armor_t*>  Steel_Plate_Body_Heavy_Armor_1();
-    some<Armor_t*>  Steel_Plate_Body_Heavy_Armor_2();
-    some<Armor_t*>  Steel_Plate_Body_Heavy_Armor_3();
-    some<Armor_t*>  Steel_Plate_Body_Illusion_1();
-    some<Armor_t*>  Steel_Plate_Body_Illusion_2();
-    some<Armor_t*>  Steel_Plate_Body_Illusion_3();
-    some<Armor_t*>  Steel_Plate_Body_Restoration_1();
-    some<Armor_t*>  Steel_Plate_Body_Restoration_2();
-    some<Armor_t*>  Steel_Plate_Body_Restoration_3();
-    some<Armor_t*>  Steel_Plate_Feet();
-    some<Armor_t*>  Steel_Plate_Feet_Carry_1();
-    some<Armor_t*>  Steel_Plate_Feet_Carry_2();
-    some<Armor_t*>  Steel_Plate_Feet_Carry_3();
-    some<Armor_t*>  Steel_Plate_Feet_Muffle();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Fire_1();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Fire_2();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Fire_3();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Frost_1();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Frost_2();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Frost_3();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Shock_1();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Shock_2();
-    some<Armor_t*>  Steel_Plate_Feet_Resist_Shock_3();
-    some<Armor_t*>  Steel_Plate_Feet_Stamina_1();
-    some<Armor_t*>  Steel_Plate_Feet_Stamina_2();
-    some<Armor_t*>  Steel_Plate_Feet_Stamina_3();
-    some<Armor_t*>  Steel_Plate_Hands();
-    some<Armor_t*>  Steel_Plate_Hands_Alchemy_1();
-    some<Armor_t*>  Steel_Plate_Hands_Alchemy_2();
-    some<Armor_t*>  Steel_Plate_Hands_Alchemy_3();
-    some<Armor_t*>  Steel_Plate_Hands_Marksman_1();
-    some<Armor_t*>  Steel_Plate_Hands_Marksman_2();
-    some<Armor_t*>  Steel_Plate_Hands_Marksman_3();
-    some<Armor_t*>  Steel_Plate_Hands_One_Handed_1();
-    some<Armor_t*>  Steel_Plate_Hands_One_Handed_2();
-    some<Armor_t*>  Steel_Plate_Hands_One_Handed_3();
-    some<Armor_t*>  Steel_Plate_Hands_Smithing_1();
-    some<Armor_t*>  Steel_Plate_Hands_Smithing_2();
-    some<Armor_t*>  Steel_Plate_Hands_Smithing_3();
-    some<Armor_t*>  Steel_Plate_Hands_Two_Handed_1();
-    some<Armor_t*>  Steel_Plate_Hands_Two_Handed_2();
-    some<Armor_t*>  Steel_Plate_Hands_Two_Handed_3();
-    some<Armor_t*>  Steel_Plate_Head();
-    some<Armor_t*>  Steel_Plate_Head_Alchemy_1();
-    some<Armor_t*>  Steel_Plate_Head_Alchemy_2();
-    some<Armor_t*>  Steel_Plate_Head_Alchemy_3();
-    some<Armor_t*>  Steel_Plate_Head_Alteration_1();
-    some<Armor_t*>  Steel_Plate_Head_Alteration_2();
-    some<Armor_t*>  Steel_Plate_Head_Alteration_3();
-    some<Armor_t*>  Steel_Plate_Head_Conjuration_1();
-    some<Armor_t*>  Steel_Plate_Head_Conjuration_2();
-    some<Armor_t*>  Steel_Plate_Head_Conjuration_3();
-    some<Armor_t*>  Steel_Plate_Head_Destruction_1();
-    some<Armor_t*>  Steel_Plate_Head_Destruction_2();
-    some<Armor_t*>  Steel_Plate_Head_Destruction_3();
-    some<Armor_t*>  Steel_Plate_Head_Illusion_1();
-    some<Armor_t*>  Steel_Plate_Head_Illusion_2();
-    some<Armor_t*>  Steel_Plate_Head_Illusion_3();
-    some<Armor_t*>  Steel_Plate_Head_Magicka_1();
-    some<Armor_t*>  Steel_Plate_Head_Magicka_2();
-    some<Armor_t*>  Steel_Plate_Head_Magicka_3();
-    some<Armor_t*>  Steel_Plate_Head_Marksman_1();
-    some<Armor_t*>  Steel_Plate_Head_Marksman_2();
-    some<Armor_t*>  Steel_Plate_Head_Marksman_3();
-    some<Armor_t*>  Steel_Plate_Head_Restoration_1();
-    some<Armor_t*>  Steel_Plate_Head_Restoration_2();
-    some<Armor_t*>  Steel_Plate_Head_Restoration_3();
-    some<Armor_t*>  Steel_Plate_Head_Waterbreathing();
-
-    some<Armor_t*>  Steel_Plate_Katria_Body();
-
-    some<Armor_t*>  Steel_Plate_Yngol_Head();
 
     some<Armor_t*>  Stormcloak_Officer_Body();
     some<Armor_t*>  Stormcloak_Officer_Feet();
@@ -3926,6 +3926,76 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Nightingale_Head_Reward();
     void                        Nightingale_Head_Reward(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Nordic_Body_Enchanted();
+    void                        Nordic_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nordic_Feet_Enchanted();
+    void                        Nordic_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nordic_Hands_Enchanted();
+    void                        Nordic_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nordic_Head_Enchanted();
+    void                        Nordic_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Nordic_Shield_Enchanted();
+    void                        Nordic_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Orcish_Body_Enchanted();
+    void                        Orcish_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Orcish_Feet_Enchanted();
+    void                        Orcish_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Orcish_Hands_Enchanted();
+    void                        Orcish_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Orcish_Head_Enchanted();
+    void                        Orcish_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Orcish_Shield_Enchanted();
+    void                        Orcish_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Plate_Body_Enchanted();
+    void                        Plate_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Plate_Feet_Enchanted();
+    void                        Plate_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Plate_Hands_Enchanted();
+    void                        Plate_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Plate_Head_Enchanted();
+    void                        Plate_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Scaled_Body_Enchanted();
+    void                        Scaled_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Scaled_Feet_Enchanted();
+    void                        Scaled_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Scaled_Hands_Enchanted();
+    void                        Scaled_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Scaled_Head_Enchanted();
+    void                        Scaled_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Stalhrim_Heavy_Body_Enchanted();
+    void                        Stalhrim_Heavy_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Heavy_Feet_Enchanted();
+    void                        Stalhrim_Heavy_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Heavy_Hands_Enchanted();
+    void                        Stalhrim_Heavy_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Heavy_Head_Enchanted();
+    void                        Stalhrim_Heavy_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Light_Body_Enchanted();
+    void                        Stalhrim_Light_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Light_Feet_Enchanted();
+    void                        Stalhrim_Light_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Light_Hands_Enchanted();
+    void                        Stalhrim_Light_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Light_Head_Enchanted();
+    void                        Stalhrim_Light_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Stalhrim_Light_Shield_Enchanted();
+    void                        Stalhrim_Light_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Steel_Body_Enchanted();
+    void                        Steel_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Steel_Feet_Enchanted();
+    void                        Steel_Feet_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Steel_Hands_Enchanted();
+    void                        Steel_Hands_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Steel_Head_Enchanted();
+    void                        Steel_Head_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Steel_Shield_Enchanted();
+    void                        Steel_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
     void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
@@ -4261,5 +4331,107 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     void                        Outfit_Nightingale_Reward_2(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Nightingale_Reward_3();
     void                        Outfit_Nightingale_Reward_3(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Nordic();
+    void                        Outfit_Nordic(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Nordic_Enchanted();
+    void                        Outfit_Nordic_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Orcish();
+    void                        Outfit_Orcish(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Orcish_Enchanted();
+    void                        Outfit_Orcish_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Penitus_Oculatus();
+    void                        Outfit_Penitus_Oculatus(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Plate();
+    void                        Outfit_Plate(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Plate_Enchanted();
+    void                        Outfit_Plate_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Plate_Katria();
+    void                        Outfit_Plate_Katria(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Plate_Katria_Enchanted();
+    void                        Outfit_Plate_Katria_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Plate_Yngol();
+    void                        Outfit_Plate_Yngol(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Plate_Yngol_Enchanted();
+    void                        Outfit_Plate_Yngol_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Scaled();
+    void                        Outfit_Scaled(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Scaled_Enchanted();
+    void                        Outfit_Scaled_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Scaled_Horned();
+    void                        Outfit_Scaled_Horned(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Scaled_Horned_Enchanted();
+    void                        Outfit_Scaled_Horned_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded();
+    void                        Outfit_Shrouded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded_Ancient();
+    void                        Outfit_Shrouded_Ancient(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded_Maskless();
+    void                        Outfit_Shrouded_Maskless(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded_Short_Sleeved();
+    void                        Outfit_Shrouded_Short_Sleeved(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded_Tumblerbane();
+    void                        Outfit_Shrouded_Tumblerbane(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Shrouded_Worn();
+    void                        Outfit_Shrouded_Worn(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Heavy();
+    void                        Outfit_Stalhrim_Heavy(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Heavy_Enchanted();
+    void                        Outfit_Stalhrim_Heavy_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Light();
+    void                        Outfit_Stalhrim_Light(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Light_Enchanted();
+    void                        Outfit_Stalhrim_Light_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Light_Deathbrand();
+    void                        Outfit_Stalhrim_Light_Deathbrand(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Stalhrim_Light_Deathbrand_Enchanted();
+    void                        Outfit_Stalhrim_Light_Deathbrand_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Steel();
+    void                        Outfit_Steel(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Enchanted();
+    void                        Outfit_Steel_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Horned();
+    void                        Outfit_Steel_Horned(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Horned_Enchanted();
+    void                        Outfit_Steel_Horned_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Horned_Winterhold();
+    void                        Outfit_Steel_Horned_Winterhold(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Horned_Winterhold_Enchanted();
+    void                        Outfit_Steel_Horned_Winterhold_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Hrolfdir();
+    void                        Outfit_Steel_Hrolfdir(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Hrolfdir_Enchanted();
+    void                        Outfit_Steel_Hrolfdir_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Imperial();
+    void                        Outfit_Steel_Imperial(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Imperial_Enchanted();
+    void                        Outfit_Steel_Imperial_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Ironhand();
+    void                        Outfit_Steel_Ironhand(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Ironhand_Enchanted();
+    void                        Outfit_Steel_Ironhand_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Pauldron();
+    void                        Outfit_Steel_Pauldron(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Pauldron_Enchanted();
+    void                        Outfit_Steel_Pauldron_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Targe_Of_The_Blooded();
+    void                        Outfit_Steel_Targe_Of_The_Blooded(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Steel_Targe_Of_The_Blooded_Enchanted();
+    void                        Outfit_Steel_Targe_Of_The_Blooded_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Stormcloak_Officer();
+    void                        Outfit_Stormcloak_Officer(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Summerset_Shadows();
+    void                        Outfit_Summerset_Shadows(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Summerset_Shadows_Linwe();
+    void                        Outfit_Summerset_Shadows_Linwe(Vector_t<some<Armor_t*>>& results);
 
 }}}
