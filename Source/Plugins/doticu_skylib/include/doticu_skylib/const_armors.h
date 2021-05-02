@@ -2595,50 +2595,48 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Summerset_Shadows_Linwe_Hands();
     some<Armor_t*>  Summerset_Shadows_Linwe_Head();
 
-    some<Armor_t*>  Thief_Body();
-    some<Armor_t*>  Thief_Feet();
-    some<Armor_t*>  Thief_Hands();
-    some<Armor_t*>  Thief_Head();
+    some<Armor_t*>  Thieves_Guild_Body();
+    some<Armor_t*>  Thieves_Guild_Feet();
+    some<Armor_t*>  Thieves_Guild_Hands();
+    some<Armor_t*>  Thieves_Guild_Head();
 
-    some<Armor_t*>  Thief_Torturer_Head();
+    some<Armor_t*>  Thieves_Guild_Blackguard_Body();
+    some<Armor_t*>  Thieves_Guild_Blackguard_Feet();
+    some<Armor_t*>  Thieves_Guild_Blackguard_Hands();
+    some<Armor_t*>  Thieves_Guild_Blackguard_Head();
 
-    some<Armor_t*>  Thief_Torturer_Quest_Head();
+    some<Armor_t*>  Thieves_Guild_Improved_Body();
+    some<Armor_t*>  Thieves_Guild_Improved_Feet();
+    some<Armor_t*>  Thieves_Guild_Improved_Hands();
+    some<Armor_t*>  Thieves_Guild_Improved_Head();
 
-    some<Armor_t*>  Thief_Blackguard_Body();
-    some<Armor_t*>  Thief_Blackguard_Feet();
-    some<Armor_t*>  Thief_Blackguard_Hands();
-    some<Armor_t*>  Thief_Blackguard_Head();
+    some<Armor_t*>  Thieves_Guild_Karliah_Body();
+    some<Armor_t*>  Thieves_Guild_Karliah_Feet();
+    some<Armor_t*>  Thieves_Guild_Karliah_Hands();
+    some<Armor_t*>  Thieves_Guild_Karliah_Head();
 
-    some<Armor_t*>  Thief_Improved_Body();
-    some<Armor_t*>  Thief_Improved_Feet();
-    some<Armor_t*>  Thief_Improved_Hands();
-    some<Armor_t*>  Thief_Improved_Head();
+    some<Armor_t*>  Thieves_Guild_Master_Body();
+    some<Armor_t*>  Thieves_Guild_Master_Feet();
+    some<Armor_t*>  Thieves_Guild_Master_Hands();
+    some<Armor_t*>  Thieves_Guild_Master_Head();
 
-    some<Armor_t*>  Thief_Karliah_Body();
-    some<Armor_t*>  Thief_Karliah_Feet();
-    some<Armor_t*>  Thief_Karliah_Hands();
-    some<Armor_t*>  Thief_Karliah_Head();
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Body();
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Feet();
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Hands();
 
-    some<Armor_t*>  Thief_Master_Body();
-    some<Armor_t*>  Thief_Master_Feet();
-    some<Armor_t*>  Thief_Master_Hands();
-    some<Armor_t*>  Thief_Master_Head();
+    some<Armor_t*>  Thieves_Guild_NPC_Body();
+    some<Armor_t*>  Thieves_Guild_NPC_Feet();
+    some<Armor_t*>  Thieves_Guild_NPC_Hands();
+    some<Armor_t*>  Thieves_Guild_NPC_Head();
 
-    some<Armor_t*>  Thief_Mercer_Body();
-    some<Armor_t*>  Thief_Mercer_Feet();
-    some<Armor_t*>  Thief_Mercer_Hands();
+    some<Armor_t*>  Thieves_Guild_Torturer_Head();
 
-    some<Armor_t*>  Thief_Unplayable_Body();
-    some<Armor_t*>  Thief_Unplayable_Feet();
-    some<Armor_t*>  Thief_Unplayable_Hands();
-    some<Armor_t*>  Thief_Unplayable_Head();
+    some<Armor_t*>  Thieves_Guild_Variant_Body();
+    some<Armor_t*>  Thieves_Guild_Variant_Feet();
+    some<Armor_t*>  Thieves_Guild_Variant_Hands();
+    some<Armor_t*>  Thieves_Guild_Variant_Head();
 
-    some<Armor_t*>  Thief_Variant_Body();
-    some<Armor_t*>  Thief_Variant_Feet();
-    some<Armor_t*>  Thief_Variant_Hands();
-    some<Armor_t*>  Thief_Variant_Head();
-
-    some<Armor_t*>  Thief_Variant_Alternate_Head();
+    some<Armor_t*>  Thieves_Guild_Variant_Alternate_Head();
 
     some<Armor_t*>  Tsun_Body();
     some<Armor_t*>  Tsun_Feet();
@@ -2669,6 +2667,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Vampire_Red_Body_Magicka_Rate();
 
     some<Armor_t*>  Vampire_Royal_Body();
+
+    some<Armor_t*>  Vampire_Royal_Serana_Head();
 
     some<Armor_t*>  Vampire_Royal_Valerica_Body();
     
@@ -3410,6 +3410,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Thalmor_Hooded_Body();
 
+    some<Armor_t*>  Clothes_Torturer_Head();
+
     some<Armor_t*>  Clothes_Ulfric_Body();
     some<Armor_t*>  Clothes_Ulfric_Feet();
     some<Armor_t*>  Clothes_Ulfric_Hands();
@@ -3420,8 +3422,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Vampire_Feet();
     some<Armor_t*>  Clothes_Vampire_Hands();
     some<Armor_t*>  Clothes_Vampire_Head();
-
-    some<Armor_t*>  Clothes_Vampire_Serana_Head();
 
     some<Armor_t*>  Clothes_Warlock_Body();
     some<Armor_t*>  Clothes_Warlock_Body_Alteration_1();
@@ -3996,6 +3996,13 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Steel_Shield_Enchanted();
     void                        Steel_Shield_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Vampire_Black_Body_Enchanted();
+    void                        Vampire_Black_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Vampire_Grey_Body_Enchanted();
+    void                        Vampire_Grey_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Vampire_Red_Body_Enchanted();
+    void                        Vampire_Red_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer();
     void                        Outfit_Ancient_Falmer(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel();
@@ -4433,5 +4440,51 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     void                        Outfit_Summerset_Shadows(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Outfit_Summerset_Shadows_Linwe();
     void                        Outfit_Summerset_Shadows_Linwe(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild();
+    void                        Outfit_Thieves_Guild(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Blackguard();
+    void                        Outfit_Thieves_Guild_Blackguard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Improved();
+    void                        Outfit_Thieves_Guild_Improved(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Karliah();
+    void                        Outfit_Thieves_Guild_Karliah(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Master();
+    void                        Outfit_Thieves_Guild_Master(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Master_Mercer();
+    void                        Outfit_Thieves_Guild_Master_Mercer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_NPC();
+    void                        Outfit_Thieves_Guild_NPC(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Torturer();
+    void                        Outfit_Thieves_Guild_Torturer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Variant();
+    void                        Outfit_Thieves_Guild_Variant(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Variant_Alternate();
+    void                        Outfit_Thieves_Guild_Variant_Alternate(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Tsun();
+    void                        Outfit_Tsun(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Black();
+    void                        Outfit_Vampire_Black(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Black_Enchanted();
+    void                        Outfit_Vampire_Black_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Grey();
+    void                        Outfit_Vampire_Grey(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Grey_Enchanted();
+    void                        Outfit_Vampire_Grey_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Red();
+    void                        Outfit_Vampire_Red(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Red_Enchanted();
+    void                        Outfit_Vampire_Red_Enchanted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal();
+    void                        Outfit_Vampire_Royal(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal_Serana();
+    void                        Outfit_Vampire_Royal_Serana(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal_Valerica();
+    void                        Outfit_Vampire_Royal_Valerica(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Outfit_Wolf();
+    void                        Outfit_Wolf(Vector_t<some<Armor_t*>>& results);
 
 }}}

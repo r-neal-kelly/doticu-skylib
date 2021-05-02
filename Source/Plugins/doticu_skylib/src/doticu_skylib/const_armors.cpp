@@ -2590,50 +2590,48 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Summerset_Shadows_Linwe_Hands()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108545); }
     some<Armor_t*>  Summerset_Shadows_Linwe_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108546); }
     
-    some<Armor_t*>  Thief_Body()                                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC3); }
-    some<Armor_t*>  Thief_Feet()                                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC2); }
-    some<Armor_t*>  Thief_Hands()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC4); }
-    some<Armor_t*>  Thief_Head()                                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC5); }
+    some<Armor_t*>  Thieves_Guild_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC3); }
+    some<Armor_t*>  Thieves_Guild_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC2); }
+    some<Armor_t*>  Thieves_Guild_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC4); }
+    some<Armor_t*>  Thieves_Guild_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC5); }
 
-    some<Armor_t*>  Thief_Torturer_Head()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EE5C0); }
+    some<Armor_t*>  Thieves_Guild_Blackguard_Body()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD33); }
+    some<Armor_t*>  Thieves_Guild_Blackguard_Feet()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD34); }
+    some<Armor_t*>  Thieves_Guild_Blackguard_Hands()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD32); }
+    some<Armor_t*>  Thieves_Guild_Blackguard_Head()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD31); }
 
-    some<Armor_t*>  Thief_Torturer_Quest_Head()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x047CBE); }
+    some<Armor_t*>  Thieves_Guild_Improved_Body()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACC); }
+    some<Armor_t*>  Thieves_Guild_Improved_Feet()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACB); }
+    some<Armor_t*>  Thieves_Guild_Improved_Hands()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACD); }
+    some<Armor_t*>  Thieves_Guild_Improved_Head()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACE); }
 
-    some<Armor_t*>  Thief_Blackguard_Body()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD33); }
-    some<Armor_t*>  Thief_Blackguard_Feet()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD34); }
-    some<Armor_t*>  Thief_Blackguard_Hands()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD32); }
-    some<Armor_t*>  Thief_Blackguard_Head()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD31); }
+    some<Armor_t*>  Thieves_Guild_Karliah_Body()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E8); }
+    some<Armor_t*>  Thieves_Guild_Karliah_Feet()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E7); }
+    some<Armor_t*>  Thieves_Guild_Karliah_Hands()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E9); }
+    some<Armor_t*>  Thieves_Guild_Karliah_Head()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35EA); }
 
-    some<Armor_t*>  Thief_Improved_Body()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACC); }
-    some<Armor_t*>  Thief_Improved_Feet()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACB); }
-    some<Armor_t*>  Thief_Improved_Hands()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACD); }
-    some<Armor_t*>  Thief_Improved_Head()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3ACE); }
+    some<Armor_t*>  Thieves_Guild_Master_Body()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D7); }
+    some<Armor_t*>  Thieves_Guild_Master_Feet()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D6); }
+    some<Armor_t*>  Thieves_Guild_Master_Hands()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D8); }
+    some<Armor_t*>  Thieves_Guild_Master_Head()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D9); }
 
-    some<Armor_t*>  Thief_Karliah_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E8); }
-    some<Armor_t*>  Thief_Karliah_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E7); }
-    some<Armor_t*>  Thief_Karliah_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35E9); }
-    some<Armor_t*>  Thief_Karliah_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35EA); }
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Body()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B5); }
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Feet()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B4); }
+    some<Armor_t*>  Thieves_Guild_Master_Mercer_Hands()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B6); }
 
-    some<Armor_t*>  Thief_Master_Body()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D7); }
-    some<Armor_t*>  Thief_Master_Feet()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D6); }
-    some<Armor_t*>  Thief_Master_Hands()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D8); }
-    some<Armor_t*>  Thief_Master_Head()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D9); }
+    some<Armor_t*>  Thieves_Guild_NPC_Body()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036584); }
+    some<Armor_t*>  Thieves_Guild_NPC_Feet()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036583); }
+    some<Armor_t*>  Thieves_Guild_NPC_Hands()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x042BE9); }
+    some<Armor_t*>  Thieves_Guild_NPC_Head()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036585); }
 
-    some<Armor_t*>  Thief_Mercer_Body()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B5); }
-    some<Armor_t*>  Thief_Mercer_Feet()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B4); }
-    some<Armor_t*>  Thief_Mercer_Hands()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B6); }
+    some<Armor_t*>  Thieves_Guild_Torturer_Head()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EE5C0); }
 
-    some<Armor_t*>  Thief_Unplayable_Body()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036584); }
-    some<Armor_t*>  Thief_Unplayable_Feet()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036583); }
-    some<Armor_t*>  Thief_Unplayable_Hands()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x042BE9); }
-    some<Armor_t*>  Thief_Unplayable_Head()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036585); }
+    some<Armor_t*>  Thieves_Guild_Variant_Body()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DB); }
+    some<Armor_t*>  Thieves_Guild_Variant_Feet()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DA); }
+    some<Armor_t*>  Thieves_Guild_Variant_Hands()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DC); }
+    some<Armor_t*>  Thieves_Guild_Variant_Head()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DD); }
 
-    some<Armor_t*>  Thief_Variant_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DB); }
-    some<Armor_t*>  Thief_Variant_Feet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DA); }
-    some<Armor_t*>  Thief_Variant_Hands()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DC); }
-    some<Armor_t*>  Thief_Variant_Head()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DD); }
-
-    some<Armor_t*>  Thief_Variant_Alternate_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
+    some<Armor_t*>  Thieves_Guild_Variant_Alternate_Head()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
     
     some<Armor_t*>  Tsun_Body()                                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
     some<Armor_t*>  Tsun_Feet()                                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
@@ -2664,6 +2662,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Vampire_Red_Body_Magicka_Rate()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x015CC7); }
 
     some<Armor_t*>  Vampire_Royal_Body()                                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00B5DB); }
+
+    some<Armor_t*>  Vampire_Royal_Serana_Head()                         { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E6A0); }
 
     some<Armor_t*>  Vampire_Royal_Valerica_Body()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0194C5); }
 
@@ -3405,6 +3405,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Clothes_Thalmor_Hooded_Body()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10C698); }
 
+    some<Armor_t*>  Clothes_Torturer_Head()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x047CBE); }
+
     some<Armor_t*>  Clothes_Ulfric_Body()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x062303); }
     some<Armor_t*>  Clothes_Ulfric_Feet()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x062311); }
     some<Armor_t*>  Clothes_Ulfric_Hands()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06230B); }
@@ -3415,8 +3417,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Vampire_Feet()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x019AE1); }
     some<Armor_t*>  Clothes_Vampire_Hands()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x019AE3); }
     some<Armor_t*>  Clothes_Vampire_Head()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x019ADE); }
-
-    some<Armor_t*>  Clothes_Vampire_Serana_Head()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E6A0); }
 
     some<Armor_t*>  Clothes_Warlock_Body()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C5D11); }
     some<Armor_t*>  Clothes_Warlock_Body_Alteration_1()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x101737); }
@@ -6497,6 +6497,38 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Steel_Shield_Resist_Shock_3());
     }
 
+    Vector_t<some<Armor_t*>>    Vampire_Black_Body_Enchanted()  { DEFINE_CREATE(Vampire_Black_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Vampire_Grey_Body_Enchanted()   { DEFINE_CREATE(Vampire_Grey_Body_Enchanted); }
+    Vector_t<some<Armor_t*>>    Vampire_Red_Body_Enchanted()    { DEFINE_CREATE(Vampire_Red_Body_Enchanted); }
+
+    void Vampire_Black_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Black_Body_Conjuration_1());
+        results.push_back(Armor::Vampire_Black_Body_Conjuration_2());
+        results.push_back(Armor::Vampire_Black_Body_Destruction_1());
+        results.push_back(Armor::Vampire_Black_Body_Destruction_2());
+        results.push_back(Armor::Vampire_Black_Body_Magicka_Rate_1());
+        results.push_back(Armor::Vampire_Black_Body_Magicka_Rate_2());
+    }
+
+    void Vampire_Grey_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Grey_Body_Conjuration_1());
+        results.push_back(Armor::Vampire_Grey_Body_Conjuration_2());
+        results.push_back(Armor::Vampire_Grey_Body_Destruction_1());
+        results.push_back(Armor::Vampire_Grey_Body_Destruction_2());
+        results.push_back(Armor::Vampire_Grey_Body_Magicka_Rate());
+    }
+
+    void Vampire_Red_Body_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Red_Body_Conjuration_1());
+        results.push_back(Armor::Vampire_Red_Body_Conjuration_2());
+        results.push_back(Armor::Vampire_Red_Body_Destruction_1());
+        results.push_back(Armor::Vampire_Red_Body_Destruction_2());
+        results.push_back(Armor::Vampire_Red_Body_Magicka_Rate());
+    }
+
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer()                 { DEFINE_CREATE(Outfit_Ancient_Falmer); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Auriel()          { DEFINE_CREATE(Outfit_Ancient_Falmer_Auriel); }
     Vector_t<some<Armor_t*>>    Outfit_Ancient_Falmer_Pauldronless()    { DEFINE_CREATE(Outfit_Ancient_Falmer_Pauldronless); }
@@ -8477,6 +8509,189 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Summerset_Shadows_Linwe_Feet());
         results.push_back(Armor::Summerset_Shadows_Linwe_Hands());
         results.push_back(Armor::Summerset_Shadows_Linwe_Head());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild()                      { DEFINE_CREATE(Outfit_Thieves_Guild); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Blackguard()           { DEFINE_CREATE(Outfit_Thieves_Guild_Blackguard); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Improved()             { DEFINE_CREATE(Outfit_Thieves_Guild_Improved); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Karliah()              { DEFINE_CREATE(Outfit_Thieves_Guild_Karliah); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Master()               { DEFINE_CREATE(Outfit_Thieves_Guild_Master); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Master_Mercer()        { DEFINE_CREATE(Outfit_Thieves_Guild_Master_Mercer); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_NPC()                  { DEFINE_CREATE(Outfit_Thieves_Guild_NPC); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Torturer()             { DEFINE_CREATE(Outfit_Thieves_Guild_Torturer); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Variant()              { DEFINE_CREATE(Outfit_Thieves_Guild_Variant); }
+    Vector_t<some<Armor_t*>>    Outfit_Thieves_Guild_Variant_Alternate()    { DEFINE_CREATE(Outfit_Thieves_Guild_Variant_Alternate); }
+
+    void Outfit_Thieves_Guild(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Body());
+        results.push_back(Armor::Thieves_Guild_Feet());
+        results.push_back(Armor::Thieves_Guild_Hands());
+        results.push_back(Armor::Thieves_Guild_Head());
+    }
+
+    void Outfit_Thieves_Guild_Blackguard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Blackguard_Body());
+        results.push_back(Armor::Thieves_Guild_Blackguard_Feet());
+        results.push_back(Armor::Thieves_Guild_Blackguard_Hands());
+        results.push_back(Armor::Thieves_Guild_Blackguard_Head());
+    }
+
+    void Outfit_Thieves_Guild_Improved(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Improved_Body());
+        results.push_back(Armor::Thieves_Guild_Improved_Feet());
+        results.push_back(Armor::Thieves_Guild_Improved_Hands());
+        results.push_back(Armor::Thieves_Guild_Improved_Head());
+    }
+
+    void Outfit_Thieves_Guild_Karliah(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Karliah_Body());
+        results.push_back(Armor::Thieves_Guild_Karliah_Feet());
+        results.push_back(Armor::Thieves_Guild_Karliah_Hands());
+        results.push_back(Armor::Thieves_Guild_Karliah_Head());
+    }
+
+    void Outfit_Thieves_Guild_Master(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Master_Body());
+        results.push_back(Armor::Thieves_Guild_Master_Feet());
+        results.push_back(Armor::Thieves_Guild_Master_Hands());
+        results.push_back(Armor::Thieves_Guild_Master_Head());
+    }
+
+    void Outfit_Thieves_Guild_Master_Mercer(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Master_Mercer_Body());
+        results.push_back(Armor::Thieves_Guild_Master_Mercer_Feet());
+        results.push_back(Armor::Thieves_Guild_Master_Mercer_Hands());
+        results.push_back(Armor::Thieves_Guild_Master_Head());
+    }
+
+    void Outfit_Thieves_Guild_NPC(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_NPC_Body());
+        results.push_back(Armor::Thieves_Guild_NPC_Feet());
+        results.push_back(Armor::Thieves_Guild_NPC_Hands());
+        results.push_back(Armor::Thieves_Guild_NPC_Head());
+    }
+
+    void Outfit_Thieves_Guild_Torturer(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Body());
+        results.push_back(Armor::Thieves_Guild_Feet());
+        results.push_back(Armor::Thieves_Guild_Hands());
+        results.push_back(Armor::Thieves_Guild_Torturer_Head());
+    }
+
+    void Outfit_Thieves_Guild_Variant(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Variant_Body());
+        results.push_back(Armor::Thieves_Guild_Variant_Feet());
+        results.push_back(Armor::Thieves_Guild_Variant_Hands());
+        results.push_back(Armor::Thieves_Guild_Variant_Head());
+    }
+
+    void Outfit_Thieves_Guild_Variant_Alternate(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Thieves_Guild_Variant_Body());
+        results.push_back(Armor::Thieves_Guild_Variant_Feet());
+        results.push_back(Armor::Thieves_Guild_Variant_Hands());
+        results.push_back(Armor::Thieves_Guild_Variant_Alternate_Head());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Tsun()   { DEFINE_CREATE(Outfit_Tsun); }
+
+    void Outfit_Tsun(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Tsun_Body());
+        results.push_back(Armor::Tsun_Feet());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Black()              { DEFINE_CREATE(Outfit_Vampire_Black); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Black_Enchanted()    { DEFINE_CREATE(Outfit_Vampire_Black_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Grey()               { DEFINE_CREATE(Outfit_Vampire_Grey); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Grey_Enchanted()     { DEFINE_CREATE(Outfit_Vampire_Grey_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Red()                { DEFINE_CREATE(Outfit_Vampire_Red); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Red_Enchanted()      { DEFINE_CREATE(Outfit_Vampire_Red_Enchanted); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal()              { DEFINE_CREATE(Outfit_Vampire_Royal); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal_Serana()       { DEFINE_CREATE(Outfit_Vampire_Royal_Serana); }
+    Vector_t<some<Armor_t*>>    Outfit_Vampire_Royal_Valerica()     { DEFINE_CREATE(Outfit_Vampire_Royal_Valerica); }
+
+    void Outfit_Vampire_Black(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Black_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Black_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Vampire_Black_Body_Enchanted().Random());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Grey(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Grey_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Grey_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Vampire_Grey_Body_Enchanted().Random());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Red(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Red_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Red_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Vampire_Red_Body_Enchanted().Random());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Royal(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Royal_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    void Outfit_Vampire_Royal_Serana(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Royal_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+        results.push_back(Armor::Vampire_Royal_Serana_Head());
+    }
+
+    void Outfit_Vampire_Royal_Valerica(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Vampire_Royal_Valerica_Body());
+        results.push_back(Armor::Vampire_Feet());
+        results.push_back(Armor::Vampire_Hands());
+    }
+
+    Vector_t<some<Armor_t*>>    Outfit_Wolf()   { DEFINE_CREATE(Outfit_Wolf); }
+
+    void Outfit_Wolf(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Wolf_Body());
+        results.push_back(Armor::Wolf_Feet());
+        results.push_back(Armor::Wolf_Hands());
+        results.push_back(Armor::Wolf_Head());
     }
 
     #undef DEFINE_CREATE
