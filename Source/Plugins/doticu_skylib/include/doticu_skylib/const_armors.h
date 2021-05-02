@@ -16,10 +16,19 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Amulet_Ancient_Nordic();
 
+    some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur();
+
+    some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Folgunthur();
+
+    some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Geirmund();
+
+    some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Saarthal();
+
     some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
 
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
 
+    some<Armor_t*>  Amulet_Articulation();
     some<Armor_t*>  Amulet_Articulation_1();
     some<Armor_t*>  Amulet_Articulation_2();
     some<Armor_t*>  Amulet_Articulation_3();
@@ -27,8 +36,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Articulation_5();
     some<Armor_t*>  Amulet_Articulation_6();
     some<Armor_t*>  Amulet_Articulation_7();
-
-    some<Armor_t*>  Amulet_Articulation_Unenchanted();
 
     some<Armor_t*>  Amulet_Bone_Hawk();
 
@@ -65,14 +72,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Elder_Council_2();
 
     some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
-
-    some<Armor_t*>  Amulet_Gauldur();
-
-    some<Armor_t*>  Amulet_Gauldur_Folgunthur();
-
-    some<Armor_t*>  Amulet_Gauldur_Geirmund();
-
-    some<Armor_t*>  Amulet_Gauldur_Saarthal();
 
     some<Armor_t*>  Amulet_Gold();
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_1();
@@ -235,21 +234,21 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Amulet_Skaal();
 
+    some<Armor_t*>  Amulet_Vampire_Bats();
+
     some<Armor_t*>  Amulet_Vampire_Drain_Magicka();
 
     some<Armor_t*>  Amulet_Vampire_Draining_Bats();
 
     some<Armor_t*>  Amulet_Vampire_Draining_Grip();
 
+    some<Armor_t*>  Amulet_Vampire_Empath();
+
     some<Armor_t*>  Amulet_Vampire_Gargoyle();
 
-    some<Armor_t*>  Amulet_Vampire_Power_Bats();
+    some<Armor_t*>  Amulet_Vampire_Mist_Form();
 
-    some<Armor_t*>  Amulet_Vampire_Power_Empath();
-
-    some<Armor_t*>  Amulet_Vampire_Power_Mist_Form();
-
-    some<Armor_t*>  Amulet_Vampire_Power_Supernatural_Reflexes();
+    some<Armor_t*>  Amulet_Vampire_Supernatural_Reflexes();
 
     some<Armor_t*>  Armor_Ancient_Falmer_Body();
     some<Armor_t*>  Armor_Ancient_Falmer_Feet();
@@ -2945,8 +2944,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage();
 
-    some<Armor_t*>  Circlet_Gag();
-
     some<Armor_t*>  Circlet_Gold_And_Emerald();
     some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_1();
     some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_2();
@@ -3336,6 +3333,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Clothes_Prisoner_Body();
     some<Armor_t*>  Clothes_Prisoner_Feet();
     some<Armor_t*>  Clothes_Prisoner_Hands();
+    some<Armor_t*>  Clothes_Prisoner_Head();
 
     some<Armor_t*>  Clothes_Prisoner_Tunic_Body();
 
@@ -3732,8 +3730,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
 namespace doticu_skylib { namespace Const { namespace Armors {
 
-    using Create_f      = Vector_t<some<Armor_t*>>(*)();
-    using Aggregate_f   = void(*)(Vector_t<some<Armor_t*>>&);
+    using Aggregate_f = void(*)(Vector_t<some<Armor_t*>>&);
 
     /* Parts */
 
@@ -4494,269 +4491,269 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Outfit_Armor_Wolf();
     void                        Outfit_Armor_Wolf(Vector_t<some<Armor_t*>>& results);
 
-    /* Outfit_Aggregates */
+    /* Outfit_Group */
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ancient_Falmer();
-    void                        Outfit_Aggregates_Armor_Ancient_Falmer(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ancient_Falmer_Standard();
-    void                        Outfit_Aggregates_Armor_Ancient_Falmer_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ancient_Falmer();
+    void                        Outfit_Group_Armor_Ancient_Falmer(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ancient_Falmer_Standard();
+    void                        Outfit_Group_Armor_Ancient_Falmer_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ancient_Nordic();
-    void                        Outfit_Aggregates_Armor_Ancient_Nordic(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ancient_Nordic_Standard();
-    void                        Outfit_Aggregates_Armor_Ancient_Nordic_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ancient_Nordic();
+    void                        Outfit_Group_Armor_Ancient_Nordic(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ancient_Nordic_Standard();
+    void                        Outfit_Group_Armor_Ancient_Nordic_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Blades();
-    void                        Outfit_Aggregates_Armor_Blades(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Blades_Standard();
-    void                        Outfit_Aggregates_Armor_Blades_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Blades();
+    void                        Outfit_Group_Armor_Blades(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Blades_Standard();
+    void                        Outfit_Group_Armor_Blades_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Bonemold();
-    void                        Outfit_Aggregates_Armor_Bonemold(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Bonemold_Standard();
-    void                        Outfit_Aggregates_Armor_Bonemold_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Bonemold_Enhanced();
-    void                        Outfit_Aggregates_Armor_Bonemold_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Bonemold();
+    void                        Outfit_Group_Armor_Bonemold(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Bonemold_Standard();
+    void                        Outfit_Group_Armor_Bonemold_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Bonemold_Enhanced();
+    void                        Outfit_Group_Armor_Bonemold_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Chitin();
-    void                        Outfit_Aggregates_Armor_Chitin(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Chitin_Standard();
-    void                        Outfit_Aggregates_Armor_Chitin_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Chitin_Enhanced();
-    void                        Outfit_Aggregates_Armor_Chitin_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Chitin();
+    void                        Outfit_Group_Armor_Chitin(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Chitin_Standard();
+    void                        Outfit_Group_Armor_Chitin_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Chitin_Enhanced();
+    void                        Outfit_Group_Armor_Chitin_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Daedric();
-    void                        Outfit_Aggregates_Armor_Daedric(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Daedric_Standard();
-    void                        Outfit_Aggregates_Armor_Daedric_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Daedric_Enhanced();
-    void                        Outfit_Aggregates_Armor_Daedric_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Daedric();
+    void                        Outfit_Group_Armor_Daedric(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Daedric_Standard();
+    void                        Outfit_Group_Armor_Daedric_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Daedric_Enhanced();
+    void                        Outfit_Group_Armor_Daedric_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dawnguard();
-    void                        Outfit_Aggregates_Armor_Dawnguard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dawnguard_Standard();
-    void                        Outfit_Aggregates_Armor_Dawnguard_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dawnguard();
+    void                        Outfit_Group_Armor_Dawnguard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dawnguard_Standard();
+    void                        Outfit_Group_Armor_Dawnguard_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonplate();
-    void                        Outfit_Aggregates_Armor_Dragonplate(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonplate_Standard();
-    void                        Outfit_Aggregates_Armor_Dragonplate_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonplate_Enhanced();
-    void                        Outfit_Aggregates_Armor_Dragonplate_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonplate();
+    void                        Outfit_Group_Armor_Dragonplate(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonplate_Standard();
+    void                        Outfit_Group_Armor_Dragonplate_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonplate_Enhanced();
+    void                        Outfit_Group_Armor_Dragonplate_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonscale();
-    void                        Outfit_Aggregates_Armor_Dragonscale(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonscale_Standard();
-    void                        Outfit_Aggregates_Armor_Dragonscale_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dragonscale_Enhanced();
-    void                        Outfit_Aggregates_Armor_Dragonscale_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonscale();
+    void                        Outfit_Group_Armor_Dragonscale(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonscale_Standard();
+    void                        Outfit_Group_Armor_Dragonscale_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dragonscale_Enhanced();
+    void                        Outfit_Group_Armor_Dragonscale_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dwarven();
-    void                        Outfit_Aggregates_Armor_Dwarven(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dwarven_Standard();
-    void                        Outfit_Aggregates_Armor_Dwarven_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Dwarven_Enhanced();
-    void                        Outfit_Aggregates_Armor_Dwarven_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dwarven();
+    void                        Outfit_Group_Armor_Dwarven(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dwarven_Standard();
+    void                        Outfit_Group_Armor_Dwarven_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Dwarven_Enhanced();
+    void                        Outfit_Group_Armor_Dwarven_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ebony();
-    void                        Outfit_Aggregates_Armor_Ebony(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ebony_Standard();
-    void                        Outfit_Aggregates_Armor_Ebony_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Ebony_Enhanced();
-    void                        Outfit_Aggregates_Armor_Ebony_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ebony();
+    void                        Outfit_Group_Armor_Ebony(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ebony_Standard();
+    void                        Outfit_Group_Armor_Ebony_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Ebony_Enhanced();
+    void                        Outfit_Group_Armor_Ebony_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Elven();
-    void                        Outfit_Aggregates_Armor_Elven(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Elven_Standard();
-    void                        Outfit_Aggregates_Armor_Elven_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Elven_Enhanced();
-    void                        Outfit_Aggregates_Armor_Elven_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Elven();
+    void                        Outfit_Group_Armor_Elven(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Elven_Standard();
+    void                        Outfit_Group_Armor_Elven_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Elven_Enhanced();
+    void                        Outfit_Group_Armor_Elven_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Falmer();
-    void                        Outfit_Aggregates_Armor_Falmer(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Falmer_Standard();
-    void                        Outfit_Aggregates_Armor_Falmer_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Falmer();
+    void                        Outfit_Group_Armor_Falmer(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Falmer_Standard();
+    void                        Outfit_Group_Armor_Falmer_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Forsworn();
-    void                        Outfit_Aggregates_Armor_Forsworn(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Forsworn_Standard();
-    void                        Outfit_Aggregates_Armor_Forsworn_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Forsworn();
+    void                        Outfit_Group_Armor_Forsworn(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Forsworn_Standard();
+    void                        Outfit_Group_Armor_Forsworn_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Fur();
-    void                        Outfit_Aggregates_Armor_Fur(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Fur_Standard();
-    void                        Outfit_Aggregates_Armor_Fur_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Fur();
+    void                        Outfit_Group_Armor_Fur(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Fur_Standard();
+    void                        Outfit_Group_Armor_Fur_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Glass();
-    void                        Outfit_Aggregates_Armor_Glass(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Glass_Standard();
-    void                        Outfit_Aggregates_Armor_Glass_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Glass_Enhanced();
-    void                        Outfit_Aggregates_Armor_Glass_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Glass();
+    void                        Outfit_Group_Armor_Glass(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Glass_Standard();
+    void                        Outfit_Group_Armor_Glass_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Glass_Enhanced();
+    void                        Outfit_Group_Armor_Glass_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Guard();
-    void                        Outfit_Aggregates_Armor_Guard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Guard_Standard();
-    void                        Outfit_Aggregates_Armor_Guard_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Guard_Enhanced();
-    void                        Outfit_Aggregates_Armor_Guard_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Guard();
+    void                        Outfit_Group_Armor_Guard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Guard_Standard();
+    void                        Outfit_Group_Armor_Guard_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Guard_Enhanced();
+    void                        Outfit_Group_Armor_Guard_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Hide();
-    void                        Outfit_Aggregates_Armor_Hide(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Hide_Standard();
-    void                        Outfit_Aggregates_Armor_Hide_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Hide_Enhanced();
-    void                        Outfit_Aggregates_Armor_Hide_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Hide();
+    void                        Outfit_Group_Armor_Hide(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Hide_Standard();
+    void                        Outfit_Group_Armor_Hide_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Hide_Enhanced();
+    void                        Outfit_Group_Armor_Hide_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Imperial();
-    void                        Outfit_Aggregates_Armor_Imperial(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Imperial_Standard();
-    void                        Outfit_Aggregates_Armor_Imperial_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Imperial_Enhanced();
-    void                        Outfit_Aggregates_Armor_Imperial_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Imperial();
+    void                        Outfit_Group_Armor_Imperial(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Imperial_Standard();
+    void                        Outfit_Group_Armor_Imperial_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Imperial_Enhanced();
+    void                        Outfit_Group_Armor_Imperial_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Iron();
-    void                        Outfit_Aggregates_Armor_Iron(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Iron_Standard();
-    void                        Outfit_Aggregates_Armor_Iron_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Iron_Enhanced();
-    void                        Outfit_Aggregates_Armor_Iron_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Iron();
+    void                        Outfit_Group_Armor_Iron(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Iron_Standard();
+    void                        Outfit_Group_Armor_Iron_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Iron_Enhanced();
+    void                        Outfit_Group_Armor_Iron_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Leather();
-    void                        Outfit_Aggregates_Armor_Leather(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Leather_Standard();
-    void                        Outfit_Aggregates_Armor_Leather_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Leather_Enhanced();
-    void                        Outfit_Aggregates_Armor_Leather_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Leather();
+    void                        Outfit_Group_Armor_Leather(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Leather_Standard();
+    void                        Outfit_Group_Armor_Leather_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Leather_Enhanced();
+    void                        Outfit_Group_Armor_Leather_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Miraak();
-    void                        Outfit_Aggregates_Armor_Miraak(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Miraak_Standard();
-    void                        Outfit_Aggregates_Armor_Miraak_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Miraak_Enhanced();
-    void                        Outfit_Aggregates_Armor_Miraak_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Miraak();
+    void                        Outfit_Group_Armor_Miraak(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Miraak_Standard();
+    void                        Outfit_Group_Armor_Miraak_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Miraak_Enhanced();
+    void                        Outfit_Group_Armor_Miraak_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Morag_Tong();
-    void                        Outfit_Aggregates_Armor_Morag_Tong(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Morag_Tong_Standard();
-    void                        Outfit_Aggregates_Armor_Morag_Tong_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Morag_Tong();
+    void                        Outfit_Group_Armor_Morag_Tong(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Morag_Tong_Standard();
+    void                        Outfit_Group_Armor_Morag_Tong_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nightingale();
-    void                        Outfit_Aggregates_Armor_Nightingale(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nightingale_Standard();
-    void                        Outfit_Aggregates_Armor_Nightingale_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nightingale_Enhanced();
-    void                        Outfit_Aggregates_Armor_Nightingale_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nightingale();
+    void                        Outfit_Group_Armor_Nightingale(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nightingale_Standard();
+    void                        Outfit_Group_Armor_Nightingale_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nightingale_Enhanced();
+    void                        Outfit_Group_Armor_Nightingale_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nordic();
-    void                        Outfit_Aggregates_Armor_Nordic(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nordic_Standard();
-    void                        Outfit_Aggregates_Armor_Nordic_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Nordic_Enhanced();
-    void                        Outfit_Aggregates_Armor_Nordic_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nordic();
+    void                        Outfit_Group_Armor_Nordic(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nordic_Standard();
+    void                        Outfit_Group_Armor_Nordic_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Nordic_Enhanced();
+    void                        Outfit_Group_Armor_Nordic_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Orcish();
-    void                        Outfit_Aggregates_Armor_Orcish(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Orcish_Standard();
-    void                        Outfit_Aggregates_Armor_Orcish_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Orcish_Enhanced();
-    void                        Outfit_Aggregates_Armor_Orcish_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Orcish();
+    void                        Outfit_Group_Armor_Orcish(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Orcish_Standard();
+    void                        Outfit_Group_Armor_Orcish_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Orcish_Enhanced();
+    void                        Outfit_Group_Armor_Orcish_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Penitus_Oculatus();
-    void                        Outfit_Aggregates_Armor_Penitus_Oculatus(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Penitus_Oculatus_Standard();
-    void                        Outfit_Aggregates_Armor_Penitus_Oculatus_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Penitus_Oculatus();
+    void                        Outfit_Group_Armor_Penitus_Oculatus(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Penitus_Oculatus_Standard();
+    void                        Outfit_Group_Armor_Penitus_Oculatus_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Plate();
-    void                        Outfit_Aggregates_Armor_Plate(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Plate_Standard();
-    void                        Outfit_Aggregates_Armor_Plate_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Plate_Enhanced();
-    void                        Outfit_Aggregates_Armor_Plate_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Plate();
+    void                        Outfit_Group_Armor_Plate(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Plate_Standard();
+    void                        Outfit_Group_Armor_Plate_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Plate_Enhanced();
+    void                        Outfit_Group_Armor_Plate_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Scaled();
-    void                        Outfit_Aggregates_Armor_Scaled(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Scaled_Standard();
-    void                        Outfit_Aggregates_Armor_Scaled_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Scaled_Enhanced();
-    void                        Outfit_Aggregates_Armor_Scaled_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Scaled();
+    void                        Outfit_Group_Armor_Scaled(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Scaled_Standard();
+    void                        Outfit_Group_Armor_Scaled_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Scaled_Enhanced();
+    void                        Outfit_Group_Armor_Scaled_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Shrouded();
-    void                        Outfit_Aggregates_Armor_Shrouded(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Shrouded_Standard();
-    void                        Outfit_Aggregates_Armor_Shrouded_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Shrouded();
+    void                        Outfit_Group_Armor_Shrouded(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Shrouded_Standard();
+    void                        Outfit_Group_Armor_Shrouded_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Stalhrim();
-    void                        Outfit_Aggregates_Armor_Stalhrim(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Stalhrim_Standard();
-    void                        Outfit_Aggregates_Armor_Stalhrim_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Stalhrim_Enhanced();
-    void                        Outfit_Aggregates_Armor_Stalhrim_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Stalhrim();
+    void                        Outfit_Group_Armor_Stalhrim(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Stalhrim_Standard();
+    void                        Outfit_Group_Armor_Stalhrim_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Stalhrim_Enhanced();
+    void                        Outfit_Group_Armor_Stalhrim_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Steel();
-    void                        Outfit_Aggregates_Armor_Steel(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Steel_Standard();
-    void                        Outfit_Aggregates_Armor_Steel_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Steel_Enhanced();
-    void                        Outfit_Aggregates_Armor_Steel_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Steel();
+    void                        Outfit_Group_Armor_Steel(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Steel_Standard();
+    void                        Outfit_Group_Armor_Steel_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Steel_Enhanced();
+    void                        Outfit_Group_Armor_Steel_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Stormcloak_Officer();
-    void                        Outfit_Aggregates_Armor_Stormcloak_Officer(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Stormcloak_Officer_Standard();
-    void                        Outfit_Aggregates_Armor_Stormcloak_Officer_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Stormcloak_Officer();
+    void                        Outfit_Group_Armor_Stormcloak_Officer(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Stormcloak_Officer_Standard();
+    void                        Outfit_Group_Armor_Stormcloak_Officer_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Summerset_Shadows();
-    void                        Outfit_Aggregates_Armor_Summerset_Shadows(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Summerset_Shadows_Standard();
-    void                        Outfit_Aggregates_Armor_Summerset_Shadows_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Summerset_Shadows();
+    void                        Outfit_Group_Armor_Summerset_Shadows(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Summerset_Shadows_Standard();
+    void                        Outfit_Group_Armor_Summerset_Shadows_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Thieves_Guild();
-    void                        Outfit_Aggregates_Armor_Thieves_Guild(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Thieves_Guild_Standard();
-    void                        Outfit_Aggregates_Armor_Thieves_Guild_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Thieves_Guild();
+    void                        Outfit_Group_Armor_Thieves_Guild(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Thieves_Guild_Standard();
+    void                        Outfit_Group_Armor_Thieves_Guild_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Tsun();
-    void                        Outfit_Aggregates_Armor_Tsun(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Tsun_Standard();
-    void                        Outfit_Aggregates_Armor_Tsun_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Tsun();
+    void                        Outfit_Group_Armor_Tsun(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Tsun_Standard();
+    void                        Outfit_Group_Armor_Tsun_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Vampire();
-    void                        Outfit_Aggregates_Armor_Vampire(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Vampire_Standard();
-    void                        Outfit_Aggregates_Armor_Vampire_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Vampire_Enhanced();
-    void                        Outfit_Aggregates_Armor_Vampire_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Vampire();
+    void                        Outfit_Group_Armor_Vampire(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Vampire_Standard();
+    void                        Outfit_Group_Armor_Vampire_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Vampire_Enhanced();
+    void                        Outfit_Group_Armor_Vampire_Enhanced(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Wolf();
-    void                        Outfit_Aggregates_Armor_Wolf(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Wolf_Standard();
-    void                        Outfit_Aggregates_Armor_Wolf_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Wolf();
+    void                        Outfit_Group_Armor_Wolf(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Wolf_Standard();
+    void                        Outfit_Group_Armor_Wolf_Standard(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor();
-    void                        Outfit_Aggregates_Armor(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Unweighted();
-    void                        Outfit_Aggregates_Armor_Unweighted(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Standard();
-    void                        Outfit_Aggregates_Armor_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Standard_Unweighted();
-    void                        Outfit_Aggregates_Armor_Standard_Unweighted(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Enhanced();
-    void                        Outfit_Aggregates_Armor_Enhanced(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Armor_Enhanced_Unweighted();
-    void                        Outfit_Aggregates_Armor_Enhanced_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor();
+    void                        Outfit_Group_Armor(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Unweighted();
+    void                        Outfit_Group_Armor_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Standard();
+    void                        Outfit_Group_Armor_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Standard_Unweighted();
+    void                        Outfit_Group_Armor_Standard_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Enhanced();
+    void                        Outfit_Group_Armor_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Armor_Enhanced_Unweighted();
+    void                        Outfit_Group_Armor_Enhanced_Unweighted(Vector_t<some<Aggregate_f>>& results);
 
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates();
-    void                        Outfit_Aggregates(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Unweighted();
-    void                        Outfit_Aggregates_Unweighted(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Standard();
-    void                        Outfit_Aggregates_Standard(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Standard_Unweighted();
-    void                        Outfit_Aggregates_Standard_Unweighted(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Enhanced();
-    void                        Outfit_Aggregates_Enhanced(Vector_t<some<Aggregate_f>>& results);
-    Vector_t<some<Aggregate_f>> Outfit_Aggregates_Enhanced_Unweighted();
-    void                        Outfit_Aggregates_Enhanced_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group();
+    void                        Outfit_Group(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Unweighted();
+    void                        Outfit_Group_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Standard();
+    void                        Outfit_Group_Standard(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Standard_Unweighted();
+    void                        Outfit_Group_Standard_Unweighted(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Enhanced();
+    void                        Outfit_Group_Enhanced(Vector_t<some<Aggregate_f>>& results);
+    Vector_t<some<Aggregate_f>> Outfit_Group_Enhanced_Unweighted();
+    void                        Outfit_Group_Enhanced_Unweighted(Vector_t<some<Aggregate_f>>& results);
 
     /* Outfit_Random */
 
