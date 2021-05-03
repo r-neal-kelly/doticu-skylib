@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/armor_set.h"
 #include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
@@ -15,17 +16,11 @@ namespace doticu_skylib {
 namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Amulet_Ancient_Nordic();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Folgunthur();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Geirmund();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Saarthal();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token();
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
 
     some<Armor_t*>  Amulet_Articulation();
@@ -40,40 +35,21 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Bone_Hawk();
 
     some<Armor_t*>  Amulet_Divine_Akatosh();
-
     some<Armor_t*>  Amulet_Divine_Arkay();
-
-    some<Armor_t*>  Amulet_Divine_Arkay_Andurs();
-
     some<Armor_t*>  Amulet_Divine_Dibella();
-
     some<Armor_t*>  Amulet_Divine_Julianos();
-
     some<Armor_t*>  Amulet_Divine_Kynareth();
-
     some<Armor_t*>  Amulet_Divine_Mara();
-
     some<Armor_t*>  Amulet_Divine_Stendarr();
-
     some<Armor_t*>  Amulet_Divine_Talos();
-
-    some<Armor_t*>  Amulet_Divine_Talos_Ogmund();
-
     some<Armor_t*>  Amulet_Divine_Zenithar();
 
-    some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee();
+    some<Armor_t*>  Amulet_East_Empire_Company();
 
-    some<Armor_t*>  Amulet_East_Empire_Company_1();
-
-    some<Armor_t*>  Amulet_East_Empire_Company_2();
-
-    some<Armor_t*>  Amulet_Elder_Council_1();
-
-    some<Armor_t*>  Amulet_Elder_Council_2();
-
-    some<Armor_t*>  Amulet_Fjotlis_Silver_Locket();
+    some<Armor_t*>  Amulet_Elder_Council();
 
     some<Armor_t*>  Amulet_Gold();
+    some<Armor_t*>  Amulet_Gold_Carry();
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_1();
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_2();
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_3();
@@ -98,8 +74,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Stamina_4();
     some<Armor_t*>  Amulet_Gold_Stamina_5();
     some<Armor_t*>  Amulet_Gold_Stamina_6();
-
-    some<Armor_t*>  Amulet_Gold_Charmed();
 
     some<Armor_t*>  Amulet_Gold_Diamond();
     some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_1();
@@ -145,10 +119,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_5();
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6();
 
-    some<Armor_t*>  Amulet_Heartstone();
-
     some<Armor_t*>  Amulet_Necromancer();
-
     some<Armor_t*>  Amulet_Necromancer_Enchanted();
 
     some<Armor_t*>  Amulet_Silver();
@@ -170,14 +141,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Silver_Two_Handed_4();
     some<Armor_t*>  Amulet_Silver_Two_Handed_5();
     some<Armor_t*>  Amulet_Silver_Two_Handed_6();
-
-    some<Armor_t*>  Amulet_Silver_Grosta();
-
-    some<Armor_t*>  Amulet_Silver_Moon();
-
-    some<Armor_t*>  Amulet_Silver_Reyda();
-
-    some<Armor_t*>  Amulet_Silver_Yisra();
 
     some<Armor_t*>  Amulet_Silver_Emerald();
     some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_1();
@@ -228,26 +191,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_6();
     some<Armor_t*>  Amulet_Silver_Sapphire_Waterbreathing();
 
-    some<Armor_t*>  Amulet_Silver_Sapphire_Bera();
-
-    some<Armor_t*>  Amulet_Silver_Sapphire_Savos_Aren();
-
     some<Armor_t*>  Amulet_Skaal();
 
     some<Armor_t*>  Amulet_Vampire_Bats();
-
     some<Armor_t*>  Amulet_Vampire_Drain_Magicka();
-
     some<Armor_t*>  Amulet_Vampire_Draining_Bats();
-
     some<Armor_t*>  Amulet_Vampire_Draining_Grip();
-
     some<Armor_t*>  Amulet_Vampire_Empath();
-
     some<Armor_t*>  Amulet_Vampire_Gargoyle();
-
     some<Armor_t*>  Amulet_Vampire_Mist_Form();
-
     some<Armor_t*>  Amulet_Vampire_Supernatural_Reflexes();
 
     some<Armor_t*>  Armor_Ancient_Falmer_Body();
@@ -1054,6 +1006,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dwarven_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Dwarven_Shield_Resist_Shock_3();
 
+    some<Armor_t*>  Armor_Dwarven_Aetherial_Head();
     some<Armor_t*>  Armor_Dwarven_Aetherial_Shield();
 
     some<Armor_t*>  Armor_Dwarven_Spellbreaker_Shield();
@@ -2913,8 +2866,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Wolf_Hands();
     some<Armor_t*>  Armor_Wolf_Head();
 
-    some<Armor_t*>  Circlet_Aetherial_Crown();
-
     some<Armor_t*>  Circlet_Copper_And_Moonstone();
     some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_1();
     some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_2();
@@ -2941,8 +2892,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_6();
 
     some<Armor_t*>  Circlet_Copper_And_Sapphire();
-
-    some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage();
+    some<Armor_t*>  Circlet_Copper_And_Sapphire_Magicka();
 
     some<Armor_t*>  Circlet_Gold_And_Emerald();
     some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_1();
@@ -2979,12 +2929,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_4();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_5();
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_6();
-
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4();
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_5();
 
     some<Armor_t*>  Circlet_Silver_And_Sapphire();
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_1();
@@ -3513,6 +3457,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Bone_Hawk();
 
     some<Armor_t*>  Ring_Gold();
+    some<Armor_t*>  Ring_Gold_Alchemy();
+    some<Armor_t*>  Ring_Gold_Health();
     some<Armor_t*>  Ring_Gold_Pickpocket_1();
     some<Armor_t*>  Ring_Gold_Pickpocket_2();
     some<Armor_t*>  Ring_Gold_Pickpocket_3();
@@ -3531,16 +3477,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Gold_Stamina_Rate_4();
 
     some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony();
-
-    some<Armor_t*>  Ring_Gold_Enchanted();
-
-    some<Armor_t*>  Ring_Gold_Pure_Mixtures();
-
-    some<Armor_t*>  Ring_Gold_Viola();
-
-    some<Armor_t*>  Ring_Gold_Wedding_Asgeir();
-
-    some<Armor_t*>  Ring_Gold_Wedding_Vittoria();
 
     some<Armor_t*>  Ring_Gold_Diamond();
     some<Armor_t*>  Ring_Gold_Diamond_Health_1();
@@ -3597,12 +3533,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Gold_Sapphire_Ahzidal_Necromancy();
 
     some<Armor_t*>  Ring_Hircine();
-
     some<Armor_t*>  Ring_Hircine_Cursed();
 
     some<Armor_t*>  Ring_Namira();
 
     some<Armor_t*>  Ring_Silver();
+    some<Armor_t*>  Ring_Silver_Alchemy();
     some<Armor_t*>  Ring_Silver_Block_1();
     some<Armor_t*>  Ring_Silver_Block_2();
     some<Armor_t*>  Ring_Silver_Block_3();
@@ -3615,22 +3551,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Lockpicking_4();
     some<Armor_t*>  Ring_Silver_Lockpicking_5();
     some<Armor_t*>  Ring_Silver_Lockpicking_6();
+    some<Armor_t*>  Ring_Silver_Smithing();
 
-    some<Armor_t*>  Ring_Silver_Bloodlust();
-
-    some<Armor_t*>  Ring_Silver_Calcelmo();
-
-    some<Armor_t*>  Ring_Silver_Madesi();
-
-    some<Armor_t*>  Ring_Silver_Muiri();
-
-    some<Armor_t*>  Ring_Silver_Muiri_Enchanted();
-
-    some<Armor_t*>  Ring_Silver_Blood_Family();
-
-    some<Armor_t*>  Ring_Silver_Wedding_Fjola_1();
-
-    some<Armor_t*>  Ring_Silver_Wedding_Fjola_2();
+    some<Armor_t*>  Ring_Silver_Werewolf_Bloodlust();
 
     some<Armor_t*>  Ring_Silver_Amethyst();
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_1();
@@ -3652,11 +3575,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_5();
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_6();
 
-    some<Armor_t*>  Ring_Silver_Amethyst_Ilas_Tei();
-
-    some<Armor_t*>  Ring_Silver_Amethyst_Instinct();
-
     some<Armor_t*>  Ring_Silver_Amethyst_Nightweavers();
+
+    some<Armor_t*>  Ring_Silver_Amethyst_Werewolf_Instinct();
 
     some<Armor_t*>  Ring_Silver_Garnet();
     some<Armor_t*>  Ring_Silver_Garnet_Alteration_1();
@@ -3678,9 +3599,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_5();
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_6();
 
-    some<Armor_t*>  Ring_Silver_Garnet_Moon();
+    some<Armor_t*>  Ring_Silver_Garnet_Neloth_Tracking();
 
-    some<Armor_t*>  Ring_Silver_Garnet_Neloth();
+    some<Armor_t*>  Ring_Silver_Garnet_Werewolf_Moon();
 
     some<Armor_t*>  Ring_Silver_Ruby();
     some<Armor_t*>  Ring_Silver_Ruby_Destruction_1();
@@ -3702,28 +3623,19 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_5();
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_6();
 
-    some<Armor_t*>  Ring_Silver_Ruby_Hunt();
+    some<Armor_t*>  Ring_Silver_Ruby_Werewolf_Hunt();
 
     some<Armor_t*>  Ring_Vampire_Beast();
-
     some<Armor_t*>  Ring_Vampire_Corpse_Curse();
-
     some<Armor_t*>  Ring_Vampire_Draining_Claws();
-
     some<Armor_t*>  Ring_Vampire_Erudite();
-
     some<Armor_t*>  Ring_Vampire_Gargoyle();
-
     some<Armor_t*>  Ring_Vampire_Reanimate_Corpse();
-
     some<Armor_t*>  Ring_Vampire_Vampiric_Grip();
 
     some<Armor_t*>  Skin_Afflicted();
-
     some<Armor_t*>  Skin_Astrid();
-
     some<Armor_t*>  Skin_Mannequin();
-
     some<Armor_t*>  Skin_Naked();
 
 }}}

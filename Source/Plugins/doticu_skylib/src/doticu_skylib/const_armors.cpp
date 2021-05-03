@@ -10,17 +10,11 @@
 namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Amulet_Ancient_Nordic()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC842); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02D773); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Folgunthur()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02D74F); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Geirmund()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02D753); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Gauldur_Saarthal()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02D75A); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Kynes_Token()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x107E2D); }
-
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0233D0); }
 
     some<Armor_t*>  Amulet_Articulation()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDEAF); }
@@ -35,40 +29,21 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Bone_Hawk()                                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01AA0B); }
 
     some<Armor_t*>  Amulet_Divine_Akatosh()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C8911); }
-
     some<Armor_t*>  Amulet_Divine_Arkay()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC848); }
-
-    some<Armor_t*>  Amulet_Divine_Arkay_Andurs()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x094E3E); }
-
     some<Armor_t*>  Amulet_Divine_Dibella()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C8915); }
-
     some<Armor_t*>  Amulet_Divine_Julianos()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C8917); }
-
     some<Armor_t*>  Amulet_Divine_Kynareth()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C8919); }
-
     some<Armor_t*>  Amulet_Divine_Mara()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C891B); }
-
     some<Armor_t*>  Amulet_Divine_Stendarr()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC844); }
-
     some<Armor_t*>  Amulet_Divine_Talos()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CC846); }
-
-    some<Armor_t*>  Amulet_Divine_Talos_Ogmund()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x064796); }
-
     some<Armor_t*>  Amulet_Divine_Zenithar()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0878BB); }
 
-    some<Armor_t*>  Amulet_Divine_Zenithar_Shahvee()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0BFA0A); }
+    some<Armor_t*>  Amulet_East_Empire_Company()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024FA4); }
 
-    some<Armor_t*>  Amulet_East_Empire_Company_1()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x026735); }
-
-    some<Armor_t*>  Amulet_East_Empire_Company_2()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x024FA4); }
-
-    some<Armor_t*>  Amulet_Elder_Council_1()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06B217); }
-
-    some<Armor_t*>  Amulet_Elder_Council_2()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C8913); }
-
-    some<Armor_t*>  Amulet_Fjotlis_Silver_Locket()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x07D678); }
+    some<Armor_t*>  Amulet_Elder_Council()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06B217); }
 
     some<Armor_t*>  Amulet_Gold()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877D5); }
+    some<Armor_t*>  Amulet_Gold_Carry()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C72E8); }
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_1()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF27); }
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_2()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF28); }
     some<Armor_t*>  Amulet_Gold_Heavy_Armor_3()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF29); }
@@ -93,8 +68,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Stamina_4()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC058); }
     some<Armor_t*>  Amulet_Gold_Stamina_5()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC059); }
     some<Armor_t*>  Amulet_Gold_Stamina_6()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC05A); }
-
-    some<Armor_t*>  Amulet_Gold_Charmed()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C72E8); }
 
     some<Armor_t*>  Amulet_Gold_Diamond()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877F1); }
     some<Armor_t*>  Amulet_Gold_Diamond_Resist_Poison_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC03D); }
@@ -140,10 +113,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_5()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC047); }
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC048); }
 
-    some<Armor_t*>  Amulet_Heartstone()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0376EF); }
-
     some<Armor_t*>  Amulet_Necromancer()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2328); }
-
     some<Armor_t*>  Amulet_Necromancer_Enchanted()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C891D); }
 
     some<Armor_t*>  Amulet_Silver()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09171B); }
@@ -165,14 +135,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Silver_Two_Handed_4()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF18); }
     some<Armor_t*>  Amulet_Silver_Two_Handed_5()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF19); }
     some<Armor_t*>  Amulet_Silver_Two_Handed_6()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF1A); }
-
-    some<Armor_t*>  Amulet_Silver_Grosta()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06BBB5); }
-
-    some<Armor_t*>  Amulet_Silver_Moon()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D9394); }
-
-    some<Armor_t*>  Amulet_Silver_Reyda()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0663DA); }
-
-    some<Armor_t*>  Amulet_Silver_Yisra()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D4FF7); }
 
     some<Armor_t*>  Amulet_Silver_Emerald()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x087833); }
     some<Armor_t*>  Amulet_Silver_Emerald_Lockpicking_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF39); }
@@ -223,26 +185,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Silver_Sapphire_Resist_Frost_6()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC04E); }
     some<Armor_t*>  Amulet_Silver_Sapphire_Waterbreathing()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC067); }
 
-    some<Armor_t*>  Amulet_Silver_Sapphire_Bera()                       { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02C8AD); }
-
-    some<Armor_t*>  Amulet_Silver_Sapphire_Savos_Aren()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B33); }
-
     some<Armor_t*>  Amulet_Skaal()                                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D4A); }
 
     some<Armor_t*>  Amulet_Vampire_Bats()                               { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A7); }
-
     some<Armor_t*>  Amulet_Vampire_Drain_Magicka()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F4D7); }
-
     some<Armor_t*>  Amulet_Vampire_Draining_Bats()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0068AE); }
-
     some<Armor_t*>  Amulet_Vampire_Draining_Grip()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E803); }
-
     some<Armor_t*>  Amulet_Vampire_Empath()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A5); }
-
     some<Armor_t*>  Amulet_Vampire_Gargoyle()                           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00F4D5); }
-
     some<Armor_t*>  Amulet_Vampire_Mist_Form()                          { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A6); }
-
     some<Armor_t*>  Amulet_Vampire_Supernatural_Reflexes()              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A8); }
 
     some<Armor_t*>  Armor_Ancient_Falmer_Body()                         { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00C816); }
@@ -1049,6 +1000,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dwarven_Shield_Resist_Shock_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x084B87); }
     some<Armor_t*>  Armor_Dwarven_Shield_Resist_Shock_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x084B88); }
 
+    some<Armor_t*>  Armor_Dwarven_Aetherial_Head()                      { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00575A); }
     some<Armor_t*>  Armor_Dwarven_Aetherial_Shield()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x005759); }
 
     some<Armor_t*>  Armor_Dwarven_Spellbreaker_Shield()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x045F96); }
@@ -2908,8 +2860,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Wolf_Hands()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0CEE7E); }
     some<Armor_t*>  Armor_Wolf_Head()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x04C3D0); }
 
-    some<Armor_t*>  Circlet_Aetherial_Crown()                           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00575A); }
-
     some<Armor_t*>  Circlet_Copper_And_Moonstone()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x016730); }
     some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC00C); }
     some<Armor_t*>  Circlet_Copper_And_Moonstone_Conjuration_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC00D); }
@@ -2936,8 +2886,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Copper_And_Ruby_Destruction_6()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC017); }
 
     some<Armor_t*>  Circlet_Copper_And_Sapphire()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0166FE); }
-
-    some<Armor_t*>  Circlet_Copper_And_Sapphire_Mage()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B2E); }
+    some<Armor_t*>  Circlet_Copper_And_Sapphire_Magicka()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B2E); }
 
     some<Armor_t*>  Circlet_Gold_And_Emerald()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01672F); }
     some<Armor_t*>  Circlet_Gold_And_Emerald_Marksman_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC02A); }
@@ -2974,12 +2923,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_4()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC027); }
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_5()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC028); }
     some<Armor_t*>  Circlet_Silver_And_Moonstone_Magicka_6()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC029); }
-
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B2C); }
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B2D); }
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B2F); }
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_4()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B30); }
-    some<Armor_t*>  Circlet_Silver_And_Moonstone_Mage_5()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1B31); }
 
     some<Armor_t*>  Circlet_Silver_And_Sapphire()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x016719); }
     some<Armor_t*>  Circlet_Silver_And_Sapphire_Alteration_1()          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC006); }
@@ -3508,6 +3451,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Bone_Hawk()                                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x011CF5); }
 
     some<Armor_t*>  Ring_Gold()                                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01CF2B); }
+    some<Armor_t*>  Ring_Gold_Alchemy()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x090E32); }
+    some<Armor_t*>  Ring_Gold_Health()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02584C); }
     some<Armor_t*>  Ring_Gold_Pickpocket_1()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E2F); }
     some<Armor_t*>  Ring_Gold_Pickpocket_2()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E30); }
     some<Armor_t*>  Ring_Gold_Pickpocket_3()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E31); }
@@ -3526,16 +3471,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Gold_Stamina_Rate_4()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E58); }
 
     some<Armor_t*>  Ring_Gold_Bond_Of_Matrimony()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C5809); }
-
-    some<Armor_t*>  Ring_Gold_Enchanted()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02584C); }
-
-    some<Armor_t*>  Ring_Gold_Pure_Mixtures()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x090E32); }
-
-    some<Armor_t*>  Ring_Gold_Viola()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0403A9); }
-
-    some<Armor_t*>  Ring_Gold_Wedding_Asgeir()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F5A1D); }
-
-    some<Armor_t*>  Ring_Gold_Wedding_Vittoria()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F5A1C); }
 
     some<Armor_t*>  Ring_Gold_Diamond()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877C9); }
     some<Armor_t*>  Ring_Gold_Diamond_Health_1()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCEFD); }
@@ -3592,12 +3527,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Gold_Sapphire_Ahzidal_Necromancy()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB9A); }
 
     some<Armor_t*>  Ring_Hircine()                                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02AC60); }
-
     some<Armor_t*>  Ring_Hircine_Cursed()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F82FE); }
 
     some<Armor_t*>  Ring_Namira()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x02C37B); }
 
     some<Armor_t*>  Ring_Silver()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03B97C); }
+    some<Armor_t*>  Ring_Silver_Alchemy()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06B218); }
     some<Armor_t*>  Ring_Silver_Block_1()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100DF3); }
     some<Armor_t*>  Ring_Silver_Block_2()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100DF4); }
     some<Armor_t*>  Ring_Silver_Block_3()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100DF5); }
@@ -3610,22 +3545,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Lockpicking_4()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E20); }
     some<Armor_t*>  Ring_Silver_Lockpicking_5()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E21); }
     some<Armor_t*>  Ring_Silver_Lockpicking_6()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E22); }
+    some<Armor_t*>  Ring_Silver_Smithing()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x024CFF); }
 
-    some<Armor_t*>  Ring_Silver_Bloodlust()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B6); }
-
-    some<Armor_t*>  Ring_Silver_Calcelmo()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D8482); }
-
-    some<Armor_t*>  Ring_Silver_Madesi()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x076F12); }
-
-    some<Armor_t*>  Ring_Silver_Muiri()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06B219); }
-
-    some<Armor_t*>  Ring_Silver_Muiri_Enchanted()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06B218); }
-
-    some<Armor_t*>  Ring_Silver_Blood_Family()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x024CFF); }
-
-    some<Armor_t*>  Ring_Silver_Wedding_Fjola_1()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0164); }
-
-    some<Armor_t*>  Ring_Silver_Wedding_Fjola_2()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3BDB); }
+    some<Armor_t*>  Ring_Silver_Werewolf_Bloodlust()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B6); }
 
     some<Armor_t*>  Ring_Silver_Amethyst()                              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877A7); }
     some<Armor_t*>  Ring_Silver_Amethyst_Conjuration_1()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100DF9); }
@@ -3647,11 +3569,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_5()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E2D); }
     some<Armor_t*>  Ring_Silver_Amethyst_One_Handed_6()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E2E); }
 
-    some<Armor_t*>  Ring_Silver_Amethyst_Ilas_Tei()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D5047); }
-
-    some<Armor_t*>  Ring_Silver_Amethyst_Instinct()                     { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B7); }
-
     some<Armor_t*>  Ring_Silver_Amethyst_Nightweavers()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x068B83); }
+
+    some<Armor_t*>  Ring_Silver_Amethyst_Werewolf_Instinct()            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B7); }
 
     some<Armor_t*>  Ring_Silver_Garnet()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877AB); }
     some<Armor_t*>  Ring_Silver_Garnet_Alteration_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FF7DE); }
@@ -3673,9 +3593,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_5()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E27); }
     some<Armor_t*>  Ring_Silver_Garnet_Marksman_6()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E28); }
 
-    some<Armor_t*>  Ring_Silver_Garnet_Moon()                           { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B8); }
+    some<Armor_t*>  Ring_Silver_Garnet_Neloth_Tracking()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01961C); }
 
-    some<Armor_t*>  Ring_Silver_Garnet_Neloth()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01961C); }
+    some<Armor_t*>  Ring_Silver_Garnet_Werewolf_Moon()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B8); }
 
     some<Armor_t*>  Ring_Silver_Ruby()                                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0877B1); }
     some<Armor_t*>  Ring_Silver_Ruby_Destruction_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100DFF); }
@@ -3697,28 +3617,19 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_5()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E50); }
     some<Armor_t*>  Ring_Silver_Ruby_Two_Handed_6()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x100E84); }
 
-    some<Armor_t*>  Ring_Silver_Ruby_Hunt()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B9); }
+    some<Armor_t*>  Ring_Silver_Ruby_Werewolf_Hunt()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0275B9); }
 
     some<Armor_t*>  Ring_Vampire_Beast()                                { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E7FD); }
-
     some<Armor_t*>  Ring_Vampire_Corpse_Curse()                         { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A4); }
-
     some<Armor_t*>  Ring_Vampire_Draining_Claws()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E7EB); }
-
     some<Armor_t*>  Ring_Vampire_Erudite()                              { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00E7FE); }
-
     some<Armor_t*>  Ring_Vampire_Gargoyle()                             { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A3); }
-
     some<Armor_t*>  Ring_Vampire_Reanimate_Corpse()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A1); }
-
     some<Armor_t*>  Ring_Vampire_Vampiric_Grip()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x00A2A2); }
 
     some<Armor_t*>  Skin_Afflicted()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x097A43); }
-
     some<Armor_t*>  Skin_Astrid()                                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x07EAF1); }
-
     some<Armor_t*>  Skin_Mannequin()                                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x107611); }
-
     some<Armor_t*>  Skin_Naked()                                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x000D64); }
 
 }}}
@@ -7053,7 +6964,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Armor_Dwarven_Body());
         results.push_back(Armor::Armor_Dwarven_Feet());
         results.push_back(Armor::Armor_Dwarven_Hands());
-        results.push_back(Armor::Armor_Dwarven_Head());
+        results.push_back(Armor::Armor_Dwarven_Aetherial_Head());
         results.push_back(Armor::Armor_Dwarven_Aetherial_Shield());
     }
 
@@ -7062,7 +6973,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor_Dwarven_Body_Enchanted().Random());
         results.push_back(Armor_Dwarven_Feet_Enchanted().Random());
         results.push_back(Armor_Dwarven_Hands_Enchanted().Random());
-        results.push_back(Armor_Dwarven_Head_Enchanted().Random());
+        results.push_back(Armor::Armor_Dwarven_Aetherial_Head());
         results.push_back(Armor::Armor_Dwarven_Aetherial_Shield());
     }
 

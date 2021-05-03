@@ -65,6 +65,7 @@
     <ClInclude Include="include\doticu_skylib\actor_value_modifiers.h" />
     <ClInclude Include="include\doticu_skylib\alpha.h" />
     <ClInclude Include="include\doticu_skylib\ammo.h" />
+    <ClInclude Include="include\doticu_skylib\armor_set.h" />
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\book.h" />
@@ -513,6 +514,7 @@
     <ClCompile Include="src\doticu_skylib\alias_reference.cpp" />
     <ClCompile Include="src\doticu_skylib\ammo.cpp" />
     <ClCompile Include="src\doticu_skylib\armor.cpp" />
+    <ClCompile Include="src\doticu_skylib\armor_set.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\book.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
