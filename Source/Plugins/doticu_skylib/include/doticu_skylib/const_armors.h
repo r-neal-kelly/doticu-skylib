@@ -226,10 +226,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Ancient_Nordic_Hevnoraak_Head();
 
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Body();
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Feet();
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Hands();
-
     some<Armor_t*>  Armor_Ancient_Nordic_Jagged_Crown_Head();
 
     some<Armor_t*>  Armor_Ancient_Nordic_Kolbjorn_Body();
@@ -254,6 +250,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Ancient_Nordic_Vokun_Head();
 
     some<Armor_t*>  Armor_Ancient_Nordic_Volsung_Head();
+
+    some<Armor_t*>  Armor_Ancient_Nordic_Yngol_Head();
 
     some<Armor_t*>  Armor_Ancient_Nordic_Ysgramor_Shield();
 
@@ -656,11 +654,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Armor_Daedric_Dremora_Body();
-    some<Armor_t*>  Armor_Daedric_Dremora_Feet();
-    some<Armor_t*>  Armor_Daedric_Dremora_Hands();
-    some<Armor_t*>  Armor_Daedric_Dremora_Head();
-
     some<Armor_t*>  Armor_Dawnguard_Heavy_Feet();
     some<Armor_t*>  Armor_Dawnguard_Heavy_Hands();
     some<Armor_t*>  Armor_Dawnguard_Heavy_Head();
@@ -787,11 +780,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_1();
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_3();
-
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Body();
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Feet();
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Hands();
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Shield();
 
     some<Armor_t*>  Armor_Dragonscale_Body();
     some<Armor_t*>  Armor_Dragonscale_Body_Alteration_1();
@@ -1258,8 +1246,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Gilded_Body_Stamina_Rate_2();
     some<Armor_t*>  Armor_Elven_Gilded_Body_Stamina_Rate_3();
 
-    some<Armor_t*>  Armor_Elven_Herebanes_Fortress_Shield();
-
     some<Armor_t*>  Armor_Elven_Pauldronless_Body();
     some<Armor_t*>  Armor_Elven_Pauldronless_Feet();
     some<Armor_t*>  Armor_Elven_Pauldronless_Hands();
@@ -1464,8 +1450,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Guard_Windhelm_Head();
     some<Armor_t*>  Armor_Guard_Windhelm_Shield();
 
-    some<Armor_t*>  Armor_Guard_Windhelm_Eastmarch_Head();
-
     some<Armor_t*>  Armor_Guard_Windhelm_Sleeved_Body();
 
     some<Armor_t*>  Armor_Guard_Winterhold_Body();
@@ -1577,8 +1561,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Armor_Hide_Movarth_Feet();
-
     some<Armor_t*>  Armor_Hide_Predators_Grace_Feet();
 
     some<Armor_t*>  Armor_Hide_Studded_Body();
@@ -1663,11 +1645,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Heavy_Head_Restoration_2();
     some<Armor_t*>  Armor_Imperial_Heavy_Head_Restoration_3();
     some<Armor_t*>  Armor_Imperial_Heavy_Shield();
-
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Body();
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Feet();
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Hands();
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Head();
 
     some<Armor_t*>  Armor_Imperial_Heavy_General_Carius_Body();
 
@@ -1763,8 +1740,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_1();
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_3();
-
-    some<Armor_t*>  Armor_Imperial_Light_Noster_Head();
 
     some<Armor_t*>  Armor_Imperial_Light_Studded_Body();
     some<Armor_t*>  Armor_Imperial_Light_Studded_Body_Health_1();
@@ -1909,14 +1884,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Armor_Iron_Dented_Shield();
-
-    some<Armor_t*>  Armor_Iron_Family_Shield();
-
-    some<Armor_t*>  Armor_Iron_Forgemasters_Fingers_Hands();
-
-    some<Armor_t*>  Armor_Iron_Roggi_Shield();
-
     some<Armor_t*>  Armor_Leather_Body();
     some<Armor_t*>  Armor_Leather_Body_Alteration_1();
     some<Armor_t*>  Armor_Leather_Body_Alteration_2();
@@ -2006,13 +1973,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Leather_Head_Restoration_2();
     some<Armor_t*>  Armor_Leather_Head_Restoration_3();
 
-    some<Armor_t*>  Armor_Miraak_Body();
     some<Armor_t*>  Armor_Miraak_Body_Reward_1();
     some<Armor_t*>  Armor_Miraak_Body_Reward_2();
     some<Armor_t*>  Armor_Miraak_Body_Reward_3();
     some<Armor_t*>  Armor_Miraak_Feet();
     some<Armor_t*>  Armor_Miraak_Hands();
-    some<Armor_t*>  Armor_Miraak_Head();
 
     some<Armor_t*>  Armor_Miraak_Heavy_Head_Reward_1();
     some<Armor_t*>  Armor_Miraak_Heavy_Head_Reward_2();
@@ -2027,19 +1992,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Morag_Tong_Hands();
     some<Armor_t*>  Armor_Morag_Tong_Head();
 
-    some<Armor_t*>  Armor_Nightingale_Body();
     some<Armor_t*>  Armor_Nightingale_Body_Reward_1();
     some<Armor_t*>  Armor_Nightingale_Body_Reward_2();
     some<Armor_t*>  Armor_Nightingale_Body_Reward_3();
-    some<Armor_t*>  Armor_Nightingale_Feet();
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_1();
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_2();
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_3();
-    some<Armor_t*>  Armor_Nightingale_Hands();
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_1();
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_2();
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_3();
-    some<Armor_t*>  Armor_Nightingale_Head();
     some<Armor_t*>  Armor_Nightingale_Head_Reward_1();
     some<Armor_t*>  Armor_Nightingale_Head_Reward_2();
     some<Armor_t*>  Armor_Nightingale_Head_Reward_3();
@@ -2326,10 +2287,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Plate_Head_Restoration_2();
     some<Armor_t*>  Armor_Plate_Head_Restoration_3();
     some<Armor_t*>  Armor_Plate_Head_Waterbreathing();
-
-    some<Armor_t*>  Armor_Plate_Katria_Body();
-
-    some<Armor_t*>  Armor_Plate_Yngol_Head();
 
     some<Armor_t*>  Armor_Scaled_Body();
     some<Armor_t*>  Armor_Scaled_Body_Alteration_1();
@@ -2756,15 +2713,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Steel_Horned_Head();
 
-    some<Armor_t*>  Armor_Steel_Horned_Winterhold_Head();
-
-    some<Armor_t*>  Armor_Steel_Hrolfdir_Shield();
-
-    some<Armor_t*>  Armor_Steel_Imperial_Feet();
-    some<Armor_t*>  Armor_Steel_Imperial_Hands();
-
-    some<Armor_t*>  Armor_Steel_Ironhand_Hands();
-
     some<Armor_t*>  Armor_Steel_Pauldron_Body();
 
     some<Armor_t*>  Armor_Steel_Targe_Of_The_Blooded_Shield();
@@ -2774,20 +2722,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Stormcloak_Officer_Hands();
     some<Armor_t*>  Armor_Stormcloak_Officer_Head();
 
-    some<Armor_t*>  Armor_Summerset_Shadows_Body();
-    some<Armor_t*>  Armor_Summerset_Shadows_Feet();
-    some<Armor_t*>  Armor_Summerset_Shadows_Hands();
-    some<Armor_t*>  Armor_Summerset_Shadows_Head();
-
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Body();
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Feet();
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Hands();
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Head();
-
     some<Armor_t*>  Armor_Thieves_Guild_Body();
     some<Armor_t*>  Armor_Thieves_Guild_Feet();
     some<Armor_t*>  Armor_Thieves_Guild_Hands();
     some<Armor_t*>  Armor_Thieves_Guild_Head();
+
+    some<Armor_t*>  Armor_Thieves_Guild_Alternate_Head();
 
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Body();
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Feet();
@@ -2809,23 +2749,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Master_Hands();
     some<Armor_t*>  Armor_Thieves_Guild_Master_Head();
 
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Body();
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Feet();
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Hands();
-
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Body();
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Feet();
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Hands();
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Head();
-
     some<Armor_t*>  Armor_Thieves_Guild_Torturer_Head();
 
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Body();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Feet();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Hands();
     some<Armor_t*>  Armor_Thieves_Guild_Variant_Head();
-
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Alternate_Head();
 
     some<Armor_t*>  Armor_Tsun_Body();
     some<Armor_t*>  Armor_Tsun_Feet();
@@ -3642,9 +3571,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
 namespace doticu_skylib { namespace Const { namespace Armors {
 
-    using Outfit_f = Armor_Set_t(*)();
-
-    /* Parts */
+    using Set_f = Armor_Set_t(*)();
 
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Body_Enchanted();
     void                        Armor_Bonemold_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
@@ -3917,684 +3844,631 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Armor_Vampire_Red_Body_Enchanted();
     void                        Armor_Vampire_Red_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
 
-    /* Outfit */
-
-    Armor_Set_t                 Outfit_Armor_Ancient_Falmer();
-    Armor_Set_t                 Outfit_Armor_Ancient_Falmer_Auriel();
-    Armor_Set_t                 Outfit_Armor_Ancient_Falmer_Pauldronless();
-    Armor_Set_t                 Outfit_Armor_Ancient_Falmer_Reflecting();
-
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Ahzidal();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Bromjunaar();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Dukaan();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Hevnoraak();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Hunter();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Jagged_Crown();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Kolbjorn();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Konahrik();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Krosis();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Morokei();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Nahkriin();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Otar();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Rahgot();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Unburned();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Vokun();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Volsung();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Ysgramor();
-    Armor_Set_t                 Outfit_Armor_Ancient_Nordic_Zahkriisos();
-
-    Armor_Set_t                 Outfit_Armor_Blades();
-
-    Armor_Set_t                 Outfit_Armor_Bonemold();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Guard();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Guard_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Pauldron();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Pauldron_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Bonemold_Pauldron_Improved();
-
-    Armor_Set_t                 Outfit_Armor_Chitin_Heavy();
-    Armor_Set_t                 Outfit_Armor_Chitin_Heavy_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Chitin_Light();
-    Armor_Set_t                 Outfit_Armor_Chitin_Light_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Daedric();
-    Armor_Set_t                 Outfit_Armor_Daedric_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Daedric_Dremora();
-    Armor_Set_t                 Outfit_Armor_Daedric_Dremora_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Dawnguard_Heavy_Brown();
-    Armor_Set_t                 Outfit_Armor_Dawnguard_Heavy_Grey();
-    Armor_Set_t                 Outfit_Armor_Dawnguard_Light_Brown();
-    Armor_Set_t                 Outfit_Armor_Dawnguard_Light_Grey();
-    Armor_Set_t                 Outfit_Armor_Dawnguard_Light_Red();
-
-    Armor_Set_t                 Outfit_Armor_Dragonplate();
-    Armor_Set_t                 Outfit_Armor_Dragonplate_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Dragonplate_Keeper();
-    Armor_Set_t                 Outfit_Armor_Dragonplate_Keeper_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Dragonscale();
-    Armor_Set_t                 Outfit_Armor_Dragonscale_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Dwarven();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Aetherial();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Aetherial_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Spellbreaker();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Spellbreaker_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Visage_Of_Mzund();
-    Armor_Set_t                 Outfit_Armor_Dwarven_Visage_Of_Mzund_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Ebony();
-    Armor_Set_t                 Outfit_Armor_Ebony_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Ebony_Mail();
-    Armor_Set_t                 Outfit_Armor_Ebony_Mail_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile();
-    Armor_Set_t                 Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Elven();
-    Armor_Set_t                 Outfit_Armor_Elven_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Elven_Gilded();
-    Armor_Set_t                 Outfit_Armor_Elven_Gilded_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Elven_Herebanes_Fortress();
-    Armor_Set_t                 Outfit_Armor_Elven_Herebanes_Fortress_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Elven_Pauldronless();
-    Armor_Set_t                 Outfit_Armor_Elven_Pauldronless_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Falmer();
-    Armor_Set_t                 Outfit_Armor_Falmer_Hardened();
-    Armor_Set_t                 Outfit_Armor_Falmer_Heavy();
-    Armor_Set_t                 Outfit_Armor_Falmer_Heavy_Shellbug();
-
-    Armor_Set_t                 Outfit_Armor_Forsworn();
-    Armor_Set_t                 Outfit_Armor_Forsworn_Old_Gods();
-
-    Armor_Set_t                 Outfit_Armor_Fur();
-    Armor_Set_t                 Outfit_Armor_Fur_Topless();
-    Armor_Set_t                 Outfit_Armor_Fur_Topless_Pauldron();
-    Armor_Set_t                 Outfit_Armor_Fur_Saviors_Hide();
-    Armor_Set_t                 Outfit_Armor_Fur_Sleeveless();
-
-    Armor_Set_t                 Outfit_Armor_Glass();
-    Armor_Set_t                 Outfit_Armor_Glass_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Guard_Falkreath();
-    Armor_Set_t                 Outfit_Armor_Guard_Hjaalmarch();
-    Armor_Set_t                 Outfit_Armor_Guard_Markarth();
-    Armor_Set_t                 Outfit_Armor_Guard_Pale();
-    Armor_Set_t                 Outfit_Armor_Guard_Riften();
-    Armor_Set_t                 Outfit_Armor_Guard_Riften_Pugilist();
-    Armor_Set_t                 Outfit_Armor_Guard_Solitude();
-    Armor_Set_t                 Outfit_Armor_Guard_Solitude_Reward();
-    Armor_Set_t                 Outfit_Armor_Guard_Whiterun();
-    Armor_Set_t                 Outfit_Armor_Guard_Windhelm();
-    Armor_Set_t                 Outfit_Armor_Guard_Windhelm_Eastmarch();
-    Armor_Set_t                 Outfit_Armor_Guard_Windhelm_Sleeved();
-    Armor_Set_t                 Outfit_Armor_Guard_Winterhold();
-
-    Armor_Set_t                 Outfit_Armor_Hide();
-    Armor_Set_t                 Outfit_Armor_Hide_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Hide_Movarth();
-    Armor_Set_t                 Outfit_Armor_Hide_Movarth_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Hide_Predators_Grace();
-    Armor_Set_t                 Outfit_Armor_Hide_Predators_Grace_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Hide_Studded();
-    Armor_Set_t                 Outfit_Armor_Hide_Studded_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Falx();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_General_Carius();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_General_Carius_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_General_Tullius();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_General_Tullius_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Knight();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Knight_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Officer();
-    Armor_Set_t                 Outfit_Armor_Imperial_Heavy_Officer_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light_Noster();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light_Noster_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light_Studded();
-    Armor_Set_t                 Outfit_Armor_Imperial_Light_Studded_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Iron();
-    Armor_Set_t                 Outfit_Armor_Iron_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Iron_Banded();
-    Armor_Set_t                 Outfit_Armor_Iron_Banded_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Iron_Dented();
-    Armor_Set_t                 Outfit_Armor_Iron_Dented_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Iron_Family();
-    Armor_Set_t                 Outfit_Armor_Iron_Family_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Iron_Forgemasters_Fingers();
-    Armor_Set_t                 Outfit_Armor_Iron_Forgemasters_Fingers_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Iron_Roggi();
-    Armor_Set_t                 Outfit_Armor_Iron_Roggi_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Leather();
-    Armor_Set_t                 Outfit_Armor_Leather_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Miraak();
-    Armor_Set_t                 Outfit_Armor_Miraak_Reward();
-    Armor_Set_t                 Outfit_Armor_Miraak_Reward_1();
-    Armor_Set_t                 Outfit_Armor_Miraak_Reward_2();
-    Armor_Set_t                 Outfit_Armor_Miraak_Reward_3();
-    Armor_Set_t                 Outfit_Armor_Miraak_Heavy_Reward();
-    Armor_Set_t                 Outfit_Armor_Miraak_Heavy_Reward_1();
-    Armor_Set_t                 Outfit_Armor_Miraak_Heavy_Reward_2();
-    Armor_Set_t                 Outfit_Armor_Miraak_Heavy_Reward_3();
-    Armor_Set_t                 Outfit_Armor_Miraak_Light_Reward();
-    Armor_Set_t                 Outfit_Armor_Miraak_Light_Reward_1();
-    Armor_Set_t                 Outfit_Armor_Miraak_Light_Reward_2();
-    Armor_Set_t                 Outfit_Armor_Miraak_Light_Reward_3();
-
-    Armor_Set_t                 Outfit_Armor_Morag_Tong();
-
-    Armor_Set_t                 Outfit_Armor_Nightingale();
-    Armor_Set_t                 Outfit_Armor_Nightingale_Reward();
-    Armor_Set_t                 Outfit_Armor_Nightingale_Reward_1();
-    Armor_Set_t                 Outfit_Armor_Nightingale_Reward_2();
-    Armor_Set_t                 Outfit_Armor_Nightingale_Reward_3();
-
-    Armor_Set_t                 Outfit_Armor_Nordic();
-    Armor_Set_t                 Outfit_Armor_Nordic_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Orcish();
-    Armor_Set_t                 Outfit_Armor_Orcish_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Penitus_Oculatus();
-
-    Armor_Set_t                 Outfit_Armor_Plate();
-    Armor_Set_t                 Outfit_Armor_Plate_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Plate_Katria();
-    Armor_Set_t                 Outfit_Armor_Plate_Katria_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Plate_Yngol();
-    Armor_Set_t                 Outfit_Armor_Plate_Yngol_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Scaled();
-    Armor_Set_t                 Outfit_Armor_Scaled_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Scaled_Horned();
-    Armor_Set_t                 Outfit_Armor_Scaled_Horned_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Shrouded();
-    Armor_Set_t                 Outfit_Armor_Shrouded_Ancient();
-    Armor_Set_t                 Outfit_Armor_Shrouded_Maskless();
-    Armor_Set_t                 Outfit_Armor_Shrouded_Short_Sleeved();
-    Armor_Set_t                 Outfit_Armor_Shrouded_Tumblerbane();
-    Armor_Set_t                 Outfit_Armor_Shrouded_Worn();
-
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Heavy();
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Heavy_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Light();
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Light_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Light_Deathbrand();
-    Armor_Set_t                 Outfit_Armor_Stalhrim_Light_Deathbrand_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Steel();
-    Armor_Set_t                 Outfit_Armor_Steel_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Horned();
-    Armor_Set_t                 Outfit_Armor_Steel_Horned_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Horned_Winterhold();
-    Armor_Set_t                 Outfit_Armor_Steel_Horned_Winterhold_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Hrolfdir();
-    Armor_Set_t                 Outfit_Armor_Steel_Hrolfdir_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Imperial();
-    Armor_Set_t                 Outfit_Armor_Steel_Imperial_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Ironhand();
-    Armor_Set_t                 Outfit_Armor_Steel_Ironhand_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Pauldron();
-    Armor_Set_t                 Outfit_Armor_Steel_Pauldron_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Steel_Targe_Of_The_Blooded();
-    Armor_Set_t                 Outfit_Armor_Steel_Targe_Of_The_Blooded_Enchanted();
-
-    Armor_Set_t                 Outfit_Armor_Stormcloak_Officer();
-
-    Armor_Set_t                 Outfit_Armor_Summerset_Shadows();
-    Armor_Set_t                 Outfit_Armor_Summerset_Shadows_Linwe();
-
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Blackguard();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Improved();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Karliah();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Master();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Master_Mercer();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_NPC();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Torturer();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Variant();
-    Armor_Set_t                 Outfit_Armor_Thieves_Guild_Variant_Alternate();
-
-    Armor_Set_t                 Outfit_Armor_Tsun();
-
-    Armor_Set_t                 Outfit_Armor_Vampire_Black();
-    Armor_Set_t                 Outfit_Armor_Vampire_Black_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Vampire_Grey();
-    Armor_Set_t                 Outfit_Armor_Vampire_Grey_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Vampire_Red();
-    Armor_Set_t                 Outfit_Armor_Vampire_Red_Enchanted();
-    Armor_Set_t                 Outfit_Armor_Vampire_Royal();
-    Armor_Set_t                 Outfit_Armor_Vampire_Royal_Serana();
-    Armor_Set_t                 Outfit_Armor_Vampire_Royal_Valerica();
-
-    Armor_Set_t                 Outfit_Armor_Wolf();
-
-    /* Outfit_Group */
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Falmer();
-    void                        Outfit_Group_Armor_Ancient_Falmer(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Falmer_Standard();
-    void                        Outfit_Group_Armor_Ancient_Falmer_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Nordic();
-    void                        Outfit_Group_Armor_Ancient_Nordic(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Nordic_Standard();
-    void                        Outfit_Group_Armor_Ancient_Nordic_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Blades();
-    void                        Outfit_Group_Armor_Blades(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Blades_Standard();
-    void                        Outfit_Group_Armor_Blades_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold();
-    void                        Outfit_Group_Armor_Bonemold(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold_Standard();
-    void                        Outfit_Group_Armor_Bonemold_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold_Enhanced();
-    void                        Outfit_Group_Armor_Bonemold_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin();
-    void                        Outfit_Group_Armor_Chitin(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin_Standard();
-    void                        Outfit_Group_Armor_Chitin_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin_Enhanced();
-    void                        Outfit_Group_Armor_Chitin_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric();
-    void                        Outfit_Group_Armor_Daedric(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric_Standard();
-    void                        Outfit_Group_Armor_Daedric_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric_Enhanced();
-    void                        Outfit_Group_Armor_Daedric_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dawnguard();
-    void                        Outfit_Group_Armor_Dawnguard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dawnguard_Standard();
-    void                        Outfit_Group_Armor_Dawnguard_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate();
-    void                        Outfit_Group_Armor_Dragonplate(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate_Standard();
-    void                        Outfit_Group_Armor_Dragonplate_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate_Enhanced();
-    void                        Outfit_Group_Armor_Dragonplate_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale();
-    void                        Outfit_Group_Armor_Dragonscale(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale_Standard();
-    void                        Outfit_Group_Armor_Dragonscale_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale_Enhanced();
-    void                        Outfit_Group_Armor_Dragonscale_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven();
-    void                        Outfit_Group_Armor_Dwarven(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven_Standard();
-    void                        Outfit_Group_Armor_Dwarven_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven_Enhanced();
-    void                        Outfit_Group_Armor_Dwarven_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony();
-    void                        Outfit_Group_Armor_Ebony(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony_Standard();
-    void                        Outfit_Group_Armor_Ebony_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony_Enhanced();
-    void                        Outfit_Group_Armor_Ebony_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven();
-    void                        Outfit_Group_Armor_Elven(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven_Standard();
-    void                        Outfit_Group_Armor_Elven_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven_Enhanced();
-    void                        Outfit_Group_Armor_Elven_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Falmer();
-    void                        Outfit_Group_Armor_Falmer(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Falmer_Standard();
-    void                        Outfit_Group_Armor_Falmer_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Forsworn();
-    void                        Outfit_Group_Armor_Forsworn(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Forsworn_Standard();
-    void                        Outfit_Group_Armor_Forsworn_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Fur();
-    void                        Outfit_Group_Armor_Fur(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Fur_Standard();
-    void                        Outfit_Group_Armor_Fur_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass();
-    void                        Outfit_Group_Armor_Glass(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass_Standard();
-    void                        Outfit_Group_Armor_Glass_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass_Enhanced();
-    void                        Outfit_Group_Armor_Glass_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard();
-    void                        Outfit_Group_Armor_Guard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard_Standard();
-    void                        Outfit_Group_Armor_Guard_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard_Enhanced();
-    void                        Outfit_Group_Armor_Guard_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide();
-    void                        Outfit_Group_Armor_Hide(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide_Standard();
-    void                        Outfit_Group_Armor_Hide_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide_Enhanced();
-    void                        Outfit_Group_Armor_Hide_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial();
-    void                        Outfit_Group_Armor_Imperial(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial_Standard();
-    void                        Outfit_Group_Armor_Imperial_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial_Enhanced();
-    void                        Outfit_Group_Armor_Imperial_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron();
-    void                        Outfit_Group_Armor_Iron(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron_Standard();
-    void                        Outfit_Group_Armor_Iron_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron_Enhanced();
-    void                        Outfit_Group_Armor_Iron_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather();
-    void                        Outfit_Group_Armor_Leather(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather_Standard();
-    void                        Outfit_Group_Armor_Leather_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather_Enhanced();
-    void                        Outfit_Group_Armor_Leather_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak();
-    void                        Outfit_Group_Armor_Miraak(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak_Standard();
-    void                        Outfit_Group_Armor_Miraak_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak_Enhanced();
-    void                        Outfit_Group_Armor_Miraak_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Morag_Tong();
-    void                        Outfit_Group_Armor_Morag_Tong(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Morag_Tong_Standard();
-    void                        Outfit_Group_Armor_Morag_Tong_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale();
-    void                        Outfit_Group_Armor_Nightingale(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale_Standard();
-    void                        Outfit_Group_Armor_Nightingale_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale_Enhanced();
-    void                        Outfit_Group_Armor_Nightingale_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic();
-    void                        Outfit_Group_Armor_Nordic(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic_Standard();
-    void                        Outfit_Group_Armor_Nordic_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic_Enhanced();
-    void                        Outfit_Group_Armor_Nordic_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish();
-    void                        Outfit_Group_Armor_Orcish(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish_Standard();
-    void                        Outfit_Group_Armor_Orcish_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish_Enhanced();
-    void                        Outfit_Group_Armor_Orcish_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Penitus_Oculatus();
-    void                        Outfit_Group_Armor_Penitus_Oculatus(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Penitus_Oculatus_Standard();
-    void                        Outfit_Group_Armor_Penitus_Oculatus_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate();
-    void                        Outfit_Group_Armor_Plate(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate_Standard();
-    void                        Outfit_Group_Armor_Plate_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate_Enhanced();
-    void                        Outfit_Group_Armor_Plate_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled();
-    void                        Outfit_Group_Armor_Scaled(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled_Standard();
-    void                        Outfit_Group_Armor_Scaled_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled_Enhanced();
-    void                        Outfit_Group_Armor_Scaled_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Shrouded();
-    void                        Outfit_Group_Armor_Shrouded(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Shrouded_Standard();
-    void                        Outfit_Group_Armor_Shrouded_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim();
-    void                        Outfit_Group_Armor_Stalhrim(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim_Standard();
-    void                        Outfit_Group_Armor_Stalhrim_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim_Enhanced();
-    void                        Outfit_Group_Armor_Stalhrim_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel();
-    void                        Outfit_Group_Armor_Steel(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel_Standard();
-    void                        Outfit_Group_Armor_Steel_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel_Enhanced();
-    void                        Outfit_Group_Armor_Steel_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stormcloak_Officer();
-    void                        Outfit_Group_Armor_Stormcloak_Officer(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stormcloak_Officer_Standard();
-    void                        Outfit_Group_Armor_Stormcloak_Officer_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Summerset_Shadows();
-    void                        Outfit_Group_Armor_Summerset_Shadows(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Summerset_Shadows_Standard();
-    void                        Outfit_Group_Armor_Summerset_Shadows_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Thieves_Guild();
-    void                        Outfit_Group_Armor_Thieves_Guild(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Thieves_Guild_Standard();
-    void                        Outfit_Group_Armor_Thieves_Guild_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Tsun();
-    void                        Outfit_Group_Armor_Tsun(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Tsun_Standard();
-    void                        Outfit_Group_Armor_Tsun_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire();
-    void                        Outfit_Group_Armor_Vampire(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire_Standard();
-    void                        Outfit_Group_Armor_Vampire_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire_Enhanced();
-    void                        Outfit_Group_Armor_Vampire_Enhanced(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Wolf();
-    void                        Outfit_Group_Armor_Wolf(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Wolf_Standard();
-    void                        Outfit_Group_Armor_Wolf_Standard(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor();
-    void                        Outfit_Group_Armor(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Unweighted();
-    void                        Outfit_Group_Armor_Unweighted(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Standard();
-    void                        Outfit_Group_Armor_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Standard_Unweighted();
-    void                        Outfit_Group_Armor_Standard_Unweighted(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Enhanced();
-    void                        Outfit_Group_Armor_Enhanced(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Enhanced_Unweighted();
-    void                        Outfit_Group_Armor_Enhanced_Unweighted(Vector_t<some<Outfit_f>>& results);
-
-    Vector_t<some<Outfit_f>>    Outfit_Group();
-    void                        Outfit_Group(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Unweighted();
-    void                        Outfit_Group_Unweighted(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Standard();
-    void                        Outfit_Group_Standard(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Standard_Unweighted();
-    void                        Outfit_Group_Standard_Unweighted(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Enhanced();
-    void                        Outfit_Group_Enhanced(Vector_t<some<Outfit_f>>& results);
-    Vector_t<some<Outfit_f>>    Outfit_Group_Enhanced_Unweighted();
-    void                        Outfit_Group_Enhanced_Unweighted(Vector_t<some<Outfit_f>>& results);
-
-    /* Outfit_Random */
-
-    Armor_Set_t                 Outfit_Random_Armor_Ancient_Falmer();
-    Armor_Set_t                 Outfit_Random_Armor_Ancient_Falmer_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Ancient_Nordic();
-    Armor_Set_t                 Outfit_Random_Armor_Ancient_Nordic_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Blades();
-    Armor_Set_t                 Outfit_Random_Armor_Blades_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Bonemold();
-    Armor_Set_t                 Outfit_Random_Armor_Bonemold_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Bonemold_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Chitin();
-    Armor_Set_t                 Outfit_Random_Armor_Chitin_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Chitin_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Daedric();
-    Armor_Set_t                 Outfit_Random_Armor_Daedric_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Daedric_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Dawnguard();
-    Armor_Set_t                 Outfit_Random_Armor_Dawnguard_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Dragonplate();
-    Armor_Set_t                 Outfit_Random_Armor_Dragonplate_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Dragonplate_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Dragonscale();
-    Armor_Set_t                 Outfit_Random_Armor_Dragonscale_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Dragonscale_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Dwarven();
-    Armor_Set_t                 Outfit_Random_Armor_Dwarven_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Dwarven_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Ebony();
-    Armor_Set_t                 Outfit_Random_Armor_Ebony_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Ebony_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Elven();
-    Armor_Set_t                 Outfit_Random_Armor_Elven_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Elven_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Falmer();
-    Armor_Set_t                 Outfit_Random_Armor_Falmer_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Forsworn();
-    Armor_Set_t                 Outfit_Random_Armor_Forsworn_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Fur();
-    Armor_Set_t                 Outfit_Random_Armor_Fur_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Glass();
-    Armor_Set_t                 Outfit_Random_Armor_Glass_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Glass_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Guard();
-    Armor_Set_t                 Outfit_Random_Armor_Guard_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Guard_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Hide();
-    Armor_Set_t                 Outfit_Random_Armor_Hide_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Hide_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Imperial();
-    Armor_Set_t                 Outfit_Random_Armor_Imperial_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Imperial_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Iron();
-    Armor_Set_t                 Outfit_Random_Armor_Iron_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Iron_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Leather();
-    Armor_Set_t                 Outfit_Random_Armor_Leather_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Leather_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Miraak();
-    Armor_Set_t                 Outfit_Random_Armor_Miraak_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Miraak_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Morag_Tong();
-    Armor_Set_t                 Outfit_Random_Armor_Morag_Tong_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Nightingale();
-    Armor_Set_t                 Outfit_Random_Armor_Nightingale_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Nightingale_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Nordic();
-    Armor_Set_t                 Outfit_Random_Armor_Nordic_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Nordic_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Orcish();
-    Armor_Set_t                 Outfit_Random_Armor_Orcish_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Orcish_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Penitus_Oculatus();
-    Armor_Set_t                 Outfit_Random_Armor_Penitus_Oculatus_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Plate();
-    Armor_Set_t                 Outfit_Random_Armor_Plate_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Plate_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Scaled();
-    Armor_Set_t                 Outfit_Random_Armor_Scaled_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Scaled_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Shrouded();
-    Armor_Set_t                 Outfit_Random_Armor_Shrouded_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Stalhrim();
-    Armor_Set_t                 Outfit_Random_Armor_Stalhrim_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Stalhrim_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Steel();
-    Armor_Set_t                 Outfit_Random_Armor_Steel_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Steel_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Stormcloak_Officer();
-    Armor_Set_t                 Outfit_Random_Armor_Stormcloak_Officer_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Summerset_Shadows();
-    Armor_Set_t                 Outfit_Random_Armor_Summerset_Shadows_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Thieves_Guild();
-    Armor_Set_t                 Outfit_Random_Armor_Thieves_Guild_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Tsun();
-    Armor_Set_t                 Outfit_Random_Armor_Tsun_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor_Vampire();
-    Armor_Set_t                 Outfit_Random_Armor_Vampire_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Vampire_Enhanced();
-
-    Armor_Set_t                 Outfit_Random_Armor_Wolf();
-    Armor_Set_t                 Outfit_Random_Armor_Wolf_Standard();
-
-    Armor_Set_t                 Outfit_Random_Armor();
-    Armor_Set_t                 Outfit_Random_Armor_Unweighted();
-    Armor_Set_t                 Outfit_Random_Armor_Standard();
-    Armor_Set_t                 Outfit_Random_Armor_Standard_Unweighted();
-    Armor_Set_t                 Outfit_Random_Armor_Enhanced();
-    Armor_Set_t                 Outfit_Random_Armor_Enhanced_Unweighted();
-
-    Armor_Set_t                 Outfit_Random();
-    Armor_Set_t                 Outfit_Random_Unweighted();
-    Armor_Set_t                 Outfit_Random_Standard();
-    Armor_Set_t                 Outfit_Random_Standard_Unweighted();
-    Armor_Set_t                 Outfit_Random_Enhanced();
-    Armor_Set_t                 Outfit_Random_Enhanced_Unweighted();
+    /* Set */
+
+    Armor_Set_t                 Set_Armor_Ancient_Falmer();
+    Armor_Set_t                 Set_Armor_Ancient_Falmer_Auriel();
+    Armor_Set_t                 Set_Armor_Ancient_Falmer_Pauldronless();
+    Armor_Set_t                 Set_Armor_Ancient_Falmer_Reflecting();
+
+    Armor_Set_t                 Set_Armor_Ancient_Nordic();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Ahzidal();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Bromjunaar();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Dukaan();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Hevnoraak();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Jagged_Crown();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Kolbjorn();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Konahrik();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Krosis();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Morokei();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Nahkriin();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Otar();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Rahgot();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Unburned();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Vokun();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Volsung();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Yngol();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Ysgramor();
+    Armor_Set_t                 Set_Armor_Ancient_Nordic_Zahkriisos();
+
+    Armor_Set_t                 Set_Armor_Blades();
+
+    Armor_Set_t                 Set_Armor_Bonemold();
+    Armor_Set_t                 Set_Armor_Bonemold_Enchanted();
+    Armor_Set_t                 Set_Armor_Bonemold_Guard();
+    Armor_Set_t                 Set_Armor_Bonemold_Guard_Enchanted();
+    Armor_Set_t                 Set_Armor_Bonemold_Pauldron();
+    Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Enchanted();
+    Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Improved();
+
+    Armor_Set_t                 Set_Armor_Chitin_Heavy();
+    Armor_Set_t                 Set_Armor_Chitin_Heavy_Enchanted();
+    Armor_Set_t                 Set_Armor_Chitin_Light();
+    Armor_Set_t                 Set_Armor_Chitin_Light_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Daedric();
+    Armor_Set_t                 Set_Armor_Daedric_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Dawnguard_Heavy_Brown();
+    Armor_Set_t                 Set_Armor_Dawnguard_Heavy_Grey();
+    Armor_Set_t                 Set_Armor_Dawnguard_Light_Brown();
+    Armor_Set_t                 Set_Armor_Dawnguard_Light_Grey();
+    Armor_Set_t                 Set_Armor_Dawnguard_Light_Red();
+
+    Armor_Set_t                 Set_Armor_Dragonplate();
+    Armor_Set_t                 Set_Armor_Dragonplate_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Dragonscale();
+    Armor_Set_t                 Set_Armor_Dragonscale_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Dwarven();
+    Armor_Set_t                 Set_Armor_Dwarven_Enchanted();
+    Armor_Set_t                 Set_Armor_Dwarven_Aetherial();
+    Armor_Set_t                 Set_Armor_Dwarven_Aetherial_Enchanted();
+    Armor_Set_t                 Set_Armor_Dwarven_Spellbreaker();
+    Armor_Set_t                 Set_Armor_Dwarven_Spellbreaker_Enchanted();
+    Armor_Set_t                 Set_Armor_Dwarven_Visage_Of_Mzund();
+    Armor_Set_t                 Set_Armor_Dwarven_Visage_Of_Mzund_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Ebony();
+    Armor_Set_t                 Set_Armor_Ebony_Enchanted();
+    Armor_Set_t                 Set_Armor_Ebony_Mail();
+    Armor_Set_t                 Set_Armor_Ebony_Mail_Enchanted();
+    Armor_Set_t                 Set_Armor_Ebony_Masque_Of_Clavicus_Vile();
+    Armor_Set_t                 Set_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Elven();
+    Armor_Set_t                 Set_Armor_Elven_Enchanted();
+    Armor_Set_t                 Set_Armor_Elven_Gilded();
+    Armor_Set_t                 Set_Armor_Elven_Gilded_Enchanted();
+    Armor_Set_t                 Set_Armor_Elven_Pauldronless();
+    Armor_Set_t                 Set_Armor_Elven_Pauldronless_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Falmer();
+    Armor_Set_t                 Set_Armor_Falmer_Hardened();
+    Armor_Set_t                 Set_Armor_Falmer_Heavy();
+    Armor_Set_t                 Set_Armor_Falmer_Heavy_Shellbug();
+
+    Armor_Set_t                 Set_Armor_Forsworn();
+    Armor_Set_t                 Set_Armor_Forsworn_Old_Gods();
+
+    Armor_Set_t                 Set_Armor_Fur();
+    Armor_Set_t                 Set_Armor_Fur_Topless();
+    Armor_Set_t                 Set_Armor_Fur_Topless_Pauldron();
+    Armor_Set_t                 Set_Armor_Fur_Saviors_Hide();
+    Armor_Set_t                 Set_Armor_Fur_Sleeveless();
+
+    Armor_Set_t                 Set_Armor_Glass();
+    Armor_Set_t                 Set_Armor_Glass_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Guard_Falkreath();
+    Armor_Set_t                 Set_Armor_Guard_Hjaalmarch();
+    Armor_Set_t                 Set_Armor_Guard_Markarth();
+    Armor_Set_t                 Set_Armor_Guard_Pale();
+    Armor_Set_t                 Set_Armor_Guard_Riften();
+    Armor_Set_t                 Set_Armor_Guard_Riften_Pugilist();
+    Armor_Set_t                 Set_Armor_Guard_Solitude();
+    Armor_Set_t                 Set_Armor_Guard_Solitude_Reward();
+    Armor_Set_t                 Set_Armor_Guard_Whiterun();
+    Armor_Set_t                 Set_Armor_Guard_Windhelm();
+    Armor_Set_t                 Set_Armor_Guard_Windhelm_Sleeved();
+    Armor_Set_t                 Set_Armor_Guard_Winterhold();
+
+    Armor_Set_t                 Set_Armor_Hide();
+    Armor_Set_t                 Set_Armor_Hide_Enchanted();
+    Armor_Set_t                 Set_Armor_Hide_Predators_Grace();
+    Armor_Set_t                 Set_Armor_Hide_Predators_Grace_Enchanted();
+    Armor_Set_t                 Set_Armor_Hide_Studded();
+    Armor_Set_t                 Set_Armor_Hide_Studded_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Imperial_Heavy();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_General_Carius();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_General_Carius_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_General_Tullius();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_General_Tullius_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_Knight();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_Knight_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_Officer();
+    Armor_Set_t                 Set_Armor_Imperial_Heavy_Officer_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Light();
+    Armor_Set_t                 Set_Armor_Imperial_Light_Enchanted();
+    Armor_Set_t                 Set_Armor_Imperial_Light_Studded();
+    Armor_Set_t                 Set_Armor_Imperial_Light_Studded_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Iron();
+    Armor_Set_t                 Set_Armor_Iron_Enchanted();
+    Armor_Set_t                 Set_Armor_Iron_Banded();
+    Armor_Set_t                 Set_Armor_Iron_Banded_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Leather();
+    Armor_Set_t                 Set_Armor_Leather_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Miraak_Reward();
+    Armor_Set_t                 Set_Armor_Miraak_Reward_1();
+    Armor_Set_t                 Set_Armor_Miraak_Reward_2();
+    Armor_Set_t                 Set_Armor_Miraak_Reward_3();
+    Armor_Set_t                 Set_Armor_Miraak_Heavy_Reward();
+    Armor_Set_t                 Set_Armor_Miraak_Heavy_Reward_1();
+    Armor_Set_t                 Set_Armor_Miraak_Heavy_Reward_2();
+    Armor_Set_t                 Set_Armor_Miraak_Heavy_Reward_3();
+    Armor_Set_t                 Set_Armor_Miraak_Light_Reward();
+    Armor_Set_t                 Set_Armor_Miraak_Light_Reward_1();
+    Armor_Set_t                 Set_Armor_Miraak_Light_Reward_2();
+    Armor_Set_t                 Set_Armor_Miraak_Light_Reward_3();
+
+    Armor_Set_t                 Set_Armor_Morag_Tong();
+
+    Armor_Set_t                 Set_Armor_Nightingale_Reward();
+    Armor_Set_t                 Set_Armor_Nightingale_Reward_1();
+    Armor_Set_t                 Set_Armor_Nightingale_Reward_2();
+    Armor_Set_t                 Set_Armor_Nightingale_Reward_3();
+
+    Armor_Set_t                 Set_Armor_Nordic();
+    Armor_Set_t                 Set_Armor_Nordic_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Orcish();
+    Armor_Set_t                 Set_Armor_Orcish_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Penitus_Oculatus();
+
+    Armor_Set_t                 Set_Armor_Plate();
+    Armor_Set_t                 Set_Armor_Plate_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Scaled();
+    Armor_Set_t                 Set_Armor_Scaled_Enchanted();
+    Armor_Set_t                 Set_Armor_Scaled_Horned();
+    Armor_Set_t                 Set_Armor_Scaled_Horned_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Shrouded();
+    Armor_Set_t                 Set_Armor_Shrouded_Ancient();
+    Armor_Set_t                 Set_Armor_Shrouded_Maskless();
+    Armor_Set_t                 Set_Armor_Shrouded_Short_Sleeved();
+    Armor_Set_t                 Set_Armor_Shrouded_Tumblerbane();
+    Armor_Set_t                 Set_Armor_Shrouded_Worn();
+
+    Armor_Set_t                 Set_Armor_Stalhrim_Heavy();
+    Armor_Set_t                 Set_Armor_Stalhrim_Heavy_Enchanted();
+    Armor_Set_t                 Set_Armor_Stalhrim_Light();
+    Armor_Set_t                 Set_Armor_Stalhrim_Light_Enchanted();
+    Armor_Set_t                 Set_Armor_Stalhrim_Light_Deathbrand();
+    Armor_Set_t                 Set_Armor_Stalhrim_Light_Deathbrand_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Steel();
+    Armor_Set_t                 Set_Armor_Steel_Enchanted();
+    Armor_Set_t                 Set_Armor_Steel_Horned();
+    Armor_Set_t                 Set_Armor_Steel_Horned_Enchanted();
+    Armor_Set_t                 Set_Armor_Steel_Pauldron();
+    Armor_Set_t                 Set_Armor_Steel_Pauldron_Enchanted();
+    Armor_Set_t                 Set_Armor_Steel_Targe_Of_The_Blooded();
+    Armor_Set_t                 Set_Armor_Steel_Targe_Of_The_Blooded_Enchanted();
+
+    Armor_Set_t                 Set_Armor_Stormcloak_Officer();
+
+    Armor_Set_t                 Set_Armor_Thieves_Guild();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Alternate();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Blackguard();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Improved();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Karliah();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Master();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Torturer();
+    Armor_Set_t                 Set_Armor_Thieves_Guild_Variant();
+
+    Armor_Set_t                 Set_Armor_Tsun();
+
+    Armor_Set_t                 Set_Armor_Vampire_Black();
+    Armor_Set_t                 Set_Armor_Vampire_Black_Enchanted();
+    Armor_Set_t                 Set_Armor_Vampire_Grey();
+    Armor_Set_t                 Set_Armor_Vampire_Grey_Enchanted();
+    Armor_Set_t                 Set_Armor_Vampire_Red();
+    Armor_Set_t                 Set_Armor_Vampire_Red_Enchanted();
+    Armor_Set_t                 Set_Armor_Vampire_Royal();
+    Armor_Set_t                 Set_Armor_Vampire_Royal_Serana();
+    Armor_Set_t                 Set_Armor_Vampire_Royal_Valerica();
+
+    Armor_Set_t                 Set_Armor_Wolf();
+
+    /* Sets */
+
+    Vector_t<some<Set_f>>       Sets_Armor_Ancient_Falmer();
+    void                        Sets_Armor_Ancient_Falmer(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Ancient_Falmer_Standard();
+    void                        Sets_Armor_Ancient_Falmer_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Ancient_Nordic();
+    void                        Sets_Armor_Ancient_Nordic(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Ancient_Nordic_Standard();
+    void                        Sets_Armor_Ancient_Nordic_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Blades();
+    void                        Sets_Armor_Blades(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Blades_Standard();
+    void                        Sets_Armor_Blades_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Bonemold();
+    void                        Sets_Armor_Bonemold(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Bonemold_Standard();
+    void                        Sets_Armor_Bonemold_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Bonemold_Enhanced();
+    void                        Sets_Armor_Bonemold_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Chitin();
+    void                        Sets_Armor_Chitin(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Chitin_Standard();
+    void                        Sets_Armor_Chitin_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Chitin_Enhanced();
+    void                        Sets_Armor_Chitin_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Daedric();
+    void                        Sets_Armor_Daedric(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Daedric_Standard();
+    void                        Sets_Armor_Daedric_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Daedric_Enhanced();
+    void                        Sets_Armor_Daedric_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Dawnguard();
+    void                        Sets_Armor_Dawnguard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dawnguard_Standard();
+    void                        Sets_Armor_Dawnguard_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonplate();
+    void                        Sets_Armor_Dragonplate(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonplate_Standard();
+    void                        Sets_Armor_Dragonplate_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonplate_Enhanced();
+    void                        Sets_Armor_Dragonplate_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonscale();
+    void                        Sets_Armor_Dragonscale(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonscale_Standard();
+    void                        Sets_Armor_Dragonscale_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dragonscale_Enhanced();
+    void                        Sets_Armor_Dragonscale_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Dwarven();
+    void                        Sets_Armor_Dwarven(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dwarven_Standard();
+    void                        Sets_Armor_Dwarven_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Dwarven_Enhanced();
+    void                        Sets_Armor_Dwarven_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Ebony();
+    void                        Sets_Armor_Ebony(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Ebony_Standard();
+    void                        Sets_Armor_Ebony_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Ebony_Enhanced();
+    void                        Sets_Armor_Ebony_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Elven();
+    void                        Sets_Armor_Elven(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Elven_Standard();
+    void                        Sets_Armor_Elven_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Elven_Enhanced();
+    void                        Sets_Armor_Elven_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Falmer();
+    void                        Sets_Armor_Falmer(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Falmer_Standard();
+    void                        Sets_Armor_Falmer_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Forsworn();
+    void                        Sets_Armor_Forsworn(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Forsworn_Standard();
+    void                        Sets_Armor_Forsworn_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Fur();
+    void                        Sets_Armor_Fur(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Fur_Standard();
+    void                        Sets_Armor_Fur_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Glass();
+    void                        Sets_Armor_Glass(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Glass_Standard();
+    void                        Sets_Armor_Glass_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Glass_Enhanced();
+    void                        Sets_Armor_Glass_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Guard();
+    void                        Sets_Armor_Guard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Guard_Standard();
+    void                        Sets_Armor_Guard_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Guard_Enhanced();
+    void                        Sets_Armor_Guard_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Hide();
+    void                        Sets_Armor_Hide(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Hide_Standard();
+    void                        Sets_Armor_Hide_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Hide_Enhanced();
+    void                        Sets_Armor_Hide_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Imperial();
+    void                        Sets_Armor_Imperial(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Imperial_Standard();
+    void                        Sets_Armor_Imperial_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Imperial_Enhanced();
+    void                        Sets_Armor_Imperial_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Iron();
+    void                        Sets_Armor_Iron(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Iron_Standard();
+    void                        Sets_Armor_Iron_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Iron_Enhanced();
+    void                        Sets_Armor_Iron_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Leather();
+    void                        Sets_Armor_Leather(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Leather_Standard();
+    void                        Sets_Armor_Leather_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Leather_Enhanced();
+    void                        Sets_Armor_Leather_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Miraak();
+    void                        Sets_Armor_Miraak(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Miraak_Enhanced();
+    void                        Sets_Armor_Miraak_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Morag_Tong();
+    void                        Sets_Armor_Morag_Tong(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Morag_Tong_Standard();
+    void                        Sets_Armor_Morag_Tong_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Nightingale();
+    void                        Sets_Armor_Nightingale(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Nightingale_Enhanced();
+    void                        Sets_Armor_Nightingale_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Nordic();
+    void                        Sets_Armor_Nordic(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Nordic_Standard();
+    void                        Sets_Armor_Nordic_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Nordic_Enhanced();
+    void                        Sets_Armor_Nordic_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Orcish();
+    void                        Sets_Armor_Orcish(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Orcish_Standard();
+    void                        Sets_Armor_Orcish_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Orcish_Enhanced();
+    void                        Sets_Armor_Orcish_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Penitus_Oculatus();
+    void                        Sets_Armor_Penitus_Oculatus(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Penitus_Oculatus_Standard();
+    void                        Sets_Armor_Penitus_Oculatus_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Plate();
+    void                        Sets_Armor_Plate(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Plate_Standard();
+    void                        Sets_Armor_Plate_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Plate_Enhanced();
+    void                        Sets_Armor_Plate_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Scaled();
+    void                        Sets_Armor_Scaled(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Scaled_Standard();
+    void                        Sets_Armor_Scaled_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Scaled_Enhanced();
+    void                        Sets_Armor_Scaled_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Shrouded();
+    void                        Sets_Armor_Shrouded(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Shrouded_Standard();
+    void                        Sets_Armor_Shrouded_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Stalhrim();
+    void                        Sets_Armor_Stalhrim(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Stalhrim_Standard();
+    void                        Sets_Armor_Stalhrim_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Stalhrim_Enhanced();
+    void                        Sets_Armor_Stalhrim_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Steel();
+    void                        Sets_Armor_Steel(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Steel_Standard();
+    void                        Sets_Armor_Steel_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Steel_Enhanced();
+    void                        Sets_Armor_Steel_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Stormcloak_Officer();
+    void                        Sets_Armor_Stormcloak_Officer(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Stormcloak_Officer_Standard();
+    void                        Sets_Armor_Stormcloak_Officer_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Thieves_Guild();
+    void                        Sets_Armor_Thieves_Guild(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Thieves_Guild_Standard();
+    void                        Sets_Armor_Thieves_Guild_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Tsun();
+    void                        Sets_Armor_Tsun(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Tsun_Standard();
+    void                        Sets_Armor_Tsun_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Vampire();
+    void                        Sets_Armor_Vampire(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Vampire_Standard();
+    void                        Sets_Armor_Vampire_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Vampire_Enhanced();
+    void                        Sets_Armor_Vampire_Enhanced(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor_Wolf();
+    void                        Sets_Armor_Wolf(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Wolf_Standard();
+    void                        Sets_Armor_Wolf_Standard(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets_Armor();
+    void                        Sets_Armor(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Unweighted();
+    void                        Sets_Armor_Unweighted(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Standard();
+    void                        Sets_Armor_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Standard_Unweighted();
+    void                        Sets_Armor_Standard_Unweighted(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Enhanced();
+    void                        Sets_Armor_Enhanced(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Armor_Enhanced_Unweighted();
+    void                        Sets_Armor_Enhanced_Unweighted(Vector_t<some<Set_f>>& results);
+
+    Vector_t<some<Set_f>>       Sets();
+    void                        Sets(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Unweighted();
+    void                        Sets_Unweighted(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Standard();
+    void                        Sets_Standard(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Standard_Unweighted();
+    void                        Sets_Standard_Unweighted(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Enhanced();
+    void                        Sets_Enhanced(Vector_t<some<Set_f>>& results);
+    Vector_t<some<Set_f>>       Sets_Enhanced_Unweighted();
+    void                        Sets_Enhanced_Unweighted(Vector_t<some<Set_f>>& results);
+
+    /* Random_Set */
+
+    Armor_Set_t                 Random_Set_Armor_Ancient_Falmer();
+    Armor_Set_t                 Random_Set_Armor_Ancient_Falmer_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Ancient_Nordic();
+    Armor_Set_t                 Random_Set_Armor_Ancient_Nordic_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Blades();
+    Armor_Set_t                 Random_Set_Armor_Blades_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Bonemold();
+    Armor_Set_t                 Random_Set_Armor_Bonemold_Standard();
+    Armor_Set_t                 Random_Set_Armor_Bonemold_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Chitin();
+    Armor_Set_t                 Random_Set_Armor_Chitin_Standard();
+    Armor_Set_t                 Random_Set_Armor_Chitin_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Daedric();
+    Armor_Set_t                 Random_Set_Armor_Daedric_Standard();
+    Armor_Set_t                 Random_Set_Armor_Daedric_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Dawnguard();
+    Armor_Set_t                 Random_Set_Armor_Dawnguard_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Dragonplate();
+    Armor_Set_t                 Random_Set_Armor_Dragonplate_Standard();
+    Armor_Set_t                 Random_Set_Armor_Dragonplate_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Dragonscale();
+    Armor_Set_t                 Random_Set_Armor_Dragonscale_Standard();
+    Armor_Set_t                 Random_Set_Armor_Dragonscale_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Dwarven();
+    Armor_Set_t                 Random_Set_Armor_Dwarven_Standard();
+    Armor_Set_t                 Random_Set_Armor_Dwarven_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Ebony();
+    Armor_Set_t                 Random_Set_Armor_Ebony_Standard();
+    Armor_Set_t                 Random_Set_Armor_Ebony_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Elven();
+    Armor_Set_t                 Random_Set_Armor_Elven_Standard();
+    Armor_Set_t                 Random_Set_Armor_Elven_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Falmer();
+    Armor_Set_t                 Random_Set_Armor_Falmer_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Forsworn();
+    Armor_Set_t                 Random_Set_Armor_Forsworn_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Fur();
+    Armor_Set_t                 Random_Set_Armor_Fur_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Glass();
+    Armor_Set_t                 Random_Set_Armor_Glass_Standard();
+    Armor_Set_t                 Random_Set_Armor_Glass_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Guard();
+    Armor_Set_t                 Random_Set_Armor_Guard_Standard();
+    Armor_Set_t                 Random_Set_Armor_Guard_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Hide();
+    Armor_Set_t                 Random_Set_Armor_Hide_Standard();
+    Armor_Set_t                 Random_Set_Armor_Hide_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Imperial();
+    Armor_Set_t                 Random_Set_Armor_Imperial_Standard();
+    Armor_Set_t                 Random_Set_Armor_Imperial_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Iron();
+    Armor_Set_t                 Random_Set_Armor_Iron_Standard();
+    Armor_Set_t                 Random_Set_Armor_Iron_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Leather();
+    Armor_Set_t                 Random_Set_Armor_Leather_Standard();
+    Armor_Set_t                 Random_Set_Armor_Leather_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Miraak();
+    Armor_Set_t                 Random_Set_Armor_Miraak_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Morag_Tong();
+    Armor_Set_t                 Random_Set_Armor_Morag_Tong_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Nightingale();
+    Armor_Set_t                 Random_Set_Armor_Nightingale_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Nordic();
+    Armor_Set_t                 Random_Set_Armor_Nordic_Standard();
+    Armor_Set_t                 Random_Set_Armor_Nordic_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Orcish();
+    Armor_Set_t                 Random_Set_Armor_Orcish_Standard();
+    Armor_Set_t                 Random_Set_Armor_Orcish_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Penitus_Oculatus();
+    Armor_Set_t                 Random_Set_Armor_Penitus_Oculatus_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Plate();
+    Armor_Set_t                 Random_Set_Armor_Plate_Standard();
+    Armor_Set_t                 Random_Set_Armor_Plate_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Scaled();
+    Armor_Set_t                 Random_Set_Armor_Scaled_Standard();
+    Armor_Set_t                 Random_Set_Armor_Scaled_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Shrouded();
+    Armor_Set_t                 Random_Set_Armor_Shrouded_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Stalhrim();
+    Armor_Set_t                 Random_Set_Armor_Stalhrim_Standard();
+    Armor_Set_t                 Random_Set_Armor_Stalhrim_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Steel();
+    Armor_Set_t                 Random_Set_Armor_Steel_Standard();
+    Armor_Set_t                 Random_Set_Armor_Steel_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Stormcloak_Officer();
+    Armor_Set_t                 Random_Set_Armor_Stormcloak_Officer_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Thieves_Guild();
+    Armor_Set_t                 Random_Set_Armor_Thieves_Guild_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Tsun();
+    Armor_Set_t                 Random_Set_Armor_Tsun_Standard();
+
+    Armor_Set_t                 Random_Set_Armor_Vampire();
+    Armor_Set_t                 Random_Set_Armor_Vampire_Standard();
+    Armor_Set_t                 Random_Set_Armor_Vampire_Enhanced();
+
+    Armor_Set_t                 Random_Set_Armor_Wolf();
+    Armor_Set_t                 Random_Set_Armor_Wolf_Standard();
+
+    Armor_Set_t                 Random_Set_Armor();
+    Armor_Set_t                 Random_Set_Armor_Unweighted();
+    Armor_Set_t                 Random_Set_Armor_Standard();
+    Armor_Set_t                 Random_Set_Armor_Standard_Unweighted();
+    Armor_Set_t                 Random_Set_Armor_Enhanced();
+    Armor_Set_t                 Random_Set_Armor_Enhanced_Unweighted();
+
+    Armor_Set_t                 Random_Set();
+    Armor_Set_t                 Random_Set_Unweighted();
+    Armor_Set_t                 Random_Set_Standard();
+    Armor_Set_t                 Random_Set_Standard_Unweighted();
+    Armor_Set_t                 Random_Set_Enhanced();
+    Armor_Set_t                 Random_Set_Enhanced_Unweighted();
 
 }}}

@@ -220,10 +220,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Ancient_Nordic_Hevnoraak_Head()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC1); }
 
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Body()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C6); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Feet()                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C5); }
-    some<Armor_t*>  Armor_Ancient_Nordic_Hunter_Hands()                 { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050C7); }
-
     some<Armor_t*>  Armor_Ancient_Nordic_Jagged_Crown_Head()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0DA750); }
 
     some<Armor_t*>  Armor_Ancient_Nordic_Kolbjorn_Body()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01DB97); }
@@ -248,6 +244,8 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Ancient_Nordic_Vokun_Head()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CC9); }
 
     some<Armor_t*>  Armor_Ancient_Nordic_Volsung_Head()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x061CAB); }
+
+    some<Armor_t*>  Armor_Ancient_Nordic_Yngol_Head()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0295F3); }
 
     some<Armor_t*>  Armor_Ancient_Nordic_Ysgramor_Shield()              { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E41D8); }
 
@@ -650,11 +648,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_2()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF8); }
     some<Armor_t*>  Armor_Daedric_Shield_Resist_Shock_3()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7AF9); }
 
-    some<Armor_t*>  Armor_Daedric_Dremora_Body()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABE); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Feet()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1ABD); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Hands()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F1AC0); }
-    some<Armor_t*>  Armor_Daedric_Dremora_Head()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10F75F); }
-
     some<Armor_t*>  Armor_Dawnguard_Heavy_Feet()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014757); }
     some<Armor_t*>  Armor_Dawnguard_Heavy_Hands()                       { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014758); }
     some<Armor_t*>  Armor_Dawnguard_Heavy_Head()                        { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x0050D0); }
@@ -781,11 +774,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_1()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A85); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A86); }
     some<Armor_t*>  Armor_Dragonplate_Shield_Resist_Shock_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D7A87); }
-
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Body()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F76); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Feet()                     { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F73); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Hands()                    { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x017F75); }
-    some<Armor_t*>  Armor_Dragonplate_Keeper_Shield()                   { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x018065); }
 
     some<Armor_t*>  Armor_Dragonscale_Body()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01393E); }
     some<Armor_t*>  Armor_Dragonscale_Body_Alteration_1()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10CF4E); }
@@ -1252,8 +1240,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Elven_Gilded_Body_Stamina_Rate_2()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1E); }
     some<Armor_t*>  Armor_Elven_Gilded_Body_Stamina_Rate_3()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDA1F); }
 
-    some<Armor_t*>  Armor_Elven_Herebanes_Fortress_Shield()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F9649); }
-
     some<Armor_t*>  Armor_Elven_Pauldronless_Body()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F12); }
     some<Armor_t*>  Armor_Elven_Pauldronless_Feet()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F11); }
     some<Armor_t*>  Armor_Elven_Pauldronless_Hands()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x105F13); }
@@ -1458,8 +1444,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Guard_Windhelm_Head()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A6D79); }
     some<Armor_t*>  Armor_Guard_Windhelm_Shield()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0214EB); }
 
-    some<Armor_t*>  Armor_Guard_Windhelm_Eastmarch_Head()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10559D); }
-
     some<Armor_t*>  Armor_Guard_Windhelm_Sleeved_Body()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD5A0); }
 
     some<Armor_t*>  Armor_Guard_Winterhold_Body()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x021522); }
@@ -1571,8 +1555,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D1); }
     some<Armor_t*>  Armor_Hide_Shield_Resist_Shock_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD4D2); }
 
-    some<Armor_t*>  Armor_Hide_Movarth_Feet()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x096D9B); }
-
     some<Armor_t*>  Armor_Hide_Predators_Grace_Feet()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0A4DCD); }
 
     some<Armor_t*>  Armor_Hide_Studded_Body()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3A2); }
@@ -1657,11 +1639,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Heavy_Head_Restoration_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BB); }
     some<Armor_t*>  Armor_Imperial_Heavy_Head_Restoration_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x08B6BC); }
     some<Armor_t*>  Armor_Imperial_Heavy_Shield()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0135BA); }
-
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Body()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A574); }
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Feet()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A573); }
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Hands()                   { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A575); }
-    some<Armor_t*>  Armor_Imperial_Heavy_Falx_Head()                    { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x01A576); }
 
     some<Armor_t*>  Armor_Imperial_Heavy_General_Carius_Body()          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0376F1); }
 
@@ -1757,8 +1734,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD44B); }
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_2()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD515); }
     some<Armor_t*>  Armor_Imperial_Light_Shield_Resist_Shock_3()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD516); }
-
-    some<Armor_t*>  Armor_Imperial_Light_Noster_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06FE72); }
 
     some<Armor_t*>  Armor_Imperial_Light_Studded_Body()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x013ED8); }
     some<Armor_t*>  Armor_Imperial_Light_Studded_Body_Health_1()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x046BB4); }
@@ -1903,14 +1878,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_2()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD559); }
     some<Armor_t*>  Armor_Iron_Banded_Shield_Resist_Shock_3()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0AD55A); }
 
-    some<Armor_t*>  Armor_Iron_Dented_Shield()                          { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03399C); }
-
-    some<Armor_t*>  Armor_Iron_Family_Shield()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03521F); }
-
-    some<Armor_t*>  Armor_Iron_Forgemasters_Fingers_Hands()             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C3CE6); }
-
-    some<Armor_t*>  Armor_Iron_Roggi_Shield()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x06901D); }
-
     some<Armor_t*>  Armor_Leather_Body()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x03619E); }
     some<Armor_t*>  Armor_Leather_Body_Alteration_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEC5); }
     some<Armor_t*>  Armor_Leather_Body_Alteration_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEC6); }
@@ -2000,13 +1967,11 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Leather_Head_Restoration_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506C); }
     some<Armor_t*>  Armor_Leather_Head_Restoration_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0B506D); }
 
-    some<Armor_t*>  Armor_Miraak_Body()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F7); }
     some<Armor_t*>  Armor_Miraak_Body_Reward_1()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D1E); }
     some<Armor_t*>  Armor_Miraak_Body_Reward_2()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D20); }
     some<Armor_t*>  Armor_Miraak_Body_Reward_3()                        { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039D22); }
     some<Armor_t*>  Armor_Miraak_Feet()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03D2AF); }
     some<Armor_t*>  Armor_Miraak_Hands()                                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02B0F9); }
-    some<Armor_t*>  Armor_Miraak_Head()                                 { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x029A62); }
 
     some<Armor_t*>  Armor_Miraak_Heavy_Head_Reward_1()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA1); }
     some<Armor_t*>  Armor_Miraak_Heavy_Head_Reward_2()                  { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x039FA2); }
@@ -2021,19 +1986,15 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Morag_Tong_Hands()                            { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AD); }
     some<Armor_t*>  Armor_Morag_Tong_Head()                             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x0292AE); }
 
-    some<Armor_t*>  Armor_Nightingale_Body()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C2); }
     some<Armor_t*>  Armor_Nightingale_Body_Reward_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB86); }
     some<Armor_t*>  Armor_Nightingale_Body_Reward_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0E); }
     some<Armor_t*>  Armor_Nightingale_Body_Reward_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0F); }
-    some<Armor_t*>  Armor_Nightingale_Feet()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0483C1); }
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0C); }
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB85); }
     some<Armor_t*>  Armor_Nightingale_Feet_Reward_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC0D); }
-    some<Armor_t*>  Armor_Nightingale_Hands()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D1); }
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_1()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB87); }
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_2()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC10); }
     some<Armor_t*>  Armor_Nightingale_Hands_Reward_3()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC11); }
-    some<Armor_t*>  Armor_Nightingale_Head()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0487D8); }
     some<Armor_t*>  Armor_Nightingale_Head_Reward_1()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x05DB88); }
     some<Armor_t*>  Armor_Nightingale_Head_Reward_2()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC13); }
     some<Armor_t*>  Armor_Nightingale_Head_Reward_3()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FCC12); }
@@ -2320,10 +2281,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Plate_Head_Restoration_2()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041036); }
     some<Armor_t*>  Armor_Plate_Head_Restoration_3()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x041037); }
     some<Armor_t*>  Armor_Plate_Head_Waterbreathing()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x092ACA); }
-
-    some<Armor_t*>  Armor_Plate_Katria_Body()                           { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x014C05); }
-
-    some<Armor_t*>  Armor_Plate_Yngol_Head()                            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0295F3); }
 
     some<Armor_t*>  Armor_Scaled_Body()                                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x01B3A3); }
     some<Armor_t*>  Armor_Scaled_Body_Alteration_1()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DEE3); }
@@ -2750,15 +2707,6 @@ namespace doticu_skylib { namespace Const { namespace Armor {
 
     some<Armor_t*>  Armor_Steel_Horned_Head()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F24); }
 
-    some<Armor_t*>  Armor_Steel_Horned_Winterhold_Head()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0940D5); }
-
-    some<Armor_t*>  Armor_Steel_Hrolfdir_Shield()                       { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x064B71); }
-
-    some<Armor_t*>  Armor_Steel_Imperial_Feet()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F21); }
-    some<Armor_t*>  Armor_Steel_Imperial_Hands()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F23); }
-
-    some<Armor_t*>  Armor_Steel_Ironhand_Hands()                        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E1643); }
-
     some<Armor_t*>  Armor_Steel_Pauldron_Body()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6F22); }
 
     some<Armor_t*>  Armor_Steel_Targe_Of_The_Blooded_Shield()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC5BF); }
@@ -2768,20 +2716,12 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Stormcloak_Officer_Hands()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086983); }
     some<Armor_t*>  Armor_Stormcloak_Officer_Head()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x086985); }
 
-    some<Armor_t*>  Armor_Summerset_Shadows_Body()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108540); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Feet()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10853F); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Hands()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108541); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108542); }
-
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Body()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108544); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Feet()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108543); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Hands()               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108545); }
-    some<Armor_t*>  Armor_Summerset_Shadows_Linwe_Head()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108546); }
-    
     some<Armor_t*>  Armor_Thieves_Guild_Body()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC3); }
     some<Armor_t*>  Armor_Thieves_Guild_Feet()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC2); }
     some<Armor_t*>  Armor_Thieves_Guild_Hands()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC4); }
     some<Armor_t*>  Armor_Thieves_Guild_Head()                          { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D3AC5); }
+
+    some<Armor_t*>  Armor_Thieves_Guild_Alternate_Head()                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
 
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Body()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD33); }
     some<Armor_t*>  Armor_Thieves_Guild_Blackguard_Feet()               { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x02AD34); }
@@ -2803,24 +2743,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Thieves_Guild_Master_Hands()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D8); }
     some<Armor_t*>  Armor_Thieves_Guild_Master_Head()                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35D9); }
 
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Body()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B5); }
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Feet()            { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B4); }
-    some<Armor_t*>  Armor_Thieves_Guild_Master_Mercer_Hands()           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x1092B6); }
-
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Body()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036584); }
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Feet()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036583); }
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Hands()                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x042BE9); }
-    some<Armor_t*>  Armor_Thieves_Guild_NPC_Head()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x036585); }
-
     some<Armor_t*>  Armor_Thieves_Guild_Torturer_Head()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0EE5C0); }
 
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Body()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DB); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Feet()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DA); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Hands()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DC); }
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DD); }
+    some<Armor_t*>  Armor_Thieves_Guild_Variant_Body()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108544); }
+    some<Armor_t*>  Armor_Thieves_Guild_Variant_Feet()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108543); }
+    some<Armor_t*>  Armor_Thieves_Guild_Variant_Hands()                 { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108545); }
+    some<Armor_t*>  Armor_Thieves_Guild_Variant_Head()                  { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x108546); }
 
-    some<Armor_t*>  Armor_Thieves_Guild_Variant_Alternate_Head()        { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0E35DF); }
-    
     some<Armor_t*>  Armor_Tsun_Body()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0165); }
     some<Armor_t*>  Armor_Tsun_Feet()                                   { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C0166); }
 
@@ -3643,11 +3572,11 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return results;                         \
     }
 
-    #define DEFINE_CREATE_GROUP(_FUNCTION_NAME, ...)    \
-    {                                                   \
-        Vector_t<some<Outfit_f>> results;               \
-        _FUNCTION_NAME(results, __VA_ARGS__);           \
-        return results;                                 \
+    #define DEFINE_CREATE_SETS(_FUNCTION_NAME, ...) \
+    {                                               \
+        Vector_t<some<Set_f>> results;              \
+        _FUNCTION_NAME(results, __VA_ARGS__);       \
+        return results;                             \
     }
 
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Body_Enchanted()     { DEFINE_CREATE(Armor_Bonemold_Body_Enchanted); }
@@ -6445,7 +6374,9 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Armor_Vampire_Red_Body_Magicka_Rate());
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Falmer()
+    /* Set */
+
+    Armor_Set_t Set_Armor_Ancient_Falmer()
     {
         Armor_Set_t result;
 
@@ -6457,7 +6388,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Falmer_Auriel()
+    Armor_Set_t Set_Armor_Ancient_Falmer_Auriel()
     {
         Armor_Set_t result;
 
@@ -6470,7 +6401,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Falmer_Pauldronless()
+    Armor_Set_t Set_Armor_Ancient_Falmer_Pauldronless()
     {
         Armor_Set_t result;
 
@@ -6482,7 +6413,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Falmer_Reflecting()
+    Armor_Set_t Set_Armor_Ancient_Falmer_Reflecting()
     {
         Armor_Set_t result;
 
@@ -6495,7 +6426,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic()
+    Armor_Set_t Set_Armor_Ancient_Nordic()
     {
         Armor_Set_t result;
 
@@ -6507,7 +6438,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Ahzidal()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Ahzidal()
     {
         Armor_Set_t result;
 
@@ -6519,7 +6450,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Bromjunaar()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Bromjunaar()
     {
         Armor_Set_t result;
 
@@ -6531,7 +6462,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Dukaan()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Dukaan()
     {
         Armor_Set_t result;
 
@@ -6543,7 +6474,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Hevnoraak()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Hevnoraak()
     {
         Armor_Set_t result;
 
@@ -6555,19 +6486,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Hunter()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Ancient_Nordic_Hunter_Body();
-        result.feet = Armor::Armor_Ancient_Nordic_Hunter_Feet();
-        result.hands = Armor::Armor_Ancient_Nordic_Hunter_Hands();
-        result.head = Armor::Armor_Ancient_Nordic_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Jagged_Crown()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Jagged_Crown()
     {
         Armor_Set_t result;
 
@@ -6579,7 +6498,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Kolbjorn()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Kolbjorn()
     {
         Armor_Set_t result;
 
@@ -6591,7 +6510,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Konahrik()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Konahrik()
     {
         Armor_Set_t result;
 
@@ -6603,7 +6522,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Krosis()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Krosis()
     {
         Armor_Set_t result;
 
@@ -6615,7 +6534,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Morokei()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Morokei()
     {
         Armor_Set_t result;
 
@@ -6627,7 +6546,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Nahkriin()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Nahkriin()
     {
         Armor_Set_t result;
 
@@ -6639,7 +6558,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Otar()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Otar()
     {
         Armor_Set_t result;
 
@@ -6651,7 +6570,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Rahgot()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Rahgot()
     {
         Armor_Set_t result;
 
@@ -6663,7 +6582,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Unburned()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Unburned()
     {
         Armor_Set_t result;
 
@@ -6675,7 +6594,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Vokun()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Vokun()
     {
         Armor_Set_t result;
 
@@ -6687,7 +6606,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Volsung()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Volsung()
     {
         Armor_Set_t result;
 
@@ -6699,7 +6618,19 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Ysgramor()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Yngol()
+    {
+        Armor_Set_t result;
+
+        result.body = Armor::Armor_Ancient_Nordic_Body();
+        result.feet = Armor::Armor_Ancient_Nordic_Feet();
+        result.hands = Armor::Armor_Ancient_Nordic_Hands();
+        result.head = Armor::Armor_Ancient_Nordic_Yngol_Head();
+
+        return result;
+    }
+
+    Armor_Set_t Set_Armor_Ancient_Nordic_Ysgramor()
     {
         Armor_Set_t result;
 
@@ -6712,7 +6643,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ancient_Nordic_Zahkriisos()
+    Armor_Set_t Set_Armor_Ancient_Nordic_Zahkriisos()
     {
         Armor_Set_t result;
 
@@ -6724,7 +6655,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Blades()
+    Armor_Set_t Set_Armor_Blades()
     {
         Armor_Set_t result;
 
@@ -6737,7 +6668,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold()
+    Armor_Set_t Set_Armor_Bonemold()
     {
         Armor_Set_t result;
 
@@ -6750,7 +6681,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Enchanted()
+    Armor_Set_t Set_Armor_Bonemold_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6763,7 +6694,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Guard()
+    Armor_Set_t Set_Armor_Bonemold_Guard()
     {
         Armor_Set_t result;
 
@@ -6776,7 +6707,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Guard_Enchanted()
+    Armor_Set_t Set_Armor_Bonemold_Guard_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6789,7 +6720,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Pauldron()
+    Armor_Set_t Set_Armor_Bonemold_Pauldron()
     {
         Armor_Set_t result;
 
@@ -6802,7 +6733,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Pauldron_Enchanted()
+    Armor_Set_t Set_Armor_Bonemold_Pauldron_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6815,7 +6746,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Bonemold_Pauldron_Improved()
+    Armor_Set_t Set_Armor_Bonemold_Pauldron_Improved()
     {
         Armor_Set_t result;
 
@@ -6828,7 +6759,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Chitin_Heavy()
+    Armor_Set_t Set_Armor_Chitin_Heavy()
     {
         Armor_Set_t result;
 
@@ -6840,7 +6771,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Chitin_Heavy_Enchanted()
+    Armor_Set_t Set_Armor_Chitin_Heavy_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6852,7 +6783,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Chitin_Light()
+    Armor_Set_t Set_Armor_Chitin_Light()
     {
         Armor_Set_t result;
 
@@ -6865,7 +6796,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Chitin_Light_Enchanted()
+    Armor_Set_t Set_Armor_Chitin_Light_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6878,7 +6809,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Daedric()
+    Armor_Set_t Set_Armor_Daedric()
     {
         Armor_Set_t result;
 
@@ -6891,7 +6822,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Daedric_Enchanted()
+    Armor_Set_t Set_Armor_Daedric_Enchanted()
     {
         Armor_Set_t result;
 
@@ -6904,33 +6835,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Daedric_Dremora()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Daedric_Dremora_Body();
-        result.feet = Armor::Armor_Daedric_Dremora_Feet();
-        result.hands = Armor::Armor_Daedric_Dremora_Hands();
-        result.head = Armor::Armor_Daedric_Dremora_Head();
-        result.forearm = Armor::Armor_Daedric_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Daedric_Dremora_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Daedric_Dremora_Body();
-        result.feet = Armor::Armor_Daedric_Dremora_Feet();
-        result.hands = Armor::Armor_Daedric_Dremora_Hands();
-        result.head = Armor::Armor_Daedric_Dremora_Head();
-        result.forearm = Armor_Daedric_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Dawnguard_Heavy_Brown()
+    Armor_Set_t Set_Armor_Dawnguard_Heavy_Brown()
     {
         Armor_Set_t result;
 
@@ -6943,7 +6848,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dawnguard_Heavy_Grey()
+    Armor_Set_t Set_Armor_Dawnguard_Heavy_Grey()
     {
         Armor_Set_t result;
 
@@ -6956,7 +6861,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dawnguard_Light_Brown()
+    Armor_Set_t Set_Armor_Dawnguard_Light_Brown()
     {
         Armor_Set_t result;
 
@@ -6969,7 +6874,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dawnguard_Light_Grey()
+    Armor_Set_t Set_Armor_Dawnguard_Light_Grey()
     {
         Armor_Set_t result;
 
@@ -6982,7 +6887,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dawnguard_Light_Red()
+    Armor_Set_t Set_Armor_Dawnguard_Light_Red()
     {
         Armor_Set_t result;
 
@@ -6995,7 +6900,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dragonplate()
+    Armor_Set_t Set_Armor_Dragonplate()
     {
         Armor_Set_t result;
 
@@ -7008,7 +6913,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dragonplate_Enchanted()
+    Armor_Set_t Set_Armor_Dragonplate_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7021,33 +6926,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dragonplate_Keeper()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Dragonplate_Keeper_Body();
-        result.feet = Armor::Armor_Dragonplate_Keeper_Feet();
-        result.hands = Armor::Armor_Dragonplate_Keeper_Hands();
-        result.head = Armor::Armor_Dragonplate_Head();
-        result.forearm = Armor::Armor_Dragonplate_Keeper_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Dragonplate_Keeper_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Dragonplate_Keeper_Body();
-        result.feet = Armor::Armor_Dragonplate_Keeper_Feet();
-        result.hands = Armor::Armor_Dragonplate_Keeper_Hands();
-        result.head = Armor_Dragonplate_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Dragonplate_Keeper_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Dragonscale()
+    Armor_Set_t Set_Armor_Dragonscale()
     {
         Armor_Set_t result;
 
@@ -7060,7 +6939,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dragonscale_Enchanted()
+    Armor_Set_t Set_Armor_Dragonscale_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7073,7 +6952,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven()
+    Armor_Set_t Set_Armor_Dwarven()
     {
         Armor_Set_t result;
 
@@ -7086,7 +6965,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Enchanted()
+    Armor_Set_t Set_Armor_Dwarven_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7099,7 +6978,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Aetherial()
+    Armor_Set_t Set_Armor_Dwarven_Aetherial()
     {
         Armor_Set_t result;
 
@@ -7112,7 +6991,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Aetherial_Enchanted()
+    Armor_Set_t Set_Armor_Dwarven_Aetherial_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7125,7 +7004,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Spellbreaker()
+    Armor_Set_t Set_Armor_Dwarven_Spellbreaker()
     {
         Armor_Set_t result;
 
@@ -7138,7 +7017,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Spellbreaker_Enchanted()
+    Armor_Set_t Set_Armor_Dwarven_Spellbreaker_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7151,7 +7030,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Visage_Of_Mzund()
+    Armor_Set_t Set_Armor_Dwarven_Visage_Of_Mzund()
     {
         Armor_Set_t result;
 
@@ -7164,7 +7043,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Dwarven_Visage_Of_Mzund_Enchanted()
+    Armor_Set_t Set_Armor_Dwarven_Visage_Of_Mzund_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7177,7 +7056,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony()
+    Armor_Set_t Set_Armor_Ebony()
     {
         Armor_Set_t result;
 
@@ -7190,7 +7069,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony_Enchanted()
+    Armor_Set_t Set_Armor_Ebony_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7203,7 +7082,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony_Mail()
+    Armor_Set_t Set_Armor_Ebony_Mail()
     {
         Armor_Set_t result;
 
@@ -7216,7 +7095,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony_Mail_Enchanted()
+    Armor_Set_t Set_Armor_Ebony_Mail_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7229,7 +7108,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile()
+    Armor_Set_t Set_Armor_Ebony_Masque_Of_Clavicus_Vile()
     {
         Armor_Set_t result;
 
@@ -7242,7 +7121,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted()
+    Armor_Set_t Set_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7255,7 +7134,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven()
+    Armor_Set_t Set_Armor_Elven()
     {
         Armor_Set_t result;
 
@@ -7268,7 +7147,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven_Enchanted()
+    Armor_Set_t Set_Armor_Elven_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7281,7 +7160,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven_Gilded()
+    Armor_Set_t Set_Armor_Elven_Gilded()
     {
         Armor_Set_t result;
 
@@ -7294,7 +7173,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven_Gilded_Enchanted()
+    Armor_Set_t Set_Armor_Elven_Gilded_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7307,33 +7186,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven_Herebanes_Fortress()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Elven_Body();
-        result.feet = Armor::Armor_Elven_Feet();
-        result.hands = Armor::Armor_Elven_Hands();
-        result.head = Armor::Armor_Elven_Head();
-        result.forearm = Armor::Armor_Elven_Herebanes_Fortress_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Elven_Herebanes_Fortress_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Elven_Body_Enchanted().Random();
-        result.feet = Armor_Elven_Feet_Enchanted().Random();
-        result.hands = Armor_Elven_Hands_Enchanted().Random();
-        result.head = Armor_Elven_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Elven_Herebanes_Fortress_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Elven_Pauldronless()
+    Armor_Set_t Set_Armor_Elven_Pauldronless()
     {
         Armor_Set_t result;
 
@@ -7346,7 +7199,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Elven_Pauldronless_Enchanted()
+    Armor_Set_t Set_Armor_Elven_Pauldronless_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7359,7 +7212,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Falmer()
+    Armor_Set_t Set_Armor_Falmer()
     {
         Armor_Set_t result;
 
@@ -7372,7 +7225,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Falmer_Hardened()
+    Armor_Set_t Set_Armor_Falmer_Hardened()
     {
         Armor_Set_t result;
 
@@ -7385,7 +7238,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Falmer_Heavy()
+    Armor_Set_t Set_Armor_Falmer_Heavy()
     {
         Armor_Set_t result;
 
@@ -7398,7 +7251,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Falmer_Heavy_Shellbug()
+    Armor_Set_t Set_Armor_Falmer_Heavy_Shellbug()
     {
         Armor_Set_t result;
 
@@ -7411,7 +7264,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Forsworn()
+    Armor_Set_t Set_Armor_Forsworn()
     {
         Armor_Set_t result;
 
@@ -7423,7 +7276,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Forsworn_Old_Gods()
+    Armor_Set_t Set_Armor_Forsworn_Old_Gods()
     {
         Armor_Set_t result;
 
@@ -7435,7 +7288,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Fur()
+    Armor_Set_t Set_Armor_Fur()
     {
         Armor_Set_t result;
 
@@ -7447,7 +7300,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Fur_Topless()
+    Armor_Set_t Set_Armor_Fur_Topless()
     {
         Armor_Set_t result;
 
@@ -7459,7 +7312,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Fur_Topless_Pauldron()
+    Armor_Set_t Set_Armor_Fur_Topless_Pauldron()
     {
         Armor_Set_t result;
 
@@ -7471,7 +7324,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Fur_Saviors_Hide()
+    Armor_Set_t Set_Armor_Fur_Saviors_Hide()
     {
         Armor_Set_t result;
 
@@ -7483,7 +7336,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Fur_Sleeveless()
+    Armor_Set_t Set_Armor_Fur_Sleeveless()
     {
         Armor_Set_t result;
 
@@ -7495,7 +7348,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Glass()
+    Armor_Set_t Set_Armor_Glass()
     {
         Armor_Set_t result;
 
@@ -7508,7 +7361,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Glass_Enchanted()
+    Armor_Set_t Set_Armor_Glass_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7521,7 +7374,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Falkreath()
+    Armor_Set_t Set_Armor_Guard_Falkreath()
     {
         Armor_Set_t result;
 
@@ -7534,7 +7387,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Hjaalmarch()
+    Armor_Set_t Set_Armor_Guard_Hjaalmarch()
     {
         Armor_Set_t result;
 
@@ -7547,7 +7400,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Markarth()
+    Armor_Set_t Set_Armor_Guard_Markarth()
     {
         Armor_Set_t result;
 
@@ -7560,7 +7413,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Pale()
+    Armor_Set_t Set_Armor_Guard_Pale()
     {
         Armor_Set_t result;
 
@@ -7573,7 +7426,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Riften()
+    Armor_Set_t Set_Armor_Guard_Riften()
     {
         Armor_Set_t result;
 
@@ -7586,7 +7439,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Riften_Pugilist()
+    Armor_Set_t Set_Armor_Guard_Riften_Pugilist()
     {
         Armor_Set_t result;
 
@@ -7599,7 +7452,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Solitude()
+    Armor_Set_t Set_Armor_Guard_Solitude()
     {
         Armor_Set_t result;
 
@@ -7612,7 +7465,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Solitude_Reward()
+    Armor_Set_t Set_Armor_Guard_Solitude_Reward()
     {
         Armor_Set_t result;
 
@@ -7625,7 +7478,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Whiterun()
+    Armor_Set_t Set_Armor_Guard_Whiterun()
     {
         Armor_Set_t result;
 
@@ -7638,7 +7491,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Windhelm()
+    Armor_Set_t Set_Armor_Guard_Windhelm()
     {
         Armor_Set_t result;
 
@@ -7651,20 +7504,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Windhelm_Eastmarch()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Guard_Windhelm_Body();
-        result.feet = Armor::Armor_Guard_Feet();
-        result.hands = Armor::Armor_Guard_Hands();
-        result.head = Armor::Armor_Guard_Windhelm_Eastmarch_Head();
-        result.forearm = Armor::Armor_Guard_Windhelm_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Guard_Windhelm_Sleeved()
+    Armor_Set_t Set_Armor_Guard_Windhelm_Sleeved()
     {
         Armor_Set_t result;
 
@@ -7677,7 +7517,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Guard_Winterhold()
+    Armor_Set_t Set_Armor_Guard_Winterhold()
     {
         Armor_Set_t result;
 
@@ -7690,7 +7530,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide()
+    Armor_Set_t Set_Armor_Hide()
     {
         Armor_Set_t result;
 
@@ -7703,7 +7543,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide_Enchanted()
+    Armor_Set_t Set_Armor_Hide_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7716,33 +7556,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide_Movarth()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Hide_Body();
-        result.feet = Armor::Armor_Hide_Movarth_Feet();
-        result.hands = Armor::Armor_Hide_Hands();
-        result.head = Armor::Armor_Hide_Head();
-        result.forearm = Armor::Armor_Hide_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Hide_Movarth_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Hide_Body_Enchanted().Random();
-        result.feet = Armor::Armor_Hide_Movarth_Feet();
-        result.hands = Armor_Hide_Hands_Enchanted().Random();
-        result.head = Armor_Hide_Head_Enchanted().Random();
-        result.forearm = Armor_Hide_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Hide_Predators_Grace()
+    Armor_Set_t Set_Armor_Hide_Predators_Grace()
     {
         Armor_Set_t result;
 
@@ -7755,7 +7569,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide_Predators_Grace_Enchanted()
+    Armor_Set_t Set_Armor_Hide_Predators_Grace_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7768,7 +7582,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide_Studded()
+    Armor_Set_t Set_Armor_Hide_Studded()
     {
         Armor_Set_t result;
 
@@ -7781,7 +7595,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Hide_Studded_Enchanted()
+    Armor_Set_t Set_Armor_Hide_Studded_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7794,7 +7608,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy()
+    Armor_Set_t Set_Armor_Imperial_Heavy()
     {
         Armor_Set_t result;
 
@@ -7807,7 +7621,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Heavy_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7820,20 +7634,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Falx()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Imperial_Heavy_Falx_Body();
-        result.feet = Armor::Armor_Imperial_Heavy_Falx_Feet();
-        result.hands = Armor::Armor_Imperial_Heavy_Falx_Hands();
-        result.head = Armor::Armor_Imperial_Heavy_Falx_Head();
-        result.forearm = Armor::Armor_Imperial_Heavy_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_General_Carius()
+    Armor_Set_t Set_Armor_Imperial_Heavy_General_Carius()
     {
         Armor_Set_t result;
 
@@ -7846,7 +7647,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_General_Carius_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Heavy_General_Carius_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7859,7 +7660,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_General_Tullius()
+    Armor_Set_t Set_Armor_Imperial_Heavy_General_Tullius()
     {
         Armor_Set_t result;
 
@@ -7872,7 +7673,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_General_Tullius_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Heavy_General_Tullius_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7885,7 +7686,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Knight()
+    Armor_Set_t Set_Armor_Imperial_Heavy_Knight()
     {
         Armor_Set_t result;
 
@@ -7898,7 +7699,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Knight_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Heavy_Knight_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7911,7 +7712,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Officer()
+    Armor_Set_t Set_Armor_Imperial_Heavy_Officer()
     {
         Armor_Set_t result;
 
@@ -7924,7 +7725,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Heavy_Officer_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Heavy_Officer_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7937,7 +7738,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Light()
+    Armor_Set_t Set_Armor_Imperial_Light()
     {
         Armor_Set_t result;
 
@@ -7950,7 +7751,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Light_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Light_Enchanted()
     {
         Armor_Set_t result;
 
@@ -7963,33 +7764,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Light_Noster()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Imperial_Light_Body();
-        result.feet = Armor::Armor_Imperial_Light_Feet();
-        result.hands = Armor::Armor_Imperial_Light_Hands();
-        result.head = Armor::Armor_Imperial_Light_Noster_Head();
-        result.forearm = Armor::Armor_Imperial_Light_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Imperial_Light_Noster_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Imperial_Light_Body_Enchanted().Random();
-        result.feet = Armor_Imperial_Light_Feet_Enchanted().Random();
-        result.hands = Armor_Imperial_Light_Hands_Enchanted().Random();
-        result.head = Armor::Armor_Imperial_Light_Noster_Head();
-        result.forearm = Armor_Imperial_Light_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Imperial_Light_Studded()
+    Armor_Set_t Set_Armor_Imperial_Light_Studded()
     {
         Armor_Set_t result;
 
@@ -8002,7 +7777,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Imperial_Light_Studded_Enchanted()
+    Armor_Set_t Set_Armor_Imperial_Light_Studded_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8015,7 +7790,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Iron()
+    Armor_Set_t Set_Armor_Iron()
     {
         Armor_Set_t result;
 
@@ -8028,7 +7803,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Iron_Enchanted()
+    Armor_Set_t Set_Armor_Iron_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8041,7 +7816,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Iron_Banded()
+    Armor_Set_t Set_Armor_Iron_Banded()
     {
         Armor_Set_t result;
 
@@ -8054,7 +7829,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Iron_Banded_Enchanted()
+    Armor_Set_t Set_Armor_Iron_Banded_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8067,111 +7842,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Iron_Dented()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Iron_Body();
-        result.feet = Armor::Armor_Iron_Feet();
-        result.hands = Armor::Armor_Iron_Hands();
-        result.head = Armor::Armor_Iron_Head();
-        result.forearm = Armor::Armor_Iron_Dented_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Dented_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Iron_Body_Enchanted().Random();
-        result.feet = Armor_Iron_Feet_Enchanted().Random();
-        result.hands = Armor_Iron_Hands_Enchanted().Random();
-        result.head = Armor_Iron_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Iron_Dented_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Family()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Iron_Body();
-        result.feet = Armor::Armor_Iron_Feet();
-        result.hands = Armor::Armor_Iron_Hands();
-        result.head = Armor::Armor_Iron_Head();
-        result.forearm = Armor::Armor_Iron_Family_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Family_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Iron_Body_Enchanted().Random();
-        result.feet = Armor_Iron_Feet_Enchanted().Random();
-        result.hands = Armor_Iron_Hands_Enchanted().Random();
-        result.head = Armor_Iron_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Iron_Family_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Forgemasters_Fingers()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Iron_Body();
-        result.feet = Armor::Armor_Iron_Feet();
-        result.hands = Armor::Armor_Iron_Forgemasters_Fingers_Hands();
-        result.head = Armor::Armor_Iron_Head();
-        result.forearm = Armor::Armor_Iron_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Forgemasters_Fingers_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Iron_Body_Enchanted().Random();
-        result.feet = Armor_Iron_Feet_Enchanted().Random();
-        result.hands = Armor::Armor_Iron_Forgemasters_Fingers_Hands();
-        result.head = Armor_Iron_Head_Enchanted().Random();
-        result.forearm = Armor_Iron_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Roggi()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Iron_Body();
-        result.feet = Armor::Armor_Iron_Feet();
-        result.hands = Armor::Armor_Iron_Hands();
-        result.head = Armor::Armor_Iron_Head();
-        result.forearm = Armor::Armor_Iron_Roggi_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Iron_Roggi_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Iron_Body_Enchanted().Random();
-        result.feet = Armor_Iron_Feet_Enchanted().Random();
-        result.hands = Armor_Iron_Hands_Enchanted().Random();
-        result.head = Armor_Iron_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Iron_Roggi_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Leather()
+    Armor_Set_t Set_Armor_Leather()
     {
         Armor_Set_t result;
 
@@ -8183,7 +7854,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Leather_Enchanted()
+    Armor_Set_t Set_Armor_Leather_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8195,19 +7866,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Miraak_Body();
-        result.feet = Armor::Armor_Miraak_Feet();
-        result.hands = Armor::Armor_Miraak_Hands();
-        result.head = Armor::Armor_Miraak_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Miraak_Reward()
+    Armor_Set_t Set_Armor_Miraak_Reward()
     {
         Armor_Set_t result;
 
@@ -8219,7 +7878,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Reward_1()
+    Armor_Set_t Set_Armor_Miraak_Reward_1()
     {
         Armor_Set_t result;
 
@@ -8231,7 +7890,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Reward_2()
+    Armor_Set_t Set_Armor_Miraak_Reward_2()
     {
         Armor_Set_t result;
 
@@ -8243,7 +7902,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Reward_3()
+    Armor_Set_t Set_Armor_Miraak_Reward_3()
     {
         Armor_Set_t result;
 
@@ -8255,7 +7914,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Heavy_Reward()
+    Armor_Set_t Set_Armor_Miraak_Heavy_Reward()
     {
         Armor_Set_t result;
 
@@ -8267,7 +7926,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Heavy_Reward_1()
+    Armor_Set_t Set_Armor_Miraak_Heavy_Reward_1()
     {
         Armor_Set_t result;
 
@@ -8279,7 +7938,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Heavy_Reward_2()
+    Armor_Set_t Set_Armor_Miraak_Heavy_Reward_2()
     {
         Armor_Set_t result;
 
@@ -8291,7 +7950,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Heavy_Reward_3()
+    Armor_Set_t Set_Armor_Miraak_Heavy_Reward_3()
     {
         Armor_Set_t result;
 
@@ -8303,7 +7962,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Light_Reward()
+    Armor_Set_t Set_Armor_Miraak_Light_Reward()
     {
         Armor_Set_t result;
 
@@ -8315,7 +7974,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Light_Reward_1()
+    Armor_Set_t Set_Armor_Miraak_Light_Reward_1()
     {
         Armor_Set_t result;
 
@@ -8327,7 +7986,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Light_Reward_2()
+    Armor_Set_t Set_Armor_Miraak_Light_Reward_2()
     {
         Armor_Set_t result;
 
@@ -8339,7 +7998,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Miraak_Light_Reward_3()
+    Armor_Set_t Set_Armor_Miraak_Light_Reward_3()
     {
         Armor_Set_t result;
 
@@ -8351,7 +8010,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Morag_Tong()
+    Armor_Set_t Set_Armor_Morag_Tong()
     {
         Armor_Set_t result;
 
@@ -8363,19 +8022,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nightingale()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Nightingale_Body();
-        result.feet = Armor::Armor_Nightingale_Feet();
-        result.hands = Armor::Armor_Nightingale_Hands();
-        result.head = Armor::Armor_Nightingale_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Nightingale_Reward()
+    Armor_Set_t Set_Armor_Nightingale_Reward()
     {
         Armor_Set_t result;
 
@@ -8387,7 +8034,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nightingale_Reward_1()
+    Armor_Set_t Set_Armor_Nightingale_Reward_1()
     {
         Armor_Set_t result;
 
@@ -8399,7 +8046,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nightingale_Reward_2()
+    Armor_Set_t Set_Armor_Nightingale_Reward_2()
     {
         Armor_Set_t result;
 
@@ -8411,7 +8058,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nightingale_Reward_3()
+    Armor_Set_t Set_Armor_Nightingale_Reward_3()
     {
         Armor_Set_t result;
 
@@ -8423,7 +8070,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nordic()
+    Armor_Set_t Set_Armor_Nordic()
     {
         Armor_Set_t result;
 
@@ -8436,7 +8083,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Nordic_Enchanted()
+    Armor_Set_t Set_Armor_Nordic_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8449,7 +8096,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Orcish()
+    Armor_Set_t Set_Armor_Orcish()
     {
         Armor_Set_t result;
 
@@ -8462,7 +8109,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Orcish_Enchanted()
+    Armor_Set_t Set_Armor_Orcish_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8475,7 +8122,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Penitus_Oculatus()
+    Armor_Set_t Set_Armor_Penitus_Oculatus()
     {
         Armor_Set_t result;
 
@@ -8487,7 +8134,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Plate()
+    Armor_Set_t Set_Armor_Plate()
     {
         Armor_Set_t result;
 
@@ -8499,7 +8146,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Plate_Enchanted()
+    Armor_Set_t Set_Armor_Plate_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8511,55 +8158,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Plate_Katria()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Plate_Katria_Body();
-        result.feet = Armor::Armor_Plate_Feet();
-        result.hands = Armor::Armor_Plate_Hands();
-        result.head = Armor::Armor_Plate_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Plate_Katria_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Plate_Katria_Body();
-        result.feet = Armor_Plate_Feet_Enchanted().Random();
-        result.hands = Armor_Plate_Hands_Enchanted().Random();
-        result.head = Armor_Plate_Head_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Plate_Yngol()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Plate_Body();
-        result.feet = Armor::Armor_Plate_Feet();
-        result.hands = Armor::Armor_Plate_Hands();
-        result.head = Armor::Armor_Plate_Yngol_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Plate_Yngol_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Plate_Body_Enchanted().Random();
-        result.feet = Armor_Plate_Feet_Enchanted().Random();
-        result.hands = Armor_Plate_Hands_Enchanted().Random();
-        result.head = Armor::Armor_Plate_Yngol_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Scaled()
+    Armor_Set_t Set_Armor_Scaled()
     {
         Armor_Set_t result;
 
@@ -8571,7 +8170,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Scaled_Enchanted()
+    Armor_Set_t Set_Armor_Scaled_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8583,7 +8182,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Scaled_Horned()
+    Armor_Set_t Set_Armor_Scaled_Horned()
     {
         Armor_Set_t result;
 
@@ -8595,7 +8194,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Scaled_Horned_Enchanted()
+    Armor_Set_t Set_Armor_Scaled_Horned_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8607,7 +8206,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded()
+    Armor_Set_t Set_Armor_Shrouded()
     {
         Armor_Set_t result;
 
@@ -8619,7 +8218,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded_Ancient()
+    Armor_Set_t Set_Armor_Shrouded_Ancient()
     {
         Armor_Set_t result;
 
@@ -8631,7 +8230,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded_Maskless()
+    Armor_Set_t Set_Armor_Shrouded_Maskless()
     {
         Armor_Set_t result;
 
@@ -8643,7 +8242,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded_Short_Sleeved()
+    Armor_Set_t Set_Armor_Shrouded_Short_Sleeved()
     {
         Armor_Set_t result;
 
@@ -8655,7 +8254,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded_Tumblerbane()
+    Armor_Set_t Set_Armor_Shrouded_Tumblerbane()
     {
         Armor_Set_t result;
 
@@ -8667,7 +8266,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Shrouded_Worn()
+    Armor_Set_t Set_Armor_Shrouded_Worn()
     {
         Armor_Set_t result;
 
@@ -8679,7 +8278,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Heavy()
+    Armor_Set_t Set_Armor_Stalhrim_Heavy()
     {
         Armor_Set_t result;
 
@@ -8691,7 +8290,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Heavy_Enchanted()
+    Armor_Set_t Set_Armor_Stalhrim_Heavy_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8703,7 +8302,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Light()
+    Armor_Set_t Set_Armor_Stalhrim_Light()
     {
         Armor_Set_t result;
 
@@ -8716,7 +8315,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Light_Enchanted()
+    Armor_Set_t Set_Armor_Stalhrim_Light_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8729,7 +8328,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Light_Deathbrand()
+    Armor_Set_t Set_Armor_Stalhrim_Light_Deathbrand()
     {
         Armor_Set_t result;
 
@@ -8742,7 +8341,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stalhrim_Light_Deathbrand_Enchanted()
+    Armor_Set_t Set_Armor_Stalhrim_Light_Deathbrand_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8755,7 +8354,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel()
+    Armor_Set_t Set_Armor_Steel()
     {
         Armor_Set_t result;
 
@@ -8768,7 +8367,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Enchanted()
+    Armor_Set_t Set_Armor_Steel_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8781,7 +8380,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Horned()
+    Armor_Set_t Set_Armor_Steel_Horned()
     {
         Armor_Set_t result;
 
@@ -8794,7 +8393,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Horned_Enchanted()
+    Armor_Set_t Set_Armor_Steel_Horned_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8807,111 +8406,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Horned_Winterhold()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Steel_Body();
-        result.feet = Armor::Armor_Steel_Feet();
-        result.hands = Armor::Armor_Steel_Hands();
-        result.head = Armor::Armor_Steel_Horned_Winterhold_Head();
-        result.forearm = Armor::Armor_Steel_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Horned_Winterhold_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Steel_Body_Enchanted().Random();
-        result.feet = Armor_Steel_Feet_Enchanted().Random();
-        result.hands = Armor_Steel_Hands_Enchanted().Random();
-        result.head = Armor::Armor_Steel_Horned_Winterhold_Head();
-        result.forearm = Armor_Steel_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Hrolfdir()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Steel_Body();
-        result.feet = Armor::Armor_Steel_Feet();
-        result.hands = Armor::Armor_Steel_Hands();
-        result.head = Armor::Armor_Steel_Head();
-        result.forearm = Armor::Armor_Steel_Hrolfdir_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Hrolfdir_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Steel_Body_Enchanted().Random();
-        result.feet = Armor_Steel_Feet_Enchanted().Random();
-        result.hands = Armor_Steel_Hands_Enchanted().Random();
-        result.head = Armor_Steel_Head_Enchanted().Random();
-        result.forearm = Armor::Armor_Steel_Hrolfdir_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Imperial()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Steel_Body();
-        result.feet = Armor::Armor_Steel_Imperial_Feet();
-        result.hands = Armor::Armor_Steel_Imperial_Hands();
-        result.head = Armor::Armor_Steel_Head();
-        result.forearm = Armor::Armor_Steel_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Imperial_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Steel_Body_Enchanted().Random();
-        result.feet = Armor::Armor_Steel_Imperial_Feet();
-        result.hands = Armor::Armor_Steel_Imperial_Hands();
-        result.head = Armor_Steel_Head_Enchanted().Random();
-        result.forearm = Armor_Steel_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Ironhand()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Steel_Body();
-        result.feet = Armor::Armor_Steel_Feet();
-        result.hands = Armor::Armor_Steel_Ironhand_Hands();
-        result.head = Armor::Armor_Steel_Head();
-        result.forearm = Armor::Armor_Steel_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Ironhand_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor_Steel_Body_Enchanted().Random();
-        result.feet = Armor_Steel_Feet_Enchanted().Random();
-        result.hands = Armor::Armor_Steel_Ironhand_Hands();
-        result.head = Armor_Steel_Head_Enchanted().Random();
-        result.forearm = Armor_Steel_Shield_Enchanted().Random();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Steel_Pauldron()
+    Armor_Set_t Set_Armor_Steel_Pauldron()
     {
         Armor_Set_t result;
 
@@ -8924,7 +8419,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Pauldron_Enchanted()
+    Armor_Set_t Set_Armor_Steel_Pauldron_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8937,7 +8432,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Targe_Of_The_Blooded()
+    Armor_Set_t Set_Armor_Steel_Targe_Of_The_Blooded()
     {
         Armor_Set_t result;
 
@@ -8950,7 +8445,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Steel_Targe_Of_The_Blooded_Enchanted()
+    Armor_Set_t Set_Armor_Steel_Targe_Of_The_Blooded_Enchanted()
     {
         Armor_Set_t result;
 
@@ -8963,7 +8458,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Stormcloak_Officer()
+    Armor_Set_t Set_Armor_Stormcloak_Officer()
     {
         Armor_Set_t result;
 
@@ -8975,31 +8470,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Summerset_Shadows()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Summerset_Shadows_Body();
-        result.feet = Armor::Armor_Summerset_Shadows_Feet();
-        result.hands = Armor::Armor_Summerset_Shadows_Hands();
-        result.head = Armor::Armor_Summerset_Shadows_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Summerset_Shadows_Linwe()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Summerset_Shadows_Linwe_Body();
-        result.feet = Armor::Armor_Summerset_Shadows_Linwe_Feet();
-        result.hands = Armor::Armor_Summerset_Shadows_Linwe_Hands();
-        result.head = Armor::Armor_Summerset_Shadows_Linwe_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Thieves_Guild()
+    Armor_Set_t Set_Armor_Thieves_Guild()
     {
         Armor_Set_t result;
 
@@ -9011,7 +8482,19 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Blackguard()
+    Armor_Set_t Set_Armor_Thieves_Guild_Alternate()
+    {
+        Armor_Set_t result;
+
+        result.body = Armor::Armor_Thieves_Guild_Body();
+        result.feet = Armor::Armor_Thieves_Guild_Feet();
+        result.hands = Armor::Armor_Thieves_Guild_Hands();
+        result.head = Armor::Armor_Thieves_Guild_Alternate_Head();
+
+        return result;
+    }
+
+    Armor_Set_t Set_Armor_Thieves_Guild_Blackguard()
     {
         Armor_Set_t result;
 
@@ -9023,7 +8506,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Improved()
+    Armor_Set_t Set_Armor_Thieves_Guild_Improved()
     {
         Armor_Set_t result;
 
@@ -9035,7 +8518,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Karliah()
+    Armor_Set_t Set_Armor_Thieves_Guild_Karliah()
     {
         Armor_Set_t result;
 
@@ -9047,7 +8530,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Master()
+    Armor_Set_t Set_Armor_Thieves_Guild_Master()
     {
         Armor_Set_t result;
 
@@ -9059,31 +8542,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Master_Mercer()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Thieves_Guild_Master_Mercer_Body();
-        result.feet = Armor::Armor_Thieves_Guild_Master_Mercer_Feet();
-        result.hands = Armor::Armor_Thieves_Guild_Master_Mercer_Hands();
-        result.head = Armor::Armor_Thieves_Guild_Master_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Thieves_Guild_NPC()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Thieves_Guild_NPC_Body();
-        result.feet = Armor::Armor_Thieves_Guild_NPC_Feet();
-        result.hands = Armor::Armor_Thieves_Guild_NPC_Hands();
-        result.head = Armor::Armor_Thieves_Guild_NPC_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Torturer()
+    Armor_Set_t Set_Armor_Thieves_Guild_Torturer()
     {
         Armor_Set_t result;
 
@@ -9095,7 +8554,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Variant()
+    Armor_Set_t Set_Armor_Thieves_Guild_Variant()
     {
         Armor_Set_t result;
 
@@ -9107,19 +8566,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Thieves_Guild_Variant_Alternate()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Thieves_Guild_Variant_Body();
-        result.feet = Armor::Armor_Thieves_Guild_Variant_Feet();
-        result.hands = Armor::Armor_Thieves_Guild_Variant_Hands();
-        result.head = Armor::Armor_Thieves_Guild_Variant_Alternate_Head();
-
-        return result;
-    }
-
-    Armor_Set_t Outfit_Armor_Tsun()
+    Armor_Set_t Set_Armor_Tsun()
     {
         Armor_Set_t result;
 
@@ -9129,7 +8576,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Black()
+    Armor_Set_t Set_Armor_Vampire_Black()
     {
         Armor_Set_t result;
 
@@ -9140,7 +8587,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Black_Enchanted()
+    Armor_Set_t Set_Armor_Vampire_Black_Enchanted()
     {
         Armor_Set_t result;
 
@@ -9151,7 +8598,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Grey()
+    Armor_Set_t Set_Armor_Vampire_Grey()
     {
         Armor_Set_t result;
 
@@ -9162,7 +8609,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Grey_Enchanted()
+    Armor_Set_t Set_Armor_Vampire_Grey_Enchanted()
     {
         Armor_Set_t result;
 
@@ -9173,7 +8620,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Red()
+    Armor_Set_t Set_Armor_Vampire_Red()
     {
         Armor_Set_t result;
 
@@ -9184,7 +8631,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Red_Enchanted()
+    Armor_Set_t Set_Armor_Vampire_Red_Enchanted()
     {
         Armor_Set_t result;
 
@@ -9195,7 +8642,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Royal()
+    Armor_Set_t Set_Armor_Vampire_Royal()
     {
         Armor_Set_t result;
 
@@ -9206,7 +8653,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Royal_Serana()
+    Armor_Set_t Set_Armor_Vampire_Royal_Serana()
     {
         Armor_Set_t result;
 
@@ -9218,7 +8665,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Vampire_Royal_Valerica()
+    Armor_Set_t Set_Armor_Vampire_Royal_Valerica()
     {
         Armor_Set_t result;
 
@@ -9229,7 +8676,7 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Outfit_Armor_Wolf()
+    Armor_Set_t Set_Armor_Wolf()
     {
         Armor_Set_t result;
 
@@ -9241,1570 +8688,1486 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Falmer()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ancient_Falmer); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Falmer_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ancient_Falmer_Standard); }
+    /* Sets */
 
-    void Outfit_Group_Armor_Ancient_Falmer(Vector_t<some<Outfit_f>>& results)
+    Vector_t<some<Set_f>>   Sets_Armor_Ancient_Falmer()             { DEFINE_CREATE_SETS(Sets_Armor_Ancient_Falmer); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ancient_Falmer_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Ancient_Falmer_Standard); }
+
+    void Sets_Armor_Ancient_Falmer(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Ancient_Falmer_Standard(results);
+        Sets_Armor_Ancient_Falmer_Standard(results);
     }
 
-    void Outfit_Group_Armor_Ancient_Falmer_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ancient_Falmer_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Ancient_Falmer);
-        results.push_back(&Outfit_Armor_Ancient_Falmer_Auriel);
-        results.push_back(&Outfit_Armor_Ancient_Falmer_Pauldronless);
-        results.push_back(&Outfit_Armor_Ancient_Falmer_Reflecting);
+        results.push_back(&Set_Armor_Ancient_Falmer);
+        results.push_back(&Set_Armor_Ancient_Falmer_Auriel);
+        results.push_back(&Set_Armor_Ancient_Falmer_Pauldronless);
+        results.push_back(&Set_Armor_Ancient_Falmer_Reflecting);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Nordic()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ancient_Nordic); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ancient_Nordic_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ancient_Nordic_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ancient_Nordic()             { DEFINE_CREATE_SETS(Sets_Armor_Ancient_Nordic); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ancient_Nordic_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Ancient_Nordic_Standard); }
 
-    void Outfit_Group_Armor_Ancient_Nordic(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ancient_Nordic(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Ancient_Nordic_Standard(results);
+        Sets_Armor_Ancient_Nordic_Standard(results);
     }
 
-    void Outfit_Group_Armor_Ancient_Nordic_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ancient_Nordic_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Ancient_Nordic);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Ahzidal);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Bromjunaar);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Dukaan);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Hevnoraak);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Hunter);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Jagged_Crown);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Kolbjorn);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Konahrik);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Krosis);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Morokei);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Nahkriin);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Otar);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Rahgot);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Unburned);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Vokun);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Volsung);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Ysgramor);
-        results.push_back(&Outfit_Armor_Ancient_Nordic_Zahkriisos);
+        results.push_back(&Set_Armor_Ancient_Nordic);
+        results.push_back(&Set_Armor_Ancient_Nordic_Ahzidal);
+        results.push_back(&Set_Armor_Ancient_Nordic_Bromjunaar);
+        results.push_back(&Set_Armor_Ancient_Nordic_Dukaan);
+        results.push_back(&Set_Armor_Ancient_Nordic_Hevnoraak);
+        results.push_back(&Set_Armor_Ancient_Nordic_Jagged_Crown);
+        results.push_back(&Set_Armor_Ancient_Nordic_Kolbjorn);
+        results.push_back(&Set_Armor_Ancient_Nordic_Konahrik);
+        results.push_back(&Set_Armor_Ancient_Nordic_Krosis);
+        results.push_back(&Set_Armor_Ancient_Nordic_Morokei);
+        results.push_back(&Set_Armor_Ancient_Nordic_Nahkriin);
+        results.push_back(&Set_Armor_Ancient_Nordic_Otar);
+        results.push_back(&Set_Armor_Ancient_Nordic_Rahgot);
+        results.push_back(&Set_Armor_Ancient_Nordic_Unburned);
+        results.push_back(&Set_Armor_Ancient_Nordic_Vokun);
+        results.push_back(&Set_Armor_Ancient_Nordic_Volsung);
+        results.push_back(&Set_Armor_Ancient_Nordic_Yngol);
+        results.push_back(&Set_Armor_Ancient_Nordic_Ysgramor);
+        results.push_back(&Set_Armor_Ancient_Nordic_Zahkriisos);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Blades()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Blades); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Blades_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Blades_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Blades()             { DEFINE_CREATE_SETS(Sets_Armor_Blades); }
+    Vector_t<some<Set_f>>   Sets_Armor_Blades_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Blades_Standard); }
 
-    void Outfit_Group_Armor_Blades(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Blades(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Blades_Standard(results);
+        Sets_Armor_Blades_Standard(results);
     }
 
-    void Outfit_Group_Armor_Blades_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Blades_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Blades);
+        results.push_back(&Set_Armor_Blades);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Bonemold); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Bonemold_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Bonemold_Enhanced()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Bonemold_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Bonemold()           { DEFINE_CREATE_SETS(Sets_Armor_Bonemold); }
+    Vector_t<some<Set_f>>   Sets_Armor_Bonemold_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Bonemold_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Bonemold_Enhanced()  { DEFINE_CREATE_SETS(Sets_Armor_Bonemold_Enhanced); }
 
-    void Outfit_Group_Armor_Bonemold(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Bonemold(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Bonemold_Standard(results);
-        Outfit_Group_Armor_Bonemold_Enhanced(results);
+        Sets_Armor_Bonemold_Standard(results);
+        Sets_Armor_Bonemold_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Bonemold_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Bonemold_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Bonemold);
-        results.push_back(&Outfit_Armor_Bonemold_Guard);
-        results.push_back(&Outfit_Armor_Bonemold_Pauldron);
-        results.push_back(&Outfit_Armor_Bonemold_Pauldron_Improved);
+        results.push_back(&Set_Armor_Bonemold);
+        results.push_back(&Set_Armor_Bonemold_Guard);
+        results.push_back(&Set_Armor_Bonemold_Pauldron);
+        results.push_back(&Set_Armor_Bonemold_Pauldron_Improved);
     }
 
-    void Outfit_Group_Armor_Bonemold_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Bonemold_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Bonemold_Enchanted);
-        results.push_back(&Outfit_Armor_Bonemold_Guard_Enchanted);
-        results.push_back(&Outfit_Armor_Bonemold_Pauldron_Enchanted);
+        results.push_back(&Set_Armor_Bonemold_Enchanted);
+        results.push_back(&Set_Armor_Bonemold_Guard_Enchanted);
+        results.push_back(&Set_Armor_Bonemold_Pauldron_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Chitin); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Chitin_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Chitin_Enhanced()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Chitin_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Chitin()             { DEFINE_CREATE_SETS(Sets_Armor_Chitin); }
+    Vector_t<some<Set_f>>   Sets_Armor_Chitin_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Chitin_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Chitin_Enhanced()    { DEFINE_CREATE_SETS(Sets_Armor_Chitin_Enhanced); }
 
-    void Outfit_Group_Armor_Chitin(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Chitin(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Chitin_Standard(results);
-        Outfit_Group_Armor_Chitin_Enhanced(results);
+        Sets_Armor_Chitin_Standard(results);
+        Sets_Armor_Chitin_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Chitin_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Chitin_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Chitin_Heavy);
-        results.push_back(&Outfit_Armor_Chitin_Light);
+        results.push_back(&Set_Armor_Chitin_Heavy);
+        results.push_back(&Set_Armor_Chitin_Light);
     }
 
-    void Outfit_Group_Armor_Chitin_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Chitin_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Chitin_Heavy_Enchanted);
-        results.push_back(&Outfit_Armor_Chitin_Light_Enchanted);
+        results.push_back(&Set_Armor_Chitin_Heavy_Enchanted);
+        results.push_back(&Set_Armor_Chitin_Light_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Daedric); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Daedric_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Daedric_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Daedric_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Daedric()            { DEFINE_CREATE_SETS(Sets_Armor_Daedric); }
+    Vector_t<some<Set_f>>   Sets_Armor_Daedric_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Daedric_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Daedric_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Daedric_Enhanced); }
 
-    void Outfit_Group_Armor_Daedric(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Daedric(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Daedric_Standard(results);
-        Outfit_Group_Armor_Daedric_Enhanced(results);
+        Sets_Armor_Daedric_Standard(results);
+        Sets_Armor_Daedric_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Daedric_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Daedric_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Daedric);
-        results.push_back(&Outfit_Armor_Daedric_Dremora);
+        results.push_back(&Set_Armor_Daedric);
     }
 
-    void Outfit_Group_Armor_Daedric_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Daedric_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Daedric_Enchanted);
-        results.push_back(&Outfit_Armor_Daedric_Dremora_Enchanted);
+        results.push_back(&Set_Armor_Daedric_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dawnguard()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dawnguard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dawnguard_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dawnguard_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dawnguard()          { DEFINE_CREATE_SETS(Sets_Armor_Dawnguard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dawnguard_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Dawnguard_Standard); }
 
-    void Outfit_Group_Armor_Dawnguard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dawnguard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Dawnguard_Standard(results);
+        Sets_Armor_Dawnguard_Standard(results);
     }
 
-    void Outfit_Group_Armor_Dawnguard_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dawnguard_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dawnguard_Heavy_Brown);
-        results.push_back(&Outfit_Armor_Dawnguard_Heavy_Grey);
-        results.push_back(&Outfit_Armor_Dawnguard_Light_Brown);
-        results.push_back(&Outfit_Armor_Dawnguard_Light_Grey);
-        results.push_back(&Outfit_Armor_Dawnguard_Light_Red);
+        results.push_back(&Set_Armor_Dawnguard_Heavy_Brown);
+        results.push_back(&Set_Armor_Dawnguard_Heavy_Grey);
+        results.push_back(&Set_Armor_Dawnguard_Light_Brown);
+        results.push_back(&Set_Armor_Dawnguard_Light_Grey);
+        results.push_back(&Set_Armor_Dawnguard_Light_Red);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonplate); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonplate_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonplate_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonplate_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonplate()            { DEFINE_CREATE_SETS(Sets_Armor_Dragonplate); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonplate_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Dragonplate_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonplate_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Dragonplate_Enhanced); }
 
-    void Outfit_Group_Armor_Dragonplate(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonplate(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Dragonplate_Standard(results);
-        Outfit_Group_Armor_Dragonplate_Enhanced(results);
+        Sets_Armor_Dragonplate_Standard(results);
+        Sets_Armor_Dragonplate_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Dragonplate_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonplate_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dragonplate);
-        results.push_back(&Outfit_Armor_Dragonplate_Keeper);
+        results.push_back(&Set_Armor_Dragonplate);
     }
 
-    void Outfit_Group_Armor_Dragonplate_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonplate_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dragonplate_Enchanted);
-        results.push_back(&Outfit_Armor_Dragonplate_Keeper_Enchanted);
+        results.push_back(&Set_Armor_Dragonplate_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonscale); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonscale_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dragonscale_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dragonscale_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonscale()            { DEFINE_CREATE_SETS(Sets_Armor_Dragonscale); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonscale_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Dragonscale_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dragonscale_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Dragonscale_Enhanced); }
 
-    void Outfit_Group_Armor_Dragonscale(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonscale(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Dragonscale_Standard(results);
-        Outfit_Group_Armor_Dragonscale_Enhanced(results);
+        Sets_Armor_Dragonscale_Standard(results);
+        Sets_Armor_Dragonscale_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Dragonscale_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonscale_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dragonscale);
+        results.push_back(&Set_Armor_Dragonscale);
     }
 
-    void Outfit_Group_Armor_Dragonscale_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dragonscale_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dragonscale_Enchanted);
+        results.push_back(&Set_Armor_Dragonscale_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dwarven); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dwarven_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Dwarven_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Dwarven_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dwarven()            { DEFINE_CREATE_SETS(Sets_Armor_Dwarven); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dwarven_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Dwarven_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Dwarven_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Dwarven_Enhanced); }
 
-    void Outfit_Group_Armor_Dwarven(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dwarven(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Dwarven_Standard(results);
-        Outfit_Group_Armor_Dwarven_Enhanced(results);
+        Sets_Armor_Dwarven_Standard(results);
+        Sets_Armor_Dwarven_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Dwarven_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dwarven_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dwarven);
-        results.push_back(&Outfit_Armor_Dwarven_Aetherial);
-        results.push_back(&Outfit_Armor_Dwarven_Spellbreaker);
-        results.push_back(&Outfit_Armor_Dwarven_Visage_Of_Mzund);
+        results.push_back(&Set_Armor_Dwarven);
+        results.push_back(&Set_Armor_Dwarven_Aetherial);
+        results.push_back(&Set_Armor_Dwarven_Spellbreaker);
+        results.push_back(&Set_Armor_Dwarven_Visage_Of_Mzund);
     }
 
-    void Outfit_Group_Armor_Dwarven_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Dwarven_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Dwarven_Enchanted);
-        results.push_back(&Outfit_Armor_Dwarven_Aetherial_Enchanted);
-        results.push_back(&Outfit_Armor_Dwarven_Spellbreaker_Enchanted);
-        results.push_back(&Outfit_Armor_Dwarven_Visage_Of_Mzund_Enchanted);
+        results.push_back(&Set_Armor_Dwarven_Enchanted);
+        results.push_back(&Set_Armor_Dwarven_Aetherial_Enchanted);
+        results.push_back(&Set_Armor_Dwarven_Spellbreaker_Enchanted);
+        results.push_back(&Set_Armor_Dwarven_Visage_Of_Mzund_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ebony); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ebony_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Ebony_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Ebony_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ebony()          { DEFINE_CREATE_SETS(Sets_Armor_Ebony); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ebony_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Ebony_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Ebony_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Ebony_Enhanced); }
 
-    void Outfit_Group_Armor_Ebony(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ebony(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Ebony_Standard(results);
-        Outfit_Group_Armor_Ebony_Enhanced(results);
+        Sets_Armor_Ebony_Standard(results);
+        Sets_Armor_Ebony_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Ebony_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ebony_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Ebony);
-        results.push_back(&Outfit_Armor_Ebony_Mail);
-        results.push_back(&Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile);
+        results.push_back(&Set_Armor_Ebony);
+        results.push_back(&Set_Armor_Ebony_Mail);
+        results.push_back(&Set_Armor_Ebony_Masque_Of_Clavicus_Vile);
     }
 
-    void Outfit_Group_Armor_Ebony_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Ebony_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Ebony_Enchanted);
-        results.push_back(&Outfit_Armor_Ebony_Mail_Enchanted);
-        results.push_back(&Outfit_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted);
+        results.push_back(&Set_Armor_Ebony_Enchanted);
+        results.push_back(&Set_Armor_Ebony_Mail_Enchanted);
+        results.push_back(&Set_Armor_Ebony_Masque_Of_Clavicus_Vile_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Elven); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Elven_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Elven_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Elven_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Elven()          { DEFINE_CREATE_SETS(Sets_Armor_Elven); }
+    Vector_t<some<Set_f>>   Sets_Armor_Elven_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Elven_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Elven_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Elven_Enhanced); }
 
-    void Outfit_Group_Armor_Elven(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Elven(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Elven_Standard(results);
-        Outfit_Group_Armor_Elven_Enhanced(results);
+        Sets_Armor_Elven_Standard(results);
+        Sets_Armor_Elven_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Elven_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Elven_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Elven);
-        results.push_back(&Outfit_Armor_Elven_Gilded);
-        results.push_back(&Outfit_Armor_Elven_Herebanes_Fortress);
-        results.push_back(&Outfit_Armor_Elven_Pauldronless);
+        results.push_back(&Set_Armor_Elven);
+        results.push_back(&Set_Armor_Elven_Gilded);
+        results.push_back(&Set_Armor_Elven_Pauldronless);
     }
 
-    void Outfit_Group_Armor_Elven_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Elven_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Elven_Enchanted);
-        results.push_back(&Outfit_Armor_Elven_Gilded_Enchanted);
-        results.push_back(&Outfit_Armor_Elven_Herebanes_Fortress_Enchanted);
-        results.push_back(&Outfit_Armor_Elven_Pauldronless_Enchanted);
+        results.push_back(&Set_Armor_Elven_Enchanted);
+        results.push_back(&Set_Armor_Elven_Gilded_Enchanted);
+        results.push_back(&Set_Armor_Elven_Pauldronless_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Falmer()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Falmer); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Falmer_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Falmer_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Falmer()             { DEFINE_CREATE_SETS(Sets_Armor_Falmer); }
+    Vector_t<some<Set_f>>   Sets_Armor_Falmer_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Falmer_Standard); }
 
-    void Outfit_Group_Armor_Falmer(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Falmer(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Falmer_Standard(results);
+        Sets_Armor_Falmer_Standard(results);
     }
 
-    void Outfit_Group_Armor_Falmer_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Falmer_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Falmer);
-        results.push_back(&Outfit_Armor_Falmer_Hardened);
-        results.push_back(&Outfit_Armor_Falmer_Heavy);
-        results.push_back(&Outfit_Armor_Falmer_Heavy_Shellbug);
+        results.push_back(&Set_Armor_Falmer);
+        results.push_back(&Set_Armor_Falmer_Hardened);
+        results.push_back(&Set_Armor_Falmer_Heavy);
+        results.push_back(&Set_Armor_Falmer_Heavy_Shellbug);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Forsworn()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Forsworn); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Forsworn_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Forsworn_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Forsworn()           { DEFINE_CREATE_SETS(Sets_Armor_Forsworn); }
+    Vector_t<some<Set_f>>   Sets_Armor_Forsworn_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Forsworn_Standard); }
 
-    void Outfit_Group_Armor_Forsworn(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Forsworn(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Forsworn_Standard(results);
+        Sets_Armor_Forsworn_Standard(results);
     }
 
-    void Outfit_Group_Armor_Forsworn_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Forsworn_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Forsworn);
-        results.push_back(&Outfit_Armor_Forsworn_Old_Gods);
+        results.push_back(&Set_Armor_Forsworn);
+        results.push_back(&Set_Armor_Forsworn_Old_Gods);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Fur()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Fur); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Fur_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Fur_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Fur()            { DEFINE_CREATE_SETS(Sets_Armor_Fur); }
+    Vector_t<some<Set_f>>   Sets_Armor_Fur_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Fur_Standard); }
 
-    void Outfit_Group_Armor_Fur(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Fur(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Fur_Standard(results);
+        Sets_Armor_Fur_Standard(results);
     }
 
-    void Outfit_Group_Armor_Fur_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Fur_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Fur);
-        results.push_back(&Outfit_Armor_Fur_Topless);
-        results.push_back(&Outfit_Armor_Fur_Topless_Pauldron);
-        results.push_back(&Outfit_Armor_Fur_Saviors_Hide);
-        results.push_back(&Outfit_Armor_Fur_Sleeveless);
+        results.push_back(&Set_Armor_Fur);
+        results.push_back(&Set_Armor_Fur_Topless);
+        results.push_back(&Set_Armor_Fur_Topless_Pauldron);
+        results.push_back(&Set_Armor_Fur_Saviors_Hide);
+        results.push_back(&Set_Armor_Fur_Sleeveless);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Glass); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Glass_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Glass_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Glass_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Glass()          { DEFINE_CREATE_SETS(Sets_Armor_Glass); }
+    Vector_t<some<Set_f>>   Sets_Armor_Glass_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Glass_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Glass_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Glass_Enhanced); }
 
-    void Outfit_Group_Armor_Glass(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Glass(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Glass_Standard(results);
-        Outfit_Group_Armor_Glass_Enhanced(results);
+        Sets_Armor_Glass_Standard(results);
+        Sets_Armor_Glass_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Glass_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Glass_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Glass);
+        results.push_back(&Set_Armor_Glass);
     }
 
-    void Outfit_Group_Armor_Glass_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Glass_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Glass_Enchanted);
+        results.push_back(&Set_Armor_Glass_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Guard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Guard_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Guard_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Guard_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Guard()          { DEFINE_CREATE_SETS(Sets_Armor_Guard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Guard_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Guard_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Guard_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Guard_Enhanced); }
 
-    void Outfit_Group_Armor_Guard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Guard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Guard_Standard(results);
-        Outfit_Group_Armor_Guard_Enhanced(results);
+        Sets_Armor_Guard_Standard(results);
+        Sets_Armor_Guard_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Guard_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Guard_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Guard_Falkreath);
-        results.push_back(&Outfit_Armor_Guard_Hjaalmarch);
-        results.push_back(&Outfit_Armor_Guard_Markarth);
-        results.push_back(&Outfit_Armor_Guard_Pale);
-        results.push_back(&Outfit_Armor_Guard_Riften);
-        results.push_back(&Outfit_Armor_Guard_Riften_Pugilist);
-        results.push_back(&Outfit_Armor_Guard_Solitude);
-        results.push_back(&Outfit_Armor_Guard_Whiterun);
-        results.push_back(&Outfit_Armor_Guard_Windhelm);
-        results.push_back(&Outfit_Armor_Guard_Windhelm_Eastmarch);
-        results.push_back(&Outfit_Armor_Guard_Windhelm_Sleeved);
-        results.push_back(&Outfit_Armor_Guard_Winterhold);
+        results.push_back(&Set_Armor_Guard_Falkreath);
+        results.push_back(&Set_Armor_Guard_Hjaalmarch);
+        results.push_back(&Set_Armor_Guard_Markarth);
+        results.push_back(&Set_Armor_Guard_Pale);
+        results.push_back(&Set_Armor_Guard_Riften);
+        results.push_back(&Set_Armor_Guard_Riften_Pugilist);
+        results.push_back(&Set_Armor_Guard_Solitude);
+        results.push_back(&Set_Armor_Guard_Whiterun);
+        results.push_back(&Set_Armor_Guard_Windhelm);
+        results.push_back(&Set_Armor_Guard_Windhelm_Sleeved);
+        results.push_back(&Set_Armor_Guard_Winterhold);
     }
 
-    void Outfit_Group_Armor_Guard_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Guard_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Guard_Solitude_Reward);
+        results.push_back(&Set_Armor_Guard_Solitude_Reward);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Hide); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Hide_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Hide_Enhanced()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Hide_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Hide()           { DEFINE_CREATE_SETS(Sets_Armor_Hide); }
+    Vector_t<some<Set_f>>   Sets_Armor_Hide_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Hide_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Hide_Enhanced()  { DEFINE_CREATE_SETS(Sets_Armor_Hide_Enhanced); }
 
-    void Outfit_Group_Armor_Hide(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Hide(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Hide_Standard(results);
-        Outfit_Group_Armor_Hide_Enhanced(results);
+        Sets_Armor_Hide_Standard(results);
+        Sets_Armor_Hide_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Hide_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Hide_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Hide);
-        results.push_back(&Outfit_Armor_Hide_Movarth);
-        results.push_back(&Outfit_Armor_Hide_Predators_Grace);
-        results.push_back(&Outfit_Armor_Hide_Studded);
+        results.push_back(&Set_Armor_Hide);
+        results.push_back(&Set_Armor_Hide_Predators_Grace);
+        results.push_back(&Set_Armor_Hide_Studded);
     }
 
-    void Outfit_Group_Armor_Hide_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Hide_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Hide_Enchanted);
-        results.push_back(&Outfit_Armor_Hide_Movarth_Enchanted);
-        results.push_back(&Outfit_Armor_Hide_Predators_Grace_Enchanted);
-        results.push_back(&Outfit_Armor_Hide_Studded_Enchanted);
+        results.push_back(&Set_Armor_Hide_Enchanted);
+        results.push_back(&Set_Armor_Hide_Predators_Grace_Enchanted);
+        results.push_back(&Set_Armor_Hide_Studded_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Imperial); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Imperial_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Imperial_Enhanced()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Imperial_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Imperial()           { DEFINE_CREATE_SETS(Sets_Armor_Imperial); }
+    Vector_t<some<Set_f>>   Sets_Armor_Imperial_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Imperial_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Imperial_Enhanced()  { DEFINE_CREATE_SETS(Sets_Armor_Imperial_Enhanced); }
 
-    void Outfit_Group_Armor_Imperial(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Imperial(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Imperial_Standard(results);
-        Outfit_Group_Armor_Imperial_Enhanced(results);
+        Sets_Armor_Imperial_Standard(results);
+        Sets_Armor_Imperial_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Imperial_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Imperial_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Imperial_Heavy);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Falx);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_General_Carius);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_General_Tullius);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Knight);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Officer);
-        results.push_back(&Outfit_Armor_Imperial_Light);
-        results.push_back(&Outfit_Armor_Imperial_Light_Noster);
-        results.push_back(&Outfit_Armor_Imperial_Light_Studded);
+        results.push_back(&Set_Armor_Imperial_Heavy);
+        results.push_back(&Set_Armor_Imperial_Heavy_General_Carius);
+        results.push_back(&Set_Armor_Imperial_Heavy_General_Tullius);
+        results.push_back(&Set_Armor_Imperial_Heavy_Knight);
+        results.push_back(&Set_Armor_Imperial_Heavy_Officer);
+        results.push_back(&Set_Armor_Imperial_Light);
+        results.push_back(&Set_Armor_Imperial_Light_Studded);
     }
 
-    void Outfit_Group_Armor_Imperial_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Imperial_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_General_Carius_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_General_Tullius_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Knight_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Heavy_Officer_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Light_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Light_Noster_Enchanted);
-        results.push_back(&Outfit_Armor_Imperial_Light_Studded_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Heavy_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Heavy_General_Carius_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Heavy_General_Tullius_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Heavy_Knight_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Heavy_Officer_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Light_Enchanted);
+        results.push_back(&Set_Armor_Imperial_Light_Studded_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Iron); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Iron_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Iron_Enhanced()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Iron_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Iron()           { DEFINE_CREATE_SETS(Sets_Armor_Iron); }
+    Vector_t<some<Set_f>>   Sets_Armor_Iron_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Iron_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Iron_Enhanced()  { DEFINE_CREATE_SETS(Sets_Armor_Iron_Enhanced); }
 
-    void Outfit_Group_Armor_Iron(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Iron(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Iron_Standard(results);
-        Outfit_Group_Armor_Iron_Enhanced(results);
+        Sets_Armor_Iron_Standard(results);
+        Sets_Armor_Iron_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Iron_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Iron_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Iron);
-        results.push_back(&Outfit_Armor_Iron_Banded);
-        results.push_back(&Outfit_Armor_Iron_Dented);
-        results.push_back(&Outfit_Armor_Iron_Family);
-        results.push_back(&Outfit_Armor_Iron_Forgemasters_Fingers);
-        results.push_back(&Outfit_Armor_Iron_Roggi);
+        results.push_back(&Set_Armor_Iron);
+        results.push_back(&Set_Armor_Iron_Banded);
     }
 
-    void Outfit_Group_Armor_Iron_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Iron_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Iron_Enchanted);
-        results.push_back(&Outfit_Armor_Iron_Banded_Enchanted);
-        results.push_back(&Outfit_Armor_Iron_Dented_Enchanted);
-        results.push_back(&Outfit_Armor_Iron_Family_Enchanted);
-        results.push_back(&Outfit_Armor_Iron_Forgemasters_Fingers_Enchanted);
-        results.push_back(&Outfit_Armor_Iron_Roggi_Enchanted);
+        results.push_back(&Set_Armor_Iron_Enchanted);
+        results.push_back(&Set_Armor_Iron_Banded_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Leather); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Leather_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Leather_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Leather_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Leather()            { DEFINE_CREATE_SETS(Sets_Armor_Leather); }
+    Vector_t<some<Set_f>>   Sets_Armor_Leather_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Leather_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Leather_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Leather_Enhanced); }
 
-    void Outfit_Group_Armor_Leather(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Leather(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Leather_Standard(results);
-        Outfit_Group_Armor_Leather_Enhanced(results);
+        Sets_Armor_Leather_Standard(results);
+        Sets_Armor_Leather_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Leather_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Leather_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Leather);
+        results.push_back(&Set_Armor_Leather);
     }
 
-    void Outfit_Group_Armor_Leather_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Leather_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Leather_Enchanted);
+        results.push_back(&Set_Armor_Leather_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Miraak); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Miraak_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Miraak_Enhanced()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Miraak_Enhanced); }
-
-    void Outfit_Group_Armor_Miraak(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Miraak_Standard(results);
-        Outfit_Group_Armor_Miraak_Enhanced(results);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor_Miraak()             { DEFINE_CREATE_SETS(Sets_Armor_Miraak); }
+    Vector_t<some<Set_f>>   Sets_Armor_Miraak_Enhanced()    { DEFINE_CREATE_SETS(Sets_Armor_Miraak_Enhanced); }
 
-    void Outfit_Group_Armor_Miraak_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Miraak(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Miraak);
+        Sets_Armor_Miraak_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Miraak_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Miraak_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Miraak_Reward);
-        results.push_back(&Outfit_Armor_Miraak_Reward_1);
-        results.push_back(&Outfit_Armor_Miraak_Reward_2);
-        results.push_back(&Outfit_Armor_Miraak_Reward_3);
-        results.push_back(&Outfit_Armor_Miraak_Heavy_Reward);
-        results.push_back(&Outfit_Armor_Miraak_Heavy_Reward_1);
-        results.push_back(&Outfit_Armor_Miraak_Heavy_Reward_2);
-        results.push_back(&Outfit_Armor_Miraak_Heavy_Reward_3);
-        results.push_back(&Outfit_Armor_Miraak_Light_Reward);
-        results.push_back(&Outfit_Armor_Miraak_Light_Reward_1);
-        results.push_back(&Outfit_Armor_Miraak_Light_Reward_2);
-        results.push_back(&Outfit_Armor_Miraak_Light_Reward_3);
+        results.push_back(&Set_Armor_Miraak_Reward);
+        results.push_back(&Set_Armor_Miraak_Reward_1);
+        results.push_back(&Set_Armor_Miraak_Reward_2);
+        results.push_back(&Set_Armor_Miraak_Reward_3);
+        results.push_back(&Set_Armor_Miraak_Heavy_Reward);
+        results.push_back(&Set_Armor_Miraak_Heavy_Reward_1);
+        results.push_back(&Set_Armor_Miraak_Heavy_Reward_2);
+        results.push_back(&Set_Armor_Miraak_Heavy_Reward_3);
+        results.push_back(&Set_Armor_Miraak_Light_Reward);
+        results.push_back(&Set_Armor_Miraak_Light_Reward_1);
+        results.push_back(&Set_Armor_Miraak_Light_Reward_2);
+        results.push_back(&Set_Armor_Miraak_Light_Reward_3);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Morag_Tong()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Morag_Tong); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Morag_Tong_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Morag_Tong_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Morag_Tong()             { DEFINE_CREATE_SETS(Sets_Armor_Morag_Tong); }
+    Vector_t<some<Set_f>>   Sets_Armor_Morag_Tong_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Morag_Tong_Standard); }
 
-    void Outfit_Group_Armor_Morag_Tong(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Morag_Tong(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Morag_Tong_Standard(results);
+        Sets_Armor_Morag_Tong_Standard(results);
     }
 
-    void Outfit_Group_Armor_Morag_Tong_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Morag_Tong_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Morag_Tong);
+        results.push_back(&Set_Armor_Morag_Tong);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nightingale); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nightingale_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nightingale_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nightingale_Enhanced); }
-
-    void Outfit_Group_Armor_Nightingale(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Nightingale_Standard(results);
-        Outfit_Group_Armor_Nightingale_Enhanced(results);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor_Nightingale()            { DEFINE_CREATE_SETS(Sets_Armor_Nightingale); }
+    Vector_t<some<Set_f>>   Sets_Armor_Nightingale_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Nightingale_Enhanced); }
 
-    void Outfit_Group_Armor_Nightingale_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Nightingale(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Nightingale);
+        Sets_Armor_Nightingale_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Nightingale_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Nightingale_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Nightingale_Reward);
-        results.push_back(&Outfit_Armor_Nightingale_Reward_1);
-        results.push_back(&Outfit_Armor_Nightingale_Reward_2);
-        results.push_back(&Outfit_Armor_Nightingale_Reward_3);
+        results.push_back(&Set_Armor_Nightingale_Reward);
+        results.push_back(&Set_Armor_Nightingale_Reward_1);
+        results.push_back(&Set_Armor_Nightingale_Reward_2);
+        results.push_back(&Set_Armor_Nightingale_Reward_3);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nordic); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nordic_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Nordic_Enhanced()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Nordic_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Nordic()             { DEFINE_CREATE_SETS(Sets_Armor_Nordic); }
+    Vector_t<some<Set_f>>   Sets_Armor_Nordic_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Nordic_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Nordic_Enhanced()    { DEFINE_CREATE_SETS(Sets_Armor_Nordic_Enhanced); }
 
-    void Outfit_Group_Armor_Nordic(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Nordic(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Nordic_Standard(results);
-        Outfit_Group_Armor_Nordic_Enhanced(results);
+        Sets_Armor_Nordic_Standard(results);
+        Sets_Armor_Nordic_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Nordic_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Nordic_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Nordic);
+        results.push_back(&Set_Armor_Nordic);
     }
 
-    void Outfit_Group_Armor_Nordic_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Nordic_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Nordic_Enchanted);
+        results.push_back(&Set_Armor_Nordic_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Orcish); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Orcish_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Orcish_Enhanced()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Orcish_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Orcish()             { DEFINE_CREATE_SETS(Sets_Armor_Orcish); }
+    Vector_t<some<Set_f>>   Sets_Armor_Orcish_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Orcish_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Orcish_Enhanced()    { DEFINE_CREATE_SETS(Sets_Armor_Orcish_Enhanced); }
 
-    void Outfit_Group_Armor_Orcish(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Orcish(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Orcish_Standard(results);
-        Outfit_Group_Armor_Orcish_Enhanced(results);
+        Sets_Armor_Orcish_Standard(results);
+        Sets_Armor_Orcish_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Orcish_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Orcish_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Orcish);
+        results.push_back(&Set_Armor_Orcish);
     }
 
-    void Outfit_Group_Armor_Orcish_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Orcish_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Orcish_Enchanted);
+        results.push_back(&Set_Armor_Orcish_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Penitus_Oculatus()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Penitus_Oculatus); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Penitus_Oculatus_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Penitus_Oculatus_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Penitus_Oculatus()           { DEFINE_CREATE_SETS(Sets_Armor_Penitus_Oculatus); }
+    Vector_t<some<Set_f>>   Sets_Armor_Penitus_Oculatus_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Penitus_Oculatus_Standard); }
 
-    void Outfit_Group_Armor_Penitus_Oculatus(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Penitus_Oculatus(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Penitus_Oculatus_Standard(results);
+        Sets_Armor_Penitus_Oculatus_Standard(results);
     }
 
-    void Outfit_Group_Armor_Penitus_Oculatus_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Penitus_Oculatus_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Penitus_Oculatus);
+        results.push_back(&Set_Armor_Penitus_Oculatus);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Plate); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Plate_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Plate_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Plate_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Plate()          { DEFINE_CREATE_SETS(Sets_Armor_Plate); }
+    Vector_t<some<Set_f>>   Sets_Armor_Plate_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Plate_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Plate_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Plate_Enhanced); }
 
-    void Outfit_Group_Armor_Plate(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Plate(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Plate_Standard(results);
-        Outfit_Group_Armor_Plate_Enhanced(results);
+        Sets_Armor_Plate_Standard(results);
+        Sets_Armor_Plate_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Plate_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Plate_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Plate);
-        results.push_back(&Outfit_Armor_Plate_Katria);
-        results.push_back(&Outfit_Armor_Plate_Yngol);
+        results.push_back(&Set_Armor_Plate);
     }
 
-    void Outfit_Group_Armor_Plate_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Plate_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Plate_Enchanted);
-        results.push_back(&Outfit_Armor_Plate_Katria_Enchanted);
-        results.push_back(&Outfit_Armor_Plate_Yngol_Enchanted);
+        results.push_back(&Set_Armor_Plate_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Scaled); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Scaled_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Scaled_Enhanced()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Scaled_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Scaled()             { DEFINE_CREATE_SETS(Sets_Armor_Scaled); }
+    Vector_t<some<Set_f>>   Sets_Armor_Scaled_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Scaled_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Scaled_Enhanced()    { DEFINE_CREATE_SETS(Sets_Armor_Scaled_Enhanced); }
 
-    void Outfit_Group_Armor_Scaled(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Scaled(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Scaled_Standard(results);
-        Outfit_Group_Armor_Scaled_Enhanced(results);
+        Sets_Armor_Scaled_Standard(results);
+        Sets_Armor_Scaled_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Scaled_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Scaled_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Scaled);
-        results.push_back(&Outfit_Armor_Scaled_Horned);
+        results.push_back(&Set_Armor_Scaled);
+        results.push_back(&Set_Armor_Scaled_Horned);
     }
 
-    void Outfit_Group_Armor_Scaled_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Scaled_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Scaled_Enchanted);
-        results.push_back(&Outfit_Armor_Scaled_Horned_Enchanted);
+        results.push_back(&Set_Armor_Scaled_Enchanted);
+        results.push_back(&Set_Armor_Scaled_Horned_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Shrouded()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Shrouded); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Shrouded_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Shrouded_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Shrouded()           { DEFINE_CREATE_SETS(Sets_Armor_Shrouded); }
+    Vector_t<some<Set_f>>   Sets_Armor_Shrouded_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Shrouded_Standard); }
 
-    void Outfit_Group_Armor_Shrouded(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Shrouded(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Shrouded_Standard(results);
+        Sets_Armor_Shrouded_Standard(results);
     }
 
-    void Outfit_Group_Armor_Shrouded_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Shrouded_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Shrouded);
-        results.push_back(&Outfit_Armor_Shrouded_Ancient);
-        results.push_back(&Outfit_Armor_Shrouded_Maskless);
-        results.push_back(&Outfit_Armor_Shrouded_Short_Sleeved);
-        results.push_back(&Outfit_Armor_Shrouded_Tumblerbane);
-        results.push_back(&Outfit_Armor_Shrouded_Worn);
+        results.push_back(&Set_Armor_Shrouded);
+        results.push_back(&Set_Armor_Shrouded_Ancient);
+        results.push_back(&Set_Armor_Shrouded_Maskless);
+        results.push_back(&Set_Armor_Shrouded_Short_Sleeved);
+        results.push_back(&Set_Armor_Shrouded_Tumblerbane);
+        results.push_back(&Set_Armor_Shrouded_Worn);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Stalhrim); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Stalhrim_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stalhrim_Enhanced()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Stalhrim_Enhanced); }
-
-    void Outfit_Group_Armor_Stalhrim(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Stalhrim_Standard(results);
-        Outfit_Group_Armor_Stalhrim_Enhanced(results);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor_Stalhrim()           { DEFINE_CREATE_SETS(Sets_Armor_Stalhrim); }
+    Vector_t<some<Set_f>>   Sets_Armor_Stalhrim_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Stalhrim_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Stalhrim_Enhanced()  { DEFINE_CREATE_SETS(Sets_Armor_Stalhrim_Enhanced); }
 
-    void Outfit_Group_Armor_Stalhrim_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Stalhrim(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Stalhrim_Heavy);
-        results.push_back(&Outfit_Armor_Stalhrim_Light);
-        results.push_back(&Outfit_Armor_Stalhrim_Light_Deathbrand);
+        Sets_Armor_Stalhrim_Standard(results);
+        Sets_Armor_Stalhrim_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Stalhrim_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Stalhrim_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Stalhrim_Heavy_Enchanted);
-        results.push_back(&Outfit_Armor_Stalhrim_Light_Enchanted);
-        results.push_back(&Outfit_Armor_Stalhrim_Light_Deathbrand_Enchanted);
+        results.push_back(&Set_Armor_Stalhrim_Heavy);
+        results.push_back(&Set_Armor_Stalhrim_Light);
+        results.push_back(&Set_Armor_Stalhrim_Light_Deathbrand);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Steel); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Steel_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Steel_Enhanced() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Steel_Enhanced); }
-
-    void Outfit_Group_Armor_Steel(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Stalhrim_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Steel_Standard(results);
-        Outfit_Group_Armor_Steel_Enhanced(results);
+        results.push_back(&Set_Armor_Stalhrim_Heavy_Enchanted);
+        results.push_back(&Set_Armor_Stalhrim_Light_Enchanted);
+        results.push_back(&Set_Armor_Stalhrim_Light_Deathbrand_Enchanted);
     }
 
-    void Outfit_Group_Armor_Steel_Standard(Vector_t<some<Outfit_f>>& results)
-    {
-        results.push_back(&Outfit_Armor_Steel);
-        results.push_back(&Outfit_Armor_Steel_Horned);
-        results.push_back(&Outfit_Armor_Steel_Horned_Winterhold);
-        results.push_back(&Outfit_Armor_Steel_Hrolfdir);
-        results.push_back(&Outfit_Armor_Steel_Imperial);
-        results.push_back(&Outfit_Armor_Steel_Ironhand);
-        results.push_back(&Outfit_Armor_Steel_Pauldron);
-        results.push_back(&Outfit_Armor_Steel_Targe_Of_The_Blooded);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor_Steel()          { DEFINE_CREATE_SETS(Sets_Armor_Steel); }
+    Vector_t<some<Set_f>>   Sets_Armor_Steel_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Steel_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Steel_Enhanced() { DEFINE_CREATE_SETS(Sets_Armor_Steel_Enhanced); }
 
-    void Outfit_Group_Armor_Steel_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Steel(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Steel_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Horned_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Horned_Winterhold_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Hrolfdir_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Imperial_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Ironhand_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Pauldron_Enchanted);
-        results.push_back(&Outfit_Armor_Steel_Targe_Of_The_Blooded_Enchanted);
+        Sets_Armor_Steel_Standard(results);
+        Sets_Armor_Steel_Enhanced(results);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stormcloak_Officer()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Stormcloak_Officer); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Stormcloak_Officer_Standard()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Stormcloak_Officer_Standard); }
-
-    void Outfit_Group_Armor_Stormcloak_Officer(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Steel_Standard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Stormcloak_Officer_Standard(results);
+        results.push_back(&Set_Armor_Steel);
+        results.push_back(&Set_Armor_Steel_Horned);
+        results.push_back(&Set_Armor_Steel_Pauldron);
+        results.push_back(&Set_Armor_Steel_Targe_Of_The_Blooded);
     }
 
-    void Outfit_Group_Armor_Stormcloak_Officer_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Steel_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Stormcloak_Officer);
+        results.push_back(&Set_Armor_Steel_Enchanted);
+        results.push_back(&Set_Armor_Steel_Horned_Enchanted);
+        results.push_back(&Set_Armor_Steel_Pauldron_Enchanted);
+        results.push_back(&Set_Armor_Steel_Targe_Of_The_Blooded_Enchanted);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Summerset_Shadows()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Summerset_Shadows); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Summerset_Shadows_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Summerset_Shadows_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Stormcloak_Officer()             { DEFINE_CREATE_SETS(Sets_Armor_Stormcloak_Officer); }
+    Vector_t<some<Set_f>>   Sets_Armor_Stormcloak_Officer_Standard()    { DEFINE_CREATE_SETS(Sets_Armor_Stormcloak_Officer_Standard); }
 
-    void Outfit_Group_Armor_Summerset_Shadows(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Stormcloak_Officer(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Summerset_Shadows_Standard(results);
+        Sets_Armor_Stormcloak_Officer_Standard(results);
     }
 
-    void Outfit_Group_Armor_Summerset_Shadows_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Stormcloak_Officer_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Summerset_Shadows);
-        results.push_back(&Outfit_Armor_Summerset_Shadows_Linwe);
+        results.push_back(&Set_Armor_Stormcloak_Officer);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Thieves_Guild()          { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Thieves_Guild); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Thieves_Guild_Standard() { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Thieves_Guild_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Thieves_Guild()          { DEFINE_CREATE_SETS(Sets_Armor_Thieves_Guild); }
+    Vector_t<some<Set_f>>   Sets_Armor_Thieves_Guild_Standard() { DEFINE_CREATE_SETS(Sets_Armor_Thieves_Guild_Standard); }
 
-    void Outfit_Group_Armor_Thieves_Guild(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Thieves_Guild(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Thieves_Guild_Standard(results);
+        Sets_Armor_Thieves_Guild_Standard(results);
     }
 
-    void Outfit_Group_Armor_Thieves_Guild_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Thieves_Guild_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Thieves_Guild);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Blackguard);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Improved);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Karliah);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Master);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Master_Mercer);
-        results.push_back(&Outfit_Armor_Thieves_Guild_NPC);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Torturer);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Variant);
-        results.push_back(&Outfit_Armor_Thieves_Guild_Variant_Alternate);
+        results.push_back(&Set_Armor_Thieves_Guild);
+        results.push_back(&Set_Armor_Thieves_Guild_Alternate);
+        results.push_back(&Set_Armor_Thieves_Guild_Blackguard);
+        results.push_back(&Set_Armor_Thieves_Guild_Improved);
+        results.push_back(&Set_Armor_Thieves_Guild_Karliah);
+        results.push_back(&Set_Armor_Thieves_Guild_Master);
+        results.push_back(&Set_Armor_Thieves_Guild_Torturer);
+        results.push_back(&Set_Armor_Thieves_Guild_Variant);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Tsun()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Tsun); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Tsun_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Tsun_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Tsun()           { DEFINE_CREATE_SETS(Sets_Armor_Tsun); }
+    Vector_t<some<Set_f>>   Sets_Armor_Tsun_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Tsun_Standard); }
 
-    void Outfit_Group_Armor_Tsun(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Tsun(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Tsun_Standard(results);
+        Sets_Armor_Tsun_Standard(results);
     }
 
-    void Outfit_Group_Armor_Tsun_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Tsun_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Tsun);
+        results.push_back(&Set_Armor_Tsun);
     }
 
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire()            { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Vampire); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire_Standard()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Vampire_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Vampire_Enhanced()   { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Vampire_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Vampire()            { DEFINE_CREATE_SETS(Sets_Armor_Vampire); }
+    Vector_t<some<Set_f>>   Sets_Armor_Vampire_Standard()   { DEFINE_CREATE_SETS(Sets_Armor_Vampire_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Vampire_Enhanced()   { DEFINE_CREATE_SETS(Sets_Armor_Vampire_Enhanced); }
 
-    void Outfit_Group_Armor_Vampire(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Vampire(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Vampire_Standard(results);
-        Outfit_Group_Armor_Vampire_Enhanced(results);
+        Sets_Armor_Vampire_Standard(results);
+        Sets_Armor_Vampire_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Vampire_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Vampire_Standard(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Vampire_Black);
-        results.push_back(&Outfit_Armor_Vampire_Grey);
-        results.push_back(&Outfit_Armor_Vampire_Red);
-        results.push_back(&Outfit_Armor_Vampire_Royal);
-        results.push_back(&Outfit_Armor_Vampire_Royal_Serana);
-        results.push_back(&Outfit_Armor_Vampire_Royal_Valerica);
+        results.push_back(&Set_Armor_Vampire_Black);
+        results.push_back(&Set_Armor_Vampire_Grey);
+        results.push_back(&Set_Armor_Vampire_Red);
+        results.push_back(&Set_Armor_Vampire_Royal);
+        results.push_back(&Set_Armor_Vampire_Royal_Serana);
+        results.push_back(&Set_Armor_Vampire_Royal_Valerica);
     }
 
-    void Outfit_Group_Armor_Vampire_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Vampire_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Vampire_Black_Enchanted);
-        results.push_back(&Outfit_Armor_Vampire_Grey_Enchanted);
-        results.push_back(&Outfit_Armor_Vampire_Red_Enchanted);
+        results.push_back(&Set_Armor_Vampire_Black_Enchanted);
+        results.push_back(&Set_Armor_Vampire_Grey_Enchanted);
+        results.push_back(&Set_Armor_Vampire_Red_Enchanted);
     }
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Wolf()           { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Wolf); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Wolf_Standard()  { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Wolf_Standard); }
 
-    void Outfit_Group_Armor_Wolf(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Wolf_Standard(results);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor_Wolf()           { DEFINE_CREATE_SETS(Sets_Armor_Wolf); }
+    Vector_t<some<Set_f>>   Sets_Armor_Wolf_Standard()  { DEFINE_CREATE_SETS(Sets_Armor_Wolf_Standard); }
 
-    void Outfit_Group_Armor_Wolf_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Wolf(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(&Outfit_Armor_Wolf);
+        Sets_Armor_Wolf_Standard(results);
     }
-
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor()                        { DEFINE_CREATE_GROUP(Outfit_Group_Armor); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Unweighted()             { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Unweighted); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Standard()               { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Standard_Unweighted()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Standard_Unweighted); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Enhanced()               { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Enhanced); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Armor_Enhanced_Unweighted()    { DEFINE_CREATE_GROUP(Outfit_Group_Armor_Enhanced_Unweighted); }
 
-    void Outfit_Group_Armor(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Wolf_Standard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Standard(results);
-        Outfit_Group_Armor_Enhanced(results);
+        results.push_back(&Set_Armor_Wolf);
     }
 
-    void Outfit_Group_Armor_Unweighted(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Standard_Unweighted(results);
-        Outfit_Group_Armor_Enhanced_Unweighted(results);
-    }
+    Vector_t<some<Set_f>>   Sets_Armor()                        { DEFINE_CREATE_SETS(Sets_Armor); }
+    Vector_t<some<Set_f>>   Sets_Armor_Unweighted()             { DEFINE_CREATE_SETS(Sets_Armor_Unweighted); }
+    Vector_t<some<Set_f>>   Sets_Armor_Standard()               { DEFINE_CREATE_SETS(Sets_Armor_Standard); }
+    Vector_t<some<Set_f>>   Sets_Armor_Standard_Unweighted()    { DEFINE_CREATE_SETS(Sets_Armor_Standard_Unweighted); }
+    Vector_t<some<Set_f>>   Sets_Armor_Enhanced()               { DEFINE_CREATE_SETS(Sets_Armor_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Armor_Enhanced_Unweighted()    { DEFINE_CREATE_SETS(Sets_Armor_Enhanced_Unweighted); }
 
-    void Outfit_Group_Armor_Standard(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Ancient_Falmer_Standard(results);
-        Outfit_Group_Armor_Ancient_Nordic_Standard(results);
-        Outfit_Group_Armor_Blades_Standard(results);
-        Outfit_Group_Armor_Bonemold_Standard(results);
-        Outfit_Group_Armor_Chitin_Standard(results);
-        Outfit_Group_Armor_Daedric_Standard(results);
-        Outfit_Group_Armor_Dawnguard_Standard(results);
-        Outfit_Group_Armor_Dragonplate_Standard(results);
-        Outfit_Group_Armor_Dragonscale_Standard(results);
-        Outfit_Group_Armor_Dwarven_Standard(results);
-        Outfit_Group_Armor_Ebony_Standard(results);
-        Outfit_Group_Armor_Elven_Standard(results);
-        Outfit_Group_Armor_Falmer_Standard(results);
-        Outfit_Group_Armor_Forsworn_Standard(results);
-        Outfit_Group_Armor_Fur_Standard(results);
-        Outfit_Group_Armor_Glass_Standard(results);
-        Outfit_Group_Armor_Guard_Standard(results);
-        Outfit_Group_Armor_Hide_Standard(results);
-        Outfit_Group_Armor_Imperial_Standard(results);
-        Outfit_Group_Armor_Iron_Standard(results);
-        Outfit_Group_Armor_Leather_Standard(results);
-        Outfit_Group_Armor_Miraak_Standard(results);
-        Outfit_Group_Armor_Morag_Tong_Standard(results);
-        Outfit_Group_Armor_Nightingale_Standard(results);
-        Outfit_Group_Armor_Nordic_Standard(results);
-        Outfit_Group_Armor_Orcish_Standard(results);
-        Outfit_Group_Armor_Penitus_Oculatus_Standard(results);
-        Outfit_Group_Armor_Plate_Standard(results);
-        Outfit_Group_Armor_Scaled_Standard(results);
-        Outfit_Group_Armor_Shrouded_Standard(results);
-        Outfit_Group_Armor_Stalhrim_Standard(results);
-        Outfit_Group_Armor_Steel_Standard(results);
-        Outfit_Group_Armor_Stormcloak_Officer_Standard(results);
-        Outfit_Group_Armor_Summerset_Shadows_Standard(results);
-        Outfit_Group_Armor_Thieves_Guild_Standard(results);
-        Outfit_Group_Armor_Tsun_Standard(results);
-        Outfit_Group_Armor_Vampire_Standard(results);
-        Outfit_Group_Armor_Wolf_Standard(results);
+        Sets_Armor_Standard(results);
+        Sets_Armor_Enhanced(results);
     }
 
-    void Outfit_Group_Armor_Standard_Unweighted(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(Outfit_Group_Armor_Ancient_Falmer_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Ancient_Nordic_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Blades_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Bonemold_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Chitin_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Daedric_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Dawnguard_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Dragonplate_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Dragonscale_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Dwarven_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Ebony_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Elven_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Falmer_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Forsworn_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Fur_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Glass_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Guard_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Hide_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Imperial_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Iron_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Leather_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Miraak_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Morag_Tong_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Nightingale_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Nordic_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Orcish_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Penitus_Oculatus_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Plate_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Scaled_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Shrouded_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Stalhrim_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Steel_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Stormcloak_Officer_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Summerset_Shadows_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Thieves_Guild_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Tsun_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Vampire_Standard().Random());
-        results.push_back(Outfit_Group_Armor_Wolf_Standard().Random());
+        Sets_Armor_Standard_Unweighted(results);
+        Sets_Armor_Enhanced_Unweighted(results);
     }
 
-    void Outfit_Group_Armor_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Standard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Bonemold_Enhanced(results);
-        Outfit_Group_Armor_Chitin_Enhanced(results);
-        Outfit_Group_Armor_Daedric_Enhanced(results);
-        Outfit_Group_Armor_Dragonplate_Enhanced(results);
-        Outfit_Group_Armor_Dragonscale_Enhanced(results);
-        Outfit_Group_Armor_Dwarven_Enhanced(results);
-        Outfit_Group_Armor_Ebony_Enhanced(results);
-        Outfit_Group_Armor_Elven_Enhanced(results);
-        Outfit_Group_Armor_Glass_Enhanced(results);
-        Outfit_Group_Armor_Guard_Enhanced(results);
-        Outfit_Group_Armor_Hide_Enhanced(results);
-        Outfit_Group_Armor_Imperial_Enhanced(results);
-        Outfit_Group_Armor_Iron_Enhanced(results);
-        Outfit_Group_Armor_Leather_Enhanced(results);
-        Outfit_Group_Armor_Miraak_Enhanced(results);
-        Outfit_Group_Armor_Nightingale_Enhanced(results);
-        Outfit_Group_Armor_Nordic_Enhanced(results);
-        Outfit_Group_Armor_Orcish_Enhanced(results);
-        Outfit_Group_Armor_Plate_Enhanced(results);
-        Outfit_Group_Armor_Scaled_Enhanced(results);
-        Outfit_Group_Armor_Stalhrim_Enhanced(results);
-        Outfit_Group_Armor_Steel_Enhanced(results);
-        Outfit_Group_Armor_Vampire_Enhanced(results);
+        Sets_Armor_Ancient_Falmer_Standard(results);
+        Sets_Armor_Ancient_Nordic_Standard(results);
+        Sets_Armor_Blades_Standard(results);
+        Sets_Armor_Bonemold_Standard(results);
+        Sets_Armor_Chitin_Standard(results);
+        Sets_Armor_Daedric_Standard(results);
+        Sets_Armor_Dawnguard_Standard(results);
+        Sets_Armor_Dragonplate_Standard(results);
+        Sets_Armor_Dragonscale_Standard(results);
+        Sets_Armor_Dwarven_Standard(results);
+        Sets_Armor_Ebony_Standard(results);
+        Sets_Armor_Elven_Standard(results);
+        Sets_Armor_Falmer_Standard(results);
+        Sets_Armor_Forsworn_Standard(results);
+        Sets_Armor_Fur_Standard(results);
+        Sets_Armor_Glass_Standard(results);
+        Sets_Armor_Guard_Standard(results);
+        Sets_Armor_Hide_Standard(results);
+        Sets_Armor_Imperial_Standard(results);
+        Sets_Armor_Iron_Standard(results);
+        Sets_Armor_Leather_Standard(results);
+        Sets_Armor_Morag_Tong_Standard(results);
+        Sets_Armor_Nordic_Standard(results);
+        Sets_Armor_Orcish_Standard(results);
+        Sets_Armor_Penitus_Oculatus_Standard(results);
+        Sets_Armor_Plate_Standard(results);
+        Sets_Armor_Scaled_Standard(results);
+        Sets_Armor_Shrouded_Standard(results);
+        Sets_Armor_Stalhrim_Standard(results);
+        Sets_Armor_Steel_Standard(results);
+        Sets_Armor_Stormcloak_Officer_Standard(results);
+        Sets_Armor_Thieves_Guild_Standard(results);
+        Sets_Armor_Tsun_Standard(results);
+        Sets_Armor_Vampire_Standard(results);
+        Sets_Armor_Wolf_Standard(results);
     }
 
-    void Outfit_Group_Armor_Enhanced_Unweighted(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Standard_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        results.push_back(Outfit_Group_Armor_Bonemold_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Chitin_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Daedric_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Dragonplate_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Dragonscale_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Dwarven_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Ebony_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Elven_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Glass_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Guard_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Hide_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Imperial_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Iron_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Leather_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Miraak_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Nightingale_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Nordic_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Orcish_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Plate_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Scaled_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Stalhrim_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Steel_Enhanced().Random());
-        results.push_back(Outfit_Group_Armor_Vampire_Enhanced().Random());
+        results.push_back(Sets_Armor_Ancient_Falmer_Standard().Random());
+        results.push_back(Sets_Armor_Ancient_Nordic_Standard().Random());
+        results.push_back(Sets_Armor_Blades_Standard().Random());
+        results.push_back(Sets_Armor_Bonemold_Standard().Random());
+        results.push_back(Sets_Armor_Chitin_Standard().Random());
+        results.push_back(Sets_Armor_Daedric_Standard().Random());
+        results.push_back(Sets_Armor_Dawnguard_Standard().Random());
+        results.push_back(Sets_Armor_Dragonplate_Standard().Random());
+        results.push_back(Sets_Armor_Dragonscale_Standard().Random());
+        results.push_back(Sets_Armor_Dwarven_Standard().Random());
+        results.push_back(Sets_Armor_Ebony_Standard().Random());
+        results.push_back(Sets_Armor_Elven_Standard().Random());
+        results.push_back(Sets_Armor_Falmer_Standard().Random());
+        results.push_back(Sets_Armor_Forsworn_Standard().Random());
+        results.push_back(Sets_Armor_Fur_Standard().Random());
+        results.push_back(Sets_Armor_Glass_Standard().Random());
+        results.push_back(Sets_Armor_Guard_Standard().Random());
+        results.push_back(Sets_Armor_Hide_Standard().Random());
+        results.push_back(Sets_Armor_Imperial_Standard().Random());
+        results.push_back(Sets_Armor_Iron_Standard().Random());
+        results.push_back(Sets_Armor_Leather_Standard().Random());
+        results.push_back(Sets_Armor_Morag_Tong_Standard().Random());
+        results.push_back(Sets_Armor_Nordic_Standard().Random());
+        results.push_back(Sets_Armor_Orcish_Standard().Random());
+        results.push_back(Sets_Armor_Penitus_Oculatus_Standard().Random());
+        results.push_back(Sets_Armor_Plate_Standard().Random());
+        results.push_back(Sets_Armor_Scaled_Standard().Random());
+        results.push_back(Sets_Armor_Shrouded_Standard().Random());
+        results.push_back(Sets_Armor_Stalhrim_Standard().Random());
+        results.push_back(Sets_Armor_Steel_Standard().Random());
+        results.push_back(Sets_Armor_Stormcloak_Officer_Standard().Random());
+        results.push_back(Sets_Armor_Thieves_Guild_Standard().Random());
+        results.push_back(Sets_Armor_Tsun_Standard().Random());
+        results.push_back(Sets_Armor_Vampire_Standard().Random());
+        results.push_back(Sets_Armor_Wolf_Standard().Random());
     }
-
-    Vector_t<some<Outfit_f>>    Outfit_Group()                      { DEFINE_CREATE_GROUP(Outfit_Group); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Unweighted()           { DEFINE_CREATE_GROUP(Outfit_Group_Unweighted); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Standard()             { DEFINE_CREATE_GROUP(Outfit_Group_Standard); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Standard_Unweighted()  { DEFINE_CREATE_GROUP(Outfit_Group_Standard_Unweighted); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Enhanced()             { DEFINE_CREATE_GROUP(Outfit_Group_Enhanced); }
-    Vector_t<some<Outfit_f>>    Outfit_Group_Enhanced_Unweighted()  { DEFINE_CREATE_GROUP(Outfit_Group_Enhanced_Unweighted); }
 
-    void Outfit_Group(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor(results);
+        Sets_Armor_Bonemold_Enhanced(results);
+        Sets_Armor_Chitin_Enhanced(results);
+        Sets_Armor_Daedric_Enhanced(results);
+        Sets_Armor_Dragonplate_Enhanced(results);
+        Sets_Armor_Dragonscale_Enhanced(results);
+        Sets_Armor_Dwarven_Enhanced(results);
+        Sets_Armor_Ebony_Enhanced(results);
+        Sets_Armor_Elven_Enhanced(results);
+        Sets_Armor_Glass_Enhanced(results);
+        Sets_Armor_Guard_Enhanced(results);
+        Sets_Armor_Hide_Enhanced(results);
+        Sets_Armor_Imperial_Enhanced(results);
+        Sets_Armor_Iron_Enhanced(results);
+        Sets_Armor_Leather_Enhanced(results);
+        Sets_Armor_Miraak_Enhanced(results);
+        Sets_Armor_Nightingale_Enhanced(results);
+        Sets_Armor_Nordic_Enhanced(results);
+        Sets_Armor_Orcish_Enhanced(results);
+        Sets_Armor_Plate_Enhanced(results);
+        Sets_Armor_Scaled_Enhanced(results);
+        Sets_Armor_Stalhrim_Enhanced(results);
+        Sets_Armor_Steel_Enhanced(results);
+        Sets_Armor_Vampire_Enhanced(results);
     }
 
-    void Outfit_Group_Unweighted(Vector_t<some<Outfit_f>>& results)
+    void Sets_Armor_Enhanced_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Unweighted(results);
+        results.push_back(Sets_Armor_Bonemold_Enhanced().Random());
+        results.push_back(Sets_Armor_Chitin_Enhanced().Random());
+        results.push_back(Sets_Armor_Daedric_Enhanced().Random());
+        results.push_back(Sets_Armor_Dragonplate_Enhanced().Random());
+        results.push_back(Sets_Armor_Dragonscale_Enhanced().Random());
+        results.push_back(Sets_Armor_Dwarven_Enhanced().Random());
+        results.push_back(Sets_Armor_Ebony_Enhanced().Random());
+        results.push_back(Sets_Armor_Elven_Enhanced().Random());
+        results.push_back(Sets_Armor_Glass_Enhanced().Random());
+        results.push_back(Sets_Armor_Guard_Enhanced().Random());
+        results.push_back(Sets_Armor_Hide_Enhanced().Random());
+        results.push_back(Sets_Armor_Imperial_Enhanced().Random());
+        results.push_back(Sets_Armor_Iron_Enhanced().Random());
+        results.push_back(Sets_Armor_Leather_Enhanced().Random());
+        results.push_back(Sets_Armor_Miraak_Enhanced().Random());
+        results.push_back(Sets_Armor_Nightingale_Enhanced().Random());
+        results.push_back(Sets_Armor_Nordic_Enhanced().Random());
+        results.push_back(Sets_Armor_Orcish_Enhanced().Random());
+        results.push_back(Sets_Armor_Plate_Enhanced().Random());
+        results.push_back(Sets_Armor_Scaled_Enhanced().Random());
+        results.push_back(Sets_Armor_Stalhrim_Enhanced().Random());
+        results.push_back(Sets_Armor_Steel_Enhanced().Random());
+        results.push_back(Sets_Armor_Vampire_Enhanced().Random());
     }
 
-    void Outfit_Group_Standard(Vector_t<some<Outfit_f>>& results)
-    {
-        Outfit_Group_Armor_Standard(results);
-    }
+    Vector_t<some<Set_f>>   Sets()                      { DEFINE_CREATE_SETS(Sets); }
+    Vector_t<some<Set_f>>   Sets_Unweighted()           { DEFINE_CREATE_SETS(Sets_Unweighted); }
+    Vector_t<some<Set_f>>   Sets_Standard()             { DEFINE_CREATE_SETS(Sets_Standard); }
+    Vector_t<some<Set_f>>   Sets_Standard_Unweighted()  { DEFINE_CREATE_SETS(Sets_Standard_Unweighted); }
+    Vector_t<some<Set_f>>   Sets_Enhanced()             { DEFINE_CREATE_SETS(Sets_Enhanced); }
+    Vector_t<some<Set_f>>   Sets_Enhanced_Unweighted()  { DEFINE_CREATE_SETS(Sets_Enhanced_Unweighted); }
 
-    void Outfit_Group_Standard_Unweighted(Vector_t<some<Outfit_f>>& results)
+    void Sets(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Standard_Unweighted(results);
+        Sets_Armor(results);
     }
 
-    void Outfit_Group_Enhanced(Vector_t<some<Outfit_f>>& results)
+    void Sets_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Enhanced(results);
+        Sets_Armor_Unweighted(results);
     }
 
-    void Outfit_Group_Enhanced_Unweighted(Vector_t<some<Outfit_f>>& results)
+    void Sets_Standard(Vector_t<some<Set_f>>& results)
     {
-        Outfit_Group_Armor_Enhanced_Unweighted(results);
+        Sets_Armor_Standard(results);
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ancient_Falmer()
+    void Sets_Standard_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        return (*Outfit_Group_Armor_Ancient_Falmer().Random())();
+        Sets_Armor_Standard_Unweighted(results);
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ancient_Falmer_Standard()
+    void Sets_Enhanced(Vector_t<some<Set_f>>& results)
     {
-        return (*Outfit_Group_Armor_Ancient_Falmer_Standard().Random())();
+        Sets_Armor_Enhanced(results);
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ancient_Nordic()
+    void Sets_Enhanced_Unweighted(Vector_t<some<Set_f>>& results)
     {
-        return (*Outfit_Group_Armor_Ancient_Nordic().Random())();
+        Sets_Armor_Enhanced_Unweighted(results);
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ancient_Nordic_Standard()
-    {
-        return (*Outfit_Group_Armor_Ancient_Nordic_Standard().Random())();
-    }
+    /* Random_Set */
 
-    Armor_Set_t Outfit_Random_Armor_Blades()
+    Armor_Set_t Random_Set_Armor_Ancient_Falmer()
     {
-        return (*Outfit_Group_Armor_Blades().Random())();
+        return (*Sets_Armor_Ancient_Falmer().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Blades_Standard()
+    Armor_Set_t Random_Set_Armor_Ancient_Falmer_Standard()
     {
-        return (*Outfit_Group_Armor_Blades_Standard().Random())();
+        return (*Sets_Armor_Ancient_Falmer_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Bonemold()
+    Armor_Set_t Random_Set_Armor_Ancient_Nordic()
     {
-        return (*Outfit_Group_Armor_Bonemold().Random())();
+        return (*Sets_Armor_Ancient_Nordic().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Bonemold_Standard()
+    Armor_Set_t Random_Set_Armor_Ancient_Nordic_Standard()
     {
-        return (*Outfit_Group_Armor_Bonemold_Standard().Random())();
+        return (*Sets_Armor_Ancient_Nordic_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Bonemold_Enhanced()
+    Armor_Set_t Random_Set_Armor_Blades()
     {
-        return (*Outfit_Group_Armor_Bonemold_Enhanced().Random())();
+        return (*Sets_Armor_Blades().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Chitin()
+    Armor_Set_t Random_Set_Armor_Blades_Standard()
     {
-        return (*Outfit_Group_Armor_Chitin().Random())();
+        return (*Sets_Armor_Blades_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Chitin_Standard()
+    Armor_Set_t Random_Set_Armor_Bonemold()
     {
-        return (*Outfit_Group_Armor_Chitin_Standard().Random())();
+        return (*Sets_Armor_Bonemold().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Chitin_Enhanced()
+    Armor_Set_t Random_Set_Armor_Bonemold_Standard()
     {
-        return (*Outfit_Group_Armor_Chitin_Enhanced().Random())();
+        return (*Sets_Armor_Bonemold_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Daedric()
+    Armor_Set_t Random_Set_Armor_Bonemold_Enhanced()
     {
-        return (*Outfit_Group_Armor_Daedric().Random())();
+        return (*Sets_Armor_Bonemold_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Daedric_Standard()
+    Armor_Set_t Random_Set_Armor_Chitin()
     {
-        return (*Outfit_Group_Armor_Daedric_Standard().Random())();
+        return (*Sets_Armor_Chitin().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Daedric_Enhanced()
+    Armor_Set_t Random_Set_Armor_Chitin_Standard()
     {
-        return (*Outfit_Group_Armor_Daedric_Enhanced().Random())();
+        return (*Sets_Armor_Chitin_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dawnguard()
+    Armor_Set_t Random_Set_Armor_Chitin_Enhanced()
     {
-        return (*Outfit_Group_Armor_Dawnguard().Random())();
+        return (*Sets_Armor_Chitin_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dawnguard_Standard()
+    Armor_Set_t Random_Set_Armor_Daedric()
     {
-        return (*Outfit_Group_Armor_Dawnguard_Standard().Random())();
+        return (*Sets_Armor_Daedric().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonplate()
+    Armor_Set_t Random_Set_Armor_Daedric_Standard()
     {
-        return (*Outfit_Group_Armor_Dragonplate().Random())();
+        return (*Sets_Armor_Daedric_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonplate_Standard()
+    Armor_Set_t Random_Set_Armor_Daedric_Enhanced()
     {
-        return (*Outfit_Group_Armor_Dragonplate_Standard().Random())();
+        return (*Sets_Armor_Daedric_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonplate_Enhanced()
+    Armor_Set_t Random_Set_Armor_Dawnguard()
     {
-        return (*Outfit_Group_Armor_Dragonplate_Enhanced().Random())();
+        return (*Sets_Armor_Dawnguard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonscale()
+    Armor_Set_t Random_Set_Armor_Dawnguard_Standard()
     {
-        return (*Outfit_Group_Armor_Dragonscale().Random())();
+        return (*Sets_Armor_Dawnguard_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonscale_Standard()
+    Armor_Set_t Random_Set_Armor_Dragonplate()
     {
-        return (*Outfit_Group_Armor_Dragonscale_Standard().Random())();
+        return (*Sets_Armor_Dragonplate().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dragonscale_Enhanced()
+    Armor_Set_t Random_Set_Armor_Dragonplate_Standard()
     {
-        return (*Outfit_Group_Armor_Dragonscale_Enhanced().Random())();
+        return (*Sets_Armor_Dragonplate_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dwarven()
+    Armor_Set_t Random_Set_Armor_Dragonplate_Enhanced()
     {
-        return (*Outfit_Group_Armor_Dwarven().Random())();
+        return (*Sets_Armor_Dragonplate_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dwarven_Standard()
+    Armor_Set_t Random_Set_Armor_Dragonscale()
     {
-        return (*Outfit_Group_Armor_Dwarven_Standard().Random())();
+        return (*Sets_Armor_Dragonscale().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Dwarven_Enhanced()
+    Armor_Set_t Random_Set_Armor_Dragonscale_Standard()
     {
-        return (*Outfit_Group_Armor_Dwarven_Enhanced().Random())();
+        return (*Sets_Armor_Dragonscale_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ebony()
+    Armor_Set_t Random_Set_Armor_Dragonscale_Enhanced()
     {
-        return (*Outfit_Group_Armor_Ebony().Random())();
+        return (*Sets_Armor_Dragonscale_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ebony_Standard()
+    Armor_Set_t Random_Set_Armor_Dwarven()
     {
-        return (*Outfit_Group_Armor_Ebony_Standard().Random())();
+        return (*Sets_Armor_Dwarven().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Ebony_Enhanced()
+    Armor_Set_t Random_Set_Armor_Dwarven_Standard()
     {
-        return (*Outfit_Group_Armor_Ebony_Enhanced().Random())();
+        return (*Sets_Armor_Dwarven_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Elven()
+    Armor_Set_t Random_Set_Armor_Dwarven_Enhanced()
     {
-        return (*Outfit_Group_Armor_Elven().Random())();
+        return (*Sets_Armor_Dwarven_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Elven_Standard()
+    Armor_Set_t Random_Set_Armor_Ebony()
     {
-        return (*Outfit_Group_Armor_Elven_Standard().Random())();
+        return (*Sets_Armor_Ebony().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Elven_Enhanced()
+    Armor_Set_t Random_Set_Armor_Ebony_Standard()
     {
-        return (*Outfit_Group_Armor_Elven_Enhanced().Random())();
+        return (*Sets_Armor_Ebony_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Falmer()
+    Armor_Set_t Random_Set_Armor_Ebony_Enhanced()
     {
-        return (*Outfit_Group_Armor_Falmer().Random())();
+        return (*Sets_Armor_Ebony_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Falmer_Standard()
+    Armor_Set_t Random_Set_Armor_Elven()
     {
-        return (*Outfit_Group_Armor_Falmer_Standard().Random())();
+        return (*Sets_Armor_Elven().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Forsworn()
+    Armor_Set_t Random_Set_Armor_Elven_Standard()
     {
-        return (*Outfit_Group_Armor_Forsworn().Random())();
+        return (*Sets_Armor_Elven_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Forsworn_Standard()
+    Armor_Set_t Random_Set_Armor_Elven_Enhanced()
     {
-        return (*Outfit_Group_Armor_Forsworn_Standard().Random())();
+        return (*Sets_Armor_Elven_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Fur()
+    Armor_Set_t Random_Set_Armor_Falmer()
     {
-        return (*Outfit_Group_Armor_Fur().Random())();
+        return (*Sets_Armor_Falmer().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Fur_Standard()
+    Armor_Set_t Random_Set_Armor_Falmer_Standard()
     {
-        return (*Outfit_Group_Armor_Fur_Standard().Random())();
+        return (*Sets_Armor_Falmer_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Glass()
+    Armor_Set_t Random_Set_Armor_Forsworn()
     {
-        return (*Outfit_Group_Armor_Glass().Random())();
+        return (*Sets_Armor_Forsworn().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Glass_Standard()
+    Armor_Set_t Random_Set_Armor_Forsworn_Standard()
     {
-        return (*Outfit_Group_Armor_Glass_Standard().Random())();
+        return (*Sets_Armor_Forsworn_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Glass_Enhanced()
+    Armor_Set_t Random_Set_Armor_Fur()
     {
-        return (*Outfit_Group_Armor_Glass_Enhanced().Random())();
+        return (*Sets_Armor_Fur().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Guard()
+    Armor_Set_t Random_Set_Armor_Fur_Standard()
     {
-        return (*Outfit_Group_Armor_Guard().Random())();
+        return (*Sets_Armor_Fur_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Guard_Standard()
+    Armor_Set_t Random_Set_Armor_Glass()
     {
-        return (*Outfit_Group_Armor_Guard_Standard().Random())();
+        return (*Sets_Armor_Glass().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Guard_Enhanced()
+    Armor_Set_t Random_Set_Armor_Glass_Standard()
     {
-        return (*Outfit_Group_Armor_Guard_Enhanced().Random())();
+        return (*Sets_Armor_Glass_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Hide()
+    Armor_Set_t Random_Set_Armor_Glass_Enhanced()
     {
-        return (*Outfit_Group_Armor_Hide().Random())();
+        return (*Sets_Armor_Glass_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Hide_Standard()
+    Armor_Set_t Random_Set_Armor_Guard()
     {
-        return (*Outfit_Group_Armor_Hide_Standard().Random())();
+        return (*Sets_Armor_Guard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Hide_Enhanced()
+    Armor_Set_t Random_Set_Armor_Guard_Standard()
     {
-        return (*Outfit_Group_Armor_Hide_Enhanced().Random())();
+        return (*Sets_Armor_Guard_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Imperial()
+    Armor_Set_t Random_Set_Armor_Guard_Enhanced()
     {
-        return (*Outfit_Group_Armor_Imperial().Random())();
+        return (*Sets_Armor_Guard_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Imperial_Standard()
+    Armor_Set_t Random_Set_Armor_Hide()
     {
-        return (*Outfit_Group_Armor_Imperial_Standard().Random())();
+        return (*Sets_Armor_Hide().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Imperial_Enhanced()
+    Armor_Set_t Random_Set_Armor_Hide_Standard()
     {
-        return (*Outfit_Group_Armor_Imperial_Enhanced().Random())();
+        return (*Sets_Armor_Hide_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Iron()
+    Armor_Set_t Random_Set_Armor_Hide_Enhanced()
     {
-        return (*Outfit_Group_Armor_Iron().Random())();
+        return (*Sets_Armor_Hide_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Iron_Standard()
+    Armor_Set_t Random_Set_Armor_Imperial()
     {
-        return (*Outfit_Group_Armor_Iron_Standard().Random())();
+        return (*Sets_Armor_Imperial().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Iron_Enhanced()
+    Armor_Set_t Random_Set_Armor_Imperial_Standard()
     {
-        return (*Outfit_Group_Armor_Iron_Enhanced().Random())();
+        return (*Sets_Armor_Imperial_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Leather()
+    Armor_Set_t Random_Set_Armor_Imperial_Enhanced()
     {
-        return (*Outfit_Group_Armor_Leather().Random())();
+        return (*Sets_Armor_Imperial_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Leather_Standard()
+    Armor_Set_t Random_Set_Armor_Iron()
     {
-        return (*Outfit_Group_Armor_Leather_Standard().Random())();
+        return (*Sets_Armor_Iron().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Leather_Enhanced()
+    Armor_Set_t Random_Set_Armor_Iron_Standard()
     {
-        return (*Outfit_Group_Armor_Leather_Enhanced().Random())();
+        return (*Sets_Armor_Iron_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Miraak()
+    Armor_Set_t Random_Set_Armor_Iron_Enhanced()
     {
-        return (*Outfit_Group_Armor_Miraak().Random())();
+        return (*Sets_Armor_Iron_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Miraak_Standard()
+    Armor_Set_t Random_Set_Armor_Leather()
     {
-        return (*Outfit_Group_Armor_Miraak_Standard().Random())();
+        return (*Sets_Armor_Leather().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Miraak_Enhanced()
+    Armor_Set_t Random_Set_Armor_Leather_Standard()
     {
-        return (*Outfit_Group_Armor_Miraak_Enhanced().Random())();
+        return (*Sets_Armor_Leather_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Morag_Tong()
+    Armor_Set_t Random_Set_Armor_Leather_Enhanced()
     {
-        return (*Outfit_Group_Armor_Morag_Tong().Random())();
+        return (*Sets_Armor_Leather_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Morag_Tong_Standard()
+    Armor_Set_t Random_Set_Armor_Miraak()
     {
-        return (*Outfit_Group_Armor_Morag_Tong_Standard().Random())();
+        return (*Sets_Armor_Miraak().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nightingale()
+    Armor_Set_t Random_Set_Armor_Miraak_Enhanced()
     {
-        return (*Outfit_Group_Armor_Nightingale().Random())();
+        return (*Sets_Armor_Miraak_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nightingale_Standard()
+    Armor_Set_t Random_Set_Armor_Morag_Tong()
     {
-        return (*Outfit_Group_Armor_Nightingale_Standard().Random())();
+        return (*Sets_Armor_Morag_Tong().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nightingale_Enhanced()
+    Armor_Set_t Random_Set_Armor_Morag_Tong_Standard()
     {
-        return (*Outfit_Group_Armor_Nightingale_Enhanced().Random())();
+        return (*Sets_Armor_Morag_Tong_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nordic()
+    Armor_Set_t Random_Set_Armor_Nightingale()
     {
-        return (*Outfit_Group_Armor_Nordic().Random())();
+        return (*Sets_Armor_Nightingale().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nordic_Standard()
+    Armor_Set_t Random_Set_Armor_Nightingale_Enhanced()
     {
-        return (*Outfit_Group_Armor_Nordic_Standard().Random())();
+        return (*Sets_Armor_Nightingale_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Nordic_Enhanced()
+    Armor_Set_t Random_Set_Armor_Nordic()
     {
-        return (*Outfit_Group_Armor_Nordic_Enhanced().Random())();
+        return (*Sets_Armor_Nordic().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Orcish()
+    Armor_Set_t Random_Set_Armor_Nordic_Standard()
     {
-        return (*Outfit_Group_Armor_Orcish().Random())();
+        return (*Sets_Armor_Nordic_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Orcish_Standard()
+    Armor_Set_t Random_Set_Armor_Nordic_Enhanced()
     {
-        return (*Outfit_Group_Armor_Orcish_Standard().Random())();
+        return (*Sets_Armor_Nordic_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Orcish_Enhanced()
+    Armor_Set_t Random_Set_Armor_Orcish()
     {
-        return (*Outfit_Group_Armor_Orcish_Enhanced().Random())();
+        return (*Sets_Armor_Orcish().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Penitus_Oculatus()
+    Armor_Set_t Random_Set_Armor_Orcish_Standard()
     {
-        return (*Outfit_Group_Armor_Penitus_Oculatus().Random())();
+        return (*Sets_Armor_Orcish_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Penitus_Oculatus_Standard()
+    Armor_Set_t Random_Set_Armor_Orcish_Enhanced()
     {
-        return (*Outfit_Group_Armor_Penitus_Oculatus_Standard().Random())();
+        return (*Sets_Armor_Orcish_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Plate()
+    Armor_Set_t Random_Set_Armor_Penitus_Oculatus()
     {
-        return (*Outfit_Group_Armor_Plate().Random())();
+        return (*Sets_Armor_Penitus_Oculatus().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Plate_Standard()
+    Armor_Set_t Random_Set_Armor_Penitus_Oculatus_Standard()
     {
-        return (*Outfit_Group_Armor_Plate_Standard().Random())();
+        return (*Sets_Armor_Penitus_Oculatus_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Plate_Enhanced()
+    Armor_Set_t Random_Set_Armor_Plate()
     {
-        return (*Outfit_Group_Armor_Plate_Enhanced().Random())();
+        return (*Sets_Armor_Plate().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Scaled()
+    Armor_Set_t Random_Set_Armor_Plate_Standard()
     {
-        return (*Outfit_Group_Armor_Scaled().Random())();
+        return (*Sets_Armor_Plate_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Scaled_Standard()
+    Armor_Set_t Random_Set_Armor_Plate_Enhanced()
     {
-        return (*Outfit_Group_Armor_Scaled_Standard().Random())();
+        return (*Sets_Armor_Plate_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Scaled_Enhanced()
+    Armor_Set_t Random_Set_Armor_Scaled()
     {
-        return (*Outfit_Group_Armor_Scaled_Enhanced().Random())();
+        return (*Sets_Armor_Scaled().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Shrouded()
+    Armor_Set_t Random_Set_Armor_Scaled_Standard()
     {
-        return (*Outfit_Group_Armor_Shrouded().Random())();
+        return (*Sets_Armor_Scaled_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Shrouded_Standard()
+    Armor_Set_t Random_Set_Armor_Scaled_Enhanced()
     {
-        return (*Outfit_Group_Armor_Shrouded_Standard().Random())();
+        return (*Sets_Armor_Scaled_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Stalhrim()
+    Armor_Set_t Random_Set_Armor_Shrouded()
     {
-        return (*Outfit_Group_Armor_Stalhrim().Random())();
+        return (*Sets_Armor_Shrouded().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Stalhrim_Standard()
+    Armor_Set_t Random_Set_Armor_Shrouded_Standard()
     {
-        return (*Outfit_Group_Armor_Stalhrim_Standard().Random())();
+        return (*Sets_Armor_Shrouded_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Stalhrim_Enhanced()
+    Armor_Set_t Random_Set_Armor_Stalhrim()
     {
-        return (*Outfit_Group_Armor_Stalhrim_Enhanced().Random())();
+        return (*Sets_Armor_Stalhrim().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Steel()
+    Armor_Set_t Random_Set_Armor_Stalhrim_Standard()
     {
-        return (*Outfit_Group_Armor_Steel().Random())();
+        return (*Sets_Armor_Stalhrim_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Steel_Standard()
+    Armor_Set_t Random_Set_Armor_Stalhrim_Enhanced()
     {
-        return (*Outfit_Group_Armor_Steel_Standard().Random())();
+        return (*Sets_Armor_Stalhrim_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Steel_Enhanced()
+    Armor_Set_t Random_Set_Armor_Steel()
     {
-        return (*Outfit_Group_Armor_Steel_Enhanced().Random())();
+        return (*Sets_Armor_Steel().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Stormcloak_Officer()
+    Armor_Set_t Random_Set_Armor_Steel_Standard()
     {
-        return (*Outfit_Group_Armor_Stormcloak_Officer().Random())();
+        return (*Sets_Armor_Steel_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Stormcloak_Officer_Standard()
+    Armor_Set_t Random_Set_Armor_Steel_Enhanced()
     {
-        return (*Outfit_Group_Armor_Stormcloak_Officer_Standard().Random())();
+        return (*Sets_Armor_Steel_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Summerset_Shadows()
+    Armor_Set_t Random_Set_Armor_Stormcloak_Officer()
     {
-        return (*Outfit_Group_Armor_Summerset_Shadows().Random())();
+        return (*Sets_Armor_Stormcloak_Officer().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Summerset_Shadows_Standard()
+    Armor_Set_t Random_Set_Armor_Stormcloak_Officer_Standard()
     {
-        return (*Outfit_Group_Armor_Summerset_Shadows_Standard().Random())();
+        return (*Sets_Armor_Stormcloak_Officer_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Thieves_Guild()
+    Armor_Set_t Random_Set_Armor_Thieves_Guild()
     {
-        return (*Outfit_Group_Armor_Thieves_Guild().Random())();
+        return (*Sets_Armor_Thieves_Guild().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Thieves_Guild_Standard()
+    Armor_Set_t Random_Set_Armor_Thieves_Guild_Standard()
     {
-        return (*Outfit_Group_Armor_Thieves_Guild_Standard().Random())();
+        return (*Sets_Armor_Thieves_Guild_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Tsun()
+    Armor_Set_t Random_Set_Armor_Tsun()
     {
-        return (*Outfit_Group_Armor_Tsun().Random())();
+        return (*Sets_Armor_Tsun().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Tsun_Standard()
+    Armor_Set_t Random_Set_Armor_Tsun_Standard()
     {
-        return (*Outfit_Group_Armor_Tsun_Standard().Random())();
+        return (*Sets_Armor_Tsun_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Vampire()
+    Armor_Set_t Random_Set_Armor_Vampire()
     {
-        return (*Outfit_Group_Armor_Vampire().Random())();
+        return (*Sets_Armor_Vampire().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Vampire_Standard()
+    Armor_Set_t Random_Set_Armor_Vampire_Standard()
     {
-        return (*Outfit_Group_Armor_Vampire_Standard().Random())();
+        return (*Sets_Armor_Vampire_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Vampire_Enhanced()
+    Armor_Set_t Random_Set_Armor_Vampire_Enhanced()
     {
-        return (*Outfit_Group_Armor_Vampire_Enhanced().Random())();
+        return (*Sets_Armor_Vampire_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Wolf()
+    Armor_Set_t Random_Set_Armor_Wolf()
     {
-        return (*Outfit_Group_Armor_Wolf().Random())();
+        return (*Sets_Armor_Wolf().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Wolf_Standard()
+    Armor_Set_t Random_Set_Armor_Wolf_Standard()
     {
-        return (*Outfit_Group_Armor_Wolf_Standard().Random())();
+        return (*Sets_Armor_Wolf_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor()
+    Armor_Set_t Random_Set_Armor()
     {
-        return (*Outfit_Group_Armor().Random())();
+        return (*Sets_Armor().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Unweighted()
+    Armor_Set_t Random_Set_Armor_Unweighted()
     {
-        return (*Outfit_Group_Armor_Unweighted().Random())();
+        return (*Sets_Armor_Unweighted().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Standard()
+    Armor_Set_t Random_Set_Armor_Standard()
     {
-        return (*Outfit_Group_Armor_Standard().Random())();
+        return (*Sets_Armor_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Standard_Unweighted()
+    Armor_Set_t Random_Set_Armor_Standard_Unweighted()
     {
-        return (*Outfit_Group_Armor_Standard_Unweighted().Random())();
+        return (*Sets_Armor_Standard_Unweighted().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Enhanced()
+    Armor_Set_t Random_Set_Armor_Enhanced()
     {
-        return (*Outfit_Group_Armor_Enhanced().Random())();
+        return (*Sets_Armor_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Armor_Enhanced_Unweighted()
+    Armor_Set_t Random_Set_Armor_Enhanced_Unweighted()
     {
-        return (*Outfit_Group_Armor_Enhanced_Unweighted().Random())();
+        return (*Sets_Armor_Enhanced_Unweighted().Random())();
     }
 
-    Armor_Set_t Outfit_Random()
+    Armor_Set_t Random_Set()
     {
-        return (*Outfit_Group().Random())();
+        return (*Sets().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Unweighted()
+    Armor_Set_t Random_Set_Unweighted()
     {
-        return (*Outfit_Group_Unweighted().Random())();
+        return (*Sets_Unweighted().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Standard()
+    Armor_Set_t Random_Set_Standard()
     {
-        return (*Outfit_Group_Standard().Random())();
+        return (*Sets_Standard().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Standard_Unweighted()
+    Armor_Set_t Random_Set_Standard_Unweighted()
     {
-        return (*Outfit_Group_Standard_Unweighted().Random())();
+        return (*Sets_Standard_Unweighted().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Enhanced()
+    Armor_Set_t Random_Set_Enhanced()
     {
-        return (*Outfit_Group_Enhanced().Random())();
+        return (*Sets_Enhanced().Random())();
     }
 
-    Armor_Set_t Outfit_Random_Enhanced_Unweighted()
+    Armor_Set_t Random_Set_Enhanced_Unweighted()
     {
-        return (*Outfit_Group_Enhanced_Unweighted().Random())();
+        return (*Sets_Enhanced_Unweighted().Random())();
     }
 
     #undef DEFINE_CREATE
