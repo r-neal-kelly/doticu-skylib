@@ -24,13 +24,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal();
 
     some<Armor_t*>  Amulet_Articulation();
-    some<Armor_t*>  Amulet_Articulation_1();
-    some<Armor_t*>  Amulet_Articulation_2();
-    some<Armor_t*>  Amulet_Articulation_3();
-    some<Armor_t*>  Amulet_Articulation_4();
-    some<Armor_t*>  Amulet_Articulation_5();
-    some<Armor_t*>  Amulet_Articulation_6();
-    some<Armor_t*>  Amulet_Articulation_7();
+    some<Armor_t*>  Amulet_Articulation_Reward_1();
+    some<Armor_t*>  Amulet_Articulation_Reward_2();
+    some<Armor_t*>  Amulet_Articulation_Reward_3();
+    some<Armor_t*>  Amulet_Articulation_Reward_4();
+    some<Armor_t*>  Amulet_Articulation_Reward_5();
+    some<Armor_t*>  Amulet_Articulation_Reward_6();
+    some<Armor_t*>  Amulet_Articulation_Reward_7();
 
     some<Armor_t*>  Amulet_Bone_Hawk();
 
@@ -120,7 +120,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6();
 
     some<Armor_t*>  Amulet_Necromancer();
-    some<Armor_t*>  Amulet_Necromancer_Enchanted();
+    some<Armor_t*>  Amulet_Necromancer_Reward();
 
     some<Armor_t*>  Amulet_Silver();
     some<Armor_t*>  Amulet_Silver_Alchemy_1();
@@ -353,9 +353,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_2();
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_3();
 
-    some<Armor_t*>  Armor_Bonemold_Guard_Body();
-
     some<Armor_t*>  Armor_Bonemold_Pauldron_Body();
+
+    some<Armor_t*>  Armor_Bonemold_Pauldron_Guard_Body();
 
     some<Armor_t*>  Armor_Bonemold_Pauldron_Improved_Body();
     some<Armor_t*>  Armor_Bonemold_Pauldron_Improved_Feet();
@@ -3540,6 +3540,124 @@ namespace doticu_skylib { namespace Const { namespace Armors {
 
     using Set_f = Armor_Set_t(*)();
 
+    Vector_t<some<Armor_t*>>    Amulet_Ancient_Nordic();
+    void                        Amulet_Ancient_Nordic(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Ancient_Nordic_Standard();
+    void                        Amulet_Ancient_Nordic_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Articulation();
+    void                        Amulet_Articulation(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Articulation_Standard();
+    void                        Amulet_Articulation_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Articulation_Reward();
+    void                        Amulet_Articulation_Reward(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Bone_Hawk();
+    void                        Amulet_Bone_Hawk(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Bone_Hawk_Standard();
+    void                        Amulet_Bone_Hawk_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Divine();
+    void                        Amulet_Divine(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Divine_Standard();
+    void                        Amulet_Divine_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_East_Empire_Company();
+    void                        Amulet_East_Empire_Company(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_East_Empire_Company_Standard();
+    void                        Amulet_East_Empire_Company_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Elder_Council();
+    void                        Amulet_Elder_Council(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Elder_Council_Standard();
+    void                        Amulet_Elder_Council_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold();
+    void                        Amulet_Gold(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Standard();
+    void                        Amulet_Gold_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Enchanted();
+    void                        Amulet_Gold_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond();
+    void                        Amulet_Gold_Diamond(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond_Standard();
+    void                        Amulet_Gold_Diamond_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond_Enchanted();
+    void                        Amulet_Gold_Diamond_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled();
+    void                        Amulet_Gold_Jeweled(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled_Standard();
+    void                        Amulet_Gold_Jeweled_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled_Enchanted();
+    void                        Amulet_Gold_Jeweled_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby();
+    void                        Amulet_Gold_Ruby(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby_Standard();
+    void                        Amulet_Gold_Ruby_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby_Enchanted();
+    void                        Amulet_Gold_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer();
+    void                        Amulet_Necromancer(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer_Standard();
+    void                        Amulet_Necromancer_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer_Reward();
+    void                        Amulet_Necromancer_Reward(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver();
+    void                        Amulet_Silver(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Standard();
+    void                        Amulet_Silver_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Enchanted();
+    void                        Amulet_Silver_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald();
+    void                        Amulet_Silver_Emerald(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald_Standard();
+    void                        Amulet_Silver_Emerald_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald_Enchanted();
+    void                        Amulet_Silver_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled();
+    void                        Amulet_Silver_Jeweled(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled_Standard();
+    void                        Amulet_Silver_Jeweled_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled_Enchanted();
+    void                        Amulet_Silver_Jeweled_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire();
+    void                        Amulet_Silver_Sapphire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire_Standard();
+    void                        Amulet_Silver_Sapphire_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire_Enchanted();
+    void                        Amulet_Silver_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Skaal();
+    void                        Amulet_Skaal(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Skaal_Standard();
+    void                        Amulet_Skaal_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet_Vampire();
+    void                        Amulet_Vampire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Vampire_Standard();
+    void                        Amulet_Vampire_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Amulet();
+    void                        Amulet(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Unweighted();
+    void                        Amulet_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Standard();
+    void                        Amulet_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Standard_Unweighted();
+    void                        Amulet_Standard_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Enhanced();
+    void                        Amulet_Enhanced(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Amulet_Enhanced_Unweighted();
+    void                        Amulet_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Body_Enchanted();
     void                        Armor_Bonemold_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Feet_Enchanted();
@@ -3811,6 +3929,87 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Armor_Vampire_Red_Body_Enchanted();
     void                        Armor_Vampire_Red_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone();
+    void                        Circlet_Copper_And_Moonstone(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone_Standard();
+    void                        Circlet_Copper_And_Moonstone_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone_Enchanted();
+    void                        Circlet_Copper_And_Moonstone_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx();
+    void                        Circlet_Copper_And_Onyx(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx_Standard();
+    void                        Circlet_Copper_And_Onyx_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx_Enchanted();
+    void                        Circlet_Copper_And_Onyx_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby();
+    void                        Circlet_Copper_And_Ruby(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby_Standard();
+    void                        Circlet_Copper_And_Ruby_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby_Enchanted();
+    void                        Circlet_Copper_And_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire();
+    void                        Circlet_Copper_And_Sapphire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire_Standard();
+    void                        Circlet_Copper_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire_Enchanted();
+    void                        Circlet_Copper_And_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald();
+    void                        Circlet_Gold_And_Emerald(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald_Standard();
+    void                        Circlet_Gold_And_Emerald_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald_Enchanted();
+    void                        Circlet_Gold_And_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby();
+    void                        Circlet_Gold_And_Ruby(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby_Standard();
+    void                        Circlet_Gold_And_Ruby_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby_Enchanted();
+    void                        Circlet_Gold_And_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald();
+    void                        Circlet_Jade_And_Emerald(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald_Standard();
+    void                        Circlet_Jade_And_Emerald_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald_Enchanted();
+    void                        Circlet_Jade_And_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Sapphire();
+    void                        Circlet_Jade_And_Sapphire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Sapphire_Standard();
+    void                        Circlet_Jade_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone();
+    void                        Circlet_Silver_And_Moonstone(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone_Standard();
+    void                        Circlet_Silver_And_Moonstone_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone_Enchanted();
+    void                        Circlet_Silver_And_Moonstone_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire();
+    void                        Circlet_Silver_And_Sapphire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire_Standard();
+    void                        Circlet_Silver_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire_Enchanted();
+    void                        Circlet_Silver_And_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Circlet();
+    void                        Circlet(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Unweighted();
+    void                        Circlet_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Standard();
+    void                        Circlet_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Standard_Unweighted();
+    void                        Circlet_Standard_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Enhanced();
+    void                        Circlet_Enhanced(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Circlet_Enhanced_Unweighted();
+    void                        Circlet_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results);
+
     Vector_t<some<Armor_t*>>    Clothes_Mage_Adept_Body_Enchanted();
     void                        Clothes_Mage_Adept_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
     Vector_t<some<Armor_t*>>    Clothes_Mage_Adept_Head_Enchanted();
@@ -3843,6 +4042,95 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     Vector_t<some<Armor_t*>>    Clothes_Warlock_Hooded_Body_Enchanted();
     void                        Clothes_Warlock_Hooded_Body_Enchanted(Vector_t<some<Armor_t*>>& results);
 
+    Vector_t<some<Armor_t*>>    Ring_Bone_Hawk();
+    void                        Ring_Bone_Hawk(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Bone_Hawk_Standard();
+    void                        Ring_Bone_Hawk_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Gold();
+    void                        Ring_Gold(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Standard();
+    void                        Ring_Gold_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Enchanted();
+    void                        Ring_Gold_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond();
+    void                        Ring_Gold_Diamond(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond_Standard();
+    void                        Ring_Gold_Diamond_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond_Enchanted();
+    void                        Ring_Gold_Diamond_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald();
+    void                        Ring_Gold_Emerald(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald_Standard();
+    void                        Ring_Gold_Emerald_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald_Enchanted();
+    void                        Ring_Gold_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire();
+    void                        Ring_Gold_Sapphire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire_Standard();
+    void                        Ring_Gold_Sapphire_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire_Enchanted();
+    void                        Ring_Gold_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Hircine();
+    void                        Ring_Hircine(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Hircine_Standard();
+    void                        Ring_Hircine_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Namira();
+    void                        Ring_Namira(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Namira_Standard();
+    void                        Ring_Namira_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Silver();
+    void                        Ring_Silver(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Standard();
+    void                        Ring_Silver_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Enchanted();
+    void                        Ring_Silver_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst();
+    void                        Ring_Silver_Amethyst(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst_Standard();
+    void                        Ring_Silver_Amethyst_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst_Enchanted();
+    void                        Ring_Silver_Amethyst_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet();
+    void                        Ring_Silver_Garnet(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet_Standard();
+    void                        Ring_Silver_Garnet_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet_Enchanted();
+    void                        Ring_Silver_Garnet_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby();
+    void                        Ring_Silver_Ruby(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby_Standard();
+    void                        Ring_Silver_Ruby_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby_Enchanted();
+    void                        Ring_Silver_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring_Vampire();
+    void                        Ring_Vampire(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Vampire_Standard();
+    void                        Ring_Vampire_Standard(Vector_t<some<Armor_t*>>& results);
+
+    Vector_t<some<Armor_t*>>    Ring();
+    void                        Ring(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Unweighted();
+    void                        Ring_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Standard();
+    void                        Ring_Standard(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Standard_Unweighted();
+    void                        Ring_Standard_Unweighted(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Enhanced();
+    void                        Ring_Enhanced(Vector_t<some<Armor_t*>>& results);
+    Vector_t<some<Armor_t*>>    Ring_Enhanced_Unweighted();
+    void                        Ring_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results);
+
     /* Set */
 
     Armor_Set_t                 Set_Armor_Ancient_Falmer();
@@ -3874,10 +4162,10 @@ namespace doticu_skylib { namespace Const { namespace Armors {
 
     Armor_Set_t                 Set_Armor_Bonemold();
     Armor_Set_t                 Set_Armor_Bonemold_Enchanted();
-    Armor_Set_t                 Set_Armor_Bonemold_Guard();
-    Armor_Set_t                 Set_Armor_Bonemold_Guard_Enchanted();
     Armor_Set_t                 Set_Armor_Bonemold_Pauldron();
     Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Enchanted();
+    Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Guard();
+    Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Guard_Enchanted();
     Armor_Set_t                 Set_Armor_Bonemold_Pauldron_Improved();
 
     Armor_Set_t                 Set_Armor_Chitin_Heavy();

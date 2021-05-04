@@ -18,13 +18,13 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Ancient_Nordic_Saarthal()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0233D0); }
 
     some<Armor_t*>  Amulet_Articulation()                               { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FDEAF); }
-    some<Armor_t*>  Amulet_Articulation_1()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09DFF7); }
-    some<Armor_t*>  Amulet_Articulation_2()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6904); }
-    some<Armor_t*>  Amulet_Articulation_3()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690D); }
-    some<Armor_t*>  Amulet_Articulation_4()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690E); }
-    some<Armor_t*>  Amulet_Articulation_5()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690F); }
-    some<Armor_t*>  Amulet_Articulation_6()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6910); }
-    some<Armor_t*>  Amulet_Articulation_7()                             { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6911); }
+    some<Armor_t*>  Amulet_Articulation_Reward_1()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09DFF7); }
+    some<Armor_t*>  Amulet_Articulation_Reward_2()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6904); }
+    some<Armor_t*>  Amulet_Articulation_Reward_3()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690D); }
+    some<Armor_t*>  Amulet_Articulation_Reward_4()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690E); }
+    some<Armor_t*>  Amulet_Articulation_Reward_5()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F690F); }
+    some<Armor_t*>  Amulet_Articulation_Reward_6()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6910); }
+    some<Armor_t*>  Amulet_Articulation_Reward_7()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0F6911); }
 
     some<Armor_t*>  Amulet_Bone_Hawk()                                  { DEFINE_FORM(Const::Mod::Dawnguard(),      Armor_t, 0x01AA0B); }
 
@@ -114,7 +114,7 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Amulet_Gold_Ruby_Resist_Fire_6()                    { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0FC048); }
 
     some<Armor_t*>  Amulet_Necromancer()                                { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0D2328); }
-    some<Armor_t*>  Amulet_Necromancer_Enchanted()                      { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C891D); }
+    some<Armor_t*>  Amulet_Necromancer_Reward()                         { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x0C891D); }
 
     some<Armor_t*>  Amulet_Silver()                                     { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x09171B); }
     some<Armor_t*>  Amulet_Silver_Alchemy_1()                           { DEFINE_FORM(Const::Mod::Skyrim(),         Armor_t, 0x10DF45); }
@@ -347,9 +347,9 @@ namespace doticu_skylib { namespace Const { namespace Armor {
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_2()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028515); }
     some<Armor_t*>  Armor_Bonemold_Shield_Resist_Shock_3()              { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x028516); }
 
-    some<Armor_t*>  Armor_Bonemold_Guard_Body()                         { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x037564); }
-
     some<Armor_t*>  Armor_Bonemold_Pauldron_Body()                      { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x037563); }
+
+    some<Armor_t*>  Armor_Bonemold_Pauldron_Guard_Body()                { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x037564); }
 
     some<Armor_t*>  Armor_Bonemold_Pauldron_Improved_Body()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB26); }
     some<Armor_t*>  Armor_Bonemold_Pauldron_Improved_Feet()             { DEFINE_FORM(Const::Mod::Dragonborn(),     Armor_t, 0x03AB25); }
@@ -3546,6 +3546,528 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return results;                             \
     }
 
+    Vector_t<some<Armor_t*>>    Amulet_Ancient_Nordic()             { DEFINE_CREATE(Amulet_Ancient_Nordic); }
+    Vector_t<some<Armor_t*>>    Amulet_Ancient_Nordic_Standard()    { DEFINE_CREATE(Amulet_Ancient_Nordic_Standard); }
+
+    void Amulet_Ancient_Nordic(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Ancient_Nordic_Standard(results);
+    }
+
+    void Amulet_Ancient_Nordic_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Ancient_Nordic());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Gauldur());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Gauldur_Folgunthur());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Gauldur_Geirmund());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Gauldur_Saarthal());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Kynes_Token());
+        results.push_back(Armor::Amulet_Ancient_Nordic_Saarthal());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Articulation()           { DEFINE_CREATE(Amulet_Articulation); }
+    Vector_t<some<Armor_t*>>    Amulet_Articulation_Standard()  { DEFINE_CREATE(Amulet_Articulation_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Articulation_Reward()    { DEFINE_CREATE(Amulet_Articulation_Reward); }
+
+    void Amulet_Articulation(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Articulation_Standard(results);
+        Amulet_Articulation_Reward(results);
+    }
+
+    void Amulet_Articulation_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Articulation());
+    }
+
+    void Amulet_Articulation_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Articulation_Reward_1());
+        results.push_back(Armor::Amulet_Articulation_Reward_2());
+        results.push_back(Armor::Amulet_Articulation_Reward_3());
+        results.push_back(Armor::Amulet_Articulation_Reward_4());
+        results.push_back(Armor::Amulet_Articulation_Reward_5());
+        results.push_back(Armor::Amulet_Articulation_Reward_6());
+        results.push_back(Armor::Amulet_Articulation_Reward_7());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Bone_Hawk()          { DEFINE_CREATE(Amulet_Bone_Hawk); }
+    Vector_t<some<Armor_t*>>    Amulet_Bone_Hawk_Standard() { DEFINE_CREATE(Amulet_Bone_Hawk_Standard); }
+
+    void Amulet_Bone_Hawk(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Bone_Hawk_Standard(results);
+    }
+
+    void Amulet_Bone_Hawk_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Bone_Hawk());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Divine()             { DEFINE_CREATE(Amulet_Divine); }
+    Vector_t<some<Armor_t*>>    Amulet_Divine_Standard()    { DEFINE_CREATE(Amulet_Divine_Standard); }
+
+    void Amulet_Divine(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Divine_Standard(results);
+    }
+
+    void Amulet_Divine_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Divine_Akatosh());
+        results.push_back(Armor::Amulet_Divine_Arkay());
+        results.push_back(Armor::Amulet_Divine_Dibella());
+        results.push_back(Armor::Amulet_Divine_Julianos());
+        results.push_back(Armor::Amulet_Divine_Kynareth());
+        results.push_back(Armor::Amulet_Divine_Mara());
+        results.push_back(Armor::Amulet_Divine_Stendarr());
+        results.push_back(Armor::Amulet_Divine_Talos());
+        results.push_back(Armor::Amulet_Divine_Zenithar());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_East_Empire_Company()            { DEFINE_CREATE(Amulet_East_Empire_Company); }
+    Vector_t<some<Armor_t*>>    Amulet_East_Empire_Company_Standard()   { DEFINE_CREATE(Amulet_East_Empire_Company_Standard); }
+
+    void Amulet_East_Empire_Company(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_East_Empire_Company_Standard(results);
+    }
+
+    void Amulet_East_Empire_Company_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_East_Empire_Company());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Elder_Council()          { DEFINE_CREATE(Amulet_Elder_Council); }
+    Vector_t<some<Armor_t*>>    Amulet_Elder_Council_Standard() { DEFINE_CREATE(Amulet_Elder_Council_Standard); }
+
+    void Amulet_Elder_Council(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Elder_Council_Standard(results);
+    }
+
+    void Amulet_Elder_Council_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Elder_Council());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold()           { DEFINE_CREATE(Amulet_Gold); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Standard()  { DEFINE_CREATE(Amulet_Gold_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Enchanted() { DEFINE_CREATE(Amulet_Gold_Enchanted); }
+
+    void Amulet_Gold(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Gold_Standard(results);
+        Amulet_Gold_Enchanted(results);
+    }
+
+    void Amulet_Gold_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold());
+    }
+
+    void Amulet_Gold_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Carry());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_1());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_2());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_3());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_4());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_5());
+        results.push_back(Armor::Amulet_Gold_Heavy_Armor_6());
+        results.push_back(Armor::Amulet_Gold_One_Handed_1());
+        results.push_back(Armor::Amulet_Gold_One_Handed_2());
+        results.push_back(Armor::Amulet_Gold_One_Handed_3());
+        results.push_back(Armor::Amulet_Gold_One_Handed_4());
+        results.push_back(Armor::Amulet_Gold_One_Handed_5());
+        results.push_back(Armor::Amulet_Gold_One_Handed_6());
+        results.push_back(Armor::Amulet_Gold_Sneak_1());
+        results.push_back(Armor::Amulet_Gold_Sneak_2());
+        results.push_back(Armor::Amulet_Gold_Sneak_3());
+        results.push_back(Armor::Amulet_Gold_Sneak_4());
+        results.push_back(Armor::Amulet_Gold_Sneak_5());
+        results.push_back(Armor::Amulet_Gold_Sneak_6());
+        results.push_back(Armor::Amulet_Gold_Stamina_1());
+        results.push_back(Armor::Amulet_Gold_Stamina_2());
+        results.push_back(Armor::Amulet_Gold_Stamina_3());
+        results.push_back(Armor::Amulet_Gold_Stamina_4());
+        results.push_back(Armor::Amulet_Gold_Stamina_5());
+        results.push_back(Armor::Amulet_Gold_Stamina_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond()           { DEFINE_CREATE(Amulet_Gold_Diamond); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond_Standard()  { DEFINE_CREATE(Amulet_Gold_Diamond_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Diamond_Enchanted() { DEFINE_CREATE(Amulet_Gold_Diamond_Enchanted); }
+
+    void Amulet_Gold_Diamond(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Gold_Diamond_Standard(results);
+        Amulet_Gold_Diamond_Enchanted(results);
+    }
+
+    void Amulet_Gold_Diamond_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Diamond());
+    }
+
+    void Amulet_Gold_Diamond_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Diamond_Resist_Poison_1());
+        results.push_back(Armor::Amulet_Gold_Diamond_Resist_Poison_2());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_1());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_2());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_3());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_4());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_5());
+        results.push_back(Armor::Amulet_Gold_Diamond_Speechcraft_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled()           { DEFINE_CREATE(Amulet_Gold_Jeweled); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled_Standard()  { DEFINE_CREATE(Amulet_Gold_Jeweled_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Jeweled_Enchanted() { DEFINE_CREATE(Amulet_Gold_Jeweled_Enchanted); }
+
+    void Amulet_Gold_Jeweled(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Gold_Jeweled_Standard(results);
+        Amulet_Gold_Jeweled_Enchanted(results);
+    }
+
+    void Amulet_Gold_Jeweled_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Jeweled());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Saint_Jiub());
+    }
+
+    void Amulet_Gold_Jeweled_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_1());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_2());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_3());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_4());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_5());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Resist_Magic_6());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_1());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_2());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_3());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_4());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_5());
+        results.push_back(Armor::Amulet_Gold_Jeweled_Smithing_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby()              { DEFINE_CREATE(Amulet_Gold_Ruby); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby_Standard()     { DEFINE_CREATE(Amulet_Gold_Ruby_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Gold_Ruby_Enchanted()    { DEFINE_CREATE(Amulet_Gold_Ruby_Enchanted); }
+
+    void Amulet_Gold_Ruby(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Gold_Ruby_Standard(results);
+        Amulet_Gold_Ruby_Enchanted(results);
+    }
+
+    void Amulet_Gold_Ruby_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Ruby());
+    }
+
+    void Amulet_Gold_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_1());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_2());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_3());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_4());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_5());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_6());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_Rate_1());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_Rate_2());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_Rate_3());
+        results.push_back(Armor::Amulet_Gold_Ruby_Health_Rate_4());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_1());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_2());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_3());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_4());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_5());
+        results.push_back(Armor::Amulet_Gold_Ruby_Resist_Fire_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer()            { DEFINE_CREATE(Amulet_Necromancer); }
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer_Standard()   { DEFINE_CREATE(Amulet_Necromancer_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Necromancer_Reward()     { DEFINE_CREATE(Amulet_Necromancer_Reward); }
+
+    void Amulet_Necromancer(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Necromancer_Standard(results);
+        Amulet_Necromancer_Reward(results);
+    }
+
+    void Amulet_Necromancer_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Necromancer());
+    }
+
+    void Amulet_Necromancer_Reward(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Necromancer_Reward());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver()             { DEFINE_CREATE(Amulet_Silver); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Standard()    { DEFINE_CREATE(Amulet_Silver_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Enchanted()   { DEFINE_CREATE(Amulet_Silver_Enchanted); }
+
+    void Amulet_Silver(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Silver_Standard(results);
+        Amulet_Silver_Enchanted(results);
+    }
+
+    void Amulet_Silver_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver());
+    }
+
+    void Amulet_Silver_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Alchemy_1());
+        results.push_back(Armor::Amulet_Silver_Alchemy_2());
+        results.push_back(Armor::Amulet_Silver_Alchemy_3());
+        results.push_back(Armor::Amulet_Silver_Alchemy_4());
+        results.push_back(Armor::Amulet_Silver_Alchemy_5());
+        results.push_back(Armor::Amulet_Silver_Alchemy_6());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_1());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_2());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_3());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_4());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_5());
+        results.push_back(Armor::Amulet_Silver_Light_Armor_6());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_1());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_2());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_3());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_4());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_5());
+        results.push_back(Armor::Amulet_Silver_Two_Handed_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald()             { DEFINE_CREATE(Amulet_Silver_Emerald); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald_Standard()    { DEFINE_CREATE(Amulet_Silver_Emerald_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Emerald_Enchanted()   { DEFINE_CREATE(Amulet_Silver_Emerald_Enchanted); }
+
+    void Amulet_Silver_Emerald(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Silver_Emerald_Standard(results);
+        Amulet_Silver_Emerald_Enchanted(results);
+    }
+
+    void Amulet_Silver_Emerald_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Emerald());
+    }
+
+    void Amulet_Silver_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_1());
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_2());
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_3());
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_4());
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_5());
+        results.push_back(Armor::Amulet_Silver_Emerald_Lockpicking_6());
+        results.push_back(Armor::Amulet_Silver_Emerald_Stamina_Rate_1());
+        results.push_back(Armor::Amulet_Silver_Emerald_Stamina_Rate_2());
+        results.push_back(Armor::Amulet_Silver_Emerald_Stamina_Rate_3());
+        results.push_back(Armor::Amulet_Silver_Emerald_Stamina_Rate_4());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled()             { DEFINE_CREATE(Amulet_Silver_Jeweled); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled_Standard()    { DEFINE_CREATE(Amulet_Silver_Jeweled_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Jeweled_Enchanted()   { DEFINE_CREATE(Amulet_Silver_Jeweled_Enchanted); }
+
+    void Amulet_Silver_Jeweled(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Silver_Jeweled_Standard(results);
+        Amulet_Silver_Jeweled_Enchanted(results);
+    }
+
+    void Amulet_Silver_Jeweled_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Jeweled());
+    }
+
+    void Amulet_Silver_Jeweled_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_1());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_2());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_3());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_4());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_5());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Pickpocket_6());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Disease_1());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Disease_2());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_1());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_2());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_3());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_4());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_5());
+        results.push_back(Armor::Amulet_Silver_Jeweled_Resist_Shock_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire()            { DEFINE_CREATE(Amulet_Silver_Sapphire); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire_Standard()   { DEFINE_CREATE(Amulet_Silver_Sapphire_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Silver_Sapphire_Enchanted()  { DEFINE_CREATE(Amulet_Silver_Sapphire_Enchanted); }
+
+    void Amulet_Silver_Sapphire(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Silver_Sapphire_Standard(results);
+        Amulet_Silver_Sapphire_Enchanted(results);
+    }
+
+    void Amulet_Silver_Sapphire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Sapphire());
+    }
+
+    void Amulet_Silver_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_1());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_2());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_3());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_4());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_5());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Block_6());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_1());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_2());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_3());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_4());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_5());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Magicka_6());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_1());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_2());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_3());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_4());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_5());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Resist_Frost_6());
+        results.push_back(Armor::Amulet_Silver_Sapphire_Waterbreathing());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Skaal()          { DEFINE_CREATE(Amulet_Skaal); }
+    Vector_t<some<Armor_t*>>    Amulet_Skaal_Standard() { DEFINE_CREATE(Amulet_Skaal_Standard); }
+
+    void Amulet_Skaal(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Skaal_Standard(results);
+    }
+
+    void Amulet_Skaal_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Skaal());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet_Vampire()            { DEFINE_CREATE(Amulet_Vampire); }
+    Vector_t<some<Armor_t*>>    Amulet_Vampire_Standard()   { DEFINE_CREATE(Amulet_Vampire_Standard); }
+
+    void Amulet_Vampire(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Vampire_Standard(results);
+    }
+
+    void Amulet_Vampire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Amulet_Vampire_Bats());
+        results.push_back(Armor::Amulet_Vampire_Drain_Magicka());
+        results.push_back(Armor::Amulet_Vampire_Draining_Bats());
+        results.push_back(Armor::Amulet_Vampire_Draining_Grip());
+        results.push_back(Armor::Amulet_Vampire_Empath());
+        results.push_back(Armor::Amulet_Vampire_Gargoyle());
+        results.push_back(Armor::Amulet_Vampire_Mist_Form());
+        results.push_back(Armor::Amulet_Vampire_Supernatural_Reflexes());
+    }
+
+    Vector_t<some<Armor_t*>>    Amulet()                        { DEFINE_CREATE(Amulet); }
+    Vector_t<some<Armor_t*>>    Amulet_Unweighted()             { DEFINE_CREATE(Amulet_Unweighted); }
+    Vector_t<some<Armor_t*>>    Amulet_Standard()               { DEFINE_CREATE(Amulet_Standard); }
+    Vector_t<some<Armor_t*>>    Amulet_Standard_Unweighted()    { DEFINE_CREATE(Amulet_Standard_Unweighted); }
+    Vector_t<some<Armor_t*>>    Amulet_Enhanced()               { DEFINE_CREATE(Amulet_Enhanced); }
+    Vector_t<some<Armor_t*>>    Amulet_Enhanced_Unweighted()    { DEFINE_CREATE(Amulet_Enhanced_Unweighted); }
+
+    void Amulet(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Standard(results);
+        Amulet_Enhanced(results);
+    }
+
+    void Amulet_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Standard_Unweighted(results);
+        Amulet_Enhanced_Unweighted(results);
+    }
+
+    void Amulet_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Ancient_Nordic_Standard(results);
+        Amulet_Articulation_Standard(results);
+        Amulet_Bone_Hawk_Standard(results);
+        Amulet_Divine_Standard(results);
+        Amulet_East_Empire_Company_Standard(results);
+        Amulet_Elder_Council_Standard(results);
+        Amulet_Gold_Standard(results);
+        Amulet_Gold_Diamond_Standard(results);
+        Amulet_Gold_Jeweled_Standard(results);
+        Amulet_Gold_Ruby_Standard(results);
+        Amulet_Necromancer_Standard(results);
+        Amulet_Silver_Standard(results);
+        Amulet_Silver_Emerald_Standard(results);
+        Amulet_Silver_Jeweled_Standard(results);
+        Amulet_Silver_Sapphire_Standard(results);
+        Amulet_Skaal_Standard(results);
+        Amulet_Vampire_Standard(results);
+    }
+
+    void Amulet_Standard_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Amulet_Ancient_Nordic_Standard().Random());
+        results.push_back(Amulet_Articulation_Standard().Random());
+        results.push_back(Amulet_Bone_Hawk_Standard().Random());
+        results.push_back(Amulet_Divine_Standard().Random());
+        results.push_back(Amulet_East_Empire_Company_Standard().Random());
+        results.push_back(Amulet_Elder_Council_Standard().Random());
+        results.push_back(Amulet_Gold_Standard().Random());
+        results.push_back(Amulet_Gold_Diamond_Standard().Random());
+        results.push_back(Amulet_Gold_Jeweled_Standard().Random());
+        results.push_back(Amulet_Gold_Ruby_Standard().Random());
+        results.push_back(Amulet_Necromancer_Standard().Random());
+        results.push_back(Amulet_Silver_Standard().Random());
+        results.push_back(Amulet_Silver_Emerald_Standard().Random());
+        results.push_back(Amulet_Silver_Jeweled_Standard().Random());
+        results.push_back(Amulet_Silver_Sapphire_Standard().Random());
+        results.push_back(Amulet_Skaal_Standard().Random());
+        results.push_back(Amulet_Vampire_Standard().Random());
+    }
+
+    void Amulet_Enhanced(Vector_t<some<Armor_t*>>& results)
+    {
+        Amulet_Articulation_Reward(results);
+        Amulet_Gold_Enchanted(results);
+        Amulet_Gold_Diamond_Enchanted(results);
+        Amulet_Gold_Jeweled_Enchanted(results);
+        Amulet_Gold_Ruby_Enchanted(results);
+        Amulet_Necromancer_Reward(results);
+        Amulet_Silver_Enchanted(results);
+        Amulet_Silver_Emerald_Enchanted(results);
+        Amulet_Silver_Jeweled_Enchanted(results);
+        Amulet_Silver_Sapphire_Enchanted(results);
+    }
+
+    void Amulet_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Amulet_Articulation_Reward().Random());
+        results.push_back(Amulet_Gold_Enchanted().Random());
+        results.push_back(Amulet_Gold_Diamond_Enchanted().Random());
+        results.push_back(Amulet_Gold_Jeweled_Enchanted().Random());
+        results.push_back(Amulet_Gold_Ruby_Enchanted().Random());
+        results.push_back(Amulet_Necromancer_Reward().Random());
+        results.push_back(Amulet_Silver_Enchanted().Random());
+        results.push_back(Amulet_Silver_Emerald_Enchanted().Random());
+        results.push_back(Amulet_Silver_Jeweled_Enchanted().Random());
+        results.push_back(Amulet_Silver_Sapphire_Enchanted().Random());
+    }
+
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Body_Enchanted()     { DEFINE_CREATE(Armor_Bonemold_Body_Enchanted); }
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Feet_Enchanted()     { DEFINE_CREATE(Armor_Bonemold_Feet_Enchanted); }
     Vector_t<some<Armor_t*>>    Armor_Bonemold_Hands_Enchanted()    { DEFINE_CREATE(Armor_Bonemold_Hands_Enchanted); }
@@ -6341,6 +6863,314 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Armor_Vampire_Red_Body_Magicka_Rate());
     }
 
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone()              { DEFINE_CREATE(Circlet_Copper_And_Moonstone); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone_Standard()     { DEFINE_CREATE(Circlet_Copper_And_Moonstone_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Moonstone_Enchanted()    { DEFINE_CREATE(Circlet_Copper_And_Moonstone_Enchanted); }
+
+    void Circlet_Copper_And_Moonstone(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Moonstone_Standard(results);
+        Circlet_Copper_And_Moonstone_Enchanted(results);
+    }
+
+    void Circlet_Copper_And_Moonstone_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Moonstone());
+    }
+
+    void Circlet_Copper_And_Moonstone_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_1());
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_2());
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_3());
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_4());
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_5());
+        results.push_back(Armor::Circlet_Copper_And_Moonstone_Conjuration_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx()           { DEFINE_CREATE(Circlet_Copper_And_Onyx); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx_Standard()  { DEFINE_CREATE(Circlet_Copper_And_Onyx_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Onyx_Enchanted() { DEFINE_CREATE(Circlet_Copper_And_Onyx_Enchanted); }
+
+    void Circlet_Copper_And_Onyx(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Onyx_Standard(results);
+        Circlet_Copper_And_Onyx_Enchanted(results);
+    }
+
+    void Circlet_Copper_And_Onyx_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Onyx());
+    }
+
+    void Circlet_Copper_And_Onyx_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_1());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_2());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_3());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_4());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_5());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Restoration_6());
+        results.push_back(Armor::Circlet_Copper_And_Onyx_Waterbreathing());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby()           { DEFINE_CREATE(Circlet_Copper_And_Ruby); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby_Standard()  { DEFINE_CREATE(Circlet_Copper_And_Ruby_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Ruby_Enchanted() { DEFINE_CREATE(Circlet_Copper_And_Ruby_Enchanted); }
+
+    void Circlet_Copper_And_Ruby(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Ruby_Standard(results);
+        Circlet_Copper_And_Ruby_Enchanted(results);
+    }
+
+    void Circlet_Copper_And_Ruby_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Ruby());
+    }
+
+    void Circlet_Copper_And_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_1());
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_2());
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_3());
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_4());
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_5());
+        results.push_back(Armor::Circlet_Copper_And_Ruby_Destruction_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire()           { DEFINE_CREATE(Circlet_Copper_And_Sapphire); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire_Standard()  { DEFINE_CREATE(Circlet_Copper_And_Sapphire_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Copper_And_Sapphire_Enchanted() { DEFINE_CREATE(Circlet_Copper_And_Sapphire_Enchanted); }
+
+    void Circlet_Copper_And_Sapphire(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Sapphire_Standard(results);
+        Circlet_Copper_And_Sapphire_Enchanted(results);
+    }
+
+    void Circlet_Copper_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Sapphire());
+    }
+
+    void Circlet_Copper_And_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Copper_And_Sapphire_Magicka());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald()              { DEFINE_CREATE(Circlet_Gold_And_Emerald); }
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald_Standard()     { DEFINE_CREATE(Circlet_Gold_And_Emerald_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Emerald_Enchanted()    { DEFINE_CREATE(Circlet_Gold_And_Emerald_Enchanted); }
+
+    void Circlet_Gold_And_Emerald(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Gold_And_Emerald_Standard(results);
+        Circlet_Gold_And_Emerald_Enchanted(results);
+    }
+
+    void Circlet_Gold_And_Emerald_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Gold_And_Emerald());
+    }
+
+    void Circlet_Gold_And_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_1());
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_2());
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_3());
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_4());
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_5());
+        results.push_back(Armor::Circlet_Gold_And_Emerald_Marksman_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby()             { DEFINE_CREATE(Circlet_Gold_And_Ruby); }
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby_Standard()    { DEFINE_CREATE(Circlet_Gold_And_Ruby_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Gold_And_Ruby_Enchanted()   { DEFINE_CREATE(Circlet_Gold_And_Ruby_Enchanted); }
+
+    void Circlet_Gold_And_Ruby(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Gold_And_Ruby_Standard(results);
+        Circlet_Gold_And_Ruby_Enchanted(results);
+    }
+
+    void Circlet_Gold_And_Ruby_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Gold_And_Ruby());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Diadem_Of_The_Savant());
+    }
+
+    void Circlet_Gold_And_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_1());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_2());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_3());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_4());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_5());
+        results.push_back(Armor::Circlet_Gold_And_Ruby_Alchemy_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald()              { DEFINE_CREATE(Circlet_Jade_And_Emerald); }
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald_Standard()     { DEFINE_CREATE(Circlet_Jade_And_Emerald_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Emerald_Enchanted()    { DEFINE_CREATE(Circlet_Jade_And_Emerald_Enchanted); }
+
+    void Circlet_Jade_And_Emerald(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Jade_And_Emerald_Standard(results);
+        Circlet_Jade_And_Emerald_Enchanted(results);
+    }
+
+    void Circlet_Jade_And_Emerald_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Jade_And_Emerald());
+    }
+
+    void Circlet_Jade_And_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_1());
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_2());
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_3());
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_4());
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_5());
+        results.push_back(Armor::Circlet_Jade_And_Emerald_Illusion_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Sapphire()             { DEFINE_CREATE(Circlet_Jade_And_Sapphire); }
+    Vector_t<some<Armor_t*>>    Circlet_Jade_And_Sapphire_Standard()    { DEFINE_CREATE(Circlet_Jade_And_Sapphire_Standard); }
+
+    void Circlet_Jade_And_Sapphire(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Jade_And_Sapphire_Standard(results);
+    }
+
+    void Circlet_Jade_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Jade_And_Sapphire());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone()              { DEFINE_CREATE(Circlet_Silver_And_Moonstone); }
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone_Standard()     { DEFINE_CREATE(Circlet_Silver_And_Moonstone_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Moonstone_Enchanted()    { DEFINE_CREATE(Circlet_Silver_And_Moonstone_Enchanted); }
+
+    void Circlet_Silver_And_Moonstone(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Silver_And_Moonstone_Standard(results);
+        Circlet_Silver_And_Moonstone_Enchanted(results);
+    }
+
+    void Circlet_Silver_And_Moonstone_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Silver_And_Moonstone());
+    }
+
+    void Circlet_Silver_And_Moonstone_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_1());
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_2());
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_3());
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_4());
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_5());
+        results.push_back(Armor::Circlet_Silver_And_Moonstone_Magicka_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire()           { DEFINE_CREATE(Circlet_Silver_And_Sapphire); }
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire_Standard()  { DEFINE_CREATE(Circlet_Silver_And_Sapphire_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Silver_And_Sapphire_Enchanted() { DEFINE_CREATE(Circlet_Silver_And_Sapphire_Enchanted); }
+
+    void Circlet_Silver_And_Sapphire(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Silver_And_Sapphire_Standard(results);
+        Circlet_Silver_And_Sapphire_Enchanted(results);
+    }
+
+    void Circlet_Silver_And_Sapphire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Silver_And_Sapphire());
+    }
+
+    void Circlet_Silver_And_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_1());
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_2());
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_3());
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_4());
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_5());
+        results.push_back(Armor::Circlet_Silver_And_Sapphire_Alteration_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Circlet()                       { DEFINE_CREATE(Circlet); }
+    Vector_t<some<Armor_t*>>    Circlet_Unweighted()            { DEFINE_CREATE(Circlet_Unweighted); }
+    Vector_t<some<Armor_t*>>    Circlet_Standard()              { DEFINE_CREATE(Circlet_Standard); }
+    Vector_t<some<Armor_t*>>    Circlet_Standard_Unweighted()   { DEFINE_CREATE(Circlet_Standard_Unweighted); }
+    Vector_t<some<Armor_t*>>    Circlet_Enhanced()              { DEFINE_CREATE(Circlet_Enhanced); }
+    Vector_t<some<Armor_t*>>    Circlet_Enhanced_Unweighted()   { DEFINE_CREATE(Circlet_Enhanced_Unweighted); }
+
+    void Circlet(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Standard(results);
+        Circlet_Enhanced(results);
+    }
+
+    void Circlet_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Standard_Unweighted(results);
+        Circlet_Enhanced_Unweighted(results);
+    }
+
+    void Circlet_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Moonstone_Standard(results);
+        Circlet_Copper_And_Onyx_Standard(results);
+        Circlet_Copper_And_Ruby_Standard(results);
+        Circlet_Copper_And_Sapphire_Standard(results);
+        Circlet_Gold_And_Emerald_Standard(results);
+        Circlet_Gold_And_Ruby_Standard(results);
+        Circlet_Jade_And_Emerald_Standard(results);
+        Circlet_Jade_And_Sapphire_Standard(results);
+        Circlet_Silver_And_Moonstone_Standard(results);
+        Circlet_Silver_And_Sapphire_Standard(results);
+    }
+
+    void Circlet_Standard_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Circlet_Copper_And_Moonstone_Standard().Random());
+        results.push_back(Circlet_Copper_And_Onyx_Standard().Random());
+        results.push_back(Circlet_Copper_And_Ruby_Standard().Random());
+        results.push_back(Circlet_Copper_And_Sapphire_Standard().Random());
+        results.push_back(Circlet_Gold_And_Emerald_Standard().Random());
+        results.push_back(Circlet_Gold_And_Ruby_Standard().Random());
+        results.push_back(Circlet_Jade_And_Emerald_Standard().Random());
+        results.push_back(Circlet_Jade_And_Sapphire_Standard().Random());
+        results.push_back(Circlet_Silver_And_Moonstone_Standard().Random());
+        results.push_back(Circlet_Silver_And_Sapphire_Standard().Random());
+    }
+
+    void Circlet_Enhanced(Vector_t<some<Armor_t*>>& results)
+    {
+        Circlet_Copper_And_Moonstone_Enchanted(results);
+        Circlet_Copper_And_Onyx_Enchanted(results);
+        Circlet_Copper_And_Ruby_Enchanted(results);
+        Circlet_Copper_And_Sapphire_Enchanted(results);
+        Circlet_Gold_And_Emerald_Enchanted(results);
+        Circlet_Gold_And_Ruby_Enchanted(results);
+        Circlet_Jade_And_Emerald_Enchanted(results);
+        Circlet_Silver_And_Moonstone_Enchanted(results);
+        Circlet_Silver_And_Sapphire_Enchanted(results);
+    }
+
+    void Circlet_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Circlet_Copper_And_Moonstone_Enchanted().Random());
+        results.push_back(Circlet_Copper_And_Onyx_Enchanted().Random());
+        results.push_back(Circlet_Copper_And_Ruby_Enchanted().Random());
+        results.push_back(Circlet_Copper_And_Sapphire_Enchanted().Random());
+        results.push_back(Circlet_Gold_And_Emerald_Enchanted().Random());
+        results.push_back(Circlet_Gold_And_Ruby_Enchanted().Random());
+        results.push_back(Circlet_Jade_And_Emerald_Enchanted().Random());
+        results.push_back(Circlet_Silver_And_Moonstone_Enchanted().Random());
+        results.push_back(Circlet_Silver_And_Sapphire_Enchanted().Random());
+    }
+
     Vector_t<some<Armor_t*>>    Clothes_Mage_Adept_Body_Enchanted()         { DEFINE_CREATE(Clothes_Mage_Adept_Body_Enchanted); }
     Vector_t<some<Armor_t*>>    Clothes_Mage_Adept_Head_Enchanted()         { DEFINE_CREATE(Clothes_Mage_Adept_Head_Enchanted); }
     Vector_t<some<Armor_t*>>    Clothes_Mage_Apprentice_Body_Enchanted()    { DEFINE_CREATE(Clothes_Mage_Apprentice_Body_Enchanted); }
@@ -6586,6 +7416,431 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         results.push_back(Armor::Clothes_Warlock_Hooded_Body_Restoration_4());
         results.push_back(Armor::Clothes_Warlock_Hooded_Body_Restoration_5());
         results.push_back(Armor::Clothes_Warlock_Hooded_Body_Restoration_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Bone_Hawk()            { DEFINE_CREATE(Ring_Bone_Hawk); }
+    Vector_t<some<Armor_t*>>    Ring_Bone_Hawk_Standard()   { DEFINE_CREATE(Ring_Bone_Hawk_Standard); }
+
+    void Ring_Bone_Hawk(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Bone_Hawk_Standard(results);
+    }
+
+    void Ring_Bone_Hawk_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Bone_Hawk());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Gold()             { DEFINE_CREATE(Ring_Gold); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Standard()    { DEFINE_CREATE(Ring_Gold_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Enchanted()   { DEFINE_CREATE(Ring_Gold_Enchanted); }
+
+    void Ring_Gold(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Gold_Standard(results);
+        Ring_Gold_Enchanted(results);
+    }
+
+    void Ring_Gold_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold());
+        results.push_back(Armor::Ring_Gold_Bond_Of_Matrimony());
+    }
+
+    void Ring_Gold_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Alchemy());
+        results.push_back(Armor::Ring_Gold_Health());
+        results.push_back(Armor::Ring_Gold_Pickpocket_1());
+        results.push_back(Armor::Ring_Gold_Pickpocket_2());
+        results.push_back(Armor::Ring_Gold_Pickpocket_3());
+        results.push_back(Armor::Ring_Gold_Pickpocket_4());
+        results.push_back(Armor::Ring_Gold_Pickpocket_5());
+        results.push_back(Armor::Ring_Gold_Pickpocket_6());
+        results.push_back(Armor::Ring_Gold_Stamina_1());
+        results.push_back(Armor::Ring_Gold_Stamina_2());
+        results.push_back(Armor::Ring_Gold_Stamina_3());
+        results.push_back(Armor::Ring_Gold_Stamina_4());
+        results.push_back(Armor::Ring_Gold_Stamina_5());
+        results.push_back(Armor::Ring_Gold_Stamina_6());
+        results.push_back(Armor::Ring_Gold_Stamina_Rate_1());
+        results.push_back(Armor::Ring_Gold_Stamina_Rate_2());
+        results.push_back(Armor::Ring_Gold_Stamina_Rate_3());
+        results.push_back(Armor::Ring_Gold_Stamina_Rate_4());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond()             { DEFINE_CREATE(Ring_Gold_Diamond); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond_Standard()    { DEFINE_CREATE(Ring_Gold_Diamond_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Diamond_Enchanted()   { DEFINE_CREATE(Ring_Gold_Diamond_Enchanted); }
+    
+    void Ring_Gold_Diamond(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Gold_Diamond_Standard(results);
+        Ring_Gold_Diamond_Enchanted(results);
+    }
+
+    void Ring_Gold_Diamond_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Diamond());
+        results.push_back(Armor::Ring_Gold_Diamond_Ahzidal_Arcana());
+    }
+
+    void Ring_Gold_Diamond_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Diamond_Health_1());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_2());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_3());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_4());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_5());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_6());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_Rate_1());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_Rate_2());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_Rate_3());
+        results.push_back(Armor::Ring_Gold_Diamond_Health_Rate_4());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_1());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_2());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_3());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_4());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_5());
+        results.push_back(Armor::Ring_Gold_Diamond_Restoration_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald()             { DEFINE_CREATE(Ring_Gold_Emerald); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald_Standard()    { DEFINE_CREATE(Ring_Gold_Emerald_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Emerald_Enchanted()   { DEFINE_CREATE(Ring_Gold_Emerald_Enchanted); }
+
+    void Ring_Gold_Emerald(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Gold_Emerald_Standard(results);
+        Ring_Gold_Emerald_Enchanted(results);
+    }
+
+    void Ring_Gold_Emerald_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Emerald());
+    }
+
+    void Ring_Gold_Emerald_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_1());
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_2());
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_3());
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_4());
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_5());
+        results.push_back(Armor::Ring_Gold_Emerald_Illusion_6());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_1());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_2());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_3());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_4());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_5());
+        results.push_back(Armor::Ring_Gold_Emerald_Smithing_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire()            { DEFINE_CREATE(Ring_Gold_Sapphire); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire_Standard()   { DEFINE_CREATE(Ring_Gold_Sapphire_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Gold_Sapphire_Enchanted()  { DEFINE_CREATE(Ring_Gold_Sapphire_Enchanted); }
+
+    void Ring_Gold_Sapphire(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Gold_Sapphire_Standard(results);
+        Ring_Gold_Sapphire_Enchanted(results);
+    }
+
+    void Ring_Gold_Sapphire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Sapphire());
+        results.push_back(Armor::Ring_Gold_Sapphire_Ahzidal_Necromancy());
+    }
+
+    void Ring_Gold_Sapphire_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_1());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_2());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_3());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_4());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_5());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_6());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_Rate_1());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_Rate_2());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_Rate_3());
+        results.push_back(Armor::Ring_Gold_Sapphire_Magicka_Rate_4());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_1());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_2());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_3());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_4());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_5());
+        results.push_back(Armor::Ring_Gold_Sapphire_Resist_Magic_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Hircine()          { DEFINE_CREATE(Ring_Hircine); }
+    Vector_t<some<Armor_t*>>    Ring_Hircine_Standard() { DEFINE_CREATE(Ring_Hircine_Standard); }
+
+    void Ring_Hircine(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Hircine_Standard(results);
+    }
+
+    void Ring_Hircine_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Hircine());
+        results.push_back(Armor::Ring_Hircine_Cursed());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Namira()           { DEFINE_CREATE(Ring_Namira); }
+    Vector_t<some<Armor_t*>>    Ring_Namira_Standard()  { DEFINE_CREATE(Ring_Namira_Standard); }
+
+    void Ring_Namira(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Namira_Standard(results);
+    }
+
+    void Ring_Namira_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Namira());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Silver()           { DEFINE_CREATE(Ring_Silver); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Standard()  { DEFINE_CREATE(Ring_Silver_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Enchanted() { DEFINE_CREATE(Ring_Silver_Enchanted); }
+
+    void Ring_Silver(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Silver_Standard(results);
+        Ring_Silver_Enchanted(results);
+    }
+
+    void Ring_Silver_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver());
+        results.push_back(Armor::Ring_Silver_Werewolf_Bloodlust());
+    }
+
+    void Ring_Silver_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Alchemy());
+        results.push_back(Armor::Ring_Silver_Block_1());
+        results.push_back(Armor::Ring_Silver_Block_2());
+        results.push_back(Armor::Ring_Silver_Block_3());
+        results.push_back(Armor::Ring_Silver_Block_4());
+        results.push_back(Armor::Ring_Silver_Block_5());
+        results.push_back(Armor::Ring_Silver_Block_6());
+        results.push_back(Armor::Ring_Silver_Lockpicking_1());
+        results.push_back(Armor::Ring_Silver_Lockpicking_2());
+        results.push_back(Armor::Ring_Silver_Lockpicking_3());
+        results.push_back(Armor::Ring_Silver_Lockpicking_4());
+        results.push_back(Armor::Ring_Silver_Lockpicking_5());
+        results.push_back(Armor::Ring_Silver_Lockpicking_6());
+        results.push_back(Armor::Ring_Silver_Smithing());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst()              { DEFINE_CREATE(Ring_Silver_Amethyst); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst_Standard()     { DEFINE_CREATE(Ring_Silver_Amethyst_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Amethyst_Enchanted()    { DEFINE_CREATE(Ring_Silver_Amethyst_Enchanted); }
+
+    void Ring_Silver_Amethyst(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Silver_Amethyst_Standard(results);
+        Ring_Silver_Amethyst_Enchanted(results);
+    }
+
+    void Ring_Silver_Amethyst_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Amethyst());
+        results.push_back(Armor::Ring_Silver_Amethyst_Nightweavers());
+        results.push_back(Armor::Ring_Silver_Amethyst_Werewolf_Instinct());
+    }
+
+    void Ring_Silver_Amethyst_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_1());
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_2());
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_3());
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_4());
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_5());
+        results.push_back(Armor::Ring_Silver_Amethyst_Conjuration_6());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_1());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_2());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_3());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_4());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_5());
+        results.push_back(Armor::Ring_Silver_Amethyst_Light_Armor_6());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_1());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_2());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_3());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_4());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_5());
+        results.push_back(Armor::Ring_Silver_Amethyst_One_Handed_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet()            { DEFINE_CREATE(Ring_Silver_Garnet); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet_Standard()   { DEFINE_CREATE(Ring_Silver_Garnet_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Garnet_Enchanted()  { DEFINE_CREATE(Ring_Silver_Garnet_Enchanted); }
+
+    void Ring_Silver_Garnet(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Silver_Garnet_Standard(results);
+        Ring_Silver_Garnet_Enchanted(results);
+    }
+
+    void Ring_Silver_Garnet_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Garnet());
+        results.push_back(Armor::Ring_Silver_Garnet_Neloth_Tracking());
+        results.push_back(Armor::Ring_Silver_Garnet_Werewolf_Moon());
+    }
+
+    void Ring_Silver_Garnet_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_1());
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_2());
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_3());
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_4());
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_5());
+        results.push_back(Armor::Ring_Silver_Garnet_Alteration_6());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_1());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_2());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_3());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_4());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_5());
+        results.push_back(Armor::Ring_Silver_Garnet_Heavy_Armor_6());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_1());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_2());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_3());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_4());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_5());
+        results.push_back(Armor::Ring_Silver_Garnet_Marksman_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby()              { DEFINE_CREATE(Ring_Silver_Ruby); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby_Standard()     { DEFINE_CREATE(Ring_Silver_Ruby_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Silver_Ruby_Enchanted()    { DEFINE_CREATE(Ring_Silver_Ruby_Enchanted); }
+
+    void Ring_Silver_Ruby(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Silver_Ruby_Standard(results);
+        Ring_Silver_Ruby_Enchanted(results);
+    }
+
+    void Ring_Silver_Ruby_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Ruby());
+        results.push_back(Armor::Ring_Silver_Ruby_Werewolf_Hunt());
+    }
+
+    void Ring_Silver_Ruby_Enchanted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_1());
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_2());
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_3());
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_4());
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_5());
+        results.push_back(Armor::Ring_Silver_Ruby_Destruction_6());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_1());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_2());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_3());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_4());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_5());
+        results.push_back(Armor::Ring_Silver_Ruby_Sneak_6());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_1());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_2());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_3());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_4());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_5());
+        results.push_back(Armor::Ring_Silver_Ruby_Two_Handed_6());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring_Vampire()          { DEFINE_CREATE(Ring_Vampire); }
+    Vector_t<some<Armor_t*>>    Ring_Vampire_Standard() { DEFINE_CREATE(Ring_Vampire_Standard); }
+
+    void Ring_Vampire(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Vampire_Standard(results);
+    }
+
+    void Ring_Vampire_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Armor::Ring_Vampire_Beast());
+        results.push_back(Armor::Ring_Vampire_Corpse_Curse());
+        results.push_back(Armor::Ring_Vampire_Draining_Claws());
+        results.push_back(Armor::Ring_Vampire_Erudite());
+        results.push_back(Armor::Ring_Vampire_Gargoyle());
+        results.push_back(Armor::Ring_Vampire_Reanimate_Corpse());
+        results.push_back(Armor::Ring_Vampire_Vampiric_Grip());
+    }
+
+    Vector_t<some<Armor_t*>>    Ring()                      { DEFINE_CREATE(Ring); }
+    Vector_t<some<Armor_t*>>    Ring_Unweighted()           { DEFINE_CREATE(Ring_Unweighted); }
+    Vector_t<some<Armor_t*>>    Ring_Standard()             { DEFINE_CREATE(Ring_Standard); }
+    Vector_t<some<Armor_t*>>    Ring_Standard_Unweighted()  { DEFINE_CREATE(Ring_Standard_Unweighted); }
+    Vector_t<some<Armor_t*>>    Ring_Enhanced()             { DEFINE_CREATE(Ring_Enhanced); }
+    Vector_t<some<Armor_t*>>    Ring_Enhanced_Unweighted()  { DEFINE_CREATE(Ring_Enhanced_Unweighted); }
+
+    void Ring(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Standard(results);
+        Ring_Enhanced(results);
+    }
+
+    void Ring_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Standard_Unweighted(results);
+        Ring_Enhanced_Unweighted(results);
+    }
+
+    void Ring_Standard(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Bone_Hawk_Standard(results);
+        Ring_Gold_Standard(results);
+        Ring_Gold_Diamond_Standard(results);
+        Ring_Gold_Emerald_Standard(results);
+        Ring_Gold_Sapphire_Standard(results);
+        Ring_Hircine_Standard(results);
+        Ring_Namira_Standard(results);
+        Ring_Silver_Standard(results);
+        Ring_Silver_Amethyst_Standard(results);
+        Ring_Silver_Garnet_Standard(results);
+        Ring_Silver_Ruby_Standard(results);
+        Ring_Vampire_Standard(results);
+    }
+
+    void Ring_Standard_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Ring_Bone_Hawk_Standard().Random());
+        results.push_back(Ring_Gold_Standard().Random());
+        results.push_back(Ring_Gold_Diamond_Standard().Random());
+        results.push_back(Ring_Gold_Emerald_Standard().Random());
+        results.push_back(Ring_Gold_Sapphire_Standard().Random());
+        results.push_back(Ring_Hircine_Standard().Random());
+        results.push_back(Ring_Namira_Standard().Random());
+        results.push_back(Ring_Silver_Standard().Random());
+        results.push_back(Ring_Silver_Amethyst_Standard().Random());
+        results.push_back(Ring_Silver_Garnet_Standard().Random());
+        results.push_back(Ring_Silver_Ruby_Standard().Random());
+        results.push_back(Ring_Vampire_Standard().Random());
+    }
+
+    void Ring_Enhanced(Vector_t<some<Armor_t*>>& results)
+    {
+        Ring_Gold_Enchanted(results);
+        Ring_Gold_Diamond_Enchanted(results);
+        Ring_Gold_Emerald_Enchanted(results);
+        Ring_Gold_Sapphire_Enchanted(results);
+        Ring_Silver_Enchanted(results);
+        Ring_Silver_Amethyst_Enchanted(results);
+        Ring_Silver_Garnet_Enchanted(results);
+        Ring_Silver_Ruby_Enchanted(results);
+    }
+
+    void Ring_Enhanced_Unweighted(Vector_t<some<Armor_t*>>& results)
+    {
+        results.push_back(Ring_Gold_Enchanted().Random());
+        results.push_back(Ring_Gold_Diamond_Enchanted().Random());
+        results.push_back(Ring_Gold_Emerald_Enchanted().Random());
+        results.push_back(Ring_Gold_Sapphire_Enchanted().Random());
+        results.push_back(Ring_Silver_Enchanted().Random());
+        results.push_back(Ring_Silver_Amethyst_Enchanted().Random());
+        results.push_back(Ring_Silver_Garnet_Enchanted().Random());
+        results.push_back(Ring_Silver_Ruby_Enchanted().Random());
     }
 
     /* Set */
@@ -6908,32 +8163,6 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         return result;
     }
 
-    Armor_Set_t Set_Armor_Bonemold_Guard()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Bonemold_Guard_Body();
-        result.feet = Armor::Armor_Bonemold_Feet();
-        result.hands = Armor::Armor_Bonemold_Hands();
-        result.head = Armor::Armor_Bonemold_Head();
-        result.forearm = Armor::Armor_Bonemold_Shield();
-
-        return result;
-    }
-
-    Armor_Set_t Set_Armor_Bonemold_Guard_Enchanted()
-    {
-        Armor_Set_t result;
-
-        result.body = Armor::Armor_Bonemold_Guard_Body();
-        result.feet = Armor_Bonemold_Feet_Enchanted().Random();
-        result.hands = Armor_Bonemold_Hands_Enchanted().Random();
-        result.head = Armor_Bonemold_Head_Enchanted().Random();
-        result.forearm = Armor_Bonemold_Shield_Enchanted().Random();
-
-        return result;
-    }
-
     Armor_Set_t Set_Armor_Bonemold_Pauldron()
     {
         Armor_Set_t result;
@@ -6952,6 +8181,32 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         Armor_Set_t result;
 
         result.body = Armor::Armor_Bonemold_Pauldron_Body();
+        result.feet = Armor_Bonemold_Feet_Enchanted().Random();
+        result.hands = Armor_Bonemold_Hands_Enchanted().Random();
+        result.head = Armor_Bonemold_Head_Enchanted().Random();
+        result.forearm = Armor_Bonemold_Shield_Enchanted().Random();
+
+        return result;
+    }
+
+    Armor_Set_t Set_Armor_Bonemold_Pauldron_Guard()
+    {
+        Armor_Set_t result;
+
+        result.body = Armor::Armor_Bonemold_Pauldron_Guard_Body();
+        result.feet = Armor::Armor_Bonemold_Feet();
+        result.hands = Armor::Armor_Bonemold_Hands();
+        result.head = Armor::Armor_Bonemold_Head();
+        result.forearm = Armor::Armor_Bonemold_Shield();
+
+        return result;
+    }
+
+    Armor_Set_t Set_Armor_Bonemold_Pauldron_Guard_Enchanted()
+    {
+        Armor_Set_t result;
+
+        result.body = Armor::Armor_Bonemold_Pauldron_Guard_Body();
         result.feet = Armor_Bonemold_Feet_Enchanted().Random();
         result.hands = Armor_Bonemold_Hands_Enchanted().Random();
         result.head = Armor_Bonemold_Head_Enchanted().Random();
@@ -10144,16 +11399,16 @@ namespace doticu_skylib { namespace Const { namespace Armors {
     void Sets_Armor_Bonemold_Standard(Vector_t<some<Set_f>>& results)
     {
         results.push_back(&Set_Armor_Bonemold);
-        results.push_back(&Set_Armor_Bonemold_Guard);
         results.push_back(&Set_Armor_Bonemold_Pauldron);
+        results.push_back(&Set_Armor_Bonemold_Pauldron_Guard);
         results.push_back(&Set_Armor_Bonemold_Pauldron_Improved);
     }
 
     void Sets_Armor_Bonemold_Enhanced(Vector_t<some<Set_f>>& results)
     {
         results.push_back(&Set_Armor_Bonemold_Enchanted);
-        results.push_back(&Set_Armor_Bonemold_Guard_Enchanted);
         results.push_back(&Set_Armor_Bonemold_Pauldron_Enchanted);
+        results.push_back(&Set_Armor_Bonemold_Pauldron_Guard_Enchanted);
     }
 
     Vector_t<some<Set_f>>   Sets_Armor_Chitin()             { DEFINE_CREATE_SETS(Sets_Armor_Chitin); }
