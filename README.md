@@ -14,12 +14,12 @@ A static library for SKSE plugins, designed to help you interact with the game e
 - You only need the following projects in the SKSE solution: common_vc14, skse64_common, and skse64. The SKSE solution is to remain separate from your own solution.
 - Add the Skylib project to your own plugin's solution.
 - In the Skylib project, use the included macro "skse" in the "doticu_skylib" property page to set the location of your SKSE solution.
-- For all projects, including SKSE's, Skylib's, and any of your own except your plugin's:
+- For all projects, including SKSE's, Skylib's, and any other except the plugin's direct project:
    - Set as a static library.
    - Set target platform to 8.1.
    - Set toolset to Visual Studio 2015 v140
    - Disable any post build events you don't want, especially on the skse64 project.
-- For you plugin's project, set the same target platform and toolset, but set it as a dynamic library instead of a static one.
+- For you plugin's project, set the same target platform and toolset, but set it to a dynamic library instead of a static one.
 - Interface directly with SKSE or alternatively, with the `SKSE_Plugin_t` in `skse_plugin.h`.
 - Build your solution.
 
