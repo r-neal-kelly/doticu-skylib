@@ -1,5 +1,7 @@
 # Skylib
-A static library for SKSE plugins, designed to help you interact with the game engine behind The Elder Scrolls V: Skyrim SE. Following in the footsteps of SKSE and CommonLibSSE, Skylib reveals native data structures and functions, and also provides new algorithms you can use to create more stable and efficient plugins.
+A static library for SKSE plugins, designed to help you interact with the game engine behind The Elder Scrolls V: Skyrim SE. Following in the footsteps of SKSE and CommonLibSSE, Skylib reveals native C++ data structures and functions, and additionaly provides new algorithms you can use to create more stable and efficient plugins.
+
+Skylib was created specifically to make dealing with the intricacies of the game engine more stable and reliable, and hopefully less mysterious too. An attempt has been made to introduce an intuitive API so that less time is spent puzzling and more time spent producing.
 
 ### Build Requirements
 - Windows 7/10
@@ -23,7 +25,10 @@ A static library for SKSE plugins, designed to help you interact with the game e
 - Interface directly with SKSE or alternatively, with the `SKSE_Plugin_t` in `skse_plugin.h`.
 - Build your solution.
 
+### Beta
+This library is currently in beta and is quite subject to change. This means that updating to a new version of Skylib may require you to make changes to your plugin's file in order to reflect any changes in Skylib.
+
 ### Thank You
-- [SKSE Team](http://skse.silverlock.org/) for your c++ library, which has decompiled large portions of the engine and made it possible to work with.
+- [SKSE Team](http://skse.silverlock.org/) for your C++ library, which has decompiled large portions of the engine and made it possible to work with.
 - Ryan-rsm-McKenzie of [CommonLibSSE](https://github.com/Ryan-rsm-McKenzie/CommonLibSSE) for decompiling even more parts of the SkyrimSE engine.
 - meh321 of [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444) for making it easy to read the executable's offsets.
