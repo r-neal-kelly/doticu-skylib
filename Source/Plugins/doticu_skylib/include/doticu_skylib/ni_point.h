@@ -16,6 +16,9 @@ namespace doticu_skylib {
         Float_t z; // 8
 
     public:
+        NI_Point_3_t();
+
+    public:
         void Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(NI_Point_3_t) == 0xC);

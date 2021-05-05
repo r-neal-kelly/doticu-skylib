@@ -10507,6 +10507,9 @@ namespace doticu_skylib { namespace Const { namespace Armors {
 
         result.body = Armor::Clothes_Fine_A_Blue_Body();
         result.feet = Armor::Clothes_Fine_A_Feet();
+        result.finger = Ring_Unweighted().Random();
+        result.forehead = Circlet_Unweighted().Random();
+        result.neck = Amulet_Unweighted().Random();
 
         return result;
     }
@@ -10517,6 +10520,9 @@ namespace doticu_skylib { namespace Const { namespace Armors {
 
         result.body = Armor::Clothes_Fine_A_Green_Body();
         result.feet = Armor::Clothes_Fine_A_Feet();
+        result.finger = Ring_Unweighted().Random();
+        result.forehead = Circlet_Unweighted().Random();
+        result.neck = Amulet_Unweighted().Random();
 
         return result;
     }

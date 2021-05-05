@@ -8,6 +8,11 @@
 
 namespace doticu_skylib {
 
+    NI_Point_3_t::NI_Point_3_t() :
+        x(0.0), y(0.0), z(0.0)
+    {
+    }
+
     void NI_Point_3_t::Log(std::string indent)
     {
         SKYLIB_LOG(indent + "NI_Point_3_t::Log");
