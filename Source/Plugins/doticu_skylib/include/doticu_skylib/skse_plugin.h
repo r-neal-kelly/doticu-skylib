@@ -45,13 +45,13 @@ namespace doticu_skylib {
 
     public:
         virtual         ~SKSE_Plugin_t();
-        virtual Bool_t  Query(some<const SKSEInterface*> skse, some<PluginInfo*> info);
-        virtual Bool_t  Load(some<const SKSEInterface*> skse);
-        virtual Bool_t  Register_Functions(some<Virtual::Machine_t*> machine);
-        virtual void    Process_SKSE_Event(some<SKSE_Message_t*> message);
+        virtual Bool_t  On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info);
+        virtual Bool_t  On_Load(some<const SKSEInterface*> skse);
+        virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine);
+        virtual void    On_Message(some<SKSE_Message_t*> message);
 
     private:
-        Bool_t Operate_On_Version(Version_t<u16> version, Operator_e method, Version_t<u16> target);
+        Bool_t Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target);
     };
 
     #define SKYLIB_EXPORT_SKSE_PLUGIN(_SKSE_PLUGIN)                                                     \
@@ -63,19 +63,19 @@ namespace doticu_skylib {
         doticu_skylib::Bool_t SKSEPlugin_Query(const SKSEInterface* skse, PluginInfo* info)             \
         {                                                                                               \
             SKYLIB_ASSERT(skse && info);                                                                \
-            return _SKSE_PLUGIN.Query(skse, info);                                                      \
+            return _SKSE_PLUGIN.On_Query(skse, info);                                                   \
         }                                                                                               \
                                                                                                         \
         doticu_skylib::Bool_t SKSEPlugin_Load(const SKSEInterface* skse)                                \
         {                                                                                               \
             SKYLIB_ASSERT(skse);                                                                        \
             return                                                                                      \
-                _SKSE_PLUGIN.Load(skse) &&                                                              \
+                _SKSE_PLUGIN.On_Load(skse) &&                                                           \
                 _SKSE_PLUGIN.papyrus->Register(                                                         \
                     [](doticu_skylib::SKSE_Registry_t* registry)->doticu_skylib::Bool_t                 \
                     {                                                                                   \
                         SKYLIB_ASSERT(registry);                                                        \
-                        return _SKSE_PLUGIN.Register_Functions(                                         \
+                        return _SKSE_PLUGIN.On_Register(                                                \
                             reinterpret_cast<doticu_skylib::Virtual::Machine_t*>(registry)              \
                         );                                                                              \
                     }                                                                                   \
@@ -86,7 +86,7 @@ namespace doticu_skylib {
                     [](doticu_skylib::SKSE_Message_t* message)->void                                    \
                     {                                                                                   \
                         if (message) {                                                                  \
-                            _SKSE_PLUGIN.Process_SKSE_Event(message);                                   \
+                            _SKSE_PLUGIN.On_Message(message);                                           \
                         }                                                                               \
                     }                                                                                   \
                 );                                                                                      \

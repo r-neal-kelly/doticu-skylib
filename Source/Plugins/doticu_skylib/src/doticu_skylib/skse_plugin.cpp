@@ -44,7 +44,7 @@ namespace doticu_skylib {
         this->plugin_handle = 0;
     }
 
-    Bool_t SKSE_Plugin_t::Query(some<const SKSEInterface*> skse, some<PluginInfo*> info)
+    Bool_t SKSE_Plugin_t::On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info)
     {
         info->infoVersion = PluginInfo::kInfoVersion;
         info->name = plugin_name();
@@ -52,22 +52,22 @@ namespace doticu_skylib {
 
         if (this->skyrim_version_target.Has_Value() &&
             this->skyrim_version_method != Operator_e::NONE &&
-            !Operate_On_Version(Version_t<u16>::From_MM_mm_ppp_b(skse->runtimeVersion),
-                                this->skyrim_version_method,
-                                this->skyrim_version_target.Value())) {
+            !Operate(Version_t<u16>::From_MM_mm_ppp_b(skse->runtimeVersion),
+                     this->skyrim_version_method,
+                     this->skyrim_version_target.Value())) {
             return false;
         } else if (this->skse_version_target.Has_Value() &&
                    this->skse_version_method != Operator_e::NONE &&
-                   !Operate_On_Version(Version_t<u16>::From_MM_mm_ppp_b(skse->skseVersion),
-                                       this->skse_version_method,
-                                       this->skse_version_target.Value())) {
+                   !Operate(Version_t<u16>::From_MM_mm_ppp_b(skse->skseVersion),
+                            this->skse_version_method,
+                            this->skse_version_target.Value())) {
             return false;
         } else {
             return true;
         }
     }
 
-    Bool_t SKSE_Plugin_t::Load(some<const SKSEInterface*> skse)
+    Bool_t SKSE_Plugin_t::On_Load(some<const SKSEInterface*> skse)
     {
         this->log.OpenRelative(
             CSIDL_MYDOCUMENTS,
@@ -84,17 +84,17 @@ namespace doticu_skylib {
         return true;
     }
 
-    Bool_t SKSE_Plugin_t::Register_Functions(some<Virtual::Machine_t*> machine)
+    Bool_t SKSE_Plugin_t::On_Register(some<Virtual::Machine_t*> machine)
     {
         return true;
     }
 
-    void SKSE_Plugin_t::Process_SKSE_Event(some<SKSE_Message_t*> message)
+    void SKSE_Plugin_t::On_Message(some<SKSE_Message_t*> message)
     {
         return;
     }
 
-    Bool_t SKSE_Plugin_t::Operate_On_Version(Version_t<u16> version, Operator_e method, Version_t<u16> target)
+    Bool_t SKSE_Plugin_t::Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target)
     {
         if (method == Operator_e::GREATER_THAN_OR_EQUAL_TO) {
             return version >= target;
