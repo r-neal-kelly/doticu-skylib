@@ -1,3 +1,6 @@
+### Skylib
+A static library for SKSE plugins, designed to help you interact with the game engine behind The Elder Scrolls V: Skyrim SE. Following in the footsteps of SKSE and CommonLibSSE, Skylib reveals native data structures and functions, and also provides new algorithms you can use to create more stable and efficient plugins.
+
 ### Build Requirements
 - Windows 7/10
 - Visual Studio
@@ -9,8 +12,9 @@
 
 ### Build Instructions
 - You only need the following projects in the SKSE solution: common_vc14, skse64_common, and skse64.
+- Add the Skylib project to your plugin's solution.
 - In your plugin's solution, use the included macro "skse" in the "doticu_skylib" property page of the Skylib project to set the location of your SKSE solution.
-- For all projects:
+- For all projects, including SKSE's and Skylib's:
    - Set as a static library.
    - Set target platform to 8.1.
    - Set toolset to Visual Studio 2015 v140
