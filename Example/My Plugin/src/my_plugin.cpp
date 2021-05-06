@@ -25,11 +25,14 @@ namespace doticu_skylib { namespace My_Plugin {
 
     Bool_t My_Plugin_t::On_Load(some<const SKSEInterface*> skse)
     {
-        SKSE_Plugin_t::On_Load(skse);
-
-        SKYLIB_LOG("My Plugin has now loaded and can begin interacting with its log and instantiating its data.");
-
-        return true;
+        if (SKSE_Plugin_t::On_Load(skse)) {
+            SKYLIB_LOG("My Plugin has now loaded and can begin interacting with its log and instantiating its data.");
+            // see Documents/My Games/Skyrim Special Edition/SKSE/My Plugin.log
+            return true;
+        } else {
+            SKYLIB_LOG("My Plugin has failed to load and will not receive any further events.");
+            return false;
+        }
     }
 
     Bool_t My_Plugin_t::On_Register(some<Virtual::Machine_t*> machine)
