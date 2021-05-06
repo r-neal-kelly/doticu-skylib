@@ -59,67 +59,14 @@ namespace doticu_skylib {
         return get_worldspace(self());
     }
 
-    template <typename Results_t>
-    class Loaded_Reference_Iterator_t :
-        public Iterator_i<Reference_t*>
-    {
-    public:
-    };
-
-    template <>
-    class Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> :
-        public Iterator_i<Reference_t*>
-    {
-    public:
-        Vector_t<some<Reference_t*>>& results;
-        Filter_i<some<Reference_t*>>* filter;
-        Loaded_Reference_Iterator_t(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter) :
-            results(results), filter(filter)
-        {
-        }
-        Iterator_e operator ()(Reference_t* reference)
-        {
-            if (reference && reference->Is_Valid() && !results.Has(reference)) {
-                if (!filter || (*filter)(reference)) {
-                    results.push_back(reference);
-                }
-            }
-
-            return Iterator_e::CONTINUE;
-        }
-    };
-
-    template <>
-    class Loaded_Reference_Iterator_t<some<Form_List_t*>> :
-        public Iterator_i<Reference_t*>
-    {
-    public:
-        some<Form_List_t*> results;
-        Filter_i<some<Reference_t*>>* filter;
-        Loaded_Reference_Iterator_t(some<Form_List_t*> results, Filter_i<some<Reference_t*>>* filter) :
-            results(results), filter(filter)
-        {
-        }
-        Iterator_e operator ()(Reference_t* reference)
-        {
-            if (reference && reference->Is_Valid()) {
-                if (!filter || (*filter)(reference)) {
-                    results->Add_Form(reference);
-                }
-            }
-
-            return Iterator_e::CONTINUE;
-        }
-    };
-
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_References()
+    Vector_t<some<Reference_t*>> Reference_t::All()
     {
         Vector_t<some<Reference_t*>> results;
-        Loaded_References(results);
+        All(results);
         return results;
     }
 
-    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results)
+    void Reference_t::All(Vector_t<some<Reference_t*>>& results)
     {
         class Iterator :
             public Iterator_i<some<Form_t*>>
@@ -143,18 +90,22 @@ namespace doticu_skylib {
                 return Iterator_e::CONTINUE;
             }
         };
+
+        results.reserve(2048);
+
         Iterator iterator(results);
+
         Game_t::Iterate_Forms(iterator);
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_References(Filter_i<some<Reference_t*>>& filter)
+    Vector_t<some<Reference_t*>> Reference_t::All(Filter_i<some<Reference_t*>>& filter)
     {
         Vector_t<some<Reference_t*>> results;
-        Loaded_References(results, filter);
+        All(results, filter);
         return results;
     }
 
-    void Reference_t::Loaded_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    void Reference_t::All(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
     {
         class Iterator :
             public Iterator_i<some<Form_t*>>
@@ -164,8 +115,7 @@ namespace doticu_skylib {
             Filter_i<some<Reference_t*>>& filter;
 
         public:
-            Iterator(Vector_t<some<Reference_t*>>& results,
-                     Filter_i<some<Reference_t*>>& filter) :
+            Iterator(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter) :
                 results(results), filter(filter)
             {
             }
@@ -174,66 +124,169 @@ namespace doticu_skylib {
             virtual Iterator_e operator ()(some<Form_t*> form) override
             {
                 maybe<Reference_t*> reference = form->As_Reference();
-                if (reference && reference->Is_Valid() && filter(reference())) {
+                if (reference && reference->Is_Valid() && this->filter(reference())) {
                     this->results.push_back(reference());
                 }
                 return Iterator_e::CONTINUE;
             }
         };
+
+        results.reserve(2048);
+
         Iterator iterator(results, filter);
+
         Game_t::Iterate_Forms(iterator);
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_References_Old(Filter_i<some<Reference_t*>>* filter)
+    Vector_t<some<Reference_t*>> Reference_t::Grid()
     {
         Vector_t<some<Reference_t*>> results;
-        Loaded_References_Old(results, filter);
+        Grid(results);
         return results;
     }
 
-    void Reference_t::Loaded_References_Old(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
+    void Reference_t::Grid(Vector_t<some<Reference_t*>>& results)
     {
-        Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> iterator(results, filter);
+        class Iterator :
+            public Iterator_i<some<Reference_t*>>
+        {
+        public:
+            Vector_t<some<Reference_t*>>& results;
 
-        results.reserve(2048);
-
-        Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
-        for (size_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
-            Cell_t* cell = loaded_cells[idx];
-            if (cell && cell->Is_Valid()) {
-                cell->References(iterator);
+        public:
+            Iterator(Vector_t<some<Reference_t*>>& results) :
+                results(results)
+            {
             }
-        }
-    }
 
-    Vector_t<some<Reference_t*>> Reference_t::Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter)
-    {
-        Vector_t<some<Reference_t*>> results;
-        Loaded_Grid_References(results, filter);
-        return results;
-    }
-
-    void Reference_t::Loaded_Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>* filter)
-    {
-        Loaded_Reference_Iterator_t<Vector_t<some<Reference_t*>>&> iterator(results, filter);
+        public:
+            virtual Iterator_e operator ()(some<Reference_t*> reference) override
+            {
+                if (reference->Is_Valid() && !this->results.Has(reference)) {
+                    this->results.push_back(reference);
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
 
         results.reserve(2048);
+
+        Iterator iterator(results);
 
         Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
-            cells_in_grid[idx]->References(iterator);
+            cells_in_grid[idx]->Iterate_References(iterator);
         }
     }
 
-    void Reference_t::Loaded_Grid_References(some<Form_List_t*> results, Filter_i<some<Reference_t*>>* filter)
+    void Reference_t::Grid(some<Form_List_t*> results)
     {
+        class Iterator :
+            public Iterator_i<some<Reference_t*>>
+        {
+        public:
+            some<Form_List_t*> results;
+
+        public:
+            Iterator(some<Form_List_t*> results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Reference_t*> reference) override
+            {
+                if (reference->Is_Valid() && !this->results->Has(reference)) {
+                    this->results->Add_Form(reference);
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
         SKYLIB_ASSERT_SOME(results);
 
-        Loaded_Reference_Iterator_t<some<Form_List_t*>> iterator(results, filter);
+        Iterator iterator(results);
 
         Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
-            cells_in_grid[idx]->References(iterator);
+            cells_in_grid[idx]->Iterate_References(iterator);
+        }
+    }
+
+    Vector_t<some<Reference_t*>> Reference_t::Grid(Filter_i<some<Reference_t*>>& filter)
+    {
+        Vector_t<some<Reference_t*>> results;
+        Grid(results, filter);
+        return results;
+    }
+
+    void Reference_t::Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Reference_t*>>
+        {
+        public:
+            Vector_t<some<Reference_t*>>& results;
+            Filter_i<some<Reference_t*>>& filter;
+
+        public:
+            Iterator(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Reference_t*> reference) override
+            {
+                if (reference->Is_Valid() && !this->results.Has(reference) && this->filter(reference)) {
+                    this->results.push_back(reference);
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results, filter);
+
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+            cells_in_grid[idx]->Iterate_References(iterator);
+        }
+    }
+
+    void Reference_t::Grid(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Reference_t*>>
+        {
+        public:
+            some<Form_List_t*>              results;
+            Filter_i<some<Reference_t*>>& filter;
+
+        public:
+            Iterator(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Reference_t*> reference) override
+            {
+                if (reference->Is_Valid() && !this->results->Has(reference) && this->filter(reference)) {
+                    this->results->Add_Form(reference);
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(results);
+
+        Iterator iterator(results, filter);
+
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
+            cells_in_grid[idx]->Iterate_References(iterator);
         }
     }
 

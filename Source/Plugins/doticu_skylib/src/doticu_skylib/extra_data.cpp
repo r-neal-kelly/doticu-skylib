@@ -34,7 +34,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Log_References");
         SKYLIB_LOG(indent + "{");
 
-        Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
 
@@ -136,7 +136,7 @@ namespace doticu_skylib {
         Vector_t<Extra_Type_e> found_types;
         found_types.reserve(256);
 
-        Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
             Log_Unique_V_Tables(indent, found_types, ref->x_list);
@@ -195,7 +195,7 @@ namespace doticu_skylib {
 
     void Extra_Data_t::Log_Text_Displays(std::string indent)
     {
-        Vector_t<some<Reference_t*>> refs = Reference_t::Loaded_References();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
             doticu_skylib::Log_Text_Displays(indent, ref->x_list);

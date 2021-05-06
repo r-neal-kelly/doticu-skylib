@@ -39,6 +39,9 @@ namespace doticu_skylib { namespace Virtual {
         static void Send_Animation_Event(some<Reference_t*> reference,
                                          String_t event_name,
                                          maybe<unique<doticu_skylib::Callback_i<>>> callback);
+
+        static void Trace(String_t note, Int_t severity, maybe<Virtual::Callback_i*> v_callback);               // Trace
+        static void Trace(String_t note, Int_t severity, maybe<unique<doticu_skylib::Callback_i<>>> callback);
     };
 
 }}

@@ -116,30 +116,30 @@ namespace doticu_skylib {
         virtual ~Cell_t();
 
     public:
-        u64                     spin_lock_1;        // 030
-        u64                     spin_lock_2;        // 038
-        Cell_Flags_e            cell_flags;         // 040
-        u16                     unk_042;            // 042
-        Cell_State_e            cell_state;         // 044
-        Bool_t                  unk_045;            // 045
-        Bool_t                  is_cell_detached;   // 046
-        u8                      pad_047;            // 047
-        Extra_List_t            x_list;             // 048
-        Cellterior_u            cellterior;         // 060
-        Land_t*                 land;               // 068
-        Float_t                 water_height;       // 070
-        void*                   nav_meshes;         // 078
-        Set_t<Reference_t*>     references;         // 080
-        Form_t*                 unk_0B0;            // 0B0
-        Array_t<Reference_t*>   unk_0B8;            // 0B8
-        Array_t<void*>          unk_0D0;            // 0D0
-        Array_t<void*>          unk_0E8;            // 0E8
-        Array_t<void*>          unk_100;            // 100
-        u64                     spin_lock_3;        // 118
-        Worldspace_t*           worldspace;         // 120
-        Attached_Cell_t*        attached_cell;      // 128
-        void*                   lighting_template;  // 130
-        u64                     unk_138;            // 138
+        u64                             spin_lock_1;        // 030
+        u64                             spin_lock_2;        // 038
+        Cell_Flags_e                    cell_flags;         // 040
+        u16                             unk_042;            // 042
+        Cell_State_e                    cell_state;         // 044
+        Bool_t                          unk_045;            // 045
+        Bool_t                          is_cell_detached;   // 046
+        u8                              pad_047;            // 047
+        Extra_List_t                    x_list;             // 048
+        Cellterior_u                    cellterior;         // 060
+        maybe<Land_t*>                  land;               // 068
+        Float_t                         water_height;       // 070
+        void*                           nav_meshes;         // 078
+        Set_t<maybe<Reference_t*>>      references;         // 080
+        maybe<Form_t*>                  unk_0B0;            // 0B0
+        Array_t<maybe<Reference_t*>>    unk_0B8;            // 0B8
+        Array_t<void*>                  unk_0D0;            // 0D0
+        Array_t<void*>                  unk_0E8;            // 0E8
+        Array_t<void*>                  unk_100;            // 100
+        u64                             spin_lock_3;        // 118
+        maybe<Worldspace_t*>            worldspace;         // 120
+        maybe<Attached_Cell_t*>         attached_cell;      // 128
+        void*                           lighting_template;  // 130
+        u64                             unk_138;            // 138
 
     public:
         Bool_t                          Is_Attached();
@@ -167,7 +167,7 @@ namespace doticu_skylib {
 
         String_t                        Any_Name();
 
-        void                            References(Iterator_i<Reference_t*>& iterator);
+        void                            Iterate_References(Iterator_i<some<Reference_t*>>& iterator);
     };
     STATIC_ASSERT(sizeof(Cell_t) == 0x140);
 

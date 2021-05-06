@@ -119,21 +119,19 @@ namespace doticu_skylib {
         };
 
     public:
-        static Vector_t<some<Reference_t*>> Loaded_References();
-        static void                         Loaded_References(Vector_t<some<Reference_t*>>& results);
-        static Vector_t<some<Reference_t*>> Loaded_References(Filter_i<some<Reference_t*>>& filter);
-        static void                         Loaded_References(Vector_t<some<Reference_t*>>& results,
-                                                              Filter_i<some<Reference_t*>>& filter);
+        static Vector_t<some<Reference_t*>> All();
+        static void                         All(Vector_t<some<Reference_t*>>& results);
 
-        static Vector_t<some<Reference_t*>> Loaded_References_Old(Filter_i<some<Reference_t*>>* filter = nullptr);
-        static void                         Loaded_References_Old(Vector_t<some<Reference_t*>>& results,
-                                                                  Filter_i<some<Reference_t*>>* filter = nullptr);
+        static Vector_t<some<Reference_t*>> All(Filter_i<some<Reference_t*>>& filter);
+        static void                         All(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
 
-        static Vector_t<some<Reference_t*>> Loaded_Grid_References(Filter_i<some<Reference_t*>>* filter = nullptr);
-        static void                         Loaded_Grid_References(Vector_t<some<Reference_t*>>& results,
-                                                                   Filter_i<some<Reference_t*>>* filter = nullptr);
-        static void                         Loaded_Grid_References(some<Form_List_t*> results,
-                                                                   Filter_i<some<Reference_t*>>* filter = nullptr);
+        static Vector_t<some<Reference_t*>> Grid();
+        static void                         Grid(Vector_t<some<Reference_t*>>& results);
+        static void                         Grid(some<Form_List_t*> results);
+
+        static Vector_t<some<Reference_t*>> Grid(Filter_i<some<Reference_t*>>& filter);
+        static void                         Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
+        static void                         Grid(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter);
 
         static maybe<Reference_t*>          Create(some<Form_t*> base,
                                                    u32 count,

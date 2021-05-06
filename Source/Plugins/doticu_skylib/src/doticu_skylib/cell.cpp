@@ -120,7 +120,7 @@ namespace doticu_skylib {
             if (player_cell->Is_Exterior()) {
                 Exterior_Cell_t* exterior_cell = player_cell->cellterior.exterior;
                 if (exterior_cell) {
-                    Worldspace_t* worldspace = player_cell->worldspace;
+                    maybe<Worldspace_t*> worldspace = player_cell->worldspace;
                     if (worldspace && worldspace->Is_Valid()) {
                         const s16_yx origin = static_cast<s16_yx>(exterior_cell->cell_xy);
                         const s16 begin_x = origin.x - grid_radius;
@@ -359,12 +359,12 @@ namespace doticu_skylib {
         }
     }
 
-    void Cell_t::References(Iterator_i<Reference_t*>& iterator)
+    void Cell_t::Iterate_References(Iterator_i<some<Reference_t*>>& iterator)
     {
-        for (size_t idx = 0, end = references.capacity; idx < end; idx += 1) {
-            Set_t<Reference_t*>::Entry_t& entry = references.entries[idx];
+        for (size_t idx = 0, end = this->references.capacity; idx < end; idx += 1) {
+            Set_t<maybe<Reference_t*>>::Entry_t& entry = this->references.entries[idx];
             if (entry.chain && entry.first) {
-                if (iterator(entry.first) == Iterator_e::BREAK) {
+                if (iterator(entry.first()) == Iterator_e::BREAK) {
                     return;
                 }
             }

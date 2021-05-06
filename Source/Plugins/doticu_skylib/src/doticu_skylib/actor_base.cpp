@@ -30,74 +30,72 @@ namespace doticu_skylib {
         return Game_t::Self()->Actor_Bases().Count();
     }
 
-    Vector_t<Actor_Base_t*> Actor_Base_t::Actor_Bases()
+    Vector_t<some<Actor_Base_t*>> Actor_Base_t::Actor_Bases()
     {
-        Vector_t<Actor_Base_t*> results;
-        results.reserve(Actor_Base_Count());
+        Vector_t<some<Actor_Base_t*>> results;
         Actor_Bases(results);
         return results;
     }
 
-    void Actor_Base_t::Actor_Bases(Vector_t<Actor_Base_t*>& results)
+    void Actor_Base_t::Actor_Bases(Vector_t<some<Actor_Base_t*>>& results)
     {
         auto& actor_bases = Game_t::Self()->Actor_Bases();
+        results.reserve(actor_bases.Count());
         for (size_t idx = 0, end = actor_bases.Count(); idx < end; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
+            maybe<Actor_Base_t*> actor_base = actor_bases[idx];
             if (actor_base) {
-                results.push_back(actor_base);
+                results.push_back(actor_base());
             }
         }
     }
 
-    Vector_t<Actor_Base_t*> Actor_Base_t::Dynamic_Actor_Bases()
+    Vector_t<some<Actor_Base_t*>> Actor_Base_t::Dynamic_Actor_Bases()
     {
-        Vector_t<Actor_Base_t*> results;
-        results.reserve(64);
+        Vector_t<some<Actor_Base_t*>> results;
         Dynamic_Actor_Bases(results);
         return results;
     }
 
-    void Actor_Base_t::Dynamic_Actor_Bases(Vector_t<Actor_Base_t*>& results)
+    void Actor_Base_t::Dynamic_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results)
     {
-        Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
-        for (size_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
-            Cell_t* cell = loaded_cells[idx];
-            class Iterator_t :
-                public Iterator_i<Reference_t*>
-            {
-            public:
-                Vector_t<Actor_Base_t*>& results;
-                Cell_t* cell;
-                Iterator_t(Vector_t<Actor_Base_t*>& results, Cell_t* cell) :
-                    results(results), cell(cell)
-                {
-                }
-                Iterator_e operator ()(Reference_t* reference)
-                {
-                    if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
-                        maybe<Actor_Base_t*> actor_base = static_cast<maybe<Actor_Base_t*>>(reference->base_form);
-                        if (actor_base && actor_base->Is_Valid() && actor_base->Is_Dynamic()) {
-                            if (!results.Has(actor_base())) {
-                                results.push_back(actor_base());
-                            }
-                        }
-                    }
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Actor_Base_t*>>& results;
 
-                    return Iterator_e::CONTINUE;
+        public:
+            Iterator(Vector_t<some<Actor_Base_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Actor_Base_t*> actor_base = form->As_Actor_Base();
+                if (actor_base && actor_base->Is_Valid() && actor_base->Is_Dynamic() && !this->results.Has(actor_base())) {
+                    this->results.push_back(actor_base());
                 }
-            } iterator(results, cell);
-            cell->References(iterator);
-        }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(64);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
     }
 
     void Actor_Base_t::Log_Actor_Bases()
     {
         #define TAB "    "
 
-        Vector_t<Actor_Base_t*> actor_bases = Actor_Bases();
+        Vector_t<some<Actor_Base_t*>> actor_bases = Actor_Bases();
         SKYLIB_LOG("Log_Actor_Bases {");
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
+            some<Actor_Base_t*> actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
         }
         SKYLIB_LOG("}");
@@ -109,10 +107,10 @@ namespace doticu_skylib {
     {
         #define TAB "    "
 
-        Vector_t<Actor_Base_t*> actor_bases = Dynamic_Actor_Bases();
+        Vector_t<some<Actor_Base_t*>> actor_bases = Dynamic_Actor_Bases();
         SKYLIB_LOG("Log_Dynamic_Actor_Bases {");
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
-            Actor_Base_t* actor_base = actor_bases[idx];
+            some<Actor_Base_t*> actor_base = actor_bases[idx];
             SKYLIB_LOG(TAB "index: %6zu, actor_base: %8.8X %s", idx, actor_base->form_id, actor_base->Any_Name());
             SKYLIB_ASSERT(actor_base->face_template);
             for (maybe<Actor_Base_t*> it = actor_base->face_template; it; it = it->face_template) {

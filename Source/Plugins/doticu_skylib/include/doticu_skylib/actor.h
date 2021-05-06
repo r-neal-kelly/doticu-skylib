@@ -108,13 +108,15 @@ namespace doticu_skylib {
         };
 
     public:
-        static Vector_t<Actor_t*>   Loaded_Actors();
-        static void                 Loaded_Actors(Vector_t<Actor_t*>& results);
-        static void                 Log_Loaded_Actors();
+        static Vector_t<some<Actor_t*>> All();
+        static void                     All(Vector_t<some<Actor_t*>>& results);
 
-        static maybe<Actor_t*>      Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify);
-        static maybe<Actor_t*>      Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
-        static maybe<Actor_t*>      Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
+        static Vector_t<some<Actor_t*>> All(Filter_i<some<Actor_t*>>& filter);
+        static void                     All(Vector_t<some<Actor_t*>>& results, Filter_i<some<Actor_t*>>& filter);
+
+        static maybe<Actor_t*>          Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify);
+        static maybe<Actor_t*>          Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
+        static maybe<Actor_t*>          Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
 
     public:
         virtual         ~Actor_t();                                                                                     // 000

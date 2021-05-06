@@ -198,4 +198,65 @@ namespace doticu_skylib { namespace Virtual {
         Send_Animation_Event(reference, event_name, new Virtual_Callback(std::move(callback)));
     }
 
+    void Debug_t::Trace(String_t note, Int_t severity, maybe<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            String_t    note;
+            Int_t       severity;
+
+        public:
+            Virtual_Arguments(String_t note, Int_t severity) :
+                note(note), severity(severity)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(2);
+                args->At(0).As<String_t>(this->note);
+                args->At(1).As<Int_t>(this->severity);
+                return true;
+            }
+        };
+
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
+            "Trace",
+            Virtual_Arguments(note, severity),
+            v_callback
+        );
+    }
+
+    void Debug_t::Trace(String_t note, Int_t severity, maybe<unique<doticu_skylib::Callback_i<>>> callback)
+    {
+        using Callback = maybe<unique<doticu_skylib::Callback_i<>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t*) override
+            {
+                if (this->callback) {
+                    (*this->callback)();
+                }
+            }
+        };
+
+        Trace(note, severity, new Virtual_Callback(std::move(callback)));
+    }
+
 }}

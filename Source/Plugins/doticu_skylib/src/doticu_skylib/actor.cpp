@@ -51,43 +51,83 @@
 
 namespace doticu_skylib {
 
-    Vector_t<Actor_t*> Actor_t::Loaded_Actors()
+    Vector_t<some<Actor_t*>> Actor_t::All()
     {
-        Vector_t<Actor_t*> loaded_actors;
-        Loaded_Actors(loaded_actors);
-        return loaded_actors;
+        Vector_t<some<Actor_t*>> results;
+        All(results);
+        return results;
     }
 
-    void Actor_t::Loaded_Actors(Vector_t<Actor_t*>& results)
+    void Actor_t::All(Vector_t<some<Actor_t*>>& results)
     {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Actor_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Actor_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Actor_t*> actor = form->As_Actor();
+                if (actor && actor->Is_Valid()) {
+                    this->results.push_back(actor());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
         results.reserve(2048);
 
-        Vector_t<Cell_t*> loaded_cells = Cell_t::Loaded_Cells();
-        for (size_t idx = 0, end = loaded_cells.size(); idx < end; idx += 1) {
-            Cell_t* cell = loaded_cells[idx];
-            class Iterator_t :
-                public Iterator_i<Reference_t*>
-            {
-            public:
-                Vector_t<Actor_t*>& results;
-                Iterator_t(Vector_t<Actor_t*>& results) :
-                    results(results)
-                {
-                }
-                Iterator_e operator ()(Reference_t* reference)
-                {
-                    if (reference && reference->Is_Valid() && reference->form_type == Form_Type_e::ACTOR) {
-                        Actor_t* actor = static_cast<Actor_t*>(reference);
-                        if (!results.Has(actor)) {
-                            results.push_back(actor);
-                        }
-                    }
+        Iterator iterator(results);
 
-                    return Iterator_e::CONTINUE;
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Actor_t*>> Actor_t::All(Filter_i<some<Actor_t*>>& filter)
+    {
+        Vector_t<some<Actor_t*>> results;
+        All(results, filter);
+        return results;
+    }
+
+    void Actor_t::All(Vector_t<some<Actor_t*>>& results, Filter_i<some<Actor_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Actor_t*>>& results;
+            Filter_i<some<Actor_t*>>& filter;
+
+        public:
+            Iterator(Vector_t<some<Actor_t*>>& results, Filter_i<some<Actor_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Actor_t*> actor = form->As_Actor();
+                if (actor && actor->Is_Valid() && this->filter(actor())) {
+                    this->results.push_back(actor());
                 }
-            } iterator(results);
-            cell->References(iterator);
-        }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results, filter);
+
+        Game_t::Iterate_Forms(iterator);
     }
 
     maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify)

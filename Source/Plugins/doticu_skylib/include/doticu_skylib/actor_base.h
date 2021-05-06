@@ -121,20 +121,20 @@ namespace doticu_skylib {
         };
 
     public:
-        static size_t                   Actor_Base_Count();
-        static Vector_t<Actor_Base_t*>  Actor_Bases();
-        static void                     Actor_Bases(Vector_t<Actor_Base_t*>& results);
-        static Vector_t<Actor_Base_t*>  Dynamic_Actor_Bases();
-        static void                     Dynamic_Actor_Bases(Vector_t<Actor_Base_t*>& results);
-        static void                     Log_Actor_Bases();
-        static void                     Log_Dynamic_Actor_Bases();
+        static size_t                           Actor_Base_Count();
+        static Vector_t<some<Actor_Base_t*>>    Actor_Bases();
+        static void                             Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
+        static Vector_t<some<Actor_Base_t*>>    Dynamic_Actor_Bases();
+        static void                             Dynamic_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
+        static void                             Log_Actor_Bases();
+        static void                             Log_Dynamic_Actor_Bases();
 
-        static void                     Stream_Actor_Bases(Vector_t<some<Actor_Base_t*>>& actor_bases, std::fstream& fstream);
+        static void                             Stream_Actor_Bases(Vector_t<some<Actor_Base_t*>>& actor_bases, std::fstream& fstream);
 
-        static Int_t                    Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
+        static Int_t                            Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
 
-        static some<Actor_Base_t*>      Create_Temporary_Copy(some<Actor_Base_t*> source);
-        static void                     Destroy(some<Actor_Base_t*> actor_base);
+        static some<Actor_Base_t*>              Create_Temporary_Copy(some<Actor_Base_t*> source);
+        static void                             Destroy(some<Actor_Base_t*> actor_base);
 
     public:
         virtual                 ~Actor_Base_t();                                // 00
