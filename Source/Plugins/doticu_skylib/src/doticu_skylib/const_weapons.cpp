@@ -3342,6 +3342,38 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
         Warhammer(results);
     }
 
+    Vector_t<some<Weapon_t*>> One_Handed()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        One_Handed(results);
+        return results;
+    }
+
+    void One_Handed(Vector_t<some<Weapon_t*>>& results)
+    {
+        Dagger(results);
+        Mace(results);
+        Staff(results);
+        Sword(results);
+        Waraxe(results);
+    }
+
+    Vector_t<some<Weapon_t*>> Two_Handed()
+    {
+        Vector_t<some<Weapon_t*>> results;
+        Two_Handed(results);
+        return results;
+    }
+
+    void Two_Handed(Vector_t<some<Weapon_t*>>& results)
+    {
+        Battleaxe(results);
+        Bow(results);
+        Crossbow(results);
+        Greatsword(results);
+        Warhammer(results);
+    }
+
     Vector_t<some<Weapon_t*>> Battleaxe()
     {
         Vector_t<some<Weapon_t*>> results;

@@ -3330,6 +3330,11 @@ namespace doticu_skylib { namespace Const { namespace Weapons {
     Vector_t<some<Weapon_t*>>   All();
     void                        All(Vector_t<some<Weapon_t*>>& results);
 
+    Vector_t<some<Weapon_t*>>   One_Handed();
+    void                        One_Handed(Vector_t<some<Weapon_t*>>& results);
+    Vector_t<some<Weapon_t*>>   Two_Handed();
+    void                        Two_Handed(Vector_t<some<Weapon_t*>>& results);
+
     Vector_t<some<Weapon_t*>>   Battleaxe();
     void                        Battleaxe(Vector_t<some<Weapon_t*>>& results);
     Vector_t<some<Weapon_t*>>   Battleaxe_Ancient_Nordic();
