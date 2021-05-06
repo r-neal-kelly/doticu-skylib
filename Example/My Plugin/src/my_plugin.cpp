@@ -2,9 +2,9 @@
     my_plugin.cpp
 */
 
-#include "doticu_skylib/actor.h"
-#include "doticu_skylib/const_actors.h"
-#include "doticu_skylib/version.h"
+#include "doticu_skylib/actor.h"        // for Actor_t::Log_Name_And_Type;
+#include "doticu_skylib/const_actors.h" // for Const::Actor::PLayer;
+#include "doticu_skylib/version.h"      // for Version_t<u16>;
 
 #include "my_plugin.h"
 
@@ -27,40 +27,62 @@ namespace doticu_skylib { namespace My_Plugin {
     {
         SKSE_Plugin_t::On_Load(skse);
 
-        SKYLIB_LOG("My Plugin has now loaded and can begin interacting with its log and instantiating any of its data.");
+        SKYLIB_LOG("My Plugin has now loaded and can begin interacting with its log and instantiating its data.");
 
         return true;
     }
 
     Bool_t My_Plugin_t::On_Register(some<Virtual::Machine_t*> machine)
     {
-        // Register_Papyrus_Functions_And_Methods(machine);
-        // see doticu_skylib/virtual_macros.h
-
-        SKYLIB_LOG("My Plugin has registered all Papyrus functions.");
-
-        return true;
+        return Register_Functions();
     }
 
     void My_Plugin_t::On_Message(some<SKSE_Message_t*> message)
     {
         if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
-            // Before_Save();
-            SKYLIB_LOG("My Plugin can now store any data in the save-game file and it will persist.");
+            Before_Save();
         } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
-            // Before_Load();
-            SKYLIB_LOG("My Plugin can now unload any of its data relating to the current save-game instance.");
+            Before_Load();
         } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame && message->data) {
-            // After_Load();
-            SKYLIB_LOG("My Plugin can now load any of its data relating to the current save-game instance.");
+            After_Load();
         } else if (message->type == SKSEMessagingInterface::kMessage_NewGame) {
-            // New_Game();
-            SKYLIB_LOG("My Plugin can now start as a new game, and should unload any of its existing data.");
+            New_Game();
         } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
-            // Access_Forms_And_Other_Data();
-            SKYLIB_LOG("My Plugin can now access forms like:");
-            Const::Actor::Player()->Log_Name_And_Type(SKYLIB_TAB);
+            Access_Data();
         }
+    }
+
+    Bool_t My_Plugin_t::Register_Functions()
+    {
+        SKYLIB_LOG("My Plugin can now register its Papyrus functions."); // see doticu_skylib/virtual_macros.h
+
+        return true;
+    }
+
+    void My_Plugin_t::Access_Data()
+    {
+        SKYLIB_LOG("My Plugin can now access forms like:");
+        Const::Actor::Player()->Log_Name_And_Type(SKYLIB_TAB);
+    }
+
+    void My_Plugin_t::New_Game()
+    {
+        SKYLIB_LOG("My Plugin can now start as a new game, and should unload its existing data.");
+    }
+
+    void My_Plugin_t::Before_Save()
+    {
+        SKYLIB_LOG("My Plugin can now store data in the save-game file and it will persist.");
+    }
+
+    void My_Plugin_t::Before_Load()
+    {
+        SKYLIB_LOG("My Plugin can now unload its data relating to the current save-game instance.");
+    }
+
+    void My_Plugin_t::After_Load()
+    {
+        SKYLIB_LOG("My Plugin can now load its data relating to the current save-game instance.");
     }
 
     extern My_Plugin_t my_plugin;
