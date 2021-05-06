@@ -1,0 +1,9 @@
+/.vs
+/.VsCodeCounter
+/Example/.vs
+/Example/My Plugin/x64/
+/Example/x64/
+/Source/Plugins/doticu_skylib/x64
+
+/Example/My Plugin/My Plugin.dll
+meta.ini

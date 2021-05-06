@@ -47,8 +47,8 @@ namespace doticu_skylib {
         virtual         ~SKSE_Plugin_t();
         virtual Bool_t  On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info);
         virtual Bool_t  On_Load(some<const SKSEInterface*> skse);
-        virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine);
-        virtual void    On_Message(some<SKSE_Message_t*> message);
+        virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine)                      = 0;
+        virtual void    On_Message(some<SKSE_Message_t*> message)                           = 0;
 
     private:
         Bool_t Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target);

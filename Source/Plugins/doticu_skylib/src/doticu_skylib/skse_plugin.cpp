@@ -84,16 +84,6 @@ namespace doticu_skylib {
         return true;
     }
 
-    Bool_t SKSE_Plugin_t::On_Register(some<Virtual::Machine_t*> machine)
-    {
-        return true;
-    }
-
-    void SKSE_Plugin_t::On_Message(some<SKSE_Message_t*> message)
-    {
-        return;
-    }
-
     Bool_t SKSE_Plugin_t::Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target)
     {
         if (method == Operator_e::GREATER_THAN_OR_EQUAL_TO) {
