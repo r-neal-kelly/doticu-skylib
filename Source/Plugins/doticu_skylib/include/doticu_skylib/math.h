@@ -70,6 +70,11 @@ namespace doticu_skylib {
             return std::uniform_int_distribution<T>(min, max)(Math_t::random_generator);
         }
 
+        static Bool_t Random_Bool()
+        {
+            return Random_Bool(50);
+        }
+
         static Bool_t Random_Bool(u8 probability_percent)
         {
             if (probability_percent == 0) {
