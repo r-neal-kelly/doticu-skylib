@@ -29,6 +29,6 @@ namespace doticu_skylib { namespace My_Plugin {
         void    After_Load();
     };
 
-    extern My_Plugin_t my_plugin = My_Plugin_t();
+    extern My_Plugin_t my_plugin;
 
 }}

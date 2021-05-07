@@ -88,7 +88,7 @@ namespace doticu_skylib { namespace My_Plugin {
         SKYLIB_LOG("My Plugin can now load its data relating to the current save-game instance.");
     }
 
-    extern My_Plugin_t my_plugin;
+    extern My_Plugin_t my_plugin = My_Plugin_t();
 
 }}
 
