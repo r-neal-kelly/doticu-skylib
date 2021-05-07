@@ -83,7 +83,7 @@ namespace doticu_skylib {
                 }
 
                 maybe<Actor_t*> actor = this->reference->As_Actor();
-                if (actor && !actor->Is_In_Combat()) {
+                if (actor) {
                     actor->Update_Equipment(none<unique<Callback_i<>>>());
                 }
             }
