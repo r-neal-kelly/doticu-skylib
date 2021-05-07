@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/collections.h"
 #include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
