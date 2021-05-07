@@ -10476,7 +10476,6 @@ namespace doticu_skylib { namespace Const { namespace Armors {
         result.body = Armor::Clothes_Farm_C_Dark_Body();
         result.feet = Armor::Clothes_Farm_C_Feet();
         result.hands = Armor::Clothes_Farm_C_Hands();
-        result.head = Armor::Clothes_Farm_C_Head();
 
         return result;
     }
