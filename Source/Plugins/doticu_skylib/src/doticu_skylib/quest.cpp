@@ -283,6 +283,41 @@ namespace doticu_skylib {
         return ID_To_Alias_Base(id) != none<Alias_Base_t*>();
     }
 
+    Vector_t<some<Alias_Base_t*>> Quest_t::Alias_Bases()
+    {
+        Vector_t<some<Alias_Base_t*>> results;
+        Alias_Bases(results);
+        return results;
+    }
+
+    void Quest_t::Alias_Bases(Vector_t<some<Alias_Base_t*>>& results)
+    {
+        for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
+            if (this->aliases[idx]) {
+                results.push_back(this->aliases[idx]());
+            }
+        }
+    }
+
+    Vector_t<some<Alias_Reference_t*>> Quest_t::Alias_References()
+    {
+        Vector_t<some<Alias_Reference_t*>> results;
+        Alias_References(results);
+        return results;
+    }
+
+    void Quest_t::Alias_References(Vector_t<some<Alias_Reference_t*>>& results)
+    {
+        for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
+            if (this->aliases[idx]) {
+                maybe<Alias_Reference_t*> alias_reference = this->aliases[idx]->As_Alias_Reference();
+                if (alias_reference) {
+                    results.push_back(alias_reference());
+                }
+            }
+        }
+    }
+
     void Quest_t::Start(maybe<Virtual::Callback_i*> v_callback)
     {
         Virtual::Machine_t::Ready_Scriptable<Quest_t*>(this);
@@ -434,6 +469,11 @@ namespace doticu_skylib {
         };
 
         Do_Display_Objective(objective, do_display, do_force, new Virtual_Callback(std::move(callback)));
+    }
+
+    void Quest_t::Unfill_Aliases(maybe<unique<Callback_i<>>> callback)
+    {
+        Alias_Reference_t::Unfill(Alias_References(), std::move(callback));
     }
 
     void Quest_t::Log_Objectives(std::string indent)

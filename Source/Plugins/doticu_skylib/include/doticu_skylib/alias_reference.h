@@ -52,7 +52,7 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Fill_u) == 0x18);
 
     public:
-        static void Unfill(Vector_t<some<Alias_Reference_t*>> aliases, maybe<unique<Callback_i<>>> callback);
+        static void Unfill(Vector_t<some<Alias_Reference_t*>>&& aliases, maybe<unique<Callback_i<>>> callback);
 
     public:
         virtual             ~Alias_Reference_t();       // 0

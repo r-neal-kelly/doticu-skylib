@@ -119,29 +119,36 @@ namespace doticu_skylib {
 
         String_t Any_Name();
 
-        maybe<Alias_Base_t*>        Index_To_Alias_Base(size_t index);
-        maybe<Alias_Base_t*>        ID_To_Alias_Base(Alias_ID_t id);
-        maybe<Alias_Reference_t*>   Index_To_Alias_Reference(size_t index);
-        maybe<Alias_Reference_t*>   ID_To_Alias_Reference(Alias_ID_t id);
+        maybe<Alias_Base_t*>                Index_To_Alias_Base(size_t index);
+        maybe<Alias_Base_t*>                ID_To_Alias_Base(Alias_ID_t id);
+        maybe<Alias_Reference_t*>           Index_To_Alias_Reference(size_t index);
+        maybe<Alias_Reference_t*>           ID_To_Alias_Reference(Alias_ID_t id);
 
-        Bool_t                      Has_Alias_Index(size_t index);
-        Bool_t                      Has_Alias_ID(Alias_ID_t id);
+        Bool_t                              Has_Alias_Index(size_t index);
+        Bool_t                              Has_Alias_ID(Alias_ID_t id);
+
+        Vector_t<some<Alias_Base_t*>>       Alias_Bases();
+        void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);
+        Vector_t<some<Alias_Reference_t*>>  Alias_References();
+        void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
 
     public:
-        void Start(maybe<Virtual::Callback_i*> v_callback);                 // Start
-        void Start(maybe<unique<Callback_i<Bool_t>>> callback);
+        void    Start(maybe<Virtual::Callback_i*> v_callback);                  // Start
+        void    Start(maybe<unique<Callback_i<Bool_t>>> callback);
 
-        void Is_Running(some<Virtual::Callback_i*> v_callback);             // IsRunning
-        void Is_Running(some<unique<Callback_i<Bool_t>>> callback);
+        void    Is_Running(some<Virtual::Callback_i*> v_callback);              // IsRunning
+        void    Is_Running(some<unique<Callback_i<Bool_t>>> callback);
 
-        void Do_Display_Objective(Int_t objective,
-                                  Bool_t do_display,
-                                  Bool_t do_force,
-                                  maybe<Virtual::Callback_i*> v_callback);  // SetObjectiveDisplayed
-        void Do_Display_Objective(Int_t objective,
-                                  Bool_t do_display,
-                                  Bool_t do_force,
-                                  maybe<unique<Callback_i<>>> callback);
+        void    Do_Display_Objective(Int_t objective,
+                                     Bool_t do_display,
+                                     Bool_t do_force,
+                                     maybe<Virtual::Callback_i*> v_callback);   // SetObjectiveDisplayed
+        void    Do_Display_Objective(Int_t objective,
+                                     Bool_t do_display,
+                                     Bool_t do_force,
+                                     maybe<unique<Callback_i<>>> callback);
+
+        void    Unfill_Aliases(maybe<unique<Callback_i<>>> callback);
 
     public:
         void Log_Objectives(std::string indent = "");

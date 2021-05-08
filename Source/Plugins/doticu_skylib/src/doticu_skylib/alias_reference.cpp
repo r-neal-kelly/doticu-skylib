@@ -14,7 +14,7 @@
 
 namespace doticu_skylib {
 
-    void Alias_Reference_t::Unfill(Vector_t<some<Alias_Reference_t*>> aliases, maybe<unique<Callback_i<>>> callback)
+    void Alias_Reference_t::Unfill(Vector_t<some<Alias_Reference_t*>>&& aliases, maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;
 
@@ -28,7 +28,7 @@ namespace doticu_skylib {
             Callback                                    callback;
 
         public:
-            Virtual_Callback(const Vector_t<some<Alias_Reference_t*>> aliases,
+            Virtual_Callback(const Vector_t<some<Alias_Reference_t*>>&& aliases,
                              const size_t idx,
                              const size_t end,
                              Callback callback) :
@@ -43,6 +43,7 @@ namespace doticu_skylib {
             virtual void operator ()(Virtual::Variable_t*) override
             {
                 if (this->idx < this->end) {
+                    SKYLIB_ASSERT_SOME(this->aliases[this->idx]);
                     this->aliases[this->idx]->Unfill(
                         new Virtual_Callback(std::move(this->aliases), this->idx + 1, this->end, std::move(this->callback))
                     );
@@ -56,7 +57,8 @@ namespace doticu_skylib {
 
         const size_t idx = 0;
         const size_t end = aliases.size();
-        if (end > 0) {
+        if (idx < end) {
+            SKYLIB_ASSERT_SOME(aliases[0]);
             aliases[0]->Unfill(new Virtual_Callback(std::move(aliases), idx + 1, end, std::move(callback)));
         } else {
             if (callback) {
