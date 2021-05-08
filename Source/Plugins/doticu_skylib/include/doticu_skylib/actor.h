@@ -438,12 +438,15 @@ namespace doticu_skylib {
 
     public:
         Float_t Alpha();
-        void    Alpha(Float_t alpha, maybe<Script_t*> script);          // SetActorAlpha
+        void    Alpha(Float_t alpha, maybe<Script_t*> script);              // SetActorAlpha
 
         Float_t Base_Weight();
-        void    Base_Weight(Float_t weight, maybe<Script_t*> script);   // SetNPCWeight
+        void    Base_Weight(Float_t weight, maybe<Script_t*> script);       // SetNPCWeight
 
-        void    Is_Doing_Favor(Bool_t value, maybe<Script_t*> script);  // SetFavorState
+        void    Is_Doing_Favor(Bool_t value, maybe<Script_t*> script);      // SetFavorState
+
+        Bool_t  Is_Forced_To_Sneak();
+        void    Is_Forced_To_Sneak(Bool_t value, maybe<Script_t*> script);  // SetForceSneak
 
     public:
         void    Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback);    // SetAlpha

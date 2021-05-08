@@ -1072,6 +1072,22 @@ namespace doticu_skylib {
         script->Execute(this);
     }
 
+    Bool_t Actor_t::Is_Forced_To_Sneak()
+    {
+        return Actor_State_t::Is_Forced_To_Sneak();
+    }
+
+    void Actor_t::Is_Forced_To_Sneak(Bool_t value, maybe<Script_t*> script)
+    {
+        maybe<unique<Script_t>> temp;
+        if (!script) {
+            temp = Script_t::Create()();
+            script = temp();
+        }
+        script->Command(std::string("SetForceSneak ") + (value ? "1" : "0"));
+        script->Execute(this);
+    }
+
     void Actor_t::Alpha(Float_t alpha, Bool_t do_fade_in, maybe<Virtual::Callback_i*> v_callback)
     {
         class Virtual_Arguments :

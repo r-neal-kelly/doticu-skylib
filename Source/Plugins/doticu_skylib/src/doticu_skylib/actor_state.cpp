@@ -52,6 +52,11 @@ namespace doticu_skylib {
         return this->bits_a.is_sneaking;
     }
 
+    Bool_t Actor_State_t::Is_Forced_To_Sneak()
+    {
+        return this->bits_b.is_forced_to_sneak;
+    }
+
     Bool_t Actor_State_t::Has_Weapon_Drawn()
     {
         Weapon_State_e weapon_state = Weapon_State();
