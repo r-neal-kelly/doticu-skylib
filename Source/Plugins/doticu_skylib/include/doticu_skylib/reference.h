@@ -119,19 +119,19 @@ namespace doticu_skylib {
         };
 
     public:
-        static Vector_t<some<Reference_t*>> All();
-        static void                         All(Vector_t<some<Reference_t*>>& results);
+        static Vector_t<some<Reference_t*>> All_References();
+        static void                         All_References(Vector_t<some<Reference_t*>>& results);
 
-        static Vector_t<some<Reference_t*>> All(Filter_i<some<Reference_t*>>& filter);
-        static void                         All(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
+        static Vector_t<some<Reference_t*>> All_References(Filter_i<some<Reference_t*>>& filter);
+        static void                         All_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
 
-        static Vector_t<some<Reference_t*>> Grid();
-        static void                         Grid(Vector_t<some<Reference_t*>>& results);
-        static void                         Grid(some<Form_List_t*> results);
+        static Vector_t<some<Reference_t*>> Grid_References();
+        static void                         Grid_References(Vector_t<some<Reference_t*>>& results);
+        static void                         Grid_References(some<Form_List_t*> results);
 
-        static Vector_t<some<Reference_t*>> Grid(Filter_i<some<Reference_t*>>& filter);
-        static void                         Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
-        static void                         Grid(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter);
+        static Vector_t<some<Reference_t*>> Grid_References(Filter_i<some<Reference_t*>>& filter);
+        static void                         Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
+        static void                         Grid_References(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter);
 
         static maybe<Reference_t*>          Create(some<Form_t*> base,
                                                    u32 count,
@@ -324,7 +324,7 @@ namespace doticu_skylib {
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
 
-        Cell_t*                             Cell(Bool_t do_check_worldspace = true);
+        maybe<Cell_t*>                      Cell(Bool_t do_check_worldspace);
         Vector_t<some<NI_Collidable_t*>>    Collidables();
         void                                Collidables(Vector_t<some<NI_Collidable_t*>>& results);
         maybe<Collision_Layer_Type_e>       Collision_Layer_Type();
@@ -343,12 +343,14 @@ namespace doticu_skylib {
         some<Reference_Container_Entry_t>   Some_Container_Entry(some<Bound_Object_t*> object);
         Container_Entry_Count_t             Container_Entry_Count(some<Bound_Object_t*> object);
 
-        Location_t*                         Location();
+        maybe<Location_t*>                  Location();
+        maybe<Location_t*>                  Cell_Location();
+        maybe<Location_t*>                  Worldspace_Location();
         
-        maybe<Worldspace_t*>                Worldspace(Bool_t do_check_locations = true);
+        maybe<Worldspace_t*>                Worldspace(Bool_t do_check_cell_locations = true);
         
-        Vector_t<Location_t*>               Locations();
-        void                                Locations(Vector_t<Location_t*>& results);
+        Vector_t<some<Location_t*>>         Locations();
+        void                                Locations(Vector_t<some<Location_t*>>& results);
         Vector_t<some<Quest_t*>>            Quests();
         void                                Quests(Vector_t<some<Quest_t*>>& results);
         Vector_t<some<Worldspace_t*>>       Worldspaces();

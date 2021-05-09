@@ -22,7 +22,7 @@ namespace doticu_skylib {
         if (!has_initialized) {
             auto& factions = Game_t::Self()->Factions();
             for (size_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
-                Faction_t* faction = factions[idx];
+                maybe<Faction_t*> faction = factions[idx];
                 if (faction) {
                     if (faction->Is_Valid()) {
                         Mod_t* highest_mod = faction->Get_Highest_Mod();
@@ -64,9 +64,9 @@ namespace doticu_skylib {
         results.reserve(factions.Count());
 
         for (size_t idx = 0, end = factions.Count(); idx < end; idx += 1) {
-            Faction_t* faction = factions[idx];
+            maybe<Faction_t*> faction = factions[idx];
             if (faction && faction->Is_Valid()) {
-                results.push_back(faction);
+                results.push_back(faction());
             }
         }
     }

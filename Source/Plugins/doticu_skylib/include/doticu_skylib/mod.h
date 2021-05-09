@@ -107,8 +107,8 @@ namespace doticu_skylib {
         static Vector_t<some<Mod_t*>>   Active_Mods();
         static Vector_t<some<Mod_t*>>   Active_Heavy_Mods();
         static Vector_t<some<Mod_t*>>   Active_Light_Mods();
-        static Array_t<Mod_t*>&         Active_Heavy_Mods_2();
-        static Array_t<Mod_t*>&         Active_Light_Mods_2();
+        static Array_t<maybe<Mod_t*>>&  Active_Heavy_Mods_2();
+        static Array_t<maybe<Mod_t*>>&  Active_Light_Mods_2();
 
         static Bool_t                   Has_Active_Mod(some<const char*> mod_name);
         static maybe<Mod_t*>            Active_Mod(some<const char*> mod_name);

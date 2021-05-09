@@ -21,102 +21,122 @@
 
 namespace doticu_skylib {
 
-    size_t Cell_t::Interior_Cell_Count()
-    {
-        return Game_t::Self()->interior_cells.count;
-    }
-
-    size_t Cell_t::Loaded_Exterior_Cell_Count()
-    {
-        Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
-        size_t exterior_cell_count = 0;
-        for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
-            Worldspace_t* worldspace = worldspaces[idx];
-            if (worldspace) {
-                if (worldspace->persistent_cell) {
-                    exterior_cell_count += 1;
-                }
-                if (worldspace->xy_to_cell.capacity > 0) {
-                    exterior_cell_count += worldspace->xy_to_cell.capacity - worldspace->xy_to_cell.free_count;
-                }
-            }
-        }
-        return exterior_cell_count;
-    }
-
-    static void Interior_Cells(Vector_t<Cell_t*>& accumulator)
-    {
-        Short_Array_t<Cell_t*>& interior_cells = Game_t::Self()->interior_cells;
-        for (size_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
-            Cell_t* cell = interior_cells.entries[idx];
-            if (cell) {
-                accumulator.push_back(cell);
-            }
-        }
-    }
-
-    static void Loaded_Exterior_Cells(Vector_t<Cell_t*>& accumulator)
-    {
-        Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
-        for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
-            Worldspace_t* worldspace = worldspaces[idx];
-            if (worldspace) {
-                if (worldspace->persistent_cell) {
-                    accumulator.push_back(worldspace->persistent_cell);
-                }
-                for (size_t idx = 0, end = worldspace->xy_to_cell.capacity; idx < end; idx += 1) {
-                    Hash_Map_t<s16_yx, Cell_t*>::Entry_t& entry = worldspace->xy_to_cell.entries[idx];
-                    if (entry.chain && entry.second) {
-                        accumulator.push_back(entry.second);
-                    }
-                }
-            }
-        }
-    }
-
-    Vector_t<Cell_t*> Cell_t::Interior_Cells()
-    {
-        Vector_t<Cell_t*> results;
-        results.reserve(Interior_Cell_Count());
-        doticu_skylib::Interior_Cells(results);
-        return results;
-    }
-
-    Vector_t<Cell_t*> Cell_t::Loaded_Exterior_Cells()
-    {
-        Vector_t<Cell_t*> results;
-        results.reserve(Loaded_Exterior_Cell_Count());
-        doticu_skylib::Loaded_Exterior_Cells(results);
-        return results;
-    }
-
-    Vector_t<Cell_t*> Cell_t::Loaded_Cells()
-    {
-        Vector_t<Cell_t*> results;
-        results.reserve(Interior_Cell_Count() + Loaded_Exterior_Cell_Count());
-        doticu_skylib::Interior_Cells(results);
-        doticu_skylib::Loaded_Exterior_Cells(results);
-        return results;
-    }
-
-    Vector_t<some<Cell_t*>> Cell_t::Cells_In_Grid()
+    Vector_t<some<Cell_t*>> Cell_t::Interior_Cells_Dynamic()
     {
         Vector_t<some<Cell_t*>> results;
-        Cells_In_Grid(results);
+        Interior_Cells_Dynamic(results);
         return results;
     }
 
-    void Cell_t::Cells_In_Grid(Vector_t<some<Cell_t*>>& results)
+    void Cell_t::Interior_Cells_Dynamic(Vector_t<some<Cell_t*>>& results)
     {
-        // we can't make this static as apparently the ini model can be updated mid-game???
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Cell_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Cell_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Cell_t*> cell = form->As_Cell();
+                if (cell && cell->Is_Valid() && cell->Is_Interior()) {
+                    this->results.push_back(cell());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(1024);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Cell_t*>> Cell_t::Interior_Cells_Static()
+    {
+        Vector_t<some<Cell_t*>> results;
+        Interior_Cells_Static(results);
+        return results;
+    }
+
+    void Cell_t::Interior_Cells_Static(Vector_t<some<Cell_t*>>& results)
+    {
+        Short_Array_t<maybe<Cell_t*>>& interior_cells = Game_t::Self()->interior_cells;
+
+        results.reserve(interior_cells.count);
+
+        for (size_t idx = 0, end = interior_cells.count; idx < end; idx += 1) {
+            maybe<Cell_t*> cell = interior_cells.entries[idx];
+            if (cell && cell->Is_Valid() && !results.Has(cell())) {
+                results.push_back(cell());
+            }
+        }
+    }
+
+    Vector_t<some<Cell_t*>> Cell_t::Exterior_Cells()
+    {
+        Vector_t<some<Cell_t*>> results;
+        Exterior_Cells(results);
+        return results;
+    }
+
+    void Cell_t::Exterior_Cells(Vector_t<some<Cell_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Cell_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Cell_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Cell_t*> cell = form->As_Cell();
+                if (cell && cell->Is_Valid() && cell->Is_Exterior()) {
+                    this->results.push_back(cell());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(1024);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Cell_t*>> Cell_t::Grid_Cells()
+    {
+        Vector_t<some<Cell_t*>> results;
+        Grid_Cells(results);
+        return results;
+    }
+
+    void Cell_t::Grid_Cells(Vector_t<some<Cell_t*>>& results)
+    {
         const u64 grids_to_load = Game_INI_t::INI_u32("uGridsToLoad:General");
         const u64 grid_radius = grids_to_load ? grids_to_load / 2 : 2;
 
         results.reserve(grids_to_load * grids_to_load);
 
-        Cell_t* player_cell = Player_t::Self()->Cell();
+        maybe<Cell_t*> player_cell = Player_t::Self()->Cell(true);
         if (player_cell && player_cell->Is_Valid()) {
-            results.push_back(player_cell);
+            results.push_back(player_cell());
             if (player_cell->Is_Exterior()) {
                 Exterior_Cell_t* exterior_cell = player_cell->cellterior.exterior;
                 if (exterior_cell) {
@@ -133,9 +153,9 @@ namespace doticu_skylib {
                                     s16_yx cell_yx(idx_y, idx_x);
                                     auto entry = worldspace->xy_to_cell.Entry(cell_yx);
                                     if (entry) {
-                                        Cell_t* cell = entry->second;
-                                        if (cell && cell->Is_Valid() && cell->Is_Attached() && !results.Has(cell)) {
-                                            results.push_back(cell);
+                                        maybe<Cell_t*> cell = entry->second;
+                                        if (cell && cell->Is_Valid() && cell->Is_Attached() && !results.Has(cell())) {
+                                            results.push_back(cell());
                                         }
                                     }
                                 }
@@ -145,6 +165,99 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    Vector_t<some<Cell_t*>> Cell_t::Attached_Cells()
+    {
+        Vector_t<some<Cell_t*>> results;
+        Attached_Cells(results);
+        return results;
+    }
+
+    void Cell_t::Attached_Cells(Vector_t<some<Cell_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Cell_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Cell_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Cell_t*> cell = form->As_Cell();
+                if (cell && cell->Is_Valid() && cell->Is_Attached()) {
+                    this->results.push_back(cell());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(64);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Cell_t*>> Cell_t::All_Cells()
+    {
+        Vector_t<some<Cell_t*>> results;
+        All_Cells(results);
+        return results;
+    }
+
+    void Cell_t::All_Cells(Vector_t<some<Cell_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Cell_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Cell_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Cell_t*> cell = form->As_Cell();
+                if (cell && cell->Is_Valid()) {
+                    this->results.push_back(cell());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    size_t Cell_t::Interior_Cell_Dynamic_Count()
+    {
+        return Interior_Cells_Dynamic().size();
+    }
+
+    size_t Cell_t::Interior_Cell_Static_Count()
+    {
+        return Interior_Cells_Static().size();
+    }
+
+    size_t Cell_t::Exterior_Cell_Count()
+    {
+        return Exterior_Cells().size();
     }
 
     Bool_t Cell_t::Is_Attached()
@@ -193,49 +306,61 @@ namespace doticu_skylib {
         }
     }
 
-    Location_t* Cell_t::Location()
+    maybe<Location_t*> Cell_t::Location()
     {
-        x_list.Validate();
-
-        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
-        if (xlocation && xlocation->location) {
-            return xlocation->location;
-        } else if (worldspace) {
-            return worldspace->location;
+        maybe<Location_t*> this_location = This_Location();
+        if (this_location) {
+            return this_location;
         } else {
-            return nullptr;
+            return Worldspace_Location();
         }
     }
 
-    Vector_t<Location_t*> Cell_t::Locations()
+    maybe<Location_t*> Cell_t::This_Location()
     {
-        Vector_t<Location_t*> locations;
+        maybe<Extra_Location_t*> x_location = this->x_list.Get<Extra_Location_t>();
+        if (x_location) {
+            return x_location->location;
+        } else {
+            return none<Location_t*>();
+        }
+    }
+
+    maybe<Location_t*> Cell_t::Worldspace_Location()
+    {
+        if (this->worldspace) {
+            return this->worldspace->Location();
+        } else {
+            return none<Location_t*>();
+        }
+    }
+
+    Vector_t<some<Location_t*>> Cell_t::Locations()
+    {
+        Vector_t<some<Location_t*>> locations;
         Locations(locations);
         return locations;
     }
 
-    void Cell_t::Locations(Vector_t<Location_t*>& results)
+    void Cell_t::Locations(Vector_t<some<Location_t*>>& results)
     {
         results.reserve(8);
 
-        x_list.Validate();
-
-        Location_t* xlocation_location = nullptr;
-        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
-        if (xlocation) {
-            xlocation_location = xlocation->location;
-        }
-        for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
-            if (!results.Has(it)) {
-                results.push_back(it);
+        this->x_list.Validate();
+        maybe<Extra_Location_t*> x_location = this->x_list.Get<Extra_Location_t>();
+        if (x_location && x_location->location) {
+            if (!results.Has(x_location->location())) {
+                results.push_back(x_location->location());
             }
+            x_location->location->Parents(results);
         }
 
-        Location_t* worldspace_location = worldspace ? worldspace->location : nullptr;
-        for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
-            if (!results.Has(it)) {
-                results.push_back(it);
+        maybe<Location_t*> worldspace_location = Worldspace_Location();
+        if (worldspace_location) {
+            if (!results.Has(worldspace_location())) {
+                results.push_back(worldspace_location());
             }
+            worldspace_location->Parents(results);
         }
     }
 
@@ -248,25 +373,13 @@ namespace doticu_skylib {
 
     void Cell_t::Location_Names(Vector_t<String_t>& results)
     {
-        results.reserve(8);
+        Vector_t<some<Location_t*>> locations = Locations();
 
-        x_list.Validate();
+        size_t location_count = locations.size();
+        results.reserve(location_count);
 
-        Location_t* xlocation_location = nullptr;
-        maybe<Extra_Location_t*> xlocation = x_list.Get<Extra_Location_t>();
-        if (xlocation) {
-            xlocation_location = xlocation->location;
-        }
-        for (Location_t* it = xlocation_location; it != nullptr; it = it->parent_location) {
-            String_t name = it->Any_Name();
-            if (!results.Has(name)) {
-                results.push_back(name);
-            }
-        }
-
-        Location_t* worldspace_location = worldspace ? worldspace->location : nullptr;
-        for (Location_t* it = worldspace_location; it != nullptr; it = it->parent_location) {
-            String_t name = it->Any_Name();
+        for (size_t idx = 0, end = location_count; idx < end; idx += 1) {
+            String_t name = locations[idx]->Any_Name();
             if (!results.Has(name)) {
                 results.push_back(name);
             }
@@ -300,19 +413,19 @@ namespace doticu_skylib {
 
     maybe<Worldspace_t*> Cell_t::Worldspace(Bool_t do_check_locations)
     {
-        if (worldspace) {
-            return worldspace;
+        if (this->worldspace) {
+            return this->worldspace;
         } else if (do_check_locations) {
-            Array_t<Worldspace_t*>& worldspaces = Game_t::Self()->Worldspaces();
+            Array_t<maybe<Worldspace_t*>>& worldspaces = Game_t::Self()->Worldspaces();
 
-            Vector_t<Location_t*> locations = Locations();
+            Vector_t<some<Location_t*>> locations = Locations();
             for (size_t idx = 0, end = locations.size(); idx < end; idx += 1) {
-                Location_t* location = locations[idx];
+                maybe<Location_t*> location = locations[idx];
                 if (location && location->Is_Valid()) {
                     for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
-                        Worldspace_t* worldspace = worldspaces[idx];
+                        maybe<Worldspace_t*> worldspace = worldspaces[idx];
                         if (worldspace && worldspace->Is_Valid()) {
-                            if (worldspace->Has_Location(location)) {
+                            if (worldspace->Has_Location(location())) {
                                 return worldspace;
                             }
                         }
@@ -320,17 +433,17 @@ namespace doticu_skylib {
                 }
             }
 
-            return nullptr;
+            return none<Worldspace_t*>();
         } else {
-            return nullptr;
+            return none<Worldspace_t*>();
         }
     }
 
     Vector_t<some<Worldspace_t*>> Cell_t::Worldspaces()
     {
-        Vector_t<some<Worldspace_t*>> worldspaces;
-        Worldspaces(worldspaces);
-        return std::move(worldspaces);
+        Vector_t<some<Worldspace_t*>> results;
+        Worldspaces(results);
+        return results;
     }
 
     void Cell_t::Worldspaces(Vector_t<some<Worldspace_t*>>& results)
@@ -369,6 +482,34 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    void Cell_t::Log_Locations(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Cell_t::Log_Locations");
+        SKYLIB_LOG(indent + "{");
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_interior: %s", Is_Interior() ? "true" : "false");
+
+        maybe<Location_t*> this_location = This_Location();
+        if (this_location) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "this_location:");
+            this_location->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "this_location: (none)");
+        }
+
+        maybe<Location_t*> worldspace_location = Worldspace_Location();
+        if (worldspace_location) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "worldspace_location:");
+            worldspace_location->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "worldspace_location: (none)");
+        }
+
+        SKYLIB_LOG(indent + SKYLIB_TAB + "has both locations: %s", this_location && worldspace_location ? "true" : "false");
+
+        SKYLIB_LOG(indent + "}");
     }
 
 }

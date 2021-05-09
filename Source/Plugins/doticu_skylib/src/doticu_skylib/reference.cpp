@@ -59,14 +59,14 @@ namespace doticu_skylib {
         return get_worldspace(self());
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::All()
+    Vector_t<some<Reference_t*>> Reference_t::All_References()
     {
         Vector_t<some<Reference_t*>> results;
-        All(results);
+        All_References(results);
         return results;
     }
 
-    void Reference_t::All(Vector_t<some<Reference_t*>>& results)
+    void Reference_t::All_References(Vector_t<some<Reference_t*>>& results)
     {
         class Iterator :
             public Iterator_i<some<Form_t*>>
@@ -98,14 +98,14 @@ namespace doticu_skylib {
         Game_t::Iterate_Forms(iterator);
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::All(Filter_i<some<Reference_t*>>& filter)
+    Vector_t<some<Reference_t*>> Reference_t::All_References(Filter_i<some<Reference_t*>>& filter)
     {
         Vector_t<some<Reference_t*>> results;
-        All(results, filter);
+        All_References(results, filter);
         return results;
     }
 
-    void Reference_t::All(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    void Reference_t::All_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
     {
         class Iterator :
             public Iterator_i<some<Form_t*>>
@@ -138,14 +138,14 @@ namespace doticu_skylib {
         Game_t::Iterate_Forms(iterator);
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::Grid()
+    Vector_t<some<Reference_t*>> Reference_t::Grid_References()
     {
         Vector_t<some<Reference_t*>> results;
-        Grid(results);
+        Grid_References(results);
         return results;
     }
 
-    void Reference_t::Grid(Vector_t<some<Reference_t*>>& results)
+    void Reference_t::Grid_References(Vector_t<some<Reference_t*>>& results)
     {
         class Iterator :
             public Iterator_i<some<Reference_t*>>
@@ -173,13 +173,13 @@ namespace doticu_skylib {
 
         Iterator iterator(results);
 
-        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Grid_Cells();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->Iterate_References(iterator);
         }
     }
 
-    void Reference_t::Grid(some<Form_List_t*> results)
+    void Reference_t::Grid_References(some<Form_List_t*> results)
     {
         class Iterator :
             public Iterator_i<some<Reference_t*>>
@@ -207,20 +207,20 @@ namespace doticu_skylib {
 
         Iterator iterator(results);
 
-        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Grid_Cells();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->Iterate_References(iterator);
         }
     }
 
-    Vector_t<some<Reference_t*>> Reference_t::Grid(Filter_i<some<Reference_t*>>& filter)
+    Vector_t<some<Reference_t*>> Reference_t::Grid_References(Filter_i<some<Reference_t*>>& filter)
     {
         Vector_t<some<Reference_t*>> results;
-        Grid(results, filter);
+        Grid_References(results, filter);
         return results;
     }
 
-    void Reference_t::Grid(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    void Reference_t::Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
     {
         class Iterator :
             public Iterator_i<some<Reference_t*>>
@@ -249,13 +249,13 @@ namespace doticu_skylib {
 
         Iterator iterator(results, filter);
 
-        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Grid_Cells();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->Iterate_References(iterator);
         }
     }
 
-    void Reference_t::Grid(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter)
+    void Reference_t::Grid_References(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter)
     {
         class Iterator :
             public Iterator_i<some<Reference_t*>>
@@ -284,7 +284,7 @@ namespace doticu_skylib {
 
         Iterator iterator(results, filter);
 
-        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Cells_In_Grid();
+        Vector_t<some<Cell_t*>> cells_in_grid = Cell_t::Grid_Cells();
         for (size_t idx = 0, end = cells_in_grid.size(); idx < end; idx += 1) {
             cells_in_grid[idx]->Iterate_References(iterator);
         }
@@ -410,7 +410,7 @@ namespace doticu_skylib {
 
     maybe<Bool_t> Reference_t::Is_In_Interior_Cell()
     {
-        maybe<Cell_t*> cell = Cell();
+        maybe<Cell_t*> cell = Cell(true);
         if (cell) {
             return cell->Is_Interior();
         } else {
@@ -420,7 +420,7 @@ namespace doticu_skylib {
 
     maybe<Bool_t> Reference_t::Is_In_Exterior_Cell()
     {
-        maybe<Cell_t*> cell = Cell();
+        maybe<Cell_t*> cell = Cell(true);
         if (cell) {
             return cell->Is_Exterior();
         } else {
@@ -564,19 +564,19 @@ namespace doticu_skylib {
         return this->x_list.Alias_References();
     }
 
-    Cell_t* Reference_t::Cell(Bool_t do_check_worldspace)
+    maybe<Cell_t*> Reference_t::Cell(Bool_t do_check_worldspace)
     {
-        if (parent_cell) {
-            return parent_cell();
+        if (this->parent_cell) {
+            return this->parent_cell();
         } else if (do_check_worldspace) {
             maybe<Worldspace_t*> worldspace = Worldspace_Impl(this);
             if (worldspace) {
                 return worldspace->persistent_cell;
             } else {
-                return nullptr;
+                return none<Cell_t*>();
             }
         } else {
-            return nullptr;
+            return none<Cell_t*>();
         }
     }
 
@@ -758,40 +758,68 @@ namespace doticu_skylib {
         }
     }
 
-    Location_t* Reference_t::Location()
+    maybe<Location_t*> Reference_t::Location()
     {
-        Cell_t* cell = Cell(true);
-        if (cell) {
-            return cell->Location();
+        maybe<Location_t*> location = Cell_Location();
+        if (location) {
+            return location;
         } else {
-            return nullptr;
+            return Worldspace_Location();
         }
     }
 
-    maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_locations)
+    maybe<Location_t*> Reference_t::Cell_Location()
+    {
+        maybe<Cell_t*> cell = Cell(true);
+        if (cell) {
+            return cell->Location();
+        } else {
+            return none<Location_t*>();
+        }
+    }
+
+    maybe<Location_t*> Reference_t::Worldspace_Location()
+    {
+        maybe<Worldspace_t*> worldspace = Worldspace(true);
+        if (worldspace) {
+            return worldspace->Location();
+        } else {
+            return none<Location_t*>();
+        }
+    }
+
+    maybe<Worldspace_t*> Reference_t::Worldspace(Bool_t do_check_cell_locations)
     {
         maybe<Worldspace_t*> worldspace = Worldspace_Impl(this);
         if (worldspace) {
             return worldspace;
-        } else if (parent_cell) {
-            return parent_cell->Worldspace(do_check_locations);
+        } else if (this->parent_cell) {
+            return this->parent_cell->Worldspace(do_check_cell_locations);
         } else {
-            return nullptr;
+            return none<Worldspace_t*>();
         }
     }
 
-    Vector_t<Location_t*> Reference_t::Locations()
+    Vector_t<some<Location_t*>> Reference_t::Locations()
     {
-        Vector_t<Location_t*> results;
+        Vector_t<some<Location_t*>> results;
         Locations(results);
         return results;
     }
 
-    void Reference_t::Locations(Vector_t<Location_t*>& results)
+    void Reference_t::Locations(Vector_t<some<Location_t*>>& results)
     {
-        Cell_t* cell = Cell();
+        maybe<Cell_t*> cell = Cell(true);
         if (cell && cell->Is_Valid()) {
             cell->Locations(results);
+        } else {
+            maybe<Worldspace_t*> worldspace = Worldspace(false);
+            if (worldspace && worldspace->Is_Valid()) {
+                if (!results.Has(worldspace->location())) {
+                    results.push_back(worldspace->location());
+                }
+                worldspace->location->Parents(results);
+            }
         }
     }
 
@@ -1107,7 +1135,7 @@ namespace doticu_skylib {
 
     Form_Owner_t Reference_t::Cell_Owner()
     {
-        maybe<Cell_t*> cell = this->Cell();
+        maybe<Cell_t*> cell = Cell(true);
         if (cell) {
             return cell->Owner();
         } else {

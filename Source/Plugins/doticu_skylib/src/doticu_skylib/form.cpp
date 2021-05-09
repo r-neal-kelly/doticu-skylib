@@ -40,6 +40,7 @@
 #include "doticu_skylib/virtual_machine.inl"
 #include "doticu_skylib/virtual_variable.inl"
 #include "doticu_skylib/weapon.h"
+#include "doticu_skylib/worldspace.h"
 
 namespace doticu_skylib {
 
@@ -220,6 +221,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Soul_Gem() const             { return As_Soul_Gem() != none<Soul_Gem_t*>(); }
     Bool_t                  Form_t::Is_Spell() const                { return As_Spell() != none<Spell_t*>(); }
     Bool_t                  Form_t::Is_Weapon() const               { return As_Weapon() != none<Weapon_t*>(); }
+    Bool_t                  Form_t::Is_Worldspace() const           { return As_Worldspace() != none<Worldspace_t*>(); }
 
     maybe<Actor_t*>         Form_t::As_Actor() const                { return Game_t::Runtime_Cast<Form_t, Actor_t>(this); }
     maybe<Actor_Base_t*>    Form_t::As_Actor_Base() const           { return Game_t::Runtime_Cast<Form_t, Actor_Base_t>(this); }
@@ -249,6 +251,7 @@ namespace doticu_skylib {
     maybe<Soul_Gem_t*>      Form_t::As_Soul_Gem() const             { return Game_t::Runtime_Cast<Form_t, Soul_Gem_t>(this); }
     maybe<Spell_t*>         Form_t::As_Spell() const                { return Game_t::Runtime_Cast<Form_t, Spell_t>(this); }
     maybe<Weapon_t*>        Form_t::As_Weapon() const               { return Game_t::Runtime_Cast<Form_t, Weapon_t>(this); }
+    maybe<Worldspace_t*>    Form_t::As_Worldspace() const           { return Game_t::Runtime_Cast<Form_t, Worldspace_t>(this); }
 
     void Form_t::Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback)
     {

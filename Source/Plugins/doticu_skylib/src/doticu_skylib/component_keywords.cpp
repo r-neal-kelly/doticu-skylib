@@ -14,6 +14,26 @@ namespace doticu_skylib {
         return Get_Has_Keyword(keyword());
     }
 
+    Bool_t Keywords_c::Component_Has_All_Keywords(const Vector_t<some<Keyword_t*>>& keywords) const
+    {
+        for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+            if (!Component_Has_Keyword(keywords[idx])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    Bool_t Keywords_c::Component_Has_Any_Keywords(const Vector_t<some<Keyword_t*>>& keywords) const
+    {
+        for (size_t idx = 0, end = keywords.size(); idx < end; idx += 1) {
+            if (Component_Has_Keyword(keywords[idx])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     Vector_t<some<Keyword_t*>> Keywords_c::Component_Keywords() const
     {
         Vector_t<some<Keyword_t*>> results;

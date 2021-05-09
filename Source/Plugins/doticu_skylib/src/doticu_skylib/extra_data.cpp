@@ -34,7 +34,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Log_References");
         SKYLIB_LOG(indent + "{");
 
-        Vector_t<some<Reference_t*>> refs = Reference_t::All();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
 
@@ -136,18 +136,15 @@ namespace doticu_skylib {
         Vector_t<Extra_Type_e> found_types;
         found_types.reserve(256);
 
-        Vector_t<some<Reference_t*>> refs = Reference_t::All();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
             Log_Unique_V_Tables(indent, found_types, ref->x_list);
         }
 
-        Vector_t<Cell_t*> cells = Cell_t::Loaded_Cells();
+        Vector_t<some<Cell_t*>> cells = Cell_t::All_Cells();
         for (size_t idx = 0, end = cells.size(); idx < end; idx += 1) {
-            maybe<Cell_t*> cell = cells[idx];
-            if (cell) {
-                Log_Unique_V_Tables(indent, found_types, cell->x_list);
-            }
+            Log_Unique_V_Tables(indent, found_types, cells[idx]->x_list);
         }
     }
 
@@ -195,18 +192,15 @@ namespace doticu_skylib {
 
     void Extra_Data_t::Log_Text_Displays(std::string indent)
     {
-        Vector_t<some<Reference_t*>> refs = Reference_t::All();
+        Vector_t<some<Reference_t*>> refs = Reference_t::All_References();
         for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
             some<Reference_t*> ref = refs[idx];
             doticu_skylib::Log_Text_Displays(indent, ref->x_list);
         }
 
-        Vector_t<Cell_t*> cells = Cell_t::Loaded_Cells();
+        Vector_t<some<Cell_t*>> cells = Cell_t::All_Cells();
         for (size_t idx = 0, end = cells.size(); idx < end; idx += 1) {
-            maybe<Cell_t*> cell = cells[idx];
-            if (cell) {
-                doticu_skylib::Log_Text_Displays(indent, cell->x_list);
-            }
+            doticu_skylib::Log_Text_Displays(indent, cells[idx]->x_list);
         }
     }
 

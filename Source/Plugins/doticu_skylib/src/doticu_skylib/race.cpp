@@ -21,9 +21,9 @@ namespace doticu_skylib {
         results.reserve(races.Count());
 
         for (size_t idx = 0, end = races.Count(); idx < end; idx += 1) {
-            Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
+            maybe<Race_t*> race = races[idx];
             if (race) {
-                results.push_back(race);
+                results.push_back(race());
             }
         }
 
@@ -38,7 +38,7 @@ namespace doticu_skylib {
         results.reserve(races.Count());
 
         for (size_t idx = 0, end = races.Count(); idx < end; idx += 1) {
-            Race_t* race = reinterpret_cast<Race_t*>(races[idx]);
+            maybe<Race_t*> race = races[idx];
             if (race) {
                 results.push_back(race->Get_Editor_ID());
             }

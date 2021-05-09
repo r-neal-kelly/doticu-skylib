@@ -43,6 +43,8 @@ namespace doticu_skylib {
 
     public:
         Bool_t                      Component_Has_Keyword(some<Keyword_t*> keyword) const;
+        Bool_t                      Component_Has_All_Keywords(const Vector_t<some<Keyword_t*>>& keywords) const;
+        Bool_t                      Component_Has_Any_Keywords(const Vector_t<some<Keyword_t*>>& keywords) const;
 
         Vector_t<some<Keyword_t*>>  Component_Keywords() const;
         void                        Component_Keywords(Vector_t<some<Keyword_t*>>& results) const;

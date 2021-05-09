@@ -7,34 +7,180 @@
 
 namespace doticu_skylib {
 
+    const Vector_t<some<Keyword_t*>>& Location_t::Civilized_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Dwelling(),
+            Const::Keyword::Location_Type_Habitation(),
+            Const::Keyword::Location_Type_Habitation_With_Inn(),
+
+            Const::Keyword::Location_Type_Settlement(),
+            Const::Keyword::Location_Type_City(),
+            Const::Keyword::Location_Type_Town(),
+            Const::Keyword::Location_Type_Orc_Stronghold(),
+            Const::Keyword::Location_Type_Guild(),
+            Const::Keyword::Location_Type_Inn(),
+            Const::Keyword::Location_Type_Farm(),
+            Const::Keyword::Location_Type_Mine(),
+            Const::Keyword::Location_Type_House(),
+            Const::Keyword::Location_Type_Store(),
+            Const::Keyword::Location_Type_Lumber_Mill(),
+            Const::Keyword::Location_Type_Player_House(),
+            Const::Keyword::Location_Type_Homestead(),
+            Const::Keyword::Location_Type_Homestead_With_Shrine(),
+            Const::Keyword::Location_Type_Castle(),
+            Const::Keyword::Location_Type_Barracks(),
+            Const::Keyword::Location_Type_Cemetery(),
+            Const::Keyword::Location_Type_Temple(),
+            Const::Keyword::Location_Type_Jail(),
+            Const::Keyword::Location_Type_Stewards_Dwelling(),
+        };
+
+        return types;
+    }
+
+    const Vector_t<some<Keyword_t*>>& Location_t::Common_Civilized_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Dwelling(),
+            Const::Keyword::Location_Type_Habitation(),
+            Const::Keyword::Location_Type_Habitation_With_Inn(),
+        };
+
+        return types;
+    }
+
+    const Vector_t<some<Keyword_t*>>& Location_t::Uncommon_Civilized_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Settlement(),
+            Const::Keyword::Location_Type_City(),
+            Const::Keyword::Location_Type_Town(),
+            Const::Keyword::Location_Type_Orc_Stronghold(),
+            Const::Keyword::Location_Type_Guild(),
+            Const::Keyword::Location_Type_Inn(),
+            Const::Keyword::Location_Type_Farm(),
+            Const::Keyword::Location_Type_Mine(),
+            Const::Keyword::Location_Type_House(),
+            Const::Keyword::Location_Type_Store(),
+            Const::Keyword::Location_Type_Lumber_Mill(),
+            Const::Keyword::Location_Type_Player_House(),
+            Const::Keyword::Location_Type_Homestead(),
+            Const::Keyword::Location_Type_Homestead_With_Shrine(),
+            Const::Keyword::Location_Type_Castle(),
+            Const::Keyword::Location_Type_Barracks(),
+            Const::Keyword::Location_Type_Cemetery(),
+            Const::Keyword::Location_Type_Temple(),
+            Const::Keyword::Location_Type_Jail(),
+            Const::Keyword::Location_Type_Stewards_Dwelling(),
+        };
+
+        return types;
+    }
+
+    const Vector_t<some<Keyword_t*>>& Location_t::Dangerous_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Dungeon(),
+
+            Const::Keyword::Location_Type_Clearable(),
+            Const::Keyword::Location_Type_Animal_Den(),
+            Const::Keyword::Location_Type_Ash_Spawn_Lair(),
+            Const::Keyword::Location_Type_Bandit_Camp(),
+            Const::Keyword::Location_Type_Dragon_Lair(),
+            Const::Keyword::Location_Type_Dragon_Priest_Lair(),
+            Const::Keyword::Location_Type_Draugr_Crypt(),
+            Const::Keyword::Location_Type_Dwarven_Automaton_Ruin(),
+            Const::Keyword::Location_Type_Falmer_Hive(),
+            Const::Keyword::Location_Type_Forsworn_Camp(),
+            Const::Keyword::Location_Type_Giant_Camp(),
+            Const::Keyword::Location_Type_Hagraven_Nest(),
+            Const::Keyword::Location_Type_Military_Camp(),
+            Const::Keyword::Location_Type_Military_Fort(),
+            Const::Keyword::Location_Type_Riekling_Camp(),
+            Const::Keyword::Location_Type_Ship(),
+            Const::Keyword::Location_Type_Shipwreck(),
+            Const::Keyword::Location_Type_Spriggan_Grove(),
+            Const::Keyword::Location_Type_Vampire_Lair(),
+            Const::Keyword::Location_Type_Warlock_Lair(),
+            Const::Keyword::Location_Type_Werebear_Lair(),
+            Const::Keyword::Location_Type_Werewolf_Lair(),
+            Const::Keyword::Location_Set_Cave(),
+            Const::Keyword::Location_Set_Cave_Ice(),
+            Const::Keyword::Location_Set_Dwarven_Ruin(),
+            Const::Keyword::Location_Set_Military_Camp(),
+            Const::Keyword::Location_Set_Military_Fort(),
+            Const::Keyword::Location_Set_Nordic_Ruin(),
+        };
+
+        return types;
+    }
+
+    const Vector_t<some<Keyword_t*>>& Location_t::Common_Dangerous_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Dungeon(),
+        };
+
+        return types;
+    }
+
+    const Vector_t<some<Keyword_t*>>& Location_t::Uncommon_Dangerous_Types()
+    {
+        static Vector_t<some<Keyword_t*>> types =
+        {
+            Const::Keyword::Location_Type_Clearable(),
+            Const::Keyword::Location_Type_Animal_Den(),
+            Const::Keyword::Location_Type_Ash_Spawn_Lair(),
+            Const::Keyword::Location_Type_Bandit_Camp(),
+            Const::Keyword::Location_Type_Dragon_Lair(),
+            Const::Keyword::Location_Type_Dragon_Priest_Lair(),
+            Const::Keyword::Location_Type_Draugr_Crypt(),
+            Const::Keyword::Location_Type_Dwarven_Automaton_Ruin(),
+            Const::Keyword::Location_Type_Falmer_Hive(),
+            Const::Keyword::Location_Type_Forsworn_Camp(),
+            Const::Keyword::Location_Type_Giant_Camp(),
+            Const::Keyword::Location_Type_Hagraven_Nest(),
+            Const::Keyword::Location_Type_Military_Camp(),
+            Const::Keyword::Location_Type_Military_Fort(),
+            Const::Keyword::Location_Type_Riekling_Camp(),
+            Const::Keyword::Location_Type_Ship(),
+            Const::Keyword::Location_Type_Shipwreck(),
+            Const::Keyword::Location_Type_Spriggan_Grove(),
+            Const::Keyword::Location_Type_Vampire_Lair(),
+            Const::Keyword::Location_Type_Warlock_Lair(),
+            Const::Keyword::Location_Type_Werebear_Lair(),
+            Const::Keyword::Location_Type_Werewolf_Lair(),
+            Const::Keyword::Location_Set_Cave(),
+            Const::Keyword::Location_Set_Cave_Ice(),
+            Const::Keyword::Location_Set_Dwarven_Ruin(),
+            Const::Keyword::Location_Set_Military_Camp(),
+            Const::Keyword::Location_Set_Military_Fort(),
+            Const::Keyword::Location_Set_Nordic_Ruin(),
+        };
+
+        return types;
+    }
+
+    Bool_t Location_t::Is_City_Or_Town() const
+    {
+        return
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_City()) ||
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Town());
+    }
+
     Bool_t Location_t::Is_Likely_Civilized() const
     {
-        if (Has_Keyword(Const::Keyword::Location_Type_Dwelling()) ||
-            Has_Keyword(Const::Keyword::Location_Type_Habitation()) ||
-            Has_Keyword(Const::Keyword::Location_Type_Habitation_With_Inn())) {
+        if (Has_Or_Inherits_Any_Keywords(Common_Civilized_Types())) {
             return true;
-        } else if (Has_Keyword(Const::Keyword::Location_Type_Dungeon())) {
+        } else if (Has_Or_Inherits_Any_Keywords(Common_Dangerous_Types())) {
             return false;
-        } else if (Has_Keyword(Const::Keyword::Location_Type_Settlement()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_City()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Town()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Orc_Stronghold()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Guild()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Inn()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Farm()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Mine()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_House()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Store()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Lumber_Mill()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Player_House()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Homestead()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Homestead_With_Shrine()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Castle()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Barracks()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Cemetery()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Temple()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Jail()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Stewards_Dwelling())) {
+        } else if (Has_Or_Inherits_Any_Keywords(Uncommon_Civilized_Types())) {
             return true;
         } else {
             return false;
@@ -43,51 +189,9 @@ namespace doticu_skylib {
 
     Bool_t Location_t::Is_Likely_Dangerous() const
     {
-        if (Is_Likely_Civilized()) {
+        if (Has_Or_Inherits_Any_Keywords(Common_Civilized_Types())) {
             return false;
-        } else if (Has_Keyword(Const::Keyword::Location_Type_Dungeon()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Clearable()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Animal_Den()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Ash_Spawn_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Bandit_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Dragon_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Dragon_Priest_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Draugr_Crypt()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Dwarven_Automaton_Ruin()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Falmer_Hive()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Forsworn_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Giant_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Hagraven_Nest()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Military_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Military_Fort()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Riekling_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Ship()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Shipwreck()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Spriggan_Grove()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Vampire_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Warlock_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Werebear_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Werewolf_Lair()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Cave()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Cave_Ice()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Dwarven_Ruin()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Military_Camp()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Military_Fort()) ||
-                   Has_Keyword(Const::Keyword::Location_Set_Nordic_Ruin())) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    Bool_t Location_t::Is_Likely_Regional() const
-    {
-        if (Is_Likely_Civilized() || Is_Likely_Dangerous()) {
-            return false;
-        } else if (Has_Keyword(Const::Keyword::Location_Type_Hold()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Hold_Capital()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Hold_Major()) ||
-                   Has_Keyword(Const::Keyword::Location_Type_Hold_Minor())) {
+        } else if (Has_Or_Inherits_Any_Keywords(Dangerous_Types())) {
             return true;
         } else {
             return false;
@@ -107,6 +211,62 @@ namespace doticu_skylib {
         } else {
             return name;
         }
+    }
+
+    Vector_t<some<Location_t*>> Location_t::Parents() const
+    {
+        Vector_t<some<Location_t*>> results;
+        Parents(results);
+        return results;
+    }
+
+    void Location_t::Parents(Vector_t<some<Location_t*>>& results) const
+    {
+        for (maybe<Location_t*> parent = this->parent_location; parent; parent = parent->parent_location) {
+            if (!results.Has(parent())) {
+                results.push_back(parent());
+            }
+        }
+    }
+
+    Bool_t Location_t::Has_Keyword(some<Keyword_t*> keyword) const
+    {
+        return Component_Has_Keyword(keyword);
+    }
+
+    Bool_t Location_t::Inherits_Keyword(some<Keyword_t*> keyword) const
+    {
+        for (maybe<Location_t*> parent = this->parent_location; parent; parent = parent->parent_location) {
+            if (parent->Component_Has_Keyword(keyword)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    Bool_t Location_t::Has_Or_Inherits_Keyword(some<Keyword_t*> keyword) const
+    {
+        return Has_Keyword(keyword) || Inherits_Keyword(keyword);
+    }
+
+    Bool_t Location_t::Has_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const
+    {
+        return Component_Has_Any_Keywords(keywords);
+    }
+
+    Bool_t Location_t::Inherits_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const
+    {
+        for (maybe<Location_t*> parent = this->parent_location; parent; parent = parent->parent_location) {
+            if (parent->Component_Has_Any_Keywords(keywords)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    Bool_t Location_t::Has_Or_Inherits_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const
+    {
+        return Has_Any_Keywords(keywords) || Inherits_Any_Keywords(keywords);
     }
 
 }

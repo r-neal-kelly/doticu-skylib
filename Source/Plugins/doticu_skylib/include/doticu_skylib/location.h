@@ -90,35 +90,54 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Keyword_Float_t) == 0x10);
 
     public:
+        static const Vector_t<some<Keyword_t*>>& Civilized_Types();
+        static const Vector_t<some<Keyword_t*>>& Common_Civilized_Types();
+        static const Vector_t<some<Keyword_t*>>& Uncommon_Civilized_Types();
+
+        static const Vector_t<some<Keyword_t*>>& Dangerous_Types();
+        static const Vector_t<some<Keyword_t*>>& Common_Dangerous_Types();
+        static const Vector_t<some<Keyword_t*>>& Uncommon_Dangerous_Types();
+
+    public:
         virtual ~Location_t();
 
     public:
-        Location_t*                 parent_location;        // 48
-        Faction_t*                  crime_faction;          // 50
-        void*                       music_type;             // 58
-        Reference_Handle_t          world_marker;           // 60
-        Float_t                     world_radius;           // 64
-        Reference_Handle_t          horse_marker;           // 68
-        u32                         pad_6C;                 // 6C
-        Array_t<Typed_Reference_t>  typed_references;       // 70
-        Array_t<Unique_Actor_t>     unique_actors;          // 88 ACUN, LCUN?
-        Changed_References_t*       changed_references;     // A0
-        void*                       unk_A8;                 // A8
-        Array_t<Reference_Handle_t> promoted_references;    // B0
-        volatile s32                loaded_count;           // C8
-        u32                         file_offset;            // CC
-        Array_t<Keyword_Float_t>    keyword_floats;         // D0
-        u32                         unk_E8;                 // E8
-        Bool_t                      is_cleared;             // EC
-        Bool_t                      was_ever_cleared;       // ED
-        u16                         pad_EE;                 // EE
+        maybe<Location_t*>              parent_location;        // 48
+        maybe<Faction_t*>               crime_faction;          // 50
+        void*                           music_type;             // 58
+        Reference_Handle_t              world_marker;           // 60
+        Float_t                         world_radius;           // 64
+        Reference_Handle_t              horse_marker;           // 68
+        u32                             pad_6C;                 // 6C
+        Array_t<Typed_Reference_t>      typed_references;       // 70
+        Array_t<Unique_Actor_t>         unique_actors;          // 88 ACUN, LCUN?
+        maybe<Changed_References_t*>    changed_references;     // A0
+        void*                           unk_A8;                 // A8
+        Array_t<Reference_Handle_t>     promoted_references;    // B0
+        volatile s32                    loaded_count;           // C8
+        u32                             file_offset;            // CC
+        Array_t<Keyword_Float_t>        keyword_floats;         // D0
+        u32                             unk_E8;                 // E8
+        Bool_t                          is_cleared;             // EC
+        Bool_t                          was_ever_cleared;       // ED
+        u16                             pad_EE;                 // EE
 
     public:
-        Bool_t      Is_Likely_Civilized() const;
-        Bool_t      Is_Likely_Dangerous() const;
-        Bool_t      Is_Likely_Regional() const;
+        Bool_t                      Is_City_Or_Town() const;
+        Bool_t                      Is_Likely_Civilized() const;
+        Bool_t                      Is_Likely_Dangerous() const;
 
-        String_t    Any_Name();
+        String_t                    Any_Name();
+
+        Vector_t<some<Location_t*>> Parents() const;
+        void                        Parents(Vector_t<some<Location_t*>>& results) const;
+
+        Bool_t                      Has_Keyword(some<Keyword_t*> keyword) const;
+        Bool_t                      Inherits_Keyword(some<Keyword_t*> keyword) const;
+        Bool_t                      Has_Or_Inherits_Keyword(some<Keyword_t*> keyword) const;
+        Bool_t                      Has_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const;
+        Bool_t                      Inherits_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const;
+        Bool_t                      Has_Or_Inherits_Any_Keywords(const Vector_t<some<Keyword_t*>> keywords) const;
     };
     STATIC_ASSERT(sizeof(Location_t) == 0xF0);
 

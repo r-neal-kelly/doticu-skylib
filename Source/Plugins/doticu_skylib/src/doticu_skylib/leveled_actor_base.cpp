@@ -30,9 +30,9 @@ namespace doticu_skylib {
     {
         auto& leveled_actor_bases = Game_t::Self()->Leveled_Actor_Bases();
         for (size_t idx = 0, end = leveled_actor_bases.Count(); idx < end; idx += 1) {
-            Leveled_Actor_Base_t* leveled_actor_base = leveled_actor_bases[idx];
+            maybe<Leveled_Actor_Base_t*> leveled_actor_base = leveled_actor_bases[idx];
             if (leveled_actor_base) {
-                results.push_back(leveled_actor_base);
+                results.push_back(leveled_actor_base());
             }
         }
     }

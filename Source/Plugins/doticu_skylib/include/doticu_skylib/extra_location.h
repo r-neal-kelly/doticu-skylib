@@ -33,7 +33,7 @@ namespace doticu_skylib {
         virtual ~Extra_Location_t(); // 0
 
     public:
-        Location_t* location; // 10
+        maybe<Location_t*>  location; // 10
     };
     STATIC_ASSERT(sizeof(Extra_Location_t) == 0x18);
 

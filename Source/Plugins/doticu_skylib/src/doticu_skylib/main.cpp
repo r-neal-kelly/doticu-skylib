@@ -108,7 +108,7 @@ namespace doticu_skylib {
             {
                 some<Actor_t*> player_actor = Player_t::Self();
                 some<Faction_t*> player_faction = static_cast<Faction_t*>(Game_t::Form(0x00000DB1)());
-                Vector_t<some<Reference_t*>> references = Reference_t::Grid();
+                Vector_t<some<Reference_t*>> references = Reference_t::Grid_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
                     maybe<Actor_t*> actor = reference->As_Actor();
@@ -141,7 +141,7 @@ namespace doticu_skylib {
                 some<Armor_t*> circlet = static_cast<Armor_t*>(Game_t::Form(0x0001672F)());
                 some<Container_t*> cache_base = static_cast<Container_t*>(Game_t::Form(0x00023A6D)());
 
-                Vector_t<some<Reference_t*>> references = Reference_t::All();
+                Vector_t<some<Reference_t*>> references = Reference_t::All_References();
                 for (size_t idx = 0, end = references.size(); idx < end; idx += 1) {
                     some<Reference_t*> reference = references[idx];
 

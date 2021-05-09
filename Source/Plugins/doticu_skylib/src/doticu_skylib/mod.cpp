@@ -72,23 +72,23 @@ namespace doticu_skylib {
 
     Vector_t<some<Mod_t*>> Mod_t::Active_Mods()
     {
-        Array_t<Mod_t*>& heavy_mods = Game_t::Self()->heavy_mods;
-        Array_t<Mod_t*>& light_mods = Game_t::Self()->light_mods;
+        Array_t<maybe<Mod_t*>>& heavy_mods = Game_t::Self()->heavy_mods;
+        Array_t<maybe<Mod_t*>>& light_mods = Game_t::Self()->light_mods;
 
         Vector_t<some<Mod_t*>> results;
         results.reserve(heavy_mods.Count() + light_mods.Count());
 
         for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = heavy_mods[idx];
+            maybe<Mod_t*> mod = heavy_mods[idx];
             if (mod) {
-                results.push_back(mod);
+                results.push_back(mod());
             }
         }
 
         for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = light_mods[idx];
+            maybe<Mod_t*> mod = light_mods[idx];
             if (mod) {
-                results.push_back(mod);
+                results.push_back(mod());
             }
         }
 
@@ -97,15 +97,15 @@ namespace doticu_skylib {
 
     Vector_t<some<Mod_t*>> Mod_t::Active_Heavy_Mods()
     {
-        Array_t<Mod_t*>& heavy_mods = Game_t::Self()->heavy_mods;
+        Array_t<maybe<Mod_t*>>& heavy_mods = Game_t::Self()->heavy_mods;
 
         Vector_t<some<Mod_t*>> results;
         results.reserve(heavy_mods.Count());
 
         for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = heavy_mods[idx];
+            maybe<Mod_t*> mod = heavy_mods[idx];
             if (mod) {
-                results.push_back(mod);
+                results.push_back(mod());
             }
         }
 
@@ -114,27 +114,27 @@ namespace doticu_skylib {
 
     Vector_t<some<Mod_t*>> Mod_t::Active_Light_Mods()
     {
-        Array_t<Mod_t*>& light_mods = Game_t::Self()->light_mods;
+        Array_t<maybe<Mod_t*>>& light_mods = Game_t::Self()->light_mods;
 
         Vector_t<some<Mod_t*>> results;
         results.reserve(light_mods.Count());
 
         for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = light_mods[idx];
+            maybe<Mod_t*> mod = light_mods[idx];
             if (mod) {
-                results.push_back(mod);
+                results.push_back(mod());
             }
         }
 
         return results;
     }
 
-    Array_t<Mod_t*>& Mod_t::Active_Heavy_Mods_2()
+    Array_t<maybe<Mod_t*>>& Mod_t::Active_Heavy_Mods_2()
     {
         return Game_t::Self()->heavy_mods;
     }
 
-    Array_t<Mod_t*>& Mod_t::Active_Light_Mods_2()
+    Array_t<maybe<Mod_t*>>& Mod_t::Active_Light_Mods_2()
     {
         return Game_t::Self()->light_mods;
     }
@@ -150,11 +150,11 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(mod_name);
 
-        Array_t<Mod_t*>& heavy_mods = Game_t::Self()->heavy_mods;
-        Array_t<Mod_t*>& light_mods = Game_t::Self()->light_mods;
+        Array_t<maybe<Mod_t*>>& heavy_mods = Game_t::Self()->heavy_mods;
+        Array_t<maybe<Mod_t*>>& light_mods = Game_t::Self()->light_mods;
 
         for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = heavy_mods[idx];
+            maybe<Mod_t*> mod = heavy_mods[idx];
             if (mod) {
                 if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
                     return mod;
@@ -163,7 +163,7 @@ namespace doticu_skylib {
         }
 
         for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
-            Mod_t* mod = light_mods[idx];
+            maybe<Mod_t*> mod = light_mods[idx];
             if (mod) {
                 if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
                     return mod;
@@ -171,7 +171,7 @@ namespace doticu_skylib {
             }
         }
 
-        return nullptr;
+        return none<Mod_t*>();
     }
 
     static void Log_Mods(const char* title, Vector_t<some<Mod_t*>> mods)

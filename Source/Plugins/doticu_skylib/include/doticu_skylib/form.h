@@ -48,6 +48,7 @@ namespace doticu_skylib {
     class Spell_t;
     class Value_c;
     class Weapon_t;
+    class Worldspace_t;
 
     namespace Virtual {
 
@@ -220,6 +221,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Soul_Gem() const;
         Bool_t                  Is_Spell() const;
         Bool_t                  Is_Weapon() const;
+        Bool_t                  Is_Worldspace() const;
 
         maybe<Actor_t*>         As_Actor() const;
         maybe<Actor_Base_t*>    As_Actor_Base() const;
@@ -249,6 +251,7 @@ namespace doticu_skylib {
         maybe<Soul_Gem_t*>      As_Soul_Gem() const;
         maybe<Spell_t*>         As_Spell() const;
         maybe<Weapon_t*>        As_Weapon() const;
+        maybe<Worldspace_t*>    As_Worldspace() const;
 
     public:
         void Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback);            // RegisterForKey

@@ -104,13 +104,27 @@ namespace doticu_skylib {
         };
 
     public:
-        static size_t                   Interior_Cell_Count();
-        static size_t                   Loaded_Exterior_Cell_Count();
-        static Vector_t<Cell_t*>        Interior_Cells();
-        static Vector_t<Cell_t*>        Loaded_Exterior_Cells();
-        static Vector_t<Cell_t*>        Loaded_Cells();
-        static Vector_t<some<Cell_t*>>  Cells_In_Grid();
-        static void                     Cells_In_Grid(Vector_t<some<Cell_t*>>& results);
+        static Vector_t<some<Cell_t*>>  Interior_Cells_Dynamic();
+        static void                     Interior_Cells_Dynamic(Vector_t<some<Cell_t*>>& results);
+
+        static Vector_t<some<Cell_t*>>  Interior_Cells_Static();
+        static void                     Interior_Cells_Static(Vector_t<some<Cell_t*>>& results);
+
+        static Vector_t<some<Cell_t*>>  Exterior_Cells();
+        static void                     Exterior_Cells(Vector_t<some<Cell_t*>>& results);
+
+        static Vector_t<some<Cell_t*>>  Grid_Cells();
+        static void                     Grid_Cells(Vector_t<some<Cell_t*>>& results);
+
+        static Vector_t<some<Cell_t*>>  Attached_Cells();
+        static void                     Attached_Cells(Vector_t<some<Cell_t*>>& results);
+
+        static Vector_t<some<Cell_t*>>  All_Cells();
+        static void                     All_Cells(Vector_t<some<Cell_t*>>& results);
+
+        static size_t                   Interior_Cell_Dynamic_Count();
+        static size_t                   Interior_Cell_Static_Count();
+        static size_t                   Exterior_Cell_Count();
 
     public:
         virtual ~Cell_t();
@@ -151,9 +165,12 @@ namespace doticu_skylib {
 
         maybe<Encounter_Zone_t*>        Encounter_Zone(Bool_t do_check_locations = true);
         
-        Location_t*                     Location();
-        Vector_t<Location_t*>           Locations();
-        void                            Locations(Vector_t<Location_t*>& results);
+        maybe<Location_t*>              Location();
+        maybe<Location_t*>              This_Location();
+        maybe<Location_t*>              Worldspace_Location();
+
+        Vector_t<some<Location_t*>>     Locations();
+        void                            Locations(Vector_t<some<Location_t*>>& results);
         Vector_t<String_t>              Location_Names();
         void                            Location_Names(Vector_t<String_t>& results);
 
@@ -168,6 +185,9 @@ namespace doticu_skylib {
         String_t                        Any_Name();
 
         void                            Iterate_References(Iterator_i<some<Reference_t*>>& iterator);
+
+    public:
+        void    Log_Locations(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Cell_t) == 0x140);
 

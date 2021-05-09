@@ -184,34 +184,34 @@ namespace doticu_skylib {
         }
     }
 
-    Array_t<Actor_Base_t*>& Game_t::Actor_Bases()
+    Array_t<maybe<Actor_Base_t*>>& Game_t::Actor_Bases()
     {
-        return reinterpret_cast<Array_t<Actor_Base_t*>&>(form_caches[Form_Type_e::ACTOR_BASE]);
+        return reinterpret_cast<Array_t<maybe<Actor_Base_t*>>&>(form_caches[Form_Type_e::ACTOR_BASE]);
     }
 
-    Array_t<Faction_t*>& Game_t::Factions()
+    Array_t<maybe<Faction_t*>>& Game_t::Factions()
     {
-        return reinterpret_cast<Array_t<Faction_t*>&>(form_caches[Form_Type_e::FACTION]);
+        return reinterpret_cast<Array_t<maybe<Faction_t*>>&>(form_caches[Form_Type_e::FACTION]);
     }
 
-    Array_t<Leveled_Actor_Base_t*>& Game_t::Leveled_Actor_Bases()
+    Array_t<maybe<Leveled_Actor_Base_t*>>& Game_t::Leveled_Actor_Bases()
     {
-        return reinterpret_cast<Array_t<Leveled_Actor_Base_t*>&>(form_caches[Form_Type_e::LEVELED_ACTOR_BASE]);
+        return reinterpret_cast<Array_t<maybe<Leveled_Actor_Base_t*>>&>(form_caches[Form_Type_e::LEVELED_ACTOR_BASE]);
     }
 
-    Array_t<Quest_t*>& Game_t::Quests()
+    Array_t<maybe<Quest_t*>>& Game_t::Quests()
     {
-        return reinterpret_cast<Array_t<Quest_t*>&>(form_caches[Form_Type_e::QUEST]);
+        return reinterpret_cast<Array_t<maybe<Quest_t*>>&>(form_caches[Form_Type_e::QUEST]);
     }
 
-    Array_t<Race_t*>& Game_t::Races()
+    Array_t<maybe<Race_t*>>& Game_t::Races()
     {
-        return reinterpret_cast<Array_t<Race_t*>&>(form_caches[Form_Type_e::RACE]);
+        return reinterpret_cast<Array_t<maybe<Race_t*>>&>(form_caches[Form_Type_e::RACE]);
     }
 
-    Array_t<Worldspace_t*>& Game_t::Worldspaces()
+    Array_t<maybe<Worldspace_t*>>& Game_t::Worldspaces()
     {
-        return reinterpret_cast<Array_t<Worldspace_t*>&>(form_caches[Form_Type_e::WORLDSPACE]);
+        return reinterpret_cast<Array_t<maybe<Worldspace_t*>>&>(form_caches[Form_Type_e::WORLDSPACE]);
     }
 
 }

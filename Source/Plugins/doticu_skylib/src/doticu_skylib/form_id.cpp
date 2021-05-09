@@ -201,7 +201,7 @@ namespace doticu_skylib {
         if (Is_Static()) {
             maybe<Heavy_Mod_Index_t> heavy_mod_index = Heavy_Mod_Index();
             if (heavy_mod_index) {
-                Array_t<Mod_t*>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
+                Array_t<maybe<Mod_t*>>& heavy_mods = Mod_t::Active_Heavy_Mods_2();
                 if (heavy_mod_index() < heavy_mods.Count()) {
                     return heavy_mods[heavy_mod_index()];
                 } else {
@@ -210,7 +210,7 @@ namespace doticu_skylib {
             } else {
                 maybe<Light_Mod_Index_t> light_mod_index = Light_Mod_Index();
                 if (light_mod_index) {
-                    Array_t<Mod_t*>& light_mods = Mod_t::Active_Light_Mods_2();
+                    Array_t<maybe<Mod_t*>>& light_mods = Mod_t::Active_Light_Mods_2();
                     if (light_mod_index() < light_mods.Count()) {
                         return light_mods[light_mod_index()];
                     } else {
