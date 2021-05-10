@@ -90,13 +90,19 @@ namespace doticu_skylib {
         STATIC_ASSERT(sizeof(Keyword_Float_t) == 0x10);
 
     public:
-        static const Vector_t<some<Keyword_t*>>& Civilized_Types();
-        static const Vector_t<some<Keyword_t*>>& Common_Civilized_Types();
-        static const Vector_t<some<Keyword_t*>>& Uncommon_Civilized_Types();
+        static Vector_t<some<Location_t*>>          Locations_Dynamic();
+        static void                                 Locations_Dynamic(Vector_t<some<Location_t*>>& results);
 
-        static const Vector_t<some<Keyword_t*>>& Dangerous_Types();
-        static const Vector_t<some<Keyword_t*>>& Common_Dangerous_Types();
-        static const Vector_t<some<Keyword_t*>>& Uncommon_Dangerous_Types();
+        static Vector_t<some<Location_t*>>          Locations_Static();
+        static void                                 Locations_Static(Vector_t<some<Location_t*>>& results);
+
+        static const Vector_t<some<Keyword_t*>>&    Civilized_Types();
+        static const Vector_t<some<Keyword_t*>>&    Common_Civilized_Types();
+        static const Vector_t<some<Keyword_t*>>&    Uncommon_Civilized_Types();
+
+        static const Vector_t<some<Keyword_t*>>&    Dangerous_Types();
+        static const Vector_t<some<Keyword_t*>>&    Common_Dangerous_Types();
+        static const Vector_t<some<Keyword_t*>>&    Uncommon_Dangerous_Types();
 
     public:
         virtual ~Location_t();
@@ -123,9 +129,12 @@ namespace doticu_skylib {
         u16                             pad_EE;                 // EE
 
     public:
-        Bool_t                      Is_City_Or_Town() const;
+        Bool_t                      Is_Inn() const;
+
+        Bool_t                      Is_Likely_City_Or_Town() const;
         Bool_t                      Is_Likely_Civilized() const;
         Bool_t                      Is_Likely_Dangerous() const;
+        Bool_t                      Is_Likely_Home() const;
 
         String_t                    Any_Name();
 

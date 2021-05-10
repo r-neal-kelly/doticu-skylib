@@ -464,6 +464,20 @@ namespace doticu_skylib {
         }
     }
 
+    String_t Actor_Base_t::Name()
+    {
+        return Name_c::Name();
+    }
+
+    void Actor_Base_t::Name(String_t name, Bool_t do_save)
+    {
+        Name_c::Name(name);
+
+        if (do_save) {
+            Flag_Form_Change(Form_Change_Flags_e::NAME);
+        }
+    }
+
     void Actor_Base_t::Log(std::string indent)
     {
         SKYLIB_LOG(indent + "Actor_Base_t::Log");

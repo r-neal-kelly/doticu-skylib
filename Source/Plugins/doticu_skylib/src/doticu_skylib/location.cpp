@@ -3,9 +3,72 @@
 */
 
 #include "doticu_skylib/const_keywords.h"
+#include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/location.h"
 
 namespace doticu_skylib {
+
+    Vector_t<some<Location_t*>> Location_t::Locations_Dynamic()
+    {
+        Vector_t<some<Location_t*>> results;
+        Locations_Dynamic(results);
+        return results;
+    }
+
+    void Location_t::Locations_Dynamic(Vector_t<some<Location_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Location_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Location_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Location_t*> location = form->As_Location();
+                if (location && location->Is_Valid()) {
+                    this->results.push_back(location());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(Game_t::Self()->Locations().Count() + 64);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Location_t*>> Location_t::Locations_Static()
+    {
+        Vector_t<some<Location_t*>> results;
+        Locations_Static(results);
+        return results;
+    }
+
+    void Location_t::Locations_Static(Vector_t<some<Location_t*>>& results)
+    {
+        Array_t<maybe<Location_t*>>& locations = Game_t::Self()->Locations();
+
+        size_t location_count = locations.Count();
+        results.reserve(location_count);
+
+        for (size_t idx = 0, end = location_count; idx < end; idx += 1) {
+            maybe<Location_t*> location = locations[idx];
+            if (location && location->Is_Valid() && !results.Has(location())) {
+                results.push_back(location());
+            }
+        }
+    }
 
     const Vector_t<some<Keyword_t*>>& Location_t::Civilized_Types()
     {
@@ -167,11 +230,17 @@ namespace doticu_skylib {
         return types;
     }
 
-    Bool_t Location_t::Is_City_Or_Town() const
+    Bool_t Location_t::Is_Inn() const
+    {
+        return Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Inn());
+    }
+
+    Bool_t Location_t::Is_Likely_City_Or_Town() const
     {
         return
             Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_City()) ||
-            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Town());
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Town()) ||
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Habitation_With_Inn());
     }
 
     Bool_t Location_t::Is_Likely_Civilized() const
@@ -196,6 +265,15 @@ namespace doticu_skylib {
         } else {
             return false;
         }
+    }
+
+    Bool_t Location_t::Is_Likely_Home() const
+    {
+        return
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_House()) ||
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Player_House()) ||
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Homestead()) ||
+            Has_Or_Inherits_Keyword(Const::Keyword::Location_Type_Homestead_With_Shrine());
     }
 
     String_t Location_t::Any_Name()

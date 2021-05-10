@@ -69,6 +69,7 @@
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\book.h" />
+    <ClInclude Include="include\doticu_skylib\calendar.h" />
     <ClInclude Include="include\doticu_skylib\color.h" />
     <ClInclude Include="include\doticu_skylib\combat_style.h" />
     <ClInclude Include="include\doticu_skylib\console_log.h" />
@@ -518,6 +519,7 @@
     <ClCompile Include="src\doticu_skylib\armor_set.cpp" />
     <ClCompile Include="src\doticu_skylib\atomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\book.cpp" />
+    <ClCompile Include="src\doticu_skylib\calendar.cpp" />
     <ClCompile Include="src\doticu_skylib\cell.cpp" />
     <ClCompile Include="src\doticu_skylib\component_form_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_keywords.cpp" />

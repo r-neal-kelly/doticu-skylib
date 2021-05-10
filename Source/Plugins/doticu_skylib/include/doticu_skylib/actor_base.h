@@ -217,6 +217,8 @@ namespace doticu_skylib {
         void                            Combat_Style(maybe<Combat_Style_t*> combat_style);
 
         String_t                        Any_Name();
+        String_t                        Name();
+        void                            Name(String_t name, Bool_t do_save);
 
     public:
         void Log(std::string indent = "");

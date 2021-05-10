@@ -23,13 +23,14 @@ namespace doticu_skylib {
     class Faction_t;
     class Form_t;
     class Leveled_Actor_Base_t;
+    class Location_t;
     class Mod_t;
     class Quest_t;
     class Race_t;
     class Region_t;
     class Worldspace_t;
 
-    class Game_t // TESDataHandler
+    class Game_t    // TESDataHandler
     {
     public:
         class Offset_e :
@@ -123,6 +124,7 @@ namespace doticu_skylib {
         Array_t<maybe<Actor_Base_t*>>&          Actor_Bases();
         Array_t<maybe<Faction_t*>>&             Factions();
         Array_t<maybe<Leveled_Actor_Base_t*>>&  Leveled_Actor_Bases();
+        Array_t<maybe<Location_t*>>&            Locations();
         Array_t<maybe<Quest_t*>>&               Quests();
         Array_t<maybe<Race_t*>>&                Races();
         Array_t<maybe<Worldspace_t*>>&          Worldspaces();
