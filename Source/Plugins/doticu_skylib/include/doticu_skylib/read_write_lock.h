@@ -38,7 +38,13 @@ namespace doticu_skylib {
         void Unlock_For_Write();
     };
 
-    class Read_Locker_t
+    class Locker_t
+    {
+    public:
+    };
+
+    class Read_Locker_t :
+        public Locker_t
     {
     public:
         Read_Locker_t() = delete;
@@ -54,7 +60,8 @@ namespace doticu_skylib {
         Read_Write_Lock_t& lock;
     };
 
-    class Write_Locker_t
+    class Write_Locker_t :
+        public Locker_t
     {
     public:
         Write_Locker_t() = delete;

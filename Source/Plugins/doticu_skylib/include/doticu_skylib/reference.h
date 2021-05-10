@@ -373,6 +373,8 @@ namespace doticu_skylib {
         void                                Copy_Worn_Items(some<Reference_t*> other);
         void                                Destroy_Non_Quest_Items();
 
+        Bool_t                              Remove_Blank_Name();
+
     public:
         void                        Add_Item(some<Form_t*> item, s16 delta);                                // AddItem
         void                        Remove_Item(some<Form_t*> item, s16 delta);                             // RemoveItem

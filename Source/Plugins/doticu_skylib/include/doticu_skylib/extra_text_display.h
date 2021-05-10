@@ -70,6 +70,8 @@ namespace doticu_skylib {
         u32                 pad_34;         // 34
 
     public:
+        Bool_t          Is_Custom();
+
         maybe<String_t> Name();
         void            Name(String_t name, Bool_t do_force);
 

@@ -217,7 +217,11 @@ namespace doticu_skylib {
     Bool_t Extra_List_t::Has(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
+        return Has(type, locker);
+    }
 
+    Bool_t Extra_List_t::Has(Extra_Type_e type, Locker_t& locker) const
+    {
         if (this->presence) {
             return this->presence->Has(type);
         } else {
@@ -228,7 +232,11 @@ namespace doticu_skylib {
     maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
+        return Get(type, locker);
+    }
 
+    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type, Locker_t& locker) const
+    {
         if (this->presence && this->presence->Has(type)) {
             for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
@@ -267,6 +275,12 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_data);
 
         Write_Locker_t locker(this->lock);
+        return Remove(x_data, locker);
+    }
+
+    Bool_t Extra_List_t::Remove(some<Extra_Data_t*> x_data, Write_Locker_t& locker)
+    {
+        SKYLIB_ASSERT_SOME(x_data);
 
         Extra_Type_e type = x_data->Type();
         if (this->presence && this->presence->Has(type)) {

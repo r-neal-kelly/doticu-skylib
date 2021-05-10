@@ -88,14 +88,21 @@ namespace doticu_skylib {
 
     public:
         Bool_t                  Has(Extra_Type_e type) const;
+        Bool_t                  Has(Extra_Type_e type, Locker_t& locker) const;
         maybe<Extra_Data_t*>    Get(Extra_Type_e type) const;
+        maybe<Extra_Data_t*>    Get(Extra_Type_e type, Locker_t& locker) const;
         Bool_t                  Add(some<Extra_Data_t*> x_data);
         Bool_t                  Remove(some<Extra_Data_t*> x_data);
+        Bool_t                  Remove(some<Extra_Data_t*> x_data, Write_Locker_t& locker);
 
         template <typename T>
         Bool_t                  Has() const;
         template <typename T>
+        Bool_t                  Has(Locker_t& locker) const;
+        template <typename T>
         maybe<T*>               Get() const;
+        template <typename T>
+        maybe<T*>               Get(Locker_t& locker) const;
         template <typename T>
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
@@ -105,9 +112,13 @@ namespace doticu_skylib {
         template <typename T>
         Bool_t                  Remove(some<T*> x_data);
         template <typename T>
+        Bool_t                  Remove(some<T*> x_data, Write_Locker_t& locker);
+        template <typename T>
         Bool_t                  Remove_And_Destroy();
         template <typename T>
         void                    Remove_And_Destroy(some<T*> x_data);
+        template <typename T>
+        void                    Remove_And_Destroy(some<T*> x_data, Write_Locker_t& locker);
 
         Bool_t                  Has_Extra_Aliases();
         Bool_t                  Has_Extra_Cannot_Wear();

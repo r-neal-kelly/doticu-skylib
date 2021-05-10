@@ -68,9 +68,14 @@ namespace doticu_skylib {
         Extra_Data_t::Destroy<Extra_Text_Display_t>(x_text_display);
     }
 
+    Bool_t Extra_Text_Display_t::Is_Custom()
+    {
+        return !this->owning_quest && this->conditional.type == Extra_Text_Display_Type_e::CUSTOM;
+    }
+
     maybe<String_t> Extra_Text_Display_t::Name()
     {
-        if (!this->owning_quest && this->conditional.type == Extra_Text_Display_Type_e::CUSTOM) {
+        if (Is_Custom()) {
             return this->name;
         } else {
             return none<String_t>();

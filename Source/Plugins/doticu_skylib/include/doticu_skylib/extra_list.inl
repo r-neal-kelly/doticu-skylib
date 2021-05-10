@@ -15,9 +15,21 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline Bool_t Extra_List_t::Has(Locker_t& locker) const
+    {
+        return Has(T::EXTRA_TYPE, locker);
+    }
+
+    template <typename T>
     inline maybe<T*> Extra_List_t::Get() const
     {
         return static_cast<maybe<T*>>(Get(T::EXTRA_TYPE));
+    }
+
+    template <typename T>
+    inline maybe<T*> Extra_List_t::Get(Locker_t& locker) const
+    {
+        return static_cast<maybe<T*>>(Get(T::EXTRA_TYPE, locker));
     }
 
     template <typename T>
@@ -45,6 +57,12 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline Bool_t Extra_List_t::Remove(some<T*> x_data, Write_Locker_t& locker)
+    {
+        return Remove(static_cast<some<Extra_Data_t*>>(x_data), locker);
+    }
+
+    template <typename T>
     inline Bool_t Extra_List_t::Remove_And_Destroy()
     {
         maybe<T*> x_data = Get<T>();
@@ -63,6 +81,15 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_data);
 
         Remove<T>(x_data);
+        T::Destroy(x_data);
+    }
+
+    template <typename T>
+    inline void Extra_List_t::Remove_And_Destroy(some<T*> x_data, Write_Locker_t& locker)
+    {
+        SKYLIB_ASSERT_SOME(x_data);
+
+        Remove<T>(x_data, locker);
         T::Destroy(x_data);
     }
 
