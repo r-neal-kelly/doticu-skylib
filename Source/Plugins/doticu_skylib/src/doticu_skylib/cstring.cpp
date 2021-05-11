@@ -181,6 +181,20 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t CString_t::Has_Non_Whitespace(some<const char*> sub)
+    {
+        SKYLIB_ASSERT_SOME(sub);
+
+        for (size_t idx = 0; sub[idx]; idx += 1) {
+            const char c = sub[idx];
+            if (c != ' ' && c != '\n' && c != '\r' && c != '\t') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     const char* CString_t::Seek_After(const char* sub, const char obj, size_t max_chars)
     {
         if (sub) {

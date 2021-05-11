@@ -5,6 +5,7 @@
 #pragma once
 
 #include "doticu_skylib/intrinsic.h"
+#include "doticu_skylib/maybe.h"
 
 namespace doticu_skylib {
 
@@ -22,6 +23,8 @@ namespace doticu_skylib {
 
         static Bool_t Is_Length_Less_Than(const char* sub, Word_t length, Bool_t with_null = false);
         static Bool_t Is_Length_Greater_Than(const char* sub, Word_t length, Bool_t with_null = false);
+
+        static Bool_t Has_Non_Whitespace(some<const char*> sub);
 
         static const char* Seek_After(const char* sub, const char obj, const size_t max_chars = 24);
 

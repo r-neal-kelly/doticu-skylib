@@ -1008,16 +1008,21 @@ namespace doticu_skylib {
         }
     }
 
-    Bool_t Reference_t::Remove_Blank_Name()
+    Bool_t Reference_t::Remove_Blank_Name(Bool_t whitespace_counts_as_blank)
     {
         Write_Locker_t locker(this->x_list.lock);
 
         maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
         if (x_text_display) {
             maybe<String_t> name = x_text_display->Name();
-            if (name.Has_Value() && name.Value() == "") {
-                this->x_list.Remove_And_Destroy<Extra_Text_Display_t>(x_text_display(), locker);
-                return true;
+            if (name.Has_Value()) {
+                String_t value = name.Value();
+                if (value == "" || (whitespace_counts_as_blank && !CString_t::Has_Non_Whitespace(value))) {
+                    this->x_list.Remove_And_Destroy<Extra_Text_Display_t>(x_text_display(), locker);
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
