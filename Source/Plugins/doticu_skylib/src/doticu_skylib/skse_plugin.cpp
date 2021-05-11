@@ -3,10 +3,55 @@
 */
 
 #include <ShlObj.h>
+#include <thread>
 
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/skse_plugin.h"
+#include "doticu_skylib/ui.h"
 
 namespace doticu_skylib {
+
+    void SKSE_Plugin_t::On_SKSE_Message(SKSE_Plugin_t& plugin, some<SKSE_Message_t*> message)
+    {
+        if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
+            std::thread(
+                [&plugin]()->void
+                {
+                    UI_t& ui = UI_t::Self();
+                    u32 time = ui.game_timer.total_time;
+                    while (ui.game_timer.total_time == time) {
+                        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+                    }
+                    plugin.On_After_Save_Game();
+                }
+            ).detach();
+            plugin.On_Before_Save_Game();
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
+            if (message->data) {
+                plugin.On_Before_Load_Game(static_cast<const char*>(message->data), message->dataLen);
+            } else {
+                plugin.On_Before_Load_Game("", 0);
+            }
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
+            plugin.On_After_Load_Game(message->data ? true : false);
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_NewGame) {
+            plugin.On_After_New_Game();
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
+            if (message->data) {
+                plugin.On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
+            } else {
+                plugin.On_Before_Delete_Game("", 0);
+            }
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
+            plugin.On_After_Load_Data(Game_t::Self());
+
+        }
+    }
 
     SKSE_Plugin_t::SKSE_Plugin_t(const some<const char*> plugin_name,
                                  const maybe<Version_t<u16>> skyrim_version_target,

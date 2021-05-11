@@ -147,7 +147,12 @@ namespace doticu_skylib {
         s32                                                 pickpocket_warning_count;   // 6D0
         Float_t                                             pickpocket_warning_timer;   // 6D4
 
-        Byte_t                                              unk_6D8[0x330];             // 6D8
+        Byte_t                                              unk_6D8[0x298];             // 6D8
+
+        s64                                                 total_play_time_updated;    // 970
+        s64                                                 total_play_time;            // 978
+
+        Byte_t                                              unk_980[0x88];              // 980
 
         Atomic_Count_t                                      teammate_count;             // A08
 

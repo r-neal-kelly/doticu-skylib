@@ -10,12 +10,12 @@
 
 namespace doticu_skylib {
 
-    Extra_Text_Display_t::Conditional_u::Conditional_u() :
+    Extra_Text_Display_t::Type_Or_Instance_u::Type_Or_Instance_u() :
         type(Extra_Text_Display_Type_e::DEFAULT)
     {
     }
 
-    Extra_Text_Display_t::Conditional_u::~Conditional_u()
+    Extra_Text_Display_t::Type_Or_Instance_u::~Type_Or_Instance_u()
     {
         this->type = Extra_Text_Display_Type_e::DEFAULT;
     }
@@ -27,7 +27,7 @@ namespace doticu_skylib {
         x_text_display->name = "";
         x_text_display->message = none<Message_t*>();
         x_text_display->owning_quest = none<Quest_t*>();
-        x_text_display->conditional.type = Extra_Text_Display_Type_e::DEFAULT;
+        x_text_display->type_or_instance.type = Extra_Text_Display_Type_e::DEFAULT;
         x_text_display->temper_level = Temper_Level_e::STANDARD;
         x_text_display->name_length = 0;
         x_text_display->pad_32 = 0;
@@ -52,7 +52,7 @@ namespace doticu_skylib {
         x_text_display->name = other.name;
         x_text_display->message = other.message;
         x_text_display->owning_quest = other.owning_quest;
-        x_text_display->conditional.type = other.conditional.type;
+        x_text_display->type_or_instance.type = other.type_or_instance.type;
         x_text_display->temper_level = other.temper_level;
         x_text_display->name_length = other.name_length;
         x_text_display->pad_32 = other.pad_32;
@@ -70,7 +70,7 @@ namespace doticu_skylib {
 
     Bool_t Extra_Text_Display_t::Is_Custom()
     {
-        return !this->owning_quest && this->conditional.type == Extra_Text_Display_Type_e::CUSTOM;
+        return this->type_or_instance.type == Extra_Text_Display_Type_e::CUSTOM;
     }
 
     maybe<String_t> Extra_Text_Display_t::Name()
@@ -108,10 +108,10 @@ namespace doticu_skylib {
         }
         if (this->owning_quest) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "owner: %s", this->owning_quest->Any_Name());
-            SKYLIB_LOG(indent + SKYLIB_TAB + "owner_instance: %i", this->conditional.owning_quest_instance);
+            SKYLIB_LOG(indent + SKYLIB_TAB + "owner_instance: %i", this->type_or_instance.owning_quest_instance);
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "owner: (nullptr)");
-            SKYLIB_LOG(indent + SKYLIB_TAB + "type: %i", this->conditional.type);
+            SKYLIB_LOG(indent + SKYLIB_TAB + "type: %i", this->type_or_instance.type);
         }
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "temper_level: %s", this->temper_level.As_String()());

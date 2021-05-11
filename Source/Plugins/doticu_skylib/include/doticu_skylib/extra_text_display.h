@@ -38,17 +38,17 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        union Conditional_u
+        union Type_Or_Instance_u
         {
         public:
             Extra_Text_Display_Type_e   type;
             u32                         owning_quest_instance;
 
         public:
-            Conditional_u();
-            ~Conditional_u();
+            Type_Or_Instance_u();
+            ~Type_Or_Instance_u();
         };
-        STATIC_ASSERT(sizeof(Conditional_u) == 0x4);
+        STATIC_ASSERT(sizeof(Type_Or_Instance_u) == 0x4);
 
     public:
         static some<Extra_Text_Display_t*>  Create();
@@ -60,14 +60,14 @@ namespace doticu_skylib {
         virtual ~Extra_Text_Display_t(); // 0
 
     public:
-        String_t            name;           // 10
-        maybe<Message_t*>   message;        // 18
-        maybe<Quest_t*>     owning_quest;   // 20
-        Conditional_u       conditional;    // 28
-        Temper_Level_t      temper_level;   // 2C
-        u16                 name_length;    // 30
-        u16                 pad_32;         // 32
-        u32                 pad_34;         // 34
+        String_t            name;               // 10
+        maybe<Message_t*>   message;            // 18
+        maybe<Quest_t*>     owning_quest;       // 20
+        Type_Or_Instance_u  type_or_instance;   // 28
+        Temper_Level_t      temper_level;       // 2C
+        u16                 name_length;        // 30
+        u16                 pad_32;             // 32
+        u32                 pad_34;             // 34
 
     public:
         Bool_t          Is_Custom();

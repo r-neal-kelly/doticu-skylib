@@ -168,6 +168,7 @@
     <ClInclude Include="include\doticu_skylib\extra_worn.h" />
     <ClInclude Include="include\doticu_skylib\extra_worn_left.h" />
     <ClInclude Include="include\doticu_skylib\form_owner.h" />
+    <ClInclude Include="include\doticu_skylib\game_timer.h" />
     <ClInclude Include="include\doticu_skylib\ingredient.h" />
     <ClInclude Include="include\doticu_skylib\key.h" />
     <ClInclude Include="include\doticu_skylib\ai_location_handle.h" />
@@ -588,6 +589,7 @@
     <ClCompile Include="src\doticu_skylib\extra_temper_level.cpp" />
     <ClCompile Include="src\doticu_skylib\extra_unique_id.cpp" />
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
+    <ClCompile Include="src\doticu_skylib\game_timer.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
     <ClCompile Include="src\doticu_skylib\main.cpp" />
     <ClCompile Include="src\doticu_skylib\misc.cpp" />

@@ -2,8 +2,9 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/scrap_array.inl"
-#include "doticu_skylib/ui.h"
+#include "doticu_skylib/ui.inl"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_debug.h"
@@ -12,6 +13,16 @@
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
+
+    UI_t& UI_t::Self()
+    {
+        static auto self = *reinterpret_cast
+            <UI_t**>
+            (Game_t::Base_Address() + Offset_e::SELF);
+
+        SKYLIB_ASSERT(self);
+        return *self;
+    }
 
     void UI_t::Run(String_t menu, String_t target)
     {

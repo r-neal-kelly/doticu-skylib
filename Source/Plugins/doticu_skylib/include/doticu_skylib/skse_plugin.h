@@ -13,6 +13,8 @@
 
 namespace doticu_skylib {
 
+    class Game_t;
+
     namespace Virtual {
 
         class Machine_t;
@@ -21,6 +23,9 @@ namespace doticu_skylib {
 
     class SKSE_Plugin_t
     {
+    public:
+        static void On_SKSE_Message(SKSE_Plugin_t& plugin, some<SKSE_Message_t*> message);
+
     public:
         IDebugLog                               log;
 
@@ -47,8 +52,14 @@ namespace doticu_skylib {
         virtual         ~SKSE_Plugin_t();
         virtual Bool_t  On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info);
         virtual Bool_t  On_Load(some<const SKSEInterface*> skse);
-        virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine)                      = 0;
-        virtual void    On_Message(some<SKSE_Message_t*> message)                           = 0;
+        virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine)                              = 0;
+        virtual void    On_After_Load_Data(some<Game_t*> game)                                      = 0;
+        virtual void    On_After_New_Game()                                                         = 0;
+        virtual void    On_Before_Save_Game()                                                       = 0;
+        virtual void    On_After_Save_Game()                                                        = 0;
+        virtual void    On_Before_Load_Game(some<const char*> file_path, u32 file_path_length)      = 0;
+        virtual void    On_After_Load_Game(Bool_t did_load_successfully)                            = 0;
+        virtual void    On_Before_Delete_Game(some<const char*> file_path, u32 file_path_length)    = 0;
 
     private:
         Bool_t Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target);
@@ -86,7 +97,7 @@ namespace doticu_skylib {
                     [](doticu_skylib::SKSE_Message_t* message)->void                                    \
                     {                                                                                   \
                         if (message) {                                                                  \
-                            _SKSE_PLUGIN.On_Message(message);                                           \
+                            doticu_skylib::SKSE_Plugin_t::On_SKSE_Message(_SKSE_PLUGIN, message);       \
                         }                                                                               \
                     }                                                                                   \
                 );                                                                                      \
