@@ -64,6 +64,27 @@ namespace doticu_skylib {
         static constexpr const char* SCRIPT_NAME = "Quest";
 
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E13938, // 513910
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
+        static Vector_t<some<Quest_t*>> Quests_Static();
+        static void                     Quests_Static(Vector_t<some<Quest_t*>>& results);
+
+        static Vector_t<some<Quest_t*>> Quests_Dynamic();
+        static void                     Quests_Dynamic(Vector_t<some<Quest_t*>>& results);
+
+    public:
         static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
         static void     Are_Running(const Vector_t<some<Quest_t*>> quests, some<unique<Callback_i<Bool_t>>> callback);
         static void     Wait_For(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, some<unique<Callback_i<>>> callback);

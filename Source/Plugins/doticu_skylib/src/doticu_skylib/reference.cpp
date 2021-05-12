@@ -501,6 +501,39 @@ namespace doticu_skylib {
         return Get_Has_Keyword(keyword());
     }
 
+    Bool_t Reference_t::Has_Extra_Text_Display()
+    {
+        Write_Locker_t locker(this->x_list.lock);
+
+        return this->x_list.Get<Extra_Text_Display_t>(locker) != none<Extra_Text_Display_t*>();
+    }
+
+    Bool_t Reference_t::Has_Custom_Name()
+    {
+        Write_Locker_t locker(this->x_list.lock);
+
+        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
+        if (x_text_display) {
+            return x_text_display->Name().Has_Value();
+        } else {
+            return false;
+        }
+    }
+
+    Bool_t Reference_t::Has_Quest_Text_Display(some<Quest_t*> quest)
+    {
+        SKYLIB_ASSERT_SOME(quest);
+
+        Write_Locker_t locker(this->x_list.lock);
+
+        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
+        if (x_text_display) {
+            return x_text_display->owning_quest == quest;
+        } else {
+            return false;
+        }
+    }
+
     const char* Reference_t::Name()
     {
         static auto get_name = reinterpret_cast

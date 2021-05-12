@@ -34,10 +34,64 @@ namespace doticu_skylib {
             CLEARS_NAME_ON_REMOVE   = static_cast<value_type>(1 << 17),
             ONLY_ACTORS             = static_cast<value_type>(1 << 18),
             IS_TRANSIENT            = static_cast<value_type>(1 << 19),
+            UNK_20                  = static_cast<value_type>(1 << 20),
             CANT_BE_PICKPOCKETED    = static_cast<value_type>(1 << 21),
+            UNK_22                  = static_cast<value_type>(1 << 22),
+            UNK_23                  = static_cast<value_type>(1 << 23),
             IS_SCENE_OPTIONAL       = static_cast<value_type>(1 << 24),
+            UNK_25                  = static_cast<value_type>(1 << 25),
+            UNK_26                  = static_cast<value_type>(1 << 26),
+            UNK_27                  = static_cast<value_type>(1 << 27),
+            UNK_28                  = static_cast<value_type>(1 << 28),
+            UNK_29                  = static_cast<value_type>(1 << 29),
+            UNK_30                  = static_cast<value_type>(1 << 30),
+            UNK_31                  = static_cast<value_type>(1 << 31),
         };
+
+    public:
         using Enum_t::Enum_t;
+
+    public:
+        void Log(std::string indent = "")
+        {
+            SKYLIB_LOG(indent + "Alias_Base_Flags_e::Log");
+            SKYLIB_LOG(indent + "{");
+
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_RESERVED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_OPTIONAL));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_QUEST_ITEM));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_REUSE));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_DEAD));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ONLY_LOADED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_ESSENTIAL));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_DISABLED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(STORES_NAME));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_RESERVED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_PROTECTED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_FORCED_FROM_ALIAS));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_DESTROYED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(FINDS_CLOSEST_TO_PLAYER));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(USES_NAMES));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_INITIALLY_DISABLED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ALLOWS_CLEARED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(CLEARS_NAME_ON_REMOVE));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(ONLY_ACTORS));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_TRANSIENT));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_20));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(CANT_BE_PICKPOCKETED));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_22));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_23));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(IS_SCENE_OPTIONAL));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_25));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_26));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_27));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_28));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_29));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_30));
+            SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_ENUM_IS_FLAGGED_STRING(UNK_31));
+
+            SKYLIB_LOG(indent + "}");
+        }
     };
 
 }

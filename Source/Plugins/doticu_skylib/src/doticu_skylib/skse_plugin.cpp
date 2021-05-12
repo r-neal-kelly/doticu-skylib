@@ -6,50 +6,43 @@
 #include <thread>
 
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/player.h"
 #include "doticu_skylib/skse_plugin.h"
 #include "doticu_skylib/ui.h"
 
 namespace doticu_skylib {
 
-    void SKSE_Plugin_t::On_SKSE_Message(SKSE_Plugin_t& plugin, some<SKSE_Message_t*> message)
+    SKSE_Plugin_t::Start_Updating_f::Start_Updating_f(SKSE_Plugin_t& plugin) :
+        plugin(plugin)
     {
-        if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
+    }
+
+    void SKSE_Plugin_t::Start_Updating_f::operator ()(std::chrono::milliseconds interval)
+    {
+        SKYLIB_ASSERT(interval.count() > 0);
+
+        if (!this->plugin.has_update_loop) {
+            this->plugin.has_update_loop = true;
             std::thread(
-                [&plugin]()->void
+                [this, interval]()->void
                 {
+                    Player_t& player = *Player_t::Self();
                     UI_t& ui = UI_t::Self();
-                    u32 time = ui.game_timer.total_time;
-                    while (ui.game_timer.total_time == time) {
-                        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+                    u32 time = 0;
+                    while (true) {
+                        {
+                            //std::lock_guard<std::mutex> update_locker(this->plugin.update_lock);
+                            if (time != ui.game_timer.total_time) {
+                                time = ui.game_timer.total_time;
+                                if (player.Is_Attached()) {
+                                    this->plugin.On_Update();
+                                }
+                            }
+                        }
+                        std::this_thread::sleep_for(interval);
                     }
-                    plugin.On_After_Save_Game();
                 }
             ).detach();
-            plugin.On_Before_Save_Game();
-
-        } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
-            if (message->data) {
-                plugin.On_Before_Load_Game(static_cast<const char*>(message->data), message->dataLen);
-            } else {
-                plugin.On_Before_Load_Game("", 0);
-            }
-
-        } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
-            plugin.On_After_Load_Game(message->data ? true : false);
-
-        } else if (message->type == SKSEMessagingInterface::kMessage_NewGame) {
-            plugin.On_After_New_Game();
-
-        } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
-            if (message->data) {
-                plugin.On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
-            } else {
-                plugin.On_Before_Delete_Game("", 0);
-            }
-
-        } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
-            plugin.On_After_Load_Data(Game_t::Self());
-
         }
     }
 
@@ -68,7 +61,10 @@ namespace doticu_skylib {
         skyrim_version_target(skyrim_version_target),
         skyrim_version_method(skyrim_version_method),
         skse_version_target(skse_version_target),
-        skse_version_method(skse_version_method)
+        skse_version_method(skse_version_method),
+
+        has_update_loop(false),
+        update_locker(this->update_lock)
     {
         SKYLIB_ASSERT_SOME(plugin_name);
 
@@ -83,14 +79,19 @@ namespace doticu_skylib {
 
     SKSE_Plugin_t::~SKSE_Plugin_t()
     {
-        this->skse = nullptr;
-        this->papyrus = nullptr;
-        this->messaging = nullptr;
-        this->plugin_handle = 0;
     }
 
     Bool_t SKSE_Plugin_t::On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info)
     {
+        auto Operate = [](Version_t<u16> version, Operator_e method, Version_t<u16> target)->Bool_t
+        {
+            if (method == Operator_e::GREATER_THAN_OR_EQUAL_TO) {
+                return version >= target;
+            } else {
+                return version == target;
+            }
+        };
+
         info->infoVersion = PluginInfo::kInfoVersion;
         info->name = plugin_name();
         info->version = 1;
@@ -129,12 +130,82 @@ namespace doticu_skylib {
         return true;
     }
 
-    Bool_t SKSE_Plugin_t::Operate(Version_t<u16> version, Operator_e method, Version_t<u16> target)
+    Bool_t SKSE_Plugin_t::On_Register(some<Virtual::Machine_t*> v_machine)
     {
-        if (method == Operator_e::GREATER_THAN_OR_EQUAL_TO) {
-            return version >= target;
-        } else {
-            return version == target;
+        return true;
+    }
+
+    void SKSE_Plugin_t::On_SKSE_Message(some<SKSE_Message_t*> message)
+    {
+        if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
+            /*
+            if (!this->update_locker.owns_lock()) {
+                this->update_locker.lock();
+            }
+            */
+
+            std::thread(
+                [this]()->void
+                {
+                    UI_t& ui = UI_t::Self();
+                    u32 time = ui.game_timer.total_time;
+                    while (time == ui.game_timer.total_time) {
+                        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+                    }
+
+                    On_After_Save_Game();
+
+                    /*
+                    if (this->update_locker.owns_lock()) {
+                        this->update_locker.unlock();
+                    }
+                    */
+                }
+            ).detach();
+
+            On_Before_Save_Game();
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
+            /*
+            if (!this->update_locker.owns_lock()) {
+                this->update_locker.lock();
+            }
+            */
+
+            if (message->data) {
+                On_Before_Load_Game(static_cast<const char*>(message->data), message->dataLen);
+            } else {
+                On_Before_Load_Game("", 0);
+            }
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
+            On_After_Load_Game(message->data ? true : false);
+
+            /*
+            if (this->update_locker.owns_lock()) {
+                this->update_locker.unlock();
+            }
+            */
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_NewGame) {
+            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+
+            On_After_New_Game();
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
+            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+
+            if (message->data) {
+                On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
+            } else {
+                On_Before_Delete_Game("", 0);
+            }
+
+        } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
+            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+
+            On_After_Load_Data(Start_Updating_f(*this));
+
         }
     }
 

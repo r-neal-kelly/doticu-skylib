@@ -7,6 +7,7 @@
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/forward_list.inl"
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/quest.h"
 #include "doticu_skylib/quest_objective.h"
 #include "doticu_skylib/reference.h"
@@ -18,6 +19,67 @@
 #include "doticu_skylib/virtual_variable.inl"
 
 namespace doticu_skylib {
+
+    Vector_t<some<Quest_t*>> Quest_t::Quests_Static()
+    {
+        Vector_t<some<Quest_t*>> results;
+        Quests_Static(results);
+        return results;
+    }
+
+    void Quest_t::Quests_Static(Vector_t<some<Quest_t*>>& results)
+    {
+        Array_t<maybe<Quest_t*>>& quests = Game_t::Self()->Quests();
+
+        size_t quest_count = quests.Count();
+        results.reserve(quest_count);
+
+        for (size_t idx = 0, end = quest_count; idx < end; idx += 1) {
+            maybe<Quest_t*> quest = quests[idx];
+            if (quest && quest->Is_Valid() && !results.Has(quest())) {
+                results.push_back(quest());
+            }
+        }
+    }
+
+    Vector_t<some<Quest_t*>> Quest_t::Quests_Dynamic()
+    {
+        Vector_t<some<Quest_t*>> results;
+        Quests_Dynamic(results);
+        return results;
+    }
+
+    void Quest_t::Quests_Dynamic(Vector_t<some<Quest_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Quest_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Quest_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Quest_t*> quest = form->As_Quest();
+                if (quest && quest->Is_Valid()) {
+                    this->results.push_back(quest());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(4096);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
 
     void Quest_t::Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback)
     {
@@ -292,6 +354,8 @@ namespace doticu_skylib {
 
     void Quest_t::Alias_Bases(Vector_t<some<Alias_Base_t*>>& results)
     {
+        Read_Locker_t locker(this->aliases_lock);
+
         for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
             if (this->aliases[idx]) {
                 results.push_back(this->aliases[idx]());
@@ -308,6 +372,8 @@ namespace doticu_skylib {
 
     void Quest_t::Alias_References(Vector_t<some<Alias_Reference_t*>>& results)
     {
+        Read_Locker_t locker(this->aliases_lock);
+
         for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
             if (this->aliases[idx]) {
                 maybe<Alias_Reference_t*> alias_reference = this->aliases[idx]->As_Alias_Reference();

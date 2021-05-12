@@ -68,4 +68,14 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Alias_Base_t::Do_Clear_Name_On_Remove()
+    {
+        return this->alias_base_flags.Is_Flagged(Alias_Base_Flags_e::CLEARS_NAME_ON_REMOVE);
+    }
+
+    void Alias_Base_t::Do_Clear_Name_On_Remove(Bool_t value)
+    {
+        this->alias_base_flags.Is_Flagged(Alias_Base_Flags_e::CLEARS_NAME_ON_REMOVE, value);
+    }
+
 }

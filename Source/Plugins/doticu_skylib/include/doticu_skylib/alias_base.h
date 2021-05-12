@@ -44,7 +44,9 @@ namespace doticu_skylib {
         public:
             enum enum_type : value_type
             {
-                RTTI = 0x01E1ED30, // 685384
+                RTTI                        = 0x01E1ED30, // 685384
+
+                MAYBE_CLEAR_NAME_ON_REMOVE  = 0x00111730, // 11510
             };
             using Enum_t::Enum_t;
         };
@@ -74,6 +76,8 @@ namespace doticu_skylib {
         void                        Is_Essential(Bool_t value);
         Bool_t                      Is_Quest_Item() const;
         void                        Is_Quest_Item(Bool_t value);
+        Bool_t                      Do_Clear_Name_On_Remove();
+        void                        Do_Clear_Name_On_Remove(Bool_t value);
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);
 

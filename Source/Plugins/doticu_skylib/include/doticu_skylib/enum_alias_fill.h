@@ -13,9 +13,14 @@ namespace doticu_skylib {
     public:
         enum : value_type
         {
-            CONDITION   = 0,
-            FORCED      = 1,
-            // ...
+            CONDITION       = 0,
+            FORCED          = 1,
+            FROM_ALIAS      = 2,
+            FROM_EVENT      = 3,
+            CREATED         = 4,
+            FROM_EXTERNAL   = 5,
+            UNIQUE_ACTOR    = 6,
+            NEAR_ALIAS      = 7,
         };
         using Enum_t::Enum_t;
     };

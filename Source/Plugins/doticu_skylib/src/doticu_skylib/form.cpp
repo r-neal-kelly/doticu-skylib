@@ -30,6 +30,7 @@
 #include "doticu_skylib/outfit.h"
 #include "doticu_skylib/package.h"
 #include "doticu_skylib/potion.h"
+#include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.inl"
 #include "doticu_skylib/scroll.h"
@@ -216,6 +217,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Outfit() const               { return As_Outfit() != none<Outfit_t*>(); }
     Bool_t                  Form_t::Is_Package() const              { return As_Package() != none<Package_t*>(); }
     Bool_t                  Form_t::Is_Potion() const               { return As_Potion() != none<Potion_t*>(); }
+    Bool_t                  Form_t::Is_Quest() const                { return As_Quest() != none<Quest_t*>(); }
     Bool_t                  Form_t::Is_Reference() const            { return As_Reference() != none<Reference_t*>(); }
     Bool_t                  Form_t::Is_Scroll() const               { return As_Scroll() != none<Scroll_t*>(); }
     Bool_t                  Form_t::Is_Soul_Gem() const             { return As_Soul_Gem() != none<Soul_Gem_t*>(); }
@@ -246,6 +248,7 @@ namespace doticu_skylib {
     maybe<Outfit_t*>        Form_t::As_Outfit() const               { return Game_t::Runtime_Cast<Form_t, Outfit_t>(this); }
     maybe<Package_t*>       Form_t::As_Package() const              { return Game_t::Runtime_Cast<Form_t, Package_t>(this); }
     maybe<Potion_t*>        Form_t::As_Potion() const               { return Game_t::Runtime_Cast<Form_t, Potion_t>(this); }
+    maybe<Quest_t*>         Form_t::As_Quest() const                { return Game_t::Runtime_Cast<Form_t, Quest_t>(this); }
     maybe<Reference_t*>     Form_t::As_Reference() const            { return Game_t::Runtime_Cast<Form_t, Reference_t>(this); }
     maybe<Scroll_t*>        Form_t::As_Scroll() const               { return Game_t::Runtime_Cast<Form_t, Scroll_t>(this); }
     maybe<Soul_Gem_t*>      Form_t::As_Soul_Gem() const             { return Game_t::Runtime_Cast<Form_t, Soul_Gem_t>(this); }

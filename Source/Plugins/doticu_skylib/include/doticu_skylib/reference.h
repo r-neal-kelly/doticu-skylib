@@ -311,6 +311,10 @@ namespace doticu_skylib {
 
         Bool_t          Has_Keyword(some<Keyword_t*> keyword) const;
 
+        Bool_t          Has_Extra_Text_Display();
+        Bool_t          Has_Custom_Name();
+        Bool_t          Has_Quest_Text_Display(some<Quest_t*> quest);
+
     public:
         const char*                         Name();
         void                                Name(String_t name);

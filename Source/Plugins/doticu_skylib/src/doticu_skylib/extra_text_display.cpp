@@ -90,9 +90,14 @@ namespace doticu_skylib {
 
         if (do_force) {
             this->message = nullptr;
+
+            maybe<Quest_t*> owning_quest = this->owning_quest;
             this->owning_quest = nullptr;
+            set_name(this, name);
+            this->owning_quest = owning_quest;
+        } else {
+            set_name(this, name);
         }
-        set_name(this, name);
     }
 
     void Extra_Text_Display_t::Log(std::string indent)

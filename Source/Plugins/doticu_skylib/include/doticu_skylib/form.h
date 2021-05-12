@@ -41,6 +41,7 @@ namespace doticu_skylib {
     class Outfit_t;
     class Package_t;
     class Potion_t;
+    class Quest_t;
     class Race_t;
     class Reference_t;
     class Scroll_t;
@@ -216,6 +217,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Outfit() const;
         Bool_t                  Is_Package() const;
         Bool_t                  Is_Potion() const;
+        Bool_t                  Is_Quest() const;
         Bool_t                  Is_Reference() const;
         Bool_t                  Is_Scroll() const;
         Bool_t                  Is_Soul_Gem() const;
@@ -246,6 +248,7 @@ namespace doticu_skylib {
         maybe<Outfit_t*>        As_Outfit() const;
         maybe<Package_t*>       As_Package() const;
         maybe<Potion_t*>        As_Potion() const;
+        maybe<Quest_t*>         As_Quest() const;
         maybe<Reference_t*>     As_Reference() const;
         maybe<Scroll_t*>        As_Scroll() const;
         maybe<Soul_Gem_t*>      As_Soul_Gem() const;
