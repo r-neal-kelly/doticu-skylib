@@ -17,6 +17,7 @@ namespace doticu_skylib { namespace My_Plugin {
                       Version_t<u16>(2, 0, 17),             // SKSE
                       Operator_e::GREATER_THAN_OR_EQUAL_TO) // 2.0.17+
     {
+        SKYLIB_LOG("My Plugin now has a log."); // see Documents/My Games/Skyrim Special Edition/SKSE/My Plugin.log
     }
 
     My_Plugin_t::~My_Plugin_t()
@@ -25,17 +26,16 @@ namespace doticu_skylib { namespace My_Plugin {
 
     Bool_t My_Plugin_t::On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info)
     {
-        // My Plugin can override On_Query or just let SKSE_Plugin_t handle it.
+        SKYLIB_LOG("My Plugin can override On_Query or just let SKSE_Plugin_t handle it.");
 
         return SKSE_Plugin_t::On_Query(skse, info);
     }
 
     Bool_t My_Plugin_t::On_Load(some<const SKSEInterface*> skse)
     {
-        // My Plugin can also override On_Load or just let SKSE_Plugin_t handle it.
+        SKYLIB_LOG("My Plugin can also override On_Load or just let SKSE_Plugin_t handle it.");
 
         if (SKSE_Plugin_t::On_Load(skse)) {
-            SKYLIB_LOG("My Plugin now has a log."); // see Documents/My Games/Skyrim Special Edition/SKSE/My Plugin.log
             SKYLIB_LOG("My Plugin has loaded and can begin instantiating its data.");
             return true;
         } else {
@@ -51,10 +51,13 @@ namespace doticu_skylib { namespace My_Plugin {
         return true;
     }
 
-    void My_Plugin_t::On_After_Load_Data(some<Game_t*> game)
+    void My_Plugin_t::On_After_Load_Data()
     {
         SKYLIB_LOG("My Plugin can now access forms like:");
         Const::Actor::Player()->Log_Name_And_Type(SKYLIB_TAB);
+
+        SKYLIB_LOG("My Plugin can now start its own game loop.");
+        Start_Updating(std::chrono::milliseconds(5000));
     }
 
     void My_Plugin_t::On_After_New_Game()
@@ -87,7 +90,12 @@ namespace doticu_skylib { namespace My_Plugin {
         SKYLIB_LOG("My Plugin can now delete any files that were created along with Skyrim's and SKSE's files.");
     }
 
-    extern My_Plugin_t my_plugin = My_Plugin_t();
+    void My_Plugin_t::On_Update(u32 time_stamp)
+    {
+        SKYLIB_LOG("My Plugin is updating with time_stamp: %u", time_stamp);
+    }
+
+    My_Plugin_t my_plugin;
 
 }}
 

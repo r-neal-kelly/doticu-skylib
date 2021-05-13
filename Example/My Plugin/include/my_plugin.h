@@ -16,16 +16,19 @@ namespace doticu_skylib { namespace My_Plugin {
 
     public:
         virtual         ~My_Plugin_t();
+
         virtual Bool_t  On_Query(some<const SKSEInterface*> skse, some<PluginInfo*> info) override;
         virtual Bool_t  On_Load(some<const SKSEInterface*> skse) override;
         virtual Bool_t  On_Register(some<Virtual::Machine_t*> machine) override;
-        virtual void    On_After_Load_Data(some<Game_t*> game) override;
+
+        virtual void    On_After_Load_Data() override;
         virtual void    On_After_New_Game() override;
         virtual void    On_Before_Save_Game() override;
         virtual void    On_After_Save_Game() override;
         virtual void    On_Before_Load_Game(some<const char*> file_path, u32 file_path_length) override;
         virtual void    On_After_Load_Game(Bool_t did_load_successfully) override;
         virtual void    On_Before_Delete_Game(some<const char*> file_path, u32 file_path_lengt) override;
+        virtual void    On_Update(u32 time_stamp) override;
     };
 
     extern My_Plugin_t my_plugin;

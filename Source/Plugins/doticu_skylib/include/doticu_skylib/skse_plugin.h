@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <atomic>
 #include <mutex>
 
 #include "skse64/PluginAPI.h"
@@ -27,20 +28,6 @@ namespace doticu_skylib {
     class SKSE_Plugin_t
     {
     public:
-        class Start_Updating_f :
-            public Callback_i<std::chrono::milliseconds>
-        {
-        public:
-            SKSE_Plugin_t& plugin;
-
-        public:
-            Start_Updating_f(SKSE_Plugin_t& plugin);
-
-        public:
-            void virtual operator ()(std::chrono::milliseconds interval) override;
-        };
-
-    public:
         IDebugLog                               log;
 
         maybe<const SKSEInterface*>             skse;
@@ -56,7 +43,7 @@ namespace doticu_skylib {
         const Operator_e                        skse_version_method;
 
     private:
-        Bool_t                                  has_update_loop;
+        std::atomic<Bool_t>                     has_update_loop;
         std::mutex                              update_lock;
         std::unique_lock<std::mutex>            update_locker;
 
@@ -74,17 +61,18 @@ namespace doticu_skylib {
         virtual Bool_t  On_Load(some<const SKSEInterface*> skse);
         virtual Bool_t  On_Register(some<Virtual::Machine_t*> v_machine);
 
-        virtual void    On_After_Load_Data(Start_Updating_f start_updating_f)                       = 0;
+        virtual void    On_After_Load_Data()                                                        = 0;
         virtual void    On_After_New_Game()                                                         = 0;
         virtual void    On_Before_Save_Game()                                                       = 0;
         virtual void    On_After_Save_Game()                                                        = 0;
         virtual void    On_Before_Load_Game(some<const char*> file_path, u32 file_path_length)      = 0;
         virtual void    On_After_Load_Game(Bool_t did_load_successfully)                            = 0;
         virtual void    On_Before_Delete_Game(some<const char*> file_path, u32 file_path_length)    = 0;
-        virtual void    On_Update()                                                                 = 0;
+        virtual void    On_Update(u32 time_stamp)                                                   = 0;
 
     public:
         void            On_SKSE_Message(some<SKSE_Message_t*> message);
+        void            Start_Updating(std::chrono::milliseconds interval);
     };
 
     #define SKYLIB_EXPORT_SKSE_PLUGIN(_SKSE_PLUGIN)                                                     \

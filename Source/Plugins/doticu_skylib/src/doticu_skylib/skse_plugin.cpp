@@ -12,40 +12,6 @@
 
 namespace doticu_skylib {
 
-    SKSE_Plugin_t::Start_Updating_f::Start_Updating_f(SKSE_Plugin_t& plugin) :
-        plugin(plugin)
-    {
-    }
-
-    void SKSE_Plugin_t::Start_Updating_f::operator ()(std::chrono::milliseconds interval)
-    {
-        SKYLIB_ASSERT(interval.count() > 0);
-
-        if (!this->plugin.has_update_loop) {
-            this->plugin.has_update_loop = true;
-            std::thread(
-                [this, interval]()->void
-                {
-                    Player_t& player = *Player_t::Self();
-                    UI_t& ui = UI_t::Self();
-                    u32 time = 0;
-                    while (true) {
-                        {
-                            //std::lock_guard<std::mutex> update_locker(this->plugin.update_lock);
-                            if (time != ui.game_timer.total_time) {
-                                time = ui.game_timer.total_time;
-                                if (player.Is_Attached()) {
-                                    this->plugin.On_Update();
-                                }
-                            }
-                        }
-                        std::this_thread::sleep_for(interval);
-                    }
-                }
-            ).detach();
-        }
-    }
-
     SKSE_Plugin_t::SKSE_Plugin_t(const some<const char*> plugin_name,
                                  const maybe<Version_t<u16>> skyrim_version_target,
                                  const Operator_e skyrim_version_method,
@@ -64,7 +30,7 @@ namespace doticu_skylib {
         skse_version_method(skse_version_method),
 
         has_update_loop(false),
-        update_locker(this->update_lock)
+        update_locker(this->update_lock, std::defer_lock)
     {
         SKYLIB_ASSERT_SOME(plugin_name);
 
@@ -75,6 +41,11 @@ namespace doticu_skylib {
         SKYLIB_ASSERT(skse_version_method == Operator_e::EQUAL_TO ||
                       skse_version_method == Operator_e::GREATER_THAN_OR_EQUAL_TO ||
                       skse_version_method == Operator_e::NONE);
+
+        this->log.OpenRelative(
+            CSIDL_MYDOCUMENTS,
+            (std::string("\\My Games\\Skyrim Special Edition\\SKSE\\") + this->plugin_name() + ".log").c_str()
+        );
     }
 
     SKSE_Plugin_t::~SKSE_Plugin_t()
@@ -115,11 +86,6 @@ namespace doticu_skylib {
 
     Bool_t SKSE_Plugin_t::On_Load(some<const SKSEInterface*> skse)
     {
-        this->log.OpenRelative(
-            CSIDL_MYDOCUMENTS,
-            (std::string("\\My Games\\Skyrim Special Edition\\SKSE\\") + this->plugin_name() + ".log").c_str()
-        );
-
         this->skse = skse();
         this->papyrus = static_cast<const SKSEPapyrusInterface*>(skse->QueryInterface(kInterface_Papyrus));
         this->messaging = static_cast<const SKSEMessagingInterface*>(skse->QueryInterface(kInterface_Messaging));
@@ -138,11 +104,9 @@ namespace doticu_skylib {
     void SKSE_Plugin_t::On_SKSE_Message(some<SKSE_Message_t*> message)
     {
         if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
-            /*
             if (!this->update_locker.owns_lock()) {
                 this->update_locker.lock();
             }
-            */
 
             std::thread(
                 [this]()->void
@@ -155,22 +119,18 @@ namespace doticu_skylib {
 
                     On_After_Save_Game();
 
-                    /*
                     if (this->update_locker.owns_lock()) {
                         this->update_locker.unlock();
                     }
-                    */
                 }
             ).detach();
 
             On_Before_Save_Game();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
-            /*
             if (!this->update_locker.owns_lock()) {
                 this->update_locker.lock();
             }
-            */
 
             if (message->data) {
                 On_Before_Load_Game(static_cast<const char*>(message->data), message->dataLen);
@@ -181,19 +141,17 @@ namespace doticu_skylib {
         } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
             On_After_Load_Game(message->data ? true : false);
 
-            /*
             if (this->update_locker.owns_lock()) {
                 this->update_locker.unlock();
             }
-            */
 
         } else if (message->type == SKSEMessagingInterface::kMessage_NewGame) {
-            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+            std::lock_guard<std::mutex> update_locker(this->update_lock);
 
             On_After_New_Game();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
-            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+            std::lock_guard<std::mutex> update_locker(this->update_lock);
 
             if (message->data) {
                 On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
@@ -202,10 +160,39 @@ namespace doticu_skylib {
             }
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
-            //std::lock_guard<std::mutex> update_locker(this->update_lock);
+            std::lock_guard<std::mutex> update_locker(this->update_lock);
 
-            On_After_Load_Data(Start_Updating_f(*this));
+            On_After_Load_Data();
 
+        }
+    }
+
+    void SKSE_Plugin_t::Start_Updating(std::chrono::milliseconds interval)
+    {
+        SKYLIB_ASSERT(interval.count() > 0);
+
+        if (!this->has_update_loop.exchange(true)) {
+            std::thread(
+                [this, interval]()->void
+                {
+                    Player_t& player = *Player_t::Self();
+                    UI_t& ui = UI_t::Self();
+                    u32 time = 0;
+                    while (true) {
+                        {
+                            std::lock_guard<std::mutex> update_locker(this->update_lock);
+
+                            if (time != ui.game_timer.total_time) {
+                                time = ui.game_timer.total_time;
+                                if (player.Is_Attached()) {
+                                    On_Update(time);
+                                }
+                            }
+                        }
+                        std::this_thread::sleep_for(interval);
+                    }
+                }
+            ).detach();
         }
     }
 
