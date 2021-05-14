@@ -89,7 +89,7 @@ namespace doticu_skylib {
         virtual ~Worldspace_t();
 
     public:
-        Hash_Map_t<s16_yx, maybe<Cell_t*>>              xy_to_cell;                         // 058
+        Hash_Map_t<s16_yx, maybe<Cell_t*>>              yx_to_cell;                         // 058
         maybe<Cell_t*>                                  persistent_cell;                    // 088
         void*                                           unk_090;                            // 090
         void*                                           climate;                            // 098
@@ -141,6 +141,7 @@ namespace doticu_skylib {
         Bool_t                          Can_Fast_Travel();
         Bool_t                          Cant_Fast_Travel();
         Bool_t                          Has_Location(some<Location_t*> location);
+        Bool_t                          Has_Cell(some<Cell_t*> cell);
 
         String_t                        Any_Name();
 

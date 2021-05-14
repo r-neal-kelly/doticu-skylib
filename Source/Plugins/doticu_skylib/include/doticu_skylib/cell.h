@@ -99,8 +99,19 @@ namespace doticu_skylib {
 
         union Cellterior_u
         {
-            Exterior_Cell_t* exterior;
-            void* interior;
+        public:
+            maybe<Interior_Cell_t*> interior;
+            maybe<Exterior_Cell_t*> exterior;
+
+        public:
+            Cellterior_u() :
+                interior(none<Interior_Cell_t*>())
+            {
+            }
+
+            ~Cellterior_u()
+            {
+            }
         };
 
     public:
@@ -178,7 +189,7 @@ namespace doticu_skylib {
         maybe<Actor_Base_t*>            Actor_Base_Owner(Bool_t do_check_locations = true);
         maybe<Faction_t*>               Faction_Owner(Bool_t do_check_locations = true);
 
-        maybe<Worldspace_t*>            Worldspace(Bool_t do_check_locations = true);
+        maybe<Worldspace_t*>            Worldspace(Bool_t do_search = true);
         Vector_t<some<Worldspace_t*>>   Worldspaces();
         void                            Worldspaces(Vector_t<some<Worldspace_t*>>& results);
 

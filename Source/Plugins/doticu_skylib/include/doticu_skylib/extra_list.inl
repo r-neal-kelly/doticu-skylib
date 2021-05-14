@@ -39,6 +39,12 @@ namespace doticu_skylib {
     }
 
     template <typename T>
+    inline Bool_t Extra_List_t::Add(some<T*> x_data, Write_Locker_t& locker)
+    {
+        return Add(static_cast<some<Extra_Data_t*>>(x_data), locker);
+    }
+
+    template <typename T>
     inline Bool_t Extra_List_t::Add_Copy(T& x_data)
     {
         return Add(T::Create(x_data));

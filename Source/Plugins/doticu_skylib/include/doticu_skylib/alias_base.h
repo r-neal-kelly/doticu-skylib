@@ -76,8 +76,10 @@ namespace doticu_skylib {
         void                        Is_Essential(Bool_t value);
         Bool_t                      Is_Quest_Item() const;
         void                        Is_Quest_Item(Bool_t value);
-        Bool_t                      Do_Clear_Name_On_Remove();
+        Bool_t                      Do_Clear_Name_On_Remove() const;
         void                        Do_Clear_Name_On_Remove(Bool_t value);
+        Bool_t                      Do_Store_Name() const;
+        void                        Do_Store_Name(Bool_t value);
     };
     STATIC_ASSERT(sizeof(Alias_Base_t) == 0x28);
 

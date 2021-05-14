@@ -138,7 +138,7 @@ namespace doticu_skylib {
         if (player_cell && player_cell->Is_Valid()) {
             results.push_back(player_cell());
             if (player_cell->Is_Exterior()) {
-                Exterior_Cell_t* exterior_cell = player_cell->cellterior.exterior;
+                maybe<Exterior_Cell_t*> exterior_cell = player_cell->cellterior.exterior;
                 if (exterior_cell) {
                     maybe<Worldspace_t*> worldspace = player_cell->worldspace;
                     if (worldspace && worldspace->Is_Valid()) {
@@ -151,7 +151,7 @@ namespace doticu_skylib {
                             for (s16 idx_x = begin_x; idx_x < end_x; idx_x += 1) {
                                 for (s16 idx_y = begin_y; idx_y < end_y; idx_y += 1) {
                                     s16_yx cell_yx(idx_y, idx_x);
-                                    auto entry = worldspace->xy_to_cell.Entry(cell_yx);
+                                    auto entry = worldspace->yx_to_cell.Entry(cell_yx);
                                     if (entry) {
                                         maybe<Cell_t*> cell = entry->second;
                                         if (cell && cell->Is_Valid() && cell->Is_Attached() && !results.Has(cell())) {
@@ -411,28 +411,18 @@ namespace doticu_skylib {
         return Owner(do_check_locations).As_Faction();
     }
 
-    maybe<Worldspace_t*> Cell_t::Worldspace(Bool_t do_check_locations)
+    maybe<Worldspace_t*> Cell_t::Worldspace(Bool_t do_search)
     {
         if (this->worldspace) {
             return this->worldspace;
-        } else if (do_check_locations) {
+        } else if (do_search && Is_Exterior()) {
             Array_t<maybe<Worldspace_t*>>& worldspaces = Game_t::Self()->Worldspaces();
-
-            Vector_t<some<Location_t*>> locations = Locations();
-            for (size_t idx = 0, end = locations.size(); idx < end; idx += 1) {
-                maybe<Location_t*> location = locations[idx];
-                if (location && location->Is_Valid()) {
-                    for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
-                        maybe<Worldspace_t*> worldspace = worldspaces[idx];
-                        if (worldspace && worldspace->Is_Valid()) {
-                            if (worldspace->Has_Location(location())) {
-                                return worldspace;
-                            }
-                        }
-                    }
+            for (size_t idx = 0, end = worldspaces.Count(); idx < end; idx += 1) {
+                maybe<Worldspace_t*> worldspace = worldspaces[idx];
+                if (worldspace && worldspace->Has_Cell(this)) {
+                    return worldspace;
                 }
             }
-
             return none<Worldspace_t*>();
         } else {
             return none<Worldspace_t*>();

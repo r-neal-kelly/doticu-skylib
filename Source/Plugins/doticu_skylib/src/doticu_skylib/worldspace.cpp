@@ -93,6 +93,21 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t Worldspace_t::Has_Cell(some<Cell_t*> cell)
+    {
+        SKYLIB_ASSERT_SOME(cell);
+
+        if (cell == this->persistent_cell) {
+            return true;
+        } else if (cell->Is_Exterior() && cell->cellterior.exterior) {
+            s16_yx yx = static_cast<s16_yx>(cell->cellterior.exterior->cell_xy);
+            maybe<Hash_Map_t<s16_yx, maybe<Cell_t*>>::Entry_t*> entry = this->yx_to_cell.Entry(yx);
+            return entry && entry->second == cell;
+        } else {
+            return false;
+        }
+    }
+
     String_t Worldspace_t::Any_Name()
     {
         const char* name = Name();
@@ -209,9 +224,9 @@ namespace doticu_skylib {
 
         SKYLIB_LOG("worldspace: %8.8X, %s", form_id, Get_Editor_ID());
         {
-            SKYLIB_LOG(TAB "xy_to_cell capacity: %u", xy_to_cell.capacity);
-            for (size_t idx = 0, end = xy_to_cell.capacity; idx < end; idx += 1) {
-                Hash_Map_t<s16_yx, maybe<Cell_t*>>::Entry_t& entry = xy_to_cell.entries[idx];
+            SKYLIB_LOG(TAB "yx_to_cell capacity: %u", yx_to_cell.capacity);
+            for (size_t idx = 0, end = yx_to_cell.capacity; idx < end; idx += 1) {
+                Hash_Map_t<s16_yx, maybe<Cell_t*>>::Entry_t& entry = yx_to_cell.entries[idx];
                 if (entry.chain) {
                     if (entry.second) {
                         SKYLIB_LOG(TAB TAB "x: %5.i, y: %5.i, cell: %8.8X, %s",

@@ -548,6 +548,11 @@ namespace doticu_skylib {
         this->x_list.Name(name);
     }
 
+    void Reference_t::Name(String_t name, Write_Locker_t& locker)
+    {
+        this->x_list.Name(name, locker);
+    }
+
     String_t Reference_t::Any_Name()
     {
         maybe<Actor_t*> actor = As_Actor();
@@ -596,6 +601,11 @@ namespace doticu_skylib {
     Vector_t<some<Alias_Reference_t*>> Reference_t::Alias_References()
     {
         return this->x_list.Alias_References();
+    }
+
+    Vector_t<some<Alias_Reference_t*>> Reference_t::Alias_References(Locker_t& locker)
+    {
+        return this->x_list.Alias_References(locker);
     }
 
     maybe<Cell_t*> Reference_t::Cell(Bool_t do_check_worldspace)
@@ -951,33 +961,47 @@ namespace doticu_skylib {
         }
     }
 
-    void Reference_t::Move_To_Offset(some<Reference_t*> target,
+    void Reference_t::Move_To_Offset(maybe<Reference_t*> target_reference,
                                      maybe<Cell_t*> target_cell,
                                      maybe<Worldspace_t*> target_worldspace,
-                                     f32_xyz& offset,
-                                     f32_xyz& rotation)
+                                     f32_xyz offset,
+                                     f32_xyz rotation)
     {
         static auto move_to_offset = reinterpret_cast
             <void(*)(Reference_t*, Reference_Handle_t&, Cell_t*, Worldspace_t*, f32_xyz&, f32_xyz&)>
             (Game_t::Base_Address() + Offset_e::MOVE_TO_OFFSET);
 
-        SKYLIB_ASSERT_SOME(target);
-
-        if (Is_Valid() && target->Is_Valid()) {
-            Reference_Handle_t target_handle = target->To_Handle();
-            if (target_handle != Reference_t::Invalid_Handle()) {
-                move_to_offset(this, target_handle, target_cell(), target_worldspace(), offset, rotation);
+        if (Is_Valid()) {
+            if (target_reference) {
+                Reference_Handle_t target_reference_handle =
+                    target_reference->Is_Valid() ? target_reference->To_Handle() : Reference_t::Invalid_Handle();
+                move_to_offset(this, target_reference_handle, target_cell(), target_worldspace(), offset, rotation);
+            } else {
+                Reference_Handle_t target_reference_handle = Reference_t::Invalid_Handle();
+                move_to_offset(this, target_reference_handle, target_cell(), target_worldspace(), offset, rotation);
             }
         }
     }
 
-    void Reference_t::Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation)
+    void Reference_t::Move_To_Offset(some<Reference_t*> reference_target, f32_xyz offset, f32_xyz rotation)
     {
-        SKYLIB_ASSERT_SOME(target);
+        SKYLIB_ASSERT_SOME(reference_target);
 
-        if (Is_Valid() && target->Is_Valid()) {
-            Move_To_Offset(target, target->Cell(false), target->Worldspace(false), offset, rotation);
-        }
+        Move_To_Offset(reference_target, reference_target->Cell(false), reference_target->Worldspace(false), offset, rotation);
+    }
+
+    void Reference_t::Move_To_Offset(some<Cell_t*> interior_cell_target, f32_xyz offset, f32_xyz rotation)
+    {
+        SKYLIB_ASSERT_SOME(interior_cell_target);
+
+        Move_To_Offset(none<Reference_t*>(), interior_cell_target, none<Worldspace_t*>(), offset, rotation);
+    }
+
+    void Reference_t::Move_To_Offset(some<Worldspace_t*> worldspace_target, f32_xyz offset, f32_xyz rotation)
+    {
+        SKYLIB_ASSERT_SOME(worldspace_target);
+
+        Move_To_Offset(none<Reference_t*>(), none<Cell_t*>(), worldspace_target, offset, rotation);
     }
 
     void Reference_t::Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree)
@@ -1052,6 +1076,10 @@ namespace doticu_skylib {
                 String_t value = name.Value();
                 if (value == "" || (whitespace_counts_as_blank && !CString_t::Has_Non_Whitespace(value))) {
                     this->x_list.Remove_And_Destroy<Extra_Text_Display_t>(x_text_display(), locker);
+                    return true;
+                } else if (x_text_display->message || x_text_display->owning_quest) {
+                    x_text_display->message = none<Message_t*>();
+                    x_text_display->owning_quest = none<Quest_t*>();
                     return true;
                 } else {
                     return false;

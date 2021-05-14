@@ -43,7 +43,19 @@ namespace doticu_skylib {
         Float_t             raw_days_passed;    // 3C
 
     public:
+        u16     Year() const;
+        void    Year(u16 value);
+        u16     Month() const;
+        void    Month(u16 value);
+        u16     Day() const;
+        void    Day(u16 value);
+        u16     Hour() const;
+        void    Hour(u16 value);
+        u16     Minute() const;
+        void    Minute(u16 value);
 
+    public:
+        void    Log(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Calendar_t) == 0x40);
 

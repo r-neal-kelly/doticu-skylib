@@ -63,9 +63,54 @@ namespace doticu_skylib {
     class f32_xyz
     {
     public:
-        Float_t x; // 0
-        Float_t y; // 4
-        Float_t z; // 8
+        Float_t x;  // 0
+        Float_t y;  // 4
+        Float_t z;  // 8
+
+    public:
+        f32_xyz() :
+            x(0.0f), y(0.0f), z(0.0f)
+        {
+        }
+
+        f32_xyz(Float_t x, Float_t y, Float_t z) :
+            x(x), y(y), z(z)
+        {
+        }
+
+        f32_xyz(const f32_xyz& other) :
+            x(other.x), y(other.y), z(other.z)
+        {
+        }
+
+        f32_xyz(f32_xyz&& other) noexcept :
+            x(std::move(other.x)), y(std::move(other.y)), z(std::move(other.z))
+        {
+        }
+
+        f32_xyz& operator =(const f32_xyz& other)
+        {
+            if (this != std::addressof(other)) {
+                this->x = other.x;
+                this->y = other.y;
+                this->z = other.z;
+            }
+            return *this;
+        }
+
+        f32_xyz& operator =(f32_xyz&& other) noexcept
+        {
+            if (this != std::addressof(other)) {
+                this->x = std::move(other.x);
+                this->y = std::move(other.y);
+                this->z = std::move(other.z);
+            }
+            return *this;
+        }
+
+        ~f32_xyz()
+        {
+        }
     };
     STATIC_ASSERT(sizeof(f32_xyz) == 0xC);
 

@@ -16,6 +16,7 @@
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/ni_collidable.h"
 #include "doticu_skylib/ni_point.h"
+#include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/reference_count.h"
 #include "doticu_skylib/reference_handle.h"
@@ -318,6 +319,7 @@ namespace doticu_skylib {
     public:
         const char*                         Name();
         void                                Name(String_t name);
+        void                                Name(String_t name, Write_Locker_t& locker);
         String_t                            Any_Name();
 
         void                                Add_Item(some<Bound_Object_t*> object,
@@ -327,6 +329,7 @@ namespace doticu_skylib {
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
+        Vector_t<some<Alias_Reference_t*>>  Alias_References(Locker_t& locker);
 
         maybe<Cell_t*>                      Cell(Bool_t do_check_worldspace);
         Vector_t<some<NI_Collidable_t*>>    Collidables();
@@ -366,12 +369,15 @@ namespace doticu_skylib {
 
         Float_t                             Distance_Between(some<Reference_t*> other);
 
-        void                                Move_To_Offset(some<Reference_t*> target,
+        void                                Move_To_Offset(maybe<Reference_t*> target_reference,
                                                            maybe<Cell_t*> target_cell,
                                                            maybe<Worldspace_t*> target_worldspace,
-                                                           f32_xyz& offset,
-                                                           f32_xyz& rotation);
-        void                                Move_To_Offset(some<Reference_t*> target, f32_xyz& offset, f32_xyz& rotation);
+                                                           f32_xyz offset,
+                                                           f32_xyz rotation);
+        void                                Move_To_Offset(some<Reference_t*> reference_target, f32_xyz offset, f32_xyz rotation);
+        void                                Move_To_Offset(some<Cell_t*> interior_cell_target, f32_xyz offset, f32_xyz rotation);
+        void                                Move_To_Offset(some<Worldspace_t*> worldspace_target, f32_xyz offset, f32_xyz rotation);
+
         void                                Move_To_Orbit(some<Reference_t*> origin, Float_t radius, Float_t degree);
 
         void                                Copy_Worn_Items(some<Reference_t*> other);
