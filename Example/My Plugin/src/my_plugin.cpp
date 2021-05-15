@@ -82,7 +82,11 @@ namespace doticu_skylib { namespace My_Plugin {
 
     void My_Plugin_t::On_After_Load_Game(Bool_t did_load_successfully)
     {
-        SKYLIB_LOG("My Plugin can now load its data relating to the current save-game instance.");
+        if (did_load_successfully) {
+            SKYLIB_LOG("My Plugin can now load its data relating to the current save-game instance.");
+        } else {
+            SKYLIB_LOG("My Plugin can now do what it needs to do, if anything, since the game failed to load a save game.");
+        }
     }
 
     void My_Plugin_t::On_Before_Delete_Game(some<const char*> file_path, u32 file_path_lengt)

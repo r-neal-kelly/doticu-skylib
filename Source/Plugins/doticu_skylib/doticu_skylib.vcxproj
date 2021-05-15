@@ -173,7 +173,6 @@
     <ClInclude Include="include\doticu_skylib\key.h" />
     <ClInclude Include="include\doticu_skylib\ai_location_handle.h" />
     <ClInclude Include="include\doticu_skylib\light.h" />
-    <ClInclude Include="include\doticu_skylib\main.h" />
     <ClInclude Include="include\doticu_skylib\maybe_enum.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\numeric.h" />
@@ -591,7 +590,6 @@
     <ClCompile Include="src\doticu_skylib\form_owner.cpp" />
     <ClCompile Include="src\doticu_skylib\game_timer.cpp" />
     <ClCompile Include="src\doticu_skylib\magic_base.cpp" />
-    <ClCompile Include="src\doticu_skylib\main.cpp" />
     <ClCompile Include="src\doticu_skylib\misc.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extra.cpp" />
     <ClCompile Include="src\doticu_skylib\ni_extras.cpp" />

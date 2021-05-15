@@ -969,9 +969,6 @@
     <ClInclude Include="include\doticu_skylib\form_owner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_actor_value_type.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -1764,9 +1761,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\form_owner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\doticu_skylib\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\virtual_actor_base.cpp">
