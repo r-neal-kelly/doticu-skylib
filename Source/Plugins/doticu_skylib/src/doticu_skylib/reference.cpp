@@ -503,16 +503,12 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Has_Extra_Text_Display()
     {
-        Write_Locker_t locker(this->x_list.lock);
-
-        return this->x_list.Get<Extra_Text_Display_t>(locker) != none<Extra_Text_Display_t*>();
+        return this->x_list.Get<Extra_Text_Display_t>() != none<Extra_Text_Display_t*>();
     }
 
     Bool_t Reference_t::Has_Custom_Name()
     {
-        Write_Locker_t locker(this->x_list.lock);
-
-        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
+        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>();
         if (x_text_display) {
             return x_text_display->Name().Has_Value();
         } else {
@@ -524,9 +520,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(quest);
 
-        Write_Locker_t locker(this->x_list.lock);
-
-        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
+        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>();
         if (x_text_display) {
             return x_text_display->owning_quest == quest;
         } else {
@@ -546,11 +540,6 @@ namespace doticu_skylib {
     void Reference_t::Name(String_t name)
     {
         this->x_list.Name(name);
-    }
-
-    void Reference_t::Name(String_t name, Write_Locker_t& locker)
-    {
-        this->x_list.Name(name, locker);
     }
 
     String_t Reference_t::Any_Name()
@@ -601,11 +590,6 @@ namespace doticu_skylib {
     Vector_t<some<Alias_Reference_t*>> Reference_t::Alias_References()
     {
         return this->x_list.Alias_References();
-    }
-
-    Vector_t<some<Alias_Reference_t*>> Reference_t::Alias_References(Locker_t& locker)
-    {
-        return this->x_list.Alias_References(locker);
     }
 
     maybe<Cell_t*> Reference_t::Cell(Bool_t do_check_worldspace)
@@ -1067,15 +1051,13 @@ namespace doticu_skylib {
 
     Bool_t Reference_t::Remove_Blank_Name(Bool_t whitespace_counts_as_blank)
     {
-        Write_Locker_t locker(this->x_list.lock);
-
-        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>(locker);
+        maybe<Extra_Text_Display_t*> x_text_display = this->x_list.Get<Extra_Text_Display_t>();
         if (x_text_display) {
             maybe<String_t> name = x_text_display->Name();
             if (name.Has_Value()) {
                 String_t value = name.Value();
                 if (value == "" || (whitespace_counts_as_blank && !CString_t::Has_Non_Whitespace(value))) {
-                    this->x_list.Remove_And_Destroy<Extra_Text_Display_t>(x_text_display(), locker);
+                    this->x_list.Remove_And_Destroy<Extra_Text_Display_t>(x_text_display());
                     return true;
                 } else if (x_text_display->message || x_text_display->owning_quest) {
                     x_text_display->message = none<Message_t*>();

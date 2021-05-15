@@ -217,11 +217,7 @@ namespace doticu_skylib {
     Bool_t Extra_List_t::Has(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
-        return Has(type, locker);
-    }
 
-    Bool_t Extra_List_t::Has(Extra_Type_e type, Locker_t& locker) const
-    {
         if (this->presence) {
             return this->presence->Has(type);
         } else {
@@ -232,11 +228,7 @@ namespace doticu_skylib {
     maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
-        return Get(type, locker);
-    }
 
-    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type, Locker_t& locker) const
-    {
         if (this->presence && this->presence->Has(type)) {
             for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
@@ -254,12 +246,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_data);
 
         Write_Locker_t locker(this->lock);
-        Add(x_data, locker);
-    }
-
-    Bool_t Extra_List_t::Add(some<Extra_Data_t*> x_data, Write_Locker_t& locker)
-    {
-        SKYLIB_ASSERT_SOME(x_data);
 
         Extra_Type_e type = x_data->Type();
         if (!this->presence) {
@@ -281,12 +267,6 @@ namespace doticu_skylib {
         SKYLIB_ASSERT_SOME(x_data);
 
         Write_Locker_t locker(this->lock);
-        return Remove(x_data, locker);
-    }
-
-    Bool_t Extra_List_t::Remove(some<Extra_Data_t*> x_data, Write_Locker_t& locker)
-    {
-        SKYLIB_ASSERT_SOME(x_data);
 
         Extra_Type_e type = x_data->Type();
         if (this->presence && this->presence->Has(type)) {
@@ -480,20 +460,7 @@ namespace doticu_skylib {
 
     void Extra_List_t::Alias_References(Vector_t<some<Alias_Reference_t*>>& results)
     {
-        Read_Locker_t locker(this->lock);
-        Alias_References(results, locker);
-    }
-
-    Vector_t<some<Alias_Reference_t*>> Extra_List_t::Alias_References(Locker_t& locker)
-    {
-        Vector_t<some<Alias_Reference_t*>> results;
-        Alias_References(results, locker);
-        return results;
-    }
-
-    void Extra_List_t::Alias_References(Vector_t<some<Alias_Reference_t*>>& results, Locker_t& locker)
-    {
-        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>(locker);
+        maybe<Extra_Aliases_t*> x_aliases = Get<Extra_Aliases_t>();
         if (x_aliases) {
             x_aliases->Alias_References(results);
         }
@@ -853,13 +820,7 @@ namespace doticu_skylib {
 
     maybe<String_t> Extra_List_t::Name()
     {
-        Read_Locker_t locker(this->lock);
-        Name(locker);
-    }
-
-    maybe<String_t> Extra_List_t::Name(Locker_t& locker)
-    {
-        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>(locker);
+        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>();
         if (x_text_display) {
             return x_text_display->Name();
         } else {
@@ -869,17 +830,11 @@ namespace doticu_skylib {
 
     void Extra_List_t::Name(String_t name)
     {
-        Write_Locker_t locker(this->lock);
-        Name(name, locker);
-    }
-
-    void Extra_List_t::Name(String_t name, Write_Locker_t& locker)
-    {
-        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>(locker);
+        maybe<Extra_Text_Display_t*> x_text_display = Get<Extra_Text_Display_t>();
         if (x_text_display) {
             x_text_display->Name(name, true);
         } else {
-            Add<Extra_Text_Display_t>(Extra_Text_Display_t::Create(name), locker);
+            Add<Extra_Text_Display_t>(Extra_Text_Display_t::Create(name));
         }
     }
 

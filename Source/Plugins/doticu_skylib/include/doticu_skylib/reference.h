@@ -319,7 +319,6 @@ namespace doticu_skylib {
     public:
         const char*                         Name();
         void                                Name(String_t name);
-        void                                Name(String_t name, Write_Locker_t& locker);
         String_t                            Any_Name();
 
         void                                Add_Item(some<Bound_Object_t*> object,
@@ -329,7 +328,6 @@ namespace doticu_skylib {
 
         Vector_t<some<Alias_Base_t*>>       Alias_Bases();
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
-        Vector_t<some<Alias_Reference_t*>>  Alias_References(Locker_t& locker);
 
         maybe<Cell_t*>                      Cell(Bool_t do_check_worldspace);
         Vector_t<some<NI_Collidable_t*>>    Collidables();
