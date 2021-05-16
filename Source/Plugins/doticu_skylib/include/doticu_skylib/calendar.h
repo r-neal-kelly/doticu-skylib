@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "doticu_skylib/calendar_now.h"
 #include "doticu_skylib/enum.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/maybe.h"
@@ -43,19 +44,35 @@ namespace doticu_skylib {
         Float_t             raw_days_passed;    // 3C
 
     public:
-        u16     Year() const;
-        void    Year(u16 value);
-        u16     Month() const;
-        void    Month(u16 value);
-        u16     Day() const;
-        void    Day(u16 value);
-        u16     Hour() const;
-        void    Hour(u16 value);
-        u16     Minute() const;
-        void    Minute(u16 value);
+        maybe<Calendar_Now_t>           Now() const;
+        void                            Now(some<Calendar_Now_t> now);
+
+        maybe<Calendar_Date_t>          Date() const;
+        void                            Date(some<Calendar_Date_t> date);
+        maybe<Calendar_Date_Month_t>    Month() const;
+        void                            Month(some<Calendar_Date_Month_t> month);
+        maybe<Calendar_Date_Day_t>      Day() const;
+        void                            Day(some<Calendar_Date_Day_t> day);
+        maybe<Calendar_Date_Year_t>     Year() const;
+        void                            Year(some<Calendar_Date_Year_t> year);
+
+        maybe<Calendar_Time_t>          Time() const;
+        void                            Time(some<Calendar_Time_t> time);
+        maybe<Calendar_Time_24_t>       Time_24() const;
+        void                            Time_24(some<Calendar_Time_24_t> time_24);
+        maybe<Calendar_Time_12_t>       Time_12() const;
+        void                            Time_12(some<Calendar_Time_12_t> time_12);
+        maybe<Calendar_Time_Hour_24_t>  Hour_24() const;
+        void                            Hour_24(some<Calendar_Time_Hour_24_t> hour_24);
+        maybe<Calendar_Time_Hour_12_t>  Hour_12() const;
+        void                            Hour_12(some<Calendar_Time_Hour_12_t> hour_12);
+        maybe<Calendar_Time_Minute_t>   Minute() const;
+        void                            Minute(some<Calendar_Time_Minute_t> minute);
+        maybe<Calendar_Time_AM_PM_e>    AM_PM() const;
+        void                            AM_PM(some<Calendar_Time_AM_PM_e> am_pm);
 
     public:
-        void    Log(std::string indent = "") const;
+        void    Log_Now(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Calendar_t) == 0x40);
 
