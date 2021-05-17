@@ -25,21 +25,21 @@ namespace doticu_skylib {
         {
             SKYLIB_ASSERT_SOME(time_12);
 
-            Calendar_Time_Hour_12_t::value_type hour = time_12().Hour()();
+            Calendar_Time_Hour_12_t::value_type hour = time_12.Hour()();
             if (hour == 12) {
                 hour = 0;
             }
-            if (time_12().AM_PM() == Calendar_Time_AM_PM_e::PM) {
+            if (time_12.AM_PM() == Calendar_Time_AM_PM_e::PM) {
                 hour += 12;
             }
-            return Calendar_Time_24_t(hour, time_12().Minute());
+            return Calendar_Time_24_t(hour, time_12.Minute());
         }
 
         static some<Calendar_Time_12_t> From_24_To_12(some<Calendar_Time_24_t> time_24)
         {
             SKYLIB_ASSERT_SOME(time_24);
 
-            Calendar_Time_Hour_24_t::value_type hour = time_24().Hour()();
+            Calendar_Time_Hour_24_t::value_type hour = time_24.Hour()();
             Calendar_Time_AM_PM_e am_pm;
             if (hour < 12) {
                 am_pm = Calendar_Time_AM_PM_e::AM;
@@ -50,7 +50,7 @@ namespace doticu_skylib {
             if (hour == 0) {
                 hour = 12;
             }
-            return Calendar_Time_12_t(hour, time_24().Minute(), am_pm);
+            return Calendar_Time_12_t(hour, time_24.Minute(), am_pm);
         }
     };
 
@@ -111,46 +111,46 @@ namespace doticu_skylib {
 
         some<Calendar_Time_Hour_24_t> Hour_24() const
         {
-            return Time_24()().Hour();
+            return Time_24().Hour();
         }
 
         Calendar_Time_t& Hour_24(some<Calendar_Time_Hour_24_t> hour_24)
         {
             SKYLIB_ASSERT_SOME(hour_24);
-            return Time_24(Time_24()().Hour(hour_24));
+            return Time_24(Time_24().Hour(hour_24));
         }
 
         some<Calendar_Time_Hour_12_t> Hour_12() const
         {
-            return Time_12()().Hour();
+            return Time_12().Hour();
         }
 
         Calendar_Time_t& Hour_12(some<Calendar_Time_Hour_12_t> hour_12)
         {
             SKYLIB_ASSERT_SOME(hour_12);
-            return Time_12(Time_12()().Hour(hour_12));
+            return Time_12(Time_12().Hour(hour_12));
         }
 
         some<Calendar_Time_Minute_t> Minute() const
         {
-            return Time_24()().Minute();
+            return Time_24().Minute();
         }
 
         Calendar_Time_t& Minute(some<Calendar_Time_Minute_t> minute)
         {
             SKYLIB_ASSERT_SOME(minute);
-            return Time_24(Time_24()().Minute(minute));
+            return Time_24(Time_24().Minute(minute));
         }
 
         some<Calendar_Time_AM_PM_e> AM_PM() const
         {
-            return Time_12()().AM_PM();
+            return Time_12().AM_PM();
         }
 
         Calendar_Time_t& AM_PM(some<Calendar_Time_AM_PM_e> am_pm)
         {
             SKYLIB_ASSERT_SOME(am_pm);
-            return Time_12(Time_12()().AM_PM(am_pm));
+            return Time_12(Time_12().AM_PM(am_pm));
         }
 
     public:

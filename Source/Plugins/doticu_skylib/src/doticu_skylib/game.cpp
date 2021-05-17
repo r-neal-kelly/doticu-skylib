@@ -109,6 +109,24 @@ namespace doticu_skylib {
         return *editor_ids_to_forms_lock;
     }
 
+    Bool_t Game_t::Has_Form(some<Form_ID_t> form_id, Read_Locker_t& locker)
+    {
+        SKYLIB_ASSERT_SOME(form_id);
+
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        auto* entry = form_ids_to_forms.Entry(form_id);
+        return entry && entry->second;
+    }
+
+    Bool_t Game_t::Has_Form(some<Form_t*> form, Read_Locker_t& locker)
+    {
+        SKYLIB_ASSERT_SOME(form);
+
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        auto* entry = form_ids_to_forms.Entry(form->form_id);
+        return entry && entry->second == form;
+    }
+
     maybe<Form_t*> Game_t::Form(Raw_Form_ID_t raw_form_id)
     {
         static auto get_form = reinterpret_cast
@@ -147,6 +165,7 @@ namespace doticu_skylib {
     {
         Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
         Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+        Read_Locker_t locker(form_ids_to_forms_lock);
 
         for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
             Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
@@ -160,6 +179,7 @@ namespace doticu_skylib {
     {
         Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
         Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+        Read_Locker_t locker(form_ids_to_forms_lock);
 
         for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
             Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
@@ -173,6 +193,7 @@ namespace doticu_skylib {
     {
         Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
         Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+        Read_Locker_t locker(form_ids_to_forms_lock);
 
         for (size_t idx = 0, end = form_ids_to_forms.capacity; idx < end; idx += 1) {
             Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
@@ -180,6 +201,31 @@ namespace doticu_skylib {
                 if (iterator(entry.second()) == Iterator_e::BREAK) {
                     return;
                 }
+            }
+        }
+    }
+
+    void Game_t::Iterate_Forms_Periodically(Iterator_i<some<Form_t*>>& iterator, std::chrono::nanoseconds interval)
+    {
+        Hash_Map_t<Form_ID_t, maybe<Form_t*>>& form_ids_to_forms = Form_IDs_To_Forms();
+        Read_Write_Lock_t& form_ids_to_forms_lock = Form_IDs_To_Forms_Lock();
+
+        for (size_t idx = 0; ; idx += 1) {
+            {
+                Read_Locker_t locker(form_ids_to_forms_lock);
+                if (idx < form_ids_to_forms.capacity) {
+                    Hash_Map_t<Form_ID_t, maybe<Form_t*>>::Entry_t& entry = form_ids_to_forms.entries[idx];
+                    if (entry.chain && entry.second) {
+                        if (iterator(entry.second()) == Iterator_e::BREAK) {
+                            return;
+                        }
+                    }
+                } else {
+                    return;
+                }
+            }
+            if (interval.count() > 0) {
+                std::this_thread::sleep_for(interval);
             }
         }
     }

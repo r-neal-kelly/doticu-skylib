@@ -291,6 +291,38 @@ namespace doticu_skylib {
         }
     }
 
+    void Reference_t::Iterate_All_References_Periodically(Iterator_i<some<Reference_t*>>& iterator,
+                                                          std::chrono::nanoseconds interval)
+    {
+        class Form_Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Iterator_i<some<Reference_t*>>& iterator;
+
+        public:
+            Form_Iterator(Iterator_i<some<Reference_t*>>& iterator) :
+                iterator(iterator)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Reference_t*> reference = form->As_Reference();
+                if (reference && reference->Is_Valid()) {
+                    return this->iterator(reference());
+                } else {
+                    return Iterator_e::CONTINUE;
+                }
+            }
+        };
+
+        Form_Iterator form_iterator(iterator);
+
+        Game_t::Iterate_Forms_Periodically(form_iterator, interval);
+    }
+
     maybe<Reference_t*> Reference_t::Create(some<Form_t*> base,
                                             u32 count,
                                             maybe<Reference_t*> at,

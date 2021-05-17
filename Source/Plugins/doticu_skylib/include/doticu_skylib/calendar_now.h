@@ -90,35 +90,35 @@ namespace doticu_skylib {
 
         some<Calendar_Date_Month_t> Month() const
         {
-            return Date()().Month();
+            return Date().Month();
         }
 
         Calendar_Now_t& Month(some<Calendar_Date_Month_t> month)
         {
             SKYLIB_ASSERT_SOME(month);
-            return Date(Date()().Month(month));
+            return Date(Date().Month(month));
         }
 
         some<Calendar_Date_Day_t> Day() const
         {
-            return Date()().Day();
+            return Date().Day();
         }
 
         Calendar_Now_t& Day(some<Calendar_Date_Day_t> day)
         {
             SKYLIB_ASSERT_SOME(day);
-            return Date(Date()().Day(day));
+            return Date(Date().Day(day));
         }
 
         some<Calendar_Date_Year_t> Year() const
         {
-            return Date()().Year();
+            return Date().Year();
         }
 
         Calendar_Now_t& Year(some<Calendar_Date_Year_t> year)
         {
             SKYLIB_ASSERT_SOME(year);
-            return Date(Date()().Year(year));
+            return Date(Date().Year(year));
         }
 
         some<Calendar_Time_t> Time() const
@@ -137,68 +137,68 @@ namespace doticu_skylib {
 
         some<Calendar_Time_24_t> Time_24() const
         {
-            return Time()().Time_24();
+            return Time().Time_24();
         }
 
         Calendar_Now_t& Time_24(some<Calendar_Time_24_t> time_24)
         {
             SKYLIB_ASSERT_SOME(time_24);
-            return Time(Time()().Time_24(time_24));
+            return Time(Time().Time_24(time_24));
         }
 
         some<Calendar_Time_12_t> Time_12() const
         {
-            return Time()().Time_12();
+            return Time().Time_12();
         }
 
         Calendar_Now_t& Time_12(some<Calendar_Time_12_t> time_12)
         {
             SKYLIB_ASSERT_SOME(time_12);
-            return Time(Time()().Time_12(time_12));
+            return Time(Time().Time_12(time_12));
         }
 
         some<Calendar_Time_Hour_24_t> Hour_24() const
         {
-            return Time()().Hour_24();
+            return Time().Hour_24();
         }
 
         Calendar_Now_t& Hour_24(some<Calendar_Time_Hour_24_t> hour_24)
         {
             SKYLIB_ASSERT_SOME(hour_24);
-            return Time(Time()().Hour_24(hour_24));
+            return Time(Time().Hour_24(hour_24));
         }
 
         some<Calendar_Time_Hour_12_t> Hour_12() const
         {
-            return Time()().Hour_12();
+            return Time().Hour_12();
         }
 
         Calendar_Now_t& Hour_12(some<Calendar_Time_Hour_12_t> hour_12)
         {
             SKYLIB_ASSERT_SOME(hour_12);
-            return Time(Time()().Hour_12(hour_12));
+            return Time(Time().Hour_12(hour_12));
         }
 
         some<Calendar_Time_Minute_t> Minute() const
         {
-            return Time()().Minute();
+            return Time().Minute();
         }
 
         Calendar_Now_t& Minute(some<Calendar_Time_Minute_t> minute)
         {
             SKYLIB_ASSERT_SOME(minute);
-            return Time(Time()().Minute(minute));
+            return Time(Time().Minute(minute));
         }
 
         some<Calendar_Time_AM_PM_e> AM_PM() const
         {
-            return Time()().AM_PM();
+            return Time().AM_PM();
         }
 
         Calendar_Now_t& AM_PM(some<Calendar_Time_AM_PM_e> am_pm)
         {
             SKYLIB_ASSERT_SOME(am_pm);
-            return Time(Time()().AM_PM(am_pm));
+            return Time(Time().AM_PM(am_pm));
         }
 
     public:

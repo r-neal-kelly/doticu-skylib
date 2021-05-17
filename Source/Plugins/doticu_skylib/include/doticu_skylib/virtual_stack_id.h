@@ -5,7 +5,6 @@
 #pragma once
 
 #include "doticu_skylib/math.h"
-#include "doticu_skylib/maybe_numeric.h"
 #include "doticu_skylib/numeric.h"
 
 namespace doticu_skylib { namespace Virtual {

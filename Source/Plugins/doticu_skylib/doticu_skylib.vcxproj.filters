@@ -528,9 +528,6 @@
     <ClInclude Include="include\doticu_skylib\magic_effect_instance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\maybe_numeric.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\mod_index.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -5,7 +5,6 @@
 #pragma once
 
 #include "doticu_skylib/form_index.h"
-#include "doticu_skylib/maybe_numeric.h"
 #include "doticu_skylib/mod_index.h"
 #include "doticu_skylib/string.h"
 

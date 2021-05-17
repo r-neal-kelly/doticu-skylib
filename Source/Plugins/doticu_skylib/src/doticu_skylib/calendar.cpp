@@ -34,8 +34,8 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(now);
 
-        Date(now().Date());
-        Time(now().Time());
+        Date(now.Date());
+        Time(now.Time());
     }
 
     maybe<Calendar_Date_t> Calendar_t::Date() const
@@ -55,9 +55,9 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(date);
 
-        Month(date().Month());
-        Day(date().Day());
-        Year(date().Year());
+        Month(date.Month());
+        Day(date.Day());
+        Year(date.Year());
     }
 
     maybe<Calendar_Date_Month_t> Calendar_t::Month() const
@@ -129,7 +129,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(time);
 
-        Time_24(time().Time_24());
+        Time_24(time.Time_24());
     }
 
     maybe<Calendar_Time_24_t> Calendar_t::Time_24() const
@@ -148,8 +148,8 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT_SOME(time_24);
 
-        Hour_24(time_24().Hour());
-        Minute(time_24().Minute());
+        Hour_24(time_24.Hour());
+        Minute(time_24.Minute());
     }
 
     maybe<Calendar_Time_12_t> Calendar_t::Time_12() const
@@ -157,7 +157,7 @@ namespace doticu_skylib {
         maybe<Calendar_Time_t> time = Time();
 
         if (time) {
-            return time().Time_12();
+            return time.Time_12();
         } else {
             return Calendar_Time_12_t::_NONE_;
         }
@@ -194,7 +194,7 @@ namespace doticu_skylib {
         maybe<Calendar_Time_t> time = Time();
 
         if (time) {
-            return time().Hour_12();
+            return time.Hour_12();
         } else {
             return Calendar_Time_Hour_12_t::_NONE_;
         }
@@ -207,7 +207,7 @@ namespace doticu_skylib {
         maybe<Calendar_Time_t> time = Time();
 
         if (time) {
-            Time(time().Hour_12(hour_12));
+            Time(time.Hour_12(hour_12));
         }
     }
 
@@ -235,7 +235,7 @@ namespace doticu_skylib {
         maybe<Calendar_Time_t> time = Time();
 
         if (time) {
-            return time().AM_PM();
+            return time.AM_PM();
         } else {
             return Calendar_Time_AM_PM_e::_NONE_;
         }
@@ -248,7 +248,7 @@ namespace doticu_skylib {
         maybe<Calendar_Time_t> time = Time();
 
         if (time) {
-            Time(time().AM_PM(am_pm));
+            Time(time.AM_PM(am_pm));
         }
     }
 
@@ -260,7 +260,7 @@ namespace doticu_skylib {
         maybe<Calendar_Now_t> now = Now();
         if (now) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "now:");
-            now().Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+            now.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "now: (none)");
         }

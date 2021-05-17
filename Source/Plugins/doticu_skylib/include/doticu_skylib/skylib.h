@@ -13,7 +13,6 @@
 #include "doticu_skylib/math.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/maybe_enum.h"
-#include "doticu_skylib/maybe_numeric.h"
 #include "doticu_skylib/numeric.h"
 #include "doticu_skylib/skse.h"
 #include "doticu_skylib/string.h"

@@ -94,13 +94,18 @@ namespace doticu_skylib {
         static Hash_Map_t<String_t, maybe<Form_t*>>&    Editor_IDs_To_Forms();
         static Read_Write_Lock_t&                       Editor_IDs_To_Forms_Lock();
 
+        static Bool_t                                   Has_Form(some<Form_ID_t> form_id, Read_Locker_t& locker);
+        static Bool_t                                   Has_Form(some<Form_t*> form, Read_Locker_t& locker);
+
         static maybe<Form_t*>                           Form(Raw_Form_ID_t raw_form_id);
         static maybe<Form_t*>                           Form(some<Mod_t*> mod, Raw_Form_Index_t raw_form_index);
         static Vector_t<some<Form_t*>>                  Forms();
         static Vector_t<some<Form_t*>>                  Forms(Filter_i<some<Form_t*>>& filter);
         static void                                     Forms(Vector_t<some<Form_t*>>& results);
         static void                                     Forms(Vector_t<some<Form_t*>>& results, Filter_i<some<Form_t*>>& filter);
+
         static void                                     Iterate_Forms(Iterator_i<some<Form_t*>>& iterator);
+        static void                                     Iterate_Forms_Periodically(Iterator_i<some<Form_t*>>& iterator, std::chrono::nanoseconds interval);
 
     public:
         u64                                 unk_000;                            // 000

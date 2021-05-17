@@ -134,6 +134,9 @@ namespace doticu_skylib {
         static void                         Grid_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
         static void                         Grid_References(some<Form_List_t*> results, Filter_i<some<Reference_t*>>& filter);
 
+        static void                         Iterate_All_References_Periodically(Iterator_i<some<Reference_t*>>& iterator,
+                                                                                std::chrono::nanoseconds interval);
+
         static maybe<Reference_t*>          Create(some<Form_t*> base,
                                                    u32 count,
                                                    maybe<Reference_t*> at,

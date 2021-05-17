@@ -117,7 +117,7 @@ namespace doticu_skylib {
                         std::this_thread::sleep_for(std::chrono::milliseconds(16));
                     }
 
-                    On_After_Save_Game();
+                    this->On_After_Save_Game();
 
                     if (this->update_locker.owns_lock()) {
                         this->update_locker.unlock();

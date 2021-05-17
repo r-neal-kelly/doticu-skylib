@@ -223,7 +223,7 @@ namespace doticu_skylib {
     Bool_t Mod_t::Has_Form(maybe<Form_ID_t> form_id)
     {
         if (form_id) {
-            return form_id().Has_Mod(this);
+            return form_id.Has_Mod(this);
         } else {
             return false;
         }

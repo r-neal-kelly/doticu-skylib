@@ -42,7 +42,7 @@ namespace doticu_skylib {
         if (heavy_mod_index) {
             maybe<Heavy_Form_Index_t> heavy_form_index(raw_form_index);
             if (heavy_form_index) {
-                this->value = Form_ID_t(heavy_mod_index(), heavy_form_index());
+                this->value = Form_ID_t(heavy_mod_index.some(), heavy_form_index.some());
             } else {
                 this->value = _NONE_;
             }
@@ -51,7 +51,7 @@ namespace doticu_skylib {
             if (light_mod_index) {
                 maybe<Light_Form_Index_t> light_form_index(raw_form_index);
                 if (light_form_index) {
-                    this->value = Form_ID_t(light_mod_index(), light_form_index());
+                    this->value = Form_ID_t(light_mod_index.some(), light_form_index.some());
                 } else {
                     this->value = _NONE_;
                 }
@@ -101,11 +101,11 @@ namespace doticu_skylib {
 
         maybe<Heavy_Mod_Index_t> heavy_mod_index = mod->Heavy_Mod_Index();
         if (heavy_mod_index) {
-            return Has_Mod(heavy_mod_index());
+            return Has_Mod(heavy_mod_index.some());
         } else {
             maybe<Light_Mod_Index_t> light_mod_index = mod->Light_Mod_Index();
             if (light_mod_index) {
-                return Has_Mod(light_mod_index());
+                return Has_Mod(light_mod_index.some());
             } else {
                 return false;
             }
