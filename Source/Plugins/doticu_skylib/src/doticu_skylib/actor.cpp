@@ -139,17 +139,34 @@ namespace doticu_skylib {
 
     void Actor_t::All_Actors_In_Cells(Vector_t<some<Actor_t*>>& results)
     {
-        class Filter :
-            public Filter_i<some<Reference_t*>>
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
         {
         public:
-            virtual Bool_t operator ()(some<Reference_t*> reference) override
-            {
-                return reference->Is_Actor();
-            }
-        } filter;
+            Vector_t<some<Actor_t*>>& results;
 
-        Reference_t::All_References_In_Cells(reinterpret_cast<Vector_t<some<Reference_t*>>&>(results), filter);
+        public:
+            Iterator(Vector_t<some<Actor_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Actor_t*> actor = form->As_Actor();
+                if (actor && actor->Is_Valid() && actor->Cell(true)) {
+                    this->results.push_back(actor());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
     }
 
     maybe<Actor_t*> Actor_t::Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify)
