@@ -14,9 +14,9 @@
 
 namespace doticu_skylib {
 
-    UI_t& UI_t::Self()
+    some<UI_t*> UI_t::Self()
     {
-        static auto self = *reinterpret_cast
+        static auto self = reinterpret_cast
             <UI_t**>
             (Game_t::Base_Address() + Offset_e::SELF);
 

@@ -108,12 +108,18 @@ namespace doticu_skylib {
                 this->update_locker.lock();
             }
 
+            if (message->data) {
+                On_Before_Save_Game(static_cast<const char*>(message->data), message->dataLen);
+            } else {
+                On_Before_Save_Game("", 0);
+            }
+
             std::thread(
                 [this]()->void
                 {
-                    UI_t& ui = UI_t::Self();
-                    u32 time = ui.game_timer.total_time;
-                    while (time == ui.game_timer.total_time) {
+                    some<UI_t*> ui = UI_t::Self();
+                    u32 time = ui->game_timer.total_time;
+                    while (time == ui->game_timer.total_time) {
                         std::this_thread::sleep_for(std::chrono::milliseconds(16));
                     }
 
@@ -124,8 +130,6 @@ namespace doticu_skylib {
                     }
                 }
             ).detach();
-
-            On_Before_Save_Game();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_PreLoadGame) {
             if (!this->update_locker.owns_lock()) {
@@ -151,12 +155,19 @@ namespace doticu_skylib {
             On_After_New_Game();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
-            std::lock_guard<std::mutex> update_locker(this->update_lock);
+            Bool_t was_already_locked = this->update_locker.owns_lock();
+            if (!was_already_locked) {
+                this->update_locker.lock();
+            }
 
             if (message->data) {
                 On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
             } else {
                 On_Before_Delete_Game("", 0);
+            }
+
+            if (!was_already_locked && this->update_locker.owns_lock()) {
+                this->update_locker.unlock();
             }
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
@@ -176,7 +187,7 @@ namespace doticu_skylib {
                 [this, interval]()->void
                 {
                     Player_t& player = *Player_t::Self();
-                    UI_t& ui = UI_t::Self();
+                    UI_t& ui = *UI_t::Self();
                     u32 time = 0;
                     while (true) {
                         {

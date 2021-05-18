@@ -114,6 +114,9 @@ namespace doticu_skylib {
         static Vector_t<some<Actor_t*>> All(Filter_i<some<Actor_t*>>& filter);
         static void                     All(Vector_t<some<Actor_t*>>& results, Filter_i<some<Actor_t*>>& filter);
 
+        static Vector_t<some<Actor_t*>> All_Actors_In_Cells();
+        static void                     All_Actors_In_Cells(Vector_t<some<Actor_t*>>& results);
+
         static maybe<Actor_t*>          Create(some<Form_t*> base, Bool_t do_persist, Bool_t do_pacify);
         static maybe<Actor_t*>          Create(some<Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);
         static maybe<Actor_t*>          Create(some<Leveled_Actor_Base_t*> base, Bool_t do_persist, Bool_t do_pacify, Bool_t do_static);

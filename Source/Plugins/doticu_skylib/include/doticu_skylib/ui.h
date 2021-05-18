@@ -50,8 +50,9 @@ namespace doticu_skylib {
         };
 
     public:
-        static UI_t&    Self();
+        static some<UI_t*> Self();
 
+    public:
         template <typename Type>
         static Type     Value(String_t menu, String_t target);
         template <typename Type>

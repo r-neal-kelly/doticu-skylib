@@ -139,6 +139,46 @@ namespace doticu_skylib {
         Game_t::Iterate_Forms(iterator);
     }
 
+    Vector_t<some<Reference_t*>> Reference_t::All_References_In_Cells(Filter_i<some<Reference_t*>>& filter)
+    {
+        Vector_t<some<Reference_t*>> results;
+        All_References_In_Cells(results, filter);
+        return results;
+    }
+
+    void Reference_t::All_References_In_Cells(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Reference_t*>>& results;
+            Filter_i<some<Reference_t*>>& filter;
+
+        public:
+            Iterator(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Reference_t*> reference = form->As_Reference();
+                if (reference && reference->Is_Valid() && reference->Cell(true) && this->filter(reference())) {
+                    this->results.push_back(reference());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results, filter);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
     Vector_t<some<Reference_t*>> Reference_t::Grid_References()
     {
         Vector_t<some<Reference_t*>> results;

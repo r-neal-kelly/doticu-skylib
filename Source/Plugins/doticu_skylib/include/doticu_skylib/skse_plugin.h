@@ -42,7 +42,7 @@ namespace doticu_skylib {
         const maybe<Version_t<u16>>             skse_version_target;
         const Operator_e                        skse_version_method;
 
-    private:
+    public:
         std::atomic<Bool_t>                     has_update_loop;
         std::mutex                              update_lock;
         std::unique_lock<std::mutex>            update_locker;
@@ -63,7 +63,7 @@ namespace doticu_skylib {
 
         virtual void    On_After_Load_Data()                                                        = 0;
         virtual void    On_After_New_Game()                                                         = 0;
-        virtual void    On_Before_Save_Game()                                                       = 0;
+        virtual void    On_Before_Save_Game(some<const char*> file_path, u32 file_path_length)      = 0;
         virtual void    On_After_Save_Game()                                                        = 0;
         virtual void    On_Before_Load_Game(some<const char*> file_path, u32 file_path_length)      = 0;
         virtual void    On_After_Load_Game(Bool_t did_load_successfully)                            = 0;

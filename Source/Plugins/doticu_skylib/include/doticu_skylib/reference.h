@@ -126,6 +126,12 @@ namespace doticu_skylib {
         static Vector_t<some<Reference_t*>> All_References(Filter_i<some<Reference_t*>>& filter);
         static void                         All_References(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
 
+        static Vector_t<some<Reference_t*>> All_References_In_Cells();
+        static void                         All_References_In_Cells(Vector_t<some<Reference_t*>>& results);
+
+        static Vector_t<some<Reference_t*>> All_References_In_Cells(Filter_i<some<Reference_t*>>& filter);
+        static void                         All_References_In_Cells(Vector_t<some<Reference_t*>>& results, Filter_i<some<Reference_t*>>& filter);
+
         static Vector_t<some<Reference_t*>> Grid_References();
         static void                         Grid_References(Vector_t<some<Reference_t*>>& results);
         static void                         Grid_References(some<Form_List_t*> results);
