@@ -9,6 +9,7 @@
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/player_objective.h"
 #include "doticu_skylib/quest_objective_state.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unique.h"
@@ -79,28 +80,15 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Relation_Counts_t) == 0x8);
 
-    class Player_Objective_t
-    {
-    public:
-        Quest_Objective_t*      objective;      // 0
-        u32                     instance_id;    // 8
-        Quest_Objective_State_e state;          // C
-        u8                      pad_D;          // D
-        u16                     pad_E;          // E
-
-        void Log(std::string indent = "");
-    };
-    STATIC_ASSERT(sizeof(Player_Objective_t) == 0x10);
-
-    class Player_t :
-        public Character_t,
-        public Event_Source_t<void*>,
-        public Event_Source_t<void**>,
-        public Event_Source_t<void***>,
-        public Event_Sink_t<void****>,
-        public Event_Sink_t<void*****>,
-        public Event_Sink_t<void******>,
-        public Event_Sink_t<void*******>
+    class Player_t :                        // PlayerCharacter
+        public Character_t,                 // 000
+        public Event_Source_t<void*>,       // 2B0
+        public Event_Source_t<void**>,      // 308
+        public Event_Source_t<void***>,     // 360
+        public Event_Sink_t<void****>,      // 3B8
+        public Event_Sink_t<void*****>,     // 3C0
+        public Event_Sink_t<void******>,    // 3C8
+        public Event_Sink_t<void*******>    // 3D0
     {
     public:
         static some<Player_t*> Self();

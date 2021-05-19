@@ -192,6 +192,7 @@
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
     <ClInclude Include="include\doticu_skylib\package_value_list.h" />
     <ClInclude Include="include\doticu_skylib\package_value_target.h" />
+    <ClInclude Include="include\doticu_skylib\player_objective.h" />
     <ClInclude Include="include\doticu_skylib\potion.h" />
     <ClInclude Include="include\doticu_skylib\projectile.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
@@ -362,7 +363,6 @@
     <ClInclude Include="include\doticu_skylib\enum_cell_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_cell_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_container_flags.h" />
-    <ClInclude Include="include\doticu_skylib\enum_day.h" />
     <ClInclude Include="include\doticu_skylib\enum_faction_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_package_interrupt_type.h" />
@@ -620,6 +620,7 @@
     <ClCompile Include="src\doticu_skylib\package_value_reference.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value_target.cpp" />
     <ClCompile Include="src\doticu_skylib\package_value_topic.cpp" />
+    <ClCompile Include="src\doticu_skylib\player_objective.cpp" />
     <ClCompile Include="src\doticu_skylib\potion.cpp" />
     <ClCompile Include="src\doticu_skylib\reaction.cpp" />
     <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />

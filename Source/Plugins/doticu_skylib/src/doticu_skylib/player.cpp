@@ -20,20 +20,6 @@
 
 namespace doticu_skylib {
 
-    void Player_Objective_t::Log(std::string indent)
-    {
-        SKYLIB_LOG(indent + "Player_Objective_t::Log");
-        SKYLIB_LOG(indent + "{");
-
-        if (objective) {
-            objective->Log(indent + SKYLIB_TAB);
-        }
-        SKYLIB_LOG(indent + SKYLIB_TAB + "instance_id: 0x%X", instance_id);
-        SKYLIB_LOG(indent + SKYLIB_TAB + "state: %s", Quest_Objective_State_e::To_String(state));
-
-        SKYLIB_LOG(indent + "}");
-    }
-
     some<Player_t*> Player_t::Self()
     {
         return Const::Actor::Player();

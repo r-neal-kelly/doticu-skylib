@@ -12,7 +12,7 @@ namespace doticu_skylib {
         public Numeric_Data_t<s8>
     {
     public:
-        static constexpr value_type _NONE_  = -1;
+        static constexpr value_type _NONE_  = 0;
         static constexpr value_type _MIN_   = 1;
         static constexpr value_type _MAX_   = 12;
 

@@ -300,9 +300,6 @@
     <ClInclude Include="include\doticu_skylib\enum_container_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\enum_day.h">
-      <Filter>Header Files\enum</Filter>
-    </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_faction_flags.h">
       <Filter>Header Files\enum</Filter>
     </ClInclude>
@@ -1443,6 +1440,9 @@
     <ClInclude Include="include\doticu_skylib\calendar_time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\doticu_skylib\player_objective.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\doticu_skylib\game.cpp">
@@ -1986,6 +1986,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\doticu_skylib\game_timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\doticu_skylib\player_objective.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

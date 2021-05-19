@@ -87,7 +87,7 @@ namespace doticu_skylib {
         void                Command(const char* command);
         void                Command(std::string command);
 
-        void                Execute(some<Reference_t*> reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
+        void                Execute(maybe<Reference_t*> reference, Compiler_e compiler_e = Compiler_e::SYSTEM);
 
     public:
         void    Console_Activate(some<Reference_t*> self, some<Reference_t*> activator, Bool_t only_default_event);
@@ -97,6 +97,9 @@ namespace doticu_skylib {
 
         void    Console_Open_Container(some<Reference_t*> self);
         void    Console_Open_Container(some<Actor_t*> self, Bool_t allow_non_teammates);
+
+        void    Console_Is_Objective_Completed(some<Quest_t*> self, u16 index, Bool_t value);
+        void    Console_Is_Objective_Displayed(some<Quest_t*> self, u16 index, Bool_t value);
     };
     STATIC_ASSERT(sizeof(Script_t) == 0x80);
 

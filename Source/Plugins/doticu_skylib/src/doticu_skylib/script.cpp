@@ -8,6 +8,8 @@
 #include "doticu_skylib/form_factory.h"
 #include "doticu_skylib/game.inl"
 #include "doticu_skylib/memory.h"
+#include "doticu_skylib/player.h"
+#include "doticu_skylib/quest.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/script.h"
 
@@ -80,7 +82,7 @@ namespace doticu_skylib {
         Command(command.c_str());
     }
 
-    void Script_t::Execute(some<Reference_t*> reference, Compiler_e compiler_e)
+    void Script_t::Execute(maybe<Reference_t*> reference, Compiler_e compiler_e)
     {
         class Compiler_t
         {
@@ -91,7 +93,11 @@ namespace doticu_skylib {
             <void(*)(Script_t*, Compiler_t*, Compiler_e::value_type, Reference_t*)>
             (Game_t::Base_Address() + Offset_e::EXECUTE);
 
-        SKYLIB_ASSERT_SOME(reference);
+        static some<Player_t*> player = Player_t::Self();
+
+        if (!reference) {
+            reference = player();
+        }
 
         Compiler_t compiler;
         execute(this, &compiler, compiler_e, reference());
@@ -148,7 +154,37 @@ namespace doticu_skylib {
 
         if (self->Is_Valid()) {
             Command(std::string("OpenActorContainer ") + (allow_non_teammates ? "1" : "0"));
-            Execute(self);
+            Execute(self());
+        }
+    }
+
+    void Script_t::Console_Is_Objective_Completed(some<Quest_t*> self, u16 index, Bool_t value)
+    {
+        SKYLIB_ASSERT_SOME(self);
+
+        if (self->Is_Valid()) {
+            Command(
+                std::string("SetObjectiveCompleted ") +
+                self->form_id.As_String() + " " +
+                std::to_string(index) + " " +
+                (value ? "1" : "0")
+            );
+            Execute(none<Reference_t*>());
+        }
+    }
+
+    void Script_t::Console_Is_Objective_Displayed(some<Quest_t*> self, u16 index, Bool_t value)
+    {
+        SKYLIB_ASSERT_SOME(self);
+
+        if (self->Is_Valid()) {
+            Command(
+                std::string("SetObjectiveDisplayed ") +
+                self->form_id.As_String() + " " +
+                std::to_string(index) + " " +
+                (value ? "1" : "0")
+            );
+            Execute(none<Reference_t*>());
         }
     }
 

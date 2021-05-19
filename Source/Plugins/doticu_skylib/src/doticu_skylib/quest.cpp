@@ -12,6 +12,7 @@
 #include "doticu_skylib/quest_objective.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.h"
+#include "doticu_skylib/script.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
@@ -37,6 +38,28 @@ namespace doticu_skylib {
         for (size_t idx = 0, end = quest_count; idx < end; idx += 1) {
             maybe<Quest_t*> quest = quests[idx];
             if (quest && quest->Is_Valid() && !results.Has(quest())) {
+                results.push_back(quest());
+            }
+        }
+    }
+
+    Vector_t<some<Quest_t*>> Quest_t::Quests_Static(Filter_i<some<Quest_t*>>& filter)
+    {
+        Vector_t<some<Quest_t*>> results;
+        Quests_Static(results, filter);
+        return results;
+    }
+
+    void Quest_t::Quests_Static(Vector_t<some<Quest_t*>>& results, Filter_i<some<Quest_t*>>& filter)
+    {
+        Array_t<maybe<Quest_t*>>& quests = Game_t::Self()->Quests();
+
+        size_t quest_count = quests.Count();
+        results.reserve(quest_count);
+
+        for (size_t idx = 0, end = quest_count; idx < end; idx += 1) {
+            maybe<Quest_t*> quest = quests[idx];
+            if (quest && quest->Is_Valid() && !results.Has(quest()) && filter(quest())) {
                 results.push_back(quest());
             }
         }
@@ -77,6 +100,46 @@ namespace doticu_skylib {
         results.reserve(4096);
 
         Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Quest_t*>> Quest_t::Quests_Dynamic(Filter_i<some<Quest_t*>>& filter)
+    {
+        Vector_t<some<Quest_t*>> results;
+        Quests_Dynamic(results, filter);
+        return results;
+    }
+
+    void Quest_t::Quests_Dynamic(Vector_t<some<Quest_t*>>& results, Filter_i<some<Quest_t*>>& filter)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Quest_t*>>&   results;
+            Filter_i<some<Quest_t*>>&   filter;
+
+        public:
+            Iterator(Vector_t<some<Quest_t*>>& results, Filter_i<some<Quest_t*>>& filter) :
+                results(results), filter(filter)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Quest_t*> quest = form->As_Quest();
+                if (quest && quest->Is_Valid() && this->filter(quest())) {
+                    this->results.push_back(quest());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(4096);
+
+        Iterator iterator(results, filter);
 
         Game_t::Iterate_Forms(iterator);
     }
@@ -382,6 +445,54 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    Vector_t<some<Quest_Objective_t*>> Quest_t::Objectives()
+    {
+        Vector_t<some<Quest_Objective_t*>> results;
+        Objectives(results);
+        return results;
+    }
+
+    void Quest_t::Objectives(Vector_t<some<Quest_Objective_t*>>& results)
+    {
+        if (!this->objectives.Is_Empty()) {
+            for (maybe<List_t<Quest_Objective_t*>::Node_t*> node = &this->objectives.head; node; node = node->next) {
+                maybe<Quest_Objective_t*> objective = node->value;
+                if (objective) {
+                    results.push_back(objective());
+                }
+            }
+        }
+    }
+
+    void Quest_t::Is_Objective_Completed(u16 index, Bool_t value)
+    {
+        unique<Script_t> script = Script_t::Create();
+        Is_Objective_Completed(index, value, script());
+    }
+
+    void Quest_t::Is_Objective_Completed(u16 index, Bool_t value, some<Script_t*> script)
+    {
+        SKYLIB_ASSERT_SOME(script);
+
+        script->Console_Is_Objective_Completed(this, index, value);
+    }
+
+    void Quest_t::Is_Objective_Displayed(u16 index, Bool_t value, Bool_t do_force)
+    {
+        unique<Script_t> script = Script_t::Create();
+        Is_Objective_Displayed(index, value, do_force, script());
+    }
+
+    void Quest_t::Is_Objective_Displayed(u16 index, Bool_t value, Bool_t do_force, some<Script_t*> script)
+    {
+        SKYLIB_ASSERT_SOME(script);
+
+        if (value && do_force) {
+            script->Console_Is_Objective_Completed(this, index, false);
+        }
+        script->Console_Is_Objective_Displayed(this, index, value);
     }
 
     void Quest_t::Start(maybe<Virtual::Callback_i*> v_callback)

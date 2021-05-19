@@ -12,15 +12,15 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + "Quest_Objective_t::Log");
         SKYLIB_LOG(indent + "{");
 
-        SKYLIB_LOG(indent + SKYLIB_TAB + "this: 0x%p", this);
         if (display_text) {
             SKYLIB_LOG(indent + SKYLIB_TAB + "display_text: %s", display_text);
         }
         if (quest) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "quest: %p %s", quest, quest->Get_Editor_ID());
+            SKYLIB_LOG(indent + SKYLIB_TAB + "quest: %s, %s", quest->form_id.As_String(), quest->Any_Name());
         }
         SKYLIB_LOG(indent + SKYLIB_TAB + "target_count: %u", target_count);
         SKYLIB_LOG(indent + SKYLIB_TAB + "index: %u", index);
+        SKYLIB_LOG(indent + SKYLIB_TAB + "is_initialized: %s", is_initialized ? "true" : "false");
         SKYLIB_LOG(indent + SKYLIB_TAB + "state: %s", Quest_Objective_State_e::To_String(state));
 
         SKYLIB_LOG(indent + "}");

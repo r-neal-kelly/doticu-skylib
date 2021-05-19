@@ -8,7 +8,8 @@
 
 namespace doticu_skylib {
 
-    class Quest_Objective_State_e : Enum_t<u8>
+    class Quest_Objective_State_e :
+        public Enum_t<u8>
     {
     public:
         enum : u8

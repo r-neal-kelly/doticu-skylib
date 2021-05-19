@@ -32,6 +32,7 @@ namespace doticu_skylib {
     class Form_List_t;
     class Global_t;
     class Scene_t;
+    class Script_t;
     class Quest_Objective_t;
     class Quest_Stage_t;
 
@@ -51,9 +52,9 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Story_Form_t) == 0x28);
 
-    class Quest_t :
-        public Story_Form_t,
-        public Name_c
+    class Quest_t :             // TESQuest
+        public Story_Form_t,    // 000
+        public Name_c           // 028
     {
     public:
         enum
@@ -80,9 +81,13 @@ namespace doticu_skylib {
     public:
         static Vector_t<some<Quest_t*>> Quests_Static();
         static void                     Quests_Static(Vector_t<some<Quest_t*>>& results);
+        static Vector_t<some<Quest_t*>> Quests_Static(Filter_i<some<Quest_t*>>& filter);
+        static void                     Quests_Static(Vector_t<some<Quest_t*>>& results, Filter_i<some<Quest_t*>>& filter);
 
         static Vector_t<some<Quest_t*>> Quests_Dynamic();
         static void                     Quests_Dynamic(Vector_t<some<Quest_t*>>& results);
+        static Vector_t<some<Quest_t*>> Quests_Dynamic(Filter_i<some<Quest_t*>>& filter);
+        static void                     Quests_Dynamic(Vector_t<some<Quest_t*>>& results, Filter_i<some<Quest_t*>>& filter);
 
     public:
         static void     Start(const Vector_t<some<Quest_t*>> quests, maybe<Callback_i<Bool_t>*> ucallback);
@@ -106,7 +111,7 @@ namespace doticu_skylib {
         Float_t                                                     delay_time;                                 // 0D8
         Quest_Flags_e                                               quest_flags;                                // 0DC
         s8                                                          priority;                                   // 0DE
-        Quest_Type_e                                                quest_type;                                 // 0DF
+        maybe<Quest_Type_e>                                         quest_type;                                 // 0DF
         Quest_Event_e                                               quest_event;                                // 0E0
         u32                                                         pad_0E4;                                    // 0E4
         List_t<Quest_Stage_t*>*                                     executed_stages;                            // 0E8 (List_t<Quest_Stage_t>* ?)
@@ -152,6 +157,15 @@ namespace doticu_skylib {
         void                                Alias_Bases(Vector_t<some<Alias_Base_t*>>& results);
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
         void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
+
+        Vector_t<some<Quest_Objective_t*>>  Objectives();
+        void                                Objectives(Vector_t<some<Quest_Objective_t*>>& results);
+
+    public:
+        void    Is_Objective_Completed(u16 index, Bool_t value);
+        void    Is_Objective_Completed(u16 index, Bool_t value, some<Script_t*> script);
+        void    Is_Objective_Displayed(u16 index, Bool_t value, Bool_t do_force);
+        void    Is_Objective_Displayed(u16 index, Bool_t value, Bool_t do_force, some<Script_t*> script);
 
     public:
         void    Start(maybe<Virtual::Callback_i*> v_callback);                  // Start
