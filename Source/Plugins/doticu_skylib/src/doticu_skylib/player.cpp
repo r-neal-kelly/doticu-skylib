@@ -72,6 +72,88 @@ namespace doticu_skylib {
         }
     }
 
+    void Player_t::Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator)
+    {
+        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
+        Iterate_Player_Objectives(iterator, locker);
+    }
+
+    void Player_t::Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator,
+                                             Read_Locker_t& forms_locker)
+    {
+        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
+            some<Player_Objective_t*> player_objective = &this->objectives[idx];
+            if (iterator(player_objective) == Iterator_e::BREAK) {
+                return;
+            }
+        }
+    }
+
+    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives()
+    {
+        Vector_t<some<Quest_Objective_t*>> results;
+        Quest_Objectives(results);
+        return results;
+    }
+
+    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results)
+    {
+        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
+        Quest_Objectives(results, locker);
+    }
+
+    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Read_Locker_t& forms_locker)
+    {
+        Vector_t<some<Quest_Objective_t*>> results;
+        Quest_Objectives(results, forms_locker);
+        return results;
+    }
+
+    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results,
+                                    Read_Locker_t& forms_locker)
+    {
+        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
+            maybe<Quest_Objective_t*> quest_objective = this->objectives[idx].objective;
+            if (quest_objective && !results.Has(quest_objective())) {
+                results.push_back(quest_objective());
+            }
+        }
+    }
+
+    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter)
+    {
+        Vector_t<some<Quest_Objective_t*>> results;
+        Quest_Objectives(results, filter);
+        return results;
+    }
+
+    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results,
+                                    Filter_i<some<Quest_Objective_t*>>& filter)
+    {
+        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
+        Quest_Objectives(results, filter, locker);
+    }
+
+    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter,
+                                                                  Read_Locker_t& forms_locker)
+    {
+        Vector_t<some<Quest_Objective_t*>> results;
+        Quest_Objectives(results, filter, forms_locker);
+        return results;
+    }
+
+    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results,
+                                    Filter_i<some<Quest_Objective_t*>>& filter,
+                                    Read_Locker_t& forms_locker)
+    {
+        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
+            maybe<Quest_Objective_t*> quest_objective = this->objectives[idx].objective;
+            if (quest_objective && !results.Has(quest_objective()) && filter(quest_objective())) {
+                results.push_back(quest_objective());
+            }
+        }
+    }
+
     void Player_t::Open_Inventory(maybe<unique<Callback_i<>>> callback)
     {
         using Callback = maybe<unique<Callback_i<>>>;

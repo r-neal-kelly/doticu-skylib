@@ -158,6 +158,7 @@ namespace doticu_skylib {
         Vector_t<some<Alias_Reference_t*>>  Alias_References();
         void                                Alias_References(Vector_t<some<Alias_Reference_t*>>& results);
 
+        maybe<Quest_Objective_t*>           Objective(u16 objective_index);
         Vector_t<some<Quest_Objective_t*>>  Objectives();
         void                                Objectives(Vector_t<some<Quest_Objective_t*>>& results);
 

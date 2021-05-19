@@ -64,6 +64,12 @@ namespace doticu_skylib {
 
     public:
         template <typename T>
+        static T Max(T a, T b)
+        {
+            return a > b ? a : b;
+        }
+
+        template <typename T>
         static T Random(T min, T max)
         {
             std::lock_guard<std::mutex> random_locker(random_lock);

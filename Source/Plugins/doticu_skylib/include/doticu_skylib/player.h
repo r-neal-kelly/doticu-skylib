@@ -156,6 +156,18 @@ namespace doticu_skylib {
 
         maybe<Relation_Counts_t*>           Relation_Counts(some<Faction_t*> faction);
 
+        void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator);
+        void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Locker_t& forms_locker);
+
+        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives();
+        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results);
+        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Read_Locker_t& forms_locker);
+        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Read_Locker_t& forms_locker);
+        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter);
+        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Filter_i<some<Quest_Objective_t*>>& filter);
+        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter, Read_Locker_t& forms_locker);
+        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Filter_i<some<Quest_Objective_t*>>& filter, Read_Locker_t& forms_locker);
+
     public:
         static void Open_Inventory(maybe<unique<Callback_i<>>> callback);
 

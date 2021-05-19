@@ -447,6 +447,21 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Quest_Objective_t*> Quest_t::Objective(u16 objective_index)
+    {
+        if (!this->objectives.Is_Empty()) {
+            for (maybe<List_t<Quest_Objective_t*>::Node_t*> node = &this->objectives.head; node; node = node->next) {
+                maybe<Quest_Objective_t*> objective = node->value;
+                if (objective && objective->index == objective_index) {
+                    return objective;
+                }
+            }
+            return none<Quest_Objective_t*>();
+        } else {
+            return none<Quest_Objective_t*>();
+        }
+    }
+
     Vector_t<some<Quest_Objective_t*>> Quest_t::Objectives()
     {
         Vector_t<some<Quest_Objective_t*>> results;
