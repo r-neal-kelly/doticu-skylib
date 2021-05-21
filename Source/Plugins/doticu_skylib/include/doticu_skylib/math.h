@@ -126,7 +126,7 @@ namespace doticu_skylib {
             using Enum_t::Enum_t;
         };
 
-        static u32 Hash(void* value, u32 size);
+        static u32 Hash(const void* value, u32 size);
         static u32 Hash(u32 value);
         static u32 Hash(u64 value);
 
@@ -143,9 +143,9 @@ namespace doticu_skylib {
         }
 
         template <typename T, enable_if_not_32_or_64<T> = true>
-        static u32 Hash(T value)
+        static u32 Hash(const T& value)
         {
-            return Hash(reinterpret_cast<void*>(std::addressof(value)), sizeof(T));
+            return Hash(reinterpret_cast<const void*>(std::addressof(value)), sizeof(T));
         }
     };
 

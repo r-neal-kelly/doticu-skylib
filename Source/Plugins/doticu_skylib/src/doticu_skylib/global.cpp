@@ -2,6 +2,9 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include <iomanip>
+#include <sstream>
+
 #include "doticu_skylib/global.inl"
 
 namespace doticu_skylib {
@@ -38,6 +41,13 @@ namespace doticu_skylib {
         } else {
             this->As<u16>(value);
         }
+    }
+
+    std::string Global_t::Float_String(size_t precision)
+    {
+        std::ostringstream oss;
+        oss << std::setprecision(precision) << Float();
+        return oss.str();
     }
 
 }

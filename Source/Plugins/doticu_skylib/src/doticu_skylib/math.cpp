@@ -11,10 +11,10 @@ namespace doticu_skylib {
     std::mt19937_64     Math_t::random_generator(Math_t::random_device());
     std::mutex          Math_t::random_lock;
 
-    u32 CRC32_Hash_t::Hash(void* value, u32 size)
+    u32 CRC32_Hash_t::Hash(const void* value, u32 size)
     {
         static auto hash_size = reinterpret_cast
-            <void(*)(u32&, void*, u32)>
+            <void(*)(u32&, const void*, u32)>
             (Game_t::Base_Address() + Offset_e::HASH_SIZE);
 
         u32 result;

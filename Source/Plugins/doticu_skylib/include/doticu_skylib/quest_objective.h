@@ -38,7 +38,8 @@ namespace doticu_skylib {
         Quest_Objective_Flags_e quest_objective_flags;  // 20
         u32                     pad_24;                 // 24
 
-        void Log(std::string indent = "");
+    public:
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Quest_Objective_t) == 0x28);
 

@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/quest_objective_state.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
@@ -14,11 +15,17 @@ namespace doticu_skylib {
     class Player_Objective_t
     {
     public:
+        static String_t Parse_Display_Text(some<Quest_Objective_t*> objective, u32 instance_id);
+
+    public:
         maybe<Quest_Objective_t*>   objective;      // 0
         u32                         instance_id;    // 8
         Quest_Objective_State_e     state;          // C
         u8                          pad_D;          // D
         u16                         pad_E;          // E
+
+    public:
+        String_t    Parse_Display_Text();
 
     public:
         void    Log(std::string indent = "");

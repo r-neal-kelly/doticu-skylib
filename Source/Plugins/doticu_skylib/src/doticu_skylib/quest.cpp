@@ -2,14 +2,19 @@
     Copyright © 2020 r-neal-kelly, aka doticu
 */
 
+#include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/alias_reference.h"
 #include "doticu_skylib/dynamic_array.inl"
 #include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/global.h"
+#include "doticu_skylib/player.h"
 #include "doticu_skylib/quest.h"
+#include "doticu_skylib/quest_instance.h"
 #include "doticu_skylib/quest_objective.h"
+#include "doticu_skylib/race.h"
 #include "doticu_skylib/reference.h"
 #include "doticu_skylib/scrap_array.h"
 #include "doticu_skylib/script.h"
@@ -398,6 +403,30 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Alias_Base_t*> Quest_t::Alias_Base(some<const char*> name)
+    {
+        Read_Locker_t locker(this->aliases_lock);
+
+        for (size_t idx = 0, end = this->aliases.Count(); idx < end; idx += 1) {
+            maybe<Alias_Base_t*> alias_base = this->aliases[idx];
+            if (alias_base && alias_base->name == name) {
+                return alias_base;
+            }
+        }
+
+        return none<Alias_Base_t*>();
+    }
+
+    maybe<Alias_Reference_t*> Quest_t::Alias_Reference(some<const char*> name)
+    {
+        maybe<Alias_Base_t*> alias_base = Alias_Base(name);
+        if (alias_base) {
+            return alias_base->As_Alias_Reference();
+        } else {
+            return none<Alias_Reference_t*>();
+        }
+    }
+
     Bool_t Quest_t::Has_Alias_Index(size_t index)
     {
         return Index_To_Alias_Base(index) != none<Alias_Base_t*>();
@@ -479,6 +508,177 @@ namespace doticu_skylib {
                 }
             }
         }
+    }
+
+    maybe<Quest_Instance_t*> Quest_t::Instance(u32 instance_id)
+    {
+        for (size_t idx = 0, end = this->instances.Count(); idx < end; idx += 1) {
+            maybe<Quest_Instance_t*> instance = this->instances[idx];
+            if (instance && instance->id == instance_id) {
+                return instance;
+            }
+        }
+        return none<Quest_Instance_t*>();
+    }
+
+    maybe<Quest_Instance_Alias_t*> Quest_t::Instance_Alias(u32 instance_id, some<const char*> alias_name)
+    {
+        maybe<Alias_Base_t*> alias_base = Alias_Base(alias_name);
+        if (alias_base) {
+            return Instance_Alias(instance_id, alias_base->id);
+        } else {
+            return none<Quest_Instance_Alias_t*>();
+        }
+    }
+
+    maybe<Quest_Instance_Alias_t*> Quest_t::Instance_Alias(u32 instance_id, Alias_ID_t alias_id)
+    {
+        maybe<Quest_Instance_t*> instance = Instance(instance_id);
+        if (instance) {
+            return instance->Alias(alias_id);
+        } else {
+            return none<Quest_Instance_Alias_t*>();
+        }
+    }
+
+    maybe<Form_t*> Quest_t::Instance_Alias_Data(u32 instance_id, some<const char*> alias_name)
+    {
+        maybe<Alias_Base_t*> alias_base = Alias_Base(alias_name);
+        if (alias_base) {
+            return Instance_Alias_Data(instance_id, alias_base->id);
+        } else {
+            return none<Form_t*>();
+        }
+    }
+
+    maybe<Form_t*> Quest_t::Instance_Alias_Data(u32 instance_id, Alias_ID_t alias_id)
+    {
+        maybe<Quest_Instance_Alias_t*> instance_alias = Instance_Alias(instance_id, alias_id);
+        if (instance_alias) {
+            return instance_alias->Data_Form();
+        } else {
+            return none<Form_t*>();
+        }
+    }
+
+    maybe<Quest_Instance_Global_t*> Quest_t::Instance_Global(u32 instance_id, some<const char*> global_editor_id)
+    {
+        maybe<Quest_Instance_t*> instance = Instance(instance_id);
+        if (instance) {
+            return instance->Global(global_editor_id);
+        } else {
+            return none<Quest_Instance_Global_t*>();
+        }
+    }
+
+    maybe<Quest_Instance_Global_t*> Quest_t::Instance_Global(u32 instance_id, some<Global_t*> global)
+    {
+        return Instance_Global(instance_id, global->editor_id);
+    }
+
+    std::string Quest_t::Replacement_Text(some<const char*> tag,
+                                          some<const char*> sub_tag,
+                                          some<const char*> value,
+                                          u32 instance_id)
+    {
+        SKYLIB_ASSERT_SOME(tag);
+        SKYLIB_ASSERT_SOME(sub_tag);
+        SKYLIB_ASSERT_SOME(value);
+
+        std::string result = "[...]";
+
+        if (CString_t::Is_Same(tag(), "Alias", true)) {
+            maybe<Form_t*> data = CString_t::Is_Same(value(), "Player", true) ?
+                Player_t::Self()() : Instance_Alias_Data(instance_id, value);
+            if (data) {
+                if (CString_t::Starts_With(sub_tag(), "ShortName", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    if (actor_base && actor_base->short_name) {
+                        result = actor_base->short_name;
+                    } else {
+                        result = data->Component_Name()();
+                    }
+                } else if (CString_t::Starts_With(sub_tag(), "Race", true)) {
+                    maybe<Race_t*> race = data->Component_Race();
+                    if (race) {
+                        result = race->Component_Name()();
+                    }
+                } else if (CString_t::Starts_With(sub_tag(), "Pronoun", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "she" : "he" : "it";
+                } else if (CString_t::Starts_With(sub_tag(), "PronounObj", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "her" : "him" : "it";
+                } else if (CString_t::Starts_With(sub_tag(), "PronounPos", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "hers" : "his" : "its";
+                } else if (CString_t::Starts_With(sub_tag(), "PronounPosObj", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "her" : "his" : "its";
+                } else if (CString_t::Starts_With(sub_tag(), "PronounRef", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "herself" : "himself" : "itself";
+                } else if (CString_t::Starts_With(sub_tag(), "PronounInt", true)) {
+                    maybe<Actor_Base_t*> actor_base = data->As_Actor_Base();
+                    result = actor_base ? actor_base->Sex() == Sex_e::FEMALE ? "herself" : "himself" : "itself";
+                } else {
+                    result = data->Component_Name()();
+                }
+                if (CString_t::Ends_With(sub_tag(), "Cap", true)) {
+                    for (size_t idx = 0, end = result.length(); idx < end; idx += 1) {
+                        if (idx == 0 || result[idx - 1] == ' ') {
+                            result[idx] = toupper(result[idx]);
+                        }
+                    }
+                }
+            }
+        } else if (CString_t::Is_Same(tag(), "Global", true)) {
+            maybe<Quest_Instance_Global_t*> data = Instance_Global(instance_id, value());
+            if (data && data->global) {
+                if (CString_t::Is_Same(sub_tag(), "Hour12", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Minutes", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Month", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "MonthWord", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Day", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "WeekDay", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Year", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "TimeSpan", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Meridiem", true)) {
+
+                } else if (CString_t::Is_Same(sub_tag(), "Time", true)) {
+
+                } else {
+                    if (data->Is_Float()) {
+                        result = data->Float_String();
+                    } else {
+                        result = data->Long_String();
+                    }
+                }
+            }
+        } else if (CString_t::Is_Same(tag(), "Relationship", true)) {
+            maybe<Form_t*> subject_data = Instance_Alias_Data(instance_id, value);
+            maybe<Form_t*> object_data = Instance_Alias_Data(instance_id, sub_tag);
+            if (subject_data && object_data) {
+                maybe<Actor_Base_t*> subject = subject_data->As_Actor_Base();
+                maybe<Actor_Base_t*> object = object_data->As_Actor_Base();
+                if (subject && object) {
+                    maybe<String_t> association = subject->Association_String(object());
+                    if (association.Has_Value()) {
+                        result = association.Value();
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 
     void Quest_t::Is_Objective_Completed(u16 index, Bool_t value)

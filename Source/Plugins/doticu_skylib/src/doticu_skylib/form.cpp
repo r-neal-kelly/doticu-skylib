@@ -13,6 +13,7 @@
 #include "doticu_skylib/component_equip_slot.h"
 #include "doticu_skylib/component_keywords.h"
 #include "doticu_skylib/component_name.h"
+#include "doticu_skylib/component_race.h"
 #include "doticu_skylib/component_value.h"
 #include "doticu_skylib/container.h"
 #include "doticu_skylib/cstring.h"
@@ -45,7 +46,7 @@
 
 namespace doticu_skylib {
 
-    Int_t Form_t::Compare_Names(const char* name_a, const char* name_b)
+    Comparator_e Form_t::Compare_Names(const char* name_a, const char* name_b)
     {
         if (!name_a || !name_a[0]) {
             return Comparator_e::IS_UNORDERED;
@@ -184,6 +185,16 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Race_t*> Form_t::Component_Race() const
+    {
+        maybe<Race_c*> component_race = As_Component_Race();
+        if (component_race) {
+            return component_race->race;
+        } else {
+            return none<Race_t*>();
+        }
+    }
+
     s32 Form_t::Component_Value() const
     {
         maybe<Value_c*> component_value = As_Component_Value();
@@ -205,6 +216,7 @@ namespace doticu_skylib {
     Bool_t                  Form_t::Is_Component_Equip_Slot() const { return As_Component_Equip_Slot() != none<Equip_Slot_c*>(); }
     Bool_t                  Form_t::Is_Component_Keywords() const   { return As_Component_Keywords() != none<Keywords_c*>(); }
     Bool_t                  Form_t::Is_Component_Name() const       { return As_Component_Name() != none<Name_c*>(); }
+    Bool_t                  Form_t::Is_Component_Race() const       { return As_Component_Race() != none<Race_c*>(); }
     Bool_t                  Form_t::Is_Component_Value() const      { return As_Component_Value() != none<Value_c*>(); }
     Bool_t                  Form_t::Is_Container() const            { return As_Container() != none<Container_t*>(); }
     Bool_t                  Form_t::Is_Faction() const              { return As_Faction() != none<Faction_t*>(); }
@@ -236,6 +248,7 @@ namespace doticu_skylib {
     maybe<Equip_Slot_c*>    Form_t::As_Component_Equip_Slot() const { return Game_t::Runtime_Cast<Form_t, Equip_Slot_c>(this); }
     maybe<Keywords_c*>      Form_t::As_Component_Keywords() const   { return Game_t::Runtime_Cast<Form_t, Keywords_c>(this); }
     maybe<Name_c*>          Form_t::As_Component_Name() const       { return Game_t::Runtime_Cast<Form_t, Name_c>(this); }
+    maybe<Race_c*>          Form_t::As_Component_Race() const       { return Game_t::Runtime_Cast<Form_t, Race_c>(this); }
     maybe<Value_c*>         Form_t::As_Component_Value() const      { return Game_t::Runtime_Cast<Form_t, Value_c>(this); }
     maybe<Container_t*>     Form_t::As_Container() const            { return Game_t::Runtime_Cast<Form_t, Container_t>(this); }
     maybe<Faction_t*>       Form_t::As_Faction() const              { return Game_t::Runtime_Cast<Form_t, Faction_t>(this); }

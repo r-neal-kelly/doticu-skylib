@@ -72,12 +72,6 @@ namespace doticu_skylib {
         }
     }
 
-    void Player_t::Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator)
-    {
-        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
-        Iterate_Player_Objectives(iterator, locker);
-    }
-
     void Player_t::Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator,
                                              Read_Locker_t& forms_locker)
     {

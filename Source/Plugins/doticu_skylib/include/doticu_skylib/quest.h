@@ -33,6 +33,9 @@ namespace doticu_skylib {
     class Global_t;
     class Scene_t;
     class Script_t;
+    class Quest_Instance_t;
+    class Quest_Instance_Alias_t;
+    class Quest_Instance_Global_t;
     class Quest_Objective_t;
     class Quest_Stage_t;
 
@@ -101,7 +104,7 @@ namespace doticu_skylib {
         virtual ~Quest_t(); // 00
 
     public:
-        Array_t<void*>                                              instances;                                  // 038
+        Array_t<maybe<Quest_Instance_t*>>                           instances;                                  // 038
         u32                                                         current_instance_id;                        // 050
         u32                                                         pad_054;                                    // 054
         Array_t<maybe<Alias_Base_t*>>                               aliases;                                    // 058
@@ -150,6 +153,9 @@ namespace doticu_skylib {
         maybe<Alias_Reference_t*>           Index_To_Alias_Reference(size_t index);
         maybe<Alias_Reference_t*>           ID_To_Alias_Reference(Alias_ID_t id);
 
+        maybe<Alias_Base_t*>                Alias_Base(some<const char*> name);
+        maybe<Alias_Reference_t*>           Alias_Reference(some<const char*> name);
+
         Bool_t                              Has_Alias_Index(size_t index);
         Bool_t                              Has_Alias_ID(Alias_ID_t id);
 
@@ -161,6 +167,19 @@ namespace doticu_skylib {
         maybe<Quest_Objective_t*>           Objective(u16 objective_index);
         Vector_t<some<Quest_Objective_t*>>  Objectives();
         void                                Objectives(Vector_t<some<Quest_Objective_t*>>& results);
+
+        maybe<Quest_Instance_t*>            Instance(u32 instance_id);
+        maybe<Quest_Instance_Alias_t*>      Instance_Alias(u32 instance_id, some<const char*> alias_name);
+        maybe<Quest_Instance_Alias_t*>      Instance_Alias(u32 instance_id, Alias_ID_t alias_id);
+        maybe<Form_t*>                      Instance_Alias_Data(u32 instance_id, some<const char*> alias_name);
+        maybe<Form_t*>                      Instance_Alias_Data(u32 instance_id, Alias_ID_t alias_id);
+        maybe<Quest_Instance_Global_t*>     Instance_Global(u32 instance_id, some<const char*> global_editor_id);
+        maybe<Quest_Instance_Global_t*>     Instance_Global(u32 instance_id, some<Global_t*> global);
+
+        std::string                         Replacement_Text(some<const char*> tag,
+                                                             some<const char*> sub_tag,
+                                                             some<const char*> value,
+                                                             u32 instance_id);
 
     public:
         void    Is_Objective_Completed(u16 index, Bool_t value);

@@ -304,12 +304,12 @@ namespace doticu_skylib {
             return none<size_t>();
         }
 
-        void Sort(Int_t(*comparator)(Type* item_a, Type* item_b))
+        void Sort(Int_t(*comparator)(Type& item_a, Type& item_b))
         {
             qsort(data(), size(), sizeof(Type), reinterpret_cast<int(*)(const void*, const void*)>(comparator));
         }
 
-        void Sort(Int_t(*comparator)(Type* item_a, Type* item_b), size_t begin)
+        void Sort(Int_t(*comparator)(Type& item_a, Type& item_b), size_t begin)
         {
             size_t end = size();
             if (begin >= end) {

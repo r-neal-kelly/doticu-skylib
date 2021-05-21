@@ -8,17 +8,18 @@
 
 namespace doticu_skylib {
 
-    class Global_Type_e : public Enum_t<s8>
+    class Association_Flags_e :
+        public Enum_t<u32>
     {
     public:
-        enum : value_type
+        enum enum_type : value_type
         {
-            _NONE_  = 0,
+            _NONE_      = 0,
 
-            FLOAT   = 'f',
-            SHORT   = 's',
-            LONG    = 'l',
+            IS_FAMILY   = static_cast<value_type>(1 << 0),
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

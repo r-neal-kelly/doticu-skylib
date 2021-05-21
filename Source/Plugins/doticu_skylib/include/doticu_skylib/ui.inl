@@ -70,6 +70,12 @@ namespace doticu_skylib {
         SetString(value);
     }
 
+    template <>
+    inline void GFx_Value_t::Value<const wchar_t*>(const wchar_t* value)
+    {
+        SetWideString(value);
+    }
+
     template <typename Type>
     inline Type UI_t::Value(String_t menu, String_t target)
     {

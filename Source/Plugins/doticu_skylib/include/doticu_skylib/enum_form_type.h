@@ -140,9 +140,9 @@ namespace doticu_skylib {
             // 0x76 WOOP
             // 0x77 SHOU
             // 0x78 EQUP
-            // 0x79 RELA
+            RELATION                = 0x79, // RELA
             // 0x7A SCEN
-            // 0x7B ASTP
+            ASSOCIATION             = 0x7B, // ASTP
             OUTFIT                  = 0x7C, // OTFT
             // 0x7D ARTO
             // 0x7E MATO

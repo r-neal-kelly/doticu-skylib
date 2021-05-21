@@ -18,6 +18,7 @@
 #include "doticu_skylib/keyword.h"
 #include "doticu_skylib/player.h"
 #include "doticu_skylib/reference.h"
+#include "doticu_skylib/relation.h"
 #include "doticu_skylib/virtual_arguments.h"
 #include "doticu_skylib/virtual_callback.h"
 #include "doticu_skylib/virtual_machine.inl"
@@ -258,9 +259,9 @@ namespace doticu_skylib {
         Relation_e::Between(this, other, relation);
     }
 
-    Race_t* Actor_Base_t::Race()
+    maybe<Race_t*> Actor_Base_t::Race()
     {
-        return race;
+        return this->race;
     }
 
     Float_t Actor_Base_t::Weight()
@@ -475,6 +476,47 @@ namespace doticu_skylib {
 
         if (do_save) {
             Flag_Form_Change(Form_Change_Flags_e::NAME);
+        }
+    }
+
+    maybe<Relation_t*> Actor_Base_t::Relation_Static(some<Actor_Base_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        if (this != other && this->relations) {
+            for (size_t idx = 0, end = this->relations->Count(); idx < end; idx += 1) {
+                maybe<Relation_t*> relation = (*this->relations)[idx];
+                if (relation && (relation->parent == other || relation->child == other)) {
+                    return relation;
+                }
+            }
+            return none<Relation_t*>();
+        } else {
+            return none<Relation_t*>();
+        }
+    }
+
+    maybe<Association_t*> Actor_Base_t::Association(some<Actor_Base_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        maybe<Relation_t*> relation = Relation_Static(other);
+        if (relation) {
+            return relation->association;
+        } else {
+            return none<Association_t*>();
+        }
+    }
+
+    maybe<String_t> Actor_Base_t::Association_String(some<Actor_Base_t*> other)
+    {
+        SKYLIB_ASSERT_SOME(other);
+
+        maybe<Relation_t*> relation = Relation_Static(other);
+        if (relation) {
+            return relation->Association_String(other);
+        } else {
+            return none<String_t>();
         }
     }
 

@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/component_form_data.h"
+#include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/enum_form_flags.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/form_id.h"
@@ -42,6 +43,7 @@ namespace doticu_skylib {
     class Package_t;
     class Potion_t;
     class Quest_t;
+    class Race_c;
     class Race_t;
     class Reference_t;
     class Scroll_t;
@@ -83,7 +85,7 @@ namespace doticu_skylib {
         };
 
     public:
-        static Int_t Compare_Names(const char* name_a, const char* name_b);
+        static Comparator_e Compare_Names(const char* name_a, const char* name_b);
 
     public:
         virtual             ~Form_t();                                                  // 00
@@ -191,6 +193,7 @@ namespace doticu_skylib {
         void                        Mod_Names(Vector_t<String_t>& results);
 
         some<const char*>           Component_Name() const;
+        maybe<Race_t*>              Component_Race() const;
         s32                         Component_Value() const;
 
     public:
@@ -205,6 +208,7 @@ namespace doticu_skylib {
         Bool_t                  Is_Component_Equip_Slot() const;
         Bool_t                  Is_Component_Keywords() const;
         Bool_t                  Is_Component_Name() const;
+        Bool_t                  Is_Component_Race() const;
         Bool_t                  Is_Component_Value() const;
         Bool_t                  Is_Container() const;
         Bool_t                  Is_Faction() const;
@@ -236,6 +240,7 @@ namespace doticu_skylib {
         maybe<Equip_Slot_c*>    As_Component_Equip_Slot() const;
         maybe<Keywords_c*>      As_Component_Keywords() const;
         maybe<Name_c*>          As_Component_Name() const;
+        maybe<Race_c*>          As_Component_Race() const;
         maybe<Value_c*>         As_Component_Value() const;
         maybe<Container_t*>     As_Container() const;
         maybe<Faction_t*>       As_Faction() const;

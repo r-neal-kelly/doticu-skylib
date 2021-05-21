@@ -156,7 +156,6 @@ namespace doticu_skylib {
 
         maybe<Relation_Counts_t*>           Relation_Counts(some<Faction_t*> faction);
 
-        void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator);
         void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Locker_t& forms_locker);
 
         Vector_t<some<Quest_Objective_t*>>  Quest_Objectives();

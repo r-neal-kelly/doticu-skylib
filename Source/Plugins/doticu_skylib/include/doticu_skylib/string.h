@@ -115,6 +115,8 @@ namespace doticu_skylib {
     public:
         Bool_t              operator !() const;
         some<const char*>   operator ()() const;
+        Bool_t              operator ==(const Dynamic_String_t& other) const;
+        Bool_t              operator !=(const Dynamic_String_t& other) const;
 
     public:
         friend std::string operator +(const Dynamic_String_t& a, const Dynamic_String_t& b);
@@ -122,6 +124,9 @@ namespace doticu_skylib {
         friend std::string operator +(const char* a, const Dynamic_String_t& b);
         friend std::string operator +(const Dynamic_String_t& a, const std::string& b);
         friend std::string operator +(const std::string& a, const Dynamic_String_t& b);
+
+        friend Bool_t operator ==(const Dynamic_String_t& a, const char* b);
+        friend Bool_t operator ==(const char* a, const Dynamic_String_t& b);
     };
     STATIC_ASSERT(sizeof(Dynamic_String_t) == 0x10);
 

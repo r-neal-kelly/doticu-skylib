@@ -93,6 +93,7 @@
     <ClInclude Include="include\doticu_skylib\alpha.h" />
     <ClInclude Include="include\doticu_skylib\ammo.h" />
     <ClInclude Include="include\doticu_skylib\armor_set.h" />
+    <ClInclude Include="include\doticu_skylib\association.h" />
     <ClInclude Include="include\doticu_skylib\atomic.h" />
     <ClInclude Include="include\doticu_skylib\atomic_number.h" />
     <ClInclude Include="include\doticu_skylib\book.h" />
@@ -105,6 +106,7 @@
     <ClInclude Include="include\doticu_skylib\calendar_time.h" />
     <ClInclude Include="include\doticu_skylib\calendar_time_12.h" />
     <ClInclude Include="include\doticu_skylib\calendar_time_24.h" />
+    <ClInclude Include="include\doticu_skylib\enum_association_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_calendar_date_weekday.h" />
     <ClInclude Include="include\doticu_skylib\enum_calendar_time_am_pm.h" />
     <ClInclude Include="include\doticu_skylib\calendar_time_hour_12.h" />
@@ -153,6 +155,7 @@
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
     <ClInclude Include="include\doticu_skylib\enum_reaction_type.h" />
+    <ClInclude Include="include\doticu_skylib\enum_relation_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_remove_reason.h" />
     <ClInclude Include="include\doticu_skylib\enum_sit_sleep_state.h" />
     <ClInclude Include="include\doticu_skylib\enum_sound_level.h" />
@@ -195,6 +198,7 @@
     <ClInclude Include="include\doticu_skylib\player_objective.h" />
     <ClInclude Include="include\doticu_skylib\potion.h" />
     <ClInclude Include="include\doticu_skylib\projectile.h" />
+    <ClInclude Include="include\doticu_skylib\quest_instance.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
     <ClInclude Include="include\doticu_skylib\reaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
@@ -470,6 +474,7 @@
     <ClInclude Include="include\doticu_skylib\package_value.h" />
     <ClInclude Include="include\doticu_skylib\perk.h" />
     <ClInclude Include="include\doticu_skylib\enum_script_type.h" />
+    <ClInclude Include="include\doticu_skylib\relation.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array_allocator.h" />
     <ClInclude Include="include\doticu_skylib\scroll.h" />
@@ -622,7 +627,9 @@
     <ClCompile Include="src\doticu_skylib\package_value_topic.cpp" />
     <ClCompile Include="src\doticu_skylib\player_objective.cpp" />
     <ClCompile Include="src\doticu_skylib\potion.cpp" />
+    <ClCompile Include="src\doticu_skylib\quest_instance.cpp" />
     <ClCompile Include="src\doticu_skylib\reaction.cpp" />
+    <ClCompile Include="src\doticu_skylib\relation.cpp" />
     <ClCompile Include="src\doticu_skylib\scrap_array_allocator.cpp" />
     <ClCompile Include="src\doticu_skylib\component_actor_base_data.cpp" />
     <ClCompile Include="src\doticu_skylib\component_container.cpp" />

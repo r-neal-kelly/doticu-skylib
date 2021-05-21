@@ -129,6 +129,7 @@ namespace doticu_skylib {
     class Package_Value_Topic_t;
     class Perk_t;
     class Player_t;
+    class Player_Objective_t;
     class Potion_t;
     class Quest_t;
     class Race_t;

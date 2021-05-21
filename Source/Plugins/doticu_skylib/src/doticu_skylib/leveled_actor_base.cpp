@@ -288,7 +288,7 @@ namespace doticu_skylib {
 
             Iterator_e operator ()(Actor_Base_t* actor_base)
             {
-                Race_t* race = actor_base->Race();
+                maybe<Race_t*> race = actor_base->Race();
                 if (race) {
                     String_t race_name = race->Get_Editor_ID();
                     if (!results.Has(race_name)) {

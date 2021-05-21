@@ -44,6 +44,8 @@ namespace doticu_skylib {
         Int_t   Percent();
         void    Percent(Int_t value);
 
+        std::string Float_String(size_t precision);
+
         template <typename Type_t>
         Type_t  As();
         template <typename Type_t>

@@ -36,12 +36,14 @@ namespace doticu_skylib {
     class Actor_Face_Data_t;
     class Actor_Head_Data_t;
     class Armor_t;
+    class Association_t;
     class Color_t;
     class Combat_Style_t;
     class Faction_t;
     class Form_List_t;
     class Head_Part_t;
     class Outfit_t;
+    class Relation_t;
 
     namespace Virtual {
 
@@ -145,37 +147,37 @@ namespace doticu_skylib {
         virtual Form_t*         Get_As_Form() const;                            // 56
 
     public:
-        Actor_Skills_t              actor_skills;           // 190
-        maybe<Actor_Class_t*>       actor_class;            // 1C0
-        maybe<Actor_Head_Data_t*>   head_data;              // 1C8
-        maybe<Form_List_t*>         gift_filter;            // 1D0
-        maybe<Combat_Style_t*>      combat_style;           // 1D8
-        u32                         file_offset;            // 1E0
-        u32                         pad_1E4;                // 1E4
-        maybe<Race_t*>              original_race;          // 1E8 (attack_race?) (ATKR)
-        maybe<Actor_Base_t*>        face_template;          // 1F0
-        Float_t                     height;                 // 1F8
-        Float_t                     weight;                 // 1FC
-        void*                       sounds;                 // 200
-        String_t                    short_name;             // 208 (SHRT)
-        maybe<Armor_t*>             far_skin;               // 210 (maybe worn armor?) (WNAM)
-        maybe<Outfit_t*>            default_outfit;         // 218 (DOFT)
-        maybe<Outfit_t*>            sleep_outfit;           // 220
-        maybe<Form_List_t*>         default_package_list;   // 228 (DPLT)
-        maybe<Faction_t*>           crime_faction;          // 230
-        maybe<Head_Part_t*>         head_parts;             // 238
-        s8                          head_part_count;        // 240
-        u8                          unk_241;                // 241
-        u8                          unk_242;                // 242
-        u8                          unk_243;                // 243
-        u8                          unk_244;                // 244
-        Sound_Level_e               sound_level;            // 245
-        u8_rgba                     body_tint;              // 246
-        u16                         pad_24A;                // 24A
-        u32                         pad_24C;                // 24C
-        maybe<Array_t<void*>*>      relationships;          // 250
-        maybe<Actor_Face_Data_t*>   face_data;              // 258
-        maybe<Array_t<void*>*>      tint_layers;            // 260
+        Actor_Skills_t                      actor_skills;           // 190
+        maybe<Actor_Class_t*>               actor_class;            // 1C0
+        maybe<Actor_Head_Data_t*>           head_data;              // 1C8
+        maybe<Form_List_t*>                 gift_filter;            // 1D0
+        maybe<Combat_Style_t*>              combat_style;           // 1D8
+        u32                                 file_offset;            // 1E0
+        u32                                 pad_1E4;                // 1E4
+        maybe<Race_t*>                      original_race;          // 1E8 (attack_race?) (ATKR)
+        maybe<Actor_Base_t*>                face_template;          // 1F0
+        Float_t                             height;                 // 1F8
+        Float_t                             weight;                 // 1FC
+        void*                               sounds;                 // 200
+        String_t                            short_name;             // 208 (SHRT)
+        maybe<Armor_t*>                     far_skin;               // 210 (maybe worn armor?) (WNAM)
+        maybe<Outfit_t*>                    default_outfit;         // 218 (DOFT)
+        maybe<Outfit_t*>                    sleep_outfit;           // 220
+        maybe<Form_List_t*>                 default_package_list;   // 228 (DPLT)
+        maybe<Faction_t*>                   crime_faction;          // 230
+        maybe<Head_Part_t*>                 head_parts;             // 238
+        s8                                  head_part_count;        // 240
+        u8                                  unk_241;                // 241
+        u8                                  unk_242;                // 242
+        u8                                  unk_243;                // 243
+        u8                                  unk_244;                // 244
+        Sound_Level_e                       sound_level;            // 245
+        u8_rgba                             body_tint;              // 246
+        u16                                 pad_24A;                // 24A
+        u32                                 pad_24C;                // 24C
+        maybe<Array_t<maybe<Relation_t*>>*> relations;              // 250
+        maybe<Actor_Face_Data_t*>           face_data;              // 258
+        maybe<Array_t<void*>*>              tint_layers;            // 260
 
     public:
         Bool_t                          Is_Deleted();
@@ -187,7 +189,7 @@ namespace doticu_skylib {
         Rarity_e                        Rarity();
         some<Relation_e>                Relation(some<Actor_Base_t*> other);
         void                            Relation(some<Actor_Base_t*> other, some<Relation_e> relation);
-        Race_t*                         Race();
+        maybe<Race_t*>                  Race();
 
         Float_t                         Weight();
         void                            Weight(Float_t weight);
@@ -219,6 +221,10 @@ namespace doticu_skylib {
         String_t                        Any_Name();
         String_t                        Name();
         void                            Name(String_t name, Bool_t do_save);
+
+        maybe<Relation_t*>              Relation_Static(some<Actor_Base_t*> other);
+        maybe<Association_t*>           Association(some<Actor_Base_t*> other);
+        maybe<String_t>                 Association_String(some<Actor_Base_t*> other);
 
     public:
         void Log(std::string indent = "");

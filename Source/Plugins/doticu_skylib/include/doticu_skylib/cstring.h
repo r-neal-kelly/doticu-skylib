@@ -28,6 +28,7 @@ namespace doticu_skylib {
 
         static const char* Seek_After(const char* sub, const char obj, const size_t max_chars = 24);
 
+    public:
         template <typename Type_t>
         static Type_t To(const char* sub)
         {
