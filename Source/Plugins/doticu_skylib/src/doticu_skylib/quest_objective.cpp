@@ -21,7 +21,7 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + SKYLIB_TAB + "target_count: %u", target_count);
         SKYLIB_LOG(indent + SKYLIB_TAB + "index: %u", index);
         SKYLIB_LOG(indent + SKYLIB_TAB + "is_initialized: %s", is_initialized ? "true" : "false");
-        SKYLIB_LOG(indent + SKYLIB_TAB + "state: %s", Quest_Objective_State_e::To_String(state));
+        SKYLIB_LOG(indent + SKYLIB_TAB + "state: %s", state.As_String());
 
         SKYLIB_LOG(indent + "}");
     }

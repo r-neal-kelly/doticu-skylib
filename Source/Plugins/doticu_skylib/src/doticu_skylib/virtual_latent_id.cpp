@@ -45,4 +45,9 @@ namespace doticu_skylib { namespace Virtual {
         Return(variable);
     }
 
+    Latent_ID_t::operator Bool_t() const
+    {
+        return this->stack_id != none<Stack_ID_t>();
+    }
+
 }}

@@ -26,6 +26,9 @@ namespace doticu_skylib { namespace Virtual {
     public:
         void Return(Variable_t& variable) const;
         void Return(Variable_t&& variable) const;
+
+    public:
+        operator Bool_t() const;
     };
 
 }}

@@ -324,17 +324,24 @@ namespace doticu_skylib {
             return at(Math_t::Random<size_t>(0, size() - 1));
         }
 
+        void Unstable_Remove(size_t idx)
+        {
+            SKYLIB_ASSERT(idx < size());
+
+            size_t last = size() - 1;
+            if (idx != last) {
+                at(idx) = at(last);
+            }
+            erase(end() - 1);
+        }
+
         Bool_t Unstable_Remove(const Type& item)
         {
             size_t count = size();
             if (count > 0) {
                 maybe<size_t> idx = Index_Of(item);
                 if (idx.Has_Value()) {
-                    size_t last = count - 1;
-                    if (idx() != last) {
-                        at(idx()) = at(last);
-                    }
-                    erase(end() - 1);
+                    Unstable_Remove(idx.Value());
                     return true;
                 } else {
                     return false;

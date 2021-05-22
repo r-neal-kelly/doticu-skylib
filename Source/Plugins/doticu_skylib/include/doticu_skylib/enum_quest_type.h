@@ -9,13 +9,14 @@
 namespace doticu_skylib {
 
     class Quest_Type_e_data :
-        public Enum_Type_Data_t<u8>
+        public Enum_Type_Data_t<s8>
     {
     public:
         enum enum_type : value_type
         {
-            _NONE_              = 0,
+            _NONE_              = -1,
 
+            OTHER               = 0,
             MAIN                = 1,
             MAGES_GUILD         = 2,
             THIEVES_GUILD       = 3,
@@ -41,7 +42,7 @@ namespace doticu_skylib {
         {
             static const char* const strings[_TOTAL_] =
             {
-                SKYLIB_ENUM_TO_STRING(_NONE_),
+                SKYLIB_ENUM_TO_STRING(OTHER),
                 SKYLIB_ENUM_TO_STRING(MAIN),
                 SKYLIB_ENUM_TO_STRING(MAGES_GUILD),
                 SKYLIB_ENUM_TO_STRING(THIEVES_GUILD),

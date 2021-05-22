@@ -35,15 +35,25 @@ namespace doticu_skylib {
         static value_type Enum_Type_Data_t::From_String(some<const char* const*> strings,
                                                         value_type _NONE_,
                                                         value_type _TOTAL_,
-                                                        maybe<const char*> string)
+                                                        maybe<const char*> string,
+                                                        Bool_t do_trim = false)
         {
             if (string) {
-                for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
-                    if (CString_t::Is_Same(strings[idx], string(), true)) {
-                        return static_cast<value_type>(idx);
+                if (do_trim) {
+                    for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
+                        if (CString_t::Is_Same_Trimmed(strings[idx], string(), true)) {
+                            return static_cast<value_type>(idx);
+                        }
                     }
+                    return _NONE_;
+                } else {
+                    for (size_t idx = 0, end = _TOTAL_; idx < end; idx += 1) {
+                        if (CString_t::Is_Same(strings[idx], string(), true)) {
+                            return static_cast<value_type>(idx);
+                        }
+                    }
+                    return _NONE_;
                 }
-                return _NONE_;
             } else {
                 return _NONE_;
             }

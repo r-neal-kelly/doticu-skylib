@@ -7,10 +7,10 @@
 #include "doticu_skylib/atomic_count.h"
 #include "doticu_skylib/character.h"
 #include "doticu_skylib/dynamic_array.h"
+#include "doticu_skylib/enum_quest_objective_state.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/player_objective.h"
-#include "doticu_skylib/quest_objective_state.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/unknown.h"
@@ -158,12 +158,8 @@ namespace doticu_skylib {
 
         void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Locker_t& forms_locker);
 
-        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives();
-        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results);
         Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Read_Locker_t& forms_locker);
         void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Read_Locker_t& forms_locker);
-        Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter);
-        void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Filter_i<some<Quest_Objective_t*>>& filter);
         Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter, Read_Locker_t& forms_locker);
         void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Filter_i<some<Quest_Objective_t*>>& filter, Read_Locker_t& forms_locker);
 

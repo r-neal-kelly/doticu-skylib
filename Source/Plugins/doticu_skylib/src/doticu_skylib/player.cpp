@@ -83,19 +83,6 @@ namespace doticu_skylib {
         }
     }
 
-    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives()
-    {
-        Vector_t<some<Quest_Objective_t*>> results;
-        Quest_Objectives(results);
-        return results;
-    }
-
-    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results)
-    {
-        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
-        Quest_Objectives(results, locker);
-    }
-
     Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Read_Locker_t& forms_locker)
     {
         Vector_t<some<Quest_Objective_t*>> results;
@@ -112,20 +99,6 @@ namespace doticu_skylib {
                 results.push_back(quest_objective());
             }
         }
-    }
-
-    Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter)
-    {
-        Vector_t<some<Quest_Objective_t*>> results;
-        Quest_Objectives(results, filter);
-        return results;
-    }
-
-    void Player_t::Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results,
-                                    Filter_i<some<Quest_Objective_t*>>& filter)
-    {
-        Read_Locker_t locker(Game_t::Form_IDs_To_Forms_Lock());
-        Quest_Objectives(results, filter, locker);
     }
 
     Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Filter_i<some<Quest_Objective_t*>>& filter,

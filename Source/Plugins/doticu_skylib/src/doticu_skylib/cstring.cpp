@@ -31,6 +31,47 @@ namespace doticu_skylib {
         }
     }
 
+    Bool_t CString_t::Is_Same_Trimmed(const char* sub, const char* obj, Bool_t caseless)
+    {
+        if (sub && obj) {
+            while (*sub == ' ') {
+                sub += 1;
+            }
+            while (*obj == ' ') {
+                obj += 1;
+            }
+            size_t sub_len = Length(sub, false);
+            size_t obj_len = Length(obj, false);
+            while (sub_len && sub[sub_len - 1] == ' ') {
+                sub_len -= 1;
+            }
+            while (obj_len && obj[obj_len - 1] == ' ') {
+                obj_len -= 1;
+            }
+            if (sub_len == obj_len) {
+                if (caseless) {
+                    for (size_t idx = 0, end = sub_len; idx < end; idx += 1) {
+                        if (tolower(sub[idx]) != tolower(obj[idx])) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } else {
+                    for (size_t idx = 0, end = sub_len; idx < end; idx += 1) {
+                        if (sub[idx] != obj[idx]) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     Bool_t CString_t::Starts_With(const char* sub, const char* obj, Bool_t caseless)
     {
         if (!sub || !obj) {

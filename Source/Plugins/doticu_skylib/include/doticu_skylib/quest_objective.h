@@ -5,16 +5,15 @@
 #pragma once
 
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_quest_objective_state.h"
 #include "doticu_skylib/string.h"
-
-#include "doticu_skylib/quest_objective_state.h"
 
 namespace doticu_skylib {
 
     class Quest_t;
     class Quest_Target_t;
 
-    class Quest_Objective_Flags_e : Enum_t<u32>
+    class Quest_Objective_Flags_e : public Enum_t<u32>
     {
     public:
         enum : u32

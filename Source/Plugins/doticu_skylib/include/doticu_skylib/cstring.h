@@ -15,6 +15,7 @@ namespace doticu_skylib {
         static size_t Length(const char* sub, Bool_t with_null = false);
 
         static Bool_t Is_Same(const char* sub, const char* obj, Bool_t caseless);
+        static Bool_t Is_Same_Trimmed(const char* sub, const char* obj, Bool_t caseless);
         static Bool_t Starts_With(const char* sub, const char* obj, Bool_t caseless);
         static Bool_t Starts_With(const char* sub, const char obj, Bool_t caseless);
         static Bool_t Ends_With(const char* sub, const char* obj, Bool_t caseless);

@@ -495,7 +495,7 @@
     <ClInclude Include="include\doticu_skylib\player.h" />
     <ClInclude Include="include\doticu_skylib\quest.h" />
     <ClInclude Include="include\doticu_skylib\quest_objective.h" />
-    <ClInclude Include="include\doticu_skylib\quest_objective_state.h" />
+    <ClInclude Include="include\doticu_skylib\enum_quest_objective_state.h" />
     <ClInclude Include="include\doticu_skylib\quest_target.h" />
     <ClInclude Include="include\doticu_skylib\race.h" />
     <ClInclude Include="include\doticu_skylib\rarity.h" />
@@ -642,7 +642,6 @@
     <ClCompile Include="src\doticu_skylib\dynatomic_count.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_extra_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_form_type.cpp" />
-    <ClCompile Include="src\doticu_skylib\enum_logic_gate.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_operator.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_script_type.cpp" />
     <ClCompile Include="src\doticu_skylib\enum_soul_level.cpp" />
@@ -702,7 +701,6 @@
     <ClCompile Include="src\doticu_skylib\player.cpp" />
     <ClCompile Include="src\doticu_skylib\quest.cpp" />
     <ClCompile Include="src\doticu_skylib\quest_objective.cpp" />
-    <ClCompile Include="src\doticu_skylib\quest_objective_state.cpp" />
     <ClCompile Include="src\doticu_skylib\race.cpp" />
     <ClCompile Include="src\doticu_skylib\rarity.cpp" />
     <ClCompile Include="src\doticu_skylib\reference.cpp" />
