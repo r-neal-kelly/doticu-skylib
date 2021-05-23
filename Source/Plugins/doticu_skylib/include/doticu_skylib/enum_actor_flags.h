@@ -48,6 +48,8 @@ namespace doticu_skylib {
             CAN_MOVE                    = static_cast<value_type>(1 << 27),
             IS_UNDERWATER               = static_cast<value_type>(1 << 31),
         };
+
+    public:
         using Enum_t::Enum_t;
     };
 

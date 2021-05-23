@@ -5,13 +5,12 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/maybe.h"
-
-#include "doticu_skylib/enum_actor_controller_flags.h"
-
 #include "doticu_skylib/dynatomic_count.h"
+#include "doticu_skylib/enum_actor_controller_flags.h"
+#include "doticu_skylib/event_dispatcher.h"
 #include "doticu_skylib/havok_quad.h"
 #include "doticu_skylib/havok_step_time.h"
+#include "doticu_skylib/maybe.h"
 #include "doticu_skylib/ni_extra_bounds.h"
 #include "doticu_skylib/unknown.h"
 
@@ -20,9 +19,9 @@ namespace doticu_skylib {
     class Havok_Rigid_Body_t;
     class Havok_Shape_Base_t;
 
-    class Havok_Actor_Controller_t :    // bhkCharacterController
-        public Dynatomic_Count_t,       // 000
-        public Event_Source_t<void*>    // 010
+    class Havok_Actor_Controller_t :        // bhkCharacterController
+        public Dynatomic_Count_t,           // 000
+        public Event_Dispatcher_t<void*>    // 010
     {
     public:
         class Offset_e : public Enum_t<Word_t>

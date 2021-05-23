@@ -7,7 +7,7 @@
 
 namespace doticu_skylib {
 
-    void Quest_Objective_t::Log(std::string indent)
+    void Quest_Objective_t::Log(std::string indent) const
     {
         SKYLIB_LOG(indent + "Quest_Objective_t::Log");
         SKYLIB_LOG(indent + "{");

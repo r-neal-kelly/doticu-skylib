@@ -336,6 +336,11 @@ namespace doticu_skylib {
     Bool_t Quest_t::Does_Run_Once()         { return this->quest_flags.Is_Flagged(Quest_Flags_e::DOES_RUN_ONCE); }
     Bool_t Quest_t::Is_Active()             { return this->quest_flags.Is_Flagged(Quest_Flags_e::IS_ACTIVE); }
 
+    Bool_t Quest_t::Is_Completed_Or_Failed()
+    {
+        return Is_Completed() || Is_Failed();
+    }
+
     Bool_t Quest_t::Has_Filled_Alias(Alias_ID_t alias_id)
     {
         Read_Locker_t locker(this->aliases_lock);
@@ -507,6 +512,40 @@ namespace doticu_skylib {
                     results.push_back(objective());
                 }
             }
+        }
+    }
+
+    maybe<Quest_Objective_Index_t> Quest_t::Lowest_Objective_Index()
+    {
+        Vector_t<some<Quest_Objective_t*>> objectives = Objectives();
+        size_t objective_count = objectives.size();
+        if (objective_count > 0) {
+            Quest_Objective_Index_t index = Quest_Objective_Index_t::_MAX_;
+            for (size_t idx = 0, end = objective_count; idx < end; idx += 1) {
+                if (objectives[idx]->index < index) {
+                    index = objectives[idx]->index;
+                }
+            }
+            return index;
+        } else {
+            return none<Quest_Objective_Index_t>();
+        }
+    }
+
+    maybe<Quest_Objective_Index_t> Quest_t::Highest_Objective_Index()
+    {
+        Vector_t<some<Quest_Objective_t*>> objectives = Objectives();
+        size_t objective_count = objectives.size();
+        if (objective_count > 0) {
+            Quest_Objective_Index_t index = Quest_Objective_Index_t::_MIN_;
+            for (size_t idx = 0, end = objective_count; idx < end; idx += 1) {
+                if (objectives[idx]->index > index) {
+                    index = objectives[idx]->index;
+                }
+            }
+            return index;
+        } else {
+            return none<Quest_Objective_Index_t>();
         }
     }
 

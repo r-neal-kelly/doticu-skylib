@@ -41,22 +41,4 @@ namespace doticu_skylib {
     };
     STATIC_ASSERT(sizeof(Animation_Graphs_t) == 0x8);
 
-    template <typename Type_t>
-    class Event_Source_t
-    {
-    public:
-        Byte_t unk_data[0x58];
-    };
-    STATIC_ASSERT(sizeof(Event_Source_t<Int_t>) == 0x58);
-
-    template <typename T>
-    class Event_Sink_t // BSTEventSink
-    {
-    public:
-        virtual ~Event_Sink_t() = default;  // 0
-
-        virtual void _01(void)  = 0;        // 1
-    };
-    STATIC_ASSERT(sizeof(Event_Sink_t<void*>) == 0x8);
-
 }

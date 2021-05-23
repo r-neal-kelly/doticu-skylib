@@ -17,6 +17,7 @@
 #include "doticu_skylib/enum_relation.h"
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
+#include "doticu_skylib/event_handler.h"
 #include "doticu_skylib/faction_and_rank.h"
 #include "doticu_skylib/form_owner.h"
 #include "doticu_skylib/intrinsic.h"
@@ -49,14 +50,14 @@ namespace doticu_skylib {
     class Spell_t;
     class Voice_Type_t;
 
-    class Actor_t :                     // Actor
-        public Reference_t,             // 000
-        public Magic_Target_t,          // 098
-        public Actor_Values_t,          // 0B0
-        public Actor_State_t,           // 0B8
-        public Event_Sink_t<void**>,    // 0C8
-        public Event_Sink_t<void***>,   // 0D0
-        public Animation_Updater_i      // 0D8
+    class Actor_t :                         // Actor
+        public Reference_t,                 // 000
+        public Magic_Target_t,              // 098
+        public Actor_Values_t,              // 0B0
+        public Actor_State_t,               // 0B8
+        public Event_Handler_t<void**>,     // 0C8
+        public Event_Handler_t<void***>,    // 0D0
+        public Animation_Updater_i          // 0D8
     {
     public:
         enum

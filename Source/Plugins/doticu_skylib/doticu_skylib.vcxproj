@@ -152,6 +152,7 @@
     <ClInclude Include="include\doticu_skylib\enum_magic_slot.h" />
     <ClInclude Include="include\doticu_skylib\enum_magic_target_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_potion_flags.h" />
+    <ClInclude Include="include\doticu_skylib\enum_quest_objective_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_flags.h" />
     <ClInclude Include="include\doticu_skylib\enum_race_size.h" />
     <ClInclude Include="include\doticu_skylib\enum_reaction_type.h" />
@@ -173,6 +174,10 @@
     <ClInclude Include="include\doticu_skylib\enum_weapon_hit_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_weapon_rumble_type.h" />
     <ClInclude Include="include\doticu_skylib\enum_weapon_animation_type.h" />
+    <ClInclude Include="include\doticu_skylib\event_dispatcher.h" />
+    <ClInclude Include="include\doticu_skylib\event_handler.h" />
+    <ClInclude Include="include\doticu_skylib\event_open_close_menu.h" />
+    <ClInclude Include="include\doticu_skylib\event_quest_stage.h" />
     <ClInclude Include="include\doticu_skylib\extra_cannot_wear.h" />
     <ClInclude Include="include\doticu_skylib\extra_charge.h" />
     <ClInclude Include="include\doticu_skylib\extra_enchantment.h" />
@@ -199,6 +204,7 @@
     <ClInclude Include="include\doticu_skylib\potion.h" />
     <ClInclude Include="include\doticu_skylib\projectile.h" />
     <ClInclude Include="include\doticu_skylib\quest_instance.h" />
+    <ClInclude Include="include\doticu_skylib\quest_objective_index.h" />
     <ClInclude Include="include\doticu_skylib\race_skill_bonus.h" />
     <ClInclude Include="include\doticu_skylib\reaction.h" />
     <ClInclude Include="include\doticu_skylib\reference_interaction.h" />
@@ -477,13 +483,16 @@
     <ClInclude Include="include\doticu_skylib\relation.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array.h" />
     <ClInclude Include="include\doticu_skylib\scrap_array_allocator.h" />
+    <ClInclude Include="include\doticu_skylib\script_event_dispatchers.h" />
     <ClInclude Include="include\doticu_skylib\scroll.h" />
     <ClInclude Include="include\doticu_skylib\season.h" />
+    <ClInclude Include="include\doticu_skylib\singleton.h" />
     <ClInclude Include="include\doticu_skylib\skse.h" />
     <ClInclude Include="include\doticu_skylib\skse_plugin.h" />
     <ClInclude Include="include\doticu_skylib\small_dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\soul_gem.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
+    <ClInclude Include="include\doticu_skylib\spin_lock.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />
     <ClInclude Include="include\doticu_skylib\sync_object.h" />
     <ClInclude Include="include\doticu_skylib\ai_target_handle.h" />
@@ -549,6 +558,7 @@
     <ClInclude Include="include\doticu_skylib\havok_reference.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\doticu_skylib\script_event_dispatchers.cpp" />
     <ClCompile Include="src\doticu_skylib\actor.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai.cpp" />
     <ClCompile Include="src\doticu_skylib\actor_ai_cached_values.cpp" />
@@ -736,6 +746,7 @@
     <None Include="include\doticu_skylib\atomic.inl" />
     <None Include="include\doticu_skylib\atomic_number.inl" />
     <None Include="include\doticu_skylib\dynamic_array.inl" />
+    <None Include="include\doticu_skylib\event_dispatcher.inl" />
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />

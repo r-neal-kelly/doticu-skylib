@@ -18,6 +18,7 @@
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/quest_objective_index.h"
 #include "doticu_skylib/read_write_lock.h"
 #include "doticu_skylib/reference_handle.h"
 #include "doticu_skylib/string.h"
@@ -143,6 +144,7 @@ namespace doticu_skylib {
         Bool_t Is_Failed();
         Bool_t Does_Run_Once();
         Bool_t Is_Active();
+        Bool_t Is_Completed_Or_Failed();
 
         Bool_t Has_Filled_Alias(Alias_ID_t alias_id);
 
@@ -167,6 +169,8 @@ namespace doticu_skylib {
         maybe<Quest_Objective_t*>           Objective(u16 objective_index);
         Vector_t<some<Quest_Objective_t*>>  Objectives();
         void                                Objectives(Vector_t<some<Quest_Objective_t*>>& results);
+        maybe<Quest_Objective_Index_t>      Lowest_Objective_Index();
+        maybe<Quest_Objective_Index_t>      Highest_Objective_Index();
 
         maybe<Quest_Instance_t*>            Instance(u32 instance_id);
         maybe<Quest_Instance_Alias_t*>      Instance_Alias(u32 instance_id, some<const char*> alias_name);

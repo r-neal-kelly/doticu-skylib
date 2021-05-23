@@ -24,6 +24,7 @@
 #include "doticu_skylib/enum_script_type.h"
 #include "doticu_skylib/enum_sex.h"
 #include "doticu_skylib/enum_sound_level.h"
+#include "doticu_skylib/event_handler.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/rarity.h"
@@ -51,22 +52,22 @@ namespace doticu_skylib {
 
     }
 
-    class Actor_Base_t :            // TESNPC
-        public Animated_Object_t,   // 000
-        public Actor_Base_Data_c,   // 030
-        public Container_c,         // 088
-        public Spells_c,            // 0A0
-        public AI_c,                // 0B0
-        public Name_c,              // 0D8
-        public Actor_Values_t,      // 0E8
-        public Destructible_c,      // 0F0
-        public Skin_c,              // 100
-        public Keywords_c,          // 110
-        public Attack_Data_c,       // 128
-        public Perks_c,             // 138
-        public Race_c,              // 150
-        public Package_Override_c,  // 160
-        public Event_Sink_t<void*>  // 188
+    class Actor_Base_t :                // TESNPC
+        public Animated_Object_t,       // 000
+        public Actor_Base_Data_c,       // 030
+        public Container_c,             // 088
+        public Spells_c,                // 0A0
+        public AI_c,                    // 0B0
+        public Name_c,                  // 0D8
+        public Actor_Values_t,          // 0E8
+        public Destructible_c,          // 0F0
+        public Skin_c,                  // 100
+        public Keywords_c,              // 110
+        public Attack_Data_c,           // 128
+        public Perks_c,                 // 138
+        public Race_c,                  // 150
+        public Package_Override_c,      // 160
+        public Event_Handler_t<void*>   // 188
     {
     public:
         enum

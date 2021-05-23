@@ -8,7 +8,10 @@
 #include "doticu_skylib/character.h"
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum_quest_objective_state.h"
+#include "doticu_skylib/event_dispatcher.h"
+#include "doticu_skylib/event_handler.h"
 #include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/game.h"
 #include "doticu_skylib/maybe.h"
 #include "doticu_skylib/player_objective.h"
 #include "doticu_skylib/reference_handle.h"
@@ -82,13 +85,13 @@ namespace doticu_skylib {
 
     class Player_t :                        // PlayerCharacter
         public Character_t,                 // 000
-        public Event_Source_t<void*>,       // 2B0
-        public Event_Source_t<void**>,      // 308
-        public Event_Source_t<void***>,     // 360
-        public Event_Sink_t<void****>,      // 3B8
-        public Event_Sink_t<void*****>,     // 3C0
-        public Event_Sink_t<void******>,    // 3C8
-        public Event_Sink_t<void*******>    // 3D0
+        public Event_Dispatcher_t<void*>,   // 2B0
+        public Event_Dispatcher_t<void**>,  // 308
+        public Event_Dispatcher_t<void***>, // 360
+        public Event_Handler_t<void****>,   // 3B8
+        public Event_Handler_t<void*****>,  // 3C0
+        public Event_Handler_t<void******>, // 3C8
+        public Event_Handler_t<void*******> // 3D0
     {
     public:
         static some<Player_t*> Self();
@@ -157,6 +160,9 @@ namespace doticu_skylib {
         maybe<Relation_Counts_t*>           Relation_Counts(some<Faction_t*> faction);
 
         void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Locker_t& forms_locker);
+        maybe<Player_Objective_t>           Lowest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker);
+        maybe<Player_Objective_t>           Highest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker);
+        maybe<Player_Objective_t>           Highest_Player_Objective(some<Quest_t*> quest, Read_Write_Lock_t& form_lock = Game_t::Form_IDs_To_Forms_Lock());
 
         Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Read_Locker_t& forms_locker);
         void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Read_Locker_t& forms_locker);

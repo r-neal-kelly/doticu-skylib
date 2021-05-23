@@ -10,6 +10,7 @@
 #include "doticu_skylib/enum_collision_layer_type.h"
 #include "doticu_skylib/enum_remove_reason.h"
 #include "doticu_skylib/enum_script_type.h"
+#include "doticu_skylib/event_handler.h"
 #include "doticu_skylib/extra_list.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/form_owner.h"
@@ -50,11 +51,11 @@ namespace doticu_skylib {
     class Reference_Attached_State_t;
     class Worldspace_t;
 
-    class Reference_t :             // TESObjectREFR
-        public Form_t,              // 00
-        public Reference_Count_t,   // 20
-        public Event_Sink_t<void*>, // 30
-        public Animation_Graphs_t   // 38
+    class Reference_t :                 // TESObjectREFR
+        public Form_t,                  // 00
+        public Reference_Count_t,       // 20
+        public Event_Handler_t<void*>,  // 30
+        public Animation_Graphs_t       // 38
     {
     public:
         enum

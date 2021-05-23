@@ -7,14 +7,21 @@
 #include "skse64/PapyrusUI.h"
 
 #include "doticu_skylib/collections.h"
+#include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/event_dispatcher.h"
+#include "doticu_skylib/event_open_close_menu.h"
 #include "doticu_skylib/game_timer.h"
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/singleton.h"
+#include "doticu_skylib/spin_lock.h"
 #include "doticu_skylib/string.h"
 #include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
+
+    class Menu_i;
 
     namespace Virtual {
 
@@ -33,7 +40,11 @@ namespace doticu_skylib {
         void Value(Type value);
     };
 
-    class UI_t // UI, MenuManager?
+    class UI_t:                                             // UI, MenuManager
+        public Singleton_t<UI_t>,                           // 000
+        public Event_Dispatcher_t<Event_Open_Close_Menu_t>, // 008
+        public Event_Dispatcher_t<void*>,                   // 060
+        public Event_Dispatcher_t<void**>                   // 0B8
     {
     public:
         class Offset_e :
@@ -76,25 +87,24 @@ namespace doticu_skylib {
         static void     Is_In_Menu_Mode(some<unique<Callback_i<Bool_t>>> callback);
 
     public:
-        Byte_t          base_classes_000[0x110];    // 000
-
-        Byte_t          data_110[0x50];             // 110
-
-        u32             pause_game_count;           // 160
-        u32             item_menu_count;            // 164
-        u32             disable_pause_menu_count;   // 168
-        u32             allow_saving_count;         // 16C
-        u32             dont_hide_cursor_count;     // 170
-        u32             custom_render_count;        // 174
-        u32             application_menu_count;     // 178
-        Bool_t          has_modal;                  // 17C
-        u8              pad_17D;                    // 17D
-        u16             pad_17E;                    // 17E
-        Game_Timer_t    game_timer;                 // 180
-        Bool_t          is_menu_visible;            // 1C0
-        Bool_t          is_closing_all_menus;       // 1C1
-        u16             pad_1C2;                    // 1C2
-        u32             pad_1C4;                    // 1C4
+        Array_t<maybe<Menu_i*>>     menus;                      // 110
+        Hash_Map_t<String_t, void*> unk_hash_map;               // 128
+        mutable Spin_Lock_t         spin_lock;                  // 158
+        u32                         pause_game_count;           // 160
+        u32                         item_menu_count;            // 164
+        u32                         disable_pause_menu_count;   // 168
+        u32                         allow_saving_count;         // 16C
+        u32                         dont_hide_cursor_count;     // 170
+        u32                         custom_render_count;        // 174
+        u32                         application_menu_count;     // 178
+        Bool_t                      has_modal;                  // 17C
+        u8                          pad_17D;                    // 17D
+        u16                         pad_17E;                    // 17E
+        Game_Timer_t                game_timer;                 // 180
+        Bool_t                      is_menu_visible;            // 1C0
+        Bool_t                      is_closing_all_menus;       // 1C1
+        u16                         pad_1C2;                    // 1C2
+        u32                         pad_1C4;                    // 1C4
     };
     STATIC_ASSERT(sizeof(UI_t) == 0x1C8);
 

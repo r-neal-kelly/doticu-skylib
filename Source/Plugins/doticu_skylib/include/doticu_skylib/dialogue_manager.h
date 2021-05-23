@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/event_handler.h"
 #include "doticu_skylib/forward_list.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/maybe.h"
@@ -20,9 +21,9 @@ namespace doticu_skylib {
     class Dialogue_Topic_Instance_t;
     class Reference_t;
 
-    class Dialogue_Manager_t :      // MenuTopicManager
-        public Event_Sink_t<void*>, // 00
-        public Event_Sink_t<void**> // 08
+    class Dialogue_Manager_t :          // MenuTopicManager
+        public Event_Handler_t<void*>,  // 00
+        public Event_Handler_t<void**>  // 08
     {
     public:
         class Offset_e :
