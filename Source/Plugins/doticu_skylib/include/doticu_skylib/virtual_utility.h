@@ -20,17 +20,20 @@ namespace doticu_skylib { namespace Virtual {
         static constexpr const char* SCRIPT_NAME = "Utility";
 
     public:
-        static void Wait_Out_Of_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback);               // Wait
-        static void Wait_Out_Of_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback);  // Wait
+        static void Wait_Out_Of_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback);                               // Wait
+        static void Wait_Out_Of_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback);
 
-        static void Wait_Even_In_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback);              // WaitMenuMode
-        static void Wait_Even_In_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback); // WaitMenuMode
+        static void Wait_Even_In_Menu(Float_t seconds, some<Virtual::Callback_i*> v_callback);                              // WaitMenuMode
+        static void Wait_Even_In_Menu(Float_t seconds, some<unique<doticu_skylib::Callback_i<>>> callback);
 
-        static void Wait_For_Game_Time(Float_t hours, some<Virtual::Callback_i*> v_callback);               // WaitGameTime
-        static void Wait_For_Game_Time(Float_t hours, some<unique<doticu_skylib::Callback_i<>>> callback);  // WaitGameTime
+        static void Wait_For_Game_Time(Float_t hours, some<Virtual::Callback_i*> v_callback);                               // WaitGameTime
+        static void Wait_For_Game_Time(Float_t hours, some<unique<doticu_skylib::Callback_i<>>> callback);
 
-        static void Is_In_Menu_Mode(some<Virtual::Callback_i*> v_callback);                                 // IsInMenuMode
-        static void Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);              // IsInMenuMode
+        static void Is_In_Menu_Mode(some<Virtual::Callback_i*> v_callback);                                                 // IsInMenuMode
+        static void Is_In_Menu_Mode(some<unique<doticu_skylib::Callback_i<Bool_t>>> callback);
+
+        static void To_Game_Time_String(Float_t days_passed, some<Virtual::Callback_i*> v_callback);                        // GameTimeToString
+        static void To_Game_Time_String(Float_t days_passed, some<unique<doticu_skylib::Callback_i<String_t>>> callback);
     };
 
 }}

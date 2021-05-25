@@ -267,21 +267,12 @@ namespace doticu_skylib {
                 some<Calendar_Date_Month_t> month = Month()();
                 some<Calendar_Date_Day_t> day = Day();
                 some<Calendar_Date_Year_t> year = Year();
-
-                some<Calendar_Time_Hour_12_t> hour_12 = Hour_12();
-                some<Calendar_Time_Minute_t> minute = Minute();
-                some<Calendar_Time_AM_PM_e> am_pm = AM_PM();
-
-                std::string month_str = std::to_string(month() + 1);
-                std::string minute_str = minute() > 9 ? std::to_string(minute()) : std::string("0") + std::to_string(minute());
-
-                SKYLIB_LOG(indent + SKYLIB_TAB + "%s/%s/%s %s:%s %s",
-                           month_str,
+                some<Calendar_Time_12_t> time_12 = Time_12();
+                SKYLIB_LOG(indent + SKYLIB_TAB + "%s/%s/%s %s",
+                           std::to_string(month() + 1),
                            std::to_string(day()),
                            std::to_string(year()),
-                           std::to_string(hour_12()),
-                           minute_str,
-                           am_pm().As_String());
+                           time_12.As_String());
             }
 
             SKYLIB_LOG(indent + "}");

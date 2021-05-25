@@ -6,6 +6,7 @@
 
 #include "doticu_skylib/calendar_now.h"
 #include "doticu_skylib/enum.h"
+#include "doticu_skylib/enum_calendar_date_weekday.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/maybe.h"
 
@@ -16,7 +17,14 @@ namespace doticu_skylib {
     class Calendar_t    // Calendar
     {
     public:
-        static Calendar_t& Self();
+        static constexpr Float_t    DEFAULT_YEAR            = 201.0f;
+        static constexpr Float_t    DEFAULT_MONTH           = 7.0f;
+        static constexpr Float_t    DEFAULT_DAY             = 17.0f;
+        static constexpr Float_t    DEFAULT_HOUR            = 8.0f;
+        static constexpr Float_t    DEFAULT_DAYS_PASSED     = 1.0f;
+        static constexpr Float_t    DEFAULT_TIME_SCALE      = 20.0f;
+
+        static constexpr Float_t    DAYS_PER_YEAR           = 365.0f;
 
     public:
         class Offset_e :
@@ -31,6 +39,11 @@ namespace doticu_skylib {
         public:
             using Enum_t::Enum_t;
         };
+
+    public:
+        static Calendar_t&                      Self();
+        static maybe<Calendar_Now_t>            Days_Passed_Now(Float_t days_passed);
+        static maybe<Calendar_Date_Weekday_e>   Days_Passed_Weekday(Float_t days_passed);
 
     public:
         u64                 pad_00;             // 00
@@ -70,6 +83,9 @@ namespace doticu_skylib {
         void                            Minute(some<Calendar_Time_Minute_t> minute);
         maybe<Calendar_Time_AM_PM_e>    AM_PM() const;
         void                            AM_PM(some<Calendar_Time_AM_PM_e> am_pm);
+
+        maybe<Calendar_Now_t>           Days_Passed_Now() const;
+        maybe<Calendar_Date_Weekday_e>  Days_Passed_Weekday() const;
 
     public:
         void    Log_Now(std::string indent = "") const;

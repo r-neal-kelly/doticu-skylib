@@ -5,6 +5,7 @@
 #include "doticu_skylib/calendar.h"
 #include "doticu_skylib/game.h"
 #include "doticu_skylib/global.inl"
+#include "doticu_skylib/math.h"
 
 namespace doticu_skylib {
 
@@ -16,6 +17,86 @@ namespace doticu_skylib {
 
         SKYLIB_ASSERT(self);
         return *self;
+    }
+
+    maybe<Calendar_Now_t> Calendar_t::Days_Passed_Now(Float_t days_passed)
+    {
+        if (days_passed >= 0.0f) {
+            static const size_t DAYS_PER_MONTH[12]
+            {
+                31, // MORNING_STAR
+                28, // SUNS_DAWN
+                31, // FIRST_SEED
+                30, // RAINS_HAND
+                31, // SECOND_SEED
+                30, // MID_YEAR
+                31, // SUNS_HEIGHT
+                31, // LAST_SEED
+                30, // HEARTH_FIRE
+                31, // FROST_FALL
+                30, // SUNS_DUSK
+                31, // EVENING_STAR
+            };
+
+            size_t relative_days = floor(days_passed);
+            size_t relative_year = floor(relative_days / DAYS_PER_YEAR);
+            relative_days -= relative_year * DAYS_PER_YEAR;
+
+            size_t absolute_year = DEFAULT_YEAR + relative_year;
+            size_t absolute_month = DEFAULT_MONTH;
+            size_t absolute_day = DEFAULT_DAY;
+            if (absolute_day + relative_days <= DAYS_PER_MONTH[absolute_month]) {
+                absolute_day += relative_days;
+            } else {
+                relative_days -= DAYS_PER_MONTH[absolute_month] - absolute_day;
+                absolute_month += 1;
+                absolute_day = 1;
+                while (relative_days > 0) {
+                    if (relative_days > DAYS_PER_MONTH[absolute_month]) {
+                        relative_days -= DAYS_PER_MONTH[absolute_month];
+                        if (absolute_month == 11) {
+                            absolute_year += 1;
+                            absolute_month = 0;
+                        } else {
+                            absolute_month += 1;
+                        }
+                    } else {
+                        absolute_day = relative_days;
+                        relative_days = 0;
+                    }
+                }
+            }
+
+            Float_t absolute_hours = ((days_passed - floor(days_passed)) * 24);
+            Float_t absolute_minutes = (absolute_hours - floor(absolute_hours)) * 60;
+            // nope, it does not appear to take into account the 8 hour default difference, so we won't either.
+            // btw, the calendar system in this game is really broken. there are errors all over the place.
+
+            Calendar_Date_Year_t year = absolute_year;
+            Calendar_Date_Month_t month = absolute_month;
+            Calendar_Date_Day_t day = absolute_day;
+            Calendar_Time_Hour_24_t hour_24 = absolute_hours;
+            Calendar_Time_Minute_t minute = absolute_minutes;
+            if (year && month && day && hour_24 && minute) {
+                some<Calendar_Date_t> date(month(), day(), year());
+                some<Calendar_Time_24_t> time_24(hour_24(), minute());
+                some<Calendar_Time_t> time(time_24);
+                return Calendar_Now_t(date, time);
+            } else {
+                return none<Calendar_Now_t>();
+            }
+        } else {
+            return none<Calendar_Now_t>();
+        }
+    }
+
+    maybe<Calendar_Date_Weekday_e> Calendar_t::Days_Passed_Weekday(Float_t days_passed)
+    {
+        if (days_passed >= 0.0f) {
+            return static_cast<size_t>(floor(days_passed)) % 7;
+        } else {
+            return none<Calendar_Date_Weekday_e>();
+        }
     }
 
     maybe<Calendar_Now_t> Calendar_t::Now() const
@@ -252,6 +333,24 @@ namespace doticu_skylib {
         }
     }
 
+    maybe<Calendar_Now_t> Calendar_t::Days_Passed_Now() const
+    {
+        if (this->days_passed) {
+            return Days_Passed_Now(this->days_passed->Float());
+        } else {
+            return none<Calendar_Now_t>();
+        }
+    }
+
+    maybe<Calendar_Date_Weekday_e> Calendar_t::Days_Passed_Weekday() const
+    {
+        if (this->days_passed) {
+            return Days_Passed_Weekday(this->days_passed->Float());
+        } else {
+            return none<Calendar_Date_Weekday_e>();
+        }
+    }
+
     void Calendar_t::Log_Now(std::string indent) const
     {
         SKYLIB_LOG(indent + "Calendar_t::Log_Now");
@@ -263,6 +362,14 @@ namespace doticu_skylib {
             now.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
         } else {
             SKYLIB_LOG(indent + SKYLIB_TAB + "now: (none)");
+        }
+
+        maybe<Calendar_Now_t> days_passed_now = Days_Passed_Now();
+        if (days_passed_now) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "days_passed_now:");
+            days_passed_now.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "days_passed_now: (none)");
         }
 
         SKYLIB_LOG(indent + "}");

@@ -234,4 +234,65 @@ namespace doticu_skylib { namespace Virtual {
         Is_In_Menu_Mode(new Virtual_Callback(std::move(callback)));
     }
 
+    void Utility_t::To_Game_Time_String(Float_t days_passed, some<Virtual::Callback_i*> v_callback)
+    {
+        class Virtual_Arguments :
+            public Virtual::Arguments_t
+        {
+        public:
+            Float_t days_passed;
+
+        public:
+            Virtual_Arguments(Float_t days_passed) :
+                days_passed(days_passed)
+            {
+            }
+
+        public:
+            virtual Bool_t operator()(Scrap_Array_t<Virtual::Variable_t>* args) override
+            {
+                args->Resize(1);
+                args->At(0).As<Float_t>(this->days_passed);
+                return true;
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(v_callback);
+
+        Virtual::Machine_t::Self()->Call_Global(
+            SCRIPT_NAME,
+            "GameTimeToString",
+            Virtual_Arguments(days_passed),
+            v_callback()
+        );
+    }
+
+    void Utility_t::To_Game_Time_String(Float_t days_passed, some<unique<doticu_skylib::Callback_i<String_t>>> callback)
+    {
+        using Callback = some<unique<doticu_skylib::Callback_i<String_t>>>;
+
+        class Virtual_Callback :
+            public Virtual::Callback_t
+        {
+        public:
+            Callback callback;
+
+        public:
+            Virtual_Callback(Callback callback) :
+                callback(std::move(callback))
+            {
+            }
+
+        public:
+            virtual void operator()(Virtual::Variable_t* result) override
+            {
+                (*this->callback)(result ? result->As<String_t>() : "");
+            }
+        };
+
+        SKYLIB_ASSERT_SOME(callback);
+
+        To_Game_Time_String(days_passed, new Virtual_Callback(std::move(callback)));
+    }
+
 }}

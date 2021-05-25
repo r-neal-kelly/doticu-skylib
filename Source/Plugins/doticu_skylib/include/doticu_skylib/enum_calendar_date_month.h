@@ -8,7 +8,7 @@
 
 namespace doticu_skylib {
 
-    class Calendar_Date_Weekday_e_data :
+    class Calendar_Date_Month_e_data :
         public Enum_Type_Data_t<s8>
     {
     public:
@@ -17,17 +17,18 @@ namespace doticu_skylib {
             _NONE_ = -1,
             _ANY_ = -1,
 
-            SUNDAS,
-            MORNDAS,
-            TIRDAS,
-            MIDDAS,
-            TURDAS,
-            FREDAS,
-            LOREDAS,
-            WEEKDAYS,
-            WEEKENDS,
-            MORNDAS_MIDDAS_FREDAS,
-            TIRDAS_TURDAS,
+            MORNING_STAR,
+            SUNS_DAWN,
+            FIRST_SEED,
+            RAINS_HAND,
+            SECOND_SEED,
+            MID_YEAR,
+            SUNS_HEIGHT,
+            LAST_SEED,
+            HEARTH_FIRE,
+            FROST_FALL,
+            SUNS_DUSK,
+            EVENING_STAR,
 
             _TOTAL_,
         };
@@ -42,17 +43,18 @@ namespace doticu_skylib {
         {
             static const char* const strings[_TOTAL_] =
             {
-                SKYLIB_ENUM_TO_STRING(SUNDAS),
-                SKYLIB_ENUM_TO_STRING(MORNDAS),
-                SKYLIB_ENUM_TO_STRING(TIRDAS),
-                SKYLIB_ENUM_TO_STRING(MIDDAS),
-                SKYLIB_ENUM_TO_STRING(TURDAS),
-                SKYLIB_ENUM_TO_STRING(FREDAS),
-                SKYLIB_ENUM_TO_STRING(LOREDAS),
-                SKYLIB_ENUM_TO_STRING(WEEKDAYS),
-                SKYLIB_ENUM_TO_STRING(WEEKENDS),
-                SKYLIB_ENUM_TO_STRING(MORNDAS_MIDDAS_FREDAS),
-                SKYLIB_ENUM_TO_STRING(TIRDAS_TURDAS),
+                SKYLIB_ENUM_TO_STRING(MORNING_STAR),
+                SKYLIB_ENUM_TO_STRING(SUNS_DAWN),
+                SKYLIB_ENUM_TO_STRING(FIRST_SEED),
+                SKYLIB_ENUM_TO_STRING(RAINS_HAND),
+                SKYLIB_ENUM_TO_STRING(SECOND_SEED),
+                SKYLIB_ENUM_TO_STRING(MID_YEAR),
+                SKYLIB_ENUM_TO_STRING(SUNS_HEIGHT),
+                SKYLIB_ENUM_TO_STRING(LAST_SEED),
+                SKYLIB_ENUM_TO_STRING(HEARTH_FIRE),
+                SKYLIB_ENUM_TO_STRING(FROST_FALL),
+                SKYLIB_ENUM_TO_STRING(SUNS_DUSK),
+                SKYLIB_ENUM_TO_STRING(EVENING_STAR),
             };
 
             return strings;
@@ -62,17 +64,18 @@ namespace doticu_skylib {
         {
             static const char* const strings[_TOTAL_] =
             {
-                "Sundas",
-                "Morndas",
-                "Tirdas",
-                "Middas",
-                "Turdas",
-                "Fredas",
-                "Loredas",
-                "Weekdays",
-                "Weekends",
-                "Morndas, Middas, and Fredas",
-                "Tirdas and Turdas",
+                "Morning Star",
+                "Sun's Dawn",
+                "First Seed",
+                "Rain's Hand",
+                "Second Seed",
+                "Mid Year",
+                "Sun's Height",
+                "Last Seed",
+                "Hearth Fire",
+                "Frost Fall",
+                "Sun's Dusk",
+                "Evening Star",
             };
 
             return strings;
@@ -99,32 +102,32 @@ namespace doticu_skylib {
         }
     };
 
-    class Calendar_Date_Weekday_e :
-        public Enum_Type_t<Calendar_Date_Weekday_e_data>
+    class Calendar_Date_Month_e :
+        public Enum_Type_t<Calendar_Date_Month_e_data>
     {
     public:
         using Enum_Type_t::Enum_Type_t;
     };
 
     template <>
-    class none<Calendar_Date_Weekday_e> :
-        public none_enum<Calendar_Date_Weekday_e>
+    class none<Calendar_Date_Month_e> :
+        public none_enum<Calendar_Date_Month_e>
     {
     public:
         using none_enum::none_enum;
     };
 
     template <>
-    class maybe<Calendar_Date_Weekday_e> :
-        public maybe_enum<Calendar_Date_Weekday_e>
+    class maybe<Calendar_Date_Month_e> :
+        public maybe_enum<Calendar_Date_Month_e>
     {
     public:
         using maybe_enum::maybe_enum;
     };
 
     template <>
-    class some<Calendar_Date_Weekday_e> :
-        public some_enum<Calendar_Date_Weekday_e>
+    class some<Calendar_Date_Month_e> :
+        public some_enum<Calendar_Date_Month_e>
     {
     public:
         using some_enum::some_enum;

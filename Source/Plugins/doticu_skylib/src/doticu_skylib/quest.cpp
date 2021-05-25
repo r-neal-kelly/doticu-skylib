@@ -5,7 +5,9 @@
 #include "doticu_skylib/actor_base.h"
 #include "doticu_skylib/alias_base.h"
 #include "doticu_skylib/alias_reference.h"
+#include "doticu_skylib/calendar.h"
 #include "doticu_skylib/dynamic_array.inl"
+#include "doticu_skylib/enum_calendar_date_month.h"
 #include "doticu_skylib/enum_comparator.h"
 #include "doticu_skylib/forward_list.inl"
 #include "doticu_skylib/game.h"
@@ -675,25 +677,63 @@ namespace doticu_skylib {
             maybe<Quest_Instance_Global_t*> data = Instance_Global(instance_id, value());
             if (data && data->global) {
                 if (CString_t::Is_Same(sub_tag(), "Hour12", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = std::to_string(now.Hour_12()());
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Minutes", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = std::to_string(now.Minute()());
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Month", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = std::to_string(now.Month()());
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "MonthWord", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = Calendar_Date_Month_e::To_English_String(now.Month()())();
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Day", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = std::to_string(now.Day()());
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "WeekDay", true)) {
-
+                    maybe<Calendar_Date_Weekday_e> weekday = Calendar_t::Days_Passed_Weekday(data->Float());
+                    if (weekday) {
+                        result = Calendar_Date_Weekday_e::To_English_String(weekday())();
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Year", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = std::to_string(now.Year()());
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "TimeSpan", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        some<Calendar_Time_Hour_24_t> hour_24 = now.Hour_24();
+                        if (hour_24() > 18) result = "Evening";
+                        else if (hour_24() > 12) result = "Afternoon";
+                        else if (hour_24() > 6) result = "Morning";
+                        else if (hour_24() > 0) result = "Night";
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Meridiem", true)) {
-
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    if (now) {
+                        result = now.Time_12().As_String();
+                    }
                 } else if (CString_t::Is_Same(sub_tag(), "Time", true)) {
-
+                    Float_t value = data->Float();
+                    if (value >= 2) {
+                        result = std::to_string(static_cast<u64>(floor(value))) + " hours";
+                    } else if (value >= 1) {
+                        result = "1 hour";
+                    } else {
+                        result = std::to_string(static_cast<u64>((value - floor(value)) * 60));
+                    }
                 } else {
                     if (data->Is_Float()) {
                         result = data->Float_String();
