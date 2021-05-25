@@ -160,9 +160,9 @@ namespace doticu_skylib {
         maybe<Relation_Counts_t*>           Relation_Counts(some<Faction_t*> faction);
 
         void                                Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Locker_t& forms_locker);
-        maybe<Player_Objective_t>           Lowest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker);
-        maybe<Player_Objective_t>           Highest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker);
-        maybe<Player_Objective_t>           Highest_Player_Objective(some<Quest_t*> quest, Read_Write_Lock_t& form_lock = Game_t::Form_IDs_To_Forms_Lock());
+
+        maybe<Player_Objective_t>           Highest_Displayed_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker);
+        maybe<Player_Objective_t>           Highest_Displayed_Player_Objective(some<Quest_t*> quest, Read_Write_Lock_t& forms_lock = Game_t::Form_IDs_To_Forms_Lock());
 
         Vector_t<some<Quest_Objective_t*>>  Quest_Objectives(Read_Locker_t& forms_locker);
         void                                Quest_Objectives(Vector_t<some<Quest_Objective_t*>>& results, Read_Locker_t& forms_locker);

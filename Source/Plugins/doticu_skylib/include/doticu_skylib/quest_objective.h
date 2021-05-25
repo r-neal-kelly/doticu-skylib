@@ -30,6 +30,9 @@ namespace doticu_skylib {
         u32                             pad_24;                 // 24
 
     public:
+        Bool_t  Is_Displayed() const;
+
+    public:
         void    Log(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Quest_Objective_t) == 0x28);

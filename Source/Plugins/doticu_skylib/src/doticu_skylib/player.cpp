@@ -83,68 +83,27 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Player_Objective_t> Player_t::Lowest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker)
+    maybe<Player_Objective_t> Player_t::Highest_Displayed_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker)
     {
-        SKYLIB_ASSERT_SOME(quest);
-
-        u32 highest_instance_id = 0;
-        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
-            Player_Objective_t& objective = this->objectives[idx];
-            if (objective.objective && objective.objective->quest == quest) {
-                if (objective.instance_id > highest_instance_id) {
-                    highest_instance_id = objective.instance_id;
-                }
-            }
-        }
-
         maybe<Player_Objective_t> result = none<Player_Objective_t>();
         for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
             Player_Objective_t& it = this->objectives[idx];
-            if (it.objective && it.objective->quest == quest) {
-                if (it.instance_id == highest_instance_id) {
-                    if (!result.Has_Value() || result.Value().objective->index > it.objective->index) {
-                        result = it;
-                    }
+            if (it.objective &&
+                it.objective->quest == quest &&
+                it.instance_id == quest->current_instance_id &&
+                it.objective->Is_Displayed()) {
+                if (!result.Has_Value() || result.Value().objective->index < it.objective->index) {
+                    result = it;
                 }
             }
         }
-
         return result;
     }
 
-    maybe<Player_Objective_t> Player_t::Highest_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker)
+    maybe<Player_Objective_t> Player_t::Highest_Displayed_Player_Objective(some<Quest_t*> quest, Read_Write_Lock_t& forms_lock)
     {
-        SKYLIB_ASSERT_SOME(quest);
-
-        u32 highest_instance_id = 0;
-        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
-            Player_Objective_t& objective = this->objectives[idx];
-            if (objective.objective && objective.objective->quest == quest) {
-                if (objective.instance_id > highest_instance_id) {
-                    highest_instance_id = objective.instance_id;
-                }
-            }
-        }
-
-        maybe<Player_Objective_t> result = none<Player_Objective_t>();
-        for (size_t idx = 0, end = this->objectives.Count(); idx < end; idx += 1) {
-            Player_Objective_t& it = this->objectives[idx];
-            if (it.objective && it.objective->quest == quest) {
-                if (it.instance_id == highest_instance_id) {
-                    if (!result.Has_Value() || result.Value().objective->index < it.objective->index) {
-                        result = it;
-                    }
-                }
-            }
-        }
-
-        return result;
-    }
-
-    maybe<Player_Objective_t> Player_t::Highest_Player_Objective(some<Quest_t*> quest, Read_Write_Lock_t& form_lock)
-    {
-        Read_Locker_t locker(form_lock);
-        return Highest_Player_Objective(quest, locker);
+        Read_Locker_t locker(forms_lock);
+        return Highest_Displayed_Player_Objective(quest, locker);
     }
 
     Vector_t<some<Quest_Objective_t*>> Player_t::Quest_Objectives(Read_Locker_t& forms_locker)

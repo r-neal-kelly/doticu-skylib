@@ -7,6 +7,24 @@
 
 namespace doticu_skylib {
 
+    Bool_t Quest_Objective_t::Is_Displayed() const
+    {
+        if (this->quest) {
+            if (this->quest->quest_type == Quest_Type_e::MISC) {
+                return this->state == Quest_Objective_State_e::DISPLAYED;
+            } else if (this->quest->Is_Displayed_In_HUD()) {
+                return
+                    this->state == Quest_Objective_State_e::COMPLETED_AND_DISPLAYED ||
+                    this->state == Quest_Objective_State_e::FAILED_AND_DISPLAYED ||
+                    this->state == Quest_Objective_State_e::DISPLAYED;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     void Quest_Objective_t::Log(std::string indent) const
     {
         SKYLIB_LOG(indent + "Quest_Objective_t::Log");
