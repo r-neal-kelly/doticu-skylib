@@ -19,7 +19,7 @@ namespace doticu_skylib {
         return *self;
     }
 
-    maybe<Calendar_Now_t> Calendar_t::Days_Passed_Now(Float_t days_passed)
+    maybe<Calendar_Now_t> Calendar_t::Days_Passed_Now(Float_t days_passed, Bool_t do_replicate_bugs)
     {
         if (days_passed >= 0.0f) {
             static const size_t DAYS_PER_MONTH[12]
@@ -37,6 +37,30 @@ namespace doticu_skylib {
                 30, // SUNS_DUSK
                 31, // EVENING_STAR
             };
+
+            /*
+                this is a bug in the vanilla GameTimeToString.
+                their code produces the left and is zero indexed, ours on the right which is one indexed.
+                the repeat changes as the current date in game changes. It always repeats the next day.
+
+                current date: 9/1/201
+                13.000000, 07/29/0201 00:00 ----- 8/30/201 12:00 AM
+                14.000000, 07/30/0201 00:00 ----- 8/31/201 12:00 AM
+                15.000000, 08/00/0201 00:00 ----- 9/1/201 12:00 AM
+                16.000000, 08/00/0201 00:00 ----- 9/2/201 12:00 AM <--------- this is a repeat of the previous day in their code
+                17.000000, 08/01/0201 00:00 ----- 9/3/201 12:00 AM
+                18.000000, 08/02/0201 00:00 ----- 9/4/201 12:00 AM
+                19.000000, 08/03/0201 00:00 ----- 9/5/201 12:00 AM
+                20.000000, 08/04/0201 00:00 ----- 9/6/201 12:00 AM
+
+                to fix it, we need to also take into account when the day starts in their buggy code (4:00 PM)
+            */
+            if (do_replicate_bugs) {
+                Calendar_t& calendar = Self();
+                if (calendar.days_passed && days_passed >= floor(calendar.days_passed->value) + (16.0f / 24.0f)) {
+                    days_passed -= 1.0f;
+                }
+            }
 
             size_t relative_days = floor(days_passed);
             size_t relative_year = floor(relative_days / DAYS_PER_YEAR);
@@ -69,8 +93,23 @@ namespace doticu_skylib {
 
             Float_t absolute_hours = ((days_passed - floor(days_passed)) * 24);
             Float_t absolute_minutes = (absolute_hours - floor(absolute_hours)) * 60;
-            // nope, it does not appear to take into account the 8 hour default difference, so we won't either.
-            // btw, the calendar system in this game is really broken. there are errors all over the place.
+            // nope, it does not appear to take into account the 8 hour default difference, so we don't either.
+
+            // believe it or not, in their buggy code, the days starts and ends at 4:00 PM, not 12:00 AM. bizarre!
+            // of course the calendar itself starts where you would expect, but in GameTimeToString it does not
+            if (do_replicate_bugs && absolute_hours >= 16.0f) {
+                if (absolute_day + 1 > DAYS_PER_MONTH[absolute_month]) {
+                    absolute_day = 1;
+                    if (absolute_month + 1 > 11) {
+                        absolute_month = 0;
+                        absolute_year += 1;
+                    } else {
+                        absolute_month += 1;
+                    }
+                } else {
+                    absolute_day += 1;
+                }
+            }
 
             Calendar_Date_Year_t year = absolute_year;
             Calendar_Date_Month_t month = absolute_month;
@@ -336,7 +375,7 @@ namespace doticu_skylib {
     maybe<Calendar_Now_t> Calendar_t::Days_Passed_Now() const
     {
         if (this->days_passed) {
-            return Days_Passed_Now(this->days_passed->Float());
+            return Days_Passed_Now(this->days_passed->Float(), false);
         } else {
             return none<Calendar_Now_t>();
         }

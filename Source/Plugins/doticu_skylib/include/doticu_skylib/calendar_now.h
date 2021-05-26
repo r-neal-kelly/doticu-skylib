@@ -201,6 +201,15 @@ namespace doticu_skylib {
             return Time(Time().AM_PM(am_pm));
         }
 
+        String_t As_String() const
+        {
+            if (Is_Valid(this->value)) {
+                return Date().As_String() + " " + Time_12().As_String();
+            } else {
+                return "";
+            }
+        }
+
     public:
         operator some<Calendar_Date_t>() const
         {
@@ -264,15 +273,7 @@ namespace doticu_skylib {
             SKYLIB_LOG(indent + "{");
 
             if (Is_Valid(this->value)) {
-                some<Calendar_Date_Month_t> month = Month()();
-                some<Calendar_Date_Day_t> day = Day();
-                some<Calendar_Date_Year_t> year = Year();
-                some<Calendar_Time_12_t> time_12 = Time_12();
-                SKYLIB_LOG(indent + SKYLIB_TAB + "%s/%s/%s %s",
-                           std::to_string(month() + 1),
-                           std::to_string(day()),
-                           std::to_string(year()),
-                           time_12.As_String());
+                SKYLIB_LOG(indent + SKYLIB_TAB + "%s", As_String());
             }
 
             SKYLIB_LOG(indent + "}");

@@ -7,6 +7,7 @@
 #include "doticu_skylib/calendar_date_day.h"
 #include "doticu_skylib/calendar_date_month.h"
 #include "doticu_skylib/calendar_date_year.h"
+#include "doticu_skylib/string.h"
 
 namespace doticu_skylib {
 
@@ -131,6 +132,18 @@ namespace doticu_skylib {
             SKYLIB_ASSERT_SOME(year);
             Numeric_t::Year(this->value, year());
             return *this;
+        }
+
+        String_t As_String() const
+        {
+            if (Is_Valid(this->value)) {
+                return
+                    std::to_string(Month()() + 1) + "/" +
+                    std::to_string(Day()()) + "/" +
+                    std::to_string(Year()());
+            } else {
+                return "";
+            }
         }
 
     public:

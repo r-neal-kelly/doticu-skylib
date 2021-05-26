@@ -42,7 +42,7 @@ namespace doticu_skylib {
 
     public:
         static Calendar_t&                      Self();
-        static maybe<Calendar_Now_t>            Days_Passed_Now(Float_t days_passed);
+        static maybe<Calendar_Now_t>            Days_Passed_Now(Float_t days_passed, Bool_t do_replicate_bugs);
         static maybe<Calendar_Date_Weekday_e>   Days_Passed_Weekday(Float_t days_passed);
 
     public:

@@ -677,27 +677,27 @@ namespace doticu_skylib {
             maybe<Quest_Instance_Global_t*> data = Instance_Global(instance_id, value());
             if (data && data->global) {
                 if (CString_t::Is_Same(sub_tag(), "Hour12", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = std::to_string(now.Hour_12()());
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "Minutes", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = std::to_string(now.Minute()());
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "Month", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = std::to_string(now.Month()());
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "MonthWord", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = Calendar_Date_Month_e::To_English_String(now.Month()())();
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "Day", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = std::to_string(now.Day()());
                     }
@@ -707,12 +707,12 @@ namespace doticu_skylib {
                         result = Calendar_Date_Weekday_e::To_English_String(weekday())();
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "Year", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = std::to_string(now.Year()());
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "TimeSpan", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         some<Calendar_Time_Hour_24_t> hour_24 = now.Hour_24();
                         if (hour_24() > 18) result = "Evening";
@@ -721,7 +721,7 @@ namespace doticu_skylib {
                         else if (hour_24() > 0) result = "Night";
                     }
                 } else if (CString_t::Is_Same(sub_tag(), "Meridiem", true)) {
-                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float());
+                    maybe<Calendar_Now_t> now = Calendar_t::Days_Passed_Now(data->Float(), true);
                     if (now) {
                         result = now.Time_12().As_String();
                     }

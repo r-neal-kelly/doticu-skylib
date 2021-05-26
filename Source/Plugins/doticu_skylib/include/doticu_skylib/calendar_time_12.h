@@ -133,16 +133,14 @@ namespace doticu_skylib {
             return *this;
         }
 
-        String_t As_String()
+        String_t As_String() const
         {
             if (Is_Valid(this->value)) {
-                some<Calendar_Time_Hour_12_t> hour = Hour();
                 some<Calendar_Time_Minute_t> minute = Minute();
-                some<Calendar_Time_AM_PM_e> am_pm = AM_PM();
                 return
-                    std::to_string(hour()) + ":" +
+                    std::to_string(Hour()()) + ":" +
                     (minute() > 9 ? std::to_string(minute()) : std::string("0") + std::to_string(minute())) + " " +
-                    am_pm().As_String()();
+                    AM_PM()().As_String()();
             } else {
                 return "";
             }
