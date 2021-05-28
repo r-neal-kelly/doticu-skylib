@@ -858,6 +858,16 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<some<Reference_t*>> Reference_t::Contained_References() const
+    {
+        return this->x_list.Contained_References();
+    }
+
+    void Reference_t::Contained_References(Vector_t<some<Reference_t*>>& results) const
+    {
+        return this->x_list.Contained_References(results);
+    }
+
     maybe<Location_t*> Reference_t::Location()
     {
         maybe<Location_t*> location = Cell_Location();
@@ -2158,6 +2168,19 @@ namespace doticu_skylib {
                        Form_Type_e::To_String(this->base_form->form_type),
                        this->base_form->Form_ID_String(),
                        this->base_form->Component_Name());
+        }
+
+        SKYLIB_LOG(indent + "}");
+    }
+
+    void Reference_t::Log_Contained_References(std::string indent)
+    {
+        SKYLIB_LOG(indent + "Reference_t::Log_Contained_References");
+        SKYLIB_LOG(indent + "{");
+
+        Vector_t<some<Reference_t*>> refs = Contained_References();
+        for (size_t idx = 0, end = refs.size(); idx < end; idx += 1) {
+            refs[idx]->Log_Name_And_Type(indent + SKYLIB_TAB);
         }
 
         SKYLIB_LOG(indent + "}");

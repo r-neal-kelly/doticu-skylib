@@ -83,6 +83,12 @@ namespace doticu_skylib {
         }
     }
 
+    void Player_t::Iterate_Player_Objectives(Iterator_i<some<Player_Objective_t*>>& iterator, Read_Write_Lock_t& forms_lock)
+    {
+        Read_Locker_t locker(forms_lock);
+        Iterate_Player_Objectives(iterator, locker);
+    }
+
     maybe<Player_Objective_t> Player_t::Highest_Displayed_Player_Objective(some<Quest_t*> quest, Read_Locker_t& forms_locker)
     {
         maybe<Player_Objective_t> result = none<Player_Objective_t>();

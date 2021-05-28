@@ -3,9 +3,12 @@
 */
 
 #include "doticu_skylib/actor_base.h"
+#include "doticu_skylib/container_changes.h"
+#include "doticu_skylib/container_changes_entry.h"
 #include "doticu_skylib/extra_aliases.h"
 #include "doticu_skylib/extra_cannot_wear.h"
 #include "doticu_skylib/extra_charge.h"
+#include "doticu_skylib/extra_container_changes.h"
 #include "doticu_skylib/extra_count.h"
 #include "doticu_skylib/extra_data.inl"
 #include "doticu_skylib/extra_enchantment.h"
@@ -228,7 +231,11 @@ namespace doticu_skylib {
     maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
+        return Get(type, locker);
+    }
 
+    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type, const Locker_t& locker) const
+    {
         if (this->presence && this->presence->Has(type)) {
             for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
@@ -497,6 +504,43 @@ namespace doticu_skylib {
         }
     }
 
+    Vector_t<some<Reference_t*>> Extra_List_t::Contained_References() const
+    {
+        Vector_t<some<Reference_t*>> results;
+        Contained_References(results);
+        return results;
+    }
+
+    void Extra_List_t::Contained_References(Vector_t<some<Reference_t*>>& results) const
+    {
+        using Entries_t = List_t<maybe<Container_Changes_Entry_t*>>;
+        using X_Lists_t = List_t<maybe<Extra_List_t*>>;
+
+        Read_Locker_t locker(this->lock);
+
+        maybe<Extra_Container_Changes_t*> x_container = Get<Extra_Container_Changes_t>(locker);
+        if (x_container && x_container->container_changes && x_container->container_changes->entries) {
+            Entries_t& entries = *x_container->container_changes->entries;
+            if (!entries.Is_Empty()) {
+                for (maybe<Entries_t::Node_t*> it = &entries.head; it; it = it->next) {
+                    maybe<Container_Changes_Entry_t*> entry = it->value;
+                    if (entry && entry->x_lists) {
+                        X_Lists_t& x_lists = *entry->x_lists;
+                        for (maybe<X_Lists_t::Node_t*> it = &x_lists.head; it; it = it->next) {
+                            maybe<Extra_List_t*> x_list = it->value;
+                            if (x_list) {
+                                maybe<Reference_t*> reference = x_list->Representative_Reference();
+                                if (reference) {
+                                    results.push_back(reference());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     s16 Extra_List_t::Count()
     {
         maybe<Extra_Count_t*> x_count = Get<Extra_Count_t>();
@@ -760,7 +804,9 @@ namespace doticu_skylib {
 
     maybe<Reference_t*> Extra_List_t::Representative_Reference() const
     {
-        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        Read_Locker_t locker(this->lock);
+
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>(locker);
         if (x_reference_handle) {
             return x_reference_handle->Representative_Reference();
         } else {
@@ -768,9 +814,11 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Reference_t*> Extra_List_t::Containing_Reference()
+    maybe<Reference_t*> Extra_List_t::Containing_Reference() const
     {
-        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
+        Read_Locker_t locker(this->lock);
+
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>(locker);
         if (x_reference_handle) {
             return x_reference_handle->Containing_Reference();
         } else {

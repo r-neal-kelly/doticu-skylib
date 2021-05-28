@@ -89,6 +89,7 @@ namespace doticu_skylib {
     public:
         Bool_t                  Has(Extra_Type_e type) const;
         maybe<Extra_Data_t*>    Get(Extra_Type_e type) const;
+        maybe<Extra_Data_t*>    Get(Extra_Type_e type, const Locker_t& locker) const;
         Bool_t                  Add(some<Extra_Data_t*> x_data);
         Bool_t                  Remove(some<Extra_Data_t*> x_data);
 
@@ -96,6 +97,8 @@ namespace doticu_skylib {
         Bool_t                  Has() const;
         template <typename T>
         maybe<T*>               Get() const;
+        template <typename T>
+        maybe<T*>               Get(const Locker_t& locker) const;
         template <typename T>
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
@@ -150,6 +153,10 @@ namespace doticu_skylib {
         Bool_t                              Cannot_Wear();
         void                                Cannot_Wear(Bool_t cannot_wear);
 
+        // Extra_Container_Changes_t
+        Vector_t<some<Reference_t*>>        Contained_References() const;
+        void                                Contained_References(Vector_t<some<Reference_t*>>& results) const;
+
         // Extra_Count_t
         s16                                 Count();
         void                                Count(s16 count);
@@ -187,7 +194,7 @@ namespace doticu_skylib {
         Reference_Handle_t                  Reference_Handle();
         void                                Reference_Handle(Reference_Handle_t reference_handle);
         maybe<Reference_t*>                 Representative_Reference() const;
-        maybe<Reference_t*>                 Containing_Reference();
+        maybe<Reference_t*>                 Containing_Reference() const;
 
         // Extra_Reference_Interaction_t
         maybe<Reference_t*>                 Reference_Interactor_A();

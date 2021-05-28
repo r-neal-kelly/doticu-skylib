@@ -358,6 +358,9 @@ namespace doticu_skylib {
         some<Reference_Container_Entry_t>   Some_Container_Entry(some<Bound_Object_t*> object);
         Container_Entry_Count_t             Container_Entry_Count(some<Bound_Object_t*> object);
 
+        Vector_t<some<Reference_t*>>        Contained_References() const;
+        void                                Contained_References(Vector_t<some<Reference_t*>>& results) const;
+
         maybe<Location_t*>                  Location();
         maybe<Location_t*>                  Cell_Location();
         maybe<Location_t*>                  Worldspace_Location();
@@ -491,6 +494,7 @@ namespace doticu_skylib {
 
     public:
         void    Log_Name_And_Type(std::string indent = "");
+        void    Log_Contained_References(std::string indent = "");
         void    Log_Extra_List(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Reference_t) == 0x98);
