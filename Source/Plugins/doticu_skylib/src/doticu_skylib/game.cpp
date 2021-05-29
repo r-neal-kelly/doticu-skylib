@@ -5,10 +5,13 @@
 #include "doticu_skylib/cstring.h"
 #include "doticu_skylib/form.h"
 #include "doticu_skylib/game.h"
+#include "doticu_skylib/game_ini.h"
 #include "doticu_skylib/mod.h"
 #include "doticu_skylib/os.h"
 
 namespace doticu_skylib {
+
+    std::mutex Game_t::lock;
 
     some<Game_t*> Game_t::Self()
     {
@@ -47,6 +50,41 @@ namespace doticu_skylib {
             has_read = OS_t::Module_Version(none<const char*>(), version);
         }
         return version;
+    }
+
+    const std::wstring Game_t::Save_Path()
+    {
+        std::wstring save_path = OS_t::Documents_Path() + L"\\My Games\\Skyrim Special Edition";
+
+        Setting* setting = GetINISetting("sLocalSavePath:General");
+        if (setting && setting->GetType() == Setting::kType_String && setting->data.s && setting->data.s[0]) {
+            std::wstring local = CString_t::To<std::wstring>(setting->data.s);
+
+            if (local[0] != L'\\' && local[0] != L'/') {
+                save_path += L"\\";
+            }
+
+            size_t last = local.length() - 1;
+            if (local[last] == L'\\' || local[last] == L'/') {
+                local.erase(last);
+            }
+
+            save_path += local;
+        } else {
+            save_path += L"\\Saves";
+        }
+
+        return save_path;
+    }
+
+    const std::wstring Game_t::Save_File_Path(some<const wchar_t*> file_name, some<const wchar_t*> extension)
+    {
+        return Save_Path() + L"\\" + file_name() + L"." + extension();
+    }
+
+    const std::wstring Game_t::Save_File_Path(some<const char*> file_name, some<const char*> extension)
+    {
+        return Save_Path() + L"\\" + CString_t::To<std::wstring>(file_name()) + L"." + CString_t::To<std::wstring>(extension());
     }
 
     Word_t Game_t::V_Table_Offset(const void* instance)

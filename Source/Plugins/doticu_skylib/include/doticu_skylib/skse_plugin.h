@@ -61,14 +61,14 @@ namespace doticu_skylib {
         virtual Bool_t  On_Load(some<const SKSEInterface*> skse);
         virtual Bool_t  On_Register(some<Virtual::Machine_t*> v_machine);
 
-        virtual void    On_After_Load_Data()                                                        = 0;
-        virtual void    On_After_New_Game()                                                         = 0;
-        virtual void    On_Before_Save_Game(some<const char*> file_path, u32 file_path_length)      = 0;
-        virtual void    On_After_Save_Game()                                                        = 0;
-        virtual void    On_Before_Load_Game(some<const char*> file_path, u32 file_path_length)      = 0;
-        virtual void    On_After_Load_Game(Bool_t did_load_successfully)                            = 0;
-        virtual void    On_Before_Delete_Game(some<const char*> file_path, u32 file_path_length)    = 0;
-        virtual void    On_Update(u32 time_stamp)                                                   = 0;
+        virtual void    On_After_Load_Data()                                = 0;
+        virtual void    On_After_New_Game()                                 = 0;
+        virtual void    On_Before_Save_Game(std::string file_name)          = 0;
+        virtual void    On_After_Save_Game()                                = 0;
+        virtual void    On_Before_Load_Game(std::string file_name)          = 0;
+        virtual void    On_After_Load_Game(Bool_t did_load_successfully)    = 0;
+        virtual void    On_Before_Delete_Game(std::string file_name)        = 0;
+        virtual void    On_Update(u32 time_stamp)                           = 0;
 
     public:
         void            On_SKSE_Message(some<SKSE_Message_t*> message);

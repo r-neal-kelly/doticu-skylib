@@ -4,12 +4,16 @@
 
 #pragma comment(lib, "version.lib")
 
+#include <ShlObj.h>
+
 #include "psapi.h"
 
 #include "doticu_skylib/os.h"
 #include "doticu_skylib/unique.h"
 
 namespace doticu_skylib {
+
+    std::mutex OS_t::lock;
 
     Double_t OS_t::Microseconds()
     {
@@ -100,6 +104,23 @@ namespace doticu_skylib {
         } else {
             return false;
         }
+    }
+
+    const std::wstring& OS_t::Documents_Path()
+    {
+        static std::wstring documents_path = L"";
+
+        std::lock_guard<std::mutex> locker(lock);
+
+        if (documents_path == L"") {
+            PWSTR res = nullptr;
+            HRESULT err = SHGetKnownFolderPath(FOLDERID_Documents, KF_FLAG_CREATE, 0, &res);
+            SKYLIB_ASSERT(err == S_OK);
+            documents_path = res;
+            CoTaskMemFree(res);
+        }
+
+        return documents_path;
     }
 
 }

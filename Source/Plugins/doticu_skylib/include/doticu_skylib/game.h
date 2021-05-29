@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <mutex>
+
 #include "doticu_skylib/collections.h"
 #include "doticu_skylib/dynamic_array.h"
 #include "doticu_skylib/enum.h"
@@ -55,6 +57,9 @@ namespace doticu_skylib {
         };
 
     public:
+        static std::mutex lock;
+
+    public:
         static some<Game_t*>            Self();
 
         static Word_t                   Base_Address();
@@ -63,6 +68,11 @@ namespace doticu_skylib {
 
         static const Version_t<u16>&    Version();
 
+        static const std::wstring       Save_Path();
+        static const std::wstring       Save_File_Path(some<const wchar_t*> file_name, some<const wchar_t*> extension);
+        static const std::wstring       Save_File_Path(some<const char*> file_name, some<const char*> extension);
+
+    public:
         template <typename T>
         static some<T*>                 Allocate(size_t count = 1);
         template <typename T>

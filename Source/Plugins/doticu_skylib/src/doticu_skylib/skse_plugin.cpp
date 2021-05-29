@@ -103,15 +103,26 @@ namespace doticu_skylib {
 
     void SKSE_Plugin_t::On_SKSE_Message(some<SKSE_Message_t*> message)
     {
+        static auto Clean_File_Name = [](some<const char*> original)->std::string
+        {
+            std::string result = original();
+
+            if (CString_t::Ends_With(original(), ".ess", true)) {
+                result.erase(result.length() - 4);
+            }
+
+            return result;
+        };
+
         if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
             if (!this->update_locker.owns_lock()) {
                 this->update_locker.lock();
             }
 
             if (message->data) {
-                On_Before_Save_Game(static_cast<const char*>(message->data), message->dataLen);
+                On_Before_Save_Game(Clean_File_Name(static_cast<const char*>(message->data)));
             } else {
-                On_Before_Save_Game("", 0);
+                On_Before_Save_Game("");
             }
 
             std::thread(
@@ -137,9 +148,9 @@ namespace doticu_skylib {
             }
 
             if (message->data) {
-                On_Before_Load_Game(static_cast<const char*>(message->data), message->dataLen);
+                On_Before_Load_Game(Clean_File_Name(static_cast<const char*>(message->data)));
             } else {
-                On_Before_Load_Game("", 0);
+                On_Before_Load_Game("");
             }
 
         } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
@@ -161,9 +172,9 @@ namespace doticu_skylib {
             }
 
             if (message->data) {
-                On_Before_Delete_Game(static_cast<const char*>(message->data), message->dataLen);
+                On_Before_Delete_Game(Clean_File_Name(static_cast<const char*>(message->data)));
             } else {
-                On_Before_Delete_Game("", 0);
+                On_Before_Delete_Game("");
             }
 
             if (!was_already_locked && this->update_locker.owns_lock()) {

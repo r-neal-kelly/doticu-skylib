@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <mutex>
+
 #include "doticu_skylib/interface.h"
 #include "doticu_skylib/intrinsic.h"
 #include "doticu_skylib/maybe.h"
@@ -13,6 +15,9 @@ namespace doticu_skylib {
 
     class OS_t
     {
+    public:
+        static std::mutex lock;
+
     public:
         static Double_t Microseconds();
         static Double_t Milliseconds();
@@ -24,6 +29,10 @@ namespace doticu_skylib {
         static size_t   Module_Size(maybe<const char*> module_name);
         static Bool_t   Module_Version(maybe<const char*> module_name, Version_t<u16>& result);
 
+    public:
+        static const std::wstring&  Documents_Path();
+
+    public:
         #pragma optimize("", off)
         template <typename Return>
         static Double_t Stress_Test_Milliseconds(size_t trial_count, Functor_i<Return>& functor)
