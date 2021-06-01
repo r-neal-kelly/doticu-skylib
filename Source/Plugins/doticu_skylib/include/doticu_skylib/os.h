@@ -32,6 +32,9 @@ namespace doticu_skylib {
     public:
         static const std::wstring&  Documents_Path();
 
+        static void Delete_File(const std::wstring& file_name);
+        static void Delete_File(std::wstring&& file_name);
+
     public:
         #pragma optimize("", off)
         template <typename Return>

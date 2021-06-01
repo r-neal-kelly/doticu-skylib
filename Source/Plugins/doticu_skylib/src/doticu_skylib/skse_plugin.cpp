@@ -96,7 +96,7 @@ namespace doticu_skylib {
         return true;
     }
 
-    Bool_t SKSE_Plugin_t::On_Register(some<Virtual::Machine_t*> v_machine)
+    Bool_t SKSE_Plugin_t::On_Register(some<Virtual::Machine_t*> machine)
     {
         return true;
     }
@@ -111,7 +111,7 @@ namespace doticu_skylib {
                 result.erase(result.length() - 4);
             }
 
-            return result;
+            return std::move(result);
         };
 
         if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
@@ -120,7 +120,8 @@ namespace doticu_skylib {
             }
 
             if (message->data) {
-                On_Before_Save_Game(Clean_File_Name(static_cast<const char*>(message->data)));
+                this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
+                On_Before_Save_Game(this->cached_file_name);
             } else {
                 On_Before_Save_Game("");
             }
@@ -134,7 +135,7 @@ namespace doticu_skylib {
                         std::this_thread::sleep_for(std::chrono::milliseconds(16));
                     }
 
-                    this->On_After_Save_Game();
+                    this->On_After_Save_Game(this->cached_file_name);
 
                     if (this->update_locker.owns_lock()) {
                         this->update_locker.unlock();
@@ -148,13 +149,14 @@ namespace doticu_skylib {
             }
 
             if (message->data) {
-                On_Before_Load_Game(Clean_File_Name(static_cast<const char*>(message->data)));
+                this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
+                On_Before_Load_Game(this->cached_file_name);
             } else {
                 On_Before_Load_Game("");
             }
 
         } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
-            On_After_Load_Game(message->data ? true : false);
+            On_After_Load_Game(this->cached_file_name, message->data ? true : false);
 
             if (this->update_locker.owns_lock()) {
                 this->update_locker.unlock();
@@ -172,7 +174,8 @@ namespace doticu_skylib {
             }
 
             if (message->data) {
-                On_Before_Delete_Game(Clean_File_Name(static_cast<const char*>(message->data)));
+                std::string file_name = Clean_File_Name(static_cast<const char*>(message->data));
+                On_Before_Delete_Game(file_name);
             } else {
                 On_Before_Delete_Game("");
             }
