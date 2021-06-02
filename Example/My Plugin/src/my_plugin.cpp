@@ -65,22 +65,22 @@ namespace doticu_skylib { namespace My_Plugin {
         SKYLIB_LOG("My Plugin can now start as a new game, and should unload its existing data.");
     }
 
-    void My_Plugin_t::On_Before_Save_Game()
+    void My_Plugin_t::On_Before_Save_Game(const std::string& file_name)
     {
         SKYLIB_LOG("My Plugin can now store data in the save-game file and it will persist.");
     }
 
-    void My_Plugin_t::On_After_Save_Game()
+    void My_Plugin_t::On_After_Save_Game(const std::string& file_name)
     {
         SKYLIB_LOG("My Plugin now knows that the game is done saving, and may continue executing.");
     }
 
-    void My_Plugin_t::On_Before_Load_Game(some<const char*> file_path, u32 file_path_length)
+    void My_Plugin_t::On_Before_Load_Game(const std::string& file_name)
     {
         SKYLIB_LOG("My Plugin can now unload its data relating to the current save-game instance.");
     }
 
-    void My_Plugin_t::On_After_Load_Game(Bool_t did_load_successfully)
+    void My_Plugin_t::On_After_Load_Game(const std::string& file_name, Bool_t did_load_successfully)
     {
         if (did_load_successfully) {
             SKYLIB_LOG("My Plugin can now load its data relating to the current save-game instance.");
@@ -89,7 +89,7 @@ namespace doticu_skylib { namespace My_Plugin {
         }
     }
 
-    void My_Plugin_t::On_Before_Delete_Game(some<const char*> file_path, u32 file_path_lengt)
+    void My_Plugin_t::On_Before_Delete_Game(const std::string& file_name)
     {
         SKYLIB_LOG("My Plugin can now delete any files that were created along with Skyrim's and SKSE's files.");
     }
