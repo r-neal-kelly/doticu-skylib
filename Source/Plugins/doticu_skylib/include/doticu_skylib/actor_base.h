@@ -207,7 +207,7 @@ namespace doticu_skylib {
         Vector_t<Actor_Base_t*>         Templates();
         void                            Templates(Vector_t<Actor_Base_t*>& results);
 
-        maybe<Actor_Base_t*>            Indentifiable_Static_Base();
+        maybe<Actor_Base_t*>            Identifiable_Static_Base();
 
         maybe<Outfit_t*>                Default_Outfit();
         void                            Default_Outfit(maybe<Outfit_t*> default_outfit);

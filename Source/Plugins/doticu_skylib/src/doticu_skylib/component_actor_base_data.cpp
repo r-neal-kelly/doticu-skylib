@@ -34,6 +34,11 @@ namespace doticu_skylib {
         return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::IS_GHOST);
     }
 
+    Bool_t Actor_Base_Data_c::Does_Respawn()
+    {
+        return this->actor_base_flags.Is_Flagged(Actor_Base_Flags_e::DOES_RESPAWN);
+    }
+
     Bool_t Actor_Base_Data_c::Is_Mortal()
     {
         return !Is_Protected() && !Is_Essential() && !Is_Invulnerable();

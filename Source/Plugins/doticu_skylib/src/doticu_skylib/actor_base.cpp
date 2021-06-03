@@ -412,7 +412,7 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Base_t*> Actor_Base_t::Indentifiable_Static_Base()
+    maybe<Actor_Base_t*> Actor_Base_t::Identifiable_Static_Base()
     {
         if (Is_Static()) {
             return this;

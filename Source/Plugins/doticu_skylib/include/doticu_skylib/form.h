@@ -198,6 +198,39 @@ namespace doticu_skylib {
         s32                         Component_Value() const;
 
     public:
+        maybe<Actor_t*>                 As_Actor() const;
+        maybe<Actor_Base_t*>            As_Actor_Base() const;
+        maybe<Ammo_t*>                  As_Ammo() const;
+        maybe<Armor_t*>                 As_Armor() const;
+        maybe<Book_t*>                  As_Book() const;
+        maybe<Bound_Object_t*>          As_Bound_Object() const;
+        maybe<Cell_t*>                  As_Cell() const;
+        maybe<Container_c*>             As_Component_Container() const;
+        maybe<Equip_Slot_c*>            As_Component_Equip_Slot() const;
+        maybe<Keywords_c*>              As_Component_Keywords() const;
+        maybe<Name_c*>                  As_Component_Name() const;
+        maybe<Race_c*>                  As_Component_Race() const;
+        maybe<Value_c*>                 As_Component_Value() const;
+        maybe<Container_t*>             As_Container() const;
+        maybe<Faction_t*>               As_Faction() const;
+        maybe<Ingredient_t*>            As_Ingredient() const;
+        maybe<Key_t*>                   As_Key() const;
+        maybe<Leveled_Actor_Base_t*>    As_Leveled_Actor_Base() const;
+        maybe<Leveled_Item_t*>          As_Leveled_Item() const;
+        maybe<Light_t*>                 As_Light() const;
+        maybe<Location_t*>              As_Location() const;
+        maybe<Misc_t*>                  As_Misc() const;
+        maybe<Outfit_t*>                As_Outfit() const;
+        maybe<Package_t*>               As_Package() const;
+        maybe<Potion_t*>                As_Potion() const;
+        maybe<Quest_t*>                 As_Quest() const;
+        maybe<Reference_t*>             As_Reference() const;
+        maybe<Scroll_t*>                As_Scroll() const;
+        maybe<Soul_Gem_t*>              As_Soul_Gem() const;
+        maybe<Spell_t*>                 As_Spell() const;
+        maybe<Weapon_t*>                As_Weapon() const;
+        maybe<Worldspace_t*>            As_Worldspace() const;
+
         Bool_t  Is_Actor() const;
         Bool_t  Is_Actor_Base() const;
         Bool_t  Is_Ammo() const;
@@ -231,38 +264,10 @@ namespace doticu_skylib {
         Bool_t  Is_Weapon() const;
         Bool_t  Is_Worldspace() const;
 
-        maybe<Actor_t*>                 As_Actor() const;
-        maybe<Actor_Base_t*>            As_Actor_Base() const;
-        maybe<Ammo_t*>                  As_Ammo() const;
-        maybe<Armor_t*>                 As_Armor() const;
-        maybe<Book_t*>                  As_Book() const;
-        maybe<Bound_Object_t*>          As_Bound_Object() const;
-        maybe<Cell_t*>                  As_Cell() const;
-        maybe<Container_c*>             As_Component_Container() const;
-        maybe<Equip_Slot_c*>            As_Component_Equip_Slot() const;
-        maybe<Keywords_c*>              As_Component_Keywords() const;
-        maybe<Name_c*>                  As_Component_Name() const;
-        maybe<Race_c*>                  As_Component_Race() const;
-        maybe<Value_c*>                 As_Component_Value() const;
-        maybe<Container_t*>             As_Container() const;
-        maybe<Faction_t*>               As_Faction() const;
-        maybe<Ingredient_t*>            As_Ingredient() const;
-        maybe<Key_t*>                   As_Key() const;
-        maybe<Leveled_Actor_Base_t*>    As_Leveled_Actor_Base() const;
-        maybe<Leveled_Item_t*>          As_Leveled_Item() const;
-        maybe<Light_t*>                 As_Light() const;
-        maybe<Location_t*>              As_Location() const;
-        maybe<Misc_t*>                  As_Misc() const;
-        maybe<Outfit_t*>                As_Outfit() const;
-        maybe<Package_t*>               As_Package() const;
-        maybe<Potion_t*>                As_Potion() const;
-        maybe<Quest_t*>                 As_Quest() const;
-        maybe<Reference_t*>             As_Reference() const;
-        maybe<Scroll_t*>                As_Scroll() const;
-        maybe<Soul_Gem_t*>              As_Soul_Gem() const;
-        maybe<Spell_t*>                 As_Spell() const;
-        maybe<Weapon_t*>                As_Weapon() const;
-        maybe<Worldspace_t*>            As_Worldspace() const;
+        template <typename T>
+        maybe<T*> As() const;
+        template <typename T>
+        Bool_t Is() const;
 
     public:
         void Register_Key_Event(Int_t key_code, maybe<Virtual::Callback_i*> v_callback);            // RegisterForKey

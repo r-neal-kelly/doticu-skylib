@@ -78,6 +78,8 @@ namespace doticu_skylib {
         Bool_t  Is_Generic();
         Bool_t  Is_Ghost();
 
+        Bool_t  Does_Respawn();
+
         Bool_t  Is_Mortal();
         void    Is_Mortal(Bool_t value, Bool_t do_save);
         Bool_t  Is_Protected();
