@@ -750,6 +750,7 @@
     <None Include="include\doticu_skylib\event_dispatcher.inl" />
     <None Include="include\doticu_skylib\extra_data.inl" />
     <None Include="include\doticu_skylib\extra_list.inl" />
+    <None Include="include\doticu_skylib\form.inl" />
     <None Include="include\doticu_skylib\forward_list.inl" />
     <None Include="include\doticu_skylib\game.inl" />
     <None Include="include\doticu_skylib\global.inl" />

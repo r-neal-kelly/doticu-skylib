@@ -2086,5 +2086,8 @@
     <None Include="include\doticu_skylib\event_dispatcher.inl">
       <Filter>Header Files</Filter>
     </None>
+    <None Include="include\doticu_skylib\form.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
