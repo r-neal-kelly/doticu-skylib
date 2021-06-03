@@ -98,8 +98,8 @@ namespace doticu_skylib {
         static void     Are_Running(const Vector_t<some<Quest_t*>> quests, some<unique<Callback_i<Bool_t>>> callback);
         static void     Wait_For(const Vector_t<some<Quest_t*>> quests, Float_t wait_interval, some<unique<Callback_i<>>> callback);
 
-        static Int_t    Compare_Any_Names(Quest_t** a, Quest_t** b);
-        static Int_t    Compare_Any_Names(some<Quest_t*>* a, some<Quest_t*>* b);
+        static Int_t    Compare_Any_Names(Quest_t*& a, Quest_t*& b);
+        static Int_t    Compare_Any_Names(some<Quest_t*>& a, some<Quest_t*>& b);
 
     public:
         virtual ~Quest_t(); // 00

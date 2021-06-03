@@ -124,17 +124,20 @@ namespace doticu_skylib {
         };
 
     public:
-        static size_t                           Actor_Base_Count();
-        static Vector_t<some<Actor_Base_t*>>    Actor_Bases();
-        static void                             Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
+        static size_t                           Static_Actor_Base_Count();
+
+        static Vector_t<some<Actor_Base_t*>>    All_Actor_Bases();
+        static void                             All_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
+        static Vector_t<some<Actor_Base_t*>>    Static_Actor_Bases();
+        static void                             Static_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
         static Vector_t<some<Actor_Base_t*>>    Dynamic_Actor_Bases();
         static void                             Dynamic_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results);
-        static void                             Log_Actor_Bases();
+        static void                             Log_Static_Actor_Bases();
         static void                             Log_Dynamic_Actor_Bases();
 
         static void                             Stream_Actor_Bases(Vector_t<some<Actor_Base_t*>>& actor_bases, std::fstream& fstream);
 
-        static Int_t                            Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b);
+        static Int_t                            Compare_Names(some<Actor_Base_t*>& a, some<Actor_Base_t*>& b);
 
         static some<Actor_Base_t*>              Create_Temporary_Copy(some<Actor_Base_t*> source);
         static void                             Destroy(some<Actor_Base_t*> actor_base);
@@ -184,7 +187,7 @@ namespace doticu_skylib {
         Bool_t                          Is_Deleted();
         Bool_t                          Isnt_Deleted();
 
-        Bool_t                          Has_Template_FF000800();
+        Bool_t                          Has_Template_FF000800(); // this is only found on certain actor bases, ones that are instantiated by its template form, I think.
 
         Sex_e                           Sex();
         Rarity_e                        Rarity();
@@ -201,9 +204,10 @@ namespace doticu_skylib {
         some<Actor_Base_t*>             Base_Root();
         some<Actor_Base_t*>             Instantiated_Base();
         some<Actor_Base_t*>             Template_Root();
-        maybe<Actor_Base_t*>            Highest_Static_Template();
         Vector_t<Actor_Base_t*>         Templates();
         void                            Templates(Vector_t<Actor_Base_t*>& results);
+
+        maybe<Actor_Base_t*>            Indentifiable_Static_Base();
 
         maybe<Outfit_t*>                Default_Outfit();
         void                            Default_Outfit(maybe<Outfit_t*> default_outfit);

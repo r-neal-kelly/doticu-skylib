@@ -362,7 +362,7 @@ namespace doticu_skylib {
         void                                        Actor_Base(some<Actor_Base_t*> actor_base, Bool_t do_save);
         maybe<Actor_Base_t*>                        Actor_Base_Root();
         maybe<Actor_Base_t*>                        Actor_Base_Template_Root();
-        maybe<Actor_Base_t*>                        Actor_Base_Highest_Static_Template();
+        maybe<Actor_Base_t*>                        Indentifiable_Static_Actor_Base();
         Vector_t<Actor_Base_t*>                     Actor_Bases();
         void                                        Actor_Bases(Vector_t<Actor_Base_t*>& results);
 

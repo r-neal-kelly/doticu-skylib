@@ -26,19 +26,58 @@
 
 namespace doticu_skylib {
 
-    size_t Actor_Base_t::Actor_Base_Count()
+    size_t Actor_Base_t::Static_Actor_Base_Count()
     {
         return Game_t::Self()->Actor_Bases().Count();
     }
 
-    Vector_t<some<Actor_Base_t*>> Actor_Base_t::Actor_Bases()
+    Vector_t<some<Actor_Base_t*>> Actor_Base_t::All_Actor_Bases()
     {
         Vector_t<some<Actor_Base_t*>> results;
-        Actor_Bases(results);
+        All_Actor_Bases(results);
         return results;
     }
 
-    void Actor_Base_t::Actor_Bases(Vector_t<some<Actor_Base_t*>>& results)
+    void Actor_Base_t::All_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results)
+    {
+        class Iterator :
+            public Iterator_i<some<Form_t*>>
+        {
+        public:
+            Vector_t<some<Actor_Base_t*>>& results;
+
+        public:
+            Iterator(Vector_t<some<Actor_Base_t*>>& results) :
+                results(results)
+            {
+            }
+
+        public:
+            virtual Iterator_e operator ()(some<Form_t*> form) override
+            {
+                maybe<Actor_Base_t*> actor_base = form->As_Actor_Base();
+                if (actor_base && actor_base->Is_Valid()) {
+                    this->results.push_back(actor_base());
+                }
+                return Iterator_e::CONTINUE;
+            }
+        };
+
+        results.reserve(2048);
+
+        Iterator iterator(results);
+
+        Game_t::Iterate_Forms(iterator);
+    }
+
+    Vector_t<some<Actor_Base_t*>> Actor_Base_t::Static_Actor_Bases()
+    {
+        Vector_t<some<Actor_Base_t*>> results;
+        Static_Actor_Bases(results);
+        return results;
+    }
+
+    void Actor_Base_t::Static_Actor_Bases(Vector_t<some<Actor_Base_t*>>& results)
     {
         auto& actor_bases = Game_t::Self()->Actor_Bases();
         results.reserve(actor_bases.Count());
@@ -89,11 +128,11 @@ namespace doticu_skylib {
         Game_t::Iterate_Forms(iterator);
     }
 
-    void Actor_Base_t::Log_Actor_Bases()
+    void Actor_Base_t::Log_Static_Actor_Bases()
     {
         #define TAB "    "
 
-        Vector_t<some<Actor_Base_t*>> actor_bases = Actor_Bases();
+        Vector_t<some<Actor_Base_t*>> actor_bases = Static_Actor_Bases();
         SKYLIB_LOG("Log_Actor_Bases {");
         for (size_t idx = 0, end = actor_bases.size(); idx < end; idx += 1) {
             some<Actor_Base_t*> actor_base = actor_bases[idx];
@@ -168,19 +207,19 @@ namespace doticu_skylib {
         }
     }
 
-    Int_t Actor_Base_t::Compare_Names(some<Actor_Base_t*>* a, some<Actor_Base_t*>* b)
+    Int_t Actor_Base_t::Compare_Names(some<Actor_Base_t*>& a, some<Actor_Base_t*>& b)
     {
-        if (!a || !*a) {
+        if (!a) {
             return Comparator_e::IS_UNORDERED;
-        } else if (!b || !*b) {
+        } else if (!b) {
             return Comparator_e::IS_ORDERED;
         } else {
             Comparator_e result = Form_t::Compare_Names(
-                (*a)->Any_Name(),
-                (*b)->Any_Name()
+                a->Any_Name(),
+                b->Any_Name()
             );
             if (result == Comparator_e::IS_EQUAL) {
-                return (*a)->form_id - (*b)->form_id;
+                return a->form_id - b->form_id;
             } else {
                 return result;
             }
@@ -354,20 +393,6 @@ namespace doticu_skylib {
         return it;
     }
 
-    maybe<Actor_Base_t*> Actor_Base_t::Highest_Static_Template()
-    {
-        if (Is_Static()) {
-            return this;
-        } else {
-            for (maybe<Actor_Base_t*> it = this->face_template; it; it = it->face_template) {
-                if (it->Is_Static()) {
-                    return it;
-                }
-            }
-            return none<Actor_Base_t*>();
-        }
-    }
-
     Vector_t<Actor_Base_t*> Actor_Base_t::Templates()
     {
         if (face_template) {
@@ -384,6 +409,20 @@ namespace doticu_skylib {
     {
         for (maybe<Actor_Base_t*> it = face_template; it; it = it->face_template) {
             results.push_back(it());
+        }
+    }
+
+    maybe<Actor_Base_t*> Actor_Base_t::Indentifiable_Static_Base()
+    {
+        if (Is_Static()) {
+            return this;
+        } else {
+            for (maybe<Actor_Base_t*> it = this->face_template; it; it = it->face_template) {
+                if (it->Is_Static()) {
+                    return it;
+                }
+            }
+            return none<Actor_Base_t*>();
         }
     }
 

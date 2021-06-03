@@ -66,7 +66,7 @@ namespace doticu_skylib {
         s16                         bleedout_override;          // 1E
         maybe<Leveled_Item_t*>      death_leveled_item;         // 20
         maybe<Voice_Type_t*>        voice_type;                 // 28
-        maybe<Form_t*>              base_template_form;         // 30 (TPLT, but resolved)
+        maybe<Form_t*>              template_form;              // 30 (TPLT, but resolved)
         u32                         unk_38;                     // 38
         u32                         unk_3C;                     // 3C
         Factions_And_Ranks_t        factions_and_ranks;         // 40
@@ -102,6 +102,7 @@ namespace doticu_skylib {
     public:
         void    Log(std::string indent = "");
         void    Log_Factions_And_Ranks(std::string indent = "");
+        void    Log_Template_Form(std::string indent = "") const;
     };
     STATIC_ASSERT(sizeof(Actor_Base_Data_c) == 0x58);
 

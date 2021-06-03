@@ -453,11 +453,11 @@ namespace doticu_skylib {
         }
     }
 
-    maybe<Actor_Base_t*> Actor_t::Actor_Base_Highest_Static_Template()
+    maybe<Actor_Base_t*> Actor_t::Indentifiable_Static_Actor_Base()
     {
         maybe<Actor_Base_t*> actor_base = Actor_Base();
         if (actor_base) {
-            return actor_base->Highest_Static_Template();
+            return actor_base->Indentifiable_Static_Base();
         } else {
             return none<Actor_Base_t*>();
         }

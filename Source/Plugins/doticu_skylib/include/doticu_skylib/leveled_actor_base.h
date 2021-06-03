@@ -27,6 +27,20 @@ namespace doticu_skylib {
         };
 
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E18C60, // 685059
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
         static size_t                           Leveled_Actor_Base_Count();
         static Vector_t<Leveled_Actor_Base_t*>  Leveled_Actor_Bases();
         static void                             Leveled_Actor_Bases(Vector_t<Leveled_Actor_Base_t*>& results);

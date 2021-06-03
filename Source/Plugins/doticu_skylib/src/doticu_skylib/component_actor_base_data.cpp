@@ -216,14 +216,14 @@ namespace doticu_skylib {
         SKYLIB_LOG(indent + SKYLIB_TAB + "actor_base_template_flags:");
         this->actor_base_template_flags.Log(indent + SKYLIB_TAB + SKYLIB_TAB);
 
-        if (this->base_template_form) {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "base_template_form:");
+        if (this->template_form) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "template_form:");
             SKYLIB_LOG(indent + SKYLIB_TAB + SKYLIB_TAB + "form_type: %s, form_id: %s, component_name: %s",
-                       Form_Type_e::To_String(this->base_template_form->form_type),
-                       this->base_template_form->Form_ID_String(),
-                       this->base_template_form->Component_Name());
+                       Form_Type_e::To_String(this->template_form->form_type),
+                       this->template_form->Form_ID_String(),
+                       this->template_form->Component_Name());
         } else {
-            SKYLIB_LOG(indent + SKYLIB_TAB + "base_template_form: (none)");
+            SKYLIB_LOG(indent + SKYLIB_TAB + "template_form: (none)");
         }
 
         SKYLIB_LOG(indent + SKYLIB_TAB + "unk_38: 0x%X", this->unk_38);
@@ -243,6 +243,16 @@ namespace doticu_skylib {
         }
 
         SKYLIB_LOG(indent + "}");
+    }
+
+    void Actor_Base_Data_c::Log_Template_Form(std::string indent) const
+    {
+        if (this->template_form) {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "template_form:");
+            this->template_form->Log_Name_And_Type(indent + SKYLIB_TAB + SKYLIB_TAB);
+        } else {
+            SKYLIB_LOG(indent + SKYLIB_TAB + "template_form: (none)");
+        }
     }
 
 }

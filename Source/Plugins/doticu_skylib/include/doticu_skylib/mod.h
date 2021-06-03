@@ -112,6 +112,8 @@ namespace doticu_skylib {
 
         static Bool_t                   Has_Active_Mod(some<const char*> mod_name);
         static maybe<Mod_t*>            Active_Mod(some<const char*> mod_name);
+        static maybe<Mod_t*>            Active_Heavy_Mod(some<const char*> mod_name);
+        static maybe<Mod_t*>            Active_Light_Mod(some<const char*> mod_name);
 
         static void                     Log_Active_Mods();
         static void                     Log_Active_Heavy_Mods();

@@ -174,6 +174,38 @@ namespace doticu_skylib {
         return none<Mod_t*>();
     }
 
+    maybe<Mod_t*> Mod_t::Active_Heavy_Mod(some<const char*> mod_name)
+    {
+        SKYLIB_ASSERT_SOME(mod_name);
+
+        Array_t<maybe<Mod_t*>>& heavy_mods = Game_t::Self()->heavy_mods;
+        for (size_t idx = 0, end = heavy_mods.Count(); idx < end; idx += 1) {
+            maybe<Mod_t*> mod = heavy_mods[idx];
+            if (mod) {
+                if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
+                    return mod;
+                }
+            }
+        }
+        return none<Mod_t*>();
+    }
+
+    maybe<Mod_t*> Mod_t::Active_Light_Mod(some<const char*> mod_name)
+    {
+        SKYLIB_ASSERT_SOME(mod_name);
+
+        Array_t<maybe<Mod_t*>>& light_mods = Game_t::Self()->light_mods;
+        for (size_t idx = 0, end = light_mods.Count(); idx < end; idx += 1) {
+            maybe<Mod_t*> mod = light_mods[idx];
+            if (mod) {
+                if (CString_t::Is_Same(mod_name(), mod->Name(), true)) {
+                    return mod;
+                }
+            }
+        }
+        return none<Mod_t*>();
+    }
+
     static void Log_Mods(const char* title, Vector_t<some<Mod_t*>> mods)
     {
         #define TAB "    "

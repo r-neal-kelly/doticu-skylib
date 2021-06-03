@@ -17,7 +17,7 @@ namespace doticu_skylib {
     public:
         static Bool_t   Has_Same_Faction(const Faction_And_Rank_t& a, const Faction_And_Rank_t& b);
 
-        static Int_t    Compare_Editor_Or_Form_IDs(Faction_And_Rank_t* a, Faction_And_Rank_t* b);
+        static Int_t    Compare_Editor_Or_Form_IDs(Faction_And_Rank_t& a, Faction_And_Rank_t& b);
 
     public:
         maybe<Faction_t*>           faction;    // 00 (some instead?)
