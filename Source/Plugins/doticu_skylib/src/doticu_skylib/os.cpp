@@ -123,12 +123,12 @@ namespace doticu_skylib {
         return documents_path;
     }
 
-    static void Delete_File(const std::wstring& file_name)
+    void OS_t::Delete_File(const std::wstring& file_name)
     {
         DeleteFileW(file_name.c_str());
     }
 
-    static void Delete_File(std::wstring&& file_name)
+    void OS_t::Delete_File(std::wstring&& file_name)
     {
         Delete_File(file_name);
     }
