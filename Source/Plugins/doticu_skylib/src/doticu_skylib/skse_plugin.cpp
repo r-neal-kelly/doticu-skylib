@@ -103,15 +103,19 @@ namespace doticu_skylib {
 
     void SKSE_Plugin_t::On_SKSE_Message(some<SKSE_Message_t*> message)
     {
-        static auto Clean_File_Name = [](some<const char*> original)->std::string
+        static auto Clean_File_Name = [](maybe<const char*> original)->std::string
         {
-            std::string result = original();
+            if (original) {
+                std::string result = original();
 
-            if (CString_t::Ends_With(original(), ".ess", true)) {
-                result.erase(result.length() - 4);
+                if (CString_t::Ends_With(original(), ".ess", true)) {
+                    result.erase(result.length() - 4);
+                }
+
+                return std::move(result);
+            } else {
+                return "";
             }
-
-            return std::move(result);
         };
 
         if (message->type == SKSEMessagingInterface::kMessage_SaveGame) {
@@ -119,12 +123,8 @@ namespace doticu_skylib {
                 this->update_locker.lock();
             }
 
-            if (message->data) {
-                this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
-                On_Before_Save_Game(this->cached_file_name);
-            } else {
-                On_Before_Save_Game("");
-            }
+            this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
+            On_Before_Save_Game(this->cached_file_name);
 
             std::thread(
                 [this]()->void
@@ -148,12 +148,8 @@ namespace doticu_skylib {
                 this->update_locker.lock();
             }
 
-            if (message->data) {
-                this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
-                On_Before_Load_Game(this->cached_file_name);
-            } else {
-                On_Before_Load_Game("");
-            }
+            this->cached_file_name = Clean_File_Name(static_cast<const char*>(message->data));
+            On_Before_Load_Game(this->cached_file_name);
 
         } else if (message->type == SKSEMessagingInterface::kMessage_PostLoadGame) {
             On_After_Load_Game(this->cached_file_name, message->data ? true : false);
@@ -168,21 +164,14 @@ namespace doticu_skylib {
             On_After_New_Game();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DeleteGame) {
-            Bool_t was_already_locked = this->update_locker.owns_lock();
-            if (!was_already_locked) {
-                this->update_locker.lock();
-            }
-
-            if (message->data) {
-                std::string file_name = Clean_File_Name(static_cast<const char*>(message->data));
-                On_Before_Delete_Game(file_name);
-            } else {
-                On_Before_Delete_Game("");
-            }
-
-            if (!was_already_locked && this->update_locker.owns_lock()) {
-                this->update_locker.unlock();
-            }
+            std::string file_name = Clean_File_Name(static_cast<const char*>(message->data));
+            std::thread(
+                [this, file_name]()->void
+                {
+                    std::lock_guard<std::mutex> update_locker(this->update_lock);
+                    On_Before_Delete_Game(file_name);
+                }
+            ).detach();
 
         } else if (message->type == SKSEMessagingInterface::kMessage_DataLoaded) {
             std::lock_guard<std::mutex> update_locker(this->update_lock);
