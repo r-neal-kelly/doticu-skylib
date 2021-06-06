@@ -17,6 +17,11 @@ namespace doticu_skylib {
 
     public:
         NI_Point_3_t();
+        NI_Point_3_t(const NI_Point_3_t& other);
+        NI_Point_3_t(NI_Point_3_t&& other) noexcept;
+        NI_Point_3_t& operator =(const NI_Point_3_t& other);
+        NI_Point_3_t& operator =(NI_Point_3_t&& other) noexcept;
+        ~NI_Point_3_t();
 
     public:
         void Log(std::string indent = "");
