@@ -71,10 +71,10 @@ namespace doticu_skylib {
 
     public:
         Extra_List_t();
-        Extra_List_t(const Extra_List_t& other)                 = delete;
-        Extra_List_t(Extra_List_t&& other) noexcept             = delete;
-        Extra_List_t& operator=(const Extra_List_t& other)      = delete;
-        Extra_List_t& operator=(Extra_List_t&& other) noexcept  = delete;
+        Extra_List_t(const Extra_List_t& other) = delete;
+        Extra_List_t(Extra_List_t&& other) noexcept = delete;
+        Extra_List_t& operator=(const Extra_List_t& other) = delete;
+        Extra_List_t& operator=(Extra_List_t&& other) noexcept = delete;
         ~Extra_List_t();
 
     public:
@@ -216,7 +216,7 @@ namespace doticu_skylib {
         void                                Is_Worn_Left(Bool_t is_worn_left);
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Extra_List_t) == 0x18);
 
