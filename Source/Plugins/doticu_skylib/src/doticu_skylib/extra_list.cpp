@@ -231,11 +231,7 @@ namespace doticu_skylib {
     maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type) const
     {
         Read_Locker_t locker(this->lock);
-        return Get(type, locker);
-    }
 
-    maybe<Extra_Data_t*> Extra_List_t::Get(Extra_Type_e type, const Locker_t& locker) const
-    {
         if (this->presence && this->presence->Has(type)) {
             for (maybe<Extra_Data_t*> it = this->x_datas; it; it = it->next) {
                 if (it->Type() == type) {
@@ -518,7 +514,7 @@ namespace doticu_skylib {
 
         Read_Locker_t locker(this->lock);
 
-        maybe<Extra_Container_Changes_t*> x_container = Get<Extra_Container_Changes_t>(locker);
+        maybe<Extra_Container_Changes_t*> x_container = Get<Extra_Container_Changes_t>();
         if (x_container && x_container->container_changes && x_container->container_changes->entries) {
             Entries_t& entries = *x_container->container_changes->entries;
             if (!entries.Is_Empty()) {
@@ -806,7 +802,7 @@ namespace doticu_skylib {
     {
         Read_Locker_t locker(this->lock);
 
-        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>(locker);
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
         if (x_reference_handle) {
             return x_reference_handle->Representative_Reference();
         } else {
@@ -818,7 +814,7 @@ namespace doticu_skylib {
     {
         Read_Locker_t locker(this->lock);
 
-        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>(locker);
+        maybe<Extra_Reference_Handle_t*> x_reference_handle = Get<Extra_Reference_Handle_t>();
         if (x_reference_handle) {
             return x_reference_handle->Containing_Reference();
         } else {

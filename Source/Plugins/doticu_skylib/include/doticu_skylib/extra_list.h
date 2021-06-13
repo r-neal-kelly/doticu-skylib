@@ -89,7 +89,6 @@ namespace doticu_skylib {
     public:
         Bool_t                  Has(Extra_Type_e type) const;
         maybe<Extra_Data_t*>    Get(Extra_Type_e type) const;
-        maybe<Extra_Data_t*>    Get(Extra_Type_e type, const Locker_t& locker) const;
         Bool_t                  Add(some<Extra_Data_t*> x_data);
         Bool_t                  Remove(some<Extra_Data_t*> x_data);
 
@@ -97,8 +96,6 @@ namespace doticu_skylib {
         Bool_t                  Has() const;
         template <typename T>
         maybe<T*>               Get() const;
-        template <typename T>
-        maybe<T*>               Get(const Locker_t& locker) const;
         template <typename T>
         Bool_t                  Add(some<T*> x_data);
         template <typename T>
