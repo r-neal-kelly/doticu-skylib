@@ -894,7 +894,7 @@
     <ClInclude Include="include\doticu_skylib\container_entry.h">
       <Filter>Header Files\container</Filter>
     </ClInclude>
-    <ClInclude Include="include\doticu_skylib\container_entry_count.h">
+    <ClInclude Include="include\doticu_skylib\sp32.h">
       <Filter>Header Files\container</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\container_entry_extra.h">
@@ -1486,6 +1486,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\doticu_skylib\enum_calendar_date_month.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sp16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sp8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sp64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sn8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sn16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sn32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\doticu_skylib\sn64.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

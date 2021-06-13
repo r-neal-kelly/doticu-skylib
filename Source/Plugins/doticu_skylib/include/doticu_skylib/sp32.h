@@ -10,10 +10,8 @@
 
 namespace doticu_skylib {
 
-    using Raw_Container_Entry_Count_t = s32;
-
-    class Container_Entry_Count_t_data :
-        public Numeric_Data_t<Raw_Container_Entry_Count_t>
+    class sp32_data :
+        public Numeric_Data_t<s32>
     {
     public:
         static constexpr value_type _NONE_  = 0;
@@ -23,36 +21,36 @@ namespace doticu_skylib {
     public:
         static Bool_t Is_Valid(value_type value)
         {
-            return value >= _NONE_;
+            return value >= _MIN_;
         }
     };
 
-    class Container_Entry_Count_t :
-        public Numeric_t<Container_Entry_Count_t_data>
+    class sp32 :
+        public Numeric_t<sp32_data>
     {
     public:
         using Numeric_t::Numeric_t;
     };
 
     template <>
-    class none<Container_Entry_Count_t> :
-        public none_numeric<Container_Entry_Count_t>
+    class none<sp32> :
+        public none_numeric<sp32>
     {
     public:
         using none_numeric::none_numeric;
     };
 
     template <>
-    class maybe<Container_Entry_Count_t> :
-        public maybe_numeric<Container_Entry_Count_t>
+    class maybe<sp32> :
+        public maybe_numeric<sp32>
     {
     public:
         using maybe_numeric::maybe_numeric;
     };
 
     template <>
-    class some<Container_Entry_Count_t> :
-        public some_numeric<Container_Entry_Count_t>
+    class some<sp32> :
+        public some_numeric<sp32>
     {
     public:
         using some_numeric::some_numeric;

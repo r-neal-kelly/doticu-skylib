@@ -47,7 +47,7 @@ namespace doticu_skylib {
         Game_t::Deallocate<Container_Changes_Entry_t>(container_changes_entry);
     }
 
-    some<Extra_List_t*> Container_Changes_Entry_t::Some_Extra_List(Container_Entry_Count_t count)
+    some<Extra_List_t*> Container_Changes_Entry_t::Some_Extra_List(sp32 count)
     {
         some<Extra_List_t*> x_list = Extra_List_t::Create();
         if (count > std::numeric_limits<s16>::max()) {
@@ -126,23 +126,23 @@ namespace doticu_skylib {
         this->pad_14 = 0;
     }
 
-    s32 Container_Changes_Entry_t::Delta(Container_Entry_Count_t base_count)
+    s32 Container_Changes_Entry_t::Delta(sp32 base_count)
     {
         this->delta = Limit(this->delta, Minimum_Delta(base_count), Maximum_Delta(base_count));
         return this->delta;
     }
 
-    s32 Container_Changes_Entry_t::Minimum_Delta(Container_Entry_Count_t base_count)
+    s32 Container_Changes_Entry_t::Minimum_Delta(sp32 base_count)
     {
         return Extra_Lists_Count() + -base_count;
     }
 
-    s32 Container_Changes_Entry_t::Maximum_Delta(Container_Entry_Count_t base_count)
+    s32 Container_Changes_Entry_t::Maximum_Delta(sp32 base_count)
     {
         return std::numeric_limits<s32>::max() + -base_count;
     }
 
-    s32 Container_Changes_Entry_t::Increment_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount)
+    s32 Container_Changes_Entry_t::Increment_Delta(sp32 base_count, sp32 amount)
     {
         s32 minimum_delta = Minimum_Delta(base_count);
         s32 maximum_delta = Maximum_Delta(base_count);
@@ -156,7 +156,7 @@ namespace doticu_skylib {
         return this->delta;
     }
 
-    s32 Container_Changes_Entry_t::Decrement_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount)
+    s32 Container_Changes_Entry_t::Decrement_Delta(sp32 base_count, sp32 amount)
     {
         s32 minimum_delta = Minimum_Delta(base_count);
         s32 maximum_delta = Maximum_Delta(base_count);
@@ -186,7 +186,7 @@ namespace doticu_skylib {
         return results;
     }
 
-    Container_Entry_Count_t Container_Changes_Entry_t::Extra_Lists_Count()
+    sp32 Container_Changes_Entry_t::Extra_Lists_Count()
     {
         s32 count = 0;
         if (this->x_lists && !this->x_lists->Is_Empty()) {
@@ -203,7 +203,7 @@ namespace doticu_skylib {
         return count;
     }
 
-    s32 Container_Changes_Entry_t::Add(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Add(sp32 base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(this->x_lists ? !this->x_lists->Has(extra_list()) : true);
@@ -220,7 +220,7 @@ namespace doticu_skylib {
         return new_delta;
     }
 
-    s32 Container_Changes_Entry_t::Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Add_Copy_Or_Increment(sp32 base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(!extra_list->Should_Be_Destroyed());
@@ -241,7 +241,7 @@ namespace doticu_skylib {
         }
     }
 
-    s32 Container_Changes_Entry_t::Remove(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Remove(sp32 base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
@@ -255,7 +255,7 @@ namespace doticu_skylib {
         return Decrement_Delta(base_count, extra_list->Count());
     }
 
-    s32 Container_Changes_Entry_t::Remove_And_Destroy(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    s32 Container_Changes_Entry_t::Remove_And_Destroy(sp32 base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
@@ -271,7 +271,7 @@ namespace doticu_skylib {
         return Decrement_Delta(base_count, x_list_count);
     }
 
-    s32 Container_Changes_Entry_t::Remove_To(Container_Entry_Count_t base_count,
+    s32 Container_Changes_Entry_t::Remove_To(sp32 base_count,
                                              some<Extra_List_t*> extra_list,
                                              maybe<Reference_t*> this_owner,
                                              some<Reference_t*> new_owner)
@@ -304,7 +304,7 @@ namespace doticu_skylib {
         return new_delta;
     }
 
-    s32 Container_Changes_Entry_t::Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount)
+    s32 Container_Changes_Entry_t::Increment_Count(sp32 base_count, some<Extra_List_t*> extra_list, s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
@@ -316,7 +316,7 @@ namespace doticu_skylib {
         return Increment_Delta(base_count, new_count - count);
     }
 
-    s32 Container_Changes_Entry_t::Decrement_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount)
+    s32 Container_Changes_Entry_t::Decrement_Count(sp32 base_count, some<Extra_List_t*> extra_list, s16 amount)
     {
         SKYLIB_ASSERT_SOME(extra_list);
         SKYLIB_ASSERT(this->x_lists && this->x_lists->Has(extra_list()));
@@ -336,7 +336,7 @@ namespace doticu_skylib {
         return Decrement_Delta(base_count, count - new_count);
     }
 
-    maybe<s32> Container_Changes_Entry_t::Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list)
+    maybe<s32> Container_Changes_Entry_t::Try_To_Consume(sp32 base_count, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT_SOME(extra_list);
 

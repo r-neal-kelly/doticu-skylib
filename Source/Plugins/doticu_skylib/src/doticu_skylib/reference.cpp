@@ -846,7 +846,7 @@ namespace doticu_skylib {
         return some<Reference_Container_Entry_t>(Base_Component_Container_Entry(object), Some_Container_Changes_Entry(object));
     }
 
-    Container_Entry_Count_t Reference_t::Container_Entry_Count(some<Bound_Object_t*> object)
+    sp32 Reference_t::Container_Entry_Count(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT_SOME(object);
 
@@ -1118,7 +1118,7 @@ namespace doticu_skylib {
             for (size_t idx = 0, end = this_container.Count(); idx < end; idx += 1) {
                 Reference_Container_Entry_t& this_entry = this_container.entries[idx];
                 if (!this_entry.Is_Leveled_Item()) {
-                    this_entry.Decrement_Count(this_container, Container_Entry_Count_t::_MAX_);
+                    this_entry.Decrement_Count(this_container, sp32::_MAX_);
                     Vector_t<some<Extra_List_t*>> this_x_lists = this_entry.Some_Extra_Lists();
                     for (size_t idx = 0, end = this_x_lists.size(); idx < end; idx += 1) {
                         some<Extra_List_t*> this_x_list = this_x_lists[idx];

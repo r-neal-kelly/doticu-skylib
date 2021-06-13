@@ -24,7 +24,7 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Container_c::Entry_Count(some<Bound_Object_t*> bound_object)
+    sp32 Container_c::Entry_Count(some<Bound_Object_t*> bound_object)
     {
         SKYLIB_ASSERT_SOME(bound_object);
 

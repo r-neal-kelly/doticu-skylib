@@ -6,7 +6,6 @@
 
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/enum_collision_layer_type.h"
 #include "doticu_skylib/enum_remove_reason.h"
 #include "doticu_skylib/enum_script_type.h"
@@ -21,6 +20,7 @@
 #include "doticu_skylib/reference_container.h"
 #include "doticu_skylib/reference_count.h"
 #include "doticu_skylib/reference_handle.h"
+#include "doticu_skylib/sp32.h"
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/unknown.h"
 
@@ -356,7 +356,7 @@ namespace doticu_skylib {
         Reference_Container_t               Container();
         maybe<Reference_Container_Entry_t>  Maybe_Container_Entry(some<Bound_Object_t*> object);
         some<Reference_Container_Entry_t>   Some_Container_Entry(some<Bound_Object_t*> object);
-        Container_Entry_Count_t             Container_Entry_Count(some<Bound_Object_t*> object);
+        sp32                                Container_Entry_Count(some<Bound_Object_t*> object);
 
         Vector_t<some<Reference_t*>>        Contained_References() const;
         void                                Contained_References(Vector_t<some<Reference_t*>>& results) const;

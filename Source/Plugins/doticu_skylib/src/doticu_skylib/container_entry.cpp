@@ -7,12 +7,12 @@
 
 namespace doticu_skylib {
 
-    Container_Entry_Count_t Container_Entry_t::Count()
+    sp32 Container_Entry_t::Count()
     {
         return this->count;
     }
 
-    void Container_Entry_t::Count(Container_Entry_Count_t count)
+    void Container_Entry_t::Count(sp32 count)
     {
         this->count = count;
     }

@@ -196,6 +196,10 @@
     <ClInclude Include="include\doticu_skylib\ai_location_handle.h" />
     <ClInclude Include="include\doticu_skylib\light.h" />
     <ClInclude Include="include\doticu_skylib\maybe_enum.h" />
+    <ClInclude Include="include\doticu_skylib\sn16.h" />
+    <ClInclude Include="include\doticu_skylib\sn32.h" />
+    <ClInclude Include="include\doticu_skylib\sn64.h" />
+    <ClInclude Include="include\doticu_skylib\sn8.h" />
     <ClInclude Include="include\doticu_skylib\ni_texture_set.h" />
     <ClInclude Include="include\doticu_skylib\numeric.h" />
     <ClInclude Include="include\doticu_skylib\package_dialogue.h" />
@@ -212,7 +216,8 @@
     <ClInclude Include="include\doticu_skylib\reference_container.h" />
     <ClInclude Include="include\doticu_skylib\reference_container_entry.h" />
     <ClInclude Include="include\doticu_skylib\actor_handle.h" />
-    <ClInclude Include="include\doticu_skylib\container_entry_count.h" />
+    <ClInclude Include="include\doticu_skylib\sp16.h" />
+    <ClInclude Include="include\doticu_skylib\sp32.h" />
     <ClInclude Include="include\doticu_skylib\extra_leveled_item.h" />
     <ClInclude Include="include\doticu_skylib\filter_collision_layer_types.h" />
     <ClInclude Include="include\doticu_skylib\havok_actor_rigid_body_controller.h" />
@@ -492,6 +497,8 @@
     <ClInclude Include="include\doticu_skylib\skse_plugin.h" />
     <ClInclude Include="include\doticu_skylib\small_dynamic_array.h" />
     <ClInclude Include="include\doticu_skylib\soul_gem.h" />
+    <ClInclude Include="include\doticu_skylib\sp64.h" />
+    <ClInclude Include="include\doticu_skylib\sp8.h" />
     <ClInclude Include="include\doticu_skylib\spell.h" />
     <ClInclude Include="include\doticu_skylib\spin_lock.h" />
     <ClInclude Include="include\doticu_skylib\static.h" />

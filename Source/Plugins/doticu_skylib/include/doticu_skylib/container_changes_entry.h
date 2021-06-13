@@ -5,9 +5,9 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/enum_extra_type.h"
 #include "doticu_skylib/forward_list.h"
+#include "doticu_skylib/sp32.h"
 
 namespace doticu_skylib {
 
@@ -31,7 +31,7 @@ namespace doticu_skylib {
         static some<Container_Changes_Entry_t*> Create(some<Bound_Object_t*> object);
         static void                             Destroy(some<Container_Changes_Entry_t*> container_changes_entry);
 
-        static some<Extra_List_t*>              Some_Extra_List(Container_Entry_Count_t count);
+        static some<Extra_List_t*>              Some_Extra_List(sp32 count);
         static maybe<Extra_List_t*>             Maybe_Extra_List_Copy(some<Extra_List_t*> extra_list);
         static some<Extra_List_t*>              Some_Extra_List_Copy(some<Extra_List_t*> extra_list);
 
@@ -51,25 +51,25 @@ namespace doticu_skylib {
         ~Container_Changes_Entry_t();
 
     public:
-        s32                             Delta(Container_Entry_Count_t base_count);
-        s32                             Minimum_Delta(Container_Entry_Count_t base_count);
-        s32                             Maximum_Delta(Container_Entry_Count_t base_count);
-        s32                             Increment_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount);
-        s32                             Decrement_Delta(Container_Entry_Count_t base_count, Container_Entry_Count_t amount);
+        s32                             Delta(sp32 base_count);
+        s32                             Minimum_Delta(sp32 base_count);
+        s32                             Maximum_Delta(sp32 base_count);
+        s32                             Increment_Delta(sp32 base_count, sp32 amount);
+        s32                             Decrement_Delta(sp32 base_count, sp32 amount);
 
         Vector_t<some<Extra_List_t*>>   Extra_Lists();
-        Container_Entry_Count_t         Extra_Lists_Count();
-        s32                             Add(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
-        s32                             Add_Copy_Or_Increment(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
-        s32                             Remove(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
-        s32                             Remove_And_Destroy(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
-        s32                             Remove_To(Container_Entry_Count_t base_count,
+        sp32                            Extra_Lists_Count();
+        s32                             Add(sp32 base_count, some<Extra_List_t*> extra_list);
+        s32                             Add_Copy_Or_Increment(sp32 base_count, some<Extra_List_t*> extra_list);
+        s32                             Remove(sp32 base_count, some<Extra_List_t*> extra_list);
+        s32                             Remove_And_Destroy(sp32 base_count, some<Extra_List_t*> extra_list);
+        s32                             Remove_To(sp32 base_count,
                                                   some<Extra_List_t*> extra_list,
                                                   maybe<Reference_t*> this_owner,
                                                   some<Reference_t*> new_owner);
-        s32                             Increment_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
-        s32                             Decrement_Count(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list, s16 amount);
-        maybe<s32>                      Try_To_Consume(Container_Entry_Count_t base_count, some<Extra_List_t*> extra_list);
+        s32                             Increment_Count(sp32 base_count, some<Extra_List_t*> extra_list, s16 amount);
+        s32                             Decrement_Count(sp32 base_count, some<Extra_List_t*> extra_list, s16 amount);
+        maybe<s32>                      Try_To_Consume(sp32 base_count, some<Extra_List_t*> extra_list);
 
         Bool_t                          Has_Quest_Item() const;
         Bool_t                          Should_Be_Destroyed();
@@ -77,7 +77,7 @@ namespace doticu_skylib {
         void                            Destroy_Extra_Lists();
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "");
     };
     STATIC_ASSERT(sizeof(Container_Changes_Entry_t) == 0x18);
 

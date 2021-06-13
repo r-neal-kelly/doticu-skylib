@@ -59,28 +59,24 @@ namespace doticu_skylib {
 
         size_t                              Count() const;
 
-        Container_Entry_Count_t             Count(some<Bound_Object_t*> object);
-        Container_Entry_Count_t             Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
-        Container_Entry_Count_t             Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount);
-        Container_Entry_Count_t             Remove_Count_To(some<Bound_Object_t*> object,
-                                                            Container_Entry_Count_t amount,
-                                                            some<Reference_t*> to);
+        sp32                                Count(some<Bound_Object_t*> object);
+        sp32                                Increment_Count(some<Bound_Object_t*> object, sp32 amount);
+        sp32                                Decrement_Count(some<Bound_Object_t*> object, sp32 amount);
+        sp32                                Remove_Count_To(some<Bound_Object_t*> object, sp32 amount, some<Reference_t*> to);
 
-        Container_Entry_Count_t             Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t             Remove_To(some<Bound_Object_t*> object,
-                                                      some<Extra_List_t*> extra_list,
-                                                      some<Reference_t*> to);
-        maybe<Container_Entry_Count_t>      Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        sp32                                Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        sp32                                Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        sp32                                Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        sp32                                Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
+        sp32                                Remove_To(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list, some<Reference_t*> to);
+        maybe<sp32>                         Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list);
 
     public:
         Reference_Container_Entry_t&        operator [](size_t index);
         const Reference_Container_Entry_t&  operator [](size_t index) const;
 
     public:
-        void Log(std::string indent = "");
+        void    Log(std::string indent = "");
     };
 
 }

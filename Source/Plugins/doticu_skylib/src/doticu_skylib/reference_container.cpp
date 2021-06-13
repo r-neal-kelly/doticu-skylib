@@ -208,7 +208,7 @@ namespace doticu_skylib {
         return this->entries.size();
     }
 
-    Container_Entry_Count_t Reference_Container_t::Count(some<Bound_Object_t*> object)
+    sp32 Reference_Container_t::Count(some<Bound_Object_t*> object)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -221,7 +221,7 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Reference_Container_t::Increment_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount)
+    sp32 Reference_Container_t::Increment_Count(some<Bound_Object_t*> object, sp32 amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -229,7 +229,7 @@ namespace doticu_skylib {
         return Some_Entry(object)->Increment_Count(*this, amount);
     }
 
-    Container_Entry_Count_t Reference_Container_t::Decrement_Count(some<Bound_Object_t*> object, Container_Entry_Count_t amount)
+    sp32 Reference_Container_t::Decrement_Count(some<Bound_Object_t*> object, sp32 amount)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -242,9 +242,7 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Reference_Container_t::Remove_Count_To(some<Bound_Object_t*> object,
-                                                                   Container_Entry_Count_t amount,
-                                                                   some<Reference_t*> to)
+    sp32 Reference_Container_t::Remove_Count_To(some<Bound_Object_t*> object, sp32 amount, some<Reference_t*> to)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -258,7 +256,7 @@ namespace doticu_skylib {
         }
     }
 
-    Container_Entry_Count_t Reference_Container_t::Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    sp32 Reference_Container_t::Add(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -267,7 +265,7 @@ namespace doticu_skylib {
         return Some_Entry(object)->Add(*this, extra_list);
     }
 
-    Container_Entry_Count_t Reference_Container_t::Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    sp32 Reference_Container_t::Add_Copy_Or_Increment(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -276,7 +274,7 @@ namespace doticu_skylib {
         return Some_Entry(object)->Add_Copy_Or_Increment(*this, extra_list);
     }
 
-    Container_Entry_Count_t Reference_Container_t::Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    sp32 Reference_Container_t::Remove(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -288,7 +286,7 @@ namespace doticu_skylib {
         return entry->Remove(*this, extra_list);
     }
 
-    Container_Entry_Count_t Reference_Container_t::Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    sp32 Reference_Container_t::Remove_And_Destroy(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -300,9 +298,7 @@ namespace doticu_skylib {
         return entry->Remove_And_Destroy(*this, extra_list);
     }
 
-    Container_Entry_Count_t Reference_Container_t::Remove_To(some<Bound_Object_t*> object,
-                                                             some<Extra_List_t*> extra_list,
-                                                             some<Reference_t*> to)
+    sp32 Reference_Container_t::Remove_To(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list, some<Reference_t*> to)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -315,7 +311,7 @@ namespace doticu_skylib {
         return entry->Remove_To(*this, extra_list, to);
     }
 
-    maybe<Container_Entry_Count_t> Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
+    maybe<sp32> Reference_Container_t::Try_To_Consume(some<Bound_Object_t*> object, some<Extra_List_t*> extra_list)
     {
         SKYLIB_ASSERT(Is_Valid());
         SKYLIB_ASSERT_SOME(object);
@@ -325,7 +321,7 @@ namespace doticu_skylib {
         if (entry) {
             return entry->Try_To_Consume(*this, extra_list);
         } else {
-            return none<Container_Entry_Count_t>();
+            return none<sp32>();
         }
     }
 

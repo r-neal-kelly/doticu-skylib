@@ -5,8 +5,8 @@
 #pragma once
 
 #include "doticu_skylib/collections.h"
-#include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/sp32.h"
 
 namespace doticu_skylib {
 
@@ -20,7 +20,7 @@ namespace doticu_skylib {
     class Reference_Container_Entry_t
     {
     public:
-        static some<Extra_List_t*>  Some_Extra_List(Container_Entry_Count_t count);
+        static some<Extra_List_t*>  Some_Extra_List(sp32 count);
         static maybe<Extra_List_t*> Maybe_Extra_List_Copy(some<Extra_List_t*> extra_list);
         static some<Extra_List_t*>  Some_Extra_List_Copy(some<Extra_List_t*> extra_list);
 
@@ -56,27 +56,27 @@ namespace doticu_skylib {
         Vector_t<some<Extra_List_t*>>       Some_Extra_Lists();
 
     public:
-        Container_Entry_Count_t Base_Count();
-        Container_Entry_Count_t Extra_Lists_Count();
-        Container_Entry_Count_t Non_Extra_Lists_Count();
-        Container_Entry_Count_t Count();
+        sp32    Base_Count();
+        sp32    Extra_Lists_Count();
+        sp32    Non_Extra_Lists_Count();
+        sp32    Count();
 
     public:
-        Container_Entry_Count_t Increment_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
-        Container_Entry_Count_t Decrement_Count(Reference_Container_t& owner, Container_Entry_Count_t amount);
-        Container_Entry_Count_t Remove_Count_To(Reference_Container_t& owner, Container_Entry_Count_t amount, some<Reference_t*> to);
-        Container_Entry_Count_t Remove_Count_To(Reference_Container_t& owner, Container_Entry_Count_t amount, Reference_Container_t& to);
+        sp32    Increment_Count(Reference_Container_t& owner, sp32 amount);
+        sp32    Decrement_Count(Reference_Container_t& owner, sp32 amount);
+        sp32    Remove_Count_To(Reference_Container_t& owner, sp32 amount, some<Reference_t*> to);
+        sp32    Remove_Count_To(Reference_Container_t& owner, sp32 amount, Reference_Container_t& to);
 
     public:
-        Container_Entry_Count_t         Add(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t         Add_Copy_Or_Increment(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t         Remove(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t         Remove_And_Destroy(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
-        Container_Entry_Count_t         Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, some<Reference_t*> to);
-        Container_Entry_Count_t         Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, Reference_Container_t& to);
-        Container_Entry_Count_t         Increment_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
-        Container_Entry_Count_t         Decrement_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
-        maybe<Container_Entry_Count_t>  Try_To_Consume(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        sp32        Add(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        sp32        Add_Copy_Or_Increment(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        sp32        Remove(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        sp32        Remove_And_Destroy(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
+        sp32        Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, some<Reference_t*> to);
+        sp32        Remove_To(Reference_Container_t& owner, some<Extra_List_t*> extra_list, Reference_Container_t& to);
+        sp32        Increment_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
+        sp32        Decrement_Count(Reference_Container_t& owner, some<Extra_List_t*> extra_list, s16 amount);
+        maybe<sp32> Try_To_Consume(Reference_Container_t& owner, some<Extra_List_t*> extra_list);
 
     public:
         explicit operator   Bool_t() const;

@@ -6,8 +6,8 @@
 
 #include "doticu_skylib/atomic_number.h"
 #include "doticu_skylib/component_form_data.h"
-#include "doticu_skylib/container_entry_count.h"
 #include "doticu_skylib/maybe.h"
+#include "doticu_skylib/sp32.h"
 
 namespace doticu_skylib {
 
@@ -27,6 +27,8 @@ namespace doticu_skylib {
             {
                 RTTI = 0x01E15488, // 513941
             };
+
+        public:
             using Enum_t::Enum_t;
         };
 
@@ -40,7 +42,7 @@ namespace doticu_skylib {
 
     public:
         maybe<Container_Entry_t*>   Maybe_Entry(some<Bound_Object_t*> bound_object);
-        Container_Entry_Count_t     Entry_Count(some<Bound_Object_t*> bound_object);
+        sp32                        Entry_Count(some<Bound_Object_t*> bound_object);
 
         void                        Container_Add_Items_To(some<Reference_t*> reference);
     };

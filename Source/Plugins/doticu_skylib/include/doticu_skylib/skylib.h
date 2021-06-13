@@ -19,6 +19,15 @@
 #include "doticu_skylib/unique.h"
 #include "doticu_skylib/version.h"
 
+#include "doticu_skylib/sp8.h"
+#include "doticu_skylib/sp16.h"
+#include "doticu_skylib/sp32.h"
+#include "doticu_skylib/sp64.h"
+#include "doticu_skylib/sn8.h"
+#include "doticu_skylib/sn16.h"
+#include "doticu_skylib/sn32.h"
+#include "doticu_skylib/sn64.h"
+
 #include "doticu_skylib/alias_id.h"
 #include "doticu_skylib/form_id.h"
 
@@ -82,7 +91,6 @@ namespace doticu_skylib {
     class Combat_Style_t;
     class Consts_t;
     class Container_t;
-    class Container_Entry_Count_t;
     class Dialogue_Branch_t;
     class Dialogue_Info_t;
     class Dialogue_Info_Instance_t;
