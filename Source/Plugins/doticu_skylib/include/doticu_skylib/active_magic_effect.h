@@ -19,6 +19,20 @@ namespace doticu_skylib {
         };
 
     public:
+        class Offset_e :
+            public Enum_t<Word_t>
+        {
+        public:
+            enum enum_type : value_type
+            {
+                RTTI = 0x01E38CE0, // 514042
+            };
+
+        public:
+            using Enum_t::Enum_t;
+        };
+
+    public:
         virtual ~Active_Magic_Effect_t(); // 0
 
     public:

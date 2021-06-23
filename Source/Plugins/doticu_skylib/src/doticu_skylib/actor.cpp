@@ -909,7 +909,7 @@ namespace doticu_skylib {
 
     void Actor_t::Reset_AI()
     {
-        Evaluate_Package(true, true);
+        Evaluate_Package(false, true);
     }
 
     Bool_t Actor_t::Add_Spell(some<Spell_t*> spell)
