@@ -28,7 +28,8 @@ namespace doticu_skylib {
     {
     public:
         some<Reference_t*>                      reference;
-        some<Container_c*>                      base_container;
+        Write_Locker_t                          extra_locker;
+        maybe<Container_c*>                     base_container;
         maybe<Container_Changes_t*>             reference_container;
         Vector_t<Reference_Container_Entry_t>   entries;
         Bool_t                                  has_changed;

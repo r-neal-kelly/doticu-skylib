@@ -15,17 +15,13 @@
 namespace doticu_skylib {
 
     Reference_Container_t::Reference_Container_t(some<Reference_t*> reference) :
-        reference(static_cast<Reference_t*>(nullptr)),
-        base_container(static_cast<Container_c*>(nullptr)),
-        reference_container(static_cast<Container_Changes_t*>(nullptr)),
+        reference((SKYLIB_ASSERT_SOME(reference), reference)),
+        extra_locker(reference->x_list.lock),
+        base_container(reference->Base_Component_Container()),
+        reference_container(reference->Maybe_Container_Changes()),
         entries(),
         has_changed(false)
     {
-        this->reference = reference;
-        SKYLIB_ASSERT_SOME(this->reference);
-        this->base_container = this->reference->Base_Component_Container()();
-        this->reference_container = this->reference->Maybe_Container_Changes();
-
         if (Is_Valid()) {
             Vector_t<some<Bound_Object_t*>> handled_objects;
 
@@ -57,6 +53,7 @@ namespace doticu_skylib {
 
     Reference_Container_t::Reference_Container_t(Reference_Container_t&& other) noexcept :
         reference(std::move(other.reference)),
+        extra_locker(std::move(other.extra_locker)),
         base_container(std::move(other.base_container)),
         reference_container(std::move(other.reference_container)),
         entries(std::move(other.entries)),
@@ -92,7 +89,7 @@ namespace doticu_skylib {
 
     Bool_t Reference_Container_t::Is_Valid() const
     {
-        return !!this->base_container;
+        return this->base_container != none<Container_c*>();
     }
 
     Bool_t Reference_Container_t::Has_Quest_Item() const
@@ -149,7 +146,7 @@ namespace doticu_skylib {
     {
         SKYLIB_ASSERT(Is_Valid());
 
-        return this->base_container;
+        return this->base_container();
     }
 
     maybe<Container_Changes_t*> Reference_Container_t::Maybe_Reference_Container()

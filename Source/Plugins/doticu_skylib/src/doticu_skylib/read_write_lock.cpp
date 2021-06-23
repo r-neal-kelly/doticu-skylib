@@ -12,7 +12,7 @@ namespace doticu_skylib {
     // The same goes for Lock_To_Write and Unlock_To_Write.
     // On the same thread, Lock_To_Read can be called any number of times after Lock_To_Write.
     // On the same thread, calling Lock_To_Write after calling Lock_To_Read will deadlock the game.
-    // Therefore it is not safe to switch from read to write on the same thread, unless the counter is zero.
+    // Therefore it is simply not safe to switch from read to write on the same thread, even if you unlock read first.
 
     Read_Write_Lock_t::Read_Write_Lock_t()
     {
@@ -104,7 +104,9 @@ namespace doticu_skylib {
 
     Read_Locker_t::~Read_Locker_t()
     {
-        this->lock->Unlock_To_Read();
+        if (this->lock) {
+            this->lock->Unlock_To_Read();
+        }
     }
 
     Write_Locker_t::Write_Locker_t(Read_Write_Lock_t& lock) :
@@ -134,7 +136,9 @@ namespace doticu_skylib {
 
     Write_Locker_t::~Write_Locker_t()
     {
-        this->lock->Unlock_To_Write();
+        if (this->lock) {
+            this->lock->Unlock_To_Write();
+        }
     }
 
 }
