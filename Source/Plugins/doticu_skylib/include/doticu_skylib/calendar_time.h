@@ -153,6 +153,11 @@ namespace doticu_skylib {
             return Time_12(Time_12().AM_PM(am_pm));
         }
 
+        u16 In_Minutes() const
+        {
+            return Hour_24()() * 60 + Minute()();
+        }
+
     public:
         operator some<Calendar_Time_24_t>() const
         {
