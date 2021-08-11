@@ -30,11 +30,11 @@ namespace doticu_skylib {
     inline u8       Atomic_t::Exchange_Subtract(volatile u8& a, u8 b)                           { return _InterlockedExchangeAdd8((volatile char*)&a, -(char)b); }
     inline u16      Atomic_t::Exchange_Subtract(volatile u16& a, u16 b)                         { return _InterlockedExchangeAdd16((volatile short*)&a, -(short)b); }
     inline u32      Atomic_t::Exchange_Subtract(volatile u32& a, u32 b)                         { return _InterlockedExchangeAdd((volatile long*)&a, -(long)b); }
-    inline u64      Atomic_t::Exchange_Subtract(volatile u64& a, u64 b)                         { return _InterlockedExchangeAdd64((volatile long long*)&a, -(long long)a); }
+    inline u64      Atomic_t::Exchange_Subtract(volatile u64& a, u64 b)                         { return _InterlockedExchangeAdd64((volatile long long*)&a, -(long long)b); }
     inline s8       Atomic_t::Exchange_Subtract(volatile s8& a, s8 b)                           { return _InterlockedExchangeAdd8((volatile char*)&a, -(char)b); }
     inline s16      Atomic_t::Exchange_Subtract(volatile s16& a, s16 b)                         { return _InterlockedExchangeAdd16((volatile short*)&a, -(short)b); }
     inline s32      Atomic_t::Exchange_Subtract(volatile s32& a, s32 b)                         { return _InterlockedExchangeAdd((volatile long*)&a, -(long)b); }
-    inline s64      Atomic_t::Exchange_Subtract(volatile s64& a, s64 b)                         { return _InterlockedExchangeAdd64((volatile long long*)&a, -(long long)a); }
+    inline s64      Atomic_t::Exchange_Subtract(volatile s64& a, s64 b)                         { return _InterlockedExchangeAdd64((volatile long long*)&a, -(long long)b); }
 
     inline u8       Atomic_t::Exchange_Or(volatile u8& a, u8 b)                                 { return _InterlockedOr8((volatile char*)&a, (char)b); }
     inline u16      Atomic_t::Exchange_Or(volatile u16& a, u16 b)                               { return _InterlockedOr16((volatile short*)&a, (short)b); }
